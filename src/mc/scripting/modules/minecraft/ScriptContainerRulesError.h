@@ -38,23 +38,11 @@ public:
     ScriptContainerRulesError();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ScriptContainerRulesError();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
 
     MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

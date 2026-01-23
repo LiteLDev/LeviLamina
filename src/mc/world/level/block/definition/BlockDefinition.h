@@ -49,8 +49,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CerealDocumentUpgrader* getCerealDocumentUpgrader(::cereal::ReflectionCtx const& ctx);
-
     MCAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
 
     MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);

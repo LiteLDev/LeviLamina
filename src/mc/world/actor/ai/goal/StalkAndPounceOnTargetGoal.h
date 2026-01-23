@@ -82,6 +82,8 @@ public:
 
     MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
+    MCAPI void _stalkPrey(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+
     MCAPI void _stuck();
     // NOLINTEND
 

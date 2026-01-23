@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/Result.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
@@ -68,6 +71,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4e6c3d;
     ::ll::UntypedStorage<8, 24> mUnk7f35b0;
+    ::ll::UntypedStorage<8, 80> mUnk72fcd7;
     // NOLINTEND
 
 public:
@@ -79,7 +83,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Core::FileStorageArea* getStorageArea(::Core::PathView path) const;
+    MCNAPI void forEachStorageArea(::std::function<void(::Core::FileStorageArea&)>&& visitorFunction);
+
+    MCNAPI ::Bedrock::Result<::std::shared_ptr<::Core::FileStorageArea>> getStorageArea(::Core::PathView path) const;
 
     MCNAPI void insertStorageArea(::Core::FileStorageArea& storageArea);
 

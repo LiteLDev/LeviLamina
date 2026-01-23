@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/LogAreaID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -112,14 +112,6 @@ public:
     );
 
     MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
-
-    MCAPI ~LogDetails();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

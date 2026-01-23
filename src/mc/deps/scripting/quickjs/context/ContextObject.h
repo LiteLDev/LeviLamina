@@ -47,12 +47,18 @@ public:
     // clang-format on
 
     // ContextObject inner types define
+    enum class ImportAllowedResult : int {
+        Success          = 0,
+        FailRestricted   = 1,
+        FailStaticImport = 2,
+    };
+
     struct UnhandledPromiseRejectionEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 208> mUnkc8e476;
-        ::ll::UntypedStorage<1, 1>   mUnkcaed09;
+        ::ll::UntypedStorage<8, 64> mUnkc8e476;
+        ::ll::UntypedStorage<1, 1>  mUnkcaed09;
         // NOLINTEND
 
     public:
@@ -77,19 +83,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>    mUnk21a88e;
-    ::ll::UntypedStorage<8, 8>    mUnka4780b;
-    ::ll::UntypedStorage<8, 7840> mUnka99eed;
-    ::ll::UntypedStorage<8, 144>  mUnk3d7cec;
-    ::ll::UntypedStorage<8, 24>   mUnk99b67a;
-    ::ll::UntypedStorage<8, 8>    mUnk880742;
-    ::ll::UntypedStorage<8, 8>    mUnkeb8990;
-    ::ll::UntypedStorage<8, 8>    mUnk8cc61a;
-    ::ll::UntypedStorage<8, 8>    mUnkd3ef0c;
-    ::ll::UntypedStorage<8, 8>    mUnk59aa18;
-    ::ll::UntypedStorage<8, 16>   mUnk182a63;
-    ::ll::UntypedStorage<8, 64>   mUnkd84617;
-    ::ll::UntypedStorage<8, 8>    mUnkfbf45f;
+    ::ll::UntypedStorage<1, 1>   mUnk21a88e;
+    ::ll::UntypedStorage<8, 8>   mUnka4780b;
+    ::ll::UntypedStorage<8, 784> mUnka99eed;
+    ::ll::UntypedStorage<8, 144> mUnk3d7cec;
+    ::ll::UntypedStorage<8, 24>  mUnk99b67a;
+    ::ll::UntypedStorage<8, 8>   mUnk880742;
+    ::ll::UntypedStorage<8, 8>   mUnkeb8990;
+    ::ll::UntypedStorage<8, 8>   mUnk8cc61a;
+    ::ll::UntypedStorage<8, 8>   mUnkd3ef0c;
+    ::ll::UntypedStorage<8, 8>   mUnk59aa18;
+    ::ll::UntypedStorage<8, 16>  mUnk182a63;
+    ::ll::UntypedStorage<8, 64>  mUnkd84617;
+    ::ll::UntypedStorage<8, 8>   mUnkfbf45f;
     // NOLINTEND
 
 public:
@@ -129,14 +135,15 @@ public:
         ::entt::meta_type const&                                 expectedReturnType
     );
 
+    MCNAPI ::Scripting::QuickJS::ContextObject::ImportAllowedResult
+    checkModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName, bool dynamicImport) const;
+
     MCNAPI ::Scripting::ResultAny getFutureResult(
         ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
         ::entt::meta_type const&
     ) const;
 
     MCNAPI ::Scripting::TypeNameInfo getNameForType(::entt::meta_type const& type, bool allowUnknownTypes) const;
-
-    MCNAPI bool isModuleImportAllowed(::std::string const& baseName, ::std::string const& moduleName) const;
 
     MCNAPI ::JSModuleDef* loadScriptAsModule(::std::string const& moduleName);
 

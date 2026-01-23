@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ActorSoundIdentifier();
+    MCAPI ActorSoundIdentifier();
 
     MCAPI explicit ActorSoundIdentifier(::Actor const& actor);
 
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+    MCAPI void* $ctor();
 
     MCAPI void* $ctor(::Actor const& actor);
 

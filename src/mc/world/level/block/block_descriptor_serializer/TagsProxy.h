@@ -13,18 +13,15 @@ public:
 
 public:
     // prevent constructor by default
-    TagsProxy& operator=(TagsProxy const&);
     TagsProxy(TagsProxy const&);
     TagsProxy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void fromString(::std::string const& expression);
-
     MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
 
-    MCFOLD ::std::string const& toString() const;
+    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy const&);
 
     MCAPI ~TagsProxy();
     // NOLINTEND

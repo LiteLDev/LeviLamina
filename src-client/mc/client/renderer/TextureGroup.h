@@ -7,7 +7,6 @@
 #include "mc/client/renderer/ImageBufferResourceManager.h"
 #include "mc/client/renderer/ImageCacheMode.h"
 #include "mc/client/renderer/TextureLoadMode.h"
-#include "mc/deps/core/resource/ResourceFileSystem.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/CountTracker.h"
 #include "mc/deps/core/threading/SharedAsync.h"
@@ -112,25 +111,11 @@ public:
         ::std::optional<::ResourceLoadType>                       optionalLoadType
     );
 
-    MCAPI void _loadTexturesAsync(
-        ::gsl::span<::ResourceLocationPair> locationPairs,
-        ::std::optional<::ResourceLoadType> resourceLoadType
-    );
-
     MCAPI void _loadTexturesSync(::gsl::span<::ResourceLocation> locations);
 
     MCAPI bool _textureIsQueuedOrBeingLoaded(::std::pair<::ResourceLocation, ::TextureLoadMode> const& textureLoadKey);
 
-    MCAPI void _unloadBedrockTextureAndCachedImage(
-        ::ResourceLocation const& cachedResourceLocation,
-        ::BedrockTexture&         bedrockTexture
-    );
-
-    MCAPI void _unloadFileSystem(::ResourceFileSystem fileSystem);
-
     MCAPI void addEmptyTexture(::ResourceLocation const& resourceLocation, int width, int height);
-
-    MCAPI uint64 estimateMemoryUsage() const;
 
     MCAPI ::BedrockTextureData const* getBedrockTextureData(::ResourceLocation const& resourceLocation) const;
 
@@ -139,6 +124,9 @@ public:
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
+
+    MCAPI ::cg::ImageBuffer*
+    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer);
 
     MCAPI bool isLoaded(
         ::ResourceLocation const& resourceLocation,
@@ -171,6 +159,8 @@ public:
     MCAPI bool shouldLoadPBRResources() const;
 
     MCAPI void unloadAllTextures();
+
+    MCAPI bool unloadTexture(::ResourceLocation const& resourceLocation, bool assertOnFailure);
 
     MCAPI ::BedrockTexture& uploadTexture(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer imageBuffer);
 

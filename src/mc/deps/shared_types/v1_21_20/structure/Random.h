@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    Random& operator=(Random const&);
     Random(Random const&);
     Random();
 
@@ -27,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::PoolAliases::Random& operator=(::SharedTypes::v1_21_20::PoolAliases::Random&&);
+
+    MCAPI ::SharedTypes::v1_21_20::PoolAliases::Random& operator=(::SharedTypes::v1_21_20::PoolAliases::Random const&);
     // NOLINTEND
 };
 

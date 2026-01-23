@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/AutomaticID.h"
@@ -44,7 +45,6 @@ class ActorRuntimeID;
 class ActorRuntimeIDManager;
 class ActorSoundIdentifier;
 class AutomationBehaviorTreeGroup;
-class BaseLightTextureImageBuilder;
 class BehaviorFactory;
 class BiomeComponentFactory;
 class BiomeManager;
@@ -90,6 +90,9 @@ class HashedString;
 class HitResult;
 class HitResultWrapper;
 class IConstBlockSource;
+class IContainerRegistryAccess;
+class IContainerRegistryTracker;
+class IDynamicContainerSerialization;
 class ILevelRandom;
 class IMinecraftEventing;
 class IRandom;
@@ -120,7 +123,6 @@ class MapItemSavedData;
 class Mob;
 class MolangPackSettingsCache;
 class MolangVariableMap;
-class MultiPlayerLevel;
 class NavigationComponent;
 class NetEventCallback;
 class NetworkIdentifier;
@@ -152,7 +154,7 @@ class Scheduler;
 class Scoreboard;
 class ScriptDeferredEventCoordinator;
 class ScriptingEventCoordinator;
-class SerializedSkin;
+class SerializedSkinRef;
 class ServerNetworkEventCoordinator;
 class ServerParticleManager;
 class ServerPlayerEventCoordinator;
@@ -163,7 +165,6 @@ class StartGamePacket;
 class StrictEntityContext;
 class StructureManager;
 class StructureSpawnRegistry;
-class SubChunkManager;
 class SubChunkPacket;
 class SubChunkRequestManager;
 class SurfaceBuilderRegistry;
@@ -176,7 +177,6 @@ class TickingAreasManager;
 class TradeTables;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
-class TrustedSkinHelper;
 class UserEntityIdentifierComponent;
 class Vec3;
 class VolumeEntityManagerServer;
@@ -194,7 +194,6 @@ struct PlayerSleepStatus;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 struct Tick;
-struct TickDeathSettings;
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
@@ -204,8 +203,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
+class BaseLightTextureImageBuilder;
 struct CameraRegistry;
+struct MultiPlayerLevel;
 struct Particle;
+struct SubChunkManager;
+struct TrustedSkinHelper;
 // clang-format on
 
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {
@@ -580,8 +583,13 @@ public:
 
     virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int) = 0;
 
-    virtual void
-    playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
+    ) = 0;
 
     virtual void playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, float const, float const) = 0;
 
@@ -851,6 +859,13 @@ public:
 
     virtual ::StackRefResult<::EntityRegistry const> getEntityRegistry() const = 0;
 
+    virtual ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> getContainerRegistryAccess() const = 0;
+
+    virtual ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> getContainerRegistryTracker() const = 0;
+
+    virtual ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>>
+    getDynamicContainerSerialization() const = 0;
+
     virtual ::EntitySystems& getEntitySystems() = 0;
 
     virtual ::WeakRef<::EntityContext> getLevelEntity() = 0;
@@ -877,11 +892,7 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     getPlayerMovementSettingsManager() const = 0;
 
-    virtual ::TickDeathSettings const& getTickDeathSettings() const = 0;
-
-    virtual void setTickDeathSettings(::TickDeathSettings const&) = 0;
-
-    virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const = 0;
+    virtual bool canUseSkin(::SerializedSkinRef const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const = 0;
 
@@ -898,6 +909,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> getUnknownBlockTypeRegistry() = 0;
 
     virtual bool isClientSide() const = 0;
+
+    virtual ::SubClientId getSubClientId() const = 0;
 
     virtual ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const = 0;
 
@@ -1005,7 +1018,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsSynchroniser> getPlayerPermissionsSynchroniser() = 0;
 
-    virtual ::MolangPackSettingsCache* getMolangPackSettingsCache() = 0;
+    virtual ::MolangPackSettingsCache const* getMolangPackSettingsCache() const = 0;
 
     virtual ::Recipes& getRecipes() const = 0;
 
@@ -1028,6 +1041,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const = 0;
+
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() = 0;
 

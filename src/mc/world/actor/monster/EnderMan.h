@@ -10,12 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class MobEffectInstance;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class EnderMan : public ::Monster {
@@ -27,10 +24,6 @@ public:
     ::ll::TypedStorage<2, 2, ::NewBlockID>                     mCarryBlockId;
     ::ll::TypedStorage<2, 2, ushort>                           mCarryBlockData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnderMan();
 
 public:
     // virtual functions
@@ -52,26 +45,6 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ~EnderMan() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EnderMan(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

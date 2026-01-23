@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    ComponentItemMenuCategoryData_v1_21_60& operator=(ComponentItemMenuCategoryData_v1_21_60 const&);
     ComponentItemMenuCategoryData_v1_21_60(ComponentItemMenuCategoryData_v1_21_60 const&);
     ComponentItemMenuCategoryData_v1_21_60();
 
@@ -29,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ComponentItemMenuCategoryData_v1_21_60& operator=(::ComponentItemMenuCategoryData_v1_21_60&&);
-
-    MCFOLD ::ComponentItemMenuCategoryData_v1_21_60& operator=(::ComponentItemMenuCategoryData_v1_21_60 const&);
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 class ActorDamageSource;
 class CompoundTag;
 class DataLoadHelper;
+class Mob;
 // clang-format on
 
 class PigZombie : public ::Zombie {
@@ -30,11 +31,17 @@ public:
 
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     virtual ~PigZombie() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _alert(::Mob& target);
     // NOLINTEND
 
 public:
@@ -46,7 +53,7 @@ public:
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

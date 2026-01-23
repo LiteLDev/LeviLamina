@@ -21,8 +21,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RideableComponent& operator=(RideableComponent const&);
+    RideableComponent();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RideableComponent(::RideableComponent&&);
+
+    MCAPI RideableComponent(::RideableComponent const&);
+
     MCAPI void _setCanPlayerRide(::Player& player, bool canRide) const;
 
     MCAPI bool areSeatsFull(::Actor const& owner) const;
@@ -36,6 +45,14 @@ public:
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
 
     MCAPI_C ~RideableComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::RideableComponent&&);
+
+    MCAPI void* $ctor(::RideableComponent const&);
     // NOLINTEND
 
 public:

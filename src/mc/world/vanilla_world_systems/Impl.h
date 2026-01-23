@@ -28,8 +28,8 @@ public:
         ::Bedrock::NonOwnerPointer<::Level> const& level,
         ::Experiments const&                       experiments,
         ::BaseGameVersion const&                   baseGameVersion,
-        ::ItemRegistryRef                          itemRegistry,
-        ::ServerScriptManager const*               scriptManager
+        ::ItemRegistryRef,
+        ::ServerScriptManager const* scriptManager
     );
 
     MCAPI ~Impl();
@@ -48,8 +48,8 @@ public:
         ::Bedrock::NonOwnerPointer<::Level> const& level,
         ::Experiments const&                       experiments,
         ::BaseGameVersion const&                   baseGameVersion,
-        ::ItemRegistryRef                          itemRegistry,
-        ::ServerScriptManager const*               scriptManager
+        ::ItemRegistryRef,
+        ::ServerScriptManager const* scriptManager
     );
     // NOLINTEND
 

@@ -9,7 +9,7 @@ struct AttributesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::BaseAttributeMap> mAttributes;
+    ::ll::TypedStorage<8, 88, ::BaseAttributeMap> mAttributes;
     // NOLINTEND
 
 public:
@@ -21,15 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributesComponent(::AttributesComponent&&);
+    MCAPI_C ::AttributesComponent& operator=(::AttributesComponent&&);
 
     MCAPI_C ~AttributesComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributesComponent&&);
     // NOLINTEND
 
 public:

@@ -12,15 +12,11 @@ public:
 
 public:
     // prevent constructor by default
-    AutoPlaceItem& operator=(AutoPlaceItem const&);
-    AutoPlaceItem(AutoPlaceItem const&);
     AutoPlaceItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AutoPlaceItem(::AutoPlaceItem&&);
-
     MCNAPI_C AutoPlaceItem(::std::string const& _collection, bool _stopWhenPlaced);
 
     MCNAPI_C ~AutoPlaceItem();
@@ -29,8 +25,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::AutoPlaceItem&&);
-
     MCNAPI_C void* $ctor(::std::string const& _collection, bool _stopWhenPlaced);
     // NOLINTEND
 

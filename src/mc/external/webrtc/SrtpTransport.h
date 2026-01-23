@@ -63,7 +63,7 @@ public:
 
     virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
 
-    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
+    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
     virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route) /*override*/;
 
@@ -73,17 +73,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CreateSrtpSessions();
-
     MCNAPI void EnableExternalAuth();
 
-    MCNAPI bool GetSrtpOverhead(int* srtp_overhead) const;
-
     MCNAPI void MaybeUpdateWritableState();
-
-    MCNAPI bool ProtectRtcp(void* p, int in_len, int max_len, int* out_len);
-
-    MCNAPI bool ProtectRtp(void* p, int in_len, int max_len, int* out_len);
 
     MCNAPI void ResetParams();
 
@@ -110,10 +102,6 @@ public:
     );
 
     MCNAPI SrtpTransport(bool rtcp_mux_enabled, ::webrtc::FieldTrialsView const& field_trials);
-
-    MCNAPI bool UnprotectRtcp(void* p, int in_len, int* out_len);
-
-    MCNAPI bool UnprotectRtp(void* p, int in_len, int* out_len);
     // NOLINTEND
 
 public:
@@ -143,7 +131,7 @@ public:
 
     MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet);
 
-    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
+    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
 
     MCNAPI void $OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 

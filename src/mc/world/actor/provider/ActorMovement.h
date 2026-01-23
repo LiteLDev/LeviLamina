@@ -10,6 +10,8 @@ class EntityContext;
 namespace ActorMovement {
 // functions
 // NOLINTBEGIN
+MCAPI_C float getPredictedWalkDist(::EntityContext const& entity, float alpha);
+
 MCAPI void setHasTeleported(::EntityContext& entity, bool newValue);
 // NOLINTEND
 

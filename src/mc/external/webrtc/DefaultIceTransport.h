@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class IceTransportInternal; }
-namespace cricket { struct P2PTransportChannel; }
 // clang-format on
 
 namespace webrtc {
@@ -30,27 +29,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DefaultIceTransport() /*override*/;
+    virtual ~DefaultIceTransport() /*override*/ = default;
 
     virtual ::cricket::IceTransportInternal* internal() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DefaultIceTransport(::std::unique_ptr<::cricket::P2PTransportChannel> internal);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::cricket::P2PTransportChannel> internal);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

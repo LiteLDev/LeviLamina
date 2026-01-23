@@ -80,11 +80,6 @@ public:
 
     MCNAPI void HandleReConfig(::dcsctp::ReConfigChunk chunk);
 
-    MCNAPI void HandleResetIncoming(
-        ::dcsctp::ParameterDescriptor const&                       descriptor,
-        ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses
-    );
-
     MCNAPI void HandleResetOutgoing(
         ::dcsctp::ParameterDescriptor const&                       descriptor,
         ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses

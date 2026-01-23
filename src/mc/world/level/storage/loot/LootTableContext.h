@@ -101,6 +101,10 @@ public:
         ::ItemStack const*         tool
     );
 
+    MCNAPI void removeVisitedTable(::LootTable const* table);
+
+    MCNAPI void setOriginalItemName(::std::string const& originalItemName);
+
     MCNAPI ~LootTableContext();
     // NOLINTEND
 

@@ -18,8 +18,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TradeTier& operator=(TradeTier const&);
+    TradeTier(TradeTier const&);
+    TradeTier();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_30::TradeTier& operator=(::SharedTypes::v1_21_30::TradeTier&&);
+
     MCAPI ~TradeTier();
     // NOLINTEND
 

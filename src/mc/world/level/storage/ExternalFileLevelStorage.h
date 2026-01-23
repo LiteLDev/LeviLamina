@@ -26,8 +26,6 @@ namespace ExternalFileLevelStorage {
 MCNAPI ::Bedrock::Result<void>
 _readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
 
-MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
-
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
 MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(

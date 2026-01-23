@@ -28,7 +28,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BaseLightTextureImageBuilder;
 class BiomeRegistry;
 class Block;
 class BlockEventDispatcher;
@@ -45,6 +44,7 @@ class DelayActionList;
 class DimensionBrightnessRamp;
 class EntityContext;
 class GameEventDispatcher;
+class IClientDimensionExtensions;
 class ILevel;
 class ILevelStorageManagerConnector;
 class LevelChunk;
@@ -63,7 +63,6 @@ class Vec3;
 class VillageManager;
 class WeakEntityRef;
 class Weather;
-class WireframeQueue;
 class WorldGenerator;
 struct ActorBlockSyncMessage;
 struct ActorChunkTransferEntry;
@@ -73,6 +72,7 @@ struct DimensionArguments;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
 struct UpdateSubChunkNetworkBlockInfo;
+namespace Poi { class Manager; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
@@ -147,7 +147,6 @@ public:
     ::ll::TypedStorage<4, 28, float[7]>                                               mMobsPerChunkSurface;
     ::ll::TypedStorage<4, 28, float[7]>                                               mMobsPerChunkUnderground;
     ::ll::TypedStorage<1, 2, ::BrightnessPair>                                        mDefaultBrightness;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseLightTextureImageBuilder>>       mLightTextureImageBuilder;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DimensionBrightnessRamp>>            mDimensionBrightnessRamp;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunkMetaData>>                mTargetMetaData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RuntimeLightingManager>>             mRuntimeLightingManager;
@@ -172,7 +171,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                     mCircuitSystemTickRate;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::WeakEntityRef>> mActorIDEntityIDMap;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>                         mDisplayEntities;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::WireframeQueue>>                    mWireframeQueue;
     ::ll::TypedStorage<8, 72, ::FeatureTerrainAdjustments>                            mFeatureTerrainAdjustments;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::vector<::std::unique_ptr<::CompoundTag>>>>
                                                                              mLimboEntities;
@@ -185,14 +183,16 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>        mLastStructurePruneTime;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBuildOrderPolicyBase>> mChunkBuildOrderPolicy;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VillageManager>>            mVillageManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Poi::Manager>>              mPoiManager;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkIdentifierWithSubId>>   mTemporaryPlayerIds;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkLoadActionList>>       mChunkLoadActionList;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DelayActionList>>           mDelayActionList;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::SubChunkPos, ::UpdateSubChunkBlocksChangedInfo>>
-                                                              mBlocksChangedBySubChunkMap;
-    ::ll::TypedStorage<8, 112, ::ActorReplication>            mActorReplication;
-    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>> mPlayersToReplicate;
-    ::ll::TypedStorage<1, 1, bool>                            mRunChunkGenWatchDog;
+                                                                              mBlocksChangedBySubChunkMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IClientDimensionExtensions>> mClientExtensions;
+    ::ll::TypedStorage<8, 112, ::ActorReplication>                            mActorReplication;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>                 mPlayersToReplicate;
+    ::ll::TypedStorage<1, 1, bool>                                            mRunChunkGenWatchDog;
     // NOLINTEND
 
 public:
@@ -300,8 +300,6 @@ public:
 
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
-    virtual ::BaseLightTextureImageBuilder* getLightTextureImageBuilder() const;
-
     virtual ::DimensionBrightnessRamp const& getBrightnessRamp() const;
 
     virtual ::std::vector<::std::string> const getStructuresFromChunkRegistry(::Vec3 const& location) const;
@@ -311,6 +309,9 @@ public:
     virtual void startLeaveGame();
 
     virtual void flushLevelChunkGarbageCollector() /*override*/;
+
+    virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const
+        /*override*/;
 
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
@@ -335,21 +336,19 @@ public:
 
     MCAPI void _completeEntityTransfer(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI_C ::Bedrock::NonOwnerPointer<::ChunkSource> _getOrCreateClientServerMainChunkSource() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::ChunkSource> _getOrCreateClientServerMainChunkSource() const;
 
     MCAPI void _processEntityChunkTransfers();
 
-    MCAPI_C void _runChunkGenerationWatchdog();
+    MCAPI void _runChunkGenerationWatchdog();
 
     MCAPI void _sendBlocksChangedPackets();
 
-    MCAPI_C void _sendUpdateBlockPacket(::UpdateSubChunkNetworkBlockInfo const& info, uint const& layer);
+    MCAPI void _sendUpdateBlockPacket(::UpdateSubChunkNetworkBlockInfo const& info, uint const& layer);
 
     MCAPI void _tickEntityChunkMoves();
 
     MCAPI void addWither(::ActorUniqueID const& id);
-
-    MCAPI float distanceToNearestPlayerSqr2D(::Vec3 origin);
 
     MCAPI ::Player* fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
@@ -521,8 +520,6 @@ public:
 
     MCAPI void $onLevelDestruction(::std::string const&);
 
-    MCFOLD ::BaseLightTextureImageBuilder* $getLightTextureImageBuilder() const;
-
     MCFOLD ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
 
     MCAPI ::std::vector<::std::string> const $getStructuresFromChunkRegistry(::Vec3 const& location) const;
@@ -532,6 +529,8 @@ public:
     MCAPI void $startLeaveGame();
 
     MCAPI void $flushLevelChunkGarbageCollector();
+
+    MCAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
     MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
 

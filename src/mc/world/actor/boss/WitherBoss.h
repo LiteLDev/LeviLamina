@@ -121,8 +121,6 @@ public:
 
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    virtual void tickDeath() /*override*/;
-
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~WitherBoss() /*override*/ = default;
@@ -152,6 +150,8 @@ public:
     MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
+
+    MCAPI_S int getInvulnerableTicks() const;
 
     MCAPI bool hasAerialAttack() const;
 
@@ -220,8 +220,6 @@ public:
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI ::Vec3 $getFiringPos() const;
-
-    MCAPI void $tickDeath();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

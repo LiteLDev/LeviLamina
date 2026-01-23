@@ -128,6 +128,8 @@ public:
 
     virtual bool isInstaticking(::BlockPos const&) const = 0;
 
+    virtual bool checkBlockDestroyPermissions(::Actor&, ::BlockPos const&, ::ItemStackBase const&, bool) = 0;
+
     virtual bool checkBlockPermissions(::Actor&, ::BlockPos const&, uchar, ::ItemStackBase const&, bool) = 0;
 
     virtual void postGameEvent(::Actor*, ::GameEvent const&, ::BlockPos const&, ::Block const*) = 0;

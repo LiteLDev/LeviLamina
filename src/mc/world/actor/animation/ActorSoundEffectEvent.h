@@ -12,16 +12,4 @@ public:
     ::ll::TypedStorage<8, 96, ::ActorSoundEffect> mSoundEffect;
     ::ll::TypedStorage<4, 4, float>               mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorSoundEffectEvent& operator=(ActorSoundEffectEvent const&);
-    ActorSoundEffectEvent(ActorSoundEffectEvent const&);
-    ActorSoundEffectEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ActorSoundEffectEvent& operator=(::ActorSoundEffectEvent&&);
-    // NOLINTEND
 };

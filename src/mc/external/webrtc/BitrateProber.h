@@ -66,8 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit BitrateProber(::webrtc::FieldTrialsView const& field_trials);
 
-    MCNAPI ::webrtc::Timestamp CalculateNextProbeTime(::webrtc::BitrateProber::ProbeCluster const& cluster) const;
-
     MCNAPI void CreateProbeCluster(::webrtc::ProbeClusterConfig const& cluster_config);
 
     MCNAPI ::std::optional<::webrtc::PacedPacketInfo> CurrentCluster(::webrtc::Timestamp now);
@@ -80,13 +78,9 @@ public:
 
     MCNAPI void ProbeSent(::webrtc::Timestamp now, ::webrtc::DataSize size);
 
-    MCNAPI bool ReadyToSetActiveState(::webrtc::DataSize packet_size) const;
-
     MCNAPI ::webrtc::DataSize RecommendedMinProbeSize() const;
 
     MCNAPI void SetAllowProbeWithoutMediaPacket(bool allow);
-
-    MCNAPI void SetEnabled(bool enable);
 
     MCNAPI ~BitrateProber();
     // NOLINTEND

@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    RandomBlockMatch& operator=(RandomBlockMatch const&);
     RandomBlockMatch(RandomBlockMatch const&);
     RandomBlockMatch();
 
@@ -26,6 +25,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch const&);
 
     MCAPI ~RandomBlockMatch();
     // NOLINTEND

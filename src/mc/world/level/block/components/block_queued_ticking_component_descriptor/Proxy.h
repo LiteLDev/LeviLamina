@@ -15,6 +15,18 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnTimeDown;
     ::ll::TypedStorage<1, 1, bool>                 mLooping;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Proxy& operator=(Proxy const&);
+    Proxy(Proxy const&);
+    Proxy();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockQueuedTickingComponentDescriptor::Proxy& operator=(::BlockQueuedTickingComponentDescriptor::Proxy&&);
+    // NOLINTEND
 };
 
 } // namespace BlockQueuedTickingComponentDescriptor

@@ -57,21 +57,15 @@ public:
 
 public:
     // prevent constructor by default
-    VoiceReceiverInfo& operator=(VoiceReceiverInfo const&);
+    VoiceReceiverInfo(VoiceReceiverInfo const&);
     VoiceReceiverInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VoiceReceiverInfo(::cricket::VoiceReceiverInfo const&);
+    MCNAPI ::cricket::VoiceReceiverInfo& operator=(::cricket::VoiceReceiverInfo const&);
 
     MCNAPI ~VoiceReceiverInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::VoiceReceiverInfo const&);
     // NOLINTEND
 
 public:

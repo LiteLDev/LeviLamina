@@ -6,7 +6,6 @@
 // clang-format off
 namespace webrtc { class DataRate; }
 namespace webrtc { class RtcEventLog; }
-namespace webrtc { class Timestamp; }
 namespace webrtc { struct PacketResult; }
 // clang-format on
 
@@ -58,8 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void EraseOldClusters(::webrtc::Timestamp timestamp);
-
     MCNAPI ::std::optional<::webrtc::DataRate> FetchAndResetLastEstimatedBitrate();
 
     MCNAPI ::std::optional<::webrtc::DataRate>

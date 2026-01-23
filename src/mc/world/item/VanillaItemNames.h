@@ -162,6 +162,8 @@ MCAPI ::HashedString const& BurnPotterySherd();
 
 MCAPI ::HashedString const& Cake();
 
+MCAPI ::HashedString const& CamelHuskSpawnEgg();
+
 MCAPI ::HashedString const& CamelSpawnEgg();
 
 MCAPI ::HashedString const& Camera();
@@ -268,11 +270,15 @@ MCAPI ::HashedString const& CopperIngot();
 
 MCAPI ::HashedString const& CopperLeggings();
 
+MCAPI ::HashedString const& CopperNautilusArmor();
+
 MCAPI ::HashedString const& CopperNugget();
 
 MCAPI ::HashedString const& CopperPickaxe();
 
 MCAPI ::HashedString const& CopperShovel();
+
+MCAPI ::HashedString const& CopperSpear();
 
 MCAPI ::HashedString const& CopperSword();
 
@@ -328,9 +334,13 @@ MCAPI ::HashedString const& DiamondHorseArmor();
 
 MCAPI ::HashedString const& DiamondLeggings();
 
+MCAPI ::HashedString const& DiamondNautilusArmor();
+
 MCAPI ::HashedString const& DiamondPickaxe();
 
 MCAPI ::HashedString const& DiamondShovel();
+
+MCAPI ::HashedString const& DiamondSpear();
 
 MCAPI ::HashedString const& DiamondSword();
 
@@ -472,9 +482,13 @@ MCAPI ::HashedString const& GoldenHorseArmor();
 
 MCAPI ::HashedString const& GoldenLeggings();
 
+MCAPI ::HashedString const& GoldenNautilusArmor();
+
 MCAPI ::HashedString const& GoldenPickaxe();
 
 MCAPI ::HashedString const& GoldenShovel();
+
+MCAPI ::HashedString const& GoldenSpear();
 
 MCAPI ::HashedString const& GoldenSword();
 
@@ -548,11 +562,15 @@ MCAPI ::HashedString const& IronIngot();
 
 MCAPI ::HashedString const& IronLeggings();
 
+MCAPI ::HashedString const& IronNautilusArmor();
+
 MCAPI ::HashedString const& IronNugget();
 
 MCAPI ::HashedString const& IronPickaxe();
 
 MCAPI ::HashedString const& IronShovel();
+
+MCAPI ::HashedString const& IronSpear();
 
 MCAPI ::HashedString const& IronSword();
 
@@ -704,6 +722,8 @@ MCAPI ::HashedString const& NameTag();
 
 MCAPI ::HashedString const& NautilusShell();
 
+MCAPI ::HashedString const& NautilusSpawnEgg();
+
 MCAPI ::HashedString const& NetherBrickItemName();
 
 MCAPI ::HashedString const& NetherSprouts();
@@ -722,15 +742,21 @@ MCAPI ::HashedString const& NetheriteHelmet();
 
 MCAPI ::HashedString const& NetheriteHoe();
 
+MCAPI ::HashedString const& NetheriteHorseArmor();
+
 MCAPI ::HashedString const& NetheriteIngot();
 
 MCAPI ::HashedString const& NetheriteLeggings();
+
+MCAPI ::HashedString const& NetheriteNautilusArmor();
 
 MCAPI ::HashedString const& NetheritePickaxe();
 
 MCAPI ::HashedString const& NetheriteScrap();
 
 MCAPI ::HashedString const& NetheriteShovel();
+
+MCAPI ::HashedString const& NetheriteSpear();
 
 MCAPI ::HashedString const& NetheriteSword();
 
@@ -777,6 +803,8 @@ MCAPI ::HashedString const& PaleOakSign();
 MCAPI ::HashedString const& PandaSpawnEgg();
 
 MCAPI ::HashedString const& Paper();
+
+MCAPI ::HashedString const& ParchedSpawnEgg();
 
 MCAPI ::HashedString const& ParrotSpawnEgg();
 
@@ -978,6 +1006,8 @@ MCAPI ::HashedString const& StonePickaxe();
 
 MCAPI ::HashedString const& StoneShovel();
 
+MCAPI ::HashedString const& StoneSpear();
+
 MCAPI ::HashedString const& StoneSword();
 
 MCAPI ::HashedString const& StraySpawnEgg();
@@ -1092,6 +1122,8 @@ MCAPI ::HashedString const& WoodenPickaxe();
 
 MCAPI ::HashedString const& WoodenShovel();
 
+MCAPI ::HashedString const& WoodenSpear();
+
 MCAPI ::HashedString const& WoodenSword();
 
 MCAPI ::HashedString const& WrittenBook();
@@ -1105,6 +1137,8 @@ MCAPI ::HashedString const& YellowHarness();
 MCAPI ::HashedString const& ZoglinSpawnEgg();
 
 MCAPI ::HashedString const& ZombieHorseSpawnEgg();
+
+MCAPI ::HashedString const& ZombieNautilusSpawnEgg();
 
 MCAPI ::HashedString const& ZombiePigmanSpawnEgg();
 

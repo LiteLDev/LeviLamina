@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+// clang-format on
+
 namespace RewindSimulation {
 
 class ExternalDataSwapper {
@@ -23,7 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C explicit ExternalDataSwapper(::EntityRegistry& registry);
+
     MCNAPI_C ~ExternalDataSwapper();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::EntityRegistry& registry);
     // NOLINTEND
 
 public:

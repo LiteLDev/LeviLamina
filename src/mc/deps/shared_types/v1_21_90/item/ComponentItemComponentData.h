@@ -43,7 +43,10 @@
 #include "mc/deps/shared_types/v1_21_60/item/StorageWeightModifierItemComponent.h"
 #include "mc/deps/shared_types/v1_21_80/item/IconItemComponent.h"
 #include "mc/deps/shared_types/v1_21_90/item/FireResistantItemComponent.h"
+#include "mc/deps/shared_types/v1_21_90/item/KineticWeaponItemComponent.h"
+#include "mc/deps/shared_types/v1_21_90/item/PiercingWeaponItemComponent.h"
 #include "mc/deps/shared_types/v1_21_90/item/SwingDurationItemComponent.h"
+#include "mc/deps/shared_types/v1_21_90/item/SwingSoundsItemComponent.h"
 #include "mc/deps/shared_types/v1_21_90/item/WearableItemComponent.h"
 
 // auto generated forward declare list
@@ -102,8 +105,12 @@ public:
     ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_80::IconItemComponent>> iconItemComponent;
     ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::InteractButtonItemComponent>>
         interactButtonItemComponent;
+    ::ll::TypedStorage<4, 88, ::std::optional<::SharedTypes::v1_21_90::KineticWeaponItemComponent>>
+        kineticWeaponItemComponent;
     ::ll::TypedStorage<2, 4, ::std::optional<::SharedTypes::v1_20_50::MaxStackSizeItemComponent>>
-                                                                                              maxStackSizeItemComponent;
+        maxStackSizeItemComponent;
+    ::ll::TypedStorage<4, 28, ::std::optional<::SharedTypes::v1_21_90::PiercingWeaponItemComponent>>
+        piercingWeaponItemComponent;
     ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>> planterItemComponent;
     ::ll::TypedStorage<8, 48, ::std::optional<::SharedTypes::v1_20_50::ProjectileItemComponent>>
                                                                                              projectileItemComponent;
@@ -119,13 +126,15 @@ public:
         storageWeightModifierItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::SharedTypes::v1_20_50::TagsItemComponent>>      tagsItemComponent;
     ::ll::TypedStorage<4, 24, ::std::optional<::SharedTypes::v1_20_50::ThrowableItemComponent>> throwableItemComponent;
-    ::ll::TypedStorage<4, 20, ::std::optional<::SharedTypes::v1_20_50::UseModifiersItemComponent>>
+    ::ll::TypedStorage<4, 28, ::std::optional<::SharedTypes::v1_20_50::UseModifiersItemComponent>>
         useModifiersItemComponent;
     ::ll::TypedStorage<4, 16, ::std::optional<::SharedTypes::v1_21_90::WearableItemComponent>> wearableItemComponent;
     ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_90::FireResistantItemComponent>>
         fireResistantItemComponent;
     ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::v1_21_90::SwingDurationItemComponent>>
         swingDurationItemComponent;
+    ::ll::TypedStorage<4, 28, ::std::optional<::SharedTypes::v1_21_90::SwingSoundsItemComponent>>
+        swingSoundsItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::v1_21_60::CustomComponentsItemComponent>>
         customComponentsItemComponent;
     // NOLINTEND

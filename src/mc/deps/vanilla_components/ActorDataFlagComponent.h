@@ -6,7 +6,7 @@
 #include "mc/deps/vanilla_components/ActorDataComponentBase.h"
 #include "mc/world/actor/ActorFlags.h"
 
-struct ActorDataFlagComponent : public ::ActorDataComponentBase<::std::bitset<126>> {
+struct ActorDataFlagComponent : public ::ActorDataComponentBase<::std::bitset<127>> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -16,8 +16,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::bitset<126> const& ALL_HIGHER_ONES();
+    MCAPI static ::std::bitset<127> const& ALL_HIGHER_ONES();
 
-    MCAPI static ::std::bitset<126> const& ALL_LOWER_ONES();
+    MCAPI static ::std::bitset<127> const& ALL_LOWER_ONES();
     // NOLINTEND
 };

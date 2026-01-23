@@ -15,7 +15,6 @@ class ActorParticleEffect;
 class ActorSoundEffect;
 class AnimationValueCurveKeyFrame;
 class ExpressionNode;
-class RenderParams;
 class StateAnimationVariable;
 // clang-format on
 
@@ -51,8 +50,6 @@ public:
     );
 
     MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
-
-    MCAPI void setVariables(::RenderParams& renderParams) const;
 
     MCAPI ~ActorAnimationControllerState();
     // NOLINTEND

@@ -123,7 +123,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string_view const& PBR_TAG();
+    MCNAPI static ::std::string_view const& PBR_TAG();
 
     MCNAPI static ::std::string_view const& RAY_TRACING_TAG();
     // NOLINTEND

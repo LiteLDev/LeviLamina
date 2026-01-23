@@ -8,7 +8,7 @@ struct NonPlayerComponents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb77e40;
+    ::ll::UntypedStorage<8, 72> mUnkb77e40;
     ::ll::UntypedStorage<8, 56> mUnke31458;
     // NOLINTEND
 

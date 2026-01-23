@@ -20,21 +20,30 @@ struct PendingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>          mUID;
-    ::ll::TypedStorage<8, 32, ::std::string>        mName;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mEntityId;
-    ::ll::TypedStorage<4, 48, ::Bounds>             mBounds;
-    ::ll::TypedStorage<4, 4, float>                 mMaxDistToPlayers;
-    ::ll::TypedStorage<1, 1, bool>                  mIsCircle;
-    ::ll::TypedStorage<1, 1, bool>                  mAlwaysActive;
-    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode> mLoadMode;
-    ::ll::TypedStorage<1, 1, bool>                  mCreated;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>             mUID;
+    ::ll::TypedStorage<8, 32, ::std::string>           mName;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>          mEntityId;
+    ::ll::TypedStorage<4, 48, ::Bounds>                mBounds;
+    ::ll::TypedStorage<4, 4, float>                    mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool>                     mIsCircle;
+    ::ll::TypedStorage<1, 1, bool>                     mAlwaysActive;
+    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode>    mLoadMode;
+    ::ll::TypedStorage<1, 1, bool>                     mCreated;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mScope;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PendingArea& operator=(PendingArea const&);
+    PendingArea(PendingArea const&);
+    PendingArea();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::TickingAreaDescription getDescription() const;
+
+    MCAPI ::PendingArea& operator=(::PendingArea&&);
 
     MCAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
 
@@ -45,6 +54,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
+
+    MCAPI static bool validTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

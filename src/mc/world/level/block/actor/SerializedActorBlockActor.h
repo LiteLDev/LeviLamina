@@ -93,6 +93,8 @@ public:
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI ::Actor* spawnActor(::BlockSource& region, ::Direction::Type direction);
+
+    MCAPI bool trySerializeActor(::Actor const& actor);
     // NOLINTEND
 
 public:

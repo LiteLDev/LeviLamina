@@ -36,9 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void
-    _registerElementRange(int electrons, int neutronStart, int neutronEnd, int defaultNeutron, ::ElementType result);
-
     MCNAPI_C void _registerElementRange(
         int                       electrons,
         int                       neutronStart,

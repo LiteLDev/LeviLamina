@@ -72,7 +72,7 @@ public:
     virtual ::EventResult
     onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants) /*override*/;
 
-    virtual ~RealmsStoriesGameplayEventListener() /*override*/ = default;
+    virtual ~RealmsStoriesGameplayEventListener() /*override*/;
     // NOLINTEND
 
 public:
@@ -82,15 +82,16 @@ public:
 
     MCNAPI void _checkForStructureRealmEvents(::Player const& player);
 
+    MCNAPI void _handleDragonKilledEvent(::Actor const& killedActor);
+
     MCNAPI void _handlePillagerKilledEvent(::Actor const& killedActor, ::ActorKilledEvent const& actorKilledEvent);
+
+    MCNAPI void _handleWitherKilledEvent(::Actor const& killedActor);
 
     MCNAPI void
     _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
 
     MCNAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, ::Player const& player);
-
-    MCNAPI void
-    _publishPlayerEventIfFirstTime(::RealmEventId id, ::std::string const& playerXuid, ::Json::Value const& metadata);
 
     MCNAPI void _publishWorldEventFirstOrOtherTime(
         ::RealmEventId       firstTimeId,
@@ -102,11 +103,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Player const* _getActorFullyAuthenticatedPlayer(::Actor const* actor);
-
     MCNAPI static ::std::set<::std::string> _getXuidsInKillProximity(::Actor const& killedActor, float xz, float y);
 
     MCNAPI static ::std::string _playerXuidsToString(::std::set<::std::string> const& xuids);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

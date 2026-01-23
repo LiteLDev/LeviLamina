@@ -22,6 +22,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class WidgetComponentStateChangePayload; }
 namespace Editor::Network { class WidgetStateChangePayload; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
+namespace Editor::ScriptModule { class ScriptEditorStructure; }
 namespace Editor::ScriptModule { class ScriptRelativeVolumeListBlockVolume; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBase; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentBoundingBox; }
@@ -88,7 +89,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk65f63a;
     ::ll::UntypedStorage<4, 24>  mUnk8b3e64;
     ::ll::UntypedStorage<4, 4>   mUnkd94f43;
-    ::ll::UntypedStorage<8, 248> mUnk30dd27;
+    ::ll::UntypedStorage<8, 104> mUnk30dd27;
     ::ll::UntypedStorage<8, 64>  mUnkfa8e26;
     ::ll::UntypedStorage<8, 24>  mUnk100eaa;
     // NOLINTEND
@@ -102,7 +103,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidget();
+    virtual ~ScriptWidget() = default;
 
     virtual ::AABB const& _getWorldBounds() const /*override*/;
 
@@ -150,8 +151,10 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentClipboard>>
     _addClipboardComponent(
         ::std::string const& componentName,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> const&
-                                                                                              optionalClipboardItem,
+        ::std::optional<::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>> const&
+            optionalClipboardOrStructure,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> const& options
     );
 
@@ -321,8 +324,6 @@ public:
 
     MCNAPI ::mce::UUID const& getGroupId() const;
 
-    MCNAPI bool isValid() const;
-
     MCNAPI void setPosition(::Vec3 const& pos);
 
     MCNAPI ::Scripting::Result_deprecated<void> setSelected(bool selected);
@@ -345,12 +346,6 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const&     options,
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

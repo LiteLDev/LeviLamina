@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/components/BlockAABBComponentData.h"
+#include "mc/world/level/block/components/BlockShapeComponentData.h"
 
-struct BlockCollisionBoxComponent : public ::BlockAABBComponentData {};
+struct BlockCollisionBoxComponent : public ::BlockShapeComponentData {};

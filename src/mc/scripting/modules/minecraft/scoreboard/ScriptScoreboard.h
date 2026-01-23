@@ -95,12 +95,21 @@ public:
             ::std::string> const& objectiveId
     );
 
+    MCNAPI void removeObjectiveByName(::std::string const& objective);
+
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>>
     setObjectiveAtDisplaySlot(
         ::ScriptModuleMinecraft::ScriptDisplayObjectiveSlotId                   displaySlotId,
         ::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions const& displaySetting
     );
+
+    MCNAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    ) const;
 
     MCNAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
         ::std::variant<

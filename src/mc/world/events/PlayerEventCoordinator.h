@@ -44,8 +44,6 @@ public:
     MCAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
     MCAPI_C void sendPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
-
-    MCAPI void sendPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:

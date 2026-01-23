@@ -19,25 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NeighborBlockDirections();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NeighborBlockDirections(::NeighborDirection direction);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::NeighborBlockDirections
     createFromRelativePosition(::BlockPos const& pos, ::BlockPos const& neighborPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NeighborDirection direction);
     // NOLINTEND
 };

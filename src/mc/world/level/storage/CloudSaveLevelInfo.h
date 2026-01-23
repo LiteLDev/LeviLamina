@@ -43,7 +43,7 @@ public:
 
     MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
-    MCNAPI_C ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
     MCNAPI_C bool operator==(::CloudSaveLevelInfo const& other) const;
 

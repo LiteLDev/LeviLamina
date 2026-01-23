@@ -44,6 +44,7 @@ public:
 
 public:
     // prevent constructor by default
+    ComponentItemData_Legacy& operator=(ComponentItemData_Legacy const&);
     ComponentItemData_Legacy();
 
 public:
@@ -54,8 +55,6 @@ public:
     MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
 
     MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
-
-    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy const&);
 
     MCAPI ~ComponentItemData_Legacy();
     // NOLINTEND

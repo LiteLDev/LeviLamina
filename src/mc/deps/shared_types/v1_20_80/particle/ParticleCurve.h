@@ -34,7 +34,7 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
+    MCAPI_C ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
 
     MCAPI_C ~ParticleCurve();
     // NOLINTEND

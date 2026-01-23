@@ -31,15 +31,7 @@ public:
 
     MCNAPI_S ::FileReadResult reload();
 
-    MCNAPI_S void syncToDisc();
-
     MCNAPI_S ~AllowListFile();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_S static ::AllowListFile loadFromDefaultLocations();
     // NOLINTEND
 
 public:

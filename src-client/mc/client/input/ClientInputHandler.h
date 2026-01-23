@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/InputBindingMode.h"
 #include "mc/deps/input/InputMode.h"
 
 // auto generated forward declare list
@@ -28,6 +29,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>> mClient;
     ::ll::TypedStorage<8, 8, ::InputHandler&>                                   mInputHandler;
+    ::ll::TypedStorage<4, 4, ::InputBindingMode>                                mInputBindingMode;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientBindingFactory>>         mBindingFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInputMappingFactory>>    mMappingFactory;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mExpectedInGameInputMode;

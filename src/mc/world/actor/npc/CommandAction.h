@@ -25,9 +25,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandAction& operator=(CommandAction const&);
+    CommandAction();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CommandAction(::npc::CommandAction const&);
+
     MCAPI ~CommandAction();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::npc::CommandAction const&);
     // NOLINTEND
 
 public:

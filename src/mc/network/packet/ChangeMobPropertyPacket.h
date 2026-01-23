@@ -64,7 +64,7 @@ public:
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-    virtual ~ChangeMobPropertyPacket() /*override*/ = default;
+    virtual ~ChangeMobPropertyPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,6 +77,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChangeMobPropertyPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

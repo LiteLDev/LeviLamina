@@ -86,8 +86,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uchar AggregationHeader() const;
-
     MCNAPI RtpPacketizerAv1(
         ::rtc::ArrayView<uchar const>              payload,
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
@@ -99,8 +97,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int AdditionalBytesForPreviousObuElement(::webrtc::RtpPacketizerAv1::Packet const& packet);
-
     MCNAPI static ::std::vector<::webrtc::RtpPacketizerAv1::Packet> Packetize(
         ::rtc::ArrayView<::webrtc::RtpPacketizerAv1::Obu const> obus,
         ::webrtc::RtpPacketizer::PayloadSizeLimits              limits

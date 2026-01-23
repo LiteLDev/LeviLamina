@@ -12,7 +12,6 @@ class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct NeedSetPreviousPositionFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class SetPreviousPositionSystem {
@@ -28,7 +27,5 @@ public:
             ::Include<::ActorMovementTickNeededComponent, ::NeedSetPreviousPositionFlagComponent>,
             ::StateVectorComponent> view
     );
-
-    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

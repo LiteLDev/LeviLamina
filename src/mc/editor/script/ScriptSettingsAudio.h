@@ -31,9 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<float, bool>>
-    get(::Editor::ScriptModule::ScriptSettingsAudioPropType prop) const;
-
     MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float, bool>>> getAll() const;
 
     MCNAPI ::Scripting::Result_deprecated<void>

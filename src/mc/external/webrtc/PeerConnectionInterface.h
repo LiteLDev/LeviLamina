@@ -256,8 +256,6 @@ public:
 
         MCNAPI RTCConfiguration(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 
-        MCNAPI bool operator!=(::webrtc::PeerConnectionInterface::RTCConfiguration const& o) const;
-
         MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration&
         operator=(::webrtc::PeerConnectionInterface::RTCConfiguration const&);
 

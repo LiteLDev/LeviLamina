@@ -31,13 +31,6 @@ public:
     ScriptPacketSendBeforeEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&
-    operator=(::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<

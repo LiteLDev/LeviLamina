@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AllayVibrationConfig();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onSignalReceive(
@@ -44,18 +40,6 @@ public:
     virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) /*override*/;
 
     virtual ~AllayVibrationConfig() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AllayVibrationConfig(::Actor& actor, ushort signalThrottlingTicks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& actor, ushort signalThrottlingTicks);
     // NOLINTEND
 
 public:

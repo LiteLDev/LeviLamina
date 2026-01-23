@@ -14,7 +14,6 @@ public:
 
 public:
     // prevent constructor by default
-    EditorRealmsWorld& operator=(EditorRealmsWorld const&);
     EditorRealmsWorld(EditorRealmsWorld const&);
     EditorRealmsWorld();
 
@@ -22,6 +21,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld&&);
+
+    MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld const&);
 
     MCNAPI_C ~EditorRealmsWorld();
     // NOLINTEND

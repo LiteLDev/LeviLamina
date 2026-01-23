@@ -9,6 +9,7 @@
 // clang-format off
 namespace CodeBuilder { class IRequestHandler; }
 namespace CodeBuilder { struct RequestHeader; }
+namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 // clang-format on
 
 namespace MakeCodeFileIO {
@@ -23,6 +24,8 @@ MCNAPI_C void openFilePicker(
     ::CodeBuilder::IRequestHandler&     sender,
     ::CodeBuilder::RequestHeader const& header
 );
+
+MCNAPI ::MakeCodeFileIO::MakeCodeFileIOReadResult readFile(::std::string const& filePath);
 // NOLINTEND
 
 } // namespace MakeCodeFileIO

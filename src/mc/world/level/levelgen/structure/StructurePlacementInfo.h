@@ -12,7 +12,6 @@
 class Block;
 class BlockSource;
 class StructureBlockPlacementInfo;
-struct PlacedConnectionBlock;
 struct StructurePlacementNeighbors;
 // clang-format on
 
@@ -42,14 +41,6 @@ public:
         ::BlockPos const& localPosition,
         ::BlockPos const& worldPosition,
         ::Rotation        rotation
-    );
-
-    MCAPI void _handlePlacedConnectionBlock(
-        ::BlockSource&                 region,
-        ::BlockPos const&              localPosition,
-        ::BlockPos const&              worldPosition,
-        ::Rotation                     rotation,
-        ::PlacedConnectionBlock const& connectionBlock
     );
 
     MCAPI void _setBlockPlacementInfo(::BlockPos const& pos, ::StructureBlockPlacementInfo const& info);

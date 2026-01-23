@@ -64,23 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeInterestGoal(
-        ::Mob& mob,
-        float  interestDistance,
-        float  interestTime,
-        float  removeTime,
-        float  carriedTime,
-        float  cooldown
-    );
-
     MCAPI bool _isLookingAtMe(::Player const& target) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, float interestDistance, float interestTime, float removeTime, float carriedTime, float cooldown);
     // NOLINTEND
 
 public:

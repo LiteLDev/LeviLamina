@@ -13,12 +13,12 @@ class BaseActorRenderContext;
 class IClientInstance;
 class Level;
 class LevelRenderer;
-class Options;
 class Player;
 class ScreenContext;
 class Vec3;
 class WeakEntityRef;
 struct LevelRenderPreRenderUpdateParameters;
+struct Options;
 struct ShadowCascadeState;
 namespace mce::framebuilder { struct ShadowParameters; }
 // clang-format on
@@ -87,11 +87,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LevelRendererShadowCamera(
-        ::IClientInstance&           clientInstance,
-        ::std::shared_ptr<::Options> options,
-        ::Level&                     level,
-        ::LevelRenderer&             levelRenderer,
-        ::WeakEntityRef              localUser
+        ::IClientInstance& clientInstance,
+        ::std::shared_ptr<::Options>,
+        ::Level&         level,
+        ::LevelRenderer& levelRenderer,
+        ::WeakEntityRef
     );
 
     MCNAPI float _calculateCascades(
@@ -151,11 +151,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::IClientInstance&           clientInstance,
-        ::std::shared_ptr<::Options> options,
-        ::Level&                     level,
-        ::LevelRenderer&             levelRenderer,
-        ::WeakEntityRef              localUser
+        ::IClientInstance& clientInstance,
+        ::std::shared_ptr<::Options>,
+        ::Level&         level,
+        ::LevelRenderer& levelRenderer,
+        ::WeakEntityRef
     );
     // NOLINTEND
 

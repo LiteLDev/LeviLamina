@@ -62,7 +62,8 @@ public:
 
     virtual void resetClientControllerCount() /*override*/;
 
-    virtual void addClientHasAdequateConnectedController(int, bool const, ::SubClientId) /*override*/;
+    virtual void
+    addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId) /*override*/;
     // NOLINTEND
 
 public:
@@ -124,6 +125,8 @@ public:
     MCAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
 
     MCAPI void $resetClientControllerCount();
+
+    MCAPI void $addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId);
     // NOLINTEND
 
 public:

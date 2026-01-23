@@ -75,6 +75,8 @@ public:
 
     MCAPI void
     handleAttackBehavior(::Actor* lockedTarget, ::Vec3 const& lockedTargetPos, float targetDistanceSq, bool canSee);
+
+    MCAPI void handleChargeData();
     // NOLINTEND
 
 public:

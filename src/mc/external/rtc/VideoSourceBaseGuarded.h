@@ -77,9 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::rtc::VideoSourceBaseGuarded::SinkPair*
-    FindSinkPair(::rtc::VideoSinkInterface<::webrtc::VideoFrame> const* sink);
-
     MCNAPI VideoSourceBaseGuarded();
 
     MCNAPI ::std::vector<::rtc::VideoSourceBaseGuarded::SinkPair> const& sink_pairs() const;

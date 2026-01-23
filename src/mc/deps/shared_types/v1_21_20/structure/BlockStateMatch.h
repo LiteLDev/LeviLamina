@@ -15,8 +15,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BlockStateMatch(BlockStateMatch const&);
+    BlockStateMatch();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockStateMatch&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockStateMatch const&);
+
     MCAPI ~BlockStateMatch();
     // NOLINTEND
 

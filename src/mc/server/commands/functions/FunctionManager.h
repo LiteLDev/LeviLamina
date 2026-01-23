@@ -145,6 +145,8 @@ public:
 
     MCNAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
+    MCNAPI ::FunctionEntry* getFunction(::std::string const& functionName);
+
     MCNAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
 
     MCNAPI void tick();

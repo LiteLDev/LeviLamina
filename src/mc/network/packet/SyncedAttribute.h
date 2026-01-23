@@ -13,23 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SyncedAttribute& operator=(SyncedAttribute const&);
-    SyncedAttribute(SyncedAttribute const&);
-    SyncedAttribute();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SyncedAttribute(::SyncedAttribute&&);
-
     MCAPI ~SyncedAttribute();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SyncedAttribute&&);
     // NOLINTEND
 
 public:

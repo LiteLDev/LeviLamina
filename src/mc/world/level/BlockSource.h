@@ -16,6 +16,7 @@
 #include "mc/world/level/IBlockSource.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/TickingQueueType.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/material/MaterialType.h"
 
@@ -244,14 +245,14 @@ public:
     virtual bool isUnderWater(::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     virtual void fireBlockChanged(
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            flags,
-        ::BlockChangedEventTarget      eventTarget,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::Actor*                       source
+        ::BlockPos const&,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::BlockChangedEventTarget,
+        ::ActorBlockSyncMessage const*,
+        ::Actor*
     ) /*override*/;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
@@ -288,6 +289,13 @@ public:
 
     virtual ::ChunkSource& getChunkSource() /*override*/;
 
+    virtual bool checkBlockDestroyPermissions(
+        ::Actor&               entity,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& item,
+        bool                   generateParticle
+    ) /*override*/;
+
     virtual bool checkBlockPermissions(
         ::Actor&               entity,
         ::BlockPos const&      blockPos,
@@ -295,8 +303,6 @@ public:
         ::ItemStackBase const& item,
         bool                   generateParticle
     ) /*override*/;
-
-    virtual float getVisualLiquidHeight(::Vec3 const& pos) const /*override*/;
 
     virtual void postGameEvent(
         ::Actor*           source,
@@ -362,8 +368,6 @@ public:
 
     MCAPI bool _getBlockPermissions(::BlockPos const& pos, bool currentState);
 
-    MCAPI_C float _getLiquidHeight(::BlockPos const& pos, ::MaterialType mat, bool blockedFromAbove) const;
-
     MCAPI ::Brightness
     _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool propagate, bool accountForNight) const;
 
@@ -397,16 +401,11 @@ public:
 
     MCAPI_C void blockEvent(int x, int y, int z, int b0, int b1);
 
+    MCAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
+
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
     MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
-
-    MCAPI bool checkBlockDestroyPermissions(
-        ::Actor&               entity,
-        ::BlockPos const&      pos,
-        ::ItemStackBase const& item,
-        bool                   generateParticle
-    );
 
     MCAPI bool containsAnyBlockInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
@@ -491,8 +490,6 @@ public:
         ::Vec3 const& posToMinimizeDistanceToIfMatchingHeight,
         float&        currentDistanceSqr
     ) const;
-
-    MCAPI bool hasChunksAt(::BlockPos const& min, ::BlockPos const& max, bool ignoreClientChunk) const;
 
     MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     hasSubChunksAt(::BlockPos const& min, ::BlockPos const& max) const;
@@ -662,6 +659,13 @@ public:
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
 
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    );
+
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
@@ -716,17 +720,6 @@ public:
 
     MCAPI bool $isUnderWater(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $fireBlockChanged(
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            flags,
-        ::BlockChangedEventTarget      eventTarget,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::Actor*                       source
-    );
-
     MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
     MCAPI ::Block const& $getBlock(::BlockPos const& pos, uint layer) const;
@@ -761,6 +754,13 @@ public:
 
     MCFOLD ::ChunkSource& $getChunkSource();
 
+    MCAPI bool $checkBlockDestroyPermissions(
+        ::Actor&               entity,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& item,
+        bool                   generateParticle
+    );
+
     MCAPI bool $checkBlockPermissions(
         ::Actor&               entity,
         ::BlockPos const&      blockPos,
@@ -769,23 +769,12 @@ public:
         bool                   generateParticle
     );
 
-    MCFOLD float $getVisualLiquidHeight(::Vec3 const& pos) const;
-
     MCAPI void $postGameEvent(
         ::Actor*           source,
         ::GameEvent const& gameEvent,
         ::BlockPos const&  originPos,
         ::Block const*     affectedBlock
     );
-
-#ifdef LL_PLAT_C
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    );
-#endif
 
 
     // NOLINTEND

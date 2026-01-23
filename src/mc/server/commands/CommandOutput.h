@@ -21,13 +21,12 @@ public:
     ::ll::TypedStorage<4, 4, ::CommandOutputType>                     mType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandPropertyBag>> mBag;
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>>  mMessages;
-    ::ll::TypedStorage<4, 4, int>                                     mSuccessCount;
+    ::ll::TypedStorage<4, 4, uint>                                    mSuccessCount;
     ::ll::TypedStorage<1, 1, bool>                                    mHasPlayerText;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
 public:
@@ -47,11 +46,19 @@ public:
 
     MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI bool hasErrorMessage() const;
+    MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
     MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI ~CommandOutput();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::optional<::std::string> _mDataGetter(::CommandOutput const& payload);
+
+    MCAPI static void _mDataSetter(::CommandOutput& payload, ::std::optional<::std::string> jsonString);
     // NOLINTEND
 
 public:

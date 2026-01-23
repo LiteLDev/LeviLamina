@@ -67,9 +67,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void
-    _tickBlockAnimationsJavaParity(::BlockSource& region, ::Random& random, ::Vec3 const& centerPosition) const;
-
     MCNAPI_C void _tickBlockAnimationsTimeLimitedJavaParity(
         ::BlockSource&                                                         region,
         ::Random&                                                              random,

@@ -50,7 +50,7 @@ public:
 
     virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
-    virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
+    virtual ::Rotation loadRotation(::Rotation) /*override*/;
 
     virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
@@ -98,10 +98,6 @@ public:
     MCFOLD ::Vec3 $loadDirection(::Vec3 const& direction);
 
     MCFOLD ::Direction::Type $loadDirection(::Direction::Type direction);
-
-#ifdef LL_PLAT_S
-    MCFOLD ::Rotation $loadRotation(::Rotation rotation);
-#endif
 
     MCFOLD ::Mirror $loadMirror(::Mirror mirror);
 

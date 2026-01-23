@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    IconItemComponentLegacyFactoryData& operator=(IconItemComponentLegacyFactoryData const&);
     IconItemComponentLegacyFactoryData(IconItemComponentLegacyFactoryData const&);
     IconItemComponentLegacyFactoryData();
 
@@ -36,6 +35,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData&&);
+
+    MCFOLD ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

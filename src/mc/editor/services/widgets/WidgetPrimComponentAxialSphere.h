@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace Scripting::RenderHelper { class BasePrimitive; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -30,8 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
-    createPrimitive(::Editor::Network::WidgetPrimComponentAxialSphere const& data);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

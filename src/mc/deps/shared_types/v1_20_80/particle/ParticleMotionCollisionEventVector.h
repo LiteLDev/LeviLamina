@@ -27,11 +27,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void fromSingleEvent(
-        ::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance,
-        ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event
-    );
     // NOLINTEND
 
 public:

@@ -47,6 +47,7 @@ public:
     // prevent constructor by default
     NpcComponent& operator=(NpcComponent const&);
     NpcComponent(NpcComponent const&);
+    NpcComponent();
 
 public:
     // virtual functions
@@ -57,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcComponent();
-
     MCAPI NpcComponent(::NpcComponent&& rhs);
 
     MCAPI void _defineEntityDataString(::Actor& owner, ::ActorDataIDs id);
@@ -66,8 +65,6 @@ public:
     MCAPI void _deserializeData(::Json::Value const& npcData);
 
     MCAPI void _loadData(::Actor& owner);
-
-    MCAPI_C void addAction(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
@@ -117,6 +114,8 @@ public:
     MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 
     MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
+
+    MCAPI_C void syncActionsWithServer(::Actor& owner) const;
     // NOLINTEND
 
 public:
@@ -140,8 +139,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::NpcComponent&& rhs);
     // NOLINTEND
 

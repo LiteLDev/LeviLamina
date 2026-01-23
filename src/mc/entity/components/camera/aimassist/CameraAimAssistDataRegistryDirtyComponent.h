@@ -23,5 +23,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::CameraAimAssistDataRegistryDirtyComponent& operator=(::CameraAimAssistDataRegistryDirtyComponent&&);
+
+    MCAPI ~CameraAimAssistDataRegistryDirtyComponent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

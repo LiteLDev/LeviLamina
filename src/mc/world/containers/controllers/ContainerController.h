@@ -64,6 +64,12 @@ public:
     // NOLINTBEGIN
     MCNAPI_C int _addItem(::ContainerScreenContext const& context, int modelSlot, int addCount);
 
+    MCNAPI_C bool canConsume(int modelSlot, int removeCount) const;
+
+    MCNAPI_C bool canDestroy(int modelSlot, int removeCount) const;
+
+    MCNAPI_C bool canDrop(int modelSlot, int removeCount) const;
+
     MCNAPI_C ::ItemSetType canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,

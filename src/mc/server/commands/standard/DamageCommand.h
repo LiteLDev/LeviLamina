@@ -37,6 +37,7 @@ public:
     // prevent constructor by default
     DamageCommand& operator=(DamageCommand const&);
     DamageCommand(DamageCommand const&);
+    DamageCommand();
 
 public:
     // virtual functions
@@ -49,8 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DamageCommand();
-
     MCAPI void _applyDamage(
         ::CommandSelectorResults<::Actor>& targets,
         ::ActorDamageSource const&         source,
@@ -62,12 +61,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

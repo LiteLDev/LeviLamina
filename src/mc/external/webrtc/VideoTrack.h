@@ -9,7 +9,6 @@
 #include "mc/external/webrtc/MediaStreamTrackInterface.h"
 #include "mc/external/webrtc/ObserverInterface.h"
 #include "mc/external/webrtc/VideoTrackInterface.h"
-#include "mc/external/webrtc/VideoTrackSourceProxyWithInternal.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -73,34 +72,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI VideoTrack(
-        ::std::string_view label,
-        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>
-                       source,
-        ::rtc::Thread* worker_thread
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::VideoTrack> Create(
         ::std::string_view                                           id,
         ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source,
         ::rtc::Thread*                                               worker_thread
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string_view label,
-        ::webrtc::scoped_refptr<::webrtc::VideoTrackSourceProxyWithInternal<::webrtc::VideoTrackSourceInterface>>
-                       source,
-        ::rtc::Thread* worker_thread
     );
     // NOLINTEND
 

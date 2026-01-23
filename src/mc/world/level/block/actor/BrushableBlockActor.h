@@ -59,7 +59,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BrushableBlockActor() /*override*/;
+    virtual ~BrushableBlockActor() /*override*/ = default;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
@@ -71,9 +71,9 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -122,12 +122,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $serverInitItemStackIds(
@@ -140,9 +134,9 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $stopOpen(::Actor& actor);
 

@@ -6,7 +6,6 @@
 // clang-format off
 namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class RtcEventLog; }
-namespace webrtc { struct AlrDetectorConfig; }
 // clang-format on
 
 namespace webrtc {
@@ -31,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AlrDetector(::webrtc::AlrDetectorConfig config, ::webrtc::RtcEventLog* event_log);
-
     MCNAPI AlrDetector(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::RtcEventLog* event_log);
 
     MCNAPI ::std::optional<int64> GetApplicationLimitedRegionStartTime() const;
@@ -47,8 +44,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::AlrDetectorConfig config, ::webrtc::RtcEventLog* event_log);
-
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::RtcEventLog* event_log);
     // NOLINTEND
 

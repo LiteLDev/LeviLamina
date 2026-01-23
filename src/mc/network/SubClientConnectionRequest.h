@@ -10,9 +10,8 @@
 // clang-format off
 class AnimatedImageData;
 class MinEngineVersion;
-class MinecraftServiceKeyManager;
 class SerializedPersonaPieceHandle;
-class SerializedSkin;
+class SerializedSkinRef;
 class TintMapColor;
 class WebToken;
 struct SubClientAuthInfo;
@@ -26,14 +25,10 @@ class SubClientConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk7f2040;
-    ::ll::UntypedStorage<8, 8>   mUnk2af921;
-    ::ll::UntypedStorage<8, 8>   mUnkaac929;
-    ::ll::UntypedStorage<8, 8>   mUnk75974b;
-    ::ll::UntypedStorage<8, 32>  mUnk2ecdf6;
-    ::ll::UntypedStorage<8, 136> mUnk55b735;
-    ::ll::UntypedStorage<4, 4>   mUnkeec142;
-    ::ll::UntypedStorage<8, 272> mUnk8de152;
+    ::ll::UntypedStorage<8, 8>  mUnk2af921;
+    ::ll::UntypedStorage<8, 8>  mUnkaac929;
+    ::ll::UntypedStorage<8, 32> mUnk2ecdf6;
+    ::ll::UntypedStorage<4, 4>  mUnkeec142;
     // NOLINTEND
 
 public:
@@ -92,19 +87,9 @@ public:
 
     MCNAPI ::std::string getThirdPartyName() const;
 
-    MCNAPI void invalidate();
-
     MCNAPI bool isWellFormed() const;
 
     MCNAPI ::std::string toString();
-
-    MCNAPI bool verify(
-        ::std::vector<::std::string> const& trustedKeys,
-        int64                               currentTime,
-        ::MinecraftServiceKeyManager const& mcServiceKeyManager
-    );
-
-    MCNAPI bool verifySelfSigned();
 
     MCNAPI ~SubClientConnectionRequest();
     // NOLINTEND
@@ -121,7 +106,7 @@ public:
         ::std::string const&                  skinId,
         ::mce::Image const&                   skinData,
         ::mce::Image const&                   capeData,
-        ::SerializedSkin const&               serializedSkin,
+        ::SerializedSkinRef const&            serializedSkin,
         ::InputMode                           currentInputMode,
         ::std::string const&                  thirdPartyName,
         ::std::string const&                  platformOnlineId,

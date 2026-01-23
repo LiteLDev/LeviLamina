@@ -91,15 +91,7 @@ public:
             ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> next_ssn
         );
 
-        MCNAPI uint64 TryToAssembleMessage();
-
         MCNAPI uint64 TryToAssembleMessages();
-
-        MCNAPI uint64 TryToAssembleMessagesFastpath(
-            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>> ssn,
-            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>   tsn,
-            ::dcsctp::Data                                                                     data
-        );
         // NOLINTEND
 
     public:
@@ -128,8 +120,6 @@ public:
         // NOLINTBEGIN
         MCNAPI int
         Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
-
-        MCNAPI uint64 EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
 
         MCNAPI uint64 TryToAssembleMessage(
             ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<

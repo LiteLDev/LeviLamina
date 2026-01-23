@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ExprTokenType : int {};
+enum class ExprTokenType : uchar {};

@@ -105,7 +105,8 @@ public:
 
     virtual ::std::optional<::Scripting::ModuleBinding> createModuleBinding(
         ::Scripting::Version                               version,
-        ::std::optional<::Scripting::ContextConfig> const& config
+        ::std::optional<::Scripting::ContextConfig> const& config,
+        bool                                               requireDynamicImport
     ) /*override*/;
     // NOLINTEND
 
@@ -168,8 +169,11 @@ public:
 
     MCNAPI ::std::vector<::Scripting::ModuleDependency> $getDependencies(::Scripting::Version version) const;
 
-    MCNAPI ::std::optional<::Scripting::ModuleBinding>
-    $createModuleBinding(::Scripting::Version version, ::std::optional<::Scripting::ContextConfig> const& config);
+    MCNAPI ::std::optional<::Scripting::ModuleBinding> $createModuleBinding(
+        ::Scripting::Version                               version,
+        ::std::optional<::Scripting::ContextConfig> const& config,
+        bool                                               requireDynamicImport
+    );
 
 
     // NOLINTEND

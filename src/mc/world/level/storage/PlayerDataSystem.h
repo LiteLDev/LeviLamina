@@ -26,7 +26,8 @@ MCAPI ::Core::PathBuffer<::std::string> getPlayerFilename(::Core::Path const& fu
 
 MCAPI ::std::string getServerId(::LevelStorage& storage, ::PlayerStorageIds const& saveIds);
 
-MCAPI ::std::string legacyConsolePlayerKey(::std::string const& str);
+MCAPI ::std::unique_ptr<::CompoundTag>
+legacyLoadClientPlayer(::std::string const& clientUniqueName, ::Core::Path const& fullPath);
 
 MCAPI ::std::unique_ptr<::CompoundTag> legacyLoadPlayer(::LevelStorage& storage, ::std::string const& clientUniqueName);
 

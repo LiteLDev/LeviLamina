@@ -15,7 +15,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class GameEvent;
-class Vec3;
 class VibrationListenerConfig;
 struct GameEventContext;
 // clang-format on
@@ -62,22 +61,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
+
     MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
-
-    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
-        ::BlockSource&            region,
-        ::GameEvent const&        gameEvent,
-        ::GameEventContext const& gameEventContext,
-        ::Vec3 const&             sensorPos
-    );
+    MCAPI void _tickInternal(::BlockSource& region);
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;
-
-    MCAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -96,7 +88,7 @@ public:
     MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCFOLD uint $getRange() const;
+    MCAPI uint $getRange() const;
 
     MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
 

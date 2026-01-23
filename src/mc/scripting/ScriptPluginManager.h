@@ -6,12 +6,12 @@
 #include "mc/deps/core/resource/ResourceInformation.h"
 #include "mc/deps/scripting/reflection/Privilege.h"
 #include "mc/scripting/PluginExecutionGroup.h"
+#include "mc/scripting/modules/FilterResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class IScriptPluginSourceEnumerator;
 class PackManifest;
-class ScriptPackConfigurationManager;
 class ScriptPlugin;
 class ScriptPluginManagerResult;
 class ScriptPluginResult;
@@ -90,16 +90,15 @@ public:
     MCNAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
 
     MCNAPI ::ScriptPluginManagerResult discoverPlugins(
-        ::ResourceInformation::ResourceType     moduleType,
-        ::IScriptPluginSourceEnumerator&        pluginEnumerator,
-        ::ScriptPackConfigurationManager const& packConfigManager,
-        ::std::vector<::std::function<bool(
+        ::ResourceInformation::ResourceType moduleType,
+        ::IScriptPluginSourceEnumerator&    pluginEnumerator,
+        ::std::vector<::std::function<::ScriptModuleFilters::FilterResult(
             ::PackManifest const&,
             ::Scripting::ModuleDescriptor const&,
             ::Scripting::ModuleDescriptor const&,
             ::ScriptPluginResult&
-        )>> const&                              moduleFilters,
-        ::std::vector<::mce::UUID>              excludeModuleIDs,
+        )>> const&                          moduleFilters,
+        ::std::vector<::mce::UUID>          excludeModuleIDs,
         ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&&
             pluginExecutionGroupSelector
     );
@@ -107,6 +106,8 @@ public:
     MCNAPI void forEachPlugin(::std::function<void(::ScriptPlugin&)> func);
 
     MCNAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
+
+    MCNAPI ::std::vector<::Scripting::ModuleDescriptor> getPluginModuleDescriptors() const;
 
     MCNAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 

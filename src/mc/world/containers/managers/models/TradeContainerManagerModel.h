@@ -41,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::Actor* getEntity() const;
+
+    MCAPI_C void recipeChanged();
     // NOLINTEND
 
 public:

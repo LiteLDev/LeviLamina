@@ -21,23 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ModuleBindingBundle& operator=(ModuleBindingBundle const&);
-    ModuleBindingBundle(ModuleBindingBundle const&);
-    ModuleBindingBundle();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ModuleBindingBundle(::Scripting::ModuleBindingBundle&&);
-
     MCNAPI ~ModuleBindingBundle();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Scripting::ModuleBindingBundle&&);
     // NOLINTEND
 
 public:

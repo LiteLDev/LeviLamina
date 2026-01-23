@@ -6,11 +6,6 @@
 #include "mc/external/rtc/Dispatcher.h"
 #include "mc/external/rtc/PhysicalSocket.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace rtc { class PhysicalSocketServer; }
-// clang-format on
-
 namespace rtc {
 
 class SocketDispatcher : public ::rtc::Dispatcher, public ::rtc::PhysicalSocket {
@@ -31,7 +26,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SocketDispatcher() /*override*/;
+    virtual ~SocketDispatcher() /*override*/ = default;
 
     virtual bool Create(int type);
 
@@ -51,33 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool Initialize();
-
-    MCNAPI explicit SocketDispatcher(::rtc::PhysicalSocketServer* ss);
-
-    MCNAPI SocketDispatcher(uint64 s, ::rtc::PhysicalSocketServer* ss);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static int& next_id_();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::PhysicalSocketServer* ss);
-
-    MCNAPI void* $ctor(uint64 s, ::rtc::PhysicalSocketServer* ss);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

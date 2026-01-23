@@ -3,15 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
+class LevelStorage;
+class StructureManager;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
+namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
@@ -40,6 +46,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptStructureTemplate(
+        ::std::string const&                                                                id,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
+        ::LevelStorage&                                                                     levelStorage
+    );
+
     MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
@@ -47,8 +61,6 @@ public:
     getBlockPermutation(::Vec3 const& location) const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
-
-    MCNAPI bool isValid() const;
 
     MCNAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
@@ -85,6 +97,18 @@ public:
     MCNAPI static ::Scripting::EnumBinding bindRotationEnum();
 
     MCNAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::string const&                                                                id,
+        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
+        ::Scripting::WeakLifetimeScope                                                      scope,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> scriptStructureManager,
+        ::LevelStorage&                                                                     levelStorage
+    );
     // NOLINTEND
 };
 

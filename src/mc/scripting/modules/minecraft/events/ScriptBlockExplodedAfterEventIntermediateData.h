@@ -22,7 +22,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Dimension&>                                                mDimension;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                                 mBlockPos;
     ::ll::TypedStorage<8, 8, ::Block const&>                                              mDestroyedBlock;
-    ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData>> mActorData;
+    ::ll::TypedStorage<8, 104, ::std::optional<::ScriptModuleMinecraft::ScriptActorData>> mSource;
     // NOLINTEND
 
 public:

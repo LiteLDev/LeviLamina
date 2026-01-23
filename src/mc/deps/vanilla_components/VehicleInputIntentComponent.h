@@ -23,7 +23,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                              mWASDControlled;
+    ::ll::TypedStorage<1, 1, bool>                              mWASDGroundControlled;
+    ::ll::TypedStorage<1, 1, bool>                              mWASDFreeCameraControlled;
     ::ll::TypedStorage<1, 1, bool>                              mControlledByPlayer;
     ::ll::TypedStorage<1, 1, bool>                              mIsClientPredicted;
     ::ll::TypedStorage<1, 1, bool>                              mUsePaddleForce;

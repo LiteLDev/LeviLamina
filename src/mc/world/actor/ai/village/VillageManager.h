@@ -168,8 +168,6 @@ public:
 
     MCAPI void removePOI(::std::weak_ptr<::POIInstance> poi);
 
-    MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
-
     MCAPI void tick(::Tick const& tick);
 
     MCAPI ::std::shared_ptr<::POIInstance> tryCreatePOI(::BlockPos const& position, ::Block const& block);

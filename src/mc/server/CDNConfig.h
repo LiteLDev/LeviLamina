@@ -17,12 +17,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CDNConfig() /*override*/;
+#else // LL_PLAT_C
     virtual ~CDNConfig() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_S void _readConfigFile();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

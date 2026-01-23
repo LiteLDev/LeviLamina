@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/BrushElevationMode.h"
 #include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
@@ -39,6 +40,10 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkbbaf84;
     ::ll::UntypedStorage<4, 4>  mUnka573ba;
     ::ll::UntypedStorage<1, 1>  mUnke46fbe;
+    ::ll::UntypedStorage<4, 4>  mUnk84cce9;
+    ::ll::UntypedStorage<4, 4>  mUnk13e9dc;
+    ::ll::UntypedStorage<4, 4>  mUnk467727;
+    ::ll::UntypedStorage<4, 4>  mUnkae7855;
     ::ll::UntypedStorage<1, 1>  mUnk97eafd;
     ::ll::UntypedStorage<4, 4>  mUnkca6267;
     ::ll::UntypedStorage<1, 1>  mUnk205ad5;
@@ -98,6 +103,14 @@ public:
     virtual void setFlattenSmoothing(int const flattenSmoothing) /*override*/;
 
     virtual void setFloorBlockOverride(bool const floorBlockOverride) /*override*/;
+
+    virtual void setElevationMode(::Editor::Brush::BrushElevationMode elevationMode) /*override*/;
+
+    virtual void setElevationFalloff(int const elevationFalloff) /*override*/;
+
+    virtual void setElevationSampleLayers(int const elevationSampleLayers) /*override*/;
+
+    virtual void setElevationBrushRadius(int const elevationBrushRadius) /*override*/;
 
     virtual void setBrushShapeVisible(bool const visible) /*override*/;
 
@@ -186,6 +199,14 @@ public:
     MCNAPI void $setFlattenSmoothing(int const flattenSmoothing);
 
     MCNAPI void $setFloorBlockOverride(bool const floorBlockOverride);
+
+    MCNAPI void $setElevationMode(::Editor::Brush::BrushElevationMode elevationMode);
+
+    MCNAPI void $setElevationFalloff(int const elevationFalloff);
+
+    MCNAPI void $setElevationSampleLayers(int const elevationSampleLayers);
+
+    MCNAPI void $setElevationBrushRadius(int const elevationBrushRadius);
 
     MCNAPI void $setBrushShapeVisible(bool const visible);
 

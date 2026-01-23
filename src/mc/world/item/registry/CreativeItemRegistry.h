@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~CreativeItemRegistry() /*override*/;
+    virtual ~CreativeItemRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,12 +63,6 @@ public:
     newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
 
     MCAPI void updateNetIdMap();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

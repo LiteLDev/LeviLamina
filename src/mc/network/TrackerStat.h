@@ -18,22 +18,15 @@ public:
 public:
     // prevent constructor by default
     TrackerStat& operator=(TrackerStat const&);
+    TrackerStat(TrackerStat const&);
     TrackerStat();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C TrackerStat(::TrackerStat const&);
-
     MCNAPI_C ::TrackerStat& operator=(::TrackerStat&&);
 
     MCNAPI ~TrackerStat();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::TrackerStat const&);
     // NOLINTEND
 
 public:

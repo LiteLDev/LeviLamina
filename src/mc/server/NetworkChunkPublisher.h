@@ -13,7 +13,7 @@
 class ChunkPos;
 class ChunkSource;
 class ChunkViewSource;
-class Level;
+class ILevel;
 class LevelChunk;
 class LevelChunkPacket;
 class ServerNetworkSystem;
@@ -29,7 +29,7 @@ class NetworkChunkPublisher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Level&>                                           mLevel;
+    ::ll::TypedStorage<8, 8, ::ILevel&>                                          mLevel;
     ::ll::TypedStorage<8, 8, ::ServerNetworkSystem*>                             mNetwork;
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                              mOwner;
     ::ll::TypedStorage<8, 8, ::ClientBlobCache::Server::ActiveTransfersManager*> mClientCache;
@@ -67,13 +67,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NetworkChunkPublisher() = default;
+    virtual ~NetworkChunkPublisher();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkChunkPublisher(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCAPI NetworkChunkPublisher(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
 
     MCAPI bool _isWaitingForFullyBuiltChunks() const;
 
@@ -109,7 +109,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCAPI void* $ctor(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

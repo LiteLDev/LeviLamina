@@ -11,13 +11,14 @@ public:
 
 public:
     // prevent constructor by default
+    EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&);
     EducationLocalLevelSettings(EducationLocalLevelSettings const&);
     EducationLocalLevelSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);
+    MCNAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings&&);
 
     MCNAPI ~EducationLocalLevelSettings();
     // NOLINTEND

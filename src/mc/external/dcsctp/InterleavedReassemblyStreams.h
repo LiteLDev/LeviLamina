@@ -69,8 +69,6 @@ public:
         MCNAPI int
         Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
 
-        MCNAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state) const;
-
         MCNAPI uint64 AssembleMessage(
             ::std::map<
                 ::webrtc::StrongAlias<::dcsctp::FSNTag, uint>,
@@ -78,8 +76,6 @@ public:
                     ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
                     ::dcsctp::Data>> const& tsn_chunks
         );
-
-        MCNAPI uint64 EraseTo(::webrtc::StrongAlias<::dcsctp::MIDTag, uint> mid);
 
         MCNAPI Stream(
             ::dcsctp::InterleavedReassemblyStreams::FullStreamId stream_id,

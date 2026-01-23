@@ -14,7 +14,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PersistenceQuerySharedGroupPayload; }
 namespace Editor::Services { class PersistenceGroup; }
 namespace Editor::Services { class PersistenceItem; }
@@ -73,22 +72,18 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const
         /*override*/;
-
-    virtual bool _validateScope(::Editor::Services::PersistenceScope scope) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit EditorServerPersistenceServiceV2(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(
         ::std::string const&                 namespacedName,
         ::Editor::Services::PersistenceScope scope,
         ::std::optional<int>                 version
     );
 
-    MCNAPI void _dispatchGroupItemsToClient(
+    MCNAPI_S void _dispatchGroupItemsToClient(
         ::Editor::Services::PersistenceGroupItemMetadata     item,
         ::Editor::Services::PersistenceGroupItemChangeAction action
     );
@@ -108,12 +103,6 @@ public:
     );
 
     MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const& payload);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -148,8 +137,6 @@ public:
     );
 
     MCNAPI ::Core::PathBuffer<::std::string> $_getGroupRootPath(::Editor::Services::PersistenceScope scope) const;
-
-    MCNAPI bool $_validateScope(::Editor::Services::PersistenceScope scope) const;
 
 
     // NOLINTEND

@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizerVp8() /*override*/;
+    virtual ~RtpPacketizerVp8() /*override*/ = default;
 
     virtual uint64 NumPackets() const /*override*/;
 
@@ -65,12 +65,6 @@ public:
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::RTPVideoHeaderVP8 const&         hdr_info
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

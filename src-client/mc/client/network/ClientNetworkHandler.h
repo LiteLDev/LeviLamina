@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/network/ClientNetworkPackDependencies.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/math/PairHash.h"
 #include "mc/deps/core/math/TupleHash.h"
@@ -47,6 +48,7 @@ class ChunkRadiusUpdatedPacket;
 class ClientNetworkSystem;
 class ClientboundCloseFormPacket;
 class ClientboundControlSchemeSetPacket;
+class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
 class CodeBuilderPacket;
@@ -56,7 +58,6 @@ class CompletedUsingItemPacket;
 class CorrectPlayerMovePredictionPacket;
 class CraftingDataPacket;
 class CurrentStructureFeaturePacket;
-class DataStoreSyncPacket;
 class DeathInfoPacket;
 class DebugDrawerPacket;
 class DebugInfoPacket;
@@ -71,7 +72,6 @@ class GameTestResultsPacket;
 class GraphicsOverrideParameterPacket;
 class GuiDataPickItemPacket;
 class IClientInstance;
-class IGameConnectionListener;
 class IGameServerStartup;
 class ILevel;
 class IPacketSecurityController;
@@ -83,7 +83,6 @@ class LessonProgressPacket;
 class LevelEventGenericPacket;
 class LevelEventPacket;
 class LevelSoundEventPacket;
-class LocalPlayer;
 class MinecraftCommands;
 class ModalFormRequestPacket;
 class MultiplayerSettingsPacket;
@@ -151,7 +150,12 @@ class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
 struct CachedHostPackIdProvider;
+struct ClientNetworkHandlerArguments;
+struct IContentManager;
+struct IGameConnectionListener;
+struct LocalPlayer;
 struct NetworkIdentifierWithSubId;
+struct PackDownloadManager;
 struct VideoCaptureSessionManager;
 namespace ClientBlobCache { struct Cache; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
@@ -161,11 +165,11 @@ class ClientNetworkHandler : public ::NetEventCallback {
 public:
     // ClientNetworkHandler inner types declare
     // clang-format off
-    struct PackDependencies;
+    struct SubscribedHostPacks;
     // clang-format on
 
     // ClientNetworkHandler inner types define
-    struct PackDependencies {};
+    struct SubscribedHostPacks {};
 
     using ChunkKey = ::std::pair<::Dimension const*, ::ChunkPos>;
 
@@ -179,16 +183,17 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MPMCQueue<uint64>>>                         mCacheHits;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                              mClient;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>                                                 mPacketSender;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IGameConnectionListener>>                     mGameConnectionListener;
     ::ll::TypedStorage<8, 8, ::IGameServerStartup&>                                           mGameServerStartup;
     ::ll::TypedStorage<8, 8, ::ClientNetworkSystem&>                                          mNetwork;
-    ::ll::TypedStorage<8, 8, ::PacketSender&>                                                 mPacketSender;
     ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                            mClientKeys;
     ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                                            mMinecraftCommands;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                           mLevel;
     ::ll::TypedStorage<1, 1, bool>                                                            mHasMessage;
     ::ll::TypedStorage<1, 1, bool>                                                            mIsLoggedIn;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                        mExistenceTracker;
+    ::ll::TypedStorage<1, 1, bool>                                                            mPacketTelemetryEnabled;
     ::ll::TypedStorage<
         8,
         64,
@@ -209,7 +214,7 @@ public:
                                                                                         mConnectionPausedCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mIOTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>> mVideoCaptureSessionManager;
-    ::ll::TypedStorage<8, 72, ::ClientNetworkHandler::PackDependencies>                 mPackDependencies;
+    ::ll::TypedStorage<8, 64, ::ClientNetworkPackDependencies>                          mPackDependencies;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CachedHostPackIdProvider>>            mCachedHostPackIdProvider;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mHostPacksReceivedSub;
     // NOLINTEND
@@ -442,9 +447,23 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet) /*override*/;
 
-    virtual void handle(::NetworkIdentifier const&, ::DataStoreSyncPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet) /*override*/;
+
+    virtual void onOutgoingPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId,
+        ::SubClientId recipientSubId
+    ) /*override*/;
+
+    virtual void onValidPacketReceived(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId,
+        ::SubClientId recipientSubId
+    ) /*override*/;
 
     virtual void
     onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID) /*override*/;
@@ -468,24 +487,24 @@ public:
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
     virtual void handlePacketViolation(
-        ::std::shared_ptr<::IPacketSecurityController> const&,
-        ::std::error_code const&,
-        ::PacketViolationResponse const,
-        ::MinecraftPacketIds const,
-        ::std::string&&,
-        ::NetworkIdentifier const&,
-        ::SubClientId const,
-        ::SubClientId const,
-        uint const
+        ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
+        ::std::error_code const&                              errorCode,
+        ::PacketViolationResponse const                       response,
+        ::MinecraftPacketIds const                            packetId,
+        ::std::string&&                                       context,
+        ::NetworkIdentifier const&                            netId,
+        ::SubClientId const                                   clientSubId,
+        ::SubClientId const                                   senderSubId,
+        uint const                                            packetSize
     ) /*override*/;
 
     virtual void sendPacketViolationWarningPacket(
-        ::std::error_code const&,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        ::std::string const&,
-        ::NetworkIdentifier const&,
-        ::SubClientId
+        ::std::error_code const&   errorCode,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::std::string const&       context,
+        ::NetworkIdentifier const& netId,
+        ::SubClientId              clientSubId
     ) /*override*/;
 
     virtual void onSuccessfulLogin(::NetworkIdentifier const& id);
@@ -494,19 +513,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientNetworkHandler(
-        ::std::weak_ptr<::IGameConnectionListener>               gameConnectionListener,
-        ::IGameServerStartup&                                    gameServerStartup,
-        ::ClientNetworkSystem&                                   network,
-        ::PacketSender&                                          packetSender,
-        ::PrivateKeyManager&                                     clientKeys,
-        ::IClientInstance&                                       client,
-        ::MinecraftCommands&                                     commands,
-        ::std::shared_ptr<::ClientBlobCache::Cache>              clientBlobCache,
-        ::Bedrock::NonOwnerPointer<::ILevel> const&              level,
-        ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager> videoCaptureSessionManager,
-        ::ClientNetworkHandler::PackDependencies&&               packDependencies
-    );
+    MCAPI explicit ClientNetworkHandler(::ClientNetworkHandlerArguments&& args);
 
     MCAPI void _disconnectFromServer(::NetworkIdentifier const& source);
 
@@ -540,21 +547,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::ClientNetworkHandler::SubscribedHostPacks
+    createHostPacks(::PackDownloadManager& downloadMaager, ::IContentManager& contentManager);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::weak_ptr<::IGameConnectionListener>               gameConnectionListener,
-        ::IGameServerStartup&                                    gameServerStartup,
-        ::ClientNetworkSystem&                                   network,
-        ::PacketSender&                                          packetSender,
-        ::PrivateKeyManager&                                     clientKeys,
-        ::IClientInstance&                                       client,
-        ::MinecraftCommands&                                     commands,
-        ::std::shared_ptr<::ClientBlobCache::Cache>              clientBlobCache,
-        ::Bedrock::NonOwnerPointer<::ILevel> const&              level,
-        ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager> videoCaptureSessionManager,
-        ::ClientNetworkHandler::PackDependencies&&               packDependencies
-    );
+    MCAPI void* $ctor(::ClientNetworkHandlerArguments&& args);
     // NOLINTEND
 
 public:
@@ -782,9 +784,23 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::PlayerLocationPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::DataStoreSyncPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet);
+
+    MCAPI void $onOutgoingPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId,
+        ::SubClientId recipientSubId
+    );
+
+    MCAPI void $onValidPacketReceived(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId,
+        ::SubClientId recipientSubId
+    );
 
     MCAPI void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 
@@ -802,6 +818,27 @@ public:
 
     MCFOLD ::OutgoingPacketFilterResult
     $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
+
+    MCAPI void $handlePacketViolation(
+        ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
+        ::std::error_code const&                              errorCode,
+        ::PacketViolationResponse const                       response,
+        ::MinecraftPacketIds const                            packetId,
+        ::std::string&&                                       context,
+        ::NetworkIdentifier const&                            netId,
+        ::SubClientId const                                   clientSubId,
+        ::SubClientId const                                   senderSubId,
+        uint const                                            packetSize
+    );
+
+    MCAPI void $sendPacketViolationWarningPacket(
+        ::std::error_code const&   errorCode,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::std::string const&       context,
+        ::NetworkIdentifier const& netId,
+        ::SubClientId              clientSubId
+    );
 
     MCAPI void $onSuccessfulLogin(::NetworkIdentifier const& id);
     // NOLINTEND

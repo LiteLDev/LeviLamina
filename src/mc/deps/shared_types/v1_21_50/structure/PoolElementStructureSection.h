@@ -28,8 +28,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PoolElementStructureSection& operator=(PoolElementStructureSection const&);
+    PoolElementStructureSection(PoolElementStructureSection const&);
+    PoolElementStructureSection();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection&
+    operator=(::SharedTypes::v1_21_50::PoolElementStructureSection&&);
+
     MCAPI ~PoolElementStructureSection();
     // NOLINTEND
 

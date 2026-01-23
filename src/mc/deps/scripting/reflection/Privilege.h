@@ -5,10 +5,10 @@
 namespace Scripting {
 
 enum class Privilege : uchar {
-    None           = 0,
-    ReadOnly       = 1,
-    EarlyExecution = 2,
-    All            = 255,
+    Default               = 0,
+    RestrictedExecAllowed = 1,
+    EarlyExecAllowed      = 2,
+    All                   = 255,
 };
 
 }

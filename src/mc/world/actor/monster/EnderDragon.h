@@ -76,7 +76,7 @@ public:
 
     virtual bool isImmobile() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual ::Vec3 getHeadLookVector(float a) const /*override*/;
 
@@ -87,8 +87,6 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
-
-    virtual void tickDeath() /*override*/;
 
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
@@ -105,6 +103,8 @@ public:
     MCAPI void _checkCrystals();
 
     MCAPI bool _checkWalls(::AABB bb);
+
+    MCAPI float _getHeadYOffset(float a) const;
 
     MCAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
@@ -171,7 +171,7 @@ public:
 
     MCFOLD bool $isImmobile() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::Vec3 $getHeadLookVector(float a) const;
 
@@ -182,8 +182,6 @@ public:
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCFOLD bool $canBePulledIntoVehicle() const;
-
-    MCAPI void $tickDeath();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

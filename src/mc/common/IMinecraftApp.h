@@ -12,8 +12,8 @@ class EDUSystems;
 class FileArchiver;
 class IGameModuleShared;
 class Minecraft;
-class Options;
 namespace Automation { class AutomationClient; }
+struct Options;
 // clang-format on
 
 class IMinecraftApp {
@@ -46,7 +46,7 @@ public:
 
     virtual ::IGameModuleShared& getGameModuleShared() = 0;
 
-    virtual void requestServerShutdown(::std::string const&) = 0;
+    virtual void requestServerShutdown() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const = 0;
 

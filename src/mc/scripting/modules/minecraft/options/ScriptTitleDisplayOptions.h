@@ -29,6 +29,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
 
+    MCNAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
+    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
+
     MCNAPI ~ScriptTitleDisplayOptions();
     // NOLINTEND
 

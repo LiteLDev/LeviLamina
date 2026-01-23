@@ -31,6 +31,7 @@ namespace BlockEvents { class BlockPlayerPlacingEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 namespace BlockEvents { class BlockRandomTickLegacyEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
@@ -61,8 +62,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnkaee139;
-        ::ll::UntypedStorage<8, 240> mUnk346989;
+        ::ll::UntypedStorage<2, 2>   mUnkae4b77;
+        ::ll::UntypedStorage<8, 256> mUnk346989;
         ::ll::UntypedStorage<8, 40>  mUnk53a6c9;
         ::ll::UntypedStorage<1, 1>   mUnk9ffddb;
         ::ll::UntypedStorage<1, 1>   mUnk2b0f74;
@@ -100,7 +101,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk61196d;
     ::ll::UntypedStorage<8, 64> mUnkb5c618;
     ::ll::UntypedStorage<8, 24> mUnkc6a9fb;
-    ::ll::UntypedStorage<2, 2>  mUnk716c2b;
+    ::ll::UntypedStorage<2, 2>  mUnke455e0;
     ::ll::UntypedStorage<8, 8>  mUnk542351;
     // NOLINTEND
 
@@ -155,12 +156,43 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadVersionError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewEventError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewComponentError>
+    _componentRegistrationValidators(
+        ::std::_List_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<
+            ::HashedString const,
+            ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>>> const&
+                              compIt,
+        ::HashedString const& name
+    );
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewComponentError>
     _componentRegistrationValidatorsCommon(
         ::std::_List_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<
             ::HashedString const,
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>>> const&
                               compIt,
         ::HashedString const& name
+    );
+
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadNewComponentError>
+    _componentRegistrationValidatorsV1(
+        ::std::_List_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<
+            ::HashedString const,
+            ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>>> const&
+                                                                            compIt,
+        ::HashedString const&                                               name,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
     MCNAPI ::Scripting::Result<
@@ -189,6 +221,11 @@ public:
     MCNAPI bool
     hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
 
+    MCNAPI bool hasSubscriptionFor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type,
+        ::BlockCustomComponentsComponent const&                       customComponents
+    ) const;
+
     MCNAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
 
     MCNAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
@@ -204,6 +241,8 @@ public:
     MCNAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
 
     MCNAPI void onRandomTickLegacy(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
+
+    MCNAPI void onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent const& eventData) const;
 
     MCNAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 

@@ -38,8 +38,6 @@ public:
         ::std::optional<::std::string> const& sourceThemeId
     );
 
-    MCNAPI bool canThemeBeModified(::std::string const& id) const;
-
     MCNAPI ::Scripting::Result_deprecated<void> deleteTheme(::std::string const& id);
 
     MCNAPI ::std::string const getCurrentTheme() const;

@@ -91,8 +91,6 @@ public:
         ::PortalEnvironmentModifiers const& modifiers
     );
 
-    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos pos);
-
     MCAPI void _maybeReplaceStairs(
         ::Random&                           random,
         ::BlockSource&                      region,
@@ -114,6 +112,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
+
+    MCAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:

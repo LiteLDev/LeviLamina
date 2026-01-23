@@ -12,6 +12,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ::std::optional<int> getValue() const;
+
+    MCAPI_C bool operator<(int rhs) const;
+
     MCAPI ::std::string toString() const;
     // NOLINTEND
 

@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IPAddress() = default;
+    virtual ~IPAddress();
     // NOLINTEND
 
 public:
@@ -48,6 +48,12 @@ public:
     MCNAPI int overhead() const;
 
     MCNAPI uint v4AddressAsHostOrderInteger() const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/world/level/Tick.h"
 
@@ -18,6 +19,7 @@ class CompoundTag;
 class ContainerComponent;
 class DynamicProperties;
 class HashedString;
+class IDataInput;
 class Item;
 class ItemDescriptor;
 class ItemEnchants;
@@ -25,6 +27,7 @@ class ItemInstance;
 class ItemStack;
 class Level;
 class NetworkItemStackDescriptor;
+class Player;
 class RecipeIngredient;
 class RenderParams;
 class SaveContext;
@@ -136,6 +139,8 @@ public:
 
     MCAPI ::ItemEnchants constructItemEnchantsFromUserData() const;
 
+    MCAPI void deserializeComponents(::IDataInput& input);
+
     MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlot() const;
 
     MCAPI short getAuxValue() const;
@@ -185,7 +190,7 @@ public:
 
     MCAPI ::Item const* getItem() const;
 
-    MCAPI_C short getMaxDamage() const;
+    MCAPI short getMaxDamage() const;
 
     MCAPI uchar getMaxStackSize() const;
 
@@ -202,6 +207,8 @@ public:
     MCAPI ::Bedrock::Safety::RedactableString getRedactedHoverName() const;
 
     MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
+
+    MCAPI_C ::HashedString const& getRendererId() const;
 
     MCAPI_C bool hasChargedItem() const;
 
@@ -233,15 +240,17 @@ public:
 
     MCAPI bool isDamageableItem() const;
 
-    MCAPI bool isDamaged() const;
+    MCAPI_C bool isDamaged() const;
 
     MCAPI_C bool isEnchanted() const;
 
     MCAPI bool isEnchantingBook() const;
 
-    MCAPI_C bool isGlint() const;
+    MCAPI bool isGlint() const;
 
     MCAPI bool isHorseArmorItem() const;
+
+    MCAPI bool isHumanoidArmorItem() const;
 
     MCAPI bool isHumanoidWearableBlockItem() const;
 
@@ -250,6 +259,8 @@ public:
     MCAPI_C bool isLiquidClipItem() const;
 
     MCAPI bool isNull() const;
+
+    MCAPI_C bool isOnCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
 
     MCAPI bool
     isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
@@ -261,13 +272,17 @@ public:
 
     MCAPI bool isPotionItem() const;
 
-    MCAPI bool isStackable() const;
+    MCAPI_C bool isStackable() const;
 
     MCAPI bool isStackable(::ItemStackBase const& other) const;
 
     MCAPI bool isStackedByData() const;
 
+    MCAPI bool isValidAuxValue(int value) const;
+
     MCFOLD bool matches(::ItemStackBase const& other) const;
+
+    MCAPI bool matchesEitherWearableCase(::CompoundTag const* userData) const;
 
     MCAPI bool matchesItem(::ItemStackBase const& other) const;
 
@@ -280,6 +295,8 @@ public:
     MCFOLD bool operator==(::ItemStackBase const& rhs) const;
 
     MCAPI void remove(int inCount);
+
+    MCAPI void removeDamageValue();
 
     MCAPI void resetHoverName();
 

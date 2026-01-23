@@ -84,7 +84,7 @@ public:
         ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
     ) /*override*/;
 
-    virtual void beginLoadRealmWorldList(::WeakEntityRef playerRef) /*override*/;
+    virtual void beginLoadRealmWorldList(::WeakEntityRef) /*override*/;
 
     virtual void beginLoadRealmSlots(::std::string const&, ::WeakEntityRef) /*override*/;
 
@@ -104,7 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
+    MCNAPI explicit EditorRealmsService(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI void _handleServiceStatusPayload(::Editor::Network::EditorRealmsStatusPayload const& payload);
 
@@ -114,7 +114,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Editor::ServiceProviderCollection& providers);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
@@ -158,7 +158,7 @@ public:
         ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
     );
 
-    MCNAPI void $beginLoadRealmWorldList(::WeakEntityRef playerRef);
+    MCNAPI void $beginLoadRealmWorldList(::WeakEntityRef);
 
     MCNAPI void $beginLoadRealmSlots(::std::string const&, ::WeakEntityRef);
 

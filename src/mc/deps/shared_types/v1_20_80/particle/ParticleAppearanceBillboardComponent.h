@@ -29,6 +29,7 @@ public:
 public:
     // prevent constructor by default
     ParticleAppearanceBillboardComponent& operator=(ParticleAppearanceBillboardComponent const&);
+    ParticleAppearanceBillboardComponent(ParticleAppearanceBillboardComponent const&);
     ParticleAppearanceBillboardComponent();
 
 public:
@@ -36,16 +37,17 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleAppearanceBillboardComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleAppearanceBillboardComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
-
-    MCAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
-
     MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
     operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
     // NOLINTEND
@@ -60,14 +62,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
     // NOLINTEND
 
 public:

@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-
 // auto generated forward declare list
 // clang-format off
 struct ConditionalBandwidthOptimization;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ConditionalBandwidthOptimizationDefinition {
@@ -33,16 +29,6 @@ public:
     MCNAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
     MCNAPI ~ConditionalBandwidthOptimizationDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>&
-            root
-    );
     // NOLINTEND
 
 public:

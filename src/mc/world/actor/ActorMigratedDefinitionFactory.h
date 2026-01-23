@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/ReflectionCtx.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
 #include "mc/resources/JsonBetaState.h"
 
@@ -17,15 +16,17 @@ class IJsonDefinitionSerializer;
 class SemVersion;
 struct DeserializeDataSettings;
 struct LegacyGoalDefinition;
-namespace ActorMigratedUtils { struct ActorLoaderTraits; }
-namespace ActorMigratedUtils { struct CustomUpgradeData; }
+namespace JsonComponentGlueUtils { struct ActorLoaderTraits; }
+namespace JsonComponentGlueUtils { struct CustomUpgradeData; }
 namespace SharedTypes::Legacy { struct ActorDocumentCorrected; }
 namespace SharedTypes::v1_21_100 { struct ActorDocument; }
 namespace SharedTypes::v1_21_110 { struct ActorDocument; }
-namespace SharedTypes::v1_21_120 { struct ActorDefinitions; }
 namespace SharedTypes::v1_21_120 { struct ActorDocument; }
+namespace SharedTypes::v1_21_130 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_130 { struct ActorDocument; }
 namespace SharedTypes::v1_21_90 { struct ActorDocument; }
 namespace cereal { class DynamicValue; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ActorMigratedDefinitionFactory {
@@ -38,24 +39,25 @@ public:
 
     using FillDefinitionCb = ::std::function<
         ::ActorMigratedDefinitionFactory::
-            InitResult(::ActorDefinitionDescriptor&, ::SharedTypes::v1_21_120::ActorDefinitions&, ::JsonBetaState)>;
+            InitResult(::ActorDefinitionDescriptor&, ::SharedTypes::v1_21_130::ActorDefinitions&, ::JsonBetaState)>;
 
     using FillDescriptionCb = ::ActorMigratedDefinitionFactory::InitResult (*)(
         ::ActorDefinition&,
         ::ActorDefinitionDescriptor&,
-        ::SharedTypes::v1_21_120::ActorDefinitions&
+        ::SharedTypes::v1_21_130::ActorDefinitions&
     );
 
-    using LoaderPtr = ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>>;
+    using LoaderPtr =
+        ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::JsonComponentGlueUtils::ActorLoaderTraits>>;
 
-    using PuvLoader = ::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>;
+    using PuvLoader = ::Bedrock::Resources::CategoryLoader<::JsonComponentGlueUtils::ActorLoaderTraits>;
 
     using SerializerPtr = ::std::unique_ptr<::IJsonDefinitionSerializer>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 120, ::cereal::ReflectionCtx> mCerealContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>> mCerealContext;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::unique_ptr<::IJsonDefinitionSerializer>>>
         mDefinitionSerializers;
     ::ll::TypedStorage<
@@ -64,7 +66,7 @@ public:
         ::std::vector<::ActorMigratedDefinitionFactory::InitResult (*)(
             ::ActorDefinition&,
             ::ActorDefinitionDescriptor&,
-            ::SharedTypes::v1_21_120::ActorDefinitions&
+            ::SharedTypes::v1_21_130::ActorDefinitions&
         )>>
         mFillActorDescriptionCbs;
     ::ll::TypedStorage<
@@ -72,44 +74,46 @@ public:
         24,
         ::std::vector<::std::function<::ActorMigratedDefinitionFactory::InitResult(
             ::ActorDefinitionDescriptor&,
-            ::SharedTypes::v1_21_120::ActorDefinitions&,
+            ::SharedTypes::v1_21_130::ActorDefinitions&,
             ::JsonBetaState
         )>>>
         mFillActorDefinitionCbs;
     ::ll::TypedStorage<
         8,
-        96,
+        120,
         ::std::tuple<
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::Legacy::ActorDocumentCorrected,
                                    ::SharedTypes::v1_21_90::ActorDocument,
-                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_21_90::ActorDocument,
                                    ::SharedTypes::v1_21_100::ActorDocument,
-                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_21_100::ActorDocument,
                                    ::SharedTypes::v1_21_110::ActorDocument,
-                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_21_110::ActorDocument,
                                    ::SharedTypes::v1_21_120::ActorDocument,
-                                   ::ActorMigratedUtils::CustomUpgradeData const&>&)>>>
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_21_120::ActorDocument,
+                                   ::SharedTypes::v1_21_130::ActorDocument,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>>>
                                                                         mLegacyUpgradeCallbacks;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::SemVersion>> mVersionedDefinitions;
     ::ll::TypedStorage<
         8,
         8,
-        ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::ActorMigratedUtils::ActorLoaderTraits>>>
+        ::std::unique_ptr<::Bedrock::Resources::CategoryLoader<::JsonComponentGlueUtils::ActorLoaderTraits>>>
         mDocumentLoader;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorMigratedDefinitionFactory();
-
     MCAPI void _bindActorDocumentTypes();
 
     MCAPI void _initialize();
@@ -132,12 +136,6 @@ public:
         ::cereal::DynamicValue const&    def,
         ::DeserializeDataSettings const& settings
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

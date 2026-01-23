@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    AuthToken& operator=(AuthToken const&);
     AuthToken(AuthToken const&);
     AuthToken();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ::Identity::AuthToken& operator=(::Identity::AuthToken&&);
+
+    MCNAPI_C ::Identity::AuthToken& operator=(::Identity::AuthToken const&);
 
     MCNAPI ~AuthToken();
     // NOLINTEND

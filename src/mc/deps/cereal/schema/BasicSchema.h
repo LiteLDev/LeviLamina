@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
+namespace cereal::internal { struct DescriptionConfig; }
 namespace cereal::internal { struct LoadState; }
 namespace cereal::internal { struct OverrideState; }
 namespace cereal::internal { struct SaveState; }
@@ -31,17 +31,12 @@ public:
     // clang-format on
 
     // BasicSchema inner types define
-    enum class DescriptionMode : int {
-        Brief    = 0,
-        Detailed = 1,
-    };
-
     struct DynamicSetterArg {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 208> mUnka33fb1;
-        ::ll::UntypedStorage<8, 8>   mUnkcc227c;
+        ::ll::UntypedStorage<8, 64> mUnka33fb1;
+        ::ll::UntypedStorage<8, 8>  mUnkcc227c;
         // NOLINTEND
 
     public:
@@ -76,6 +71,7 @@ public:
         ::ll::UntypedStorage<8, 40> mUnk235705;
         ::ll::UntypedStorage<8, 32> mUnke471ac;
         ::ll::UntypedStorage<1, 1>  mUnk9dbec8;
+        ::ll::UntypedStorage<1, 1>  mUnkb484a6;
         ::ll::UntypedStorage<1, 1>  mUnk39c99d;
         // NOLINTEND
 
@@ -158,17 +154,7 @@ public:
 
     virtual bool isGreedy(::entt::meta_ctx const&) const;
 
-    virtual void members(::entt::meta_ctx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
-
-    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::entt::meta_ctx const&, uint) const;
-
     virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const&) const;
-
-    virtual void validateConstraint(
-        ::cereal::Constraint const&  constraint,
-        ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context
-    ) const;
 
     virtual void doLoad(
         ::cereal::SchemaReader&,
@@ -180,7 +166,7 @@ public:
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const&) const;
 
     virtual ::cereal::SchemaDescription
-    makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
+    makeDescription(::entt::meta_ctx const&, ::cereal::internal::DescriptionConfig) const = 0;
     // NOLINTEND
 
 public:
@@ -199,17 +185,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isGreedy(::entt::meta_ctx const&) const;
 
-    MCNAPI void $members(::entt::meta_ctx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
-
-    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::entt::meta_ctx const&, uint) const;
-
     MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const&) const;
-
-    MCNAPI void $validateConstraint(
-        ::cereal::Constraint const&  constraint,
-        ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context
-    ) const;
 
 
     // NOLINTEND

@@ -134,6 +134,8 @@ public:
 
     MCAPI void fillStencil(::ScreenContext& screenContext, float x0, float y0, float x1, float y1) const;
 
+    MCAPI ::mce::MaterialPtr const& getMaterial(::ScreenRenderer::ScreenMaterial mat) const;
+
     MCAPI bool tessellateQuadBuffer(
         ::ScreenRenderer::QuadBuffer const& quadBuffer,
         float                               quadW,

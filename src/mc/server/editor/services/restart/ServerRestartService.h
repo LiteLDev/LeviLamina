@@ -14,6 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 struct ScriptingWorldInitializeEvent;
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class RestartServiceRequestRestartPayload; }
 // clang-format on
 
@@ -64,12 +65,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ServerRestartService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void
     _onRestartServiceRequestRestartPayload(::Editor::Network::RestartServiceRequestRestartPayload const& payload);
 
     MCNAPI void _onTick();
 
     MCNAPI bool _validateRequest();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

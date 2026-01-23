@@ -40,8 +40,6 @@ public:
 
     MCAPI_C void allocateStorage(::cg::ImageDescription const& imageDesc);
 
-    MCAPI_C ::cg::ImageBuffer clone() const;
-
     MCAPI_C uchar const* get(uint arrayIndex) const;
 
     MCAPI_C ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);

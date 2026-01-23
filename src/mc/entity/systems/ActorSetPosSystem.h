@@ -16,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class EntityContext;
 class HitboxComponent;
 class StrictEntityContext;
 class Vec3;
@@ -143,8 +142,6 @@ public:
     MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCNAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
-
-    MCNAPI static void setPosition(::EntityContext& entity, ::Vec3 const& position, bool isClientSide);
     // NOLINTEND
 
 public:

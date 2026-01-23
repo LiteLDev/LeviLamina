@@ -9,7 +9,6 @@
 // clang-format off
 class BaseGameVersion;
 class EntityContext;
-class LocalPlayer;
 class PacketSender;
 class Player;
 class UserEntityIdentifierComponent;
@@ -37,8 +36,6 @@ MCNAPI ::ControlScheme::Scheme getDefaultControlScheme(
     ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets,
     ::std::vector<::ControlScheme::Scheme> const&               allowedControlSchemes
 );
-
-MCNAPI_C void onControlSchemeChanged(::LocalPlayer& localPlayer, ::ControlScheme::Scheme newScheme);
 
 MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,

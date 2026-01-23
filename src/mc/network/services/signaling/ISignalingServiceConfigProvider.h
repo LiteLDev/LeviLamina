@@ -42,9 +42,7 @@ public:
     virtual ~ISignalingServiceConfigProvider() /*override*/;
 #endif
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
-
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getJsonRpcUrl() = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl(bool, ::std::string const&) = 0;
 
     virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
 

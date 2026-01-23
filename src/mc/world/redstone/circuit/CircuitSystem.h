@@ -56,5 +56,12 @@ public:
     MCAPI void setStrength(::BlockPos const& pos, int strength);
 
     MCAPI void updateBlocks(::BlockSource& region, ::BlockPos const& chunkPos);
+
+    MCAPI void updateIndividualBlock(
+        ::gsl::not_null<::BaseCircuitComponent*> component,
+        ::BlockPos const&                        chunkPos,
+        ::BlockPos const&                        pos,
+        ::BlockSource&                           region
+    );
     // NOLINTEND
 };

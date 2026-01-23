@@ -27,8 +27,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SummonSpellStage(SummonSpellStage const&);
+    SummonSpellStage();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SummonSpellStage& operator=(::SummonSpellStage const&);
+
     MCAPI ~SummonSpellStage();
     // NOLINTEND
 

@@ -44,9 +44,11 @@ public:
 
     MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
 
+    MCNAPI_C explicit PathView(::std::string const& src);
+
     MCNAPI explicit PathView(::Core::Path const& src);
 
-    MCNAPI bool isAbsolute() const;
+    MCNAPI_C explicit PathView(char const* src);
 
     MCNAPI auto operator==(::Core::PathView const& rhs) const;
 
@@ -60,7 +62,11 @@ public:
 
     MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
 
+    MCNAPI_C void* $ctor(::std::string const& src);
+
     MCNAPI void* $ctor(::Core::Path const& src);
+
+    MCNAPI_C void* $ctor(char const* src);
     // NOLINTEND
 
 public:

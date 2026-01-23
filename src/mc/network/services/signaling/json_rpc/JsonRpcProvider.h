@@ -56,6 +56,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk5861b3;
     ::ll::UntypedStorage<8, 64>  mUnkee8ec5;
+    ::ll::UntypedStorage<8, 64>  mUnkbb1fce;
     ::ll::UntypedStorage<8, 80>  mUnk1a0d61;
     ::ll::UntypedStorage<8, 64>  mUnke31280;
     ::ll::UntypedStorage<8, 120> mUnk4502ec;
@@ -79,9 +80,9 @@ public:
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
     );
 
-    MCNAPI void _expirePendingResult(::std::string const& id);
+    MCNAPI void _dispatchJsonRpc(::std::string const& method, ::Json::Value const& params, ::std::string const& id);
 
-    MCNAPI void dispatchJsonRpc(::std::string const& method, ::Json::Value const& params);
+    MCNAPI void _expirePendingResult(::std::string const& id);
 
     MCNAPI void
     handleJsonRpcResult(::std::string const& id, ::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& result);

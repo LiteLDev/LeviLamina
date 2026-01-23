@@ -6,11 +6,10 @@
 // clang-format off
 class Actor;
 class HashedString;
+class DataDrivenRenderer;
 class IClientInstance;
 class IMinecraftGame;
-class DataDrivenRenderer;
 class ScreenContext;
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class BaseActorRenderContext {
@@ -79,8 +78,6 @@ public:
     MCNAPI_C ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
     MCNAPI_C float getFrameAlpha(::Actor const& actor) const;
-
-    MCNAPI_C ::std::shared_ptr<::mce::TextureGroup> getTextureGroup();
 
     MCNAPI_C bool isDeferredUpscaling() const;
     // NOLINTEND

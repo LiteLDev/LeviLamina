@@ -16,9 +16,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PersonaCharacterHandle(PersonaCharacterHandle const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C PersonaCharacterHandle();
+
+    MCAPI_C void invalidate();
+
+    MCFOLD_C ::persona::PersonaCharacterHandle& operator=(::persona::PersonaCharacterHandle const&);
 
     MCAPI_C ~PersonaCharacterHandle();
     // NOLINTEND

@@ -16,6 +16,21 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::IItemComponentLegacyFactoryData>>> mMap;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Components(Components const&);
+        Components();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCFOLD ::IItemComponentLegacyFactoryData::Components&
+        operator=(::IItemComponentLegacyFactoryData::Components&&);
+
+        MCFOLD ::IItemComponentLegacyFactoryData::Components&
+        operator=(::IItemComponentLegacyFactoryData::Components const&);
+        // NOLINTEND
     };
 
 public:

@@ -49,8 +49,6 @@ public:
 
     MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
-
     MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
     MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);

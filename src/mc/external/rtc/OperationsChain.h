@@ -32,23 +32,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit CallbackHandle(::webrtc::scoped_refptr<::rtc::OperationsChain> operations_chain);
-
         MCNAPI void OnOperationComplete();
-
-        MCNAPI ~CallbackHandle();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::scoped_refptr<::rtc::OperationsChain> operations_chain);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -64,6 +48,7 @@ public:
     // prevent constructor by default
     OperationsChain& operator=(OperationsChain const&);
     OperationsChain(OperationsChain const&);
+    OperationsChain();
 
 public:
     // member functions
@@ -71,10 +56,6 @@ public:
     MCNAPI ::std::function<void()> CreateOperationsChainCallback();
 
     MCNAPI bool IsEmpty() const;
-
-    MCNAPI void OnOperationComplete();
-
-    MCNAPI OperationsChain();
 
     MCNAPI void SetOnChainEmptyCallback(::std::function<void()> on_chain_empty_callback);
 
@@ -85,12 +66,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::rtc::OperationsChain> Create();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

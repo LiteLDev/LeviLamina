@@ -13,6 +13,7 @@ class BlockComponentStorage;
 class CompoundTag;
 class ExpressionNode;
 class SemVersion;
+namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -89,6 +90,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
+    getBoneVisibility(::std::map<::std::string, ::ExpressionNode> const& boneVisibilities);
+
+    MCAPI static ::std::map<::std::string, ::ExpressionNode>
+    setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> const& boneVisibilities);
     // NOLINTEND
 
 public:

@@ -29,12 +29,11 @@ public:
 public:
     // prevent constructor by default
     NetworkIdentifier(NetworkIdentifier const&);
+    NetworkIdentifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkIdentifier();
-
     MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string getAddress() const;
@@ -47,9 +46,11 @@ public:
 
     MCAPI bool isUnassigned() const;
 
-    MCAPI_S ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+    MCAPI bool operator<(::NetworkIdentifier const& other) const;
 
-    MCAPI_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
+    MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+
+    MCFOLD_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND
@@ -64,11 +65,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::NetworkIdentifier& INVALID_ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

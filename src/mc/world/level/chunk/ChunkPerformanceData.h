@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/events/ChunkLoadTelemetryData.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/chunk/AtomicTimeAccumulator.h"
 
 // auto generated forward declare list
@@ -14,6 +15,7 @@ class ChunkPos;
 class ChunkSource;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
+struct ClientChunkPerformanceData;
 // clang-format on
 
 struct ChunkPerformanceData : public ::Bedrock::EnableNonOwnerReferences {
@@ -108,6 +110,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ChunkPerformanceData() /*override*/ = default;
+
+    virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+
+    virtual void resetAll();
     // NOLINTEND
 
 public:
@@ -118,14 +124,22 @@ public:
     MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-
-    MCAPI void resetAll();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+
+    MCAPI void $resetAll();
+
+
     // NOLINTEND
 
 public:

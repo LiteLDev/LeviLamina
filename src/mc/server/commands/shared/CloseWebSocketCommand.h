@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
+    MCAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
     // NOLINTEND
 
 public:

@@ -104,22 +104,10 @@ public:
     SctpPacket();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SctpPacket();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::SctpPacket>
     Parse(::rtc::ArrayView<uchar const> data, ::dcsctp::DcSctpOptions const& options);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

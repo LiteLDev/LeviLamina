@@ -41,6 +41,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+#endif
+
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
@@ -48,10 +52,6 @@ public:
     MCFOLD void $setAuxValue(int aux);
 
     MCAPI ::HashedString const& $queryEntityRenderer() const;
-
-#ifdef LL_PLAT_C
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
 
 
     // NOLINTEND

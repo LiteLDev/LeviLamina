@@ -23,9 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
 
 
     // NOLINTEND

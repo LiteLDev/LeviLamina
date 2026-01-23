@@ -47,11 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CartographyContainerManagerController() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~CartographyContainerManagerController() /*override*/;
-#endif
 
     virtual void postInit(::std::weak_ptr<::ContainerManagerController> self) /*override*/;
 
@@ -91,7 +87,7 @@ public:
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
 
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
@@ -124,12 +120,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI_C void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -173,7 +163,7 @@ public:
 
     MCNAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
 
     MCNAPI void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,

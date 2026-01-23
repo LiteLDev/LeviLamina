@@ -30,6 +30,8 @@ MCAPI ::HashedString const& Grass();
 
 MCAPI ::HashedString const& Gravel();
 
+MCAPI ::HashedString const& HasFenceConnections();
+
 MCAPI ::HashedString const& IronDiggable();
 
 MCAPI ::HashedString const& IsAxeItemDestructible();

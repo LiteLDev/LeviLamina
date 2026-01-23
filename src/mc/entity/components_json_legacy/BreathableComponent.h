@@ -31,6 +31,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mBreathesLava;
     ::ll::TypedStorage<1, 1, bool>                                   mBreathesSolids;
     ::ll::TypedStorage<1, 1, bool>                                   mGeneratesBubbles;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanDehydrate;
     ::ll::TypedStorage<2, 2, short>                                  mAirSupply;
     ::ll::TypedStorage<2, 2, short>                                  mAirSupplyMax;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>      mBreathableBlocks;
@@ -42,6 +43,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool canBreathe(::Actor const& owner) const;
+
+    MCNAPI void setAirSupply(short supply);
 
     MCNAPI void updateBreathableState(::Actor& owner);
 

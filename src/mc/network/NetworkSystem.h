@@ -168,17 +168,10 @@ public:
         ::Json::Value const&                     sessionSummary
     ) /*override*/;
 
-    virtual void onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
-    virtual void onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void
+    onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     virtual void onOutgoingConnectionFailed(
         ::Connection::DisconnectFailReason discoReason,
@@ -269,20 +262,6 @@ public:
         bool                                     skipDisconnectMessage,
         ::Json::Value const&                     sessionSummary
     );
-
-#ifdef LL_PLAT_S
-    MCAPI void $onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    );
-
-    MCAPI void $onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    );
-#endif
 
     MCAPI void
     $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, ::std::string const& reasonMessage);

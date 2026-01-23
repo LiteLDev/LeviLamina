@@ -11,7 +11,6 @@
 class ActorDefinitionDescriptor;
 class JumpControl;
 class Mob;
-struct JumpControlDescription;
 // clang-format on
 
 class JumpControlComponent {
@@ -37,8 +36,6 @@ public:
     MCNAPI JumpControlComponent(::JumpControlComponent const& other);
 
     MCNAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
-
-    MCNAPI void initializeFromDefinition(::Mob& owner, ::JumpControlDescription* description);
 
     MCNAPI ~JumpControlComponent();
     // NOLINTEND

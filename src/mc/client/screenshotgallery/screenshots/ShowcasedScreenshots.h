@@ -11,7 +11,6 @@
 // clang-format off
 namespace Core { class FileSystem; }
 namespace Screenshots { class IScreenshotGalleryHttpCall; }
-namespace Screenshots { struct ShowcasedScreenshot; }
 namespace Social { struct XUID; }
 namespace Screenshots { struct RawShowcasedScreenshot; }
 // clang-format on
@@ -71,11 +70,6 @@ public:
         ::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>> const& showcasedScreenshots
     );
 
-    MCNAPI_C bool _loadShowcasedScreenshotCallback(
-        ::std::string const&                         screenshotGuid,
-        ::std::optional<::std::vector<uchar>> const& rawScreenshot
-    );
-
     MCNAPI_C void _pruneCache();
 
     MCNAPI_C void _pruneIncrementally(::std::vector<::Core::PathBuffer<::std::string>> fileList);
@@ -83,7 +77,7 @@ public:
     MCNAPI_C ::Bedrock::Threading::Async<::std::string>
     addScreenshotToShowcase(int64 captureTime, bool featured, ::Core::PathBuffer<::std::string> const& imagePath);
 
-    MCNAPI_C ::std::unordered_map<::std::string, ::Screenshots::ShowcasedScreenshot> const getScreenshots() const;
+    MCNAPI_C ::Core::PathBuffer<::std::string> const getFeaturedScreenshotPath() const;
 
     MCNAPI_C ::Bedrock::Threading::Async<bool> loadCount();
 

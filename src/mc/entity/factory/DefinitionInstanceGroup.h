@@ -27,6 +27,8 @@ public:
 
     MCNAPI void combine(::DefinitionInstanceGroup const& other);
 
+    MCNAPI ::DefinitionInstanceGroup& operator=(::DefinitionInstanceGroup&&);
+
     MCNAPI void remove(::std::shared_ptr<::IDefinitionInstance> const& definition);
 
     MCNAPI ~DefinitionInstanceGroup();

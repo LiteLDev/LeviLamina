@@ -5,42 +5,22 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/PlayerVideoCapturePacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class PlayerVideoCapturePacket : public ::Packet {
-public:
-    // PlayerVideoCapturePacket inner types declare
-    // clang-format off
-    struct StartVideoCapture;
-    struct StopVideoCapture;
-    // clang-format on
-
-    // PlayerVideoCapturePacket inner types define
-    struct StartVideoCapture {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>           mFrameRate;
-        ::ll::TypedStorage<8, 32, ::std::string> mFilePrefix;
-        // NOLINTEND
-    };
-
-    struct StopVideoCapture {};
-
+class PlayerVideoCapturePacket : public ::ll::PayloadPacket<::PlayerVideoCapturePacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::std::variant<::PlayerVideoCapturePacket::StartVideoCapture, ::PlayerVideoCapturePacket::StopVideoCapture>>
-        mParams;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -50,9 +30,35 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
-    virtual void write(::BinaryStream&) const /*override*/;
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
+    virtual void write(::BinaryStream& stream) const /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     virtual ~PlayerVideoCapturePacket() /*override*/ = default;
     // NOLINTEND
@@ -60,6 +66,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::MinecraftPacketIds $getId() const;
 
+    MCAPI ::std::string $getName() const;
+
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
+    MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

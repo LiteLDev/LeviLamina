@@ -21,27 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptActorLoadAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptActorLoadAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle);
     // NOLINTEND
 };
 

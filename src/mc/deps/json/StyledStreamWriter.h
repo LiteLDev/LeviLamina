@@ -34,8 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StyledStreamWriter(::std::string indentation);
 
-    MCAPI void pushValue(::std::string const& value);
-
     MCAPI void unindent();
 
     MCAPI void write(::std::ostream& out, ::Json::Value const& root);

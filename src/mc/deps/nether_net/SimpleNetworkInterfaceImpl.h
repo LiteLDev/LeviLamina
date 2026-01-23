@@ -49,6 +49,7 @@ public:
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
     ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
     ::ll::UntypedStorage<1, 1>   mUnk49643d;
+    ::ll::UntypedStorage<1, 1>   mUnkbea55f;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
     ::ll::UntypedStorage<8, 16>  mUnkd76d91;
     ::ll::UntypedStorage<8, 16>  mUnk9e7ad4;
@@ -65,7 +66,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SimpleNetworkInterfaceImpl() /*override*/;
+    virtual ~SimpleNetworkInterfaceImpl() /*override*/ = default;
 
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,
@@ -90,7 +91,7 @@ public:
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
 
     virtual bool GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
+        ::NetherNet::NetworkID     peerId,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     ) /*override*/;
@@ -115,6 +116,10 @@ public:
     virtual void EnableLANSignaling() /*override*/;
 
     virtual void DisableLANSignaling() /*override*/;
+
+    virtual void EnableTrickleIce() /*override*/;
+
+    virtual void DisableTrickleIce() /*override*/;
 
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event) /*override*/;
 
@@ -155,12 +160,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $SendPacket(
@@ -179,11 +178,8 @@ public:
 
     MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCNAPI bool $GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    );
+    MCNAPI bool
+    $GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
 
     MCNAPI void
     $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
@@ -203,6 +199,10 @@ public:
     MCNAPI void $EnableLANSignaling();
 
     MCNAPI void $DisableLANSignaling();
+
+    MCNAPI void $EnableTrickleIce();
+
+    MCNAPI void $DisableTrickleIce();
 
     MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
 

@@ -111,6 +111,8 @@ public:
 
     MCAPI int getItemCount() const;
 
+    MCAPI_C short getLegacyIDFromName(::HashedString const& name) const;
+
     MCAPI ::HashedString getNameFromLegacyID(short id) const;
 
     MCAPI ::std::unordered_map<::HashedString, ::WeakPtr<::Item>> const& getNameToItemMap() const;

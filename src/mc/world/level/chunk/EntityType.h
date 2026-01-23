@@ -26,11 +26,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EntityType& operator=(EntityType const&);
+    EntityType();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EntityType(::br::spawn::EntityType const&);
+
     MCAPI bool isBlockDangerous(::Block const& block) const;
 
     MCAPI ~EntityType();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::br::spawn::EntityType const&);
     // NOLINTEND
 
 public:

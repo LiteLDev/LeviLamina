@@ -14,8 +14,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorSoundEffect& operator=(ActorSoundEffect const&);
+    ActorSoundEffect(ActorSoundEffect const&);
+    ActorSoundEffect();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ActorSoundEffect& operator=(::ActorSoundEffect&&);
+
     MCAPI ~ActorSoundEffect();
     // NOLINTEND
 

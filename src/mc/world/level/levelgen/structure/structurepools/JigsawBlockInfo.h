@@ -32,13 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawBlockInfo(::JigsawBlockInfo&&);
 
-    MCAPI JigsawBlockInfo(
-        ::BlockPos const&  pos,
-        ::Block const*     block,
-        ::Block const*     finalBlock,
-        ::JigsawEditorData editorData
-    );
-
     MCAPI ~JigsawBlockInfo();
     // NOLINTEND
 
@@ -46,9 +39,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::JigsawBlockInfo&&);
-
-    MCAPI void*
-    $ctor(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
     // NOLINTEND
 
 public:

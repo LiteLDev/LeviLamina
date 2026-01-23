@@ -42,6 +42,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;
 
+    virtual ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const = 0;
+
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>
     ) = 0;

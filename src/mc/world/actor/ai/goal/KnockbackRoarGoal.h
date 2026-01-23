@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -46,12 +45,6 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~KnockbackRoarDefinition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
         // NOLINTEND
 
     public:

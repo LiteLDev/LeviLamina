@@ -13,4 +13,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DanceComponentListener>> mListener;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI DanceComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
 };

@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    DataStoreRemoval& operator=(DataStoreRemoval const&);
     DataStoreRemoval(DataStoreRemoval const&);
     DataStoreRemoval();
 
@@ -21,6 +20,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval&&);
+
+    MCNAPI ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval const&);
 
     MCNAPI ~DataStoreRemoval();
     // NOLINTEND

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace ScriptModuleMinecraft { struct ScriptAnimationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraDefaultOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFadeOptions; }
@@ -43,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptCamera(::Player const& player);
-
     MCNAPI ::Scripting::Result_deprecated<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
@@ -110,12 +107,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 };
 

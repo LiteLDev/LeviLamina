@@ -79,8 +79,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
-
     MCAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 

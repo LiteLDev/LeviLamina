@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class Candidate; }
-namespace webrtc { struct SdpParseError; }
 // clang-format on
 
 namespace webrtc {
@@ -31,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JsepIceCandidate() /*override*/;
+    virtual ~JsepIceCandidate() /*override*/ = default;
 
     virtual ::std::string sdp_mid() const /*override*/;
 
@@ -47,25 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool Initialize(::std::string const& sdp, ::webrtc::SdpParseError* err);
-
-    MCNAPI JsepIceCandidate(::std::string const& sdp_mid, int sdp_mline_index);
-
     MCNAPI JsepIceCandidate(::std::string const& sdp_mid, int sdp_mline_index, ::cricket::Candidate const& candidate);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& sdp_mid, int sdp_mline_index);
-
     MCNAPI void* $ctor(::std::string const& sdp_mid, int sdp_mline_index, ::cricket::Candidate const& candidate);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

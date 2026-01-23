@@ -3,10 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/WebToken.h"
-#include "mc/certificates/identity/GameServerToken.h"
-#include "mc/certificates/identity/LegacyMultiplayerToken.h"
-#include "mc/certificates/identity/PlayerAuthenticationInfo.h"
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/certificates/identity/edu/Role.h"
@@ -16,14 +12,14 @@
 // auto generated forward declare list
 // clang-format off
 class AnimatedImageData;
-class Certificate;
+class LegacyMultiplayerToken;
 class MinEngineVersion;
-class MinecraftServiceKeyManager;
 class PrivateKeyManager;
 class SerializedPersonaPieceHandle;
-class SerializedSkin;
+class SerializedSkinRef;
 class TintMapColor;
 class UnverifiedCertificate;
+class WebToken;
 struct SyncedClientOptionsComponent;
 namespace Json { class Value; }
 namespace mce { class Color; }
@@ -34,14 +30,10 @@ class ConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                       mIsVerified;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
-    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>                   mLegacyMultiplayerToken;
     ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mUnverifiedGameServerToken;
-    ::ll::TypedStorage<8, 136, ::GameServerToken>                        mVerifiedGameServerToken;
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                 mAuthenticationType;
-    ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo>               mAuthenticationInfo;
     // NOLINTEND
 
 public:
@@ -76,6 +68,8 @@ public:
 
     MCFOLD ::std::string getDeviceId() const;
 
+    MCAPI ::std::string getDeviceModel() const;
+
     MCAPI ::std::string getEduJoinerToHostNonce() const;
 
     MCAPI ::std::string getEduSessionToken() const;
@@ -106,27 +100,9 @@ public:
 
     MCAPI ::std::string getSkinResourcePatch() const;
 
-    MCFOLD void invalidate();
-
     MCAPI bool isWellFormed() const;
 
     MCFOLD ::std::string toString();
-
-    MCAPI ::std::unique_ptr<::Certificate> validate(
-        ::std::unique_ptr<::Certificate> certificate,
-        int64                            currentTime,
-        bool                             isSelfSigned,
-        bool                             checkExpired
-    ) const;
-
-    MCAPI bool verify(
-        ::std::vector<::std::string> const& trustedKeys,
-        int64                               currentTime,
-        ::MinecraftServiceKeyManager const& mcServiceKeyManager,
-        bool                                checkExpired
-    );
-
-    MCAPI bool verifySelfSigned(bool checkExpired);
 
     MCAPI ~ConnectionRequest();
     // NOLINTEND
@@ -135,16 +111,16 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI_C static void _fillPersonaJson(
-        ::Json::Value&          root,
-        ::std::string const&    skinId,
-        ::mce::Image const&     skinImageData,
-        ::std::string const&    capeId,
-        ::mce::Image const&     capeImageData,
-        ::SerializedSkin const& serializedSkin
+        ::Json::Value&             root,
+        ::std::string const&       skinId,
+        ::mce::Image const&        skinImageData,
+        ::std::string const&       capeId,
+        ::mce::Image const&        capeImageData,
+        ::SerializedSkinRef const& serializedSkin
     );
 
     MCAPI_C static ::ConnectionRequest create(
-        ::PrivateKeyManager&                  userSigner,
+        ::PrivateKeyManager const&            userSigner,
         ::PlayerAuthenticationType            authenticationType,
         ::LegacyMultiplayerToken const&       legacyMultiplayerToken,
         ::RawGameServerToken const&           gameServerToken,
@@ -154,7 +130,7 @@ public:
         ::std::string const&                  skinId,
         ::mce::Image const&                   skinImageData,
         ::mce::Image const&                   capeImageData,
-        ::SerializedSkin const&               serializedSkin,
+        ::SerializedSkinRef const&            serializedSkin,
         ::std::string const&                  deviceId,
         ::InputMode                           currentInputMode,
         int                                   guiScale,

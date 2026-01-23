@@ -13,8 +13,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RectangleArea();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C RectangleArea(float x0, float y0, float x1, float y1, bool checkForValidity);
+
+    MCAPI_C ::RectangleArea grow(::glm::vec2 const& f) const;
+
     MCAPI_C bool isOverlapping(::RectangleArea const& rect) const;
+
+    MCAPI_C ::RectangleArea translate(float tx, float ty) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(float x0, float y0, float x1, float y1, bool checkForValidity);
     // NOLINTEND
 };

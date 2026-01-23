@@ -39,7 +39,9 @@ public:
         ::cg::TextureSetLayerType textureType
     );
 
-    MCAPI_C ::mce::ClientTexture const& getClientTexture() const;
+    MCFOLD_C ::mce::ClientTexture const& getClientTexture() const;
+
+    MCFOLD_C ::mce::ClientTexture const& operator*() const;
 
     MCAPI_C ::mce::TexturePtr& operator=(::mce::TexturePtr&& rhs);
 

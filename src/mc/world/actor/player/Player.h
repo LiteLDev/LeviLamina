@@ -14,7 +14,6 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
@@ -72,7 +71,9 @@ class GetCollisionShapeInterface;
 class HudContainerManagerModel;
 class IConstBlockSource;
 class IContainerManager;
+class ILevel;
 class IMinecraftEventing;
+class ISparseContainerSetListener;
 class InventoryTransaction;
 class Item;
 class ItemDescriptor;
@@ -81,7 +82,6 @@ class ItemStackBase;
 class ItemStackNetManagerBase;
 class LayeredAbilities;
 class LegacyTelemetryEventPacket;
-class Level;
 class NetworkChunkPublisher;
 class NetworkIdentifier;
 class Packet;
@@ -92,7 +92,7 @@ class PlayerInventory;
 class PlayerListener;
 class PlayerRespawnRandomizer;
 class ResolvedTextObject;
-class SerializedSkin;
+class SerializedSkinRef;
 class ShieldItem;
 class SubChunkPos;
 class TextObjectRoot;
@@ -119,9 +119,11 @@ class Player : public ::Mob {
 public:
     // Player inner types declare
     // clang-format off
+    struct AttackParameters;
     struct CachedSpawnData;
     struct FixedSpawnPositionData;
     struct FixedSpawnPositionData_DEPRECATED;
+    struct ItemCooldown;
     struct PlayerSpawnPoint;
     // clang-format on
 
@@ -143,6 +145,24 @@ public:
         CheckLoadedChunk                  = 6,
         ChooseSpawnPosition               = 7,
         SpawnComplete                     = 8,
+    };
+
+    struct AttackParameters {
+    public:
+        // AttackParameters inner types define
+        enum class Sound : int {
+            None          = 0,
+            Predictive    = 1,
+            NonPredictive = 2,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::Player::AttackParameters::Sound> mSound;
+        ::ll::TypedStorage<1, 1, bool>                              mTriggerCooldown;
+        ::ll::TypedStorage<1, 1, bool>                              mCanCrit;
+        // NOLINTEND
     };
 
     struct CachedSpawnData {
@@ -178,6 +198,15 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mPosition;
         ::ll::TypedStorage<1, 1, bool>    mIsAboveLeaves;
+        // NOLINTEND
+    };
+
+    struct ItemCooldown {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int> mTicksLeft;
+        ::ll::TypedStorage<4, 4, int> mTotalTicks;
         // NOLINTEND
     };
 
@@ -274,7 +303,7 @@ public:
     ::ll::TypedStorage<8, 48, ::InventoryTransactionManager>                 mTransactionManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameMode>>                  mGameMode;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerRespawnRandomizer>>   mSpawnRandomizer;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SerializedSkin>>            mSkin;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SerializedSkinRef>>         mSkin;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerBase>>   mItemStackNetManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>       mUIAnimationComponent;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>       mMapAnimationComponent;
@@ -301,23 +330,23 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mMapIndex;
     ::ll::TypedStorage<4, 4, float>                                          mElytraVolume;
     ::ll::TypedStorage<8, 8, uint64>                                         mElytraLoop;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, int>>     mItemCooldowns;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mVanillaItemCooldowns;
-    ::ll::TypedStorage<8, 8, int64>                                                 mStartedBlockingTimeStamp;
-    ::ll::TypedStorage<8, 8, int64>                                                 mBlockedUsingShieldTimeStamp;
-    ::ll::TypedStorage<8, 8, int64>                                                 mBlockedUsingDamagedShieldTimeStamp;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mLastEmotePlayed;
-    ::ll::TypedStorage<8, 8, int64>                                                 mEmoteEasterEggEndTime;
-    ::ll::TypedStorage<4, 4, uint>                                                  mEmoteMessageCount;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mDeviceId;
-    ::ll::TypedStorage<1, 1, bool>                                                  mFlagClientForBAIReset;
-    ::ll::TypedStorage<1, 1, bool>                                                  mSendInventoryOptionsToClient;
-    ::ll::TypedStorage<1, 1, bool>                                                  mIsHostingPlayer;
-    ::ll::TypedStorage<1, 1, bool>                                                  mPrevBlockedUsingShield;
-    ::ll::TypedStorage<1, 1, bool>                                                  mPrevBlockedUsingDamagedShield;
-    ::ll::TypedStorage<1, 1, bool>                                                  mUsedPotion;
-    ::ll::TypedStorage<8, 8, ::PlayerDestroyProgressCacheComponent&>                mDestroyProgressCache;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::Player::ItemCooldown>> mItemCooldowns;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>>         mVanillaItemCooldowns;
+    ::ll::TypedStorage<8, 8, int64>                                                         mStartedBlockingTimeStamp;
+    ::ll::TypedStorage<8, 8, int64>                                  mBlockedUsingShieldTimeStamp;
+    ::ll::TypedStorage<8, 8, int64>                                  mBlockedUsingDamagedShieldTimeStamp;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mLastEmotePlayed;
+    ::ll::TypedStorage<8, 8, int64>                                  mEmoteEasterEggEndTime;
+    ::ll::TypedStorage<4, 4, uint>                                   mEmoteMessageCount;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mDeviceId;
+    ::ll::TypedStorage<1, 1, bool>                                   mFlagClientForBAIReset;
+    ::ll::TypedStorage<1, 1, bool>                                   mSendInventoryOptionsToClient;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsHostingPlayer;
+    ::ll::TypedStorage<1, 1, bool>                                   mPrevBlockedUsingShield;
+    ::ll::TypedStorage<1, 1, bool>                                   mPrevBlockedUsingDamagedShield;
+    ::ll::TypedStorage<1, 1, bool>                                   mUsedPotion;
+    ::ll::TypedStorage<8, 8, ::PlayerDestroyProgressCacheComponent&> mDestroyProgressCache;
     // NOLINTEND
 
 public:
@@ -420,7 +449,7 @@ public:
 
     virtual ::CommandPermissionLevel getCommandPermissionLevel() const /*override*/;
 
-    virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     virtual ::ItemStack const& getCarriedItem() const /*override*/;
 
@@ -436,7 +465,7 @@ public:
 
     virtual void openChalkboard(::ChalkboardBlockActor&, bool);
 
-    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData>);
 
     virtual void openInventory();
 
@@ -495,7 +524,7 @@ public:
 
     virtual bool isSilentObserver() const /*override*/;
 
-    virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
+    virtual void useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
 
     virtual bool isLoading() const;
 
@@ -509,7 +538,7 @@ public:
 
     virtual void initHUDContainerManager();
 
-    virtual void _emitCriticalHitParticles(::Actor& actor);
+    virtual void emitCriticalHitParticles(::Actor const& target, int particleCount);
 
     virtual bool isImmobile() const /*override*/;
 
@@ -617,11 +646,13 @@ public:
 
     virtual void setRemotePlayerTicked(bool);
 
+    virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener();
+
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
 
@@ -652,7 +683,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Player(
-        ::Level&                          level,
+        ::ILevel&                         level,
         ::PacketSender&                   packetSender,
         ::GameType                        playerGameType,
         bool                              isHostingPlayer,
@@ -669,8 +700,6 @@ public:
 
     MCAPI void _addLevels(int levels);
 
-    MCAPI bool _attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause, bool doPredictiveSound);
-
     MCAPI bool _blockUsingShield(::ActorDamageSource const& source, float damage);
 
     MCAPI bool _checkAndFixSpawnPosition(
@@ -680,6 +709,8 @@ public:
         bool                                           searchUp,
         bool                                           positionFromSave
     );
+
+    MCAPI_C void _checkMovementShouldStopEmoting();
 
     MCAPI void _chooseSpawnArea();
 
@@ -708,6 +739,8 @@ public:
 
     MCAPI void _registerPlayerAttributes();
 
+    MCAPI void _resetClientAnimations();
+
     MCAPI void _saveInventoryOptions(::CompoundTag& tag) const;
 
     MCAPI void _sendShieldUpdatePacket(
@@ -720,8 +753,6 @@ public:
 
     MCAPI void _setPlayerGameType(::GameType gameType);
 
-    MCAPI bool _shouldCrit(::Actor const& target) const;
-
     MCAPI void _updateInteraction();
 
     MCAPI bool _validateSpawnPositionAvailability(
@@ -729,6 +760,12 @@ public:
         ::BlockSource*      blockSourceChunkCheck,
         ::Vec3 const* const AABBoffset
     ) const;
+
+    MCAPI bool attack(
+        ::Actor&                                       actor,
+        ::SharedTypes::Legacy::ActorDamageCause const& cause,
+        ::Player::AttackParameters const&              parameters
+    );
 
     MCAPI bool canBeSeenOnMap() const;
 
@@ -754,8 +791,6 @@ public:
 
     MCAPI void completeUsingItem();
 
-    MCAPI void dropCursorSelectedItemOnDeath();
-
     MCAPI void eat(::ItemStack const& instance);
 
     MCAPI void eat(int hungerValue, float saturationModifier);
@@ -770,6 +805,10 @@ public:
 
     MCAPI ::Agent* getAgent() const;
 
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getAttackHitSound() const;
+
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getAttackMissSound() const;
+
     MCAPI ::ItemStack const& getCurrentActiveShield() const;
 
     MCAPI float getDestroyProgress(::Block const& block);
@@ -782,9 +821,9 @@ public:
 
     MCAPI int getItemCooldownLeft(::HashedString const& category) const;
 
-    MCAPI ::std::string getItemInteractText(::Item const& item) const;
+    MCAPI_C float getItemCooldownProgress(::HashedString const& category) const;
 
-    MCAPI float getLevelProgress() const;
+    MCAPI ::std::string getItemInteractText(::Item const& item) const;
 
     MCAPI float getLuck();
 
@@ -793,8 +832,6 @@ public:
     MCAPI ::AABB getPickupArea() const;
 
     MCAPI ::GameType getPlayerGameType() const;
-
-    MCAPI int getPlayerLevel() const;
 
     MCFOLD ::ItemStack const& getSelectedItem() const;
 
@@ -827,8 +864,6 @@ public:
         bool               forceBalanced
     );
 
-    MCAPI bool is2DPositionRelevant(::DimensionType dimension, ::BlockPos const& position);
-
     MCAPI_C bool isEmoting() const;
 
     MCAPI bool isFlying() const;
@@ -837,7 +872,7 @@ public:
 
     MCAPI bool isHiddenFrom(::Mob& target) const;
 
-    MCAPI bool isHungry() const;
+    MCAPI bool isHurt();
 
     MCAPI bool isInRaid() const;
 
@@ -876,8 +911,6 @@ public:
 
     MCAPI void setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> manager);
 
-    MCAPI_C void setCursorSelectedItemGroup(::ItemGroup const& itemGroup);
-
     MCAPI void setHasDied(bool hasDied);
 
     MCAPI void setLastDeathDimension(::DimensionType dimension);
@@ -887,6 +920,8 @@ public:
     MCAPI_C void setLastHurtBy(::ActorType lastHurtBy);
 
     MCAPI void setName(::std::string const& newName);
+
+    MCAPI void setPlatformOnlineId(::std::string const& platformOnlineId);
 
     MCAPI void setPlayerUIItem(::PlayerUISlot slot, ::ItemStack const& item, bool forceBalance);
 
@@ -927,7 +962,7 @@ public:
 
     MCAPI void updateInventoryTransactions();
 
-    MCAPI void updateSkin(::SerializedSkin const& skin, int clientSubID);
+    MCAPI void updateSkin(::SerializedSkinRef const& skin, int clientSubID);
 
     MCAPI void updateTrackedBosses();
 
@@ -982,8 +1017,6 @@ public:
 
     MCAPI static ::Player* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
-    MCAPI static ::Player* tryGetFromEntity(::StackRefResult<::EntityContext> entity, bool includeRemoved);
-
     MCAPI static void
     updatePlayerGameTypeEntityData(::EntityContext& entity, ::GameType gameType, ::GameType defaultGameType);
     // NOLINTEND
@@ -1022,7 +1055,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Level&                          level,
+        ::ILevel&                         level,
         ::PacketSender&                   packetSender,
         ::GameType                        playerGameType,
         bool                              isHostingPlayer,
@@ -1131,6 +1164,10 @@ public:
 
     MCAPI bool $add(::ItemStack& item);
 
+    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
+
+    MCAPI bool $attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
     MCFOLD ::ItemStack const& $getCarriedItem() const;
 
     MCAPI void $setCarriedItem(::ItemStack const& item);
@@ -1145,7 +1182,7 @@ public:
 
     MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
 
-    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData>);
 
     MCFOLD void $openInventory();
 
@@ -1204,7 +1241,7 @@ public:
 
     MCAPI bool $isSilentObserver() const;
 
-    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCFOLD bool $isLoading() const;
 
@@ -1214,13 +1251,11 @@ public:
 
     MCAPI float $getSpeed() const;
 
-#ifdef LL_PLAT_S
     MCAPI void $setPlayerGameType(::GameType gameType);
-#endif
 
     MCAPI void $initHUDContainerManager();
 
-    MCAPI void $_emitCriticalHitParticles(::Actor& actor);
+    MCAPI void $emitCriticalHitParticles(::Actor const& target, int particleCount);
 
     MCAPI bool $isImmobile() const;
 
@@ -1233,6 +1268,10 @@ public:
     MCAPI void $addExperience(int xp);
 
     MCAPI void $addLevels(int levels);
+
+#ifdef LL_PLAT_S
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+#endif
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
@@ -1303,21 +1342,25 @@ public:
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-#ifdef LL_PLAT_S
     MCFOLD void $setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
-#endif
 
     MCFOLD void $setRemotePlayerTicked(bool);
+
+    MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
 
     MCAPI bool $_shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
+
+#ifdef LL_PLAT_S
+    MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
+#endif
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
@@ -1330,10 +1373,6 @@ public:
     MCFOLD void $_serverInitItemStackIds();
 
     MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
-
-#ifdef LL_PLAT_C
-    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
-#endif
 
 
     // NOLINTEND

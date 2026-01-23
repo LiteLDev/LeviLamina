@@ -58,7 +58,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~Packet();
+        virtual ~Packet() = default;
 
         virtual int AddRef();
 
@@ -75,12 +75,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -153,18 +147,6 @@ public:
         ProtectedPacket& operator=(ProtectedPacket const&);
         ProtectedPacket(ProtectedPacket const&);
         ProtectedPacket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ProtectedPacket();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class ReceivedFecPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
@@ -184,18 +166,6 @@ public:
         ReceivedFecPacket& operator=(ReceivedFecPacket const&);
         ReceivedFecPacket(ReceivedFecPacket const&);
         ReceivedFecPacket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~ReceivedFecPacket();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class ReceivedPacket : public ::webrtc::ForwardErrorCorrection::SortablePacket {
@@ -263,8 +233,6 @@ public:
         ::std::list<::webrtc::ForwardErrorCorrection::Packet*>*                         fec_packets
     );
 
-    MCNAPI void FinalizeFecHeaders(uint64 num_fec_packets, uint media_ssrc, ushort seq_num_base);
-
     MCNAPI ForwardErrorCorrection(
         ::std::unique_ptr<::webrtc::FecHeaderReader> fec_header_reader,
         ::std::unique_ptr<::webrtc::FecHeaderWriter> fec_header_writer,
@@ -296,10 +264,6 @@ public:
     MCNAPI static ::std::unique_ptr<::webrtc::ForwardErrorCorrection> CreateUlpfec(uint ssrc);
 
     MCNAPI static int NumFecPackets(int num_media_packets, int protection_factor);
-
-    MCNAPI static ushort ParseSequenceNumber(uchar const* packet);
-
-    MCNAPI static uint ParseSsrc(uchar const* packet);
 
     MCNAPI static void
     XorHeaders(::webrtc::ForwardErrorCorrection::Packet const& src, ::webrtc::ForwardErrorCorrection::Packet* dst);

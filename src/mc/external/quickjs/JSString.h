@@ -13,9 +13,9 @@ public:
     uchar                      mUnk85b39d : 2;
     ::ll::UntypedStorage<4, 4> mUnkfbf9e4;
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<2, 2> mUnk7276d8;
+    ::ll::UntypedStorage<2, 2> mUnkddded3;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<2, 2> mUnk129d47;
+    ::ll::UntypedStorage<2, 2> mUnk279b0e;
 #endif
     // NOLINTEND
 };

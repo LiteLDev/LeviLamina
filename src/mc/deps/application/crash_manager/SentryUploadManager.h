@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/platform/Copyable.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -25,7 +24,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const = 0;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void>>
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
 
     virtual ::std::string const& getMinidumpUploadUri() const = 0;

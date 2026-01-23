@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class Block;
+class BlockSource;
 class ItemDescriptor;
 class Mob;
 // clang-format on
@@ -95,7 +95,7 @@ public:
 
     MCAPI bool _findTargetBlock();
 
-    MCAPI bool _isValidTarget(::Block const& candidateBlock) const;
+    MCAPI bool _isValidTarget(::BlockSource& region, ::BlockPos& pos) const;
 
     MCAPI void _moveToBlock();
     // NOLINTEND

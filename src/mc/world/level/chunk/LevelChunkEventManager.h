@@ -41,10 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelChunkEventManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LevelChunkEventManager() /*override*/ = default;
@@ -56,20 +52,6 @@ public:
     getOnChunkReloadedConnector() /*override*/;
 
     virtual ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& getOnChunkDiscardedConnector() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LevelChunkEventManager(
-        ::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy);
     // NOLINTEND
 
 public:

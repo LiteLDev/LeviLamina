@@ -14,8 +14,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&& sack);
-
-    MCNAPI static bool Validate(::dcsctp::SackChunk const& sack);
     // NOLINTEND
 };
 

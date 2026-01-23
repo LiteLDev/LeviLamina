@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/schema/BasicSchema.h"
 #include "mc/deps/cereal/schema/DefaultCompositeSchema.h"
 
 // auto generated forward declare list
@@ -11,6 +10,7 @@
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
+namespace cereal::internal { struct DescriptionConfig; }
 namespace cereal::internal { struct LoadState; }
 namespace cereal::internal { struct SaveState; }
 // clang-format on
@@ -21,17 +21,17 @@ class ComponentStorageCompositeSchema : public ::cereal::internal::DefaultCompos
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual void doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const /*override*/;
+
     virtual void doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
-    ) const /*override*/;
-
-    virtual void doSave(
-        ::cereal::SchemaWriter&              writer,
-        ::entt::meta_any const&              any,
-        ::cereal::internal::SaveState const& state
     ) const /*override*/;
 
     virtual ~ComponentStorageCompositeSchema() /*override*/ = default;
@@ -41,9 +41,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(
-        ::entt::meta_ctx const&                          ctx,
-        ::entt::meta_type const&                         type,
-        ::cereal::internal::BasicSchema::DescriptionMode mode
+        ::entt::meta_ctx const&               ctx,
+        ::entt::meta_type const&              type,
+        ::cereal::internal::DescriptionConfig config
     ) const;
     // NOLINTEND
 
@@ -57,17 +57,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
+
     MCNAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
-    ) const;
-
-    MCNAPI void $doSave(
-        ::cereal::SchemaWriter&              writer,
-        ::entt::meta_any const&              any,
-        ::cereal::internal::SaveState const& state
     ) const;
 
 

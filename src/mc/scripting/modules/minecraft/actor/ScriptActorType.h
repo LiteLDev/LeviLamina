@@ -59,8 +59,6 @@ public:
     );
 
     MCAPI ::std::string getId() const;
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
     // NOLINTEND
 
 public:

@@ -4,9 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/IceConnectionState.h"
-#include "mc/external/cricket/IceGatheringState.h"
 #include "mc/external/cricket/MediaType.h"
-#include "mc/external/rtc/SSLHandshakeError.h"
 #include "mc/external/rtc/SSLRole.h"
 #include "mc/external/webrtc/AudioDeviceModule.h"
 #include "mc/external/webrtc/Call.h"
@@ -15,7 +13,6 @@
 #include "mc/external/webrtc/PeerConnectionFactoryInterface.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/PeerConnectionInternal.h"
-#include "mc/external/webrtc/PortPrunePolicy.h"
 #include "mc/external/webrtc/RTCErrorOr.h"
 #include "mc/external/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/external/webrtc/UsageEvent.h"
@@ -28,11 +25,8 @@ namespace cricket { class CandidateStats; }
 namespace cricket { class ContentGroup; }
 namespace cricket { class PortAllocator; }
 namespace cricket { class SessionDescription; }
-namespace cricket { struct CandidatePairChangeEvent; }
-namespace cricket { struct IceCandidateErrorEvent; }
 namespace cricket { struct RelayServerConfig; }
 namespace cricket { struct TransportStats; }
-namespace rtc { class CopyOnWriteBuffer; }
 namespace rtc { class RTCCertificate; }
 namespace rtc { class SSLCertChain; }
 namespace rtc { class SocketAddress; }
@@ -58,7 +52,6 @@ namespace webrtc { class RTCError; }
 namespace webrtc { class RTCStatsCollectorCallback; }
 namespace webrtc { class Resource; }
 namespace webrtc { class RtcEventLogOutput; }
-namespace webrtc { class RtpPacketReceived; }
 namespace webrtc { class RtpReceiverInterface; }
 namespace webrtc { class RtpSenderInterface; }
 namespace webrtc { class RtpTransceiver; }
@@ -72,7 +65,6 @@ namespace webrtc { class SetRemoteDescriptionObserverInterface; }
 namespace webrtc { class SetSessionDescriptionObserver; }
 namespace webrtc { class StatsObserver; }
 namespace webrtc { class StreamCollectionInterface; }
-namespace webrtc { class TurnCustomizer; }
 namespace webrtc { struct BandwidthEstimationSettings; }
 namespace webrtc { struct BitrateSettings; }
 namespace webrtc { struct CryptoOptions; }
@@ -459,12 +451,8 @@ public:
         ::std::vector<::webrtc::RtpEncodingParameters> const*        init_send_encodings
     );
 
-    MCNAPI bool ConfiguredForMedia() const;
-
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
     FindTransceiverBySender(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface> sender);
-
-    MCNAPI bool GetLocalCandidateMediaIndex(::std::string const& content_name, int* sdp_mline_index);
 
     MCNAPI ::webrtc::RTCError Initialize(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
@@ -478,47 +466,19 @@ public:
         ::webrtc::PeerConnectionInterface::RTCConfiguration const&                    configuration
     );
 
-    MCNAPI ::std::function<void(::rtc::CopyOnWriteBuffer const&, int64)> InitializeRtcpCallback();
-
     MCNAPI ::webrtc::JsepTransportController* InitializeTransportController_n(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
         ::webrtc::PeerConnectionDependencies const&                dependencies
     );
 
-    MCNAPI ::std::function<void(::webrtc::RtpPacketReceived const&)> InitializeUnDemuxablePacketHandler();
-
-    MCNAPI void OnIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface> candidate);
-
-    MCNAPI void OnIceCandidateError(
-        ::std::string const& address,
-        int                  port,
-        ::std::string const& url,
-        int                  error_code,
-        ::std::string const& error_text
-    );
-
-    MCNAPI void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const& candidates);
-
     MCNAPI void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state);
-
-    MCNAPI void OnSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
-
-    MCNAPI void OnTransportControllerCandidateChanged(::cricket::CandidatePairChangeEvent const& event);
-
-    MCNAPI void OnTransportControllerCandidateError(::cricket::IceCandidateErrorEvent const& event);
 
     MCNAPI void OnTransportControllerCandidatesGathered(
         ::std::string const&                       transport_name,
         ::std::vector<::cricket::Candidate> const& candidates
     );
 
-    MCNAPI void OnTransportControllerCandidatesRemoved(::std::vector<::cricket::Candidate> const& candidates);
-
     MCNAPI void OnTransportControllerConnectionState(::cricket::IceConnectionState state);
-
-    MCNAPI void OnTransportControllerDtlsHandshakeError(::rtc::SSLHandshakeError error);
-
-    MCNAPI void OnTransportControllerGatheringState(::cricket::IceGatheringState state);
 
     MCNAPI PeerConnection(
         ::webrtc::Environment const&                             env,
@@ -530,42 +490,16 @@ public:
         bool                                                     dtls_enabled
     );
 
-    MCNAPI bool ReconfigurePortAllocator_n(
-        ::std::set<::rtc::SocketAddress> const&                                       stun_servers,
-        ::std::vector<::cricket::RelayServerConfig> const&                            turn_servers,
-        ::std::vector<::std::pair<::rtc::SocketAddress, ::rtc::SocketAddress>> const& mapped_ports,
-        ::webrtc::PeerConnectionInterface::IceTransportsType                          type,
-        int                                                                           candidate_pool_size,
-        ::webrtc::PortPrunePolicy                                                     turn_port_prune_policy,
-        ::webrtc::TurnCustomizer*                                                     turn_customizer,
-        ::std::optional<int>                                                          stun_candidate_keepalive_interval,
-        bool                                                                          have_local_description
-    );
-
     MCNAPI void ReportFirstConnectUsageMetrics();
-
-    MCNAPI void ReportIceCandidateCollected(::cricket::Candidate const& candidate);
-
-    MCNAPI void ReportRemoteIceCandidateAdded(::cricket::Candidate const& candidate);
 
     MCNAPI void ReportTransportStats(
         ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>>
             transceivers
     );
 
-    MCNAPI void ReportUsagePattern() const;
-
-    MCNAPI void SetConnectionState(::webrtc::PeerConnectionInterface::PeerConnectionState new_state);
-
     MCNAPI void SetSctpTransportName(::std::string sctp_transport_name);
 
-    MCNAPI void SetStandardizedIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
-
     MCNAPI ::std::optional<::std::string> SetupDataChannelTransport_n(::std::string_view mid);
-
-    MCNAPI bool StartRtcEventLog_w(::std::unique_ptr<::webrtc::RtcEventLogOutput> output, int64 output_period_ms);
-
-    MCNAPI void StopRtcEventLog_w();
 
     MCNAPI void TeardownDataChannelTransport_n(::webrtc::RTCError error);
     // NOLINTEND
@@ -581,8 +515,6 @@ public:
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
         ::webrtc::PeerConnectionDependencies                       dependencies
     );
-
-    MCNAPI static void ReportBestConnectionState(::cricket::TransportStats const& stats);
 
     MCNAPI static void ReportNegotiatedCiphers(
         bool                                    dtls_enabled,

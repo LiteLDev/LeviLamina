@@ -11,7 +11,7 @@
 // clang-format off
 class AppPlatform;
 namespace Core::WriteThrottledOS { class OSWriteThrottleTracker; }
-class SceneFactory;
+struct SceneFactory;
 // clang-format on
 
 class ThrottledFileWriteManager : public ::Bedrock::EnableNonOwnerReferences {

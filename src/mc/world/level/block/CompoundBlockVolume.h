@@ -12,6 +12,7 @@
 // clang-format off
 class CompoundBlockVolumeItem;
 class CompoundBlockVolumeIterator;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
@@ -43,8 +44,6 @@ public:
 
     MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
-    MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
-
     MCAPI bool isInside(::BlockPos const& pos) const;
 
     MCAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
@@ -53,6 +52,12 @@ public:
 
     MCAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

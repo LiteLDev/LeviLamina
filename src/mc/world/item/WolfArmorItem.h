@@ -39,13 +39,15 @@ public:
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
 
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+
+    virtual bool isBodyArmor() const /*override*/;
 
     virtual int getArmorValue() const /*override*/;
 
@@ -85,13 +87,15 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               item,
+        ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+    MCFOLD bool $isBodyArmor() const;
 
     MCFOLD int $getArmorValue() const;
 

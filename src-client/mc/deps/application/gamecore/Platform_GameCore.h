@@ -45,6 +45,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mProtocolActivationURI;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mAppLocation;
     ::ll::TypedStorage<1, 1, bool>                                                 mMouseInsideClient;
+    ::ll::TypedStorage<1, 1, bool>                                                 mInactiveScrollEnabled;
     // NOLINTEND
 
 public:
@@ -118,6 +119,8 @@ public:
     MCAPI ::std::optional<::std::string> extractProtocolActivationURI();
 
     MCAPI bool isMouseCaptured();
+
+    MCAPI void performCriticalChecksTerminateOnFailure();
 
     MCAPI void setWindow(::HWND__* hwnd);
     // NOLINTEND

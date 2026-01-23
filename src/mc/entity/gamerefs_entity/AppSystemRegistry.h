@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::entt::dispatcher& getDispatcher() const;
+    MCNAPI_C void registerEvents();
 
     MCNAPI_C ::TickingSystemRegistrationToken registerTickingSystem(::std::unique_ptr<::ITickingSystem> tickingSystem);
 

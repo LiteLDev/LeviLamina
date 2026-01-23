@@ -3,68 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/math/Color.h"
-#include "mc/deps/core/math/Vec3.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/ClientboundDebugRendererPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class ClientboundDebugRendererPacket : public ::Packet {
-public:
-    // ClientboundDebugRendererPacket inner types declare
-    // clang-format off
-    struct DebugMarkerData;
-    // clang-format on
-
-    // ClientboundDebugRendererPacket inner types define
-    enum class Type : uint {
-        Invalid            = 0,
-        ClearDebugMarkers  = 1,
-        AddDebugMarkerCube = 2,
-    };
-
-    struct DebugMarkerData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>              text;
-        ::ll::TypedStorage<4, 12, ::Vec3>                     position;
-        ::ll::TypedStorage<4, 16, ::mce::Color>               color;
-        ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds> duration;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI DebugMarkerData();
-
-        MCAPI ~DebugMarkerData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
-    };
-
+class ClientboundDebugRendererPacket : public ::ll::PayloadPacket<::ClientboundDebugRendererPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ClientboundDebugRendererPacket::Type>                              mType;
-    ::ll::TypedStorage<8, 80, ::std::optional<::ClientboundDebugRendererPacket::DebugMarkerData>> mDebugMarkerData;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -78,9 +34,35 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    virtual bool disallowBatching() const /*override*/;
+
+    virtual bool isValid() const /*override*/;
+
+    virtual uint64 getMaxSize() const /*override*/;
+
+    virtual ::std::string toString() const /*override*/;
+
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     virtual ~ClientboundDebugRendererPacket() /*override*/;
     // NOLINTEND
@@ -88,19 +70,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundDebugRendererPacket(
-        ::std::string               text,
-        ::mce::Color const&         color,
-        ::Vec3 const&               position,
-        ::std::chrono::milliseconds duration
-    );
+    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string text, ::mce::Color const& color, ::Vec3 const& position, ::std::chrono::milliseconds duration);
+    MCAPI void* $ctor(::ClientboundDebugRendererPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -116,9 +92,34 @@ public:
 
     MCAPI ::std::string $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCFOLD uint64 $getMaxSize() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

@@ -92,8 +92,7 @@ public:
         ::TintMethod         tintMethod,
         bool                 randomizeUVRotation,
         bool                 supportsTextureVariations,
-        bool                 alphaMaskedTint,
-        bool                 emissive
+        bool                 alphaMaskedTint
     );
 
     MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
@@ -134,8 +133,7 @@ public:
         ::TintMethod         tintMethod,
         bool                 randomizeUVRotation,
         bool                 supportsTextureVariations,
-        bool                 alphaMaskedTint,
-        bool                 emissive
+        bool                 alphaMaskedTint
     );
     // NOLINTEND
 

@@ -8,9 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class ColorSpace; }
-namespace webrtc { class RtpPacketInfos; }
-namespace webrtc { class Timestamp; }
 namespace webrtc { class VideoFrameBuffer; }
 // clang-format on
 
@@ -157,21 +154,6 @@ public:
     // NOLINTBEGIN
     MCNAPI VideoFrame(::webrtc::VideoFrame const&);
 
-    MCNAPI VideoFrame(
-        ushort                                                     id,
-        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& buffer,
-        int64                                                      timestamp_us,
-        ::std::optional<::webrtc::Timestamp> const&                capture_time_identifier,
-        ::std::optional<::webrtc::Timestamp> const&                reference_time,
-        uint                                                       timestamp_rtp,
-        int64                                                      ntp_time_ms,
-        ::webrtc::VideoRotation                                    rotation,
-        ::std::optional<::webrtc::ColorSpace> const&               color_space,
-        ::webrtc::VideoFrame::RenderParameters const&              render_parameters,
-        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&   update_rect,
-        ::webrtc::RtpPacketInfos                                   packet_infos
-    );
-
     MCNAPI int height() const;
 
     MCNAPI int width() const;
@@ -183,21 +165,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::VideoFrame const&);
-
-    MCNAPI void* $ctor(
-        ushort                                                     id,
-        ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& buffer,
-        int64                                                      timestamp_us,
-        ::std::optional<::webrtc::Timestamp> const&                capture_time_identifier,
-        ::std::optional<::webrtc::Timestamp> const&                reference_time,
-        uint                                                       timestamp_rtp,
-        int64                                                      ntp_time_ms,
-        ::webrtc::VideoRotation                                    rotation,
-        ::std::optional<::webrtc::ColorSpace> const&               color_space,
-        ::webrtc::VideoFrame::RenderParameters const&              render_parameters,
-        ::std::optional<::webrtc::VideoFrame::UpdateRect> const&   update_rect,
-        ::webrtc::RtpPacketInfos                                   packet_infos
-    );
     // NOLINTEND
 
 public:

@@ -72,8 +72,6 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
-
     MCAPI int _getColor(::Block const& block) const;
 
     MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;

@@ -16,6 +16,7 @@ public:
     struct InitLoadCallback;
     struct InitPending;
     struct InitShaderSDK;
+    struct InitTextureStreaming;
     struct LocalResources;
     struct RegisteredWindow;
     // clang-format on
@@ -36,6 +37,8 @@ public:
     struct InitPending {};
 
     struct InitShaderSDK {};
+
+    struct InitTextureStreaming {};
 
     struct LocalResources {};
 

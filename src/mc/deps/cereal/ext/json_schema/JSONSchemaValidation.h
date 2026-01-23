@@ -22,18 +22,19 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnk2f06e7;
     ::ll::UntypedStorage<8, 16> mUnkf06836;
     ::ll::UntypedStorage<8, 16> mUnk26a133;
+    ::ll::UntypedStorage<8, 40> mUnk40ba91;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    JSONSchemaValidation& operator=(JSONSchemaValidation const&);
     JSONSchemaValidation(JSONSchemaValidation const&);
     JSONSchemaValidation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::ext::internal::JSONSchemaValidation&
-    operator=(::cereal::ext::internal::JSONSchemaValidation const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation&&);
 
     MCNAPI ~JSONSchemaValidation();
     // NOLINTEND

@@ -10,6 +10,8 @@ namespace cereal { class StringConstraint; }
 namespace SharedTypes::Constraints {
 // functions
 // NOLINTBEGIN
+MCAPI ::cereal::StringConstraint cullingLayerConstraint();
+
 MCFOLD ::cereal::StringConstraint locIdStringConstraint();
 
 MCFOLD ::cereal::StringConstraint resourceIdentifierConstraint();

@@ -57,7 +57,8 @@ public:
         ::std::string const&      str,
         ::std::vector<int> const& widths,
         ::Vec3 const&             pos,
-        ::mce::Color const&       color
+        ::mce::Color const&       color,
+        float                     scale
     ) const;
     // NOLINTEND
 

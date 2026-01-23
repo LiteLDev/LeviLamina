@@ -66,7 +66,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual ~BeehiveBlockActor() /*override*/;
+    virtual ~BeehiveBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -89,12 +89,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI_C static uint const& MAX_OCCUPANCY();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

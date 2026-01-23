@@ -155,8 +155,6 @@ public:
 
     MCAPI void _jump() const;
 
-    MCAPI void _postJumpCleanup() const;
-
     MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
     // NOLINTEND
 

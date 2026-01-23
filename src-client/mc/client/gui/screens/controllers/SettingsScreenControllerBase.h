@@ -80,8 +80,6 @@ public:
 
     MCNAPI void _removeResourcePacks();
 
-    MCNAPI ::ui::ViewRequest _showLowDiskSpaceWarning();
-
     MCNAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCNAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);

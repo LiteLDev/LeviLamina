@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct DisplayNameItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
     DisplayNameItemComponent(DisplayNameItemComponent const&);
     DisplayNameItemComponent();
 
@@ -36,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S explicit DisplayNameItemComponent(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
-
     MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
+
+    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
     // NOLINTEND
 
 public:
@@ -51,12 +49,6 @@ public:
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_S void* $ctor(::SharedTypes::v1_20_50::DisplayNameItemComponent component);
     // NOLINTEND
 
 public:

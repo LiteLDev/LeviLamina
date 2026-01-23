@@ -27,7 +27,6 @@ public:
 
     public:
         // prevent constructor by default
-        StringRepresentation& operator=(StringRepresentation const&);
         StringRepresentation(StringRepresentation const&);
         StringRepresentation();
 
@@ -36,6 +35,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
         operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
+
+        MCFOLD ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
+        operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation const&);
 
         MCAPI ~StringRepresentation();
         // NOLINTEND
@@ -68,6 +70,8 @@ public:
     MCAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode const&);
 
     MCAPI ExpressionNode(::std::string string, short molangVersion);
+
+    MCAPI ::SharedTypes::Legacy::ExpressionNode& operator=(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCAPI ~ExpressionNode();
     // NOLINTEND

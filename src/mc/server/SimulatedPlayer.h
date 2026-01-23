@@ -14,6 +14,7 @@
 #include "mc/server/sim/LookDuration.h"
 #include "mc/server/sim/MovementIntent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/GameType.h"
@@ -55,7 +56,7 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>                                mDestroyingBlockPos;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
-    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>                                    mCooldownTick;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>                                    mInputCooldownTick;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                                   mMovementSettings;
     ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
@@ -125,7 +126,7 @@ public:
 
     MCFOLD ::BlockSource& _getRegion();
 
-    MCAPI bool _trySwing();
+    MCAPI bool _trySwing(::ActorSwingSource swingSource);
 
     MCAPI void _updateMovement();
 

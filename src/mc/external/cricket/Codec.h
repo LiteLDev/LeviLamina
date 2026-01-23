@@ -67,8 +67,6 @@ public:
 
     MCNAPI Codec(::cricket::Codec const&);
 
-    MCNAPI Codec(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate);
-
     MCNAPI Codec(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate, uint64 channels);
 
     MCNAPI bool GetParam(::std::string const& name, int* out) const;
@@ -104,8 +102,6 @@ public:
     MCNAPI void* $ctor(::cricket::Codec&&);
 
     MCNAPI void* $ctor(::cricket::Codec const&);
-
-    MCNAPI void* $ctor(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate);
 
     MCNAPI void* $ctor(::cricket::Codec::Type type, int id, ::std::string const& name, int clockrate, uint64 channels);
     // NOLINTEND

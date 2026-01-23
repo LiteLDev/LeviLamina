@@ -72,9 +72,18 @@ MCAPI_S ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityN
     ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
 );
 
+MCAPI_S void generateBiomeDocumentation(::Core::Path const& docsFolder, ::BiomeRegistry const& biomes);
+
+MCAPI_S void generateCameraPresetDocumentation(::Core::Path const& docsFolder, ::CameraPresets const& presets);
+
 MCAPI_S void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
 MCAPI_S void generateCooldownCategoriesDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
+
+MCAPI_S void generateEntitiesDocumentation(
+    ::Core::Path const&                                                              docsFolder,
+    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
+);
 
 MCAPI_S void generateItemsDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
 

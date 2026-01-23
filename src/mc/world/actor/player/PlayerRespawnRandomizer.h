@@ -30,6 +30,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
+
+    MCAPI ::Vec3 performPrimaryJump(::Vec3 const& spawnCenter);
     // NOLINTEND
 
 public:

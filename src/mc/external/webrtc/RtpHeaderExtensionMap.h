@@ -30,8 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void Deregister(::std::string_view uri);
 
-    MCNAPI ::webrtc::RTPExtensionType GetType(int id) const;
-
     MCNAPI bool Register(int id, ::webrtc::RTPExtensionType type, ::std::string_view uri);
 
     MCNAPI bool RegisterByUri(int id, ::std::string_view uri);

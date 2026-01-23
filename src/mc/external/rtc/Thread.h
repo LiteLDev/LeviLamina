@@ -184,8 +184,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void AllowInvokesToThread(::rtc::Thread* thread);
 
-    MCNAPI void ClearCurrentTaskQueue();
-
     MCNAPI void DisallowAllInvokes();
 
     MCNAPI void Dispatch(::absl::AnyInvocable<void() &&> task);
@@ -194,17 +192,9 @@ public:
 
     MCNAPI void DoInit();
 
-    MCNAPI void EnsureIsCurrentTaskQueue();
-
     MCNAPI ::absl::AnyInvocable<void() &&> Get(int cmsWait);
 
     MCNAPI bool IsCurrent() const;
-
-    MCNAPI bool IsOwned();
-
-    MCNAPI bool IsRunning();
-
-    MCNAPI void Join();
 
     MCNAPI bool ProcessMessages(int cmsLoop);
 
@@ -223,10 +213,6 @@ public:
     MCNAPI Thread(::rtc::SocketServer* ss, bool do_init);
 
     MCNAPI Thread(::std::unique_ptr<::rtc::SocketServer> ss, bool do_init);
-
-    MCNAPI void UnwrapCurrent();
-
-    MCNAPI void WakeUpSocketServer();
 
     MCNAPI bool WrapCurrentWithThreadManager(::rtc::ThreadManager* thread_manager, bool need_synchronize_access);
 

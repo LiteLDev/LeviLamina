@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockMapColorDescription : public ::BlockComponentDescription {
@@ -40,6 +41,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

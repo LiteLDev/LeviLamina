@@ -45,6 +45,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
     ::ll::UntypedStorage<8, 48> mUnkc95cac;
+    ::ll::UntypedStorage<8, 48> mUnk86a141;
     // NOLINTEND
 
 public:
@@ -57,6 +58,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent) /*override*/;
+
+    virtual ::EventResult onLevelTick(::Level&) /*override*/;
 
     virtual ~EditorManagerServer() /*override*/;
 
@@ -82,6 +85,9 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription
     registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription
+    registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)> func) /*override*/;
     // NOLINTEND
 
 public:
@@ -112,6 +118,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
+    MCNAPI ::EventResult $onLevelTick(::Level&);
+
     MCNAPI bool $isClientSide() const;
 
     MCNAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
@@ -133,6 +141,9 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription
     $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)> func);
 
 
     // NOLINTEND

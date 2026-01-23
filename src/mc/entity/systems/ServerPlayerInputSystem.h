@@ -8,9 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class InteractPacket;
+class EntityContext;
 class InventoryPacket;
-class PlayerAuthInputPacket;
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct ServerPlayerCurrentMovementComponent;
@@ -42,12 +41,10 @@ MCAPI void _tickServerPlayerInputSystem(
 
 MCAPI ::TickingSystemWithInfo create();
 
-MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
-
 MCAPI bool
 onInventoryTransactionPacket(::ServerPlayerMovementComponent& component, ::std::shared_ptr<::InventoryPacket> packet);
 
-MCAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
+MCAPI void transferInteractPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ServerPlayerInputSystem

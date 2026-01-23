@@ -14,8 +14,6 @@ namespace ActorSynchedData {
 // NOLINTBEGIN
 MCAPI void updateAlwaysShowNameTag(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
 
-MCAPI void updateBoundingBox(::EntityContext& entity, ::SynchedActorDataEntityWrapper const& entityData);
-
 MCAPI void updateCommandBlock(::Actor& actor, int dataId, ::std::string& filteredNameTag);
 
 MCAPI void updateContainer(::Actor& actor);

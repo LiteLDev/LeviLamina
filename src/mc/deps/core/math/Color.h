@@ -15,10 +15,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Color();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Color();
-
     MCAPI_C Color(::glm::vec3 const& color, float a_);
 
     MCAPI_C Color(::mce::Color const& color, float a_);
@@ -27,7 +29,7 @@ public:
 
     MCAPI_C bool isNan() const;
 
-    MCAPI bool operator!=(::mce::Color const& c) const;
+    MCAPI_C bool operator!=(::mce::Color const& c) const;
 
     MCAPI_C ::mce::Color& operator*=(float s);
 
@@ -41,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::mce::Color fromARGB(int col);
+    MCAPI static ::mce::Color fromARGB(int col);
 
     MCAPI_C static ::mce::Color fromHSB(float hue, float saturation, float brightness);
 
@@ -91,8 +93,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
 
     MCFOLD_C void* $ctor(::mce::Color const& color, float a_);

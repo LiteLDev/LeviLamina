@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
@@ -22,40 +22,28 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockTypeRegistry;
 class ChunkGenerationManager;
 class Command;
 class CommandManager;
 class CommandOrigin;
 class DynamicPropertiesManager;
-class EntityContext;
 class Experiments;
 class HashedString;
-class IEntityRegistryOwner;
-class IMinecraftEventing;
-class ItemRegistryRef;
-class LevelData;
 class LevelSettings;
-class LevelStorage;
-class LinkedAssetValidator;
 class MapDataManager;
-class MinecraftCommands;
 class MobEvents;
-class PacketSender;
+class NetworkIdentifier;
 class Player;
 class PlayerSleepManager;
 class Random;
 class ResourcePackManager;
-class Scheduler;
 class ServerMapDataManager;
 class ServerPlayerSleepManager;
-class SoundPlayerInterface;
-class StructureManager;
 class TagCacheManager;
 class VolumeEntityManagerServer;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
-struct NetworkPermissions;
+struct ServerLevelArguments;
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
 
@@ -160,6 +148,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
         /*override*/;
 
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) /*override*/;
+
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
@@ -178,26 +168,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        ::ResourcePackManager&                                       serverResourcePackManager,
-        ::ResourcePackManager&                                       clientResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::MinecraftCommands&                                         commands,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
-    );
+    MCAPI explicit ServerLevel(::ServerLevelArguments&& args);
 
     MCAPI void _initializeActorManager();
 
@@ -215,26 +186,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        ::ResourcePackManager&                                       serverResourcePackManager,
-        ::ResourcePackManager&                                       clientResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::MinecraftCommands&                                         commands,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
-    );
+    MCAPI void* $ctor(::ServerLevelArguments&& args);
     // NOLINTEND
 
 public:
@@ -274,6 +226,15 @@ public:
 
     MCAPI ::TradeTables* $getTradeTables();
 
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    );
+
+    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+
     MCAPI void $decrementTagCache(
         ::std::string const& tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
@@ -296,6 +257,8 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
+    MCAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+
     MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
 
     MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
@@ -309,17 +272,6 @@ public:
     MCAPI ::MapDataManager& $_getMapDataManager();
 
     MCAPI void $_initializeMapDataManager();
-
-#ifdef LL_PLAT_C
-    MCAPI void $runCommand(
-        ::HashedString const&     commandStr,
-        ::CommandOrigin&          origin,
-        ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion const commandVersion
-    );
-
-    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
-#endif
 
 
     // NOLINTEND

@@ -14,10 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptWeatherChangedBeforeEvent {
 public:
-    // ScriptWeatherChangedBeforeEvent inner types define
-    using WeatherType = ::ScriptModuleMinecraft::ScriptWeatherType;
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptWeatherType const> mPreviousWeatherType;

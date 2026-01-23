@@ -72,7 +72,7 @@ public:
         ::LevelData const&   levelData
     ) /*override*/;
 
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
 
     virtual void createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -121,7 +121,8 @@ public:
         ::std::vector<::LevelSummary>& dest,
         bool                           includeShallowSummaries,
         bool                           includePartiallyCopiedLevels,
-        bool                           includeBetaRetailLevels
+        bool                           includeBetaRetailLevels,
+        bool                           includeInvalidLevelDataLevels
     ) /*override*/;
 
     virtual bool hasCachedLevels(bool includeShallowSummaries) const /*override*/;
@@ -154,7 +155,7 @@ public:
 
     MCNAPI ::LevelCache* _createAndAddToCache(::std::string const& levelId, ::Core::Path const& directory);
 
-    MCNAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
+    MCNAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
 
     MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
 
@@ -200,7 +201,7 @@ public:
         ::LevelData const&   levelData
     );
 
-    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
 
     MCNAPI void $createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -248,7 +249,8 @@ public:
         ::std::vector<::LevelSummary>& dest,
         bool                           includeShallowSummaries,
         bool                           includePartiallyCopiedLevels,
-        bool                           includeBetaRetailLevels
+        bool                           includeBetaRetailLevels,
+        bool                           includeInvalidLevelDataLevels
     );
 
     MCNAPI bool $hasCachedLevels(bool includeShallowSummaries) const;

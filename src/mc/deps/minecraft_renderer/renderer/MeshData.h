@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core_graphics/enums/PrimitiveMode.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { struct MeshDataVertexFieldCounts; }
-// clang-format on
-
 namespace mce {
 
 class MeshData {
@@ -50,8 +45,6 @@ public:
     MCAPI_C ::mce::MeshData clone() const;
 
     MCAPI_C void freeMemory();
-
-    MCAPI_C ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
 
     MCAPI_C ::mce::MeshData& operator=(::mce::MeshData&&);
 

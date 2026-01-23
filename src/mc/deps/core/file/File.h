@@ -60,6 +60,8 @@ public:
 
     MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
+    MCNAPI void setLoggingEnabled(bool loggingEnabled);
+
     MCNAPI ::Core::Result setPosition(uint64 position);
 
     MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);

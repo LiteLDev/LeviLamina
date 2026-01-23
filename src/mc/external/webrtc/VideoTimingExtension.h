@@ -17,16 +17,6 @@ public:
 
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ushort time_delta_ms, uchar offset);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static uchar const& kNetwork2TimestampDeltaOffset();
-
-    MCNAPI static uchar const& kPacerExitDeltaOffset();
-
-    MCNAPI static uchar const& kPacketizationFinishDeltaOffset();
-    // NOLINTEND
 };
 
 } // namespace webrtc

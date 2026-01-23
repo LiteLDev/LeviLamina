@@ -79,9 +79,13 @@ public:
 
     MCAPI void addUnlockingInstruction(::UnlockedRecipesServerComponent::UnlockingInstruction instruction);
 
+    MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
+
     MCAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+
+    MCAPI ~UnlockedRecipesServerComponent();
     // NOLINTEND
 
 public:
@@ -98,5 +102,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UnlockedRecipesServerComponent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

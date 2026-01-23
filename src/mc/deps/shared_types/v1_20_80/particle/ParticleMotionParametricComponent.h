@@ -34,14 +34,17 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleMotionParametricComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleMotionParametricComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
-
     MCAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
     operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
     // NOLINTEND
@@ -56,12 +59,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
     // NOLINTEND
 
 public:

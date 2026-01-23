@@ -49,6 +49,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk4ee18c;
     ::ll::UntypedStorage<4, 8>   mUnkddec90;
     ::ll::UntypedStorage<8, 8>   mUnk90f5fb;
+    ::ll::UntypedStorage<8, 8>   mUnk37151f;
     ::ll::UntypedStorage<8, 24>  mUnk7c8d71;
     ::ll::UntypedStorage<8, 8>   mUnkb5cc8d;
     ::ll::UntypedStorage<8, 8>   mUnkcec6f6;
@@ -89,6 +90,8 @@ public:
     MCNAPI ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>
     _extractFrame(::ScreenContext& screenContext, bool renderGraphContainsPlayScreen);
 
+    MCNAPI void _tickLightTexture(::Dimension& dimension, float a);
+
     MCNAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
 
     MCNAPI void cleanupRenderGraph();
@@ -100,6 +103,8 @@ public:
     MCNAPI ::ScreenContext makeScreenContext(float a);
 
     MCNAPI void onSubClientRemoved(::IClientInstance const& client);
+
+    MCNAPI void recreateTickingTextureStage();
 
     MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 

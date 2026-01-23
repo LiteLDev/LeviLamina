@@ -35,8 +35,6 @@ public:
 
     MCNAPI ::rtc::SSLCertChain const& GetSSLCertificateChain() const;
 
-    MCNAPI explicit RTCCertificate(::rtc::SSLIdentity* identity);
-
     MCNAPI ~RTCCertificate();
     // NOLINTEND
 
@@ -44,12 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate> Create(::std::unique_ptr<::rtc::SSLIdentity> identity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::SSLIdentity* identity);
     // NOLINTEND
 
 public:

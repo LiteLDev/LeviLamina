@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/block/traits/block_trait/IGetPlacementBlockCallback.h"
 #include "mc/world/level/block/traits/block_trait/ITrait.h"
+#include "mc/world/level/block/traits/block_trait/PlacementCallbackOrder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +15,7 @@ class BlockPos;
 class BlockType;
 class CompoundTag;
 class Vec3;
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -35,6 +37,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool> mCardinalDirection;
         ::ll::TypedStorage<1, 1, bool> mFacingDirection;
+        ::ll::TypedStorage<1, 1, bool> mCornerAndCardinalDirection;
         // NOLINTEND
 
     public:
@@ -71,6 +74,8 @@ public:
             ::Vec3 const&
         ) const /*override*/;
 
+        virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
+
         virtual ~UpdateCardinalGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
@@ -84,6 +89,8 @@ public:
             uchar,
             ::Vec3 const&
         ) const;
+
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -113,6 +120,8 @@ public:
             ::Vec3 const&
         ) const /*override*/;
 
+        virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const /*override*/;
+
         virtual ~UpdateFacingGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
@@ -127,6 +136,8 @@ public:
             ::Vec3 const&
         ) const;
 
+        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+
 
         // NOLINTEND
 
@@ -140,16 +151,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementDirection::EnabledStates> mStates;
-    ::ll::TypedStorage<4, 4, float>                                           mRotationOffset;
+    ::ll::TypedStorage<1, 3, ::BlockTrait::PlacementDirection::EnabledStates>        mStates;
+    ::ll::TypedStorage<4, 4, float>                                                  mRotationOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mBlocksToCornerWith;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
 
-    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&) /*override*/;
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
 
@@ -163,21 +175,26 @@ public:
 
     MCAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
 
-    MCAPI static ::std::string const& getName();
+    MCAPI static void _addCornerConnection(
+        ::BlockType&                                                 blockType,
+        ::std::vector<::SharedTypes::Legacy::BlockDescriptor> const& blocksToCornerWith
+    );
+
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     MCAPI void $applyToBlockType(::BlockType& blockType) const;
 

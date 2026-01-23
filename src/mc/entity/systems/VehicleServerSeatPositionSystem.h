@@ -26,7 +26,35 @@ class VehicleServerSeatPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static float _getRidingHeight(
+        ::StrictEntityContext const&                                             context,
+        ::OffsetsComponent const&                                                offsetsComponent,
+        ::ActorDataFlagComponent const&                                          actorDataFlagComponent,
+        ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
+        ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
+    );
+
     MCNAPI static void _setSeatDescriptionToActorDataSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::PositionPassengerRequestComponent const,
+            ::OffsetsComponent const,
+            ::ActorDataFlagComponent,
+            ::ActorDataSeatOffsetComponent,
+            ::ActorDataDirtyFlagsComponent,
+            ::SynchedActorDataComponent> passengerView,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::VehicleComponent const,
+            ::ActorDataBoundingBoxComponent const,
+            ::RideableComponent const>                                           vehicleView,
+        ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
+        ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
+    );
+
+    MCNAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
+        ::StrictEntityContext const& entityContext,
         ::ViewT<
             ::StrictEntityContext,
             ::PassengerComponent const,

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 

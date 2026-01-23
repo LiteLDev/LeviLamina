@@ -186,6 +186,8 @@ public:
     MCAPI static void
     darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
+    MCAPI_C static ::MobEffect* getById(uint effectId);
+
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
     MCAPI static ::MobEffect::FactorCalculationData getDarknessEffectFactorCalculationData();

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class StructureDuplicatePayload
@@ -18,8 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    StructureDuplicatePayload& operator=(StructureDuplicatePayload const&);
-    StructureDuplicatePayload(StructureDuplicatePayload const&);
     StructureDuplicatePayload();
 
 public:
@@ -31,6 +35,30 @@ public:
     virtual ~StructureDuplicatePayload() /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI StructureDuplicatePayload(::Editor::Network::StructureDuplicatePayload const&);
+
+    MCNAPI_C StructureDuplicatePayload(::HashedString const& newId, ::HashedString const& fromId);
+
+    MCNAPI ::Editor::Network::StructureDuplicatePayload& operator=(::Editor::Network::StructureDuplicatePayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Network::StructureDuplicatePayload const&);
+
+    MCNAPI_C void* $ctor(::HashedString const& newId, ::HashedString const& fromId);
     // NOLINTEND
 
 public:

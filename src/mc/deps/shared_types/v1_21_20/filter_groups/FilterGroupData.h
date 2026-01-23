@@ -42,16 +42,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void fromFilterGroupVector(
-        ::SharedTypes::v1_21_20::FilterGroupData&                      instance,
-        ::std::vector<::SharedTypes::v1_21_20::FilterGroupData> const& filterGroups
-    );
-
-    MCAPI static void fromFilterTestData(
-        ::SharedTypes::v1_21_20::FilterGroupData&      instance,
-        ::SharedTypes::v1_21_20::FilterTestData const& filterTestData
-    );
     // NOLINTEND
 
 public:
@@ -65,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

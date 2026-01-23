@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~MediaStreamObserver() /*override*/;
+    virtual ~MediaStreamObserver() /*override*/ = default;
 
     virtual void OnChanged() /*override*/;
     // NOLINTEND
@@ -71,12 +71,6 @@ public:
         ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>
             video_track_removed_callback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

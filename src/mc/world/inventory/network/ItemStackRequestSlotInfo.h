@@ -18,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ItemStackRequestSlotInfo();
-
     MCNAPI ~ItemStackRequestSlotInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
     // NOLINTEND
 
 public:

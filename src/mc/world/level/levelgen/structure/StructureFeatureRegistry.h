@@ -48,5 +48,13 @@ public:
     MCAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
     MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+
+    MCAPI ~StructureFeatureRegistry();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

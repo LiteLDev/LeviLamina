@@ -16,7 +16,7 @@ struct DimensionArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::DerivedDimensionArguments> mDerived;
+    ::ll::TypedStorage<8, 80, ::DerivedDimensionArguments> mDerived;
     ::ll::TypedStorage<4, 4, ::DimensionType>              mDimId;
     ::ll::TypedStorage<2, 4, ::DimensionHeightRange>       mHeightRange;
     ::ll::TypedStorage<8, 32, ::std::string>               mName;

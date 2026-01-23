@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct DiggerBlockTypeInfo {
 public:
     // member variables
@@ -16,22 +21,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DiggerBlockTypeInfo& operator=(DiggerBlockTypeInfo const&);
+    DiggerBlockTypeInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiggerBlockTypeInfo();
-
     MCAPI DiggerBlockTypeInfo(::DiggerBlockTypeInfo const&);
 
     MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo&&);
+    // NOLINTEND
 
-    MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::DiggerBlockTypeInfo const&);
     // NOLINTEND
 };

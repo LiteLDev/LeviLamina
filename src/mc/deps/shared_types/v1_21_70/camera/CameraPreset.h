@@ -7,7 +7,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/util/Identifier.h"
 #include "mc/deps/shared_types/util/Reference.h"
-#include "mc/deps/shared_types/v1_21_50/camera/CameraPresetAimAssistDefinition.h"
+#include "mc/deps/shared_types/v1_21_50/camera/CameraAimAssistCommandPresetDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +48,8 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_21_70::CameraPreset::AudioListener>> mListener;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                                 mPlayerEffects;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAlignTargetAndCameraForward;
-    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraPresetAimAssistDefinition>> mAimAssist;
+    ::ll::TypedStorage<8, 72, ::std::optional<::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition>>
+        mAimAssist;
     // NOLINTEND
 
 public:
@@ -58,33 +59,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI CameraPreset(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
+    MCAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
 
-    MCAPI_S ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
 
-    MCFOLD_S void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+    MCFOLD void setEntityOffset(::std::optional<::std::array<float, 3>> opt);
 
-    MCAPI_S ~CameraPreset();
+    MCFOLD void setHorizontalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+
+    MCFOLD void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
+
+    MCFOLD void setViewOffset(::std::optional<::std::array<float, 2>> opt);
+
+    MCAPI ~CameraPreset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_70::CameraPreset const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_S void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class TaskResult;
 namespace Core { class PathView; }
 // clang-format on
 
@@ -25,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TaskResult _checkUserStoragePath(::Core::PathView storagePath) const;
-
     MCNAPI void queueCheckUserStorage(::Core::PathView storagePath);
     // NOLINTEND
 };

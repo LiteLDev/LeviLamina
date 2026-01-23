@@ -55,7 +55,13 @@ public:
 
     virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) /*override*/;
 
-    virtual ~LoopbackPacketSender() /*override*/ = default;
+    virtual ~LoopbackPacketSender() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class ScriptAsyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctio
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk5145ae;
+    ::ll::UntypedStorage<8, 72> mUnk5145ae;
     // NOLINTEND
 
 public:

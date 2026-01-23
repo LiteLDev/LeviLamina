@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ResourceMetadata();
 
-    MCNAPI_C ::ResourceMetadata& operator=(::ResourceMetadata const&);
+    MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
     MCNAPI ~ResourceMetadata();
     // NOLINTEND

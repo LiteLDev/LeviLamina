@@ -17,6 +17,12 @@ public:
     CurrentlyOwnedProperties& operator=(CurrentlyOwnedProperties const&);
     CurrentlyOwnedProperties(CurrentlyOwnedProperties const&);
     CurrentlyOwnedProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::QuickJS::CurrentlyOwnedProperties& operator=(::Scripting::QuickJS::CurrentlyOwnedProperties&&);
+    // NOLINTEND
 };
 
 } // namespace Scripting::QuickJS

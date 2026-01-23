@@ -11,6 +11,8 @@
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/platform/brstd/move_only_function.h"
+#include "mc/world/actor/player/SkinMemThresholds.h"
 #include "mc/world/level/LevelListener.h"
 #include "mc/world/level/dimension/DimensionDefinitionGroup.h"
 
@@ -22,14 +24,12 @@ class AddItemActorPacket;
 class AddPaintingPacket;
 class AddPlayerPacket;
 class AnimatePacket;
-class AppPlatform;
 class Block;
 class BlockActorDataPacket;
 class BlockEventPacket;
 class BlockPos;
 class ChangeDimensionPacket;
 class ClientCacheMissResponsePacket;
-class ClientNetworkSystem;
 class ContainerClosePacket;
 class ContainerOpenPacket;
 class ContainerRegistryCleanupPacket;
@@ -41,20 +41,12 @@ class EntityOverrides;
 class GameRulesChangedPacket;
 class HurtArmorPacket;
 class IBlockSource;
-class IClientInstance;
-class IGameConnectionListener;
-class IGameEventNotifier;
-class IGameServerStartup;
 class ILevel;
-class IMinecraftEventing;
-class IPackSourceFactory;
 class InventoryContentPacket;
 class InventorySlotPacket;
 class InventoryTransactionPacket;
 class ItemRegistryPacket;
 class LevelChunkPacket;
-class LevelStorage;
-class MinecraftCommands;
 class MobArmorEquipmentPacket;
 class MobEffectPacket;
 class MobEquipmentPacket;
@@ -65,14 +57,13 @@ class MovePlayerPacket;
 class MovementEffectPacket;
 class NetworkSettingsPacket;
 class NetworkStackLatencyPacket;
-class PacketSender;
 class Player;
 class PlayerHotbarPacket;
 class PlayerListPacket;
 class PlayerSkinPacket;
 class PlayerUpdateEntityOverridesPacket;
-class PrivateKeyManager;
 class RemoveActorPacket;
+class SerializedSkinRef;
 class ServerStatsPacket;
 class SetActorDataPacket;
 class SetActorLinkPacket;
@@ -84,7 +75,6 @@ class SetHealthPacket;
 class SetHudPacket;
 class SetSpawnPositionPacket;
 class SetTimePacket;
-class SoundPlayerInterface;
 class SpawnParticleEffectPacket;
 class StartGamePacket;
 class UpdateAbilitiesPacket;
@@ -92,13 +82,11 @@ class UpdateAdventureSettingsPacket;
 class UpdateBlockPacket;
 class UpdateBlockSyncedPacket;
 struct ActorBlockSyncMessage;
-struct IContentManager;
+struct ClientCreateLevelArguments;
 struct IPersonaNetworkHandlerDelegate;
+struct LegacyClientNetworkHandlerArguments;
+struct MultiPlayerLevel;
 struct NetworkChunkInserter;
-struct PackDownloadManager;
-struct PersonaService;
-struct VideoCaptureSessionManager;
-namespace ClientBlobCache { struct Cache; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -108,10 +96,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::DimensionDefinitionGroup>                             mDimensionDefinitionGroup;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorage>>                       mCacheStorage;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>>     mSoundPlayer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                   mMultiPlayerLevel;
-    ::ll::TypedStorage<8, 8, ::PacketSender&>                                         mPacketSender;
     ::ll::TypedStorage<4, 4, int>                                                     mPendingTime;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mServerIdentifier;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkChunkInserter>>               mChunkInsertQueue;
@@ -123,15 +108,19 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mNextChunkRequestDrainTime;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                mExistanceTracker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPersonaNetworkHandlerDelegate>>     mPersonaNetworkHandlerDelegate;
+    ::ll::TypedStorage<8, 24, ::SkinMemThresholds>                                    mSkinMemThresholds;
     ::ll::TypedStorage<1, 1, bool>                                                    mIsConnectedToApplicationLayer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx>> mCtx;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EntityOverrides>>                    mEntityOverrides;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<::std::unique_ptr<::MultiPlayerLevel>(::ClientCreateLevelArguments&&) const>>
+        mCreateLevel;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LegacyClientNetworkHandler& operator=(LegacyClientNetworkHandler const&);
-    LegacyClientNetworkHandler(LegacyClientNetworkHandler const&);
     LegacyClientNetworkHandler();
 
 public:
@@ -143,7 +132,8 @@ public:
 
     virtual void onConnect(::NetworkIdentifier const& hostId) /*override*/;
 
-    virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
+    virtual void
+    onUnableToConnect(::Connection::DisconnectFailReason discoReason, ::std::string const& message) /*override*/;
 
     virtual bool getIsConnectedToApplicationLayer() const /*override*/;
 
@@ -272,36 +262,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyClientNetworkHandler(
-        ::std::weak_ptr<::IGameConnectionListener>                   gameConnectionListener,
-        ::IGameServerStartup&                                        gameServerStartup,
-        ::IClientInstance&                                           client,
-        ::ClientNetworkSystem&                                       network,
-        ::PacketSender&                                              packetSender,
-        ::PrivateKeyManager&                                         clientKeys,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::PlayerAuthenticationType                                   authType,
-        ::LegacyMultiplayerToken&&                                   userToken,
-        ::RawGameServerToken&&                                       newToken,
-        ::MinecraftCommands&                                         commands,
-        ::std::shared_ptr<::ClientBlobCache::Cache>                  blobCache,
-        ::cereal::ReflectionCtx&                                     ctx,
-        ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>     videoCaptureSessionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaService> const&       personaService,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&          appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> const&   minecraftEventing,
-        int                                                          personaMemoryThreshold,
-        ::PackDownloadManager&                                       packDownloadManager,
-        ::IPackSourceFactory&                                        packSourceFactory,
-        ::IContentManager&                                           contentManager,
-        ::IGameEventNotifier&                                        gameEventNotifier
-    );
+    MCAPI explicit LegacyClientNetworkHandler(::LegacyClientNetworkHandlerArguments&& args);
 
     MCAPI void _drainCacheMissesQueueAndSendPacket();
 
     MCAPI ::std::string _getServerIdentifier() const;
 
     MCAPI void _removePlayer(::mce::UUID const& playerEntryId);
+
+    MCAPI bool _shouldKeepSkinBasedOnMemory(::mce::UUID const& playerId, ::SerializedSkinRef const& skin) const;
 
     MCAPI void onSubClientConnect();
     // NOLINTEND
@@ -322,30 +291,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::weak_ptr<::IGameConnectionListener>                   gameConnectionListener,
-        ::IGameServerStartup&                                        gameServerStartup,
-        ::IClientInstance&                                           client,
-        ::ClientNetworkSystem&                                       network,
-        ::PacketSender&                                              packetSender,
-        ::PrivateKeyManager&                                         clientKeys,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::PlayerAuthenticationType                                   authType,
-        ::LegacyMultiplayerToken&&                                   userToken,
-        ::RawGameServerToken&&                                       newToken,
-        ::MinecraftCommands&                                         commands,
-        ::std::shared_ptr<::ClientBlobCache::Cache>                  blobCache,
-        ::cereal::ReflectionCtx&                                     ctx,
-        ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>     videoCaptureSessionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::PersonaService> const&       personaService,
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform> const&          appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> const&   minecraftEventing,
-        int                                                          personaMemoryThreshold,
-        ::PackDownloadManager&                                       packDownloadManager,
-        ::IPackSourceFactory&                                        packSourceFactory,
-        ::IContentManager&                                           contentManager,
-        ::IGameEventNotifier&                                        gameEventNotifier
-    );
+    MCAPI void* $ctor(::LegacyClientNetworkHandlerArguments&& args);
     // NOLINTEND
 
 public:
@@ -360,6 +306,8 @@ public:
     MCAPI void $onPlayerReady(::Player& player);
 
     MCAPI void $onConnect(::NetworkIdentifier const& hostId);
+
+    MCAPI void $onUnableToConnect(::Connection::DisconnectFailReason discoReason, ::std::string const& message);
 
     MCAPI bool $getIsConnectedToApplicationLayer() const;
 

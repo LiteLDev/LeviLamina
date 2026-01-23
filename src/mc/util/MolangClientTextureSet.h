@@ -86,7 +86,7 @@ public:
 
     MCNAPI_C ::mce::ClientTexture const& getClientTexture() const;
 
-    MCNAPI_C ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
+    MCNAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
 
     MCNAPI_C ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
 

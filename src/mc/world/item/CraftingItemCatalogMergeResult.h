@@ -68,17 +68,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Group(::CraftingItemCatalogMergeResult::Group&&);
-
         MCAPI ::CraftingItemCatalogMergeResult::Group& operator=(::CraftingItemCatalogMergeResult::Group&&);
 
         MCAPI ~Group();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CraftingItemCatalogMergeResult::Group&&);
         // NOLINTEND
 
     public:
@@ -121,12 +113,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void insertAfterGroup(
-        ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
-        ::std::string_view                                   groupName,
-        ::CraftingItemCatalogMergeResult::Group              insertGroup
-    );
-
     MCAPI void insertAfterItemsGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   itemName,

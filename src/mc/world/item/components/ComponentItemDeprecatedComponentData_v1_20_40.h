@@ -38,8 +38,6 @@ public:
 
     MCAPI ComponentItemDeprecatedComponentData_v1_20_40(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
 
-    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_40& operator=(::ComponentItemDeprecatedComponentData_v1_20_40&&);
-
     MCAPI ::ComponentItemDeprecatedComponentData_v1_20_40&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_40 const&);
 

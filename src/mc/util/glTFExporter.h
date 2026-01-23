@@ -13,6 +13,7 @@ namespace glTF { struct Image; }
 namespace glTF { struct Material; }
 namespace glTF { struct Mesh; }
 namespace glTF { struct Node; }
+namespace glTF { struct Sampler; }
 namespace glTF { struct Scene; }
 namespace glTF { struct Texture; }
 // clang-format on
@@ -72,7 +73,11 @@ public:
 
     MCNAPI_C void _serializeBinaryData(::Json::Value& glTF);
 
+    MCNAPI_C void _serializeSampler(::Json::Value& root, ::glTF::Sampler const& sampler);
+
     MCNAPI_C int addAccessor(::glTF::Accessor& accessor);
+
+    MCNAPI_C uint64 addBinaryBuffer(::Core::Path const& filePath, uchar const* data, uint64 size);
 
     MCNAPI_C int addBuffer(::glTF::Buffer& buffer);
 
@@ -85,6 +90,8 @@ public:
     MCNAPI_C int addMesh(::glTF::Mesh& mesh);
 
     MCNAPI_C int addNode(::glTF::Node& node);
+
+    MCNAPI_C int addSampler(::glTF::Sampler& sampler);
 
     MCNAPI_C int addScene(::glTF::Scene& scene);
 

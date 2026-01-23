@@ -34,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C TextureSetDefinition();
+
     MCAPI_C ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
     _addLayer(::cg::TextureSetLayerType const& type, ::mce::Color const& color);
 
@@ -41,9 +43,6 @@ public:
     _addLayer(::cg::TextureSetLayerType const& type, ::ResourceLocationPair const& resourceLocationPair);
 
     MCAPI_C ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetImageContainer> _getImageContainer();
-
-    MCAPI_C ::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition>
-    _getLayerRef(::cg::TextureSetLayerType const& t);
 
     MCAPI_C void _removeLayerInfo(::cg::TextureSetLayerType const& type);
 
@@ -53,6 +52,12 @@ public:
     MCAPI_C uint64 getStorageSize(::cg::TextureSetLayerType t) const;
 
     MCAPI_C ::std::optional<::std::string> hasValidationError() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor();
     // NOLINTEND
 };
 

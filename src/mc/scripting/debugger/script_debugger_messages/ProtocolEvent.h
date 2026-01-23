@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    ProtocolEvent& operator=(ProtocolEvent const&);
     ProtocolEvent(ProtocolEvent const&);
     ProtocolEvent();
 
@@ -31,6 +30,8 @@ public:
     MCNAPI ProtocolEvent(::std::vector<::Scripting::ModuleDescriptor>&& pluginDescriptors, bool requirePasscode);
 
     MCNAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent&&);
+
+    MCNAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent const&);
 
     MCNAPI ~ProtocolEvent();
     // NOLINTEND

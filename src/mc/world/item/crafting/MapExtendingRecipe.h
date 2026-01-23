@@ -9,6 +9,7 @@
 // clang-format off
 class CraftingContainer;
 class CraftingContext;
+class HashedString;
 class ItemInstance;
 class RecipeIngredient;
 namespace mce { class UUID; }
@@ -20,10 +21,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MapExtendingRecipe();
 
 public:
     // virtual functions
@@ -48,9 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapExtendingRecipe(::std::string const& recipeId, ::mce::UUID const& id);
-
     MCAPI void _updateMapInstance(::ItemInstance& mapInstance, ::CraftingContext& craftingContext) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString _getTagForUUID(::mce::UUID const& uuid);
     // NOLINTEND
 
 public:
@@ -59,12 +60,6 @@ public:
     MCAPI static ::mce::UUID const& CartographyTableID();
 
     MCAPI static ::mce::UUID const& CraftingTableID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& id);
     // NOLINTEND
 
 public:

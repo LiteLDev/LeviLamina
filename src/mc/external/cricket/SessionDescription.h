@@ -33,8 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddContent(::cricket::ContentInfo&& content);
-
     MCNAPI void AddContent(
         ::std::string const&                                  name,
         ::cricket::MediaProtocolType                          type,

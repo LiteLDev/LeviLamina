@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BlockTransformationDescription;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockTransformationSerializer {
@@ -27,8 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    from(::BlockTransformationDescription& desc, ::BlockTransformationSerializer::TransformationProxy proxy);
+    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -41,7 +41,7 @@ public:
 
     MCNAPI SourceTree(::Molang::details::SourceTree const&);
 
-    MCNAPI SourceTree(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
+    MCNAPI_S SourceTree(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
 
     MCNAPI SourceTree(::Json::Value const& value, ::MolangParseConfig const& config);
 
@@ -65,7 +65,7 @@ public:
 
     MCNAPI void* $ctor(::Molang::details::SourceTree const&);
 
-    MCNAPI void* $ctor(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
+    MCNAPI_S void* $ctor(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
 
     MCNAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
     // NOLINTEND

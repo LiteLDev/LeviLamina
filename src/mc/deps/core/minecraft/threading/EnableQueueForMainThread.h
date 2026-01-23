@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EnableQueueForMainThread(::std::string name);
 
-    MCNAPI_C EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
+    MCNAPI EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
 
     MCNAPI_C ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
 
@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string name);
 
-    MCNAPI_C void* $ctor(::WorkerPool&, ::Scheduler&, ::std::string);
+    MCNAPI void* $ctor(::WorkerPool&, ::Scheduler&, ::std::string);
     // NOLINTEND
 
 public:

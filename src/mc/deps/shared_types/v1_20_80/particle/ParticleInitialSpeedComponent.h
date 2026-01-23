@@ -27,7 +27,12 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleInitialSpeedComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleInitialSpeedComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -45,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

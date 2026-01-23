@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/DtlsTransportInternal.h"
-#include "mc/external/rtc/SSLHandshakeError.h"
 #include "mc/external/rtc/SSLProtocolVersion.h"
 #include "mc/external/rtc/SSLRole.h"
 #include "mc/external/rtc/Socket.h"
@@ -61,7 +60,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~DtlsTransport() /*override*/;
+    virtual ~DtlsTransport() /*override*/ = default;
 
     virtual ::webrtc::DtlsTransportState dtls_state() const /*override*/;
 
@@ -130,8 +129,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void ConfigureHandshakeTimeout();
 
-    MCNAPI void ConnectToIceTransport();
-
     MCNAPI DtlsTransport(
         ::cricket::IceTransportInternal* ice_transport,
         ::webrtc::CryptoOptions const&   crypto_options,
@@ -144,8 +141,6 @@ public:
     MCNAPI void MaybeStartDtls();
 
     MCNAPI void OnDtlsEvent(::rtc::StreamInterface* dtls, int sig, int err);
-
-    MCNAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError error);
 
     MCNAPI void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 
@@ -165,8 +160,6 @@ public:
 
     MCNAPI void set_dtls_state(::webrtc::DtlsTransportState state);
 
-    MCNAPI void set_receiving(bool receiving);
-
     MCNAPI void set_writable(bool writable);
     // NOLINTEND
 
@@ -179,12 +172,6 @@ public:
         ::webrtc::RtcEventLog*           event_log,
         ::rtc::SSLProtocolVersion        max_version
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

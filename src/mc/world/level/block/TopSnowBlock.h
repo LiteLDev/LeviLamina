@@ -13,7 +13,6 @@ class AABB;
 class Actor;
 class BaseGameVersion;
 class Block;
-class BlockItem;
 class BlockPos;
 class BlockSource;
 class BlockType;
@@ -91,9 +90,12 @@ public:
 
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
-    virtual bool
-    canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
-        /*override*/;
+    virtual bool canBeBuiltOver(
+        ::Block const&     block,
+        ::BlockSource&     region,
+        ::BlockPos const&  pos,
+        ::BlockType const& newBlock
+    ) const /*override*/;
 
     virtual bool canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -117,8 +119,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const* item) const;
-
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -207,7 +207,7 @@ public:
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
-        ::BlockItem const& newItem
+        ::BlockType const& newBlock
     ) const;
 
     MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;

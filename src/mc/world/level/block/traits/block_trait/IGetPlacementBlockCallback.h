@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/traits/block_trait/PlacementCallbackOrder.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -25,6 +28,8 @@ public:
         uchar,
         ::Vec3 const&
     ) const = 0;
+
+    virtual ::BlockTrait::PlacementCallbackOrder getCallbackOrder() const = 0;
     // NOLINTEND
 
 public:

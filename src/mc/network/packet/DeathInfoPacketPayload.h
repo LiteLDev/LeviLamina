@@ -33,14 +33,13 @@ public:
 
 public:
     // prevent constructor by default
-    DeathInfoPacketPayload& operator=(DeathInfoPacketPayload const&);
     DeathInfoPacketPayload(DeathInfoPacketPayload const&);
     DeathInfoPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DeathInfoPacketPayload& operator=(::DeathInfoPacketPayload&&);
+    MCFOLD ::DeathInfoPacketPayload& operator=(::DeathInfoPacketPayload const&);
 
     MCAPI ~DeathInfoPacketPayload();
     // NOLINTEND

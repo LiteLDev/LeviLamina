@@ -42,8 +42,6 @@ namespace MobJumpSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCNAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
-
 MCNAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
 MCNAPI void doMobJumpSystem(

@@ -41,8 +41,6 @@ public:
 
     MCNAPI bool IsFirstMidInGroup(::std::string const& mid) const;
 
-    MCNAPI ::cricket::ContentGroup const* LookupGroupByMid(::std::string const&) const;
-
     MCNAPI ::cricket::ContentGroup* LookupGroupByMid(::std::string const& mid);
 
     MCNAPI void RefreshEstablishedBundleGroupsByMid();

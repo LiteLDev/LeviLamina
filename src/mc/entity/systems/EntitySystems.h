@@ -18,6 +18,7 @@ struct EntitySystemTickingMode;
 struct IEntitySystemsCollection;
 struct SystemCategory;
 struct SystemInfo;
+struct TickingSystemId;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -46,6 +47,13 @@ public:
     using MovementSystemCategory = ::entt::
         type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
 
+    using SystemInvokeCallbackFunc = ::std::function<void(::TickingSystemId)>;
+
+    using SystemInvokeCallbackPair =
+        ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>;
+
+    using SystemInvokeCallbackSig = void(::TickingSystemId);
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -54,6 +62,8 @@ public:
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>>             mDispatcher;
     ::ll::TypedStorage<8, 32, ::std::string>                                mName;
     ::ll::TypedStorage<1, 1, bool>                                          mEnableTimingCapture;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>     mPreSystemInvoke;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>     mPostSystemInvoke;
     // NOLINTEND
 
 public:
@@ -89,13 +99,19 @@ public:
 
     MCNAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCNAPI void registerGameOnlyMovementTickingSystem(::TickingSystemWithInfo&& system);
+    MCNAPI_C void registerEvents(::EntityRegistry& registry);
 
     MCNAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
     MCNAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
 
     MCNAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
+
+    MCNAPI_C ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
+    setSystemInvokeCallbacks(
+        ::std::function<void(::TickingSystemId)>&& preInvoke,
+        ::std::function<void(::TickingSystemId)>&& postInvoke
+    );
 
     MCNAPI_C void tick(::EntityRegistry& registry);
     // NOLINTEND

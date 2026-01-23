@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    DropdownOption& operator=(DropdownOption const&);
     DropdownOption(DropdownOption const&);
     DropdownOption();
 
@@ -28,6 +27,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
+
+    MCFOLD ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
 
     MCFOLD bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&) const;
     // NOLINTEND

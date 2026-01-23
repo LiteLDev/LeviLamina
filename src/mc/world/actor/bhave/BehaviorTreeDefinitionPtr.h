@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _deref();
+
     MCAPI ~BehaviorTreeDefinitionPtr();
     // NOLINTEND
 

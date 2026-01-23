@@ -81,6 +81,8 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
+    MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
+
     MCNAPI ::std::vector<::std::string> buildCameraPresetList() const;
 
     MCNAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;

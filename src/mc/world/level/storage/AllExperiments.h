@@ -19,5 +19,6 @@ enum class AllExperiments : int {
     VanillaBlockGeometry                   = 13,
     SimplifiedSpawnRules                   = 14,
     VoxelShapes                            = 15,
-    Count                                  = 16,
+    Poi                                    = 16,
+    Count                                  = 17,
 };

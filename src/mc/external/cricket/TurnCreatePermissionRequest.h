@@ -8,9 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class StunMessage; }
-namespace cricket { class TurnEntry; }
-namespace cricket { class TurnPort; }
-namespace rtc { class SocketAddress; }
 // clang-format on
 
 namespace cricket {
@@ -33,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TurnCreatePermissionRequest() /*override*/;
+    virtual ~TurnCreatePermissionRequest() /*override*/ = default;
 
     virtual void OnSent() /*override*/;
 
@@ -42,28 +39,6 @@ public:
     virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
 
     virtual void OnTimeout() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TurnCreatePermissionRequest(
-        ::cricket::TurnPort*        port,
-        ::cricket::TurnEntry*       entry,
-        ::rtc::SocketAddress const& ext_addr
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, ::rtc::SocketAddress const& ext_addr);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

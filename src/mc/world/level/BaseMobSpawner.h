@@ -66,8 +66,6 @@ public:
 
     MCAPI_C ::Actor* createAndAddDisplayEntity(::BlockSource& region);
 
-    MCAPI ::ActorDefinitionIdentifier getSpawnTypeId() const;
-
     MCAPI void removeDisplayEntity();
 
     MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);

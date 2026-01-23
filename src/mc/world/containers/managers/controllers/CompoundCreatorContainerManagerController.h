@@ -79,6 +79,8 @@ public:
     MCNAPI_C void _updateResultPreview();
 
     MCNAPI_C ::std::string getOutputFormula();
+
+    MCNAPI_C bool isStillValid(float pickRange);
     // NOLINTEND
 
 public:

@@ -173,6 +173,8 @@ public:
 
     virtual void Read(char&) = 0;
 
+    virtual void Read(char&) = 0;
+
     virtual void Read(uchar&) = 0;
 
     virtual void Read(float&) = 0;

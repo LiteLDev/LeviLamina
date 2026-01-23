@@ -39,23 +39,6 @@ public:
         ::ll::TypedStorage<8, 8, ::ActorUniqueID>             keyEntityId;
         ::ll::TypedStorage<4, 12, ::BlockPos>                 keyBlockPos;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UniqueId& operator=(UniqueId const&);
-        UniqueId();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
-        // NOLINTEND
     };
 
 public:

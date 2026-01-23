@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,23 +18,15 @@ class EventIdentifierConstraint : public ::cereal::ConstraintHandle<::SharedType
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~EventIdentifierConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+
     MCFOLD void validateValue(::std::string const& str, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

@@ -45,7 +45,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TextureHotReloader() /*override*/;
+    virtual ~TextureHotReloader() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -106,12 +106,6 @@ public:
             ::ImageResourceManager>> imageWatcher,
         ::TextureHotReloaderMode     mode
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

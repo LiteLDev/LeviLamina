@@ -47,7 +47,7 @@ public:
 
     virtual void OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState) /*override*/;
 
-    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState) /*override*/;
+    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state) /*override*/;
 
     virtual void OnIceCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
 
@@ -85,7 +85,7 @@ public:
 
     MCNAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
 
-    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState newState);
+    MCNAPI void $OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state);
 
     MCNAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
 

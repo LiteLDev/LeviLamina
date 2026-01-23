@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HoldGroundGoal() /*override*/ = default;
+    virtual ~HoldGroundGoal() /*override*/;
 
     virtual bool canUse() /*override*/;
 
@@ -47,6 +47,12 @@ public:
     virtual void tick() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

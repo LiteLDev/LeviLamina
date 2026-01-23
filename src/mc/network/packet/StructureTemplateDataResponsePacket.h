@@ -25,8 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&);
-    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&);
     StructureTemplateDataResponsePacket();
 
 public:
@@ -64,7 +62,7 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     virtual ~StructureTemplateDataResponsePacket() /*override*/;
     // NOLINTEND
@@ -73,8 +71,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit StructureTemplateDataResponsePacket(::StructureTemplateDataResponsePacketPayload payload);
-
-    MCAPI ::StructureTemplateDataResponsePacket& operator=(::StructureTemplateDataResponsePacket&&);
     // NOLINTEND
 
 public:
@@ -123,8 +119,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

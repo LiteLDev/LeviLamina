@@ -21,6 +21,8 @@ namespace NetherNet {
 // NOLINTBEGIN
 MCNAPI ::NetherNet::ErrorOr<::std::unique_ptr<::NetherNet::AesContext>, ::std::error_code> CreateEnvelope(uint64 id);
 
+MCNAPI uint64 CreateID();
+
 MCNAPI ::NetherNet::ErrorOr<::std::vector<uchar>, ::std::error_code> CreateKey(uint64 id);
 
 MCNAPI void InitializeNetherNetTransport(::NetherNet::GlobalConfiguration const& config);

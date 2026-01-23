@@ -40,8 +40,6 @@ public:
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
-
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~PumpkinBlock() /*override*/ = default;
@@ -65,8 +63,6 @@ public:
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
-
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

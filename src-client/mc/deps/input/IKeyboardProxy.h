@@ -6,7 +6,7 @@ class IKeyboardProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void feedText(::std::string const&, bool) = 0;
+    virtual void feedText(::std::string const&) = 0;
 
     virtual void feedCaretLocation(int) = 0;
 

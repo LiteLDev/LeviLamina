@@ -13,6 +13,7 @@ struct JSValue;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { class StrongObjectHandle; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct IteratorBinding; }
 namespace Scripting { struct ObjectFactory; }
@@ -54,6 +55,8 @@ MCNAPI ::JSValue CopyJSValueObjectToNativeAssociativeContainer(
 );
 
 MCNAPI ::Scripting::QuickJS::ArrayProxy CreateArrayProxy(::JSContext* ctx);
+
+MCNAPI ::Scripting::FunctionBinding CreateIteratorNextFunctionBinding(::Scripting::IteratorBinding& iteratorBinding);
 
 MCNAPI ::std::unique_ptr<::Scripting::ClassBinding>
 CreateIteratorReturnClassBinding(::Scripting::IteratorBinding& iteratorBinding);
@@ -206,8 +209,6 @@ MCNAPI ::JSValue ThrowEngineErrorToJS(::JSContext* ctx, ::std::string const& msg
 MCNAPI ::JSValue ThrowJSTypeErrorWithContext(::JSContext*, ::Scripting::QuickJS::ContextUserData&, char const*, ...);
 
 MCNAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
-
-MCNAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
 
 MCNAPI ::Scripting::StrongObjectHandle getHandleFromObjectFactory(
     ::JSContext*                           ctx,

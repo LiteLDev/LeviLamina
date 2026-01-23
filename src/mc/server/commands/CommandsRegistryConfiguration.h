@@ -27,12 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~CommandsRegistryConfiguration() /*override*/;
-#else // LL_PLAT_C
-    virtual ~CommandsRegistryConfiguration() /*override*/ = default;
-#endif
-
     // NOLINTEND
 
 public:

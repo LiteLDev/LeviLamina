@@ -27,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    SliderSetting& operator=(SliderSetting const&);
     SliderSetting(SliderSetting const&);
     SliderSetting();
 
@@ -37,7 +36,12 @@ public:
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&&);
 
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
+
     MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&) const;
+
+    MCAPI ~SliderSetting();
     // NOLINTEND
 
 public:
@@ -50,6 +54,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& TYPE_NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

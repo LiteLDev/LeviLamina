@@ -45,15 +45,6 @@ public:
         // NOLINTEND
 
     public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void fromReference(
-            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
-            ::SharedTypes::Reference<3> const&                                                      ref
-        );
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
@@ -95,11 +86,6 @@ public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-        MCAPI static void fromReference(
-            ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::SharedTypes::Reference<3> const&                                                            ref
-        );
 
         MCAPI static void fromVector(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,

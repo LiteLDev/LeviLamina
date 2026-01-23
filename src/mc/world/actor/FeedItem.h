@@ -27,7 +27,6 @@ public:
 
     public:
         // prevent constructor by default
-        Effect& operator=(Effect const&);
         Effect(Effect const&);
         Effect();
 
@@ -35,6 +34,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCFOLD ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
+
+        MCFOLD ::FeedItem::Effect& operator=(::FeedItem::Effect const&);
 
         MCAPI ~Effect();
         // NOLINTEND
@@ -50,6 +51,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemDescriptor>                  mItemDescriptor;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                  mResultItem;
     ::ll::TypedStorage<4, 4, int>                                mValue;
     ::ll::TypedStorage<8, 24, ::std::vector<::FeedItem::Effect>> mEffects;
     // NOLINTEND

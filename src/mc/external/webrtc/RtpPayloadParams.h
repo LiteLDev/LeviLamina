@@ -14,7 +14,6 @@ namespace webrtc { struct CodecSpecificInfoH264; }
 namespace webrtc { struct CodecSpecificInfoVP8; }
 namespace webrtc { struct CodecSpecificInfoVP9; }
 namespace webrtc { struct FrameDependencyStructure; }
-namespace webrtc { struct GenericFrameInfo; }
 namespace webrtc { struct RTPVideoHeader; }
 namespace webrtc { struct RtpPayloadState; }
 // clang-format on
@@ -46,9 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RTPVideoHeader::GenericDescriptorInfo
-    GenericDescriptorFromFrameInfo(::webrtc::GenericFrameInfo const& frame_info, int64 frame_id);
-
     MCNAPI ::std::optional<::webrtc::FrameDependencyStructure>
     GenericStructure(::webrtc::CodecSpecificInfo const* codec_specific_info);
 
@@ -70,8 +66,6 @@ public:
     MCNAPI RtpPayloadParams(::webrtc::RtpPayloadParams const&);
 
     MCNAPI RtpPayloadParams(uint ssrc, ::webrtc::RtpPayloadState const* state, ::webrtc::FieldTrialsView const& trials);
-
-    MCNAPI void SetCodecSpecific(::webrtc::RTPVideoHeader* rtp_video_header, bool first_frame_in_picture);
 
     MCNAPI void SetDependenciesVp8Deprecated(
         ::webrtc::CodecSpecificInfoVP8 const&            vp8_info,

@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerPersonaPiece& operator=(ScriptPlayerPersonaPiece const&);
     ScriptPlayerPersonaPiece(ScriptPlayerPersonaPiece const&);
     ScriptPlayerPersonaPiece();
 
@@ -31,6 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
     operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
+
+    MCNAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
+    operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
 
     MCNAPI ~ScriptPlayerPersonaPiece();
     // NOLINTEND

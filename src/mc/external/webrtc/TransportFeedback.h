@@ -38,39 +38,12 @@ public:
         // prevent constructor by default
         LastChunk& operator=(LastChunk const&);
         LastChunk(LastChunk const&);
+        LastChunk();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void AppendTo(::std::vector<uchar>* deltas) const;
-
-        MCNAPI void Clear();
-
         MCNAPI void Decode(ushort chunk, uint64 max_size);
-
-        MCNAPI void DecodeOneBit(ushort chunk, uint64 max_size);
-
-        MCNAPI void DecodeRunLength(ushort chunk, uint64 max_count);
-
-        MCNAPI void DecodeTwoBit(ushort chunk, uint64 max_size);
-
-        MCNAPI bool Empty() const;
-
-        MCNAPI ushort EncodeLast() const;
-
-        MCNAPI ushort EncodeOneBit() const;
-
-        MCNAPI ushort EncodeRunLength() const;
-
-        MCNAPI ushort EncodeTwoBit(uint64 size) const;
-
-        MCNAPI LastChunk();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -113,7 +86,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TransportFeedback() /*override*/;
+    virtual ~TransportFeedback() /*override*/ = default;
 
     virtual uint64 BlockLength() const /*override*/;
 
@@ -136,27 +109,15 @@ public:
 
     MCNAPI ::webrtc::TimeDelta GetBaseDelta(::webrtc::Timestamp prev_timestamp) const;
 
-    MCNAPI uint64 PaddingLength() const;
-
     MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const& packet);
 
     MCNAPI TransportFeedback();
-
-    MCNAPI explicit TransportFeedback(bool include_timestamps);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(bool include_timestamps);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

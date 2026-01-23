@@ -25,13 +25,7 @@ public:
 
     MCNAPI ::std::vector<::std::optional<::webrtc::VideoBitrateAllocation>> GetSimulcastAllocations() const;
 
-    MCNAPI uint GetSpatialLayerSum(uint64 spatial_index) const;
-
-    MCNAPI uint GetTemporalLayerSum(uint64 spatial_index, uint64 temporal_index) const;
-
     MCNAPI bool HasBitrate(uint64 spatial_index, uint64 temporal_index) const;
-
-    MCNAPI bool IsSpatialLayerUsed(uint64 spatial_index) const;
 
     MCNAPI bool SetBitrate(uint64 spatial_index, uint64 temporal_index, uint bitrate_bps);
 

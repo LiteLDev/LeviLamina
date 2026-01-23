@@ -111,6 +111,8 @@ public:
         ::cereal::ReflectionCtx const& ctx
     );
 
+    MCAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+
     MCAPI static bool validateCerealComponent(
         ::std::string const&           componentName,
         ::SemVersion const&            documentVersion,

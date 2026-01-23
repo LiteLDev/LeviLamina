@@ -12,7 +12,6 @@ public:
 
 public:
     // prevent constructor by default
-    ServerSettingsResponsePacketPayload& operator=(ServerSettingsResponsePacketPayload const&);
     ServerSettingsResponsePacketPayload(ServerSettingsResponsePacketPayload const&);
     ServerSettingsResponsePacketPayload();
 
@@ -20,6 +19,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ServerSettingsResponsePacketPayload& operator=(::ServerSettingsResponsePacketPayload&&);
+
+    MCFOLD ::ServerSettingsResponsePacketPayload& operator=(::ServerSettingsResponsePacketPayload const&);
 
     MCAPI ~ServerSettingsResponsePacketPayload();
     // NOLINTEND

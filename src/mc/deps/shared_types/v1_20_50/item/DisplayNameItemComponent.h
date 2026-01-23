@@ -18,7 +18,6 @@ public:
 
 public:
     // prevent constructor by default
-    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
     DisplayNameItemComponent(DisplayNameItemComponent const&);
     DisplayNameItemComponent();
 
@@ -28,7 +27,10 @@ public:
     MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
 
-    MCAPI_C ~DisplayNameItemComponent();
+    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
+    operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent const&);
+
+    MCAPI ~DisplayNameItemComponent();
     // NOLINTEND
 
 public:
@@ -40,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

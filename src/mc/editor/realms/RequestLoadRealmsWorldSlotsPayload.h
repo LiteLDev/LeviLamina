@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class RequestLoadRealmsWorldSlotsPayload
@@ -17,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    RequestLoadRealmsWorldSlotsPayload& operator=(RequestLoadRealmsWorldSlotsPayload const&);
     RequestLoadRealmsWorldSlotsPayload(RequestLoadRealmsWorldSlotsPayload const&);
     RequestLoadRealmsWorldSlotsPayload();
 
@@ -25,6 +29,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~RequestLoadRealmsWorldSlotsPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::RequestLoadRealmsWorldSlotsPayload&
+    operator=(::Editor::Network::RequestLoadRealmsWorldSlotsPayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

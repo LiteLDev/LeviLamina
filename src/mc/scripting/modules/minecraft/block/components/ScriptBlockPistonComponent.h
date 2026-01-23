@@ -12,6 +12,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class PistonBlockActor;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
@@ -37,12 +38,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptBlockPistonComponent() /*override*/ = default;
+    virtual ~ScriptBlockPistonComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::PistonBlockActor const* _tryGetPiston() const;
+
     MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getAttachedBlocks();
@@ -70,8 +73,7 @@ public:
     MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
@@ -79,6 +81,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

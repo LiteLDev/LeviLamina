@@ -20,13 +20,20 @@ public:
 public:
     // prevent constructor by default
     BorderCellEntry& operator=(BorderCellEntry const&);
-    BorderCellEntry(BorderCellEntry const&);
     BorderCellEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BorderCellEntry(::BlendingDataFactoryUtil::BorderCellEntry const&);
+
     MCNAPI ~BorderCellEntry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlendingDataFactoryUtil::BorderCellEntry const&);
     // NOLINTEND
 
 public:

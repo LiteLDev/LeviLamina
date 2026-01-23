@@ -32,8 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload& operator=(::PositionTrackingDBServerBroadcastPacketPayload&&
-    );
+    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload&
+    operator=(::PositionTrackingDBServerBroadcastPacketPayload&&);
 
     MCAPI ~PositionTrackingDBServerBroadcastPacketPayload();
     // NOLINTEND

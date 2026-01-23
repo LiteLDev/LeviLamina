@@ -34,7 +34,6 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleVisualEffectEvent& operator=(ParticleVisualEffectEvent const&);
     ParticleVisualEffectEvent();
 
 public:
@@ -44,6 +43,9 @@ public:
 
     MCAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
     operator=(::SharedTypes::v1_20_80::ParticleVisualEffectEvent&&);
+
+    MCAPI ::SharedTypes::v1_20_80::ParticleVisualEffectEvent&
+    operator=(::SharedTypes::v1_20_80::ParticleVisualEffectEvent const&);
 
     MCAPI ~ParticleVisualEffectEvent();
     // NOLINTEND

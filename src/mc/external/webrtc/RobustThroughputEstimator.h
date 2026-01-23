@@ -33,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RobustThroughputEstimator() /*override*/;
+    virtual ~RobustThroughputEstimator() /*override*/ = default;
 
     virtual void
     IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
@@ -50,8 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool FirstPacketOutsideWindow();
-
     MCNAPI explicit RobustThroughputEstimator(::webrtc::RobustThroughputEstimatorSettings const& settings);
     // NOLINTEND
 
@@ -59,12 +57,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RobustThroughputEstimatorSettings const& settings);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

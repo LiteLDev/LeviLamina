@@ -44,7 +44,7 @@ public:
 
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    virtual ~SaplingBlock() /*override*/ = default;
+    virtual ~SaplingBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -93,6 +93,12 @@ public:
         ::std::optional<::std::string> singleSaplingTreeWithBeehive,
         ::std::optional<::std::string> quadrupleSaplingTree
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

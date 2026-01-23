@@ -16,15 +16,13 @@ public:
 
 public:
     // prevent constructor by default
+    PersistenceQueryGroupOptions& operator=(PersistenceQueryGroupOptions const&);
     PersistenceQueryGroupOptions(PersistenceQueryGroupOptions const&);
     PersistenceQueryGroupOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::PersistenceQueryGroupOptions&
-    operator=(::Editor::Services::PersistenceQueryGroupOptions const&);
-
     MCNAPI ~PersistenceQueryGroupOptions();
     // NOLINTEND
 

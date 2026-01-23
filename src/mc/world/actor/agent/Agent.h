@@ -9,7 +9,6 @@
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
 #include "mc/world/actor/agent/AgentRenderData.h"
-#include "mc/world/actor/agent/AgentTravelType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -91,7 +90,7 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
@@ -111,11 +110,15 @@ public:
 
     MCAPI bool _isOnGround(::AABB const& aabb);
 
-    MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
-
     MCAPI float getMoveSpeedScalar() const;
 
+    MCAPI int getSwingAnimationDuration() const;
+
     MCAPI void handleAnimationEvent(::AgentAnimation anim);
+
+    MCAPI bool isArmSwinging() const;
+
+    MCAPI bool isEmoting() const;
 
     MCAPI bool isShrugging() const;
 
@@ -179,7 +182,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $setOwner(::ActorUniqueID const id);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

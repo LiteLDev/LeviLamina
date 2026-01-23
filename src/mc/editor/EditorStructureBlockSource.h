@@ -15,9 +15,6 @@ class Actor;
 class Block;
 class BlockChangeContext;
 class BlockSourceListener;
-class ChunkSource;
-class Dimension;
-class Level;
 struct ActorBlockSyncMessage;
 struct Bounds;
 // clang-format on
@@ -30,10 +27,6 @@ public:
     ::ll::TypedStorage<8, 408, ::Editor::EditorStructureTemplate> mTemplate;
     ::ll::TypedStorage<4, 12, ::BlockPos const>                   mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EditorStructureBlockSource();
 
 public:
     // virtual functions
@@ -63,25 +56,6 @@ public:
         ::ActorBlockSyncMessage const*,
         ::BlockChangeContext const&
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI EditorStructureBlockSource(
-        ::Level&       level,
-        ::Dimension&   dimension,
-        ::ChunkSource& chunkSource,
-        ::AABB const&  bounds,
-        ::BlockPos     offset
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Level& level, ::Dimension& dimension, ::ChunkSource& chunkSource, ::AABB const& bounds, ::BlockPos offset);
     // NOLINTEND
 
 public:

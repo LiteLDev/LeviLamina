@@ -44,7 +44,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~TaskQueueTimeout() /*override*/;
+        virtual ~TaskQueueTimeout() /*override*/ = default;
 
         virtual void Start(
             ::dcsctp::DurationMs                                duration_ms,
@@ -66,12 +66,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void*
         $ctor(::dcsctp::TaskQueueTimeoutFactory& parent, ::webrtc::TaskQueueBase::DelayPrecision precision);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
 
     public:

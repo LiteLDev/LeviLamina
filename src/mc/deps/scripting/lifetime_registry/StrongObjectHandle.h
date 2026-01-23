@@ -26,13 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _removeReference();
+    MCNAPI ::entt::meta_any asAny();
 
     MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
     MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle&& rhs);
 
     MCNAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
+
+    MCNAPI bool valid() const;
 
     MCNAPI ~StrongObjectHandle();
     // NOLINTEND

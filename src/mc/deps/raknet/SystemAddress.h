@@ -30,8 +30,6 @@ public:
 
     MCAPI SystemAddress();
 
-    MCAPI ::std::string ToString(char portDelineator) const;
-
     MCAPI void ToString(bool writePort, char* dest, char portDelineator) const;
     // NOLINTEND
 

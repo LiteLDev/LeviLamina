@@ -24,10 +24,10 @@ public:
 
     // UWPMigrationManager inner types define
     enum class Status : int {
-        None          = 0,
-        Success       = 1,
-        Error         = 2,
-        Criticalerror = 3,
+        None           = 0,
+        Success        = 1,
+        Migrationerror = 2,
+        Criticalerror  = 3,
     };
 
     struct MoveOperation {
@@ -58,11 +58,17 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~MoveOperation() = default;
+        virtual ~MoveOperation();
 
         virtual ::Core::Result migrate(bool) const = 0;
 
         virtual void cleanup() const = 0;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:

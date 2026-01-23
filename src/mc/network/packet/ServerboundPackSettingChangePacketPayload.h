@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    ServerboundPackSettingChangePacketPayload& operator=(ServerboundPackSettingChangePacketPayload const&);
     ServerboundPackSettingChangePacketPayload(ServerboundPackSettingChangePacketPayload const&);
     ServerboundPackSettingChangePacketPayload();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ServerboundPackSettingChangePacketPayload& operator=(::ServerboundPackSettingChangePacketPayload&&);
+
+    MCAPI ::ServerboundPackSettingChangePacketPayload& operator=(::ServerboundPackSettingChangePacketPayload const&);
 
     MCAPI ~ServerboundPackSettingChangePacketPayload();
     // NOLINTEND

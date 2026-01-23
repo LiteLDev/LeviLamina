@@ -22,8 +22,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeCappedSurfaceData& operator=(BiomeCappedSurfaceData const&);
+    BiomeCappedSurfaceData(BiomeCappedSurfaceData const&);
+    BiomeCappedSurfaceData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::BiomeCappedSurfaceData& operator=(::BiomeCappedSurfaceData&&);
+
     MCAPI ~BiomeCappedSurfaceData();
     // NOLINTEND
 

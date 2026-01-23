@@ -22,12 +22,12 @@ public:
     ::ll::UntypedStorage<4, 8>   mUnkf908c4;
     ::ll::UntypedStorage<1, 2>   mUnkee317e;
     ::ll::UntypedStorage<4, 16>  mUnkbe5c2a;
-    ::ll::UntypedStorage<8, 256> mUnk250a0a;
+    ::ll::UntypedStorage<8, 112> mUnk250a0a;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptWidgetComponentGizmoOptions& operator=(ScriptWidgetComponentGizmoOptions const&);
+    ScriptWidgetComponentGizmoOptions(ScriptWidgetComponentGizmoOptions const&);
     ScriptWidgetComponentGizmoOptions();
 
 public:
@@ -42,22 +42,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetComponentGizmoOptions(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
-
     MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&&);
+
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
     // NOLINTEND
 
 public:

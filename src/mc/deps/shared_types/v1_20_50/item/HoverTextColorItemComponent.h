@@ -18,17 +18,17 @@ public:
 
 public:
     // prevent constructor by default
-    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
-
     MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
     operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
+
+    MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
+    operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent const&);
 
     MCAPI ~HoverTextColorItemComponent();
     // NOLINTEND
@@ -37,12 +37,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
     // NOLINTEND
 
 public:

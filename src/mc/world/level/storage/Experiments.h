@@ -15,7 +15,7 @@ class Experiments : public ::ExperimentStorage {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool ExperimentalCreatorCameras() const;
+    MCAPI bool BetaApis() const;
 
     MCAPI Experiments();
 

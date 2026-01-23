@@ -8,16 +8,18 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSourceHandle;
-struct PistonActionEvent;
 namespace ScriptModuleMinecraft { class ScriptBlockPistonComponent; }
-namespace Scripting { class WeakLifetimeScope; }
+namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPistonActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptPistonActionAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPistonActionAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,35 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPistonActionAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPistonActionAfterEvent(
-        ::PistonActionEvent const&                                                                pistonActionEvent,
-        ::BlockSourceHandle&                                                                      blockSourceHandle,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
-        ::Scripting::WeakLifetimeScope const&                                                     scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::PistonActionEvent const&                                                                pistonActionEvent,
-        ::BlockSourceHandle&                                                                      blockSourceHandle,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
-        ::Scripting::WeakLifetimeScope const&                                                     scope
-    );
     // NOLINTEND
 };
 

@@ -152,8 +152,6 @@ public:
 
     MCNAPI void _processBlockOperationAreas();
 
-    MCNAPI void _processBounds();
-
     MCNAPI void _updateChunksToProcess();
 
     MCNAPI bool isAreaAvailable(::BoundingBox const& area);
@@ -177,6 +175,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> requestMove(::BlockPos const& center);
 
     MCNAPI ::Scripting::Result_deprecated<void> setBlock(::BlockPos const& pos, ::Block const& block);
+
+    MCNAPI void tick();
 
     MCNAPI ~ProjectRegion();
     // NOLINTEND

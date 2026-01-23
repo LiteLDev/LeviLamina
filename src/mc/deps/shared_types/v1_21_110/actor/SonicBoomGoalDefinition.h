@@ -54,26 +54,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_ATTACK_COOLDOWN();
-
-    MCAPI static float const& DEFAULT_ATTACK_DAMAGE();
-
-    MCAPI static float const& DEFAULT_ATTACK_RANGE_HORIZONTAL();
-
-    MCAPI static float const& DEFAULT_ATTACK_RANGE_VERTICAL();
-
-    MCAPI static float const& DEFAULT_DURATION();
-
-    MCAPI static float const& DEFAULT_DURATION_UNTIL_ATTACK_SOUND();
-
-    MCAPI static float const& DEFAULT_KNOCKBACK_HEIGHT_CAP();
-
-    MCAPI static float const& DEFAULT_KNOCKBACK_HORIZONTAL_STRENGTH();
-
-    MCAPI static float const& DEFAULT_KNOCKBACK_VERTICAL_STRENGTH();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

@@ -18,27 +18,25 @@ class ScriptDeferredFlushTracker;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorEventListener; }
 namespace ScriptModuleMinecraft { class ScriptAfterEventList; }
-namespace ScriptModuleMinecraft { class ScriptBlockEventListener; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { class ScriptItemEventListener; }
-namespace ScriptModuleMinecraft { class ScriptLevelEventListener; }
 namespace ScriptModuleMinecraft { class ScriptPlayerEventListener; }
 namespace ScriptModuleMinecraft { class ScriptServerNetworkEventListener; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemReleaseUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemStartUseAfterEvent; }
@@ -47,10 +45,10 @@ namespace ScriptModuleMinecraft { struct ScriptItemStopUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemStopUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPackSettingChangeAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerButtonInputAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerEmoteAfterEvent; }
@@ -61,21 +59,21 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerInputPermissionCategoryChan
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInventoryItemChangeAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSpawnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSwingStartAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerUseNameTagAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptPressurePlatePushAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptPressurePlatePushAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptProjectileHitBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptProjectileHitEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptServerMessageAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptTargetBlockHitAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptTripWireTripAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptTargetBlockHitAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptTripWireTripAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEventIntermediateData; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
@@ -83,9 +81,8 @@ namespace Scripting { struct ContextConfig; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptWorldAfterEvents
-: public ::ScriptModuleMinecraft::IScriptWorldAfterEvents,
-  public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::IScriptWorldAfterEvents> {
+class ScriptWorldAfterEvents : public ::ScriptModuleMinecraft::IScriptWorldAfterEvents,
+                               public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptWorldAfterEvents> {
 public:
     // ScriptWorldAfterEvents inner types declare
     // clang-format off
@@ -148,9 +145,7 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level*>>                            mLevel;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptGlobalEventListeners*> mGlobalEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorEventListener>> mActorEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockEventListener>> mBlockEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptItemEventListener>>  mItemEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptLevelEventListener>> mLevelEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPlayerEventListener>>
         mPlayerEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptServerNetworkEventListener>>
@@ -177,17 +172,15 @@ public:
     virtual ::Level& getLevel() const /*override*/;
 
     virtual void onGameRuleChange(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>&
-            gameRulesChangeEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onWeatherChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
-            weatherChangedEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPushButton(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>& pushedButton
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptButtonPushAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorLoad(
@@ -207,7 +200,7 @@ public:
     ) /*override*/;
 
     virtual void onActorHitBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorAddEffect(
@@ -215,11 +208,11 @@ public:
     ) /*override*/;
 
     virtual void onActivateLever(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>& leverEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData>& leverEvent
     ) /*override*/;
 
     virtual void onPlayerPlaceBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>& blockPlaceEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onExplodeBlock(
@@ -227,11 +220,11 @@ public:
     ) /*override*/;
 
     virtual void onPlayerBreakBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>& blockBreakEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHurt(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& actorHurtEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHealthChanged(
@@ -240,7 +233,7 @@ public:
     ) /*override*/;
 
     virtual void onActorDie(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>& actorDieEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorRemoved(
@@ -281,11 +274,11 @@ public:
     ) /*override*/;
 
     virtual void onPlayerJoin(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPlayerLeave(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPlayerSpawn(
@@ -320,7 +313,7 @@ public:
     ) /*override*/;
 
     virtual void onWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onChat(
@@ -340,29 +333,27 @@ public:
     ) /*override*/;
 
     virtual void onActivatePiston(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPistonActionAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onExplosion(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPushPressurePlate(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
-            pushedPressurePlate
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPopPressurePlate(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
-            poppedPressurePlate
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onHitTargetBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>& hitTargetBlock
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onTripTripWire(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>& trippedTripWire
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onPlayerEmote(
@@ -411,8 +402,7 @@ public:
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI void
-    registerListeners(bool worldListener, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
+    MCAPI void registerListeners(::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
     // NOLINTEND
 
 public:
@@ -454,18 +444,15 @@ public:
     MCFOLD ::Level& $getLevel() const;
 
     MCAPI void $onGameRuleChange(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>&
-            gameRulesChangeEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onWeatherChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
-            weatherChangedEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPushButton(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>& pushedButton
-    );
+    MCAPI void
+    $onPushButton(::std::shared_ptr<::ScriptModuleMinecraft::ScriptButtonPushAfterEventIntermediateData>& eventData);
 
     MCAPI void
     $onActorLoad(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorLoadAfterEvent>& eventData);
@@ -482,7 +469,7 @@ public:
     );
 
     MCAPI void $onActorHitBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onActorAddEffect(
@@ -490,11 +477,11 @@ public:
     );
 
     MCAPI void $onActivateLever(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>& leverEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData>& leverEvent
     );
 
     MCAPI void $onPlayerPlaceBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>& blockPlaceEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onExplodeBlock(
@@ -502,12 +489,11 @@ public:
     );
 
     MCAPI void $onPlayerBreakBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>& blockBreakEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorHurt(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& actorHurtEvent
-    );
+    MCAPI void
+    $onActorHurt(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData);
 
     MCAPI void $onActorHealthChanged(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
@@ -515,7 +501,7 @@ public:
     );
 
     MCAPI void
-    $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>& actorDieEvent);
+    $onActorDie(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>& eventData);
 
     MCAPI void $onActorRemoved(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&           removedActor,
@@ -553,11 +539,10 @@ public:
     );
 
     MCAPI void
-    $onPlayerJoin(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>& eventData);
+    $onPlayerJoin(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onPlayerLeave(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>& eventData
-    );
+    MCAPI void
+    $onPlayerLeave(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData>& eventData);
 
     MCAPI void $onPlayerSpawn(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>& eventData
@@ -591,7 +576,7 @@ public:
     );
 
     MCAPI void $onWorldInitialize(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData>& eventData
     );
 
     MCAPI void
@@ -610,29 +595,27 @@ public:
     );
 
     MCAPI void $onActivatePiston(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPistonActionAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onExplosion(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onPushPressurePlate(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
-            pushedPressurePlate
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onPopPressurePlate(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
-            poppedPressurePlate
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onHitTargetBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>& hitTargetBlock
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onTripTripWire(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>& trippedTripWire
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onPlayerEmote(

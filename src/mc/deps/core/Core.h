@@ -24,6 +24,8 @@ MCNAPI ::Core::Result transferDirectory(
 
 // static variables
 // NOLINTBEGIN
+MCNAPI ::std::add_lvalue_reference_t<::std::unique_ptr<char[0]>> mThreadLocalBuffer();
+
 MCNAPI ::std::string const& sLockBlobName();
 
 MCNAPI ::std::string const& sMultiChunkTag();

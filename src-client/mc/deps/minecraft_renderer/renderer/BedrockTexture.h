@@ -52,9 +52,6 @@ public:
 
     MCAPI ::mce::ClientTexture const& getClientHandle(::cg::TextureSetLayerType textureType) const;
 
-    MCAPI ::std::shared_ptr<::BedrockTextureData const> const
-    getSharedBedrockTextureData(::cg::TextureSetLayerType textureType) const;
-
     MCAPI bool load(
         ::mce::TextureResourceService&                                 textureResourceService,
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition,

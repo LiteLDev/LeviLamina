@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/clientbiome/client_biome_json_document_helper/ComponentMap.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace SharedTypes::v1_21_40 { struct IClientBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -37,7 +39,6 @@ public:
 
         public:
             // prevent constructor by default
-            ClientBiomeDescription& operator=(ClientBiomeDescription const&);
             ClientBiomeDescription(ClientBiomeDescription const&);
             ClientBiomeDescription();
 
@@ -47,6 +48,11 @@ public:
             MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
             operator=(
                 ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
+            );
+
+            MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
+            operator=(
+                ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription const&
             );
 
             MCAPI ~ClientBiomeDescription();
@@ -65,15 +71,20 @@ public:
             // NOLINTEND
         };
 
-        struct ComponentMap {
+        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
         public:
-            // member variables
+            // prevent constructor by default
+            ComponentMap(ComponentMap const&);
+            ComponentMap();
+
+        public:
+            // member functions
             // NOLINTBEGIN
-            ::ll::TypedStorage<
-                8,
-                16,
-                ::std::map<::std::string, ::std::shared_ptr<::SharedTypes::v1_21_40::IClientBiomeJsonComponent>>>
-                mJsonComponents;
+            MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&&);
+
+            MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject::ComponentMap const&);
             // NOLINTEND
 
         public:
@@ -97,7 +108,6 @@ public:
 
     public:
         // prevent constructor by default
-        ClientBiomeJsonObject& operator=(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject();
 
@@ -106,6 +116,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
+
+        MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCAPI ~ClientBiomeJsonObject();
         // NOLINTEND
@@ -132,9 +145,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ClientBiomeJsonDocument();
+    MCAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_40::ClientBiomeJsonDocument&&);
+
+    MCAPI_C ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:
@@ -146,13 +167,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    MCAPI_C static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD_C void* $ctor(::SharedTypes::v1_21_40::ClientBiomeJsonDocument&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

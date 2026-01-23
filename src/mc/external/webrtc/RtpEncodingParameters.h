@@ -26,15 +26,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RtpEncodingParameters& operator=(RtpEncodingParameters const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RtpEncodingParameters();
 
     MCNAPI RtpEncodingParameters(::webrtc::RtpEncodingParameters const&);
+
+    MCNAPI ::webrtc::RtpEncodingParameters& operator=(::webrtc::RtpEncodingParameters const&);
 
     MCNAPI ~RtpEncodingParameters();
     // NOLINTEND

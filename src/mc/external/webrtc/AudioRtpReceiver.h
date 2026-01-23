@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/webrtc/AudioSourceInterface.h"
-#include "mc/external/webrtc/MediaSourceInterface.h"
 #include "mc/external/webrtc/ObserverInterface.h"
 #include "mc/external/webrtc/RtpReceiverInternal.h"
 #include "mc/external/webrtc/scoped_refptr.h"
@@ -141,12 +140,6 @@ public:
     MCNAPI void Reconfigure(bool track_enabled);
 
     MCNAPI void RestartMediaChannel(::std::optional<uint> ssrc);
-
-    MCNAPI void RestartMediaChannel_w(
-        ::std::optional<uint>                       ssrc,
-        bool                                        track_enabled,
-        ::webrtc::MediaSourceInterface::SourceState state
-    );
 
     MCNAPI void SetOutputVolume_w(double volume);
     // NOLINTEND

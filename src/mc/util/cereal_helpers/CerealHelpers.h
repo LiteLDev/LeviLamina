@@ -44,13 +44,15 @@ MCNAPI_C ::Core::Result _endLoadFromJsonFile(
     ::Core::Path const&                   path
 );
 
+MCNAPI void bindBoundingBox(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
+
+MCNAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
 
 MCNAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
-
-MCNAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
 
 MCNAPI bool checkBrightnessSchema(
     ::rapidjson::
@@ -85,11 +87,6 @@ MCNAPI bool checkFloatSchema(
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value,
     ::std::optional<float> const&                                                                                 min,
     ::std::optional<float> const&                                                                                 max
-);
-
-MCNAPI bool checkIdentifierStringSchema(
-    ::rapidjson::
-        GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
 );
 
 MCNAPI bool checkItemDescriptorSchema(

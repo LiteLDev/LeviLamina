@@ -235,7 +235,8 @@ enum class MinecraftPacketIds : int {
     ClientboundControlSchemeSetPacket        = 327,
     DebugDrawerPacket                        = 328,
     ServerboundPackSettingChangePacket       = 329,
-    DataStoreSyncPacket                      = 330,
+    ClientboundDataStore                     = 330,
     GraphicsParameterOverridePacket          = 331,
-    EndId                                    = 332,
+    ServerboundDataStore                     = 332,
+    EndId                                    = 333,
 };

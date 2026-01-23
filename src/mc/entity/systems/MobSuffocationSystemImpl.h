@@ -88,6 +88,14 @@ public:
         ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers
     );
 
+    MCNAPI static bool _isShulkerInWall(
+        ::StateVectorComponent const&      stateVectorComponent,
+        ::AABBShapeComponent const&        aabbShapeComponent,
+        ::SynchedActorDataComponent const& synchedActorDataComponent,
+        ::OffsetsComponent const&          offsetsComponent,
+        ::IConstBlockSource const&         region
+    );
+
     MCNAPI static void _tickCheckSuffocation(
         ::StrictEntityContext const&           entity,
         ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,

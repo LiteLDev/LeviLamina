@@ -50,7 +50,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicNetworkManager() /*override*/;
+    virtual ~BasicNetworkManager() /*override*/ = default;
 
     virtual void StartUpdating() /*override*/;
 
@@ -75,17 +75,9 @@ public:
 
     MCNAPI bool CreateNetworks(bool include_ignored, ::std::vector<::std::unique_ptr<::rtc::Network>>* networks) const;
 
-    MCNAPI bool IsConfiguredVpn(::rtc::IPAddress prefix, int prefix_length) const;
-
-    MCNAPI bool IsIgnoredNetwork(::rtc::Network const& network) const;
-
-    MCNAPI void OnNetworksChanged();
-
     MCNAPI ::rtc::IPAddress QueryDefaultLocalAddress(int family) const;
 
     MCNAPI void StartNetworkMonitor();
-
-    MCNAPI void StopNetworkMonitor();
 
     MCNAPI void UpdateNetworksContinually();
 
@@ -100,12 +92,6 @@ public:
         ::rtc::SocketFactory*            socket_factory,
         ::webrtc::FieldTrialsView const* field_trials_view
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

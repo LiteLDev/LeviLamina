@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class BasicPortAllocatorSession; }
 namespace cricket { class PortInterface; }
 namespace cricket { struct PortConfiguration; }
 namespace cricket { struct RelayServerConfig; }
@@ -58,17 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AllocationSequence(
-        ::cricket::BasicPortAllocatorSession* session,
-        ::rtc::Network const*                 network,
-        ::cricket::PortConfiguration*         config,
-        uint                                  flags,
-        ::std::function<void()>               port_allocation_complete_callback
-    );
-
     MCNAPI void Clear();
-
-    MCNAPI void CreateRelayPorts();
 
     MCNAPI void CreateStunPorts();
 
@@ -83,37 +72,11 @@ public:
 
     MCNAPI void Init();
 
-    MCNAPI void OnNetworkFailed();
-
     MCNAPI void OnPortDestroyed(::cricket::PortInterface* port);
 
     MCNAPI void OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
     MCNAPI void Process(int epoch);
-
-    MCNAPI void Start();
-
-    MCNAPI void Stop();
-
-    MCNAPI ~AllocationSequence();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::cricket::BasicPortAllocatorSession* session,
-        ::rtc::Network const*                 network,
-        ::cricket::PortConfiguration*         config,
-        uint                                  flags,
-        ::std::function<void()>               port_allocation_complete_callback
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

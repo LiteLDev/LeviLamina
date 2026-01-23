@@ -20,15 +20,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LegacyBlendedNoise();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit LegacyBlendedNoise(::IRandom& random);
+
     MCAPI ~LegacyBlendedNoise();
     // NOLINTEND
 
 public:
-    // static functions
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::LegacyBlendedNoise make(::IRandom& random);
+    MCAPI void* $ctor(::IRandom& random);
     // NOLINTEND
 
 public:

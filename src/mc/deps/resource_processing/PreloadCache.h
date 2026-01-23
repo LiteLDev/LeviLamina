@@ -36,6 +36,18 @@ public:
         PreloadedContentMaps& operator=(PreloadedContentMaps const&);
         PreloadedContentMaps(PreloadedContentMaps const&);
         PreloadedContentMaps();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~PreloadedContentMaps();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
     struct SharedOnlyConstructionTag {};

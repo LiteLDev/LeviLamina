@@ -45,7 +45,7 @@ public:
 
     virtual int StrideV() const /*override*/;
 
-    virtual ~I420Buffer() /*override*/;
+    virtual ~I420Buffer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,16 +58,6 @@ public:
         int                                  crop_width,
         int                                  crop_height
     );
-
-    MCNAPI I420Buffer(int width, int height);
-
-    MCNAPI I420Buffer(int width, int height, int stride_y, int stride_u, int stride_v);
-
-    MCNAPI uchar* MutableDataU();
-
-    MCNAPI uchar* MutableDataV();
-
-    MCNAPI uchar* MutableDataY();
     // NOLINTEND
 
 public:
@@ -76,20 +66,6 @@ public:
     MCNAPI static ::webrtc::scoped_refptr<::webrtc::I420Buffer> Create(int width, int height);
 
     MCNAPI static void SetBlack(::webrtc::I420Buffer* buffer);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(int width, int height);
-
-    MCNAPI void* $ctor(int width, int height, int stride_y, int stride_u, int stride_v);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

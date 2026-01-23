@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class PrefabDBServerVisibilityUpdatePayload
@@ -14,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk4d6870;
     ::ll::UntypedStorage<8, 24> mUnkf984a5;
+    ::ll::UntypedStorage<8, 24> mUnka75c95;
     // NOLINTEND
 
 public:
@@ -25,7 +31,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PrefabDBServerVisibilityUpdatePayload() /*override*/ = default;
+    virtual ~PrefabDBServerVisibilityUpdatePayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

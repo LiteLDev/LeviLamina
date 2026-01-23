@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
-class IMinecraftGame;
 class PropertyBag;
 class PushNotificationMessage;
 namespace Bedrock { class ActivationArguments; }
@@ -19,6 +18,7 @@ namespace Bedrock { class IIslandCore; }
 namespace Bedrock { class IIslandManager; }
 namespace Bedrock { struct PlatformBuildInfo; }
 namespace Bedrock { struct PlatformRuntimeInfo; }
+class IMinecraftGame;
 // clang-format on
 
 namespace Bedrock {

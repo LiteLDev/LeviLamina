@@ -65,8 +65,16 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        BucketContext(BucketContext const&);
+        BucketContext();
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI_S ::ChunkRecyclerTelemetryData::BucketContext&
+        operator=(::ChunkRecyclerTelemetryData::BucketContext const&);
+
         MCAPI_S ~BucketContext();
         // NOLINTEND
 
@@ -111,7 +119,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~ChunkRecyclerTelemetryData() /*override*/;
+#else // LL_PLAT_C
     virtual ~ChunkRecyclerTelemetryData() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
@@ -127,8 +140,6 @@ public:
 
     MCAPI void recordCacheCheck(::LevelChunk const& lc);
 
-    MCAPI void recordChunkDeleted(::LevelChunk const& lc);
-
     MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 
     MCAPI void tickLevel(::Level const& level);
@@ -138,5 +149,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI_S void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

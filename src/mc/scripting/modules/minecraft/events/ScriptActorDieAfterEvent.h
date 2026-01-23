@@ -9,12 +9,18 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorDieAfterEvent {
+public:
+    // ScriptActorDieAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,7 +39,10 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptActorDieAfterEvent(::ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
 
-    MCAPI ~ScriptActorDieAfterEvent();
+    MCAPI ScriptActorDieAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                       scope
+    );
     // NOLINTEND
 
 public:
@@ -46,12 +55,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                       scope
+    );
     // NOLINTEND
 };
 

@@ -11,6 +11,8 @@ namespace QuerySetIdentifier {
 // functions
 // NOLINTBEGIN
 MCNAPI ::gsl::span<::HashedString const> getDefaultCollection();
+
+MCNAPI ::gsl::span<::HashedString const> getTagsCollection();
 // NOLINTEND
 
 // static variables

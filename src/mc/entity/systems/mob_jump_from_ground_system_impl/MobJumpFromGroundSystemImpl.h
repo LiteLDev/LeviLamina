@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
-#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/ecs/strict/Filter.h"
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
-#include "mc/deps/ecs/strict/Include.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -33,7 +31,6 @@ struct ExternalDataComponent;
 struct FallDistanceComponent;
 struct HasLightweightFamilyFlagComponent;
 struct HorseFlagComponent;
-struct JumpFromGroundRequestComponent;
 struct LavaSlimeFlagComponent;
 struct LavaSlimeJumpRequestComponent;
 struct LocalConstBlockSourceFactoryComponent;
@@ -166,20 +163,6 @@ MCNAPI void mobJumpFromGround(
     ::EntityModifier<::TriggerJumpRequestComponent>& modifier,
     ::IConstBlockSource const&                       region,
     bool                                             isSquid
-);
-
-MCNAPI void tickFilterSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::JumpFromGroundRequestComponent>,
-        ::Optional<::LocalPlayerComponent const>,
-        ::Optional<::LavaSlimeFlagComponent const>,
-        ::Optional<::SquidFlagComponent const>> view,
-    ::EntityModifier<
-        ::LocalPlayerJumpRequestComponent,
-        ::LavaSlimeJumpRequestComponent,
-        ::SquidJumpRequestComponent,
-        ::OtherJumpRequestComponent> mod
 );
 // NOLINTEND
 

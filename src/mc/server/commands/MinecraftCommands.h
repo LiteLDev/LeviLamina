@@ -27,6 +27,7 @@ class ItemRegistryRef;
 class Level;
 class Recipes;
 struct MCRESULT;
+struct MinecraftCommandsArguments;
 namespace br::worldgen { class StructureRegistry; }
 // clang-format on
 
@@ -59,8 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    MinecraftCommands(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
+    MCAPI explicit MinecraftCommands(::MinecraftCommandsArguments&& args);
 
     MCAPI ::Command* compileCommand(
         ::HashedString const&                       commandStr,
@@ -140,7 +140,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
+    MCAPI void* $ctor(::MinecraftCommandsArguments&& args);
     // NOLINTEND
 
 public:

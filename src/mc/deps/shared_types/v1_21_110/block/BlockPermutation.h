@@ -18,6 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                              mCondition;
     ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents> mComponents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                               mOrderedV1CustomComponents;
     // NOLINTEND
 
 public:
@@ -28,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&&);
 
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

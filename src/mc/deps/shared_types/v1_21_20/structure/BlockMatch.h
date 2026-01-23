@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    BlockMatch& operator=(BlockMatch const&);
     BlockMatch(BlockMatch const&);
     BlockMatch();
 
@@ -25,6 +24,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch const&);
 
     MCAPI ~BlockMatch();
     // NOLINTEND

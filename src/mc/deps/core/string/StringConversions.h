@@ -8,8 +8,6 @@ class StringConversions {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::string toUtf8(wchar_t const* src, int srcLen);
-
     MCNAPI static int toUtf8(wchar_t const* src, int srcLen, char* dest, int max);
 
     MCNAPI static ::std::wstring toWide(char const* src, int srcLen);

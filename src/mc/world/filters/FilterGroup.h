@@ -81,8 +81,6 @@ public:
 
     MCNAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCNAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
-
     MCNAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
     MCNAPI void serialize(::Json::Value& jsonVal) const;

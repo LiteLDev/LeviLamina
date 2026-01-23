@@ -14,7 +14,6 @@ public:
 
 public:
     // prevent constructor by default
-    AutomaticFeatureRuleDescription& operator=(AutomaticFeatureRuleDescription const&);
     AutomaticFeatureRuleDescription(AutomaticFeatureRuleDescription const&);
     AutomaticFeatureRuleDescription();
 
@@ -23,6 +22,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
+    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
 
     MCAPI ~AutomaticFeatureRuleDescription();
     // NOLINTEND

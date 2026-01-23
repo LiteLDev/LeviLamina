@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptStructurePlaceOptions& operator=(ScriptStructurePlaceOptions const&);
     ScriptStructurePlaceOptions(ScriptStructurePlaceOptions const&);
     ScriptStructurePlaceOptions();
 
@@ -34,9 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
     operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions&&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
-    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
 
     MCNAPI ~ScriptStructurePlaceOptions();
     // NOLINTEND

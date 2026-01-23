@@ -15,6 +15,17 @@ class BufferedFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Core::Result _copyFileSection(
+        ::Core::FileSystemImpl* pSourceTransaction,
+        ::Core::PathView        sourceFilePath,
+        ::Core::FileSystemImpl* pTargetTransaction,
+        ::Core::PathView        targetFilePath,
+        uint64                  startPosition,
+        uint64                  sectionSize,
+        uint64&                 outBytesWritten,
+        uint64&                 outBytesRemaining
+    );
+
     MCNAPI static ::Core::Result copyDirectory(
         ::Core::FileSystemImpl* pSourceTransaction,
         ::Core::PathView        sourceDirectoryPath,

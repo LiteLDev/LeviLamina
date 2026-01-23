@@ -17,8 +17,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HasItemFilter(HasItemFilter const&);
+    HasItemFilter();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::HasItemFilter& operator=(::HasItemFilter const&);
+
     MCAPI ~HasItemFilter();
     // NOLINTEND
 

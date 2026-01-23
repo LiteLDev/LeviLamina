@@ -13,6 +13,7 @@ class HashedString;
 class Player;
 namespace Editor { class IEditorPlayer; }
 namespace Editor { class LogMessage; }
+namespace Editor { struct LogContent; }
 // clang-format on
 
 namespace Editor::Services {
@@ -37,12 +38,11 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void
-    log(::std::string&&                 msg,
+    log(::Editor::LogContent            content,
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask,
-        ::std::string                   subMsg) /*override*/;
+        ::Editor::LogChannel            logChannelMask) /*override*/;
 
     virtual void flush() /*override*/;
 
@@ -63,12 +63,11 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI void $log(
-        ::std::string&&                 msg,
+        ::Editor::LogContent            content,
         ::Player*                       player,
         ::Editor::LogLevel              level,
         ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask,
-        ::std::string                   subMsg
+        ::Editor::LogChannel            logChannelMask
     );
 
     MCNAPI void $flush();

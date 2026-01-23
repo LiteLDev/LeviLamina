@@ -28,6 +28,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::InteractionResult useShovelOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;

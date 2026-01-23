@@ -33,14 +33,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_DURATION();
-
-    MCAPI static float const& DEFAULT_SNIFFING_RADIUS();
-
-    MCAPI static float const& DEFAULT_SUSPICION_RADIUS_HORIZONTAL();
-
-    MCAPI static float const& DEFAULT_SUSPICION_RADIUS_VERTICAL();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

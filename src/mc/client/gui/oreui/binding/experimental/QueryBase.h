@@ -4,7 +4,7 @@
 
 namespace OreUI::Experimental {
 
-template <typename... T0>
+template <typename T0>
 class QueryBase {};
 
 } // namespace OreUI::Experimental

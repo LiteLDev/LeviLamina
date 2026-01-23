@@ -22,27 +22,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlatWorldPreset& operator=(FlatWorldPreset const&);
-    FlatWorldPreset(FlatWorldPreset const&);
-    FlatWorldPreset();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatWorldPreset(::FlatWorldPreset&&);
-
     MCFOLD_C ushort getBiomeId() const;
 
     MCAPI ::Json::Value toJson() const;
 
     MCAPI ~FlatWorldPreset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FlatWorldPreset&&);
     // NOLINTEND
 
 public:

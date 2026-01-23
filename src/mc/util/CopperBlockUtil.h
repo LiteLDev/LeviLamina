@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/CopperType.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -22,8 +19,6 @@ namespace CopperBlockUtil {
 MCNAPI_C void emitScrapeParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos);
 
 MCNAPI_C void emitWaxParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos, ::mce::Color const& color);
-
-MCNAPI_C ::std::string_view getCopperTypeName(::CopperType type);
 
 MCNAPI bool shouldUseInteractableBlockAsCopper(::Actor const& actor);
 

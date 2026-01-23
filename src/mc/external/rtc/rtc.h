@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/Port.h"
 #include "mc/external/rtc/AdapterType.h"
-#include "mc/external/rtc/WeakPtr.h"
-#include "mc/external/webrtc/SctpDataChannelControllerInterface.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,9 +29,6 @@ MCNAPI int64 ASN1TimeToSec(uchar const* s, uint64 length, bool long_format);
 MCNAPI ::std::string AdapterTypeToString(::rtc::AdapterType type);
 
 MCNAPI uint64 ComputeDigest(::std::string_view alg, void const* input, uint64 in_len, void* output, uint64 out_len);
-
-MCNAPI uint64
-ComputeDigest(::rtc::MessageDigest* digest, void const* input, uint64 in_len, void* output, uint64 out_len);
 
 MCNAPI uint64 ComputeHmac(
     ::std::string_view alg,
@@ -89,8 +83,6 @@ MCNAPI ::rtc::IPAddress GetAnyIP(int family);
 
 MCNAPI double GetNextMovingAverage(double prev_average, double cur, double ratio);
 
-MCNAPI uint GetPrefix(::_IP_ADAPTER_PREFIX_XP* prefixlist, ::rtc::IPAddress const& ip, ::rtc::IPAddress* prefix);
-
 MCNAPI bool GetSrtpKeyAndSaltLengths(int crypto_suite, int* key_length, int* salt_length);
 
 MCNAPI int IPAddressPrecedence(::rtc::IPAddress const& ip);
@@ -98,10 +90,6 @@ MCNAPI int IPAddressPrecedence(::rtc::IPAddress const& ip);
 MCNAPI bool IPFromAddrInfo(::addrinfo* info, ::rtc::IPAddress* out);
 
 MCNAPI bool IPFromString(::std::string_view str, ::rtc::IPAddress* out);
-
-MCNAPI bool IPIs6Bone(::rtc::IPAddress const& ip);
-
-MCNAPI bool IPIs6To4(::rtc::IPAddress const& ip);
 
 MCNAPI bool IPIsAny(::rtc::IPAddress const& ip);
 
@@ -113,25 +101,11 @@ MCNAPI bool IPIsMacBased(::rtc::IPAddress const& ip);
 
 MCNAPI bool IPIsPrivate(::rtc::IPAddress const& ip);
 
-MCNAPI bool IPIsPrivateNetwork(::rtc::IPAddress const& ip);
-
-MCNAPI bool IPIsSharedNetwork(::rtc::IPAddress const& ip);
-
-MCNAPI bool IPIsSiteLocal(::rtc::IPAddress const& ip);
-
-MCNAPI bool IPIsTeredo(::rtc::IPAddress const& ip);
-
 MCNAPI bool IPIsULA(::rtc::IPAddress const& ip);
 
 MCNAPI bool IPIsUnspec(::rtc::IPAddress const& ip);
 
-MCNAPI bool IPIsV4Compatibility(::rtc::IPAddress const& ip);
-
-MCNAPI bool IPIsV4Mapped(::rtc::IPAddress const& ip);
-
 MCNAPI bool InitRandom(int seed);
-
-MCNAPI bool InitRandom(char const* seed, uint64 len);
 
 MCNAPI bool InitializeSSL();
 
@@ -164,8 +138,6 @@ MCNAPI int64 TimeDiff(int64 later, int64 earlier);
 MCNAPI int64 TimeMicros();
 
 MCNAPI int64 TimeMillis();
-
-MCNAPI int64 TimeNanos();
 
 MCNAPI int64 TimeUTCMicros();
 
@@ -214,14 +186,6 @@ MCNAPI ::std::string hex_encode_with_delimiter(::std::string_view source, char d
 MCNAPI char const* inet_ntop(int af, void const* src, char* dst, int size);
 
 MCNAPI int inet_pton(int af, ::std::string_view src, void* dst);
-
-MCNAPI bool operator!=(::rtc::WeakPtr<::cricket::Port> const& weak_ptr, nullptr_t);
-
-MCNAPI bool operator!=(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
-
-MCNAPI bool operator==(::rtc::WeakPtr<::cricket::Port> const& weak_ptr, nullptr_t);
-
-MCNAPI bool operator==(::rtc::WeakPtr<::webrtc::SctpDataChannelControllerInterface> const& weak_ptr, nullptr_t);
 
 MCNAPI ::std::vector<::std::string_view> split(::std::string_view source, char delimiter);
 

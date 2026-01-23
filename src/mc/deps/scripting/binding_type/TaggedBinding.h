@@ -29,8 +29,6 @@ public:
 
     MCNAPI ::Scripting::TaggedBinding& beta();
 
-    MCNAPI ::Scripting::TaggedBinding& onlyStable();
-
     MCNAPI ::Scripting::TaggedBinding& release(
         ::Scripting::Version                                inclusiveLowerVersion,
         ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit

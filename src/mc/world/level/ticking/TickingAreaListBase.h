@@ -38,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint countEntityTickingAreas() const;
-
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;

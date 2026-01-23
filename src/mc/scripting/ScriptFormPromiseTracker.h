@@ -123,6 +123,8 @@ public:
     );
 
     MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
+
+    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
     // NOLINTEND
 
 public:

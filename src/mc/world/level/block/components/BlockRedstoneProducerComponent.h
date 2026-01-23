@@ -28,6 +28,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;
     ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
     ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
+    ::ll::TypedStorage<1, 1, bool>                                  mSetSignalStrengthOnRedstoneComponentSetup;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnPlaceEventSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnStateChangeEvenSubscription;
     // NOLINTEND
@@ -48,6 +49,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool const isSignalSource(::Block const& block);
+
     MCAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);

@@ -28,8 +28,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_DURATION();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItemDescriptor;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mResultItem;
     ::ll::TypedStorage<4, 4, float>             mGrowth;
     // NOLINTEND
 
@@ -22,7 +23,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionFeedItem(::ActorDefinitionFeedItem const&);
 
-    MCFOLD ::ActorDefinitionFeedItem& operator=(::ActorDefinitionFeedItem const&);
+    MCAPI ::ActorDefinitionFeedItem& operator=(::ActorDefinitionFeedItem const&);
 
     MCAPI ~ActorDefinitionFeedItem();
     // NOLINTEND

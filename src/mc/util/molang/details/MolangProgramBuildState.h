@@ -40,8 +40,6 @@ public:
         ::brstd::source_location source
     );
 
-    MCNAPI uint64 numInstructions() const;
-
     MCNAPI void popForEachScope(uint64 instructionIndex);
 
     MCNAPI void popLoopScope(uint64 instructionIndex);

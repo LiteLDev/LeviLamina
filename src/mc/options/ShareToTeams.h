@@ -18,4 +18,16 @@ public:
     ShareToTeams& operator=(ShareToTeams const&);
     ShareToTeams(ShareToTeams const&);
     ShareToTeams();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ~ShareToTeams();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

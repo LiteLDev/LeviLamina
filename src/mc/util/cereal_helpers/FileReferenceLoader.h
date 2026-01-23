@@ -39,11 +39,7 @@ public:
 
     MCNAPI_C ::Core::Path getPath(::Core::Path const& relativePath);
 
-    MCNAPI_C bool hasErrors();
-
     MCNAPI_C bool isAllowedToUsePath(::Core::Path const& path);
-
-    MCNAPI_C uint64 stackDepth() const;
 
     MCNAPI_C ~FileReferenceLoader();
     // NOLINTEND

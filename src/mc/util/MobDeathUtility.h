@@ -25,9 +25,7 @@ struct DimensionTypeComponent;
 struct IsDeadFlagComponent;
 struct OffsetsComponent;
 struct OverlayAlphaComponent;
-struct ParticleEventRequestQueueComponent;
 struct PlayerComponent;
-struct RandomComponent;
 struct ShieldFlickerComponent;
 struct SoundEventRequestQueueComponent;
 struct SpawnExperienceOrbRequestQueueComponent;
@@ -106,19 +104,6 @@ MCNAPI void serverTickWitherDie(
     ::SpawnExperienceOrbRequestQueueComponent&    experienceOrbRequestQueue,
     ::Optional<::ExperienceRewardComponent const> experienceReward,
     ::EntityModifier<::IsDeadFlagComponent>&      modifier
-);
-
-MCNAPI void tickDragonExplosionParticles(
-    ::StateVectorComponent const&                                    stateVector,
-    ::OptionalComponentWrapper<::RandomComponent>                    random,
-    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
-);
-
-MCNAPI void tickExplosionParticles(
-    ::DeathTickingComponent const&                                   deathTicking,
-    ::StateVectorComponent const&                                    stateVector,
-    ::OptionalComponentWrapper<::RandomComponent>                    random,
-    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue
 );
 
 MCNAPI void toggleWitherAerialAttack(

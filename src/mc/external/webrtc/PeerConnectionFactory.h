@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaEngineInterface; }
 namespace cricket { struct AudioOptions; }
 namespace webrtc { class AudioSourceInterface; }
 namespace webrtc { class AudioTrackInterface; }
@@ -95,16 +94,12 @@ public:
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration
     );
 
-    MCNAPI bool IsTrialEnabled(::std::string_view key) const;
-
     MCNAPI explicit PeerConnectionFactory(::webrtc::PeerConnectionFactoryDependencies dependencies);
 
     MCNAPI PeerConnectionFactory(
         ::webrtc::scoped_refptr<::webrtc::ConnectionContext> context,
         ::webrtc::PeerConnectionFactoryDependencies*         dependencies
     );
-
-    MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/FileArchiverOutcome.h"
 
@@ -26,6 +27,7 @@ class LevelStorage;
 class PackInstance;
 class Scheduler;
 class TaskGroup;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 // clang-format on
@@ -41,6 +43,7 @@ public:
     struct Result;
     struct ExportData;
     class IWorldConverter;
+    struct InterventionPublishers;
     // clang-format on
 
     // FileArchiver inner types define
@@ -210,6 +213,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::FileArchiver::ExportType>                     mExportType;
         ::ll::TypedStorage<8, 32, ::std::string>                                 mLevelId;
         ::ll::TypedStorage<8, 8, uint64>                                         mTotalFileCount;
         ::ll::TypedStorage<8, 104, ::FileArchiver::Result>                       mResult;
@@ -232,13 +236,6 @@ public:
 
     class IWorldConverter {
     public:
-        // IWorldConverter inner types define
-        using InTaskFilePathCallBack =
-            ::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>;
-
-        using PreExportConvertedCallback = ::std::function<void(::LevelData&)>;
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~IWorldConverter() = default;
@@ -255,8 +252,7 @@ public:
             ::std::shared_ptr<::FileArchiver::ExportData>&,
             ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
             ::Bedrock::Threading::Async<void>&,
-            ::std::function<void(::LevelData&)>,
-            ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
+            ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>>
         ) = 0;
         // NOLINTEND
 
@@ -264,6 +260,98 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 
+        // NOLINTEND
+    };
+
+    struct InterventionPublishers {
+    public:
+        // InterventionPublishers inner types define
+        using BeginSignature = void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&);
+
+        using CleanupSignature = void(::FileArchiver::ExportType);
+
+        using CopyCompleteSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+        using LevelDataFinalizeSignature = void(::FileArchiver::ExportType, ::LevelData&);
+
+        using LevelDataMutationSignature = void(::FileArchiver::ExportType, ::LevelData&);
+
+        using PreFileRemovalSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+        using PrePackageSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mBegin;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mCopyComplete;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::LevelData&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mLevelDataMutation;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mPreFileRemoval;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::LevelData&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mLevelDataFinalize;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mPrePackage;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::
+                Publisher<void(::FileArchiver::ExportType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+            mCleanup;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI InterventionPublishers();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -325,16 +413,14 @@ public:
     _copyPackToTemp(::PackInstance const& packInstance, ::Core::Path const& tempPath, ::FileArchiver::Result& result);
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> _enqueueExportWorldTasks(
-        ::Core::Path const&                            outputFilePath,
-        ::std::string const&                           worldId,
-        bool                                           isBundle,
-        ::FileArchiver::ExportType                     exportType,
-        ::FileArchiver::ShowToast                      showToast,
-        ::Bedrock::Threading::Async<void>              preTaskHandle,
-        ::std::function<void(::FileArchiver::Result&)> cleanupTask,
-        ::std::function<void(::LevelData&)>            convertPreExportCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-            pathCallbacks
+        ::Core::Path const&                                                        outputFilePath,
+        ::std::string const&                                                       worldId,
+        bool                                                                       isBundle,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::FileArchiver::ShowToast                                                  showToast,
+        ::Bedrock::Threading::Async<void>                                          preTaskHandle,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::std::function<void(::FileArchiver::Result&)>                             cleanupTask
     );
 
     MCAPI void _exportLevelFiles(
@@ -377,45 +463,47 @@ public:
     MCAPI_C ::Bedrock::Threading::Async<::FileArchiver::CopyWorldResult> copyLevelAsync(::std::string const& worldId);
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentEditorLevel(
-        ::Level*                            level,
-        ::Core::Path const&                 exportFilePath,
-        ::std::function<void(::LevelData&)> preExportConvertedCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-                                   pathCallbacks,
-        ::FileArchiver::ExportType exportType,
-        ::FileArchiver::ShowToast  toast
+        ::Level*                                                                   level,
+        ::Core::Path const&                                                        exportFilePath,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::FileArchiver::ShowToast                                                  toast
     );
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentLevel(
-        ::Level*                   level,
-        bool                       isBundle,
-        ::FileArchiver::ExportType exportType,
-        ::Core::Path const&        exportFilePath
+        ::Level*                                                                   level,
+        bool                                                                       isBundle,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::Core::Path const&                                                        exportFilePath,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     );
 
     MCAPI void exportCurrentLevel(
-        ::Level*                                       level,
-        bool                                           isBundle,
-        ::FileArchiver::ExportType                     exportType,
-        ::Core::Path const&                            exportFilePath,
-        ::std::function<void(::FileArchiver::Result&)> exportCallback
+        ::Level*                                                                   level,
+        bool                                                                       isBundle,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::Core::Path const&                                                        exportFilePath,
+        ::std::function<void(::FileArchiver::Result&)>                             exportCallback,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     );
 
     MCAPI_C ::Bedrock::Threading::Async<::FileArchiver::Result> exportLevel(
-        ::std::string const&       worldId,
-        bool                       isBundle,
-        ::FileArchiver::ExportType exportType,
-        ::FileArchiver::ShowToast  showToast,
-        ::Core::Path const&        exportFilePath
+        ::std::string const&                                                       worldId,
+        bool                                                                       isBundle,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::FileArchiver::ShowToast                                                  showToast,
+        ::Core::Path const&                                                        exportFilePath,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     );
 
     MCAPI_C void exportLevel(
-        ::std::string const&                           worldId,
-        bool                                           isBundle,
-        ::FileArchiver::ExportType                     exportType,
-        ::Core::Path const&                            exportFilePath,
-        ::std::function<void(::FileArchiver::Result&)> exportCallback,
-        ::FileArchiver::ShowToast                      showToast
+        ::std::string const&                                                       worldId,
+        bool                                                                       isBundle,
+        ::FileArchiver::ExportType                                                 exportType,
+        ::Core::Path const&                                                        exportFilePath,
+        ::std::function<void(::FileArchiver::Result&)>                             exportCallback,
+        ::FileArchiver::ShowToast                                                  showToast,
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
     );
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result>

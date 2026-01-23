@@ -8,12 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerJoinAfterEvent {
+public:
+    // ScriptPlayerJoinAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,12 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerJoinAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
-        ::std::string const&                                                        playerName,
-        ::std::string const&                                                        playerId
-    );
-
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
 
@@ -50,16 +49,6 @@ public:
     MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::Scripting::ClassBinding bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
-        ::std::string const&                                                        playerName,
-        ::std::string const&                                                        playerId
-    );
     // NOLINTEND
 
 public:

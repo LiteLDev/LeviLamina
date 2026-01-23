@@ -13,13 +13,14 @@ public:
 
 public:
     // prevent constructor by default
-    ActorTextureResourceLocations& operator=(ActorTextureResourceLocations const&);
     ActorTextureResourceLocations(ActorTextureResourceLocations const&);
     ActorTextureResourceLocations();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations const&);
+
     MCNAPI ~ActorTextureResourceLocations();
     // NOLINTEND
 

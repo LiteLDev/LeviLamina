@@ -22,13 +22,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ImportStructureMetaData() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~ImportStructureMetaData() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

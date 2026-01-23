@@ -49,11 +49,12 @@ class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
 public:
     // DedicatedServer inner types define
     enum class StartResult : int {
-        Success           = 0,
-        PortOccupied      = 1,
-        InvalidSettings   = 2,
-        MissingDependency = 3,
-        RuntimeError      = 4,
+        Success                      = 0,
+        PortOccupied                 = 1,
+        InvalidSettings              = 2,
+        MissingDependency            = 3,
+        RuntimeError                 = 4,
+        DocumentationGenerationError = 5,
     };
 
 public:
@@ -111,7 +112,7 @@ public:
 
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
-    virtual void requestServerShutdown(::std::string const&) /*override*/;
+    virtual void requestServerShutdown() /*override*/;
 
     virtual bool requestInGamePause(::SubClientId const&, bool) /*override*/;
     // NOLINTEND
@@ -127,15 +128,9 @@ public:
 
     MCAPI void initializeHttp(::PropertiesSettings const& properties);
 
-    MCAPI void initializeImguiProfiler();
-
     MCAPI void initializeLogging(::TestConfig& testConfig);
 
-    MCAPI ::std::future<bool> initializeMultiplayerKeys(
-        ::Minecraft&                                                     minecraft,
-        ::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discovery,
-        ::PropertiesSettings const&                                      properties
-    );
+    MCAPI ::std::future<bool> initializeMultiplayerKeys(::Minecraft& minecraft, ::PropertiesSettings const& properties);
 
     MCAPI void initializeServices(
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
@@ -190,7 +185,7 @@ public:
 
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void $requestServerShutdown(::std::string const&);
+    MCAPI void $requestServerShutdown();
 
     MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND

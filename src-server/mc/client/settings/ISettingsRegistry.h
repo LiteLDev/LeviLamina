@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ISettingsRegistry {
+struct ISettingsRegistry {
 public:
     // ISettingsRegistry inner types declare
     // clang-format off

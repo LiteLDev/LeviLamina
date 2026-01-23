@@ -41,8 +41,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
-
     MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
     MCFOLD ::std::vector<::JigsawBlockInfo>
@@ -53,6 +51,10 @@ public:
     MCFOLD bool $isValid() const;
 
     MCFOLD ::StructurePoolElementType $type() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
+#endif
 
 
     // NOLINTEND

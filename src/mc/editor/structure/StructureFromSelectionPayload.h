@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class StructureFromSelectionPayload
@@ -17,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    StructureFromSelectionPayload& operator=(StructureFromSelectionPayload const&);
     StructureFromSelectionPayload(StructureFromSelectionPayload const&);
     StructureFromSelectionPayload();
 
@@ -30,6 +34,19 @@ public:
     virtual ~StructureFromSelectionPayload() /*override*/;
 #endif
 
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::StructureFromSelectionPayload&
+    operator=(::Editor::Network::StructureFromSelectionPayload const&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace NetherNet { struct StunRelayServer; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace JsonRpc {
@@ -28,7 +29,6 @@ public:
 
     public:
         // prevent constructor by default
-        TurnAuthServer& operator=(TurnAuthServer const&);
         TurnAuthServer(TurnAuthServer const&);
         TurnAuthServer();
 
@@ -36,6 +36,9 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer& operator=(::JsonRpc::TurnConfigResult::TurnAuthServer&&);
+
+        MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer&
+        operator=(::JsonRpc::TurnConfigResult::TurnAuthServer const&);
         // NOLINTEND
     };
 
@@ -58,6 +61,12 @@ public:
     MCNAPI ::std::vector<::NetherNet::StunRelayServer> convertToRelayConfig();
 
     MCNAPI ~TurnConfigResult();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -43,6 +43,8 @@ public:
     MCAPI ItemInstance(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+
+    MCAPI ::ItemInstance clone() const;
     // NOLINTEND
 
 public:

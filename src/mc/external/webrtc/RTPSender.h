@@ -133,11 +133,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> AudioExtensionSizes();
-
     MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> FecExtensionSizes();
-
-    MCNAPI static ::rtc::ArrayView<::webrtc::RtpExtensionSize const> VideoExtensionSizes();
     // NOLINTEND
 
 public:

@@ -35,13 +35,9 @@ public:
 
     MCNAPI void Clear();
 
-    MCNAPI void OnRequestTimedOut(::cricket::StunRequest* request);
-
     MCNAPI void Send(::cricket::StunRequest* request);
 
     MCNAPI void SendDelayed(::cricket::StunRequest* request, int delay);
-
-    MCNAPI void SendPacket(void const* data, uint64 size, ::cricket::StunRequest* request);
 
     MCNAPI StunRequestManager(
         ::webrtc::TaskQueueBase*                                            thread,

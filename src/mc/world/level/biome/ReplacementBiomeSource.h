@@ -112,8 +112,6 @@ public:
 
     MCAPI bool fullyReplacesBiomeById(::BiomeIdType id) const;
 
-    MCAPI bool fullyReplacesBiomeByNameHash(::BiomeHashType hash) const;
-
     MCAPI ::Biome const* tryReplace(::Biome const* targetBiome, ::BlockPos const& position) const;
     // NOLINTEND
 

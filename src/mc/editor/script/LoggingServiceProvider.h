@@ -13,6 +13,7 @@ class HashedString;
 class Player;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class LogMessage; }
+namespace Editor { struct LogContent; }
 // clang-format on
 
 namespace Editor::Services {
@@ -24,12 +25,7 @@ public:
     virtual ~LoggingServiceProvider() = default;
 
     virtual void
-    log(::std::string&&,
-        ::Player*,
-        ::Editor::LogLevel,
-        ::std::vector<::HashedString>&&,
-        ::Editor::LogChannel,
-        ::std::string) = 0;
+    log(::Editor::LogContent, ::Player*, ::Editor::LogLevel, ::std::vector<::HashedString>&&, ::Editor::LogChannel) = 0;
 
     virtual void flush() = 0;
 

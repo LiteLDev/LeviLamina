@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    EnchantableItemComponent& operator=(EnchantableItemComponent const&);
     EnchantableItemComponent(EnchantableItemComponent const&);
     EnchantableItemComponent();
 
@@ -28,6 +27,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_20_50::EnchantableItemComponent&
     operator=(::SharedTypes::v1_20_50::EnchantableItemComponent&&);
+
+    MCAPI ::SharedTypes::v1_20_50::EnchantableItemComponent&
+    operator=(::SharedTypes::v1_20_50::EnchantableItemComponent const&);
     // NOLINTEND
 
 public:

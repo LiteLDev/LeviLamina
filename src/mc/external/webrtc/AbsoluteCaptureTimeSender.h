@@ -6,7 +6,6 @@
 // clang-format off
 namespace webrtc { class Clock; }
 namespace webrtc { class NtpTime; }
-namespace webrtc { class Timestamp; }
 namespace webrtc { struct AbsoluteCaptureTime; }
 // clang-format on
 
@@ -44,15 +43,6 @@ public:
         ::std::optional<int64> estimated_capture_clock_offset,
         bool                   force
     );
-
-    MCNAPI bool ShouldSendExtension(
-        ::webrtc::Timestamp    send_time,
-        uint                   source,
-        uint                   rtp_timestamp,
-        int                    rtp_clock_frequency_hz,
-        ::webrtc::NtpTime      absolute_capture_time,
-        ::std::optional<int64> estimated_capture_clock_offset
-    ) const;
     // NOLINTEND
 
 public:

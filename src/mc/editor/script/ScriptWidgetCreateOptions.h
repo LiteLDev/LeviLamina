@@ -23,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 40>  mUnk45e023;
     ::ll::UntypedStorage<4, 16>  mUnk41ac7c;
     ::ll::UntypedStorage<4, 16>  mUnkfc3427;
-    ::ll::UntypedStorage<8, 256> mUnkd41faf;
+    ::ll::UntypedStorage<8, 112> mUnkd41faf;
     ::ll::UntypedStorage<4, 8>   mUnk82e11c;
     // NOLINTEND
 
@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
-
     MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
@@ -56,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
-
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
     // NOLINTEND
 

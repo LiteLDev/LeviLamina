@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class OperatorType : int {};
+enum class OperatorType : uchar {};

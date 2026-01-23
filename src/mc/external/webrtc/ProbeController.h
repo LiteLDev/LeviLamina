@@ -100,10 +100,6 @@ public:
 
     MCNAPI void SetNetworkStateEstimate(::webrtc::NetworkStateEstimate estimate);
 
-    MCNAPI bool TimeForAlrProbe(::webrtc::Timestamp at_time) const;
-
-    MCNAPI bool TimeForNetworkStateProbe(::webrtc::Timestamp at_time) const;
-
     MCNAPI ~ProbeController();
     // NOLINTEND
 

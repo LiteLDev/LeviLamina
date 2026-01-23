@@ -57,6 +57,8 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI bool isActivated() const;
+
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
 

@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/block/tessellation_pipeline/item_transforms/Type.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/CachedComponentData.h"
 #include "mc/world/level/block/components/BlockComponentDirectData.h"
@@ -19,7 +17,6 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
-class BlockGraphics;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -28,11 +25,11 @@ class DefinitionTrigger;
 class GetCollisionShapeInterface;
 class HashedString;
 class HitResult;
+class IClientBlockData;
 class IConstBlockSource;
 class ItemActor;
 class ItemInstance;
 class ItemStackBase;
-class Matrix;
 class NeighborBlockDirections;
 class Player;
 class Random;
@@ -46,22 +43,18 @@ class Block {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
-    ::ll::TypedStorage<2, 2, ushort const>                   mData;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>  mBlockType;
-    ::ll::TypedStorage<4, 8, ::CachedComponentData>          mCachedComponentData;
-    ::ll::TypedStorage<8, 112, ::BlockComponentDirectData>   mDirectData;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mSerializationId;
-    ::ll::TypedStorage<8, 8, uint64>                         mSerializationIdHash;
-    ::ll::TypedStorage<4, 4, uint>                           mSerializationIdHashForNetwork;
-    ::ll::TypedStorage<4, 4, uint>                           mNetworkId;
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<1, 1, bool> mHasRuntimeId;
-#else // LL_PLAT_C
-    ::ll::TypedStorage<1, 1, bool>                   mHasRuntimeId;
-    ::ll::TypedStorage<8, 8, ::BlockGraphics const*> mBlockGraphics;
-#endif
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>             mComponents;
+    ::ll::TypedStorage<2, 2, ushort const>                          mData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>         mBlockType;
+    ::ll::TypedStorage<4, 8, ::CachedComponentData>                 mCachedComponentData;
+    ::ll::TypedStorage<8, 96, ::BlockComponentDirectData>           mDirectData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>        mTags;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                        mSerializationId;
+    ::ll::TypedStorage<8, 8, uint64>                                mSerializationIdHash;
+    ::ll::TypedStorage<4, 4, uint>                                  mSerializationIdHashForNetwork;
+    ::ll::TypedStorage<4, 4, uint>                                  mNetworkId;
+    ::ll::TypedStorage<1, 1, bool>                                  mHasRuntimeId;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IClientBlockData>> mClientData;
     // NOLINTEND
 
 public:
@@ -81,20 +74,9 @@ public:
 
     MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
-    MCAPI bool _isSolid() const;
-
     MCAPI_C void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void _queueForTickBasedOnComponentConfiguration(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::Random&         random,
-        bool              placingBlock
-    ) const;
-
     MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& position, bool withData) const;
 
@@ -104,9 +86,7 @@ public:
 
     MCAPI void buildSerializationId(uint latestUpdaterVersion);
 
-    MCAPI bool canProvideFullSupport(uchar face) const;
-
-    MCAPI bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool canConnect(::Block const& connectionBlock, uchar toOther) const;
 
     MCAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb) const;
 
@@ -157,16 +137,12 @@ public:
 
     MCAPI ::std::string getDescriptionId() const;
 
-    MCAPI_C float getDestructionParticleCount() const;
-
-    MCAPI_C ::Matrix getItemDisplayTransform(::ClientBlockPipeline::ItemTransforms::Type type) const;
-
     MCAPI_C ::VoxelShapes::VoxelShape const* getOcclusionFaceShape(uchar face) const;
 
     MCAPI_C ::AABB const&
     getOutline(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI_C ::BlockRenderLayer getRenderLayer() const;
+    MCAPI_S ::Vec3 getRandomOffset(::BlockPos const& pos) const;
 
     MCAPI_C bool getSecondPart(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
@@ -195,6 +171,10 @@ public:
     MCAPI void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void onFallOn(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, float fallDistance) const;
+
+    MCAPI void onPlace(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousBlock) const;
+
+    MCAPI void onStateChange(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousBlock) const;
 
     MCAPI void onStepOff(::Actor& entity, ::BlockPos const& pos) const;
 

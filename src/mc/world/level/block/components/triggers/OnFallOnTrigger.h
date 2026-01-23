@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~OnFallOnTrigger();
+    virtual ~OnFallOnTrigger() = default;
     // NOLINTEND
 
 public:
@@ -32,12 +32,6 @@ public:
     MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent const& eventData) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

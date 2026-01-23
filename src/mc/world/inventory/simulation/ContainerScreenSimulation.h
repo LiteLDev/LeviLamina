@@ -11,11 +11,9 @@
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenAutoplaceBehaviour.h"
 #include "mc/world/inventory/simulation/ContainerScreenTransferBehaviour.h"
-#include "mc/world/inventory/simulation/ContainerValidationCaller.h"
 
 // auto generated forward declare list
 // clang-format off
-class Container;
 class ContainerScreenActionScope;
 class ContainerScreenTemporaryActionScope;
 class ContainerScreenValidation;
@@ -26,7 +24,6 @@ struct ContainerScreenActionResult;
 struct ContainerSimulationSplitStack;
 struct ContainerValidationResult;
 struct ContainerValidationSlotData;
-struct FullContainerName;
 struct ItemTransferAmount;
 // clang-format on
 
@@ -43,10 +40,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::vector<::AutoPlaceTarget>>>
         mAutoPlaceOrderMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenSimulation();
 
 public:
     // virtual functions
@@ -133,13 +126,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ContainerScreenSimulation(
-        ::ContainerScreenContext const&                                           screenContext,
-        ::ContainerValidationCaller                                               caller,
-        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
-        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
-    );
-
     MCNAPI_C ::ContainerScreenTemporaryActionScope _createTemporaryScope();
 
     MCNAPI_C void _leaveActionScope(::ContainerScreenActionResult& result);
@@ -161,17 +147,6 @@ public:
     MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
 
     MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::ContainerScreenContext const&                                           screenContext,
-        ::ContainerValidationCaller                                               caller,
-        ::std::unique_ptr<::IContainerTransfer>&&                                 containerTransferInterface,
-        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> predictiveContainers
-    );
     // NOLINTEND
 
 public:

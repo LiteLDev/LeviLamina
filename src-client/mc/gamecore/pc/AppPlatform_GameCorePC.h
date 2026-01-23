@@ -6,6 +6,7 @@
 #include "mc/client/gui/MousePointerType.h"
 #include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/OsVersion.h"
+#include "mc/deps/core/debug/AssertDialogResponse.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/PlatformType.h"
@@ -30,6 +31,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkc2204d;
     ::ll::UntypedStorage<8, 8>  mUnka8c638;
     ::ll::UntypedStorage<1, 1>  mUnk587e2e;
+    ::ll::UntypedStorage<4, 8>  mUnk459e6c;
     // NOLINTEND
 
 public:
@@ -65,6 +67,8 @@ public:
 
     virtual bool isMouseInsideClient() const /*override*/;
 
+    virtual bool canScroll() const /*override*/;
+
     virtual void hideMousePointer() /*override*/;
 
     virtual void showMousePointer() /*override*/;
@@ -79,7 +83,7 @@ public:
 
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    virtual void setTextBoxBackend(::std::string const& str) /*override*/;
+    virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
     virtual int getCaretPosition() const /*override*/;
 
@@ -106,6 +110,9 @@ public:
     virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) /*override*/;
 
     virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings) /*override*/;
+
+    virtual auto getModalErrorMessageProc()
+        -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&) /*override*/;
 
     virtual ::OsVersion getOSVersion() const /*override*/;
 
@@ -193,6 +200,8 @@ public:
 
     MCAPI bool $isMouseInsideClient() const;
 
+    MCAPI bool $canScroll() const;
+
     MCAPI void $hideMousePointer();
 
     MCAPI void $showMousePointer();
@@ -207,7 +216,7 @@ public:
 
     MCAPI ::std::string $getTextBoxBackend() const;
 
-    MCAPI void $setTextBoxBackend(::std::string const& str);
+    MCAPI void $setTextBoxBackend(::std::string const& newText);
 
     MCAPI int $getCaretPosition() const;
 
@@ -234,6 +243,8 @@ public:
     MCAPI void $pickImage(::std::shared_ptr<::ImagePickingCallback> callback);
 
     MCAPI void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
+
+    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
     MCFOLD ::OsVersion $getOSVersion() const;
 

@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddRelay(::cricket::RelayServerConfig const& config);
-
     MCNAPI ::std::set<::rtc::SocketAddress> GetRelayServerAddresses(::cricket::ProtocolType type) const;
 
     MCNAPI PortConfiguration(
@@ -49,8 +47,6 @@ public:
     );
 
     MCNAPI ::std::set<::rtc::SocketAddress> StunServers();
-
-    MCNAPI bool SupportsProtocol(::cricket::RelayServerConfig const& relay, ::cricket::ProtocolType type) const;
     // NOLINTEND
 
 public:

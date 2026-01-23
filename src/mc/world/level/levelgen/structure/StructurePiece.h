@@ -113,6 +113,17 @@ public:
     MCAPI ushort getOrientationData(::Block const* block, ushort data);
 
     MCAPI bool isAboveGround(int x0, int y1, int z, ::BlockSource& region);
+
+    MCAPI void maybeGenerateBlockIfNotFloating(
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        ::Random&            random,
+        float                probability,
+        int                  x,
+        int                  y,
+        int                  z,
+        ::Block const&       block
+    );
     // NOLINTEND
 
 public:

@@ -33,11 +33,19 @@ public:
     MCNAPI bool areChunksLoaded();
 
     MCNAPI ::std::shared_ptr<::ITickingArea> getTickingArea() const;
+
+    MCNAPI ~ScopedGameTestTickingArea();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& TICKING_AREA_PREFIX();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -10,15 +10,12 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class Level;
 class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -41,10 +38,6 @@ public:
     ::ll::TypedStorage<4, 4, int>             mHealth;
     ::ll::TypedStorage<4, 4, int>             mRandomPickupValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExperienceOrb();
 
 public:
     // virtual functions
@@ -71,12 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceOrb(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void _handleMending(::Player& player);
 
     MCAPI void _tryMergeExistingOrbs();
@@ -99,16 +86,6 @@ public:
         int                       xpValue,
         ::ExperienceOrb::DropType dropType,
         ::Player*                 owner
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
     );
     // NOLINTEND
 

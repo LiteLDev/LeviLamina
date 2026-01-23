@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit NetworkID(::std::string const& str);
 
-    MCNAPI explicit NetworkID(::Json::Value const& value);
-
     MCNAPI uint64 getHash() const;
 
     MCNAPI bool isValid() const;
@@ -39,8 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& str);
-
-    MCNAPI void* $ctor(::Json::Value const& value);
     // NOLINTEND
 };
 

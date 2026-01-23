@@ -27,7 +27,12 @@ public:
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterShapeEntityAABBComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterShapeEntityAABBComponent() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:

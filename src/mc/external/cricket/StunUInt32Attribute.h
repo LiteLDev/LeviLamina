@@ -42,16 +42,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StunUInt32Attribute(ushort type);
-
     MCNAPI StunUInt32Attribute(ushort type, uint value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort type);
-
     MCNAPI void* $ctor(ushort type, uint value);
     // NOLINTEND
 

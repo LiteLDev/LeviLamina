@@ -22,6 +22,13 @@ public:
     MCNAPI static void
     _doWaterAnimalPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
+    MCNAPI static void _tickWaterAnimalPreAIStepSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::WaterAnimalFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

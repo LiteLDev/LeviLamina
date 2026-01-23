@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UIControl {
+struct UIControl {
 public:
     // UIControl inner types declare
     // clang-format off

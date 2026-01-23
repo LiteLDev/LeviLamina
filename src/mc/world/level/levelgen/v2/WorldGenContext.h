@@ -8,9 +8,9 @@ class WorldGenContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMinHeight;
-    ::ll::TypedStorage<4, 4, int> mMaxHeight;
-    ::ll::TypedStorage<4, 4, int> mSeaLevel;
+    ::ll::TypedStorage<2, 2, short> mMinHeight;
+    ::ll::TypedStorage<2, 2, short> mMaxHeight;
+    ::ll::TypedStorage<2, 2, short> mSeaLevel;
     // NOLINTEND
 };
 

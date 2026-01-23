@@ -5,12 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Identifier.h"
 #include "mc/deps/shared_types/util/Reference.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -34,8 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI CameraAimAssistPresetDefinition();
 
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
-
     MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
@@ -46,8 +41,6 @@ public:
 
     MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
 
@@ -55,17 +48,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
-    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
     MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
     // NOLINTEND

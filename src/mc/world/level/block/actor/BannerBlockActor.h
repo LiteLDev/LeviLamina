@@ -49,7 +49,12 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~BannerBlockActor() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~BannerBlockActor() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -63,7 +68,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+    MCAPI_C static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
     MCAPI static int getBaseColor(::ItemStack const& item);
 

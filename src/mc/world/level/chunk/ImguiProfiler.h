@@ -65,7 +65,7 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI_S Record(::ImguiProfiler::RecordGroup::Record const&);
+            MCAPI Record(::ImguiProfiler::RecordGroup::Record const&);
 
             MCAPI ::ImguiProfiler::RecordGroup::Record& operator=(::ImguiProfiler::RecordGroup::Record&&);
 
@@ -75,7 +75,7 @@ public:
         public:
             // constructor thunks
             // NOLINTBEGIN
-            MCAPI_S void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
+            MCAPI void* $ctor(::ImguiProfiler::RecordGroup::Record const&);
             // NOLINTEND
 
         public:
@@ -98,14 +98,13 @@ public:
         public:
             // prevent constructor by default
             FullStackRecord& operator=(FullStackRecord const&);
+            FullStackRecord(FullStackRecord const&);
             FullStackRecord();
 
         public:
             // member functions
             // NOLINTBEGIN
             MCAPI FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord&&);
-
-            MCAPI_C FullStackRecord(::ImguiProfiler::RecordGroup::FullStackRecord const&);
 
             MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord&
             operator=(::ImguiProfiler::RecordGroup::FullStackRecord&&);
@@ -117,8 +116,6 @@ public:
             // constructor thunks
             // NOLINTBEGIN
             MCAPI void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord&&);
-
-            MCAPI_C void* $ctor(::ImguiProfiler::RecordGroup::FullStackRecord const&);
             // NOLINTEND
 
         public:

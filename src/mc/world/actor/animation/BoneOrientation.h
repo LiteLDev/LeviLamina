@@ -42,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C explicit BoneOrientation(::HashedString const& boneName);
+
     MCAPI void applyShortestPathBlend(
         ::BoneOrientation const& blendOut,
         ::BoneOrientation const& blendIn,
@@ -50,6 +52,8 @@ public:
     );
 
     MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
+
+    MCAPI_C void setMatrix(::Matrix const& matrix);
 
     MCAPI_C void updateLocalPreTransformMatrix();
 
@@ -61,6 +65,12 @@ public:
     // NOLINTBEGIN
     MCAPI_C static void
     computeBoneTransform(::BoneOrientation& boneOrientation, ::Vec3 const* offset, ::Matrix& boneToEntitySpaceMatrix);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::HashedString const& boneName);
     // NOLINTEND
 
 public:

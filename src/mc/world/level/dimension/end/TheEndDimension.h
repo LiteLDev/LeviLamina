@@ -153,10 +153,8 @@ public:
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-#ifdef LL_PLAT_C
     MCFOLD ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
-#endif
 
 
     // NOLINTEND

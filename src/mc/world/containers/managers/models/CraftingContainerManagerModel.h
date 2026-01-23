@@ -113,8 +113,6 @@ public:
 
     MCNAPI_C bool _hasUnlockedRecipes(::ItemInstance const& item) const;
 
-    MCNAPI_C bool _isWorkbenchValid() const;
-
     MCNAPI_C bool _populateContainers(uint64& count);
 
     MCNAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);

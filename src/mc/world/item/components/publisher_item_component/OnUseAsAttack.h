@@ -11,14 +11,16 @@
 class HashedString;
 class ItemStack;
 class Player;
+class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 namespace PublisherItemComponent {
 
-struct OnUseAsAttack : public ::ItemComponent,
-                       public ::Bedrock::PubSub::
-                           Publisher<void(::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnUseAsAttack
+: public ::ItemComponent,
+  public ::Bedrock::PubSub::
+      Publisher<void(::ItemStack&, ::Player&, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,6 +31,16 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+
+    MCNAPI static void** $vftableForConnector();
+
+    MCNAPI static void** $vftableForDispatchingPublisherBase();
     // NOLINTEND
 };
 

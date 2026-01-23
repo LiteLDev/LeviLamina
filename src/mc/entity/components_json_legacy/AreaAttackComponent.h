@@ -9,9 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class CompoundTag;
-class DataLoadHelper;
 struct ActorUniqueID;
 struct Tick;
 // clang-format on
@@ -41,8 +39,6 @@ public:
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI ~AreaAttackComponent();
     // NOLINTEND

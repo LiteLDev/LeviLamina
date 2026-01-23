@@ -66,7 +66,7 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> disposeGroupItem(::std::string key);
 
     MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>
+        ::std::optional<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptPersistenceGroupItem>>>
     fetchItem(::std::string const& itemName);
 
     MCNAPI ::Scripting::Result_deprecated<
@@ -74,6 +74,8 @@ public:
     getOrCreateItem(::std::string const& itemName, ::std::optional<::std::string> defaultJsonValue);
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> listItems() const;
+
+    MCNAPI ::Scripting::Result_deprecated<bool> saveToClient();
     // NOLINTEND
 
 public:

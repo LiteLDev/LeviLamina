@@ -39,7 +39,7 @@ public:
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
-    virtual ~DropdownControl() /*override*/ = default;
+    virtual ~DropdownControl() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,6 +62,12 @@ public:
         ::std::optional<uint> defaultValueIndex,
         ::std::optional<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> tooltip
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

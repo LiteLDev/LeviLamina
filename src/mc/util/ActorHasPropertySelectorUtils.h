@@ -27,8 +27,6 @@ MCNAPI bool checkIntProperty(
     bool                       inverted
 );
 
-MCNAPI bool checkIntToBoolConversionNoInversion(bool boolValue, ::CommandRationalRange& rationalRange);
-
 MCNAPI ::std::variant<::CommandRationalRange, bool, ::std::string> parseComparison(
     ::std::variant<
         ::ScriptModuleMinecraft::LessThanComparison,

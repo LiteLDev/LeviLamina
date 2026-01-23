@@ -37,8 +37,6 @@ public:
 
     MCNAPI ::webrtc::DataRate UpperBound() const;
 
-    MCNAPI double deviation_estimate_kbps() const;
-
     MCNAPI ::webrtc::DataRate estimate() const;
 
     MCNAPI bool has_estimate() const;

@@ -42,7 +42,7 @@ public:
     MCAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
 
-    MCAPI_S ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
     // NOLINTEND
 

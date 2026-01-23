@@ -16,6 +16,7 @@ public:
 
 public:
     // prevent constructor by default
+    MobSpawnHerdInfo(MobSpawnHerdInfo const&);
     MobSpawnHerdInfo();
 
 public:
@@ -29,6 +30,8 @@ public:
         ::std::string const& herdEvent,
         uint                 herdEventSkipCount
     );
+
+    MCFOLD ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
 
     MCAPI ~MobSpawnHerdInfo();
     // NOLINTEND

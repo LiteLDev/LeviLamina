@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockSupportDescription : public ::NetworkedBlockComponentDescription<::BlockSupportDescription> {
@@ -38,6 +39,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockSupportDescription(::SupportShape shapeType);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -13,10 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cricket { class MediaEngineInterface; }
-namespace cricket { class VideoMediaReceiveChannelInterface; }
 namespace cricket { class VideoMediaSendChannelInterface; }
-namespace cricket { class VoiceMediaReceiveChannelInterface; }
 namespace cricket { class VoiceMediaSendChannelInterface; }
 namespace webrtc { class AudioTrackInterface; }
 namespace webrtc { class ConnectionContext; }
@@ -157,13 +154,9 @@ public:
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
     GetVideoTransceiver() const;
 
-    MCNAPI ::webrtc::PeerConnectionObserver* Observer() const;
-
     MCNAPI void OnLocalSenderAdded(::webrtc::RtpSenderInfo const& sender_info, ::cricket::MediaType media_type);
 
     MCNAPI void OnLocalSenderRemoved(::webrtc::RtpSenderInfo const& sender_info, ::cricket::MediaType media_type);
-
-    MCNAPI void OnNegotiationNeeded();
 
     MCNAPI void OnRemoteSenderAdded(
         ::webrtc::RtpSenderInfo const&  sender_info,
@@ -193,13 +186,7 @@ public:
         ::std::function<void()>                  on_negotiation_needed
     );
 
-    MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
-
-    MCNAPI ::cricket::VideoMediaReceiveChannelInterface* video_media_receive_channel() const;
-
     MCNAPI ::cricket::VideoMediaSendChannelInterface* video_media_send_channel() const;
-
-    MCNAPI ::cricket::VoiceMediaReceiveChannelInterface* voice_media_receive_channel() const;
 
     MCNAPI ::cricket::VoiceMediaSendChannelInterface* voice_media_send_channel() const;
     // NOLINTEND

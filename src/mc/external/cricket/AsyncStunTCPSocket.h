@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) /*override*/;
 
     virtual uint64 ProcessInput(::rtc::ArrayView<uchar const> data) /*override*/;
 
@@ -32,8 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsyncStunTCPSocket(::rtc::Socket* socket);
-
-    MCNAPI uint64 GetExpectedLength(void const* data, uint64 len, int* pad_bytes);
     // NOLINTEND
 
 public:
@@ -45,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options);
 
     MCNAPI uint64 $ProcessInput(::rtc::ArrayView<uchar const> data);
 

@@ -71,7 +71,7 @@ public:
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
 
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
@@ -145,7 +145,7 @@ public:
     MCNAPI ::CreateContainerItemScope
     $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
 
     MCNAPI void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,

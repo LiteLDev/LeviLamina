@@ -18,7 +18,6 @@ namespace webrtc { class FrameTransformerInterface; }
 namespace webrtc { class PacketRouter; }
 namespace webrtc { class ReportBlockData; }
 namespace webrtc { class RtpPacketSender; }
-namespace webrtc { class RtpPacketToSend; }
 namespace webrtc { class RtpRtcpInterface; }
 namespace webrtc { class RtpVideoSenderInterface; }
 namespace webrtc { class StreamFeedbackProvider; }
@@ -32,7 +31,6 @@ namespace webrtc { struct BitrateConstraints; }
 namespace webrtc { struct BitrateSettings; }
 namespace webrtc { struct NetworkControlUpdate; }
 namespace webrtc { struct NetworkStateEstimate; }
-namespace webrtc { struct PacedPacketInfo; }
 namespace webrtc { struct ReceivedPacket; }
 namespace webrtc { struct RtpConfig; }
 namespace webrtc { struct RtpPayloadState; }
@@ -206,22 +204,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::webrtc::BitrateConstraints> ApplyOrLiftRelayCap(bool is_relayed);
-
-    MCNAPI ::std::optional<bool> GetCongestedStateUpdate() const;
-
-    MCNAPI bool IsRelevantRouteChange(::rtc::NetworkRoute const& old_route, ::rtc::NetworkRoute const& new_route) const;
-
     MCNAPI void MaybeCreateControllers();
-
-    MCNAPI void
-    NotifyBweOfPacedSentPacket(::webrtc::RtpPacketToSend const& packet, ::webrtc::PacedPacketInfo const& pacing_info);
 
     MCNAPI void PostUpdates(::webrtc::NetworkControlUpdate update);
 
     MCNAPI void ProcessSentPacket(::rtc::SentPacket const& sent_packet);
-
-    MCNAPI void ProcessSentPacketUpdates(::webrtc::NetworkControlUpdate updates);
 
     MCNAPI explicit RtpTransportControllerSend(::webrtc::RtpTransportConfig const& config);
 
@@ -230,8 +217,6 @@ public:
     MCNAPI void UpdateBitrateConstraints(::webrtc::BitrateConstraints const& updated);
 
     MCNAPI void UpdateCongestedState();
-
-    MCNAPI void UpdateControlState();
 
     MCNAPI void UpdateControllerWithTimeInterval();
 

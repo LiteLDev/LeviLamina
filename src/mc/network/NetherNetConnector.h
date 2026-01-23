@@ -165,6 +165,8 @@ public:
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
 
+    virtual void setDisableTrickleIce(bool disableTrickleIce) /*override*/;
+
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
@@ -248,6 +250,8 @@ public:
     // NOLINTBEGIN
     MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
+    MCAPI void $setDisableTrickleIce(bool disableTrickleIce);
+
     MCFOLD bool $host(::ConnectionDefinition const& definition);
 
     MCFOLD bool
@@ -262,6 +266,8 @@ public:
     MCFOLD void $closeNetworkConnection(::NetworkIdentifier const&);
 
     MCFOLD bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
+
+    MCFOLD ::TransportLayer $getNetworkType() const;
 
     MCFOLD void $_onDisable();
 

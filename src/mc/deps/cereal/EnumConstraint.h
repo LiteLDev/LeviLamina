@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal::internal { struct ConstraintDescription; }
-// clang-format on
-
 namespace cereal {
 
 class EnumConstraint : public ::cereal::ConstraintHandle<::cereal::EnumConstraint> {
@@ -28,8 +23,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~EnumConstraint() /*override*/;
     // NOLINTEND
 
@@ -37,14 +30,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

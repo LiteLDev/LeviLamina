@@ -54,6 +54,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool calculatePlacePos(::Actor& entity, uchar& face, ::BlockPos& pos);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string const& name, int id, ::SignBlock::SignType type);

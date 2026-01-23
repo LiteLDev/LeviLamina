@@ -19,7 +19,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

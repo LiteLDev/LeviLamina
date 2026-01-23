@@ -37,7 +37,8 @@ public:
 
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const /*override*/;
+    virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const
+        /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
@@ -67,7 +68,7 @@ public:
 
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

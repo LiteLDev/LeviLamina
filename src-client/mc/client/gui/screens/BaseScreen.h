@@ -29,10 +29,8 @@ struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;
 struct TouchPadTouchEventData;
-namespace OreUI { struct ISceneDebugDataProvider; }
 namespace OreUI { struct ViewDebugSettings; }
-namespace OreUI::Experimental::Detail { struct ICommandProvider; }
-namespace OreUI::Experimental::Detail { struct IQueryProvider; }
+namespace OreUI::Debug { struct ISceneDataProvider; }
 // clang-format on
 
 class BaseScreen : public ::AbstractScene {
@@ -108,8 +106,7 @@ public:
 
     virtual void handleButtonRelease(uint buttonId, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void
-    handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) /*override*/;
+    virtual void handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool) /*override*/;
 
     virtual bool handlePointerLocation(
         ::PointerLocationEventData const& pointerLocationData,
@@ -120,8 +117,7 @@ public:
 
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void
-    handleTextChar(::std::string const& inputUtf8, bool keepImePosition, ::FocusImpact focusImpact) /*override*/;
+    virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) /*override*/;
 
@@ -241,13 +237,7 @@ public:
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::ISceneDebugDataProvider const> getDebugDataProvider() const
-        /*override*/;
-
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::IQueryProvider const> getQueryProvider() const
-        /*override*/;
-
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::ICommandProvider const> getCommandProvider() const
+    virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const
         /*override*/;
     // NOLINTEND
 
@@ -323,8 +313,6 @@ public:
 
     MCNAPI void $handleButtonRelease(uint buttonId, ::FocusImpact focusImpact);
 
-    MCNAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
-
     MCNAPI bool
     $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
 
@@ -332,7 +320,7 @@ public:
 
     MCNAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
-    MCNAPI void $handleTextChar(::std::string const& inputUtf8, bool keepImePosition, ::FocusImpact focusImpact);
+    MCNAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
 
     MCNAPI void $handleCaretLocation(int caretLocation, ::FocusImpact focusImpact);
 
@@ -450,12 +438,7 @@ public:
 
     MCNAPI void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::ISceneDebugDataProvider const> $getDebugDataProvider() const;
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::IQueryProvider const> $getQueryProvider() const;
-
-    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::ICommandProvider const>
-    $getCommandProvider() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
     // NOLINTEND
 
 public:

@@ -40,10 +40,6 @@ public:
 
     MCNAPI double ComputeRateForInterval(int64 interval_milliseconds) const;
 
-    MCNAPI void EnsureInitialized();
-
-    MCNAPI uint64 NextBucketIndex(uint64 bucket_index) const;
-
     MCNAPI RateTracker(int64 bucket_milliseconds, uint64 bucket_count);
 
     MCNAPI int64 TotalSampleCount() const;

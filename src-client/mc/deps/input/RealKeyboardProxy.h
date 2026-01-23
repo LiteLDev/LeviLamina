@@ -9,7 +9,7 @@ class RealKeyboardProxy : public ::IKeyboardProxy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void feedText(::std::string const& text, bool isFromIME) /*override*/;
+    virtual void feedText(::std::string const& text) /*override*/;
 
     virtual void feedCaretLocation(int caretPos) /*override*/;
 
@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $feedText(::std::string const& text, bool isFromIME);
+    MCAPI void $feedText(::std::string const& text);
 
     MCAPI void $feedCaretLocation(int caretPos);
     // NOLINTEND

@@ -28,11 +28,11 @@ class ClientInstanceScreenModel;
 class ContainerManagerController;
 class ItemStack;
 class ItemStackBase;
-class UIPropertyBag;
 struct AutoPlaceItem;
 struct ItemStateData;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
+struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 
@@ -114,7 +114,7 @@ public:
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
 
     virtual void onLeave() /*override*/;
 
@@ -213,19 +213,13 @@ public:
 
     MCAPI ::ItemGroup const& _getCursorSelectedItemGroup() const;
 
-    MCAPI ::std::string _getDisplayName() const;
-
     MCAPI short _getDraggingDistanceSqrFromStartingPoint() const;
 
     MCAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
     MCAPI ::std::vector<::AutoPlaceItem>& _getReservedAutoPlaceOrder(::ContainerEnumName name, uint64 reserve);
 
-    MCAPI ::std::vector<::std::string>& _getReservedCoalesceOrder(::ContainerEnumName name, uint64 reserve);
-
     MCAPI ::ItemStackBase const& _getSelectedItemStackBase() const;
-
-    MCAPI ::std::string _getStackItemCount() const;
 
     MCAPI ::ItemStackBase const&
     _getTakeableItemStackBase(::std::string const& collectionName, int collectionIndex) const;
@@ -255,6 +249,8 @@ public:
     MCAPI void _handleTakeAmount(int amount, ::std::string const& collectionName, int index);
 
     MCAPI void _handleUnselectSlot();
+
+    MCAPI bool _hasCustomDisplayName() const;
 
     MCAPI bool _hasItems(::std::string const& collectionName, int collectionIndex) const;
 

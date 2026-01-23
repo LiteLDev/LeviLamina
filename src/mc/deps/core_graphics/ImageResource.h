@@ -11,13 +11,37 @@ namespace cg {
 
 class ImageResource {
 public:
+    // ImageResource inner types declare
+    // clang-format off
+    struct StreamedResource;
+    // clang-format on
+
     // ImageResource inner types define
-    using ImageData =
-        ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>;
+    struct StreamedResource {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<::cg::ImageBuffer>> mLoadedMipData;
+        ::ll::TypedStorage<8, 24, ::std::vector<uchar>>             mLoadedMipLevels;
+        ::ll::TypedStorage<8, 8, uint64>                            mImageHash;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        StreamedResource& operator=(StreamedResource const&);
+        StreamedResource(StreamedResource const&);
+        StreamedResource();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI_C ::cg::ImageResource::StreamedResource& operator=(::cg::ImageResource::StreamedResource&&);
+        // NOLINTEND
+    };
+
+    using ImageData = ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>;
 
     using ImageHash = uint64;
-
-    using StreamedResource = ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>;
 
 public:
     // virtual functions
@@ -36,7 +60,7 @@ public:
 
     virtual void addImage(::std::shared_ptr<::cg::ImageResource>) = 0;
 
-    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::std::pair<::std::vector<::cg::ImageBuffer>, uint64>>
+    virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() = 0;
     // NOLINTEND
 

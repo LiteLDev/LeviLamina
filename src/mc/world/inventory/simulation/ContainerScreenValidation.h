@@ -15,7 +15,6 @@ class ContainerScreenValidatorBase;
 class ContainerValidationBase;
 class ItemStack;
 class SimpleSparseContainer;
-struct ContainerIterationRange;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
 struct ContainerValidationLayer;
@@ -53,11 +52,10 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerScreenValidation();
 
-    virtual ::ContainerValidationResult
-    tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
+    virtual ::ContainerValidationResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
 
     virtual ::ContainerValidationCraftResult
-    getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
+    getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
 
     virtual ::ContainerValidationResult tryActivate();
     // NOLINTEND
@@ -85,6 +83,9 @@ public:
 
     MCNAPI int _tryAddItem(::ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
 
+    MCNAPI bool
+    _tryMoveItem(::ContainerValidationSlotInfo& srcValidatorPair, ::ContainerValidationSlotInfo& dstValidatorPair);
+
     MCNAPI ::ItemStack _tryRemoveItem(::ContainerValidationSlotInfo& slotInfo, int amount);
 
     MCNAPI int _trySetItem(
@@ -100,9 +101,6 @@ public:
         int                                  transferAmount,
         ::ContainerScreenRequestActionType   actionType
     );
-
-    MCNAPI_C ::std::optional<::ContainerIterationRange>
-    getContainerIterator(::ContainerValidationSlotData const& slotData);
 
     MCNAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
@@ -154,11 +152,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ContainerValidationResult
-    $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
+    MCNAPI ::ContainerValidationResult $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
 
     MCNAPI ::ContainerValidationCraftResult
-    $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
+    $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
 
     MCNAPI ::ContainerValidationResult $tryActivate();
 

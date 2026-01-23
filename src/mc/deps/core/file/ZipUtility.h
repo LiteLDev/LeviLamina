@@ -38,6 +38,15 @@ public:
         ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
         ::Core::ZipUtils::ZipSettings const&                    zipSettings) const /*override*/;
 
+    virtual ::Bedrock::Result<void> zipFromZip(
+        ::Core::PathView                     zipInputPath,
+        ::Core::PathView                     zipInputSubPath,
+        ::Core::PathView                     zipOutputPath,
+        ::Core::ZipUtils::ZipProgress&       progress,
+        bool                                 useLowMemMode,
+        ::Core::ZipUtils::ZipSettings const& zipSettings
+    ) const /*override*/;
+
     virtual ::Bedrock::Result<void> unzipInTransaction(
         ::Core::Path const&                    zipInputPath,
         ::Core::Path const&                    outputFolderPath,
@@ -87,6 +96,15 @@ public:
         bool                                                    useLowMemMode,
         ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
         ::Core::ZipUtils::ZipSettings const&                    zipSettings
+    ) const;
+
+    MCNAPI ::Bedrock::Result<void> $zipFromZip(
+        ::Core::PathView                     zipInputPath,
+        ::Core::PathView                     zipInputSubPath,
+        ::Core::PathView                     zipOutputPath,
+        ::Core::ZipUtils::ZipProgress&       progress,
+        bool                                 useLowMemMode,
+        ::Core::ZipUtils::ZipSettings const& zipSettings
     ) const;
 
     MCNAPI ::Bedrock::Result<void> $unzipInTransaction(

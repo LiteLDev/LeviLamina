@@ -73,10 +73,6 @@ public:
         // NOLINTBEGIN
         MCNAPI bool Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
 
-        MCNAPI void EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
-
-        MCNAPI void PopFront();
-
         MCNAPI ~AdditionalTsnBlocks();
         // NOLINTEND
 
@@ -135,8 +131,6 @@ public:
     MCNAPI void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state);
 
     MCNAPI bool ShouldSendAck(bool also_if_delayed);
-
-    MCNAPI void UpdateAckState(::dcsctp::DataTracker::AckState new_state, ::std::string_view reason);
 
     MCNAPI bool will_increase_cum_ack_tsn(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> tsn) const;
 

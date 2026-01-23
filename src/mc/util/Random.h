@@ -49,7 +49,7 @@ public:
 
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI_C float nextFloat(float min, float max);
+    MCAPI float nextFloat(float min, float max);
 
     MCAPI_C float nextGaussianFloat();
 

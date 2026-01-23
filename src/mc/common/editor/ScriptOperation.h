@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Transactions { class ScriptOperationPayload; }
 // clang-format on
 
 namespace Editor::Transactions {
@@ -37,6 +38,20 @@ public:
     virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) /*override*/;
 
     virtual ~ScriptOperation() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI
+    ScriptOperation(::std::string const& operationName, ::Editor::Transactions::ScriptOperationPayload const&& payload);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void*
+    $ctor(::std::string const& operationName, ::Editor::Transactions::ScriptOperationPayload const&& payload);
     // NOLINTEND
 
 public:

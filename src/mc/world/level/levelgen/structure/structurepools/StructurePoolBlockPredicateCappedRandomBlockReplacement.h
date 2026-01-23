@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateCappedRandomBlockReplacement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool test(::Block const& block, ::Randomize&) const /*override*/;
@@ -55,18 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateCappedRandomBlockReplacement(
-        ::std::map<::HashedString, ::HashedString> const& blockMappings,
-        uint                                              maximumAmount
-    );
-
     MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::map<::HashedString, ::HashedString> const& blockMappings, uint maximumAmount);
     // NOLINTEND
 
 public:

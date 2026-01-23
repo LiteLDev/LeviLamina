@@ -31,7 +31,7 @@ public:
 
     MCAPI PerlinSimplexNoise(uint seed, int levels);
 
-    MCAPI void _init(::IRandom& r, bool parityInitialization);
+    MCAPI PerlinSimplexNoise(::IRandom& r, int levels, bool parityInitialization);
 
     MCAPI float* getRegion(
         float*        buffer,
@@ -56,6 +56,8 @@ public:
     MCAPI void* $ctor(::PerlinSimplexNoise const&);
 
     MCAPI void* $ctor(uint seed, int levels);
+
+    MCAPI void* $ctor(::IRandom& r, int levels, bool parityInitialization);
     // NOLINTEND
 
 public:

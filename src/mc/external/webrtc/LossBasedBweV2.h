@@ -95,16 +95,12 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Config();
-
-        MCNAPI Config(::webrtc::LossBasedBweV2::Config&&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
-
-        MCNAPI void* $ctor(::webrtc::LossBasedBweV2::Config&&);
         // NOLINTEND
     };
 
@@ -240,58 +236,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI double AdjustBiasFactor(double loss_rate, double bias_factor) const;
-
     MCNAPI void CalculateInstantLowerBound();
 
-    MCNAPI void CalculateInstantUpperBound();
-
-    MCNAPI void CalculateTemporalWeights();
-
-    MCNAPI bool CanKeepIncreasingState(::webrtc::DataRate estimate) const;
-
-    MCNAPI double GetAverageReportedByteLossRatio() const;
-
     MCNAPI double GetAverageReportedLossRatio() const;
-
-    MCNAPI double GetAverageReportedPacketLossRatio() const;
-
-    MCNAPI ::webrtc::DataRate GetCandidateBandwidthUpperBound() const;
 
     MCNAPI ::std::vector<::webrtc::LossBasedBweV2::ChannelParameters> GetCandidates(bool in_alr) const;
 
     MCNAPI ::webrtc::LossBasedBweV2::Derivatives
     GetDerivatives(::webrtc::LossBasedBweV2::ChannelParameters const& channel_parameters) const;
 
-    MCNAPI double GetFeasibleInherentLoss(::webrtc::LossBasedBweV2::ChannelParameters const& channel_parameters) const;
-
-    MCNAPI double GetHighBandwidthBias(::webrtc::DataRate bandwidth) const;
-
-    MCNAPI double GetInherentLossUpperBound(::webrtc::DataRate bandwidth) const;
-
-    MCNAPI ::webrtc::DataRate GetInstantLowerBound() const;
-
-    MCNAPI ::webrtc::DataRate GetInstantUpperBound() const;
-
     MCNAPI ::webrtc::LossBasedBweV2::Result GetLossBasedResult() const;
 
     MCNAPI double GetObjective(::webrtc::LossBasedBweV2::ChannelParameters const& channel_parameters) const;
-
-    MCNAPI ::webrtc::DataRate GetSendingRate(::webrtc::DataRate instantaneous_sending_rate) const;
 
     MCNAPI bool IsConfigValid() const;
 
     MCNAPI bool IsEnabled() const;
 
-    MCNAPI bool IsEstimateIncreasingWhenLossLimited(::webrtc::DataRate old_estimate, ::webrtc::DataRate new_estimate);
-
-    MCNAPI bool IsInLossLimitedState() const;
-
     MCNAPI bool IsReady() const;
 
     MCNAPI explicit LossBasedBweV2(::webrtc::FieldTrialsView const* key_value_config);
-
-    MCNAPI void NewtonsMethodUpdate(::webrtc::LossBasedBweV2::ChannelParameters& channel_parameters) const;
 
     MCNAPI bool PaceAtLossBasedEstimate() const;
 
@@ -310,8 +274,6 @@ public:
     );
 
     MCNAPI bool UseInStartPhase() const;
-
-    MCNAPI ~LossBasedBweV2();
     // NOLINTEND
 
 public:
@@ -325,12 +287,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

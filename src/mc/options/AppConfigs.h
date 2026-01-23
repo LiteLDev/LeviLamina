@@ -11,13 +11,13 @@
 // clang-format off
 class IAppConfigData;
 class IContentAccessibilityProvider;
-class ISceneStack;
 class IScreenCapabilities;
 class LevelData;
 struct AppConfigsDependencies;
 struct ConnectionDefinition;
 struct PackIdVersion;
-class SceneFactory;
+class ISceneStack;
+struct SceneFactory;
 // clang-format on
 
 class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {

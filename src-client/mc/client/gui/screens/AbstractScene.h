@@ -27,10 +27,8 @@ struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;
 struct TouchPadTouchEventData;
-namespace OreUI { struct ISceneDebugDataProvider; }
 namespace OreUI { struct ViewDebugSettings; }
-namespace OreUI::Experimental::Detail { struct ICommandProvider; }
-namespace OreUI::Experimental::Detail { struct IQueryProvider; }
+namespace OreUI::Debug { struct ISceneDataProvider; }
 // clang-format on
 
 class AbstractScene {
@@ -105,7 +103,7 @@ public:
 
     virtual void handleDirection(::DirectionId, float, float, ::FocusImpact) = 0;
 
-    virtual void handleTextChar(::std::string const&, bool, ::FocusImpact) = 0;
+    virtual void handleTextChar(::std::string const&, ::FocusImpact) = 0;
 
     virtual void handleCaretLocation(int, ::FocusImpact) = 0;
 
@@ -229,13 +227,7 @@ public:
 
     virtual void setDebugSettings(::OreUI::ViewDebugSettings const&) const = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::ISceneDebugDataProvider const> getDebugDataProvider() const = 0;
-
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::IQueryProvider const>
-    getQueryProvider() const = 0;
-
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::Experimental::Detail::ICommandProvider const>
-    getCommandProvider() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const = 0;
     // NOLINTEND
 
 public:

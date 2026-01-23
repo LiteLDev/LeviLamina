@@ -33,8 +33,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _rarityFromString(::RarityItemComponent& instance, ::std::string const& value);
-
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,

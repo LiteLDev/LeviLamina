@@ -36,6 +36,8 @@ MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
 MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
 
 MCAPI void tryMoveStorageItem(::ItemStackBase& item);
+
+MCAPI void tryRemoveStorageItemContentData(::ItemStackBase& item);
 // NOLINTEND
 
 } // namespace StorageItemUtility

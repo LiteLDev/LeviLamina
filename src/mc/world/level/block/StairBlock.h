@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -30,7 +30,8 @@ class StairBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockType const&> mBase;
+    ::ll::TypedStorage<8, 8, ::BlockType const&>                         mBase;
+    ::ll::TypedStorage<8, 192, ::std::optional<::BlockDescriptor> const> mBlocksToCornerWith;
     // NOLINTEND
 
 public:
@@ -76,8 +77,6 @@ public:
     virtual bool
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
-
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -125,6 +124,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StairBlock(::std::string const& nameId, int id, ::BlockType const& base, bool enableCornerStairTag);
+
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -151,14 +152,21 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockType const& base, bool enableCornerStairTag);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -168,6 +176,7 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+#endif
 
     MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
@@ -191,8 +200,6 @@ public:
 
     MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
-
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

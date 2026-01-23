@@ -6,6 +6,7 @@
 // clang-format off
 class MinEngineVersion;
 class SemVersion;
+struct DeserializeDataParams;
 namespace Json { class Value; }
 // clang-format on
 
@@ -27,6 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ConstDeserializeDataParams(::DeserializeDataParams const& deserializeDataParams);
+
     MCNAPI_C ConstDeserializeDataParams(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
 
     MCNAPI_C ConstDeserializeDataParams(
@@ -41,6 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::DeserializeDataParams const& deserializeDataParams);
+
     MCNAPI_C void* $ctor(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
 
     MCNAPI_C void*

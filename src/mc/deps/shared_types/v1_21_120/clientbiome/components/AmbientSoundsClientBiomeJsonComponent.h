@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_40 { struct AmbientSoundsClientBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -33,7 +32,6 @@ public:
 
     public:
         // prevent constructor by default
-        SoundAddition& operator=(SoundAddition const&);
         SoundAddition(SoundAddition const&);
         SoundAddition();
 
@@ -42,6 +40,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&
         operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&&);
+
+        MCFOLD ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition&
+        operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent::SoundAddition const&);
 
         MCAPI ~SoundAddition();
         // NOLINTEND
@@ -73,8 +74,6 @@ public:
 
 public:
     // prevent constructor by default
-    AmbientSoundsClientBiomeJsonComponent& operator=(AmbientSoundsClientBiomeJsonComponent const&);
-    AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
 public:
@@ -88,19 +87,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
+    MCAPI_C
+    AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
 
     MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
+
+    MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
+    operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI_C static ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent
-    upgrade(::SharedTypes::v1_21_40::AmbientSoundsClientBiomeJsonComponent const& oldComponent);
     // NOLINTEND
 
 public:
@@ -114,7 +114,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
+    MCAPI_C void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
     // NOLINTEND
 
 public:

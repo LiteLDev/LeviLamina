@@ -18,6 +18,7 @@ struct AutoPlaceResult;
 struct CreateContainerItemScope;
 struct ItemStackRequestScope;
 struct ItemTransferAmount;
+struct SelectedSlotInfo;
 // clang-format on
 
 class GrindstoneContainerManagerController : public ::ContainerManagerController {
@@ -48,6 +49,8 @@ public:
     virtual void handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
 
     virtual void handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot) /*override*/;
+
+    virtual void handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot) /*override*/;
 
     virtual int handleAutoPlace(
         ::SlotData const&                     srcSlot,
@@ -99,6 +102,8 @@ public:
     MCNAPI void $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
     MCNAPI void $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+
+    MCNAPI void $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
     MCNAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,

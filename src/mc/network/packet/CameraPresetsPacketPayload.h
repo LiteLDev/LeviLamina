@@ -13,22 +13,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraPresetsPacketPayload& operator=(CameraPresetsPacketPayload const&);
-    CameraPresetsPacketPayload(CameraPresetsPacketPayload const&);
-    CameraPresetsPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::CameraPresetsPacketPayload& operator=(::CameraPresetsPacketPayload&&);
-
     MCAPI ~CameraPresetsPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

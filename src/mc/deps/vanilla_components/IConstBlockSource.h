@@ -86,8 +86,6 @@ public:
     getTallestCollisionShape(::AABB const&, float*, bool, ::optional_ref<::GetCollisionShapeInterface const>) const = 0;
 
     virtual float getBrightness(::BlockPos const&) const = 0;
-
-    virtual float getVisualLiquidHeight(::Vec3 const&) const = 0;
     // NOLINTEND
 
 public:

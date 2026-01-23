@@ -60,19 +60,29 @@ public:
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-    virtual ~GraphicsOverrideParameterPacket() /*override*/ = default;
+    virtual ~GraphicsOverrideParameterPacket() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI GraphicsOverrideParameterPacket();
+
+    MCAPI explicit GraphicsOverrideParameterPacket(::GraphicsOverrideParameterPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::GraphicsOverrideParameterPacketPayload payload);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -84,7 +94,7 @@ public:
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

@@ -14,12 +14,6 @@ namespace VanillaSystems { struct VanillaSystemsEventingComponent; }
 namespace VanillaSystems::ActorValueValidation {
 // functions
 // NOLINTBEGIN
-MCNAPI void _fireTelemetryEvent(
-    ::std::string const&                                                 invalidValue,
-    char const*                                                          caller,
-    ::OptionalGlobal<::VanillaSystems::VanillaSystemsEventingComponent>& eventingComponent
-);
-
 MCNAPI bool validateVec3Position(
     ::Vec3 const&                                                        pos,
     char const*                                                          caller,

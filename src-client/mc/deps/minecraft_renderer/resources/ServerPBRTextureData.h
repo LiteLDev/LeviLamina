@@ -28,12 +28,11 @@ public:
 public:
     // prevent constructor by default
     ServerPBRTextureData& operator=(ServerPBRTextureData const&);
+    ServerPBRTextureData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerPBRTextureData();
-
     MCNAPI ServerPBRTextureData(::ServerPBRTextureData&&);
 
     MCNAPI ServerPBRTextureData(::ServerPBRTextureData const&);
@@ -44,8 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::ServerPBRTextureData&&);
 
     MCNAPI void* $ctor(::ServerPBRTextureData const&);

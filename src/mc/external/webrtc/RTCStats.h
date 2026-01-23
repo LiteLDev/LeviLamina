@@ -37,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::webrtc::Attribute> Attributes() const;
-
     MCNAPI RTCStats(::webrtc::RTCStats const& other);
 
     MCNAPI ::std::string ToJson() const;

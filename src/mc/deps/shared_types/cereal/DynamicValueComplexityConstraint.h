@@ -9,7 +9,6 @@
 // clang-format off
 namespace cereal { class DynamicValue; }
 namespace cereal { class SerializerContext; }
-namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes {
@@ -25,8 +24,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~DynamicValueComplexityConstraint() /*override*/ = default;
     // NOLINTEND
 
@@ -34,14 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(::cereal::DynamicValue const& value, ::cereal::SerializerContext& serializerContext) const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

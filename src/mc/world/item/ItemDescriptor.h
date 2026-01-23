@@ -17,6 +17,7 @@ class ReadOnlyBinaryStream;
 struct ItemTag;
 namespace Json { class Value; }
 namespace SharedTypes::Legacy { struct ItemDescriptor; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ItemDescriptor {
@@ -204,6 +205,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static void fromSharedTypes(::ItemDescriptor& instance, ::SharedTypes::Legacy::ItemDescriptor const& desc);
+
     MCAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
 
     MCAPI static ::SharedTypes::Legacy::ItemDescriptor toSharedTypes(::ItemDescriptor const& id);

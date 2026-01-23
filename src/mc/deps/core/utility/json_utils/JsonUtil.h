@@ -24,7 +24,6 @@ namespace SharedTypes::v1_21_100 { struct CircleAroundAnchorGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct ControlledByPlayerGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct DragonFlamingGoalDefinition; }
 namespace SharedTypes::v1_21_100 { struct EatMobGoalDefinition; }
-namespace SharedTypes::v1_21_110 { struct ExperienceRewardDefinition; }
 namespace SharedTypes::v1_21_110 { struct RoarGoalDefinition; }
 namespace SharedTypes::v1_21_110 { struct SlimeAttackGoalDefinition; }
 namespace SharedTypes::v1_21_110 { struct SlimeFloatGoalDefinition; }
@@ -41,6 +40,8 @@ namespace SharedTypes::v1_21_120 { struct AvoidBlockGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct AvoidMobTypeGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct DigGoalDefinition; }
 namespace SharedTypes::v1_21_120 { struct DrinkMilkGoalDefinition; }
+namespace SharedTypes::v1_21_130 { struct ExploreOutskirtsGoalDefinition; }
+namespace SharedTypes::v1_21_130 { struct InvestigateSuspiciousLocationGoalDefinition; }
 // clang-format on
 
 namespace JsonUtil {
@@ -52,12 +53,6 @@ MCNAPI void LogMissingChildSchemaOption(
     ::std::string const& missingName,
     ::std::string const& foundNodesStr,
     ::std::string const& optionsStr
-);
-
-MCNAPI void buildActorDefinitionSchema(
-    ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_110::ExperienceRewardDefinition>>&
-        root
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -126,6 +121,20 @@ MCNAPI void buildActorGoalSchema(
         ::JsonUtil::EmptyClass,
         ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition>>& root,
     ::std::string const&                                         name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_130::ExploreOutskirtsGoalDefinition>>& root,
+    ::std::string const&                                            name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_130::InvestigateSuspiciousLocationGoalDefinition>>& root,
+    ::std::string const&                                                         name
 );
 
 MCNAPI void buildActorGoalSchema(
@@ -230,8 +239,6 @@ MCNAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
 MCNAPI_C bool parseVec4(::Vec4& outVec, ::Json::Value const& root);
 
 MCNAPI_C ::Json::Value patchJson(::Json::Value const& base, ::Json::Value const& patch, char terminator);
-
-MCNAPI_C bool serializeToFile(::Json::Value const& json, ::Core::Path const& path);
 
 MCNAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
 

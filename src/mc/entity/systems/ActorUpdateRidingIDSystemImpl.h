@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct KeepRidingEvenIfTooLargeForVehicleFlagComponent;
 struct PassengerComponent;
 struct RidingPrevIDComponent;
 struct StopRidingRequestComponent;
@@ -19,6 +20,12 @@ struct VehicleComponent;
 namespace ActorUpdateRidingIDSystemImpl {
 // functions
 // NOLINTBEGIN
+MCNAPI void clearRidingID(
+    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
+    ::StrictEntityContext const&                                                              entity,
+    ::EntityModifier<::PassengerComponent, ::KeepRidingEvenIfTooLargeForVehicleFlagComponent> modifier
+);
+
 MCNAPI void updateRidingPrevID(
     ::entt::type_list<::Include<::StopRidingRequestComponent>>,
     ::StrictEntityContext const&                             entity,

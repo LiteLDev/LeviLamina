@@ -41,6 +41,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Json::Value getValue() const;
 
+    MCNAPI void updateMeasurement(::Social::Events::Measurement const& newMeasure);
+
     MCNAPI ~Measurement();
     // NOLINTEND
 

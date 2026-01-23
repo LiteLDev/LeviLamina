@@ -67,8 +67,6 @@ public:
     MCAPI AddActorPacket();
 
     MCAPI explicit AddActorPacket(::Actor& e);
-
-    MCAPI_C ::ActorDefinitionIdentifier getType() const;
     // NOLINTEND
 
 public:

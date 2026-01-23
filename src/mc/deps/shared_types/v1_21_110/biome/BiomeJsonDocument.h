@@ -11,7 +11,6 @@
 class SemVersionConstant;
 namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 namespace cereal { struct ReflectionCtx; }
-namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_21_110 {
@@ -47,15 +46,7 @@ public:
             public:
                 // virtual functions
                 // NOLINTBEGIN
-                virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
                 virtual ~BiomeIdentifierReferenceConstraint() /*override*/ = default;
-                // NOLINTEND
-
-            public:
-                // virtual function thunks
-                // NOLINTBEGIN
-
                 // NOLINTEND
             };
 
@@ -67,7 +58,6 @@ public:
 
         public:
             // prevent constructor by default
-            BiomeDescription& operator=(BiomeDescription const&);
             BiomeDescription(BiomeDescription const&);
             BiomeDescription();
 
@@ -76,6 +66,9 @@ public:
             // NOLINTBEGIN
             MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
+
+            MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::BiomeDescription const&);
 
             MCAPI ~BiomeDescription();
             // NOLINTEND
@@ -105,6 +98,21 @@ public:
             // NOLINTEND
 
         public:
+            // prevent constructor by default
+            ComponentMap(ComponentMap const&);
+            ComponentMap();
+
+        public:
+            // member functions
+            // NOLINTBEGIN
+            MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::ComponentMap&&);
+
+            MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
+            operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
+            // NOLINTEND
+
+        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -122,7 +130,6 @@ public:
 
     public:
         // prevent constructor by default
-        BiomeJsonObject& operator=(BiomeJsonObject const&);
         BiomeJsonObject(BiomeJsonObject const&);
         BiomeJsonObject();
 
@@ -131,6 +138,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&
         operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&&);
+
+        MCFOLD ::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject&
+        operator=(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
 
         MCAPI ~BiomeJsonObject();
         // NOLINTEND
@@ -158,12 +168,11 @@ public:
 public:
     // prevent constructor by default
     BiomeJsonDocument& operator=(BiomeJsonDocument const&);
+    BiomeJsonDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeJsonDocument();
-
     MCAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
 
     MCAPI BiomeJsonDocument(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
@@ -186,11 +195,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
 
-    MCFOLD void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:

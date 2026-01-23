@@ -173,6 +173,10 @@ public:
 
     MCAPI void _addMessage(::GuiData::MessageConfig messageConfig, ::ProfanityFilterContext profanityFilterContext);
 
+    MCAPI void _setSubtitleInternal(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
+
+    MCAPI void _setTitleInternal(::std::string const& title, ::std::optional<::std::string> filteredTitle);
+
     MCAPI void _tickDelayedMessages();
 
     MCAPI void _tickItemDrop();
@@ -253,8 +257,6 @@ public:
 
     MCAPI ::RectangleArea getLayoutCustomizationMainPanelRectangle() const;
 
-    MCAPI ::RectangleArea getLayoutCustomizationSubPanelRectangle() const;
-
     MCAPI ::std::vector<::GuiMessage> getPreexistingMessages();
 
     MCAPI ::RectangleArea getSafeScreenZoneArea() const;
@@ -277,11 +279,7 @@ public:
 
     MCAPI void setScreenSizeData(::ScreenSizeData const& screenSizeData);
 
-    MCAPI void setSubtitle(::std::string const& subtitle, ::std::optional<::std::string> filteredSubtitle);
-
     MCAPI void setTextToSpeechEnabled(bool enabled);
-
-    MCAPI void setTitle(::std::string const& title, ::std::optional<::std::string> filteredTitle);
 
     MCAPI ::RectangleArea setTouchToolbarArea(::RectangleArea const& toolbarArea);
 

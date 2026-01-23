@@ -24,15 +24,18 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionTrigger& operator=(ActorDefinitionTrigger const&);
     ActorDefinitionTrigger(ActorDefinitionTrigger const&);
-    ActorDefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDefinitionTrigger();
+
     MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
     operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
+
+    MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
+    operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);
 
     MCAPI ~ActorDefinitionTrigger();
     // NOLINTEND
@@ -41,6 +44,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

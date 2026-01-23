@@ -51,6 +51,9 @@ public:
     MCAPI ::Actor* _getRandomPlayerInOverworld() const;
 
     MCAPI ::std::optional<::BlockPos>
+    _getRandomWildernessPosAroundSpecifiedPos(::BlockPos const& position, ::BlockSource& region);
+
+    MCAPI ::std::optional<::BlockPos>
     _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
 
     MCAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);

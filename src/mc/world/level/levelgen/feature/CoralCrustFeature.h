@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
 
     MCAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;

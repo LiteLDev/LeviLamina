@@ -72,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~TrendlineEstimator() /*override*/;
+    virtual ~TrendlineEstimator() /*override*/ = default;
 
     virtual void Update(
         double recv_delta_ms,
@@ -96,8 +96,6 @@ public:
         ::webrtc::NetworkStatePredictor* network_state_predictor
     );
 
-    MCNAPI void UpdateThreshold(double modified_trend, int64 now_ms);
-
     MCNAPI void UpdateTrendline(
         double recv_delta_ms,
         double send_delta_ms,
@@ -112,12 +110,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void*
     $ctor(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::NetworkStatePredictor* network_state_predictor);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

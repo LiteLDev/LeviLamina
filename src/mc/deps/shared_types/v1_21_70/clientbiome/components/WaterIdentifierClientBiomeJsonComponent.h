@@ -18,7 +18,7 @@ struct WaterIdentifierClientBiomeJsonComponent : public ::SharedTypes::v1_21_40:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<22>> mWaterIdentifier;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<23>> mWaterIdentifier;
     // NOLINTEND
 
 public:

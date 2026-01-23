@@ -18,7 +18,6 @@ public:
 
 public:
     // prevent constructor by default
-    PermuteType& operator=(PermuteType const&);
     PermuteType(PermuteType const&);
     PermuteType();
 
@@ -26,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType&&);
+
+    MCFOLD ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType const&);
 
     MCAPI ~PermuteType();
     // NOLINTEND

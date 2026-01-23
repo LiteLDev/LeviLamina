@@ -13,7 +13,6 @@ class ActorRenderer;
 class BaseActorRenderContext;
 class DataDrivenRenderer;
 class Font;
-class GeometryGroup;
 class HashedString;
 class ResourceLoadManager;
 class ResourcePackManager;
@@ -23,6 +22,7 @@ class Vec3;
 struct ActorResourceDefinition;
 struct ActorResourceDefinitionGroup;
 struct BlockTessellator;
+struct GeometryGroup;
 struct NameTagRenderObject;
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }
@@ -48,15 +48,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorRenderDispatcher();
+    virtual ~ActorRenderDispatcher() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ActorRenderDispatcher(::SubClientId clientId);
-
-    MCNAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
 
     MCNAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Font&              font,
@@ -74,13 +72,16 @@ public:
 
     MCNAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::HashedString const& rendererName) const;
 
+    MCNAPI bool hasWaterHole(::Actor& actor) const;
+
     MCNAPI void initializeEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                geometryGroup,
         ::std::shared_ptr<::mce::TextureGroup>                               textureGroup,
         ::BlockTessellator&                                                  commonBlockRenderer,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& entityResourceDefGroup,
         ::ResourcePackManager&                                               resourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>                 resourceLoadManager
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>                 resourceLoadManager,
+        bool                                                                 supportsNewVertexFormat
     );
 
     MCNAPI bool initializePlayerRenderer(
@@ -89,6 +90,14 @@ public:
     );
 
     MCNAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
+
+    MCNAPI void render(
+        ::BaseActorRenderContext& entityRenderContext,
+        ::Actor&                  entity,
+        ::Vec3 const&             pos,
+        ::Vec2 const&             rot,
+        bool                      ignoreLighting
+    );
 
     MCNAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
@@ -109,12 +118,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SubClientId clientId);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

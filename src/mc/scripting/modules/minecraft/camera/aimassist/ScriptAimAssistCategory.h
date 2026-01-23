@@ -34,6 +34,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockPriorities() const;
 
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockTagPriorities() const;
+
     MCNAPI ::Scripting::Result_deprecated<int> getDefaultBlockPriority() const;
 
     MCNAPI ::Scripting::Result_deprecated<int> getDefaultEntityPriority() const;

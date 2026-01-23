@@ -73,8 +73,6 @@ public:
 
     MCNAPI ::rtc::ArrayView<uchar const> FindExtension(::webrtc::RTPExtensionType type) const;
 
-    MCNAPI ::webrtc::RtpPacket::ExtensionInfo const* FindExtensionInfo(int id) const;
-
     MCNAPI ::webrtc::RtpPacket::ExtensionInfo& FindOrCreateExtensionInfo(int id);
 
     MCNAPI bool HasExtension(::webrtc::RTPExtensionType type) const;

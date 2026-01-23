@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockType;
-struct BlockComponentFinalizerForRendererContext;
 // clang-format on
 
 class BlockTypeComponentStorageFinalizer {
@@ -14,13 +13,14 @@ public:
     // NOLINTBEGIN
     MCAPI void _finalizeBlockTriggerComponents(::BlockType& blockType);
 
+    MCAPI void _finalizeCollisionBoxComponent(::BlockType& blockType);
+
+    MCAPI void _finalizeSelectionBoxComponent(::BlockType& blockType);
+
     MCAPI void _updateDestructionParticlesComponent(::BlockType& blockType);
 
-    MCAPI void finalizeComponentData(::BlockType& blockType);
+    MCAPI void addRemainingComponents(::BlockType& blockType);
 
-    MCAPI_C void finalizeComponentDataForRendering(
-        ::BlockType&                                 blockType,
-        ::BlockComponentFinalizerForRendererContext& finalizerContext
-    );
+    MCAPI void finalizeComponentData(::BlockType& blockType);
     // NOLINTEND
 };

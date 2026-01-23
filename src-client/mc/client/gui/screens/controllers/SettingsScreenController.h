@@ -15,8 +15,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
 struct GeneralSettingsScreenController;
+struct MainMenuScreenModel;
 struct RealmsInviteLinkSettingsScreenController;
 struct RealmsSettingsScreenController;
 struct SettingsScreenCapabilities;

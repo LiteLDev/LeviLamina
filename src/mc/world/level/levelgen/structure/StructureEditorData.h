@@ -43,6 +43,8 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
+    MCAPI_C void setStructureName(::Bedrock::Safety::RedactableString const& name);
+
     MCAPI void setStructureSize(::BlockPos const& size);
 
     MCAPI_C void validateSize(::BlockPos const& structurePosition, short minHeight, short maxHeight);

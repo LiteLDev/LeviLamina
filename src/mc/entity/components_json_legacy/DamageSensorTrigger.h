@@ -16,14 +16,13 @@ public:
 
 public:
     // prevent constructor by default
+    DamageSensorTrigger& operator=(DamageSensorTrigger const&);
     DamageSensorTrigger(DamageSensorTrigger const&);
     DamageSensorTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DamageSensorTrigger& operator=(::DamageSensorTrigger const&);
-
     MCNAPI void setCause(::std::string const& causeName);
 
     MCNAPI void setDealsDamage(::std::string const& value);

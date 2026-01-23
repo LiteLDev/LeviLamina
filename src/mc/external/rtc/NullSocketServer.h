@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~NullSocketServer() /*override*/;
+    virtual ~NullSocketServer() /*override*/ = default;
 
     virtual bool Wait(::webrtc::TimeDelta max_wait_duration, bool process_io) /*override*/;
 
@@ -47,12 +47,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

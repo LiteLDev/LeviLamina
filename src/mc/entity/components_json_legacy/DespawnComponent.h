@@ -132,19 +132,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canDespawn(
-        ::Actor&                            actor,
-        ::DespawnComponent::IWorldAccessor& worldAccessor,
-        ::DespawnDefinition const&          definition
-    ) const;
-
-    MCNAPI bool _instantRulesPrescribeDespawn(
-        ::Actor&                                  actor,
-        ::DespawnDefinition const&                definition,
-        ::DespawnComponent::IWorldAccessor const& worldAccessor
-    ) const;
-
     MCNAPI bool _softRulesPrescribeDespawn(
+        ::Actor&                            actor,
+        ::DespawnDefinition const&          definition,
+        ::DespawnComponent::IWorldAccessor& worldAccessor
+    ) const;
+
+    MCNAPI bool _tryStandardDespawnRules(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor

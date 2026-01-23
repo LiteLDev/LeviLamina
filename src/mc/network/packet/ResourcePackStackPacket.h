@@ -21,7 +21,6 @@ class ResourcePackStackPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mAddOnIdsAndVersions;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>               mBaseGameVersion;
     ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
@@ -49,7 +48,6 @@ public:
     MCAPI ResourcePackStackPacket();
 
     MCAPI ResourcePackStackPacket(
-        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,
@@ -64,7 +62,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(
-        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,

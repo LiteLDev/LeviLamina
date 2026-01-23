@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Network {
 
 class ThemeSettingsNewThemeCreatedPayload
@@ -19,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    ThemeSettingsNewThemeCreatedPayload& operator=(ThemeSettingsNewThemeCreatedPayload const&);
     ThemeSettingsNewThemeCreatedPayload(ThemeSettingsNewThemeCreatedPayload const&);
     ThemeSettingsNewThemeCreatedPayload();
 
@@ -33,9 +39,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
     operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
+    // NOLINTEND
 
-    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
-    operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

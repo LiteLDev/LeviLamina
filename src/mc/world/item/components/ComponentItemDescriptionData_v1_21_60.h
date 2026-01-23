@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    ComponentItemDescriptionData_v1_21_60& operator=(ComponentItemDescriptionData_v1_21_60 const&);
     ComponentItemDescriptionData_v1_21_60(ComponentItemDescriptionData_v1_21_60 const&);
     ComponentItemDescriptionData_v1_21_60();
 
@@ -29,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ComponentItemDescriptionData_v1_21_60& operator=(::ComponentItemDescriptionData_v1_21_60&&);
+
+    MCFOLD ::ComponentItemDescriptionData_v1_21_60& operator=(::ComponentItemDescriptionData_v1_21_60 const&);
 
     MCAPI ~ComponentItemDescriptionData_v1_21_60();
     // NOLINTEND

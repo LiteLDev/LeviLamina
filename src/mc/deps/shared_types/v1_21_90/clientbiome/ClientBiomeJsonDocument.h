@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace SharedTypes::v1_21_70 { struct ClientBiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -39,7 +38,6 @@ public:
 
         public:
             // prevent constructor by default
-            ClientBiomeDescription& operator=(ClientBiomeDescription const&);
             ClientBiomeDescription(ClientBiomeDescription const&);
             ClientBiomeDescription();
 
@@ -49,6 +47,11 @@ public:
             MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
             operator=(
                 ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
+            );
+
+            MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
+            operator=(
+                ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription const&
             );
 
             MCAPI ~ClientBiomeDescription();
@@ -81,7 +84,6 @@ public:
 
     public:
         // prevent constructor by default
-        ClientBiomeJsonObject& operator=(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject();
 
@@ -90,6 +92,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
+
+        MCFOLD ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCAPI ~ClientBiomeJsonObject();
         // NOLINTEND
@@ -118,41 +123,39 @@ public:
 public:
     // prevent constructor by default
     ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
     ClientBiomeJsonDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
+    MCAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_90::ClientBiomeJsonDocument&&);
 
-    MCAPI ~ClientBiomeJsonDocument();
+    MCAPI_C ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI_C static ::SharedTypes::v1_21_90::ClientBiomeJsonDocument
-    upgrade(::SharedTypes::v1_21_70::ClientBiomeJsonDocument oldDocument);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::SemVersionConstant const& FIRST_VERSION();
+    MCAPI_C static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument const&);
+    MCFOLD_C void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

@@ -55,8 +55,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool BelongsToBurst(::webrtc::Timestamp arrival_time, ::webrtc::Timestamp send_time) const;
-
     MCNAPI bool ComputeDeltas(
         ::webrtc::Timestamp  send_time,
         ::webrtc::Timestamp  arrival_time,
@@ -68,8 +66,6 @@ public:
     );
 
     MCNAPI explicit InterArrivalDelta(::webrtc::TimeDelta send_time_group_length);
-
-    MCNAPI bool NewTimestampGroup(::webrtc::Timestamp arrival_time, ::webrtc::Timestamp send_time) const;
 
     MCNAPI void Reset();
     // NOLINTEND

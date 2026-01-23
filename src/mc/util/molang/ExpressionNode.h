@@ -17,6 +17,7 @@ class BlockSource;
 class HashedString;
 class MaterialVariants;
 class RenderParams;
+struct ExpressionQueries;
 struct MolangClientTextureSet;
 struct MolangDataDrivenGeometry;
 struct MolangParseConfig;
@@ -24,6 +25,7 @@ struct MolangQueryFunction;
 struct MolangScriptArg;
 namespace Json { class Value; }
 namespace Molang::details { class IComplexExpression; }
+namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -55,6 +57,8 @@ public:
 
         MCNAPI_C explicit ResourceReference(::MolangDataDrivenGeometry const& geometry);
 
+        MCNAPI_C explicit ResourceReference(::MaterialVariants const& matVariants);
+
         MCNAPI_C explicit ResourceReference(::MolangClientTextureSet const& textureSet);
 
         MCNAPI_C ~ResourceReference();
@@ -66,6 +70,8 @@ public:
         MCNAPI_C void* $ctor();
 
         MCNAPI_C void* $ctor(::MolangDataDrivenGeometry const& geometry);
+
+        MCNAPI_C void* $ctor(::MaterialVariants const& matVariants);
 
         MCNAPI_C void* $ctor(::MolangClientTextureSet const& textureSet);
         // NOLINTEND
@@ -111,8 +117,6 @@ public:
 
     MCAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
 
-    MCAPI ::std::optional<::MolangScriptArg> _getValueIfConstant() const;
-
     MCAPI float evalAsFloat(::RenderParams& renderParams) const;
 
     MCAPI ::MolangScriptArg const& evalGeneric(::RenderParams& renderParams) const;
@@ -124,8 +128,6 @@ public:
     MCAPI ::MolangCompileResult link();
 
     MCAPI ::ExpressionNode& operator=(::ExpressionNode&&);
-
-    MCAPI_C ::ExpressionNode& operator=(::MaterialVariants const& materialVariants);
 
     MCAPI ::ExpressionNode& operator=(::ExpressionNode const& rhs);
 
@@ -142,11 +144,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _initializeMolangQueries();
+    MCAPI static bool _initializeMolangQueries(::ExpressionQueries&& queries);
 
-    MCAPI static void initializeMolang();
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::function<
+    MCAPI_S static void initializeMolang(::ExpressionQueries&& queries);
+
+    MCAPI_C static ::std::function<
         ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
         ::HashedString const&            functionName,
@@ -189,7 +193,7 @@ public:
     // NOLINTBEGIN
     MCAPI_C void* $ctor();
 
-    MCFOLD void* $ctor(::ExpressionNode&&);
+    MCAPI void* $ctor(::ExpressionNode&&);
 
     MCAPI_C void* $ctor(::MaterialVariants const& materialVariants);
 

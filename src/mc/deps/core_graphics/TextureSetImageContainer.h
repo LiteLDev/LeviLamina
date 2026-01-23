@@ -35,12 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~TextureSetImageContainer() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~TextureSetImageContainer() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -53,12 +48,6 @@ public:
 
     MCAPI_C ::cg::ImageDescription
     getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

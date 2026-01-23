@@ -37,22 +37,7 @@ public:
         // prevent constructor by default
         Params& operator=(Params const&);
         Params(Params const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Params();
-
-        MCNAPI Params(::webrtc::FecProtectionParams delta_params, ::webrtc::FecProtectionParams keyframe_params);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
-
-        MCNAPI void* $ctor(::webrtc::FecProtectionParams delta_params, ::webrtc::FecProtectionParams keyframe_params);
-        // NOLINTEND
+        Params();
     };
 
 public:
@@ -109,14 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::FecProtectionParams const& CurrentParams() const;
-
-    MCNAPI bool ExcessOverheadBelowMax() const;
-
-    MCNAPI bool MinimumMediaPacketsReached() const;
-
-    MCNAPI int Overhead() const;
-
     MCNAPI void ResetState();
 
     MCNAPI UlpfecGenerator(::std::unique_ptr<::webrtc::ForwardErrorCorrection> fec, ::webrtc::Clock* clock);

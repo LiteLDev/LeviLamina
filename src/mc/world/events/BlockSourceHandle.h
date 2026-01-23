@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onSourceDestroyed(::BlockSource& source);
+    MCAPI void $onSourceDestroyed(::BlockSource& source);
 
 
     // NOLINTEND

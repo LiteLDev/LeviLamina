@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataSize; }
-namespace webrtc { class RtcpFeedbackSenderInterface; }
 namespace webrtc { class RtpPacketToSend; }
 namespace webrtc { struct PacedPacketInfo; }
 // clang-format on
@@ -65,16 +64,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface* candidate_module, bool media_sender);
-
     MCNAPI void AddSendRtpModule(::webrtc::RtpRtcpInterface* rtp_module, bool remb_candidate);
 
     MCNAPI void AddSendRtpModuleToMap(::webrtc::RtpRtcpInterface* rtp_module, uint ssrc);
 
     MCNAPI void DetermineActiveRembModule();
-
-    MCNAPI void
-    MaybeRemoveRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface* candidate_module, bool media_sender);
 
     MCNAPI PacketRouter();
 

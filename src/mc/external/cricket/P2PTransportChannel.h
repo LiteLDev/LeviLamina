@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cricket { class Candidate; }
-namespace webrtc { class AsyncDnsResolverInterface; }
-// clang-format on
-
 namespace cricket {
 
 struct P2PTransportChannel {
@@ -31,30 +25,6 @@ public:
         CandidateAndResolver& operator=(CandidateAndResolver const&);
         CandidateAndResolver(CandidateAndResolver const&);
         CandidateAndResolver();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI CandidateAndResolver(
-            ::cricket::Candidate const&                              candidate,
-            ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>&& resolver
-        );
-
-        MCNAPI ~CandidateAndResolver();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::cricket::Candidate const& candidate, ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>&& resolver);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 };
 

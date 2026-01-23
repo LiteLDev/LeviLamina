@@ -8,8 +8,8 @@ class JsonValueHierarchy;
 class SemVersionConstant;
 class Vec2;
 class Vec3;
-struct TextureUVCoordinateSet;
 namespace Json { class Value; }
+struct TextureUVCoordinateSet;
 // clang-format on
 
 class Geometry {
@@ -106,9 +106,14 @@ public:
 
     public:
         // prevent constructor by default
-        NodeTextureMesh& operator=(NodeTextureMesh const&);
         NodeTextureMesh(NodeTextureMesh const&);
         NodeTextureMesh();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI_C ::Geometry::NodeTextureMesh& operator=(::Geometry::NodeTextureMesh const&);
+        // NOLINTEND
     };
 
     struct NodeVertex {
@@ -247,7 +252,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk74839b;
     ::ll::UntypedStorage<1, 1>  mUnka5c77f;
     ::ll::UntypedStorage<8, 24> mUnkabff87;
-    ::ll::UntypedStorage<1, 1>  mUnk451394;
+    ::ll::UntypedStorage<1, 1>  mUnka8e31c;
     ::ll::UntypedStorage<4, 8>  mUnk369adf;
     ::ll::UntypedStorage<8, 32> mUnk544404;
     ::ll::UntypedStorage<8, 32> mUnke93ad1;

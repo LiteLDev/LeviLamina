@@ -107,10 +107,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void OnAudioChannelGone();
-
-    MCNAPI void OnData(::webrtc::AudioSinkInterface::Data const& audio);
-
     MCNAPI RemoteAudioSource(
         ::webrtc::TaskQueueBase*                              worker_thread,
         ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction on_audio_channel_gone_action

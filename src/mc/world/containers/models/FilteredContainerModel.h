@@ -39,11 +39,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~FilteredContainerModel() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~FilteredContainerModel() /*override*/;
-#endif
 
     virtual void containerContentChanged(int) /*override*/;
 
@@ -78,6 +74,8 @@ public:
     );
 
     MCNAPI_C void _refreshContainer(bool fullRefresh);
+
+    MCNAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
     // NOLINTEND
 
 public:
@@ -92,12 +90,6 @@ public:
         bool                                                         filter,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

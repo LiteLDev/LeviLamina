@@ -116,17 +116,10 @@ public:
 
     MCNAPI void InternalCreateOffer(::webrtc::WebRtcSessionDescriptionFactory::CreateSessionDescriptionRequest request);
 
-    MCNAPI void OnCertificateRequestFailed();
-
     MCNAPI void Post(::absl::AnyInvocable<void() &&> callback);
 
     MCNAPI void
     PostCreateSessionDescriptionFailed(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::RTCError error);
-
-    MCNAPI void PostCreateSessionDescriptionSucceeded(
-        ::webrtc::CreateSessionDescriptionObserver*              observer,
-        ::std::unique_ptr<::webrtc::SessionDescriptionInterface> description
-    );
 
     MCNAPI void SetCertificate(::webrtc::scoped_refptr<::rtc::RTCCertificate> certificate);
 

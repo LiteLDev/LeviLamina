@@ -14,10 +14,6 @@ namespace SharedTypes::v1_20_50 {
 
 struct RecordItemComponent {
 public:
-    // RecordItemComponent inner types define
-    using SoundEvent = ::SharedTypes::Legacy::LevelSoundEvent;
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;

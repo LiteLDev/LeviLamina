@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockVoxelShapesCullingDescription
@@ -17,6 +18,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mOcclusionShapeName;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockVoxelShapesCullingDescription();
 
 public:
     // virtual functions
@@ -31,11 +36,29 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BlockVoxelShapesCullingDescription(::std::string occlusionShapeName);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
 
     MCAPI static ::std::string const& SHAPE_DEFAULT();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string occlusionShapeName);
     // NOLINTEND
 
 public:

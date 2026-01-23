@@ -51,6 +51,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserLoggingSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserConnectionQualitySub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableLanSignalingSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableTrickleIceSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
     // NOLINTEND
 

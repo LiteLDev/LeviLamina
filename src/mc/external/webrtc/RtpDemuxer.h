@@ -57,14 +57,8 @@ public:
 
     MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSink(::webrtc::RtpPacketReceived const& packet);
 
-    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByMid(::std::string_view mid, uint ssrc);
-
     MCNAPI ::webrtc::RtpPacketSinkInterface*
     ResolveSinkByMidRsid(::std::string_view mid, ::std::string_view rsid, uint ssrc);
-
-    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByPayloadType(uchar payload_type, uint ssrc);
-
-    MCNAPI ::webrtc::RtpPacketSinkInterface* ResolveSinkByRsid(::std::string_view rsid, uint ssrc);
 
     MCNAPI explicit RtpDemuxer(bool use_mid);
 

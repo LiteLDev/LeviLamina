@@ -62,10 +62,6 @@ public:
             frame_template
     ) const;
 
-    MCNAPI void FindBestTemplate();
-
-    MCNAPI bool HasExtendedFields() const;
-
     MCNAPI RtpDependencyDescriptorWriter(
         ::rtc::ArrayView<uchar>                   data,
         ::webrtc::FrameDependencyStructure const& structure,
@@ -73,43 +69,13 @@ public:
         ::webrtc::DependencyDescriptor const&     descriptor
     );
 
-    MCNAPI bool ShouldWriteActiveDecodeTargetsBitmask() const;
-
-    MCNAPI int StructureSizeBits() const;
-
-    MCNAPI uint64 TemplateId() const;
-
     MCNAPI int ValueSizeBits() const;
 
     MCNAPI bool Write();
 
-    MCNAPI void WriteBits(uint64 val, uint64 bit_count);
-
-    MCNAPI void WriteExtendedFields();
-
-    MCNAPI void WriteFrameChains();
-
     MCNAPI void WriteFrameDependencyDefinition();
 
-    MCNAPI void WriteFrameDtis();
-
-    MCNAPI void WriteFrameFdiffs();
-
-    MCNAPI void WriteMandatoryFields();
-
-    MCNAPI void WriteNonSymmetric(uint value, uint num_values);
-
-    MCNAPI void WriteResolutions();
-
-    MCNAPI void WriteTemplateChains();
-
     MCNAPI void WriteTemplateDependencyStructure();
-
-    MCNAPI void WriteTemplateDtis();
-
-    MCNAPI void WriteTemplateFdiffs();
-
-    MCNAPI void WriteTemplateLayers();
     // NOLINTEND
 
 public:

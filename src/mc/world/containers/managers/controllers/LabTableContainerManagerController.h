@@ -46,6 +46,8 @@ public:
     MCNAPI_C void combineInputs(::BlockPos const& blockPos);
 
     MCNAPI_C bool hasInput();
+
+    MCNAPI_C bool isStillValid(float pickRange);
     // NOLINTEND
 
 public:

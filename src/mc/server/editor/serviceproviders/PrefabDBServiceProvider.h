@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class WeakEntityRef;
 namespace Editor::Prefabs { class PrefabDBTemplate; }
 namespace mce { class UUID; }
 // clang-format on
@@ -22,6 +23,10 @@ public:
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const&) const = 0;
 
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> getTemplate(::mce::UUID const&) = 0;
+
+    virtual void bake(::WeakEntityRef, ::std::function<void(bool)>, ::std::function<void(::std::string_view)>) = 0;
+
+    virtual void unbake(::WeakEntityRef, ::std::function<void(bool)>, ::std::function<void(::std::string_view)>) = 0;
     // NOLINTEND
 
 public:

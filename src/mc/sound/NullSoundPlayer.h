@@ -14,6 +14,7 @@ struct LoopingSoundState;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 class SoundItem;
 // clang-format on
 
@@ -33,11 +34,11 @@ public:
 
     virtual bool isPlayingMusicEvent(::std::string const&) const /*override*/;
 
-    virtual bool isPlayingMusic(::Core::Path const&) const /*override*/;
+    virtual bool isPlayingMusic(::Core::PathView) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() /*override*/;
 
-    virtual bool getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const /*override*/;
+    virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const /*override*/;
 
     virtual void fadeToStopMusic(float) /*override*/;
 
@@ -94,11 +95,11 @@ public:
 
     MCNAPI bool $isPlayingMusicEvent(::std::string const&) const;
 
-    MCNAPI bool $isPlayingMusic(::Core::Path const&) const;
+    MCNAPI bool $isPlayingMusic(::Core::PathView) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicName();
 
-    MCNAPI bool $getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const;
+    MCNAPI bool $getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const;
 
     MCNAPI void $fadeToStopMusic(float);
 

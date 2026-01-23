@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class MultiPlayerLevel;
+class Level;
 // clang-format on
 
 class IConnectionEventing {
@@ -46,7 +46,7 @@ public:
         ::std::string const&
     ) = 0;
 
-    virtual void fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const*) = 0;
+    virtual void fireEventOnSuccessfulClientLogin(::Level const*) = 0;
     // NOLINTEND
 
 public:

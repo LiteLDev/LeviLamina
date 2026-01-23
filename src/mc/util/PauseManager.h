@@ -34,6 +34,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C bool requestInGamePause(::ILocalServerPauseCommunication& pauseCommunication, bool status) const;
+
+    MCNAPI ~PauseManager();
     // NOLINTEND
 
 public:
@@ -43,5 +45,11 @@ public:
 
     MCNAPI_C static void
     setSimulationType(::StackRefResult<::PauseManager> pauseManager, ::SimulationType simulationType);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

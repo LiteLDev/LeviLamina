@@ -28,19 +28,16 @@ public:
     // prevent constructor by default
     ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&);
     ServerPlayerMovementComponent(ServerPlayerMovementComponent const&);
+    ServerPlayerMovementComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayerMovementComponent();
-
     MCAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
 
     MCAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryPacket> packet);
 
     MCAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
-
-    MCAPI uint64 getReadyToSimulateCount() const;
 
     MCAPI ::ServerPlayerMovementComponent& operator=(::ServerPlayerMovementComponent&&);
     // NOLINTEND
@@ -48,8 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ServerPlayerMovementComponent&&);
     // NOLINTEND
 };

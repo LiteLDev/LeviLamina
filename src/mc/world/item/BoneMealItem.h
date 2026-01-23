@@ -45,11 +45,9 @@ public:
 
     MCFOLD bool $isDye() const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
-
-#ifdef LL_PLAT_C
     MCFOLD ::ItemColor $getItemColor() const;
-#endif
+
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
 
     // NOLINTEND

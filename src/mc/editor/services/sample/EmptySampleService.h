@@ -7,14 +7,23 @@
 #include "mc/editor/serviceproviders/EmptySampleServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Editor { class ServiceProviderCollection; }
+// clang-format on
+
 namespace Editor::Services {
 
 class EmptySampleService : public ::Editor::Services::IEditorService,
                            public ::Editor::Services::EmptySampleServiceProvider {
 public:
+    // prevent constructor by default
+    EmptySampleService();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EmptySampleService() /*override*/ = default;
+    virtual ~EmptySampleService() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> init() /*override*/;
 
@@ -23,6 +32,24 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual void SampleMethod() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit EmptySampleService(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -136,8 +136,6 @@ public:
         ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)> transport_lookup
     );
 
-    MCNAPI void OnFirstPacketReceived();
-
     MCNAPI void OnNegotiationUpdate(::webrtc::SdpType sdp_type, ::cricket::MediaContentDescription const* content);
 
     MCNAPI void PushNewMediaChannelAndDeleteChannel(::std::unique_ptr<::cricket::ChannelInterface> channel_to_delete);
@@ -154,11 +152,6 @@ public:
         ::webrtc::ConnectionContext*                                                                   context,
         ::std::vector<::webrtc::RtpHeaderExtensionCapability> header_extensions_to_negotiate,
         ::std::function<void()>                               on_negotiation_needed
-    );
-
-    MCNAPI void SetChannel(
-        ::std::unique_ptr<::cricket::ChannelInterface>                         channel,
-        ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)> transport_lookup
     );
 
     MCNAPI void SetPeerConnectionClosed();

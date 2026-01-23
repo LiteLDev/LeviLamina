@@ -8,15 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class ItemStack;
 class MobEffectInstance;
 class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -33,14 +30,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                                 mLife;
+    ::ll::TypedStorage<1, 1, bool>                                mHasSkippedFirstCritParticle;
     ::ll::TypedStorage<4, 4, int>                                 mEnchantFlame;
     ::ll::TypedStorage<4, 4, int>                                 mEnchantInfinity;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Arrow();
 
 public:
     // virtual functions
@@ -69,12 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Arrow(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void addMobEffect(::MobEffectInstance effect);
 
     MCAPI int getAuxValue() const;
@@ -86,16 +74,6 @@ public:
     MCAPI void setEnchantPower(int level);
 
     MCAPI void setEnchantPunch(int level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

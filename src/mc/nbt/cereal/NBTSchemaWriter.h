@@ -88,6 +88,8 @@ public:
 
     virtual bool write(::std::string_view const value) /*override*/;
 
+    virtual bool write(::gsl::span<uchar const> view) /*override*/;
+
     virtual void writeValidityFlag(bool) /*override*/;
 
     virtual void writeControlValue(uint) /*override*/;
@@ -139,6 +141,8 @@ public:
     MCNAPI bool $write(double value);
 
     MCNAPI bool $write(::std::string_view const value);
+
+    MCNAPI bool $write(::gsl::span<uchar const> view);
 
     MCNAPI void $writeValidityFlag(bool);
 

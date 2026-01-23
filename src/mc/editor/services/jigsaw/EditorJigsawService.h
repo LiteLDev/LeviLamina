@@ -15,7 +15,9 @@
 class BlockPos;
 class FeatureRegistry;
 class IStructureTemplateManager;
+class JigsawEditorData;
 class JigsawStructureRegistry;
+class ResourcePackManager;
 class WeakEntityRef;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class IEditorPlayer; }
@@ -54,7 +56,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI_S TemplatePoolData(
+            ::std::string const&                                        templateId,
+            ::std::set<::std::string> const&                            structNames,
+            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
+        );
+
         MCNAPI ~TemplatePoolData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI_S void* $ctor(
+            ::std::string const&                                        templateId,
+            ::std::set<::std::string> const&                            structNames,
+            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
+        );
         // NOLINTEND
 
     public:
@@ -125,6 +143,11 @@ public:
         ::WeakEntityRef                                    playerRef
     ) /*override*/;
 
+    virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef) /*override*/;
+
+    virtual void
+    setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData) /*override*/;
+
     virtual ::Bedrock::PubSub::Subscription
     listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) /*override*/;
 
@@ -144,6 +167,8 @@ public:
         ::JigsawStructureRegistry&                                 jigsawStructureRegistry
     );
 
+    MCNAPI void _loadBehaviorPackJigsawRegistries(::ResourcePackManager& packManager);
+
     MCNAPI void _saveFile(
         ::Editor::Services::EditorRegistryFile& regFile,
         ::Core::PathBuffer<::std::string>       jigsawPath,
@@ -155,6 +180,12 @@ public:
 
     MCNAPI bool
     _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& SERVICE_NAME();
     // NOLINTEND
 
 public:
@@ -208,6 +239,10 @@ public:
         ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
         ::WeakEntityRef                                    playerRef
     );
+
+    MCNAPI ::JigsawEditorData const $getJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef);
+
+    MCNAPI void $setJigsawBlockData(::BlockPos& pos, ::WeakEntityRef playerRef, ::JigsawEditorData jigsawData);
 
     MCNAPI ::Bedrock::PubSub::Subscription
     $listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback);

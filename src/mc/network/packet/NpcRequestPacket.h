@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NpcRequestPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -44,7 +40,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
 
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -70,13 +66,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NpcRequestPacket(::NpcRequestPacketPayload payload);
+    MCAPI NpcRequestPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NpcRequestPacketPayload payload);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -102,7 +98,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

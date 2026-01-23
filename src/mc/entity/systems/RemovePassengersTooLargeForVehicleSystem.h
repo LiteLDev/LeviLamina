@@ -17,7 +17,6 @@ struct ActorMovementTickNeededComponent;
 struct KeepRidingEvenIfTooLargeForVehicleFlagComponent;
 struct PassengerComponent;
 struct StopRidingRequestComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class RemovePassengersTooLargeForVehicleSystem {
@@ -42,7 +41,5 @@ public:
         ::ViewT<::StrictEntityContext, ::RideableComponent const> vehicleView,
         ::EntityModifier<::StopRidingRequestComponent>            modifier
     );
-
-    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

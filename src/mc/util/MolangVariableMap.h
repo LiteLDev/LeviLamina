@@ -29,15 +29,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangVariableMap(MolangVariableMap const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
 
     MCAPI_C MolangVariableMap(::MolangVariableMap&&);
+
+    MCAPI_C MolangVariableMap(::MolangVariableMap const& rhs);
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
@@ -52,10 +50,14 @@ public:
     MCAPI bool operator==(::MolangVariableMap const& rhs) const;
 
     MCAPI void setMolangStructMember(
-        ::HashedString const&    rootVariableName,
+        ::MolangVariableIndex    molangVariableIndex,
         ::HashedString const&    memberNameDepth0,
         ::MolangScriptArg const& value
     );
+
+    MCAPI void setMolangVariable(::MolangVariableIndex molangVariableIndex, ::MolangScriptArg const& value);
+
+    MCAPI void setMolangVariable(::HashedString const& variableName, ::MolangScriptArg const& value);
 
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
@@ -70,6 +72,8 @@ public:
     MCAPI void* $ctor();
 
     MCAPI_C void* $ctor(::MolangVariableMap&&);
+
+    MCAPI_C void* $ctor(::MolangVariableMap const& rhs);
     // NOLINTEND
 
 public:

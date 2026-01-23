@@ -6,6 +6,7 @@
 // clang-format off
 class HashedString;
 class ItemRegistryRef;
+struct TrimPattern;
 // clang-format on
 
 class TrimPatternRegistry {
@@ -25,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::HashedString> getPatternIdByItem(::HashedString const& itemId) const;
+    MCAPI_C void initializeFromTrimPatterns(::std::vector<::TrimPattern> const& patterns);
 
     MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND

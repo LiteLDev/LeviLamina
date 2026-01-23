@@ -41,15 +41,6 @@ MCNAPI void applySlowdownOnMove(
         ::StateVectorComponent> view
 );
 
-MCNAPI void applySlowdownOnMoveSingleEntity(
-    ::StrictEntityContext const& context,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::BlockMovementSlowdownMultiplierComponent,
-        ::MoveRequestComponent,
-        ::StateVectorComponent> view
-);
-
 MCNAPI void immunePlayer(
     ::ViewT<
         ::StrictEntityContext,

@@ -76,7 +76,7 @@ public:
     virtual ~SparseContainer() /*override*/;
 #endif
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
@@ -84,10 +84,9 @@ public:
 
     virtual void containerContentChanged(int slot) /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    virtual void
-    serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     virtual void startOpen(::Actor& actor) /*override*/;
 
@@ -154,8 +153,6 @@ public:
         int                             amount
     ) const;
 
-    MCNAPI_C bool canDrop(::ContainerEnumName name, int slot, int amount) const;
-
     MCNAPI_C bool canRemove(::ContainerEnumName name, int slot, int amount) const;
 
     MCNAPI_C ::ItemSetType canSet(
@@ -199,7 +196,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int index) const;
 
     MCNAPI int $getContainerSize() const;
 
@@ -207,9 +204,9 @@ public:
 
     MCNAPI void $containerContentChanged(int slot);
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCNAPI void $serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>);
 
     MCNAPI void $startOpen(::Actor& actor);
 

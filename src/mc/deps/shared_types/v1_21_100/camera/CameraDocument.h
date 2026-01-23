@@ -30,7 +30,6 @@ public:
 
     public:
         // prevent constructor by default
-        Description& operator=(Description const&);
         Description(Description const&);
         Description();
 
@@ -39,6 +38,9 @@ public:
         // NOLINTBEGIN
         MCFOLD_C ::SharedTypes::v1_21_100::CameraDocument::Description&
         operator=(::SharedTypes::v1_21_100::CameraDocument::Description&&);
+
+        MCFOLD_C ::SharedTypes::v1_21_100::CameraDocument::Description&
+        operator=(::SharedTypes::v1_21_100::CameraDocument::Description const&);
 
         MCAPI_C ~Description();
         // NOLINTEND
@@ -86,7 +88,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

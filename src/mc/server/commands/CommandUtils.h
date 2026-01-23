@@ -70,7 +70,7 @@ MCAPI ::std::string getActorName(::Actor const& actor);
 
 MCAPI ::Vec3 getFeetPos(::Actor const* entity);
 
-MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
+MCAPI ::std::vector<::ActorType> getInvalidCommandEntities();
 
 MCAPI_C ::Player const* getOriginPlayer(::CommandOrigin const& origin);
 
@@ -81,6 +81,8 @@ MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEnt
 MCAPI bool isPlayerSpawnedMob(::Actor const& entity, ::Actor const& summoner);
 
 MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
+
+MCAPI void setInitEvent(::ActorDefinitionIdentifier& actorId, ::std::string const& eventName);
 
 MCAPI ::std::string toJsonResult(::std::string const& commandName, ::Json::Value const& rawData);
 

@@ -11,7 +11,6 @@ public:
 
 public:
     // prevent constructor by default
-    AddBehaviorTreePacketPayload& operator=(AddBehaviorTreePacketPayload const&);
     AddBehaviorTreePacketPayload(AddBehaviorTreePacketPayload const&);
     AddBehaviorTreePacketPayload();
 
@@ -19,6 +18,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::AddBehaviorTreePacketPayload& operator=(::AddBehaviorTreePacketPayload&&);
+
+    MCFOLD ::AddBehaviorTreePacketPayload& operator=(::AddBehaviorTreePacketPayload const&);
 
     MCAPI ~AddBehaviorTreePacketPayload();
     // NOLINTEND

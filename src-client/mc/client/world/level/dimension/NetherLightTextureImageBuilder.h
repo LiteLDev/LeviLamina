@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseLightData;
 class IClientInstance;
+struct BaseLightData;
 // clang-format on
 
 class NetherLightTextureImageBuilder : public ::BaseLightTextureImageBuilder {

@@ -81,8 +81,6 @@ public:
 
     MCAPI void parseDepthStencilState(::Json::Value const& root);
 
-    MCAPI void parseRasterizerState(::Json::Value const& root);
-
     MCAPI void parseRenderTargetFormat(::Json::Value const& root);
 
     MCAPI void parseSamplers(::Json::Value const& root);

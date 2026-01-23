@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
@@ -15,6 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk9fd194;
+    ::ll::UntypedStorage<1, 1> mUnk709a4e;
     // NOLINTEND
 
 public:
@@ -28,11 +32,13 @@ public:
     // NOLINTBEGIN
     virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const = 0;
 
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const = 0;
+
     virtual ~Constraint() = default;
 
     virtual ::cereal::Constraint const* subConstraint(uint64) const;
 
-    virtual ::cereal::internal::ConstraintDescription description() const = 0;
+    virtual ::entt::type_info const& info() const = 0;
     // NOLINTEND
 
 public:

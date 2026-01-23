@@ -17,6 +17,7 @@ class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class RedstoneTorchBlock : public ::TorchBlock {
@@ -30,9 +31,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -61,6 +59,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _installCircuit(::BlockSource& source, ::BlockPos const& pos) const;
 
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -68,8 +68,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

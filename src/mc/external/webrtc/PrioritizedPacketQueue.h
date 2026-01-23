@@ -44,8 +44,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::webrtc::DataSize PacketSize() const;
-
         MCNAPI ~QueuedPacket();
         // NOLINTEND
 
@@ -74,27 +72,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::array<::std::deque<::webrtc::PrioritizedPacketQueue::QueuedPacket>, 5> DequeueAll();
-
         MCNAPI ::webrtc::PrioritizedPacketQueue::QueuedPacket DequeuePacket(int priority_level);
-
-        MCNAPI bool EnqueuePacket(::webrtc::PrioritizedPacketQueue::QueuedPacket packet, int priority_level);
-
-        MCNAPI bool HasPacketsAtPrio(int priority_level) const;
-
-        MCNAPI bool IsEmpty() const;
-
-        MCNAPI ::webrtc::Timestamp LastEnqueueTime() const;
-
-        MCNAPI ::webrtc::Timestamp LeadingPacketEnqueueTime(int priority_level) const;
-
-        MCNAPI explicit StreamQueue(::webrtc::Timestamp creation_time);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::webrtc::Timestamp creation_time);
         // NOLINTEND
     };
 

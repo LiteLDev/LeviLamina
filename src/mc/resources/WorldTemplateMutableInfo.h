@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::WorldTemplateMutableInfo& operator=(::WorldTemplateMutableInfo&&);
+
     MCNAPI ~WorldTemplateMutableInfo();
     // NOLINTEND
 

@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockType;
 class IBlockWorldGenAPI;
 class Random;
 namespace DripstoneUtils { struct PointedDripstoneBasePos; }
@@ -29,7 +28,9 @@ getPointedDripstoneBasePos(::IBlockWorldGenAPI& target, ::BlockPos const& pos, :
 
 MCAPI bool isCircleMostlyEmbeddedInStone(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
 
-MCAPI bool replaceableByDripstone(::BlockType const& block);
+MCAPI bool isDripstoneBaseOrLava(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
+
+MCAPI bool placeDripstoneBlockIfPossible(::IBlockWorldGenAPI& target, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace DripstoneUtils

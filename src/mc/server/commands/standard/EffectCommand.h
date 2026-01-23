@@ -58,8 +58,6 @@ public:
 
     MCAPI bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
 
-    MCAPI bool _checkIsValidDuration(::CommandOutput& output) const;
-
     MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
 
     MCAPI void _clearEffect(

@@ -33,6 +33,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>                        mSubpackInfoStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                                 mMetadata;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const>> mDependenciesUpgrade;
+    ::ll::TypedStorage<1, 1, uchar>                                                             mRevision;
     // NOLINTEND
 
 public:

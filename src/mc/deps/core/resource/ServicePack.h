@@ -20,12 +20,13 @@ public:
 
 public:
     // prevent constructor by default
-    ServicePack(ServicePack const&);
     ServicePack();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C ServicePack(::ServicePack const&);
+
     MCNAPI_C ServicePack(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
 
     MCNAPI_C ::ServicePack& operator=(::ServicePack const&);
@@ -36,6 +37,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::ServicePack const&);
+
     MCNAPI_C void* $ctor(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
     // NOLINTEND
 

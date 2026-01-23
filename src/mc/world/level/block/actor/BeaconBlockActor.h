@@ -56,7 +56,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BeaconBlockActor() /*override*/;
+    virtual ~BeaconBlockActor() /*override*/ = default;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -70,9 +70,9 @@ public:
 
     virtual bool isWithinRenderDistance(::Vec3 const& cameraPosition) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void removeItem(int slot, int count) /*override*/;
 
@@ -143,12 +143,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
@@ -163,9 +157,9 @@ public:
 
     MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int index) const;
 
-    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD void $removeItem(int slot, int count);
 

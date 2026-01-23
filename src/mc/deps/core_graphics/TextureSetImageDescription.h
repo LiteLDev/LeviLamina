@@ -50,13 +50,12 @@ public:
 public:
     // prevent constructor by default
     TextureSetImageDescription& operator=(TextureSetImageDescription const&);
-    TextureSetImageDescription(TextureSetImageDescription const&);
     TextureSetImageDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
+    MCAPI_C TextureSetImageDescription(::cg::TextureSetImageDescription const&);
 
     MCAPI_C explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
 
@@ -68,7 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
+    MCFOLD_C void* $ctor(::cg::TextureSetImageDescription const&);
 
     MCAPI_C void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
     // NOLINTEND

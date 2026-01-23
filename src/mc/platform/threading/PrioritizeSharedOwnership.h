@@ -12,12 +12,6 @@ public:
     ::ll::TypedStorage<8, 88, ::std::condition_variable_any> mZeroReaders;
     ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>          mReaderCount;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void lock();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading

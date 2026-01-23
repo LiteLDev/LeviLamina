@@ -9,15 +9,12 @@
 // clang-format off
 namespace Json { class Value; }
 namespace cereal { class SerializerContext; }
-namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 class MolangVariableMapConstraint : public ::cereal::ConstraintHandle<::MolangVariableMapConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~MolangVariableMapConstraint() /*override*/ = default;
     // NOLINTEND
 
@@ -25,14 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void validateValue(::Json::Value const& parsedJson, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

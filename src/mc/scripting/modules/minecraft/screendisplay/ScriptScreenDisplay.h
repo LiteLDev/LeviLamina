@@ -37,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptScreenDisplay(::Player const& player);
-
     MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
         ::Player& player,
         ::std::variant<
@@ -47,8 +45,6 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
             text
     ) const;
-
-    MCNAPI bool _isValid() const;
 
     MCNAPI ::Scripting::Result<::std::vector<::HudElement>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getHiddenHudElements();
@@ -130,12 +126,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 };
 

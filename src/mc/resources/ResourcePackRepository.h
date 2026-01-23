@@ -272,13 +272,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI_C static ::Core::PathBuffer<::std::string>
-    getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

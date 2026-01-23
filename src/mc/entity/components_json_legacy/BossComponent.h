@@ -39,12 +39,11 @@ public:
     // prevent constructor by default
     BossComponent& operator=(BossComponent const&);
     BossComponent(BossComponent const&);
+    BossComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossComponent();
-
     MCAPI BossComponent(::BossComponent&&);
 
     MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
@@ -59,6 +58,8 @@ public:
 
     MCAPI void sendDeathTelemetry(::Actor& owner);
 
+    MCAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
+
     MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
     MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
@@ -69,8 +70,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::BossComponent&&);
     // NOLINTEND
 

@@ -21,9 +21,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CameraAvoidanceDefinition& operator=(CameraAvoidanceDefinition const&);
+    CameraAvoidanceDefinition(CameraAvoidanceDefinition const&);
+    CameraAvoidanceDefinition();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~CameraAvoidanceDefinition();
+    MCAPI ::SharedTypes::v1_21_100::CameraAvoidanceDefinition&
+    operator=(::SharedTypes::v1_21_100::CameraAvoidanceDefinition&&);
     // NOLINTEND
 
 public:
@@ -36,12 +43,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

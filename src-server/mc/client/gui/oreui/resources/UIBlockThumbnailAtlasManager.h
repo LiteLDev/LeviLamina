@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-class UIBlockThumbnailAtlasManager {
+struct UIBlockThumbnailAtlasManager {
 public:
     // UIBlockThumbnailAtlasManager inner types declare
     // clang-format off

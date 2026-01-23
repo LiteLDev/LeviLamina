@@ -22,6 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
+    MCAPI ActorParticleEffectEvent(::ActorParticleEffectEvent&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorParticleEffectEvent&&);
     // NOLINTEND
 };

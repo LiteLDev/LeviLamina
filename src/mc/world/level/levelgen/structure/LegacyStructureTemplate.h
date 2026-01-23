@@ -62,7 +62,12 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
-    MCAPI ::BlockPos _calculateRelativePosition(::BlockPos pos, ::LegacyStructureSettings const& settings) const;
+    MCAPI ::BlockPos calculateConnectedPosition(
+        ::LegacyStructureSettings const& settings1,
+        ::BlockPos const&                connection1,
+        ::LegacyStructureSettings const& settings2,
+        ::BlockPos const&                connection2
+    ) const;
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 

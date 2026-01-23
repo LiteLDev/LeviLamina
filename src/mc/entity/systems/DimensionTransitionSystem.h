@@ -48,6 +48,13 @@ public:
     MCAPI_C static void
     _tickReadyToContinueClient(::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent> view);
 
+    MCAPI static void _tickReadyToContinueServer(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<::PassengerComponent, ::VehicleComponent, ::DimensionTransitionComponent>,
+            ::PlayerChangeDimensionRequestComponent> view
+    );
+
     MCAPI static void _tickVehicleDismount(
         ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
             passengers,
@@ -65,6 +72,11 @@ public:
         ::ChangeDimensionRequest&&                                                        request,
         ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
         ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
+    );
+
+    MCAPI static bool shouldLevelWaitForSystem(
+        ::StrictEntityContext const&                                                  entity,
+        ::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent const> view
     );
 
     MCAPI static void tryHandleChangeDimensionRequestLevel(

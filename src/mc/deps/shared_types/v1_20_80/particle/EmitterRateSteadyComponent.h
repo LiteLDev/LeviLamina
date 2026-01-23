@@ -23,23 +23,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmitterRateSteadyComponent& operator=(EmitterRateSteadyComponent const&);
-    EmitterRateSteadyComponent(EmitterRateSteadyComponent const&);
-    EmitterRateSteadyComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterRateSteadyComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterRateSteadyComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmitterRateSteadyComponent(::SharedTypes::v1_20_80::EmitterRateSteadyComponent&&);
     // NOLINTEND
 
 public:
@@ -52,12 +45,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterRateSteadyComponent&&);
     // NOLINTEND
 
 public:

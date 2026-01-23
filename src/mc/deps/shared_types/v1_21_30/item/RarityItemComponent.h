@@ -18,7 +18,6 @@ public:
 
 public:
     // prevent constructor by default
-    RarityItemComponent& operator=(RarityItemComponent const&);
     RarityItemComponent(RarityItemComponent const&);
     RarityItemComponent();
 
@@ -26,6 +25,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_30::RarityItemComponent& operator=(::SharedTypes::v1_21_30::RarityItemComponent&&);
+
+    MCFOLD ::SharedTypes::v1_21_30::RarityItemComponent& operator=(::SharedTypes::v1_21_30::RarityItemComponent const&);
     // NOLINTEND
 
 public:

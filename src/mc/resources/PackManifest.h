@@ -128,8 +128,6 @@ public:
     MCAPI void
     addNativeModuleDependency(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const& moduleId);
 
-    MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
-
     MCAPI void addPackDependency(::PackIdVersion const& packId);
 
     MCAPI_C ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
@@ -148,8 +146,6 @@ public:
 
     MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getZipFolderPath() const;
-
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
     MCAPI_C bool isRestrictedPack() const;
@@ -167,8 +163,6 @@ public:
     MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
-
-    MCAPI_S void setMetadata(::ResourceMetadata const& metadata);
 
     MCAPI void setMinEngineVersion(::MinEngineVersion const& engineVersion);
 

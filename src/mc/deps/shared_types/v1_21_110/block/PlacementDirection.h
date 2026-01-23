@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ~PlacementDirection();
+    MCAPI ~PlacementDirection();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_S void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

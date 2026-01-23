@@ -6,7 +6,6 @@
 // clang-format off
 class ActorAnimationControllerPtr;
 class ActorSkeletalAnimationPtr;
-class DataDrivenGeometry;
 class HashedString;
 struct MolangVariableSettings;
 struct NamedMolangScript;
@@ -18,14 +17,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr>> mActorAnimationMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr>>
-                                                                  mActorAnimationControllerMap;
-    ::ll::TypedStorage<8, 24, ::std::vector<::NamedMolangScript>> mActorAnimateScriptArray;
-#ifdef LL_PLAT_S
-    ::ll::TypedStorage<8, 24, ::std::vector<::MolangVariableSettings>> mVariableSettings;
-#else // LL_PLAT_C
+                                                                       mActorAnimationControllerMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NamedMolangScript>>      mActorAnimateScriptArray;
     ::ll::TypedStorage<8, 24, ::std::vector<::MolangVariableSettings>> mVariableSettings;
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>           mQueryableGeometryBoneNames;
-#endif
     // NOLINTEND
 
 public:
@@ -45,7 +40,7 @@ public:
 
     MCAPI_C uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
 
-    MCAPI_C void initQueryableGeometryBoneNames(::std::shared_ptr<::DataDrivenGeometry const> geometry);
+    MCAPI_C void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
 
     MCAPI_C void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
 
@@ -54,7 +49,7 @@ public:
     MCAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
-    MCAPI ~CommonResourceDefinitionMap();
+    MCAPI_C ~CommonResourceDefinitionMap();
     // NOLINTEND
 
 public:
@@ -70,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

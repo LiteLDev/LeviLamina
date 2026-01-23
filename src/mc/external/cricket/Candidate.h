@@ -94,10 +94,6 @@ public:
 
     MCNAPI bool operator==(::cricket::Candidate const& o) const;
 
-    MCNAPI void set_password(::std::string_view password);
-
-    MCNAPI void set_username(::std::string_view username);
-
     MCNAPI ::std::string_view type_name() const;
 
     MCNAPI ~Candidate();

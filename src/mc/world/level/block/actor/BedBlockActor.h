@@ -63,15 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S explicit BedBlockActor(::BlockPos const& pos);
-
     MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_S void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

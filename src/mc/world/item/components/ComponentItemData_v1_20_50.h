@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>              mDescription;
-    ::ll::TypedStorage<8, 800, ::SharedTypes::v1_20_50::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 808, ::SharedTypes::v1_20_50::ComponentItemComponentData> mItemComponents;
     ::ll::TypedStorage<8, 768, ::ComponentItemDeprecatedComponentData_v1_20_50>     mDeprecatedItemComponents;
     // NOLINTEND
 

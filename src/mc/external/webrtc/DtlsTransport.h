@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/DtlsTransportInterface.h"
-#include "mc/external/webrtc/DtlsTransportState.h"
 #include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
@@ -55,8 +54,6 @@ public:
     MCNAPI void Clear();
 
     MCNAPI explicit DtlsTransport(::std::unique_ptr<::cricket::DtlsTransportInternal> internal);
-
-    MCNAPI void OnInternalDtlsState(::cricket::DtlsTransportInternal* transport, ::webrtc::DtlsTransportState state);
 
     MCNAPI void UpdateInformation();
 

@@ -13,6 +13,8 @@ namespace LeashableSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
+MCNAPI ::TickingSystemWithInfo createHandleCaravanEventRequestSystem();
+
 MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
 MCNAPI_C void registerClientSystems(::EntitySystems& systemRegistry);

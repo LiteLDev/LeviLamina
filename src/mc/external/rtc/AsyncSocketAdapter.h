@@ -70,7 +70,7 @@ public:
 
     virtual void OnCloseEvent(::rtc::Socket* socket, int err);
 
-    virtual ~AsyncSocketAdapter() /*override*/ = default;
+    virtual ~AsyncSocketAdapter() /*override*/;
     // NOLINTEND
 
 public:
@@ -83,6 +83,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::Socket* socket);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

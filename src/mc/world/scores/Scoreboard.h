@@ -11,7 +11,6 @@
 #include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveRenderType.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
-#include "mc/world/scores/PlayerScoreSetFunction.h"
 #include "mc/world/scores/ScoreboardOperationResult.h"
 
 // auto generated forward declare list
@@ -144,19 +143,9 @@ public:
 
     MCAPI ::ScoreboardId const& getScoreboardId(::Player const& player) const;
 
-    MCAPI ::ScoreboardIdentityRef* getScoreboardIdentityRef(::ScoreboardId const& scoreboardId);
-
     MCAPI ::std::vector<::ScoreboardIdentityRef> getScoreboardIdentityRefs() const;
 
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
-
-    MCAPI int modifyPlayerScore(
-        ::ScoreboardOperationResult& result,
-        ::ScoreboardId const&        id,
-        ::Objective&                 objective,
-        int                          scoreValue,
-        ::PlayerScoreSetFunction     action
-    );
 
     MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);
 

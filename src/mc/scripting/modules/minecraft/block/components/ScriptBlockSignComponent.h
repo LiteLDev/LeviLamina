@@ -13,6 +13,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class SignBlockActor;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
@@ -32,6 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SignBlockActor const* _tryGetSign() const;
+
+    MCNAPI ::SignBlockActor* _tryGetSign();
+
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
     getRawText(::SignTextSide side) const;
 

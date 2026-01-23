@@ -19,6 +19,7 @@ public:
 public:
     // prevent constructor by default
     SimulcastLayerList& operator=(SimulcastLayerList const&);
+    SimulcastLayerList(SimulcastLayerList const&);
     SimulcastLayerList();
 
 public:
@@ -30,17 +31,9 @@ public:
 
     MCNAPI ::std::vector<::cricket::SimulcastLayer> GetAllLayers() const;
 
-    MCNAPI SimulcastLayerList(::cricket::SimulcastLayerList const&);
-
     MCNAPI ::cricket::SimulcastLayerList& operator=(::cricket::SimulcastLayerList&&);
 
     MCNAPI ~SimulcastLayerList();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cricket::SimulcastLayerList const&);
     // NOLINTEND
 
 public:

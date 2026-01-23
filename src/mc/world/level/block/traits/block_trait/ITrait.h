@@ -15,13 +15,19 @@ class ITrait {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ITrait() = default;
+    virtual ~ITrait();
 
     virtual void applyToBlockType(::BlockType&) const = 0;
 
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
 
     virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

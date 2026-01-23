@@ -24,7 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    ToggleSetting& operator=(ToggleSetting const&);
     ToggleSetting(ToggleSetting const&);
     ToggleSetting();
 
@@ -33,6 +32,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
+
+    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&);
 
     MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&) const;
 

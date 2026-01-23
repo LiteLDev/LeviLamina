@@ -87,6 +87,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptActionFormData& operator=(ScriptActionFormData const&);
     ScriptActionFormData();
 
 public:
@@ -123,9 +124,6 @@ public:
 
     MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData&
     operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
-
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptActionFormData&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
 
     MCNAPI ::Scripting::Result<
         ::Scripting::Promise<

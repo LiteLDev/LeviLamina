@@ -14,6 +14,7 @@
 struct JSContext;
 struct JSModuleDef;
 namespace Scripting { class DependencyLocator; }
+namespace Scripting { class IBreakpointValidator; }
 namespace Scripting { class IDebuggerController; }
 namespace Scripting { class IDebuggerTransport; }
 namespace Scripting { class IDependencyLoader; }
@@ -46,13 +47,14 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk4a943c;
     ::ll::UntypedStorage<8, 8>  mUnkfaeecd;
     ::ll::UntypedStorage<8, 8>  mUnk53e8fe;
-    ::ll::UntypedStorage<8, 8>  mUnkf9e8f9;
     ::ll::UntypedStorage<8, 64> mUnk1c3b53;
     ::ll::UntypedStorage<8, 8>  mUnk70cddb;
+    ::ll::UntypedStorage<1, 1>  mUnk9e6cf4;
     ::ll::UntypedStorage<8, 8>  mUnk6d0b0e;
     ::ll::UntypedStorage<8, 8>  mUnk2178f5;
     ::ll::UntypedStorage<8, 24> mUnke1366a;
     ::ll::UntypedStorage<8, 64> mUnke4ca00;
+    ::ll::UntypedStorage<8, 8>  mUnkf9e8f9;
     ::ll::UntypedStorage<8, 8>  mUnk4de080;
     // NOLINTEND
 
@@ -118,14 +120,15 @@ public:
         ::entt::meta_type const&                                expectedResultType
     ) const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
-        ::std::optional<::std::chrono::microseconds> timeSlice,
-        ::std::optional<::Scripting::Privilege>      privilege
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+    executeCoroutines(::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     virtual bool hasPendingJobs() /*override*/;
 
-    virtual ::Scripting::IDebuggerController* enableDebugger(::Scripting::IDebuggerTransport& transport) /*override*/;
+    virtual ::Scripting::IDebuggerController* enableDebugger(
+        ::Scripting::IDebuggerTransport&   transport,
+        ::Scripting::IBreakpointValidator& validator
+    ) /*override*/;
 
     virtual void disableDebugger() /*override*/;
 
@@ -247,14 +250,13 @@ public:
         ::entt::meta_type const&                                expectedResultType
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> $executeCoroutines(
-        ::std::optional<::std::chrono::microseconds> timeSlice,
-        ::std::optional<::Scripting::Privilege>      privilege
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
+    $executeCoroutines(::std::optional<::Scripting::Privilege> privilege);
 
     MCNAPI bool $hasPendingJobs();
 
-    MCNAPI ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport& transport);
+    MCNAPI ::Scripting::IDebuggerController*
+    $enableDebugger(::Scripting::IDebuggerTransport& transport, ::Scripting::IBreakpointValidator& validator);
 
     MCNAPI void $disableDebugger();
 

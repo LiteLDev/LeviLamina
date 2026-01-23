@@ -31,7 +31,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkb96c8d;
-    ::ll::UntypedStorage<8, 8>  mUnk4f9819;
     ::ll::UntypedStorage<8, 8>  mUnk809618;
     ::ll::UntypedStorage<8, 8>  mUnkd638dd;
     ::ll::UntypedStorage<8, 8>  mUnk7a20a8;
@@ -86,7 +85,7 @@ public:
 
     virtual bool isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
@@ -99,12 +98,12 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     virtual bool hasCapability(::std::string_view requiredCapability) const;
@@ -133,11 +132,12 @@ public:
 
     MCNAPI_C ::ContentTierIncompatibleReason canSupportPacks();
 
+    MCNAPI_C void clearStack(::ResourcePackStackType stackType);
+
     MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
         ::ResourcePackStack const& globalStack,
-        ::ResourcePackStack const& levelStack,
-        ::ResourcePackStack const& addonStack
+        ::ResourcePackStack const& levelStack
     ) const;
 
     MCNAPI_C void ensureSupportedSubpacks();
@@ -220,7 +220,7 @@ public:
 
     MCNAPI bool $isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
@@ -233,12 +233,12 @@ public:
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;

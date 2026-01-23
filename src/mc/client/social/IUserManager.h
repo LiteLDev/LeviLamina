@@ -14,18 +14,18 @@
 
 // auto generated forward declare list
 // clang-format off
-class IClientInstance;
 class ILevelListCache;
-class IMinecraftGame;
-class Options;
 struct ControllerIDtoClientMap;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class SingleThreadedLock; }
 namespace Social { class MultiplayerServiceObserver; }
 namespace Social { class ProfileImageOptions; }
-namespace Social { class User; }
 namespace Social { class UserListObserver; }
 namespace mce { struct Image; }
+class IClientInstance;
+class IMinecraftGame;
+struct Options;
+namespace Social { struct User; }
 namespace Social { struct XboxLiveUser; }
 // clang-format on
 

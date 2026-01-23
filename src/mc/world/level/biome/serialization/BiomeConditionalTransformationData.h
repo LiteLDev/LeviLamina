@@ -21,16 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeConditionalTransformationData& operator=(BiomeConditionalTransformationData const&);
-    BiomeConditionalTransformationData(BiomeConditionalTransformationData const&);
-    BiomeConditionalTransformationData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditionalTransformationData(::BiomeConditionalTransformationData&&);
-
     MCAPI ~BiomeConditionalTransformationData();
     // NOLINTEND
 
@@ -38,12 +30,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeConditionalTransformationData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeConditionalTransformationData&&);
     // NOLINTEND
 
 public:

@@ -23,13 +23,8 @@ MCNAPI ::Scripting::Result<::PageContent, ::ScriptModuleMinecraft::ScriptBookPag
     ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const& rawTextArray
 );
 
-MCNAPI ::Scripting::Result<::PageContent, ::ScriptModuleMinecraft::ScriptBookPageContentError> _makePageContent(
-    int pageIndex,
-    ::std::variant<
-        ::std::string,
-        ::ScriptModuleMinecraft::ScriptRawMessageInterface,
-        ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> text
-);
+MCNAPI ::Scripting::Result<::PageContent, ::ScriptModuleMinecraft::ScriptBookPageContentError>
+_makePageContent(int pageIndex, ::std::string const& text);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::ScriptBookItemComponentInternal

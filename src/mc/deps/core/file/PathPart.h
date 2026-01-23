@@ -12,25 +12,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PathPart();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PathPart(char const* pCStr, uint64 size);
-
-    MCNAPI_C PathPart(::gsl::not_null<char const*> pCStr, uint64 size);
+    MCNAPI char const* getUtf8CString() const;
 
     MCNAPI ~PathPart();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(char const* pCStr, uint64 size);
-
-    MCNAPI_C void* $ctor(::gsl::not_null<char const*> pCStr, uint64 size);
     // NOLINTEND
 
 public:

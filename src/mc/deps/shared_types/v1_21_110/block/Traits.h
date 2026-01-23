@@ -22,9 +22,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Traits& operator=(Traits const&);
+    Traits(Traits const&);
+    Traits();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::Traits&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::Traits&&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

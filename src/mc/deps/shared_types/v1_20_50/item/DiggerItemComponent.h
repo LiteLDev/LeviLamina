@@ -29,16 +29,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BlockInfo(BlockInfo const&);
-        BlockInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo&
-        operator=(::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo const&);
-
         MCAPI ~BlockInfo();
         // NOLINTEND
 
@@ -79,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

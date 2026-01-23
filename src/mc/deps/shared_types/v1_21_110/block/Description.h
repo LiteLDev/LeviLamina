@@ -7,6 +7,11 @@
 #include "mc/deps/shared_types/v1_21_110/block/States.h"
 #include "mc/deps/shared_types/v1_21_110/block/Traits.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_110::BlockDefinition {
 
 struct Description {
@@ -27,27 +32,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S Description(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
+    MCAPI Description(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::Description&&);
 
-    MCAPI_S ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    MCAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
     operator=(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
-    MCAPI_S ~Description();
+    MCAPI ~Description();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
+    MCAPI void* $ctor(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_S void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

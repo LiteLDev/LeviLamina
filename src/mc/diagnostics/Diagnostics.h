@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/diagnostics/LogAreaID.h"
-#include "mc/diagnostics/bedrock_log/LogCategory.h"
-#include "mc/diagnostics/bedrock_log/LogRule.h"
+#include "mc/platform/diagnostics/LogAreaID.h"
+#include "mc/platform/diagnostics/bedrock_log/LogCategory.h"
+#include "mc/platform/diagnostics/bedrock_log/LogRule.h"
 
 namespace Bedrock::Diagnostics {
 // functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -19,10 +20,11 @@ class UseModifiersItemComponent : public ::NetworkedItemComponent<::UseModifiers
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                            mUseDuration;
-    ::ll::TypedStorage<1, 1, bool>                             mEmitVibrations;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>           mMovementModifier;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
+    ::ll::TypedStorage<4, 4, float>                                                   mUseDuration;
+    ::ll::TypedStorage<1, 1, bool>                                                    mEmitVibrations;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mStartSound;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                  mMovementModifier;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mOnUseSubscription;
     // NOLINTEND
 
 public:

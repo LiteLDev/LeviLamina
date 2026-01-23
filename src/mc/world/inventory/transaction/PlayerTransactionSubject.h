@@ -63,7 +63,7 @@ public:
 
     virtual bool baseUseItem(::ItemStack& item) /*override*/;
 
-    virtual bool baseUseItemAsAttack(::ItemStack& item) /*override*/;
+    virtual bool baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection) /*override*/;
 
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
@@ -127,7 +127,7 @@ public:
 
     MCAPI bool $baseUseItem(::ItemStack& item);
 
-    MCAPI bool $baseUseItemAsAttack(::ItemStack& item);
+    MCAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
 
     MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,

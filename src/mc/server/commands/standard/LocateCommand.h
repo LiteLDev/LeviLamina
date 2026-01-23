@@ -10,6 +10,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Level;
 // clang-format on
 
 class LocateCommand : public ::Command {
@@ -47,7 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry);
+    MCAPI static void setup(::CommandRegistry& registry, ::Level const& level);
     // NOLINTEND
 
 public:

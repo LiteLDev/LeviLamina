@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -30,8 +29,6 @@ class FenceBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
-
     virtual ::AABB const& getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -61,8 +58,6 @@ public:
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
-
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
@@ -106,7 +101,7 @@ public:
         ::Vec3 const&              entityPos
     ) const;
 
-    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -130,8 +125,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
-
     MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -162,8 +155,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
@@ -179,6 +170,7 @@ public:
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -188,6 +180,7 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+#endif
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

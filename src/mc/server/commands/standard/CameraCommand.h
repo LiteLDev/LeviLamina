@@ -15,6 +15,7 @@ class CommandRegistry;
 class Experiments;
 struct CameraInstruction;
 struct ServerCameraStatesComponent;
+namespace SharedTypes::v1_21_90 { struct CameraPreset; }
 // clang-format on
 
 class CameraCommand : public ::Command {
@@ -101,7 +102,12 @@ public:
     // NOLINTBEGIN
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~CameraCommand() /*override*/;
+#else // LL_PLAT_C
     virtual ~CameraCommand() /*override*/ = default;
+#endif
+
     // NOLINTEND
 
 public:
@@ -127,6 +133,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool resolveInheritance(
+        ::std::string&                                              currentPresetName,
+        ::std::string const&                                        parentToStopAt,
+        ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presetList
+    );
+
     MCAPI static void setup(::CommandRegistry& registry, ::Experiments const* experiments);
     // NOLINTEND
 
@@ -216,6 +228,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

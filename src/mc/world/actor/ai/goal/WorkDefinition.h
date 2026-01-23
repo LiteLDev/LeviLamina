@@ -6,6 +6,12 @@
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class WorkGoal;
+// clang-format on
+
 class WorkDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
@@ -21,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorkDefinition(WorkDefinition const&);
-    WorkDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorkDefinition() /*override*/ = default;
@@ -34,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WorkDefinition& operator=(::WorkDefinition const&);
+    MCAPI void initialize(::EntityContext& entity, ::WorkGoal& goal) const;
     // NOLINTEND
 
 public:

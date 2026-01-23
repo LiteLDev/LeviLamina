@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SceneFactory {
+struct SceneFactory {
 public:
     // SceneFactory inner types declare
     // clang-format off

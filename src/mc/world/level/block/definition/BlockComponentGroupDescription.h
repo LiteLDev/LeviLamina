@@ -45,6 +45,8 @@ public:
         MCAPI ::std::shared_ptr<::cereal::DynamicValue>
         getCustomComponent(::cereal::SerializerContext const& context) const;
 
+        MCFOLD ::BlockComponentGroupDescription::Components& operator=(::BlockComponentGroupDescription::Components&&);
+
         MCFOLD ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
@@ -86,6 +88,8 @@ public:
     MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
 
     MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
+
+    MCAPI_S void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
 
     MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 

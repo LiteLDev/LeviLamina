@@ -43,6 +43,8 @@ public:
 
     MCNAPI void _onItemCreated(::std::string const& id);
 
+    MCNAPI void _onItemDestroyed(::std::string const& id);
+
     MCNAPI void _onItemUpdated(::std::string const& id, ::std::string const& propName);
 
     MCNAPI bool _removeItem(::std::string const& id);

@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
 
-    MCFOLD ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
+    MCAPI ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
 
     MCAPI ~ItemSpecificSpeed();
     // NOLINTEND
@@ -30,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ItemSpecificSpeed const&);
+    MCAPI void* $ctor(::ItemSpecificSpeed const&);
     // NOLINTEND
 
 public:

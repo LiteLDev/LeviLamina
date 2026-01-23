@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptBoxShape(ScriptBoxShape const&);
     ScriptBoxShape();
 
 public:
@@ -38,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBoxShape(::ScriptModuleDebugUtilities::ScriptBoxShape const&);
-
     MCFOLD ::ScriptModuleDebugUtilities::ScriptBoxShape& operator=(::ScriptModuleDebugUtilities::ScriptBoxShape const&);
     // NOLINTEND
 
@@ -47,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleDebugUtilities::ScriptBoxShape const&);
     // NOLINTEND
 
 public:

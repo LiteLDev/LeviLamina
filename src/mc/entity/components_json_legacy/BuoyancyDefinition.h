@@ -42,6 +42,10 @@ public:
     MCNAPI ::Json::Value _serialize() const;
 
     MCNAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
+
+    MCNAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
+
+    MCNAPI ~BuoyancyDefinition();
     // NOLINTEND
 
 public:
@@ -50,5 +54,11 @@ public:
     MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BuoyancyDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

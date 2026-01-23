@@ -44,7 +44,7 @@ public:
 
     MCAPI void _replaceSelection(::std::string_view replacementUtf8Text);
 
-    MCAPI void _setText(::std::string_view newUtf8Text);
+    MCAPI void enable(::std::string_view newUtf8Text, int maxLength);
 
     MCAPI void feedAction(::TextEditContext::TextEditAction action);
 
@@ -53,6 +53,8 @@ public:
     MCAPI void feedText(::std::string_view utf8Text);
 
     MCAPI void setCaretLocation(int location);
+
+    MCAPI void setText(::std::string_view newUtf8Text);
 
     MCAPI ~TextEditContext();
     // NOLINTEND

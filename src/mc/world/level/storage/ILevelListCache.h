@@ -84,7 +84,7 @@ public:
 
     virtual ::LevelSummary* getShallowLevelSummary(::std::string const&) = 0;
 
-    virtual void getLevelList(::std::vector<::LevelSummary>&, bool, bool, bool) = 0;
+    virtual void getLevelList(::std::vector<::LevelSummary>&, bool, bool, bool, bool) = 0;
 
     virtual bool hasCachedLevels(bool) const = 0;
 

@@ -95,7 +95,7 @@ public:
 
     virtual int getToughnessValue() const /*override*/;
 
-    virtual float getArmorKnockbackResistance() const;
+    virtual float getKnockbackResistanceValue() const /*override*/;
 
     virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
 
@@ -188,7 +188,7 @@ public:
 
     MCAPI int $getToughnessValue() const;
 
-    MCAPI float $getArmorKnockbackResistance() const;
+    MCAPI float $getKnockbackResistanceValue() const;
 
     MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
 
@@ -201,6 +201,8 @@ public:
     MCAPI bool $isDyeable() const;
 
     MCAPI bool $isTrimAllowed() const;
+
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 

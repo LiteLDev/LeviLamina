@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
+    MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
     MCAPI_C bool hasExpired() const;
 
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
+    MCAPI void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
     // NOLINTEND
 
 public:

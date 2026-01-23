@@ -3,21 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/FoliageBlock.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class GetCollisionShapeInterface;
-class IConstBlockSource;
 class ItemInstance;
 namespace mce { class Color; }
 // clang-format on
@@ -36,13 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
-
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
@@ -85,13 +74,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
-
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 

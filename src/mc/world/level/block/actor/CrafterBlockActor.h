@@ -40,13 +40,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~LruCache();
+        MCAPI_S ~LruCache();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI_S void $dtor();
         // NOLINTEND
     };
 

@@ -8,10 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
 class IConstBlockSource;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Blaze : public ::Monster {
@@ -25,10 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, float> mAllowedHeightOffset;
     ::ll::TypedStorage<4, 4, int>   mNextHeightOffsetChangeTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Blaze();
 
 public:
     // virtual functions
@@ -51,23 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Blaze(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void preTravel();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

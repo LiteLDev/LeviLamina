@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ResourceLocationPair& operator=(ResourceLocationPair const&);
     ResourceLocationPair(ResourceLocationPair const&);
 
 public:
@@ -30,6 +29,8 @@ public:
     MCNAPI_C ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
 
     MCNAPI_C ::ResourceLocationPair& operator=(::ResourceLocationPair&&);
+
+    MCNAPI_C ::ResourceLocationPair& operator=(::ResourceLocationPair const&);
 
     MCNAPI_C ~ResourceLocationPair();
     // NOLINTEND

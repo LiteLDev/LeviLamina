@@ -40,7 +40,7 @@ public:
 
     MCNAPI ::std::string _loadItem();
 
-    MCNAPI ::std::string fetchItemPayload();
+    MCNAPI ::std::string const& fetchItemPayload();
 
     MCNAPI ::Bedrock::PubSub::Subscription
     onValueChange(::std::function<void(::Editor::Services::PersistenceItem const&)> callback);

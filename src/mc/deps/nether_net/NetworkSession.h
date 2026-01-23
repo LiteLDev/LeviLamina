@@ -18,11 +18,18 @@ namespace NetherNet {
 
 class NetworkSession : public ::NetherNet::ContextProxy {
 public:
+    // NetworkSession inner types declare
+    // clang-format off
+    struct DisableTrickleIceTag;
+    // clang-format on
+
     // NetworkSession inner types define
     enum class Direction : int {
         Incoming = 0,
         Outgoing = 1,
     };
+
+    struct DisableTrickleIceTag {};
 
 public:
     // member variables

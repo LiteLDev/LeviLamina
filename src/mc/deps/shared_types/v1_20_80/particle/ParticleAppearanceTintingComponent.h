@@ -22,24 +22,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleAppearanceTintingComponent& operator=(ParticleAppearanceTintingComponent const&);
-    ParticleAppearanceTintingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleAppearanceTintingComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleAppearanceTintingComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
-
-    MCAPI_C ParticleAppearanceTintingComponent(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:
@@ -52,14 +44,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent&&);
-
-    MCAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponent const&);
     // NOLINTEND
 
 public:

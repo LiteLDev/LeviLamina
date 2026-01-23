@@ -17,10 +17,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
 struct IEntitlementManager;
+struct MainMenuScreenModel;
 namespace Json { class Value; }
-namespace Social { class User; }
+namespace Social { struct User; }
 namespace edu::auth { struct CredsAuthComplete; }
 // clang-format on
 
@@ -86,8 +86,6 @@ public:
     ::ll::UntypedStorage<8, 72>  mUnk87c88d;
     ::ll::UntypedStorage<1, 1>   mUnk3144fa;
     ::ll::UntypedStorage<1, 1>   mUnkd7b80b;
-    ::ll::UntypedStorage<1, 1>   mUnkdc7f4b;
-    ::ll::UntypedStorage<1, 1>   mUnkac83cd;
     ::ll::UntypedStorage<8, 336> mUnk8d5d3d;
     ::ll::UntypedStorage<8, 24>  mUnk356acd;
     ::ll::UntypedStorage<8, 24>  mUnkfac3ef;
@@ -136,7 +134,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -165,11 +163,13 @@ public:
 
     MCAPI void _createProxy();
 
-    MCAPI void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCFOLD void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
     MCAPI void _fetchRealms();
 
     MCAPI void _fetchUserOrientedContent(bool signInFailed);
+
+    MCAPI bool _hasAnimatedGatheringBadge() const;
 
     MCAPI bool _hasValidGathering() const;
 
@@ -194,8 +194,6 @@ public:
     MCAPI void _registerSilentSignInCallbacks();
 
     MCAPI void _registerStoreButtonArtBindings();
-
-    MCAPI void _tryDisplayCloudFileUploadDialog();
 
     MCAPI void _tryImportPacks();
 

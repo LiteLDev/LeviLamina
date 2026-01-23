@@ -6,6 +6,7 @@
 #include "mc/deps/core/file/OutputFileStream.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/network/TrackerType.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/util/ProfilerLiteTelemetry.h"
 
 // auto generated forward declare list
@@ -97,6 +98,11 @@ public:
         MCNAPI void $dtor();
         // NOLINTEND
     };
+
+    using EventSource = ::brstd::function_ref<
+        void(::brstd::function_ref<void(::std::string const&, double), void(::std::string const&, double)>)>;
+
+    using EventVisitor = ::brstd::function_ref<void(::std::string const&, double)>;
 
 public:
     // member variables

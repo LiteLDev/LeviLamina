@@ -11,7 +11,6 @@
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ISignalingInterface.h"
 #include "mc/network/services/signaling/ISignalingJsonRpcInterop.h"
-#include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 
@@ -132,12 +131,6 @@ public:
             bool                                                             useJsonRpc
         );
 
-        MCNAPI void _handleError(
-            ::SignalingService::Connection::ServiceError errorCode,
-            ::std::string const&                         errorMessage,
-            ::std::string const&                         messageId
-        );
-
         MCNAPI void _parseError(::std::string const& message, ::std::string messageId);
 
         MCNAPI ::Bedrock::Result<::std::vector<::NetherNet::StunRelayServer>, ::NetherNet::ESessionError>
@@ -160,8 +153,6 @@ public:
 
         MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
         sendTo(::NetherNet::NetworkID to, ::std::string const& message);
-
-        MCNAPI void update();
         // NOLINTEND
 
     public:
@@ -317,13 +308,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
         sendJsonRpc(::std::string const& message);
 
-        MCNAPI ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
-        sendJsonRpcTo(
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
             ::PlayerMessaging::NetworkID          networkIdTo,
             ::std::optional<::std::string> const& messageId,
             ::std::string const&                  message
@@ -373,19 +361,16 @@ public:
         // NOLINTBEGIN
         virtual ~JsonRpcInterop() /*override*/ = default;
 
-        virtual ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
-        sendJsonRpcTo(
+        virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> sendJsonRpcTo(
             ::PlayerMessaging::NetworkID          networkIdTo,
             ::std::optional<::std::string> const& messageId,
             ::std::string const&                  message
         ) const /*override*/;
 
-        virtual ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
+        virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
         sendJsonRpc(::std::string const& message) const /*override*/;
 
-        virtual ::gsl::not_null<::std::shared_ptr<::MessageTracker>> getMessageTracker() /*override*/;
+        virtual ::std::shared_ptr<::MessageTracker> getMessageTracker() /*override*/;
 
         virtual void
         parseSignal(::NetherNet::NetworkID fromNetworkID, ::std::string message, ::std::string messageId) /*override*/;
@@ -403,19 +388,16 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
-        $sendJsonRpcTo(
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>> $sendJsonRpcTo(
             ::PlayerMessaging::NetworkID          networkIdTo,
             ::std::optional<::std::string> const& messageId,
             ::std::string const&                  message
         ) const;
 
-        MCNAPI ::Bedrock::Threading::Async<
-            ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
         $sendJsonRpc(::std::string const& message) const;
 
-        MCNAPI ::gsl::not_null<::std::shared_ptr<::MessageTracker>> $getMessageTracker();
+        MCNAPI ::std::shared_ptr<::MessageTracker> $getMessageTracker();
 
         MCNAPI void $parseSignal(::NetherNet::NetworkID fromNetworkID, ::std::string message, ::std::string messageId);
 
@@ -483,6 +465,8 @@ public:
     MCNAPI_C ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> signIn(::PlayerMessaging::SigninID localId);
+
+    MCNAPI void update();
     // NOLINTEND
 
 public:

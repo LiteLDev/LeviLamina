@@ -23,7 +23,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeComponents(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual bool shouldBurn() /*override*/;
 
@@ -41,6 +42,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+#endif
+
     MCFOLD bool $shouldBurn();
 
     MCFOLD bool $isOnFire() const;

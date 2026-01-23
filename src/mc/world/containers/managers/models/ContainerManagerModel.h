@@ -7,6 +7,7 @@
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/IContainerManager.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 
@@ -117,6 +118,8 @@ public:
 
     MCAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
+    MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
+
     MCAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
 
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
@@ -132,6 +135,8 @@ public:
     MCAPI_C ::HashedString getEntityLocName(::ActorUniqueID const& actorUniqueID) const;
 
     MCAPI_C ::std::string getEntityName(::ActorUniqueID const& actorUniqueID) const;
+
+    MCAPI_C int getPlayerLevels() const;
 
     MCAPI_C void grantExperience(int amount);
 

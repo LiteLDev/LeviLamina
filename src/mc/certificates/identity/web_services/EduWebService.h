@@ -7,6 +7,7 @@
 #include "mc/certificates/identity/web_services/IEduWebService.h"
 #include "mc/certificates/identity/web_services/SigninContext.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
+#include "mc/deps/identity/edu_common/ActiveDirectoryAuthenticationState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -105,6 +106,13 @@ public:
     getRequest(::std::string_view url, ::std::string apiVersion, bool includeAuth, ::Json::Value&& body);
 
     MCNAPI_C ::WebServices::EduSignin::EduRole getRole(::std::string const& str);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_C static ::ActiveDirectoryAuthenticationState
+    getErrorState(::std::string const& reason, ::WebServices::SigninContext context);
     // NOLINTEND
 
 public:

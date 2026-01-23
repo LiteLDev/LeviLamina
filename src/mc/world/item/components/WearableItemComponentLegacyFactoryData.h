@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 

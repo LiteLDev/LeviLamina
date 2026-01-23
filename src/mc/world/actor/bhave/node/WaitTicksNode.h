@@ -22,7 +22,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
@@ -33,10 +33,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initializeFromDefinition(::Actor& owner);
-
-#ifdef LL_PLAT_C
-    MCAPI ::BehaviorStatus $tick(::Actor& owner);
-#endif
 
 
     // NOLINTEND

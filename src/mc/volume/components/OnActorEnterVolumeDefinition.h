@@ -14,10 +14,4 @@ public:
     OnActorEnterVolumeDefinition& operator=(OnActorEnterVolumeDefinition const&);
     OnActorEnterVolumeDefinition(OnActorEnterVolumeDefinition const&);
     OnActorEnterVolumeDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI_C ::OnActorEnterVolumeDefinition& operator=(::OnActorEnterVolumeDefinition&&);
-    // NOLINTEND
 };

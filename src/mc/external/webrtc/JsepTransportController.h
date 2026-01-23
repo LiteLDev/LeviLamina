@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/IceRole.h"
-#include "mc/external/rtc/SSLHandshakeError.h"
 #include "mc/external/rtc/SSLRole.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
@@ -18,29 +17,22 @@ namespace cricket { class ContentGroup; }
 namespace cricket { class ContentInfo; }
 namespace cricket { class DtlsTransportInternal; }
 namespace cricket { class IceTransportInternal; }
-namespace cricket { class JsepTransport; }
 namespace cricket { class PortAllocator; }
 namespace cricket { class SessionDescription; }
-namespace cricket { struct CandidatePairChangeEvent; }
-namespace cricket { struct IceCandidateErrorEvent; }
 namespace cricket { struct IceConfig; }
 namespace cricket { struct JsepTransportDescription; }
 namespace cricket { struct TransportInfo; }
 namespace cricket { struct TransportStats; }
-namespace rtc { class CopyOnWriteBuffer; }
 namespace rtc { class PacketTransportInternal; }
 namespace rtc { class RTCCertificate; }
 namespace rtc { class SSLCertChain; }
 namespace rtc { class Thread; }
 namespace webrtc { class AsyncDnsResolverFactoryInterface; }
 namespace webrtc { class DataChannelTransportInterface; }
-namespace webrtc { class DtlsSrtpTransport; }
 namespace webrtc { class DtlsTransport; }
 namespace webrtc { class Environment; }
 namespace webrtc { class IceTransportInterface; }
 namespace webrtc { class RTCError; }
-namespace webrtc { class RtpPacketReceived; }
-namespace webrtc { class RtpTransport; }
 namespace webrtc { class RtpTransportInternal; }
 namespace webrtc { class SctpTransport; }
 // clang-format on
@@ -169,7 +161,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JsepTransportController() /*override*/;
+    virtual ~JsepTransportController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -185,12 +177,6 @@ public:
         ::cricket::SessionDescription const* remote_desc
     );
 
-    MCNAPI ::std::unique_ptr<::webrtc::DtlsSrtpTransport> CreateDtlsSrtpTransport(
-        ::std::string const&              transport_name,
-        ::cricket::DtlsTransportInternal* rtp_dtls_transport,
-        ::cricket::DtlsTransportInternal* rtcp_dtls_transport
-    );
-
     MCNAPI ::std::unique_ptr<::cricket::DtlsTransportInternal>
     CreateDtlsTransport(::cricket::ContentInfo const& content_info, ::cricket::IceTransportInternal* ice);
 
@@ -202,21 +188,6 @@ public:
         ::cricket::TransportInfo const& transport_info,
         ::std::vector<int> const&       encrypted_extension_ids,
         int                             rtp_abs_sendtime_extn_id
-    );
-
-    MCNAPI ::std::unique_ptr<::webrtc::RtpTransport> CreateUnencryptedRtpTransport(
-        ::std::string const&            transport_name,
-        ::rtc::PacketTransportInternal* rtp_packet_transport,
-        ::rtc::PacketTransportInternal* rtcp_packet_transport
-    );
-
-    MCNAPI void DestroyAllJsepTransports_n();
-
-    MCNAPI ::cricket::IceRole DetermineIceRole(
-        ::cricket::JsepTransport*       jsep_transport,
-        ::cricket::TransportInfo const& transport_info,
-        ::webrtc::SdpType               type,
-        bool                            local
     );
 
     MCNAPI ::std::vector<::cricket::DtlsTransportInternal*> GetActiveDtlsTransports();
@@ -231,33 +202,16 @@ public:
 
     MCNAPI ::std::vector<int> GetEncryptedHeaderExtensionIds(::cricket::ContentInfo const& content_info);
 
-    MCNAPI ::cricket::JsepTransport const* GetJsepTransportByName(::std::string const&) const;
-
-    MCNAPI ::cricket::JsepTransport* GetJsepTransportByName(::std::string const& transport_name);
-
-    MCNAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string const&) const;
-
-    MCNAPI ::cricket::JsepTransport const* GetJsepTransportForMid(::std::string_view mid) const;
-
-    MCNAPI ::cricket::JsepTransport* GetJsepTransportForMid(::std::string const& mid);
-
     MCNAPI ::webrtc::scoped_refptr<::rtc::RTCCertificate>
     GetLocalCertificate(::std::string const& transport_name) const;
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const& transport_name) const;
-
-    MCNAPI int GetRtpAbsSendTimeHeaderExtensionId(::cricket::ContentInfo const& content_info);
 
     MCNAPI ::webrtc::RtpTransportInternal* GetRtpTransport(::std::string_view mid) const;
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::SctpTransport> GetSctpTransport(::std::string const& mid) const;
 
     MCNAPI bool GetStats(::std::string const& transport_name, ::cricket::TransportStats* stats);
-
-    MCNAPI bool
-    HandleBundledContent(::cricket::ContentInfo const& content_info, ::cricket::ContentGroup const& bundle_group);
-
-    MCNAPI void HandleRejectedContent(::cricket::ContentInfo const& content_info);
 
     MCNAPI JsepTransportController(
         ::webrtc::Environment const&                env,
@@ -282,28 +236,8 @@ public:
 
     MCNAPI bool NeedsIceRestart(::std::string const& transport_name) const;
 
-    MCNAPI void OnDtlsHandshakeError(::rtc::SSLHandshakeError error);
-
-    MCNAPI void OnRtcpPacketReceived_n(::rtc::CopyOnWriteBuffer* packet, int64 packet_time_us);
-
-    MCNAPI void OnTransportCandidateError_n(
-        ::cricket::IceTransportInternal*         transport,
-        ::cricket::IceCandidateErrorEvent const& event
-    );
-
     MCNAPI void
     OnTransportCandidateGathered_n(::cricket::IceTransportInternal* transport, ::cricket::Candidate const& candidate);
-
-    MCNAPI void OnTransportCandidatePairChanged_n(::cricket::CandidatePairChangeEvent const& event);
-
-    MCNAPI void OnTransportCandidatesRemoved_n(
-        ::cricket::IceTransportInternal*           transport,
-        ::std::vector<::cricket::Candidate> const& candidates
-    );
-
-    MCNAPI bool OnTransportChanged(::std::string const& mid, ::cricket::JsepTransport* jsep_transport);
-
-    MCNAPI void OnTransportGatheringState_n(::cricket::IceTransportInternal* transport);
 
     MCNAPI void OnTransportReceivingState_n(::rtc::PacketTransportInternal* transport);
 
@@ -312,8 +246,6 @@ public:
     MCNAPI void OnTransportStateChanged_n(::cricket::IceTransportInternal* transport);
 
     MCNAPI void OnTransportWritableState_n(::rtc::PacketTransportInternal* transport);
-
-    MCNAPI void OnUnDemuxableRtpPacketReceived_n(::webrtc::RtpPacketReceived const& packet);
 
     MCNAPI ::webrtc::RTCError RemoveRemoteCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
@@ -363,12 +295,6 @@ public:
         ::webrtc::AsyncDnsResolverFactoryInterface* async_dns_resolver_factory,
         ::webrtc::JsepTransportController::Config   config
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

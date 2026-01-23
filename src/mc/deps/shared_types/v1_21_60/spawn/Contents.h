@@ -25,8 +25,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Contents& operator=(Contents const&);
+    Contents();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Contents(::SharedTypes::v1_21_60::Spawn::Contents const&);
+
     MCAPI ~Contents();
     // NOLINTEND
 
@@ -40,6 +47,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersion const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Contents const&);
     // NOLINTEND
 
 public:

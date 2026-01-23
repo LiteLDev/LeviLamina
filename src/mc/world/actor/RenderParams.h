@@ -22,9 +22,9 @@ class IBlockWorldGenAPI;
 class ILevel;
 class ItemStackBase;
 class MolangVariableMap;
-namespace ParticleSystem { class ParticleEmitter; }
 class DataDrivenModel;
 struct ActorRenderData;
+namespace ParticleSystem { struct ParticleEmitter; }
 // clang-format on
 
 class RenderParams {

@@ -71,8 +71,6 @@ public:
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value
     ) const;
 
-    MCNAPI void clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
-
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     clone(::Scripting::WeakLifetimeScope scope) const;
 
@@ -119,8 +117,6 @@ public:
 
     MCNAPI bool hasTag(::std::string const& tag) const;
 
-    MCNAPI bool isStackableWith(::ScriptModuleMinecraft::ScriptItemStack const& other) const;
-
     MCNAPI bool matches(
         ::std::string                                                                                  itemName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
@@ -158,8 +154,6 @@ public:
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
             loreVariantList
     );
-
-    MCNAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCNAPI ::Scripting::Result_deprecated<void> setNameTag(::std::optional<::std::string> nameTag);
 

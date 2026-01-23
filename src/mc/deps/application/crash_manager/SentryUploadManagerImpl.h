@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/application/crash_manager/SentryUploadManager.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/platform/Copyable.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -38,7 +37,7 @@ public:
     virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const
         /*override*/;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void>>
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const /*override*/;
 
     virtual ::std::string const& getMinidumpUploadUri() const /*override*/;

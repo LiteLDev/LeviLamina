@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class BitrateEstimator; }
 namespace webrtc { class DataRate; }
 namespace webrtc { class FieldTrialsView; }
 namespace webrtc { class Timestamp; }
@@ -34,7 +33,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~AcknowledgedBitrateEstimator() /*override*/;
+    virtual ~AcknowledgedBitrateEstimator() /*override*/ = default;
 
     virtual void
     IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
@@ -52,28 +51,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const* key_value_config);
-
-    MCNAPI AcknowledgedBitrateEstimator(
-        ::webrtc::FieldTrialsView const*              key_value_config,
-        ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
-
-    MCNAPI void* $ctor(
-        ::webrtc::FieldTrialsView const*              key_value_config,
-        ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

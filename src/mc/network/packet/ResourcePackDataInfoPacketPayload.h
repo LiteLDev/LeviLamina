@@ -20,7 +20,6 @@ public:
 
 public:
     // prevent constructor by default
-    ResourcePackDataInfoPacketPayload& operator=(ResourcePackDataInfoPacketPayload const&);
     ResourcePackDataInfoPacketPayload(ResourcePackDataInfoPacketPayload const&);
     ResourcePackDataInfoPacketPayload();
 
@@ -28,6 +27,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload&&);
+
+    MCAPI ::ResourcePackDataInfoPacketPayload& operator=(::ResourcePackDataInfoPacketPayload const&);
 
     MCAPI ~ResourcePackDataInfoPacketPayload();
     // NOLINTEND

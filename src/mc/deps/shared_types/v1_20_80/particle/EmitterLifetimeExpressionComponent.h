@@ -23,23 +23,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmitterLifetimeExpressionComponent& operator=(EmitterLifetimeExpressionComponent const&);
-    EmitterLifetimeExpressionComponent(EmitterLifetimeExpressionComponent const&);
-    EmitterLifetimeExpressionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterLifetimeExpressionComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterLifetimeExpressionComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmitterLifetimeExpressionComponent(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
     // NOLINTEND
 
 public:
@@ -52,12 +45,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeExpressionComponent&&);
     // NOLINTEND
 
 public:

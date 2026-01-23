@@ -19,6 +19,7 @@ struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class RepeaterBlock : public ::DiodeBlock {
@@ -66,6 +67,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;

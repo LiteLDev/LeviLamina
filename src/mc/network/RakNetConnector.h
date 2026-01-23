@@ -277,6 +277,8 @@ public:
 
     virtual void setDisableLanSignaling(bool) /*override*/;
 
+    virtual void setDisableTrickleIce(bool) /*override*/;
+
     virtual void _onDisable() /*override*/;
 
     virtual void _onEnable() /*override*/;
@@ -363,15 +365,17 @@ public:
 
     MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD ::TransportLayer $getNetworkType() const;
-#endif
-
     MCFOLD void $setDisableLanSignaling(bool);
+
+    MCFOLD void $setDisableTrickleIce(bool);
 
     MCAPI void $_onDisable();
 
     MCAPI void $_onEnable();
+
+#ifdef LL_PLAT_C
+    MCFOLD ::TransportLayer $getNetworkType() const;
+#endif
 
 
     // NOLINTEND

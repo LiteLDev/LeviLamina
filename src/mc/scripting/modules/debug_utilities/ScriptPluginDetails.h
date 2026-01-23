@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPluginDetails& operator=(ScriptPluginDetails const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptPluginDetails();
@@ -32,6 +28,9 @@ public:
 
     MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
     operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
+
+    MCAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
+    operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
     MCAPI ~ScriptPluginDetails();
     // NOLINTEND

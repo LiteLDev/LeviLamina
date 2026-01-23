@@ -11,6 +11,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
+class HashedString;
+class TaskResult;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class SelectionVolumeUpdate; }
@@ -31,6 +34,11 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk7bbf27;
     ::ll::UntypedStorage<8, 16>  mUnk41c42a;
     ::ll::UntypedStorage<8, 16>  mUnk7e7ef6;
+    ::ll::UntypedStorage<8, 56>  mUnkf28297;
+    ::ll::UntypedStorage<8, 8>   mUnka13fb7;
+    ::ll::UntypedStorage<8, 64>  mUnkdc3f46;
+    ::ll::UntypedStorage<8, 8>   mUnk1fee3a;
+    ::ll::UntypedStorage<8, 64>  mUnk8c7459;
     // NOLINTEND
 
 public:
@@ -61,6 +69,27 @@ public:
     virtual ::Editor::Selection::SelectionContainerEntity& containerEntityNonConst() /*override*/;
 
     virtual ::WeakRef<::Editor::ProjectRegion> getVolumeRegion() const /*override*/;
+
+    virtual uint64 generateManifest() /*override*/;
+
+    virtual uint64 generateManifestWithCallback(
+        ::std::function<
+            void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
+            callback
+    ) /*override*/;
+
+    virtual ::Editor::Services::SelectionServiceProvider::ManifestState const& getCurrentManifest() const /*override*/;
+
+    virtual void deselectBlocksAsync(
+        ::std::string const&                                                 blockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    ) /*override*/;
+
+    virtual void replaceBlocksAsync(
+        ::std::string const&                                                 fromBlockIdentifier,
+        ::std::string const&                                                 toBlockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -68,9 +97,20 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit SelectionServiceServer(::Editor::ServiceProviderCollection& providers);
 
+    MCNAPI void _cancelPreviousGeneration();
+
+    MCNAPI void _completeManifestWithEmptyState();
+
+    MCNAPI ::std::vector<::Editor::Services::SelectionServiceProvider::ManifestEntry>
+    _createSortedEntries(::std::unordered_map<::HashedString, uint64> const& blockCounts) const;
+
     MCNAPI void _handleRegionUpdate(::Editor::Selection::SelectionVolumeEvent const& evt);
 
     MCNAPI void _handleVolumeUpdate(::Editor::Network::SelectionVolumeUpdate const& payload);
+
+    MCNAPI ::TaskResult _processBlocksInChunks(::BlockSource& region, uint64 generationId);
+
+    MCNAPI void _startManifestGeneration();
     // NOLINTEND
 
 public:
@@ -105,6 +145,27 @@ public:
     MCNAPI ::Editor::Selection::SelectionContainerEntity& $containerEntityNonConst();
 
     MCNAPI ::WeakRef<::Editor::ProjectRegion> $getVolumeRegion() const;
+
+    MCNAPI uint64 $generateManifest();
+
+    MCNAPI uint64 $generateManifestWithCallback(
+        ::std::function<
+            void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
+            callback
+    );
+
+    MCNAPI ::Editor::Services::SelectionServiceProvider::ManifestState const& $getCurrentManifest() const;
+
+    MCNAPI void $deselectBlocksAsync(
+        ::std::string const&                                                 blockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    );
+
+    MCNAPI void $replaceBlocksAsync(
+        ::std::string const&                                                 fromBlockIdentifier,
+        ::std::string const&                                                 toBlockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    );
 
 
     // NOLINTEND

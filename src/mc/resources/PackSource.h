@@ -141,6 +141,8 @@ public:
 
     MCNAPI_C void _addPack(::std::shared_ptr<::Pack> pack);
 
+    MCNAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
+
     MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
     MCNAPI ::PackSourceLoadResult
@@ -150,13 +152,9 @@ public:
 
     MCNAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
 
-    MCNAPI void _setPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
-
     MCNAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
 
     MCNAPI_C void forEachPack(::std::function<void(::Pack&)> callback);
-
-    MCNAPI_C void forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
     MCNAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,

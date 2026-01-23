@@ -19,14 +19,20 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>              mDescription;
-    ::ll::TypedStorage<8, 864, ::SharedTypes::v1_20_80::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 872, ::SharedTypes::v1_20_80::ComponentItemComponentData> mItemComponents;
     ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>     mDeprecatedItemComponents;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ComponentItemData_v1_20_80(ComponentItemData_v1_20_80 const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemData_v1_20_80();
+
+    MCAPI ::ComponentItemData_v1_20_80& operator=(::ComponentItemData_v1_20_80 const&);
 
     MCAPI ~ComponentItemData_v1_20_80();
     // NOLINTEND

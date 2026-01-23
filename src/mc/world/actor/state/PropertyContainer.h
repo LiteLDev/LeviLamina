@@ -39,11 +39,11 @@ public:
 
     MCAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
 
-    MCAPI void addAdditionalSaveDataToCompoundTag(::CompoundTag& compoundTag) const;
-
     MCAPI void addEntryToSyncData(::PropertyMetadata const& propMetadata, ::PropertySyncData& syncData) const;
 
     MCAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
+
+    MCAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 
     MCAPI void setAliasProperties(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,

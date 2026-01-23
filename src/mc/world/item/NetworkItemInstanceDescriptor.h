@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
+    MCAPI_C NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
 
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
@@ -50,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
+    MCAPI_C void* $ctor(::NetworkItemInstanceDescriptor&&);
 
     MCAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND

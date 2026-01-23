@@ -14,7 +14,6 @@ public:
 
 public:
     // prevent constructor by default
-    CommandMessage& operator=(CommandMessage const&);
     CommandMessage(CommandMessage const&);
     CommandMessage();
 
@@ -22,6 +21,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage&&);
+
+    MCNAPI ::ScriptDebuggerMessages::CommandMessage& operator=(::ScriptDebuggerMessages::CommandMessage const&);
     // NOLINTEND
 };
 

@@ -10,6 +10,7 @@ enum class BrushPaintMode : int {
     Smooth         = 2,
     Roughen        = 3,
     Flatten        = 4,
+    Elevation      = 5,
 };
 
 }

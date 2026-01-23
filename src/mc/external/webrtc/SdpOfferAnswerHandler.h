@@ -25,33 +25,24 @@ namespace cricket { class AudioContentDescription; }
 namespace cricket { class Candidate; }
 namespace cricket { class ContentGroup; }
 namespace cricket { class ContentInfo; }
-namespace cricket { class MediaEngineInterface; }
-namespace cricket { class PortAllocator; }
 namespace cricket { class SessionDescription; }
 namespace cricket { class VideoContentDescription; }
-namespace cricket { struct MediaDescriptionOptions; }
 namespace cricket { struct MediaSessionOptions; }
 namespace cricket { struct StreamParams; }
-namespace rtc { class Thread; }
-namespace webrtc { class AudioTrackInterface; }
 namespace webrtc { class ConnectionContext; }
-namespace webrtc { class DataChannelController; }
 namespace webrtc { class IceCandidateInterface; }
 namespace webrtc { class JsepIceCandidate; }
-namespace webrtc { class JsepTransportController; }
 namespace webrtc { class MediaStreamInterface; }
 namespace webrtc { class PeerConnectionSdpMethods; }
 namespace webrtc { class RTCError; }
 namespace webrtc { class RtpReceiverInternal; }
 namespace webrtc { class RtpTransceiver; }
 namespace webrtc { class RtpTransceiverInterface; }
-namespace webrtc { class RtpTransmissionManager; }
 namespace webrtc { class SessionDescriptionInterface; }
 namespace webrtc { class SetSessionDescriptionObserver; }
 namespace webrtc { class StreamCollection; }
 namespace webrtc { class StreamCollectionInterface; }
 namespace webrtc { class TransceiverList; }
-namespace webrtc { class VideoTrackInterface; }
 namespace webrtc { struct PeerConnectionDependencies; }
 // clang-format on
 
@@ -189,8 +180,6 @@ public:
         MCNAPI void SetError(::webrtc::RTCErrorType type, ::std::string message);
 
         MCNAPI void SignalCompletion();
-
-        MCNAPI bool UpdateChannels();
         // NOLINTEND
 
     public:
@@ -371,8 +360,6 @@ public:
 
     MCNAPI void Close();
 
-    MCNAPI bool ConfiguredForMedia() const;
-
     MCNAPI void CreateAnswer(
         ::webrtc::CreateSessionDescriptionObserver*                     observer,
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options
@@ -407,10 +394,6 @@ public:
 
     MCNAPI void EnableSending();
 
-    MCNAPI bool ExpectSetLocalDescription(::webrtc::SdpType type);
-
-    MCNAPI bool ExpectSetRemoteDescription(::webrtc::SdpType type);
-
     MCNAPI void FillInMissingRemoteMids(::cricket::SessionDescription* new_remote_description);
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>
@@ -437,10 +420,6 @@ public:
     );
 
     MCNAPI void GenerateNegotiationNeededEvent();
-
-    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForActiveData(::std::string const& mid) const;
-
-    MCNAPI ::cricket::MediaDescriptionOptions GetMediaDescriptionOptionsForRejectedData(::std::string const& mid) const;
 
     MCNAPI void GetOptionsForAnswer(
         ::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& offer_answer_options,
@@ -482,25 +461,11 @@ public:
     MCNAPI ::webrtc::RTCError
     HandleLegacyOfferOptions(::webrtc::PeerConnectionInterface::RTCOfferAnswerOptions const& options);
 
-    MCNAPI bool HasNewIceCredentials();
-
     MCNAPI void Initialize(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
         ::webrtc::PeerConnectionDependencies&                      dependencies,
         ::webrtc::ConnectionContext*                               context
     );
-
-    MCNAPI bool IsUnifiedPlan() const;
-
-    MCNAPI void OnAudioTrackAdded(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
-
-    MCNAPI void OnAudioTrackRemoved(::webrtc::AudioTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
-
-    MCNAPI void OnOperationsChainEmpty();
-
-    MCNAPI void OnVideoTrackAdded(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
-
-    MCNAPI void OnVideoTrackRemoved(::webrtc::VideoTrackInterface* track, ::webrtc::MediaStreamInterface* stream);
 
     MCNAPI void PlanBUpdateSendersAndReceivers(
         ::cricket::ContentInfo const*             audio_content,
@@ -562,8 +527,6 @@ public:
 
     MCNAPI SdpOfferAnswerHandler(::webrtc::PeerConnectionSdpMethods* pc, ::webrtc::ConnectionContext* context);
 
-    MCNAPI char const* SessionErrorToString(::webrtc::SdpOfferAnswerHandler::SessionError error) const;
-
     MCNAPI void SetAssociatedRemoteStreams(
         ::webrtc::scoped_refptr<::webrtc::RtpReceiverInternal>                  receiver,
         ::std::vector<::std::string> const&                                     stream_ids,
@@ -594,10 +557,6 @@ public:
         ::webrtc::SetSessionDescriptionObserver* observer,
         ::webrtc::SessionDescriptionInterface*   desc_ptr
     );
-
-    MCNAPI void SetRemoteDescriptionPostProcess(bool was_answer);
-
-    MCNAPI void SetSessionError(::webrtc::SdpOfferAnswerHandler::SessionError error, ::std::string const& error_desc);
 
     MCNAPI bool ShouldFireNegotiationNeededEvent(uint event_id);
 
@@ -657,31 +616,11 @@ public:
         ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     );
 
-    MCNAPI ::webrtc::DataChannelController* data_channel_controller();
-
-    MCNAPI ::std::optional<bool> is_caller() const;
-
     MCNAPI ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> local_streams();
-
-    MCNAPI ::cricket::MediaEngineInterface* media_engine() const;
-
-    MCNAPI ::rtc::Thread* network_thread() const;
-
-    MCNAPI ::cricket::PortAllocator* port_allocator();
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::StreamCollectionInterface> remote_streams();
 
-    MCNAPI ::webrtc::RtpTransmissionManager* rtp_manager();
-
-    MCNAPI ::webrtc::TransceiverList const* transceivers() const;
-
     MCNAPI ::webrtc::TransceiverList* transceivers();
-
-    MCNAPI ::webrtc::JsepTransportController* transport_controller_n();
-
-    MCNAPI ::webrtc::JsepTransportController const* transport_controller_s() const;
-
-    MCNAPI ::webrtc::JsepTransportController* transport_controller_s();
     // NOLINTEND
 
 public:

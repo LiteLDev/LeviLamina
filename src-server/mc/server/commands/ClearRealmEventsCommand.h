@@ -9,6 +9,7 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+class CommandRegistry;
 // clang-format on
 
 class ClearRealmEventsCommand : public ::ServerCommand {
@@ -18,6 +19,12 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
 
     virtual ~ClearRealmEventsCommand() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:

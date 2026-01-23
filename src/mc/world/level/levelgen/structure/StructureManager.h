@@ -7,6 +7,7 @@
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/Loader.h"
+#include "mc/network/packet/StructureTemplateResponseType.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
@@ -32,6 +33,7 @@ class StructureAnimationData;
 class StructurePoolElement;
 class StructureSettings;
 class StructureTemplate;
+class StructureTemplateDataResponsePacket;
 struct Tick;
 namespace Core { class Path; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
@@ -88,12 +90,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StructureManager(::ResourcePackManager& packManager);
 
-    MCAPI ::StructureTemplate* _createAndLoadStructure(
-        ::std::string const&         structureName,
-        ::ResourcePackManager const* packManager,
-        ::LevelStorage*              levelStorage
-    );
-
     MCAPI ::std::string _createLevelStorageId(::std::string const& dimensionPrefix, ::std::string const& saveId);
 
     MCAPI bool _findResource(
@@ -131,6 +127,13 @@ public:
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
+    MCAPI ::StructureTemplateDataResponsePacket createStructureDataExportPacket(
+        ::std::string const&            structureName,
+        ::ResourcePackManager const*    packManager,
+        ::LevelStorage*                 levelStorage,
+        ::StructureTemplateResponseType responseType
+    );
+
     MCAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
 
     MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
@@ -155,6 +158,8 @@ public:
     loadPlacementQueueItem(::std::string const& key, ::CompoundTag const& tag, ::Level& level, ::Dimension& dimension);
 
     MCAPI void queueLoad(::std::unique_ptr<::StructureAnimationData> structureAnimationData);
+
+    MCAPI void reset();
 
     MCAPI void saveToLevel(::StructureTemplate const& structureTemplate, ::LevelStorage& levelStorage);
 
@@ -187,8 +192,6 @@ public:
         ::std::string&                                                       fileData,
         ::Core::Path const&                                                  filenameWithExtension
     );
-
-    MCAPI_C static bool exportStructure(::StructureTemplate const& structureTemplate, ::Core::Path const& filePath);
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
     getStructurePath(::std::string_view structureNamespace, ::std::string_view structureName);

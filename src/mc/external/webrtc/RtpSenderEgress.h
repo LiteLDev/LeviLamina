@@ -18,7 +18,6 @@ namespace webrtc { class TaskQueueBase; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { struct FecProtectionParams; }
 namespace webrtc { struct PacedPacketInfo; }
-namespace webrtc { struct PacketOptions; }
 namespace webrtc { struct RtpPacketCounter; }
 namespace webrtc { struct StreamDataCounters; }
 // clang-format on
@@ -69,8 +68,6 @@ public:
             ::webrtc::RtpSenderEgress* sender,
             ::webrtc::PacketSequencer* sequencer
         );
-
-        MCNAPI void PrepareForSend(::webrtc::RtpPacketToSend* packet);
         // NOLINTEND
 
     public:
@@ -196,8 +193,6 @@ public:
 
     MCNAPI void OnBatchComplete();
 
-    MCNAPI void PeriodicUpdate();
-
     MCNAPI RtpSenderEgress(
         ::webrtc::RtpRtcpInterface::Configuration const& config,
         ::webrtc::RtpPacketHistory*                      packet_history
@@ -205,12 +200,6 @@ public:
 
     MCNAPI void
     SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info);
-
-    MCNAPI bool SendPacketToNetwork(
-        ::webrtc::RtpPacketToSend const& packet,
-        ::webrtc::PacketOptions const&   options,
-        ::webrtc::PacedPacketInfo const& pacing_info
-    );
 
     MCNAPI void SetFecProtectionParameters(
         ::webrtc::FecProtectionParams const& delta_params,

@@ -8,9 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-struct LeverActionEvent;
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEventIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -18,6 +17,10 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptLeverActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptLeverActionAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,10 +36,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptLeverActionAfterEvent(
-        ::LeverActionEvent const&                                                   leverActionEvent,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::BlockPos const&,
-        ::Scripting::WeakLifetimeScope const& scope
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
     );
     // NOLINTEND
 
@@ -50,10 +51,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::LeverActionEvent const&                                                   leverActionEvent,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::BlockPos const&,
-        ::Scripting::WeakLifetimeScope const& scope
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                          scope
     );
     // NOLINTEND
 };

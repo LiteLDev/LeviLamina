@@ -22,21 +22,14 @@ public:
     // prevent constructor by default
     ThreadManager& operator=(ThreadManager const&);
     ThreadManager(ThreadManager const&);
+    ThreadManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddInternal(::rtc::Thread* message_queue);
-
     MCNAPI ::rtc::Thread* CurrentThread();
 
-    MCNAPI void RemoveInternal(::rtc::Thread* message_queue);
-
     MCNAPI void SetCurrentThread(::rtc::Thread* thread);
-
-    MCNAPI void SetCurrentThreadInternal(::rtc::Thread* thread);
-
-    MCNAPI ThreadManager();
 
     MCNAPI void UnwrapCurrentThread();
 
@@ -51,12 +44,6 @@ public:
     MCNAPI static ::rtc::ThreadManager* Instance();
 
     MCNAPI static void Remove(::rtc::Thread* message_queue);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

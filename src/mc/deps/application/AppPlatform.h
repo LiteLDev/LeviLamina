@@ -60,15 +60,16 @@ namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPaste; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Bedrock { class IApplicationDataStores; }
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
-namespace Social { struct UserCreationData; }
 namespace mce { class UUID; }
 namespace mce { struct Image; }
 class WebviewInterface;
 namespace Social { struct MultiplayerService; }
+namespace Social { struct UserCreationData; }
 namespace Webview { struct PlatformArguments; }
 // clang-format on
 
@@ -337,7 +338,8 @@ public:
 
     virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
 
-    virtual void setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback);
+    virtual ::Bedrock::PubSub::Subscription
+        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
 
     virtual void runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -490,7 +492,7 @@ public:
 
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    virtual void setTextBoxBackend(::std::string const& str) = 0;
+    virtual void setTextBoxBackend(::std::string const&) = 0;
 
     virtual int getCaretPosition() const = 0;
 
@@ -568,8 +570,6 @@ public:
     virtual ::std::string getPackageFamilyName() const;
 
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
-
-    virtual ::std::string getPlatformString() const = 0;
 
     virtual ::std::string getSubPlatformString() const = 0;
 
@@ -885,6 +885,8 @@ public:
 
     MCNAPI_C double getTotalActiveSeconds();
 
+    MCNAPI ::Core::PathBuffer<::std::string> getUserdataPath() const;
+
     MCNAPI_C void loadImage(::mce::Image& out, ::Core::Path const& filename);
 
     MCNAPI_C ::mce::Image loadTexture(::Core::Path const& filename);
@@ -1168,10 +1170,6 @@ public:
 
     MCNAPI uint64 $getMaximumUsedMemory();
 
-    MCNAPI uint64 $getLowMemoryEventThreshold(::LowMemorySeverity) const;
-
-    MCNAPI uint64 $getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
-
     MCNAPI uint64 $getLowPhysicalMemoryThreshold() const;
 
     MCNAPI void $calculateIfLowMemoryDevice();
@@ -1411,8 +1409,6 @@ public:
 
     MCNAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    MCNAPI void $setMousePointerType(::ui::MousePointerType);
-
     MCNAPI void $hideMousePointer();
 
     MCNAPI void $showMousePointer();
@@ -1531,7 +1527,8 @@ public:
 
     MCNAPI void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
 
-    MCNAPI void $setStorageDirectoryChanged(::std::function<void(::Core::Path const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription
+        $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
 
     MCNAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -1556,6 +1553,10 @@ public:
     MCNAPI void $setShowLostFocusToasts(bool showLostFocusToasts);
 
     MCNAPI bool $getShowLostFocusToasts();
+
+    MCNAPI uint64 $getLowMemoryEventThreshold(::LowMemorySeverity) const;
+
+    MCNAPI uint64 $getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
 
     MCNAPI ::std::string $getDeviceId() const;
 

@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    EduSharedUriResource& operator=(EduSharedUriResource const&);
     EduSharedUriResource(EduSharedUriResource const&);
     EduSharedUriResource();
 
@@ -29,6 +28,8 @@ public:
     MCNAPI_C bool operator!=(::EduSharedUriResource const& rhs) const;
 
     MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
+
+    MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
 
     MCNAPI bool operator==(::EduSharedUriResource const& rhs) const;
 

@@ -15,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string ToString() const;
+    MCAPI_C ::std::string ToString() const;
     // NOLINTEND
 };
 

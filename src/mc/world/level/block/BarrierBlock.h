@@ -16,16 +16,12 @@ public:
     // NOLINTBEGIN
     virtual ~BarrierBlock() /*override*/ = default;
 
-    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
-
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
-
     MCFOLD float $getShadeBrightness(::Block const& block) const;
 
 

@@ -8,13 +8,12 @@ struct ProfilerMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk13be7c;
+    ::ll::UntypedStorage<8, 16> mUnk722636;
     ::ll::UntypedStorage<8, 32> mUnkbf88fc;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ProfilerMessage& operator=(ProfilerMessage const&);
     ProfilerMessage(ProfilerMessage const&);
     ProfilerMessage();
 
@@ -22,6 +21,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage&&);
+
+    MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage const&);
     // NOLINTEND
 };
 

@@ -26,21 +26,12 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangVariable& operator=(MolangVariable const&);
-    MolangVariable();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MolangVariable(::MolangVariable const& rhs);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MolangVariableIndex
     _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
+
+    MCAPI_C static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
@@ -61,11 +52,5 @@ public:
     MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap();
 
     MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap_LowWaterMark();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangVariable const& rhs);
     // NOLINTEND
 };

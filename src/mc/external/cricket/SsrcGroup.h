@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    SsrcGroup& operator=(SsrcGroup const&);
     SsrcGroup();
 
 public:
@@ -24,8 +25,6 @@ public:
     MCNAPI SsrcGroup(::cricket::SsrcGroup const&);
 
     MCNAPI SsrcGroup(::std::string const& usage, ::std::vector<uint> const& ssrcs);
-
-    MCNAPI ::cricket::SsrcGroup& operator=(::cricket::SsrcGroup const&);
 
     MCNAPI ~SsrcGroup();
     // NOLINTEND

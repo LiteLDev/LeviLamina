@@ -46,7 +46,7 @@ public:
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI_C void setTrackOutput(::Actor& owner, bool trackOutput);
+    MCAPI void setTrackOutput(::Actor& owner, bool trackOutput);
     // NOLINTEND
 
 public:

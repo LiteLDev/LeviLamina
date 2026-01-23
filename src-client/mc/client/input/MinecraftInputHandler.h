@@ -7,19 +7,24 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/input/enums/ButtonState.h"
+#include "mc/deps/input/enums/RawInputType.h"
 
 // auto generated forward declare list
 // clang-format off
 class ClientMoveInputHandler;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
+class IMinecraftGame;
 class InputHandler;
+class InputSettingsHandler;
 class MinecraftBindingFactoryMap;
 class MinecraftInputHandlerProxy;
 class MinecraftInputMappingFactoryMap;
 class MouseMapper;
 class SplitscreenJoinListener;
 struct Config;
+struct ControllerIDtoClientMap;
 struct IGameModuleApp;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
@@ -35,11 +40,18 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftBindingFactoryMap>>            mBindingFactoryMap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputMappingFactoryMap>>       mMappingFactoryMap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SplitscreenJoinListener>>               mSplitscreenJoinListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InputSettingsHandler>>                  mInputSettingsHandler;
     ::ll::TypedStorage<
         8,
         128,
         ::Bedrock::PubSub::Publisher<void(::IClientInstance&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                                                              mAnyInputSubscription;
+        mAnyInputSubscription;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(int, ::RawInputType, ::ButtonState, bool), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                                              mRawInputEventPublisher;
     ::ll::TypedStorage<8, 8, ::MouseMapper*>                                  mMouseMapper;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputHandlerProxy>> mProxy;
     // NOLINTEND
@@ -76,6 +88,13 @@ public:
 
     MCAPI ::ClientMoveInputHandler*
     initClientInput(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::IGameModuleApp& gameModuleApp);
+
+    MCAPI void tick(
+        ::IMinecraftGame&                                               mcGame,
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&         primaryClient,
+        ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map,
+        bool                                                            allowMultipleClients
+    );
     // NOLINTEND
 
 public:

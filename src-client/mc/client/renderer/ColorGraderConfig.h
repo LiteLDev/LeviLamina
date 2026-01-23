@@ -13,9 +13,9 @@
 // clang-format off
 class HashedString;
 class LinkedAssetValidator;
-class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
+struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -61,7 +61,6 @@ public:
 
             public:
                 // prevent constructor by default
-                ColorGradingDescription& operator=(ColorGradingDescription const&);
                 ColorGradingDescription(ColorGradingDescription const&);
                 ColorGradingDescription();
 
@@ -69,9 +68,19 @@ public:
                 // member functions
                 // NOLINTBEGIN
                 MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&
+                operator=(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::
+                              ColorGradingDescription const&);
+
+                MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&
                 operator=(
                     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGradingDescription&&
                 );
+                // NOLINTEND
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
             };
 
@@ -165,6 +174,12 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                // NOLINTEND
             };
 
             struct ToneMapping {
@@ -207,6 +222,12 @@ public:
 
             MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings&
             operator=(::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings&&);
+            // NOLINTEND
+
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
@@ -312,6 +333,12 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+                // NOLINTEND
             };
 
         public:
@@ -337,6 +364,12 @@ public:
             // NOLINTEND
 
         public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
+
+        public:
             // constructor thunks
             // NOLINTBEGIN
             MCNAPI void* $ctor();
@@ -354,7 +387,6 @@ public:
 
     public:
         // prevent constructor by default
-        ColorGradingParametersSrcV1& operator=(ColorGradingParametersSrcV1 const&);
         ColorGradingParametersSrcV1();
 
     public:
@@ -364,6 +396,9 @@ public:
 
         MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1&
         operator=(::ColorGraderConfig::ColorGradingParametersSrcV1&&);
+
+        MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1&
+        operator=(::ColorGraderConfig::ColorGradingParametersSrcV1 const&);
 
         MCNAPI ~ColorGradingParametersSrcV1();
         // NOLINTEND

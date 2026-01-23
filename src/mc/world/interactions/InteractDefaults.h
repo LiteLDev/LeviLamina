@@ -16,15 +16,9 @@ MCNAPI bool const& ADMIRE();
 
 MCNAPI bool const& BARTER();
 
-MCNAPI float const& COOLDOWN();
-
-MCNAPI float const& COOLDOWN_AFTER_ATTACK();
-
 MCNAPI bool const& GIVE_ITEM();
 
 MCNAPI int const& HURT_ITEM();
-
-MCNAPI bool const& SWING();
 
 MCNAPI bool const& TAKE_ITEM();
 

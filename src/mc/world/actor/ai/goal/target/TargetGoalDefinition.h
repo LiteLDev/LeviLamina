@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                           mDefaultFollowDistance;
     ::ll::TypedStorage<4, 4, float>                           mForgetTargetTime;
     ::ll::TypedStorage<4, 4, float>                           mPersistTargetTime;
+    ::ll::TypedStorage<4, 4, float>                           mTargetAcquisitionProbability;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 

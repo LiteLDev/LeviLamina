@@ -79,10 +79,6 @@ public:
     MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
     MCNAPI_C void _setupCallbacks();
-
-    MCNAPI_C bool getHasInputItem() const;
-
-    MCNAPI_C bool getHasMaterialItem() const;
     // NOLINTEND
 
 public:

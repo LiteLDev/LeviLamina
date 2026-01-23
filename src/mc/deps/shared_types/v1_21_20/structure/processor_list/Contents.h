@@ -35,7 +35,6 @@ public:
 
 public:
     // prevent constructor by default
-    Contents& operator=(Contents const&);
     Contents(Contents const&);
     Contents();
 
@@ -44,6 +43,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&&);
+
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
+    operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents const&);
 
     MCAPI ~Contents();
     // NOLINTEND

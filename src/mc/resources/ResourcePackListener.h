@@ -22,6 +22,8 @@ public:
     virtual void onLanguageSubpacksChanged();
 
     virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr);
+
+    virtual void onJsonResourcesChanged(::ResourcePackManager&);
     // NOLINTEND
 
 public:
@@ -40,6 +42,8 @@ public:
     MCNAPI void $onLanguageSubpacksChanged();
 
     MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
 
 
     // NOLINTEND

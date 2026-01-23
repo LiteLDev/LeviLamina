@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TripWireTripEvent;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptTripWireTripAfterEventIntermediateData; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -17,6 +17,10 @@ namespace Scripting { struct ClassBinding; }
 namespace ScriptModuleMinecraft {
 
 struct ScriptTripWireTripAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent {
+public:
+    // ScriptTripWireTripAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,8 +37,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptTripWireTripAfterEvent(
-        ::TripWireTripEvent const&            tripWireTripEvent,
-        ::Scripting::WeakLifetimeScope const& scope
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                           scope
     );
     // NOLINTEND
 
@@ -47,7 +51,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                           scope
+    );
     // NOLINTEND
 };
 

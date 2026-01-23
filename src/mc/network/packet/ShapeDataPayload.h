@@ -30,7 +30,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mScale;
     ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>                                      mColor;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mTimeLeftTotalSec;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                                                     mDimensionId;
+    ::ll::TypedStorage<4, 8, ::std::optional<::DimensionType>>                                    mDimensionId;
     ::ll::TypedStorage<
         8,
         48,

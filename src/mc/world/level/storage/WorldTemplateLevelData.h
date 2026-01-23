@@ -40,8 +40,6 @@ public:
 
     MCNAPI void _setTagData(::CompoundTag& tag) const;
 
-    MCNAPI ::BaseGameVersion const& getBaseGameVersion() const;
-
     MCNAPI ~WorldTemplateLevelData();
     // NOLINTEND
 

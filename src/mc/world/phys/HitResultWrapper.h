@@ -27,11 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _onActorRemoved(::Actor const& actor);
+    MCAPI void _onActorRemoved(::Actor const& actor);
 
     MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
-
-    MCFOLD void _removeIfActorMatches(::Actor const& actor);
 
     MCAPI void initialize(
         ::IActorManagerConnector&        actorManagerConnector,

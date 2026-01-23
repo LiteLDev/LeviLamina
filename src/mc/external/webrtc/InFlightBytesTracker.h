@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { struct NetworkRoute; }
-namespace webrtc { class DataSize; }
 namespace webrtc { struct PacketFeedback; }
 // clang-format on
 
@@ -19,13 +17,7 @@ public:
     // clang-format on
 
     // InFlightBytesTracker inner types define
-    struct NetworkRouteComparator {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool operator()(::rtc::NetworkRoute const& a, ::rtc::NetworkRoute const& b) const;
-        // NOLINTEND
-    };
+    struct NetworkRouteComparator {};
 
 public:
     // member variables
@@ -42,10 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddInFlightPacketBytes(::webrtc::PacketFeedback const& packet);
-
-    MCNAPI ::webrtc::DataSize GetOutstandingData(::rtc::NetworkRoute const& network_route) const;
-
     MCNAPI void RemoveInFlightPacketBytes(::webrtc::PacketFeedback const& packet);
     // NOLINTEND
 };

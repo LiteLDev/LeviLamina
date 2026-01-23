@@ -11,6 +11,8 @@ class Actor;
 namespace AttackGoalUtility {
 // functions
 // NOLINTBEGIN
+MCAPI float calculateTargetXZDistanceSquared(::Actor const& attacker, ::Actor const& target);
+
 MCAPI ::AABB getTargetHitbox(::Actor const& target);
 
 MCAPI bool isInSunlight(::Actor const& actor);

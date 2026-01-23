@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    LessonProgressPacketPayload& operator=(LessonProgressPacketPayload const&);
     LessonProgressPacketPayload(LessonProgressPacketPayload const&);
     LessonProgressPacketPayload();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::LessonProgressPacketPayload& operator=(::LessonProgressPacketPayload&&);
+
+    MCAPI ::LessonProgressPacketPayload& operator=(::LessonProgressPacketPayload const&);
 
     MCAPI ~LessonProgressPacketPayload();
     // NOLINTEND

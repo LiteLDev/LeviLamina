@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ::StructurePieceType getType() const /*override*/;
 
-    virtual ~NBStartPiece() /*override*/ = default;
+    virtual ~NBStartPiece() /*override*/;
     // NOLINTEND
 
 public:
@@ -45,6 +45,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Random& random, int west, int north);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace webrtc { class DataRate; }
 namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { class VideoBitrateAllocation; }
@@ -222,7 +221,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnkb248f8;
     ::ll::UntypedStorage<1, 1>   mUnkaddaca;
     ::ll::UntypedStorage<8, 16>  mUnk9734fb;
-    ::ll::UntypedStorage<8, 16>  mUnk7e193f;
+    ::ll::UntypedStorage<8, 16>  mUnk41321a;
     // NOLINTEND
 
 public:
@@ -279,14 +278,10 @@ public:
         ::webrtc::RTCPSender::PacketSender&        sender
     );
 
-    MCNAPI ::webrtc::TimeDelta ComputeTimeUntilNextReport(::webrtc::DataRate send_bitrate);
-
     MCNAPI bool ConsumeFlag(uint type, bool forced);
 
     MCNAPI ::std::vector<::webrtc::rtcp::ReportBlock>
     CreateReportBlocks(::webrtc::RTCPSender::FeedbackState const& feedback_state);
-
-    MCNAPI bool IsFlagPresent(uint type) const;
 
     MCNAPI void PrepareReport(::webrtc::RTCPSender::FeedbackState const& feedback_state);
 

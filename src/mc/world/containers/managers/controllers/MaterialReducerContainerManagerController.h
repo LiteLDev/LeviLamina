@@ -87,6 +87,8 @@ public:
     MCNAPI_C void _setupCallbacks();
 
     MCNAPI_C void _updateResult(::ItemStack const& input);
+
+    MCNAPI_C bool isStillValid(float pickRange);
     // NOLINTEND
 
 public:

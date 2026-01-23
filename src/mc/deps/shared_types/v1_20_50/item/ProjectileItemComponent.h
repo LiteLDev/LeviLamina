@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    ProjectileItemComponent& operator=(ProjectileItemComponent const&);
     ProjectileItemComponent(ProjectileItemComponent const&);
     ProjectileItemComponent();
 
@@ -31,6 +30,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
     operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
+
+    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
+    operator=(::SharedTypes::v1_20_50::ProjectileItemComponent const&);
 
     MCAPI ~ProjectileItemComponent();
     // NOLINTEND

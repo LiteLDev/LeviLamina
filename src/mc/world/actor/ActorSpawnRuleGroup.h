@@ -11,6 +11,7 @@ class LinkedAssetValidator;
 class MobSpawnRules;
 class Random;
 class ResourcePackManager;
+struct ActorDefinitionIdentifier;
 namespace br::spawn { class SpawnPlacements; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -48,6 +49,8 @@ public:
         ::Experiments const&           experiments,
         ::IMinecraftEventing&          eventing
     );
+
+    MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
 
     MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND

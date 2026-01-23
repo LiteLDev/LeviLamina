@@ -30,7 +30,6 @@ public:
     // prevent constructor by default
     ListTag& operator=(ListTag const&);
     ListTag(ListTag const&);
-    ListTag();
 
 public:
     // virtual functions
@@ -43,7 +42,7 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
 
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
@@ -59,6 +58,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ListTag();
+
     MCAPI void add(::std::unique_ptr<::Tag> tag);
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
@@ -70,8 +71,12 @@ public:
     MCAPI float getFloat(int index) const;
 
     MCAPI ::ListTag& operator=(::ListTag&&);
+    // NOLINTEND
 
-    MCFOLD int size() const;
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -91,7 +96,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

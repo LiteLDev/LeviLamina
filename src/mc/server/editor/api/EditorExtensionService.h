@@ -16,6 +16,7 @@
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
+namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
@@ -102,7 +103,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
+
     MCNAPI void _sortExtensionListIntoExecutionOrder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

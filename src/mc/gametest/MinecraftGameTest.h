@@ -12,7 +12,6 @@ class BlockPos;
 class BlockSource;
 class Dimension;
 class Level;
-namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestListener; }
 namespace gametest { struct TestParameters; }
@@ -46,8 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit MinecraftGameTest(::Level& level);
-
-    MCNAPI void _runTestPreparation(::gametest::BaseGameTestFunction const& testFunction);
 
     MCNAPI void clearAllTests(::BlockSource& region);
 

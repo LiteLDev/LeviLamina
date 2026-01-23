@@ -26,23 +26,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmitterShapeBoxComponent& operator=(EmitterShapeBoxComponent const&);
-    EmitterShapeBoxComponent(EmitterShapeBoxComponent const&);
-    EmitterShapeBoxComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~EmitterShapeBoxComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~EmitterShapeBoxComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmitterShapeBoxComponent(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
     // NOLINTEND
 
 public:
@@ -55,12 +48,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapeBoxComponent&&);
     // NOLINTEND
 
 public:

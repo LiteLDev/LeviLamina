@@ -20,12 +20,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<6>>                                mName;
-    ::ll::TypedStorage<8, 144, ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities> mPriorities;
+    ::ll::TypedStorage<8, 208, ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities> mPriorities;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CameraAimAssistCategoryDefinition& operator=(CameraAimAssistCategoryDefinition const&);
     CameraAimAssistCategoryDefinition(CameraAimAssistCategoryDefinition const&);
     CameraAimAssistCategoryDefinition();
 
@@ -37,7 +36,8 @@ public:
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&) const;
+    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
 
     MCAPI ~CameraAimAssistCategoryDefinition();
     // NOLINTEND

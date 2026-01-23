@@ -26,7 +26,13 @@ public:
     // NOLINTBEGIN
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
-    virtual ~FlyDefinition() /*override*/ = default;
+    virtual ~FlyDefinition() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

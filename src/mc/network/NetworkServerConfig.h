@@ -20,22 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkServerConfig& operator=(NetworkServerConfig const&);
-    NetworkServerConfig();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkServerConfig(::NetworkServerConfig const&);
-
     MCAPI ~NetworkServerConfig();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkServerConfig const&);
     // NOLINTEND
 
 public:

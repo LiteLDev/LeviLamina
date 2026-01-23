@@ -7,6 +7,7 @@
 class EntityContext;
 struct ActorUniqueID;
 struct FamilyTypeDefinition;
+namespace VehicleUtils { struct VehicleRootInfo; }
 // clang-format on
 
 namespace RideableComponentHelpers {
@@ -28,6 +29,8 @@ public:
     virtual bool isAlive() const = 0;
 
     virtual bool canBeAddedAsPassenger(::RideableComponentHelpers::IRideableActor const&) const = 0;
+
+    virtual ::VehicleUtils::VehicleRootInfo getVehicleRoot() const = 0;
     // NOLINTEND
 
 public:

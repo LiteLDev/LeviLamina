@@ -19,9 +19,9 @@ public:
 
     // DenyList inner types define
     enum class Duration : int {
-        Session = 0,
-        OneTime = 1,
-        Invalid = 2,
+        Session                 = 0,
+        OneTimeForInvalidPlayer = 1,
+        Invalid                 = 2,
     };
 
     struct Entry {
@@ -30,7 +30,6 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk89b913;
         ::ll::UntypedStorage<8, 40> mUnk8e3c22;
-        ::ll::UntypedStorage<8, 32> mUnk99d06f;
         ::ll::UntypedStorage<4, 4>  mUnk657815;
         // NOLINTEND
 
@@ -45,6 +44,8 @@ public:
         // NOLINTBEGIN
         MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
 
+        MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid, ::DenyList::Duration const& duration);
+
         MCNAPI ~Entry();
         // NOLINTEND
 
@@ -52,6 +53,8 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
+
+        MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid, ::DenyList::Duration const& duration);
         // NOLINTEND
 
     public:
@@ -72,27 +75,18 @@ public:
     // prevent constructor by default
     DenyList& operator=(DenyList const&);
     DenyList(DenyList const&);
+    DenyList();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DenyList();
-
     MCNAPI void addEntry(::DenyList::Entry const& entry);
 
     MCNAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
 
-    MCNAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
-
     MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
     MCNAPI ~DenyList();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

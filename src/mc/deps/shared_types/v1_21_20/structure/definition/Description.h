@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    Description& operator=(Description const&);
     Description(Description const&);
     Description();
 
@@ -25,6 +24,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_21_20::JigsawStructureDefinition::Description&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Description&&);
+
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureDefinition::Description&
+    operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Description const&);
 
     MCAPI ~Description();
     // NOLINTEND

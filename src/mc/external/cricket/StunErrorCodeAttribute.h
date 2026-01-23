@@ -32,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~StunErrorCodeAttribute() /*override*/;
+    virtual ~StunErrorCodeAttribute() /*override*/ = default;
 
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
 
@@ -47,28 +47,12 @@ public:
     MCNAPI void SetCode(int code);
 
     MCNAPI void SetReason(::std::string const& reason);
-
-    MCNAPI StunErrorCodeAttribute(ushort type, ushort length);
-
-    MCNAPI int code() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ushort const& MIN_SIZE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort type, ushort length);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

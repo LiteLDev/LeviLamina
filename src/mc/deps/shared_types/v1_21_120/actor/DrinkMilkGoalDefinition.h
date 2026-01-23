@@ -36,8 +36,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_COOLDOWN_SECONDS();
-
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND
 

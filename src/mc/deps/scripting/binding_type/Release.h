@@ -46,6 +46,8 @@ public:
     MCNAPI static ::std::string_view const& PRE_RELEASE_TAG_ALPHA();
 
     MCNAPI static ::std::string_view const& PRE_RELEASE_TAG_BETA();
+
+    MCNAPI static ::std::string_view const& PRE_RELEASE_TAG_INTERNAL();
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
@@ -17,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class EntityContext;
 class MobEffect;
 class Scoreboard;
 class ServerLevel;
@@ -385,10 +383,10 @@ public:
     MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocalizationKey(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocation(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
+    MCFOLD ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::std::variant<float, bool, ::std::string>>,
@@ -438,10 +436,10 @@ public:
         ::std::string const& name
     );
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     hasTag(::Actor const& self, ::std::string const& tag) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
+    MCFOLD ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isClimbing(::Actor const& self) const;
@@ -497,10 +495,10 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType
     );
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     removeTag(::Actor& self, ::std::string const& tag);
 
-    MCAPI ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
+    MCFOLD ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
 
     MCAPI ::Scripting::Result<
         ::std::variant<float, bool, ::std::string>,
@@ -612,8 +610,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
 
-    MCAPI ::Actor* tryGetActor() const;
-
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     tryTeleport(
         ::Actor&                                                               self,
@@ -629,9 +625,6 @@ public:
         ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
             supportedComponentFactories
     );
-
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
-    getHandle(::StackRefResult<::EntityContext> entityRef, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
@@ -679,10 +672,10 @@ public:
 
     MCFOLD ::Scripting::Result_deprecated<void> $setNameTag_010(::Actor& self, ::std::string const& nameTag);
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getSneaking(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
+    MCFOLD ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
 
     MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setSneaking(::Actor& self, bool isSneaking);

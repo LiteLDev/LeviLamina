@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/rtc/BufferT.h"
-#include "mc/external/webrtc/DtlsTransportState.h"
 #include "mc/external/webrtc/SrtpTransport.h"
 
 // auto generated forward declare list
@@ -58,20 +57,7 @@ public:
         ::rtc::BufferT<uchar, 1>*         recv_key
     );
 
-    MCNAPI bool IsDtlsActive();
-
-    MCNAPI bool IsDtlsConnected();
-
-    MCNAPI bool IsDtlsWritable();
-
     MCNAPI void MaybeSetupDtlsSrtp();
-
-    MCNAPI void OnDtlsState(::cricket::DtlsTransportInternal* transport, ::webrtc::DtlsTransportState state);
-
-    MCNAPI void SetDtlsTransport(
-        ::cricket::DtlsTransportInternal*  new_dtls_transport,
-        ::cricket::DtlsTransportInternal** old_dtls_transport
-    );
 
     MCNAPI void SetDtlsTransports(
         ::cricket::DtlsTransportInternal* rtp_dtls_transport,
@@ -79,10 +65,6 @@ public:
     );
 
     MCNAPI void SetOnDtlsStateChange(::std::function<void()> callback);
-
-    MCNAPI void SetRtcpDtlsTransport(::cricket::DtlsTransportInternal* rtcp_dtls_transport);
-
-    MCNAPI void SetRtpDtlsTransport(::cricket::DtlsTransportInternal* rtp_dtls_transport);
 
     MCNAPI void SetupRtcpDtlsSrtp();
 

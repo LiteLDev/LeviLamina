@@ -76,8 +76,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isSupportedBlock(::Block const& block);
-
     MCAPI static bool isValidResource(::Block const& plant);
     // NOLINTEND
 

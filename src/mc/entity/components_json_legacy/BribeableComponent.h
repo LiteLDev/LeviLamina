@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorInteraction;
 class BribeableDefinition;
 class ItemStack;
 class Player;
@@ -28,5 +29,9 @@ public:
     MCNAPI bool _canBribe(::ItemStack const& item);
 
     MCNAPI bool clientBribeCheck(::Actor& owner);
+
+    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+
+    MCNAPI void resetBribe(::Actor& owner);
     // NOLINTEND
 };

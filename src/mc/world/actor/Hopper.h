@@ -16,6 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>  mCooldownTime;
+    ::ll::TypedStorage<4, 4, int>  mMoveCooldownTime;
     ::ll::TypedStorage<1, 1, bool> mTransferedFromChestMinecart;
     ::ll::TypedStorage<1, 1, bool> mIsEntity;
     ::ll::TypedStorage<4, 4, int>  mMoveItemSpeed;

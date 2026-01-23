@@ -33,8 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit FieldTrialFlag(::std::string_view key);
 
-    MCNAPI FieldTrialFlag(::std::string_view key, bool default_value);
-
     MCNAPI explicit operator bool() const;
     // NOLINTEND
 
@@ -42,8 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view key);
-
-    MCNAPI void* $ctor(::std::string_view key, bool default_value);
     // NOLINTEND
 
 public:

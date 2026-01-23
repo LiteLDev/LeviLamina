@@ -17,6 +17,7 @@
 class Vec3;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
+namespace Editor::ScriptModule { class ScriptEditorStructure; }
 namespace Editor::ScriptModule { class ScriptWidget; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentClipboardOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponent; }
@@ -32,7 +33,7 @@ class ScriptWidgetComponentClipboard : public ::Editor::ScriptModule::ScriptWidg
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk7b4fbf;
+    ::ll::UntypedStorage<8, 48> mUnk192ed4;
     ::ll::UntypedStorage<1, 1>  mUnk81f975;
     ::ll::UntypedStorage<1, 1>  mUnkd4706b;
     ::ll::UntypedStorage<4, 12> mUnk62bf0a;
@@ -52,7 +53,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentClipboard() /*override*/ = default;
+    virtual ~ScriptWidgetComponentClipboard() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -68,8 +69,10 @@ public:
         ::std::string const&                                                     componentName,
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
         ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> const&
-                                                                                       optionalClipboardItem,
+        ::std::optional<::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>> const&
+                                                                                       optClipboardOrStructure,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> options
     );
 
@@ -114,10 +117,18 @@ public:
         ::std::string const&                                                     componentName,
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
         ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> const&
-                                                                                       optionalClipboardItem,
+        ::std::optional<::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptEditorStructure>>> const&
+                                                                                       optClipboardOrStructure,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentClipboardOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

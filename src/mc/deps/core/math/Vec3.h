@@ -33,17 +33,15 @@ public:
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
-    MCFOLD_C float length() const;
+    MCAPI float lengthSquared() const;
 
-    MCFOLD ::Vec3 normalized() const;
+    MCAPI ::Vec3 normalized() const;
 
     MCAPI ::Vec3 operator*(float k) const;
 
-    MCFOLD_C ::Vec3 operator+(::glm::vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3 operator+(::Vec3 const&) const;
-
     MCAPI_C ::Vec3 operator+(float f) const;
+
+    MCAPI ::Vec3 operator+(::Vec3 const& rhs) const;
 
     MCAPI_C ::Vec3& operator+=(::Vec3 const& rhs);
 
@@ -51,15 +49,13 @@ public:
 
     MCAPI_C ::Vec3 operator-(float f) const;
 
-    MCAPI_C ::Vec3 operator-(::Vec3 const& rhs) const;
+    MCAPI ::Vec3 operator-(::Vec3 const& rhs) const;
 
     MCAPI_C ::Vec3& operator-=(::Vec3 const& rhs);
 
-    MCFOLD bool operator==(::Vec3 const& rhs) const;
+    MCAPI_C bool operator==(::Vec3 const& rhs) const;
 
     MCAPI_C ::Vec3 round() const;
-
-    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:

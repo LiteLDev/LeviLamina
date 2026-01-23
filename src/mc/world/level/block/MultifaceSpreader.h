@@ -6,6 +6,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class BlockSource;
 class IBlockWorldGenAPI;
 // clang-format on
 
@@ -27,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MultifaceSpreader();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MultifaceSpreader() = default;
@@ -46,6 +51,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit MultifaceSpreader(::std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
+
     MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> _getSpreadWrappingAround(
         ::IBlockWorldGenAPI& target,
         ::Block const&       self,
@@ -70,6 +77,15 @@ public:
         ::BlockPos const&    pos
     ) const;
 
+    MCAPI bool spreadFromFaceTowardDirection(
+        ::BlockSource&    region,
+        ::Block const&    self,
+        ::Block const&    block,
+        ::BlockPos const& pos,
+        uchar             startingFace,
+        uchar             spreadDirection
+    ) const;
+
     MCAPI bool spreadFromFaceTowardRandomDirection(
         ::IBlockWorldGenAPI& target,
         ::Block const&       self,
@@ -85,6 +101,12 @@ public:
     MCAPI static ::std::vector<::MultifaceSpreader::SpreadType> const& ALL_SPREAD_TYPES();
 
     MCAPI static ::std::vector<::MultifaceSpreader::SpreadType> const& SAME_POSITION_ONLY();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::MultifaceSpreader::SpreadType> const& spreadTypes);
     // NOLINTEND
 
 public:

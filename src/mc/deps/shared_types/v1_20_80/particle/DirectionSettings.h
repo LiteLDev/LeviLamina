@@ -29,16 +29,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DirectionSettings& operator=(DirectionSettings const&);
-    DirectionSettings(DirectionSettings const&);
-    DirectionSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_80::DirectionSettings& operator=(::SharedTypes::v1_20_80::DirectionSettings&&);
-
     MCAPI_C ~DirectionSettings();
     // NOLINTEND
 

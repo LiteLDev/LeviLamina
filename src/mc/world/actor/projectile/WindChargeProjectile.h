@@ -18,9 +18,10 @@ class WindChargeProjectile : public ::PredictableProjectile {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeComponents(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -36,6 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+#endif
+
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

@@ -103,9 +103,6 @@ public:
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
-    MCAPI ::Block const*
-    tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;
-
     MCAPI ~StructureBlockPalette();
     // NOLINTEND
 

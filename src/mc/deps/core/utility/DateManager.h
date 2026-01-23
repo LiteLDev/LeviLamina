@@ -54,6 +54,8 @@ public:
 
     MCNAPI_C bool isBetweenDates(::std::string const& start, ::std::string const& end) const;
 
+    MCNAPI_C bool isInPast(::std::string const& strTime) const;
+
     MCNAPI_C void registerScheduledCallback(::ScheduledCallback callback) const;
 
     MCNAPI_C ::std::string toString(::DateManager::TimeZoneType outputType, ::std::string const& format) const;

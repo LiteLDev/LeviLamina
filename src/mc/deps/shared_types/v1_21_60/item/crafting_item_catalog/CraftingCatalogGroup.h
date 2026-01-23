@@ -24,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    CraftingCatalogGroup& operator=(CraftingCatalogGroup const&);
     CraftingCatalogGroup(CraftingCatalogGroup const&);
     CraftingCatalogGroup();
 
@@ -31,9 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup&&);
-
-    MCAPI ::SharedTypes::v1_21_60::CraftingCatalogGroup&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogGroup const&);
     // NOLINTEND
 
 public:

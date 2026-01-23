@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,6 +19,11 @@ class UpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void _tick(
+        ::ViewT<::StrictEntityContext, ::Include<::NeedsUpgradeToBodySlotFlagComponent>, ::ActorOwnerComponent> view,
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>             modifier
+    );
+
     MCNAPI static void _upgrade(
         ::StrictEntityContext& strictEntityContext,
         ::ActorOwnerComponent& actorOwnerComponent,

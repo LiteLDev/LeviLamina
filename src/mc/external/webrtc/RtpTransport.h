@@ -103,8 +103,6 @@ public:
         flat_tree<uint, ::webrtc::identity, ::std::less<void>, ::std::vector<uint>>
         GetSsrcsForSink(::webrtc::RtpPacketSinkInterface* sink);
 
-    MCNAPI bool IsTransportWritable();
-
     MCNAPI void MaybeSignalReadyToSend();
 
     MCNAPI void OnReadPacket(::rtc::PacketTransportInternal* transport, ::rtc::ReceivedPacket const& received_packet);
@@ -114,8 +112,6 @@ public:
     MCNAPI void OnSentPacket(::rtc::PacketTransportInternal* packet_transport, ::rtc::SentPacket const& sent_packet);
 
     MCNAPI bool SendPacket(bool rtcp, ::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags);
-
-    MCNAPI void SetReadyToSend(bool rtcp, bool ready);
 
     MCNAPI void SetRtcpPacketTransport(::rtc::PacketTransportInternal* new_packet_transport);
 

@@ -37,12 +37,7 @@ public:
 
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ~UserDataShapelessRecipe() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~UserDataShapelessRecipe() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

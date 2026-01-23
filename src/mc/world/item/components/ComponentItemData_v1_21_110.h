@@ -19,13 +19,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 88, ::ComponentItemDescriptionData_v1_21_110>              mDescription;
-    ::ll::TypedStorage<8, 1096, ::SharedTypes::v1_21_90::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 1248, ::SharedTypes::v1_21_90::ComponentItemComponentData> mItemComponents;
     ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>      mDeprecatedItemComponents;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ComponentItemData_v1_21_110& operator=(ComponentItemData_v1_21_110 const&);
     ComponentItemData_v1_21_110();
 
 public:
@@ -34,6 +33,10 @@ public:
     MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110&&);
 
     MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110 const&);
+
+    MCAPI ::ComponentItemData_v1_21_110& operator=(::ComponentItemData_v1_21_110&&);
+
+    MCFOLD ::ComponentItemData_v1_21_110& operator=(::ComponentItemData_v1_21_110 const&);
 
     MCAPI ~ComponentItemData_v1_21_110();
     // NOLINTEND
@@ -60,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ComponentItemData_v1_21_110&&);
 
-    MCFOLD void* $ctor(::ComponentItemData_v1_21_110 const&);
+    MCAPI void* $ctor(::ComponentItemData_v1_21_110 const&);
     // NOLINTEND
 
 public:

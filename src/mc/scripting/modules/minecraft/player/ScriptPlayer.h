@@ -122,10 +122,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<uint> calculateTotalXp() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    clearPropertyOverridesForEntity(::ScriptModuleMinecraft::ScriptActor const& targetEntity);
-
-    MCNAPI ::Scripting::Result_deprecated<void> clearPropertyOverridesForEntityBeta(
+    MCNAPI ::Scripting::Result_deprecated<void> clearPropertyOverridesForEntity(
         ::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const&
             targetEntity
     );

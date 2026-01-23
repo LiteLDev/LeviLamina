@@ -31,7 +31,6 @@ public:
 
     public:
         // prevent constructor by default
-        Description& operator=(Description const&);
         Description(Description const&);
         Description();
 
@@ -40,6 +39,9 @@ public:
         // NOLINTBEGIN
         MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Description&
         operator=(::SharedTypes::v1_20_60::BlockCulling::Description&&);
+
+        MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Description&
+        operator=(::SharedTypes::v1_20_60::BlockCulling::Description const&);
 
         MCAPI ~Description();
         // NOLINTEND
@@ -70,7 +72,6 @@ public:
 
         public:
             // prevent constructor by default
-            GeometryPart& operator=(GeometryPart const&);
             GeometryPart(GeometryPart const&);
             GeometryPart();
 
@@ -79,6 +80,9 @@ public:
             // NOLINTBEGIN
             MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&&);
+
+            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
+            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart const&);
             // NOLINTEND
         };
 
@@ -91,7 +95,6 @@ public:
 
     public:
         // prevent constructor by default
-        Rule& operator=(Rule const&);
         Rule(Rule const&);
         Rule();
 
@@ -99,6 +102,9 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
+
+        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule&
+        operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&);
         // NOLINTEND
     };
 

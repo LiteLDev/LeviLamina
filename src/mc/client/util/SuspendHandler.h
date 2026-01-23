@@ -32,7 +32,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~SuspendHandler() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~SuspendHandler() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
@@ -45,6 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI_C void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

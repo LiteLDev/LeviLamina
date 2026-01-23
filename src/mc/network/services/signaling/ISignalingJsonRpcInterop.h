@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/nether_net/ESessionError.h"
-#include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 
@@ -24,15 +23,13 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingJsonRpcInterop() = default;
 
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
     sendJsonRpcTo(::PlayerMessaging::NetworkID, ::std::optional<::std::string> const&, ::std::string const&) const = 0;
 
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::std::monostate, ::NetherNet::ESessionError>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Result<void, ::NetherNet::ESessionError>>
     sendJsonRpc(::std::string const&) const = 0;
 
-    virtual ::gsl::not_null<::std::shared_ptr<::MessageTracker>> getMessageTracker() = 0;
+    virtual ::std::shared_ptr<::MessageTracker> getMessageTracker() = 0;
 
     virtual void parseSignal(::NetherNet::NetworkID, ::std::string, ::std::string) = 0;
 

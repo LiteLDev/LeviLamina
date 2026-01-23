@@ -46,7 +46,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnkb71d1e;
+        ::ll::UntypedStorage<1, 3>  mUnkb71d1e;
         ::ll::UntypedStorage<4, 4>  mUnkfb510f;
         ::ll::UntypedStorage<8, 8>  mUnk5decd4;
         ::ll::UntypedStorage<8, 24> mUnkbd7168;
@@ -76,8 +76,6 @@ public:
             ::std::function<void()>                     mainThreadCallback,
             uint                                        taskPriority
         );
-
-        MCNAPI_C ~ResourceLoadTaskGroup();
         // NOLINTEND
 
     public:
@@ -90,12 +88,6 @@ public:
             ::Scheduler&                      scheduler,
             ::WorkerPool&                     workerPool
         );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI_C void $dtor();
         // NOLINTEND
     };
 
@@ -136,8 +128,6 @@ public:
 
     MCNAPI void
     _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
-
-    MCNAPI_C bool areDependenciesLoaded(::ResourceLoadType resourceLoadType) const;
 
     MCNAPI_C bool isComplete() const;
 

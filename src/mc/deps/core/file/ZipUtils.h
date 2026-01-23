@@ -24,9 +24,6 @@ namespace Core::ZipUtils {
 // NOLINTBEGIN
 MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
 
-MCNAPI bool
-exists(::Core::PathView zipPath, ::Core::PathView relativePath, ::Core::ZipUtils::UnzipSettings const& unzipSettings);
-
 MCNAPI bool getFilenames(
     ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
@@ -39,6 +36,8 @@ MCNAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
 
 MCNAPI ::Core::Result
 isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
+
+MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::UnzipResult e);
 
 MCNAPI_C ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
 
@@ -73,6 +72,23 @@ zip(::Core::PathView                     inputPathIn,
     ::Core::ZipUtils::ZipProgress&       progress,
     bool                                 useLowMemMode,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
+
+MCNAPI_C ::Core::ZipUtils::ZipResult
+zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
+    ::Core::PathView                                        zipOutputPath,
+    ::Core::ZipUtils::ZipProgress&                          progress,
+    bool                                                    useLowMemMode,
+    ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
+    ::Core::ZipUtils::ZipSettings const&                    zipSettings);
+
+MCNAPI ::Core::ZipUtils::ZipResult zipFromZip(
+    ::Core::PathView                     zipInputPath,
+    ::Core::PathView                     zipInputSubPath,
+    ::Core::PathView                     zipOutputPath,
+    ::Core::ZipUtils::ZipProgress&       progress,
+    bool                                 useLowMemMode,
+    ::Core::ZipUtils::ZipSettings const& zipSettings
+);
 // NOLINTEND
 
 } // namespace Core::ZipUtils

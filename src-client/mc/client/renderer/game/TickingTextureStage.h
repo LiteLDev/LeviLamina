@@ -46,8 +46,6 @@ public:
     MCNAPI void _createRenderTarget(::mce::Texture& atlasTexture, ::mce::RenderContext& renderContext);
 
     MCNAPI void createRenderTarget(::mce::RenderContext& renderContext);
-
-    MCNAPI void resetStage();
     // NOLINTEND
 
 public:

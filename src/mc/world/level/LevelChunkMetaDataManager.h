@@ -42,6 +42,8 @@ public:
 
     MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
 
+    MCNAPI void tick();
+
     MCNAPI void updateLevelChunkMetaDataForSaving(
         ::LevelChunk&                                     lc,
         ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,

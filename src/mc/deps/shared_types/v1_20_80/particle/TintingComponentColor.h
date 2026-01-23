@@ -25,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    TintingComponentColor& operator=(TintingComponentColor const&);
     TintingComponentColor(TintingComponentColor const&);
     TintingComponentColor();
 
@@ -32,9 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_20_80::TintingComponentColor& operator=(::SharedTypes::v1_20_80::TintingComponentColor&&);
-
-    MCAPI ::SharedTypes::v1_20_80::TintingComponentColor&
-    operator=(::SharedTypes::v1_20_80::TintingComponentColor const&);
 
     MCAPI ~TintingComponentColor();
     // NOLINTEND

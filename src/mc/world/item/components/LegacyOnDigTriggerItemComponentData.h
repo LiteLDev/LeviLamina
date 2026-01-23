@@ -31,8 +31,6 @@ public:
 
     MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData const&);
 
-    MCAPI ::LegacyOnDigTriggerItemComponentData& operator=(::LegacyOnDigTriggerItemComponentData&&);
-
     MCAPI ~LegacyOnDigTriggerItemComponentData();
     // NOLINTEND
 

@@ -29,18 +29,6 @@ public:
         Node& operator=(Node const&);
         Node(Node const&);
         Node();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~Node();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:

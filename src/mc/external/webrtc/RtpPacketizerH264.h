@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RtpPacketizerH264() /*override*/;
+    virtual ~RtpPacketizerH264() /*override*/ = default;
 
     virtual uint64 NumPackets() const /*override*/;
 
@@ -71,11 +71,7 @@ public:
 
     MCNAPI void NextAggregatePacket(::webrtc::RtpPacketToSend* rtp_packet);
 
-    MCNAPI void NextFragmentPacket(::webrtc::RtpPacketToSend* rtp_packet);
-
     MCNAPI bool PacketizeFuA(uint64 fragment_index);
-
-    MCNAPI bool PacketizeSingleNalu(uint64 fragment_index);
 
     MCNAPI uint64 PacketizeStapA(uint64 fragment_index);
 
@@ -94,12 +90,6 @@ public:
         ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
         ::webrtc::H264PacketizationMode            packetization_mode
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

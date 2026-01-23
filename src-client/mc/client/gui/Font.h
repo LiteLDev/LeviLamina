@@ -371,8 +371,6 @@ public:
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCAPI int getTextHeight(::std::string const& str, float fontSize);
-
     MCAPI bool hasFormattingCodes(::std::string const& str) const;
 
     MCAPI int processLinesInBox(

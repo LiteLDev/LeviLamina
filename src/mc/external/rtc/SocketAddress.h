@@ -25,10 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void Clear();
 
-    MCNAPI bool EqualIPs(::rtc::SocketAddress const& addr) const;
-
-    MCNAPI bool EqualPorts(::rtc::SocketAddress const& addr) const;
-
     MCNAPI ::std::string HostAsSensitiveURIString() const;
 
     MCNAPI ::std::string HostAsURIString() const;

@@ -26,12 +26,14 @@
 #include "mc/deps/core/threading/DeferredTasksManager.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/TextboxTextUpdateReason.h"
 #include "mc/events/IMinecraftEventing.h"
 #include "mc/events/NetworkType.h"
 #include "mc/locale/I18nObserver.h"
 #include "mc/platform/MultiplayerLockedContext.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/resources/ResourcePackListener.h"
 #include "mc/server/commands/test/TestAssetCommandType.h"
 #include "mc/server/commands/test/TestCommandType.h"
@@ -45,8 +47,8 @@ class ActorAnimationControllerGroup;
 class ActorAnimationGroup;
 class AppSystemRegistry;
 class ChunkSource;
+class ClientInstance;
 class ClientNetworkSystem;
-class ContentCatalogService;
 class ContentIdentity;
 class ContentLogFileEndPoint;
 class DateManager;
@@ -54,13 +56,12 @@ class Dimension;
 class EDUSystems;
 class EntityContext;
 class FileArchiver;
-class FlightingService;
 class FontHandle;
 class GameModuleClient;
 class GameRenderer;
-class GeometryGroup;
 class GuiData;
 class IApp;
+class IClientDimensionExtensions;
 class IClientInstance;
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
@@ -70,34 +71,32 @@ class ILevelListCache;
 class IMinecraftEventing;
 class IResourcePackRepository;
 class ISceneStack;
+class ITextBoxController;
 class ItemRegistryRef;
 class LevelDbEnv;
 class LevelSettings;
 class LinkedAssetValidator;
-class LocalPlayer;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class Option;
-class Options;
 class PackManifest;
 class PackManifestFactory;
 class PackSourceFactory;
 class Player;
 class PushNotificationMessage;
-class RealmsAPI;
 class RenderControllerGroup;
 class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class ResourcePackStack;
-class SceneFactory;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
 class ServerNetworkHandler;
 class TaskGroup;
 class TextureAtlas;
 class Timer;
+class UIEventCoordinator;
 class UIMeasureStrategy;
 class Vec3;
 class WebSocketCommManager;
@@ -106,9 +105,9 @@ struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
 struct BlockCullingGroup;
 struct CDNService;
-struct CloudFileUploadManager;
 struct ClubsService;
 struct ContentAcquisition;
+struct ContentCatalogService;
 struct ControllerIDtoClientMap;
 struct CubemapBackgroundResources;
 struct DeferredLighting;
@@ -116,7 +115,9 @@ struct DevConsoleLogger;
 struct EmoticonManager;
 struct ExternalContentManager;
 struct ExternalWorldTransferActionFunc;
+struct FlightingService;
 struct GatheringManager;
+struct GeometryGroup;
 struct GlobalResourcesCrashRecovery;
 struct IContentManager;
 struct IDlcValidation;
@@ -127,12 +128,15 @@ struct IOfferRepository;
 struct IThirdPartyServerRepository;
 struct IUIDefRepository;
 struct IUIRepository;
+struct LatencyGraphDisplay;
 struct LevelLoader;
 struct LibraryRepository;
+struct LocalPlayer;
 struct LocalWorldTransferActionFunc;
 struct MarketplaceServicesManager;
 struct MusicManager;
 struct NewPlayerSystem;
+struct Options;
 struct PackDownloadManager;
 struct ParticleEffectGroup;
 struct PersonaRepository;
@@ -140,6 +144,8 @@ struct PersonaService;
 struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
+struct RealmsAPI;
+struct SceneFactory;
 struct ScreenshotOptions;
 struct ScreenshotRecorder;
 struct SeasonsRenderer;
@@ -173,21 +179,20 @@ namespace OreUI { struct IResourceAllowList; }
 namespace OreUI { struct Router; }
 namespace Parties { struct PartySystem; }
 namespace Progress { struct ProgressTips; }
-namespace Realms { class GenericRequestServiceHandler; }
 namespace Realms { struct ContentService; }
+namespace Realms { struct GenericRequestServiceHandler; }
 namespace Realms { struct RealmsServices; }
 namespace Realms { struct RealmsSystem; }
 namespace Realms { struct SubscriptionService; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { class User; }
 namespace Social { struct MultiplayerGameInfo; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct PresenceManager; }
 namespace Social { struct SocialSystem; }
+namespace Social { struct User; }
 namespace World { struct WorldSystem; }
-namespace cg { class ImageBuffer; }
 namespace edu::auth { struct CredentialsAcquired; }
 namespace edu::auth { struct CredentialsRefreshSuccess; }
 namespace edu::auth { struct CredsLost; }
@@ -208,6 +213,7 @@ public:
     // MinecraftGame inner types declare
     // clang-format off
     struct InitContext;
+    struct FrameGapImpl;
     // clang-format on
 
     // MinecraftGame inner types define
@@ -251,6 +257,20 @@ public:
         InitContext();
     };
 
+    struct FrameGapImpl {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk2970b7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FrameGapImpl& operator=(FrameGapImpl const&);
+        FrameGapImpl(FrameGapImpl const&);
+        FrameGapImpl();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -264,6 +284,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkbd99eb;
     ::ll::UntypedStorage<8, 8>   mUnkb27992;
     ::ll::UntypedStorage<8, 8>   mUnka239d7;
+    ::ll::UntypedStorage<8, 8>   mUnk736ec3;
     ::ll::UntypedStorage<8, 8>   mUnk3662ee;
     ::ll::UntypedStorage<8, 8>   mUnkefbf07;
     ::ll::UntypedStorage<8, 8>   mUnk60f945;
@@ -386,6 +407,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnka6a0fa;
     ::ll::UntypedStorage<8, 8>   mUnkbf242b;
     ::ll::UntypedStorage<8, 8>   mUnk4e62ab;
+    ::ll::UntypedStorage<8, 8>   mUnk5211d9;
     ::ll::UntypedStorage<8, 8>   mUnk47bccf;
     ::ll::UntypedStorage<8, 8>   mUnk30af55;
     ::ll::UntypedStorage<8, 8>   mUnk158ab2;
@@ -442,7 +464,6 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk34046c;
     ::ll::UntypedStorage<8, 8>   mUnk5a12aa;
     ::ll::UntypedStorage<8, 64>  mUnk4282e8;
-    ::ll::UntypedStorage<8, 8>   mUnk17da42;
     ::ll::UntypedStorage<8, 8>   mUnkf7e0b8;
     ::ll::UntypedStorage<8, 16>  mUnka4d1d6;
     ::ll::UntypedStorage<8, 8>   mUnkec5a96;
@@ -504,7 +525,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk7c5611;
     ::ll::UntypedStorage<8, 8>   mUnkb6a170;
     ::ll::UntypedStorage<8, 8>   mUnka2905a;
-    ::ll::UntypedStorage<8, 8>   mUnka726cc;
+    ::ll::UntypedStorage<8, 8>   mUnkd2daa5;
     ::ll::UntypedStorage<8, 8>   mUnk807b24;
     ::ll::UntypedStorage<8, 8>   mUnkbef787;
     ::ll::UntypedStorage<8, 8>   mUnk1cf921;
@@ -565,8 +586,11 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnka8e328;
     ::ll::UntypedStorage<8, 24>  mUnkba1560;
     ::ll::UntypedStorage<8, 16>  mUnk3bcf80;
+    ::ll::UntypedStorage<8, 16>  mUnka14281;
     ::ll::UntypedStorage<1, 1>   mUnkd46ea8;
     ::ll::UntypedStorage<8, 8>   mUnk205ada;
+    ::ll::UntypedStorage<8, 16>  mUnk41bdf3;
+    ::ll::UntypedStorage<8, 16>  mUnkad2805;
     // NOLINTEND
 
 public:
@@ -640,6 +664,8 @@ public:
     setTextboxText(::std::string const& text, int const controllerId, ::TextboxTextUpdateReason reason) /*override*/;
 
     virtual void onKeyboardDismissed(int const controllerId) /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> getTextBoxController() /*override*/;
 
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
 
@@ -911,8 +937,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::ActiveDirectoryIdentity> getNullableActiveDirectoryIdentity() /*override*/;
-
     virtual void clearCache() /*override*/;
 
     virtual void releaseClientSubId(::SubClientId subid) /*override*/;
@@ -989,7 +1013,7 @@ public:
 
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
-    virtual void requestServerShutdown(::std::string const& message) /*override*/;
+    virtual void requestServerShutdown() /*override*/;
 
     virtual void setTestExecuteCommandCallback(
         ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
@@ -1012,8 +1036,6 @@ public:
     virtual void setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const /*override*/;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::CloudFileUploadManager> getCloudFileUploadManager() const /*override*/;
 
     virtual bool requestInGamePause(::SubClientId const& subClient, bool status) /*override*/;
 
@@ -1085,7 +1107,8 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> getOreUIResourceAllowList() /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> requestScreenshot(::ScreenshotOptions& screenshotOptions) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
+    requestScreenshot(::ScreenshotOptions& screenshotOptions) /*override*/;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
 
@@ -1320,6 +1343,12 @@ public:
 
     MCAPI ::LocalServerLauncher::Impl::AllDependencies _createAllDependencies();
 
+    MCAPI ::std::shared_ptr<::ClientInstance>
+    _createClientInstance(::SubClientId id, ::LatencyGraphDisplay* latencyDisplay, int controller);
+
+    MCAPI ::brstd::move_only_function<::std::unique_ptr<::IClientDimensionExtensions>(bool) const>
+    _createDimensionExtensionsFactory(bool isClientSide);
+
     MCAPI ::std::unique_ptr<::GameModuleClient> _createGameModuleClient(::SubClientId id);
 
     MCAPI void _cycleRoundRobinClientSubId();
@@ -1513,6 +1542,8 @@ public:
 
     MCAPI ::SerialWorkList::WorkResult _initializeFrameBuilder();
 
+    MCAPI void _initializeTextureStreamingResources();
+
     MCAPI bool _isGameplayPaused();
 
     MCAPI bool _isWaitingOnADAuthentication() const;
@@ -1696,15 +1727,15 @@ public:
     MCAPI void
     joinRealm(::Realms::World const& world, ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow);
 
-    MCAPI void onScreenshotReady(::cg::ImageBuffer& outImage, ::ScreenshotOptions& screenshotOptions);
-
     MCAPI void onTick();
 
     MCAPI bool primaryLevelExists() const;
 
     MCAPI void reloadMaterials();
 
-    MCAPI void setDpadScale(float dpadScaleValue);
+    MCAPI void setDpadScale();
+
+    MCAPI void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator);
 
     MCAPI void startFrame();
 
@@ -1793,6 +1824,8 @@ public:
 
     MCAPI void $onKeyboardDismissed(int const controllerId);
 
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> $getTextBoxController();
+
     MCAPI void $onLowMemory(::LowMemorySeverity);
 
     MCAPI void $onAppFocusLost();
@@ -1858,7 +1891,7 @@ public:
 
     MCAPI void $onClientCreatedLevel(::IClientInstance& client);
 
-    MCAPI ::GameRenderer& $getGameRenderer() const;
+    MCFOLD ::GameRenderer& $getGameRenderer() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> $getUIDefRepo() const;
 
@@ -1912,7 +1945,7 @@ public:
 
     MCAPI uint $getUIRenderClientMask() const;
 
-    MCFOLD uint64 $getClientInstanceCount() const;
+    MCAPI uint64 $getClientInstanceCount() const;
 
     MCAPI void $forEachClientInstance(::std::function<void(::IClientInstance&)> callback);
 
@@ -1934,7 +1967,7 @@ public:
 
     MCAPI void $resetInput();
 
-    MCAPI ::PixelCalc const& $getDpadScale() const;
+    MCFOLD ::PixelCalc const& $getDpadScale() const;
 
     MCAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
 
@@ -1948,7 +1981,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> $getSchematicsRepository() const;
 
-    MCFOLD ::ParticleEffectGroup& $getParticleEffectGroup() const;
+    MCAPI ::ParticleEffectGroup& $getParticleEffectGroup() const;
 
     MCAPI ::DeferredLighting& $getDeferredLighting() const;
 
@@ -1982,7 +2015,7 @@ public:
 
     MCAPI ::std::shared_ptr<::SkinRepository> $getSkinRepository() const;
 
-    MCFOLD ::PersonaRepository& $getPersonaRepository() const;
+    MCAPI ::PersonaRepository& $getPersonaRepository() const;
 
     MCAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
 
@@ -2002,7 +2035,7 @@ public:
 
     MCAPI ::IResourcePackRepository& $getResourcePackRepository() const;
 
-    MCAPI ::ResourcePackManager& $getResourcePackManager() const;
+    MCFOLD ::ResourcePackManager& $getResourcePackManager() const;
 
     MCAPI ::ResourcePackManager& $getServerResourcePackManager();
 
@@ -2026,7 +2059,7 @@ public:
 
     MCAPI bool $hasAllValidCrossPlatformSkin() const;
 
-    MCAPI ::PackDownloadManager& $getPackDownloadManager();
+    MCFOLD ::PackDownloadManager& $getPackDownloadManager();
 
     MCFOLD ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator() const;
 
@@ -2049,8 +2082,6 @@ public:
     MCFOLD ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::ActiveDirectoryIdentity> $getNullableActiveDirectoryIdentity();
 
     MCAPI void $clearCache();
 
@@ -2123,17 +2154,17 @@ public:
 
     MCAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
-    MCAPI ::IGameModuleApp& $getGameModule();
+    MCFOLD ::IGameModuleApp& $getGameModule();
 
     MCAPI ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void $requestServerShutdown(::std::string const& message);
+    MCAPI void $requestServerShutdown();
 
-    MCFOLD void $setTestExecuteCommandCallback(
+    MCAPI void $setTestExecuteCommandCallback(
         ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
     );
 
-    MCFOLD void $setTestAssetCommandCallback(
+    MCAPI void $setTestAssetCommandCallback(
         ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const& callback
     );
 
@@ -2149,8 +2180,6 @@ public:
     MCAPI void $setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::CloudFileUploadManager> $getCloudFileUploadManager() const;
 
     MCAPI bool $requestInGamePause(::SubClientId const& subClient, bool status);
 
@@ -2168,7 +2197,7 @@ public:
 
     MCAPI ::std::string $getMultiplayerDisabledTextBody(::MultiplayerLockedContext context) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> $getExternalServer() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> $getExternalServer() const;
 
     MCAPI ::std::shared_ptr<::mce::TextureGroup> $getTextureGroup() const;
 
@@ -2220,7 +2249,8 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> $getOreUIResourceAllowList();
 
-    MCAPI ::Core::PathBuffer<::std::string> $requestScreenshot(::ScreenshotOptions& screenshotOptions);
+    MCAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
+    $requestScreenshot(::ScreenshotOptions& screenshotOptions);
 
     MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
@@ -2275,7 +2305,7 @@ public:
 
     MCAPI void $resumeContentDownloads();
 
-    MCFOLD ::UIMeasureStrategy& $getUIMeasureStrategy();
+    MCAPI ::UIMeasureStrategy& $getUIMeasureStrategy();
 
     MCFOLD void $copyInternalSettingsFolderToExternalLocation() const;
 
@@ -2349,7 +2379,7 @@ public:
 
     MCAPI void $stopCustomMusic(float fadeoutSeconds);
 
-    MCAPI ::EntityContext& $getEntity() const;
+    MCFOLD ::EntityContext& $getEntity() const;
 
     MCAPI ::AppSystemRegistry& $getAppSystemRegistry();
 
@@ -2365,7 +2395,7 @@ public:
 
     MCAPI ::Bedrock::NonOwnerPointer<::ChunkSource> $getClientGenChunkSource(::DimensionType const& dimensionType);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
 
     MCAPI double $getGameUpdateDurationInSeconds() const;
 

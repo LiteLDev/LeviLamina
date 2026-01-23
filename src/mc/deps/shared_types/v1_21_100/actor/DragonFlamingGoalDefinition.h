@@ -49,13 +49,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_GROUND_FLAME_COUNT();
-
     MCAPI static ::std::string_view const& DEFAULT_SMOKE_COLOR();
-
-    MCAPI static float const& DEFAULT_SMOKE_RADIUS();
-
-    MCAPI static float const& DEFAULT_SMOKE_TIME();
 
     MCAPI static ::std::string_view const& NAME();
     // NOLINTEND

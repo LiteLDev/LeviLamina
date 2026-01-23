@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,17 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~UUIDConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
     // NOLINTEND
 
 public:

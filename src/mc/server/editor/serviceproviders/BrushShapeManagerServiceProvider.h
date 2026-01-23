@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/BrushElevationMode.h"
 #include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/editor/services/native_brush/BrushFlattenMode.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
@@ -55,6 +56,14 @@ public:
     virtual void setFlattenSmoothing(int const) = 0;
 
     virtual void setFloorBlockOverride(bool const) = 0;
+
+    virtual void setElevationMode(::Editor::Brush::BrushElevationMode) = 0;
+
+    virtual void setElevationFalloff(int const) = 0;
+
+    virtual void setElevationSampleLayers(int const) = 0;
+
+    virtual void setElevationBrushRadius(int const) = 0;
 
     virtual void setBrushShapeVisible(bool const) = 0;
 

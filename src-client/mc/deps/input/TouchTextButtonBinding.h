@@ -24,4 +24,15 @@ public:
     ::ll::TypedStorage<4, 4, int>             touchStateRequirement;
     ::ll::TypedStorage<1, 1, bool>            extendButtonPressOutsideUntilReleased;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TouchTextButtonBinding(TouchTextButtonBinding const&);
+    TouchTextButtonBinding();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::TouchTextButtonBinding& operator=(::TouchTextButtonBinding const&);
+    // NOLINTEND
 };

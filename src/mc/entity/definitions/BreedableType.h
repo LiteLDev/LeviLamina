@@ -14,13 +14,12 @@ public:
 public:
     // prevent constructor by default
     BreedableType& operator=(BreedableType const&);
+    BreedableType(BreedableType const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BreedableType();
-
-    MCNAPI BreedableType(::BreedableType const&);
 
     MCNAPI ~BreedableType();
     // NOLINTEND
@@ -29,8 +28,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::BreedableType const&);
     // NOLINTEND
 
 public:

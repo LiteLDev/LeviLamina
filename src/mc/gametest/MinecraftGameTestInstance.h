@@ -12,7 +12,6 @@ class AABB;
 class BlockSource;
 class BoundingBox;
 class Dimension;
-class StructureBlockActor;
 class Vec3;
 // clang-format on
 
@@ -59,12 +58,6 @@ public:
     virtual int _getLevelTick() const /*override*/;
 
     virtual bool _isTestReady() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::StructureBlockActor const* _getStructureBlockActor() const;
     // NOLINTEND
 
 public:

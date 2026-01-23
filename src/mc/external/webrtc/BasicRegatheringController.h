@@ -57,7 +57,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BasicRegatheringController() /*override*/;
+    virtual ~BasicRegatheringController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,12 +92,6 @@ public:
         ::cricket::IceTransportInternal*                    ice_transport,
         ::rtc::Thread*                                      thread
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

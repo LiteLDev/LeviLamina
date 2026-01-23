@@ -12,9 +12,9 @@
 // clang-format off
 class HashedString;
 class LinkedAssetValidator;
-class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
+struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
@@ -55,7 +55,6 @@ public:
 
             public:
                 // prevent constructor by default
-                AtmosphericScatteringDescription& operator=(AtmosphericScatteringDescription const&);
                 AtmosphericScatteringDescription(AtmosphericScatteringDescription const&);
                 AtmosphericScatteringDescription();
 
@@ -67,7 +66,18 @@ public:
                     operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings::
                                   AtmosphericScatteringSettings::AtmosphericScatteringDescription&&);
 
+                MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+                    AtmosphericScatteringDescription&
+                    operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings::
+                                  AtmosphericScatteringSettings::AtmosphericScatteringDescription const&);
+
                 MCNAPI ~AtmosphericScatteringDescription();
+                // NOLINTEND
+
+            public:
+                // static functions
+                // NOLINTBEGIN
+                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
                 // NOLINTEND
 
             public:
@@ -199,7 +209,6 @@ public:
 
     public:
         // prevent constructor by default
-        AtmosphericScatteringConfigSettings& operator=(AtmosphericScatteringConfigSettings const&);
         AtmosphericScatteringConfigSettings(AtmosphericScatteringConfigSettings const&);
         AtmosphericScatteringConfigSettings();
 
@@ -208,6 +217,9 @@ public:
         // NOLINTBEGIN
         MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettings&
         operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings&&);
+
+        MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettings&
+        operator=(::AtmosphericScattering::AtmosphericScatteringConfigSettings const&);
 
         MCNAPI ~AtmosphericScatteringConfigSettings();
         // NOLINTEND

@@ -12,8 +12,6 @@ namespace ScriptUtils {
 // NOLINTBEGIN
 MCNAPI ::Scripting::Error functionError(::std::string_view functionName);
 
-MCNAPI ::Scripting::Error getPropertyError(::std::string_view propertyName);
-
 MCNAPI ::Scripting::Error setPropertyError(::std::string_view propertyName);
 // NOLINTEND
 

@@ -32,7 +32,6 @@ public:
 
 public:
     // prevent constructor by default
-    EduDedicatedServerDetails& operator=(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails();
 
@@ -42,6 +41,8 @@ public:
     MCNAPI_C ::Bedrock::Result<void> fromJsonValue(::Json::Value const& details);
 
     MCNAPI_C ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails&&);
+
+    MCNAPI_C ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails const&);
 
     MCNAPI_C ::Json::Value toJsonValue() const;
 

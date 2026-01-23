@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_80 { struct BezierChainNode; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_20_80 {
@@ -27,15 +26,9 @@ public:
     // NOLINTBEGIN
     MCAPI BezierChainNodeMap(::SharedTypes::v1_20_80::BezierChainNodeMap const&);
 
-    MCFOLD ::SharedTypes::v1_20_80::BezierChainNodeMap& operator=(::SharedTypes::v1_20_80::BezierChainNodeMap&&);
+    MCFOLD_C ::SharedTypes::v1_20_80::BezierChainNodeMap& operator=(::SharedTypes::v1_20_80::BezierChainNodeMap&&);
 
     MCAPI ~BezierChainNodeMap();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

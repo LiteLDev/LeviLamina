@@ -4,15 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
-#include "mc/world/level/pathfinder/NodeType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDefinitionDescriptor;
 class BlockDescriptor;
-class BlockPos;
 class Mob;
 class Path;
 class PathNavigation;
@@ -68,14 +65,6 @@ public:
     MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
     MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
-
-    MCAPI ::NodeType isFree(
-        ::Mob&            owner,
-        ::BlockPos const& lastPathPos,
-        ::BlockPos const& testPos,
-        ::BlockPos const& size,
-        ::CanJumpIntoNode jumpIntoNode
-    );
 
     MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
 

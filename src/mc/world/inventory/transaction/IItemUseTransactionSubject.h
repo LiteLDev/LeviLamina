@@ -54,7 +54,7 @@ public:
 
     virtual bool baseUseItem(::ItemStack&) = 0;
 
-    virtual bool baseUseItemAsAttack(::ItemStack&) = 0;
+    virtual bool baseUseItemAsAttack(::ItemStack&, ::Vec3 const&) = 0;
 
     virtual ::InteractionResult
     useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::Block const*, bool) = 0;

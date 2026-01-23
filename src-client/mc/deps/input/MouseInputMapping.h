@@ -28,6 +28,8 @@ public:
 
     MCAPI ::MouseInputMapping& operator=(::MouseInputMapping const&);
 
+    MCAPI ::MouseInputMapping& operator=(::MouseInputMapping&&);
+
     MCAPI ~MouseInputMapping();
     // NOLINTEND
 

@@ -128,7 +128,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RTPSenderVideo() /*override*/;
+    virtual ~RTPSenderVideo() /*override*/ = default;
 
     virtual bool SendVideo(
         int                                       payload_type,
@@ -158,20 +158,10 @@ public:
         ::webrtc::RtpPacketToSend*      packet
     ) const;
 
-    MCNAPI bool AllowRetransmission(
-        uchar               temporal_id,
-        int                 retransmission_settings,
-        ::webrtc::TimeDelta expected_retransmission_time
-    );
-
-    MCNAPI uint64 FecPacketOverhead() const;
-
     MCNAPI void LogAndSendToNetwork(
         ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets,
         uint64                                                      encoder_output_size
     );
-
-    MCNAPI void MaybeUpdateCurrentPlayoutDelay(::webrtc::RTPVideoHeader const& header);
 
     MCNAPI ::webrtc::DataRate PostEncodeOverhead() const;
 
@@ -200,12 +190,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static uchar GetTemporalId(::webrtc::RTPVideoHeader const& header);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::webrtc::TimeDelta const& kTLRateWindowSize();
@@ -215,12 +199,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::RTPSenderVideo::Config const& config);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -21,6 +21,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
+    ScriptDebuggerSettings(ScriptDebuggerSettings const&);
     ScriptDebuggerSettings();
 
 public:
@@ -36,6 +38,8 @@ public:
         ::std::optional<uint>          port,
         ::std::optional<::std::string> passcode
     );
+
+    MCNAPI_C ::ScriptDebuggerSettings& operator=(::ScriptDebuggerSettings&&);
 
     MCNAPI ~ScriptDebuggerSettings();
     // NOLINTEND

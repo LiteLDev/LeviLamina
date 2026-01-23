@@ -58,7 +58,7 @@ public:
 
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     virtual float getMaxHeadXRot() /*override*/;
 
@@ -87,6 +87,8 @@ public:
     MCAPI void preAiStep();
 
     MCAPI void registerLoopingSounds();
+
+    MCAPI void setElder(bool value);
     // NOLINTEND
 
 public:
@@ -114,7 +116,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool);
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCFOLD float $getMaxHeadXRot();
 

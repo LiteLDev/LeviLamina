@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    EditorExtensionOptionalParameters& operator=(EditorExtensionOptionalParameters const&);
     EditorExtensionOptionalParameters(EditorExtensionOptionalParameters const&);
     EditorExtensionOptionalParameters();
 
@@ -30,9 +31,6 @@ public:
 
     MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
     operator=(::Editor::API::EditorExtensionOptionalParameters&&);
-
-    MCNAPI ::Editor::API::EditorExtensionOptionalParameters&
-    operator=(::Editor::API::EditorExtensionOptionalParameters const&);
 
     MCNAPI ~EditorExtensionOptionalParameters();
     // NOLINTEND

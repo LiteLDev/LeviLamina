@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/BaseError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace Scripting {
 
 struct UnsupportedAPIError : public ::Scripting::BaseError {
@@ -18,6 +23,12 @@ public:
     MCAPI explicit UnsupportedAPIError(::std::string const& msg);
 
     MCAPI ~UnsupportedAPIError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:

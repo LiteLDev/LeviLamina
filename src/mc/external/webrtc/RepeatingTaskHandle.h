@@ -36,8 +36,6 @@ public:
 
     MCNAPI void Stop();
 
-    MCNAPI ::webrtc::RepeatingTaskHandle& operator=(::webrtc::RepeatingTaskHandle&&);
-
     MCNAPI ~RepeatingTaskHandle();
     // NOLINTEND
 

@@ -22,6 +22,13 @@ public:
     MCNAPI static void
     _doGuardianPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
+    MCNAPI static void _tickGuardianPreAIStepSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::GuardianFlagComponent>,
+            ::ActorOwnerComponent> view
+    );
+
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

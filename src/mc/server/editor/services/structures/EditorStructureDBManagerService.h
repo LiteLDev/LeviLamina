@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/EditorStructureDBManagerServiceProvider.h"
@@ -39,6 +41,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkfbbcb2;
     ::ll::UntypedStorage<8, 8>  mUnkd2ea0d;
     ::ll::UntypedStorage<8, 16> mUnke5e032;
+    ::ll::UntypedStorage<8, 16> mUnk8a5e13;
     ::ll::UntypedStorage<8, 16> mUnk827501;
     ::ll::UntypedStorage<8, 8>  mUnk2a6ce4;
     // NOLINTEND
@@ -125,6 +128,9 @@ public:
         ::Editor::EditorStructureDBMetadata&           metaData
     );
 
+    MCNAPI void
+    _exportFlaggedStructuresToTarget(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& targetRoot);
+
     MCNAPI ::std::string const _getJsonStringFromMetadata(::Editor::EditorStructureDBMetadata const& metaData) const;
 
     MCNAPI ::std::string _getNameFromStructurePath(::Core::Path const& path) const;
@@ -139,6 +145,8 @@ public:
     _parseJsonToMetadata(::std::string& jsonString, ::Editor::EditorStructureDBMetadata& metaData);
 
     MCNAPI void _processBPStructures();
+
+    MCNAPI void _processEditorProjectStructures();
 
     MCNAPI void _processInProjectStructures();
 

@@ -73,12 +73,17 @@ public:
 
     public:
         // prevent constructor by default
+        State(State const&);
         State();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
+
         MCAPI State(::HashedString name, ::std::string const& stringState);
+
+        MCAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
 
         MCAPI ~State();
         // NOLINTEND
@@ -86,6 +91,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
+
         MCAPI void* $ctor(::HashedString name, ::std::string const& stringState);
         // NOLINTEND
 

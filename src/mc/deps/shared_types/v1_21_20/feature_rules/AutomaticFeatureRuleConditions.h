@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    AutomaticFeatureRuleConditions& operator=(AutomaticFeatureRuleConditions const&);
     AutomaticFeatureRuleConditions(AutomaticFeatureRuleConditions const&);
     AutomaticFeatureRuleConditions();
 
@@ -26,6 +25,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
+
+    MCAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
+    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions const&);
 
     MCAPI ~AutomaticFeatureRuleConditions();
     // NOLINTEND

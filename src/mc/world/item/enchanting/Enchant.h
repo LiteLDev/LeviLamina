@@ -9,6 +9,8 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class BaseGameVersion;
+class Experiments;
 class ItemInstance;
 struct EnchantSlotEnumHasher;
 // clang-format on
@@ -25,13 +27,13 @@ public:
     };
 
     enum class CompatibilityID : int {
-        NonConflict  = 0,
-        Damage       = 1,
-        Gathering    = 2,
-        Protection   = 3,
-        Froststrider = 4,
-        Mendfinity   = 5,
-        Loyalriptide = 6,
+        NonConflict     = 0,
+        Damage          = 1,
+        Gathering       = 2,
+        Protection      = 3,
+        FrostStrider    = 4,
+        MendingInfinity = 5,
+        LoyaltyRiptide  = 6,
     };
 
     enum class Frequency : int {
@@ -67,6 +69,7 @@ public:
         MushroomStick = 1u << 20,
         Brush         = 1u << 21,
         HeavyWeapon   = 1u << 22,
+        MeleeSpear    = 1u << 23,
         GArmor        = ArmorHead | ArmorTorso | ArmorFeet | ArmorLegs,
         GDigging      = Hoe | Axe | Pickaxe | Shovel,
         GTool         = Hoe | Shears | Flintsteel | Shield,
@@ -115,8 +118,9 @@ public:
         WindBurst            = 38,
         Density              = 39,
         Breach               = 40,
-        NumEnchantments      = 41,
-        InvalidEnchantment   = 42,
+        Lunge                = 41,
+        NumEnchantments      = 42,
+        InvalidEnchantment   = 43,
     };
 
     enum class VillagerTrading : int {
@@ -158,17 +162,19 @@ public:
 
     virtual int getMaxLevel() const;
 
-    virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    virtual int getDamageProtection(int, ::ActorDamageSource const&) const;
 
     virtual float getAfterBreachArmorFraction(int, float) const;
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    virtual void doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    virtual void doPostAttack(::Actor&, ::Actor&, int) const;
+
+    virtual void doPostPiercingAttack(::Actor&, int) const;
 
     virtual void doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    virtual void doPostHurt(::ItemInstance&, ::Actor&, ::Actor&, int) const;
 
     virtual bool isMeleeDamageEnchant() const;
 
@@ -178,22 +184,12 @@ public:
 
     virtual bool isDiscoverable() const;
 
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Enchant(
-        ::Enchant::Type            type,
-        ::Enchant::Frequency       frequency,
-        ::std::string_view         stringId,
-        ::std::string_view         description,
-        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
-        int                        primarySlots,
-        int                        secondarySlots
-    );
-
     MCAPI Enchant(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
@@ -211,7 +207,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static void initEnchants();
+    MCAPI static void initEnchants(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
     MCAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
     // NOLINTEND
@@ -233,16 +229,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Enchant::Type            type,
-        ::Enchant::Frequency       frequency,
-        ::std::string_view         stringId,
-        ::std::string_view         description,
-        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
-        int                        primarySlots,
-        int                        secondarySlots
-    );
-
     MCAPI void* $ctor(
         ::Enchant::Type            type,
         ::Enchant::Frequency       frequency,
@@ -274,17 +260,19 @@ public:
 
     MCFOLD int $getMaxLevel() const;
 
-    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCFOLD int $getDamageProtection(int, ::ActorDamageSource const&) const;
 
     MCFOLD float $getAfterBreachArmorFraction(int, float) const;
 
     MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    MCFOLD void $doPostAttack(::Actor&, ::Actor&, int) const;
+
+    MCFOLD void $doPostPiercingAttack(::Actor&, int) const;
 
     MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCFOLD void $doPostHurt(::ItemInstance&, ::Actor&, ::Actor&, int) const;
 
     MCFOLD bool $isMeleeDamageEnchant() const;
 
@@ -294,7 +282,7 @@ public:
 
     MCFOLD bool $isDiscoverable() const;
 
-    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type) const;
 
 
     // NOLINTEND

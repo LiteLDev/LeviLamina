@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,6 +14,7 @@ struct PassengerComponent;
 struct PassengersChangedFlagComponent;
 struct RecalculateControlledByLocalInstanceRequestComponent;
 struct RemovePassengersComponent;
+struct StopRidingRequestComponent;
 struct VehicleComponent;
 // clang-format on
 
@@ -23,6 +25,16 @@ MCNAPI void removePassengersSystem(
     ::StrictEntityContext const& vehicleEntity,
     ::RemovePassengersComponent& removePassengersComponent,
     ::VehicleComponent&          vehicleComponent,
+    ::EntityModifier<
+        ::VehicleComponent,
+        ::RecalculateControlledByLocalInstanceRequestComponent,
+        ::PassengersChangedFlagComponent> modifier
+);
+
+MCNAPI void singleTickPassengerRemovePassengerSystem(
+    ::StrictEntityContext const&                                                                        passenger,
+    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
+    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent>               vehicleView,
     ::EntityModifier<
         ::VehicleComponent,
         ::RecalculateControlledByLocalInstanceRequestComponent,

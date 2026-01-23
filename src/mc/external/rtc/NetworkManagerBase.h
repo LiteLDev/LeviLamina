@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/AdapterType.h"
 #include "mc/external/rtc/NetworkManager.h"
 
 // auto generated forward declare list
@@ -54,14 +53,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::rtc::Network> CreateNetwork(
-        ::std::string_view      name,
-        ::std::string_view      description,
-        ::rtc::IPAddress const& prefix,
-        int                     prefix_length,
-        ::rtc::AdapterType      type
-    ) const;
-
     MCNAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const& ip) const;
 
     MCNAPI void MergeNetworkList(
@@ -71,14 +62,6 @@ public:
     );
 
     MCNAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const* field_trials);
-
-    MCNAPI void set_default_local_addresses(::rtc::IPAddress const& ipv4, ::rtc::IPAddress const& ipv6);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static bool IsVpnMacAddress(::rtc::ArrayView<uchar const> address);
     // NOLINTEND
 
 public:

@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class MainMenuScreenModel;
+struct MainMenuScreenModel;
 // clang-format on
 
 class StartMenuScreenControllerProxy : public ::ScreenControllerProxy {

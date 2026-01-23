@@ -46,6 +46,8 @@ public:
 
     MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
 
+    MCAPI void markValidActionsForSerialization(bool isClientSide) const;
+
     MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
 
     MCAPI void write(::BinaryStream& stream) const;

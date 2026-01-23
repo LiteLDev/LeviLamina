@@ -15,10 +15,9 @@
 // auto generated forward declare list
 // clang-format off
 class AsyncVerdictPromise;
-class ConnectionRequest;
 class NetworkIdentifier;
-class SubClientConnectionRequest;
 class TaskGroup;
+struct PlayerAuthenticationInfo;
 // clang-format on
 
 class AsyncJoinTaskManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -66,9 +65,7 @@ public:
             uint64,
             ::brstd::move_only_function<void(
                 ::NetworkIdentifier const&,
-                ::std::variant<
-                    ::std::reference_wrapper<::ConnectionRequest const>,
-                    ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+                ::PlayerAuthenticationInfo const&,
                 ::SubClientId,
                 ::std::shared_ptr<::AsyncVerdictPromise>
             )>>>
@@ -109,19 +106,15 @@ public:
     );
 
     MCAPI ::Bedrock::Threading::Async<::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny>> handleAsyncJoinCallbacks(
-        ::NetworkIdentifier const& source,
-        ::std::variant<
-            ::std::reference_wrapper<::ConnectionRequest const>,
-            ::std::reference_wrapper<::SubClientConnectionRequest const>> const& request,
-        ::SubClientId                                                            subClientId
+        ::NetworkIdentifier const&        source,
+        ::PlayerAuthenticationInfo const& playerInfo,
+        ::SubClientId                     subClientId
     );
 
     MCAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
-            ::std::variant<
-                ::std::reference_wrapper<::ConnectionRequest const>,
-                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
+            ::PlayerAuthenticationInfo const&,
             ::SubClientId,
             ::std::shared_ptr<::AsyncVerdictPromise>
         )> callback

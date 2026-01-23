@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
+#include "mc/deps/cereal/ContextArea.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,22 +24,23 @@ public:
 public:
     // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&);
-    StringConstraint();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
-
     virtual ~StringConstraint() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI StringConstraint();
+
     MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
     MCNAPI StringConstraint(::cereal::StringConstraint const&);
+
+    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
 
     MCNAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
 
@@ -54,6 +56,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::cereal::StringConstraint&&);
 
     MCNAPI void* $ctor(::cereal::StringConstraint const&);
@@ -63,14 +67,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
-
-
     // NOLINTEND
 
 public:

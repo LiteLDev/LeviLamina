@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ChangeMobPropertyPacketPayload& operator=(ChangeMobPropertyPacketPayload const&);
     ChangeMobPropertyPacketPayload(ChangeMobPropertyPacketPayload const&);
     ChangeMobPropertyPacketPayload();
 
@@ -27,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ChangeMobPropertyPacketPayload& operator=(::ChangeMobPropertyPacketPayload&&);
+
+    MCAPI ::ChangeMobPropertyPacketPayload& operator=(::ChangeMobPropertyPacketPayload const&);
 
     MCAPI ~ChangeMobPropertyPacketPayload();
     // NOLINTEND

@@ -7,6 +7,7 @@
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -83,6 +84,15 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptPersistenceService&
     operator=(::Editor::ScriptModule::ScriptPersistenceService&&);
+
+    MCNAPI ::Scripting::Result_deprecated<void> requestClientGroup(
+        ::std::string const&                                                              namespacedName,
+        ::Editor::Services::PersistenceGroupCreationOptions                               options,
+        ::Scripting::Closure<void(::Scripting::Result_deprecated<::std::optional<::Scripting::WeakTypedObjectHandle<
+                                      ::Editor::ScriptModule::ScriptPersistenceGroup>>>)> callback
+    );
+
+    MCNAPI bool saveGroupToClient(::mce::UUID uuid);
     // NOLINTEND
 
 public:

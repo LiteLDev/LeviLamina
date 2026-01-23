@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StringPayload();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~StringPayload() /*override*/;
@@ -33,6 +37,18 @@ public:
         ::Scripting::StringBasedRuntime&        runtime,
         ::std::optional<::Scripting::Privilege> privilege
     ) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StringPayload(::std::string scriptName, ::std::string scriptData);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string scriptName, ::std::string scriptData);
     // NOLINTEND
 
 public:

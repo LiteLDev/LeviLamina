@@ -17,15 +17,9 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class DataDrivenRenderer;
 class Dimension;
 class GameRenderer;
-class GeometryGroup;
-class HashedString;
 class IClientInstance;
-class MinecraftGameplayGraphicsResources;
-class MultiPlayerLevel;
-class Options;
 class ScreenContext;
 class SoundPlayerInterface;
 class Tessellator;
@@ -36,7 +30,10 @@ struct ActorResourceDefinitionGroup;
 struct BlockTessellator;
 struct ClientFrameUpdateContext;
 struct FrameRenderObject;
+struct GeometryGroup;
 struct LevelRenderPreRenderUpdateParameters;
+struct MultiPlayerLevel;
+struct Options;
 struct RenderChunkCoordinator;
 struct ScreenshotOptions;
 struct SoundMapping;
@@ -157,11 +154,6 @@ public:
 
     MCNAPI void _debugDrawClientSideChunkGenBlockDifferences();
 
-    MCNAPI void _initDataDrivenRendererResources(
-        ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
-        ::MinecraftGameplayGraphicsResources&                                                graphicsResources
-    );
-
     MCNAPI void _initPipelineTessellatorResources();
 
     MCNAPI void _initResources();
@@ -240,18 +232,6 @@ public:
     MCNAPI void $onAppResumed();
 
     MCNAPI void $onDeviceLost();
-
-    MCNAPI void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
 
     MCNAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,

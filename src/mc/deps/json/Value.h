@@ -76,12 +76,6 @@ public:
     public:
         // CZStringCompare inner types define
         using is_transparent = void;
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator()(::Json::Value::CZString const& czstring1, ::Json::Value::CZString const& czstring2) const;
-        // NOLINTEND
     };
 
     union ValueHolder {
@@ -159,6 +153,8 @@ public:
     MCAPI explicit Value(uint64 value);
 
     MCAPI explicit Value(bool value);
+
+    MCAPI ::std::vector<::Json::Value*>* _copyArray(::std::vector<::Json::Value*> const& values);
 
     MCAPI void _insert(::Json::Value::CZString&& key, ::Json::Value&& value, bool overwrite);
 

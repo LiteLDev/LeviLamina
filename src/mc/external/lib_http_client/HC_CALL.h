@@ -31,6 +31,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk4f7136;
 #ifdef LL_PLAT_S
     ::ll::UntypedStorage<4, 4> mUnk21abaa;
+    ::ll::UntypedStorage<8, 8> mUnkf03548;
 #endif
     ::ll::UntypedStorage<4, 4>  mUnkbed0a8;
     ::ll::UntypedStorage<4, 4>  mUnkedd66f;
@@ -51,6 +52,20 @@ public:
     ::ll::UntypedStorage<4, 4> mUnkc9bb28;
     ::ll::UntypedStorage<4, 4> mUnkef06fa;
     ::ll::UntypedStorage<4, 4> mUnkbeca7b;
+#ifdef LL_PLAT_S
+    ::ll::UntypedStorage<8, 8> mUnke3ad4e;
+    ::ll::UntypedStorage<8, 8> mUnk9a2b24;
+    ::ll::UntypedStorage<8, 8> mUnkc104d9;
+    ::ll::UntypedStorage<8, 8> mUnkb569c1;
+    ::ll::UntypedStorage<8, 8> mUnk72670a;
+    ::ll::UntypedStorage<8, 8> mUnk11b46c;
+    ::ll::UntypedStorage<8, 8> mUnkf7e60c;
+    ::ll::UntypedStorage<8, 8> mUnkfeb886;
+    ::ll::UntypedStorage<8, 8> mUnke7efc8;
+    ::ll::UntypedStorage<8, 8> mUnke91507;
+    ::ll::UntypedStorage<8, 8> mUnke13752;
+    ::ll::UntypedStorage<8, 8> mUnk611083;
+#endif
     ::ll::UntypedStorage<8, 8> mUnke7da0d;
     ::ll::UntypedStorage<4, 4> mUnk911abe;
     ::ll::UntypedStorage<8, 8> mUnk8ce464;

@@ -49,6 +49,8 @@ public:
 
     MCNAPI_C bool _isVisibilityExpressionMapEqual(::ModelPart const& modelPart) const;
 
+    MCNAPI_C void constructMesh(::ScreenContext& screenContext);
+
     MCNAPI_C void copyBoneMatrixToSkinnedMesh(
         int                            meshIndex,
         int                            partIndex,

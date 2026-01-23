@@ -35,7 +35,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                            mControlOptionEditorId;
     ::ll::TypedStorage<4, 4, ::TouchTurnState>                                  mPrevState;
     ::ll::TypedStorage<8, 32, ::TouchTurnControlState>                          mPrevTouchTurnControlState;
-    ::ll::TypedStorage<8, 120, ::TouchMoveAndTurnControlState>                  mPrevTouchMoveAndTurnControlState;
+    ::ll::TypedStorage<8, 152, ::TouchMoveAndTurnControlState>                  mPrevTouchMoveAndTurnControlState;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, int>>>            mActivePointers;
     // NOLINTEND
 

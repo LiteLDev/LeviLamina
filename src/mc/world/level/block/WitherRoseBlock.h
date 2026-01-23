@@ -53,7 +53,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const& block) const;
 
     MCFOLD bool $isAuxValueRelevantForPicking() const;
 

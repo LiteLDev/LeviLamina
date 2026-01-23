@@ -17,7 +17,7 @@ class NavigationScriptActorComponent : public ::ScriptModuleMinecraft::ScriptAct
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1c9dd4;
+    ::ll::UntypedStorage<8, 8> mUnk4bd356;
     // NOLINTEND
 
 public:

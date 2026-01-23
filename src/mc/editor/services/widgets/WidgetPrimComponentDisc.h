@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/game_refs/OwnerPtr.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace Scripting::RenderHelper { class BasePrimitive; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -28,10 +25,15 @@ public:
     WidgetPrimComponentDisc();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentDisc const&) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
-    createPrimitive(::Editor::Network::WidgetPrimComponentDisc const& data);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

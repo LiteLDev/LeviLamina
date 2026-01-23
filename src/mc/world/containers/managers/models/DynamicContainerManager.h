@@ -41,8 +41,6 @@ public:
     );
 
     MCAPI void broadcastChanges(::PlayerContainerRefresher const& refresher);
-
-    MCAPI ~DynamicContainerManager();
     // NOLINTEND
 
 public:
@@ -54,11 +52,5 @@ public:
         ::std::shared_ptr<::Container>      container,
         ::ItemStack const&                  storageItem
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

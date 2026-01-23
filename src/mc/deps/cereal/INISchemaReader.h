@@ -57,6 +57,8 @@ public:
 
     virtual ::Bedrock::Result<::std::string> asString(uint64) /*override*/;
 
+    virtual ::Bedrock::Result<void> asRawBytes(::std::function<::gsl::span<uchar>(uint64)>, uint64) /*override*/;
+
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
 
     virtual ::std::optional<uint> readControlValue() /*override*/;

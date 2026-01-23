@@ -23,23 +23,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleInitialExpressionComponent& operator=(ParticleInitialExpressionComponent const&);
-    ParticleInitialExpressionComponent(ParticleInitialExpressionComponent const&);
-    ParticleInitialExpressionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleInitialExpressionComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleInitialExpressionComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleInitialExpressionComponent(::SharedTypes::v1_20_80::ParticleInitialExpressionComponent&&);
     // NOLINTEND
 
 public:
@@ -52,12 +45,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleInitialExpressionComponent&&);
     // NOLINTEND
 
 public:

@@ -42,6 +42,8 @@ public:
     MCAPI_C bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
 
     MCAPI_C ::ModelPartLocator& operator=(::ModelPartLocator const&);
+
+    MCAPI_C ~ModelPartLocator();
     // NOLINTEND
 
 public:
@@ -55,5 +57,11 @@ public:
         ::Vec3 const&        localOffset,
         bool                 ignoreInheritedScale
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

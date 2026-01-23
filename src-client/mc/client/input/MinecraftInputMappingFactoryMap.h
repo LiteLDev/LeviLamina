@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap const> const> mCIDToClientMap;
-    ::ll::TypedStorage<8, 712, ::MinecraftInputMappingFactoryMap::NullInputMappingFactory> mNullInputMappingFactory;
+    ::ll::TypedStorage<8, 728, ::MinecraftInputMappingFactoryMap::NullInputMappingFactory> mNullInputMappingFactory;
     // NOLINTEND
 
 public:

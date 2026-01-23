@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void popChild();
+
     MCNAPI void pushChild(::std::string const& tagName);
 
     MCNAPI void replaceWith(::std::string const& newTagName, ::std::unique_ptr<::Tag> newTag);

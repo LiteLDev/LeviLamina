@@ -53,7 +53,7 @@ public:
 
     MCAPI void increment();
 
-    MCFOLD bool isEqual(::Json::ValueIteratorBase const& other) const;
+    MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
 
     MCAPI char const* memberName() const;
 

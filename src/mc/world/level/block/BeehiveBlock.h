@@ -73,8 +73,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BeehiveBlockActor* _getBeehiveBlockActor(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI static ::ItemStack
     getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 

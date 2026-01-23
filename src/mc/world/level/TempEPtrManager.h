@@ -17,10 +17,4 @@ public:
     TempEPtrManager& operator=(TempEPtrManager const&);
     TempEPtrManager(TempEPtrManager const&);
     TempEPtrManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void unregisterTemporaryPointer(::_TickPtr& ptr);
-    // NOLINTEND
 };

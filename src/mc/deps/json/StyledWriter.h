@@ -43,8 +43,6 @@ public:
 
     MCAPI void indent();
 
-    MCAPI void pushValue(::std::string const& value);
-
     MCAPI void unindent();
 
     MCAPI void writeArrayValue(::Json::Value const& value);
@@ -52,8 +50,6 @@ public:
     MCAPI void writeIndent();
 
     MCAPI void writeValue(::Json::Value const& value);
-
-    MCAPI void writeWithIndent(::std::string const& value);
     // NOLINTEND
 
 public:

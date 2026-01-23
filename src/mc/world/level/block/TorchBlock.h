@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TorchBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -68,8 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TorchBlock(::std::string const& nameId, int id, ::ParticleType flameParticle);
-
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -83,12 +77,6 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::TorchFacing const[]> DATA_FROM_FACING();
 
     MCAPI static ::std::add_lvalue_reference_t<ushort const[]> FACING_FROM_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::ParticleType flameParticle);
     // NOLINTEND
 
 public:

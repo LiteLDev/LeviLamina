@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~JsepSessionDescription() /*override*/;
+    virtual ~JsepSessionDescription() /*override*/ = default;
 
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const /*override*/;
 
@@ -68,15 +68,11 @@ public:
     // NOLINTBEGIN
     MCNAPI bool GetMediasectionIndex(::webrtc::IceCandidateInterface const* candidate, uint64* index);
 
-    MCNAPI int GetMediasectionIndex(::cricket::Candidate const& candidate);
-
     MCNAPI bool Initialize(
         ::std::unique_ptr<::cricket::SessionDescription> description,
         ::std::string const&                             session_id,
         ::std::string const&                             session_version
     );
-
-    MCNAPI explicit JsepSessionDescription(::webrtc::SdpType type);
 
     MCNAPI JsepSessionDescription(
         ::webrtc::SdpType                                type,
@@ -89,20 +85,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::SdpType type);
-
     MCNAPI void* $ctor(
         ::webrtc::SdpType                                type,
         ::std::unique_ptr<::cricket::SessionDescription> description,
         ::std::string_view                               session_id,
         ::std::string_view                               session_version
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

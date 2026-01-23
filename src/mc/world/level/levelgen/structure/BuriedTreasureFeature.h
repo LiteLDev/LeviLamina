@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BuriedTreasureFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
@@ -60,6 +64,18 @@ public:
     ) /*override*/;
 
     virtual ~BuriedTreasureFeature() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit BuriedTreasureFeature(uint seed);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint seed);
     // NOLINTEND
 
 public:

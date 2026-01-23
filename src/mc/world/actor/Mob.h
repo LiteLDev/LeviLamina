@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
-#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/BuiltInMobComponents.h"
 #include "mc/world/actor/MobSpawnMethod.h"
@@ -38,6 +39,8 @@ class SaveContext;
 class SynchedActorDataWriter;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct CalculateAttackDamageSettings;
+struct InterpolationPair;
 struct JumpPreventionResult;
 struct LegacyGoalDefinition;
 struct VariantParameterList;
@@ -112,8 +115,6 @@ public:
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound();
-
     virtual float getSpeed() const;
 
     virtual void setSpeed(float speed);
@@ -138,7 +139,7 @@ public:
 
     virtual bool checkSpawnObstruction() const;
 
-    virtual void addPassenger(::Actor& passenger) /*override*/;
+    virtual void addPassenger(::Actor& newPassenger) /*override*/;
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
@@ -150,7 +151,7 @@ public:
 
     virtual float getItemUseIntervalProgress() const;
 
-    virtual bool swing() /*override*/;
+    virtual bool swing(::ActorSwingSource) /*override*/;
 
     virtual float getMaxHeadXRot();
 
@@ -158,15 +159,15 @@ public:
 
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
-    virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     virtual bool isAlliedTo(::Mob*);
 
-    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&);
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
-    virtual ::SharedTypes::Legacy::ActorDamageCause getBlockDamageCause(::Block const&) const /*override*/;
+    virtual ::SharedTypes::Legacy::ActorDamageCause getBlockDamageCause(::Block const& block) const /*override*/;
 
     virtual bool inCaravan() const /*override*/;
 
@@ -244,8 +245,6 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual void tickDeath();
-
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -275,6 +274,8 @@ public:
 
     MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
+    MCAPI void _doSoulSpeedParticleEffect();
+
     MCAPI void _doSprintParticleEffect();
 
     MCAPI bool _initHardCodedComponents(bool isClientSide);
@@ -287,18 +288,11 @@ public:
 
     MCAPI ::std::unique_ptr<::ListTag> _saveArmor(::SaveContext const& saveContext) const;
 
-    MCAPI void _updateSprintingState();
-
     MCAPI void _verifyAttributes();
-
-    MCAPI void
-    addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
-    MCAPI float calculateAttackDamage(::Actor const& target) const;
-
-    MCAPI float calculateAttackDamage(::Actor const& target, float baseAttackDamage) const;
+    MCAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
 
     MCAPI bool checkForPostHitDamageImmunity(float damageDifference, ::ActorDamageSource const& source);
 
@@ -324,6 +318,8 @@ public:
 
     MCAPI int getArmorTypeHash();
 
+    MCAPI float getAttackAnim(float a);
+
     MCAPI int getCaravanSize() const;
 
     MCAPI int getCarriedItemKnockbackBonus() const;
@@ -340,7 +336,7 @@ public:
 
     MCAPI ::Mob* getFirstCaravanHead();
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause) const;
 
     MCAPI ::ItemStack const& getItemSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
 
@@ -358,11 +354,13 @@ public:
 
     MCAPI float getYBodyRotation() const;
 
+    MCAPI_C ::InterpolationPair getYBodyRotationsNewOld() const;
+
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
-    MCAPI_C bool isGliding() const;
+    MCAPI bool isAbleToMove() const;
 
-    MCAPI void jumpFromGround();
+    MCAPI_C bool isGliding() const;
 
     MCAPI void knockback(::Actor* source, int damage, float xd, float zd, float horizontalPower, float verticalPower);
 
@@ -378,11 +376,11 @@ public:
 
     MCAPI void setEatCounter(int value);
 
+    MCAPI void setEating(bool value);
+
     MCAPI void setJumpTicks(int ticks);
 
-    MCAPI void setYBodyRotation(float rotation);
-
-    MCAPI_C void setYBodyRotations(float rotation, float oldRotation);
+    MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
     MCAPI bool shouldApplyWaterGravity();
 
@@ -440,7 +438,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -475,8 +473,6 @@ public:
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
-
     MCAPI float $getSpeed() const;
 
     MCAPI void $setSpeed(float speed);
@@ -501,7 +497,7 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& passenger);
+    MCAPI void $addPassenger(::Actor& newPassenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
@@ -513,17 +509,25 @@ public:
 
     MCFOLD float $getItemUseIntervalProgress() const;
 
-    MCAPI bool $swing();
-
     MCAPI float $getMaxHeadXRot();
 
     MCAPI bool $isImmobile() const;
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* target);
+
+#ifdef LL_PLAT_S
+    MCAPI bool $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+#endif
 
     MCFOLD bool $isAlliedTo(::Mob*);
+
+#ifdef LL_PLAT_S
+    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
+    MCAPI ::SharedTypes::Legacy::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
+#endif
 
     MCAPI bool $inCaravan() const;
 
@@ -531,9 +535,17 @@ public:
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
+    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+
     MCFOLD void $sendArmorDamage(::std::bitset<5> const);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
+
+    MCAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+
+    MCAPI int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
+
+    MCAPI float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHandEquipment() const;
 
@@ -588,8 +600,6 @@ public:
 
     MCAPI bool $canFreeze() const;
 
-    MCAPI void $tickDeath();
-
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
@@ -609,13 +619,7 @@ public:
     MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
-
-    MCAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
-
-    MCAPI int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
-
-    MCAPI float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
+    MCAPI bool $swing(::ActorSwingSource);
 #endif
 
 

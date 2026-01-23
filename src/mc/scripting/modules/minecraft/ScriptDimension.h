@@ -306,11 +306,7 @@ public:
         ::std::optional<float>         minHeight
     ) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptWeatherType getWeather() const;
-
     MCNAPI bool isChunkLoaded(::Vec3 const& location) const;
-
-    MCNAPI bool isEmpty_V010(::BlockPos const& position) const;
 
     MCNAPI ::Scripting::Result<
         bool,

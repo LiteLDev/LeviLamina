@@ -177,7 +177,12 @@ public:
 
     MCNAPI_C void _resetStats();
 
+    MCNAPI_C bool
+    _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
+
     MCNAPI_C void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
+
+    MCNAPI_C void _tryReport(::IMinecraftEventing& eventing, bool IsEcoFrameThrottled, int fpsThrottle);
 
     MCNAPI_C bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
 

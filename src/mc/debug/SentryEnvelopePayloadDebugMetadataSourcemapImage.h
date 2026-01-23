@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct SentryEnvelopePayloadDebugMetadataSourcemapImage {
 public:
     // SentryEnvelopePayloadDebugMetadataSourcemapImage inner types define
@@ -19,8 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage();
 
@@ -30,7 +33,16 @@ public:
     MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
     operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
 
+    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
+    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
+
     MCNAPI ~SentryEnvelopePayloadDebugMetadataSourcemapImage();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

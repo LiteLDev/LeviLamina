@@ -54,7 +54,7 @@ public:
 
     virtual uint64 hash() const /*override*/;
 
-    virtual bool equals(::Tag const& rhs) const /*override*/;
+    virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
 public:
@@ -74,6 +74,8 @@ public:
 
     MCAPI void deepCopy(::CompoundTag const& other);
 
+    MCAPI ::Tag const* get(::std::string_view name) const;
+
     MCAPI_C ::Tag* get(::std::string_view name);
 
     MCAPI bool getBoolean(::std::string_view string) const;
@@ -82,19 +84,23 @@ public:
 
     MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
 
-    MCAPI ::CompoundTag const* getCompound(::std::string_view name) const;
+    MCAPI ::CompoundTag const* getCompound(::std::string_view) const;
+
+    MCFOLD ::CompoundTag* getCompound(::std::string_view name);
 
     MCAPI float getFloat(::std::string_view name) const;
 
     MCAPI int getInt(::std::string_view name) const;
 
-    MCAPI ::Int64Tag const* getInt64Tag(::std::string_view name) const;
+    MCAPI ::Int64Tag const* getInt64Tag(::std::string_view) const;
+
+    MCFOLD ::Int64Tag* getInt64Tag(::std::string_view name);
 
     MCAPI ::IntTag const* getIntTag(::std::string_view name) const;
 
-    MCAPI ::ListTag const* getList(::std::string_view name) const;
+    MCAPI ::ListTag const* getList(::std::string_view) const;
 
-    MCAPI ::ListTag* getList(::std::string_view name);
+    MCFOLD ::ListTag* getList(::std::string_view name);
 
     MCAPI ::ShortTag const* getShortTag(::std::string_view name) const;
 
@@ -128,7 +134,7 @@ public:
 
     MCAPI ::std::string& putString(::std::string name, ::std::string value);
 
-    MCAPI_C bool remove(::std::string_view name);
+    MCAPI bool remove(::std::string_view name);
     // NOLINTEND
 
 public:
@@ -162,7 +168,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& obj) const;
 
 
     // NOLINTEND

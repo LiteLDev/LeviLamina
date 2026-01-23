@@ -46,16 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void ConsumePadding(::rtc::ByteBufferReader* buf) const;
-
-    MCNAPI StunAttribute(ushort type, ushort length);
-
-    MCNAPI void WritePadding(::rtc::ByteBufferWriter* buf) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::cricket::StunAttribute*
@@ -68,12 +58,6 @@ public:
     MCNAPI static ::std::unique_ptr<::cricket::StunUInt32Attribute> CreateUInt32(ushort type);
 
     MCNAPI static ::std::unique_ptr<::cricket::StunUInt16ListAttribute> CreateUnknownAttributes();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(ushort type, ushort length);
     // NOLINTEND
 
 public:

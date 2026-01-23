@@ -49,11 +49,11 @@ public:
 
     virtual void loadFromTag(::ListTag const& inventoryList);
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
     virtual int getMaxStackSize() const /*override*/;
 
@@ -115,11 +115,11 @@ public:
 
     MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
     MCFOLD int $getMaxStackSize() const;
 

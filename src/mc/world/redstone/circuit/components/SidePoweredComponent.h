@@ -43,7 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _removeSideSource(::BlockPos const& posSource);
+    MCAPI SidePoweredComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -52,8 +52,6 @@ public:
         ::Scripting::WeakLifetimeScope                                                        scope
     );
 
-    MCNAPI bool _isValid() const;
-
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
 

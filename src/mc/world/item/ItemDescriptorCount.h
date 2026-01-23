@@ -34,8 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI ItemDescriptorCount(::ItemDescriptorCount const&);
 
-    MCAPI ItemDescriptorCount(::ItemDescriptor const& descriptor, ushort stackSize);
-
     MCAPI explicit operator bool() const;
 
     MCFOLD ::ItemDescriptorCount& operator=(::ItemDescriptorCount const&);
@@ -45,8 +43,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemDescriptorCount const&);
-
-    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
     // NOLINTEND
 
 public:

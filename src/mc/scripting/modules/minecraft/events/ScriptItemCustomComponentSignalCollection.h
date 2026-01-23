@@ -63,7 +63,7 @@ public:
 
     virtual void onPostFlushAfterEvents() /*override*/;
 
-    virtual ~ScriptItemCustomComponentSignalCollection() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentSignalCollection() /*override*/;
     // NOLINTEND
 
 public:
@@ -88,6 +88,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

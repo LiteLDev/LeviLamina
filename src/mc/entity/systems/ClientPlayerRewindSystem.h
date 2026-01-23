@@ -4,7 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntityContext;
+class ReplayStateComponent;
 struct ReplayStateTrackerComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -27,6 +29,9 @@ public:
     MCNAPI_C static ::TickingSystemWithInfo createSystem();
 
     MCNAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
+
+    MCNAPI_C static void
+    doRewindHistory(::ActorOwnerComponent& actorOwnerComponent, ::ReplayStateComponent& replayStateComponent);
 
     MCNAPI_C static ::TickingSystemWithInfo publishHistoryChangesSystem();
     // NOLINTEND

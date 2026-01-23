@@ -19,10 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Enter() const;
-
-    MCNAPI void Leave() const;
-
     MCNAPI RecursiveCriticalSection();
 
     MCNAPI ~RecursiveCriticalSection();

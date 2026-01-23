@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkGeneratorStructureState& operator=(ChunkGeneratorStructureState const&);
-    ChunkGeneratorStructureState(ChunkGeneratorStructureState const&);
-    ChunkGeneratorStructureState();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(
@@ -40,8 +34,6 @@ public:
         ::BiomeSource const& biomeSource,
         bool                 mustBeInNewChunks
     ) const;
-
-    MCAPI ::br::worldgen::ChunkGeneratorStructureState& operator=(::br::worldgen::ChunkGeneratorStructureState&&);
 
     MCAPI ~ChunkGeneratorStructureState();
     // NOLINTEND

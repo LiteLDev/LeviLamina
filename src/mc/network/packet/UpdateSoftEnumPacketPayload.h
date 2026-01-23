@@ -16,14 +16,15 @@ public:
 
 public:
     // prevent constructor by default
-    UpdateSoftEnumPacketPayload& operator=(UpdateSoftEnumPacketPayload const&);
     UpdateSoftEnumPacketPayload(UpdateSoftEnumPacketPayload const&);
     UpdateSoftEnumPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::UpdateSoftEnumPacketPayload& operator=(::UpdateSoftEnumPacketPayload&&);
+    MCFOLD ::UpdateSoftEnumPacketPayload& operator=(::UpdateSoftEnumPacketPayload&&);
+
+    MCFOLD ::UpdateSoftEnumPacketPayload& operator=(::UpdateSoftEnumPacketPayload const&);
 
     MCAPI ~UpdateSoftEnumPacketPayload();
     // NOLINTEND

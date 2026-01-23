@@ -26,18 +26,6 @@ public:
         Bucket& operator=(Bucket const&);
         Bucket(Bucket const&);
         Bucket();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit Bucket(int64 timestamp);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(int64 timestamp);
-        // NOLINTEND
     };
 
 public:

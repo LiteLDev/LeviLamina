@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Objective;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
@@ -35,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _isValid() const;
-
     MCNAPI ::Scripting::Result_deprecated<int> _modifyScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -84,8 +83,6 @@ public:
     MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardObjective&
     operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
 
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptScoreboardObjective const& other) const;
-
     MCNAPI ::Scripting::Result_deprecated<bool> removeParticipant(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -100,6 +97,8 @@ public:
             ::std::string>& participant,
         int                 score
     );
+
+    MCNAPI ::Objective* tryGetObjective() const;
     // NOLINTEND
 
 public:

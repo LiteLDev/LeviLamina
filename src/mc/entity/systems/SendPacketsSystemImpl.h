@@ -24,6 +24,16 @@ MCNAPI void sendPacketsSystem(
     ::SendPacketsComponent&                           sendPacketsComponent
 );
 
+MCNAPI void singleTick(
+    ::StrictEntityContext& entity,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorOwnerComponent const,
+        ::Optional<::UserEntityIdentifierComponent const>,
+        ::SendPacketsComponent>              view,
+    ::EntityModifier<::SendPacketsComponent> modifier
+);
+
 MCNAPI void tick(
     ::ViewT<
         ::StrictEntityContext,

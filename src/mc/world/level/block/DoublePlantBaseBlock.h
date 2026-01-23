@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DoublePlantBaseBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
@@ -80,17 +76,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DoublePlantBaseBlock(::std::string const& nameId, int id);
-
     MCAPI void _preventCreativeDropFromBottomPart(::Player const& player, ::BlockPos const& bottomHalfPos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -131,11 +119,5 @@ public:
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

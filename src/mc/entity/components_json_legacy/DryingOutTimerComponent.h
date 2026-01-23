@@ -37,15 +37,13 @@ public:
 
     public:
         // prevent constructor by default
+        DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&);
         DryingOutTimerDefinition(DryingOutTimerDefinition const&);
         DryingOutTimerDefinition();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::DryingOutTimerComponent::DryingOutTimerDefinition&
-        operator=(::DryingOutTimerComponent::DryingOutTimerDefinition const&);
-
         MCNAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
@@ -78,11 +76,12 @@ public:
     // prevent constructor by default
     DryingOutTimerComponent& operator=(DryingOutTimerComponent const&);
     DryingOutTimerComponent(DryingOutTimerComponent const&);
-    DryingOutTimerComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DryingOutTimerComponent();
+
     MCNAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
 
     MCNAPI ~DryingOutTimerComponent();
@@ -91,6 +90,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::DryingOutTimerComponent&&);
     // NOLINTEND
 

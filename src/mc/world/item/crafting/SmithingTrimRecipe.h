@@ -39,12 +39,7 @@ public:
 
     virtual bool hasDataDrivenResult() const /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ~SmithingTrimRecipe() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~SmithingTrimRecipe() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:

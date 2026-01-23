@@ -69,6 +69,8 @@ public:
     MCAPI ::std::shared_ptr<::FillingContainer>
     getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
 
+    MCAPI ::std::optional<int> getDynamicContainerWeight(::FullContainerName id) const;
+
     MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
 
     MCAPI ::std::unique_ptr<::ListTag>

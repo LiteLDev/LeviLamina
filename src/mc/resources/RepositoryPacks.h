@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::RepositoryPackTuple>
+    MCNAPI ::std::pair<::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::RepositoryPackTuple>>>, bool>
     addResourcePackIfNotAlreadyAdded(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
     MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>

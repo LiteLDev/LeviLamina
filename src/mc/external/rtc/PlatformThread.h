@@ -30,14 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void Finalize();
-
-    MCNAPI PlatformThread(void* handle, bool joinable);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::rtc::PlatformThread
@@ -52,12 +44,6 @@ public:
         ::rtc::ThreadAttributes attributes,
         bool                    joinable
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(void* handle, bool joinable);
     // NOLINTEND
 
 public:

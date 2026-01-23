@@ -11,12 +11,17 @@
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorHitBlockAfterEvent {
+public:
+    // ScriptActorHitBlockAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN

@@ -36,8 +36,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
-
     MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
+
+    MCAPI ~AutomationBehaviorTreeGroup();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

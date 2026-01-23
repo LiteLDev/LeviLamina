@@ -54,17 +54,9 @@ public:
 
     MCNAPI bool Parse(::webrtc::rtcp::CommonHeader const& packet);
 
-    MCNAPI void ParseDlrrBlock(uchar const* block, ushort block_length);
-
-    MCNAPI void ParseRrtrBlock(uchar const* block, ushort block_length);
-
-    MCNAPI void ParseTargetBitrateBlock(uchar const* block, ushort block_length);
-
     MCNAPI void SetRrtr(::webrtc::rtcp::Rrtr const& rrtr);
 
     MCNAPI void SetTargetBitrate(::webrtc::rtcp::TargetBitrate const& bitrate);
-
-    MCNAPI uint64 TargetBitrateLength() const;
     // NOLINTEND
 
 public:

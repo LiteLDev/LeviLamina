@@ -34,7 +34,6 @@ public:
 
     public:
         // prevent constructor by default
-        BiomeReplacement& operator=(BiomeReplacement const&);
         BiomeReplacement(BiomeReplacement const&);
         BiomeReplacement();
 
@@ -43,6 +42,9 @@ public:
         // NOLINTBEGIN
         MCAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
         operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
+
+        MCAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
+        operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
 
         MCAPI ~BiomeReplacement();
         // NOLINTEND

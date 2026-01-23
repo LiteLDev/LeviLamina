@@ -37,6 +37,14 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_20::PoolAliases::RandomGroup&
     operator=(::SharedTypes::v1_21_20::PoolAliases::RandomGroup&&);
+
+    MCAPI ~RandomGroup();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

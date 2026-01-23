@@ -11,6 +11,8 @@ namespace ActorGlobal {
 // functions
 // NOLINTBEGIN
 MCAPI void addActorGlobalComponents(::EntityContext& entity);
+
+MCAPI void removeActorGlobalComponents(::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ActorGlobal

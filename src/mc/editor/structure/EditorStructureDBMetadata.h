@@ -49,10 +49,6 @@ public:
 
     MCNAPI EditorStructureDBMetadata(::Editor::EditorStructureDBMetadata const&);
 
-    MCNAPI explicit EditorStructureDBMetadata(
-        ::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData
-    );
-
     MCNAPI EditorStructureDBMetadata(
         ::mce::UUID const& guid,
         ::std::string      structureNamespace,
@@ -87,8 +83,6 @@ public:
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata&&);
 
     MCNAPI void* $ctor(::Editor::EditorStructureDBMetadata const&);
-
-    MCNAPI void* $ctor(::Editor::Structures::PUVLoader::CurrentVersion::FileDataContainer&& loadedData);
 
     MCNAPI void* $ctor(
         ::mce::UUID const& guid,

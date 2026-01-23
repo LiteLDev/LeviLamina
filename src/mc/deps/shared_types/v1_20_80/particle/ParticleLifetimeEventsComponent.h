@@ -25,22 +25,16 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ParticleLifetimeEventsComponent& operator=(ParticleLifetimeEventsComponent const&);
-    ParticleLifetimeEventsComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HashedString const& getIdentifier() const /*override*/;
 
+#ifdef LL_PLAT_S
+    virtual ~ParticleLifetimeEventsComponent() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~ParticleLifetimeEventsComponent() /*override*/;
-    // NOLINTEND
+#endif
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleLifetimeEventsComponent(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:
@@ -53,12 +47,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::HashedString const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:

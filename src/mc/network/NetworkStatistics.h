@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/profiler/platform/CounterToken.h"
 #include "mc/deps/raknet/RakNetStatistics.h"
 #include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/network/PacketObserver.h"
@@ -60,7 +59,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mCurrentPacketStats;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentSourceNetworkIdentifierStrings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentTargetNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 10624, ::std::array<::std::string, 332>>               mPacketNames;
+    ::ll::TypedStorage<8, 10656, ::std::array<::std::string, 333>>               mPacketNames;
     ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                mCurrentOverview;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkStatistics::OverviewStats>> mLastSeconds;
     ::ll::TypedStorage<8, 8, double>                                             mStartSeconds;
@@ -68,14 +67,6 @@ public:
     ::ll::TypedStorage<8, 224, ::RakNet::RakNetStatistics>                       mRakNetStatsReading;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::RakNet::RakNetStatistics&)>> mGetRakNetStatsReading;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Core::OutputFileStream>>         mCSVFile;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken>                       mUserBytesPerSecSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken>                       mActualBytesPerSecSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesPerSecReceivedCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mUserBytesTotalSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesTotalSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesTotalReceivedCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mPacketLossPercentagePerSecCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mPacketLossPercentageTotalCounterToken;
     // NOLINTEND
 
 public:
@@ -114,8 +105,6 @@ public:
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
-
-    MCAPI void _initRakNetProfileTracking();
 
     MCAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
 

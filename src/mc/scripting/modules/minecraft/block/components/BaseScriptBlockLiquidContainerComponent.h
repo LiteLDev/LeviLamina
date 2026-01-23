@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CauldronBlockActor;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -40,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
+
     MCNAPI ::Scripting::Result_deprecated<int> getFillLevel();
     // NOLINTEND
 

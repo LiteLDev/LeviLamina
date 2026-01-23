@@ -10,6 +10,7 @@
 class HashedString;
 namespace Editor { struct ProbabilityBlockPaletteItem; }
 namespace Editor { struct SimpleBlockPaletteItem; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -26,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    BlockPaletteItemChangedPayload(BlockPaletteItemChangedPayload const&);
     BlockPaletteItemChangedPayload();
 
 public:
@@ -38,7 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C BlockPaletteItemChangedPayload(
+    MCNAPI BlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&);
+
+    MCNAPI BlockPaletteItemChangedPayload(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
@@ -49,9 +51,17 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCNAPI void* $ctor(::Editor::Network::BlockPaletteItemChangedPayload const&);
+
+    MCNAPI void* $ctor(
         ::HashedString const&                                                                          paletteId,
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item

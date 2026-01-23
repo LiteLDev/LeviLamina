@@ -31,7 +31,6 @@ struct LocalSpatialEntityFetcherFactoryComponent;
 struct MobFlagComponent;
 struct MoveRequestComponent;
 struct MovementInterpolatorComponent;
-struct OffsetsComponent;
 struct ServerCatchupMovementTrackerComponent;
 struct ShouldBeSimulatedComponent;
 struct StateVectorComponent;
@@ -147,14 +146,6 @@ MCNAPI void storeNearbyMobsOnMoveRequest(
     ::IsSolidMobNearbyComponent const& nearby,
     ::DepenetrationComponent&          depenetration,
     ::MoveRequestComponent&            request
-);
-
-MCNAPI void tickRewindShapeRefresh(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::IsSolidMobNearbyComponent&                                                                solidNearby,
-    ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::OffsetsComponent const> const& aabbs,
-    ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&                   pmcs,
-    ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const&                interpolators
 );
 // NOLINTEND
 

@@ -38,8 +38,6 @@ public:
 
     MCNAPI ::std::string getName() const;
 
-    MCNAPI bool isValid() const;
-
     MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
     operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
     // NOLINTEND

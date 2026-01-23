@@ -95,8 +95,6 @@ public:
 
     MCNAPI void $onAppTerminated();
 
-    MCNAPI void $onOperationModeChanged(::OperationMode const operationMode);
-
     MCNAPI void $onPerformanceModeChanged(bool const boost);
 
     MCNAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
@@ -115,7 +113,11 @@ public:
 
     MCNAPI void $onClipboardPaste(::std::string const&);
 
+#ifdef LL_PLAT_C
+    MCNAPI void $onOperationModeChanged(::OperationMode const operationMode);
+
     MCNAPI void $onLowMemory(::LowMemorySeverity);
+#endif
 
 
     // NOLINTEND

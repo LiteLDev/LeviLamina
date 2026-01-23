@@ -21,77 +21,59 @@ class ItemStackBase;
 class Mob;
 class Vec3;
 struct ActorUniqueID;
-namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
-class EnchantUtils {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _convertBookCheck(::ItemStackBase& out);
+namespace EnchantUtils {
+// functions
+// NOLINTBEGIN
+MCAPI bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
 
-    MCAPI static void appendEnchantToFormattedText(
-        ::Enchant::Type                      type,
-        ::std::string_view                   enchantName,
-        ::Bedrock::Safety::RedactableString& formattedEnchantmentText
-    );
+MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
 
-    MCAPI static bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
+MCAPI float
+calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
 
-    MCAPI static int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
+MCAPI int
+combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
 
-    MCAPI static float
-    calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
+MCAPI void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
 
-    MCAPI static int
-    combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
+MCAPI void doPostPiercingAttackEffects(::Actor& attacker);
 
-    MCAPI static void doPostDamageEffects(::Actor& victim, ::Actor& attacker);
+MCAPI void doPreDamageEffects(::Actor& victim, ::Actor& attacker);
 
-    MCAPI static void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
+MCAPI ::ItemInstance generateEnchantedBook(::EnchantmentInstance const& enchant);
 
-    MCAPI static ::ItemInstance generateEnchantedBook(::EnchantmentInstance const& enchant);
+MCAPI ::std::vector<::std::pair<::EnchantmentInstance, int>>
+getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
 
-    MCAPI static ::std::vector<::std::pair<::EnchantmentInstance, int>>
-    getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
+MCAPI ::std::vector<::Vec3> getBookCasePositions(::BlockSource& source, ::Vec3 const& pos);
 
-    MCAPI static ::std::vector<::Vec3> getBookCasePositions(::BlockSource& source, ::Vec3 const& pos);
+MCAPI void getCurses(::ItemStackBase const& item, ::std::vector<::EnchantmentInstance>& outputCurses);
 
-    MCAPI static void getCurses(::ItemStackBase const& item, ::std::vector<::EnchantmentInstance>& outputCurses);
+MCAPI float getDamageReduction(::ActorDamageSource const& source, ::Mob const& target);
 
-    MCAPI static float getDamageReduction(::ActorDamageSource const& source, ::Mob const& target);
+MCAPI ::std::vector<int> getEnchantCosts(::ItemStackBase const& itemInst, int bookcaseCount);
 
-    MCAPI static ::std::vector<int> getEnchantCosts(::ItemStackBase const& itemInst, int bookcaseCount);
+MCAPI int getEnchantLevel(::Enchant::Type enchantType, ::ItemStackBase const& stack);
 
-    MCAPI static int getEnchantLevel(::Enchant::Type enchantType, ::ItemStackBase const& stack);
+MCAPI ::std::string getEnchantNameAndLevel(::Enchant::Type id, int level);
 
-    MCAPI static ::std::string getEnchantNameAndLevel(::Enchant::Type id, int level);
+MCAPI ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
 
-    MCAPI static ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
+MCAPI ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
 
-    MCAPI static ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
+MCAPI ::std::string getLevelString(int level);
 
-    MCAPI static ::std::string getLevelString(int level);
+MCAPI float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
 
-    MCAPI static float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
+MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
 
-    MCAPI static ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
+MCAPI ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
-    MCAPI static ::ItemStack const&
-    getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
+MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
-    MCAPI static bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
+MCAPI ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);
+// NOLINTEND
 
-    MCAPI static ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_EXP_REPAIR_COST();
-
-    MCAPI static int const& PROTECTIONFACTOR_SECONDARYCAP();
-
-    MCAPI static ::std::vector<::std::string>& mEnchantmentNames();
-    // NOLINTEND
-};
+} // namespace EnchantUtils

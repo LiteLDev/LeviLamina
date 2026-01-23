@@ -21,6 +21,7 @@ public:
     ::ll::TypedStorage<4, 4, ::EffectDuration>    mEffectTime;
     ::ll::TypedStorage<4, 4, int>                 mCooldownTicks;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
+    ::ll::TypedStorage<1, 1, bool>                mIsAmbient;
     // NOLINTEND
 
 public:

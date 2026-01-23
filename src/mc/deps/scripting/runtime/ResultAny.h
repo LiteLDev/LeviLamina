@@ -8,16 +8,27 @@ class ResultAny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>               mIsError;
-    ::ll::TypedStorage<8, 208, ::entt::meta_any> mValue;
+    ::ll::TypedStorage<1, 1, bool>              mIsError;
+    ::ll::TypedStorage<8, 64, ::entt::meta_any> mValue;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ResultAny(ResultAny const&);
+    ResultAny();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResultAny();
+    MCAPI ResultAny(::Scripting::ResultAny&&);
 
     MCAPI explicit ResultAny(::entt::meta_any&& resultAny);
+
+    MCFOLD ::Scripting::ResultAny& operator=(::Scripting::ResultAny&&);
+
+    MCAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const&);
+
+    MCAPI ::entt::meta_any toAny();
 
     MCAPI ::entt::meta_any toAny() const;
 
@@ -37,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor(::Scripting::ResultAny&&);
 
     MCAPI void* $ctor(::entt::meta_any&& resultAny);
     // NOLINTEND

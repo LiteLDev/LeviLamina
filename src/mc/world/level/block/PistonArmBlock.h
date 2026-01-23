@@ -65,7 +65,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -88,8 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _getCollisions(::AABB& armBaseAABB, ::AABB& armAABB, ::AABB& frontAABB, uchar facingDir) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -123,10 +121,6 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-
-#ifdef LL_PLAT_S
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
-#endif
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

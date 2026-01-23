@@ -27,17 +27,18 @@ public:
 
 public:
     // prevent constructor by default
-    JigsawEditorData(JigsawEditorData const&);
     JigsawEditorData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI JigsawEditorData(::JigsawEditorData const&);
+
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCFOLD ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
-    MCAPI_C ::JigsawEditorData& operator=(::JigsawEditorData const&);
+    MCFOLD ::JigsawEditorData& operator=(::JigsawEditorData const&);
 
     MCAPI void save(::CompoundTag& tag) const;
 
@@ -48,6 +49,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::JigsawEditorData const&);
     // NOLINTEND
 
 public:

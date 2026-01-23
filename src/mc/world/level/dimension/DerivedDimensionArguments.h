@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientDimensionExtensions;
 class ILevel;
 class TaskGroup;
 // clang-format on
@@ -17,7 +18,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ILevel&> mLevel;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::TaskGroup>(::std::string_view)>>
-        mCreateTaskGroup;
+                                                                              mCreateTaskGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IClientDimensionExtensions>> mClientExtensions;
     // NOLINTEND
 
 public:
@@ -35,6 +37,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

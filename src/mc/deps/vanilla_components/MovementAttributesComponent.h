@@ -5,7 +5,7 @@
 struct MovementAttributesComponent {
 public:
     // MovementAttributesComponent inner types define
-    using MemberPtr = ::std::optional<float> MovementAttributesComponent::*;
+    using MemberPtr = ::std::optional<float>::MovementAttributesComponent::*;
 
 public:
     // member variables

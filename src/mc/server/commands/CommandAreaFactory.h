@@ -32,6 +32,8 @@ public:
         bool            allowPlayerChunks
     ) const;
 
+    MCNAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
+
     MCNAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
         ::BlockPos const& min,
         ::BlockPos const& max,

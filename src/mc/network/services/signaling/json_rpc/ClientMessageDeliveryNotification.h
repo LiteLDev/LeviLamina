@@ -29,7 +29,6 @@ public:
 
     public:
         // prevent constructor by default
-        Params& operator=(Params const&);
         Params(Params const&);
         Params();
 
@@ -38,6 +37,9 @@ public:
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::ClientMessageDeliveryNotification::Params&
         operator=(::JsonRpc::ClientMessageDeliveryNotification::Params&&);
+
+        MCNAPI ::JsonRpc::ClientMessageDeliveryNotification::Params&
+        operator=(::JsonRpc::ClientMessageDeliveryNotification::Params const&);
 
         MCNAPI ~Params();
         // NOLINTEND
@@ -64,6 +66,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ClientMessageDeliveryNotification(::std::string messageId);
+
     MCNAPI ~ClientMessageDeliveryNotification();
     // NOLINTEND
 
@@ -71,6 +75,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string messageId);
     // NOLINTEND
 
 public:

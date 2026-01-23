@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftServiceKeySource;
+class TaskGroup;
 struct MinecraftServiceKeyInfo;
+struct MinecraftServiceKeysMetadata;
 namespace Bedrock::Http { struct Url; }
-namespace Bedrock::Services { class DiscoveryHelper; }
 // clang-format on
 
 class MinecraftServiceKeyManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -47,7 +48,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkd6fb1a;
     ::ll::UntypedStorage<8, 32>  mUnkfe2c47;
     ::ll::UntypedStorage<1, 1>   mUnk349f6c;
-    ::ll::UntypedStorage<8, 24>  mUnkac8556;
+    ::ll::UntypedStorage<8, 8>   mUnke5429b;
     ::ll::UntypedStorage<8, 64>  mUnk65f124;
     ::ll::UntypedStorage<8, 64>  mUnkc82f81;
     ::ll::UntypedStorage<8, 64>  mUnk75be14;
@@ -58,6 +59,7 @@ public:
     // prevent constructor by default
     MinecraftServiceKeyManager& operator=(MinecraftServiceKeyManager const&);
     MinecraftServiceKeyManager(MinecraftServiceKeyManager const&);
+    MinecraftServiceKeyManager();
 
 public:
     // virtual functions
@@ -68,7 +70,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecraftServiceKeyManager();
+    MCNAPI MinecraftServiceKeyManager(
+        ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
+        ::std::function<int64()>                                                                            timeFn,
+        ::std::function<::Bedrock::Threading::Async<::Bedrock::Http::Url>()>                                urlFn,
+        ::std::function<::Bedrock::Threading::Async<
+            ::std::optional<::MinecraftServiceKeysMetadata>>(::TaskGroup&, ::std::string const&, bool)>     metadataFn,
+        ::std::function<::Bedrock::Threading::Async<::std::optional<
+            ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
+    );
 
     MCNAPI_S void _blockingInitRecursive(
         ::MinecraftServiceKeyInfo                                                     keyFetchResult,
@@ -77,19 +87,27 @@ public:
 
     MCNAPI ::Bedrock::Threading::Async<::MinecraftServiceKeyInfo> _fullFetch(bool highPriority);
 
-    MCNAPI_S ::Bedrock::Threading::Async<::Bedrock::Http::Url> _getAuthServiceUrl();
+    MCNAPI bool _saveMetadata(::std::optional<::MinecraftServiceKeysMetadata> const& metadata);
 
     MCNAPI_S ::std::future<bool> blockingInit();
 
-    MCNAPI ::MinecraftServiceKeyInfo getKeyInfo() const;
+    MCNAPI ::std::string getKeyFromKeyId(::std::string const& kid) const;
 
-    MCNAPI_S void setDiscoveryHelper(::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discoveryHelper);
+    MCNAPI ::MinecraftServiceKeyInfo getKeyInfo() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::IMinecraftServiceKeySource>                                                     keySource,
+        ::std::function<int64()>                                                                            timeFn,
+        ::std::function<::Bedrock::Threading::Async<::Bedrock::Http::Url>()>                                urlFn,
+        ::std::function<::Bedrock::Threading::Async<
+            ::std::optional<::MinecraftServiceKeysMetadata>>(::TaskGroup&, ::std::string const&, bool)>     metadataFn,
+        ::std::function<::Bedrock::Threading::Async<::std::optional<
+            ::std::unordered_map<::std::string, ::std::string>>>(::TaskGroup&, ::std::string const&, bool)> keysFn
+    );
     // NOLINTEND
 
 public:

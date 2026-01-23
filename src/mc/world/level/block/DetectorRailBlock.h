@@ -14,6 +14,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class DetectorRailBlock : public ::BaseRailBlock {
@@ -23,9 +24,6 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
 
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
@@ -53,6 +51,8 @@ public:
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _handlePressed(::BlockSource& region, ::BlockPos const& pos, bool shouldBePressed) const;
+
+    MCFOLD void _onRedstoneUpdateDetectorRail(::BlockEvents::BlockRedstoneUpdateEvent&) const;
     // NOLINTEND
 
 public:
@@ -61,8 +61,6 @@ public:
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

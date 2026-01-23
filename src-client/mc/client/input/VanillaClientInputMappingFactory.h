@@ -11,11 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class GamePadRemappingLayout;
-class IOptions;
 class RemappingLayout;
 struct ChordButtonMapping;
 struct DeviceButtonMapping;
 struct GameControllerInputMapping;
+struct IOptions;
 struct KeyboardInputMapping;
 struct MouseInputMapping;
 struct TestAutoInputMapping;

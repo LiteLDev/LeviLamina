@@ -229,6 +229,8 @@ public:
         ::ContainerRuntimeId const&       containerRuntimeId
     );
 
+    MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+
     MCAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
@@ -241,13 +243,9 @@ public:
 
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 
-    MCAPI ::ContainerScreenContext const& getScreenContext() const;
-
     MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
 
     MCAPI ::ItemStackNetResult handleRequestAction(::ItemStackRequestAction const& requestAction);
-
-    MCAPI void normalTick();
 
     MCAPI ::std::vector<::ItemInstance>
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);

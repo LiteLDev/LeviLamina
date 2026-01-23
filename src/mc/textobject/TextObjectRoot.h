@@ -39,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::std::string> asStringVector() const;
-
     MCNAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
     // NOLINTEND
 

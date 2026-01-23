@@ -133,11 +133,12 @@ public:
 public:
     // prevent constructor by default
     Logger& operator=(Logger const&);
-    Logger();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Logger();
+
     MCNAPI Logger(::Puv::Logger&&);
 
     MCNAPI Logger(::Puv::Logger const&);
@@ -155,6 +156,8 @@ public:
         ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>> dst,
         ::std::string                                                                            msg);
 
+    MCNAPI void merge(::Puv::Logger log);
+
     MCNAPI ::Puv::Logger& operator=(::Puv::Logger&&);
 
     MCNAPI ~Logger();
@@ -171,6 +174,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::Puv::Logger&&);
 
     MCNAPI void* $ctor(::Puv::Logger const&);
