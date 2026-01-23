@@ -39,8 +39,6 @@ public:
     MCFOLD ::std::string asString() const;
 
     MCAPI_C bool operator!=(::mce::UUID const& rhs) const;
-
-    MCFOLD bool operator==(::mce::UUID const& rhs) const;
     // NOLINTEND
 
 public:

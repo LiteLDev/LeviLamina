@@ -63,7 +63,7 @@ public:
 
     [[nodiscard]] std::string const& getTypeName() const { return getBlockType().getTypeName(); }
 
-    [[nodiscard]] short getBlockItemId() const { return getBlockType().getBlockItemId(); }
+    [[nodiscard]] unsigned short getBlockItemId() const { return getBlockType().mID->mValue; }
 
     [[nodiscard]] ushort getData() const { return mData; }
 

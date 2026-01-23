@@ -269,10 +269,6 @@ public:
     }
 
 public:
-    // prevent constructor by default
-    Color();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toHexString() const;

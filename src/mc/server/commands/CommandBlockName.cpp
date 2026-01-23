@@ -6,5 +6,14 @@ std::string const& CommandBlockName::getBlockName() const {
     return BlockTypeRegistry::get().getBlockNameFromNameHash(mBlockNameHash);
 }
 std::string CommandBlockName::getDescriptionId() const {
-    return BlockType::buildDescriptionIdFromNameInfo(BlockType::extractBlockNameInfo(getBlockName()));
+    auto        nameInfo = BlockType::extractBlockNameInfo(getBlockName());
+    std::string sourceName;
+    if (nameInfo.mNamespaceName.get() == "minecraft") {
+        sourceName = nameInfo.mRawName->mStr;
+    } else {
+        sourceName = nameInfo.mFullName->mStr;
+    }
+
+    return BlockType::BLOCK_DESCRIPTION_PREFIX() + sourceName;
+    ;
 }

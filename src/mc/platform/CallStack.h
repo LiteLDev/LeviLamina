@@ -32,9 +32,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
-        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
-        ::ll::TypedStorage<4, 4, uint>                mLine;
+        uint64             mFilenameHash;
+        ::std::string_view mFilename;
+        uint               mLine;
         // NOLINTEND
     };
 
@@ -89,11 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CallStack(::Bedrock::CallStack&&);
-
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
-
-    MCAPI_C ::Bedrock::CallStack& operator=(::Bedrock::CallStack&&);
 
     MCAPI ~CallStack();
     // NOLINTEND

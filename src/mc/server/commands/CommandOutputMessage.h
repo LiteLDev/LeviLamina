@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CommandOutputMessage& operator=(::CommandOutputMessage const& rhs);
-
     MCAPI bool operator==(::CommandOutputMessage const& other) const;
     // NOLINTEND
 };

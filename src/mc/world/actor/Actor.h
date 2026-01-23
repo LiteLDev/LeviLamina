@@ -805,8 +805,6 @@ public:
 
     MCAPI void handleLeftoverFallDamage(float damage, ::ActorDamageSource source);
 
-    MCAPI bool hasCategory(::ActorCategory categories) const;
-
     MCAPI bool hasDimension() const;
 
     MCAPI bool hasEffect(::MobEffect const& effect) const;

@@ -247,8 +247,6 @@ public:
 
     LLNDAPI NetworkIdentifier const& getNetworkIdentifier() const;
 
-    LLNDAPI optional_ref<Certificate const> getCertificate() const;
-
     LLNDAPI SubClientId const& getClientSubId() const;
 
     LLNDAPI int getSelectedItemSlot() const;

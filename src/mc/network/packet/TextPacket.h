@@ -39,6 +39,9 @@ public:
     // NOLINTEND
 
 public:
+    TextPacket(TextPacket const&) = default;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;

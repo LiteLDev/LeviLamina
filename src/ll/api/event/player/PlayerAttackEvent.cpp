@@ -21,18 +21,18 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerAttackEventHook,
     HookPriority::Normal,
     Player,
-    &Player::_attack,
+    &Player::attack,
     bool,
-    Actor&                                         ac,
-    ::SharedTypes::Legacy::ActorDamageCause const& cause,
-    bool                                           doPredictiveSound
+    Actor&                                       ac,
+    SharedTypes::Legacy::ActorDamageCause const& cause,
+    Player::AttackParameters const&              parameters
 ) {
     auto ev = PlayerAttackEvent(*this, ac, cause);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return false;
     }
-    return origin(ac, cause, doPredictiveSound);
+    return origin(ac, cause, parameters);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

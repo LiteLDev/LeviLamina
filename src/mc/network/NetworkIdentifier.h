@@ -34,6 +34,8 @@ public:
 
     NetworkIdentifier(::NetworkIdentifier const& other) = default;
 
+    NetworkIdentifier() = default;
+
 public:
     // member functions
     // NOLINTBEGIN

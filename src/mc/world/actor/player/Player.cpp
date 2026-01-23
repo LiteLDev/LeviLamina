@@ -43,12 +43,6 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
-optional_ref<Certificate const> Player::getCertificate() const {
-    return getConnectionRequest().transform([](auto& request) {
-        return request.mLegacyMultiplayerToken->mCertificate.get();
-    });
-}
-
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
 
 int Player::getSelectedItemSlot() const { return mInventory->mSelected; }

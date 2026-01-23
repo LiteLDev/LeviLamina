@@ -150,8 +150,6 @@ public:
 
     MCAPI ::ItemEnchants constructItemEnchantsFromUserData() const;
 
-    MCAPI void deserializeComponents(::IDataInput& input);
-
     MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlot() const;
 
     MCAPI short getAuxValue() const;

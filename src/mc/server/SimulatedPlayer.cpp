@@ -97,11 +97,11 @@ bool SimulatedPlayer::simulateAttack(Actor* target) {
         return false;
     }
     auto currentTick = getLevel().getCurrentServerTick().tickID;
-    if (*mCooldownTick && (currentTick - **mCooldownTick < 10)) {
+    if (*mInputCooldownTick && (currentTick - **mInputCooldownTick < 10)) {
         return false;
     }
-    _trySwing();
-    mCooldownTick = currentTick;
+    _trySwing(ActorSwingSource::Attack);
+    mInputCooldownTick = currentTick;
     return attack(*target, SharedTypes::Legacy::ActorDamageCause::EntityAttack);
 }
 void SimulatedPlayer::simulateStartBuildInSlot(int slot) {

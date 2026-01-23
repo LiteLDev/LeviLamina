@@ -90,7 +90,11 @@ CommandHandle& CommandHandle::alias(std::string_view alias) {
     return *this;
 }
 std::vector<std::string> CommandHandle::alias() const {
-    std::lock_guard lock{impl->mutex};
-    return impl->registrar.getRegistry().getAliases(impl->signature.name);
+    std::lock_guard          lock{impl->mutex};
+    std::vector<std::string> aliases;
+    for (auto& i : impl->registrar.getRegistry().mAliases) {
+        aliases.push_back(i.second);
+    }
+    return aliases;
 }
 } // namespace ll::command

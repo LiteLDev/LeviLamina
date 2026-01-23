@@ -14,6 +14,6 @@ Bedrock::Result<CompoundTag> serialize<CompoundTag>::read(ReadOnlyBinaryStream& 
     if (auto res = NbtIo::read(io); res) {
         return std::move(*res->get());
     } else {
-        return nonstd::make_unexpected(res.error());
+        return nonstd::make_unexpected(std::move(res.error()));
     }
 }

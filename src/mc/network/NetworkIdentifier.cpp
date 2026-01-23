@@ -9,7 +9,9 @@ std::string NetworkIdentifier::getIPAndPort() const {
         .and_then([&](auto& peer) -> std::optional<std::string> {
             auto address = peer.GetSystemAddressFromGuid(mGuid);
             if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS()) {
-                auto ipAndPort = address.ToString('|');
+                std::string ipAndPort;
+                ipAndPort.resize(64);
+                address.ToString(true, ipAndPort.data(), '|');
                 auto result =
                     std::ranges::views::split(ipAndPort, '|')
                     | std::views::transform([](auto&& part) { return std::string_view{part.begin(), part.end()}; })
