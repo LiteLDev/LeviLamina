@@ -13,19 +13,23 @@ on:
 
 jobs:
   build-doxygen:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v6
 
       - run: |
           git clone --depth 1 --branch v2.3.4 https://github.com/jothepro/doxygen-awesome-css.git docs/api/doxygen-awesome-css
-          
-      - run : |
+
+      - run: |
           mkdir -p site/api
-      
-      - uses: mattnotmitt/doxygen-action@v1
-        with:
-          doxyfile-path: ./docs/api/Doxyfile
+
+      - name: Install Doxygen
+        run: |
+          sudo apt update
+          sudo apt install doxygen -y
+
+      - run: |
+          doxygen docs/api/Doxyfile
 
       - run: |
           tar -cvf artifact.tar -C site/ .
