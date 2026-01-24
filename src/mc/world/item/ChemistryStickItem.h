@@ -40,7 +40,7 @@ public:
 
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
+    virtual void hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     virtual bool isValidRepairItem(
         ::ItemStackBase const&   source,
@@ -88,7 +88,7 @@ public:
 
     MCAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const;
 
     MCFOLD bool $isValidRepairItem(
         ::ItemStackBase const&   source,

@@ -19,14 +19,8 @@ class ExplorationMapFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk300c0a;
+    ::ll::TypedStorage<8, 32, ::std::string> mDestination;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExplorationMapFunction& operator=(ExplorationMapFunction const&);
-    ExplorationMapFunction(ExplorationMapFunction const&);
-    ExplorationMapFunction();
 
 public:
     // virtual functions
@@ -43,18 +37,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

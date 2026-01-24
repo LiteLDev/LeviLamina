@@ -13,14 +13,12 @@ class InputModeBoolOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkda6f12;
-    ::ll::UntypedStorage<8, 64> mUnk7832c1;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InputMode, bool>> mValues;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InputMode, bool>> mDefaultValues;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    InputModeBoolOption& operator=(InputModeBoolOption const&);
-    InputModeBoolOption(InputModeBoolOption const&);
     InputModeBoolOption();
 
 public:
@@ -43,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C InputModeBoolOption(
+    MCAPI_C InputModeBoolOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -52,7 +50,7 @@ public:
         bool                 value
     );
 
-    MCNAPI_C InputModeBoolOption(
+    MCAPI_C InputModeBoolOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -63,16 +61,16 @@ public:
         bool                 valueGamePad
     );
 
-    MCNAPI_C void
+    MCAPI_C void
     _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
 
-    MCNAPI_C void set(::InputMode inputmode, bool value, bool saveOptionChange);
+    MCAPI_C void set(::InputMode inputmode, bool value, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -81,7 +79,7 @@ public:
         bool                 value
     );
 
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -96,18 +94,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCFOLD void $load(::std::string const& valueString);
 
-    MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
+    MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 #endif
 
 

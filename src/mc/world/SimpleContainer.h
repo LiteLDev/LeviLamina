@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual int getContainerSize() const /*override*/;
 
@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI int $getContainerSize() const;
 
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

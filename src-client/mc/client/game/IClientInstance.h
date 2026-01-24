@@ -69,10 +69,12 @@ class IConnectionEventing;
 class IContentKeyProvider;
 class IMinecraftEventing;
 class IMinecraftGame;
+class IOptions;
 class IResourcePackRepository;
 class ISceneStack;
 class ItemInHandRenderer;
 class ItemRegistryRef;
+class ItemRenderer;
 class KeyboardManager;
 class Level;
 class LevelRenderer;
@@ -83,6 +85,7 @@ class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class Option;
+class Options;
 class PackManifestFactory;
 class PacketSender;
 class Player;
@@ -119,11 +122,9 @@ struct GuidedFlowManager;
 struct HitDetectSystem;
 struct HudIconActorRenderer;
 struct IGameConnectionListener;
-struct IOptions;
 struct ISettingsRegistry;
 struct ITTSEventManager;
 struct IUIRepository;
-struct ItemRenderer;
 struct LatencyGraphDisplay;
 struct ListenerState;
 struct LocalPlayer;
@@ -132,7 +133,6 @@ struct MarketplaceServicesManager;
 struct MobEffectsLayout;
 struct MultiPlayerLevel;
 struct MusicManager;
-struct Options;
 struct PacksInfoData;
 struct PersonaRepository;
 struct PixelCalc;
@@ -174,10 +174,10 @@ namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct User; }
 namespace World { struct WorldSystem; }
+namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
-namespace mce { struct Camera; }
 namespace mce { struct ViewportInfo; }
 namespace ui { struct ScreenTechStackSelector; }
 // clang-format on

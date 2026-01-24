@@ -13,18 +13,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk164613;
-    ::ll::UntypedStorage<2, 2> mUnk959b3f;
-    ::ll::UntypedStorage<4, 4> mUnk45e051;
-    ::ll::UntypedStorage<4, 4> mUnk12ee42;
-    ::ll::UntypedStorage<4, 4> mUnk3d4e2a;
-    ::ll::UntypedStorage<1, 1> mUnka76eeb;
-    ::ll::UntypedStorage<1, 1> mUnk7d688e;
+    ::ll::TypedStorage<2, 2, ushort>                                         ipv4Port;
+    ::ll::TypedStorage<2, 2, ushort>                                         ipv6Port;
+    ::ll::TypedStorage<4, 4, ::ConnectionDefinition::PortBusyFallbackPolicy> fallback;
+    ::ll::TypedStorage<4, 4, int>                                            maxNumPlayers;
+    ::ll::TypedStorage<4, 4, int>                                            maxNumConnections;
+    ::ll::TypedStorage<1, 1, bool>                                           isServerVisibleToLanDiscovery;
+    ::ll::TypedStorage<1, 1, bool>                                           allowUnconnectedPongs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConnectionDefinition& operator=(ConnectionDefinition const&);
-    ConnectionDefinition(ConnectionDefinition const&);
-    ConnectionDefinition();
 };

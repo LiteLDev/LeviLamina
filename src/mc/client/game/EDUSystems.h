@@ -54,6 +54,8 @@ public:
 
 public:
     // prevent constructor by default
+    EDUSystems& operator=(EDUSystems const&);
+    EDUSystems(EDUSystems const&);
     EDUSystems();
 
 public:

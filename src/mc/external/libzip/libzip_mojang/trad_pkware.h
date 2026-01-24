@@ -15,4 +15,10 @@ public:
 #endif
     ::ll::UntypedStorage<8, 16> mUnkab1db3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    trad_pkware& operator=(trad_pkware const&);
+    trad_pkware(trad_pkware const&);
+    trad_pkware();
 };

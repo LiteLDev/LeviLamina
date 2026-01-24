@@ -47,7 +47,7 @@ public:
     virtual void
     _removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
 
-    virtual void _tick(::Editor::ServiceProviderCollection& serviceProviderCollection) /*override*/;
+    virtual void _tick(::Editor::ServiceProviderCollection& serviceProvider) /*override*/;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 
     MCNAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
-    MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProviderCollection);
+    MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProvider);
 
 
     // NOLINTEND

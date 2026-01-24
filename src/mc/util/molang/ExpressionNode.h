@@ -52,6 +52,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ResourceReference& operator=(ResourceReference const&);
+        ResourceReference(ResourceReference const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCNAPI_C ResourceReference();

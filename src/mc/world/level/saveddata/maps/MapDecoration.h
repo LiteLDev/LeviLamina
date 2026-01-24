@@ -47,9 +47,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>        mLabel;
     ::ll::TypedStorage<1, 1, ::MapDecoration::Type> mImage;
-    ::ll::TypedStorage<1, 1, char>                  mX;
-    ::ll::TypedStorage<1, 1, char>                  mY;
-    ::ll::TypedStorage<1, 1, char>                  mRotation;
+    ::ll::TypedStorage<1, 1, schar>                 mX;
+    ::ll::TypedStorage<1, 1, schar>                 mY;
+    ::ll::TypedStorage<1, 1, schar>                 mRotation;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mColor;
     // NOLINTEND
 

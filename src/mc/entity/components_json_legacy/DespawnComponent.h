@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/Randomize.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -9,7 +12,6 @@ class BlockPos;
 class ChunkPos;
 class DespawnDefinition;
 class Player;
-class Randomize;
 class Vec3;
 // clang-format on
 
@@ -46,7 +48,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -66,8 +68,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkdd04ca;
-        ::ll::UntypedStorage<8, 24> mUnke083cd;
+        ::ll::TypedStorage<8, 8, ::Actor&>     mActor;
+        ::ll::TypedStorage<8, 24, ::Randomize> mActorRandomize;
         // NOLINTEND
 
     public:
@@ -99,25 +101,25 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::Player* $fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
+        MCAPI ::Player* $fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
-        MCNAPI uint $getChunkTickRange() const;
+        MCAPI uint $getChunkTickRange() const;
 
-        MCNAPI bool $areChunksFullyLoaded(::BlockPos const& min, int r) const;
+        MCAPI bool $areChunksFullyLoaded(::BlockPos const& min, int r) const;
 
-        MCNAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
+        MCAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-        MCNAPI ::Randomize& $getChanceRandomize();
+        MCFOLD ::Randomize& $getChanceRandomize();
 
-        MCNAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
+        MCAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 
-        MCNAPI void $resetActorNoActionTime(::Actor& actor);
+        MCAPI void $resetActorNoActionTime(::Actor& actor);
 
 
         // NOLINTEND
@@ -132,18 +134,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _softRulesPrescribeDespawn(
+    MCAPI bool _softRulesPrescribeDespawn(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor
     ) const;
 
-    MCNAPI bool _tryStandardDespawnRules(
+    MCAPI bool _tryStandardDespawnRules(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor
     ) const;
 
-    MCNAPI void tick(::Actor& actor);
+    MCAPI void tick(::Actor& actor);
     // NOLINTEND
 };

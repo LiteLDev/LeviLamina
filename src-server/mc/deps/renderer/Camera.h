@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct Camera {};
+class Camera {};
 
 } // namespace mce

@@ -67,9 +67,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, char> mX;
-        ::ll::TypedStorage<1, 1, char> mY;
-        ::ll::TypedStorage<1, 1, char> mZ;
+        ::ll::TypedStorage<1, 1, schar> mX;
+        ::ll::TypedStorage<1, 1, schar> mY;
+        ::ll::TypedStorage<1, 1, schar> mZ;
         // NOLINTEND
     };
 

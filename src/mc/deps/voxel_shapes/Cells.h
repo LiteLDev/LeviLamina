@@ -19,9 +19,9 @@ class Cells {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3e79bc;
-    ::ll::UntypedStorage<1, 1>  mUnkc1f84e;
-    ::ll::UntypedStorage<1, 1>  mUnk69d3a4;
+    ::ll::UntypedStorage<1, 1>  mUnkbc4301;
+    ::ll::UntypedStorage<1, 1>  mUnk753a0d;
+    ::ll::UntypedStorage<1, 1>  mUnke06a37;
     ::ll::UntypedStorage<8, 72> mUnk3ea7f6;
     // NOLINTEND
 

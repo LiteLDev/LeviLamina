@@ -84,7 +84,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                     mPreviewIncomplete;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                              mOrigin;
     ::ll::TypedStorage<4, 4, ::DimensionType>                                          mDimension;
-    ::ll::TypedStorage<1, 1, char>                                                     mScale;
+    ::ll::TypedStorage<1, 1, schar>                                                    mScale;
     ::ll::TypedStorage<8, 24, ::std::vector<uint>>                                     mPixels;
     ::ll::TypedStorage<8, 24, ::std::vector<::ClientTerrainPixel>>                     mClientPixels;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MapItemTrackedActor>>> mTrackedEntities;

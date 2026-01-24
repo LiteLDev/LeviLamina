@@ -43,7 +43,7 @@ public:
 
     virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -111,7 +111,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
@@ -151,8 +151,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForBlockActor();
+    MCAPI static void** $vftableForBlockActor();
 
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

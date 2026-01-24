@@ -61,7 +61,7 @@ public:
 
     using TypeInt64 = int64;
 
-    using TypeInt8 = char;
+    using TypeInt8 = schar;
 
     using TypeShort = short;
 

@@ -32,7 +32,7 @@ public:
 
     virtual bool write(bool value) /*override*/;
 
-    virtual bool write(char) /*override*/;
+    virtual bool write(schar) /*override*/;
 
     virtual bool write(uchar value) /*override*/;
 
@@ -80,7 +80,7 @@ public:
 
     MCAPI bool $write(bool value);
 
-    MCFOLD bool $write(char);
+    MCFOLD bool $write(schar);
 
     MCAPI bool $write(uchar value);
 

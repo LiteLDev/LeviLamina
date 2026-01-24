@@ -2,9 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/RandomValueBounds.h"
+
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class LootItemCondition;
+class LootPoolEntry;
+class LootPoolTiers;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -14,34 +20,28 @@ class LootPool {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6a364b;
-    ::ll::UntypedStorage<8, 24> mUnk2b0680;
-    ::ll::UntypedStorage<8, 8>  mUnk1243db;
-    ::ll::UntypedStorage<4, 8>  mUnk2b08f0;
-    ::ll::UntypedStorage<4, 8>  mUnk734328;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootPoolEntry>>>     mEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemCondition>>> mConditions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LootPoolTiers>>                     mTiers;
+    ::ll::TypedStorage<4, 8, ::RandomValueBounds>                                    mRolls;
+    ::ll::TypedStorage<4, 8, ::RandomValueBounds>                                    mBonusRolls;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootPool& operator=(LootPool const&);
-    LootPool(LootPool const&);
-    LootPool();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+    MCAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+    MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
+    MCAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
 
-    MCNAPI ~LootPool();
+    MCAPI ~LootPool();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

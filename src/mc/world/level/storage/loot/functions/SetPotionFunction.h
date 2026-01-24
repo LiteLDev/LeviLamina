@@ -20,14 +20,8 @@ class SetPotionFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8c4abd;
+    ::ll::TypedStorage<8, 32, ::std::string> mPotionName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetPotionFunction& operator=(SetPotionFunction const&);
-    SetPotionFunction(SetPotionFunction const&);
-    SetPotionFunction();
 
 public:
     // virtual functions
@@ -44,24 +38,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

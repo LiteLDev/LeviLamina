@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -17,14 +18,8 @@ class SetOminousBottleFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk4b5715;
+    ::ll::TypedStorage<4, 8, ::RandomValueBounds> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetOminousBottleFunction& operator=(SetOminousBottleFunction const&);
-    SetOminousBottleFunction(SetOminousBottleFunction const&);
-    SetOminousBottleFunction();
 
 public:
     // virtual functions
@@ -41,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCNAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
+    MCAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext&);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

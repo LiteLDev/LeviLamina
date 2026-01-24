@@ -31,6 +31,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ConstantExpression& operator=(ConstantExpression const&);
+    ConstantExpression(ConstantExpression const&);
+    ConstantExpression();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const /*override*/;

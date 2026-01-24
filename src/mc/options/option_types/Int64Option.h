@@ -9,20 +9,14 @@ class Int64Option : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk510608;
-    ::ll::UntypedStorage<8, 8>  mUnk29d63f;
-    ::ll::UntypedStorage<8, 8>  mUnkbcb0b8;
-    ::ll::UntypedStorage<8, 8>  mUnk9d0523;
-    ::ll::UntypedStorage<1, 1>  mUnkd62eb8;
-    ::ll::UntypedStorage<8, 24> mUnkb7d350;
-    ::ll::UntypedStorage<8, 64> mUnk1830cd;
+    ::ll::TypedStorage<8, 8, int64 const>                VALUE_MAX;
+    ::ll::TypedStorage<8, 8, int64 const>                VALUE_MIN;
+    ::ll::TypedStorage<8, 8, int64>                      mValue;
+    ::ll::TypedStorage<8, 8, int64>                      mDefaultValue;
+    ::ll::TypedStorage<1, 1, bool>                       mClampToRange;
+    ::ll::TypedStorage<8, 24, ::std::vector<int64>>      mPossibleValues;
+    ::ll::TypedStorage<8, 64, ::std::function<int(int)>> mCoerceSaveValueCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Int64Option& operator=(Int64Option const&);
-    Int64Option(Int64Option const&);
-    Int64Option();
 
 public:
     // virtual functions

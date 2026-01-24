@@ -31,6 +31,7 @@ class Level;
 class LevelRenderer;
 class Matrix;
 class Mob;
+class Options;
 class Player;
 class Random;
 class ScreenContext;
@@ -48,7 +49,6 @@ struct DeferredSound;
 struct DirectionalLightRenderData;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
-struct Options;
 struct RenderChunkShared;
 struct ResolvedItemIconInfo;
 struct SkyRenderObject;
@@ -57,9 +57,9 @@ struct SoundMapping;
 struct TextureUVCoordinateSet;
 struct ViewRenderData;
 struct ViewRenderObject;
+namespace mce { class Camera; }
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
-namespace mce { struct Camera; }
 namespace mce::framebuilder { struct SkyWeatherParameters; }
 // clang-format on
 

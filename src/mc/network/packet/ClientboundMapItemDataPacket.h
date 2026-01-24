@@ -36,7 +36,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                    mMapIds;
-    ::ll::TypedStorage<1, 1, char>                                               mScale;
+    ::ll::TypedStorage<1, 1, schar>                                              mScale;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MapDecoration>>> mDecorations;
     ::ll::TypedStorage<8, 24, ::std::vector<::MapItemTrackedActor::UniqueId>>    mUniqueIds;
     ::ll::TypedStorage<4, 4, int>                                                mStartX;

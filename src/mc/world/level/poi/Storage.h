@@ -22,13 +22,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::entt::dense_map<::Poi::SectionPosId, ::std::unique_ptr<::Poi::Section>>> mSections;
-    ::ll::
-        TypedStorage<8, 72, ::entt::dense_set<::Poi::ChunkPosId, ::std::hash<::Poi::ChunkPosId>, ::std::equal_to<void>>>
-                                                              mDirtyChunks;
-    ::ll::TypedStorage<2, 6, ::br::worldgen::WorldGenContext> mWorldContext;
-    ::ll::TypedStorage<8, 120, ::cereal::ReflectionCtx>       mCtx;
-    ::ll::TypedStorage<8, 8, ::Dimension const*>              mDimension;
-    ::ll::TypedStorage<8, 8, ::Poi::Registry const*>          mRegistry;
+    ::ll::TypedStorage<8, 72, ::entt::dense_set<::Poi::ChunkPosId>>                                      mDirtyChunks;
+    ::ll::TypedStorage<2, 6, ::br::worldgen::WorldGenContext>                                            mWorldContext;
+    ::ll::TypedStorage<8, 120, ::cereal::ReflectionCtx>                                                  mCtx;
+    ::ll::TypedStorage<8, 8, ::Dimension const*>                                                         mDimension;
+    ::ll::TypedStorage<8, 8, ::Poi::Registry const*>                                                     mRegistry;
     // NOLINTEND
 
 public:

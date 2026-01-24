@@ -31,4 +31,10 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk16f70f;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    JSObject& operator=(JSObject const&);
+    JSObject(JSObject const&);
+    JSObject();
 };

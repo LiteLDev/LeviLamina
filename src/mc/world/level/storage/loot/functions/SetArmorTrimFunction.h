@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -21,14 +21,12 @@ class SetArmorTrimFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkbe4288;
-    ::ll::UntypedStorage<8, 48> mUnk231591;
+    ::ll::TypedStorage<8, 48, ::HashedString> mMaterial;
+    ::ll::TypedStorage<8, 48, ::HashedString> mPattern;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SetArmorTrimFunction& operator=(SetArmorTrimFunction const&);
-    SetArmorTrimFunction(SetArmorTrimFunction const&);
     SetArmorTrimFunction();
 
 public:
@@ -46,26 +44,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SetArmorTrimFunction(
+    MCAPI SetArmorTrimFunction(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
         ::HashedString const&                                  material,
         ::HashedString const&                                  pattern
     );
 
-    MCNAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
         ::HashedString const&                                  material,
         ::HashedString const&                                  pattern
@@ -75,11 +73,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

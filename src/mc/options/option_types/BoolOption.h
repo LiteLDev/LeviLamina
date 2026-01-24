@@ -9,16 +9,10 @@ class BoolOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2714f6;
-    ::ll::UntypedStorage<1, 1>  mUnk7dc59c;
-    ::ll::UntypedStorage<8, 64> mUnkaaf000;
+    ::ll::TypedStorage<1, 1, bool>                         mValue;
+    ::ll::TypedStorage<1, 1, bool>                         mDefaultValue;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(bool)>> mCoerceValueCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoolOption& operator=(BoolOption const&);
-    BoolOption(BoolOption const&);
-    BoolOption();
 
 public:
     // virtual functions
@@ -38,21 +32,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void set(bool v, bool saveOptionChange);
+    MCAPI void set(bool v, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCAPI void $load(::std::string const& valueString);
 
 
     // NOLINTEND

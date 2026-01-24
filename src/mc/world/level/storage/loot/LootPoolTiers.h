@@ -6,14 +6,8 @@ class LootPoolTiers {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6cee5e;
-    ::ll::UntypedStorage<4, 4> mUnke79884;
-    ::ll::UntypedStorage<4, 4> mUnk1edcd4;
+    ::ll::TypedStorage<4, 4, int>   mRangeForInitialTier;
+    ::ll::TypedStorage<4, 4, int>   mBonusRolls;
+    ::ll::TypedStorage<4, 4, float> mBonusRollChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootPoolTiers& operator=(LootPoolTiers const&);
-    LootPoolTiers(LootPoolTiers const&);
-    LootPoolTiers();
 };

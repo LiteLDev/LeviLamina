@@ -17,7 +17,7 @@ class EnumOption : public ::IntOption {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2aaabc;
+    ::ll::TypedStorage<8, 8, ::std::unordered_map<int, ::std::string> const&> ValueNameMap;
     // NOLINTEND
 
 public:
@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EnumOption(
+    MCAPI_C EnumOption(
         ::OptionID                                      id,
         ::OptionOwnerType                               ownerType,
         ::OptionResetFlags                              resetFlags,
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::OptionID                                      id,
         ::OptionOwnerType                               ownerType,
         ::OptionResetFlags                              resetFlags,

@@ -39,7 +39,7 @@ public:
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
 
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -87,7 +87,7 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory

@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Objective;
+// clang-format on
+
 struct ScoreInfoRef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk73dfe2;
-    ::ll::UntypedStorage<1, 1> mUnk218d66;
-    ::ll::UntypedStorage<8, 8> mUnk3a7044;
+    ::ll::TypedStorage<8, 8, ::Objective const*> mObjective;
+    ::ll::TypedStorage<1, 1, bool>               mValid;
+    ::ll::TypedStorage<8, 8, int*>               mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScoreInfoRef& operator=(ScoreInfoRef const&);
-    ScoreInfoRef(ScoreInfoRef const&);
-    ScoreInfoRef();
 };

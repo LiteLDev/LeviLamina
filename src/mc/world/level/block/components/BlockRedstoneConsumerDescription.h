@@ -15,12 +15,12 @@ class BlockRedstoneConsumerDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char> mMinPower;
-    ::ll::TypedStorage<1, 1, bool> mPropagatePower;
-    ::ll::TypedStorage<1, 1, bool> mConsumePowerAnyDirection;
-    ::ll::TypedStorage<1, 1, bool> mAcceptSameDirection;
-    ::ll::TypedStorage<1, 1, bool> mAcceptHalfPulse;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreFirstUpdate;
+    ::ll::TypedStorage<1, 1, schar> mMinPower;
+    ::ll::TypedStorage<1, 1, bool>  mPropagatePower;
+    ::ll::TypedStorage<1, 1, bool>  mConsumePowerAnyDirection;
+    ::ll::TypedStorage<1, 1, bool>  mAcceptSameDirection;
+    ::ll::TypedStorage<1, 1, bool>  mAcceptHalfPulse;
+    ::ll::TypedStorage<1, 1, bool>  mIgnoreFirstUpdate;
     // NOLINTEND
 
 public:

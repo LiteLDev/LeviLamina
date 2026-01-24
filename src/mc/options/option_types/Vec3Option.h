@@ -14,15 +14,9 @@ class Vec3Option : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk88a07d;
-    ::ll::UntypedStorage<4, 12> mUnkfc5e05;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mValue;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mDefaultValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec3Option& operator=(Vec3Option const&);
-    Vec3Option(Vec3Option const&);
-    Vec3Option();
 
 public:
     // virtual functions

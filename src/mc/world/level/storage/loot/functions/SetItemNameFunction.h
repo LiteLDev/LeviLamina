@@ -19,14 +19,8 @@ class SetItemNameFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk166840;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetItemNameFunction& operator=(SetItemNameFunction const&);
-    SetItemNameFunction(SetItemNameFunction const&);
-    SetItemNameFunction();
 
 public:
     // virtual functions
@@ -43,18 +37,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCNAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

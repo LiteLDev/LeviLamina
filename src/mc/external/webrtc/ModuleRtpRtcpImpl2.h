@@ -111,7 +111,7 @@ public:
 
     virtual void RegisterSendPayloadFrequency(int payload_type, int payload_frequency) /*override*/;
 
-    virtual int DeRegisterSendPayload(char payload_type) /*override*/;
+    virtual int DeRegisterSendPayload(schar payload_type) /*override*/;
 
     virtual void SetExtmapAllowMixed(bool extmap_allow_mixed) /*override*/;
 
@@ -319,7 +319,7 @@ public:
 
     MCNAPI void $RegisterSendPayloadFrequency(int payload_type, int payload_frequency);
 
-    MCNAPI int $DeRegisterSendPayload(char payload_type);
+    MCNAPI int $DeRegisterSendPayload(schar payload_type);
 
     MCNAPI void $SetExtmapAllowMixed(bool extmap_allow_mixed);
 

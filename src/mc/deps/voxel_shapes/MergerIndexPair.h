@@ -8,8 +8,8 @@ struct MergerIndexPair {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2e69ad;
-    ::ll::UntypedStorage<1, 1> mUnk4607ef;
+    ::ll::UntypedStorage<1, 1> mUnk34726a;
+    ::ll::UntypedStorage<1, 1> mUnk8f52e0;
     // NOLINTEND
 
 public:

@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
         ::Json::Value const&                                   entry,
         int                                                    weight,
         int                                                    quality,
@@ -52,9 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
 
-    MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
+    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
 
 
     // NOLINTEND

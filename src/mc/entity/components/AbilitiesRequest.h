@@ -2,17 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/AbilitiesIndex.h"
+
 struct AbilitiesRequest {
+public:
+    // AbilitiesRequest inner types define
+    using Variant = ::std::variant<bool, float>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9a7073;
-    ::ll::UntypedStorage<4, 8> mUnkc84f63;
+    ::ll::TypedStorage<1, 1, ::AbilitiesIndex>            mIDToSet;
+    ::ll::TypedStorage<4, 8, ::std::variant<bool, float>> mDesiredValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbilitiesRequest& operator=(AbilitiesRequest const&);
-    AbilitiesRequest(AbilitiesRequest const&);
-    AbilitiesRequest();
 };

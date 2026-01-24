@@ -167,7 +167,7 @@ public:
 
     virtual int handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        takeType,
+        ::ItemTakeType                        type,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     ) /*override*/;
@@ -313,7 +313,7 @@ public:
 
     MCNAPI int $handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
-        ::ItemTakeType                        takeType,
+        ::ItemTakeType                        type,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );

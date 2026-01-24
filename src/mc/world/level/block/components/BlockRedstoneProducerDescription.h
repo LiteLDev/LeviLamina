@@ -19,7 +19,7 @@ struct BlockRedstoneProducerDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                                  mPower;
+    ::ll::TypedStorage<1, 1, schar>                                 mPower;
     ::ll::TypedStorage<1, 1, uchar>                                 mStronglyPoweredFace;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mConnectedFaces;
     ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;

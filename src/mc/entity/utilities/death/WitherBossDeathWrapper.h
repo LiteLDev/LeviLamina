@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WitherBoss;
+// clang-format on
+
 class WitherBossDeathWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5a6e53;
+    ::ll::TypedStorage<8, 8, ::WitherBoss&> mWither;
     // NOLINTEND
 
 public:
@@ -18,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void explode();
+    MCAPI void explode();
     // NOLINTEND
 };

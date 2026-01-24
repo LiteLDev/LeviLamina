@@ -38,6 +38,8 @@ public:
 
 public:
     // prevent constructor by default
+    RayTracingOptions& operator=(RayTracingOptions const&);
+    RayTracingOptions(RayTracingOptions const&);
     RayTracingOptions();
 
 public:

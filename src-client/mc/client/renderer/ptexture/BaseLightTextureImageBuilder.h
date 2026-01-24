@@ -6,9 +6,9 @@
 // clang-format off
 class Dimension;
 class IClientInstance;
+class IOptions;
 class Player;
 struct BaseLightData;
-struct IOptions;
 namespace mce { struct Image; }
 // clang-format on
 

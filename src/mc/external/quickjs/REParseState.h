@@ -25,4 +25,10 @@ public:
     ::ll::UntypedStorage<1, 128> mUnk4b9b23;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    REParseState& operator=(REParseState const&);
+    REParseState(REParseState const&);
+    REParseState();
 };

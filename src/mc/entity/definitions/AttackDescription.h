@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/world/actor/AttributeDescription.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,16 +16,10 @@ struct AttackDescription : public ::AttributeDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnka0e703;
-    ::ll::UntypedStorage<8, 32> mUnk3c0ac5;
-    ::ll::UntypedStorage<4, 4>  mUnk948a72;
+    ::ll::TypedStorage<4, 8, ::FloatRange>     mDamage;
+    ::ll::TypedStorage<8, 32, ::std::string>   mEffectName;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mEffectDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttackDescription& operator=(AttackDescription const&);
-    AttackDescription(AttackDescription const&);
-    AttackDescription();
 
 public:
     // virtual functions
@@ -38,15 +34,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

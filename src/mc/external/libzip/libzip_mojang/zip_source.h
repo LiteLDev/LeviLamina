@@ -24,4 +24,10 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk186f5d;
     ::ll::UntypedStorage<8, 8>  mUnk47d29a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    zip_source& operator=(zip_source const&);
+    zip_source(zip_source const&);
+    zip_source();
 };

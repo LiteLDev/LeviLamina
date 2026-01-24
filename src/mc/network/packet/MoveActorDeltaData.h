@@ -34,9 +34,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                        mNewPositionX;
     ::ll::TypedStorage<4, 4, float>                        mNewPositionY;
     ::ll::TypedStorage<4, 4, float>                        mNewPositionZ;
-    ::ll::TypedStorage<1, 1, char>                         mRotX;
-    ::ll::TypedStorage<1, 1, char>                         mRotY;
-    ::ll::TypedStorage<1, 1, char>                         mRotYHead;
+    ::ll::TypedStorage<1, 1, schar>                        mRotX;
+    ::ll::TypedStorage<1, 1, schar>                        mRotY;
+    ::ll::TypedStorage<1, 1, schar>                        mRotYHead;
     ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
     // NOLINTEND
 };

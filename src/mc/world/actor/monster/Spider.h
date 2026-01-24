@@ -20,7 +20,7 @@ public:
         Cave   = 1,
     };
 
-    using DataFlagIdType = char;
+    using DataFlagIdType = schar;
 
 public:
     // prevent constructor by default
@@ -73,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -145,7 +145,7 @@ public:
 
     virtual void RegisterSendPayloadFrequency(int, int) = 0;
 
-    virtual int DeRegisterSendPayload(char) = 0;
+    virtual int DeRegisterSendPayload(schar) = 0;
 
     virtual void SetExtmapAllowMixed(bool) = 0;
 

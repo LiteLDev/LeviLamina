@@ -32,6 +32,8 @@ public:
 
 public:
     // prevent constructor by default
+    SourceExpression& operator=(SourceExpression const&);
+    SourceExpression(SourceExpression const&);
     SourceExpression();
 
 public:

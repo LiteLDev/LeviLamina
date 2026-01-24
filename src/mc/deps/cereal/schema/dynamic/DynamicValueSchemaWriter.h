@@ -36,7 +36,7 @@ public:
 
     virtual bool write(bool value) /*override*/;
 
-    virtual bool write(char value) /*override*/;
+    virtual bool write(schar value) /*override*/;
 
     virtual bool write(uchar value) /*override*/;
 
@@ -96,7 +96,7 @@ public:
 
     MCNAPI bool $write(bool value);
 
-    MCNAPI bool $write(char value);
+    MCNAPI bool $write(schar value);
 
     MCNAPI bool $write(uchar value);
 

@@ -14,4 +14,10 @@ public:
     ::ll::UntypedStorage<2, 2> mUnka388a6;
 #endif
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ct_data_s& operator=(ct_data_s const&);
+    ct_data_s(ct_data_s const&);
+    ct_data_s();
 };

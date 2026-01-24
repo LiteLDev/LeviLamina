@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/ITickingSystem.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,14 +27,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 48> mUnk371d16;
+        ::ll::TypedStorage<4, 48, ::BlockPos[4]> mBlockPos;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockPositions& operator=(BlockPositions const&);
-        BlockPositions(BlockPositions const&);
-        BlockPositions();
     };
 
 public:
@@ -47,15 +42,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TrailSystem::BlockPositions _calculateBlockSpawnPositions(::Actor& actor, ::Vec3& offset);
+    MCAPI static ::TrailSystem::BlockPositions _calculateBlockSpawnPositions(::Actor& actor, ::Vec3& offset);
 
-    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
+    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::TrailComponent& trailComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

@@ -39,6 +39,8 @@ public:
 
 public:
     // prevent constructor by default
+    DataDrivenGeometry& operator=(DataDrivenGeometry const&);
+    DataDrivenGeometry(DataDrivenGeometry const&);
     DataDrivenGeometry();
 
 public:

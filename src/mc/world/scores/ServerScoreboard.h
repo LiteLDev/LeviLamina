@@ -93,7 +93,7 @@ public:
 
     virtual ::ScoreboardId const& createScoreboardId(::Actor const& entity) /*override*/;
 
-    virtual ::ScoreboardId const& createScoreboardId(::std::string const& fakePlayer) /*override*/;
+    virtual ::ScoreboardId const& createScoreboardId(::std::string const& name) /*override*/;
 
     virtual void writeToLevelStorage() /*override*/;
 
@@ -188,7 +188,7 @@ public:
 
     MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& name);
 
     MCAPI void $writeToLevelStorage();
 

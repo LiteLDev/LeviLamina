@@ -10,8 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBaseBlockPos;
-    ::ll::TypedStorage<1, 1, char>        mSpan;
-    ::ll::TypedStorage<1, 1, char>        mXInc;
-    ::ll::TypedStorage<1, 1, char>        mZInc;
+    ::ll::TypedStorage<1, 1, schar>       mSpan;
+    ::ll::TypedStorage<1, 1, schar>       mXInc;
+    ::ll::TypedStorage<1, 1, schar>       mZInc;
     // NOLINTEND
 };

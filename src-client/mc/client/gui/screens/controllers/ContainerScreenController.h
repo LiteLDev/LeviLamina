@@ -120,7 +120,7 @@ public:
 
     virtual void setAssociatedBlockPos(::BlockPos const& pos) /*override*/;
 
-    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID) /*override*/;
+    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -346,7 +346,7 @@ public:
 
     MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
+    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 

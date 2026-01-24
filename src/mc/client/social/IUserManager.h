@@ -24,7 +24,7 @@ namespace Social { class UserListObserver; }
 namespace mce { struct Image; }
 class IClientInstance;
 class IMinecraftGame;
-struct Options;
+class Options;
 namespace Social { struct User; }
 namespace Social { struct XboxLiveUser; }
 // clang-format on
