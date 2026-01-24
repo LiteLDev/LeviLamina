@@ -58,7 +58,7 @@ LL_TYPE_INSTANCE_HOOK(
 // Minecraft
 static std::atomic<Minecraft*> minecraft;
 
-LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::initCommands, void) {
+LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::init, void) {
     minecraft = this;
     origin();
 }
@@ -219,10 +219,9 @@ LL_TYPE_INSTANCE_HOOK(
     ServerInstance,
     &ServerInstance::$ctor,
     void*,
-    ::IMinecraftApp&                                                       app,
-    ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> const& coordinator
+    ServerInstanceArguments&& args
 ) {
-    auto res       = origin(app, coordinator);
+    auto res       = origin(std::move(args));
     serverInstance = this;
     return res;
 }

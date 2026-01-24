@@ -113,8 +113,6 @@ public:
     MCAPI bool matchType(::Actor const& entity) const;
 
     MCAPI ::std::shared_ptr<::std::vector<::Actor*>> newResults(::CommandOrigin const& origin) const;
-
-    MCAPI_C ~CommandSelectorBase();
     // NOLINTEND
 
 public:

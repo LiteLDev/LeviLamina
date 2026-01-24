@@ -25,10 +25,11 @@ public:
     // NOLINTEND
 
 public:
+    WebToken() = default;
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C WebToken();
-
     MCAPI explicit WebToken(::std::string token);
 
     MCAPI ::std::string _signatureToDER() const;
