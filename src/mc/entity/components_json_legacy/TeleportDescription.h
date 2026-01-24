@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,21 +15,15 @@ struct TeleportDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk9b16a1;
-    ::ll::UntypedStorage<4, 4>  mUnkd7f130;
-    ::ll::UntypedStorage<4, 4>  mUnk50bb43;
-    ::ll::UntypedStorage<4, 12> mUnkd0b638;
-    ::ll::UntypedStorage<4, 4>  mUnkce79a1;
-    ::ll::UntypedStorage<4, 4>  mUnk3c9360;
-    ::ll::UntypedStorage<4, 4>  mUnkb3e45b;
-    ::ll::UntypedStorage<4, 4>  mUnk5f2e62;
+    ::ll::TypedStorage<1, 1, bool>    mRandomTeleports;
+    ::ll::TypedStorage<4, 4, float>   mMinTeleportTime;
+    ::ll::TypedStorage<4, 4, float>   mMaxTeleportTime;
+    ::ll::TypedStorage<4, 12, ::Vec3> mRandomTeleportCube;
+    ::ll::TypedStorage<4, 4, float>   mTargetDistance;
+    ::ll::TypedStorage<4, 4, float>   mTargetTeleportChance;
+    ::ll::TypedStorage<4, 4, float>   mLightTeleportChance;
+    ::ll::TypedStorage<4, 4, float>   mDarkTeleportChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeleportDescription& operator=(TeleportDescription const&);
-    TeleportDescription(TeleportDescription const&);
-    TeleportDescription();
 
 public:
     // virtual functions
@@ -43,15 +38,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

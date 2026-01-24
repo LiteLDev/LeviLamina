@@ -51,7 +51,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf38309;
+    ::ll::TypedStorage<8, 8, ::Connector::ConnectionCallbacks&> mCallbacks;
     // NOLINTEND
 
 public:
@@ -85,28 +85,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getLocalIp();
+    MCFOLD ::std::string $getLocalIp();
 
-    MCNAPI ushort $getPort() const;
+    MCFOLD ushort $getPort() const;
 
-    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCNAPI bool $isIPv4Supported() const;
+    MCFOLD bool $isIPv4Supported() const;
 
-    MCNAPI bool $isIPv6Supported() const;
+    MCFOLD bool $isIPv6Supported() const;
 
-    MCNAPI ushort $getIPv4Port() const;
+    MCFOLD ushort $getIPv4Port() const;
 
-    MCNAPI ushort $getIPv6Port() const;
+    MCFOLD ushort $getIPv6Port() const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::TransportLayer $getNetworkType() const;
+    MCFOLD ::TransportLayer $getNetworkType() const;
 #endif
 
 

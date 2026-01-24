@@ -9,18 +9,12 @@ class FloatOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk160d4d;
-    ::ll::UntypedStorage<4, 4> mUnkbffafd;
-    ::ll::UntypedStorage<4, 4> mUnk2054f2;
-    ::ll::UntypedStorage<4, 4> mUnkb0d644;
-    ::ll::UntypedStorage<4, 4> mUnk565d6e;
+    ::ll::TypedStorage<4, 4, float const> VALUE_MIN;
+    ::ll::TypedStorage<4, 4, float const> VALUE_MAX;
+    ::ll::TypedStorage<4, 4, float>       mValue;
+    ::ll::TypedStorage<4, 4, float>       mDefaultValue;
+    ::ll::TypedStorage<4, 4, float const> DELTA;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FloatOption& operator=(FloatOption const&);
-    FloatOption(FloatOption const&);
-    FloatOption();
 
 public:
     // virtual functions
@@ -40,16 +34,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCAPI void $load(::std::string const& valueString);
 #endif
 
 

@@ -9,12 +9,6 @@ class TempEPtrManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkfdd00e;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::_TickPtr*>> mTempTickPointers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TempEPtrManager& operator=(TempEPtrManager const&);
-    TempEPtrManager(TempEPtrManager const&);
-    TempEPtrManager();
 };

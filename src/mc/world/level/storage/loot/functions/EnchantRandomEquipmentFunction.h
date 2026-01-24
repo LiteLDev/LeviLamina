@@ -17,14 +17,8 @@ class EnchantRandomEquipmentFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfab570;
+    ::ll::TypedStorage<4, 4, float> mChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantRandomEquipmentFunction& operator=(EnchantRandomEquipmentFunction const&);
-    EnchantRandomEquipmentFunction(EnchantRandomEquipmentFunction const&);
-    EnchantRandomEquipmentFunction();
 
 public:
     // virtual functions
@@ -41,11 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

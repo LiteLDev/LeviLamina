@@ -40,16 +40,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk581d19;
-        ::ll::UntypedStorage<8, 8>  mUnk1cd584;
-        ::ll::UntypedStorage<4, 12> mUnkc5e5b6;
+        ::ll::TypedStorage<1, 1, bool>                                 mPlaceNewBlocks;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GateWayGenerator& operator=(GateWayGenerator const&);
-        GateWayGenerator(GateWayGenerator const&);
-        GateWayGenerator();
 
     public:
         // member functions

@@ -29,45 +29,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk85cc40;
-        ::ll::UntypedStorage<4, 4>  mUnk738917;
-        ::ll::UntypedStorage<4, 4>  mUnk59d95d;
+        ::ll::TypedStorage<8, 32, ::std::string> mEnchantmentName;
+        ::ll::TypedStorage<4, 4, int>            mMinLevel;
+        ::ll::TypedStorage<4, 4, int>            mMaxLevel;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EnchantmentOption& operator=(EnchantmentOption const&);
-        EnchantmentOption(EnchantmentOption const&);
-        EnchantmentOption();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~EnchantmentOption();
+        MCAPI ~EnchantmentOption();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1be4fe;
-    ::ll::UntypedStorage<4, 4>  mUnk751251;
-    ::ll::UntypedStorage<4, 4>  mUnk18274c;
-    ::ll::UntypedStorage<4, 4>  mUnk677e06;
-    ::ll::UntypedStorage<8, 24> mUnk4675c9;
+    ::ll::TypedStorage<4, 4, int>                                                                mBaseCost;
+    ::ll::TypedStorage<4, 4, int>                                                                mRandomBaseCost;
+    ::ll::TypedStorage<4, 4, int>                                                                mRandomPerLevelCost;
+    ::ll::TypedStorage<4, 4, int>                                                                mPerLevelCost;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EnchantBookForTradingFunction::EnchantmentOption>> mEnchantmentOptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantBookForTradingFunction& operator=(EnchantBookForTradingFunction const&);
-    EnchantBookForTradingFunction(EnchantBookForTradingFunction const&);
-    EnchantBookForTradingFunction();
 
 public:
     // virtual functions
@@ -90,33 +78,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EnchantmentInstance _getRandomEnchantInstance(::Random& random) const;
+    MCAPI ::EnchantmentInstance _getRandomEnchantInstance(::Random& random) const;
 
-    MCNAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
+    MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
+    MCAPI static ::std::optional<::EnchantBookForTradingFunction::EnchantmentOption>
     _parseEnchantmentOption(::Json::Value const& enchantOptionData);
 
-    MCNAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
+    MCAPI static ::std::unique_ptr<::EnchantBookForTradingFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
-    MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

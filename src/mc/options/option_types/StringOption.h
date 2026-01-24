@@ -9,16 +9,10 @@ class StringOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbd0c8a;
-    ::ll::UntypedStorage<8, 32> mUnk338bfd;
-    ::ll::UntypedStorage<8, 64> mUnke8bd90;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mValue;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mDefaultValue;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::string(::std::string const&)>> mCoerceValueCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StringOption& operator=(StringOption const&);
-    StringOption(StringOption const&);
-    StringOption();
 
 public:
     // virtual functions
@@ -33,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void set(::std::string const& value, bool saveOptionChange);
+    MCAPI_C void set(::std::string const& value, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCAPI void $load(::std::string const& valueString);
 #endif
 
 

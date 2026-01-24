@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/AsyncJoinDenyReason.h"
+
 struct AsyncJoinDeny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke49edf;
-    ::ll::UntypedStorage<8, 40> mUnkd6385c;
+    ::ll::TypedStorage<1, 1, ::AsyncJoinDenyReason>           denyReason;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> customDisconnectionString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AsyncJoinDeny& operator=(AsyncJoinDeny const&);
-    AsyncJoinDeny(AsyncJoinDeny const&);
-    AsyncJoinDeny();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~AsyncJoinDeny();
+    MCAPI ~AsyncJoinDeny();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

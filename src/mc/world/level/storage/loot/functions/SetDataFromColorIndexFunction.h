@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _applyImpl(
+    MCAPI bool _applyImpl(
         ::Item const*&       inOutItemDef,
         ::Actor const*       thisEntity,
         ::std::string const& originalItemName,
@@ -42,11 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

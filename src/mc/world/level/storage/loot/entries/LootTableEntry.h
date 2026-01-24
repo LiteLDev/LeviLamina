@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class LootTable;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -17,14 +18,8 @@ class LootTableEntry : public ::LootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8be934;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LootTable>> mTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootTableEntry& operator=(LootTableEntry const&);
-    LootTableEntry(LootTableEntry const&);
-    LootTableEntry();
 
 public:
     // virtual functions
@@ -40,16 +35,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry>
+    MCAPI static ::std::unique_ptr<::LootPoolEntry>
     deserialize(::Json::Value entry, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
 
-    MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
+    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
 
 
     // NOLINTEND

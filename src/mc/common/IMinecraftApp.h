@@ -13,7 +13,7 @@ class FileArchiver;
 class IGameModuleShared;
 class Minecraft;
 namespace Automation { class AutomationClient; }
-struct Options;
+class Options;
 // clang-format on
 
 class IMinecraftApp {

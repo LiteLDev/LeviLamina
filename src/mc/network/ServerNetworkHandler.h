@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationInfo.h"
+#include "mc/client/network/blob_cache/client_blob_cache/TransferBuilder.h"
 #include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
@@ -188,9 +189,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::PlayerAuthenticationInfo getPrimaryPlayerInfo() const;
+        MCAPI ::PlayerAuthenticationInfo getPrimaryPlayerInfo() const;
 
-        MCNAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
+        MCAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
         // NOLINTEND
     };
 
@@ -198,14 +199,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 248> mUnke6ab0b;
+        ::ll::TypedStorage<8, 248, ::ClientBlobCache::Server::TransferBuilder> mTransferBuilder;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TransferBuilderBatcher& operator=(TransferBuilderBatcher const&);
-        TransferBuilderBatcher(TransferBuilderBatcher const&);
-        TransferBuilderBatcher();
     };
 
 public:
@@ -1054,14 +1049,14 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForNetEventCallback();
+    MCAPI static void** $vftableForNetEventCallback();
 
-    MCNAPI static void** $vftableForMultiplayerServiceObserver();
+    MCAPI static void** $vftableForMultiplayerServiceObserver();
 
-    MCNAPI static void** $vftableForXboxLiveUserObserver();
+    MCAPI static void** $vftableForXboxLiveUserObserver();
 
-    MCNAPI static void** $vftableForLevelListener();
+    MCAPI static void** $vftableForLevelListener();
 
-    MCNAPI static void** $vftableForEnableQueueForMainThread();
+    MCAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
 };

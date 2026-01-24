@@ -13,12 +13,12 @@ class BaseActorRenderContext;
 class IClientInstance;
 class Level;
 class LevelRenderer;
+class Options;
 class Player;
 class ScreenContext;
 class Vec3;
 class WeakEntityRef;
 struct LevelRenderPreRenderUpdateParameters;
-struct Options;
 struct ShadowCascadeState;
 namespace mce::framebuilder { struct ShadowParameters; }
 // clang-format on

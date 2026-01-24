@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,19 +16,13 @@ class AreaAttackDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf11d58;
-    ::ll::UntypedStorage<4, 4>  mUnk66251f;
-    ::ll::UntypedStorage<4, 4>  mUnk70bae4;
-    ::ll::UntypedStorage<8, 64> mUnkf298ab;
-    ::ll::UntypedStorage<4, 4>  mUnkfc8483;
-    ::ll::UntypedStorage<1, 1>  mUnke25e9e;
+    ::ll::TypedStorage<4, 4, float>                                   mDamageRange;
+    ::ll::TypedStorage<4, 4, int>                                     mDamagePerTick;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mDamageCause;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                     mEntityFilter;
+    ::ll::TypedStorage<4, 4, float>                                   mAttackCooldownSeconds;
+    ::ll::TypedStorage<1, 1, bool>                                    mPlayAttackSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AreaAttackDefinition& operator=(AreaAttackDefinition const&);
-    AreaAttackDefinition(AreaAttackDefinition const&);
-    AreaAttackDefinition();
 
 public:
     // member functions

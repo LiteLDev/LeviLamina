@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -23,17 +24,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk433823;
-    ::ll::UntypedStorage<4, 4>  mUnk950a69;
-    ::ll::UntypedStorage<8, 24> mUnkce176b;
-    ::ll::UntypedStorage<8, 8>  mUnkcdf4f9;
+    ::ll::TypedStorage<4, 4, int>                                                    mWeight;
+    ::ll::TypedStorage<4, 4, int>                                                    mQuality;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemCondition>>> mConditions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LootPoolEntry>>                     mSubTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootPoolEntry& operator=(LootPoolEntry const&);
-    LootPoolEntry(LootPoolEntry const&);
-    LootPoolEntry();
 
 public:
     // virtual functions
@@ -48,14 +43,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry>
+    MCAPI static ::std::unique_ptr<::LootPoolEntry>
     deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

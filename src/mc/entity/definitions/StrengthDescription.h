@@ -14,16 +14,10 @@ struct StrengthDescription : public ::AttributeDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc495a2;
-    ::ll::UntypedStorage<4, 4> mUnkbaa826;
-    ::ll::UntypedStorage<4, 4> mUnkaddf55;
+    ::ll::TypedStorage<1, 1, bool> mHasComponent;
+    ::ll::TypedStorage<4, 4, int>  mStrength;
+    ::ll::TypedStorage<4, 4, int>  mMaxStrength;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StrengthDescription& operator=(StrengthDescription const&);
-    StrengthDescription(StrengthDescription const&);
-    StrengthDescription();
 
 public:
     // virtual functions
@@ -38,15 +32,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

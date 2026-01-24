@@ -12,10 +12,10 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
+class Options;
 class SceneStackProxy;
 class UIEventCoordinator;
 struct CachedScenes;
-struct Options;
 struct ScreenThreshold;
 namespace Bedrock::PubSub { class Subscription; }
 namespace OreUI { struct RouteAction; }

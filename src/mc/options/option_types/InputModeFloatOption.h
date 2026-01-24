@@ -13,17 +13,15 @@ class InputModeFloatOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk2c1e26;
-    ::ll::UntypedStorage<4, 4>  mUnk12b75b;
-    ::ll::UntypedStorage<8, 64> mUnk8fd07f;
-    ::ll::UntypedStorage<8, 64> mUnkac5f60;
-    ::ll::UntypedStorage<4, 4>  mUnk356984;
+    ::ll::TypedStorage<4, 4, float const>                               VALUE_MIN;
+    ::ll::TypedStorage<4, 4, float const>                               VALUE_MAX;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InputMode, float>> mValues;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::InputMode, float>> mDefaultValues;
+    ::ll::TypedStorage<4, 4, float const>                               DELTA;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    InputModeFloatOption& operator=(InputModeFloatOption const&);
-    InputModeFloatOption(InputModeFloatOption const&);
     InputModeFloatOption();
 
 public:
@@ -46,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C InputModeFloatOption(
+    MCAPI_C InputModeFloatOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -57,16 +55,16 @@ public:
         float                rangeMax
     );
 
-    MCNAPI_C void
+    MCAPI_C void
     _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
 
-    MCNAPI_C void set(::InputMode inputmode, float value, bool saveOptionChange);
+    MCAPI_C void set(::InputMode inputmode, float value, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -81,18 +79,18 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCFOLD void $load(::std::string const& valueString);
 
-    MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
+    MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 #endif
 
 

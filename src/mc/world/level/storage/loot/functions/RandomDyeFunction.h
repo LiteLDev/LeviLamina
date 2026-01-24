@@ -31,19 +31,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
+    MCAPI void _applyBase(::ItemStackBase& item, ::Random& random) const;
 
-    MCNAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
+    MCAPI ::mce::Color _getRandomArmorColor(::Random& random) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

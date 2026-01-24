@@ -20,16 +20,10 @@ class SetBookContentsFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc1d3ee;
-    ::ll::UntypedStorage<8, 32> mUnk651b29;
-    ::ll::UntypedStorage<8, 24> mUnk994879;
+    ::ll::TypedStorage<8, 32, ::std::string>                mTitle;
+    ::ll::TypedStorage<8, 32, ::std::string>                mAuthor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPages;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBookContentsFunction& operator=(SetBookContentsFunction const&);
-    SetBookContentsFunction(SetBookContentsFunction const&);
-    SetBookContentsFunction();
 
 public:
     // virtual functions
@@ -46,24 +40,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _fillUserData(::CompoundTag& tag);
+    MCAPI void _fillUserData(::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCNAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

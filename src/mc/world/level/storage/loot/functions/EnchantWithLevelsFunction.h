@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -20,15 +21,9 @@ class EnchantWithLevelsFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk3632ac;
-    ::ll::UntypedStorage<1, 1> mUnkc5975e;
+    ::ll::TypedStorage<4, 8, ::RandomValueBounds> mLevels;
+    ::ll::TypedStorage<1, 1, bool>                mTreasure;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantWithLevelsFunction& operator=(EnchantWithLevelsFunction const&);
-    EnchantWithLevelsFunction(EnchantWithLevelsFunction const&);
-    EnchantWithLevelsFunction();
 
 public:
     // virtual functions
@@ -51,22 +46,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

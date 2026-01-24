@@ -9,15 +9,9 @@ class StringListOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkeb1db8;
-    ::ll::UntypedStorage<8, 24> mUnk83fbdf;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mDefaultValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StringListOption& operator=(StringListOption const&);
-    StringListOption(StringListOption const&);
-    StringListOption();
 
 public:
     // virtual functions
@@ -32,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void set(::std::vector<::std::string> const& value, bool saveOptionChange);
+    MCAPI_C void set(::std::vector<::std::string> const& value, bool saveOptionChange);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCNAPI void $load(::std::string const& valueString);
+    MCAPI void $load(::std::string const& valueString);
 #endif
 
 

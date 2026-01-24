@@ -6,12 +6,6 @@ struct FlyingSpeedDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9bcae5;
+    ::ll::TypedStorage<4, 4, float> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlyingSpeedDefinition& operator=(FlyingSpeedDefinition const&);
-    FlyingSpeedDefinition(FlyingSpeedDefinition const&);
-    FlyingSpeedDefinition();
 };

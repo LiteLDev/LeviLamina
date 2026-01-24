@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ItemColor.h"
+#include "mc/world/level/block/BannerBlockType.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -19,18 +20,16 @@ namespace Json { class Value; }
 
 class SetBannerDetailsFunction : public ::LootItemFunction {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke809d9;
-    ::ll::UntypedStorage<1, 1>  mUnkd8feda;
-    ::ll::UntypedStorage<8, 24> mUnkc9e1fc;
-    // NOLINTEND
+    // SetBannerDetailsFunction inner types define
+    using Pattern = ::std::pair<uchar, ::ItemColor>;
 
 public:
-    // prevent constructor by default
-    SetBannerDetailsFunction& operator=(SetBannerDetailsFunction const&);
-    SetBannerDetailsFunction(SetBannerDetailsFunction const&);
-    SetBannerDetailsFunction();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::BannerBlockType>                               mBannerType;
+    ::ll::TypedStorage<1, 1, ::ItemColor>                                     mBaseColor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uchar, ::ItemColor>>> mBannerPatterns;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -47,27 +46,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _apply(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) const;
+    MCAPI void _apply(::ItemStackBase& item, ::Random& random, ::LootTableContext& context) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
 
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

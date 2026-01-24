@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EnchantmentInstance;
 class ItemInstance;
 class ItemStack;
 class LootTableContext;
@@ -17,15 +18,9 @@ class EnchantRandomlyFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkee08ad;
-    ::ll::UntypedStorage<1, 1>  mUnke32d3b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EnchantmentInstance>> mEnchantments;
+    ::ll::TypedStorage<1, 1, bool>                                  mTreasure;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantRandomlyFunction& operator=(EnchantRandomlyFunction const&);
-    EnchantRandomlyFunction(EnchantRandomlyFunction const&);
-    EnchantRandomlyFunction();
 
 public:
     // virtual functions
@@ -42,11 +37,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

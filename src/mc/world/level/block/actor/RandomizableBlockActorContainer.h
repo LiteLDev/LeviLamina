@@ -59,8 +59,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

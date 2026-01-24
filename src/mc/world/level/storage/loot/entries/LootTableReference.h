@@ -18,14 +18,8 @@ class LootTableReference : public ::LootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfe9ed0;
+    ::ll::TypedStorage<8, 32, ::std::string> mDir;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootTableReference& operator=(LootTableReference const&);
-    LootTableReference(LootTableReference const&);
-    LootTableReference();
 
 public:
     // virtual functions
@@ -41,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
         ::Json::Value                                          entry,
         int                                                    weight,
         int                                                    quality,
@@ -52,9 +46,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+    MCAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
 
-    MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
+    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
 
 
     // NOLINTEND

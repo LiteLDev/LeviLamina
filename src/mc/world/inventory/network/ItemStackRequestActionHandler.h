@@ -71,21 +71,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
+        MCAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
 
-        MCNAPI ~PlayerLegacyRequestSlotIdAssignment();
+        MCAPI ~PlayerLegacyRequestSlotIdAssignment();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
+        MCAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -138,23 +138,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ScreenData(::ItemStackRequestActionHandler::ScreenData&&);
+        MCAPI ScreenData(::ItemStackRequestActionHandler::ScreenData&&);
 
-        MCNAPI ::ItemStackRequestActionHandler::ScreenData& operator=(::ItemStackRequestActionHandler::ScreenData&&);
+        MCAPI ::ItemStackRequestActionHandler::ScreenData& operator=(::ItemStackRequestActionHandler::ScreenData&&);
 
-        MCNAPI ~ScreenData();
+        MCAPI ~ScreenData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ItemStackRequestActionHandler::ScreenData&&);
+        MCAPI void* $ctor(::ItemStackRequestActionHandler::ScreenData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

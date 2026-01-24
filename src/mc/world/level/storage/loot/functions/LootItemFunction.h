@@ -50,14 +50,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd6cdfe;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemCondition>>> mPredicates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootItemFunction& operator=(LootItemFunction const&);
-    LootItemFunction(LootItemFunction const&);
-    LootItemFunction();
 
 public:
     // virtual functions
@@ -78,14 +72,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<
+    MCAPI static ::std::unordered_map<
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
@@ -95,15 +89,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCNAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
 
     // NOLINTEND

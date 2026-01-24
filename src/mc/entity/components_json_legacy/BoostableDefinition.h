@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BoostItem;
+// clang-format on
+
 class BoostableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd849f7;
-    ::ll::UntypedStorage<4, 4>  mUnk520096;
-    ::ll::UntypedStorage<4, 4>  mUnk37d505;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BoostItem>> mBoostItems;
+    ::ll::TypedStorage<4, 4, float>                       mMaxBoostTime;
+    ::ll::TypedStorage<4, 4, float>                       mSpeedModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoostableDefinition& operator=(BoostableDefinition const&);
-    BoostableDefinition(BoostableDefinition const&);
-    BoostableDefinition();
 };

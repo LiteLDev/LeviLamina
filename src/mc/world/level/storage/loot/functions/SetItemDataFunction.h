@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/world/level/storage/loot/RandomValueBounds.h"
 #include "mc/world/level/storage/loot/functions/LootItemFunction.h"
 
 // auto generated forward declare list
@@ -35,15 +36,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk66cbff;
-    ::ll::UntypedStorage<4, 4> mUnkf2597e;
+    ::ll::TypedStorage<4, 8, ::RandomValueBounds>              mValue;
+    ::ll::TypedStorage<4, 4, ::LootItemFunction::FunctionType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetItemDataFunction& operator=(SetItemDataFunction const&);
-    SetItemDataFunction(SetItemDataFunction const&);
-    SetItemDataFunction();
 
 public:
     // virtual functions
@@ -60,14 +55,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
         ::Item const*&       inOutItemDef,
         ::std::string const& originalItemName,
         ::Random&            random,
         int&                 outResultAux
     );
 
-    MCNAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
         ::std::string const& originalItemName,
         ::std::string const& itemRawNameId,
         ::Random&            random,
@@ -75,24 +70,24 @@ public:
         ::WeakPtr<::Item>&   outItem
     );
 
-    MCNAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
+    MCAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
 
 
     // NOLINTEND

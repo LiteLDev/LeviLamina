@@ -112,95 +112,95 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AppPlatformWindows();
+    MCAPI_C AppPlatformWindows();
 
-    MCNAPI uint64 _findHighPerformanceThreadsCount() const;
+    MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
+    MCAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uint64 $getTotalHardwareThreadsCount() const;
+    MCAPI uint64 $getTotalHardwareThreadsCount() const;
 
-    MCNAPI uint64 $getHighPerformanceThreadsCount() const;
+    MCAPI uint64 $getHighPerformanceThreadsCount() const;
 
-    MCNAPI void $initializeGraphicsDeviceTier();
+    MCAPI void $initializeGraphicsDeviceTier();
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCFOLD ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCNAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
+    MCAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
 
-    MCNAPI bool $allowContentLogWriteToDisk();
+    MCFOLD bool $allowContentLogWriteToDisk();
 
-    MCNAPI bool $devHotReloadRenderResources() const;
+    MCFOLD bool $devHotReloadRenderResources() const;
 
-    MCNAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
+    MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
-    MCNAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
+    MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
-    MCNAPI bool $canAppSelfTerminate() const;
+    MCFOLD bool $canAppSelfTerminate() const;
 
-    MCNAPI bool $getPlatformTTSExists() const;
+    MCFOLD bool $getPlatformTTSExists() const;
 
-    MCNAPI bool $getPlatformTTSEnabled() const;
+    MCAPI bool $getPlatformTTSEnabled() const;
 
-    MCNAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCNAPI bool $is24HourTimeFormat() const;
+    MCAPI bool $is24HourTimeFormat() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
 
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string $getSystemLocale() const;
+    MCAPI ::std::string $getSystemLocale() const;
 
-    MCNAPI void $collectGraphicsHardwareDetails();
+    MCFOLD void $collectGraphicsHardwareDetails();
 
-    MCNAPI bool $supportsMSAA() const;
+    MCFOLD bool $supportsMSAA() const;
 
-    MCNAPI bool $supportsAlbumExport() const;
+    MCFOLD bool $supportsAlbumExport() const;
 
-    MCNAPI bool $supportsPDFExport() const;
+    MCFOLD bool $supportsPDFExport() const;
 
-    MCNAPI ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
+    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 
-    MCNAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
+    MCAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
 
-    MCNAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
+    MCAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
     $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
 
-    MCNAPI bool $isTablet() const;
+    MCFOLD bool $isTablet() const;
 
-    MCNAPI double $getTimeSFromProcessStart() const;
+    MCAPI double $getTimeSFromProcessStart() const;
 
-    MCNAPI void $showXboxLiveUserSettings();
+    MCAPI void $showXboxLiveUserSettings();
 #endif
 
 

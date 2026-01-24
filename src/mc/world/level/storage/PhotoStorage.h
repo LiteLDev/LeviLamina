@@ -18,91 +18,89 @@ class PhotoStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk90e915;
-    ::ll::UntypedStorage<8, 32> mUnk735fe6;
-    ::ll::UntypedStorage<8, 32> mUnkba338e;
-    ::ll::UntypedStorage<8, 32> mUnke545fe;
-    ::ll::UntypedStorage<8, 32> mUnka43046;
-    ::ll::UntypedStorage<8, 64> mUnk34296d;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>   mBaseDir;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>   mBookDir;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>   mPhotoDir;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>   mPhotoItemDir;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>   mManifestDir;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mChecksums;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PhotoStorage& operator=(PhotoStorage const&);
-    PhotoStorage(PhotoStorage const&);
     PhotoStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PhotoStorage(::Core::Path const& baseDir);
+    MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
-    MCNAPI_C bool _addValidFile(::Core::Path path);
+    MCAPI_C bool _addValidFile(::Core::Path path);
 
-    MCNAPI_C bool _isValidFile(::Core::Path file);
+    MCAPI_C bool _isValidFile(::Core::Path file);
 
-    MCNAPI_C bool _readFile(::Core::Path path, ::std::string& resultData);
+    MCAPI_C bool _readFile(::Core::Path path, ::std::string& resultData);
 
-    MCNAPI void _readManifest();
+    MCAPI void _readManifest();
 
-    MCNAPI_C bool _writeFile(::Core::Path path, ::std::string const& photoData);
+    MCAPI_C bool _writeFile(::Core::Path path, ::std::string const& photoData);
 
-    MCNAPI_C void _writeManifest();
+    MCAPI_C void _writeManifest();
 
-    MCNAPI_C void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
+    MCAPI_C void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
-    MCNAPI_C ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
+    MCAPI_C ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
 
-    MCNAPI_C void
+    MCAPI_C void
     getPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName, ::std::string& resultData);
 
-    MCNAPI_C ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
+    MCAPI_C ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
 
-    MCNAPI_C void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
+    MCAPI_C void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
-    MCNAPI_C void storePhoto(
+    MCAPI_C void storePhoto(
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData
     );
 
-    MCNAPI_C ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
+    MCAPI_C ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
         ::Player&                      owner,
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData
     );
 
-    MCNAPI ~PhotoStorage();
+    MCAPI ~PhotoStorage();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathBuffer<::std::string> getScreenshotFilename();
+    MCAPI_C static ::Core::PathBuffer<::std::string> getScreenshotFilename();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& BOOKS_DIR();
+    MCAPI static ::std::string const& BOOKS_DIR();
 
-    MCNAPI static ::std::string const& MANIFEST_NAME();
+    MCAPI static ::std::string const& MANIFEST_NAME();
 
-    MCNAPI static ::std::string const& PHOTOITEM_DIR();
+    MCAPI static ::std::string const& PHOTOITEM_DIR();
 
-    MCNAPI static ::std::string const& PHOTO_DIR();
+    MCAPI static ::std::string const& PHOTO_DIR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& baseDir);
+    MCAPI void* $ctor(::Core::Path const& baseDir);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
