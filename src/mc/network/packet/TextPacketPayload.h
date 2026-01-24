@@ -31,9 +31,12 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        AuthorAndMessage(AuthorAndMessage const&);
-        AuthorAndMessage();
+        AuthorAndMessage(AuthorAndMessage const&) = default;
+        AuthorAndMessage()                        = default;
+        AuthorAndMessage(TextPacketType type, std::string const& author, std::string const& message)
+        : mType(type),
+          mAuthor(author),
+          mMessage(message) {}
 
     public:
         // member functions
@@ -64,9 +67,12 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        MessageAndParams(MessageAndParams const&);
-        MessageAndParams();
+        MessageAndParams(MessageAndParams const&) = default;
+        MessageAndParams()                        = default;
+        MessageAndParams(TextPacketType type, std::string const& message, std::vector<std::string> const& params)
+        : mType(type),
+          mMessage(message),
+          mParams(params) {}
 
     public:
         // member functions
@@ -96,9 +102,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        MessageOnly(MessageOnly const&);
-        MessageOnly();
+        MessageOnly(MessageOnly const&) = default;
+        MessageOnly()                   = default;
+        MessageOnly(TextPacketType type, std::string const& message) : mType(type), mMessage(message) {}
 
     public:
         // member functions

@@ -16,30 +16,24 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class TextPacket : public ::Packet {
-public:
-    [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
-        auto res  = TextPacket{};
-        res.mType = TextPacketType::Raw;
-        res.mMessage.assign(msg);
-        return res;
-    }
-
+class TextPacket : public ::ll::PayloadPacket<::TextPacketPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::TextPacketType               mType;
-    ::std::string                  mAuthor;
-    ::std::string                  mMessage;
-    ::std::optional<::std::string> mFilteredMessage;
-    ::std::vector<::std::string>   params;
-    bool                           mLocalize;
-    ::std::string                  mXuid;
-    ::std::string                  mPlatformId;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
     TextPacket(TextPacket const&) = default;
+
+    [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
+        auto        res = TextPacket{};
+        MessageOnly message;
+        message.mType = TextPacketType::Raw;
+        message.mMessage->assign(msg);
+        res.mBody = message;
+        return res;
+    }
 
 public:
     // virtual functions

@@ -31,7 +31,8 @@ LL_TYPE_INSTANCE_HOOK(
     TextPacket const&        packet
 ) {
     if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId); player) {
-        auto event = PlayerChatEvent{*player, const_cast<TextPacket&>(packet).mMessage};
+        auto msg   = std::visit([](auto&& arg) { return arg.mMessage; }, packet.mBody.get());
+        auto event = PlayerChatEvent{*player, msg};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return;
