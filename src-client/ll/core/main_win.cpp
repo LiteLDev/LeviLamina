@@ -10,7 +10,6 @@
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
-#include "ll/core/gui/ImGuiHooks.h"
 #include "ll/core/mod/ModRegistrar.h"
 
 #include "mc/client/game/MinecraftGame.h"

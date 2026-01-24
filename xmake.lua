@@ -11,7 +11,7 @@ local is_server = is_config("target_type", "server")
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
-add_requires("entt v3.14.0")
+add_requires("entt v3.15.0")
 add_requires("expected-lite v0.8.0")
 add_requires("fmt 11.2.0")
 add_requires("gsl v4.0.0")
@@ -49,14 +49,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v1.21.124-server.5")
+        add_requires("bedrockdata v1.21.132-server.1")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v1.21.124-client.3")
-    end
-    if is_windows then
-        add_requires("imgui[dx11=y,dx12=y] v1.91.0-docking")
+        add_requires("bedrockdata v1.21.132-client.1")
     end
 end
 
@@ -205,7 +202,6 @@ target("LeviLamina")
         if is_windows then
             add_syslinks("dxgi", "runtimeobject", "gdi32")
         end
-        add_packages("imgui")
         add_headerfiles("src-client/(ll/api/**.h)", "src-client/(mc/**.h)")
         add_includedirs("src-client")
         add_defines("LL_PLAT_C")
