@@ -25,8 +25,11 @@ jobs:
 
       - name: Install Doxygen
         run: |
-          sudo apt update
-          sudo apt install doxygen -y
+          wget -qO doxygen.tar.gz https://www.doxygen.nl/files/doxygen-1.16.1.linux.bin.tar.gz
+          tar -xzf doxygen.tar.gz
+          sudo cp -r doxygen-*/bin/* /usr/local/bin/
+          sudo chmod +x /usr/local/bin/doxygen
+          doxygen --version
 
       - run: |
           doxygen docs/api/Doxyfile
