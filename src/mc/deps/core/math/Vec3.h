@@ -17,8 +17,6 @@ public:
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
-
-    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
