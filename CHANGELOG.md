@@ -7,9 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-01-25
+
+### Added
+
+- Added client support @OEOTYAN @dreamguxiang @ShrBox
+- Added MouseInputEvent @dreamguxiang
+- Added KeyInputEvent @dreamguxiang
+- Added custom shortcut key support @dreamguxiang @OEOTYAN
+- Added `mce::Color::toARGB` @Lovelylavender4
+- Added packs support for mods @dreamguxiang
+- Added `ll::isClient` @ShrBox
+- Added `ll::service::getDBStorage` @ShrBox
+- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot` @ShrBox
+- Added ClientExitLevelEvent @ShrBox
+- Added ClientStartJoinLevelEvent @ShrBox
+- Added ClientCancelJoinLevelEvent @ShrBox
+- Added ClientJoinLevelEvent @ShrBox
+- Removed `Player::getCertificate`
+- Added custom packet @dreamguxiang @OEOTYAN
+
 ### Changed
 
-- Removed `Player::getCertificate`
+- Supported Minecraft 1.21.132.1 and Bedrock Dedicated Server 1.21.132.3 @OEOTYAN @ShrBox @dreamguxiang
+- Bumped PreLoader to v1.15.7
+- Bumped bedrock-runtime-data to v1.21.132-server.2
+- Bumped bedrock-runtime-data to v1.21.132-client.3
+- Bumped levilamina-loc to 1.6.*
 
 ## [1.8.0-rc.2] - 2026-01-17
 
@@ -1272,7 +1296,8 @@ For lip and tooth-hub test only.
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.2...v1.9.0
 [1.8.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.1...v1.8.0-rc.2
 [1.8.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...v1.8.0-rc.1
 [1.7.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.6...v1.7.7

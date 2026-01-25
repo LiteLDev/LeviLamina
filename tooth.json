@@ -13,7 +13,7 @@
         {
             "platform": "win-x64",
             "dependencies": {
-                "github.com/LiteLDev/bds": "1.21.132",
+                "github.com/LiteLDev/bds": "1.21.132-patch.3",
                 "github.com/LiteLDev/CrashLogger": "1.3.*",
                 "github.com/LiteLDev/levilamina-loc": "1.6.*",
                 "github.com/LiteLDev/PeEditor": "3.9.*",
