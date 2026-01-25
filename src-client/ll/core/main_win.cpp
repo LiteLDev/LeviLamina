@@ -13,7 +13,6 @@
 #include "ll/core/mod/ModRegistrar.h"
 
 #include "mc/client/game/ClientInstance.h"
-#include "mc/client/game/MinecraftGame.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -48,8 +47,6 @@ std::string& defaultLocaleCode();
 }
 
 void leviLaminaMain() {
-    // gui::init();
-
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
         res.error().log(getLogger());
@@ -62,6 +59,8 @@ void leviLaminaMain() {
     }
 
     printWelcomeMsg();
+
+    CrashLogger::init();
 
     command::registerCommands();
 
@@ -82,9 +81,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     getLogger().debug("sendServerInitializeEnd");
 
     auto result = origin(ins);
-    // service::bedrock::serverInstance = std::addressof(ins);
-
-    CrashLogger::init();
 
     mod::ModRegistrar::getInstance().enableAllMods();
 
