@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -50,6 +51,15 @@ public:
 public:
     // prevent constructor by default
     Scoreboard();
+
+public:
+    LLAPI int modifyPlayerScore(
+        ScoreboardOperationResult& result,
+        ScoreboardId const&        id,
+        Objective&                 objective,
+        int                        scoreValue,
+        PlayerScoreSetFunction     action
+    );
 
 public:
     // virtual functions
