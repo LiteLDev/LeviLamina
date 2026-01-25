@@ -20,6 +20,12 @@ public:
 
     [[nodiscard]] constexpr optional_ref(std::nullptr_t) noexcept {}
 
+
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
+    constexpr optional_ref(U const&& r) noexcept = delete;
+
+
     template <class U>
         requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(std::optional<U>& o) noexcept : mPtr(o ? std::addressof(*o) : nullptr) {}

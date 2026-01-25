@@ -86,6 +86,12 @@ public:
     ::std::vector<::Bedrock::CallStack::FrameWithContext> mFrames;
     // NOLINTEND
 
+    CallStack()                                = default;
+    CallStack(CallStack const&)                = default;
+    CallStack& operator=(CallStack const&)     = default;
+    CallStack(CallStack&&) noexcept            = default;
+    CallStack& operator=(CallStack&&) noexcept = default;
+
 public:
     // member functions
     // NOLINTBEGIN

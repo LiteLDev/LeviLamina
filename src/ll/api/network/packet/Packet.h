@@ -45,9 +45,11 @@ public:
 
     virtual ~Packet() = default;
 
-    virtual void                    write(::BinaryStream&) const   = 0;
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
-    virtual ::std::string           getName() const                = 0;
+    virtual void                                  write(::BinaryStream&) const  = 0;
+    [[nodiscard]] virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&) = 0;
+    [[nodiscard]] virtual ::std::string           getName() const               = 0;
+
+    [[nodiscard]] virtual PacketRuntimeId getRuntimeId() const;
 
     LLAPI void sendToServer() const;
     LLAPI void sendToClient(::NetworkIdentifier const& identifier, ::SubClientId clientId) const;
@@ -69,7 +71,8 @@ class PacketBase : public Packet {
     static bool ensureRegistered() {
         PacketRegistrar::getInstance().registerPacket(
             reflection::type_unprefix_name_v<Derived>,
-            []() -> std::shared_ptr<Packet> { return std::make_shared<Derived>(); }
+            ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>),
+            []() -> std::unique_ptr<Packet> { return std::make_shared<Derived>(); }
         );
         return true;
     }
@@ -81,6 +84,10 @@ public:
     [[nodiscard]] ::std::string getName() const override {
         return ::std::string(reflection::type_unprefix_name_v<Derived>);
     }
+    [[nodiscard]] PacketRuntimeId getRuntimeId() const override {
+        constexpr PacketRuntimeId runtimeId = ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>);
+        return runtimeId;
+    }
 
     inline static bool sRegistered = ensureRegistered();
 };
@@ -91,7 +98,8 @@ class PacketHandlerBase : public IPacketHandler {
         static Derived instance;
         PacketRegistrar::getInstance().registerHandler(
             reflection::type_unprefix_name_v<PacketType>,
-            std::shared_ptr<IPacketHandler>(std::shared_ptr<void>{}, &instance)
+            ll::hash_utils::doHash(reflection::type_unprefix_name_v<PacketType>),
+            instance
         );
         return true;
     }

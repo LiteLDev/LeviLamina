@@ -12,16 +12,19 @@
 #include "ll/api/utils/HashUtils.h"
 
 namespace ll::network {
+
+PacketRuntimeId Packet::getRuntimeId() const { return ll::hash_utils::doHash(getName()); }
+
 void Packet::sendToServer() const {
-    auto          level = ll::service::getMinecraft(true)->getLevel();
-    if(!level) return;
-    RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+    auto level = ll::service::getMinecraft(true)->getLevel();
+    if (!level) return;
+    RuntimePacket packet(*this);
     level->getPacketSender()->sendToServer(packet);
 }
 
 void Packet::sendToClient(::NetworkIdentifier const& identifier, ::SubClientId clientId) const {
     ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+        RuntimePacket packet(*this);
         level.getPacketSender()->sendToClient(identifier, packet, clientId);
         return true;
     });
@@ -29,7 +32,7 @@ void Packet::sendToClient(::NetworkIdentifier const& identifier, ::SubClientId c
 
 void Packet::sendToClient(::UserEntityIdentifierComponent const* user) {
     ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+        RuntimePacket packet(*this);
         level.getPacketSender()->sendToClient(user, packet);
         return true;
     });
@@ -38,7 +41,7 @@ void Packet::sendToClient(::UserEntityIdentifierComponent const* user) {
 
 void Packet::sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& users) {
     ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+        RuntimePacket packet(*this);
         level.getPacketSender()->sendToClients(users, packet);
         return true;
     });
@@ -46,7 +49,7 @@ void Packet::sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& us
 
 void Packet::sendBroadcast() {
     ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+        RuntimePacket packet(*this);
         level.getPacketSender()->sendBroadcast(packet);
         return true;
     });
@@ -54,7 +57,7 @@ void Packet::sendBroadcast() {
 
 void Packet::sendBroadcast(::NetworkIdentifier const& identifier, ::SubClientId clientId) {
     ll::service::getLevel().transform([&](auto& level) {
-        RuntimePacket packet(ll::hash_utils::doHash(getName()), *this);
+        RuntimePacket packet(*this);
         level.getPacketSender()->sendBroadcast(identifier, clientId, packet);
         return true;
     });

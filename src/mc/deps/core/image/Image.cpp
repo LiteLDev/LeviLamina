@@ -5,7 +5,7 @@ namespace mce {
 
 Image::Image() : imageFormat(ImageFormat::Unknown), mWidth(0), mHeight(0), mDepth(1), mUsage(ImageUsage::Unknown) {}
 
-Image::Image(unsigned w, unsigned h, ImageFormat format, ImageUsage usage)
+Image::Image(uint32 w, uint32 h, ImageFormat format, ImageUsage usage)
 : imageFormat(format),
   mWidth(w),
   mHeight(h),
@@ -14,11 +14,11 @@ Image::Image(unsigned w, unsigned h, ImageFormat format, ImageUsage usage)
   mImageBytes() {}
 
 Image::Image(
-    const uint32_t         w,
-    const uint32_t         h,
-    const uint32_t         d,
-    const mce::ImageFormat format,
-    const mce::ImageUsage  usage
+   uint32       w,
+   uint32       h,
+   uint32       d,
+   mce::ImageFormat format,
+   mce::ImageUsage  usage
 )
 : imageFormat(format),
   mWidth(w),
@@ -80,20 +80,20 @@ mce::Image& Image::operator=(mce::Image&& rhs) {
 void Image::setRawImage(mce::Image::Storage&& contents) { mImageBytes = std::move(contents); }
 
 void Image::setImageDescription(
-    const uint32_t         w,
-    const uint32_t         h,
-    const mce::ImageFormat format,
-    const mce::ImageUsage  usage
+   uint32         w,
+   uint32         h,
+   mce::ImageFormat format,
+   mce::ImageUsage  usage
 ) {
     setImageDescription(w, h, 1, format, usage);
 }
 
 void Image::setImageDescription(
-    const uint32_t         w,
-    const uint32_t         h,
-    const uint32_t         d,
-    const mce::ImageFormat format,
-    const mce::ImageUsage  usage
+   uint32         w,
+   uint32         h,
+   uint32         d,
+   mce::ImageFormat format,
+   mce::ImageUsage  usage
 ) {
     mWidth      = w;
     mHeight     = h;
@@ -137,8 +137,8 @@ static size_t getBytesPerPixel(mce::ImageFormat format) {
 }
 
 void Image::resizeImageBytesToFitImageDescription() {
-    unsigned depth         = mDepth ? mDepth : 1;
-    unsigned bytesPerPixel = getBytesPerPixel(imageFormat);
+    auto depth         = mDepth ? mDepth : 1;
+    auto bytesPerPixel = getBytesPerPixel(imageFormat);
 
     std::size_t totalBytes = static_cast<std::size_t>(depth) * mWidth * mHeight * bytesPerPixel;
 

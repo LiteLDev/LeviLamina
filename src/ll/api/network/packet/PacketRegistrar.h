@@ -12,25 +12,27 @@ namespace ll::network {
 class Packet;
 class IPacketHandler;
 
+using PacketRuntimeId = uint64;
+
 class PacketRegistrar {
 public:
-    using PacketFactory = std::function<std::shared_ptr<Packet>()>;
-    using PacketHandler = std::shared_ptr<IPacketHandler>;
+    using PacketFactory = std::function<std::unique_ptr<Packet>()>;
+    using PacketHandler = optional_ref<IPacketHandler>;
 
-    static PacketRegistrar& getInstance();
+    LLNDAPI static PacketRegistrar& getInstance();
 
-    bool registerPacket(std::string_view name, PacketFactory factory);
-    bool registerPacket(std::string_view name, PacketFactory factory, PacketHandler handler);
-    bool registerHandler(std::string_view name, PacketHandler handler);
+    LLAPI bool registerPacket(std::string_view name, PacketRuntimeId id, PacketFactory factory);
+    LLAPI bool registerPacket(std::string_view name, PacketRuntimeId id, PacketFactory factory, PacketHandler handler);
+    LLAPI bool registerHandler(std::string_view name, PacketRuntimeId id, PacketHandler handler);
 
-    std::shared_ptr<Packet> createPacket(uint64 runtimeId);
-    PacketHandler           getHandler(uint64 runtimeId);
+    LLNDAPI std::unique_ptr<Packet> createPacket(PacketRuntimeId runtimeId);
+    LLNDAPI PacketHandler           getHandler(PacketRuntimeId runtimeId);
 
 private:
     PacketRegistrar() = default;
 
-    ConcurrentDenseMap<uint64, PacketFactory> mPackets;
-    ConcurrentDenseMap<uint64, PacketHandler> mHandlers;
+    ConcurrentDenseMap<PacketRuntimeId, PacketFactory> mPackets;
+    ConcurrentDenseMap<PacketRuntimeId, PacketHandler> mHandlers;
 };
 
 } // namespace ll::network

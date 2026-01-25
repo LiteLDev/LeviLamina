@@ -204,7 +204,7 @@ enum class MinecraftPacketIds : int {
     CameraPresets                            = 198,
     UnlockedRecipes                          = 199,
     TitleSpecificPacketsStart                = 200,
-    RuntimePacket                            = 201,
+    LeviLaminaRuntimePacket                  = 201,
     TitleSpecificPacketsEnd                  = 299,
     CameraInstruction                        = 300,
     CompressedBiomeDefinitionListDeprecated  = 301,

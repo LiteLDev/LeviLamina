@@ -6,24 +6,26 @@
 
 namespace ll::network {
 
-MinecraftPacketIds RuntimePacket::getId() const { return MinecraftPacketIds::RuntimePacket; }
+MinecraftPacketIds RuntimePacket::getId() const { return MinecraftPacketIds::LeviLaminaRuntimePacket; }
 
-std::string RuntimePacket::getName() const { return "RuntimePacket"; }
+std::string RuntimePacket::getName() const { return "LeviLaminaRuntimePacket"; }
 
 void RuntimePacket::write(BinaryStream& bs) const {
-    bs.writeUnsignedInt64(mRuntimeId, "RuntimeId", "The runtime id of the packet");
-    mPacket->write(bs);
+    bs.writeUnsignedInt64(runtimeId, "RuntimeId", "The runtime id of the packet");
+    packet->write(bs);
 }
 
 Bedrock::Result<void> RuntimePacket::_read(ReadOnlyBinaryStream& bs) {
-    mRuntimeId = bs.getUnsignedInt64().value();
-
-    mPacket = PacketRegistrar::getInstance().createPacket(mRuntimeId);
-    if (!mPacket) {
-        return {};
+    if (auto res = bs.getUnsignedInt64(); res) {
+        runtimeId = res.value();
+    } else {
+        return nonstd::make_unexpected(res.error());
     }
-
-    return mPacket->_read(bs);
+    movePacket(PacketRegistrar::getInstance().createPacket(runtimeId));
+    if (!ownedPacket) {
+        return nonstd::make_unexpected(Bedrock::ErrorInfo<>{std::error_code{}});
+    }
+    return ownedPacket->read(bs);
 }
 
 }; // namespace ll::network

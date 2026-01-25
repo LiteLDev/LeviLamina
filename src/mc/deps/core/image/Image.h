@@ -21,8 +21,8 @@ struct Image {
     mce::Image::Storage mImageBytes;
 
     LLNDAPI Image();
-    LLNDAPI Image(const uint32 w, const uint32 h, const mce::ImageFormat format, const mce::ImageUsage usage);
-    LLNDAPI Image(const uint32, const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
+    LLNDAPI Image(uint32 w, uint32 h, mce::ImageFormat format, mce::ImageUsage usage);
+    LLNDAPI Image(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage);
     LLNDAPI Image(const mce::Image&);
     LLNDAPI Image(mce::Image&&);
     LLNDAPI Image(mce::Image::Storage&&);
@@ -31,12 +31,12 @@ struct Image {
     LLAPI mce::Image& operator=(const mce::Image&);
     LLAPI mce::Image& operator=(mce::Image&&);
     LLAPI void        setRawImage(mce::Image::Storage&& contents);
-    LLAPI void        setImageDescription(const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
-    LLAPI void setImageDescription(const uint32, const uint32, const uint32, const mce::ImageFormat, const mce::ImageUsage);
-    LLAPI void copyRawImage(const mce::Image::Storage&);
-    LLAPI mce::Image          clone() const;
-    LLAPI bool                isEmpty() const;
-    LLAPI void                resizeImageBytesToFitImageDescription();
+    LLAPI void        setImageDescription(uint32 w, uint32 h, mce::ImageFormat format, mce::ImageUsage usage);
+    LLAPI void        setImageDescription(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage);
+    LLAPI void        copyRawImage(const mce::Image::Storage&);
+    LLAPI mce::Image clone() const;
+    LLAPI bool       isEmpty() const;
+    LLAPI void       resizeImageBytesToFitImageDescription();
 };
 
 } // namespace mce

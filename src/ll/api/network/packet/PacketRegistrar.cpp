@@ -13,64 +13,66 @@ PacketRegistrar& PacketRegistrar::getInstance() {
     return instance;
 }
 
-bool PacketRegistrar::registerPacket(std::string_view name, PacketFactory factory) {
-    uint64 hash     = ll::hash_utils::doHash(name);
-    bool   inserted = false;
+bool PacketRegistrar::registerPacket(std::string_view /*name*/, PacketRuntimeId id, PacketFactory factory) {
+    bool inserted = false;
     mPackets.lazy_emplace_l(
-        hash,
+        id,
         [](auto&) {},
         [&](auto const& ctor) {
-            ctor(hash, std::move(factory));
+            ctor(id, std::move(factory));
             inserted = true;
         }
     );
     return inserted;
 }
 
-bool PacketRegistrar::registerPacket(std::string_view name, PacketFactory factory, PacketHandler handler) {
-    uint64 hash     = ll::hash_utils::doHash(name);
-    bool   inserted = false;
+bool PacketRegistrar::registerPacket(
+    std::string_view name,
+    PacketRuntimeId  id,
+    PacketFactory    factory,
+    PacketHandler    handler
+) {
+    bool inserted = false;
 
-    if (mHandlers.contains(hash)) {
+    if (mHandlers.contains(id)) {
         return false;
     }
 
     mPackets.lazy_emplace_l(
-        hash,
+        id,
         [](auto&) {},
         [&](auto const& ctor) {
-            ctor(hash, std::move(factory));
+            ctor(id, std::move(factory));
             inserted = true;
         }
     );
 
     if (inserted && handler) {
-        mHandlers.try_emplace(hash, std::move(handler));
+        registerHandler(name, id, std::move(handler));
     }
     return inserted;
 }
 
-bool PacketRegistrar::registerHandler(std::string_view name, PacketHandler handler) {
-    uint64 hash     = ll::hash_utils::doHash(name);
-    bool   inserted = false;
+bool PacketRegistrar::registerHandler(std::string_view /*name*/, PacketRuntimeId id, PacketHandler handler) {
+    bool inserted = false;
     mHandlers.lazy_emplace_l(
-        hash,
+        id,
         [](auto&) {},
         [&](auto const& ctor) {
-            ctor(hash, std::move(handler));
+            ctor(id, std::move(handler));
             inserted = true;
         }
     );
     return inserted;
 }
 
-std::shared_ptr<Packet> PacketRegistrar::createPacket(uint64 runtimeId) {
+std::unique_ptr<Packet> PacketRegistrar::createPacket(PacketRuntimeId runtimeId) {
     PacketFactory factory;
     mPackets.if_contains(runtimeId, [&](auto const& v) { factory = v.second; });
     return factory ? factory() : nullptr;
 }
 
-PacketRegistrar::PacketHandler PacketRegistrar::getHandler(uint64 runtimeId) {
+PacketRegistrar::PacketHandler PacketRegistrar::getHandler(PacketRuntimeId runtimeId) {
     PacketHandler handler;
     mHandlers.if_contains(runtimeId, [&](auto const& v) { handler = v.second; });
     return handler;
@@ -86,14 +88,14 @@ public:
         ::NetEventCallback&          netEvent,
         ::std::shared_ptr<::Packet>& pkt
     ) const override {
-        auto& packet = (std::shared_ptr<ll::network::RuntimePacket>&)pkt;
-        if (!packet->mPacket) {
+        auto& packet = static_cast<ll::network::RuntimePacket&>(*pkt);
+        if (!packet.hasPacket()) {
             return;
         }
 
-        auto handler = ll::network::PacketRegistrar::getInstance().getHandler(packet->mRuntimeId);
+        auto handler = ll::network::PacketRegistrar::getInstance().getHandler(packet.getRuntimeId());
         if (handler) {
-            handler->handle(networkId, netEvent, *packet->mPacket);
+            handler->handle(networkId, netEvent, packet.getPacket());
             return;
         }
     }
@@ -108,7 +110,7 @@ LL_AUTO_STATIC_HOOK(
     ::std::shared_ptr<::Packet>,
     MinecraftPacketIds id
 ) {
-    if (id == MinecraftPacketIds::RuntimePacket) {
+    if (id == MinecraftPacketIds::LeviLaminaRuntimePacket) {
         auto packet      = std::make_shared<ll::network::RuntimePacket>();
         packet->mHandler = &RuntimePacketPacketHandler;
         return packet;
