@@ -27,7 +27,6 @@ LL_TYPE_STATIC_HOOK(
     ::Level const&                         level
 ) {
     if (!isHost) {
-        CommandRegistrar::getInstance(true).clear();
         origin(minecraftCommands, minecraftGame, textureGroup, archiver, isHost, adIdentity, scriptingEnabled, level);
         registerVersionCommand(true);
         registerCrashCommand(true);
@@ -45,7 +44,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     EventResult,
     ::ServerInstance& ins
 ) {
-    CommandRegistrar::getInstance(false).clear();
     auto res = origin(ins);
     registerVersionCommand(false);
     registerCrashCommand(false);

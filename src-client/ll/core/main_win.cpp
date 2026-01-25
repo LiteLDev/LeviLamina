@@ -12,6 +12,7 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/mod/ModRegistrar.h"
 
+#include "mc/client/game/ClientInstance.h"
 #include "mc/client/game/MinecraftGame.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 #include "mc/deps/core/file/Path.h"
@@ -27,15 +28,12 @@
 #include "mc/resources/PackManifest.h"
 #include "mc/resources/PackSettingsFactory.h"
 #include "mc/resources/PackSourceFactory.h"
-#include "mc/resources/RepositorySourceOptions.h"
 #include "mc/resources/RepositorySources.h"
 #include "mc/resources/ResourcePack.h"
-#include "mc/resources/ResourcePackRepository.h"
 #include "mc/resources/ResourcePackStack.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/module/VanillaGameModuleServer.h"
-#include "mc/world/level/Level.h"
 
 #include "pl/Config.h"
 
@@ -209,6 +207,17 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     // Back to main menu
     setGamingStatus(GamingStatus::Default);
+}
+
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    ClearClientCommandHook,
+    HookPriority::Highest,
+    ClientInstance,
+    &ClientInstance::$onLevelExit,
+    void
+) {
+    command::CommandRegistrar::getInstance(true).clear();
+    origin();
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
