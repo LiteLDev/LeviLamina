@@ -78,6 +78,8 @@ public:
 
     LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
 
+    LLAPI void sendToServer() const;
+
 public:
     // member variables
     // NOLINTBEGIN

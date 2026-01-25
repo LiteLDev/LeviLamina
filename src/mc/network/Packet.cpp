@@ -49,3 +49,8 @@ void Packet::sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exce
         return true;
     });
 }
+
+void Packet::sendToServer() const {
+    auto level = ll::service::getMinecraft(true)->getLevel();
+    level->getPacketSender()->sendToServer(const_cast<Packet&>(*this));
+}
