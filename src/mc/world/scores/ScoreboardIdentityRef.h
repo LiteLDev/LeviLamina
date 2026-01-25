@@ -26,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string const&
+    MCAPI ::std::string const&
     getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
-    MCNAPI ::ScoreboardOperationResult
+    MCAPI ::ScoreboardOperationResult
     modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
-    MCNAPI_S bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
+    MCAPI_S bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::CompoundTag> serialize(::ScoreboardIdentityRef const& toSave);
+    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ScoreboardIdentityRef const& toSave);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ScoreboardIdentityRef const& Undefined();
+    MCAPI static ::ScoreboardIdentityRef const& Undefined();
     // NOLINTEND
 };
