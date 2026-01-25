@@ -842,8 +842,6 @@ MCAPI bool operator!=(
 
 MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCAPI_C ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
-
 MCAPI bool operator<(
     ::SemVersionBase<::std::string_view> const&               lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
