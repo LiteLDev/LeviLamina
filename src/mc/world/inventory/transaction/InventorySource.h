@@ -21,4 +21,9 @@ public:
     ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerId;
     ::ll::TypedStorage<4, 4, ::InventorySource::InventorySourceFlags> mFlags;
     // NOLINTEND
+
+public:
+    bool operator==(InventorySource const& other) const {
+        return this->mType == other.mType && this->mContainerId == other.mContainerId && this->mFlags == other.mFlags;
+    }
 };
