@@ -22,20 +22,20 @@ To install LeviLamina onto the Minecraft Bedrock Edition client, you also need t
 3. Run the following command to install LeviLamina:
    `lip install github.com/LiteLDev/LeviLamina#client@version_number`
 
-For example, to install version 1.9.0, run:
+For example, to install version 1.9.1, run:
 ```shell
-lip install github.com/LiteLDev/LeviLamina#client@1.9.0
+lip install github.com/LiteLDev/LeviLamina#client@1.9.1
 ```
 
 ### Upgrading LeviLamina
 
 Due to a design limitation in lip, lip currently does not support upgrading a package and its dependencies together; you must manually upgrade the dependencies as well.  
-For example, to upgrade to version 1.9.0, run the following command:
+For example, to upgrade to version 1.9.1, run the following command:
 ```shell
-lip update github.com/LiteLDev/LeviLamina#client@1.9.0 github.com/LiteLDev/bedrock-runtime-data@1.21.132-client.3
+lip update github.com/LiteLDev/LeviLamina#client@1.9.1 github.com/LiteLDev/bedrock-runtime-data@1.21.132-client.3
 ```
 
-Because version 1.9.0 depends on bedrock-runtime-data version 1.21.132-client.3, you need to upgrade it together.
+Because version 1.9.1 depends on bedrock-runtime-data version 1.21.132-client.3, you need to upgrade it together.
 
 ## Automatic Installation via LeviLauncher
 

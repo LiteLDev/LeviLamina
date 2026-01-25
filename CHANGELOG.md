@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.1] - 2026-01-25
+
+### Fixed
+
+- Fixed protocol version
+- Removed client only `operator!=` in `mce::UUID`
+- Fixed getResourcePackRepository
+
 ## [1.9.0] - 2026-01-25
 
 ### Added
@@ -1296,7 +1304,8 @@ For lip and tooth-hub test only.
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.1...HEAD
+[1.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...v1.9.1
 [1.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.2...v1.9.0
 [1.8.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.1...v1.8.0-rc.2
 [1.8.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...v1.8.0-rc.1

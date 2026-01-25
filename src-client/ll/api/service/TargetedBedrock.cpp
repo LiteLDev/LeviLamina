@@ -83,7 +83,7 @@ optional_ref<ServerNetworkHandler> getServerNetworkHandler(bool isClientSide) {
 
 optional_ref<RakNet::RakPeer> getRakPeer() { return nullptr; }
 
-optional_ref<ResourcePackRepository> geResourcePackRepository(bool isClientSide) {
+optional_ref<ResourcePackRepository> getResourcePackRepository(bool isClientSide) {
     if (isClientSide) {
         if (auto ins = getClientInstance()) {
             return reinterpret_cast<ResourcePackRepository&>(ins->getResourcePackRepository());

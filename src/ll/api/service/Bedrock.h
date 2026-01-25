@@ -17,6 +17,7 @@ class NetworkSystem;
 class CommandRegistry;
 class ServerInstance;
 class DBStorage;
+class ResourcePackRepository;
 
 namespace ll::service::inline bedrock {
 
@@ -35,5 +36,7 @@ LLNDAPI optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide = fal
 LLNDAPI optional_ref<ServerInstance> getServerInstance();
 
 LLNDAPI optional_ref<DBStorage> getDBStorage();
+
+LLNDAPI optional_ref<ResourcePackRepository> getResourcePackRepository(bool isClientSide = false);
 
 } // namespace ll::service::inline bedrock
