@@ -72,7 +72,7 @@ class PacketBase : public Packet {
         PacketRegistrar::getInstance().registerPacket(
             reflection::type_unprefix_name_v<Derived>,
             ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>),
-            []() -> std::unique_ptr<Packet> { return std::make_shared<Derived>(); }
+            []() -> std::unique_ptr<Packet> { return std::make_unique<Derived>(); }
         );
         return true;
     }
