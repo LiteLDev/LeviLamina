@@ -31,16 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C QueueConfig(
-        ::std::string_view                                              name,
-        uint                                                            priority,
-        ::Scheduler&                                                    scheduler,
-        ::WorkerPool&                                                   primaryWorkerPool,
-        ::std::initializer_list<::std::reference_wrapper<::WorkerPool>> secondaryWorkerPools,
-        ::gsl::span<::std::thread::id const>                            affinities
-    );
 
-    MCNAPI_C ~QueueConfig();
     // NOLINTEND
 
 public:

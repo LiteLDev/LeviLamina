@@ -31,10 +31,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SparseContainerClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SparseContainerClient() /*override*/ = default;
@@ -43,14 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SparseContainerClient(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
-
     MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
 
     MCNAPI_C void _pushHistoricPredictionItem(

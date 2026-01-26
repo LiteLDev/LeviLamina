@@ -236,8 +236,6 @@ public:
 
     MCAPI_C bool isValidIndex(uint index) const;
 
-    MCFOLD_C bool operator!() const;
-
     MCAPI bool operator!=(::Json::Value const& other) const;
 
     MCAPI bool operator<(::Json::Value const& other) const;

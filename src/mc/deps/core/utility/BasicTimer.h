@@ -13,8 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    BasicTimer& operator=(BasicTimer const&);
-    BasicTimer(BasicTimer const&);
     BasicTimer();
 
 public:
@@ -23,8 +21,6 @@ public:
     MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
     MCAPI_C bool hasExpired() const;
-
-    MCAPI_C ::BasicTimer& operator=(::BasicTimer&&);
 
     MCAPI_C void resetTime();
 

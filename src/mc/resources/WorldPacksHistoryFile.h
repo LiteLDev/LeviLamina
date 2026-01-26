@@ -27,18 +27,15 @@ public:
 public:
     // prevent constructor by default
     WorldPacksHistoryFile& operator=(WorldPacksHistoryFile const&);
+    WorldPacksHistoryFile(WorldPacksHistoryFile const&);
     WorldPacksHistoryFile();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C WorldPacksHistoryFile(::WorldPacksHistoryFile const&);
-
     MCNAPI_C ::WorldPackHistory const& addPack(::WorldPackHistory const& newWorldPackHistory);
 
     MCNAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
-
-    MCNAPI_C ::WorldPacksHistoryFile& operator=(::WorldPacksHistoryFile&&);
 
     MCNAPI void removePack(::PackIdVersion const& packId);
 

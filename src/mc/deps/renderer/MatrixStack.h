@@ -26,9 +26,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::MatrixStack::MatrixStackRef& operator=(::Matrix const& lhs);
 
-        MCAPI_C ~MatrixStackRef();
         // NOLINTEND
 
     public:
@@ -56,8 +54,6 @@ public:
     MCAPI_C ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
     MCAPI_C ::Matrix const& sortOriginTransform() const;
-
-    MCAPI_C ~MatrixStack();
     // NOLINTEND
 
 public:

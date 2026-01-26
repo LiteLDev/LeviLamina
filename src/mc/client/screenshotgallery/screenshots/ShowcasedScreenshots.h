@@ -45,13 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ShowcasedScreenshots(
-        ::Social::XUID                                               xuid,
-        ::Core::PathBuffer<::std::string> const&                     cacheStoragePath,
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&     fileSystem,
-        ::std::unique_ptr<::Screenshots::IScreenshotGalleryHttpCall> httpCaller
-    );
-
     MCNAPI_C ::std::string _addScreenshotToShowcaseCallback(
         ::Core::PathBuffer<::std::string> const&                      imagePath,
         ::std::optional<::Screenshots::RawShowcasedScreenshot> const& rawScreenshot
@@ -92,8 +85,6 @@ public:
     MCNAPI_C ::Bedrock::Threading::Async<bool> removeShowcasedScreenshot(::std::string const& guid);
 
     MCNAPI_C ::Bedrock::Threading::Async<bool> setFeaturedScreenshot(::std::string const& guid);
-
-    MCNAPI_C ~ShowcasedScreenshots();
     // NOLINTEND
 
 public:

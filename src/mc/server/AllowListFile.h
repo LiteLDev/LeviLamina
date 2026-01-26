@@ -27,11 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit AllowListFile(::Core::Path const& filePath);
-
     MCNAPI_S ::FileReadResult reload();
-
-    MCNAPI_S ~AllowListFile();
     // NOLINTEND
 
 public:

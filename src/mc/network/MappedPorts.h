@@ -14,11 +14,12 @@ public:
     // prevent constructor by default
     MappedPorts& operator=(MappedPorts const&);
     MappedPorts(MappedPorts const&);
+    MappedPorts();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S MappedPorts();
+
     // NOLINTEND
 
 public:

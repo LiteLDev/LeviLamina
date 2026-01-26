@@ -35,6 +35,7 @@ public:
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&);
     BinaryStream(BinaryStream const&);
+    BinaryStream();
 
 public:
     // virtual functions
@@ -116,8 +117,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BinaryStream();
-
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
 
     MCAPI_C void write(void const* origin, uint64 num);

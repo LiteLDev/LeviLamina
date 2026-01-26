@@ -22,24 +22,13 @@ public:
 public:
     // prevent constructor by default
     JsonValueHierarchyNode& operator=(JsonValueHierarchyNode const&);
+    JsonValueHierarchyNode(JsonValueHierarchyNode const&);
+    JsonValueHierarchyNode();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C JsonValueHierarchyNode();
 
-    MCNAPI_C JsonValueHierarchyNode(::JsonValueHierarchyNode&&);
-
-    MCNAPI_C JsonValueHierarchyNode(::JsonValueHierarchyNode const&);
-
-    MCNAPI_C JsonValueHierarchyNode(
-        ::Json::Value&            value,
-        ::SemVersion const&       formatVersion,
-        ::MinEngineVersion const& minEngineVersion,
-        ::std::string const&      sourceFileName
-    );
-
-    MCNAPI_C ~JsonValueHierarchyNode();
     // NOLINTEND
 
 public:

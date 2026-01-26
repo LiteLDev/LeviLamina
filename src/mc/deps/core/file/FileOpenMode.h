@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit FileOpenMode(::std::string_view spec);
+
     // NOLINTEND
 
 public:

@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     DataStoreSync& operator=(DataStoreSync const&);
     DataStoreSync(DataStoreSync const&);
+    DataStoreSync();
 
 public:
     // virtual functions
@@ -43,8 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DataStoreSync();
-
     MCNAPI ::cereal::DynamicValue const* get(::std::string const& datastoreName, ::std::string const& property) const;
 
     MCNAPI ::nonstd::

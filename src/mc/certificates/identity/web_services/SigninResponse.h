@@ -20,16 +20,13 @@ public:
 public:
     // prevent constructor by default
     SigninResponse& operator=(SigninResponse const&);
+    SigninResponse(SigninResponse const&);
     SigninResponse();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SigninResponse(::WebServices::EduSignin::SigninResponse&&);
 
-    MCNAPI_C SigninResponse(::WebServices::EduSignin::SigninResponse const&);
-
-    MCNAPI_C ~SigninResponse();
     // NOLINTEND
 
 public:

@@ -24,15 +24,14 @@ public:
 
     public:
         // prevent constructor by default
+        ConstrainedString& operator=(ConstrainedString const&);
         ConstrainedString(ConstrainedString const&);
         ConstrainedString();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::VolumeIdentifier::ConstrainedString& operator=(::VolumeIdentifier::ConstrainedString&&);
 
-        MCNAPI_C ::VolumeIdentifier::ConstrainedString& operator=(::VolumeIdentifier::ConstrainedString const&);
         // NOLINTEND
 
     public:
@@ -50,14 +49,13 @@ public:
 
 public:
     // prevent constructor by default
+    VolumeIdentifier& operator=(VolumeIdentifier const&);
     VolumeIdentifier(VolumeIdentifier const&);
     VolumeIdentifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::VolumeIdentifier& operator=(::VolumeIdentifier&&);
 
-    MCNAPI_C ::VolumeIdentifier& operator=(::VolumeIdentifier const&);
     // NOLINTEND
 };

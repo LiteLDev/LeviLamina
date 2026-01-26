@@ -79,13 +79,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EduWebService(
-        ::std::unique_ptr<::ResponseVerifier>                             verifier,
-        ::std::function<::std::string const()>                            getEduIdentityToken,
-        ::std::function<::std::optional<::EDUConfigData>(::Json::Value&)> clientConfigParser,
-        ::std::string const&                                              appSessionId
-    );
-
     MCNAPI_C void _authenticateWithService(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>

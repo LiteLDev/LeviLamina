@@ -19,21 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialVariants(MaterialVariants const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MaterialVariants();
 
-    MCAPI_C explicit MaterialVariants(::mce::MaterialPtr const& skinningMaterial);
-
-    MCAPI_C ::MaterialVariants& operator=(::MaterialVariants&&);
-
-    MCFOLD_C ::MaterialVariants& operator=(::MaterialVariants const&);
-
-    MCAPI_C ~MaterialVariants();
     // NOLINTEND
 
 public:

@@ -40,16 +40,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CachedLineData& operator=(CachedLineData const&);
-        CachedLineData(CachedLineData const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI CachedLineData();
-
-        MCAPI_C CachedLineData(::ChalkboardBlockActor::CachedLineData&&);
 
         MCAPI ~CachedLineData();
         // NOLINTEND
@@ -81,17 +74,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::ChalkboardBlockActor::CachedMessageData& operator=(::ChalkboardBlockActor::CachedMessageData&&);
 
-        MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
     public:

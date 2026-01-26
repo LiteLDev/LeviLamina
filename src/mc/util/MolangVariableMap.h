@@ -29,13 +29,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangVariableMap(MolangVariableMap const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
-
-    MCAPI_C MolangVariableMap(::MolangVariableMap&&);
-
-    MCAPI_C MolangVariableMap(::MolangVariableMap const& rhs);
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 

@@ -13,17 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AttributesComponent& operator=(AttributesComponent const&);
-    AttributesComponent(AttributesComponent const&);
-    AttributesComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::AttributesComponent& operator=(::AttributesComponent&&);
 
-    MCAPI_C ~AttributesComponent();
     // NOLINTEND
 
 public:

@@ -35,11 +35,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C NetSerializationCallbacks(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
-
         MCNAPI_C ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
-
-        MCNAPI_C ~NetSerializationCallbacks();
         // NOLINTEND
 
     public:
@@ -77,8 +73,6 @@ public:
 
     MCNAPI bool
     serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
-
-    MCNAPI_C ~ComponentNetRelevancyRegistry();
     // NOLINTEND
 
 public:

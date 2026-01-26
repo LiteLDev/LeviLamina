@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S RepositoriesOptions(::PackCommand::RepositoriesOptions&&);
-
     MCNAPI ~RepositoriesOptions();
     // NOLINTEND
 

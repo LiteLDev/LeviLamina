@@ -34,10 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ExpandoContainerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -82,13 +78,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ExpandoContainerModel(
-        ::FullContainerName const&                            containerName,
-        int                                                   containerSize,
-        ::ContainerCategory                                   containerCategory,
-        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
-    );
-
     MCNAPI_C void _generateCurrentItems();
 
     MCNAPI_C void _refreshContainer(bool fullRefresh);

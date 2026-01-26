@@ -20,16 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftUpdateResultItemClientEvent& operator=(CraftUpdateResultItemClientEvent const&);
-    CraftUpdateResultItemClientEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C CraftUpdateResultItemClientEvent(::CraftUpdateResultItemClientEvent const&);
 
-    MCAPI_C ~CraftUpdateResultItemClientEvent();
     // NOLINTEND
 
 public:

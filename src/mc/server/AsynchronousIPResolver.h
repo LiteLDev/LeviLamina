@@ -35,6 +35,7 @@ public:
 
 public:
     // prevent constructor by default
+    AsynchronousIPResolver& operator=(AsynchronousIPResolver const&);
     AsynchronousIPResolver(AsynchronousIPResolver const&);
     AsynchronousIPResolver();
 
@@ -44,8 +45,6 @@ public:
     MCNAPI explicit AsynchronousIPResolver(::std::string url);
 
     MCNAPI void _resolve();
-
-    MCNAPI_C ::AsynchronousIPResolver& operator=(::AsynchronousIPResolver const&);
 
     MCNAPI ~AsynchronousIPResolver();
     // NOLINTEND

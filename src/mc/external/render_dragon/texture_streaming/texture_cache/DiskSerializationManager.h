@@ -100,9 +100,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C
-    DiskSerializationManager(::std::string fileLocation, uint blockSize, uint numberOfBlocks, bool forceRestartCache);
-
     MCNAPI_C ::std::optional<uint> _claimFirstAvailableSpotInResidencyTable();
 
     MCNAPI_C ::std::optional<uint> _claimFirstFreeBlock();
@@ -139,8 +136,6 @@ public:
     MCNAPI_C void flush();
 
     MCNAPI_C void serialize(uint64 const& imageHash, ::std::vector<::cg::ImageBuffer> const& mipChain);
-
-    MCNAPI_C ~DiskSerializationManager();
     // NOLINTEND
 
 public:

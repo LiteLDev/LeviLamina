@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&);
-    PurchaseReceiptPacket(PurchaseReceiptPacket const&);
-    PurchaseReceiptPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -72,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::PurchaseReceiptPacket& operator=(::PurchaseReceiptPacket&&);
+
     // NOLINTEND
 
 public:

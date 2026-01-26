@@ -28,25 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ImageBuffer();
-
-    MCAPI_C ImageBuffer(::cg::ImageBuffer&& other);
-
-    MCAPI_C explicit ImageBuffer(::mce::Image&& rhs);
-
-    MCAPI_C explicit ImageBuffer(::mce::Image const& rhs);
-
-    MCAPI_C ImageBuffer(::cg::ImageBuffer const& rhs);
-
     MCAPI_C void allocateStorage(::cg::ImageDescription const& imageDesc);
 
     MCAPI_C uchar const* get(uint arrayIndex) const;
-
-    MCAPI_C ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
-
-    MCAPI_C ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);
-
-    MCAPI_C ~ImageBuffer();
     // NOLINTEND
 
 public:

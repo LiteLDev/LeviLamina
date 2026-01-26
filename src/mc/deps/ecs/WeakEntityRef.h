@@ -28,8 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
 
-    MCNAPI_C bool operator!=(::WeakEntityRef entityRef) const;
-
     MCNAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
 
     MCNAPI ~WeakEntityRef();

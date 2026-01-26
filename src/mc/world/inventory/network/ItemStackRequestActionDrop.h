@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestActionDrop();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _write(::BinaryStream& stream) const /*override*/;
@@ -37,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ItemStackRequestActionDrop(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+
     // NOLINTEND
 
 public:

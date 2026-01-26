@@ -16,16 +16,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IngredientSearchInfo& operator=(IngredientSearchInfo const&);
-    IngredientSearchInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C IngredientSearchInfo(::IngredientSearchInfo const&);
 
-    MCAPI_C ~IngredientSearchInfo();
     // NOLINTEND
 
 public:

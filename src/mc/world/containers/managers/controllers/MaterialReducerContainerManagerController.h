@@ -37,10 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MaterialReducerContainerManagerController() /*override*/ = default;
@@ -64,10 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit MaterialReducerContainerManagerController(
-        ::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C void _consumeInputItem();
 
     MCNAPI_C void _destroySlot(::SlotData const& slot, ::ItemTransferAmount amount);

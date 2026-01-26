@@ -25,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    Path& operator=(Path const&);
     Path(Path const&);
 
 public:
@@ -32,15 +33,11 @@ public:
     // NOLINTBEGIN
     MCNAPI Path();
 
-    MCNAPI_S explicit Path(char const* str);
-
     MCNAPI_C char const* getUtf8CString() const;
 
     MCNAPI_C ::std::string_view getUtf8StringView() const;
 
     MCNAPI ::Core::Path& operator=(::Core::Path&&);
-
-    MCNAPI_C ::Core::Path& operator=(::Core::Path const&);
 
     MCNAPI ~Path();
     // NOLINTEND

@@ -51,8 +51,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI_C bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
-
-        MCNAPI_C ~CommandData();
         // NOLINTEND
 
     public:

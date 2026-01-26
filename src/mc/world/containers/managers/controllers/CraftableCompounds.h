@@ -27,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     CraftableCompounds& operator=(CraftableCompounds const&);
+    CraftableCompounds(CraftableCompounds const&);
 
 public:
     // virtual functions
@@ -45,8 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CraftableCompounds();
-
-    MCNAPI_C CraftableCompounds(::CraftableCompounds const&);
 
     MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 

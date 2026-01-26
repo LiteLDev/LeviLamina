@@ -44,11 +44,7 @@ public:
 
     MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
 
-    MCNAPI_C explicit PathView(::std::string const& src);
-
     MCNAPI explicit PathView(::Core::Path const& src);
-
-    MCNAPI_C explicit PathView(char const* src);
 
     MCNAPI auto operator==(::Core::PathView const& rhs) const;
 

@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCNAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
 
-    MCNAPI_C explicit SchemaConverterCollection(::Json::Value& node);
-
     MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
 

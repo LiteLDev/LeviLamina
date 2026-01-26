@@ -46,11 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimpleBlockVolume& operator=(SimpleBlockVolume const&);
-    SimpleBlockVolume();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::BlockPos getMin() const /*override*/;
@@ -81,12 +76,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C SimpleBlockVolume(::SimpleBlockVolume const& volume);
-
-    MCAPI_C SimpleBlockVolume(::BlockPos const& from, ::Vec3 const& size);
-
-    MCAPI_C SimpleBlockVolume(::BlockPos const& from, ::BlockPos const& to);
-
     MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
     MCAPI_C uchar getCornerHandle(::SimpleBlockVolume::CornerIndex cornerIndex) const;
@@ -96,8 +85,6 @@ public:
     MCAPI_C ::AABB getWorldAABB() const;
 
     MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
-
-    MCAPI_C bool operator==(::SimpleBlockVolume const& other) const;
 
     MCAPI_C ::SimpleBlockVolume& setCornerPosition(uchar cornerHandle, ::BlockPos const& pos);
 

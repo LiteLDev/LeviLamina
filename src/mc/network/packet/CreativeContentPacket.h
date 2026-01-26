@@ -38,19 +38,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CreativeGroupInfoDescription();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C CreativeGroupInfoDescription(
-            ::CreativeItemCategory          creativeItemCategory,
-            ::std::string                   name,
-            ::NetworkItemInstanceDescriptor itemDescriptor
-        );
 
-        MCAPI_C ~CreativeGroupInfoDescription();
         // NOLINTEND
 
     public:
@@ -81,17 +71,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CreativeItemEntryDescription& operator=(CreativeItemEntryDescription const&);
-        CreativeItemEntryDescription(CreativeItemEntryDescription const&);
-        CreativeItemEntryDescription();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C CreativeItemEntryDescription(::CreativeContentPacket::CreativeItemEntryDescription&&);
 
-        MCAPI_C ~CreativeItemEntryDescription();
         // NOLINTEND
 
     public:

@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
+    Cursor();
 
 public:
     // virtual functions
@@ -49,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Cursor();
+
     // NOLINTEND
 
 public:

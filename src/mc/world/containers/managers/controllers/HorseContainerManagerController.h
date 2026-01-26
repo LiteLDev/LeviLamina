@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HorseContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~HorseContainerManagerController() /*override*/ = default;
@@ -36,8 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit HorseContainerManagerController(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
-
     MCNAPI_C bool canWearCarpet() const;
 
     MCNAPI_C bool canWearSaddle() const;

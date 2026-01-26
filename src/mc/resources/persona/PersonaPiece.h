@@ -66,23 +66,12 @@ public:
 public:
     // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&);
+    PersonaPiece(PersonaPiece const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PersonaPiece();
-
-    MCNAPI_C PersonaPiece(::PersonaPiece&&);
-
-    MCNAPI_C PersonaPiece(::PersonaPiece const&);
-
-    MCNAPI_C PersonaPiece(
-        ::std::string const&   pieceId,
-        ::PackIdVersion const& packIdVersion,
-        ::persona::PieceType   pieceTypeId,
-        bool                   platformLocked,
-        bool                   titleLocked
-    );
 
     MCNAPI_C ::std::string getPieceName() const;
 
@@ -95,8 +84,6 @@ public:
     MCNAPI_C void initLocalizationDictionary();
 
     MCNAPI_C bool isValid() const;
-
-    MCNAPI_C bool operator!=(::PersonaPiece const& asset) const;
 
     MCNAPI_C void setPieceNameAsLocKey(::std::string const& pieceName);
 

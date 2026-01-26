@@ -27,27 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C TexturePtr();
-
-    MCAPI_C TexturePtr(::mce::TexturePtr const& rhs);
-
-    MCAPI_C TexturePtr(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
-
-    MCAPI_C TexturePtr(
-        ::BedrockTexture const&   bedrockTexture,
-        ::ResourceLocation const& resourceLocation,
-        ::cg::TextureSetLayerType textureType
-    );
-
     MCFOLD_C ::mce::ClientTexture const& getClientTexture() const;
-
-    MCFOLD_C ::mce::ClientTexture const& operator*() const;
-
-    MCAPI_C ::mce::TexturePtr& operator=(::mce::TexturePtr&& rhs);
-
-    MCAPI_C ::mce::TexturePtr& operator=(::mce::TexturePtr const& rhs);
-
-    MCAPI_C ~TexturePtr();
     // NOLINTEND
 
 public:

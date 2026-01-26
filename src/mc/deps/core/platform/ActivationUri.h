@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ActivationUri();
+
     // NOLINTEND
 
 public:

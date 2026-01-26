@@ -42,8 +42,6 @@ public:
 
     MCAPI HitResult(::HitResult const&);
 
-    MCAPI_C HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-
     MCAPI HitResult(
         ::Vec3 const& startPos,
         ::Vec3 const& rayDir,

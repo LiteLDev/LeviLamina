@@ -65,17 +65,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BucketContext(BucketContext const&);
-        BucketContext();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_S ::ChunkRecyclerTelemetryData::BucketContext&
-        operator=(::ChunkRecyclerTelemetryData::BucketContext const&);
 
-        MCAPI_S ~BucketContext();
         // NOLINTEND
 
     public:
@@ -130,8 +122,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ChunkRecyclerTelemetryData();
-
     MCAPI void _reset();
 
     MCAPI void _setIsLocked();

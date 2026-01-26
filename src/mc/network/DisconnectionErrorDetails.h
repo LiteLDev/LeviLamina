@@ -31,9 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DisconnectionErrorDetails(::DisconnectionErrorDetails&&);
 
-    MCNAPI_C ~DisconnectionErrorDetails();
     // NOLINTEND
 
 public:

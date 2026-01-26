@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~SoundParameter();
+
     // NOLINTEND
 
 public:

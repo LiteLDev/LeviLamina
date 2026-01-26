@@ -132,8 +132,6 @@ public:
 
     MCAPI ::GameRules& operator=(::GameRules const& rhs);
 
-    MCAPI_C bool operator==(::GameRules const& rhs) const;
-
     MCAPI_C ::Bedrock::PubSub::Subscription
     registerOnGameRuleChangeCallback(::std::function<void(::GameRules const&, ::GameRuleId const&)> callback);
 

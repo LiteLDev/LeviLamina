@@ -29,20 +29,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Description(Description const&);
-        Description();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD_C ::SharedTypes::v1_21_100::CameraDocument::Description&
-        operator=(::SharedTypes::v1_21_100::CameraDocument::Description&&);
 
-        MCFOLD_C ::SharedTypes::v1_21_100::CameraDocument::Description&
-        operator=(::SharedTypes::v1_21_100::CameraDocument::Description const&);
-
-        MCAPI_C ~Description();
         // NOLINTEND
 
     public:
@@ -60,17 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraDocument& operator=(CameraDocument const&);
-    CameraDocument(CameraDocument const&);
-    CameraDocument();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::SharedTypes::v1_21_100::CameraDocument& operator=(::SharedTypes::v1_21_100::CameraDocument&&);
 
-    MCAPI_C ~CameraDocument();
     // NOLINTEND
 
 public:

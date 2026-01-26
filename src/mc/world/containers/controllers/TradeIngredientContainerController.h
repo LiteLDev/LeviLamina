@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TradeIngredientContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isItemAllowed(::ItemStackBase const& item) const /*override*/;
@@ -34,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit TradeIngredientContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
     MCNAPI_C void setTradeItem(::ItemStack const& item);
     // NOLINTEND
 

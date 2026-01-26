@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+
     // NOLINTEND
 
 public:

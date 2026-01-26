@@ -72,8 +72,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PhotoTransferPacket();
-
-    MCAPI_C explicit PhotoTransferPacket(::PhotoTransferPacketPayload payload);
     // NOLINTEND
 
 public:

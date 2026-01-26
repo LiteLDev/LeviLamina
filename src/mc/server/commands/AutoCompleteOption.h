@@ -26,9 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
 
-    MCNAPI_C ~AutoCompleteOption();
     // NOLINTEND
 
 public:

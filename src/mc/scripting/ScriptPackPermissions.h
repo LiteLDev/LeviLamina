@@ -21,15 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPackPermissions& operator=(ScriptPackPermissions const&);
-    ScriptPackPermissions(ScriptPackPermissions const&);
-    ScriptPackPermissions();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::ScriptPackPermissions& operator=(::ScriptPackPermissions&&);
+
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~DistanceEvent();
+
     // NOLINTEND
 
 public:

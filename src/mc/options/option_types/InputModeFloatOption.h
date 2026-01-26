@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InputModeFloatOption();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) /*override*/;
@@ -44,17 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C InputModeFloatOption(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        float                value,
-        float                valueMin,
-        float                rangeMax
-    );
-
     MCAPI_C void
     _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
 

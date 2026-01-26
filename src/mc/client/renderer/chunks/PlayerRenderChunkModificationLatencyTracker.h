@@ -49,7 +49,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~TimeMarker();
+
         // NOLINTEND
 
     public:

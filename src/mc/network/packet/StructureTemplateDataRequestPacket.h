@@ -66,9 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S StructureTemplateDataRequestPacket();
 
-    MCAPI_C explicit StructureTemplateDataRequestPacket(::StructureTemplateDataRequestPacketPayload payload);
     // NOLINTEND
 
 public:

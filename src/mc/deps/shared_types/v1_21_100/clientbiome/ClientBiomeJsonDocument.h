@@ -105,18 +105,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
-    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ClientBiomeJsonDocument();
 
-    MCAPI_C ClientBiomeJsonDocument(::SharedTypes::v1_21_100::ClientBiomeJsonDocument&&);
-
-    MCAPI_C ~ClientBiomeJsonDocument();
     // NOLINTEND
 
 public:

@@ -23,17 +23,14 @@ public:
 
 public:
     // prevent constructor by default
+    EduHeadlessConnectionHandshake& operator=(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EduHeadlessConnectionHandshake(::std::string const& id, ::Json::Value const& json);
 
-    MCNAPI_C ::Social::EduHeadlessConnectionHandshake& operator=(::Social::EduHeadlessConnectionHandshake const&);
-
-    MCNAPI_C ~EduHeadlessConnectionHandshake();
     // NOLINTEND
 
 public:

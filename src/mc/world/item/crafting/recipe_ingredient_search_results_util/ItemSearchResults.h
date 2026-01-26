@@ -19,19 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemSearchResults& operator=(ItemSearchResults const&);
-    ItemSearchResults();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ItemSearchResults(::RecipeIngredientSearchResultsUtil::ItemSearchResults const&);
 
-    MCAPI_C ::RecipeIngredientSearchResultsUtil::ItemSearchResults&
-    operator=(::RecipeIngredientSearchResultsUtil::ItemSearchResults&&);
-
-    MCAPI_C ~ItemSearchResults();
     // NOLINTEND
 
 public:

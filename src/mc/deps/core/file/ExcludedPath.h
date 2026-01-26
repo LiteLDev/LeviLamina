@@ -24,9 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ExcludedPath(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
 
-    MCNAPI_C ~ExcludedPath();
     // NOLINTEND
 
 public:

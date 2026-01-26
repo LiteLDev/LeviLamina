@@ -107,8 +107,6 @@ public:
 
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
 
-    MCAPI_C ::MolangScriptArg& operator=(::MolangOffsetPlaceholder&& value);
-
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 
     MCAPI void reportGetFailure() const;

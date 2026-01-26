@@ -23,14 +23,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Timer();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
-
     MCAPI void advanceTime(float preferredFrameStep);
     // NOLINTEND
 

@@ -20,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ValidationFail(::Bedrock::DeviceIdErrorType::ValidationFail&&);
 
-    MCNAPI_C ~ValidationFail();
     // NOLINTEND
 
 public:

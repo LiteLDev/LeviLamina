@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     EmotePacket& operator=(EmotePacket const&);
+    EmotePacket();
 
 public:
     // virtual functions
@@ -70,11 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S EmotePacket();
-
     MCAPI EmotePacket(::EmotePacket const&);
-
-    MCAPI_C explicit EmotePacket(::EmotePacketPayload payload);
     // NOLINTEND
 
 public:

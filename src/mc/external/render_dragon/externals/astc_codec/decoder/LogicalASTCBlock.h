@@ -57,11 +57,7 @@ public:
 
     MCNAPI_C ::std::array<int, 4> ColorAt(int x, int y) const;
 
-    MCNAPI_C LogicalASTCBlock(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
-
     MCNAPI_C void SetDualPlaneChannel(int channel);
-
-    MCNAPI_C ~LogicalASTCBlock();
     // NOLINTEND
 
 public:

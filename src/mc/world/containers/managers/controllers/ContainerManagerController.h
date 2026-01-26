@@ -61,10 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -167,8 +163,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
-
     MCNAPI_C void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
 
     MCNAPI_C void _addOutputsAsDestinations(

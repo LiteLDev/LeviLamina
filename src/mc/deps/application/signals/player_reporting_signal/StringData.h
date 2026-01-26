@@ -21,9 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C StringData(::std::string key, ::std::string value);
 
-    MCNAPI_C ~StringData();
     // NOLINTEND
 
 public:

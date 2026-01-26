@@ -11,7 +11,7 @@ class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~RawSubscription();
+
     // NOLINTEND
 
 public:

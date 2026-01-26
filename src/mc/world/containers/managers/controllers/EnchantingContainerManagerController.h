@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EnchantingContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EnchantingContainerManagerController() /*override*/ = default;
@@ -45,10 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit EnchantingContainerManagerController(
-        ::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::std::string _getEnchantHint(int option);
 
     MCNAPI_C void _setupCallbacks();

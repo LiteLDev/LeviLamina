@@ -33,7 +33,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~Entry();
+
         // NOLINTEND
 
     public:
@@ -60,8 +60,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
-
-    MCNAPI_C ~ItemTransferRequest();
     // NOLINTEND
 
 public:

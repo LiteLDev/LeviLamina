@@ -63,8 +63,6 @@ public:
         ::SubChunkPos const&   playerSubChunkPosition,
         ::DimensionType const& playerDimension
     );
-
-    MCAPI_C ~SubChunkRequestManager();
     // NOLINTEND
 
 public:

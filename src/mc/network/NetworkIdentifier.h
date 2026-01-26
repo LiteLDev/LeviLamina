@@ -28,6 +28,7 @@ public:
 
 public:
     // prevent constructor by default
+    NetworkIdentifier& operator=(NetworkIdentifier const&);
     NetworkIdentifier(NetworkIdentifier const&);
     NetworkIdentifier();
 
@@ -49,8 +50,6 @@ public:
     MCAPI bool operator<(::NetworkIdentifier const& other) const;
 
     MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
-
-    MCFOLD_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

@@ -13,16 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActionValue& operator=(ActionValue const&);
-    ActionValue(ActionValue const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActionValue();
-
-    MCFOLD_C ::npc::ActionValue& operator=(::npc::ActionValue&&);
 
     MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
 

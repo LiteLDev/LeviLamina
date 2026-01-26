@@ -34,17 +34,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DepenetrationComponent& operator=(DepenetrationComponent const&);
-    DepenetrationComponent(DepenetrationComponent const&);
-    DepenetrationComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
 
-    MCAPI_C ~DepenetrationComponent();
     // NOLINTEND
 
 public:

@@ -20,16 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VariationMap& operator=(VariationMap const&);
-    VariationMap();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C VariationMap(::cg::VariationMap const&);
 
-    MCAPI_C ~VariationMap();
     // NOLINTEND
 
 public:

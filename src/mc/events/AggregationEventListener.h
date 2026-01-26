@@ -70,13 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 
-    MCNAPI_C AggregationEventListener(
-        uint                regBatchSize,
-        uint                regSendInterval,
-        uint                throttledSendInterval,
-        ::Core::Path const& logFileName
-    );
-
     MCNAPI void _handleAggregation(
         ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
         ::Social::Events::Event const&         event

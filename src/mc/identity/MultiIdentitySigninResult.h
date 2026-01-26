@@ -19,14 +19,13 @@ public:
 public:
     // prevent constructor by default
     MultiIdentitySigninResult& operator=(MultiIdentitySigninResult const&);
+    MultiIdentitySigninResult(MultiIdentitySigninResult const&);
     MultiIdentitySigninResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MultiIdentitySigninResult(::Social::MultiIdentitySigninResult const&);
 
-    MCNAPI_C ~MultiIdentitySigninResult();
     // NOLINTEND
 
 public:

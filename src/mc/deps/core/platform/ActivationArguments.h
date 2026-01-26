@@ -33,8 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ActivationArguments();
 
-    MCNAPI_C ActivationArguments(int argc, char** const argv);
-
     MCNAPI_C void parseURLArgument(::std::string const& url);
 
     MCNAPI void preParseArguments();

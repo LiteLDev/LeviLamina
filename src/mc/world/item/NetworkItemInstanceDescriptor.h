@@ -23,8 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
-    NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
     NetworkItemInstanceDescriptor();
 
 public:
@@ -36,13 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
-
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
-
-    MCAPI_C ::NetworkItemInstanceDescriptor& operator=(::NetworkItemInstanceDescriptor&&);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

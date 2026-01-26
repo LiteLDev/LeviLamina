@@ -14,19 +14,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScheduledCallback& operator=(ScheduledCallback const&);
+    ScheduledCallback(ScheduledCallback const&);
     ScheduledCallback();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ScheduledCallback(::ScheduledCallback const&);
 
-    MCNAPI_C
-    ScheduledCallback(int64 callTime, ::std::weak_ptr<bool> existanceTracker, ::std::function<void()> callback);
-
-    MCNAPI_C ::ScheduledCallback& operator=(::ScheduledCallback const&);
-
-    MCNAPI_C ~ScheduledCallback();
     // NOLINTEND
 
 public:

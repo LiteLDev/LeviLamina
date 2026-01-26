@@ -24,26 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ModelPartLocator();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ModelPartLocator(::ModelPartLocator const&);
-
-    MCAPI_C ModelPartLocator(
-        ::std::string const& name,
-        ::std::string const& boneName,
-        ::Vec3 const&        localOffset,
-        bool                 ignoreInheritedScale
-    );
-
     MCAPI_C bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
-
-    MCAPI_C ::ModelPartLocator& operator=(::ModelPartLocator const&);
-
-    MCAPI_C ~ModelPartLocator();
     // NOLINTEND
 
 public:

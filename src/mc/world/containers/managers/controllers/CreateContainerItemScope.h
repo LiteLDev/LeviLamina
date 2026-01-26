@@ -25,28 +25,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreateContainerItemScope();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CreateContainerItemScope(
-        ::ItemStackRequestScope&&                requestScope,
-        ::SlotData const&                        createdItemOutputSlot,
-        ::ItemInstance const&                    item,
-        ::ItemTransferAmount                     takeAmount,
-        ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
-    );
-
     MCNAPI_C void _createItemStack(
         ::ItemStackRequestId const& currentRequestId,
         ::SlotData const&           createdItemOutputSlot,
         ::ItemInstance const&       item,
         ::ItemTransferAmount        takeAmount
     );
-
-    MCNAPI_C ~CreateContainerItemScope();
     // NOLINTEND
 
 public:

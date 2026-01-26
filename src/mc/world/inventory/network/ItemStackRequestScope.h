@@ -26,8 +26,6 @@ public:
 
     MCNAPI_C int
     addRequestToFilterString(::std::string const& stringToFilter, ::TextProcessingEventOrigin origin) const;
-
-    MCNAPI_C ~ItemStackRequestScope();
     // NOLINTEND
 
 public:

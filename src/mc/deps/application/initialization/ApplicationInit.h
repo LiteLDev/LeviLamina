@@ -30,7 +30,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~Objects();
+
         // NOLINTEND
 
     public:
@@ -58,8 +58,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void run();
-
-    MCNAPI_C ~ApplicationInit();
     // NOLINTEND
 
 public:

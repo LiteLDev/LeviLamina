@@ -22,11 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C TelemetryCommonProperties(::Webview::TelemetryCommonProperties&&);
 
-    MCNAPI_C ::Webview::TelemetryCommonProperties& operator=(::Webview::TelemetryCommonProperties&&);
-
-    MCNAPI_C ~TelemetryCommonProperties();
     // NOLINTEND
 
 public:

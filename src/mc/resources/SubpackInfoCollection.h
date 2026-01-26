@@ -32,8 +32,6 @@ public:
 
     MCNAPI_C ::ContentTierIncompatibleReason
     isCompatibleSubpack(int index, ::ContentTierInfo const& contentInfoTier) const;
-
-    MCNAPI_C ~SubpackInfoCollection();
     // NOLINTEND
 
 public:

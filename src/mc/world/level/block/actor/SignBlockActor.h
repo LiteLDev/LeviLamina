@@ -51,6 +51,7 @@ public:
     public:
         // prevent constructor by default
         CachedLineData& operator=(CachedLineData const&);
+        CachedLineData(CachedLineData const&);
 
     public:
         // member functions
@@ -58,8 +59,6 @@ public:
         MCAPI CachedLineData();
 
         MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
-
-        MCAPI_C CachedLineData(::SignBlockActor::CachedLineData const&);
 
         MCAPI ~CachedLineData();
         // NOLINTEND
@@ -95,19 +94,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CachedMessageData& operator=(CachedMessageData const&);
-        CachedMessageData(CachedMessageData const&);
-        CachedMessageData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C CachedMessageData(::SignBlockActor::CachedMessageData&&);
 
-        MCAPI_C ::SignBlockActor::CachedMessageData& operator=(::SignBlockActor::CachedMessageData&&);
-
-        MCAPI_C ~CachedMessageData();
         // NOLINTEND
 
     public:
@@ -169,16 +158,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Text& operator=(Text const&);
-        Text(Text const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Text();
-
-        MCAPI_S Text(::SignBlockActor::Text&&);
 
         MCAPI void _parseOldVersionText(::CompoundTag const& tag);
 
@@ -235,10 +217,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SignBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SignBlockActor() /*override*/ = default;
@@ -275,8 +253,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
-
     MCAPI bool _tryLoadR13Data(::CompoundTag const& tag, ::SignBlockActor::Text& frontText);
 
     MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);

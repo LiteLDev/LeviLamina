@@ -30,14 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ConstDeserializeDataParams(::DeserializeDataParams const& deserializeDataParams);
 
-    MCNAPI_C ConstDeserializeDataParams(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
-
-    MCNAPI_C ConstDeserializeDataParams(
-        ::Json::Value const&      value,
-        ::SemVersion const&       formatVersion,
-        ::MinEngineVersion const& minEngineVersion
-    );
-
     MCNAPI ~ConstDeserializeDataParams();
     // NOLINTEND
 

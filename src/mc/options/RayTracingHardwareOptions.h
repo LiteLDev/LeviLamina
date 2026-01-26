@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     RayTracingHardwareOptions& operator=(RayTracingHardwareOptions const&);
     RayTracingHardwareOptions(RayTracingHardwareOptions const&);
+    RayTracingHardwareOptions();
 
 public:
     // virtual functions
@@ -35,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C RayTracingHardwareOptions();
+
     // NOLINTEND
 
 public:

@@ -56,10 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientNetworkSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -76,16 +72,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ClientNetworkSystem(
-        ::Scheduler&                                         receiveThread,
-        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                        networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>            appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::std::unique_ptr<::IPacketSerializationController>  packetController
-    );
-
     MCNAPI_C bool
     connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
 

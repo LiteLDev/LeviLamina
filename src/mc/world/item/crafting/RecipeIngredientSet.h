@@ -21,8 +21,6 @@ public:
     MCAPI_C void add(::ItemStackBase const& item);
 
     MCAPI_C void add(::std::vector<::ItemStack> const& list);
-
-    MCAPI_C ~RecipeIngredientSet();
     // NOLINTEND
 
 public:

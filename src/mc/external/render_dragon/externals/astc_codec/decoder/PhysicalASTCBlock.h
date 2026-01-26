@@ -55,8 +55,6 @@ public:
 
     MCNAPI_C ::astc_codec::base::Optional<int> PartitionID() const;
 
-    MCNAPI_C explicit PhysicalASTCBlock(::astc_codec::base::UInt128 astc_block);
-
     MCNAPI_C ::astc_codec::base::Optional<::std::array<int, 4>> VoidExtentCoords() const;
 
     MCNAPI_C ::astc_codec::base::Optional<::std::array<int, 2>> WeightGridDims() const;

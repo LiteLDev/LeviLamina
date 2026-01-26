@@ -51,10 +51,6 @@ public:
 
     MCFOLD bool operator!=(::BlockPos const& rhs) const;
 
-    MCAPI_C ::BlockPos operator+(::BlockPos const& rhs) const;
-
-    MCAPI_C ::BlockPos operator+(int s) const;
-
     MCAPI ::BlockPos operator-(::BlockPos const& rhs) const;
 
     MCAPI ::BlockPos relative(uchar facing, int steps) const;

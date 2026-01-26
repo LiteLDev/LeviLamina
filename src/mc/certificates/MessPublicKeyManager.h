@@ -30,6 +30,7 @@ public:
     // prevent constructor by default
     MessPublicKeyManager& operator=(MessPublicKeyManager const&);
     MessPublicKeyManager(MessPublicKeyManager const&);
+    MessPublicKeyManager();
 
 public:
     // virtual functions
@@ -40,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MessPublicKeyManager();
-
     MCNAPI_C ::std::vector<::std::string> getMessLoginPublicKeys();
 
     MCNAPI_C void

@@ -35,8 +35,6 @@ public:
         // NOLINTBEGIN
         MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI_C explicit ScopedItemRegistry(::ItemRegistryRef registryRef);
-
         MCAPI void construct(::ItemRegistryRef registryRef);
 
         MCAPI ~ScopedItemRegistry();

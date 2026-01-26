@@ -28,10 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C FolderSizeAndModifyDateSnapshotDiff(
-        ::FolderSizeAndModifyDateSnapshot const& older,
-        ::FolderSizeAndModifyDateSnapshot const& newer
-    );
+
     // NOLINTEND
 
 public:

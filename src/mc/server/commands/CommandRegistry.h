@@ -452,7 +452,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ~SemanticInfo();
+
         // NOLINTEND
 
     public:

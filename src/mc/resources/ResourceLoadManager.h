@@ -63,14 +63,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ResourceLoadTaskGroup(
-            ::std::string_view                groupName,
-            ::ResourceLoadType                loadType,
-            ::std::vector<::ResourceLoadType> dependencies,
-            ::Scheduler&                      scheduler,
-            ::WorkerPool&                     workerPool
-        );
-
         MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,

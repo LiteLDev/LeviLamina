@@ -126,8 +126,6 @@ public:
 
     MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCNAPI_C bool operator==(::LevelSummary const& rhs) const;
-
     MCNAPI_C ::LevelSummary& setId(::std::string Id);
 
     MCNAPI ::LevelSummary& setName(::std::string Name);

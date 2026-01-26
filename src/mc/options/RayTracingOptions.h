@@ -106,10 +106,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C RayTracingOptions(
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsHardwareOptions> advancedGraphicsHardwareOptions,
-        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>              resourcePackManager
-    );
+
     // NOLINTEND
 
 public:

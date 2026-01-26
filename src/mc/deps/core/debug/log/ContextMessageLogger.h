@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ContextMessageLogger(::ContextMessageLoggerOptions const& options);
+
     // NOLINTEND
 
 public:

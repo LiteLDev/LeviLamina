@@ -21,17 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C Color(::glm::vec3 const& color, float a_);
-
-    MCAPI_C Color(::mce::Color const& color, float a_);
-
     MCAPI Color(float r_, float g_, float b_, float a_);
 
     MCAPI_C bool isNan() const;
-
-    MCAPI_C bool operator!=(::mce::Color const& c) const;
-
-    MCAPI_C ::mce::Color& operator*=(float s);
 
     MCAPI bool operator==(::mce::Color const& c) const;
 

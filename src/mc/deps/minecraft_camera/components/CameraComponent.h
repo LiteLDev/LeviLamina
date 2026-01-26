@@ -23,12 +23,11 @@ public:
 public:
     // prevent constructor by default
     CameraComponent& operator=(CameraComponent const&);
+    CameraComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CameraComponent();
-
     MCNAPI CameraComponent(::MinecraftCamera::CameraComponent&&);
 
     MCNAPI CameraComponent(::MinecraftCamera::CameraComponent const&);

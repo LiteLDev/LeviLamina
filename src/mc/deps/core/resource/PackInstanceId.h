@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    PackInstanceId& operator=(PackInstanceId const&);
     PackInstanceId(PackInstanceId const&);
     PackInstanceId();
 
@@ -22,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackInstanceId(::PackInstanceId&&);
-
-    MCFOLD_C ::PackInstanceId& operator=(::PackInstanceId const&);
 
     MCAPI ~PackInstanceId();
     // NOLINTEND

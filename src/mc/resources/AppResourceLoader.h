@@ -16,10 +16,6 @@ namespace mce { struct Image; }
 
 class AppResourceLoader : public ::ResourceLoader {
 public:
-    // prevent constructor by default
-    AppResourceLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
@@ -54,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit AppResourceLoader(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+
     // NOLINTEND
 
 public:

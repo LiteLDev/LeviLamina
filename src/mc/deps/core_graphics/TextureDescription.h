@@ -17,9 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C TextureDescription();
 
-    MCAPI_C explicit TextureDescription(::cg::ImageDescription const& imageDescription);
     // NOLINTEND
 
 public:

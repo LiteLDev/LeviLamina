@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ~PlayerVideoCapturePacketPayload();
+
     // NOLINTEND
 
 public:

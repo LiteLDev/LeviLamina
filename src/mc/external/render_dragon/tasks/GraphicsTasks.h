@@ -55,7 +55,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~InitBgfx();
+
         // NOLINTEND
 
     public:
@@ -85,7 +85,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~InitBegin();
+
         // NOLINTEND
 
     public:
@@ -112,9 +112,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::dragon::tasks::GraphicsTasks::InitPending& operator=(::dragon::tasks::GraphicsTasks::InitPending&&);
 
-        MCNAPI_C ~InitPending();
         // NOLINTEND
 
     public:
@@ -131,18 +129,9 @@ public:
                                      ::dragon::tasks::GraphicsTasks::InitFinalize,
                                      ::dragon::tasks::GraphicsTasks::InitEnd> {
     public:
-        // prevent constructor by default
-        InitializationState& operator=(InitializationState const&);
-        InitializationState();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C InitializationState(::dragon::tasks::GraphicsTasks::InitializationState&&);
 
-        MCNAPI_C InitializationState(::dragon::tasks::GraphicsTasks::InitializationState const&);
-
-        MCNAPI_C ~InitializationState();
         // NOLINTEND
 
     public:
@@ -195,12 +184,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C GraphicsTasks(
-        ::WorkerPool&                                       rendererPool,
-        ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools,
-        ::Scheduler&                                        clientScheduler
-    );
-
     MCNAPI_C void _forCounter(
         uint64                               count,
         ::std::function<void(uint64)> const& workerCallback,
@@ -228,8 +211,6 @@ public:
     MCNAPI_C void queueResourcesTask(::std::function<void()> const& task);
 
     MCNAPI_C void waitForPreviousFrame();
-
-    MCNAPI_C ~GraphicsTasks();
     // NOLINTEND
 
 public:

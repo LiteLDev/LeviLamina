@@ -39,7 +39,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~TransactionContext();
+
         // NOLINTEND
 
     public:
@@ -70,7 +70,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~TelemetryOperationInProgress();
+
         // NOLINTEND
 
     public:
@@ -115,11 +115,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ThrottledFileWriteManager(
-        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                        appPlatform,
-        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> oSWriteThrottleTracker
-    );
-
     MCNAPI_C ::Bedrock::Threading::Async<bool> beginLargeFileTransaction(
         uint64                                            bytesToBeWritten,
         ::std::string const&                              originatingSystem,

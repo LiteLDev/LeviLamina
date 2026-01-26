@@ -30,18 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ShowcasedScreenshot(
-        ::std::string                     guid,
-        ::Core::PathBuffer<::std::string> thumbnailPath,
-        ::Core::PathBuffer<::std::string> imagePath,
-        ::std::string                     imageUrl,
-        int64                             captureTime,
-        int64                             lastModifiedTime,
-        bool                              featured,
-        bool                              loadingImage
-    );
 
-    MCNAPI_C ~ShowcasedScreenshot();
     // NOLINTEND
 
 public:

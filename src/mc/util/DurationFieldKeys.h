@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    DurationFieldKeys& operator=(DurationFieldKeys const&);
     DurationFieldKeys(DurationFieldKeys const&);
     DurationFieldKeys();
 
@@ -36,8 +37,6 @@ public:
         ::std::string minute,
         ::std::string second
     );
-
-    MCNAPI_C ::DurationFieldKeys& operator=(::DurationFieldKeys const&);
 
     MCNAPI ~DurationFieldKeys();
     // NOLINTEND

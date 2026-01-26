@@ -49,10 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -81,16 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CraftingContainerManagerModel(
-        ::ContainerID        containerId,
-        ::Player&            player,
-        bool                 workbench,
-        bool                 pocket,
-        bool                 filtering,
-        ::BlockPos const&    pos,
-        ::std::string const& inventorySearch
-    );
-
     MCNAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
         ::ContainerEnumName                                          containerEnumName,
         ::CreativeItemGroupCategory* const                           category,

@@ -205,8 +205,6 @@ public:
 
     MCAPI_C bool isEditionCompatible() const;
 
-    MCAPI_C ::LevelData& operator=(::LevelData&&);
-
     MCAPI_C ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
 
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);

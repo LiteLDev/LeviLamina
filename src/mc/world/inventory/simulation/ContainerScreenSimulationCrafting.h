@@ -19,10 +19,6 @@ struct FullContainerName;
 
 class ContainerScreenSimulationCrafting : public ::ContainerScreenSimulation {
 public:
-    // prevent constructor by default
-    ContainerScreenSimulationCrafting();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ContainerScreenActionResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs);
@@ -35,12 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ContainerScreenSimulationCrafting(
-        ::ContainerScreenContext const&,
-        ::ContainerValidationCaller,
-        ::std::unique_ptr<::IContainerTransfer>&&,
-        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>
-    );
+
     // NOLINTEND
 
 public:

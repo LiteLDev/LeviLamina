@@ -74,6 +74,7 @@ public:
 
 public:
     // prevent constructor by default
+    AmbientSoundsClientBiomeJsonComponent(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
 public:
@@ -87,9 +88,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C
-    AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
-
     MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
     operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
 

@@ -29,7 +29,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~AvailableGame();
+
         // NOLINTEND
 
     public:
@@ -68,13 +68,12 @@ public:
     // prevent constructor by default
     ThirdPartyServer& operator=(ThirdPartyServer const&);
     ThirdPartyServer(ThirdPartyServer const&);
+    ThirdPartyServer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ThirdPartyServer();
 
-    MCNAPI_C ~ThirdPartyServer();
     // NOLINTEND
 
 public:

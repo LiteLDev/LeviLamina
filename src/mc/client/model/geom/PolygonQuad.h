@@ -26,17 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PolygonQuad(
-        ::VertexPT const& v0,
-        ::VertexPT const& v1,
-        ::VertexPT const& v2,
-        ::VertexPT const& v3,
-        float             uu0,
-        float             vv0,
-        float             uu1,
-        float             vv1,
-        ::QuadUVRotation  uvRotation
-    );
+
     // NOLINTEND
 
 public:

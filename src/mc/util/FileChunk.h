@@ -14,17 +14,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FileChunk& operator=(FileChunk const&);
-    FileChunk(FileChunk const&);
-    FileChunk();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::FileChunk& operator=(::FileChunk&&);
 
-    MCNAPI_C ~FileChunk();
     // NOLINTEND
 
 public:

@@ -74,7 +74,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ~PingCallbackData();
+
         // NOLINTEND
 
     public:

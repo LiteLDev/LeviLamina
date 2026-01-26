@@ -25,16 +25,11 @@ public:
 
 public:
     // prevent constructor by default
-    WebToken& operator=(WebToken const&);
-    WebToken(WebToken const&);
+    WebToken();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C WebToken();
-
-    MCAPI_C WebToken(::WebToken&&);
-
     MCAPI explicit WebToken(::std::string token);
 
     MCAPI ::std::string _signatureToDER() const;
@@ -42,8 +37,6 @@ public:
     MCAPI ::std::string getKeyId() const;
 
     MCAPI_C ::std::string getSignerPublicKey() const;
-
-    MCAPI_C ::WebToken& operator=(::WebToken&&);
 
     MCAPI_S ::std::string toString() const;
 

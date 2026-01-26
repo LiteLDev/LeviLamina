@@ -25,12 +25,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PriorityPreset& operator=(PriorityPreset const&);
+    PriorityPreset(PriorityPreset const&);
+    PriorityPreset();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PriorityPreset();
-
-    MCNAPI_C PriorityPreset(::CameraAimAssist::PriorityPreset const&);
-
     MCNAPI PriorityPreset(
         ::HashedString const&                                       id,
         ::CameraAimAssist::PriorityPresetExclusionData const&       exclusionList,
@@ -39,10 +41,6 @@ public:
         ::HashedString const&                                       handCategory,
         ::HashedString const&                                       defaultCategory
     );
-
-    MCNAPI_C ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
-
-    MCNAPI_C ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset const&);
 
     MCNAPI ~PriorityPreset();
     // NOLINTEND

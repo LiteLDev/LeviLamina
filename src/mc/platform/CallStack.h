@@ -124,8 +124,6 @@ public:
 
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
 
-    MCAPI_C ::Bedrock::CallStack& operator=(::Bedrock::CallStack&&);
-
     MCAPI ~CallStack();
     // NOLINTEND
 

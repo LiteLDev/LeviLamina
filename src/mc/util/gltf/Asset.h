@@ -43,17 +43,14 @@ public:
 
 public:
     // prevent constructor by default
+    Asset& operator=(Asset const&);
     Asset(Asset const&);
     Asset();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::glTF::Asset& operator=(::glTF::Asset const&);
-
     MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Asset();
     // NOLINTEND
 
 public:

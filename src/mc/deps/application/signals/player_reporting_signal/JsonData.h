@@ -26,9 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C JsonData(::std::string key, ::Json::Value value);
 
-    MCNAPI_C ~JsonData();
     // NOLINTEND
 
 public:

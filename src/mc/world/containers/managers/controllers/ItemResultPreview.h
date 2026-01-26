@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ItemResultPreview();
+
     // NOLINTEND
 
 public:

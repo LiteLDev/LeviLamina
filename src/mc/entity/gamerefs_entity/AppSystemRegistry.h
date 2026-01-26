@@ -30,8 +30,6 @@ public:
     MCNAPI_C ::TickingSystemRegistrationToken registerTickingSystem(::std::unique_ptr<::ITickingSystem> tickingSystem);
 
     MCNAPI_C void tick();
-
-    MCNAPI_C ~AppSystemRegistry();
     // NOLINTEND
 
 public:

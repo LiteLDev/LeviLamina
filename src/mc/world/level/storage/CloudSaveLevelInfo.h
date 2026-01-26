@@ -32,20 +32,9 @@ public:
 
     MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
-    MCNAPI_C CloudSaveLevelInfo(
-        ::std::string driveItemId,
-        ::std::string cTag,
-        ::std::string userId,
-        ::std::string filename,
-        ::std::string lastUpdated,
-        bool          needsUpload
-    );
-
     MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
     MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
-
-    MCNAPI_C bool operator==(::CloudSaveLevelInfo const& other) const;
 
     MCNAPI void serialize(::CompoundTag& tag) const;
 

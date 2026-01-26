@@ -24,8 +24,6 @@ public:
 
     MCAPI explicit HashedString(char const* str);
 
-    MCAPI_C explicit HashedString(::std::string_view str);
-
     MCAPI HashedString(uint64 hash, char const* str);
 
     MCFOLD char const* c_str() const;

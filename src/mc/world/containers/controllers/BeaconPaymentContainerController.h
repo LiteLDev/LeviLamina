@@ -14,10 +14,6 @@ class Recipes;
 
 class BeaconPaymentContainerController : public ::ContainerController {
 public:
-    // prevent constructor by default
-    BeaconPaymentContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconPaymentContainerController() /*override*/ = default;
@@ -28,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit BeaconPaymentContainerController(::std::shared_ptr<::ContainerModel> ptrContainerModel);
+
     // NOLINTEND
 
 public:

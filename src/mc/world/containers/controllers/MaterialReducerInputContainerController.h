@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerInputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MaterialReducerInputContainerController() /*override*/ = default;
@@ -35,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit MaterialReducerInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
     // NOLINTEND
 
 public:

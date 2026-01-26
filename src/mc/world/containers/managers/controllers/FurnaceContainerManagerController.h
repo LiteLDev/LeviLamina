@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FurnaceContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FurnaceContainerManagerController() /*override*/ = default;
@@ -42,11 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C FurnaceContainerManagerController(
-        ::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel,
-        ::HashedString const&                           recipeTag
-    );
-
     MCNAPI_C int getBurnProgress(int max);
 
     MCNAPI_C int getLitProgress(int max);

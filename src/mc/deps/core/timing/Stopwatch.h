@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
+    Stopwatch();
 
 public:
     // virtual functions
@@ -33,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Stopwatch();
-
     MCNAPI_C void start();
     // NOLINTEND
 

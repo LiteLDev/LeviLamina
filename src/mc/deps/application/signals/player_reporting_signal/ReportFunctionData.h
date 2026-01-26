@@ -22,9 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ReportFunctionData(::PlayerReportingSignal::ReportFunctionData&&);
 
-    MCNAPI_C ~ReportFunctionData();
     // NOLINTEND
 
 public:

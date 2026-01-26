@@ -9,7 +9,7 @@ struct LocalGameServerToken : public ::NewType<::std::string> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~LocalGameServerToken();
+
     // NOLINTEND
 
 public:

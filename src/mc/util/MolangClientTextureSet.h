@@ -39,58 +39,18 @@ public:
 
 public:
     // prevent constructor by default
+    MolangClientTextureSet& operator=(MolangClientTextureSet const&);
+    MolangClientTextureSet(MolangClientTextureSet const&);
     MolangClientTextureSet();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MolangClientTextureSet(::MolangClientTextureSet const& rhs);
-
-    MCNAPI_C MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
-
-    MCNAPI_C MolangClientTextureSet(
-        ::HashedString const& name,
-        ::mce::TexturePtr     colorTexturePtr,
-        ::mce::TexturePtr     mersTexturePtr
-    );
-
-    MCNAPI_C MolangClientTextureSet(
-        ::HashedString const& name,
-        ::mce::TexturePtr     colorTexturePtr,
-        ::mce::TexturePtr     mersTexturePtr,
-        ::mce::TexturePtr     normalTexturePtr
-    );
-
-    MCNAPI_C MolangClientTextureSet(
-        ::HashedString const& name,
-        ::mce::TexturePtr     colorTexturePtr,
-        ::mce::TexturePtr     mersTexturePtr,
-        ::MERSTextureMode     mersTextureMode,
-        ::mce::TexturePtr     normalTexturePtr,
-        ::NormalTextureMode   normalTextureMode
-    );
-
-    MCNAPI_C MolangClientTextureSet(
-        ::HashedString const&                     name,
-        ::mce::TexturePtr                         colorTexturePtr,
-        ::mce::TexturePtr                         mersTexturePtr,
-        ::MERSTextureMode                         mersTextureMode,
-        ::mce::TexturePtr                         normalTexturePtr,
-        ::NormalTextureMode                       normalTextureMode,
-        ::std::optional<::MERSUniformData> const& uniformData,
-        bool                                      hasMERS,
-        bool                                      hasNormals
-    );
-
     MCNAPI_C ::std::unique_ptr<::MolangClientTextureSet::ExtraPBRData> _clonePBRData() const;
 
     MCNAPI_C ::mce::ClientTexture const& getClientTexture() const;
 
     MCNAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
-
-    MCNAPI_C ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
-
-    MCNAPI_C ~MolangClientTextureSet();
     // NOLINTEND
 
 public:

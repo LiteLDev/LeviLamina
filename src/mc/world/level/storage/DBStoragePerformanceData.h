@@ -53,15 +53,12 @@ public:
         // prevent constructor by default
         AtomicAccumulator& operator=(AtomicAccumulator const&);
         AtomicAccumulator(AtomicAccumulator const&);
+        AtomicAccumulator();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C AtomicAccumulator();
-
         MCNAPI_S void reset();
-
-        MCNAPI_C ~AtomicAccumulator();
         // NOLINTEND
 
     public:
@@ -88,13 +85,12 @@ public:
         // prevent constructor by default
         DBStorageAccumulator& operator=(DBStorageAccumulator const&);
         DBStorageAccumulator(DBStorageAccumulator const&);
+        DBStorageAccumulator();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C DBStorageAccumulator();
 
-        MCNAPI_C ~DBStorageAccumulator();
         // NOLINTEND
 
     public:

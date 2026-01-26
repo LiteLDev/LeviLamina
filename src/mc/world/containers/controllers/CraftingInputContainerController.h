@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingInputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CraftingInputContainerController() /*override*/ = default;
@@ -39,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CraftingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
     MCNAPI_C void onRecipeSelectedWithSpecificIngredients(
         ::Recipe const*                          recipe,
         uint64                                   gridSize,

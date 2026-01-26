@@ -34,6 +34,7 @@ public:
 
 public:
     // prevent constructor by default
+    ProfileImageOptions& operator=(ProfileImageOptions const&);
     ProfileImageOptions(ProfileImageOptions const&);
     ProfileImageOptions();
 
@@ -42,13 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI_C uint64 hash() const;
 
-    MCNAPI_C ::Social::ProfileImageOptions& operator=(::Social::ProfileImageOptions&&);
-
-    MCNAPI_C ::Social::ProfileImageOptions& operator=(::Social::ProfileImageOptions const&);
-
     MCNAPI_C ::std::string toString() const;
-
-    MCNAPI_C ~ProfileImageOptions();
     // NOLINTEND
 
 public:

@@ -30,14 +30,11 @@ public:
 
 public:
     // prevent constructor by default
-    ValueIterator& operator=(ValueIterator const&);
     ValueIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ValueIterator(::Json::ValueIterator const& other);
-
     MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
 
     MCAPI ~ValueIterator();

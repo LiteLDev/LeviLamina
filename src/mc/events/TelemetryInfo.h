@@ -18,12 +18,11 @@ public:
     // prevent constructor by default
     TelemetryInfo& operator=(TelemetryInfo const&);
     TelemetryInfo(TelemetryInfo const&);
+    TelemetryInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C TelemetryInfo();
-
     MCNAPI_C void _detectTampering();
 
     MCNAPI_C ::std::string _generateTamperGuard(::std::string const& content) const;

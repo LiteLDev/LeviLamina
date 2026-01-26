@@ -23,13 +23,12 @@ public:
 public:
     // prevent constructor by default
     RequestBuilder& operator=(RequestBuilder const&);
+    RequestBuilder(RequestBuilder const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RequestBuilder();
-
-    MCNAPI_C RequestBuilder(::Bedrock::Http::RequestBuilder const&);
 
     MCNAPI_C ::Bedrock::Http::RequestBuilder& body(::gsl::span<uchar> const& binaryData);
 

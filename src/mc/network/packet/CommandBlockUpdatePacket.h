@@ -60,8 +60,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandBlockUpdatePacket(::CommandBlockUpdatePacket const&);
-
-    MCAPI_C CommandBlockUpdatePacket(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
     // NOLINTEND
 
 public:

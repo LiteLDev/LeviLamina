@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ArmorContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player);
+
     // NOLINTEND
 
 public:

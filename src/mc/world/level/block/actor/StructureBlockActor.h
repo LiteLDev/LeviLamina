@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -64,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit StructureBlockActor(::BlockPos const& pos);
-
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
     MCAPI void _queueStructure(::IStructureWireframeQueue& wireframeQueue, ::StructureEditorData const& dataToQueue);

@@ -35,17 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C EnumOption(
-        ::OptionID                                      id,
-        ::OptionOwnerType                               ownerType,
-        ::OptionResetFlags                              resetFlags,
-        ::std::string const&                            captionId,
-        ::std::string const&                            saveTag,
-        int                                             value,
-        ::std::vector<int> const&                       values,
-        ::std::unordered_map<int, ::std::string> const& valueNameMap,
-        ::GameVersion                                   version
-    );
+
     // NOLINTEND
 
 public:

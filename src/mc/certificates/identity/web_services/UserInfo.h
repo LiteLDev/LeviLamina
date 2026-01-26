@@ -29,11 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C UserInfo(::WebServices::EduSignin::UserInfo&&);
 
-    MCNAPI_C ::WebServices::EduSignin::UserInfo& operator=(::WebServices::EduSignin::UserInfo&&);
-
-    MCNAPI_C ~UserInfo();
     // NOLINTEND
 
 public:

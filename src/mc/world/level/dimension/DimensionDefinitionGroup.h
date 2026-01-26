@@ -42,6 +42,7 @@ public:
 
 public:
     // prevent constructor by default
+    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
     DimensionDefinitionGroup();
 
 public:
@@ -56,8 +57,6 @@ public:
         ::ResourcePackManager* const   rpm,
         ::IMinecraftEventing&          eventing
     );
-
-    MCAPI_C ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup const&);
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     tryAddDimensionDefinitionByString(

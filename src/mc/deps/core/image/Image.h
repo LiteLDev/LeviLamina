@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit Image(::mce::Blob&& contents);
-
     MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
 
     MCAPI ::mce::Image clone() const;

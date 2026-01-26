@@ -56,15 +56,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Blob();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Blob(uint64 size);
 
-    MCNAPI_C ~Blob();
     // NOLINTEND
 
 public:

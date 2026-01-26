@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::WorkerPool& operator*() const;
+
     // NOLINTEND
 
 public:

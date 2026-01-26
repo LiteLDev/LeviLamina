@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit Vec3(::glm::vec3 const& glm);
-
     MCAPI explicit Vec3(float s);
 
     MCAPI Vec3(float x_, float y_, float z_);
@@ -39,21 +37,11 @@ public:
 
     MCAPI ::Vec3 operator*(float k) const;
 
-    MCAPI_C ::Vec3 operator+(float f) const;
-
     MCAPI ::Vec3 operator+(::Vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3& operator+=(::Vec3 const& rhs);
 
     MCAPI ::Vec3 operator-() const;
 
-    MCAPI_C ::Vec3 operator-(float f) const;
-
     MCAPI ::Vec3 operator-(::Vec3 const& rhs) const;
-
-    MCAPI_C ::Vec3& operator-=(::Vec3 const& rhs);
-
-    MCAPI_C bool operator==(::Vec3 const& rhs) const;
 
     MCAPI_C ::Vec3 round() const;
     // NOLINTEND

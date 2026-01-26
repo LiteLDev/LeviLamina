@@ -27,15 +27,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        StreamedResource& operator=(StreamedResource const&);
-        StreamedResource(StreamedResource const&);
-        StreamedResource();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::cg::ImageResource::StreamedResource& operator=(::cg::ImageResource::StreamedResource&&);
+
         // NOLINTEND
     };
 

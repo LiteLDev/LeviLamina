@@ -20,27 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ScriptDebuggerSettings(
-        bool                           allowOutbound,
-        bool                           allowInbound,
-        ::ScriptDebuggerAttachMode     attachMode,
-        uint                           autoAttachTimeoutSec,
-        bool                           forcePort,
-        ::std::optional<::std::string> host,
-        ::std::optional<uint>          port,
-        ::std::optional<::std::string> passcode
-    );
-
-    MCNAPI_C ::ScriptDebuggerSettings& operator=(::ScriptDebuggerSettings&&);
-
     MCNAPI ~ScriptDebuggerSettings();
     // NOLINTEND
 

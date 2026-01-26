@@ -12,10 +12,6 @@ class SmokerContainerManagerModel;
 
 class SmokerContainerManagerController : public ::FurnaceContainerManagerController {
 public:
-    // prevent constructor by default
-    SmokerContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SmokerContainerManagerController() /*override*/ = default;
@@ -24,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit SmokerContainerManagerController(
-        ::std::weak_ptr<::SmokerContainerManagerModel> containerManagerModel
-    );
+
     // NOLINTEND
 
 public:

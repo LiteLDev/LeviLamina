@@ -37,77 +37,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameConnectionInfo(GameConnectionInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameConnectionInfo();
 
-    MCAPI_C GameConnectionInfo(::Social::GameConnectionInfo&&);
-
-    MCAPI_C GameConnectionInfo(::Social::GameConnectionInfo const&);
-
-    MCAPI_C GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
-
-    MCAPI_C GameConnectionInfo(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType            connectionType,
-        ::NetherNet::NetworkID const&       netherNetId,
-        ::PlayerMessaging::NetworkID const& playerMessagingId
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType      connectionType,
-        ::NetherNet::NetworkID const& netherNetId,
-        ::GatheringServerInfo const&  serverInfo
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType      connectionType,
-        ::NetherNet::NetworkID const& netherNetId,
-        ::ThirdPartyInfo const&       serverInfo
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::RakNet::SystemAddress      connection,
-        ::RakNet::RakNetGUID const&  rakGuid,
-        ::ThirdPartyInfo const&      serverInfo,
-        ::GatheringServerInfo const& gatheringServerInfo
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType     connectionType,
-        ::std::string const&         ipAddress,
-        int                          port,
-        ::GatheringServerInfo const& serverInfo
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType connectionType,
-        ::std::string const&     ipAddress,
-        int                      port,
-        ::ThirdPartyInfo const&  serverInfo
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType      connectionType,
-        ::NetherNet::NetworkID const& netherNetId,
-        ::std::string&                serverRegion,
-        int                           serviceQuality
-    );
-
-    MCAPI_C GameConnectionInfo(
-        ::Social::ConnectionType connectionType,
-        ::std::string const&     ipAddress,
-        int                      port,
-        ::std::string&           serverRegion,
-        int                      serviceQuality
-    );
-
     MCAPI_C ::std::string getCorrelationId() const;
 
     MCAPI_C ::std::string const getRakNetGUID() const;
-
-    MCAPI_C ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
 
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
 

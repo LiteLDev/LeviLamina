@@ -24,13 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C NetworkSummary(
-        ::std::function<::TransportLayer()> getNetworkType,
-        ::std::function<bool()>             isInGame,
-        ::std::function<bool()>             isSignedIntoSignalingService,
-        ::std::function<bool()>             isHostingLocalDedicatedServer
-    );
-
     MCNAPI_C ::std::optional<::std::string> getNetworkInfoString();
     // NOLINTEND
 

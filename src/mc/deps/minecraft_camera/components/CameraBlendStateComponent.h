@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::MinecraftCamera::CameraBlendStateComponent& operator=(::MinecraftCamera::CameraBlendStateComponent&&);
+
     // NOLINTEND
 };
 

@@ -68,11 +68,6 @@ public:
 
     MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
-    MCNAPI_C EditorStructureTemplate(
-        ::StructureTemplate const&                              temp,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
-    );
-
     MCNAPI void _editorFillBlockInfo(
         ::BlockSource&                                 region,
         ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
@@ -94,8 +89,6 @@ public:
         ::BlockPos const&                              posMin,
         ::BlockPos const&                              span
     );
-
-    MCNAPI_C ::Editor::EditorStructureTemplate& operator=(::Editor::EditorStructureTemplate&&);
 
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,

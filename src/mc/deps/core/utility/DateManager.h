@@ -34,6 +34,7 @@ public:
     // prevent constructor by default
     DateManager& operator=(DateManager const&);
     DateManager(DateManager const&);
+    DateManager();
 
 public:
     // virtual functions
@@ -46,8 +47,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DateManager();
-
     MCNAPI_C void _sendScheduledCallbacks();
 
     MCNAPI_C ::tm getDateTime(::DateManager::TimeZoneType returnType) const;

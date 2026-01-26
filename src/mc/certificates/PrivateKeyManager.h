@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    PrivateKeyManager& operator=(PrivateKeyManager const&);
     PrivateKeyManager(PrivateKeyManager const&);
     PrivateKeyManager();
 
@@ -32,8 +33,6 @@ public:
     MCNAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System system);
 
     MCNAPI ::std::string computeSecret(::KeyManager const& peer) const;
-
-    MCNAPI_C ::PrivateKeyManager& operator=(::PrivateKeyManager const& rhs);
     // NOLINTEND
 
 public:

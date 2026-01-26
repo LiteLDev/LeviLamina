@@ -71,9 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ServerboundPackSettingChangePacket();
 
-    MCAPI_C explicit ServerboundPackSettingChangePacket(::ServerboundPackSettingChangePacketPayload payload);
     // NOLINTEND
 
 public:

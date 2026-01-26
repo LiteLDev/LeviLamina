@@ -26,14 +26,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LegacyMultiplayerToken();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C LegacyMultiplayerToken(::LegacyMultiplayerToken const& other);
-
     MCAPI ::Json::Value _getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
 
     MCAPI ::mce::UUID getIdentity() const;
@@ -43,8 +37,6 @@ public:
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo(bool trustSelfSigned) const;
 
     MCAPI ::std::string getXuid(bool trustSelfSigned) const;
-
-    MCAPI_C ::LegacyMultiplayerToken const& operator=(::LegacyMultiplayerToken const& other);
 
     MCAPI_C ::std::string toString() const;
 

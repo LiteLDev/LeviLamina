@@ -24,17 +24,14 @@ public:
 
     public:
         // prevent constructor by default
+        VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription&&);
 
-        MCNAPI_C ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription const&);
-
-        MCNAPI_C ~VolumeDescription();
         // NOLINTEND
 
     public:
@@ -61,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~VolumeDefinition();
+
     // NOLINTEND
 
 public:

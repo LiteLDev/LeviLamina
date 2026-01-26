@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LabTableContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LabTableContainerManagerController() /*override*/ = default;
@@ -35,10 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit LabTableContainerManagerController(
-        ::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C void _setupCallbacks();
 
     MCNAPI_C void _updateResult();

@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ExpandoModelElement();
+
     // NOLINTEND
 
 public:

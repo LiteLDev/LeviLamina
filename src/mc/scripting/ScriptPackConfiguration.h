@@ -32,8 +32,6 @@ public:
 
     MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
 
-    MCNAPI_S ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
-
     MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
 

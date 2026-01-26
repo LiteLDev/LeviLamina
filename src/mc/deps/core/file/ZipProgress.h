@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     ZipProgress& operator=(ZipProgress const&);
     ZipProgress(ZipProgress const&);
+    ZipProgress();
 
 public:
     // virtual functions
@@ -29,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ZipProgress();
+
     // NOLINTEND
 
 public:

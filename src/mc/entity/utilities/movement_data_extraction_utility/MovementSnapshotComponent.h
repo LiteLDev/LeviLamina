@@ -86,20 +86,13 @@ public:
 public:
     // prevent constructor by default
     MovementSnapshotComponent& operator=(MovementSnapshotComponent const&);
+    MovementSnapshotComponent(MovementSnapshotComponent const&);
+    MovementSnapshotComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MovementSnapshotComponent();
 
-    MCNAPI_C MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI_C MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-
-    MCNAPI_C ::MovementDataExtractionUtility::MovementSnapshotComponent&
-    operator=(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCNAPI_C ~MovementSnapshotComponent();
     // NOLINTEND
 
 public:

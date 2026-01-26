@@ -42,7 +42,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~MigrationProgress();
+
         // NOLINTEND
 
     public:

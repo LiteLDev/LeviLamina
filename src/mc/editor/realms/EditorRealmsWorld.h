@@ -23,8 +23,6 @@ public:
     MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld&&);
 
     MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld const&);
-
-    MCNAPI_C ~EditorRealmsWorld();
     // NOLINTEND
 
 public:

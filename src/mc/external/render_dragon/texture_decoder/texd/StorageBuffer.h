@@ -28,15 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StorageBuffer();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C StorageBuffer(uchar const* data, uint64 size);
 
-    MCAPI_C ~StorageBuffer();
     // NOLINTEND
 
 public:

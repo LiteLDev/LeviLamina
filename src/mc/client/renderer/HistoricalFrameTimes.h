@@ -17,12 +17,11 @@ public:
     // prevent constructor by default
     HistoricalFrameTimes& operator=(HistoricalFrameTimes const&);
     HistoricalFrameTimes(HistoricalFrameTimes const&);
+    HistoricalFrameTimes();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C HistoricalFrameTimes();
-
     MCNAPI_C void setCurrentFrameTime(float frameTime);
     // NOLINTEND
 

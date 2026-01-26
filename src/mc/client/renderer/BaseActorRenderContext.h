@@ -79,6 +79,7 @@ public:
 public:
     // prevent constructor by default
     BaseActorRenderContext& operator=(BaseActorRenderContext const&);
+    BaseActorRenderContext(BaseActorRenderContext const&);
     BaseActorRenderContext();
 
 public:
@@ -95,14 +96,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BaseActorRenderContext(::BaseActorRenderContext const&);
-
-    MCAPI_C BaseActorRenderContext(
-        ::ScreenContext&   screenContext,
-        ::IClientInstance& clientInstance,
-        ::IMinecraftGame&  minecraftGame
-    );
-
     MCAPI_C ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
     MCAPI_C float getFrameAlpha(::Actor const& actor) const;

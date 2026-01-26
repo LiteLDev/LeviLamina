@@ -42,8 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureDuplicatePayload(::Editor::Network::StructureDuplicatePayload const&);
 
-    MCNAPI_C StructureDuplicatePayload(::HashedString const& newId, ::HashedString const& fromId);
-
     MCNAPI ::Editor::Network::StructureDuplicatePayload& operator=(::Editor::Network::StructureDuplicatePayload const&);
     // NOLINTEND
 

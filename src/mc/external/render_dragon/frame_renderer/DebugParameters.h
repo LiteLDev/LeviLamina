@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~DebugParameters();
+
     // NOLINTEND
 
 public:

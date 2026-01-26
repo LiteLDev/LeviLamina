@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChestContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ChestContainerManagerController() /*override*/ = default;
@@ -36,10 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ChestContainerManagerController(
-        ::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C void _calculateFullCobblestoneAchievement();
 
     MCNAPI_C void _setupCallbacks();

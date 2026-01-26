@@ -15,12 +15,6 @@ class RecipeIngredient;
 
 class ShapelessRecipe : public ::Recipe {
 public:
-    // prevent constructor by default
-    ShapelessRecipe& operator=(ShapelessRecipe const&);
-    ShapelessRecipe(ShapelessRecipe const&);
-    ShapelessRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
@@ -41,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ShapelessRecipe(::ShapelessRecipe&& recipe);
+
     // NOLINTEND
 
 public:

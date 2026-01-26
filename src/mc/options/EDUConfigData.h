@@ -34,18 +34,13 @@ public:
 public:
     // prevent constructor by default
     EDUConfigData& operator=(EDUConfigData const&);
+    EDUConfigData(EDUConfigData const&);
     EDUConfigData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EDUConfigData(::EDUConfigData&&);
 
-    MCNAPI_C EDUConfigData(::EDUConfigData const&);
-
-    MCNAPI_C explicit EDUConfigData(::Json::Value const& config);
-
-    MCNAPI_C ~EDUConfigData();
     // NOLINTEND
 
 public:

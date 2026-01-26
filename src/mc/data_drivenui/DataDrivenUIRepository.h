@@ -75,11 +75,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DataDrivenUIRepository(
-        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
-        ::ResourcePackManager&                               resourcePackManager
-    );
-
     MCNAPI_C void _initializeLoaders(
         ::Puv::SlicedLoader<::SharedTypes::v1_21_130::DataDrivenUI::UIRoot, nullptr_t, nullptr_t>& rootLoader,
         ::Puv::SlicedLoader<::SharedTypes::v1_21_130::DataDrivenUI::UIComposition, nullptr_t, nullptr_t>&

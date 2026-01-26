@@ -29,9 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::WorldRecoveryTelemetryEvent& operator=(::Bedrock::WorldRecoveryTelemetryEvent&&);
 
-    MCNAPI_C ~WorldRecoveryTelemetryEvent();
     // NOLINTEND
 
 public:

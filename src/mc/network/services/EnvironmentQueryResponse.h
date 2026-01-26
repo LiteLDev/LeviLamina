@@ -33,8 +33,6 @@ public:
     GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
 
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
-
-    MCNAPI_C ~EnvironmentQueryResponse();
     // NOLINTEND
 
 public:

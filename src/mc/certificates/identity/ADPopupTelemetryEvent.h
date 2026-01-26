@@ -26,8 +26,6 @@ public:
         ::edu::Role                          role,
         ::std::string const&                 tenantType
     ) const;
-
-    MCNAPI_C ~ADPopupTelemetryEvent();
     // NOLINTEND
 
 public:

@@ -86,12 +86,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C RemoteConnectorComposite(
-        ::RakNetConnector::ConnectionCallbacks&              callbacks,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner
-    );
-
     MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getActiveConnector() const;
     // NOLINTEND
 

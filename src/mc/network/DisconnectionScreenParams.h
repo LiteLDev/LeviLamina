@@ -30,19 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DisconnectionScreenParams(
-        ::Connection::DisconnectFailReason disconnectFailReason,
-        ::std::string                      titleStringOverride,
-        ::std::string                      bodyStringOverride,
-        ::Connection::DisconnectionStage   disconnectStage,
-        ::std::string                      screenNameOverride,
-        ::std::string                      telemetryString,
-        bool                               leaveGame,
-        bool                               isSubClient,
-        ::std::string                      codewordOverride
-    );
 
-    MCNAPI_C ~DisconnectionScreenParams();
     // NOLINTEND
 
 public:

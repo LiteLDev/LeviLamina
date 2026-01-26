@@ -149,8 +149,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CommonBlockUtilityService(::Editor::ServiceProviderCollection& providers);
-
     MCNAPI ::BlockSource& _getBlockSource() const;
 
     MCNAPI ::Dimension& _getDimension() const;

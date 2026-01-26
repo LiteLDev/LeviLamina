@@ -33,21 +33,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MovementIntent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit MovementIntent(
-        ::std::variant<
-            ::sim::VoidMoveIntent,
-            ::sim::MoveInDirectionIntent,
-            ::sim::MoveToPositionIntent,
-            ::sim::NavigateToPositionsIntent,
-            ::sim::NavigateToEntityIntent> type
-    );
-
     MCNAPI void finalize(::SimulatedPlayer& player);
 
     MCNAPI ~MovementIntent();

@@ -84,12 +84,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EDUSystems(
-        ::IMinecraftGame&                               game,
-        ::EducationServicesEnvironment                  environment,
-        ::Identity::ActiveDirectoryIdentityParameters&& activeDirectoryIdentityParameters
-    );
-
     MCNAPI_C void _setupImmersiveReaderListener(::IClientInstance& client);
 
     MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity();
