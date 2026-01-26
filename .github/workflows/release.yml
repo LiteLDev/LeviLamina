@@ -139,13 +139,46 @@ jobs:
         run: |
           echo sha256=$(sha256sum levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
+      - name: Prepare SHA row
+        run: |
+          echo "| levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |" > sha-row.txt
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: sha-row-${{ matrix.target_type }}-${{ matrix.mode }}
+          path: sha-row.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: |
+            levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip
+
+  finalize-release-body:
+    needs: upload-to-release
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/download-artifact@v7
+        with:
+          pattern: sha-row-*
+          path: rows
+
+      - id: collect-sha-rows
+        run: |
+          find rows -name "sha-row.txt" -print -exec cat {} \; > table_rows.txt
+          echo "rows<<'EOF'" >> $GITHUB_OUTPUT
+          cat table_rows.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - uses: softprops/action-gh-release@v2
         with:
           append_body: true
-          body: |-
-            | levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
-          files: |
-            levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip
+          tag_name: ${{ github.event.release.tag_name }}
+          body: ${{ steps.collect-sha-rows.outputs.rows }}
 
   dispatch-client-version-db:
     runs-on: ubuntu-latest
