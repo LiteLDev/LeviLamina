@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompoundCreatorContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CompoundCreatorContainerManagerController() /*override*/ = default;
@@ -67,10 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CompoundCreatorContainerManagerController(
-        ::std::weak_ptr<::CompoundCreatorContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C bool
     _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
 

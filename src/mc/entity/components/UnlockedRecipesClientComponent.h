@@ -20,15 +20,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UnlockedRecipesClientComponent& operator=(UnlockedRecipesClientComponent const&);
-    UnlockedRecipesClientComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C UnlockedRecipesClientComponent(::UnlockedRecipesClientComponent const&);
-
     MCAPI_C void addUnlockedRecipes(
         ::Recipes const&                    recipes,
         ::std::vector<::std::string> const& unlockedRecipeIds,
@@ -37,11 +30,7 @@ public:
 
     MCAPI_C bool isRecipeUnlocked(::Recipe const& recipe) const;
 
-    MCAPI_C ::UnlockedRecipesClientComponent& operator=(::UnlockedRecipesClientComponent&&);
-
     MCAPI_C void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
-
-    MCAPI_C ~UnlockedRecipesClientComponent();
     // NOLINTEND
 
 public:

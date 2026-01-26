@@ -21,15 +21,14 @@ public:
 
 public:
     // prevent constructor by default
+    Frame& operator=(Frame const&);
     Frame(Frame const&);
     Frame();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::gif::Frame& operator=(::gif::Frame const&);
 
-    MCNAPI_C ~Frame();
     // NOLINTEND
 
 public:

@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CrashHandlerImpl(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
+
     // NOLINTEND
 
 public:

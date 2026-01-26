@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~ParticleEmitterDirection();
+
     // NOLINTEND
 
 public:

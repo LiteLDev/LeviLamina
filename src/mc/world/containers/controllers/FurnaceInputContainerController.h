@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FurnaceInputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FurnaceInputContainerController() /*override*/ = default;
@@ -35,10 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C FurnaceInputContainerController(
-        ::std::shared_ptr<::ContainerModel> containerModel,
-        ::HashedString const&               recipeTag
-    );
+
     // NOLINTEND
 
 public:

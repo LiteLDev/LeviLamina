@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ExternalFileLevelStorageSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ExternalFileLevelStorageSource() /*override*/;
@@ -98,11 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ExternalFileLevelStorageSource(
-        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&  pathManager,
-        ::Bedrock::NotNullNonOwnerPtr<::SaveTransactionManager> const& saveTransactionManager
-    );
-
     MCAPI_C void _getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) const;
     // NOLINTEND
 

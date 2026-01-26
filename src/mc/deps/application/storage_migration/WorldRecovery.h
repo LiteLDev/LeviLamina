@@ -43,7 +43,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~RecoveryResult();
+
         // NOLINTEND
 
     public:
@@ -73,7 +73,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~RecoveryUpdate();
+
         // NOLINTEND
 
     public:

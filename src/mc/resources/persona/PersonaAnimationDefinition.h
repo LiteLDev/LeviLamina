@@ -20,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PersonaAnimationDefinition(::PersonaAnimationDefinition&&);
-
     MCNAPI ~PersonaAnimationDefinition();
     // NOLINTEND
 

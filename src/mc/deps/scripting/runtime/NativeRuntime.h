@@ -134,8 +134,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
-
     MCAPI_S ::Scripting::ResultAny runFunction(
         ::Scripting::ContextId contextId,
         ::std::function<::Scripting::ResultAny(

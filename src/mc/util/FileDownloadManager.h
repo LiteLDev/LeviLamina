@@ -55,11 +55,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C FileDownloadManager(
-        ::std::shared_ptr<::IFilePicker>          filePicker,
-        ::std::shared_ptr<::IFileChunkDownloader> fileDownloader
-    );
-
     MCNAPI_C void _writeData(
         ::std::vector<uchar>                data,
         uint64                              writeBytes,

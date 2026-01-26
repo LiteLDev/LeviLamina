@@ -57,8 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DataDrivenGeometry(::DataDrivenModel& owner, ::std::string const& name, ::GeometryPtr sourceGeo);
-
     MCNAPI_C void copyBoneMatricesToActor(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,

@@ -97,8 +97,6 @@ public:
 
     MCNAPI_C int addTexture(::glTF::Texture& texture);
 
-    MCNAPI_C glTFExporter(::Core::Path const& folderPath, ::std::string const& modelName);
-
     MCNAPI_C void serialize();
     // NOLINTEND
 

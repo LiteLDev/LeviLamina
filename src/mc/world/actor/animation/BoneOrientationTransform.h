@@ -15,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BoneOrientationTransform();
+
     // NOLINTEND
 
 public:

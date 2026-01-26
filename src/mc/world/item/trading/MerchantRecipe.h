@@ -38,10 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MerchantRecipe();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MerchantRecipe();
-
     MCAPI MerchantRecipe(::MerchantRecipe&&);
 
     MCAPI MerchantRecipe(::MerchantRecipe const&);

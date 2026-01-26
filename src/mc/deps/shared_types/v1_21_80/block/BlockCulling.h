@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~BlockCulling();
+
     // NOLINTEND
 
 public:

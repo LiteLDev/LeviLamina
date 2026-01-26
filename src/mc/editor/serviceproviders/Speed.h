@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
+
     // NOLINTEND
 
 public:

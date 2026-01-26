@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
+
     // NOLINTEND
 
 public:

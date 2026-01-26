@@ -30,10 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubChunkRequestPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SubChunkRequestPacket() /*override*/;
@@ -50,11 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C SubChunkRequestPacket(
-        ::DimensionType                     dimensionType,
-        ::SubChunkPos const&                playerPos,
-        ::std::vector<::SubChunkPos> const& pos
-    );
+
     // NOLINTEND
 
 public:

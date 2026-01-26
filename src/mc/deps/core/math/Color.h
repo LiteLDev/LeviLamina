@@ -271,6 +271,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C bool isNan() const;
+
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
 

@@ -34,16 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C WatchdogTimer(
-        ::WorkerPool&                                              workerPool,
-        ::Scheduler&                                               scheduler,
-        ::std::chrono::nanoseconds                                 timeout,
-        bool                                                       startPaused,
-        ::std::function<::std::chrono::steady_clock::time_point()> timeoutCallback,
-        ::std::chrono::nanoseconds                                 deadline,
-        bool                                                       assertOnDeadline
-    );
-
     MCNAPI_C void _queueTaskWithoutLock();
 
     MCNAPI_C ::TaskResult _watchdogTimerThreadRoutine();

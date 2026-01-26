@@ -24,14 +24,12 @@ public:
 public:
     // prevent constructor by default
     PriorityCategory& operator=(PriorityCategory const&);
+    PriorityCategory(PriorityCategory const&);
+    PriorityCategory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C PriorityCategory();
-
-    MCNAPI_C PriorityCategory(::CameraAimAssist::PriorityCategory const&);
-
     MCNAPI PriorityCategory(
         ::HashedString const&                            id,
         int                                              defaultBlockPriority,
@@ -40,8 +38,6 @@ public:
         ::std::unordered_map<::HashedString, int> const& entityPriority,
         ::std::unordered_map<::HashedString, int> const& blockTagPriority
     );
-
-    MCNAPI_C ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
 
     MCNAPI ~PriorityCategory();
     // NOLINTEND

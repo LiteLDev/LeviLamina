@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    MinEngineVersion& operator=(MinEngineVersion const&);
     MinEngineVersion(MinEngineVersion const&);
     MinEngineVersion();
 
@@ -25,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
-
-    MCAPI_C ::MinEngineVersion& operator=(::MinEngineVersion const&);
 
     MCAPI ~MinEngineVersion();
     // NOLINTEND

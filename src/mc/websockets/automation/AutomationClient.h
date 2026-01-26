@@ -77,8 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit AutomationClient(::IMinecraftApp& minecraft);
-
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
     MCNAPI void _removeSession(::Automation::AutomationSession const& session);

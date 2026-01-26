@@ -29,17 +29,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DisplayActorManager();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C DisplayActorManager(
-        ::std::unique_ptr<::IDisplayActorManagerProxy>         displayActorManagerProxy,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
-    );
-
     MCNAPI_C void _removeDisplayActorEntity(::OwnerPtr<::EntityContext> entity);
 
     MCNAPI_C ::Actor* addDisplayActorEntity(
@@ -53,8 +44,6 @@ public:
     MCNAPI_C void removeAllDisplayActorEntities();
 
     MCNAPI_C bool removeDisplayActorEntity(::WeakEntityRef weakEntityRef);
-
-    MCNAPI_C ~DisplayActorManager();
     // NOLINTEND
 
 public:

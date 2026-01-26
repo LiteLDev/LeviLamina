@@ -117,7 +117,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+
     // NOLINTEND
 
 public:

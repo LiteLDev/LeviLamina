@@ -31,6 +31,7 @@ public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
+    AppPlatformWindows();
 
 public:
     // virtual functions
@@ -112,8 +113,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C AppPlatformWindows();
-
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 

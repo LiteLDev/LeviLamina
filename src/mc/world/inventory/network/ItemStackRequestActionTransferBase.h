@@ -26,10 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestActionTransferBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _write(::BinaryStream& stream) const /*override*/;
@@ -42,14 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ItemStackRequestActionTransferBase(
-        ::ItemStackRequestActionType      actionType,
-        uchar                             amount,
-        ::ItemStackRequestSlotInfo const& src,
-        ::ItemStackRequestSlotInfo const& dst,
-        bool                              isDstSerialized,
-        bool                              isAmountSerialized
-    );
+
     // NOLINTEND
 
 public:

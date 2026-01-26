@@ -98,15 +98,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C SparseContainer(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        bool                                             isClientSide,
-        bool                                             isItemStackNetManagerEnabled,
-        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
-
     MCAPI_C int _getAvailableAddCount(
         ::ContainerScreenContext const& context,
         ::ContainerEnumName             name,

@@ -20,13 +20,12 @@ public:
 public:
     // prevent constructor by default
     JsonValueHierarchy& operator=(JsonValueHierarchy const&);
+    JsonValueHierarchy(JsonValueHierarchy const&);
     JsonValueHierarchy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C JsonValueHierarchy(::JsonValueHierarchy const&);
-
     MCNAPI_C ::Json::Value const& get(::std::string const& name) const;
 
     MCNAPI_C ::Json::Value const&
@@ -40,8 +39,6 @@ public:
 
     MCNAPI_C ::MinEngineVersion const& getMinEngineVersion() const;
 
-    MCNAPI_C ::Json::Value const& operator[](::std::string const& name) const;
-
     MCNAPI_C void pushEmptyNode();
 
     MCNAPI_C void push_back(
@@ -50,8 +47,6 @@ public:
         ::MinEngineVersion const& minEngineVersion,
         ::std::string const&      fileName
     );
-
-    MCNAPI_C ~JsonValueHierarchy();
     // NOLINTEND
 
 public:

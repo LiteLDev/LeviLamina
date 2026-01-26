@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HudContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~HudContainerManagerController() /*override*/ = default;
@@ -34,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit HudContainerManagerController(::std::weak_ptr<::HudContainerManagerModel> containerManagerModel);
-
     MCNAPI_C void refreshHotbar();
     // NOLINTEND
 

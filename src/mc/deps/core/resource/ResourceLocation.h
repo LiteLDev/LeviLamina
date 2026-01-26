@@ -23,25 +23,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourceLocation();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ResourceLocation();
-
-    MCAPI_C ResourceLocation(::ResourceLocation const&);
-
-    MCAPI_C explicit ResourceLocation(::Core::PathView path);
-
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
     MCAPI_C ::HashedString getHashedPath() const;
-
-    MCAPI_C bool operator<(::ResourceLocation const& rhs) const;
-
-    MCAPI_C ::ResourceLocation& operator=(::ResourceLocation const&);
-
-    MCAPI_C bool operator==(::ResourceLocation const& rhs) const;
 
     MCAPI ~ResourceLocation();
     // NOLINTEND

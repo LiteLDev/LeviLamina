@@ -125,8 +125,6 @@ public:
 
     MCAPI LevelSettings(::LevelSettings const&);
 
-    MCAPI_C explicit LevelSettings(::LevelSummary const& summary);
-
     MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
     MCAPI_S ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);

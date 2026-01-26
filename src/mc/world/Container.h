@@ -214,12 +214,6 @@ public:
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI_C Container(
-        ::SharedTypes::Legacy::ContainerType       type,
-        ::Bedrock::Safety::RedactableString const& name,
-        bool                                       customName
-    );
-
     MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 

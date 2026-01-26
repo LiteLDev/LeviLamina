@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ElementConstructorContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ElementConstructorContainerManagerController() /*override*/ = default;
@@ -68,10 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ElementConstructorContainerManagerController(
-        ::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::ItemInstance _getElementItem(::ElementType type) const;
 
     MCNAPI_C bool _handleOutputSwap(::SlotData const& src, ::SlotData const& dest, ::ItemTransferAmount amount);

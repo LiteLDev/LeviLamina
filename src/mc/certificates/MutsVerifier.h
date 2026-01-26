@@ -45,13 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MutsVerifier(
-        ::std::string                    responseField,
-        ::std::string                    payloadField,
-        ::std::string                    publicKey,
-        ::std::function<int64()>         getTime,
-        ::std::function<::std::string()> createRequestId
-    );
+
     // NOLINTEND
 
 public:

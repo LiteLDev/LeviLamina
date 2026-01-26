@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShapedRecipe& operator=(ShapedRecipe const&);
-    ShapedRecipe(ShapedRecipe const&);
-    ShapedRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -51,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ShapedRecipe(::ShapedRecipe&& recipe);
-
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;

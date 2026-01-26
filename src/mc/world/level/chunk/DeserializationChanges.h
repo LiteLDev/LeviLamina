@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~DeserializationChanges();
+
     // NOLINTEND
 
 public:

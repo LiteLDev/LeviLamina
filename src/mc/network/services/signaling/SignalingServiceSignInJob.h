@@ -54,13 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SignalingServiceSignInJob(
-        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&&                        netherNetConnector,
-        ::std::shared_ptr<::SignalingService>                                        signalingService,
-        bool                                                                         useJsonRpc,
-        ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
-    );
-
     MCNAPI void _handleSignInResult(
         ::std::error_code                                       error,
         ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,

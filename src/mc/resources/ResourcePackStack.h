@@ -58,11 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ResourcePackStack(
-        ::std::vector<::PackInstance> const&                                  packs,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
-    );
-
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,

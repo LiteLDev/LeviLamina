@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ~ClientAssertion();
+
     // NOLINTEND
 
 public:

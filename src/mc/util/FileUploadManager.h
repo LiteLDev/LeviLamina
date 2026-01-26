@@ -96,12 +96,6 @@ public:
     // NOLINTBEGIN
     MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
-    MCNAPI_C FileUploadManager(
-        ::TaskGroup&                                         taskGroup,
-        ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
-    );
-
     MCNAPI void _generateMultiPartHelper();
 
     MCNAPI void _resumeUpload();

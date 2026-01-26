@@ -27,12 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C WindowState(
-        ::tagRECT const&                         defaultRect,
-        ::std::unique_ptr<::WindowStateStorage>  storage,
-        ::std::unique_ptr<::WindowStatePlatform> platform
-    );
-
     MCNAPI_C bool _fitToScreen();
 
     MCNAPI_C bool readFromWindow(::HWND__* window);

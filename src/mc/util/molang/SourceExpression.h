@@ -77,8 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit SourceExpression(::Molang::details::SourceTree node);
-
     MCNAPI SourceExpression(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 

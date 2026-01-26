@@ -14,7 +14,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~ClipboardData();
+
     // NOLINTEND
 
 public:

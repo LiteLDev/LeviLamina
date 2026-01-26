@@ -18,20 +18,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerScreenActionResult& operator=(ContainerScreenActionResult const&);
-    ContainerScreenActionResult();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ContainerScreenActionResult(::ContainerScreenActionResult const&);
 
-    MCNAPI_C explicit ContainerScreenActionResult(::ContainerValidationResult const& validationResult);
-
-    MCNAPI_C ::ContainerScreenActionResult& operator=(::ContainerScreenActionResult&&);
-
-    MCNAPI_C ~ContainerScreenActionResult();
     // NOLINTEND
 
 public:

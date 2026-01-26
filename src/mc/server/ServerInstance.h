@@ -92,8 +92,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_S CreateServerLevelOps(::ServerInstance::CreateServerLevelOps&&);
-
         MCNAPI ~CreateServerLevelOps();
         // NOLINTEND
 

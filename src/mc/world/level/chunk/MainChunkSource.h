@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MainChunkSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MainChunkSource() /*override*/ = default;
@@ -54,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
+
     // NOLINTEND
 
 public:

@@ -55,8 +55,6 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCAPI_C explicit ItemStack(::ItemInstance const& rhs);
-
     MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);

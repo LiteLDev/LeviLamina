@@ -35,10 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TradeContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~TradeContainerManagerController() /*override*/ = default;
@@ -74,8 +70,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit TradeContainerManagerController(::std::weak_ptr<::TradeContainerManagerModel> pModel);
-
     MCNAPI_C void _consumeIngredients(uchar numCrafts);
 
     MCNAPI_C void

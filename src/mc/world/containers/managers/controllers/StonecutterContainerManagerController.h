@@ -35,10 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StonecutterContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~StonecutterContainerManagerController() /*override*/ = default;
@@ -83,10 +79,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit StonecutterContainerManagerController(
-        ::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::std::pair<::ItemInstance, ::RecipeNetId> _buildResultItem();
 
     MCNAPI_C bool

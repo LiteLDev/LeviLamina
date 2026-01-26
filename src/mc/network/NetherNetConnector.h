@@ -105,7 +105,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~NewOutgoingConnectionEvent();
+
         // NOLINTEND
 
     public:

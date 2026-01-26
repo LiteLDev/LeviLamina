@@ -24,12 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C bool isNull() const;
-
-    MCNAPI_C ::RenderController const* operator->() const;
-
-    MCNAPI_C ::RenderController* operator->();
-
-    MCNAPI_C ~RenderControllerPtr();
     // NOLINTEND
 
 public:

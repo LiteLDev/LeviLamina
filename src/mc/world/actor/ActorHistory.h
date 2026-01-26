@@ -34,7 +34,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ~Snapshot();
+
         // NOLINTEND
 
     public:

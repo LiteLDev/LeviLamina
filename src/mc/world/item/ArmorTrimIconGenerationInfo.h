@@ -20,26 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ArmorTrimIconGenerationInfo& operator=(ArmorTrimIconGenerationInfo const&);
-    ArmorTrimIconGenerationInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ArmorTrimIconGenerationInfo(::ArmorTrimIconGenerationInfo const&);
 
-    MCAPI_C ArmorTrimIconGenerationInfo(
-        ::std::string const&      armorName,
-        ::std::string const&      armorType,
-        ::ResourceLocation const& armorTextureLocation,
-        ::ResourceLocation const& trimTextureLocation,
-        ::std::string const&      armorMaterial,
-        ::std::string const&      trimMaterial,
-        ::std::string const&      trimPalette
-    );
-
-    MCAPI_C ~ArmorTrimIconGenerationInfo();
     // NOLINTEND
 
 public:

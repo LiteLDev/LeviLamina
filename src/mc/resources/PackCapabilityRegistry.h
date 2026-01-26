@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
-
     MCNAPI ~PackCapabilityRegistry();
     // NOLINTEND
 

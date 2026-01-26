@@ -23,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
 
     // NOLINTEND

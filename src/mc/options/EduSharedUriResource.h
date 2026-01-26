@@ -25,8 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI EduSharedUriResource(::EduSharedUriResource&&);
 
-    MCNAPI_C bool operator!=(::EduSharedUriResource const& rhs) const;
-
     MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
 
     MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource const&);

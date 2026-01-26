@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Audio(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+
     // NOLINTEND
 
 public:

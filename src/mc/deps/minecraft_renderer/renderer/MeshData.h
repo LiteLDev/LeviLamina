@@ -29,26 +29,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MeshData& operator=(MeshData const&);
-    MeshData(MeshData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MeshData();
-
-    MCAPI_C MeshData(::mce::MeshData&&);
-
     MCAPI_C void clear();
 
     MCAPI_C ::mce::MeshData clone() const;
 
     MCAPI_C void freeMemory();
-
-    MCAPI_C ::mce::MeshData& operator=(::mce::MeshData&&);
-
-    MCAPI_C ~MeshData();
     // NOLINTEND
 
 public:

@@ -86,12 +86,11 @@ public:
         // prevent constructor by default
         ComponentStateBoundingBox& operator=(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox(ComponentStateBoundingBox const&);
+        ComponentStateBoundingBox();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ComponentStateBoundingBox();
-
         MCNAPI bool
         operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateBoundingBox const& other) const;
         // NOLINTEND
@@ -191,11 +190,12 @@ public:
         // prevent constructor by default
         ComponentStateGizmo& operator=(ComponentStateGizmo const&);
         ComponentStateGizmo(ComponentStateGizmo const&);
+        ComponentStateGizmo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ComponentStateGizmo();
+
         // NOLINTEND
 
     public:

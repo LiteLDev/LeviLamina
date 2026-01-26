@@ -30,20 +30,12 @@ public:
 public:
     // prevent constructor by default
     SkinnedMeshGroup& operator=(SkinnedMeshGroup const&);
+    SkinnedMeshGroup(SkinnedMeshGroup const&);
     SkinnedMeshGroup();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C SkinnedMeshGroup(::SkinnedMeshGroup const&);
-
-    MCNAPI_C SkinnedMeshGroup(
-        ::ModelPart& modelPart,
-        int          skinnedMeshGroupIdentifier,
-        bool         isUniqueGroup,
-        uint64       skinnedMeshGroupIndex
-    );
-
     MCNAPI_C ::MaterialVariants const&
     _evalMaterialVarants(::RenderParams& renderParams, ::RenderController const* renderController);
 

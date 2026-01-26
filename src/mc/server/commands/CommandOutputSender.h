@@ -25,6 +25,7 @@ public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&);
     CommandOutputSender(CommandOutputSender const&);
+    CommandOutputSender();
 
 public:
     // virtual functions
@@ -39,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CommandOutputSender();
-
     MCNAPI_C void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
 
     MCNAPI_C ::Json::Value _toJson(::CommandOutput const& commandOutput) const;

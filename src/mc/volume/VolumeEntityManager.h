@@ -46,8 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C VolumeEntityManager(::StackRefResult<::EntityRegistry> registry, ::cereal::ReflectionCtx& ctx);
-
     MCNAPI_C ::OwnerPtr<::EntityContext> _createVolumeEntity(::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 

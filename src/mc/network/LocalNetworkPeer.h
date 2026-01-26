@@ -31,9 +31,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::LocalNetworkPeer::IncomingData& operator=(::LocalNetworkPeer::IncomingData&&);
 
-        MCNAPI_C ~IncomingData();
         // NOLINTEND
 
     public:
@@ -54,6 +52,7 @@ public:
     // prevent constructor by default
     LocalNetworkPeer& operator=(LocalNetworkPeer const&);
     LocalNetworkPeer(LocalNetworkPeer const&);
+    LocalNetworkPeer();
 
 public:
     // virtual functions
@@ -77,8 +76,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C LocalNetworkPeer();
-
     MCNAPI_C void addIncomingData(::std::string data);
     // NOLINTEND
 

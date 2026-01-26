@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide) /*override*/;
@@ -45,13 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(::ItemInstance craftResult);
-
-    MCNAPI_C ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
-        ::std::vector<::ItemInstance> const& craftResults,
-        uchar                                numCrafts
-    );
-
     MCNAPI_C void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
     // NOLINTEND
 

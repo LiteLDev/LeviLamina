@@ -58,10 +58,6 @@ public:
         MCAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
 
         MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
-
-        MCAPI_S ::PacketGroupDefinition::PacketGroupBuilder& operator=(::PacketGroupDefinition::PacketGroupBuilder&&);
-
-        MCAPI_S ~PacketGroupBuilder();
         // NOLINTEND
 
     public:

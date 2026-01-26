@@ -45,8 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void updateResource(uint64 const& key);
-
-    MCNAPI_C ~LRUEviction();
     // NOLINTEND
 
 public:

@@ -20,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit QRCode(::std::string const& targetString);
 
-    MCNAPI_C ~QRCode();
     // NOLINTEND
 
 public:

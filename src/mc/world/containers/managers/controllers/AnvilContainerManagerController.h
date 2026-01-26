@@ -44,10 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AnvilContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AnvilContainerManagerController() /*override*/ = default;
@@ -98,10 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit AnvilContainerManagerController(
-        ::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C void _consumeMaterials();
 
     MCNAPI_C bool _consumeOneFromAnvilInputSlot();

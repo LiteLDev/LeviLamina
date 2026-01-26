@@ -34,30 +34,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActiveDirectoryPopup& operator=(ActiveDirectoryPopup const&);
+    ActiveDirectoryPopup(ActiveDirectoryPopup const&);
+    ActiveDirectoryPopup();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ActiveDirectoryPopup();
-
-    MCNAPI_C ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
-
-    MCNAPI_C ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
-
-    MCNAPI_C ActiveDirectoryPopup(
-        ::std::string&&             id,
-        ::std::string&&             title,
-        ::std::string&&             popupText,
-        ::std::string&&             hyperlinkIntroText,
-        ::std::string&&             hyperlinkLabelText,
-        ::std::string&&             hyperlinkUri,
-        ::ActiveDirectoryAction     postPopupAction,
-        ::ActiveDirectoryExperience experienceType
-    );
-
     MCNAPI_C ::std::string getTTSMessageBody() const;
-
-    MCNAPI_C ::ActiveDirectoryPopup& operator=(::ActiveDirectoryPopup const&);
-
-    MCNAPI_C ~ActiveDirectoryPopup();
     // NOLINTEND
 
 public:

@@ -58,18 +58,16 @@ public:
 
 public:
     // prevent constructor by default
+    BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
+    BlockGeometryComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BlockGeometryComponent();
-
     MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
 
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
-
-    MCAPI_C ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
 
     MCAPI ~BlockGeometryComponent();
     // NOLINTEND

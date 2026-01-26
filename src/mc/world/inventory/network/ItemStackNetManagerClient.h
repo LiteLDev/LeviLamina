@@ -58,10 +58,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PredictiveContainer();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         virtual ~PredictiveContainer() = default;
@@ -70,13 +66,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C PredictiveContainer(
-            ::Container&                                     backingContainer,
-            ::SparseContainerBackingSetType                  backingSetType,
-            bool                                             isItemStackNetManagerEnabled,
-            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
-            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
-        );
+
         // NOLINTEND
 
     public:
@@ -109,7 +99,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~OpenSessionContainerData();
+
         // NOLINTEND
 
     public:
@@ -149,21 +139,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ClientScreenData& operator=(ClientScreenData const&);
-        ClientScreenData(ClientScreenData const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ClientScreenData();
 
-        MCNAPI_C ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
-
-        MCNAPI_C ::ItemStackNetManagerClient::ClientScreenData&
-        operator=(::ItemStackNetManagerClient::ClientScreenData&&);
-
-        MCNAPI_C ~ClientScreenData();
         // NOLINTEND
 
     public:

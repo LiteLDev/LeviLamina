@@ -23,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::MolangOffsetPlaceholder& operator=(::MolangOffsetPlaceholder&&);
-
-    MCAPI_C ~MolangOffsetPlaceholder();
     // NOLINTEND
 
 public:

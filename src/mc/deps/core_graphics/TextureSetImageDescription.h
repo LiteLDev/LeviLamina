@@ -48,20 +48,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TextureSetImageDescription& operator=(TextureSetImageDescription const&);
-    TextureSetImageDescription();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C TextureSetImageDescription(::cg::TextureSetImageDescription const&);
 
-    MCAPI_C explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
-
-    MCAPI_C ::cg::TextureSetImageDescription& operator=(::cg::TextureSetImageDescription&&);
-
-    MCAPI_C ~TextureSetImageDescription();
     // NOLINTEND
 
 public:

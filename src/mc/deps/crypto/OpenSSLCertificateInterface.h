@@ -53,8 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S
-    OpenSSLCertificateInterface(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+
     // NOLINTEND
 
 public:

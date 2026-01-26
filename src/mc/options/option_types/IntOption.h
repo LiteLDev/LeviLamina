@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IntOption();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -47,31 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C IntOption(
-        ::OptionID                id,
-        ::OptionOwnerType         ownerType,
-        ::OptionResetFlags        resetFlags,
-        ::std::string const&      captionId,
-        ::std::string const&      saveTag,
-        int                       value,
-        ::std::vector<int> const& values,
-        bool                      clampToRange,
-        ::GameVersion             version
-    );
-
-    MCAPI_C IntOption(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        int                  value,
-        bool                 clampToRange,
-        int                  valueMin,
-        int                  valueMax,
-        ::GameVersion        version
-    );
-
     MCAPI_C int _validate(int value);
     // NOLINTEND
 

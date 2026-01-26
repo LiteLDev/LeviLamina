@@ -14,12 +14,6 @@ namespace mce { class UUID; }
 
 class ShapedChemistryRecipe : public ::ShapedRecipe {
 public:
-    // prevent constructor by default
-    ShapedChemistryRecipe& operator=(ShapedChemistryRecipe const&);
-    ShapedChemistryRecipe(ShapedChemistryRecipe const&);
-    ShapedChemistryRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::mce::UUID const& getId() const /*override*/;
@@ -38,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ShapedChemistryRecipe(::ShapedChemistryRecipe&&);
+
     // NOLINTEND
 
 public:

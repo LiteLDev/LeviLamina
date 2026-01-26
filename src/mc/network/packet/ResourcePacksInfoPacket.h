@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePacksInfoPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -44,13 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ResourcePacksInfoPacket(
-        bool                           resourcePackRequired,
-        ::std::vector<::PackInfoData>& resourcePacks,
-        bool                           hasAddonPacks,
-        ::PackIdVersion const&         worldTemplateIdVersion,
-        bool                           forceDisableVibrantVisuals
-    );
+
     // NOLINTEND
 
 public:

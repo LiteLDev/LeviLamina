@@ -13,16 +13,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Button& operator=(Button const&);
-    Button(Button const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Button();
-
-    MCFOLD_C ::npc::Button& operator=(::npc::Button&&);
 
     MCAPI ::npc::Button& operator=(::std::string_view newName);
 

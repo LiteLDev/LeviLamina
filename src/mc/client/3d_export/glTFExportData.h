@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~glTFExportData();
+
     // NOLINTEND
 
 public:

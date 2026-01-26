@@ -21,9 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::persona::color::SwatchListInfo& operator=(::persona::color::SwatchListInfo&&);
 
-    MCNAPI_C ~SwatchListInfo();
     // NOLINTEND
 
 public:

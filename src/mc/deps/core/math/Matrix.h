@@ -11,26 +11,16 @@ public:
 
 public:
     // prevent constructor by default
-    Matrix(Matrix const&);
+    Matrix();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C Matrix();
-
     MCAPI explicit Matrix(::glm::qua<float> const& q);
 
     MCAPI_C void mult(::Matrix const& rhs);
 
     MCAPI_C void normalize();
-
-    MCAPI_C bool operator!=(::Matrix const& rhs) const;
-
-    MCAPI_C ::Matrix operator*(::Matrix const& matrix) const;
-
-    MCAPI_C ::glm::vec3 operator*(::glm::vec3 const& vec) const;
-
-    MCFOLD_C ::Matrix& operator=(::Matrix const&);
 
     MCAPI_C void rotate(float a, ::glm::vec3 const& axis);
 

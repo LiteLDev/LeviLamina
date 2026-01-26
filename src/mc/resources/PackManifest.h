@@ -100,6 +100,7 @@ public:
 
 public:
     // prevent constructor by default
+    PackManifest& operator=(PackManifest const&);
     PackManifest();
 
 public:
@@ -151,8 +152,6 @@ public:
     MCAPI_C bool isRestrictedPack() const;
 
     MCAPI_C bool isUsingPackNameKeyword() const;
-
-    MCAPI_C ::PackManifest& operator=(::PackManifest const&);
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 

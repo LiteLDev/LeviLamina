@@ -37,6 +37,14 @@ public:
 
     MCAPI ::BlockPos above() const;
 
+    MCAPI_C ::BlockPos below() const;
+
+    MCAPI ::BlockPos east() const;
+
+    MCAPI uint64 hashCode() const;
+
+    MCAPI ::BlockPos north() const;
+
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
     MCAPI ::BlockPos south() const;

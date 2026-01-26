@@ -17,6 +17,12 @@ public:
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
+
+    MCAPI float lengthSquared() const;
+
+    MCAPI ::Vec3 normalized() const;
+
+    MCAPI_C ::Vec3 round() const;
     // NOLINTEND
 
 public:

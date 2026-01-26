@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureEditorData& operator=(StructureEditorData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureEditorData();
@@ -38,8 +42,6 @@ public:
     MCAPI StructureEditorData(::StructureEditorData const&);
 
     MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI_C ::StructureEditorData& operator=(::StructureEditorData const&);
 
     MCAPI void save(::CompoundTag& tag) const;
 

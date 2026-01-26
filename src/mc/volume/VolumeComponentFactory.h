@@ -12,10 +12,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class VolumeComponentFactory : public ::EntityComponentFactoryCereal<::VolumeComponentFactory> {
 public:
-    // prevent constructor by default
-    VolumeComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~VolumeComponentFactory() /*override*/ = default;
@@ -24,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit VolumeComponentFactory(::cereal::ReflectionCtx& ctx);
+
     // NOLINTEND
 
 public:

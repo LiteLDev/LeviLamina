@@ -42,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit BoneOrientation(::HashedString const& boneName);
-
     MCAPI void applyShortestPathBlend(
         ::BoneOrientation const& blendOut,
         ::BoneOrientation const& blendIn,

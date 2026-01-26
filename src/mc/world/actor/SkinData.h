@@ -16,14 +16,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SkinData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit SkinData(::Actor const& actor);
-
     MCAPI_C void applyToActor(::Actor& actor) const;
     // NOLINTEND
 

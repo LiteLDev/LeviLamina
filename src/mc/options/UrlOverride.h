@@ -20,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::UrlOverride& operator=(::UrlOverride&&);
 
-    MCNAPI_C ~UrlOverride();
     // NOLINTEND
 
 public:

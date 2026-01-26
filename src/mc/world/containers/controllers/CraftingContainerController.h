@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -51,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CraftingContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+
     // NOLINTEND
 
 public:

@@ -138,8 +138,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit LinkedAssetValidator(bool isClient);
-
     MCNAPI_C void addFile(int assetType, ::std::string const& filepath);
 
     MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);

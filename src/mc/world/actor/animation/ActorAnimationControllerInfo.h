@@ -19,13 +19,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorAnimationControllerInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit ActorAnimationControllerInfo(::HashedString const& name);
+
     // NOLINTEND
 
 public:

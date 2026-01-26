@@ -17,17 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FileWatcherHandle& operator=(FileWatcherHandle const&);
-    FileWatcherHandle(FileWatcherHandle const&);
-    FileWatcherHandle();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD_C ::mce::FileWatcherHandle& operator=(::mce::FileWatcherHandle&&);
 
-    MCAPI_C ~FileWatcherHandle();
     // NOLINTEND
 
 public:

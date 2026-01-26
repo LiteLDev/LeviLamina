@@ -26,17 +26,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ParticleCurve& operator=(ParticleCurve const&);
+    ParticleCurve();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ParticleCurve();
-
     MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
-
-    MCAPI_C ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
-
-    MCAPI_C ~ParticleCurve();
     // NOLINTEND
 
 public:

@@ -11,16 +11,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkAddress(NetworkAddress const&);
-    NetworkAddress();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD_S ::NetworkAddress& operator=(::NetworkAddress const&);
 
-    MCAPI_S ~NetworkAddress();
     // NOLINTEND
 
 public:

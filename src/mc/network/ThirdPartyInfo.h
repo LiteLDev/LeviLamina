@@ -19,24 +19,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ThirdPartyInfo();
 
-    MCNAPI_C ThirdPartyInfo(::ThirdPartyInfo&&);
-
     MCNAPI ThirdPartyInfo(::ThirdPartyInfo const&);
-
-    MCNAPI_C ThirdPartyInfo(
-        ::std::unordered_set<::std::string> const& allowListUrls,
-        ::std::string                              creatorId,
-        ::std::string                              creatorName,
-        ::std::string                              storePageId,
-        bool                                       requireXBL,
-        ::std::string const&                       experienceId
-    );
 
     MCNAPI_C bool isEligible(::std::string const& urlToMatch) const;
 
     MCNAPI_C bool isValid() const;
-
-    MCNAPI_C ::ThirdPartyInfo& operator=(::ThirdPartyInfo&&);
 
     MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 

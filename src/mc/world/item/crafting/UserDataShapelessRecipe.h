@@ -25,8 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    UserDataShapelessRecipe& operator=(UserDataShapelessRecipe const&);
-    UserDataShapelessRecipe(UserDataShapelessRecipe const&);
     UserDataShapelessRecipe();
 
 public:
@@ -43,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C UserDataShapelessRecipe(::UserDataShapelessRecipe&&);
-
     MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
 
     MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;

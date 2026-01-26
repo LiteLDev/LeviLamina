@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~IngredientSearchResults();
+
     // NOLINTEND
 
 public:

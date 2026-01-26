@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FilteredContainerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FilteredContainerModel() /*override*/ = default;
@@ -63,16 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C FilteredContainerModel(
-        ::FullContainerName const&                                   containerName,
-        int                                                          size,
-        ::ContainerCategory                                          containerCategory,
-        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>        creativeItemRegistry,
-        bool                                                         doExpandoGroups,
-        bool                                                         filter,
-        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
-    );
-
     MCNAPI_C void _refreshContainer(bool fullRefresh);
 
     MCNAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);

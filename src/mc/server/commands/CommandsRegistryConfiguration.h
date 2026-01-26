@@ -34,8 +34,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
-
-    MCNAPI_S ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
     // NOLINTEND
 
 public:

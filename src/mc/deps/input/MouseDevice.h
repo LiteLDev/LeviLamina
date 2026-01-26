@@ -26,12 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MouseDevice();
-
     MCAPI_C void
     feed(char actionButtonId, schar buttonData, short x, short y, short dx, short dy, bool forceMotionlessPointer);
-
-    MCAPI_C ~MouseDevice();
     // NOLINTEND
 
 public:

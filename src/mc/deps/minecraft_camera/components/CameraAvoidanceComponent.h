@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
+
     // NOLINTEND
 };
 

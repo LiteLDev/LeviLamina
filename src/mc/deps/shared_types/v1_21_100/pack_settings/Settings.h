@@ -27,8 +27,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
     operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
-
-    MCAPI_C ~Settings();
     // NOLINTEND
 
 public:

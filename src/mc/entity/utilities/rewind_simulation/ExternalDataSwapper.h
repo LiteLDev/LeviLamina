@@ -28,9 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit ExternalDataSwapper(::EntityRegistry& registry);
 
-    MCNAPI_C ~ExternalDataSwapper();
     // NOLINTEND
 
 public:

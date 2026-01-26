@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LoomContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -75,10 +71,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit LoomContainerManagerController(
-        ::std::weak_ptr<::LoomContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::ItemInstance _buildResultItem();
 
     MCNAPI_C void

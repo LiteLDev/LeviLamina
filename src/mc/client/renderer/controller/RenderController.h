@@ -44,17 +44,12 @@ public:
 public:
     // prevent constructor by default
     RenderController& operator=(RenderController const&);
+    RenderController(RenderController const&);
     RenderController();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C RenderController(::RenderController&&);
-
-    MCNAPI_C RenderController(::RenderController const&);
-
-    MCNAPI_C explicit RenderController(::std::string const& name);
-
     MCNAPI_C bool _parseColor(
         ::Json::Value const& root,
         ::ExpressionNode*    colorNode,
@@ -104,8 +99,6 @@ public:
     MCNAPI_C bool updatePartMaterials();
 
     MCNAPI_C bool updatePartVisibility();
-
-    MCNAPI_C ~RenderController();
     // NOLINTEND
 
 public:

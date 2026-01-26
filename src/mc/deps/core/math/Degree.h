@@ -16,13 +16,9 @@ struct Degree : public ::type_safe::strong_typedef<::mce::Degree, float>,
                 public ::type_safe::strong_typedef_op::relational_comparison<::mce::Degree>,
                 public ::type_safe::strong_typedef_op::output_operator<::mce::Degree> {
 public:
-    // prevent constructor by default
-    Degree();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S explicit Degree(::mce::Radian rad);
+
     // NOLINTEND
 
 public:

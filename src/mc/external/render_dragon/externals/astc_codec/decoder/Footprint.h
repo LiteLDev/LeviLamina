@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Footprint(::astc_codec::FootprintType footprint);
+
     // NOLINTEND
 
 public:

@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C EditorBlockPalette(::Editor::EditorBlockPalette&&);
-
     MCNAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
 
     MCNAPI EditorBlockPalette(

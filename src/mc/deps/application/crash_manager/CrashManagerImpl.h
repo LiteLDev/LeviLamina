@@ -44,7 +44,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~CrashProcessorInfo();
+
         // NOLINTEND
 
     public:
@@ -72,7 +72,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~CrashedSessionInfo();
+
         // NOLINTEND
 
     public:
@@ -105,6 +105,7 @@ public:
     // prevent constructor by default
     CrashManagerImpl& operator=(CrashManagerImpl const&);
     CrashManagerImpl(CrashManagerImpl const&);
+    CrashManagerImpl();
 
 public:
     // virtual functions
@@ -153,8 +154,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C CrashManagerImpl();
-
     MCNAPI_C void _doNetworkUnavailableCleanup();
 
     MCNAPI_C ::std::shared_ptr<::Bedrock::SessionInfo> _findCrashedSessionInfo(::std::string_view sessionId) const;

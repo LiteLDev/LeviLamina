@@ -35,8 +35,6 @@ public:
     _deserializePacketLimitConfig(::Json::Value& root);
 
     MCNAPI_S ::Bedrock::Result<::PacketGroupDefinition::PacketGroupBuilder> deserializePacketLimitConfig();
-
-    MCNAPI_S ~PacketLimitAlgorithmDeserializer();
     // NOLINTEND
 
 public:

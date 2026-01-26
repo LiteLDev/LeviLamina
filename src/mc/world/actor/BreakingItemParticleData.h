@@ -16,13 +16,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BreakingItemParticleData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit BreakingItemParticleData(::ParticleType type);
+
     // NOLINTEND
 
 public:

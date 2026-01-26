@@ -40,8 +40,6 @@ public:
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
     MCNAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
-
-    MCNAPI_C ~BuoyancyComponent();
     // NOLINTEND
 
 public:

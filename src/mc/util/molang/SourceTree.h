@@ -41,8 +41,6 @@ public:
 
     MCNAPI SourceTree(::Molang::details::SourceTree const&);
 
-    MCNAPI_S SourceTree(::Molang::details::ExpressionNode node, ::MolangParseConfig const& parseConfig);
-
     MCNAPI SourceTree(::Json::Value const& value, ::MolangParseConfig const& config);
 
     MCNAPI ::std::optional<::MolangScriptArg> getValueIfConstant() const;

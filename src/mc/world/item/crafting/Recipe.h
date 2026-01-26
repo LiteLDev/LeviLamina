@@ -110,8 +110,6 @@ public:
 
 public:
     // prevent constructor by default
-    Recipe& operator=(Recipe const&);
-    Recipe(Recipe const&);
     Recipe();
 
 public:
@@ -153,8 +151,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
-
-    MCAPI_C Recipe(::Recipe&& recipe);
 
     MCAPI_C ::IngredientSearchResults
     checkContainerItemsForUsability(::std::vector<::ContainerModel*> const& containers) const;

@@ -40,8 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Material();
     // NOLINTEND
 
 public:

@@ -24,8 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    SmithingTrimRecipe& operator=(SmithingTrimRecipe const&);
-    SmithingTrimRecipe(SmithingTrimRecipe const&);
     SmithingTrimRecipe();
 
 public:
@@ -45,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C SmithingTrimRecipe(::SmithingTrimRecipe&&);
-
     MCAPI SmithingTrimRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,

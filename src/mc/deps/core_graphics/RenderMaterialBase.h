@@ -44,10 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RenderMaterialBase& operator=(RenderMaterialBase const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -68,10 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C RenderMaterialBase();
-
-    MCAPI_C RenderMaterialBase(::cg::RenderMaterialBase const&);
-
     MCAPI_C void addDefine(::std::string const& define);
 
     MCAPI_C void modifyDefines(::cg::RenderFeaturesConfiguration const& features);

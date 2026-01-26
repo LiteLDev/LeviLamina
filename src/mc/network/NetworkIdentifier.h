@@ -55,8 +55,6 @@ public:
 
     MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
 
-    MCFOLD_C ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
-
     MCAPI ::std::string toString() const;
     // NOLINTEND
 

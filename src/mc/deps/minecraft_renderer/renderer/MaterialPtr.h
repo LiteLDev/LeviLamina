@@ -24,21 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MaterialPtr();
-
-    MCAPI_C MaterialPtr(::mce::MaterialPtr const&);
-
-    MCAPI_C MaterialPtr(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
-
     MCAPI_C ::HashedString const& getHashedName() const;
 
     MCAPI_C bool isNull() const;
-
-    MCAPI_C ::mce::RenderMaterial const* operator->() const;
-
-    MCFOLD_C ::mce::MaterialPtr& operator=(::mce::MaterialPtr const&);
-
-    MCAPI_C ~MaterialPtr();
     // NOLINTEND
 
 public:

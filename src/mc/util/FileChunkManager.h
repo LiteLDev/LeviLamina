@@ -31,8 +31,6 @@ public:
     MCNAPI void _generateChunkInfo();
 
     MCNAPI void reset(uint64 totalSize, uint chunkSize);
-
-    MCNAPI_C ~FileChunkManager();
     // NOLINTEND
 
 public:

@@ -43,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ActorAnimationGroup();
-
     MCAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);

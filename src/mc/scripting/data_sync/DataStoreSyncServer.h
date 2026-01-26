@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     DataStoreSyncServer& operator=(DataStoreSyncServer const&);
     DataStoreSyncServer(DataStoreSyncServer const&);
+    DataStoreSyncServer();
 
 public:
     // virtual functions
@@ -37,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S DataStoreSyncServer();
-
     MCNAPI void applyUpdate(::Bedrock::DDUI::DataStoreUpdate const& change);
 
     MCNAPI bool canClientUpdateProperty(

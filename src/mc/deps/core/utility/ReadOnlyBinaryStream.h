@@ -26,10 +26,6 @@ public:
     }
 
 public:
-    // prevent constructor by default
-    ReadOnlyBinaryStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ReadOnlyBinaryStream();

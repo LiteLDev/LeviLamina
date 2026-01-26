@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GrindstoneContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GrindstoneContainerManagerController() /*override*/ = default;
@@ -66,10 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit GrindstoneContainerManagerController(
-        ::std::weak_ptr<::GrindstoneContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
 
     MCNAPI_C void _grantExperience(::ItemStack const& input, ::ItemStack const& additional) const;

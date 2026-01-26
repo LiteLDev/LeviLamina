@@ -16,7 +16,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~HistoricPredictionData();
+
     // NOLINTEND
 
 public:

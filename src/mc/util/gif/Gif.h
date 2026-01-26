@@ -23,9 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::gif::Gif& operator=(::gif::Gif&&);
 
-    MCNAPI_C ~Gif();
     // NOLINTEND
 
 public:

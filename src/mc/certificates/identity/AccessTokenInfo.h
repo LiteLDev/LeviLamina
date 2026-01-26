@@ -19,11 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AccessTokenInfo(::std::string _email, int64 _expiration);
 
-    MCNAPI_C ::AccessTokenInfo& operator=(::AccessTokenInfo&&);
-
-    MCNAPI_C ~AccessTokenInfo();
     // NOLINTEND
 
 public:

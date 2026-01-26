@@ -48,7 +48,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ~Primitive();
+
         // NOLINTEND
 
     public:
@@ -77,8 +77,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Mesh();
     // NOLINTEND
 
 public:

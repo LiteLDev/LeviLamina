@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~EduFetchServersResponse();
+
     // NOLINTEND
 
 public:

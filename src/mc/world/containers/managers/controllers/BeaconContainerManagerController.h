@@ -48,10 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BeaconContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconContainerManagerController() /*override*/ = default;
@@ -62,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit BeaconContainerManagerController(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
-
     MCNAPI_C void _confirmTransaction();
 
     MCNAPI_C void _setupCallbacks();

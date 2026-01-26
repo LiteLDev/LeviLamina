@@ -56,12 +56,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_S TemplatePoolData(
-            ::std::string const&                                        templateId,
-            ::std::set<::std::string> const&                            structNames,
-            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
-        );
-
         MCNAPI ~TemplatePoolData();
         // NOLINTEND
 

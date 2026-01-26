@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
+
     // NOLINTEND
 
 public:

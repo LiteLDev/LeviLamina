@@ -26,16 +26,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CopyableDataList& operator=(CopyableDataList const&);
-        CopyableDataList();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C CopyableDataList(::SynchedActorData::CopyableDataList const& other);
 
-        MCAPI_C ~CopyableDataList();
         // NOLINTEND
 
     public:

@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit IntegerSequenceCodec(int range);
+
     // NOLINTEND
 
 public:

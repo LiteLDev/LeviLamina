@@ -24,17 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommonResourceDefinitionMap& operator=(CommonResourceDefinitionMap const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommonResourceDefinitionMap();
-
-    MCAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap&&);
-
-    MCAPI_C CommonResourceDefinitionMap(::CommonResourceDefinitionMap const&);
 
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
@@ -48,8 +40,6 @@ public:
 
     MCAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
-
-    MCAPI_C ~CommonResourceDefinitionMap();
     // NOLINTEND
 
 public:

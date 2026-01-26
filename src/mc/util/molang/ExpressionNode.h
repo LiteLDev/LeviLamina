@@ -55,19 +55,12 @@ public:
         // prevent constructor by default
         ResourceReference& operator=(ResourceReference const&);
         ResourceReference(ResourceReference const&);
+        ResourceReference();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ResourceReference();
 
-        MCNAPI_C explicit ResourceReference(::MolangDataDrivenGeometry const& geometry);
-
-        MCNAPI_C explicit ResourceReference(::MaterialVariants const& matVariants);
-
-        MCNAPI_C explicit ResourceReference(::MolangClientTextureSet const& textureSet);
-
-        MCNAPI_C ~ResourceReference();
         // NOLINTEND
 
     public:
@@ -126,13 +119,9 @@ public:
     // NOLINTBEGIN
     MCAPI ExpressionNode(::ExpressionNode&&);
 
-    MCAPI_C explicit ExpressionNode(::MaterialVariants const& materialVariants);
-
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
     MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
-
-    MCAPI_C ExpressionNode(char const* expression, ::MolangVersion molangVersion);
 
     MCAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
 

@@ -29,17 +29,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraShakeComponent& operator=(CameraShakeComponent const&);
-    CameraShakeComponent(CameraShakeComponent const&);
-    CameraShakeComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C void initialize(::Random& random);
-
-    MCAPI_C ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
 
     MCAPI_C bool queueShakeEvent(float intensity, float duration);
     // NOLINTEND

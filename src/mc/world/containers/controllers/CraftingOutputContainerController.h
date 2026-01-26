@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingOutputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CraftingOutputContainerController() /*override*/ = default;
@@ -43,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CraftingOutputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
     // NOLINTEND
 
 public:

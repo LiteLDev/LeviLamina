@@ -11,14 +11,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VolumeCreationDataComponent& operator=(VolumeCreationDataComponent const&);
-    VolumeCreationDataComponent(VolumeCreationDataComponent const&);
-    VolumeCreationDataComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::VolumeCreationDataComponent& operator=(::VolumeCreationDataComponent&&);
+
     // NOLINTEND
 };

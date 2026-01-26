@@ -22,9 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit WorkTarget(uint64 secondaryWorkersCount);
 
-    MCNAPI_C ~WorkTarget();
     // NOLINTEND
 
 public:

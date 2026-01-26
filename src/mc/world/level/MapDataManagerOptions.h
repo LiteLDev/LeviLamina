@@ -20,10 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapDataManagerOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isPremiumWorldTemplate() const /*override*/;
@@ -40,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit MapDataManagerOptions(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
+
     // NOLINTEND
 
 public:

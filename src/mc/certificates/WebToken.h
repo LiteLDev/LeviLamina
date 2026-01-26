@@ -65,6 +65,8 @@ public:
     // NOLINTBEGIN
     MCAPI_C void* $ctor();
 
+    MCAPI_C void* $ctor(::WebToken&&);
+
     MCAPI void* $ctor(::std::string token);
     // NOLINTEND
 

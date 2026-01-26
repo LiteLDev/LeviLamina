@@ -26,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void UninstallHooks();
-
-    MCNAPI_C ~EntitySystemProfiler();
     // NOLINTEND
 
 public:

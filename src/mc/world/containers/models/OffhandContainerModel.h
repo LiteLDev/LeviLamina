@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C OffhandContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player);
+
     // NOLINTEND
 
 public:

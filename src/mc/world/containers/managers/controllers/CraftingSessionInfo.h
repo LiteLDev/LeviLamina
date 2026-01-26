@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~CraftingSessionInfo();
+
     // NOLINTEND
 
 public:

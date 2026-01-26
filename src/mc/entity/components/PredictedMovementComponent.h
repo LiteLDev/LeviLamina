@@ -343,16 +343,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C MotionHistoryItem(
-            ::Vec3 const&                                                                   motion,
-            bool                                                                            onGround,
-            bool                                                                            isMotionHintItem,
-            ::std::chrono::steady_clock::time_point const&                                  timepoint,
-            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
-            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
-            bool                                                                            didAdjustTimepoint,
-            ::std::chrono::milliseconds const&                                              timepointDiff
-        );
+
         // NOLINTEND
 
     public:

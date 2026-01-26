@@ -134,10 +134,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -193,10 +189,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CraftingContainerManagerController(
-        ::std::weak_ptr<::CraftingContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::std::vector<::ItemInstance> _craftItem(::ItemStackRequestScope const& requestScope, uchar craftCount);
 
     MCNAPI_C void _filterRecipes();

@@ -12,10 +12,6 @@ class BlastFurnaceContainerManagerModel;
 
 class BlastFurnaceContainerManagerController : public ::FurnaceContainerManagerController {
 public:
-    // prevent constructor by default
-    BlastFurnaceContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BlastFurnaceContainerManagerController() /*override*/ = default;
@@ -24,9 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit BlastFurnaceContainerManagerController(
-        ::std::weak_ptr<::BlastFurnaceContainerManagerModel> containerManagerModel
-    );
+
     // NOLINTEND
 
 public:

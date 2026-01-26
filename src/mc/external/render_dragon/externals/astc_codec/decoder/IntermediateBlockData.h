@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~IntermediateBlockData();
+
     // NOLINTEND
 
 public:

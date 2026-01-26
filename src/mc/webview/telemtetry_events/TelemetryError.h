@@ -21,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C auto toJsonStr() const;
-
-    MCNAPI_C ~TelemetryError();
     // NOLINTEND
 
 public:

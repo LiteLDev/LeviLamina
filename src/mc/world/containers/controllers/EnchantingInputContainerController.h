@@ -15,10 +15,6 @@ class Recipes;
 
 class EnchantingInputContainerController : public ::ContainerController {
 public:
-    // prevent constructor by default
-    EnchantingInputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~EnchantingInputContainerController() /*override*/ = default;
@@ -29,8 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit EnchantingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
-
     MCNAPI_C bool _isEnchantingInputItem(::ItemDescriptor const& item) const;
     // NOLINTEND
 

@@ -69,22 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ActiveDirectoryIdentity(
-        ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
-        ::Identity::ActiveDirectoryIdentityParameters&& parameters
-    );
-
-    MCNAPI_C ActiveDirectoryIdentity(
-        ::Bedrock::NonOwnerPointer<::IEDUSystems>                                                 eduSystems,
-        ::std::optional<::EducationServicesEnvironment>                                           environment,
-        ::std::unique_ptr<::IActiveDirectoryIdentityTelemetry>&&                                  eventing,
-        ::std::unique_ptr<::Identity::ISettingStorageStrategy>&&                                  settings,
-        ::std::unique_ptr<::Identity::IEduSsoStrategy>&&                                          sso,
-        ::std::function<::std::unique_ptr<::Identity::IEduAuth>(::Identity::EduAuthParameters&&)> createAuth,
-        ::std::unique_ptr<::ResponseVerifier>                                                     verifier,
-        ::std::string                                                                             appSessionId
-    );
-
     MCNAPI_C void _authenticateDemoWithService();
 
     MCNAPI_C void _authenticateSignInWithService();

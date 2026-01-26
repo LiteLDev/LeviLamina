@@ -17,16 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockShapeComponentData& operator=(BlockShapeComponentData const&);
-    BlockShapeComponentData(BlockShapeComponentData const&);
-    BlockShapeComponentData();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::BlockShapeComponentData& operator=(::BlockShapeComponentData&&);
-
     MCAPI ~BlockShapeComponentData();
     // NOLINTEND
 

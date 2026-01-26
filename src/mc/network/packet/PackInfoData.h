@@ -30,7 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    PackInfoData(PackInfoData const&);
     PackInfoData();
 
 public:
@@ -48,8 +47,6 @@ public:
         bool                     isRayTracingCapable,
         ::std::string const&     cdnUrl
     );
-
-    MCAPI_C ::PackInfoData& operator=(::PackInfoData const&);
 
     MCAPI ~PackInfoData();
     // NOLINTEND

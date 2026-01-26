@@ -13,7 +13,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~TextInput();
+
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~TickingSystemRegistrationToken();
+
     // NOLINTEND
 
 public:

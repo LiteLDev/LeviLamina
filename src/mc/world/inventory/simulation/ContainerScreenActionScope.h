@@ -22,10 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerScreenActionScope();
-
-public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -39,8 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C
-    ContainerScreenActionScope(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
+
     // NOLINTEND
 
 public:

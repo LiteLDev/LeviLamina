@@ -17,8 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C bool has(::std::string_view key) const;
-
-    MCNAPI_C ~PropertyBag();
     // NOLINTEND
 
 public:

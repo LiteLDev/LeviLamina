@@ -78,7 +78,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ~CopyWorldResult();
+
         // NOLINTEND
 
     public:
@@ -100,17 +100,8 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        EduCloudImportInfo(EduCloudImportInfo const&);
-        EduCloudImportInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::FileArchiver::EduCloudImportInfo& operator=(::FileArchiver::EduCloudImportInfo&&);
-
-        MCAPI_C ::FileArchiver::EduCloudImportInfo& operator=(::FileArchiver::EduCloudImportInfo const&);
-
         MCAPI ~EduCloudImportInfo();
         // NOLINTEND
 

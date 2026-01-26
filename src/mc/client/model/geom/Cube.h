@@ -64,36 +64,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Cube(::Cube&&);
-
-    MCNAPI_C Cube(
-        ::Vec3 const&                              point,
-        ::Vec3 const&                              extents,
-        float                                      growAmount,
-        bool                                       shouldMirror,
-        ::std::array<::Cube::FaceUVData, 6> const& faceUVData,
-        ::Vec2 const&                              inTexExtents,
-        ::mce::Color const&                        color
-    );
-
-    MCNAPI_C Cube(
-        ::Vec3 const&          point,
-        ::Vec3 const&          extents,
-        float                  growAmount,
-        bool                   shouldMirror,
-        ::Vec2 const&          inTexExtents,
-        ::TextureOffset const& inTexOffs,
-        ::mce::Color const&    color
-    );
-
     MCNAPI_C void compile(::Tessellator& t) const;
 
     MCNAPI_C void expandAABB(::AABB& aabb) const;
 
     MCNAPI_C void
     setQuad(uchar facing, float u0, float v0, float u1, float v1, ::VertexPT* vertices, ::QuadUVRotation uvRotation);
-
-    MCNAPI_C ~Cube();
     // NOLINTEND
 
 public:

@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~Sampler();
+
     // NOLINTEND
 
 public:

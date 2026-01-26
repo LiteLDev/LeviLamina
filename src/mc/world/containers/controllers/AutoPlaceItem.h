@@ -11,15 +11,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AutoPlaceItem();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C AutoPlaceItem(::std::string const& _collection, bool _stopWhenPlaced);
 
-    MCNAPI_C ~AutoPlaceItem();
     // NOLINTEND
 
 public:

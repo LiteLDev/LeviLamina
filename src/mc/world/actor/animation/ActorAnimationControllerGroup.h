@@ -44,8 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ActorAnimationControllerGroup();
-
     MCAPI void _loadActorAnimationController(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,

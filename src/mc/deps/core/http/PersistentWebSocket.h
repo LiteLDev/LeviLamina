@@ -29,6 +29,7 @@ public:
     // prevent constructor by default
     PersistentWebSocket& operator=(PersistentWebSocket const&);
     PersistentWebSocket(PersistentWebSocket const&);
+    PersistentWebSocket();
 
 public:
     // virtual functions
@@ -53,8 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S PersistentWebSocket();
-
     MCNAPI void _connectWithRetry(
         ::std::string const&                     uri,
         ::Bedrock::Http::HeaderCollection const& headers,

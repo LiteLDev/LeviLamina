@@ -7,10 +7,6 @@
 
 struct MemoryStream : public ::MemoryStreamBuffer, public virtual ::std::ios, public ::std::istream {
 public:
-    // prevent constructor by default
-    MemoryStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~MemoryStream() /*override*/ = default;
@@ -19,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C MemoryStream(char const* base, uint64 size);
+
     // NOLINTEND
 
 public:

@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventoryMenu();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~InventoryMenu() /*override*/;
@@ -53,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C InventoryMenu(::Player& player, ::Container* container);
+
     // NOLINTEND
 
 public:

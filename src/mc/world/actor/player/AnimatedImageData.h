@@ -33,8 +33,6 @@ public:
     );
 
     MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
-
-    MCAPI_C ~AnimatedImageData();
     // NOLINTEND
 
 public:

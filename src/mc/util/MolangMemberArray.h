@@ -49,8 +49,6 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_XYZ, ::Vec3 const& vec);
 
-    MCAPI_C MolangMemberArray(::MolangStruct_Z, float z);
-
     MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
     MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);

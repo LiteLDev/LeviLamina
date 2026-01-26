@@ -27,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-
     MCNAPI_S void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
     // NOLINTEND
 

@@ -53,10 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AllowList();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void serialize(::Json::Value& root) /*override*/;
@@ -74,8 +70,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit AllowList(::std::function<void()> syncCallback);
-
     MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
     MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);

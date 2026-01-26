@@ -36,9 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Identity::ServiceResponse& operator=(::Identity::ServiceResponse&&);
 
-    MCNAPI_C ~ServiceResponse();
     // NOLINTEND
 
 public:

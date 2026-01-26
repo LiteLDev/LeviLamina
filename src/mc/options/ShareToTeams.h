@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ~ShareToTeams();
+
     // NOLINTEND
 
 public:

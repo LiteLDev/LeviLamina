@@ -15,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ~PlayerSelectedItemChangedEvent();
+
     // NOLINTEND
 
 public:

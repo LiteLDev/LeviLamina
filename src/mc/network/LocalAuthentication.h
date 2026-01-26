@@ -27,8 +27,6 @@ public:
         bool                 isSignedIn,
         uint64               clientRandomId
     );
-
-    MCNAPI_C ~LocalAuthentication();
     // NOLINTEND
 
 public:

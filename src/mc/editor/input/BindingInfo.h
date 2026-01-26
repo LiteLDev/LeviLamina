@@ -28,13 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C BindingInfo(
-        ::std::string                  label,
-        bool                           canRebind,
-        ::std::optional<::std::string> tooltip,
-        ::std::optional<::std::string> actionId
-    );
-
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
 
     MCNAPI ~BindingInfo();

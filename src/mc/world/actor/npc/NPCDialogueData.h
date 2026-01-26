@@ -28,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
-
-    MCAPI_C ~NPCDialogueData();
     // NOLINTEND
 
 public:

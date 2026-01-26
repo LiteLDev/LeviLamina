@@ -100,10 +100,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ModelPart(::ModelPart&& rhs);
-
-    MCNAPI_C ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
-
     MCNAPI_C void _adjustUVsInward(
         ::std::vector<::Vec2>&                                        uvs,
         ::std::vector<::std::array<::Geometry::NodeVertex, 3>> const& tris,
@@ -199,8 +195,6 @@ public:
 
     MCNAPI_C uint64 numCubes() const;
 
-    MCNAPI_C ::ModelPart& operator=(::ModelPart&& rhs);
-
     MCNAPI_C void render(
         ::ScreenContext& screenContext,
         ::Model&         model,
@@ -223,8 +217,6 @@ public:
     MCNAPI_C void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
 
     MCNAPI_C void translateTo(::Matrix& mv, float scale);
-
-    MCNAPI_C ~ModelPart();
     // NOLINTEND
 
 public:

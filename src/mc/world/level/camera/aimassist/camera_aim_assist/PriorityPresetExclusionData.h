@@ -36,9 +36,6 @@ public:
 
     MCNAPI_C bool isExcludedBlock(::BlockType const& block) const;
 
-    MCNAPI_C ::CameraAimAssist::PriorityPresetExclusionData&
-    operator=(::CameraAimAssist::PriorityPresetExclusionData&&);
-
     MCNAPI ~PriorityPresetExclusionData();
     // NOLINTEND
 

@@ -32,10 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C NetworkConnectionTypeChangeObserver(
-        ::std::function<::NetworkConnectionType()>  getNetworkConnectionType,
-        ::std::function<void(::std::string const&)> fireNetworkChangedEvent
-    );
+
     // NOLINTEND
 
 public:

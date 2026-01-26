@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SmithingTableContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SmithingTableContainerManagerController() /*override*/ = default;
@@ -66,10 +62,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit SmithingTableContainerManagerController(
-        ::std::weak_ptr<::SmithingTableContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C void _consumeItems();
 
     MCNAPI_C void _createCraftItem(::ItemInstance& stack, ::ItemStackRequestScope const& requestScope);

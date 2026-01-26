@@ -30,8 +30,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
-
-    MCAPI_C ~InsideGenericBlockComponent();
     // NOLINTEND
 
 public:

@@ -33,6 +33,7 @@ public:
 
 public:
     // prevent constructor by default
+    ResourceInformation& operator=(ResourceInformation const&);
     ResourceInformation();
 
 public:
@@ -48,8 +49,6 @@ public:
         ::std::string const&                language,
         ::std::string const&                entry
     );
-
-    MCAPI_C ::ResourceInformation& operator=(::ResourceInformation const&);
 
     MCAPI ~ResourceInformation();
     // NOLINTEND

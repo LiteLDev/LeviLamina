@@ -24,15 +24,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Certificate& operator=(Certificate const&);
-    Certificate();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Certificate(::Certificate const& other);
-
     MCNAPI_C void addToEnd(::Certificate const& certificate);
 
     MCNAPI int64 getExpirationDate() const;

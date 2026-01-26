@@ -63,6 +63,7 @@ public:
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
+    DebugInfoComponent(DebugInfoComponent const&);
     DebugInfoComponent();
 
 public:
@@ -77,8 +78,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DebugInfoComponent(::DebugInfoComponent&&);
-
-    MCAPI_S DebugInfoComponent(::DebugInfoComponent const&);
 
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND

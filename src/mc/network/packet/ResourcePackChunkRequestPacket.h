@@ -24,10 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePackChunkRequestPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -75,7 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C explicit ResourcePackChunkRequestPacket(::ResourcePackChunkRequestPacketPayload payload);
+
     // NOLINTEND
 
 public:

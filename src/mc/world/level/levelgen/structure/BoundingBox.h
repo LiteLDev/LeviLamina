@@ -77,8 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C BoundingBox(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
-
     MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
     // NOLINTEND
 

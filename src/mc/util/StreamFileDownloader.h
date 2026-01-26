@@ -36,6 +36,7 @@ public:
     // prevent constructor by default
     StreamFileDownloader& operator=(StreamFileDownloader const&);
     StreamFileDownloader(StreamFileDownloader const&);
+    StreamFileDownloader();
 
 public:
     // virtual functions
@@ -89,8 +90,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C StreamFileDownloader();
-
     MCNAPI_C void _checkErrorAndRequeue(uint64 bytesWritten, bool hasError);
 
     MCNAPI_C void _downloadFile();

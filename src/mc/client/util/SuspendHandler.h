@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit SuspendHandler(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+
     // NOLINTEND
 
 public:

@@ -29,12 +29,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ParticleEffectData();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ParticleEffectData();
-
-    MCAPI_C ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData&&);
-
     MCAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);

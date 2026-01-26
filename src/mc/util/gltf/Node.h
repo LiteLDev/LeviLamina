@@ -30,19 +30,13 @@ public:
 public:
     // prevent constructor by default
     Node& operator=(Node const&);
+    Node(Node const&);
+    Node();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C Node();
-
-    MCNAPI_C Node(::glTF::Node&&);
-
-    MCNAPI_C Node(::glTF::Node const&);
-
     MCNAPI_C ::Json::Value serialize() const;
-
-    MCNAPI_C ~Node();
     // NOLINTEND
 
 public:

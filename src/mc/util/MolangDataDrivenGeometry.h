@@ -21,20 +21,15 @@ public:
 public:
     // prevent constructor by default
     MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
+    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&);
     MolangDataDrivenGeometry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C MolangDataDrivenGeometry(::MolangDataDrivenGeometry const&);
-
-    MCAPI_C MolangDataDrivenGeometry(::std::shared_ptr<::DataDrivenGeometry> geometry, ::HashedString const& name);
-
     MCAPI ::MolangDataDrivenGeometry& operator=(::MolangDataDrivenGeometry&&);
 
     MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
-
-    MCAPI_C ~MolangDataDrivenGeometry();
     // NOLINTEND
 
 public:

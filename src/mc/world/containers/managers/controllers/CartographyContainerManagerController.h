@@ -41,10 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CartographyContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~CartographyContainerManagerController() /*override*/ = default;
@@ -99,10 +95,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit CartographyContainerManagerController(
-        ::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel
-    );
-
     MCNAPI_C ::ItemInstance _buildResultItem();
 
     MCNAPI_C void _clearName();

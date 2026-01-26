@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C TextureSetDefinition();
-
     MCAPI_C ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
     _addLayer(::cg::TextureSetLayerType const& type, ::mce::Color const& color);
 

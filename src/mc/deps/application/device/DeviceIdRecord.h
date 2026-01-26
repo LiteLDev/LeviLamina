@@ -34,10 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C explicit DeviceIdRecord(::std::string const& deviceId);
-
-    MCNAPI_C ::Bedrock::DeviceIdRecord& operator=(::Bedrock::DeviceIdRecord&& other);
-
     MCNAPI_C ::Bedrock::Result<
         void,
         ::std::variant<
@@ -46,8 +42,6 @@ public:
             ::Bedrock::DeviceIdErrorType::CacheOpenFailed,
             ::Bedrock::DeviceIdErrorType::ValidationFail>>
     writeToCacheFile(::Core::Path const& pathToCacheFile);
-
-    MCNAPI_C ~DeviceIdRecord();
     // NOLINTEND
 
 public:

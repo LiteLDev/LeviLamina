@@ -37,13 +37,12 @@ public:
 public:
     // prevent constructor by default
     PlayerListEntry& operator=(PlayerListEntry const&);
+    PlayerListEntry(PlayerListEntry const&);
     PlayerListEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C PlayerListEntry(::PlayerListEntry const&);
-
     MCAPI PlayerListEntry(::PlayerListEntry&&);
 
     MCAPI explicit PlayerListEntry(::Player const& player);
