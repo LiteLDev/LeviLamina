@@ -112,6 +112,9 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    concurrency:
+      group: release-upload-${{ github.event.release.tag_name }}
+      cancel-in-progress: false
     strategy:
       matrix:
         target_type:
