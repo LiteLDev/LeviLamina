@@ -46,17 +46,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
+    MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCNAPI ::ItemStackNetResult $endRequest();
+    MCAPI ::ItemStackNetResult $endRequest();
 
-    MCNAPI void $postRequest(bool const wasSuccess);
+    MCAPI void $postRequest(bool const wasSuccess);
 
 
     // NOLINTEND

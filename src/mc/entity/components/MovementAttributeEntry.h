@@ -16,9 +16,9 @@ struct MovementAttributeEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::optional<float>::MovementAttributesComponent::*> mMovementAttribute;
-    ::ll::TypedStorage<1, 1, ::MovementAttributeAccess>                              mAccess;
-    ::ll::TypedStorage<1, 1, ::MovementAttributeCorrectionMode>                      mCorrectionMode;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Attribute const*>>                    mAttribute;
+    ::ll::TypedStorage<8, 8, ::std::optional<float> MovementAttributesComponent::*> mMovementAttribute;
+    ::ll::TypedStorage<1, 1, ::MovementAttributeAccess>                             mAccess;
+    ::ll::TypedStorage<1, 1, ::MovementAttributeCorrectionMode>                     mCorrectionMode;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Attribute const*>>                   mAttribute;
     // NOLINTEND
 };

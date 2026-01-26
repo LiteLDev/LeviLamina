@@ -18,37 +18,35 @@ class ServerConnectionAuthValidator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk304c93;
-    ::ll::UntypedStorage<8, 24> mUnk2e89b2;
-    ::ll::UntypedStorage<8, 24> mUnkc40c7f;
-    ::ll::UntypedStorage<1, 1>  mUnk652da8;
-    ::ll::UntypedStorage<1, 1>  mUnk538371;
+    ::ll::TypedStorage<8, 64, ::std::function<int64()>>                                    mCurrentTimeFn;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager>> mMinecraftServiceKeys;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mLegacyMultiplayerTokenTrustedKeys;
+    ::ll::TypedStorage<1, 1, bool>                          mAllowSelfSigned;
+    ::ll::TypedStorage<1, 1, bool>                          mAllowExpiredTokens;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ServerConnectionAuthValidator& operator=(ServerConnectionAuthValidator const&);
-    ServerConnectionAuthValidator(ServerConnectionAuthValidator const&);
     ServerConnectionAuthValidator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerConnectionAuthValidator(
+    MCAPI ServerConnectionAuthValidator(
         ::NetworkServerConfig const&                                networkServerConfig,
         ::std::function<int64()>                                    currentTimeFn,
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
         ::std::vector<::std::string> const&                         legacyMultiplayerTokenTrustedKeys
     );
 
-    MCNAPI ::std::variant<::PlayerAuthenticationInfo, ::Connection::DisconnectFailReason>
+    MCAPI ::std::variant<::PlayerAuthenticationInfo, ::Connection::DisconnectFailReason>
     validate(::ConnectionRequest const& connectionRequest) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::NetworkServerConfig const&                                networkServerConfig,
         ::std::function<int64()>                                    currentTimeFn,
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
