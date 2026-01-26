@@ -4,7 +4,7 @@
 
 #include "mc/common/IMinecraftApp.h"
 #include "mc/deps/raknet/RakPeer.h"
-#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
+#include "mc/network/IPacketLimitAlgorithm.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/IRepositoryFactory.h"
@@ -13,9 +13,7 @@
 #include "mc/server/PropertiesSettings.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
-#include "mc/server/commands/AllowListCommand.h"
 #include "mc/server/commands/CommandRegistry.h"
-#include "mc/server/commands/MinecraftCommands.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 

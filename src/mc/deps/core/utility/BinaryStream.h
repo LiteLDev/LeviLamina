@@ -52,7 +52,6 @@ public:
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&);
     BinaryStream(BinaryStream const&);
-    BinaryStream();
 
 public:
     // virtual functions

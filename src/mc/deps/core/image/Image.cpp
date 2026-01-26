@@ -13,13 +13,7 @@ Image::Image(uint32 w, uint32 h, ImageFormat format, ImageUsage usage)
   mUsage{usage},
   mImageBytes() {}
 
-Image::Image(
-   uint32       w,
-   uint32       h,
-   uint32       d,
-   mce::ImageFormat format,
-   mce::ImageUsage  usage
-)
+Image::Image(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage)
 : imageFormat(format),
   mWidth(w),
   mHeight(h),
@@ -79,22 +73,11 @@ mce::Image& Image::operator=(mce::Image&& rhs) {
 
 void Image::setRawImage(mce::Image::Storage&& contents) { mImageBytes = std::move(contents); }
 
-void Image::setImageDescription(
-   uint32         w,
-   uint32         h,
-   mce::ImageFormat format,
-   mce::ImageUsage  usage
-) {
+void Image::setImageDescription(uint32 w, uint32 h, mce::ImageFormat format, mce::ImageUsage usage) {
     setImageDescription(w, h, 1, format, usage);
 }
 
-void Image::setImageDescription(
-   uint32         w,
-   uint32         h,
-   uint32         d,
-   mce::ImageFormat format,
-   mce::ImageUsage  usage
-) {
+void Image::setImageDescription(uint32 w, uint32 h, uint32 d, mce::ImageFormat format, mce::ImageUsage usage) {
     mWidth      = w;
     mHeight     = h;
     mDepth      = d;
@@ -133,7 +116,6 @@ static size_t getBytesPerPixel(mce::ImageFormat format) {
     default:
         return 0;
     }
-    return 0;
 }
 
 void Image::resizeImageBytesToFitImageDescription() {
