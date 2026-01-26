@@ -1,65 +1,45 @@
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/ecs/strict/StrictEntityContext.h"
 #include "mc/entity/components/MoveInputComponent.h"
-#include "mc/entity/components/ServerPlayerCurrentMovementComponent.h"
-#include "mc/input/MoveInputState.h"
-#include "mc/network/ServerNetworkHandler.h"
+#include "mc/deps/vanilla_components/WasOnGroundFlagComponent.h"
+#include "mc/entity/systems/ServerPlayerMovementCorrectionSystem.h"
 #include "mc/network/packet/PlayerAuthInputPacket.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/util/ServerMoveInputHandlerSystemUtils.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/level/Level.h"
 
 
 namespace ll::event::inline player {
 
-LL_STATIC_HOOK(
-    PlayerJumpEventHook,
-    HookPriority::Normal,
-    &ServerMoveInputHandlerSystemUtils::_tickServerMoveInputHandler,
-    void,
-    StrictEntityContext&                        strictEntityContext,
-    MovementAbilitiesComponent const&           abilitiesComponent,
-    ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
-    ClientInputLockComponent&                   lockComponent,
-    MoveInputComponent&                         input,
-    ActorDataFlagComponent&                     actorDataFlag,
-    ActorDataDirtyFlagsComponent&               actorDataDirtyFlags,
-    VanillaClientGameplayComponent&             vanillaClientGameplayComponent,
-    ::Optional<::SneakingComponent const>       sneakingComponent,
-    ::Optional<::WasInWaterFlagComponent const> isInWater
-) {
-    origin(
-        strictEntityContext,
-        abilitiesComponent,
-        serverPlayerCurrentMovementComponent,
-        lockComponent,
-        input,
-        actorDataFlag,
-        actorDataDirtyFlags,
-        vanillaClientGameplayComponent,
-        sneakingComponent,
-        isInWater
-    );
-    if (strictEntityContext.mEntity->isNull()) return;
-    if (auto level = ll::service::getLevel(); level) {
-        if (Actor* actor = Actor::tryGetFromEntity(strictEntityContext, *level->getEntityRegistry(), false); actor) {
-            if (actor->isPlayer()) {
-                auto& inputstate = *input.mInputState;
-                auto& pkt        = *serverPlayerCurrentMovementComponent.mCurrentUpdate;
-                if (pkt.mInputData.get()[(size_t)::PlayerAuthInputPacket::InputData::StartJumping]
-                    && inputstate.mFlagValues->test((ushort)MoveInputState::Flag::JumpDown)
-                    && input.mFlagValues->test((ushort)MoveInputState::Flag::JumpInputWasPressed)) {
-                    EventBus::getInstance().publish(PlayerJumpEvent(static_cast<ServerPlayer&>(*actor)));
+    LL_STATIC_HOOK(
+        PlayerJumpEventHook,
+        HookPriority::Normal,
+        &ServerPlayerMovementCorrectionSystem::_afterMovementSimulation,
+        void,
+        UserEntityIdentifierComponent const& userIdentifier,
+        Actor&                               actor,
+        PlayerAuthInputPacket const&         packet,
+        ReplayStateComponent&                replay,
+        ActorRotationComponent const*        actorRotation,
+        ServerPlayerMovementComponent&       serverPlayerMovement,
+        StateVectorComponent&                stateVector,
+        BoatMovementComponent const*         boat
+    ) {
+        origin(userIdentifier, actor, packet, replay, actorRotation, serverPlayerMovement, stateVector, boat);
+        if (packet.mInputData->test(static_cast<size_t>(PlayerAuthInputPacket::InputData::Jumping)) && actor.isPlayer()) {
+            auto&      player  = static_cast<Player&>(actor);
+            auto&      pos     = player.getPosition();
+            auto&      posPrev = player.mBuiltInComponents->mStateVectorComponent->mPosPrev.get();
+            auto const delta   = pos - posPrev;
+            if (player.getEntityContext().hasComponent<WasOnGroundFlagComponent>() && !player.isOnGround()
+                && delta.y > 0.0f) {
+                EventBus::getInstance().publish(PlayerJumpEvent(player));
                 }
-            }
         }
     }
-}
 
 
 static std::unique_ptr<EmitterBase> emitterFactory();

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.8] - 2026-01-26
+
+### Fixed
+
+- Fixed PlayerJumpEvent
+
 ## [1.7.7] - 2025-12-03
 
 ### Changed
@@ -1226,7 +1232,8 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.8...HEAD
+[1.7.8]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...v1.7.8
 [1.7.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.6...v1.7.7
 [1.7.6]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.5...v1.7.6
 [1.7.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.4...v1.7.5
