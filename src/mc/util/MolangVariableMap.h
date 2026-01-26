@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/util/MolangVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangVariableIndex.h"
@@ -30,6 +31,15 @@ public:
     // NOLINTEND
 
 public:
+    MolangVariableMap(MolangVariableMap const& rhs) {
+        mMapFromVariableIndexToVariableArrayOffset = rhs.mMapFromVariableIndexToVariableArrayOffset;
+        mVariables                                 = {};
+        for (auto& ptr : *rhs.mVariables) {
+            mVariables->push_back(std::make_unique<MolangVariable>(*ptr));
+        }
+        mHasPublicVariables = rhs.mHasPublicVariables;
+    }
+
     void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value) {
         setMolangVariable(variableName.getHash(), variableName.c_str(), value);
     }
@@ -38,10 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
-
-    MCAPI_C MolangVariableMap(::MolangVariableMap&&);
-
-    MCAPI_C MolangVariableMap(::MolangVariableMap const& rhs);
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
