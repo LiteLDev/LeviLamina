@@ -26,6 +26,13 @@ public:
     // NOLINTEND
 
 public:
+    MolangVariable(MolangVariable const& rhs) {
+        mValue       = rhs.mValue;
+        mPublicValue = std::make_unique<MolangScriptArg>(*rhs.mPublicValue);
+        mSettings    = rhs.mSettings;
+    }
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MolangVariableIndex
