@@ -4,15 +4,14 @@ docs_dir: contents
 
 nav:
   - Home: index.md
-  - Quickstart: quickstart.md
   - FAQ: faq.md
 
-  - Player Guides:
+  - User Guides:
       - Install on Server:
-          - player_guides/install.md
-          - player_guides/install_on_docker.md
-      - player_guides/install_on_client.md
-      - player_guides/troubleshooting.md
+          - user_guides/install.md
+          - user_guides/install_on_docker.md
+      - user_guides/install_on_client.md
+      - user_guides/troubleshooting.md
       - common_guides/usage_guidelines.md
 
   - Developer Guides:
@@ -104,9 +103,8 @@ plugins:
           name: 中文
           nav_translations:
             Home: 主页
-            Quickstart: 快速开始
             FAQ: 常见问题
-            Player Guides: 玩家指南
+            User Guides: 用户指南
             Install on Server: 在服务器上安装
             Install on Client: 在客户端上安装
             Install on Docker: 在Docker上安装

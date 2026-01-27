@@ -24,25 +24,45 @@
 ### 通过 lip
 
 1. 安装lip，可以参考[lip文档](https://lip.levimc.org/zh/user-guide/installation/)
-2. 运行以下命令来安装LeviLamina:
+2. (可选)可以通过`lip config set`命令来设置GitHub镜像，例如:
+    ```shell
+    lip config set github_proxies=https://github.bibk.top
+    ```
+3. (可选)可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://mcdl.bibk.top`
+   。你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`.cache/bdsdown`目录下，如果该目录不存在请手动创建。
+   该目录基于您安装BDS的路径，例如`C:\Users\YourName\BDS\.cache\bdsdown`。
+4. 为你的 Minecraft 服务器创建一个目录并切换到该目录:
+    ```shell
+    mkdir myserver
+    cd myserver
+    ```
+5. 使用 lip 安装 LeviLamina:
+    ```shell
+    # 安装最新版本
+    lip install github.com/LiteLDev/LeviLamina
+    
+    # 安装指定版本 (把 x.y.z 替换成想要的版本)
+    lip install github.com/LiteLDev/LeviLamina@x.y.z
+    ```
+6. 执行以下命令启动服务器:
+    ```shell
+    ./bedrock_server_mod.exe
+    ```
 
-```shell
-lip install github.com/LiteLDev/LeviLamina
-```
-
-或者指定版本号:
-
-```shell
-lip install github.com/LiteLDev/LeviLamina@x.y.z
-```
-
-LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看
+可在 [releases](https://github.com/LiteLDev/LeviLamina/releases) 查看可用版本号。
 
 如果你想要升级LeviLamina，可以运行以下命令:
 
 ```shell
-lip install -U github.com/LiteLDev/LeviLamina
+# 升级到最新版本
+lip update github.com/LiteLDev/LeviLamina
+
+# 升级到指定版本 (把 x.y.z 替换成想要的版本)
+lip update github.com/LiteLDev/LeviLamina@x.y.z
 ```
+
+!!! warning
+    为确保数据安全，请勿在同一目录内更新 LeviLamina。建议在独立文件夹内安装新版本，然后复制 `worlds` 目录并按需更新配置。
 
 ### 手动安装
 
@@ -84,3 +104,17 @@ lip install -U github.com/LiteLDev/LeviLamina
    ```pwsh
    .\PeEditor.exe -mb
    ```
+
+## 搜寻模组
+
+在添加 Mods 之前，请先了解各种选项。最佳资源来源为 [Bedrinth](https://bedrinth.com)，当然你也可以在其他网站上找到更多资源。
+
+## 安装模组
+
+大多数 Mods（尤其是 Bedrinth 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
+
+```shell
+lip install github.com/LiteLDev/LeviAntiCheat
+```
+
+如有需要，请遵循各个 Mod 开发者提供的进一步说明。

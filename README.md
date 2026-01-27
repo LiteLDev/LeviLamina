@@ -27,7 +27,7 @@ For more information, please refer to [the documentation](https://lamina.levimc.
 
 ## Install & Usage
 
-Please refer to [Quickstart](https://lamina.levimc.org/quickstart/)
+Please refer to [Install on Server](https://lamina.levimc.org/user_guides/install/) and [Install on Client](https://lamina.levimc.org/user_guides/install_on_client/).
 
 ## Star History
 

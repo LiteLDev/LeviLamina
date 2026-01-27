@@ -27,7 +27,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不
 
 ## 安装和使用
 
-请参考 [快速入门](https://lamina.levimc.org/zh/quickstart/)
+请参考 [在服务器上安装](https://lamina.levimc.org/zh/user_guides/install) 和 [在客户端上安装](https://lamina.levimc.org/zh/user_guides/install_on_client/)。
 
 ## 星标蹭蹭涨
 
