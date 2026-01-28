@@ -23,6 +23,11 @@ public:
     // NOLINTEND
 
 public:
+    StructurePoolBlockPredicateBlockMatchRandom(::Block const& block, float const probability)
+    : mBlock(block),
+      mProbability(probability) {}
+
+public:
     // prevent constructor by default
     StructurePoolBlockPredicateBlockMatchRandom& operator=(StructurePoolBlockPredicateBlockMatchRandom const&);
     StructurePoolBlockPredicateBlockMatchRandom(StructurePoolBlockPredicateBlockMatchRandom const&);

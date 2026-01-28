@@ -26,6 +26,9 @@ public:
     // NOLINTEND
 
 public:
+    explicit FixedBiomeSource(Biome const& biome) : mFixedBiome(biome) {}
+
+public:
     // prevent constructor by default
     FixedBiomeSource& operator=(FixedBiomeSource const&);
     FixedBiomeSource(FixedBiomeSource const&);

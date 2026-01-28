@@ -26,6 +26,20 @@ public:
     // NOLINTEND
 
 public:
+    StructureTemplateRegistrationContext(
+        Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> const& manager,
+        JigsawStructureElementRegistry&                                 structureRegistry,
+        FeatureRegistry&                                                featureRegistry,
+        BaseGameVersion                                                 baseGameVersion,
+        Experiments const&                                              experiments
+    )
+    : mManager(manager),
+      mStructureRegistry(structureRegistry),
+      mFeatureRegistry(featureRegistry),
+      mBaseGameVersion(baseGameVersion),
+      mExperiments(experiments) {}
+
+public:
     // prevent constructor by default
     StructureTemplateRegistrationContext& operator=(StructureTemplateRegistrationContext const&);
     StructureTemplateRegistrationContext();
