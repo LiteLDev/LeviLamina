@@ -143,7 +143,7 @@ jobs:
         run: |
           echo "| levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |" > sha-row.txt
 
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v6
         with:
           name: sha-row-${{ matrix.target_type }}-${{ matrix.mode }}
           path: sha-row.txt
