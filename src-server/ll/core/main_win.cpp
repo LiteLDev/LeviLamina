@@ -4,10 +4,8 @@
 #include <csignal>
 #include <cstdio>
 #include <cwchar>
-#include <exception>
 #include <filesystem>
 #include <string>
-#include <system_error>
 #include <vector>
 
 #include "fmt/core.h"
@@ -16,7 +14,6 @@
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/Bedrock.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/PlayerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -32,7 +29,6 @@
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/commands/StopCommand.h"
 

@@ -11,6 +11,7 @@
 #include "ll/core/CrashLogger.h"
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/mod/ModRegistrar.h"
+#include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/client/game/ClientInstance.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
@@ -65,6 +66,10 @@ void leviLaminaMain() {
     command::registerCommands();
 
     mod::ModRegistrar::getInstance().loadAllMods();
+
+    if (config.modules.vulnerabilityFixes) {
+        vulnerability_fixes::enableFixes();
+    }
 }
 
 // namespace service::bedrock {
