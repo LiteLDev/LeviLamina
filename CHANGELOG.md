@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.4] - 2026-02-03
+
+### Fixed
+
+- Fixed a vulnerability of SubChunkRequestPacket
+
 ## [1.9.3] - 2026-02-03
 
 ### Changed
@@ -1324,7 +1330,8 @@ For lip and tooth-hub test only.
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.4...HEAD
+[1.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.3...v1.9.4
 [1.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.2...v1.9.3
 [1.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.1...v1.9.2
 [1.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...v1.9.1
