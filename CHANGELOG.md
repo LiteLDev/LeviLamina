@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.3] - 2026-02-03
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.132-server.5
+- Bumped bedrock-runtime-data to v1.21.132-client.6
+- Updated Minecraft headers
+
+### Fixed
+
+- Fixed a crash of Certificate::validate(Mojang's issue)
+
 ## [1.9.2] - 2026-01-26
 
 ### Changed
@@ -1312,7 +1324,8 @@ For lip and tooth-hub test only.
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.3...HEAD
+[1.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.2...v1.9.3
 [1.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.1...v1.9.2
 [1.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...v1.9.1
 [1.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.2...v1.9.0
