@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Attribute;
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
@@ -20,14 +21,8 @@ class AttributeScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc8d220;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::Attribute const>> mSharedAttribute;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeScriptActorComponent& operator=(AttributeScriptActorComponent const&);
-    AttributeScriptActorComponent(AttributeScriptActorComponent const&);
-    AttributeScriptActorComponent();
 
 public:
     // virtual functions
@@ -60,33 +55,33 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<float> $getCurrent() const;
+    MCAPI ::Scripting::Result_deprecated<float> $getCurrent() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+    MCAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         $setCurrentV2(float const& value) const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> $getValue() const;
+    MCAPI ::Scripting::Result_deprecated<float> $getValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> $getEffectiveMinValue() const;
+    MCAPI ::Scripting::Result_deprecated<float> $getEffectiveMinValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> $getEffectiveMaxValue() const;
+    MCAPI ::Scripting::Result_deprecated<float> $getEffectiveMaxValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
 
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

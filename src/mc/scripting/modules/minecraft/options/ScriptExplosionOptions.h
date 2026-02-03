@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
@@ -14,34 +18,29 @@ struct ScriptExplosionOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9fed69;
-    ::ll::UntypedStorage<1, 2>  mUnk72424f;
-    ::ll::UntypedStorage<1, 2>  mUnk5a3dc4;
-    ::ll::UntypedStorage<1, 2>  mUnkf77c5a;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+                                                    mSource;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mBreaksBlocks;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mCausesFire;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mAllowUnderwater;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptExplosionOptions& operator=(ScriptExplosionOptions const&);
-    ScriptExplosionOptions(ScriptExplosionOptions const&);
-    ScriptExplosionOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
 
-    MCNAPI static ::Scripting::InterfaceBinding bindV1();
+    MCAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
+    MCAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
 
-    MCNAPI static bool const& BREAKS_BLOCKS_DEFAULT();
+    MCAPI static bool const& BREAKS_BLOCKS_DEFAULT();
 
-    MCNAPI static bool const& CAUSES_FIRE_DEFAULT();
+    MCAPI static bool const& CAUSES_FIRE_DEFAULT();
     // NOLINTEND
 };
 

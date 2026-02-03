@@ -20,7 +20,7 @@ class ScriptStringBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockPr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk98946a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValidValues;
     // NOLINTEND
 
 public:
@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStringBlockProperty(
+    MCAPI ScriptStringBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<::std::string>                                                          validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getState() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
+    MCAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setState(::std::string state);
+    MCAPI ::Scripting::Result_deprecated<void> setState(::std::string state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<::std::string>                                                          validValues,

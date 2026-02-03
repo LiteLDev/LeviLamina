@@ -14,15 +14,9 @@ struct PushableDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5411f5;
-    ::ll::UntypedStorage<1, 1> mUnk3d351c;
+    ::ll::TypedStorage<1, 1, bool> mIsPushable;
+    ::ll::TypedStorage<1, 1, bool> mIsPushableByPiston;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PushableDescription& operator=(PushableDescription const&);
-    PushableDescription(PushableDescription const&);
-    PushableDescription();
 
 public:
     // virtual functions
@@ -37,15 +31,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

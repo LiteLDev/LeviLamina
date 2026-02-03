@@ -17,9 +17,13 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptDataDrivenActorTriggerEventFilter : public ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter {
 public:
+    // ScriptDataDrivenActorTriggerEventFilter inner types define
+    using Data = ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke9470c;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mEventTypes;
     // NOLINTEND
 
 public:
@@ -38,38 +42,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDataDrivenActorTriggerEventFilter(
+    MCAPI ScriptDataDrivenActorTriggerEventFilter(
         ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&
     );
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
+    MCFOLD bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
 
 
     // NOLINTEND

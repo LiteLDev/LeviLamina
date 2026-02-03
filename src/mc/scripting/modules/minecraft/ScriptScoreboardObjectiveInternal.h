@@ -15,7 +15,7 @@ namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft::ScriptScoreboardObjectiveInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string getErrorMessage(
+MCAPI ::std::string getErrorMessage(
     ::ScoreboardOperationResult result,
     ::std::variant<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,

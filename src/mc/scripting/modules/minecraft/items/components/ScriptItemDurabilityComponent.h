@@ -35,40 +35,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemDurabilityComponent(
+    MCAPI ScriptItemDurabilityComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
+    MCAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
 
-    MCNAPI ::Scripting::Result_deprecated<int> getDamageChance(int unbreaking);
+    MCAPI ::Scripting::Result_deprecated<int> getDamageChance(int unbreaking);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getDamageChanceRange();
+    MCAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getDamageChanceRange();
 
-    MCNAPI ::Scripting::Result_deprecated<::FloatRange> getDamageRange_V010();
+    MCAPI ::Scripting::Result_deprecated<::FloatRange> getDamageRange_V010();
 
-    MCNAPI ::Scripting::Result_deprecated<int> getMaxDurability();
+    MCAPI ::Scripting::Result_deprecated<int> getMaxDurability();
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> getUnbreakable();
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidItemStackError> getUnbreakable();
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCurrentDamage(int damage);
+    MCAPI ::Scripting::Result_deprecated<void> setCurrentDamage(int damage);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidItemStackError>
     setUnbreakable(bool isUnbreakable);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );

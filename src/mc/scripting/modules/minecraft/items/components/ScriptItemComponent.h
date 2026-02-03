@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,8 +21,9 @@ class ScriptItemComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5e0c70;
-    ::ll::UntypedStorage<8, 32> mUnk8f4aee;
+    ::ll::TypedStorage<8, 32, ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+        mItemStackHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>> mItemType;
     // NOLINTEND
 
 public:
@@ -39,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
+    MCAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCNAPI ScriptItemComponent(
+    MCAPI ScriptItemComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope,
         ::std::string                                                                  id
@@ -51,15 +54,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope,
         ::std::string                                                                  id
@@ -69,13 +72,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

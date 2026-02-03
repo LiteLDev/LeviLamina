@@ -33,21 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::JukeboxBlockActor* _tryGetJukeboxActor();
+    MCFOLD ::JukeboxBlockActor* _tryGetJukeboxActor();
 
-    MCNAPI ::Scripting::Result_deprecated<void> ejectRecord();
+    MCAPI ::Scripting::Result_deprecated<void> ejectRecord();
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getRecord();
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isPlaying();
+    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
 
-    MCNAPI ::Scripting::Result_deprecated<void> pauseRecord();
+    MCAPI ::Scripting::Result_deprecated<void> pauseRecord();
 
-    MCNAPI ::Scripting::Result_deprecated<void> playRecord();
+    MCAPI ::Scripting::Result_deprecated<void> playRecord();
 
-    MCNAPI ::Scripting::Result_deprecated<void> setRecord(
+    MCAPI ::Scripting::Result_deprecated<void> setRecord(
         ::std::optional<::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>> const& itemTypeOrId,
@@ -58,10 +58,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -69,13 +69,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

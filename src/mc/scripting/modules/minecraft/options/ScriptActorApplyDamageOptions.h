@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,32 +18,28 @@ struct ScriptActorApplyDamageOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk232874;
-    ::ll::UntypedStorage<8, 40> mUnkbfc0ea;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mDamagingEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptActorApplyDamageOptions& operator=(ScriptActorApplyDamageOptions const&);
-    ScriptActorApplyDamageOptions(ScriptActorApplyDamageOptions const&);
-    ScriptActorApplyDamageOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptActorApplyDamageOptions();
+    MCAPI ~ScriptActorApplyDamageOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

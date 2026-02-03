@@ -8,13 +8,13 @@ class MainProcScope {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MainProcScope();
+    MCAPI ~MainProcScope();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

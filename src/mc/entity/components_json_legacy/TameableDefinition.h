@@ -29,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addTamingItem(::ActorDefinitionTameItem const& tameItem);
+    MCAPI void addTamingItem(::ActorDefinitionTameItem const& tameItem);
 
-    MCNAPI void addTamingItemByName(::std::string const& name);
+    MCAPI void addTamingItemByName(::std::string const& name);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TameableDefinition>>& root
     );
     // NOLINTEND

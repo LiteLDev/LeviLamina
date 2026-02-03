@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,20 +16,14 @@ class ScriptAABB {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk49bddd;
-    ::ll::UntypedStorage<4, 12> mUnkff7bfd;
+    ::ll::TypedStorage<4, 12, ::Vec3> mCenter;
+    ::ll::TypedStorage<4, 12, ::Vec3> mExtent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptAABB& operator=(ScriptAABB const&);
-    ScriptAABB(ScriptAABB const&);
-    ScriptAABB();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

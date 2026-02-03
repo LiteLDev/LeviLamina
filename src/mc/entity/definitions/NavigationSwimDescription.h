@@ -9,21 +9,15 @@ struct NavigationSwimDescription : public ::NavigationDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkeddfd9;
-    ::ll::UntypedStorage<1, 1> mUnkd523a9;
-    ::ll::UntypedStorage<4, 4> mUnkd83b80;
-    ::ll::UntypedStorage<4, 4> mUnka8bf2d;
-    ::ll::UntypedStorage<4, 4> mUnkaf77de;
-    ::ll::UntypedStorage<4, 4> mUnk3e2dea;
-    ::ll::UntypedStorage<4, 4> mUnkfc6d83;
-    ::ll::UntypedStorage<4, 4> mUnk5d31a0;
+    ::ll::TypedStorage<1, 1, bool>  mUsingWander;
+    ::ll::TypedStorage<1, 1, bool>  mAllowRiverFollow;
+    ::ll::TypedStorage<4, 4, float> mSteeringDamping;
+    ::ll::TypedStorage<4, 4, float> mMinDepth;
+    ::ll::TypedStorage<4, 4, float> mMaxDepth;
+    ::ll::TypedStorage<4, 4, float> mTerrainAvoidDist;
+    ::ll::TypedStorage<4, 4, float> mLookAheadDist;
+    ::ll::TypedStorage<4, 4, float> mCenteredThres;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NavigationSwimDescription& operator=(NavigationSwimDescription const&);
-    NavigationSwimDescription(NavigationSwimDescription const&);
-    NavigationSwimDescription();
 
 public:
     // virtual functions

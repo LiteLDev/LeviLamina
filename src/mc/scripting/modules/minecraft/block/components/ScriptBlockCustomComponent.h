@@ -21,7 +21,11 @@ class ScriptBlockCustomComponent : public ::ScriptModuleMinecraft::BaseScriptBlo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6ab2bf;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters>>
+        mParams;
     // NOLINTEND
 
 public:
@@ -38,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponent(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
+    MCAPI ScriptBlockCustomComponent(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
 
-    MCNAPI ScriptBlockCustomComponent(
+    MCAPI ScriptBlockCustomComponent(
         ::BlockSource&       region,
         ::BlockPos           position,
         ::std::string const& name,
@@ -53,15 +57,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BlockSource&       region,
         ::BlockPos           position,
         ::std::string const& name,

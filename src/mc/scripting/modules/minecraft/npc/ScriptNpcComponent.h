@@ -29,37 +29,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
+    MCAPI ::Scripting::Result_deprecated<int> getSkinIndex() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
+    MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
+    MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
+    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
     setSkinIndex(int skinIndex);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

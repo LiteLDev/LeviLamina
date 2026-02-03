@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptSimpleBlockVolume.h"
+#include "mc/world/level/block/CompoundBlockVolumeAction.h"
+#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundBlockVolumeItem;
@@ -14,9 +19,9 @@ class ScriptCompoundBlockVolumeItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkaf6d04;
-    ::ll::UntypedStorage<4, 8>  mUnka0e799;
-    ::ll::UntypedStorage<4, 8>  mUnk686d88;
+    ::ll::TypedStorage<8, 48, ::ScriptModuleMinecraft::ScriptSimpleBlockVolume>        mVolume;
+    ::ll::TypedStorage<4, 8, ::std::optional<::CompoundBlockVolumePositionRelativity>> mRelativity;
+    ::ll::TypedStorage<4, 8, ::std::optional<::CompoundBlockVolumeAction>>             mAction;
     // NOLINTEND
 
 public:
@@ -27,24 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
+    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
-    MCNAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
+    MCAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
 
-    MCNAPI ~ScriptCompoundBlockVolumeItem();
+    MCAPI ~ScriptCompoundBlockVolumeItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindInterface();
+    MCAPI static ::Scripting::InterfaceBinding bindInterface();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

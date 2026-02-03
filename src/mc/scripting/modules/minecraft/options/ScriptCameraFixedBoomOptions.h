@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,20 +17,14 @@ struct ScriptCameraFixedBoomOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk91b1a2;
-    ::ll::UntypedStorage<4, 16> mUnk261901;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mViewOffset;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mEntityOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCameraFixedBoomOptions& operator=(ScriptCameraFixedBoomOptions const&);
-    ScriptCameraFixedBoomOptions(ScriptCameraFixedBoomOptions const&);
-    ScriptCameraFixedBoomOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

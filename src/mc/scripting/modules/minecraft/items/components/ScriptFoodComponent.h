@@ -31,31 +31,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptFoodComponent(
+    MCAPI ScriptFoodComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getCanAlwaysEat();
+    MCAPI ::Scripting::Result_deprecated<bool> getCanAlwaysEat();
 
-    MCNAPI ::Scripting::Result_deprecated<int> getNutrition();
+    MCAPI ::Scripting::Result_deprecated<int> getNutrition();
 
-    MCNAPI ::Scripting::Result_deprecated<float> getSaturationModifier();
+    MCAPI ::Scripting::Result_deprecated<float> getSaturationModifier();
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getUsingConvertsToItem();
+    MCAPI ::Scripting::Result_deprecated<::std::string> getUsingConvertsToItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );

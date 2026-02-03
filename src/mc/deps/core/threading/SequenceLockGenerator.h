@@ -9,16 +9,14 @@ namespace Bedrock::Threading {
 
 class SequenceLockGenerator {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc9cc59;
-    // NOLINTEND
+    // SequenceLockGenerator inner types define
+    using SequenceId = ::Bedrock::Threading::SequenceLock::SequenceId;
 
 public:
-    // prevent constructor by default
-    SequenceLockGenerator& operator=(SequenceLockGenerator const&);
-    SequenceLockGenerator(SequenceLockGenerator const&);
-    SequenceLockGenerator();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mValue;
+    // NOLINTEND
 };
 
 } // namespace Bedrock::Threading

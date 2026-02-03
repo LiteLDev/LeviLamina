@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,15 +15,9 @@ struct BreakDoorAnnotationDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkec80a0;
-    ::ll::UntypedStorage<4, 4> mUnkaa31da;
+    ::ll::TypedStorage<4, 4, int>                               mBreakTicks;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mMinDifficulty;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreakDoorAnnotationDescription& operator=(BreakDoorAnnotationDescription const&);
-    BreakDoorAnnotationDescription(BreakDoorAnnotationDescription const&);
-    BreakDoorAnnotationDescription();
 
 public:
     // virtual functions

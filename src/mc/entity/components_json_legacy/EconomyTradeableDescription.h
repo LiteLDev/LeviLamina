@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,25 +15,19 @@ struct EconomyTradeableDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd5ad06;
-    ::ll::UntypedStorage<8, 32> mUnk393108;
-    ::ll::UntypedStorage<1, 1>  mUnk10e7b1;
-    ::ll::UntypedStorage<4, 4>  mUnk9f4fee;
-    ::ll::UntypedStorage<4, 8>  mUnkd5fb30;
-    ::ll::UntypedStorage<4, 8>  mUnk206819;
-    ::ll::UntypedStorage<4, 4>  mUnk5376cd;
-    ::ll::UntypedStorage<4, 4>  mUnka899a4;
-    ::ll::UntypedStorage<1, 1>  mUnka7d6f1;
-    ::ll::UntypedStorage<1, 1>  mUnk7d2059;
-    ::ll::UntypedStorage<1, 1>  mUnk6b9b92;
-    ::ll::UntypedStorage<1, 1>  mUnkae8426;
+    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string> mTradeTablePath;
+    ::ll::TypedStorage<1, 1, bool>           mUseNewTradeScreen;
+    ::ll::TypedStorage<4, 4, int>            mHeroDemandDiscount;
+    ::ll::TypedStorage<4, 8, ::IntRange>     mCuredDiscount;
+    ::ll::TypedStorage<4, 8, ::IntRange>     mMaxCuredDiscount;
+    ::ll::TypedStorage<4, 4, int>            mNearbyCuredDiscount;
+    ::ll::TypedStorage<4, 4, int>            mMaxNearbyCuredDiscount;
+    ::ll::TypedStorage<1, 1, bool>           mPersistTrades;
+    ::ll::TypedStorage<1, 1, bool>           mConvertTradesEconomy;
+    ::ll::TypedStorage<1, 1, bool>           mShowTradeScreen;
+    ::ll::TypedStorage<1, 1, bool>           mUseLegacyPrices;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EconomyTradeableDescription& operator=(EconomyTradeableDescription const&);
-    EconomyTradeableDescription(EconomyTradeableDescription const&);
-    EconomyTradeableDescription();
 
 public:
     // virtual functions
@@ -47,15 +42,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

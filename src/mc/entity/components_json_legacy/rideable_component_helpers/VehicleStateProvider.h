@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canAddPassenger(
+    MCAPI bool $canAddPassenger(
         ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
         ::RideableComponentData const&                         vehicleData,
         ::RideableComponentHelpers::IRideableActor const&      vehicleActor,

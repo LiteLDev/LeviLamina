@@ -16,36 +16,30 @@ struct ScriptMoveToOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkc11c9f;
-    ::ll::UntypedStorage<1, 2> mUnk49c1dd;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mSpeed;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>  mFaceTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptMoveToOptions& operator=(ScriptMoveToOptions const&);
-    ScriptMoveToOptions(ScriptMoveToOptions const&);
-    ScriptMoveToOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::Error> validate() const;
+    MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleGameTest::ScriptMoveToOptions> bindV1();
+    MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleGameTest::ScriptMoveToOptions> bindV1();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool const& FACE_TARGET_DEFAULT();
+    MCAPI static bool const& FACE_TARGET_DEFAULT();
 
-    MCNAPI static float const& SPEED_DEFAULT();
+    MCAPI static float const& SPEED_DEFAULT();
 
-    MCNAPI static float const& SPEED_MIN();
+    MCAPI static float const& SPEED_MIN();
     // NOLINTEND
 };
 

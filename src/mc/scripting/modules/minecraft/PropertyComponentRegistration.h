@@ -2,14 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class IComponentFactory; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace Scripting { class ModuleBindingBuilder; }
+// clang-format on
+
 namespace ScriptModuleMinecraft::ScriptPropertyComponents {
 
 struct PropertyComponentRegistration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5ad51f;
-    ::ll::UntypedStorage<8, 64> mUnk6e2ddb;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<
+            void(::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&)>>
+        factoryRegistration;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<
+            void(::Scripting::ModuleBindingBuilder&, ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&)>>
+        bindingRegistration;
     // NOLINTEND
 
 public:
@@ -21,22 +38,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     PropertyComponentRegistration(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
 
-    MCNAPI ~PropertyComponentRegistration();
+    MCAPI ~PropertyComponentRegistration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

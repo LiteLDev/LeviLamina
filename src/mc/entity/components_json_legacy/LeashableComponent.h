@@ -31,22 +31,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LeashableComponent(::LeashableComponent&&);
+    MCAPI LeashableComponent(::LeashableComponent&&);
 
-    MCNAPI ::LeashableComponent& operator=(::LeashableComponent&&);
+    MCAPI ::LeashableComponent& operator=(::LeashableComponent&&);
 
-    MCNAPI ~LeashableComponent();
+    MCAPI ~LeashableComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LeashableComponent&&);
+    MCAPI void* $ctor(::LeashableComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

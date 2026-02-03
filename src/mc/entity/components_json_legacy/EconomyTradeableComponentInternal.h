@@ -11,7 +11,7 @@ struct TradeItem;
 namespace EconomyTradeableComponentInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI int _filterTrades(::Actor& owner, ::std::vector<::TradeItem>& tradeItems);
+MCAPI int _filterTrades(::Actor& owner, ::std::vector<::TradeItem>& tradeItems);
 // NOLINTEND
 
 } // namespace EconomyTradeableComponentInternal

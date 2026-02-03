@@ -9,12 +9,12 @@
 // clang-format off
 class AABB;
 class Actor;
+class ActorRenderData;
 class BaseActorRenderContext;
 class DataDrivenRenderer;
 class RenderParams;
 class Tessellator;
 class Vec3;
-struct ActorRenderData;
 namespace mce { class Mesh; }
 // clang-format on
 

@@ -14,16 +14,10 @@ struct CommandBlockDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2b3677;
-    ::ll::UntypedStorage<4, 4> mUnkeeebab;
-    ::ll::UntypedStorage<1, 1> mUnk7ae7ab;
+    ::ll::TypedStorage<4, 4, int>  mCurrentTickCount;
+    ::ll::TypedStorage<4, 4, int>  mTicksPerCommand;
+    ::ll::TypedStorage<1, 1, bool> mTicking;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandBlockDescription& operator=(CommandBlockDescription const&);
-    CommandBlockDescription(CommandBlockDescription const&);
-    CommandBlockDescription();
 
 public:
     // virtual functions

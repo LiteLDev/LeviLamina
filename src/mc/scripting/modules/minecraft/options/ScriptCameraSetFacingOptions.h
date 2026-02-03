@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/options/ScriptEaseOptions.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,35 +19,29 @@ struct ScriptCameraSetFacingOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc207d1;
-    ::ll::UntypedStorage<4, 16> mUnk7caf74;
-    ::ll::UntypedStorage<4, 20> mUnk3f29d7;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mFacingEntity;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                                                    mLocation;
+    ::ll::TypedStorage<4, 20, ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions>>                mEaseOptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCameraSetFacingOptions& operator=(ScriptCameraSetFacingOptions const&);
-    ScriptCameraSetFacingOptions(ScriptCameraSetFacingOptions const&);
-    ScriptCameraSetFacingOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraSetFacingOptions const& other) const;
 
-    MCNAPI ~ScriptCameraSetFacingOptions();
+    MCAPI ~ScriptCameraSetFacingOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

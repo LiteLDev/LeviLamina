@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GameType.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptPropertyTargetSelectorOption; }
+namespace ScriptModuleMinecraft { struct ScriptScoreTargetSelectorOption; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,24 +18,27 @@ class ScriptActorFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnkca00de;
-    ::ll::UntypedStorage<4, 8>  mUnkf2e62c;
-    ::ll::UntypedStorage<4, 8>  mUnk3a68a5;
-    ::ll::UntypedStorage<4, 8>  mUnkb51740;
-    ::ll::UntypedStorage<4, 8>  mUnkadb959;
-    ::ll::UntypedStorage<4, 8>  mUnkabce4a;
-    ::ll::UntypedStorage<8, 40> mUnk4a7187;
-    ::ll::UntypedStorage<8, 32> mUnk9f91ec;
-    ::ll::UntypedStorage<8, 32> mUnk3e4f93;
-    ::ll::UntypedStorage<8, 40> mUnk236f47;
-    ::ll::UntypedStorage<4, 8>  mUnk87bfb7;
-    ::ll::UntypedStorage<8, 32> mUnke28c0f;
-    ::ll::UntypedStorage<8, 32> mUnk3820c7;
-    ::ll::UntypedStorage<8, 32> mUnk9a2af1;
-    ::ll::UntypedStorage<8, 32> mUnka036c0;
-    ::ll::UntypedStorage<8, 32> mUnk99044e;
-    ::ll::UntypedStorage<8, 32> mUnk831225;
-    ::ll::UntypedStorage<8, 32> mUnkcbb533;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                           mMinLevel;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                           mMaxLevel;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mMinVerticalRotation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mMaxVerticalRotation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mMinHorizontalRotation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mMaxHorizontalRotation;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mType;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mFamilies;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mTags;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mName;
+    ::ll::TypedStorage<4, 8, ::std::optional<::GameType>>                    mGameMode;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mExcludeTypes;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mExcludeFamilies;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mExcludeTags;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mExcludeNames;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::GameType>>>    mExcludeGameModes;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>>>
+        mScoreOptions;
+    ::ll::
+        TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption>>>
+            mPropertyOptions;
     // NOLINTEND
 
 public:
@@ -40,35 +48,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCNAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter const&);
 
-    MCNAPI ~ScriptActorFilter();
+    MCAPI ~ScriptActorFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

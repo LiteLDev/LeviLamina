@@ -30,15 +30,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
+    MCAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
 
-    MCNAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
     );
     // NOLINTEND

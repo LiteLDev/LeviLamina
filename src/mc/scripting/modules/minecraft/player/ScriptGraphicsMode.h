@@ -16,11 +16,11 @@ struct ScriptGraphicsMode {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBinding bind();
+    MCAPI static ::Scripting::EnumBinding bind();
 
-    MCNAPI static ::GraphicsMode getModeFromString(::std::string const& str);
+    MCAPI static ::GraphicsMode getModeFromString(::std::string const& str);
 
-    MCNAPI static ::std::string getModeName(::GraphicsMode mode);
+    MCAPI static ::std::string getModeName(::GraphicsMode mode);
     // NOLINTEND
 };
 

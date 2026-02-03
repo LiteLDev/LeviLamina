@@ -22,18 +22,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void removeArea();
+    MCAPI void removeArea();
 
-    MCNAPI void setTickingArea(::Actor& owner, ::std::shared_ptr<::ITickingArea> tickingArea);
+    MCAPI void setTickingArea(::Actor& owner, ::std::shared_ptr<::ITickingArea> tickingArea);
 
-    MCNAPI void updateArea(::Actor& owner);
+    MCAPI void updateArea(::Actor& owner);
 
-    MCNAPI ~TickWorldComponent();
+    MCAPI ~TickWorldComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

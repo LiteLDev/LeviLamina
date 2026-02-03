@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,34 +17,29 @@ struct ScriptDimensionLocation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk392c2a;
-    ::ll::UntypedStorage<4, 4>  mUnkd1408b;
-    ::ll::UntypedStorage<4, 4>  mUnkdceea9;
-    ::ll::UntypedStorage<4, 4>  mUnk5bc35f;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                    mDimension;
+    ::ll::TypedStorage<4, 4, float> mX;
+    ::ll::TypedStorage<4, 4, float> mY;
+    ::ll::TypedStorage<4, 4, float> mZ;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDimensionLocation& operator=(ScriptDimensionLocation const&);
-    ScriptDimensionLocation(ScriptDimensionLocation const&);
-    ScriptDimensionLocation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptDimensionLocation();
+    MCAPI ~ScriptDimensionLocation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

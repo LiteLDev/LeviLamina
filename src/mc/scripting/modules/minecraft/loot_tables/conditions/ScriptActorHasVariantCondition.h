@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItemActorHasVariantCondition;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,7 +17,7 @@ class ScriptActorHasVariantCondition : public ::ScriptModuleMinecraft::ScriptLoo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk16de79;
+    ::ll::TypedStorage<8, 8, ::LootItemActorHasVariantCondition const&> mCondition;
     // NOLINTEND
 
 public:
@@ -28,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -16,27 +16,27 @@ struct ScriptInvalidContainerSlotError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptInvalidContainerSlotError();
+    MCAPI ScriptInvalidContainerSlotError();
 
-    MCNAPI ~ScriptInvalidContainerSlotError();
+    MCAPI ~ScriptInvalidContainerSlotError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

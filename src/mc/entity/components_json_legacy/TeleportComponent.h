@@ -28,10 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool randomTeleport(::Actor& owner);
+    MCAPI bool randomTeleport(::Actor& owner);
 
-    MCNAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
+    MCAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
 
-    MCNAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
+    MCAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
     // NOLINTEND
 };

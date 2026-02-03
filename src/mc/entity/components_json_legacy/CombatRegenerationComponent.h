@@ -23,10 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
+    MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
-    MCNAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
+    MCAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
 
-    MCNAPI void tick(::Actor& owner);
+    MCAPI void tick(::Actor& owner);
     // NOLINTEND
 };

@@ -13,21 +13,15 @@ struct ScriptCameraFadeTimeOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk110d85;
-    ::ll::UntypedStorage<4, 4> mUnke60978;
-    ::ll::UntypedStorage<4, 4> mUnkadca5f;
+    ::ll::TypedStorage<4, 4, float> mFadeInTime;
+    ::ll::TypedStorage<4, 4, float> mHoldTime;
+    ::ll::TypedStorage<4, 4, float> mFadeOutTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCameraFadeTimeOptions& operator=(ScriptCameraFadeTimeOptions const&);
-    ScriptCameraFadeTimeOptions(ScriptCameraFadeTimeOptions const&);
-    ScriptCameraFadeTimeOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

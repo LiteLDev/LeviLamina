@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class CustomCommandRegistry; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandInterface; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandResult; }
@@ -23,7 +24,7 @@ class ScriptCustomCommandRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk14592e;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::CustomCommandRegistry&> mCustomCommandRegistry;
     // NOLINTEND
 
 public:
@@ -35,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::ScriptModuleMinecraft::ScriptCustomCommandError,
@@ -46,7 +47,7 @@ public:
         ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>> closure
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::ScriptModuleMinecraft::ScriptCustomCommandError,
@@ -61,7 +62,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

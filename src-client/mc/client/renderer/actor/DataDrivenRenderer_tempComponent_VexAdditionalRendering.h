@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorRenderData;
 class BaseActorRenderContext;
 class BoneOrientation;
 class DataDrivenRenderer;
@@ -17,7 +18,6 @@ class HashedString;
 class ItemStack;
 class Mob;
 class RenderParams;
-struct ActorRenderData;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_VexAdditionalRendering : public ::DataDrivenRenderer_tempComponent {

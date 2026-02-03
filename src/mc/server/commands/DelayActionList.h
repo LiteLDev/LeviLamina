@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
+#include "mc/world/level/dimension/DimensionDataSerializer.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class DelayRequest;
 class Dimension;
-class DimensionDataSerializer;
 class ICommandOriginLoader;
 class IRequestAction;
 class LevelStorage;
@@ -41,15 +41,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkeceaf4;
-    ::ll::UntypedStorage<4, 4>  mUnk7cbe33;
+    ::ll::TypedStorage<8, 24, ::DelayActionList::DelayRequestQueue> mDelayRequests;
+    ::ll::TypedStorage<4, 4, ::DimensionDataSerializer>             mDimensionDataSerializer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DelayActionList& operator=(DelayActionList const&);
-    DelayActionList(DelayActionList const&);
-    DelayActionList();
 
 public:
     // virtual functions

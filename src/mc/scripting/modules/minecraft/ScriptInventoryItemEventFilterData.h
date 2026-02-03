@@ -2,23 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/items/ScriptPlayerInventoryType.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+// clang-format on
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptInventoryItemEventFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkedadf7;
-    ::ll::UntypedStorage<4, 4> mUnk584dcb;
-    ::ll::UntypedStorage<1, 1> mUnk3b073b;
-    ::ll::UntypedStorage<4, 4> mUnkc309d5;
+    ::ll::TypedStorage<8, 8, ::ItemInstance const*>                              mItemInstance;
+    ::ll::TypedStorage<4, 4, int>                                                mSlot;
+    ::ll::TypedStorage<1, 1, bool>                                               mIsQuantityChangedOnly;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptPlayerInventoryType> mPlayerInventoryType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptInventoryItemEventFilterData& operator=(ScriptInventoryItemEventFilterData const&);
-    ScriptInventoryItemEventFilterData(ScriptInventoryItemEventFilterData const&);
-    ScriptInventoryItemEventFilterData();
 };
 
 } // namespace ScriptModuleMinecraft::EventFilters

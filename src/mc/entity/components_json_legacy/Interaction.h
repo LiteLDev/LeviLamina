@@ -45,54 +45,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Interaction();
+    MCAPI Interaction();
 
-    MCNAPI Interaction(::Interaction&&);
+    MCAPI Interaction(::Interaction&&);
 
-    MCNAPI Interaction(::Interaction const&);
+    MCAPI Interaction(::Interaction const&);
 
-    MCNAPI void addActorDefinitionIdentifierByName(::std::string const& name);
+    MCAPI void addActorDefinitionIdentifierByName(::std::string const& name);
 
-    MCNAPI void addLevelSoundEventByName(::std::string const& name);
+    MCAPI void addLevelSoundEventByName(::std::string const& name);
 
-    MCNAPI void setCooldown(float const& seconds);
+    MCAPI void setCooldown(float const& seconds);
 
-    MCNAPI void setCooldownAfterBeingAttacked(float const& seconds);
+    MCAPI void setCooldownAfterBeingAttacked(float const& seconds);
 
-    MCNAPI void setDropItemSlot(::std::string const& slot);
+    MCAPI void setDropItemSlot(::std::string const& slot);
 
-    MCNAPI void setEquipItemSlot(::std::string const& slot);
+    MCAPI void setEquipItemSlot(::std::string const& slot);
 
-    MCNAPI void setRepairItemAmount(int const& amount);
+    MCAPI void setRepairItemAmount(int const& amount);
 
-    MCNAPI void setRepairItemSlot(::std::string const& slot);
+    MCAPI void setRepairItemSlot(::std::string const& slot);
 
-    MCNAPI void setTransformItem(::std::string const& name);
+    MCAPI void setTransformItem(::std::string const& name);
 
-    MCNAPI void setVibrationByName(::std::string const& name);
+    MCAPI void setVibrationByName(::std::string const& name);
 
-    MCNAPI ~Interaction();
+    MCAPI ~Interaction();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::ItemSlotInfo> _tryConvertStringToItemSlotInfo(::std::string const& string);
+    MCAPI static ::std::optional<::ItemSlotInfo> _tryConvertStringToItemSlotInfo(::std::string const& string);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::Interaction&&);
+    MCAPI void* $ctor(::Interaction&&);
 
-    MCNAPI void* $ctor(::Interaction const&);
+    MCAPI void* $ctor(::Interaction const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandPermissionLevel.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptCustomCommandParamInterface; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,12 +17,16 @@ struct ScriptCustomCommandInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb8cea7;
-    ::ll::UntypedStorage<8, 32> mUnk2b3342;
-    ::ll::UntypedStorage<1, 1>  mUnk4e7a82;
-    ::ll::UntypedStorage<1, 2>  mUnk7bb478;
-    ::ll::UntypedStorage<8, 32> mUnkec9c52;
-    ::ll::UntypedStorage<8, 32> mUnk28894d;
+    ::ll::TypedStorage<8, 32, ::std::string>           mName;
+    ::ll::TypedStorage<8, 32, ::std::string>           mDescription;
+    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mPermissionLevel;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mCheatsRequired;
+    ::ll::
+        TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleMinecraft::ScriptCustomCommandParamInterface>>>
+            mMandatoryParams;
+    ::ll::
+        TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleMinecraft::ScriptCustomCommandParamInterface>>>
+            mOptionalParams;
     // NOLINTEND
 
 public:
@@ -29,33 +37,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
+    MCAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
 
-    MCNAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
+    MCAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
 
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& other) const;
 
-    MCNAPI ~ScriptCustomCommandInterface();
+    MCAPI ~ScriptCustomCommandInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

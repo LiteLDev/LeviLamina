@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,21 +18,16 @@ struct ScriptTickingAreaOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk6c2004;
-    ::ll::UntypedStorage<4, 12> mUnk2f1289;
-    ::ll::UntypedStorage<8, 32> mUnk3231f4;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTo;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFrom;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+        mDimension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptTickingAreaOptions& operator=(ScriptTickingAreaOptions const&);
-    ScriptTickingAreaOptions(ScriptTickingAreaOptions const&);
-    ScriptTickingAreaOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

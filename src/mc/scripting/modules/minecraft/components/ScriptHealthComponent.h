@@ -39,36 +39,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void notifyHealthChange(float oldValue, float newValue) const;
+    MCAPI void notifyHealthChange(float oldValue, float newValue) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
+    MCAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         $setCurrentV2(float const& value) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToMaxValue() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
+    MCAPI ::Scripting::Result_deprecated<void> $resetToDefaultValue() const;
 
 
     // NOLINTEND

@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -26,41 +26,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb84624;
+        ::ll::TypedStorage<8, 8, ::Biome const*> mBiomePtr;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb4cea5;
-    ::ll::UntypedStorage<8, 8>  mUnkd2271f;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                  mBiome;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBiomeType& operator=(ScriptBiomeType const&);
-    ScriptBiomeType(ScriptBiomeType const&);
-    ScriptBiomeType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getId() const;
+    MCAPI ::std::string getId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
     getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

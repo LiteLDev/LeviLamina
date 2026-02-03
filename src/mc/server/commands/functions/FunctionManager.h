@@ -89,22 +89,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk434392;
-    ::ll::UntypedStorage<1, 1>  mUnkc90958;
-    ::ll::UntypedStorage<8, 8>  mUnkb87a32;
-    ::ll::UntypedStorage<4, 4>  mUnk5cf55c;
-    ::ll::UntypedStorage<8, 24> mUnkb4927f;
-    ::ll::UntypedStorage<8, 64> mUnk34a953;
-    ::ll::UntypedStorage<8, 8>  mUnkd26b3c;
-    ::ll::UntypedStorage<8, 8>  mUnk35042f;
-    ::ll::UntypedStorage<8, 64> mUnk754948;
-    ::ll::UntypedStorage<8, 24> mUnka7e559;
+    ::ll::TypedStorage<8, 8, ::GameRule const*>                                mGameRule;
+    ::ll::TypedStorage<1, 1, bool>                                             mIsProcessingStack;
+    ::ll::TypedStorage<8, 8, uint64>                                           mInsertPoint;
+    ::ll::TypedStorage<4, 4, int>                                              mExecutionCount;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FunctionManager::QueuedCommand>> mCommandList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CommandOrigin const*, ::FunctionManager::OriginMapping>>
+                                                                      mOriginMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ICommandDispatcher>> mCommandDispatcher;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>>      mTickOrigin;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::FunctionEntry>>> mFunctions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FunctionManager::TickFunction>>                          mTickFunctions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FunctionManager& operator=(FunctionManager const&);
-    FunctionManager(FunctionManager const&);
     FunctionManager();
 
 public:

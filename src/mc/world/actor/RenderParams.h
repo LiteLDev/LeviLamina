@@ -22,8 +22,8 @@ class IBlockWorldGenAPI;
 class ILevel;
 class ItemStackBase;
 class MolangVariableMap;
+class ActorRenderData;
 class DataDrivenModel;
-struct ActorRenderData;
 namespace ParticleSystem { struct ParticleEmitter; }
 // clang-format on
 

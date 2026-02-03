@@ -5,7 +5,7 @@
 namespace CollisionBoxDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& BB_EPSILON();
+MCAPI float const& BB_EPSILON();
 // NOLINTEND
 
 } // namespace CollisionBoxDefaults

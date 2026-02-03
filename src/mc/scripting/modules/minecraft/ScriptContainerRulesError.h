@@ -28,21 +28,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka95bb8;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptContainerRulesError::Reason> mReason;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptContainerRulesError& operator=(ScriptContainerRulesError const&);
-    ScriptContainerRulesError(ScriptContainerRulesError const&);
-    ScriptContainerRulesError();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 };
 

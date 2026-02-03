@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EmptyLootItem;
 class LootPoolEntry;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -17,7 +18,7 @@ class ScriptEmptyLootItem : public ::ScriptModuleMinecraft::ScriptLootPoolEntry 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk795f34;
+    ::ll::TypedStorage<8, 8, ::EmptyLootItem const&> mEmptyLootItem;
     // NOLINTEND
 
 public:
@@ -37,13 +38,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootPoolEntry const& $_getEntry() const;
+    MCFOLD ::LootPoolEntry const& $_getEntry() const;
 
 
     // NOLINTEND

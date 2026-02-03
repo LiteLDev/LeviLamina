@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/SharedRecursiveMutexBase.h"
+#include "mc/platform/threading/Mutex.h"
 
 namespace Bedrock::Threading {
 
@@ -11,15 +12,9 @@ class SharedRecursiveMapMutex : public ::Bedrock::Threading::SharedRecursiveMute
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk31bb98;
-    ::ll::UntypedStorage<8, 64> mUnkce3fae;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                   mSharedMapLock;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::thread::id, uint>> mSharedRecursionCounts;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SharedRecursiveMapMutex& operator=(SharedRecursiveMapMutex const&);
-    SharedRecursiveMapMutex(SharedRecursiveMapMutex const&);
-    SharedRecursiveMapMutex();
 
 public:
     // virtual functions

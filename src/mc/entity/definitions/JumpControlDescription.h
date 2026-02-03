@@ -14,14 +14,8 @@ struct JumpControlDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb888e8;
+    ::ll::TypedStorage<4, 4, float> mJumpPower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JumpControlDescription& operator=(JumpControlDescription const&);
-    JumpControlDescription(JumpControlDescription const&);
-    JumpControlDescription();
 
 public:
     // virtual functions

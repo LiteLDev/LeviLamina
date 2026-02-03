@@ -29,36 +29,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SeatDescription(::SeatDescription const&);
+    MCAPI SeatDescription(::SeatDescription const&);
 
-    MCNAPI void addRotationExpressionNode(::ExpressionNode const& node);
+    MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
 
-    MCNAPI ::SeatDescription& operator=(::SeatDescription const&);
+    MCAPI ::SeatDescription& operator=(::SeatDescription const&);
 
-    MCNAPI bool operator==(::SeatDescription const& seat) const;
+    MCAPI bool operator==(::SeatDescription const& seat) const;
 
-    MCNAPI void setCameraRelaxDistanceSmoothing(float const& value);
+    MCAPI void setCameraRelaxDistanceSmoothing(float const& value);
 
-    MCNAPI void setThirdPersonCamerRadiusOverride(float const& value);
+    MCAPI void setThirdPersonCamerRadiusOverride(float const& value);
 
-    MCNAPI ~SeatDescription();
+    MCAPI ~SeatDescription();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SeatDescription const& EMPTY();
+    MCAPI static ::SeatDescription const& EMPTY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SeatDescription const&);
+    MCAPI void* $ctor(::SeatDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

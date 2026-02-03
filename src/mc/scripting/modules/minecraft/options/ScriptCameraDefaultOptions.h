@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/options/ScriptEaseOptions.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,19 +16,13 @@ struct ScriptCameraDefaultOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkd3a885;
+    ::ll::TypedStorage<4, 16, ::ScriptModuleMinecraft::ScriptEaseOptions> mEaseOptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCameraDefaultOptions& operator=(ScriptCameraDefaultOptions const&);
-    ScriptCameraDefaultOptions(ScriptCameraDefaultOptions const&);
-    ScriptCameraDefaultOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

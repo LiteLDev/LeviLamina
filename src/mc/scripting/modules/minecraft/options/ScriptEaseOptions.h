@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/EasingType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,22 +16,16 @@ struct ScriptEaseOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk2705ed;
-    ::ll::UntypedStorage<4, 8> mUnk8b8fa8;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>        mEasingTime;
+    ::ll::TypedStorage<4, 8, ::std::optional<::EasingType>> mEasingType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEaseOptions& operator=(ScriptEaseOptions const&);
-    ScriptEaseOptions(ScriptEaseOptions const&);
-    ScriptEaseOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::InterfaceBinding bindV1();
+    MCAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
 };
 

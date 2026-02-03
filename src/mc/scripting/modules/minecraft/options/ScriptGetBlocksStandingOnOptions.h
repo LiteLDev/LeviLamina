@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptBlockFilter.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,32 +16,26 @@ struct ScriptGetBlocksStandingOnOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>   mUnk4454d9;
-    ::ll::UntypedStorage<8, 168> mUnk70e891;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                         mIgnoreThinBlocks;
+    ::ll::TypedStorage<8, 168, ::std::optional<::ScriptModuleMinecraft::ScriptBlockFilter>> mBlockFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptGetBlocksStandingOnOptions& operator=(ScriptGetBlocksStandingOnOptions const&);
-    ScriptGetBlocksStandingOnOptions(ScriptGetBlocksStandingOnOptions const&);
-    ScriptGetBlocksStandingOnOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptGetBlocksStandingOnOptions();
+    MCAPI ~ScriptGetBlocksStandingOnOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

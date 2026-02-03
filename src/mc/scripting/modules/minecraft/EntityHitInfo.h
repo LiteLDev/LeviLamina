@@ -2,22 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/phys/AABB.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 namespace ScriptModuleMinecraft::ScriptRaycasting {
 
 struct EntityHitInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7cc77b;
-    ::ll::UntypedStorage<4, 24> mUnk42f426;
-    ::ll::UntypedStorage<4, 4>  mUnk8a5ddc;
+    ::ll::TypedStorage<8, 8, ::Actor*> actor;
+    ::ll::TypedStorage<4, 24, ::AABB>  aabb;
+    ::ll::TypedStorage<4, 4, float>    distance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityHitInfo& operator=(EntityHitInfo const&);
-    EntityHitInfo(EntityHitInfo const&);
-    EntityHitInfo();
 };
 
 } // namespace ScriptModuleMinecraft::ScriptRaycasting

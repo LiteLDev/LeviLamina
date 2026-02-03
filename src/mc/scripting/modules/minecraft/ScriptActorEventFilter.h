@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
 struct ActorUniqueID;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorEventFilterData; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct InterfaceBinding; }
@@ -14,11 +18,21 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptActorEventFilter {
 public:
+    // ScriptActorEventFilter inner types define
+    using Data = ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData;
+
+    using Invalidator = ::ActorUniqueID;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbd2ff5;
-    ::ll::UntypedStorage<8, 32> mUnkfa0a1c;
-    ::ll::UntypedStorage<8, 32> mUnkc4466f;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>>
+                                                                               mSpecificActors;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>>   mActorTypes;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::ActorUniqueID>>> mProcessedUniqueIds;
     // NOLINTEND
 
 public:
@@ -36,38 +50,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
+    MCAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
-    MCNAPI void process();
+    MCAPI void process();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
+    MCAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
 
 
     // NOLINTEND

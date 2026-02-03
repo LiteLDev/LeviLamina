@@ -16,7 +16,7 @@ struct ScriptBookPageContentError : public ::ScriptModuleMinecraft::ScriptBookEr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb2d4c3;
+    ::ll::TypedStorage<4, 4, int> mPageIndex;
     // NOLINTEND
 
 public:
@@ -27,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBookPageContentError(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
+    MCAPI ScriptBookPageContentError(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
 
-    MCNAPI ~ScriptBookPageContentError();
+    MCAPI ~ScriptBookPageContentError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBookPageContentError const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

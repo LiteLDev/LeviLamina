@@ -13,19 +13,13 @@ struct LessThanOrEqualsComparison {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4b6467;
+    ::ll::TypedStorage<4, 4, float> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LessThanOrEqualsComparison& operator=(LessThanOrEqualsComparison const&);
-    LessThanOrEqualsComparison(LessThanOrEqualsComparison const&);
-    LessThanOrEqualsComparison();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

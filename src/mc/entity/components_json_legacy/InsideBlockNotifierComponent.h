@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
+    MCAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
     // NOLINTEND
 };

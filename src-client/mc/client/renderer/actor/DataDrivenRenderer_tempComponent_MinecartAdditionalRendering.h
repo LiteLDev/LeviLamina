@@ -8,10 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorRenderData;
 class BaseActorRenderContext;
 class Block;
 class RenderParams;
-struct ActorRenderData;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_MinecartAdditionalRendering : public ::DataDrivenRenderer_tempComponent {

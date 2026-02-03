@@ -38,11 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setCopperEventType(::std::string const& name);
+    MCAPI void setCopperEventType(::std::string const& name);
 
-    MCNAPI void setParticleType(::std::string const& name);
+    MCAPI void setParticleType(::std::string const& name);
 
-    MCNAPI void
+    MCAPI void
     spawnParticle(::BlockSource& region, ::Actor& owner, ::Player& player, ::ItemStack const& usedItemCopy) const;
     // NOLINTEND
 };

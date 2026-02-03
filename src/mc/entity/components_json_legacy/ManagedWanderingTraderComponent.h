@@ -11,6 +11,6 @@ class ManagedWanderingTraderComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void reloadComponent(::Actor& actor);
+    MCAPI void reloadComponent(::Actor& actor);
     // NOLINTEND
 };

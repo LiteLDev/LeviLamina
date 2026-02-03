@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/loot_tables/functions/ScriptLootItemFunction.h"
 
 // auto generated forward declare list
 // clang-format off
 class LootItemFunction;
+class SetItemCountFunction;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,8 +19,8 @@ class ScriptSetItemCountFunction : public ::ScriptModuleMinecraft::ScriptLootIte
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke5e47e;
-    ::ll::UntypedStorage<8, 8>  mUnk7d79a4;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::SetItemCountFunction const&>   mFunction;
     // NOLINTEND
 
 public:
@@ -38,13 +40,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootItemFunction const& $_getFunction() const;
+    MCFOLD ::LootItemFunction const& $_getFunction() const;
 
 
     // NOLINTEND

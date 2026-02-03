@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/interfaces/ScriptRawMessageInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,10 +16,17 @@ struct ScriptTitleDisplayOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 224> mUnkf9096b;
-    ::ll::UntypedStorage<4, 4>   mUnkeab427;
-    ::ll::UntypedStorage<4, 4>   mUnkbb8084;
-    ::ll::UntypedStorage<4, 4>   mUnkf6ce1b;
+    ::ll::TypedStorage<
+        8,
+        224,
+        ::std::optional<::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>>>>
+                                  mSubtitle;
+    ::ll::TypedStorage<4, 4, int> mFadeInTime;
+    ::ll::TypedStorage<4, 4, int> mStayTime;
+    ::ll::TypedStorage<4, 4, int> mFadeOutTime;
     // NOLINTEND
 
 public:
@@ -27,30 +37,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
+    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
     operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
 
-    MCNAPI ~ScriptTitleDisplayOptions();
+    MCAPI ~ScriptTitleDisplayOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

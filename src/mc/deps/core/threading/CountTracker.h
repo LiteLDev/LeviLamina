@@ -8,25 +8,19 @@ class CountTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd2fa18;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<void*>> mCountReference;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CountTracker& operator=(CountTracker const&);
-    CountTracker(CountTracker const&);
-    CountTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CountTracker();
+    MCAPI ~CountTracker();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void senseEntities(
+    MCAPI void senseEntities(
         ::Actor&                                      actor,
         ::gsl::span<::gsl::not_null<::Actor*>> const& nearbyActors,
         ::Tick const&                                 currentTick,
@@ -42,12 +42,12 @@ public:
         bool                                          canFireEventWithNoEntities
     );
 
-    MCNAPI ~EntitySubsensor();
+    MCAPI ~EntitySubsensor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

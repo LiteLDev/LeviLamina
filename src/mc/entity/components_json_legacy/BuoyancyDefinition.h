@@ -37,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
+    MCAPI void _addLiquidBlockDescriptor(::BlockDescriptor const& liquidBlockDescriptor);
 
-    MCNAPI ::Json::Value _serialize() const;
+    MCAPI ::Json::Value _serialize() const;
 
-    MCNAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
 
-    MCNAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
+    MCAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
 
-    MCNAPI ~BuoyancyDefinition();
+    MCAPI ~BuoyancyDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BuoyancyDefinition>>& root
     );
     // NOLINTEND
@@ -59,6 +59,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

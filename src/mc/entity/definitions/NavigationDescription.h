@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,34 +15,28 @@ struct NavigationDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke021f4;
-    ::ll::UntypedStorage<1, 1>  mUnke40bc7;
-    ::ll::UntypedStorage<1, 1>  mUnk8233f5;
-    ::ll::UntypedStorage<1, 1>  mUnk42c5ff;
-    ::ll::UntypedStorage<1, 1>  mUnk3d7bfd;
-    ::ll::UntypedStorage<1, 1>  mUnk11da91;
-    ::ll::UntypedStorage<1, 1>  mUnk1b16eb;
-    ::ll::UntypedStorage<1, 1>  mUnk535f70;
-    ::ll::UntypedStorage<1, 1>  mUnk7da11c;
-    ::ll::UntypedStorage<1, 1>  mUnkd41a21;
-    ::ll::UntypedStorage<1, 1>  mUnkdca7bd;
-    ::ll::UntypedStorage<1, 1>  mUnk1ba87c;
-    ::ll::UntypedStorage<1, 1>  mUnkcf7d3d;
-    ::ll::UntypedStorage<1, 1>  mUnkf18f3c;
-    ::ll::UntypedStorage<1, 1>  mUnk2bb095;
-    ::ll::UntypedStorage<1, 1>  mUnk5bb94f;
-    ::ll::UntypedStorage<1, 1>  mUnk1d7ef1;
-    ::ll::UntypedStorage<1, 1>  mUnkf1011a;
-    ::ll::UntypedStorage<1, 1>  mUnkc042da;
-    ::ll::UntypedStorage<1, 1>  mUnkb73240;
-    ::ll::UntypedStorage<8, 24> mUnkbbdfa5;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mNavigationType;
+    ::ll::TypedStorage<1, 1, bool>                              mIsAmphibious;
+    ::ll::TypedStorage<1, 1, bool>                              mAvoidSun;
+    ::ll::TypedStorage<1, 1, bool>                              mCanPassDoors;
+    ::ll::TypedStorage<1, 1, bool>                              mCanOpenDoors;
+    ::ll::TypedStorage<1, 1, bool>                              mCanOpenIronDoors;
+    ::ll::TypedStorage<1, 1, bool>                              mCanBreakDoors;
+    ::ll::TypedStorage<1, 1, bool>                              mAvoidWater;
+    ::ll::TypedStorage<1, 1, bool>                              mAvoidDamageBlocks;
+    ::ll::TypedStorage<1, 1, bool>                              mCanFloat;
+    ::ll::TypedStorage<1, 1, bool>                              mCanSink;
+    ::ll::TypedStorage<1, 1, bool>                              mCanPathOverLava;
+    ::ll::TypedStorage<1, 1, bool>                              mCanWalkInLava;
+    ::ll::TypedStorage<1, 1, bool>                              mAvoidPortals;
+    ::ll::TypedStorage<1, 1, bool>                              mCanWalk;
+    ::ll::TypedStorage<1, 1, bool>                              mCanSwim;
+    ::ll::TypedStorage<1, 1, bool>                              mCanBreach;
+    ::ll::TypedStorage<1, 1, bool>                              mCanJump;
+    ::ll::TypedStorage<1, 1, bool>                              mUsingDoorAnnotations;
+    ::ll::TypedStorage<1, 1, bool>                              mCanPathFromAir;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlocksToAvoid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NavigationDescription& operator=(NavigationDescription const&);
-    NavigationDescription(NavigationDescription const&);
-    NavigationDescription();
 
 public:
     // virtual functions

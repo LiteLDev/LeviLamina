@@ -28,29 +28,23 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc41a25;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason> mReason;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCustomComponentNameError& operator=(ScriptCustomComponentNameError const&);
-    ScriptCustomComponentNameError(ScriptCustomComponentNameError const&);
-    ScriptCustomComponentNameError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptCustomComponentNameError();
+    MCAPI ~ScriptCustomComponentNameError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCNAPI static ::Scripting::
+    MCAPI static ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError>
         validate(::HashedString const& componentName);
     // NOLINTEND
@@ -58,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

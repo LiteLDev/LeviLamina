@@ -16,19 +16,19 @@ struct ScriptInvalidPotionEffectTypeError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptInvalidPotionEffectTypeError();
+    MCAPI ~ScriptInvalidPotionEffectTypeError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

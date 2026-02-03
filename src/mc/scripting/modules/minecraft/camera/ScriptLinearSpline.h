@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,7 +14,7 @@ struct ScriptLinearSpline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd83b10;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mControlPoints;
     // NOLINTEND
 
 public:
@@ -25,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptLinearSpline& operator=(::ScriptModuleMinecraft::ScriptLinearSpline&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptLinearSpline& operator=(::ScriptModuleMinecraft::ScriptLinearSpline&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

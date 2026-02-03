@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItemPassengerOfActorCondition;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,7 +17,7 @@ class ScriptPassengerOfActorCondition : public ::ScriptModuleMinecraft::ScriptLo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkac9636;
+    ::ll::TypedStorage<8, 8, ::LootItemPassengerOfActorCondition const&> mCondition;
     // NOLINTEND
 
 public:
@@ -28,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getEntityType() const;
+    MCFOLD ::std::string getEntityType() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

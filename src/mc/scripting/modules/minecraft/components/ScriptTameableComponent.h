@@ -30,38 +30,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<float> getProbability() const;
+    MCAPI ::Scripting::Result_deprecated<float> getProbability() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getTameItems() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> tame(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
+    MCAPI ::Scripting::Result_deprecated<bool> tame(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> tame_010() const;
+    MCAPI ::Scripting::Result_deprecated<bool> tame_010() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     tamedToPlayer() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

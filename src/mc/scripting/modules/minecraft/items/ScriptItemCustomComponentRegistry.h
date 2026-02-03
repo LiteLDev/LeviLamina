@@ -3,16 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/scripting/Version.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentClosureFlags.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentRegistry.h"
+#include "mc/world/item/registry/ItemRegistryRef.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 class Item;
-class ItemRegistryRef;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
 struct ServerScriptManagerEvents;
@@ -44,40 +48,39 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkd76e59;
-        ::ll::UntypedStorage<8, 40> mUnkb7345a;
-        ::ll::UntypedStorage<2, 2>  mUnk8e8194;
+        ::ll::TypedStorage<1, 1, bool>                                                           mRegistered;
+        ::ll::TypedStorage<8, 40, ::Scripting::Version>                                          mClosureFlagsVersion;
+        ::ll::TypedStorage<2, 2, ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags> mClosureFlags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ComponentInfo& operator=(ComponentInfo const&);
-        ComponentInfo(ComponentInfo const&);
-        ComponentInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ComponentInfo();
+        MCAPI ~ComponentInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk952d18;
-    ::ll::UntypedStorage<8, 8>  mUnkdbb6de;
-    ::ll::UntypedStorage<8, 16> mUnk58737c;
-    ::ll::UntypedStorage<8, 16> mUnke262ca;
-    ::ll::UntypedStorage<8, 8>  mUnkebf18e;
-    ::ll::UntypedStorage<8, 8>  mUnke3cee5;
-    ::ll::UntypedStorage<8, 24> mUnkfd49fe;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::HashedString, ::ScriptModuleMinecraft::ScriptItemCustomComponentRegistry::ComponentInfo>>
+                                                                mKnownComponents;
+    ::ll::TypedStorage<8, 8, ::ScriptDeferredEventCoordinator&> mDeferredEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::ItemRegistryRef const>          mItemRegistry;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mItemRegistryInitSubscription;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&> mParameterCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>>
+                                                                                   mSignals;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::cereal::ReflectionCtx>> mCerealContext;
     // NOLINTEND
 
 public:
@@ -138,7 +141,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponentRegistry(
+    MCAPI ScriptItemCustomComponentRegistry(
         ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
@@ -146,13 +149,13 @@ public:
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                            parameterCache
     );
 
-    MCNAPI void _bindComponentToCereal(::HashedString const& compName);
+    MCAPI void _bindComponentToCereal(::HashedString const& compName);
 
-    MCNAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
+    MCAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
 
-    MCNAPI void _subscribeItemsToComponents();
+    MCAPI void _subscribeItemsToComponents();
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -168,7 +171,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ServerScriptManagerEvents&      events,
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::ItemRegistryRef                 itemRegistry,
@@ -180,13 +183,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -198,7 +201,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
@@ -210,24 +213,24 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCNAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
+    MCAPI ::std::vector<::std::string_view> $getValidComponentsForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
     ) const;
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     $tryGetCustomComponentParametersForItem(
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
         ::std::string_view                                                           componentName,
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const;
 
-    MCNAPI ::ScriptDeferredEventListener& $getEventListener();
+    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
 
-    MCNAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
+    MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI void $_onReload();
+    MCAPI void $_onReload();
 
-    MCNAPI void $_onScriptInitializationComplete();
+    MCAPI void $_onScriptInitializationComplete();
 
 
     // NOLINTEND

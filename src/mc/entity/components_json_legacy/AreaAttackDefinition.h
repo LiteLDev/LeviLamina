@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setDamageCause(::std::string const& cause);
+    MCAPI void setDamageCause(::std::string const& cause);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AreaAttackDefinition>>& root
     );
     // NOLINTEND

@@ -32,22 +32,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
+    MCAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
 
-    MCNAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
+    MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
 
-    MCNAPI ~BlockBreakSensorComponent();
+    MCAPI ~BlockBreakSensorComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockBreakSensorComponent&&);
+    MCAPI void* $ctor(::BlockBreakSensorComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

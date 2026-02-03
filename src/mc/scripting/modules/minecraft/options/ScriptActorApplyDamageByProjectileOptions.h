@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,8 +17,11 @@ struct ScriptActorApplyDamageByProjectileOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk5ccbb1;
-    ::ll::UntypedStorage<8, 32> mUnk4e9c54;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mDamagingEntity;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+        mDamagingProjectile;
     // NOLINTEND
 
 public:
@@ -25,31 +32,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorApplyDamageByProjectileOptions(
+    MCAPI ScriptActorApplyDamageByProjectileOptions(
         ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&
     );
 
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 
-    MCNAPI ~ScriptActorApplyDamageByProjectileOptions();
+    MCAPI ~ScriptActorApplyDamageByProjectileOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

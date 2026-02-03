@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,23 +40,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk19391c;
-    ::ll::UntypedStorage<4, 4>  mUnk7a793e;
-    ::ll::UntypedStorage<4, 4>  mUnkcdee7f;
-    ::ll::UntypedStorage<4, 16> mUnk1276ba;
-    ::ll::UntypedStorage<4, 16> mUnk1ea27e;
-    ::ll::UntypedStorage<8, 32> mUnk52f8ff;
-    ::ll::UntypedStorage<4, 4>  mUnk4f16a0;
-    ::ll::UntypedStorage<1, 1>  mUnk9d0811;
-    ::ll::UntypedStorage<1, 1>  mUnk6253a0;
-    ::ll::UntypedStorage<1, 1>  mUnk206b0d;
+    ::ll::TypedStorage<4, 4, ::TickingAreaCommand::Mode>             mMode;
+    ::ll::TypedStorage<4, 4, ::TickingAreaCommand::AddAreaType>      mAddAreaType;
+    ::ll::TypedStorage<4, 4, ::TickingAreaCommand::TargetDimensions> mTargetDimensions;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                     mPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                     mMax;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mName;
+    ::ll::TypedStorage<4, 4, int>                                    mRadius;
+    ::ll::TypedStorage<1, 1, bool>                                   mUsePosition;
+    ::ll::TypedStorage<1, 1, bool>                                   mPreloadValue;
+    ::ll::TypedStorage<1, 1, bool>                                   mPreloadValueSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickingAreaCommand& operator=(TickingAreaCommand const&);
-    TickingAreaCommand(TickingAreaCommand const&);
-    TickingAreaCommand();
 
 public:
     // virtual functions

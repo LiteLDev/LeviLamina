@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketViolationResponse.h"
+
 struct PacketViolation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk35cea8;
-    ::ll::UntypedStorage<4, 4>  mUnka5e6fc;
-    ::ll::UntypedStorage<4, 4>  mUnk14a1c0;
-    ::ll::UntypedStorage<8, 24> mUnkd55951;
-    ::ll::UntypedStorage<4, 4>  mUnked96ed;
-    ::ll::UntypedStorage<8, 8>  mUnkadf17d;
+    ::ll::TypedStorage<4, 4, uint>                                    mTotalCount;
+    ::ll::TypedStorage<4, 4, float>                                   mTotalScore;
+    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>                    mLastPacketId;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::error_code>>     mLastResult;
+    ::ll::TypedStorage<4, 4, ::PacketViolationResponse>               mLastResponse;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastViolationTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketViolation& operator=(PacketViolation const&);
-    PacketViolation(PacketViolation const&);
-    PacketViolation();
 };

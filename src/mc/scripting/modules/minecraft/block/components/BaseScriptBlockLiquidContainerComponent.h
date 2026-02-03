@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
+#include "mc/world/level/block/CauldronLiquidType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,15 +20,9 @@ class BaseScriptBlockLiquidContainerComponent : public ::ScriptModuleMinecraft::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf47896;
-    ::ll::UntypedStorage<4, 4> mUnk79f968;
+    ::ll::TypedStorage<4, 4, ::CauldronLiquidType>                     mLiquidType;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFluidType> mFluidType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseScriptBlockLiquidContainerComponent& operator=(BaseScriptBlockLiquidContainerComponent const&);
-    BaseScriptBlockLiquidContainerComponent(BaseScriptBlockLiquidContainerComponent const&);
-    BaseScriptBlockLiquidContainerComponent();
 
 public:
     // virtual functions
@@ -41,23 +37,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
+    MCFOLD ::CauldronBlockActor* _tryGetCauldronBlockActor();
 
-    MCNAPI ::Scripting::Result_deprecated<int> getFillLevel();
+    MCAPI ::Scripting::Result_deprecated<int> getFillLevel();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
+    MCAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
-    MCNAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
 
 
     // NOLINTEND

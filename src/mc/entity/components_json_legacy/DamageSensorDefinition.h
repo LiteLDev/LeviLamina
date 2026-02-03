@@ -25,8 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addDamageSensorTrigger(::DamageSensorTrigger const& trigger);
+    MCAPI void addDamageSensorTrigger(::DamageSensorTrigger const& trigger);
 
-    MCNAPI void initialize(::EntityContext& entity, ::DamageSensorComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::DamageSensorComponent& component) const;
     // NOLINTEND
 };

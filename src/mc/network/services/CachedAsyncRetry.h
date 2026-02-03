@@ -8,14 +8,8 @@ struct CachedAsyncRetry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk565da6;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds> mDelay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CachedAsyncRetry& operator=(CachedAsyncRetry const&);
-    CachedAsyncRetry(CachedAsyncRetry const&);
-    CachedAsyncRetry();
 };
 
 } // namespace Bedrock::Threading

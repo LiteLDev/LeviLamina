@@ -20,8 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setMaxDelayTicks(float const& seconds);
+    MCAPI void setMaxDelayTicks(float const& seconds);
 
-    MCNAPI void setMinDelayTicks(float const& seconds);
+    MCAPI void setMinDelayTicks(float const& seconds);
     // NOLINTEND
 };

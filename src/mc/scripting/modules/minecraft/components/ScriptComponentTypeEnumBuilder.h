@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponentType.h"
 
 // auto generated forward declare list
@@ -17,36 +18,34 @@ class ScriptComponentTypeEnumBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnka1fc59;
-    ::ll::UntypedStorage<8, 152> mUnk1f98b8;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptComponentType const>              mType;
+    ::ll::TypedStorage<8, 152, ::Scripting::EnumBindingBuilder<::std::string, ::std::string>> mEnumBuilder;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptComponentTypeEnumBuilder& operator=(ScriptComponentTypeEnumBuilder const&);
-    ScriptComponentTypeEnumBuilder(ScriptComponentTypeEnumBuilder const&);
     ScriptComponentTypeEnumBuilder();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    MCAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
 
-    MCNAPI ::Scripting::EnumBinding bind(::std::optional<::Scripting::Version> releaseVersion);
+    MCAPI ::Scripting::EnumBinding bind(::std::optional<::Scripting::Version> releaseVersion);
 
-    MCNAPI ~ScriptComponentTypeEnumBuilder();
+    MCAPI ~ScriptComponentTypeEnumBuilder();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptComponentType componentType);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

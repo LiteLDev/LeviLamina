@@ -17,36 +17,30 @@ struct ScriptEntityRaycastOptions : public ::ScriptModuleMinecraft::ScriptActorF
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk529469;
-    ::ll::UntypedStorage<1, 2> mUnk1fbb2e;
-    ::ll::UntypedStorage<1, 2> mUnk3b6b12;
-    ::ll::UntypedStorage<1, 2> mUnkf4d7c2;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>  mMaxDistance;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIgnoreBlockCollision;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIncludePassableBlocks;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIncludeLiquidBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEntityRaycastOptions& operator=(ScriptEntityRaycastOptions const&);
-    ScriptEntityRaycastOptions(ScriptEntityRaycastOptions const&);
-    ScriptEntityRaycastOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptEntityRaycastOptions();
+    MCAPI ~ScriptEntityRaycastOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

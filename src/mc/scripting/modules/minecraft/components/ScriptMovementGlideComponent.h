@@ -26,28 +26,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<float> getSpeedWhenTurning() const;
+    MCAPI ::Scripting::Result_deprecated<float> getSpeedWhenTurning() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> getStartSpeed() const;
+    MCAPI ::Scripting::Result_deprecated<float> getStartSpeed() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
 
 
     // NOLINTEND

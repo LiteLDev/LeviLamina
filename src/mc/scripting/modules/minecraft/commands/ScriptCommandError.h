@@ -28,31 +28,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCommandError(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
+    MCAPI ScriptCommandError(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
 
-    MCNAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
+    MCAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
 
-    MCNAPI ~ScriptCommandError();
+    MCAPI ~ScriptCommandError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
+    MCAPI void* $ctor(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
 
-    MCNAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
+    MCAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

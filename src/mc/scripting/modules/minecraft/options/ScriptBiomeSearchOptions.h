@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -16,25 +17,19 @@ struct ScriptBiomeSearchOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk468d38;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mBoundingSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBiomeSearchOptions& operator=(ScriptBiomeSearchOptions const&);
-    ScriptBiomeSearchOptions(ScriptBiomeSearchOptions const&);
-    ScriptBiomeSearchOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> validate() const;
+    MCAPI ::Scripting::Result_deprecated<void> validate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

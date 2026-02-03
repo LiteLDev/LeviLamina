@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -13,19 +16,13 @@ class ScriptColor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnka089da;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptColor& operator=(ScriptColor const&);
-    ScriptColor(ScriptColor const&);
-    ScriptColor();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

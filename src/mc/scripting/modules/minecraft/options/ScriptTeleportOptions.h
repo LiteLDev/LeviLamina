@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,11 +19,15 @@ struct ScriptTeleportOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnke27782;
-    ::ll::UntypedStorage<4, 12> mUnk3014e4;
-    ::ll::UntypedStorage<1, 2>  mUnk166a30;
-    ::ll::UntypedStorage<4, 16> mUnk7acad9;
-    ::ll::UntypedStorage<1, 2>  mUnkd39ed0;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>>
+                                                       mDimension;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mRotation;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mKeepVelocity;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mFacingLocation;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>    mCheckForBlocks;
     // NOLINTEND
 
 public:
@@ -28,27 +38,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
 
-    MCNAPI ~ScriptTeleportOptions();
+    MCAPI ~ScriptTeleportOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

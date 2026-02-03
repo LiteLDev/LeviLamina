@@ -5,9 +5,9 @@
 namespace BoostableDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& MAX_BOOST_TIME();
+MCAPI float const& MAX_BOOST_TIME();
 
-MCNAPI float const& SPEED_MODIFIER();
+MCAPI float const& SPEED_MODIFIER();
 // NOLINTEND
 
 } // namespace BoostableDefaults

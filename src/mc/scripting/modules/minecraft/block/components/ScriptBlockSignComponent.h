@@ -33,37 +33,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SignBlockActor const* _tryGetSign() const;
+    MCAPI ::SignBlockActor const* _tryGetSign() const;
 
-    MCNAPI ::SignBlockActor* _tryGetSign();
+    MCFOLD ::SignBlockActor* _tryGetSign();
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRawTextInterface>>
     getRawText(::SignTextSide side) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getText(::SignTextSide side) const;
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getText(::SignTextSide side) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ItemColor>> getTextDyeColor(::SignTextSide side) const;
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::ItemColor>> getTextDyeColor(::SignTextSide side) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setText(
+    MCAPI ::Scripting::Result_deprecated<void> setText(
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& messageParameter,
         ::SignTextSide                                                                           side
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
+    MCAPI ::Scripting::Result_deprecated<void> setTextDyeColor(::std::optional<::ItemColor> color, ::SignTextSide side);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setWaxed(bool waxed);
+    MCAPI ::Scripting::Result_deprecated<void> setWaxed(bool waxed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockSignComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -71,7 +70,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ struct ScriptItemEnchantmentTypeNotCompatibleError : public ::Scripting::BaseErr
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 };
 

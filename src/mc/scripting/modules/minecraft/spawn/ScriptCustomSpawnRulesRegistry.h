@@ -13,6 +13,7 @@ class BlockPos;
 class BlockSource;
 class IRandom;
 class Mob;
+class ServerLevel;
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
 namespace ScriptModuleMinecraft { struct ScriptSpawnRulesInvalidRegistryError; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -23,9 +24,16 @@ namespace ScriptModuleMinecraft {
 
 class ScriptCustomSpawnRulesRegistry : public ::ScriptModuleMinecraft::ScriptServerStateMonitor {
 public:
+    // ScriptCustomSpawnRulesRegistry inner types define
+    using EntityPredicate = ::std::function<
+        bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>;
+
+    using ObstructionPredicate = ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf7db7b;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&> mLevel;
     // NOLINTEND
 
 public:
@@ -45,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -61,7 +69,7 @@ public:
         )>                   callback
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -75,7 +83,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onReload();
+    MCAPI void $_onReload();
 
 
     // NOLINTEND

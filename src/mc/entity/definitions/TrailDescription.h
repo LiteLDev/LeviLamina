@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,16 +17,10 @@ struct TrailDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkcb6109;
-    ::ll::UntypedStorage<8, 48> mUnkcb8f0f;
-    ::ll::UntypedStorage<4, 12> mUnkf7364f;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mSpawnCondition;
+    ::ll::TypedStorage<8, 48, ::HashedString>     mBlockType;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mSpawnOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrailDescription& operator=(TrailDescription const&);
-    TrailDescription(TrailDescription const&);
-    TrailDescription();
 
 public:
     // virtual functions

@@ -18,25 +18,25 @@ struct ScriptCustomComponentInvalidRegistryError : public ::Scripting::BaseError
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptCustomComponentInvalidRegistryError();
+    MCAPI ~ScriptCustomComponentInvalidRegistryError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
+    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
     validate(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
+    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
     validateV1(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

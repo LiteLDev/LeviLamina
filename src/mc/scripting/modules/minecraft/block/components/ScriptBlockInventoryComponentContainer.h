@@ -5,9 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockActor;
+class BlockSource;
 class Container;
 class ItemContext;
 namespace Scripting { struct ClassBinding; }
@@ -19,9 +22,9 @@ class ScriptBlockInventoryComponentContainer : public ::ScriptModuleMinecraft::S
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka24892;
-    ::ll::UntypedStorage<4, 12> mUnk743c06;
-    ::ll::UntypedStorage<8, 8>  mUnkf22c88;
+    ::ll::TypedStorage<8, 8, ::BlockActor*>  mBlockActor;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
+    ::ll::TypedStorage<8, 8, ::BlockSource&> mBlockSource;
     // NOLINTEND
 
 public:
@@ -45,17 +48,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCNAPI ::Container* $_tryGetContainer() const;
+    MCAPI ::Container* $_tryGetContainer() const;
 
-    MCNAPI ::ItemContext $_getItemContext(int slot) const;
+    MCAPI ::ItemContext $_getItemContext(int slot) const;
 
 
     // NOLINTEND

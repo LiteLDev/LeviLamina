@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addNameFilterByName(::std::string const& name);
+    MCFOLD void addNameFilterByName(::std::string const& name);
 
-    MCNAPI ~NameAction();
+    MCAPI ~NameAction();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

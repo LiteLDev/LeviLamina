@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockType;
+class HashedString;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -28,48 +29,36 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkc3ff51;
+        ::ll::TypedStorage<8, 8, ::BlockType const*> mBlockTypePtr;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk63c7cf;
-    ::ll::UntypedStorage<8, 8>  mUnk317417;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                mScope;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::HashedString const>> mBlockName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockType& operator=(ScriptBlockType const&);
-    ScriptBlockType(ScriptBlockType const&);
-    ScriptBlockType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
 
-    MCNAPI ::std::string getId() const;
+    MCAPI ::std::string getId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
 
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
     // NOLINTEND
 };

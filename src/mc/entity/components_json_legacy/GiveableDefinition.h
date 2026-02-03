@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addGiveableTrigger(::GiveableTrigger const& trigger);
+    MCAPI void addGiveableTrigger(::GiveableTrigger const& trigger);
     // NOLINTEND
 };

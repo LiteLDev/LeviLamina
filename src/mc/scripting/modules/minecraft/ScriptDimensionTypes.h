@@ -18,43 +18,46 @@ namespace ScriptModuleMinecraft {
 
 class ScriptDimensionTypes {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk3871d3;
-    ::ll::UntypedStorage<1, 1>  mUnk68d761;
-    // NOLINTEND
+    // ScriptDimensionTypes inner types define
+    using DimensionTypeMap =
+        ::std::map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>;
 
 public:
-    // prevent constructor by default
-    ScriptDimensionTypes& operator=(ScriptDimensionTypes const&);
-    ScriptDimensionTypes(ScriptDimensionTypes const&);
-    ScriptDimensionTypes();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>>
+                                   mDimensionTypes;
+    ::ll::TypedStorage<1, 1, bool> mRegisteredTypes;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
     get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
 
-    MCNAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
+    MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::std::string> _getDimensionStringNames();
+    MCAPI static ::std::unordered_map<::std::string, ::std::string> _getDimensionStringNames();
 
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCNAPI static ::DimensionType fromString(::std::string const& name);
+    MCAPI static ::DimensionType fromString(::std::string const& name);
 
-    MCNAPI static ::std::string toString(::DimensionType const& type);
+    MCAPI static ::std::string toString(::DimensionType const& type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& sMinecraftNamespace();
+    MCAPI static ::std::string const& sMinecraftNamespace();
     // NOLINTEND
 };
 

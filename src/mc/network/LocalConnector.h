@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/network/Connector.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class LocalConnectivitySystem;
 class LocalNetworkPeer;
-class NetworkIdentifier;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -18,16 +19,14 @@ class LocalConnector : public ::Connector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk7690b5;
-    ::ll::UntypedStorage<8, 176> mUnk78bc81;
-    ::ll::UntypedStorage<8, 16>  mUnkf0e384;
-    ::ll::UntypedStorage<8, 24>  mUnk954ef0;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>            mMutex;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                   mLocalId;
+    ::ll::TypedStorage<8, 16, ::std::set<::LocalConnector*>>          mConnections;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mCallbackQueue;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LocalConnector& operator=(LocalConnector const&);
-    LocalConnector(LocalConnector const&);
     LocalConnector();
 
 public:

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/platform/PlatformType.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/scripting/modules/minecraft/device/ScriptSystemInfo.h"
 
 // auto generated forward declare list
@@ -17,9 +19,9 @@ class ScriptClientSystemInfo : public ::ScriptModuleMinecraft::ScriptSystemInfo 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk78b136;
-    ::ll::UntypedStorage<4, 4>  mUnk9a7963;
-    ::ll::UntypedStorage<4, 4>  mUnkc28247;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayerRef;
+    ::ll::TypedStorage<4, 4, ::PlatformType>   mPlatformType;
+    ::ll::TypedStorage<4, 4, int>              mMaxRenderDistance;
     // NOLINTEND
 
 public:
@@ -37,22 +39,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptClientSystemInfo(::Player const& player);
+    MCAPI explicit ScriptClientSystemInfo(::Player const& player);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo&
-    operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player const& player);
+    MCAPI void* $ctor(::Player const& player);
     // NOLINTEND
 
 public:

@@ -30,17 +30,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _setRestrictionRadius(int const& restrictionRadius);
+    MCAPI void _setRestrictionRadius(int const& restrictionRadius);
 
-    MCNAPI void _setRestrictionType(::std::string const& restrictionType);
+    MCAPI void _setRestrictionType(::std::string const& restrictionType);
 
-    MCNAPI void initialize(::EntityContext&, ::HomeComponent& component) const;
+    MCAPI void initialize(::EntityContext&, ::HomeComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HomeDefinition>>& root);
     // NOLINTEND
 };

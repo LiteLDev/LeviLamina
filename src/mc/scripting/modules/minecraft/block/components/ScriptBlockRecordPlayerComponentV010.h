@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::JukeboxBlockActor* _tryGetJukeboxActor();
+    MCFOLD ::JukeboxBlockActor* _tryGetJukeboxActor();
 
-    MCNAPI ::Scripting::Result_deprecated<void> clearRecord();
+    MCAPI ::Scripting::Result_deprecated<void> clearRecord();
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isPlaying();
+    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
 
-    MCNAPI ::Scripting::Result_deprecated<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
+    MCAPI ::Scripting::Result_deprecated<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -51,7 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

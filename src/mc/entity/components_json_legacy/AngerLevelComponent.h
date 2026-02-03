@@ -42,13 +42,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ConditionalSound();
+        MCAPI ~ConditionalSound();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -112,49 +112,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AngerLevelComponent(::AngerLevelComponent&&);
+    MCAPI AngerLevelComponent(::AngerLevelComponent&&);
 
-    MCNAPI void _createOrModifyAngerLevel(::Actor const& nuisanceSource, ::std::function<int(int)> const& modifyingFn);
+    MCAPI void _createOrModifyAngerLevel(::Actor const& nuisanceSource, ::std::function<int(int)> const& modifyingFn);
 
-    MCNAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
+    MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI bool belowAngryThreshold(::ActorUniqueID id) const;
+    MCAPI bool belowAngryThreshold(::ActorUniqueID id) const;
 
-    MCNAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
+    MCAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
 
-    MCNAPI ::std::optional<::std::pair<::Actor*, int>>
-    getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
+    MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
-    MCNAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
+    MCAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
 
-    MCNAPI void tick(::Actor* owner, ::ILevel const& level);
+    MCAPI void tick(::Actor* owner, ::ILevel const& level);
 
-    MCNAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
+    MCAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
 
-    MCNAPI ~AngerLevelComponent();
+    MCAPI ~AngerLevelComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& DEFAULT_ANGRY_BOOST();
+    MCAPI static int const& DEFAULT_ANGRY_BOOST();
 
-    MCNAPI static int const& DEFAULT_ANGRY_THRESHOLD();
+    MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
 
-    MCNAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
+    MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AngerLevelComponent&&);
+    MCAPI void* $ctor(::AngerLevelComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

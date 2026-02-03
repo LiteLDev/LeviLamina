@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,14 +16,8 @@ class ScriptRGB {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk60d0e7;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptRGB& operator=(ScriptRGB const&);
-    ScriptRGB(ScriptRGB const&);
-    ScriptRGB();
 
 public:
     // virtual functions
@@ -33,19 +30,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
 
     // NOLINTEND

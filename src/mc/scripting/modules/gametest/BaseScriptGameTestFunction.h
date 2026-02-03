@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/gametest/BaseGameTestFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 // clang-format on
@@ -18,13 +18,11 @@ class BaseScriptGameTestFunction : public ::gametest::BaseGameTestFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke32198;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BaseScriptGameTestFunction& operator=(BaseScriptGameTestFunction const&);
-    BaseScriptGameTestFunction(BaseScriptGameTestFunction const&);
     BaseScriptGameTestFunction();
 
 public:
@@ -39,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    MCAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
 
-    MCNAPI void addTag(::std::string tag);
+    MCAPI void addTag(::std::string tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext>
+    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     $createContext(::gametest::BaseGameTestHelper& helper) const;
 
 

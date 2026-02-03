@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
@@ -53,7 +54,6 @@ namespace ScriptModuleMinecraft { struct ScriptUnloadedChunksError; }
 namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
@@ -80,28 +80,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkd53c77;
+        ::ll::TypedStorage<4, 4, ::DimensionType> mId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
+
+    using SpawnEntityResult = ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::InvalidArgumentError,
+        ::ScriptModuleMinecraft::ScriptActorSpawnError>;
+
+    using SpawnEntityResult_Internal = ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::InvalidArgumentError,
+        ::ScriptModuleMinecraft::ScriptActorSpawnError>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk57a70e;
-    ::ll::UntypedStorage<8, 8>  mUnk27564b;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>>   mDimension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDimension& operator=(ScriptDimension const&);
-    ScriptDimension(ScriptDimension const&);
-    ScriptDimension();
 
 public:
     // virtual functions
@@ -112,7 +114,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
@@ -126,14 +128,14 @@ public:
         ::std::string const&                                                           spawnEvent
     ) const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>
     containsBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const& blockVolumeBase,
         ::ScriptModuleMinecraft::ScriptBlockFilter const&                                           filter,
         bool                                                                                        allowUnloadedChunks
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -143,13 +145,13 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptExplosionOptions> explosionOptions
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> createExplosion_V010(
+    MCAPI ::Scripting::Result_deprecated<void> createExplosion_V010(
         ::Vec3 const&                                                                   pos,
         float                                                                           radius,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionOptions> explosionOptions
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
         ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
         ::Scripting::EngineError,
@@ -163,7 +165,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockFillOptions> const&                           options
     );
 
-    MCNAPI ::Scripting::Result<::std::optional<::Vec3>, ::Scripting::EngineError, ::Scripting::Error> findClosestBiome(
+    MCAPI ::Scripting::Result<::std::optional<::Vec3>, ::Scripting::EngineError, ::Scripting::Error> findClosestBiome(
         ::Vec3 const& pos,
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>,
@@ -171,19 +173,19 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBiomeSearchOptions> options
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::ScriptModuleMinecraft::ScriptBiomeType,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getBiome(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getBlock(::Scripting::WeakLifetimeScope scope, ::Vec3 const& position) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockAbove(
         ::Scripting::WeakLifetimeScope                                             scope,
@@ -191,7 +193,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockBelow(
         ::Scripting::WeakLifetimeScope                                             scope,
@@ -199,7 +201,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastHit>>
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastHit>>
     getBlockFromRay(
         ::Scripting::WeakLifetimeScope                                             scope,
         ::Vec3 const&                                                              pos,
@@ -207,7 +209,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockFromRay_V010(
         ::Scripting::WeakLifetimeScope                                             scope,
@@ -216,10 +218,10 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>
     getBlock_V010(::Scripting::WeakLifetimeScope scope, ::BlockPos const& position);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>,
         ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
         ::Scripting::Error>
@@ -230,19 +232,19 @@ public:
         bool                                                                                        allowUnloadedChunks
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
         ::ScriptModuleMinecraft::ScriptCommandError,
         ::Scripting::InvalidArgumentError>
     getEntities(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getEntitiesAtBlockLocation(::Vec3 const& pos) const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getEntitiesAtBlockLocation_V010(::BlockPos const& pos) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::vector<::ScriptModuleMinecraft::ScriptEntityRaycastHit>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
@@ -255,7 +257,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getEntitiesFromRay_V010(
         ::Scripting::WeakLifetimeScope                                              scope,
@@ -264,41 +266,41 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityRaycastOptions> const& options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorIterator>>
     getEntities_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::vector<::std::string>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getGeneratedStructures(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getHeightRange() const;
+    MCAPI ::Scripting::Result_deprecated<::Scripting::NumberRange> getHeightRange() const;
 
-    MCNAPI ::std::string getId() const;
+    MCAPI ::std::string getId() const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getLightLevel(::Vec3 const& location) const;
 
-    MCNAPI ::std::string getLocalizationKey() const;
+    MCAPI ::std::string getLocalizationKey() const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
         ::ScriptModuleMinecraft::ScriptCommandError,
         ::Scripting::InvalidArgumentError>
     getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
     getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getSkyLightLevel(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getTopmostBlock(
         ::Scripting::WeakLifetimeScope scope,
@@ -306,26 +308,26 @@ public:
         ::std::optional<float>         minHeight
     ) const;
 
-    MCNAPI bool isChunkLoaded(::Vec3 const& location) const;
+    MCAPI bool isChunkLoaded(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::Scripting::InvalidArgumentError,
         ::Scripting::Error>
     placeFeature(::std::string const& featureName, ::Vec3 const& location, bool shouldThrowOnFailure) const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<bool, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         placeFeatureRule(::std::string const& featureRuleName, ::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playSound(
+    MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playSound(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
         ::ScriptModuleMinecraft::ScriptCommandError>
     runCommand(
@@ -334,7 +336,7 @@ public:
         ::std::string const&              commandString
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
+    MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
         ::ScriptModuleMinecraft::ScriptCommandError,
         void>>
@@ -345,16 +347,16 @@ public:
         ::std::string const&              commandString
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::JSON>
+    MCAPI ::Scripting::Result_deprecated<::Scripting::JSON>
     runCommand_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     setBlockPermutation(::Vec3 const& location, ::ScriptModuleMinecraft::ScriptBlockPermutation const& permutation);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
@@ -366,10 +368,10 @@ public:
             ::std::string> const& blockType
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     setWeather(::ScriptModuleMinecraft::ScriptWeatherType type, ::std::optional<int> duration);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -382,10 +384,10 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptSpawnEntityOptions> const&      options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     spawnEntity_V010(::std::string const& identifier, ::std::variant<::BlockPos, ::Vec3> const& pos) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -394,19 +396,19 @@ public:
         ::ScriptModuleMinecraft::ScriptActorSpawnError>
     spawnEntity_V130(::std::string const& identifier, ::Vec3 const& pos) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     spawnItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack, ::Vec3 const& pos) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     spawnItem_V010(
         ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack,
         ::std::variant<::BlockPos, ::Vec3> const&       pos
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -417,25 +419,25 @@ public:
             molangVariables
     );
 
-    MCNAPI void spawnParticle_V010(
+    MCAPI void spawnParticle_V010(
         ::std::string const&                                                                   effectName,
         ::Vec3 const&                                                                          location,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMolangVariableMap> molangVariables
     );
 
-    MCNAPI void stopAllSounds();
+    MCAPI void stopAllSounds();
 
-    MCNAPI void stopSound(::std::string const& soundID);
+    MCAPI void stopSound(::std::string const& soundID);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindScriptWeatherType();
+    MCAPI static ::Scripting::EnumBinding bindScriptWeatherType();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

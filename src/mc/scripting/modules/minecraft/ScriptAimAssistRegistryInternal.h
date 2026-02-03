@@ -16,7 +16,7 @@ namespace Scripting { struct InvalidArgumentError; }
 namespace ScriptModuleMinecraft::ScriptAimAssistRegistryInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::Result<
+MCAPI ::Scripting::Result<
     void,
     ::ScriptModuleMinecraft::ScriptNamespaceNameError,
     ::Scripting::InvalidArgumentError,

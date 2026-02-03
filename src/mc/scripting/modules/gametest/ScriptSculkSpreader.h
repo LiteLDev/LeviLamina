@@ -4,15 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class SculkSpreader;
 class Vec3;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,39 +22,33 @@ class ScriptSculkSpreader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk731900;
-    ::ll::UntypedStorage<8, 8>  mUnka70c1b;
-    ::ll::UntypedStorage<4, 12> mUnk6529e7;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::BlockSource*>                  mBlockSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mCatalystPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptSculkSpreader& operator=(ScriptSculkSpreader const&);
-    ScriptSculkSpreader(ScriptSculkSpreader const&);
-    ScriptSculkSpreader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SculkSpreader* _getSculkSpreader() const;
+    MCAPI ::SculkSpreader* _getSculkSpreader() const;
 
-    MCNAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
+    MCAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
 
-    MCNAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
+    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
+    MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
+    MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
     getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

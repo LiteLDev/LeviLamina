@@ -13,8 +13,8 @@ struct ScriptRawMessageScoreInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkf9185b;
-    ::ll::UntypedStorage<8, 40> mUnkdfcdfc;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> name;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> objective;
     // NOLINTEND
 
 public:
@@ -26,24 +26,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    MCFOLD ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
 
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
-    MCNAPI ~ScriptRawMessageScoreInterface();
+    MCAPI ~ScriptRawMessageScoreInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

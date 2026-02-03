@@ -13,7 +13,7 @@ struct ScriptMemoryTierBuilder {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBinding bind();
+    MCAPI static ::Scripting::EnumBinding bind();
     // NOLINTEND
 };
 

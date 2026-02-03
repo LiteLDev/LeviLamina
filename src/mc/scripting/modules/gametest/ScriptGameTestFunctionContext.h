@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/gametest/framework/IGameTestFunctionContext.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
+// clang-format on
 
 namespace ScriptModuleGameTest {
 
@@ -11,16 +18,11 @@ class ScriptGameTestFunctionContext : public ::gametest::IGameTestFunctionContex
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka05f6e;
-    ::ll::UntypedStorage<8, 8>  mUnk1e5e56;
-    ::ll::UntypedStorage<8, 32> mUnk14f7e3;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                                 mScope;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleGameTest::ScriptGameTestHelper>> mScriptGameTestHelper;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>>
+        mScriptGameTestHelperHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptGameTestFunctionContext& operator=(ScriptGameTestFunctionContext const&);
-    ScriptGameTestFunctionContext(ScriptGameTestFunctionContext const&);
-    ScriptGameTestFunctionContext();
 
 public:
     // virtual functions
@@ -31,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

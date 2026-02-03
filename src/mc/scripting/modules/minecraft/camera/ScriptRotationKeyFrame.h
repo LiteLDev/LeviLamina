@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,20 +16,14 @@ struct ScriptRotationKeyFrame {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk8da969;
-    ::ll::UntypedStorage<4, 4>  mUnkace6c4;
+    ::ll::TypedStorage<4, 12, ::Vec3> mRotation;
+    ::ll::TypedStorage<4, 4, float>   mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptRotationKeyFrame& operator=(ScriptRotationKeyFrame const&);
-    ScriptRotationKeyFrame(ScriptRotationKeyFrame const&);
-    ScriptRotationKeyFrame();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

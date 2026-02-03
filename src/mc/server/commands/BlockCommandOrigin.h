@@ -3,15 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BaseCommandBlock;
-class BlockPos;
 class BlockSource;
 class CommandBlockActor;
 class CompoundTag;
@@ -25,10 +26,10 @@ class BlockCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk93b0b4;
-    ::ll::UntypedStorage<4, 12> mUnke10705;
-    ::ll::UntypedStorage<4, 4>  mUnk7ba504;
-    ::ll::UntypedStorage<8, 32> mUnkefdc9d;
+    ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
+    ::ll::TypedStorage<4, 12, ::BlockPos>     mPosition;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
+    ::ll::TypedStorage<8, 32, ::std::string>  mName;
     // NOLINTEND
 
 public:

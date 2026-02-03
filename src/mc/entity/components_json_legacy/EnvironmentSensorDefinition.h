@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addEnvironmentTrigger(::ActorDefinitionTrigger const& trigger);
+    MCFOLD void addEnvironmentTrigger(::ActorDefinitionTrigger const& trigger);
     // NOLINTEND
 };

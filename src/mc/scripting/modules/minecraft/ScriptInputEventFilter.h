@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/input/ScriptingInputButton.h"
+#include "mc/input/ScriptingInputButtonState.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptInputEventFilterData; }
@@ -12,10 +16,14 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptInputEventFilter {
 public:
+    // ScriptInputEventFilter inner types define
+    using Data = ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilterData;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnked4dfa;
-    ::ll::UntypedStorage<4, 8>  mUnke8f7ae;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptingInputButton>>> mInputButtons;
+    ::ll::TypedStorage<4, 8, ::std::optional<::ScriptingInputButtonState>>            mInputState;
     // NOLINTEND
 
 public:
@@ -26,22 +34,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
 
-    MCNAPI ~ScriptInputEventFilter();
+    MCAPI ~ScriptInputEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

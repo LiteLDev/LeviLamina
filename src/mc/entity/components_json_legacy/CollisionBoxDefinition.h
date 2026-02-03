@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setHeight(float const& height);
+    MCAPI void setHeight(float const& height);
 
-    MCNAPI void setWidth(float const& width);
+    MCAPI void setWidth(float const& width);
     // NOLINTEND
 };

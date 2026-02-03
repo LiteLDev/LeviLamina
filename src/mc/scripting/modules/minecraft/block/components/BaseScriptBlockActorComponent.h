@@ -11,14 +11,8 @@ class BaseScriptBlockActorComponent : public ::ScriptModuleMinecraft::BaseScript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke36270;
+    ::ll::TypedStorage<8, 8, void*> mBlockActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseScriptBlockActorComponent& operator=(BaseScriptBlockActorComponent const&);
-    BaseScriptBlockActorComponent(BaseScriptBlockActorComponent const&);
-    BaseScriptBlockActorComponent();
 
 public:
     // virtual functions
@@ -31,13 +25,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

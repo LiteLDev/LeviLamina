@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/ActorShaderManager.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,21 +26,35 @@ public:
     // clang-format on
 
     // BaseActorRenderer inner types define
-    struct NameplateBackgroundInfo {};
+    struct NameplateBackgroundInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>> mesh;
+        ::ll::TypedStorage<4, 4, int>                             width;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~NameplateBackgroundInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkde0011;
-    ::ll::UntypedStorage<8, 16> mUnkac78a8;
-    ::ll::UntypedStorage<8, 16> mUnkd6b348;
-    ::ll::UntypedStorage<8, 16> mUnk74ffb5;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagBackgroundMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mNameTagTextMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTagMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDepthTestedNameTextMat;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseActorRenderer& operator=(BaseActorRenderer const&);
-    BaseActorRenderer(BaseActorRenderer const&);
 
 public:
     // virtual functions
@@ -50,9 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseActorRenderer();
+    MCAPI BaseActorRenderer();
 
-    MCNAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
+    MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Tessellator&            tessellator,
         ::std::string const&      str,
         ::std::vector<int> const& widths,
@@ -65,10 +80,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BaseActorRenderer::NameplateBackgroundInfo
+    MCAPI static ::BaseActorRenderer::NameplateBackgroundInfo
     _makeTextBackground(::Tessellator& tessellator, ::std::string const& str, ::std::vector<int> const& widths);
 
-    MCNAPI static void renderText(
+    MCAPI static void renderText(
         ::ScreenContext&             screenContext,
         ::ViewRenderData const&      viewData,
         ::NameTagRenderObject const& tagData,
@@ -80,21 +95,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR();
+    MCAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR();
 
-    MCNAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR_EDU();
+    MCAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR_EDU();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

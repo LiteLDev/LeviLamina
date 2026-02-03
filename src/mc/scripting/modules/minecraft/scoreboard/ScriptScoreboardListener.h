@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ScoreboardId;
+namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -17,14 +19,9 @@ class ScriptScoreboardListener : public ::ScoreboardEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk79dfd3;
+    ::ll::TypedStorage<8, 32, ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard>>
+        mScoreboardHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptScoreboardListener& operator=(ScriptScoreboardListener const&);
-    ScriptScoreboardListener(ScriptScoreboardListener const&);
-    ScriptScoreboardListener();
 
 public:
     // virtual functions
@@ -39,9 +36,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
+    MCAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
-    MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
 
 
     // NOLINTEND

@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/item/enchanting/Enchant.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -16,17 +19,11 @@ class EnchantCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk2a4051;
-    ::ll::UntypedStorage<1, 1>   mUnkb70f34;
-    ::ll::UntypedStorage<4, 4>   mUnkb35076;
-    ::ll::UntypedStorage<4, 4>   mUnked5103;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<1, 1, ::Enchant::Type>              mType;
+    ::ll::TypedStorage<4, 4, int>                          mId;
+    ::ll::TypedStorage<4, 4, int>                          mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantCommand& operator=(EnchantCommand const&);
-    EnchantCommand(EnchantCommand const&);
-    EnchantCommand();
 
 public:
     // virtual functions

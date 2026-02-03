@@ -37,15 +37,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addOnIncreaseSoundDefinition(::SoundDefinition const& soundDefinition);
+    MCAPI void addOnIncreaseSoundDefinition(::SoundDefinition const& soundDefinition);
 
-    MCNAPI void initialize(::EntityContext& entity, ::AngerLevelComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::AngerLevelComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngerLevelDefinition>>& root
     );
     // NOLINTEND

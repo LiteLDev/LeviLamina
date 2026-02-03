@@ -34,13 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DamageSensorTrigger const* _getVerifiedDamageSensorTrigger(
+    MCAPI ::DamageSensorTrigger const* _getVerifiedDamageSensorTrigger(
         ::Actor&                                       owner,
         ::SharedTypes::Legacy::ActorDamageCause const& cause,
         ::VariantParameterList const&                  parameters
     ) const;
 
-    MCNAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
+    MCAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
         ::Actor&                                       owner,
         ::Actor*                                       sender,
         ::SharedTypes::Legacy::ActorDamageCause const& cause,
@@ -51,18 +51,18 @@ public:
         bool                                           willTrigger
     );
 
-    MCNAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
+    MCAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
 
-    MCNAPI ::DamageSensorComponent& operator=(::DamageSensorComponent&&);
+    MCAPI ::DamageSensorComponent& operator=(::DamageSensorComponent&&);
 
-    MCNAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
+    MCAPI ::SharedTypes::Legacy::DealsDamage recordBlockDamageAndCheckIfDealt(
         ::Actor&                                owner,
         ::SharedTypes::Legacy::ActorDamageCause cause,
         float                                   amount,
         ::BlockPos                              standingOnPos
     );
 
-    MCNAPI ::SharedTypes::Legacy::DealsDamage recordGenericDamageAndCheckIfDealt(
+    MCAPI ::SharedTypes::Legacy::DealsDamage recordGenericDamageAndCheckIfDealt(
         ::Actor&                   owner,
         ::ActorDamageSource const& source,
         float                      amount,

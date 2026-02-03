@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,38 +14,32 @@ class ScriptContainerRules {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6e3899;
-    ::ll::UntypedStorage<8, 24> mUnkda46d7;
-    ::ll::UntypedStorage<8, 24> mUnkde0160;
-    ::ll::UntypedStorage<4, 8>  mUnkff9dc0;
+    ::ll::TypedStorage<1, 1, bool>                             mAllowNestedStorageItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mBannedItemsDescriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mAllowedItemsDescriptor;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>             mWeightLimit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptContainerRules& operator=(ScriptContainerRules const&);
-    ScriptContainerRules(ScriptContainerRules const&);
-    ScriptContainerRules();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::std::string> _getAllowedItems() const;
+    MCAPI ::std::vector<::std::string> _getAllowedItems() const;
 
-    MCNAPI ::std::vector<::std::string> _getBannedItems() const;
+    MCAPI ::std::vector<::std::string> _getBannedItems() const;
 
-    MCNAPI ~ScriptContainerRules();
+    MCAPI ~ScriptContainerRules();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

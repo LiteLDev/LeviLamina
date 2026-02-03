@@ -14,15 +14,9 @@ class DynamicPropertiesDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk645c3d;
-    ::ll::UntypedStorage<8, 8>  mUnk1a8ad5;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DynamicPropertyDefinition>> mDynamicProperties;
+    ::ll::TypedStorage<8, 8, uint64>                                                            mCost;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicPropertiesDefinition& operator=(DynamicPropertiesDefinition const&);
-    DynamicPropertiesDefinition(DynamicPropertiesDefinition const&);
-    DynamicPropertiesDefinition();
 
 public:
     // member functions

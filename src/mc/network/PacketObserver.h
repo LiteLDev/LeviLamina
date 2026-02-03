@@ -41,14 +41,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk78c417;
+    ::ll::TypedStorage<4, 24, ::PacketObserver::PacketStats> mQueuedStatsInfo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketObserver& operator=(PacketObserver const&);
-    PacketObserver(PacketObserver const&);
-    PacketObserver();
 
 public:
     // virtual functions

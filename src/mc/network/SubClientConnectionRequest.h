@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
@@ -13,6 +15,7 @@ class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class SerializedSkinRef;
 class TintMapColor;
+class UnverifiedCertificate;
 class WebToken;
 struct SubClientAuthInfo;
 struct SyncedClientOptionsComponent;
@@ -25,10 +28,10 @@ class SubClientConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2af921;
-    ::ll::UntypedStorage<8, 8>  mUnkaac929;
-    ::ll::UntypedStorage<8, 32> mUnk2ecdf6;
-    ::ll::UntypedStorage<4, 4>  mUnkeec142;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mUnverifiedGameServerToken;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                 mAuthenticationType;
     // NOLINTEND
 
 public:

@@ -13,19 +13,13 @@ struct ScriptCommandResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3516be;
+    ::ll::TypedStorage<4, 4, int> successCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCommandResult& operator=(ScriptCommandResult const&);
-    ScriptCommandResult(ScriptCommandResult const&);
-    ScriptCommandResult();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

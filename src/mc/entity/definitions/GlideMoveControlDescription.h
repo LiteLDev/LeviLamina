@@ -14,15 +14,9 @@ struct GlideMoveControlDescription : public ::MoveControlDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk173bc9;
-    ::ll::UntypedStorage<4, 4> mUnke59e29;
+    ::ll::TypedStorage<4, 4, float> mStartSpeed;
+    ::ll::TypedStorage<4, 4, float> mSpeedWhenTurning;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlideMoveControlDescription& operator=(GlideMoveControlDescription const&);
-    GlideMoveControlDescription(GlideMoveControlDescription const&);
-    GlideMoveControlDescription();
 
 public:
     // virtual functions

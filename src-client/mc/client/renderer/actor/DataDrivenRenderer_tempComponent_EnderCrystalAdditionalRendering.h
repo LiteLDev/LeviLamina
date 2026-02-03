@@ -7,12 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorRenderData;
 class BaseActorRenderContext;
 class DataDrivenRenderer;
 class RenderParams;
 class Tessellator;
 class Vec3;
-struct ActorRenderData;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_EnderCrystalAdditionalRendering : public ::DataDrivenRenderer_tempComponent {

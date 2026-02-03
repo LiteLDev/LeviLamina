@@ -20,7 +20,7 @@ class ScriptBoolBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbc7a0c;
+    ::ll::TypedStorage<8, 32, ::std::vector<bool>> mValidValues;
     // NOLINTEND
 
 public:
@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBoolBlockProperty(
+    MCAPI ScriptBoolBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getState() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
+    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setState(bool state);
+    MCAPI ::Scripting::Result_deprecated<void> setState(bool state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,

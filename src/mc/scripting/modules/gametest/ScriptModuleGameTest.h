@@ -10,11 +10,11 @@ namespace Scripting { struct EnumBinding; }
 namespace ScriptModuleGameTest {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::EnumBinding bindLookDurationEnumV1();
+MCAPI ::Scripting::EnumBinding bindLookDurationEnumV1();
 
-MCNAPI ::Scripting::EnumBinding bindPersonaArmSize();
+MCAPI ::Scripting::EnumBinding bindPersonaArmSize();
 
-MCNAPI ::Scripting::EnumBinding bindPersonaPieceType();
+MCAPI ::Scripting::EnumBinding bindPersonaPieceType();
 // NOLINTEND
 
 } // namespace ScriptModuleGameTest

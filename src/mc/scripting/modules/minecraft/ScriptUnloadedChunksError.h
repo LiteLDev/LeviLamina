@@ -20,27 +20,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
+    MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);
 
-    MCNAPI ~ScriptUnloadedChunksError();
+    MCAPI ~ScriptUnloadedChunksError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
+    MCAPI void* $ctor(uint64 unloadedChunks, uint64 totalChunks);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

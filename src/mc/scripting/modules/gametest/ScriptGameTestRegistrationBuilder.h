@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace ScriptModuleGameTest { class BaseScriptGameTestFunction; }
 namespace ScriptModuleMinecraft { class ScriptDimensionType; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -20,8 +22,12 @@ class ScriptGameTestRegistrationBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7216f9;
-    ::ll::UntypedStorage<8, 16> mUnke6eaae;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>>
+                                                                                                     mScriptingHandle;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptModuleGameTest::BaseScriptGameTestFunction>> mGameTestFunction;
     // NOLINTEND
 
 public:
@@ -33,34 +39,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     batch(::std::string batchName);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     maxAttempts(int maxAttempts);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     maxTicks(int maxTicks);
 
-    MCNAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
+    MCAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
     operator=(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     padding(int blockPadding);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     required(bool required);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     requiredSuccessfulAttempts(int requiredSuccessfulAttempts);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     rotate(bool rotate);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     setupTicks(int setupTicks);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError>
@@ -69,10 +75,10 @@ public:
         ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar
     );
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     structureName(::std::string structureName);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     tag(::std::string tag);
     // NOLINTEND
 };

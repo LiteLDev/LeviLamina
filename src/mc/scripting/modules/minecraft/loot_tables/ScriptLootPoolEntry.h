@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ class ScriptLootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk33c303;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptLootPoolEntry& operator=(ScriptLootPoolEntry const&);
-    ScriptLootPoolEntry(ScriptLootPoolEntry const&);
-    ScriptLootPoolEntry();
 
 public:
     // virtual functions
@@ -37,14 +32,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>>
     getSubTable() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

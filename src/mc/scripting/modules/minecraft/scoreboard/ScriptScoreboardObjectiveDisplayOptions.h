@@ -18,37 +18,36 @@ class ScriptScoreboardObjectiveDisplayOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf923d0;
-    ::ll::UntypedStorage<4, 8>  mUnk86abb2;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>>
+                                                                                                     mObjective;
+    ::ll::TypedStorage<4, 8, ::std::optional<::ScriptModuleMinecraft::ScriptObjectiveSortOrderType>> mSortOrder;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptScoreboardObjectiveDisplayOptions& operator=(ScriptScoreboardObjectiveDisplayOptions const&);
-    ScriptScoreboardObjectiveDisplayOptions(ScriptScoreboardObjectiveDisplayOptions const&);
     ScriptScoreboardObjectiveDisplayOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptScoreboardObjectiveDisplayOptions(
+    MCAPI ScriptScoreboardObjectiveDisplayOptions(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
     );
 
-    MCNAPI ~ScriptScoreboardObjectiveDisplayOptions();
+    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
         ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
     );
@@ -57,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

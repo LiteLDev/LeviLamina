@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptBlockFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3c5da0;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockFilterData& operator=(ScriptBlockFilterData const&);
-    ScriptBlockFilterData(ScriptBlockFilterData const&);
-    ScriptBlockFilterData();
 };
 
 } // namespace ScriptModuleMinecraft::EventFilters

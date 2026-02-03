@@ -16,35 +16,33 @@ class ScriptChunkValidator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk66966d;
-    ::ll::UntypedStorage<4, 4>  mUnkb5b83a;
-    ::ll::UntypedStorage<4, 4>  mUnk78441e;
+    ::ll::TypedStorage<8, 16, ::std::set<::ChunkPos>> mChunkPositions;
+    ::ll::TypedStorage<4, 4, int const>               mMaxHeight;
+    ::ll::TypedStorage<4, 4, int const>               mMinHeight;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptChunkValidator& operator=(ScriptChunkValidator const&);
-    ScriptChunkValidator(ScriptChunkValidator const&);
     ScriptChunkValidator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptChunkValidator(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
+    MCAPI ScriptChunkValidator(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
 
-    MCNAPI ~ScriptChunkValidator();
+    MCAPI ~ScriptChunkValidator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
+    MCAPI void* $ctor(::std::set<::ChunkPos> const& chunkPositions, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

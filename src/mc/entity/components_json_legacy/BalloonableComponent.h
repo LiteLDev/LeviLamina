@@ -14,10 +14,10 @@ class BalloonableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool attach(::Actor& owner, ::Actor& attacher, ::ItemStack& item);
+    MCAPI bool attach(::Actor& owner, ::Actor& attacher, ::ItemStack& item);
 
-    MCNAPI void detach(::Actor& owner, ::Actor& balloon);
+    MCAPI void detach(::Actor& owner, ::Actor& balloon);
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

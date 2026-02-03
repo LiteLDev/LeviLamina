@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,12 +17,16 @@ struct ScriptPlayAnimationOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk661f75;
-    ::ll::UntypedStorage<8, 32> mUnkc5982c;
-    ::ll::UntypedStorage<8, 40> mUnk7de0bf;
-    ::ll::UntypedStorage<4, 8>  mUnkb5e4ac;
-    ::ll::UntypedStorage<8, 40> mUnk3a0d0d;
-    ::ll::UntypedStorage<8, 40> mUnkb81727;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mPlayerNames;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>>
+                                                              mPlayers;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mNextState;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>          mBlendOutTime;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mStopExpression;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mController;
     // NOLINTEND
 
 public:
@@ -28,39 +36,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCNAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+    MCAPI ScriptPlayAnimationOptions(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
     operator=(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayAnimationOptions&
     operator=(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
 
-    MCNAPI ~ScriptPlayAnimationOptions();
+    MCAPI ~ScriptPlayAnimationOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindV1();
+    MCAPI static ::Scripting::InterfaceBinding bindV1();
 
-    MCNAPI static ::Scripting::InterfaceBinding bindV2();
+    MCAPI static ::Scripting::InterfaceBinding bindV2();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

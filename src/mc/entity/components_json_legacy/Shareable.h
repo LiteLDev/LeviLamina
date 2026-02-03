@@ -31,16 +31,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setCraftInto(::std::string const& name);
+    MCAPI void setCraftInto(::std::string const& name);
 
-    MCNAPI void setItem(::std::string const& name);
+    MCAPI void setItem(::std::string const& name);
 
-    MCNAPI ~Shareable();
+    MCAPI ~Shareable();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

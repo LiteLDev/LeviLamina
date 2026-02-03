@@ -8,16 +8,10 @@ class YieldAfterIterations {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc70657;
-    ::ll::UntypedStorage<2, 2> mUnk19035e;
-    ::ll::UntypedStorage<2, 2> mUnkd8f7c7;
+    ::ll::TypedStorage<4, 4, uint>   mCounter;
+    ::ll::TypedStorage<2, 2, ushort> mIterationsBeforeYielding;
+    ::ll::TypedStorage<2, 2, ushort> mYieldCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    YieldAfterIterations& operator=(YieldAfterIterations const&);
-    YieldAfterIterations(YieldAfterIterations const&);
-    YieldAfterIterations();
 };
 
 } // namespace Bedrock::Threading::Detail

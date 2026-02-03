@@ -23,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setCause(::std::string const& causeName);
+    MCAPI void setCause(::std::string const& causeName);
 
-    MCNAPI void setDealsDamage(::std::string const& value);
+    MCAPI void setDealsDamage(::std::string const& value);
 
-    MCNAPI ~DamageSensorTrigger();
+    MCAPI ~DamageSensorTrigger();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

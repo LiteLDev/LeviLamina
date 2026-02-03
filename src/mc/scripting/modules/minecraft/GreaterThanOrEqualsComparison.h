@@ -13,19 +13,13 @@ struct GreaterThanOrEqualsComparison {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5007ed;
+    ::ll::TypedStorage<4, 4, float> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GreaterThanOrEqualsComparison& operator=(GreaterThanOrEqualsComparison const&);
-    GreaterThanOrEqualsComparison(GreaterThanOrEqualsComparison const&);
-    GreaterThanOrEqualsComparison();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

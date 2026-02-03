@@ -26,42 +26,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk375741;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockState const*> const> blockState;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
+
+    using BlockStateType = ::std::variant<int, ::std::string, bool>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk513a19;
-    ::ll::UntypedStorage<8, 8>  mUnka5badd;
-    ::ll::UntypedStorage<8, 24> mUnkc6d90c;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                     mName;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockState const*> const>               mBlockState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<int, ::std::string, bool>>> mValidValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockStateType& operator=(ScriptBlockStateType const&);
-    ScriptBlockStateType(ScriptBlockStateType const&);
-    ScriptBlockStateType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _fillValidValues();
+    MCAPI void _fillValidValues();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
     // NOLINTEND
 };

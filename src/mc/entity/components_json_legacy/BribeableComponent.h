@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _bribe(::Actor& owner, ::Player& player);
+    MCAPI void _bribe(::Actor& owner, ::Player& player);
 
-    MCNAPI bool _canBribe(::ItemStack const& item);
+    MCAPI bool _canBribe(::ItemStack const& item);
 
-    MCNAPI bool clientBribeCheck(::Actor& owner);
+    MCAPI bool clientBribeCheck(::Actor& owner);
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCNAPI void resetBribe(::Actor& owner);
+    MCAPI void resetBribe(::Actor& owner);
     // NOLINTEND
 };

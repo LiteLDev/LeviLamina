@@ -40,19 +40,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addFamilyTypeByName(::std::string const& name);
+    MCAPI void addFamilyTypeByName(::std::string const& name);
 
-    MCNAPI void initialize(::EntityContext& entity, ::RideableComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::RideableComponent& component) const;
 
-    MCNAPI void setDismountMode(::std::string const& mode);
+    MCAPI void setDismountMode(::std::string const& mode);
 
-    MCNAPI ~RideableDefinition();
+    MCAPI ~RideableDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RideableDefinition>>& root
     );
     // NOLINTEND
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

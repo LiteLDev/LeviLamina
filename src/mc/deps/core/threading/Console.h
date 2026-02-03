@@ -8,15 +8,9 @@ class Console {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8d7df0;
-    ::ll::UntypedStorage<8, 8> mUnke7b300;
+    ::ll::TypedStorage<8, 8, uint64> mPrimaryWorkerCount;
+    ::ll::TypedStorage<8, 8, uint64> mSecondaryWorkerCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Console& operator=(Console const&);
-    Console(Console const&);
-    Console();
 };
 
 } // namespace Bedrock::Threading::Burst::Strategy

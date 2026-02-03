@@ -13,8 +13,8 @@ class SitComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _sitEvent(::Actor& actor, bool sit);
+    MCAPI void _sitEvent(::Actor& actor, bool sit);
 
-    MCNAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

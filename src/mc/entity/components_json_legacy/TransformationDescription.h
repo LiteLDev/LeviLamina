@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,30 +16,24 @@ struct TransformationDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkf1916c;
-    ::ll::UntypedStorage<4, 4>   mUnkfcdacb;
-    ::ll::UntypedStorage<4, 4>   mUnk39f035;
-    ::ll::UntypedStorage<4, 4>   mUnk336375;
-    ::ll::UntypedStorage<1, 1>   mUnk5996f5;
-    ::ll::UntypedStorage<1, 1>   mUnkfb7641;
-    ::ll::UntypedStorage<1, 1>   mUnke83336;
-    ::ll::UntypedStorage<8, 24>  mUnk99cedb;
-    ::ll::UntypedStorage<8, 24>  mUnk6d0106;
-    ::ll::UntypedStorage<4, 4>   mUnkd9418e;
-    ::ll::UntypedStorage<4, 4>   mUnkd2f61c;
-    ::ll::UntypedStorage<4, 4>   mUnk2efb7f;
-    ::ll::UntypedStorage<4, 4>   mUnkab4437;
-    ::ll::UntypedStorage<8, 24>  mUnkfc9115;
-    ::ll::UntypedStorage<8, 24>  mUnkc3397b;
-    ::ll::UntypedStorage<1, 1>   mUnk8bb55a;
-    ::ll::UntypedStorage<1, 1>   mUnk240268;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                          mEntityName;
+    ::ll::TypedStorage<4, 4, int>                                                    mDelayTicks;
+    ::ll::TypedStorage<4, 4, int>                                                    mDelayTicksRangeMin;
+    ::ll::TypedStorage<4, 4, int>                                                    mDelayTicksRangeMax;
+    ::ll::TypedStorage<1, 1, bool>                                                   mDropEquipment;
+    ::ll::TypedStorage<1, 1, bool>                                                   mDropInventory;
+    ::ll::TypedStorage<1, 1, bool>                                                   mPreserveEquipment;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mBeginTransformSound;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mTransformSound;
+    ::ll::TypedStorage<4, 4, float>                                                  mBlockAssistChance;
+    ::ll::TypedStorage<4, 4, int>                                                    mBlockRadius;
+    ::ll::TypedStorage<4, 4, int>                                                    mBlockMax;
+    ::ll::TypedStorage<4, 4, float>                                                  mBlockChance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                          mBlockTypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                          mAddComponentGroups;
+    ::ll::TypedStorage<1, 1, bool>                                                   mMaintainOwner;
+    ::ll::TypedStorage<1, 1, bool>                                                   mMaintainTradeLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransformationDescription& operator=(TransformationDescription const&);
-    TransformationDescription(TransformationDescription const&);
-    TransformationDescription();
 
 public:
     // virtual functions
@@ -52,15 +48,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

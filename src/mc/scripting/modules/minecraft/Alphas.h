@@ -10,7 +10,7 @@ namespace Scripting { struct Version; }
 namespace ScriptModuleMinecraft::Alphas {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Scripting::Version const& CURRENT();
+MCAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Alphas

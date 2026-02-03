@@ -5,20 +5,19 @@
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class BaseScriptBlockDefinitionalComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk46be0b;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseScriptBlockDefinitionalComponent& operator=(BaseScriptBlockDefinitionalComponent const&);
-    BaseScriptBlockDefinitionalComponent(BaseScriptBlockDefinitionalComponent const&);
-    BaseScriptBlockDefinitionalComponent();
 
 public:
     // virtual functions
@@ -31,13 +30,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

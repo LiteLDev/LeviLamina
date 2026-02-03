@@ -29,48 +29,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
+    MCAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
+    MCAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
+    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
+    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setAirSupply(short value) const;
+    MCAPI ::Scripting::Result_deprecated<void> setAirSupply(short value) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

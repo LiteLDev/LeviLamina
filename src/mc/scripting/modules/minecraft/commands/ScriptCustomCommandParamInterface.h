@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandParamType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,9 +16,9 @@ struct ScriptCustomCommandParamInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk779845;
-    ::ll::UntypedStorage<4, 4>  mUnk1962fc;
-    ::ll::UntypedStorage<8, 40> mUnk8fcaa8;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mName;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptCustomCommandParamType> mParamType;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                       mEnumName;
     // NOLINTEND
 
 public:
@@ -26,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
+    MCFOLD ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
     operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
+    MCFOLD ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
     operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

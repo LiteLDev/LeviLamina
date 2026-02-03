@@ -15,16 +15,19 @@ namespace Bedrock::Threading::AsyncResult {
 
 class ToXAsyncBlock : public ::Bedrock::Threading::AsyncResultBase<::XAsyncBlock*> {
 public:
+    // ToXAsyncBlock inner types define
+    using Context = ::std::weak_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaed0d7;
-    ::ll::UntypedStorage<8, 8> mUnkacb2bd;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::XAsyncBlock>> mAsyncBlock;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::weak_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock>>>
+        mAsyncContext;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ToXAsyncBlock& operator=(ToXAsyncBlock const&);
-    ToXAsyncBlock(ToXAsyncBlock const&);
     ToXAsyncBlock();
 
 public:
@@ -36,17 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
+    MCAPI explicit ToXAsyncBlock(::XTaskQueueObject* queue);
 
-    MCNAPI ::XAsyncBlock* _getAsyncBlock();
+    MCAPI ::XAsyncBlock* _getAsyncBlock();
 
-    MCNAPI void _handleResult(long hr);
+    MCAPI void _handleResult(long hr);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::XTaskQueueObject* queue);
+    MCAPI void* $ctor(::XTaskQueueObject* queue);
     // NOLINTEND
 
 public:

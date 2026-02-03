@@ -13,33 +13,27 @@ struct EqualsComparison {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk755dad;
+    ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string>> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EqualsComparison& operator=(EqualsComparison const&);
-    EqualsComparison(EqualsComparison const&);
-    EqualsComparison();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
+    MCFOLD bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
 
-    MCNAPI ~EqualsComparison();
+    MCAPI ~EqualsComparison();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

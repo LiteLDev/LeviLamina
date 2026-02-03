@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/ScriptBlockFilter.h"
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptBlockVolumeBase; }
@@ -21,22 +24,16 @@ class ScriptBlockFiller {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk76101e;
-    ::ll::UntypedStorage<8, 160> mUnk2149fb;
-    ::ll::UntypedStorage<8, 8>   mUnk495145;
-    ::ll::UntypedStorage<8, 16>  mUnkf05836;
+    ::ll::TypedStorage<1, 1, bool>                                         mIgnoreChunkBoundErrors;
+    ::ll::TypedStorage<8, 160, ::ScriptModuleMinecraft::ScriptBlockFilter> mBlockFilter;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>>                mDimension;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>              mScope;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockFiller& operator=(ScriptBlockFiller const&);
-    ScriptBlockFiller(ScriptBlockFiller const&);
-    ScriptBlockFiller();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptListBlockVolume>>
     fillBlocks(
         ::std::variant<
@@ -48,13 +45,13 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
     );
 
-    MCNAPI ~ScriptBlockFiller();
+    MCAPI ~ScriptBlockFiller();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

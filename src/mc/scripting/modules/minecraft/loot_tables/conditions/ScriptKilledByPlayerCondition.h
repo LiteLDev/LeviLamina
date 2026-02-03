@@ -16,7 +16,7 @@ class ScriptKilledByPlayerCondition : public ::ScriptModuleMinecraft::ScriptLoot
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

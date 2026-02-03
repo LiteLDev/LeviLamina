@@ -32,17 +32,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkf545be;
-        ::ll::UntypedStorage<4, 4> mUnkefb20b;
-        ::ll::UntypedStorage<4, 4> mUnk9d2b80;
-        ::ll::UntypedStorage<4, 4> mUnkdda2a4;
+        ::ll::TypedStorage<4, 4, uint> sentBytesUnpacked;
+        ::ll::TypedStorage<4, 4, uint> sentBytesPacked;
+        ::ll::TypedStorage<4, 4, uint> receivedBytesUnpacked;
+        ::ll::TypedStorage<4, 4, uint> receivedBytesPacked;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OverviewStats& operator=(OverviewStats const&);
-        OverviewStats(OverviewStats const&);
-        OverviewStats();
     };
 
 public:

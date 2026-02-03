@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addShareable(::Shareable const& shareable);
+    MCAPI void addShareable(::Shareable const& shareable);
 
-    MCNAPI void addShareableByName(::std::string const& name);
+    MCAPI void addShareableByName(::std::string const& name);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShareableDefinition>>& root
     );
     // NOLINTEND

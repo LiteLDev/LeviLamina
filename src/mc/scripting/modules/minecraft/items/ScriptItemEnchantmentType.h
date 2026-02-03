@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Enchant;
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -16,11 +17,15 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentType {
 public:
+    // ScriptItemEnchantmentType inner types define
+    using Key = ::std::string;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbf350b;
-    ::ll::UntypedStorage<1, 1>  mUnka2d387;
-    ::ll::UntypedStorage<8, 32> mUnk2361be;
+    ::ll::TypedStorage<8, 8, ::Enchant const*> mEnchant;
+    ::ll::TypedStorage<1, 1, ::Enchant::Type>  mEnchantType;
+    ::ll::TypedStorage<8, 32, ::std::string>   mName;
     // NOLINTEND
 
 public:
@@ -32,24 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getName() const;
+    MCFOLD ::std::string getName() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
+    MCAPI ::ScriptModuleMinecraft::ScriptItemEnchantmentType&
     operator=(::ScriptModuleMinecraft::ScriptItemEnchantmentType&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Enchant::Type getEnchantType(
+    MCAPI static ::Enchant::Type getEnchantType(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
             ::std::string> const& enchantmentTypeOrId
     );
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::Enchant::Type enchantmentType);
     // NOLINTEND
 };

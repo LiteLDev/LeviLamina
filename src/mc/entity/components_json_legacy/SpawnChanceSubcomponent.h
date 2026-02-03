@@ -48,13 +48,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $readfromJSON(::Json::Value& component);
+    MCAPI void $readfromJSON(::Json::Value& component);
 
-    MCNAPI void $writetoJSON(::Json::Value& component) const;
+    MCAPI void $writetoJSON(::Json::Value& component) const;
 
-    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
+    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
 
-    MCNAPI char const* $getName() const;
+    MCAPI char const* $getName() const;
 
 
     // NOLINTEND

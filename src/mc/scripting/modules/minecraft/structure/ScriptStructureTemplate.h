@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
@@ -17,7 +18,6 @@ class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptStructureManager; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct EnumBinding; }
@@ -30,11 +30,12 @@ class ScriptStructureTemplate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk564cd3;
-    ::ll::UntypedStorage<8, 24> mUnk2863f0;
-    ::ll::UntypedStorage<8, 16> mUnk9f6bf9;
-    ::ll::UntypedStorage<8, 8>  mUnk663778;
-    ::ll::UntypedStorage<8, 32> mUnk730abc;
+    ::ll::TypedStorage<8, 32, ::std::string const>                               mId;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                    mScope;
+    ::ll::TypedStorage<8, 8, ::LevelStorage&>                                    mLevelStorage;
+    ::ll::TypedStorage<8, 32, ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager>>
+        mScriptStructureManager;
     // NOLINTEND
 
 public:
@@ -46,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStructureTemplate(
+    MCAPI ScriptStructureTemplate(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,
@@ -54,28 +55,28 @@ public:
         ::LevelStorage&                                                                     levelStorage
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
         ::Scripting::InvalidArgumentError>
     getBlockPermutation(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
+    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
         isWaterlogged(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
         ::Scripting::EngineError,
         ::Scripting::InvalidArgumentError>
     saveAs(::std::string const& identifier, ::StructureRedstoneSaveMode saveMode);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
 
-    MCNAPI ::Scripting::
+    MCAPI ::Scripting::
         Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
         setBlockPermutation(
             ::Vec3 const& location,
@@ -88,21 +89,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindAnimationModeEnum();
+    MCAPI static ::Scripting::EnumBinding bindAnimationModeEnum();
 
-    MCNAPI static ::Scripting::EnumBinding bindMirrorEnum();
+    MCAPI static ::Scripting::EnumBinding bindMirrorEnum();
 
-    MCNAPI static ::Scripting::EnumBinding bindRotationEnum();
+    MCAPI static ::Scripting::EnumBinding bindRotationEnum();
 
-    MCNAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
+    MCAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,

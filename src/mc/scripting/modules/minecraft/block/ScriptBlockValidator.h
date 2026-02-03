@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 // clang-format on
@@ -14,8 +18,8 @@ class ScriptBlockValidator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk63d84c;
-    ::ll::UntypedStorage<4, 12> mUnka50b5c;
+    ::ll::TypedStorage<8, 8, ::BlockSource const&> mBlockSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>    mPosition;
     // NOLINTEND
 
 public:
@@ -27,10 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
     getChunkAtPositionLoadedAndTickingError();
 
-    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getPositionWithinWorldBoundsError();
     // NOLINTEND
 };

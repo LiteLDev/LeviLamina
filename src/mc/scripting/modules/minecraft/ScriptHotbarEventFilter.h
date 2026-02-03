@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptHotbarEventFilterProcessedData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptHotbarEventFilterData; }
@@ -12,10 +15,15 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptHotbarEventFilter {
 public:
+    // ScriptHotbarEventFilter inner types define
+    using Data = ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilterData;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2fdddc;
-    ::ll::UntypedStorage<8, 32> mUnkd3f14a;
+    ::ll::TypedStorage<8, 64, ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilterProcessedData>
+                                                                   mProcessedData;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<int>>> mAllowedSlots;
     // NOLINTEND
 
 public:
@@ -25,33 +33,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptHotbarEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
+    MCAPI ScriptHotbarEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCNAPI ~ScriptHotbarEventFilter();
+    MCAPI ~ScriptHotbarEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
