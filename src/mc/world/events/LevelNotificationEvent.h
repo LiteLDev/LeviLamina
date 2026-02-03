@@ -6,6 +6,7 @@
 #include "mc/world/events/LevelDayCycleEvent.h"
 #include "mc/world/events/LevelGameRuleChangeEvent.h"
 #include "mc/world/events/LevelStartLeaveGameEvent.h"
+#include "mc/world/events/LevelTickingAreaFinishedLoadingEvent.h"
 #include "mc/world/events/LevelWeatherChangedEvent.h"
 #include "mc/world/events/ScriptingWorldInitializeEvent.h"
 #include "mc/world/level/LevelSoundBroadcastEvent.h"
