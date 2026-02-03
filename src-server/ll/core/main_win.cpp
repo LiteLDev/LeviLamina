@@ -29,6 +29,7 @@
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/scripting/ServerScriptManager.h"
+#include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/commands/StopCommand.h"
 
