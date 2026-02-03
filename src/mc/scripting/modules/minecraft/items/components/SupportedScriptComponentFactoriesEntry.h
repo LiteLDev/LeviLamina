@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BaseGameVersion;
-// clang-format on
+// auto generated inclusion list
+#include "mc/util/BaseGameVersion.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -13,10 +11,10 @@ struct SupportedScriptComponentFactoriesEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk73b536;
-    ::ll::UntypedStorage<8, 40> mUnk1a3f89;
-    ::ll::UntypedStorage<8, 32> mUnkcacf96;
-    ::ll::UntypedStorage<8, 64> mUnka6f161;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                        mMinVersion;
+    ::ll::TypedStorage<8, 40, ::std::optional<::BaseGameVersion>>       mMaxVersionExclusive;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mPrerelease;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string_view>> mSupportedComponentTypeNames;
     // NOLINTEND
 
 public:
@@ -27,25 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCNAPI SupportedScriptComponentFactoriesEntry(
+    MCAPI SupportedScriptComponentFactoriesEntry(
         ::BaseGameVersion                        minVersion,
         ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
         ::std::string                            prerelease,
         ::std::optional<::BaseGameVersion>       maxVersionExclusive
     );
 
-    MCNAPI ~SupportedScriptComponentFactoriesEntry();
+    MCAPI ~SupportedScriptComponentFactoriesEntry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::BaseGameVersion                        minVersion,
         ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
         ::std::string                            prerelease,
@@ -56,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

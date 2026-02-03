@@ -8,10 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorRenderData;
 class BaseActorRenderContext;
 class DataDrivenRenderer;
 class RenderParams;
-struct ActorRenderData;
 struct BlockTessellator;
 // clang-format on
 

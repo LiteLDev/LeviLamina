@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
+    MCAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
     // NOLINTEND
 };

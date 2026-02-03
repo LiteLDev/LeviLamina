@@ -32,17 +32,24 @@ class ActorRenderDispatcher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkfb9bd4;
-    ::ll::UntypedStorage<8, 64> mUnk29c74d;
-    ::ll::UntypedStorage<8, 24> mUnkdde25c;
-    ::ll::UntypedStorage<1, 1>  mUnk79be5f;
-    ::ll::UntypedStorage<8, 8>  mUnk83274d;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::ActorRenderer>>>
+        mNonDataDrivenRenderers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>>>
+        mDataDrivenRenderers;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::function<void(
+            ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&,
+            ::std::shared_ptr<::mce::TextureGroup>
+        )>>>
+                                            mGameSpecificRegistrationCallbacks;
+    ::ll::TypedStorage<1, 1, ::SubClientId> mClientSubId;
+    ::ll::TypedStorage<8, 8, int64 const>   mResourceLoadTimeStamp;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorRenderDispatcher& operator=(ActorRenderDispatcher const&);
-    ActorRenderDispatcher(ActorRenderDispatcher const&);
     ActorRenderDispatcher();
 
 public:
@@ -54,9 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ActorRenderDispatcher(::SubClientId clientId);
+    MCAPI explicit ActorRenderDispatcher(::SubClientId clientId);
 
-    MCNAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
+    MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Font&              font,
         ::Tessellator&       tessellator,
         ::Actor&             actor,
@@ -66,15 +73,15 @@ public:
         ::mce::Color         color
     );
 
-    MCNAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
+    MCAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
-    MCNAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::Actor const& actor) const;
+    MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::Actor const& actor) const;
 
-    MCNAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::HashedString const& rendererName) const;
+    MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::HashedString const& rendererName) const;
 
-    MCNAPI bool hasWaterHole(::Actor& actor) const;
+    MCAPI bool hasWaterHole(::Actor& actor) const;
 
-    MCNAPI void initializeEntityRenderers(
+    MCAPI void initializeEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                geometryGroup,
         ::std::shared_ptr<::mce::TextureGroup>                               textureGroup,
         ::BlockTessellator&                                                  commonBlockRenderer,
@@ -84,14 +91,14 @@ public:
         bool                                                                 supportsNewVertexFormat
     );
 
-    MCNAPI bool initializePlayerRenderer(
+    MCAPI bool initializePlayerRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> resources,
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );
 
-    MCNAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
+    MCAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
 
-    MCNAPI void render(
+    MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
         ::Actor&                  entity,
         ::Vec3 const&             pos,
@@ -99,7 +106,7 @@ public:
         bool                      ignoreLighting
     );
 
-    MCNAPI void render(
+    MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
         ::Actor&                  entity,
         ::Vec3 const&             cameraTargetPos,
@@ -108,16 +115,16 @@ public:
         bool                      ignoreLighting
     );
 
-    MCNAPI void renderEffects(::BaseActorRenderContext& actorRenderContext, ::Actor& actor);
+    MCAPI void renderEffects(::BaseActorRenderContext& actorRenderContext, ::Actor& actor);
 
-    MCNAPI void
+    MCAPI void
     renderWaterHole(::BaseActorRenderContext& actorRenderContext, ::Actor& actor, ::Vec3 const& cameraTargetPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SubClientId clientId);
+    MCAPI void* $ctor(::SubClientId clientId);
     // NOLINTEND
 
 public:

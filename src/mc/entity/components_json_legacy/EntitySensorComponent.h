@@ -34,16 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EntitySensorComponent& operator=(::EntitySensorComponent&&);
+    MCAPI ::EntitySensorComponent& operator=(::EntitySensorComponent&&);
 
-    MCNAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
+    MCAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
 
-    MCNAPI ~EntitySensorComponent();
+    MCAPI ~EntitySensorComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

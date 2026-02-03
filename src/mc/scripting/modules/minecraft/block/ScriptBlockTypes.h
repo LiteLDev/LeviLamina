@@ -18,52 +18,59 @@ class ScriptBlockTypes {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkeb848e;
-    ::ll::UntypedStorage<8, 64> mUnk4361db;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>>
+        mBlocks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>>
+        mBlockAliases;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockTypes& operator=(ScriptBlockTypes const&);
-    ScriptBlockTypes(ScriptBlockTypes const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockTypes();
+    MCAPI ScriptBlockTypes();
 
-    MCNAPI void _registerBlockType(
+    MCAPI void _registerBlockType(
         ::std::string                                                                  blockName,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
     );
 
-    MCNAPI void _registerBlockTypeAlias(
+    MCAPI void _registerBlockTypeAlias(
         ::std::string                                                                  blockName,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
     );
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     getAllBlockTypes(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bind_V010();
+    MCAPI static ::Scripting::ClassBinding bind_V010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 

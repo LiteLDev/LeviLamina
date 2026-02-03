@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/world/persistence/DynamicPropertiesDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,8 +22,8 @@ class ScriptDynamicPropertiesDefinition
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkfd05bb;
-    ::ll::UntypedStorage<8, 16> mUnk972b73;
+    ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>  mDefinition;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     // NOLINTEND
 
 public:
@@ -32,42 +34,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
-    MCNAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    MCAPI ScriptDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineBoolean(::std::string const& identifier, ::std::optional<bool> defaultValue);
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineNumber(::std::string const& identifier, ::std::optional<float> defaultValue);
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineString(::std::string const& identifier, uint maxLength, ::std::optional<::std::string> defaultValue);
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineVector3(::std::string const& identifier, ::std::optional<::Vec3> defaultValue);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
+    MCAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
     operator=(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     // NOLINTEND
 };
 

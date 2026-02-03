@@ -13,7 +13,7 @@ class ScriptBlockBoundingBox {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

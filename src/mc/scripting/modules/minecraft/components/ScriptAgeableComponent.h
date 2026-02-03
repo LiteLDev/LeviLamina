@@ -29,28 +29,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getDropItems() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> getDuration() const;
+    MCAPI ::Scripting::Result_deprecated<float> getDuration() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::ActorDefinitionFeedItem>> getFeedItems() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
+    MCAPI ::Scripting::Result_deprecated<::ActorDefinitionTrigger> getGrowUp() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTransformToItem() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

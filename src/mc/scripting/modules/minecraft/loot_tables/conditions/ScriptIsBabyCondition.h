@@ -16,7 +16,7 @@ class ScriptIsBabyCondition : public ::ScriptModuleMinecraft::ScriptLootItemCond
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

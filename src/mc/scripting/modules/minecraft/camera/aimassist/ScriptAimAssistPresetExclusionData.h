@@ -8,16 +8,10 @@ struct ScriptAimAssistPresetExclusionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk596e44;
-    ::ll::UntypedStorage<8, 32> mUnk193f30;
-    ::ll::UntypedStorage<8, 32> mUnk8b2003;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mBlocks;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mActors;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>> mBlockTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptAimAssistPresetExclusionData& operator=(ScriptAimAssistPresetExclusionData const&);
-    ScriptAimAssistPresetExclusionData(ScriptAimAssistPresetExclusionData const&);
-    ScriptAimAssistPresetExclusionData();
 };
 
 } // namespace ScriptModuleMinecraft

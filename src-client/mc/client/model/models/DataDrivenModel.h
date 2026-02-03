@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorRenderData;
 class DataDrivenRenderer;
 class ExpressionNode;
 class GameVersion;
@@ -16,7 +17,6 @@ class HashedString;
 class ItemStack;
 class RenderParams;
 class Vec3;
-struct ActorRenderData;
 struct ActorResourceDefinition;
 // clang-format on
 

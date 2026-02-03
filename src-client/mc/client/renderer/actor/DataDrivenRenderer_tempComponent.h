@@ -9,11 +9,11 @@
 // clang-format off
 class AABB;
 class Actor;
+class ActorRenderData;
 class BaseActorRenderContext;
 class BoneOrientation;
 class HashedString;
 class RenderParams;
-struct ActorRenderData;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent {

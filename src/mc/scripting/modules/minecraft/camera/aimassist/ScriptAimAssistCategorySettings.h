@@ -13,56 +13,54 @@ class ScriptAimAssistCategorySettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke5a89f;
-    ::ll::UntypedStorage<8, 64> mUnkd241f9;
-    ::ll::UntypedStorage<8, 64> mUnk198565;
-    ::ll::UntypedStorage<8, 64> mUnk12bc57;
-    ::ll::UntypedStorage<4, 4>  mUnk45f75a;
-    ::ll::UntypedStorage<4, 4>  mUnk21669d;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mEntityPriorities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mBlockPriorities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mBlockTagPriorities;
+    ::ll::TypedStorage<4, 4, int>                                       mDefaultEntityPriority;
+    ::ll::TypedStorage<4, 4, int>                                       mDefaultBlockPriority;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptAimAssistCategorySettings& operator=(ScriptAimAssistCategorySettings const&);
-    ScriptAimAssistCategorySettings(ScriptAimAssistCategorySettings const&);
     ScriptAimAssistCategorySettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptAimAssistCategorySettings(::std::string name);
+    MCAPI explicit ScriptAimAssistCategorySettings(::std::string name);
 
-    MCNAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
+    MCAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
 
-    MCNAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
+    MCAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
 
-    MCNAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
+    MCAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
 
-    MCNAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
+    MCAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
 
-    MCNAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
+    MCAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
 
-    MCNAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
+    MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
 
-    MCNAPI ~ScriptAimAssistCategorySettings();
+    MCAPI ~ScriptAimAssistCategorySettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name);
+    MCAPI void* $ctor(::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

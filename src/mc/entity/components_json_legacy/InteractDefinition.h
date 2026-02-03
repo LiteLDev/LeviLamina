@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addInteraction(::Interaction const& interaction);
+    MCAPI void addInteraction(::Interaction const& interaction);
     // NOLINTEND
 };

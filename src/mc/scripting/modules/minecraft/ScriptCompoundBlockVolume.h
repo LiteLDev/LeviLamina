@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 
 // auto generated forward declare list
 // clang-format off
+class CompoundBlockVolume;
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EnumBinding; }
 // clang-format on
@@ -20,8 +22,8 @@ class ScriptCompoundBlockVolume
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf65901;
-    ::ll::UntypedStorage<8, 16> mUnk13417a;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>           mScope;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CompoundBlockVolume>> mVolume;
     // NOLINTEND
 
 public:
@@ -38,18 +40,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
+    MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBinding bindActionEnums();
+    MCAPI static ::Scripting::EnumBinding bindActionEnums();
 
-    MCNAPI static ::Scripting::ClassBinding bindClass();
+    MCAPI static ::Scripting::ClassBinding bindClass();
 
-    MCNAPI static ::Scripting::EnumBinding bindRelativeEnums();
+    MCAPI static ::Scripting::EnumBinding bindRelativeEnums();
     // NOLINTEND
 
 public:

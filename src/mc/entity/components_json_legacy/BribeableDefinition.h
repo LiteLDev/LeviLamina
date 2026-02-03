@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addBribeItem(::ItemDescriptor const& itemDescriptor);
+    MCFOLD void addBribeItem(::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BribeableDefinition>>& root
     );
     // NOLINTEND

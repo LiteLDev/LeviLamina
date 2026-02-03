@@ -18,33 +18,33 @@ class ScriptEffects {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8a793a;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>>
+        mEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEffects& operator=(ScriptEffects const&);
-    ScriptEffects(ScriptEffects const&);
-    ScriptEffects();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
+    MCAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& effectName);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
     getAllEffectTypes(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCNAPI static void bindV010(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCAPI static void bindV010(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 };
 

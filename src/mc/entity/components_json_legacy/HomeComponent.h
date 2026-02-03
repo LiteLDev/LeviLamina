@@ -41,12 +41,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
+    MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
-    MCNAPI bool isInHomeDimension(::Actor const& owner) const;
+    MCAPI bool isInHomeDimension(::Actor const& owner) const;
 
-    MCNAPI ::HomeComponent& operator=(::HomeComponent&&);
+    MCAPI ::HomeComponent& operator=(::HomeComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 };

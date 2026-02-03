@@ -10,7 +10,7 @@ class BaseGameVersion;
 namespace DamageSensor::Versions {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BaseGameVersion const& DO_NOT_USE_OWNER_AS_SENDER_AND_DAMAGER_FOR_BLOCK_DAMAGE();
+MCAPI ::BaseGameVersion const& DO_NOT_USE_OWNER_AS_SENDER_AND_DAMAGER_FOR_BLOCK_DAMAGE();
 // NOLINTEND
 
 } // namespace DamageSensor::Versions

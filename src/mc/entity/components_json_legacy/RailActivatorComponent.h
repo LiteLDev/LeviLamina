@@ -11,6 +11,6 @@ class RailActivatorComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ejectAllPassengers(::Actor& owner);
+    MCAPI void ejectAllPassengers(::Actor& owner);
     // NOLINTEND
 };

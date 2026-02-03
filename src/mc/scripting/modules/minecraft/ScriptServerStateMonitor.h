@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/scripting/modules/minecraft/ScriptServerState.h"
+
 // auto generated forward declare list
 // clang-format off
 struct ServerScriptManagerEvents;
@@ -13,16 +17,14 @@ class ScriptServerStateMonitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk7f133f;
-    ::ll::UntypedStorage<8, 16> mUnkccd0a1;
-    ::ll::UntypedStorage<8, 16> mUnke8d94f;
-    ::ll::UntypedStorage<8, 16> mUnk5bdafd;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptServerState> mState;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mPreReloadSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mInitializeCompleteSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>           mStartupCompleteSub;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptServerStateMonitor& operator=(ScriptServerStateMonitor const&);
-    ScriptServerStateMonitor(ScriptServerStateMonitor const&);
     ScriptServerStateMonitor();
 
 public:
@@ -40,29 +42,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
+    MCAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
+    MCAPI void* $ctor(::ServerScriptManagerEvents& events);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onReload();
+    MCFOLD void $_onReload();
 
-    MCNAPI void $_onScriptInitializationComplete();
+    MCFOLD void $_onScriptInitializationComplete();
 
-    MCNAPI void $_onScriptModuleStartupComplete();
+    MCFOLD void $_onScriptModuleStartupComplete();
 
 
     // NOLINTEND

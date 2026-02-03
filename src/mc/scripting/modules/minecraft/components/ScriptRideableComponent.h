@@ -30,48 +30,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<bool>
+    MCAPI ::Scripting::Result_deprecated<bool>
     addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     ejectPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> ejectPassengers() const;
+    MCAPI ::Scripting::Result_deprecated<void> ejectPassengers() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
+    MCAPI ::Scripting::Result_deprecated<int> getControllingSeat() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getCrouchingSkipInteract() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getFamilyTypes() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getInteractText() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getInteractText() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getPassengerCanInteract() const;
 
-    MCNAPI ::Scripting::Result_deprecated<float> getPassengerMaxWidth() const;
+    MCAPI ::Scripting::Result_deprecated<float> getPassengerMaxWidth() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getRiders() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
+    MCAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::SeatDescription>> getSeats() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

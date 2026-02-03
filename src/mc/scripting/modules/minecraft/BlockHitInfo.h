@@ -2,22 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
+
 namespace ScriptModuleMinecraft::ScriptRaycasting {
 
 struct BlockHitInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk7bf503;
-    ::ll::UntypedStorage<1, 1>  mUnkf88283;
-    ::ll::UntypedStorage<4, 12> mUnk79536b;
+    ::ll::TypedStorage<4, 12, ::BlockPos> pos;
+    ::ll::TypedStorage<1, 1, uchar>       face;
+    ::ll::TypedStorage<4, 12, ::Vec3>     faceLocation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockHitInfo& operator=(BlockHitInfo const&);
-    BlockHitInfo(BlockHitInfo const&);
-    BlockHitInfo();
 };
 
 } // namespace ScriptModuleMinecraft::ScriptRaycasting

@@ -27,33 +27,27 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk80d740;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptTickingAreaError::Reason> mReason;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptTickingAreaError& operator=(ScriptTickingAreaError const&);
-    ScriptTickingAreaError(ScriptTickingAreaError const&);
-    ScriptTickingAreaError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptTickingAreaError();
+    MCAPI ~ScriptTickingAreaError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

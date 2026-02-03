@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorRenderData;
 class BannerBlockActor;
 class BaseActorRenderContext;
 class Block;
@@ -23,7 +24,6 @@ class ItemStack;
 class Matrix;
 class SkullBlockActor;
 class Vec3;
-struct ActorRenderData;
 struct BlockGraphics;
 struct BlockTessellator;
 struct ItemGraphics;

@@ -34,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DespawnDefinition>>& root);
     // NOLINTEND
 };

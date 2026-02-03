@@ -10,7 +10,7 @@ namespace Scripting { struct Version; }
 namespace ScriptModuleGameTest::Betas {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Scripting::Version const& CURRENT();
+MCAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
 } // namespace ScriptModuleGameTest::Betas

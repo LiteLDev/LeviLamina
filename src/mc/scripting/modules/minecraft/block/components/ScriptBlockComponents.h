@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
@@ -10,6 +11,7 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace ScriptModuleMinecraft { class IScriptBlockCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -21,19 +23,14 @@ class ScriptBlockComponents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk33d15f;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::ScriptModuleMinecraft::IScriptBlockCustomComponentReader const>>
+        mCustomComponentReader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockComponents& operator=(ScriptBlockComponents const&);
-    ScriptBlockComponents(ScriptBlockComponents const&);
-    ScriptBlockComponents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
     createV010(
         ::std::string const&                  componentName,
         ::BlockSource&                        region,
@@ -41,7 +38,7 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     ) const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
     createV1(
         ::std::string const&                  componentName,
         ::BlockSource&                        region,
@@ -49,7 +46,7 @@ public:
         ::Scripting::WeakLifetimeScope const& scope
     ) const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
     createV2(
         ::std::string const&                  componentName,
         ::BlockSource&                        region,
@@ -61,7 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(
+    MCAPI static void bind(
         ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& blockComponentTypeEnumBuilder
     );

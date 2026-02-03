@@ -4,7 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/level/block/BlockSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +20,7 @@ class Dimension;
 class ItemRegistryRef;
 class ItemStack;
 class Level;
+class Player;
 namespace Util { struct ReplacementResults; }
 // clang-format on
 
@@ -46,27 +51,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16>  mUnk61ee00;
-    ::ll::UntypedStorage<4, 16>  mUnkc2d44e;
-    ::ll::UntypedStorage<4, 4>   mUnkd99ddd;
-    ::ll::UntypedStorage<4, 4>   mUnk143aa3;
-    ::ll::UntypedStorage<4, 4>   mUnkc6ab40;
-    ::ll::UntypedStorage<8, 32>  mUnk37e4b5;
-    ::ll::UntypedStorage<8, 32>  mUnk1f092c;
-    ::ll::UntypedStorage<8, 200> mUnkab3570;
-    ::ll::UntypedStorage<8, 200> mUnke13a5c;
-    ::ll::UntypedStorage<8, 200> mUnk94a0af;
-    ::ll::UntypedStorage<4, 4>   mUnk9b05e5;
-    ::ll::UntypedStorage<4, 4>   mUnkc35383;
-    ::ll::UntypedStorage<4, 4>   mUnk98643d;
-    ::ll::UntypedStorage<4, 4>   mUnk5aa67b;
-    ::ll::UntypedStorage<1, 1>   mUnkb95b3a;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mMinePosition;
+    ::ll::TypedStorage<4, 4, ::LootCommand::Target>                mTarget;
+    ::ll::TypedStorage<4, 4, ::LootCommand::Source>                mSource;
+    ::ll::TypedStorage<4, 4, ::LootCommand::TargetIdentifier>      mReplacementIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mLootTable;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mTool;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mEntitySource;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mEntityTarget;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>        mPlayerTarget;
+    ::ll::TypedStorage<4, 4, ::BlockSlot>                          mBlockSlot;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
+    ::ll::TypedStorage<4, 4, int>                                  mSlotId;
+    ::ll::TypedStorage<4, 4, int>                                  mConsecutiveSlotFillCount;
+    ::ll::TypedStorage<1, 1, bool>                                 mSlotFillCountIsSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootCommand& operator=(LootCommand const&);
-    LootCommand(LootCommand const&);
 
 public:
     // virtual functions

@@ -25,41 +25,39 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2ac532;
+    ::ll::TypedStorage<1, 1, ::ScriptModuleMinecraft::ScriptBookError::Reason> mErrorReason;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBookError& operator=(ScriptBookError const&);
-    ScriptBookError(ScriptBookError const&);
     ScriptBookError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
+    MCAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
 
-    MCNAPI ~ScriptBookError();
+    MCAPI ~ScriptBookError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
+    MCAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

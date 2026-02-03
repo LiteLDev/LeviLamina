@@ -17,9 +17,9 @@ class ScriptVector : public ::Vec3 {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    MCAPI static ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
     divide(::Vec3 const& a, ::std::variant<float, ::Vec3> const& b);
     // NOLINTEND
 };

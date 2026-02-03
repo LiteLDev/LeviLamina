@@ -29,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
+    MCAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setTamed(bool showParticles) const;
+    MCAPI ::Scripting::Result_deprecated<void> setTamed(bool showParticles) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
+    MCAPI ::Scripting::Result_deprecated<bool>
     setTamedToPlayer(bool showParticles, ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
     tamedToPlayer() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

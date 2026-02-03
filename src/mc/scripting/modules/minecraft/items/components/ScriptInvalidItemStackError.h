@@ -19,7 +19,7 @@ struct ScriptInvalidItemStackError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7252b5;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>> mItemType;
     // NOLINTEND
 
 public:
@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptInvalidItemStackError(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
+    MCAPI ScriptInvalidItemStackError(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
 
-    MCNAPI ScriptInvalidItemStackError(
+    MCAPI ScriptInvalidItemStackError(
         ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
         ::std::string_view                                                            functionName
     );
 
-    MCNAPI ~ScriptInvalidItemStackError();
+    MCAPI ~ScriptInvalidItemStackError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidItemStackError const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType                                      memberType,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemType,
         ::std::string_view                                                            functionName
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

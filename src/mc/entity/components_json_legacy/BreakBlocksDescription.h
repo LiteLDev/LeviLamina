@@ -15,14 +15,8 @@ struct BreakBlocksDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk931570;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockType const*>> mBreakableBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreakBlocksDescription& operator=(BreakBlocksDescription const&);
-    BreakBlocksDescription(BreakBlocksDescription const&);
-    BreakBlocksDescription();
 
 public:
     // virtual functions
@@ -37,15 +31,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

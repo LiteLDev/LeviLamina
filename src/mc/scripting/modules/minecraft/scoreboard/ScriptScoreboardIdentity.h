@@ -4,10 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/world/scores/IdentityDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -18,9 +21,9 @@ class ScriptScoreboardIdentity {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk786da7;
-    ::ll::UntypedStorage<8, 80> mUnkc4058d;
-    ::ll::UntypedStorage<8, 8>  mUnk782009;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 80, ::IdentityDefinition>           mIdentity;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level const*>> mLevel;
     // NOLINTEND
 
 public:
@@ -32,20 +35,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getActor() const;
 
-    MCNAPI ::std::string getName() const;
+    MCAPI ::std::string getName() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
+    MCAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
     operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

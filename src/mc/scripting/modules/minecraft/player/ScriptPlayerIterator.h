@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerIterator& operator=(::ScriptModuleMinecraft::ScriptPlayerIterator&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerIterator& operator=(::ScriptModuleMinecraft::ScriptPlayerIterator&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -39,17 +39,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _loadNpcData();
+    MCAPI void _loadNpcData();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
+    MCFOLD void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
 
-    MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
+    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
 
-    MCNAPI void $onLanguagesLoaded();
+    MCFOLD void $onLanguagesLoaded();
 
 
     // NOLINTEND

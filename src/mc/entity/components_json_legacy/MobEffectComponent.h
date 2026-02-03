@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void tick(::Actor& owner);
+    MCAPI void tick(::Actor& owner);
 
-    MCNAPI ~MobEffectComponent();
+    MCAPI ~MobEffectComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

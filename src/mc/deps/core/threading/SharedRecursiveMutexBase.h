@@ -8,16 +8,10 @@ class SharedRecursiveMutexBase : public ::std::shared_mutex {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdaa45e;
-    ::ll::UntypedStorage<4, 4> mUnk904537;
-    ::ll::UntypedStorage<8, 8> mUnk7dbf45;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::std::thread::id>> mOwningThreadId;
+    ::ll::TypedStorage<4, 4, uint>                             mExclusiveLockCount;
+    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>            mSharedLockCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SharedRecursiveMutexBase& operator=(SharedRecursiveMutexBase const&);
-    SharedRecursiveMutexBase(SharedRecursiveMutexBase const&);
-    SharedRecursiveMutexBase();
 
 public:
     // virtual functions

@@ -14,12 +14,12 @@ struct QueueConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb55726;
-    ::ll::UntypedStorage<4, 4>  mUnk2500c7;
-    ::ll::UntypedStorage<8, 8>  mUnk25f13d;
-    ::ll::UntypedStorage<8, 8>  mUnk90c92e;
-    ::ll::UntypedStorage<8, 24> mUnk323b5c;
-    ::ll::UntypedStorage<8, 24> mUnkb6bb39;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mName;
+    ::ll::TypedStorage<4, 4, uint>                                                   mPriority;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>                                           mScheduler;
+    ::ll::TypedStorage<8, 8, ::WorkerPool&>                                          mPrimaryWorkerPool;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::WorkerPool>>> mSecondaryWorkerPools;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::thread::id>>                      mAffinities;
     // NOLINTEND
 
 public:
@@ -37,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::std::string_view                                              name,
         uint                                                            priority,
         ::Scheduler&                                                    scheduler,
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };
 

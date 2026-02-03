@@ -4,27 +4,30 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
+#include "mc/util/Random.h"
+
+// auto generated forward declare list
+// clang-format off
+class ClientNetworkSystem;
+class NetworkSessionOwner;
+class PacketReplayNetworkHandler;
+class Scheduler;
+// clang-format on
 
 class NetworkReplayer : public ::AppPlatformListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk915175;
-    ::ll::UntypedStorage<8, 8>    mUnkdde456;
-    ::ll::UntypedStorage<8, 8>    mUnkde6b6c;
-    ::ll::UntypedStorage<8, 8>    mUnkb68ebb;
-    ::ll::UntypedStorage<8, 8>    mUnkdb6788;
-    ::ll::UntypedStorage<8, 24>   mUnkbfce75;
-    ::ll::UntypedStorage<8, 8>    mUnk2d7091;
-    ::ll::UntypedStorage<8, 8>    mUnk84812d;
-    ::ll::UntypedStorage<8, 2576> mUnkd76865;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>                     mPingIntervals;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scheduler>>                  mScheduler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkSessionOwner>>        mNetworkSessionOwner;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientNetworkSystem>>        mNetwork;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PacketReplayNetworkHandler>> mPacketReplayNetworkHandler;
+    ::ll::TypedStorage<8, 24, ::std::vector<int64>>                           mLatencyTimePointsMS;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>         mLastLatencyPacketSentAt;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>         mLastReplayPacketSentAt;
+    ::ll::TypedStorage<8, 2576, ::Random>                                     mRandom;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkReplayer& operator=(NetworkReplayer const&);
-    NetworkReplayer(NetworkReplayer const&);
-    NetworkReplayer();
 
 public:
     // virtual functions

@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandSource.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,10 +19,16 @@ class ScriptCustomCommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd57353;
-    ::ll::UntypedStorage<8, 40> mUnk5a2d82;
-    ::ll::UntypedStorage<8, 40> mUnk74d2d5;
-    ::ll::UntypedStorage<8, 40> mUnk9a2832;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptCustomCommandSource> mSourceType;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mSourceEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mInitiatorEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
+            mSourceBlock;
     // NOLINTEND
 
 public:
@@ -27,31 +39,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
+    MCAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
 
-    MCNAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
+    MCAPI ScriptCustomCommandOrigin(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
 
-    MCNAPI ~ScriptCustomCommandOrigin();
+    MCAPI ~ScriptCustomCommandOrigin();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomCommandOrigin const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

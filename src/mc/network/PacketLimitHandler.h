@@ -8,20 +8,19 @@
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 
+// auto generated forward declare list
+// clang-format off
+class PacketGroupDefinition;
+// clang-format on
+
 class PacketLimitHandler : public ::IPacketSecurityHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbbec0f;
-    ::ll::UntypedStorage<8, 24> mUnke5b26d;
-    ::ll::UntypedStorage<1, 1>  mUnk416e17;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PacketGroupDefinition>> mPacketGroupDefinition;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::error_code>>        mLastResult;
+    ::ll::TypedStorage<1, 1, uchar>                                      mViolationLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketLimitHandler& operator=(PacketLimitHandler const&);
-    PacketLimitHandler(PacketLimitHandler const&);
-    PacketLimitHandler();
 
 public:
     // virtual functions

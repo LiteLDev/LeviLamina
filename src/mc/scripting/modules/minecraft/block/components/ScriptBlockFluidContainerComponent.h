@@ -39,38 +39,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CauldronBlockActor* _tryGetCauldronBlockActor();
+    MCFOLD ::CauldronBlockActor* _tryGetCauldronBlockActor();
 
-    MCNAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
+    MCAPI ::Scripting::Result_deprecated<void> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;
+    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getCustomColor() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getFillLevel() const;
+    MCAPI ::Scripting::Result_deprecated<int> getFillLevel() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptFluidType> getFluidType() const;
+    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptFluidType> getFluidType() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCAPI ::Scripting::Result_deprecated<void> setCustomColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setFillLevel(int level) const;
+    MCAPI ::Scripting::Result_deprecated<void> setFillLevel(int level) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
+    MCAPI ::Scripting::Result_deprecated<void> setFluidType(::ScriptModuleMinecraft::ScriptFluidType fluidType);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
+    MCAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
+    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
 
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -78,19 +78,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& ComponentIdV1();
+    MCAPI static ::std::string const& ComponentIdV1();
 
-    MCNAPI static ::std::string const& ComponentIdV2();
+    MCAPI static ::std::string const& ComponentIdV2();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getTypeId_V1() const;
+    MCAPI ::std::string const& $getTypeId_V1() const;
 
-    MCNAPI ::std::string const& $getTypeId_V2() const;
+    MCAPI ::std::string const& $getTypeId_V2() const;
 
-    MCNAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
 
 
     // NOLINTEND

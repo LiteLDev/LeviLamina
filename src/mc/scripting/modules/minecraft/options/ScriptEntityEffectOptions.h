@@ -13,20 +13,14 @@ struct ScriptEntityEffectOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkb63041;
-    ::ll::UntypedStorage<1, 2> mUnkf6cd6b;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>  mAmplifier;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mShowParticles;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEntityEffectOptions& operator=(ScriptEntityEffectOptions const&);
-    ScriptEntityEffectOptions(ScriptEntityEffectOptions const&);
-    ScriptEntityEffectOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

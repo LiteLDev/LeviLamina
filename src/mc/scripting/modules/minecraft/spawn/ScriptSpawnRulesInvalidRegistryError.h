@@ -18,30 +18,30 @@ struct ScriptSpawnRulesInvalidRegistryError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSpawnRulesInvalidRegistryError();
+    MCAPI ScriptSpawnRulesInvalidRegistryError();
 
-    MCNAPI ~ScriptSpawnRulesInvalidRegistryError();
+    MCAPI ~ScriptSpawnRulesInvalidRegistryError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError>
+    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError>
     validate(::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry const& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

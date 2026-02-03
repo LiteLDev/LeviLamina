@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct BlockSet;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,17 +15,11 @@ struct PreferredPathDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk761312;
-    ::ll::UntypedStorage<4, 4>  mUnk6123b9;
-    ::ll::UntypedStorage<4, 4>  mUnkaf5690;
-    ::ll::UntypedStorage<8, 24> mUnk402455;
+    ::ll::TypedStorage<4, 4, float>                      mDefaultBlockCost;
+    ::ll::TypedStorage<4, 4, float>                      mJumpCost;
+    ::ll::TypedStorage<4, 4, int>                        mMaxFallBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSet>> mPreferredPathGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PreferredPathDescription& operator=(PreferredPathDescription const&);
-    PreferredPathDescription(PreferredPathDescription const&);
-    PreferredPathDescription();
 
 public:
     // virtual functions

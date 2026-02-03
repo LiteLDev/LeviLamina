@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LootItemFunction;
+class SetSpawnEggFunction;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,7 +18,7 @@ class ScriptSetSpawnEggFunction : public ::ScriptModuleMinecraft::ScriptLootItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkeb932a;
+    ::ll::TypedStorage<8, 8, ::SetSpawnEggFunction const&> mFunction;
     // NOLINTEND
 
 public:
@@ -37,13 +38,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootItemFunction const& $_getFunction() const;
+    MCFOLD ::LootItemFunction const& $_getFunction() const;
 
 
     // NOLINTEND

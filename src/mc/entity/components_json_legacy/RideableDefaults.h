@@ -5,15 +5,15 @@
 namespace RideableDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI int const& CONTROLLING_SEAT();
+MCAPI int const& CONTROLLING_SEAT();
 
-MCNAPI bool const& PASSENGER_CAN_PICK();
+MCAPI bool const& PASSENGER_CAN_PICK();
 
-MCNAPI bool const& PULL_IN_ENTITIES();
+MCAPI bool const& PULL_IN_ENTITIES();
 
-MCNAPI int const& SEAT_COUNT();
+MCAPI int const& SEAT_COUNT();
 
-MCNAPI bool const& SKIP_INTERACT_IF_CROUCHING();
+MCAPI bool const& SKIP_INTERACT_IF_CROUCHING();
 // NOLINTEND
 
 } // namespace RideableDefaults

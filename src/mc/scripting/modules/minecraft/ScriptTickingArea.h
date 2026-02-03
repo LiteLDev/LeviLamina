@@ -2,8 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,47 +18,48 @@ struct ScriptTickingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdbf8d8;
-    ::ll::UntypedStorage<4, 24> mUnka3d909;
-    ::ll::UntypedStorage<8, 32> mUnk39679d;
-    ::ll::UntypedStorage<4, 4>  mUnk2ccd31;
-    ::ll::UntypedStorage<1, 1>  mUnk4cce40;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                             mDimension;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> mBoundingBox;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
+    ::ll::TypedStorage<4, 4, int>            mNumberOfChunks;
+    ::ll::TypedStorage<1, 1, bool>           mIsFullyLoaded;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTickingArea();
+    MCAPI ScriptTickingArea();
 
-    MCNAPI ScriptTickingArea(::ScriptModuleMinecraft::ScriptTickingArea const&);
+    MCAPI ScriptTickingArea(::ScriptModuleMinecraft::ScriptTickingArea const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptTickingArea& operator=(::ScriptModuleMinecraft::ScriptTickingArea const&);
 
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptTickingArea const&) const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptTickingArea const&) const;
 
-    MCNAPI ~ScriptTickingArea();
+    MCAPI ~ScriptTickingArea();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickingArea const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTickingArea const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

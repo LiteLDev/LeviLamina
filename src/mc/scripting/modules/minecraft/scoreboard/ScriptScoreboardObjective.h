@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
 
@@ -23,8 +24,9 @@ class ScriptScoreboardObjective {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk18599c;
-    ::ll::UntypedStorage<8, 32> mUnk1b7050;
+    ::ll::TypedStorage<8, 32, ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard>>
+                                             mScoreboardHandle;
+    ::ll::TypedStorage<8, 32, ::std::string> mObjectiveId;
     // NOLINTEND
 
 public:
@@ -36,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<int> _modifyScore(
+    MCAPI ::Scripting::Result_deprecated<int> _modifyScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -45,9 +47,9 @@ public:
         int                      score
     );
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboard* _tryGetScoreboard() const;
+    MCAPI ::ScriptModuleMinecraft::ScriptScoreboard* _tryGetScoreboard() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> addScore(
+    MCAPI ::Scripting::Result_deprecated<int> addScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -55,42 +57,42 @@ public:
         int                 scoreToAdd
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getObjectiveId() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getObjectiveId() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>>
     getParticipants() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<int>> getScore(
+    MCAPI ::Scripting::Result_deprecated<::std::optional<int>> getScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
             ::std::string> const& participant
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo>>
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo>>
     getScores() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> hasParticipant(
+    MCAPI ::Scripting::Result_deprecated<bool> hasParticipant(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
             ::std::string> const& participant
     ) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardObjective&
+    MCFOLD ::ScriptModuleMinecraft::ScriptScoreboardObjective&
     operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> removeParticipant(
+    MCAPI ::Scripting::Result_deprecated<bool> removeParticipant(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
             ::std::string>& participant
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setScore(
+    MCAPI ::Scripting::Result_deprecated<void> setScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -98,13 +100,13 @@ public:
         int                 score
     );
 
-    MCNAPI ::Objective* tryGetObjective() const;
+    MCAPI ::Objective* tryGetObjective() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

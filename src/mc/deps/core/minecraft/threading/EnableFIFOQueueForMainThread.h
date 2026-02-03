@@ -4,22 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
+#include "mc/platform/threading/Mutex.h"
 
 namespace Bedrock::Threading {
 
 class EnableFIFOQueueForMainThread : public ::Bedrock::Threading::EnableQueueForMainThread {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk4d4d7c;
-    ::ll::UntypedStorage<8, 80> mUnkb751e8;
-    // NOLINTEND
+    // EnableFIFOQueueForMainThread inner types define
+    using Task = ::std::function<void()>;
 
 public:
-    // prevent constructor by default
-    EnableFIFOQueueForMainThread& operator=(EnableFIFOQueueForMainThread const&);
-    EnableFIFOQueueForMainThread(EnableFIFOQueueForMainThread const&);
-    EnableFIFOQueueForMainThread();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 40, ::std::deque<::std::function<void()>>> mQueue;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>           mQueueMutex;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -30,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _runNextTask();
+    MCAPI_C void _runNextTask();
 
-    MCNAPI_C void queueForMainThreadFIFO(::std::function<void()>&& task);
+    MCAPI_C void queueForMainThreadFIFO(::std::function<void()>&& task);
     // NOLINTEND
 
 public:

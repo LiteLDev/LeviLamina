@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class LootItemFunction;
+class SpecificEnchantFunction;
 namespace ScriptModuleMinecraft { class ScriptEnchantInfo; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -19,8 +20,13 @@ class ScriptSpecificEnchantFunction : public ::ScriptModuleMinecraft::ScriptLoot
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7c63b5;
-    ::ll::UntypedStorage<8, 32> mUnk8706ef;
+    ::ll::TypedStorage<8, 8, ::SpecificEnchantFunction const&> mFunction;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>>>
+        mEnchants;
     // NOLINTEND
 
 public:
@@ -39,28 +45,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptSpecificEnchantFunction(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
+    MCAPI ScriptSpecificEnchantFunction(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
     getEnchantInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSpecificEnchantFunction const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootItemFunction const& $_getFunction() const;
+    MCFOLD ::LootItemFunction const& $_getFunction() const;
 
 
     // NOLINTEND

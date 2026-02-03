@@ -19,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~SittableDefinition();
+    MCAPI ~SittableDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

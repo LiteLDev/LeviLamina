@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/ActorComponentDescription.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ActorType.h"
+#include "mc/world/actor/projectile/ProjectileAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
+class OnHitSubcomponent;
+struct ActorDefinitionIdentifier;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,51 +21,46 @@ struct ProjectileDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnkf81dfa;
-    ::ll::UntypedStorage<4, 4>   mUnk4d21a6;
-    ::ll::UntypedStorage<1, 1>   mUnk94a443;
-    ::ll::UntypedStorage<1, 1>   mUnk10b02b;
-    ::ll::UntypedStorage<1, 1>   mUnk134b73;
-    ::ll::UntypedStorage<4, 4>   mUnk65eae1;
-    ::ll::UntypedStorage<4, 4>   mUnkd8459e;
-    ::ll::UntypedStorage<4, 4>   mUnkd429b4;
-    ::ll::UntypedStorage<4, 4>   mUnkdded5e;
-    ::ll::UntypedStorage<4, 4>   mUnkb738f2;
-    ::ll::UntypedStorage<4, 4>   mUnkfa96b8;
-    ::ll::UntypedStorage<4, 4>   mUnkf38e13;
-    ::ll::UntypedStorage<4, 4>   mUnk1d4cec;
-    ::ll::UntypedStorage<4, 4>   mUnkedee1d;
-    ::ll::UntypedStorage<1, 1>   mUnkc59641;
-    ::ll::UntypedStorage<1, 1>   mUnk46d6db;
-    ::ll::UntypedStorage<4, 4>   mUnk39900e;
-    ::ll::UntypedStorage<4, 4>   mUnke6da30;
-    ::ll::UntypedStorage<1, 1>   mUnk5b53c9;
-    ::ll::UntypedStorage<8, 32>  mUnkabf91b;
-    ::ll::UntypedStorage<8, 32>  mUnk1ac4ad;
-    ::ll::UntypedStorage<8, 32>  mUnka1f0db;
-    ::ll::UntypedStorage<4, 4>   mUnk95580d;
-    ::ll::UntypedStorage<8, 24>  mUnkfbe3b0;
-    ::ll::UntypedStorage<8, 104> mUnk89aca8;
-    ::ll::UntypedStorage<1, 1>   mUnk4ffeb9;
-    ::ll::UntypedStorage<1, 1>   mUnk3833c1;
-    ::ll::UntypedStorage<1, 1>   mUnk9395de;
-    ::ll::UntypedStorage<1, 1>   mUnkb45c03;
-    ::ll::UntypedStorage<1, 1>   mUnk167026;
-    ::ll::UntypedStorage<1, 1>   mUnk59a085;
-    ::ll::UntypedStorage<1, 1>   mUnkfacbfb;
-    ::ll::UntypedStorage<1, 1>   mUnkd09c12;
-    ::ll::UntypedStorage<1, 1>   mUnk7a8273;
-    ::ll::UntypedStorage<1, 1>   mUnk7c3984;
-    ::ll::UntypedStorage<1, 1>   mUnk919980;
-    ::ll::UntypedStorage<8, 24>  mUnk151c2b;
-    ::ll::UntypedStorage<1, 1>   mUnke74701;
-    ::ll::UntypedStorage<4, 4>   mUnke0891f;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                mProjectileOffset;
+    ::ll::TypedStorage<4, 4, float>                                                  mProjectilePower;
+    ::ll::TypedStorage<1, 1, bool>                                                   mKnockback;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIgniteOnHit;
+    ::ll::TypedStorage<1, 1, bool>                                                   mLightingOnHit;
+    ::ll::TypedStorage<4, 4, float>                                                  mGravity;
+    ::ll::TypedStorage<4, 4, float>                                                  mUpwardsAngleOffset;
+    ::ll::TypedStorage<4, 4, ::ParticleType>                                         mHitParticle;
+    ::ll::TypedStorage<4, 4, float>                                                  mUncertaintyBase;
+    ::ll::TypedStorage<4, 4, float>                                                  mUncertaintyMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                                  mOnFireTime;
+    ::ll::TypedStorage<4, 4, int>                                                    mPotionEffect;
+    ::ll::TypedStorage<4, 4, float>                                                  mSplashRange;
+    ::ll::TypedStorage<4, 4, ::ActorType>                                            mFilter;
+    ::ll::TypedStorage<1, 1, bool>                                                   mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIsSplash;
+    ::ll::TypedStorage<4, 4, float>                                                  mInertiaMod;
+    ::ll::TypedStorage<4, 4, float>                                                  mLiquidInertia;
+    ::ll::TypedStorage<1, 1, bool>                                                   mSemiRandomDiffDamage;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mHitEntitySound;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mHitGroundSound;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mShootSound;
+    ::ll::TypedStorage<4, 4, ::ProjectileAnchor>                                     mAnchor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::OnHitSubcomponent>>> mOnHitCommands;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                             mOnHitEvent;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIsDangerous;
+    ::ll::TypedStorage<1, 1, bool>                                                   mReflectOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                                   mDestroyOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                                   mStopOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                                   mCritParticleOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                                   mShootTarget;
+    ::ll::TypedStorage<1, 1, bool>                                                   mIsHoming;
+    ::ll::TypedStorage<1, 1, bool>                                                   mShouldBounce;
+    ::ll::TypedStorage<1, 1, bool>                                                   mFireAffectedByGriefing;
+    ::ll::TypedStorage<1, 1, bool>                                                   mHitWater;
+    ::ll::TypedStorage<1, 1, bool>                                                   mMultipleHits;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionIdentifier>>            mIgnoredEntities;
+    ::ll::TypedStorage<1, 1, bool>                                                   mHitNearestPassenger;
+    ::ll::TypedStorage<4, 4, float>                                                  mReflectImmunityInSeconds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProjectileDescription& operator=(ProjectileDescription const&);
-    ProjectileDescription(ProjectileDescription const&);
 
 public:
     // virtual functions
@@ -73,27 +75,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ProjectileDescription();
+    MCAPI ProjectileDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

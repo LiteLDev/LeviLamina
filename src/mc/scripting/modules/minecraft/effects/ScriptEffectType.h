@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class MobEffect;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,27 +14,21 @@ class ScriptEffectType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka2fcd9;
+    ::ll::TypedStorage<8, 8, ::MobEffect const*> mEffect;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEffectType& operator=(ScriptEffectType const&);
-    ScriptEffectType(ScriptEffectType const&);
-    ScriptEffectType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getName_V1() const;
+    MCAPI ::std::string getName_V1() const;
 
-    MCNAPI ::std::string getName_V2() const;
+    MCAPI ::std::string getName_V2() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

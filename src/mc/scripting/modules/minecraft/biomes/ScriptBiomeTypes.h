@@ -20,8 +20,14 @@ class ScriptBiomeTypes {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6289c3;
-    ::ll::UntypedStorage<8, 24> mUnka904b7;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>>
+                                                                           mBiomeTypes;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::BiomeRegistry>> mBiomeRegistry;
     // NOLINTEND
 
 public:
@@ -33,29 +39,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    MCAPI explicit ScriptBiomeTypes(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
 
-    MCNAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
     get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
     getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
+    MCAPI static ::Scripting::ClassBinding bind(::Bedrock::NonOwnerPointer<::BiomeRegistry> biomeRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
     // NOLINTEND
 };
 

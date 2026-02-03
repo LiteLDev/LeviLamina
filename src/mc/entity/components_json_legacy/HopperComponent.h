@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool pullInItems(::Actor& owner);
+    MCAPI bool pullInItems(::Actor& owner);
     // NOLINTEND
 };

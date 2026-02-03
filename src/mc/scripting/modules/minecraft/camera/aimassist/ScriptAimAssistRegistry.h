@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptAimAssistCategory; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistPreset; }
@@ -23,12 +25,40 @@ namespace ScriptModuleMinecraft {
 
 class ScriptAimAssistRegistry {
 public:
+    // ScriptAimAssistRegistry inner types define
+    using AddCategoryResultType = ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>,
+        ::Scripting::Error,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError>;
+
+    using AddPresetResultType = ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>,
+        ::Scripting::Error,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc0d955;
-    ::ll::UntypedStorage<8, 8>  mUnkbc5c8b;
-    ::ll::UntypedStorage<8, 64> mUnkc4ea74;
-    ::ll::UntypedStorage<8, 64> mUnk14be86;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>>
+        mCategoriesHandles;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>>
+        mPresetHandles;
     // NOLINTEND
 
 public:
@@ -39,11 +69,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
 
-    MCNAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+    MCAPI ScriptAimAssistRegistry(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>,
         ::Scripting::Error,
         ::Scripting::InvalidArgumentError,
@@ -51,7 +81,7 @@ public:
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addCategory(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& categorySettings);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>,
         ::Scripting::Error,
         ::Scripting::InvalidArgumentError,
@@ -59,40 +89,40 @@ public:
         ::ScriptModuleMinecraft::ScriptNamespaceNameError>
     _addPreset(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& presetSettings);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>
     _createCategoryHandle(::std::string const& categoryId) const;
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>
     _createPresetHandle(::std::string const& presetId) const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
     _getCategories() const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistCategory>>
     _getOrCreateCategoryHandle(::std::string const& categoryId) const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
     _getOrCreatePresetHandle(::std::string const& presetId) const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
     _getPresets() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
+    MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAimAssistRegistry const&);
     // NOLINTEND
 };
 

@@ -14,26 +14,20 @@ struct ScriptWorldSoundOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkd3ea43;
-    ::ll::UntypedStorage<4, 8> mUnk816ed2;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mVolume;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mPitch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptWorldSoundOptions& operator=(ScriptWorldSoundOptions const&);
-    ScriptWorldSoundOptions(ScriptWorldSoundOptions const&);
-    ScriptWorldSoundOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
+    MCAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

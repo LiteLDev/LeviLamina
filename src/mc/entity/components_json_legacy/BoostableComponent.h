@@ -23,18 +23,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canUseItem(::Actor const& actor, ::ItemStack const& item);
+    MCAPI bool _canUseItem(::Actor const& actor, ::ItemStack const& item);
 
-    MCNAPI void _useItem(::Actor& actor, ::ItemStack& item, ::Player& player);
+    MCAPI void _useItem(::Actor& actor, ::ItemStack& item, ::Player& player);
 
-    MCNAPI void boost(::Actor& actor);
+    MCAPI void boost(::Actor& actor);
 
-    MCNAPI bool onItemInteract(::Actor& actor, ::ItemStack& item, ::Player& player);
+    MCAPI bool onItemInteract(::Actor& actor, ::ItemStack& item, ::Player& player);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
+    MCAPI static ::mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
     // NOLINTEND
 };

@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+
 // auto generated forward declare list
 // clang-format off
+class LootPoolTiers;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,8 +17,8 @@ class ScriptLootPoolTiers {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk45b804;
-    ::ll::UntypedStorage<8, 8>  mUnke9b344;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::LootPoolTiers const&>          mTiers;
     // NOLINTEND
 
 public:
@@ -26,7 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

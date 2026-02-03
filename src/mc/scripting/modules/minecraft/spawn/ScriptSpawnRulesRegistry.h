@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptCustomSpawnRulesRegistry; }
 namespace ScriptModuleMinecraft { class ScriptEntitySpawnCallbackArgs; }
 namespace ScriptModuleMinecraft { class ScriptObstructionCallbackArgs; }
 namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
@@ -22,9 +23,17 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSpawnRulesRegistry {
 public:
+    // ScriptSpawnRulesRegistry inner types define
+    using EntitySpawnCallback = ::Scripting::Closure<
+        bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEntitySpawnCallbackArgs>)>;
+
+    using ObstructionCallback = ::Scripting::Closure<
+        bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptObstructionCallbackArgs>)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk19046f;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomSpawnRulesRegistry&> mRegistry;
     // NOLINTEND
 
 public:
@@ -36,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -48,7 +57,7 @@ public:
             bool(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEntitySpawnCallbackArgs>)> callback
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
@@ -64,7 +73,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

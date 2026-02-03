@@ -31,25 +31,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCompostableComponent(
+    MCAPI ScriptItemCompostableComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<schar> getCompostingChance();
+    MCAPI ::Scripting::Result_deprecated<schar> getCompostingChance();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );

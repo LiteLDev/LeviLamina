@@ -20,13 +20,15 @@ class ScriptItemCustomComponent : public ::ScriptModuleMinecraft::ScriptItemComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk729dd5;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters>>
+        mParams;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptItemCustomComponent& operator=(ScriptItemCustomComponent const&);
-    ScriptItemCustomComponent(ScriptItemCustomComponent const&);
     ScriptItemCustomComponent();
 
 public:
@@ -38,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponent(
+    MCAPI ScriptItemCustomComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
         ::std::string const&                                                           name,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
@@ -50,13 +52,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
         ::std::string const&                                                           name,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&

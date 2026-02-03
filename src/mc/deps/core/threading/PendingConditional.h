@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/AsyncStatus.h"
+#include "mc/deps/core/threading/ConditionalState.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/platform/threading/Mutex.h"
 
 namespace Bedrock::Threading::Details {
 
@@ -12,17 +14,12 @@ class PendingConditional : public ::Bedrock::Threading::IAsyncResult<void> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkf798ba;
-    ::ll::UntypedStorage<8, 80> mUnk82b1a0;
-    ::ll::UntypedStorage<4, 4>  mUnk1e31ee;
-    ::ll::UntypedStorage<8, 24> mUnkcf3535;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                        mCondition;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                    mLock;
+    ::ll::TypedStorage<4, 4, ::Bedrock::Threading::Details::ConditionalState> mState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(::Bedrock::Threading::IAsyncResult<void> const&)>>>
+        mCallbacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PendingConditional& operator=(PendingConditional const&);
-    PendingConditional(PendingConditional const&);
-    PendingConditional();
 
 public:
     // virtual functions
@@ -41,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void doCheck();
+    MCAPI_C void doCheck();
     // NOLINTEND
 
 public:

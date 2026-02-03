@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~EntitySubsensorDescriptor();
+    MCAPI ~EntitySubsensorDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

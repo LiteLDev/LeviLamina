@@ -27,42 +27,40 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd02cad;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason> mReason;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptNamespaceNameError& operator=(ScriptNamespaceNameError const&);
-    ScriptNamespaceNameError(ScriptNamespaceNameError const&);
     ScriptNamespaceNameError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptNamespaceNameError(
+    MCAPI ScriptNamespaceNameError(
         ::std::string const&                                      name,
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
     );
 
-    MCNAPI ~ScriptNamespaceNameError();
+    MCAPI ~ScriptNamespaceNameError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
+    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
     validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&                                      name,
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
@@ -72,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

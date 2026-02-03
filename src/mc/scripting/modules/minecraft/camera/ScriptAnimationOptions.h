@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/camera/ScriptSplineAnimation.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,32 +16,26 @@ struct ScriptAnimationOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb5e6ab;
-    ::ll::UntypedStorage<8, 48> mUnk7b3d05;
+    ::ll::TypedStorage<4, 4, float>                                           mTotalTime;
+    ::ll::TypedStorage<8, 48, ::ScriptModuleMinecraft::ScriptSplineAnimation> mAnimation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptAnimationOptions& operator=(ScriptAnimationOptions const&);
-    ScriptAnimationOptions(ScriptAnimationOptions const&);
-    ScriptAnimationOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptAnimationOptions();
+    MCAPI ~ScriptAnimationOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

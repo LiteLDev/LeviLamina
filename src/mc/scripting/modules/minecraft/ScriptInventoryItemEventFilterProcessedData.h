@@ -2,17 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptInventoryItemEventFilterProcessedData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb4c2ec;
-    ::ll::UntypedStorage<8, 64> mUnk855a48;
-    ::ll::UntypedStorage<8, 24> mUnkb9b0b9;
-    ::ll::UntypedStorage<8, 64> mUnk1a133c;
-    ::ll::UntypedStorage<8, 24> mUnka43b72;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>           mProcessedAllowedSlots;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mProcessedExcludeItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>       mProcessedExcludeTags;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mProcessedIncludeItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>       mProcessedIncludeTags;
     // NOLINTEND
 
 public:
@@ -22,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptInventoryItemEventFilterProcessedData();
+    MCAPI ScriptInventoryItemEventFilterProcessedData();
 
-    MCNAPI ScriptInventoryItemEventFilterProcessedData(
+    MCAPI ScriptInventoryItemEventFilterProcessedData(
         ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
     );
 
-    MCNAPI ~ScriptInventoryItemEventFilterProcessedData();
+    MCAPI ~ScriptInventoryItemEventFilterProcessedData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

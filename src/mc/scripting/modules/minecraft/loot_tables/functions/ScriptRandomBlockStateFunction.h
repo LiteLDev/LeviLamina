@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LootItemFunction;
+class RandomBlockStateFunction;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,7 +18,7 @@ class ScriptRandomBlockStateFunction : public ::ScriptModuleMinecraft::ScriptLoo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk639c2c;
+    ::ll::TypedStorage<8, 8, ::RandomBlockStateFunction const&> mFunction;
     // NOLINTEND
 
 public:
@@ -37,19 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getBlockState() const;
+    MCAPI ::std::string getBlockState() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootItemFunction const& $_getFunction() const;
+    MCFOLD ::LootItemFunction const& $_getFunction() const;
 
 
     // NOLINTEND

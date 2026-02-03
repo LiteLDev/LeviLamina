@@ -33,10 +33,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
     $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
-    MCNAPI bool $hasComponent(::WeakEntityRef entity) const;
+    MCAPI bool $hasComponent(::WeakEntityRef entity) const;
 
 
     // NOLINTEND

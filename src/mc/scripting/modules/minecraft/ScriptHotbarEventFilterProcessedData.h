@@ -8,25 +8,19 @@ struct ScriptHotbarEventFilterProcessedData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk545658;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>> mProcessedAllowedSlots;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptHotbarEventFilterProcessedData& operator=(ScriptHotbarEventFilterProcessedData const&);
-    ScriptHotbarEventFilterProcessedData(ScriptHotbarEventFilterProcessedData const&);
-    ScriptHotbarEventFilterProcessedData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptHotbarEventFilterProcessedData();
+    MCAPI ~ScriptHotbarEventFilterProcessedData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

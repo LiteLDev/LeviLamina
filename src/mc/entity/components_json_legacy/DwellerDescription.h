@@ -14,22 +14,16 @@ struct DwellerDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf036a4;
-    ::ll::UntypedStorage<8, 32> mUnk3529fc;
-    ::ll::UntypedStorage<8, 32> mUnkfe2924;
-    ::ll::UntypedStorage<4, 4>  mUnk8fd1ac;
-    ::ll::UntypedStorage<4, 4>  mUnkaa8e91;
-    ::ll::UntypedStorage<4, 4>  mUnkf76660;
-    ::ll::UntypedStorage<4, 4>  mUnk9a8b16;
-    ::ll::UntypedStorage<1, 1>  mUnk10f73f;
-    ::ll::UntypedStorage<1, 1>  mUnked0174;
+    ::ll::TypedStorage<8, 32, ::std::string> mType;
+    ::ll::TypedStorage<8, 32, ::std::string> mRole;
+    ::ll::TypedStorage<8, 32, ::std::string> mPreferredProfession;
+    ::ll::TypedStorage<4, 4, int>            mUpdateBase;
+    ::ll::TypedStorage<4, 4, int>            mUpdateVariant;
+    ::ll::TypedStorage<4, 4, int>            mFirstFoundingReward;
+    ::ll::TypedStorage<4, 4, float>          mDwellingBoundsTolerance;
+    ::ll::TypedStorage<1, 1, bool>           mCanFindPOI;
+    ::ll::TypedStorage<1, 1, bool>           mCanMigrate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DwellerDescription& operator=(DwellerDescription const&);
-    DwellerDescription(DwellerDescription const&);
-    DwellerDescription();
 
 public:
     // virtual functions
@@ -44,15 +38,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

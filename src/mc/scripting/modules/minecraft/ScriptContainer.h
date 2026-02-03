@@ -4,8 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/ScriptContainerRules.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,8 +28,8 @@ class ScriptContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk4b2c18;
-    ::ll::UntypedStorage<8, 16> mUnk7559db;
+    ::ll::TypedStorage<8, 72, ::std::optional<::ScriptModuleMinecraft::ScriptContainerRules>> mContainerRules;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                                 mScope;
     // NOLINTEND
 
 public:
@@ -87,20 +89,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptContainer(::ScriptModuleMinecraft::ScriptContainer const&);
+    MCAPI ScriptContainer(::ScriptModuleMinecraft::ScriptContainer const&);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidContainerError>
     contains(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
+    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getWeight() const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
@@ -110,56 +112,56 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
+    MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainer const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptContainer const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<int> $getSize() const;
+    MCAPI ::Scripting::Result_deprecated<int> $getSize() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     $setItemV010(int slot, ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     $getItem(int slot) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     $addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
+    MCAPI ::Scripting::Result_deprecated<bool>
     $transferItemV010(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainer& toScriptContainer) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
+    MCAPI ::Scripting::Result_deprecated<bool>
     $swapItemsV010(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainer& otherScriptContainer) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     $getSlot(
         int slot,
@@ -167,7 +169,7 @@ public:
             scriptContainerWrapperHandle
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> $clearAll() const;
+    MCAPI ::Scripting::Result_deprecated<void> $clearAll() const;
 
 
     // NOLINTEND

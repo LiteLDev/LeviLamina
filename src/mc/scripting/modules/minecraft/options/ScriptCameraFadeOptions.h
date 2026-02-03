@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptRGB.h"
+#include "mc/scripting/modules/minecraft/options/ScriptCameraFadeTimeOptions.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,32 +17,26 @@ struct ScriptCameraFadeOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk877077;
-    ::ll::UntypedStorage<4, 32> mUnke0fb75;
+    ::ll::TypedStorage<4, 16, ::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeTimeOptions>> mTimeOptions;
+    ::ll::TypedStorage<4, 32, ::std::optional<::ScriptModuleMinecraft::ScriptRGB>>                   mFadeColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCameraFadeOptions& operator=(ScriptCameraFadeOptions const&);
-    ScriptCameraFadeOptions(ScriptCameraFadeOptions const&);
-    ScriptCameraFadeOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptCameraFadeOptions();
+    MCAPI ~ScriptCameraFadeOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

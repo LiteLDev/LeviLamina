@@ -13,37 +13,36 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptRawTextInterface {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2a76a3;
-    // NOLINTEND
+    // ScriptRawTextInterface inner types define
+    using RawTextType = ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface>;
 
 public:
-    // prevent constructor by default
-    ScriptRawTextInterface& operator=(ScriptRawTextInterface const&);
-    ScriptRawTextInterface(ScriptRawTextInterface const&);
-    ScriptRawTextInterface();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface>>>
+        rawtext;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
 
-    MCNAPI ~ScriptRawTextInterface();
+    MCAPI ~ScriptRawTextInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
+    MCAPI static ::ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(::Json::Value const& json);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

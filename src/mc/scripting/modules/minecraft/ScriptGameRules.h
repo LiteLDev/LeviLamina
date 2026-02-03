@@ -13,21 +13,19 @@ namespace ScriptModuleMinecraft {
 
 class ScriptGameRules {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6dc759;
-    // NOLINTEND
+    // ScriptGameRules inner types define
+    using Key = ::GameRules const*;
 
 public:
-    // prevent constructor by default
-    ScriptGameRules& operator=(ScriptGameRules const&);
-    ScriptGameRules(ScriptGameRules const&);
-    ScriptGameRules();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Level*>> mLevel;
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 

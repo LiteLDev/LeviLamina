@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class IRequestAction;
+// clang-format on
+
 class DelayRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk777e90;
-    ::ll::UntypedStorage<8, 8>  mUnkb1c5bd;
-    ::ll::UntypedStorage<8, 32> mUnk2164de;
+    ::ll::TypedStorage<8, 8, uint64>                              mTickToExecuteOn;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRequestAction>> mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mSerializationId;
     // NOLINTEND
 
 public:

@@ -22,18 +22,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _attemptToTame(::Actor& owner, ::Player& player, ::std::optional<::ItemDescriptor> const& resultItem);
+    MCAPI bool _attemptToTame(::Actor& owner, ::Player& player, ::std::optional<::ItemDescriptor> const& resultItem);
 
-    MCNAPI bool _canTame(::Actor& owner, ::Player& player, ::ItemDescriptor& resultItemOut);
+    MCAPI bool _canTame(::Actor& owner, ::Player& player, ::ItemDescriptor& resultItemOut);
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCNAPI void tame(::Actor& owner, ::Player& player);
+    MCAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _becomeTame(::Actor& owner);
+    MCAPI static void _becomeTame(::Actor& owner);
     // NOLINTEND
 };

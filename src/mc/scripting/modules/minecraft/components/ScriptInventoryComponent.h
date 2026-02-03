@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
@@ -24,7 +25,7 @@ class ScriptInventoryComponent : public ::ScriptModuleMinecraft::ScriptActorComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk97445f;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongObjectHandle>> mScriptContainer;
     // NOLINTEND
 
 public:
@@ -43,56 +44,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptInventoryComponent(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCAPI ScriptInventoryComponent(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
 
-    MCNAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
+    MCAPI ::Scripting::Result_deprecated<int> getAdditionalSlotsPerStrength() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getCanBeSiphonedFrom() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getContainerType() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
+    MCAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
     getOrCreateContainerV010();
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
     getOrCreateContainerV1();
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getOrCreateContainerV2();
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
+    MCAPI ::Scripting::Result_deprecated<bool> getRestrictToOwner() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInventoryComponent const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isValid() const;
+    MCAPI bool $_isValid() const;
 
 
     // NOLINTEND

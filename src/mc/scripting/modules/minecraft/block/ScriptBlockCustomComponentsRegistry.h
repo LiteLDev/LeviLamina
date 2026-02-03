@@ -3,11 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/scripting/Version.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/block/IScriptBlockCustomComponentReader.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEventTypes.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentInterface.h"
+#include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentAfterEventList.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
 #include "mc/world/events/ScriptDeferredEventListener.h"
 
@@ -34,7 +40,6 @@ namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
-namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentAlreadyRegisteredError; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentReloadNewComponentError; }
@@ -44,6 +49,7 @@ namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryErr
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -62,47 +68,51 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnkae4b77;
-        ::ll::UntypedStorage<8, 256> mUnk346989;
-        ::ll::UntypedStorage<8, 40>  mUnk53a6c9;
-        ::ll::UntypedStorage<1, 1>   mUnk9ffddb;
-        ::ll::UntypedStorage<1, 1>   mUnk2b0f74;
+        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 12>>
+            mEventsUsed;
+        ::ll::TypedStorage<8, 256, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
+                                                        mClosures;
+        ::ll::TypedStorage<8, 40, ::Scripting::Version> mVersionBoundWith;
+        ::ll::TypedStorage<1, 1, bool>                  mInitialized;
+        ::ll::TypedStorage<1, 1, bool>                  mUsedByBlock;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScriptBlockCustomComponentData& operator=(ScriptBlockCustomComponentData const&);
-        ScriptBlockCustomComponentData(ScriptBlockCustomComponentData const&);
-        ScriptBlockCustomComponentData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void setClosureData(
+        MCAPI void setClosureData(
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&& closures,
             ::Scripting::WeakLifetimeScope const&                          scope
         );
 
-        MCNAPI ~ScriptBlockCustomComponentData();
+        MCAPI ~ScriptBlockCustomComponentData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8848d2;
-    ::ll::UntypedStorage<8, 24> mUnk1fa307;
-    ::ll::UntypedStorage<8, 24> mUnk61196d;
-    ::ll::UntypedStorage<8, 64> mUnkb5c618;
-    ::ll::UntypedStorage<8, 24> mUnkc6a9fb;
-    ::ll::UntypedStorage<2, 2>  mUnke455e0;
-    ::ll::UntypedStorage<8, 8>  mUnk542351;
+    ::ll::TypedStorage<8, 8, ::ScriptDeferredEventCoordinator&>                    mDeferredEventCoordinator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::cereal::ReflectionCtx>> mCerealContext;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>      mBlockSubscriptions;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::HashedString,
+            ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>
+                                                                                            mComponents;
+    ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptCustomComponentAfterEventList> mAsyncEventQueues;
+    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 12>>
+        mV1EventSubscriptionList;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&>
+        mCustomComponentParameterCache;
     // NOLINTEND
 
 public:
@@ -138,18 +148,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentsRegistry(
+    MCAPI ScriptBlockCustomComponentsRegistry(
         ::ServerScriptManagerEvents&                                  events,
         ::ScriptDeferredEventCoordinator&                             deferredEventCoordinator,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
     );
 
-    MCNAPI void _bindComponentToCereal(
+    MCAPI void _bindComponentToCereal(
         ::HashedString const&                                               compName,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -164,7 +174,7 @@ public:
         ::HashedString const& name
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -179,7 +189,7 @@ public:
         ::HashedString const& name
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -195,7 +205,7 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -211,44 +221,44 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
-    MCNAPI void _registerBlockForEventing(
+    MCAPI void _registerBlockForEventing(
         ::BlockType&                                                             block,
         ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>> const& comps
     );
 
-    MCNAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
+    MCAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
-    MCNAPI bool
+    MCAPI bool
     hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
 
-    MCNAPI bool hasSubscriptionFor(
+    MCAPI bool hasSubscriptionFor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type,
         ::BlockCustomComponentsComponent const&                       customComponents
     ) const;
 
-    MCNAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
+    MCAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
 
-    MCNAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent const& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent const& eventData) const;
 
-    MCNAPI void onPlayerBreak(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    MCAPI void onPlayerBreak(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
 
-    MCNAPI void onPlayerInteract(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void onPlayerInteract(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
-    MCNAPI void onQueuedTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
+    MCAPI void onQueuedTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
 
-    MCNAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
+    MCAPI void onRandomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
 
-    MCNAPI void onRandomTickLegacy(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
+    MCAPI void onRandomTickLegacy(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
 
-    MCNAPI void onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent const& eventData) const;
+    MCAPI void onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent const& eventData) const;
 
-    MCNAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
+    MCAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 
-    MCNAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
+    MCAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -261,7 +271,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                          scope
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
@@ -278,17 +288,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface> const
     _getEventMetadata();
 
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ServerScriptManagerEvents&                                  events,
         ::ScriptDeferredEventCoordinator&                             deferredEventCoordinator,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
@@ -298,23 +308,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onPreFlushAfterEvents();
+    MCAPI void $onPreFlushAfterEvents();
 
-    MCNAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCNAPI void $onPostFlushAfterEvents();
+    MCAPI void $onPostFlushAfterEvents();
 
-    MCNAPI void $_onScriptInitializationComplete();
+    MCAPI void $_onScriptInitializationComplete();
 
-    MCNAPI void $_onReload();
+    MCAPI void $_onReload();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     $tryGetCustomComponentParametersForItem(
         ::IBlockSource const&                 region,
         ::BlockPos                            blockPos,

@@ -18,7 +18,7 @@ class ScriptGameRulesFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules>
     getHandle(::Scripting::WeakLifetimeScope& scope, ::Level& level);
     // NOLINTEND
 };

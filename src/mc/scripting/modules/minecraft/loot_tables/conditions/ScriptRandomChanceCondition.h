@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItemRandomChanceCondition;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -16,7 +17,7 @@ class ScriptRandomChanceCondition : public ::ScriptModuleMinecraft::ScriptLootIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd72e54;
+    ::ll::TypedStorage<8, 8, ::LootItemRandomChanceCondition const&> mCondition;
     // NOLINTEND
 
 public:
@@ -28,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

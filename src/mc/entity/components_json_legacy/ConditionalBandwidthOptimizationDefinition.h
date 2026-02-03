@@ -24,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addConditionalBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
+    MCAPI void addConditionalBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
-    MCNAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
+    MCAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
-    MCNAPI ~ConditionalBandwidthOptimizationDefinition();
+    MCAPI ~ConditionalBandwidthOptimizationDefinition();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

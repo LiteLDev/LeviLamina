@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorRenderData;
 class BaseActorRenderContext;
 class Block;
 class BlockType;
@@ -21,7 +22,6 @@ class Item;
 class ItemStack;
 class Mob;
 class RenderParams;
-struct ActorRenderData;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class TextureGroup; }
 // clang-format on

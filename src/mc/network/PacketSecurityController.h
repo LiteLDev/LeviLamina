@@ -7,26 +7,26 @@
 #include "mc/network/IPacketSecurityController.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/PacketGroupDefinition.h"
+#include "mc/network/PacketRateLimitFeature.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 
 // auto generated forward declare list
 // clang-format off
 class NetworkIdentifier;
+class PacketViolationHandler;
 // clang-format on
 
 class PacketSecurityController : public ::IPacketSecurityController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc814bd;
-    ::ll::UntypedStorage<8, 40> mUnk2b4bd9;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PacketViolationHandler>> mPacketViolationHandler;
+    ::ll::TypedStorage<8, 40, ::std::optional<::PacketRateLimitFeature>>  mPacketRateLimitFeature;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PacketSecurityController& operator=(PacketSecurityController const&);
-    PacketSecurityController(PacketSecurityController const&);
     PacketSecurityController();
 
 public:

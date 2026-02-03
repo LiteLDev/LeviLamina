@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setActorDefByName(::std::string const& name);
+    MCAPI void setActorDefByName(::std::string const& name);
 
-    MCNAPI ~ShooterProjectileData();
+    MCAPI ~ShooterProjectileData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

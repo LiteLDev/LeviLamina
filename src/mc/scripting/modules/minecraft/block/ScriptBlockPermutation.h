@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/level/block/LiquidType.h"
 
@@ -14,7 +15,6 @@ class Block;
 namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -32,71 +32,59 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk15953a;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> block;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkca0900;
-    ::ll::UntypedStorage<8, 8>  mUnkb17ea8;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockPermutation& operator=(ScriptBlockPermutation const&);
-    ScriptBlockPermutation(ScriptBlockPermutation const&);
-    ScriptBlockPermutation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     _createPropertyV010(::std::string const& propertyName);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> canBeDestroyedByLiquidSpread(::LiquidType liquidType) const;
+    MCAPI ::Scripting::Result_deprecated<bool> canBeDestroyedByLiquidSpread(::LiquidType liquidType) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> canContainLiquid(::LiquidType liquidType) const;
+    MCAPI ::Scripting::Result_deprecated<bool> canContainLiquid(::LiquidType liquidType) const;
 
-    MCNAPI ::std::vector<
+    MCAPI ::std::vector<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     getAllPropertiesV010();
 
-    MCNAPI ::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>> getAllStates() const;
+    MCAPI ::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>> getAllStates() const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack(int amount) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     getPropertyV010(::std::string const& propertyName);
 
-    MCNAPI ::std::optional<::std::variant<int, ::std::string, bool>> getState(::std::string const& name) const;
+    MCAPI ::std::optional<::std::variant<int, ::std::string, bool>> getState(::std::string const& name) const;
 
-    MCNAPI ::std::vector<::std::string> getTags() const;
+    MCAPI ::std::vector<::std::string> getTags() const;
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> getType() const;
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> getType() const;
 
-    MCNAPI bool hasTag(::std::string const& tag) const;
+    MCAPI bool hasTag(::std::string const& tag) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> isLiquidBlocking(::LiquidType liquidType) const;
+    MCAPI ::Scripting::Result_deprecated<bool> isLiquidBlocking(::LiquidType liquidType) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> liquidSpreadCausesSpawn(::LiquidType liquidType) const;
+    MCAPI ::Scripting::Result_deprecated<bool> liquidSpreadCausesSpawn(::LiquidType liquidType) const;
 
-    MCNAPI bool matches(
+    MCAPI bool matches(
         ::std::string                                                                                  blockName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     withState(
         ::Scripting::WeakLifetimeScope const&           scope,
@@ -108,14 +96,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>
     getOrCreateHandle(::Block const& block, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI static ::Scripting::Result_deprecated<
+    MCAPI static ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     resolve(
         ::Scripting::WeakLifetimeScope                                                                        scope,

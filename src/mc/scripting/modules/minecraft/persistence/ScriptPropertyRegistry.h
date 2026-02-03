@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptActorType; }
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -19,25 +20,19 @@ class ScriptPropertyRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkddaedc;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ServerLevel>> mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPropertyRegistry& operator=(ScriptPropertyRegistry const&);
-    ScriptPropertyRegistry(ScriptPropertyRegistry const&);
-    ScriptPropertyRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> registerEntityTypeDynamicProperties(
+    MCAPI ::Scripting::Result_deprecated<void> registerEntityTypeDynamicProperties(
         ::Scripting::WeakLifetimeScope                                          scope,
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptActorType> entityTypeOrId
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> registerWorldDynamicProperties(
+    MCAPI ::Scripting::Result_deprecated<void> registerWorldDynamicProperties(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
     // NOLINTEND
@@ -45,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

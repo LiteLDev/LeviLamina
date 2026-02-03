@@ -14,10 +14,10 @@ struct ScriptScoreTargetSelectorOption {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk385a3c;
-    ::ll::UntypedStorage<4, 8>  mUnkbc73f6;
-    ::ll::UntypedStorage<4, 8>  mUnkc71f5d;
-    ::ll::UntypedStorage<1, 2>  mUnk324102;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mObjective;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>            mMinScore;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>            mMaxScore;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mExclude;
     // NOLINTEND
 
 public:
@@ -29,16 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
+    MCAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
 
-    MCNAPI static ::Scripting::InterfaceBinding bindV1();
+    MCAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
 };
 

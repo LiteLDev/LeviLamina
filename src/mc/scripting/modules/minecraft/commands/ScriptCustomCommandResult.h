@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/commands/ScriptCustomCommandStatus.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,8 +16,8 @@ struct ScriptCustomCommandResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk463728;
-    ::ll::UntypedStorage<8, 40> mUnk20d4b2;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptCustomCommandStatus> mStatus;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mMessage;
     // NOLINTEND
 
 public:
@@ -26,22 +29,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandResult&
+    MCAPI ::ScriptModuleMinecraft::ScriptCustomCommandResult&
     operator=(::ScriptModuleMinecraft::ScriptCustomCommandResult&&);
 
-    MCNAPI ~ScriptCustomCommandResult();
+    MCAPI ~ScriptCustomCommandResult();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -2,14 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/certificates/identity/LegacyMultiplayerToken.h"
+#include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/certificates/identity/RawGameServerToken.h"
+
+// auto generated forward declare list
+// clang-format off
+class PrivateKeyManager;
+// clang-format on
+
 struct SubClientAuthInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd91c50;
-    ::ll::UntypedStorage<4, 4>  mUnk87f20b;
-    ::ll::UntypedStorage<8, 8>  mUnke4add1;
-    ::ll::UntypedStorage<8, 32> mUnk2630a3;
+    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>       userSigner;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType> authenticationType;
+    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>   token;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>      newToken;
     // NOLINTEND
 
 public:

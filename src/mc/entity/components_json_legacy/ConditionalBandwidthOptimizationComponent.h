@@ -29,28 +29,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
+    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
 
-    MCNAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
+    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
 
-    MCNAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
+    MCAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
 
-    MCNAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
+    MCAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
 
-    MCNAPI ~ConditionalBandwidthOptimizationComponent();
+    MCAPI ~ConditionalBandwidthOptimizationComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
+    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
 
-    MCNAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
+    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -32,14 +32,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RideableComponentData& operator=(::RideableComponentData&&);
+    MCAPI ::RideableComponentData& operator=(::RideableComponentData&&);
 
-    MCNAPI ~RideableComponentData();
+    MCAPI ~RideableComponentData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

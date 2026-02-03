@@ -32,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~RailActivatorDefinition();
+    MCAPI ~RailActivatorDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RailActivatorDefinition>>& root
     );
     // NOLINTEND
@@ -46,6 +46,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

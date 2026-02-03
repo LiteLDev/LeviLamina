@@ -8,31 +8,25 @@ struct ValueParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk54e479;
-    ::ll::UntypedStorage<1, 1>  mUnk8ea399;
-    ::ll::UntypedStorage<4, 4>  mUnkee7dea;
-    ::ll::UntypedStorage<4, 4>  mUnk8d6f67;
-    ::ll::UntypedStorage<1, 1>  mUnk6addb5;
-    ::ll::UntypedStorage<1, 1>  mUnk2141d1;
-    ::ll::UntypedStorage<8, 32> mUnk16d32c;
+    ::ll::TypedStorage<1, 1, bool>           isNumber;
+    ::ll::TypedStorage<1, 1, bool>           isFloat;
+    ::ll::TypedStorage<4, 4, float>          floatVal;
+    ::ll::TypedStorage<4, 4, int>            intVal;
+    ::ll::TypedStorage<1, 1, bool>           isBool;
+    ::ll::TypedStorage<1, 1, bool>           boolVal;
+    ::ll::TypedStorage<8, 32, ::std::string> stringVal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ValueParams& operator=(ValueParams const&);
-    ValueParams(ValueParams const&);
-    ValueParams();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ValueParams();
+    MCAPI ~ValueParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

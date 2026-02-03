@@ -22,38 +22,37 @@ class ScriptBlockLocationIterator
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk38fd69;
-    ::ll::UntypedStorage<8, 8>  mUnkdea65b;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>>
+                                                                             mStrongTypedIterableHandle;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseBlockLocationIterator>> mIterator;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBlockLocationIterator& operator=(ScriptBlockLocationIterator const&);
-    ScriptBlockLocationIterator(ScriptBlockLocationIterator const&);
     ScriptBlockLocationIterator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockLocationIterator(
+    MCAPI ScriptBlockLocationIterator(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle
     );
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::EngineError> isValid() const;
+    MCAPI ::Scripting::Result<bool, ::Scripting::EngineError> isValid() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle

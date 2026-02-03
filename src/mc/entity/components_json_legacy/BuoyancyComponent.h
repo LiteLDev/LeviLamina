@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
+    MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCNAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
+    MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
-    MCNAPI bool
+    MCAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCNAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
+    MCAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

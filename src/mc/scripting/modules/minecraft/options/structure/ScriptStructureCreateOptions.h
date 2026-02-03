@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,21 +16,15 @@ struct ScriptStructureCreateOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnkf85873;
-    ::ll::UntypedStorage<1, 2> mUnka70b23;
-    ::ll::UntypedStorage<1, 2> mUnkee778e;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                        mIncludeEntities;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                        mIncludeBlocks;
+    ::ll::TypedStorage<1, 2, ::std::optional<::StructureRedstoneSaveMode>> mSaveMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptStructureCreateOptions& operator=(ScriptStructureCreateOptions const&);
-    ScriptStructureCreateOptions(ScriptStructureCreateOptions const&);
-    ScriptStructureCreateOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

@@ -17,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DanceComponent();
+    MCAPI DanceComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

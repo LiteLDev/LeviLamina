@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
@@ -24,7 +25,7 @@ class ScriptBlockInventoryComponent : public ::ScriptModuleMinecraft::BaseScript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkcc943d;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongObjectHandle>> mScriptContainer;
     // NOLINTEND
 
 public:
@@ -41,13 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockInventoryComponent(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
+    MCAPI ScriptBlockInventoryComponent(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
 
-    MCNAPI ::Scripting::Result_deprecated<
+    MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>>
     getOrCreateContainer();
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<
+    MCAPI ::Scripting::Result_deprecated<::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
     getOrCreateContainerV010();
     // NOLINTEND
@@ -55,10 +56,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -66,13 +67,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
     // NOLINTEND
 
 public:

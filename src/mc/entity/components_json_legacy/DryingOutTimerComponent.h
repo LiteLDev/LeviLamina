@@ -44,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DryingOutTimerDefinition();
+        MCAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
                 ::JsonUtil::EmptyClass,
                 ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root
@@ -60,7 +60,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -80,24 +80,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DryingOutTimerComponent();
+    MCAPI DryingOutTimerComponent();
 
-    MCNAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
+    MCAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
 
-    MCNAPI ~DryingOutTimerComponent();
+    MCAPI ~DryingOutTimerComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::DryingOutTimerComponent&&);
+    MCAPI void* $ctor(::DryingOutTimerComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

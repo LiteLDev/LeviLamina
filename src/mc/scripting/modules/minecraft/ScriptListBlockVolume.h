@@ -36,44 +36,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptListBlockVolume();
+    MCAPI ScriptListBlockVolume();
 
-    MCNAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCNAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
 
-    MCNAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
+    MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
 
-    MCNAPI void add(::std::vector<::Vec3> const& locations);
+    MCAPI void add(::std::vector<::Vec3> const& locations);
 
-    MCNAPI void remove(::std::vector<::Vec3> const& locations);
+    MCAPI void remove(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
 
-    MCNAPI void* $ctor(::std::vector<::Vec3> const& locations);
+    MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
     $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
-    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
+    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
 
 
     // NOLINTEND

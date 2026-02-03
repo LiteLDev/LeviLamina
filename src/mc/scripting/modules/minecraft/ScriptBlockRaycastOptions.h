@@ -17,35 +17,29 @@ struct ScriptBlockRaycastOptions : public ::ScriptModuleMinecraft::ScriptBlockFi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkd33855;
-    ::ll::UntypedStorage<1, 2> mUnke8721f;
-    ::ll::UntypedStorage<1, 2> mUnk11f33b;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>  mMaxDistance;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIncludePassableBlocks;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIncludeLiquidBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockRaycastOptions& operator=(ScriptBlockRaycastOptions const&);
-    ScriptBlockRaycastOptions(ScriptBlockRaycastOptions const&);
-    ScriptBlockRaycastOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptBlockRaycastOptions();
+    MCAPI ~ScriptBlockRaycastOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

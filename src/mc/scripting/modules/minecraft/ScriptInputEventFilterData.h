@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/input/ScriptingInputButton.h"
+#include "mc/input/ScriptingInputButtonState.h"
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptInputEventFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk848ada;
-    ::ll::UntypedStorage<4, 4> mUnk27dfcc;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButton>      mInputButton;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mNewState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptInputEventFilterData& operator=(ScriptInputEventFilterData const&);
-    ScriptInputEventFilterData(ScriptInputEventFilterData const&);
-    ScriptInputEventFilterData();
 };
 
 } // namespace ScriptModuleMinecraft::EventFilters

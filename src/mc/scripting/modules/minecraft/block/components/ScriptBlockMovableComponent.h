@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::ScriptModuleMinecraft::ScriptMovementType,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     movementType() const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::ScriptModuleMinecraft::ScriptStickyType,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -44,17 +44,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindMovementType();
+    MCAPI static ::Scripting::EnumBinding bindMovementType();
 
-    MCNAPI static ::Scripting::EnumBinding bindStickyType();
+    MCAPI static ::Scripting::EnumBinding bindStickyType();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

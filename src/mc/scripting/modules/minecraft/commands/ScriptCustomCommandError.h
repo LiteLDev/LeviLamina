@@ -29,33 +29,27 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdc2807;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptCustomCommandError::Reason> mReason;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCustomCommandError& operator=(ScriptCustomCommandError const&);
-    ScriptCustomCommandError(ScriptCustomCommandError const&);
-    ScriptCustomCommandError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptCustomCommandError();
+    MCAPI ~ScriptCustomCommandError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

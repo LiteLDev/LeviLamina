@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deviceinfo/DeviceMemoryTier.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
@@ -13,14 +16,8 @@ class ScriptSystemInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk93638a;
+    ::ll::TypedStorage<4, 4, ::DeviceMemoryTier> mMemoryTier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptSystemInfo& operator=(ScriptSystemInfo const&);
-    ScriptSystemInfo(ScriptSystemInfo const&);
-    ScriptSystemInfo();
 
 public:
     // virtual functions
@@ -31,13 +28,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

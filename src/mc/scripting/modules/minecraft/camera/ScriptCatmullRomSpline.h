@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,7 +14,7 @@ struct ScriptCatmullRomSpline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2b4d07;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mControlPoints;
     // NOLINTEND
 
 public:
@@ -25,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCatmullRomSpline&
+    MCFOLD ::ScriptModuleMinecraft::ScriptCatmullRomSpline&
     operator=(::ScriptModuleMinecraft::ScriptCatmullRomSpline&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

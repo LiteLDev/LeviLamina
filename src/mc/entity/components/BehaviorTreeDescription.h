@@ -9,14 +9,8 @@ struct BehaviorTreeDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9017ba;
+    ::ll::TypedStorage<8, 32, ::std::string> mBehaviorTreeId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BehaviorTreeDescription& operator=(BehaviorTreeDescription const&);
-    BehaviorTreeDescription(BehaviorTreeDescription const&);
-    BehaviorTreeDescription();
 
 public:
     // virtual functions

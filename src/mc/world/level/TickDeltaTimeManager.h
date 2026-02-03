@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITickDeltaTimeManagerProxy;
+// clang-format on
+
 class TickDeltaTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk27bb36;
-    ::ll::UntypedStorage<8, 8> mUnk6cf847;
+    ::ll::TypedStorage<8, 8, double> mTickDeltaTime;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ITickDeltaTimeManagerProxy>> const>
+        mTickDeltaTimeManagerProxy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickDeltaTimeManager& operator=(TickDeltaTimeManager const&);
-    TickDeltaTimeManager(TickDeltaTimeManager const&);
-    TickDeltaTimeManager();
 };

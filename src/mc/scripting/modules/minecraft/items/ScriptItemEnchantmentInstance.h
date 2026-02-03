@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
 class EnchantmentInstance;
 class ItemEnchants;
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsError; }
+namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentTypeNotCompatibleError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentUnknownIdError; }
 namespace Scripting { struct InterfaceBinding; }
@@ -18,39 +22,34 @@ struct ScriptItemEnchantmentInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk63ef6b;
-    ::ll::UntypedStorage<4, 4>  mUnk63728b;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+                                  mEnchantType;
+    ::ll::TypedStorage<4, 4, int> mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptItemEnchantmentInstance& operator=(ScriptItemEnchantmentInstance const&);
-    ScriptItemEnchantmentInstance(ScriptItemEnchantmentInstance const&);
-    ScriptItemEnchantmentInstance();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::variant<
+    MCAPI ::std::variant<
         ::EnchantmentInstance,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
         ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>
     tryResolveInstance(::ItemEnchants& itemEnchants) const;
 
-    MCNAPI ~ScriptItemEnchantmentInstance();
+    MCAPI ~ScriptItemEnchantmentInstance();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

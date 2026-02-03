@@ -13,20 +13,14 @@ struct ScriptProgressKeyFrame {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkda262a;
-    ::ll::UntypedStorage<4, 4> mUnk7e639d;
+    ::ll::TypedStorage<4, 4, float> mAlpha;
+    ::ll::TypedStorage<4, 4, float> mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptProgressKeyFrame& operator=(ScriptProgressKeyFrame const&);
-    ScriptProgressKeyFrame(ScriptProgressKeyFrame const&);
-    ScriptProgressKeyFrame();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

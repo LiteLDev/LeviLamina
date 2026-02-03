@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -14,14 +16,12 @@ class ScriptComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkad83bc;
-    ::ll::UntypedStorage<8, 40> mUnkf28bfb;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope const> mScope;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string> const> mId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptComponent& operator=(ScriptComponent const&);
-    ScriptComponent(ScriptComponent const&);
     ScriptComponent();
 
 public:
@@ -39,33 +39,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
+    MCAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
+    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getTypeId_V1() const;
+    MCAPI ::std::string const& $getTypeId_V1() const;
 
-    MCNAPI ::std::string const& $getTypeId_V2() const;
+    MCFOLD ::std::string const& $getTypeId_V2() const;
 
 
     // NOLINTEND

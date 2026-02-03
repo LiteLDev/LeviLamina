@@ -11,13 +11,13 @@ struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptLocationOutOfWorldBoundsError();
+    MCAPI ~ScriptLocationOutOfWorldBoundsError();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

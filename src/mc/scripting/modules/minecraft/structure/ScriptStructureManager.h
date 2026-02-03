@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
 class BoundingBox;
+class ServerLevel;
 class StructureTemplate;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptDimension; }
@@ -33,9 +35,15 @@ class ScriptStructureManager : public ::Scripting::WeakHandleFromThis<::ScriptMo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk250945;
-    ::ll::UntypedStorage<8, 8>  mUnk5c39b7;
-    ::ll::UntypedStorage<8, 64> mUnk95af6c;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>>>
+        mStructures;
     // NOLINTEND
 
 public:
@@ -46,26 +54,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager&&);
+    MCAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager&&);
 
-    MCNAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager const&);
+    MCAPI ScriptStructureManager(::ScriptModuleMinecraft::ScriptStructureManager const&);
 
-    MCNAPI ::std::string_view _getPlaceErrorMessage(::std::string_view key) const;
+    MCAPI ::std::string_view _getPlaceErrorMessage(::std::string_view key) const;
 
-    MCNAPI ::StructureTemplate const* _getStructure(
+    MCAPI ::StructureTemplate const* _getStructure(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
             scriptStructureOrName
     ) const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
         ::Scripting::InvalidArgumentError,
         ::Scripting::EngineError>
     createEmptyStructure(::std::string const& identifier, ::Vec3 const& size, ::StructureRedstoneSaveMode saveMode);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
         ::Scripting::InvalidArgumentError>
     createStructureFromWorld(
@@ -76,25 +84,24 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptStructureCreateOptions> const&         options
     );
 
-    MCNAPI ::Scripting::Result<bool, ::Scripting::InvalidArgumentError> deleteStructure(
+    MCAPI ::Scripting::Result<bool, ::Scripting::InvalidArgumentError> deleteStructure(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
             scriptStructureOrName
     );
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(::StructureTemplate& structureTemplate);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>>
     getStructure(::std::string const& identifier);
 
-    MCNAPI ::std::vector<::std::string> getWorldStructureIds() const;
+    MCAPI ::std::vector<::std::string> getWorldStructureIds() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptStructureManager&
-    operator=(::ScriptModuleMinecraft::ScriptStructureManager&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptStructureManager& operator=(::ScriptModuleMinecraft::ScriptStructureManager&&);
 
-    MCNAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsaw(
+    MCAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsaw(
         ::std::string const&                                                                  pool,
         ::std::string const&                                                                  targetJigsaw,
         int                                                                                   maxDepth,
@@ -103,14 +110,14 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptJigsawPlaceOptions> const&             options
     );
 
-    MCNAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsawStructure(
+    MCAPI ::Scripting::Result<::BoundingBox, ::ScriptModuleMinecraft::ScriptPlaceJigsawError> placeJigsawStructure(
         ::std::string const&                                                                  identifier,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> const& scriptDimension,
         ::Vec3 const&                                                                         location,
         ::std::optional<::ScriptModuleMinecraft::ScriptJigsawStructurePlaceOptions> const&    options
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptInvalidStructureError,
         ::Scripting::InvalidArgumentError,
@@ -125,21 +132,21 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptStructurePlaceOptions> const&          options
     );
 
-    MCNAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
+    MCAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureManager const&);
     // NOLINTEND
 };
 

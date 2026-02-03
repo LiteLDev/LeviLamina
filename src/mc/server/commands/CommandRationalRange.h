@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandFloatRange.h"
+#include "mc/server/commands/CommandIntegerRange.h"
+
 class CommandRationalRange {
 public:
     // CommandRationalRange inner types define
@@ -20,17 +24,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk22d4a5;
-    ::ll::UntypedStorage<4, 4>  mUnkde7d4d;
-    ::ll::UntypedStorage<1, 1>  mUnk3d8439;
-    ::ll::UntypedStorage<1, 1>  mUnkef96a4;
-    ::ll::UntypedStorage<1, 1>  mUnk7a2deb;
+    ::ll::TypedStorage<4, 16, ::std::variant<::CommandIntegerRange, ::CommandFloatRange>> mRange;
+    ::ll::TypedStorage<4, 4, ::CommandRationalRange::ValueType>                           mValueType;
+    ::ll::TypedStorage<1, 1, ::CommandRationalRange::BoundType>                           mBoundType;
+    ::ll::TypedStorage<1, 1, bool>                                                        mInvert;
+    ::ll::TypedStorage<1, 1, bool>                                                        mInclusive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandRationalRange& operator=(CommandRationalRange const&);
-    CommandRationalRange(CommandRationalRange const&);
 
 public:
     // member functions

@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/WeightedChoices.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,15 +16,9 @@ struct IllagerBeastBlockedDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf7f122;
-    ::ll::UntypedStorage<4, 4>  mUnk766c74;
+    ::ll::TypedStorage<8, 24, ::WeightedChoices<::ActorDefinitionTrigger>> mReactionChoices;
+    ::ll::TypedStorage<4, 4, float>                                        mKnockbackStrength;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IllagerBeastBlockedDescription& operator=(IllagerBeastBlockedDescription const&);
-    IllagerBeastBlockedDescription(IllagerBeastBlockedDescription const&);
-    IllagerBeastBlockedDescription();
 
 public:
     // virtual functions
@@ -37,15 +33,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getJsonName() const;
+    MCAPI char const* $getJsonName() const;
 
-    MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

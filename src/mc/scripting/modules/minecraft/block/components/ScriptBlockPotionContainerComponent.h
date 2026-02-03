@@ -33,17 +33,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockPotionContainerComponent(::ScriptModuleMinecraft::ScriptBlockPotionContainerComponent const&);
+    MCAPI ScriptBlockPotionContainerComponent(::ScriptModuleMinecraft::ScriptBlockPotionContainerComponent const&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
+    MCAPI ::Scripting::Result_deprecated<void> setPotionType(::ScriptModuleMinecraft::ScriptItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPotionContainerComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -51,13 +51,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockPotionContainerComponent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockPotionContainerComponent const&);
     // NOLINTEND
 
 public:

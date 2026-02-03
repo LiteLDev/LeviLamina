@@ -13,20 +13,14 @@ struct RangeComparison {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6e6363;
-    ::ll::UntypedStorage<4, 4> mUnk32bb6e;
+    ::ll::TypedStorage<4, 4, float> mLowerBound;
+    ::ll::TypedStorage<4, 4, float> mUpperBound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RangeComparison& operator=(RangeComparison const&);
-    RangeComparison(RangeComparison const&);
-    RangeComparison();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

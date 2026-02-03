@@ -18,9 +18,10 @@ class IScriptBlockProperty {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc4eb82;
-    ::ll::UntypedStorage<8, 32> mUnkaddf92;
-    ::ll::UntypedStorage<8, 8>  mUnk6af17c;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+                                                  mBlockData;
+    ::ll::TypedStorage<8, 8, ::BlockState const*> mBlockState;
     // NOLINTEND
 
 public:
@@ -38,25 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IScriptBlockProperty(
+    MCAPI IScriptBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCNAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
+    MCAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
@@ -66,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

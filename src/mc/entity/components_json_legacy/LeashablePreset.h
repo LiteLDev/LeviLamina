@@ -23,14 +23,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setSpringType(::std::string const& type);
+    MCAPI void setSpringType(::std::string const& type);
 
-    MCNAPI ~LeashablePreset();
+    MCAPI ~LeashablePreset();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -32,26 +32,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ShooterComponent();
+    MCAPI ShooterComponent();
 
-    MCNAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
+    MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCNAPI void onShoot(::Actor& owner);
+    MCAPI void onShoot(::Actor& owner);
 
-    MCNAPI ::ShooterComponent& operator=(::ShooterComponent&&);
+    MCAPI ::ShooterComponent& operator=(::ShooterComponent&&);
 
-    MCNAPI ~ShooterComponent();
+    MCAPI ~ShooterComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

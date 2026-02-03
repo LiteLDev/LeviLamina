@@ -24,21 +24,21 @@ namespace Scripting { struct UnsupportedAPIError; }
 namespace ScriptModuleMinecraft::ScriptRaycasting {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::BlockPos> getBlockFromAxisRay(
+MCAPI ::std::optional<::BlockPos> getBlockFromAxisRay(
     ::BlockSource const&                                      region,
     ::BlockPos const&                                         pos,
     ::Facing::Name                                            direction,
     ::ScriptModuleMinecraft::ScriptBlockRaycastOptions const& blockOptions
 );
 
-MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo> getBlockFromRay(
+MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo> getBlockFromRay(
     ::BlockSource const&                                      region,
     ::Vec3 const&                                             pos,
     ::Vec3 const&                                             vector,
     ::ScriptModuleMinecraft::ScriptBlockRaycastOptions const& blockOptions
 );
 
-MCNAPI ::Scripting::Result<
+MCAPI ::Scripting::Result<
     ::std::vector<::ScriptModuleMinecraft::ScriptRaycasting::EntityHitInfo>,
     ::Scripting::InvalidArgumentError,
     ::Scripting::EngineError,

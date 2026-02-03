@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorRenderData;
 class BaseActorRenderContext;
 class RenderParams;
-struct ActorRenderData;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_VillagerV2AdditionalRendering : public ::DataDrivenRenderer_tempComponent {

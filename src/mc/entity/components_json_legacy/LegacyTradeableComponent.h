@@ -44,38 +44,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TradeTable* _getTradeTable(::Actor& owner);
+    MCAPI ::TradeTable* _getTradeTable(::Actor& owner);
 
-    MCNAPI void _rearrangeTradeList(::Actor& owner, ::std::vector<::Trade>& tradeList, uint64 sampleCount);
+    MCAPI void _rearrangeTradeList(::Actor& owner, ::std::vector<::Trade>& tradeList, uint64 sampleCount);
 
-    MCNAPI bool _refreshTrades(::Actor& owner);
+    MCAPI bool _refreshTrades(::Actor& owner);
 
-    MCNAPI void _updateMaxTradeTier(::Actor& owner, int tradeTier);
+    MCAPI void _updateMaxTradeTier(::Actor& owner, int tradeTier);
 
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
+    MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCNAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
+    MCAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
 
-    MCNAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
+    MCAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCNAPI void restockAllRecipes(::Actor& owner);
+    MCAPI void restockAllRecipes(::Actor& owner);
 
-    MCNAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
+    MCAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
 
-    MCNAPI void updateTradeTier(::Actor& owner);
+    MCAPI void updateTradeTier(::Actor& owner);
 
-    MCNAPI ~LegacyTradeableComponent();
+    MCAPI ~LegacyTradeableComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

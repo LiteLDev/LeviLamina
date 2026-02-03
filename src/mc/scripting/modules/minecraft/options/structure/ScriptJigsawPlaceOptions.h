@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/LiquidSettings.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,21 +16,15 @@ struct ScriptJigsawPlaceOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk37f030;
-    ::ll::UntypedStorage<1, 2> mUnka3cb84;
-    ::ll::UntypedStorage<1, 2> mUnk278e49;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                           mKeepJigsaws;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                           mIncludeEntities;
+    ::ll::TypedStorage<1, 2, ::std::optional<::br::worldgen::LiquidSettings>> mLiquidSettings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptJigsawPlaceOptions& operator=(ScriptJigsawPlaceOptions const&);
-    ScriptJigsawPlaceOptions(ScriptJigsawPlaceOptions const&);
-    ScriptJigsawPlaceOptions();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

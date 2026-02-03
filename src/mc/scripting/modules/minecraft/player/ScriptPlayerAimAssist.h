@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
@@ -21,9 +22,20 @@ namespace ScriptModuleMinecraft {
 
 class ScriptPlayerAimAssist {
 public:
+    // ScriptPlayerAimAssist inner types define
+    using SetMethodResultType = ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::Scripting::ArgumentOutOfBoundsError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::Error>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkad4f3a;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
     // NOLINTEND
 
 public:
@@ -35,11 +47,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> _getAimAssistSettings() const;
+    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> _getAimAssistSettings() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssist& operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssist&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerAimAssist& operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssist&&);
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::Scripting::ArgumentOutOfBoundsError,
@@ -53,7 +65,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -14,15 +14,9 @@ struct MoveControlSwayDescription : public ::MoveControlDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc165ab;
-    ::ll::UntypedStorage<4, 4> mUnk7d08fd;
+    ::ll::TypedStorage<4, 4, float> mSwayFrequency;
+    ::ll::TypedStorage<4, 4, float> mSwayAmplitude;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveControlSwayDescription& operator=(MoveControlSwayDescription const&);
-    MoveControlSwayDescription(MoveControlSwayDescription const&);
-    MoveControlSwayDescription();
 
 public:
     // virtual functions

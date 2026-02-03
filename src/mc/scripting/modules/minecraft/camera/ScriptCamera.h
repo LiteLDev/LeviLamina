@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
@@ -30,7 +31,7 @@ struct ScriptCamera {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf4cfb1;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntityRef;
     // NOLINTEND
 
 public:
@@ -42,21 +43,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> clearCamera() const;
+    MCAPI ::Scripting::Result_deprecated<void> clearCamera() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> playAnimation(
+    MCAPI ::Scripting::Result_deprecated<void> playAnimation(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCatmullRomSpline>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLinearSpline>> const& spline,
         ::ScriptModuleMinecraft::ScriptAnimationOptions                                               animationOptions
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera(
+    MCAPI ::Scripting::Result_deprecated<void> setCamera(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -68,10 +69,10 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     setCameraWithEase(::std::string const& cameraPreset, ::ScriptModuleMinecraft::ScriptEaseOptions easeOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V1(
+    MCAPI ::Scripting::Result_deprecated<void> setCamera_V1(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -83,7 +84,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V2(
+    MCAPI ::Scripting::Result_deprecated<void> setCamera_V2(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -94,19 +95,19 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDefaultCamera(
+    MCAPI ::Scripting::Result_deprecated<void> setDefaultCamera(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions> easeOptions
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void>
+    MCAPI ::Scripting::Result_deprecated<void>
     setFov(::std::optional<::ScriptModuleMinecraft::ScriptCameraFovOptions> fovOptions) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

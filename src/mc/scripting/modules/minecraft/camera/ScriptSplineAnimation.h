@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptProgressKeyFrame; }
+namespace ScriptModuleMinecraft { struct ScriptRotationKeyFrame; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -13,8 +15,8 @@ struct ScriptSplineAnimation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk512343;
-    ::ll::UntypedStorage<8, 24> mUnk38570a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptProgressKeyFrame>> mProgressKeyFrames;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptRotationKeyFrame>> mRotationKeyFrames;
     // NOLINTEND
 
 public:
@@ -26,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptSplineAnimation& operator=(::ScriptModuleMinecraft::ScriptSplineAnimation&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptSplineAnimation& operator=(::ScriptModuleMinecraft::ScriptSplineAnimation&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

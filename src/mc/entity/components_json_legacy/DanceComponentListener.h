@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onLevelSoundEvent(
+    MCAPI void _onLevelSoundEvent(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int,
@@ -41,6 +41,6 @@ public:
         bool
     );
 
-    MCNAPI void setLevel(::Level& level);
+    MCAPI void setLevel(::Level& level);
     // NOLINTEND
 };

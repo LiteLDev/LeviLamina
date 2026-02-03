@@ -15,25 +15,25 @@ class ScriptBlockBoundingBoxUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::BoundingBox createValid(::Vec3 const& min, ::Vec3 max);
+    MCAPI static ::BoundingBox createValid(::Vec3 const& min, ::Vec3 max);
 
-    MCNAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
+    MCAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
 
-    MCNAPI static ::BoundingBox expand(::BoundingBox const& box, ::BoundingBox const& other);
+    MCAPI static ::BoundingBox expand(::BoundingBox const& box, ::BoundingBox const& other);
 
-    MCNAPI static ::Vec3 getCenter(::BoundingBox const& box);
+    MCAPI static ::Vec3 getCenter(::BoundingBox const& box);
 
-    MCNAPI static ::std::optional<::BoundingBox> getIntersection(::BoundingBox const& box, ::BoundingBox const& other);
+    MCAPI static ::std::optional<::BoundingBox> getIntersection(::BoundingBox const& box, ::BoundingBox const& other);
 
-    MCNAPI static ::Vec3 getSpan(::BoundingBox const& box);
+    MCAPI static ::Vec3 getSpan(::BoundingBox const& box);
 
-    MCNAPI static bool intersects(::BoundingBox const& box, ::BoundingBox const& other);
+    MCAPI static bool intersects(::BoundingBox const& box, ::BoundingBox const& other);
 
-    MCNAPI static bool isInside(::BoundingBox const& box, ::Vec3 const& pos);
+    MCAPI static bool isInside(::BoundingBox const& box, ::Vec3 const& pos);
 
-    MCNAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
+    MCAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };
 

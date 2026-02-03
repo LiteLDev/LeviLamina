@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionDescriptor;
+struct Description;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,14 +19,8 @@ class MovementScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2e33dd;
+    ::ll::TypedStorage<8, 8, ::Description* ::ActorDefinitionDescriptor::*> mDescriptionMember;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementScriptActorComponent& operator=(MovementScriptActorComponent const&);
-    MovementScriptActorComponent(MovementScriptActorComponent const&);
-    MovementScriptActorComponent();
 
 public:
     // virtual functions
@@ -37,13 +33,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
+    MCAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
 
 
     // NOLINTEND

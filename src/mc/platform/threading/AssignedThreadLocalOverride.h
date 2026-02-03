@@ -2,14 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class AssignedThread; }
+// clang-format on
+
 namespace Bedrock::Threading {
 
 class AssignedThreadLocalOverride {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8b1e39;
-    ::ll::UntypedStorage<4, 4> mUnk806fd8;
+    ::ll::TypedStorage<8, 8, ::Bedrock::Threading::AssignedThread&> mTarget;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>                     mPreviousId;
     // NOLINTEND
 
 public:

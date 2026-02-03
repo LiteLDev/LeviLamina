@@ -31,15 +31,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockLavaContainerComponent(::ScriptModuleMinecraft::ScriptBlockLavaContainerComponent const&);
+    MCAPI ScriptBlockLavaContainerComponent(::ScriptModuleMinecraft::ScriptBlockLavaContainerComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::optional<
+    MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLavaContainerComponent>>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -47,13 +47,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockLavaContainerComponent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockLavaContainerComponent const&);
     // NOLINTEND
 
 public:

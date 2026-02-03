@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct InterfaceBinding; }
@@ -13,10 +17,10 @@ struct ScriptPlayerAimAssistSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk680e7f;
-    ::ll::UntypedStorage<4, 12> mUnk7faab5;
-    ::ll::UntypedStorage<4, 8>  mUnk87c1e6;
-    ::ll::UntypedStorage<1, 2>  mUnke263f3;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mPresetId;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>                       mViewAngle;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mDistance;
+    ::ll::TypedStorage<1, 2, ::std::optional<::CameraAimAssist::TargetMode>> mTargetMode;
     // NOLINTEND
 
 public:
@@ -27,25 +31,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
     operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
     operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings const&);
 
-    MCNAPI ~ScriptPlayerAimAssistSettings();
+    MCAPI ~ScriptPlayerAimAssistSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

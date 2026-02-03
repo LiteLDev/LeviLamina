@@ -5,41 +5,41 @@
 namespace FlockingDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& BLOCK_DISTANCE();
+MCAPI float const& BLOCK_DISTANCE();
 
-MCNAPI float const& BLOCK_WEIGHT();
+MCAPI float const& BLOCK_WEIGHT();
 
-MCNAPI float const& BREACH_INFLUENCE();
+MCAPI float const& BREACH_INFLUENCE();
 
-MCNAPI float const& COHESION_THRESHOLD();
+MCAPI float const& COHESION_THRESHOLD();
 
-MCNAPI float const& COHESION_WEIGHT();
+MCAPI float const& COHESION_WEIGHT();
 
-MCNAPI float const& GOAL_WEIGHT();
+MCAPI float const& GOAL_WEIGHT();
 
-MCNAPI int const& HIGH_FLOCK_LIMIT();
+MCAPI int const& HIGH_FLOCK_LIMIT();
 
-MCNAPI float const& INFLUENCE_RADIUS();
+MCAPI float const& INFLUENCE_RADIUS();
 
-MCNAPI float const& INNER_COHESION_THRESHOLD();
+MCAPI float const& INNER_COHESION_THRESHOLD();
 
-MCNAPI bool const& IN_WATER();
+MCAPI bool const& IN_WATER();
 
-MCNAPI float const& LONER_CHANCE();
+MCAPI float const& LONER_CHANCE();
 
-MCNAPI int const& LOW_FLOCK_LIMIT();
+MCAPI int const& LOW_FLOCK_LIMIT();
 
-MCNAPI bool const& MATCH_VARIANTS();
+MCAPI bool const& MATCH_VARIANTS();
 
-MCNAPI float const& MAX_HEIGHT();
+MCAPI float const& MAX_HEIGHT();
 
-MCNAPI float const& MIN_HEIGHT();
+MCAPI float const& MIN_HEIGHT();
 
-MCNAPI float const& SEPARATION_THRESHOLD();
+MCAPI float const& SEPARATION_THRESHOLD();
 
-MCNAPI float const& SEPARATION_WEIGHT();
+MCAPI float const& SEPARATION_WEIGHT();
 
-MCNAPI bool const& USE_CENTER_OF_MASS();
+MCAPI bool const& USE_CENTER_OF_MASS();
 // NOLINTEND
 
 } // namespace FlockingDefaults

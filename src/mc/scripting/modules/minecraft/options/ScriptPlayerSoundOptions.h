@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct Error; }
@@ -14,27 +17,21 @@ struct ScriptPlayerSoundOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk3c9ff5;
-    ::ll::UntypedStorage<4, 8>  mUnk897870;
-    ::ll::UntypedStorage<4, 8>  mUnkf67b7f;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mLocation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mVolume;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mPitch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPlayerSoundOptions& operator=(ScriptPlayerSoundOptions const&);
-    ScriptPlayerSoundOptions(ScriptPlayerSoundOptions const&);
-    ScriptPlayerSoundOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::Error> validate() const;
+    MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/scripting/modules/minecraft/loot_tables/conditions/ScriptLootItemCondition.h"
 
 // auto generated forward declare list
 // clang-format off
+class LootItemMatchToolCondition;
 namespace ScriptModuleMinecraft { class ScriptEnchantInfo; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -18,9 +20,14 @@ class ScriptMatchToolCondition : public ::ScriptModuleMinecraft::ScriptLootItemC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk227ce4;
-    ::ll::UntypedStorage<8, 8>  mUnk63f893;
-    ::ll::UntypedStorage<8, 32> mUnk79d519;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>     mScope;
+    ::ll::TypedStorage<8, 8, ::LootItemMatchToolCondition const&> mCondition;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>>>
+        mEnchantInfos;
     // NOLINTEND
 
 public:
@@ -32,20 +39,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
     getEnchantments();
 
-    MCNAPI ::std::vector<::std::string> const getItemTagsAll();
+    MCAPI ::std::vector<::std::string> const getItemTagsAll();
 
-    MCNAPI ::std::vector<::std::string> const getItemTagsAny() const;
+    MCAPI ::std::vector<::std::string> const getItemTagsAny() const;
 
-    MCNAPI ::std::vector<::std::string> const getItemTagsNone() const;
+    MCAPI ::std::vector<::std::string> const getItemTagsNone() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

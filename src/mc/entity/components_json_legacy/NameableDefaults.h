@@ -5,9 +5,9 @@
 namespace NameableDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI bool const& ALLOW_NAMETAG_RENAMING();
+MCAPI bool const& ALLOW_NAMETAG_RENAMING();
 
-MCNAPI bool const& ALWAYS_SHOW();
+MCAPI bool const& ALWAYS_SHOW();
 // NOLINTEND
 
 } // namespace NameableDefaults

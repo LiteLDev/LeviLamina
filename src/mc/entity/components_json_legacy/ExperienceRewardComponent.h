@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int getOnDeathExperience(::Actor& owner) const;
+    MCAPI int getOnDeathExperience(::Actor& owner) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& mIsExperienceDropEnabledTag();
+    MCAPI static ::std::string const& mIsExperienceDropEnabledTag();
     // NOLINTEND
 };

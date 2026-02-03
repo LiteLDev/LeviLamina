@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/modules/minecraft/ScriptActorEventFilterData.h"
+
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptDataDrivenActorTriggerEventFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk39ab08;
-    ::ll::UntypedStorage<8, 56> mUnk5d0576;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                     mEventType;
+    ::ll::TypedStorage<8, 56, ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData> mActorData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDataDrivenActorTriggerEventFilterData& operator=(ScriptDataDrivenActorTriggerEventFilterData const&);
-    ScriptDataDrivenActorTriggerEventFilterData(ScriptDataDrivenActorTriggerEventFilterData const&);
-    ScriptDataDrivenActorTriggerEventFilterData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptDataDrivenActorTriggerEventFilterData();
+    MCAPI ~ScriptDataDrivenActorTriggerEventFilterData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

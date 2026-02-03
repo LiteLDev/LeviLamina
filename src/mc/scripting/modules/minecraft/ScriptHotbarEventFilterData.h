@@ -8,14 +8,8 @@ struct ScriptHotbarEventFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke8ed8c;
+    ::ll::TypedStorage<4, 4, int> mSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptHotbarEventFilterData& operator=(ScriptHotbarEventFilterData const&);
-    ScriptHotbarEventFilterData(ScriptHotbarEventFilterData const&);
-    ScriptHotbarEventFilterData();
 };
 
 } // namespace ScriptModuleMinecraft::EventFilters

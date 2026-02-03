@@ -8,7 +8,7 @@
 namespace Bedrock::Threading::AsyncResult {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Bedrock::Threading::Async<void> done();
+MCAPI ::Bedrock::Threading::Async<void> done();
 // NOLINTEND
 
 } // namespace Bedrock::Threading::AsyncResult

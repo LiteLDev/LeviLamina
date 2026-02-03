@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     accumulatesSnow() const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -42,13 +42,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

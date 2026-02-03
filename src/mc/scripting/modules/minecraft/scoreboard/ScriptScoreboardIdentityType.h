@@ -13,9 +13,9 @@ struct ScriptScoreboardIdentityType {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::EnumBinding bindV010();
+    MCAPI static ::Scripting::EnumBinding bindV010();
 
-    MCNAPI static ::Scripting::EnumBinding bindV1();
+    MCAPI static ::Scripting::EnumBinding bindV1();
     // NOLINTEND
 };
 

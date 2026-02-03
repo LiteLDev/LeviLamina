@@ -44,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~MatingResult();
+        MCAPI ~MatingResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -68,46 +68,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem);
+    MCAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem);
 
-    MCNAPI ::std::optional<::BreedableType> _determineBreedType(::Actor const& partner) const;
+    MCAPI ::std::optional<::BreedableType> _determineBreedType(::Actor const& partner) const;
 
-    MCNAPI ::Actor* _handleMate(::Actor& owner, ::Actor& partner);
+    MCAPI ::Actor* _handleMate(::Actor& owner, ::Actor& partner);
 
-    MCNAPI void _handlePregnancy(::Actor& owner, ::Actor& partner);
+    MCAPI void _handlePregnancy(::Actor& owner, ::Actor& partner);
 
-    MCNAPI bool _meetsEnvironmentRequirements(::Actor& owner) const;
+    MCAPI bool _meetsEnvironmentRequirements(::Actor& owner) const;
 
-    MCNAPI void _spawnExperienceOrbs(::Actor& owner);
+    MCAPI void _spawnExperienceOrbs(::Actor& owner);
 
-    MCNAPI void _spawnLoveParticles(::Actor& owner);
+    MCAPI void _spawnLoveParticles(::Actor& owner);
 
-    MCNAPI void _useBreedItem(
+    MCAPI void _useBreedItem(
         ::Actor&  owner,
         ::Player& player,
         ::ItemStack const&,
         ::std::optional<::ItemDescriptor> const& resultItem
     );
 
-    MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCNAPI ::Player* getLoveCause(::Actor const& owner) const;
+    MCAPI ::Player* getLoveCause(::Actor const& owner) const;
 
-    MCNAPI ::BreedableComponent::MatingResult mate(::Actor& owner, ::Actor& partner);
+    MCAPI ::BreedableComponent::MatingResult mate(::Actor& owner, ::Actor& partner);
 
-    MCNAPI bool meetsSittingRequirements(::Actor const& actor) const;
+    MCAPI bool meetsSittingRequirements(::Actor const& actor) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void setOffspringAttributes(
+    MCAPI static void setOffspringAttributes(
         ::MutableAttributeWithContext& offspring,
         ::AttributeInstanceConstRef    owner,
         ::AttributeInstanceConstRef    partner
     );
 
-    MCNAPI static void setOffspringAttributesWithParentCentricBlending(
+    MCAPI static void setOffspringAttributesWithParentCentricBlending(
         ::MutableAttributeWithContext& offspring,
         ::AttributeInstanceConstRef    owner,
         ::AttributeInstanceConstRef    partner,

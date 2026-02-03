@@ -16,7 +16,7 @@ class ScriptItemUtilities {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::Result_deprecated<schar> getCompostingChanceOrError(::ItemStackBase const& item);
+    MCAPI static ::Scripting::Result_deprecated<schar> getCompostingChanceOrError(::ItemStackBase const& item);
     // NOLINTEND
 };
 

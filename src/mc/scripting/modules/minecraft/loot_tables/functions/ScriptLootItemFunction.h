@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,8 +19,13 @@ class ScriptLootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkba58a7;
-    ::ll::UntypedStorage<8, 32> mUnkf678f6;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>>>
+        mConditions;
     // NOLINTEND
 
 public:
@@ -38,17 +44,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
     getConditions();
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptLootItemFunction&
+    MCAPI ::ScriptModuleMinecraft::ScriptLootItemFunction&
     operator=(::ScriptModuleMinecraft::ScriptLootItemFunction const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

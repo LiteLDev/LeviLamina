@@ -19,35 +19,23 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk8183f0;
+        ::ll::TypedStorage<4, 4, uint> mValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SequenceId& operator=(SequenceId const&);
-        SequenceId(SequenceId const&);
-        SequenceId();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdd11a0;
-    ::ll::UntypedStorage<4, 4> mUnk4e67be;
+    ::ll::TypedStorage<4, 4, ::std::thread::id>   mOwningThreadId;
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mAtom;
     union {
         struct {
-            uint mUnk851e4f : 31;
-            uint mUnk2d3b17 : 1;
+            uint mRecursionCounter : 31;
+            uint mTestEnabledFlag  : 1;
         };
-        ::ll::UntypedStorage<4, 4> mUnk8c1911;
+        ::ll::TypedStorage<4, 4, uint> mBitfieldData;
     };
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SequenceLock& operator=(SequenceLock const&);
-    SequenceLock(SequenceLock const&);
-    SequenceLock();
 };
 
 } // namespace Bedrock::Threading

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/definitions/MoveControlDescription.h"
+#include "mc/util/FloatRange.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,14 +15,8 @@ struct SlimeMoveControlDescription : public ::MoveControlDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk55085e;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mJumpDelayTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlimeMoveControlDescription& operator=(SlimeMoveControlDescription const&);
-    SlimeMoveControlDescription(SlimeMoveControlDescription const&);
-    SlimeMoveControlDescription();
 
 public:
     // virtual functions

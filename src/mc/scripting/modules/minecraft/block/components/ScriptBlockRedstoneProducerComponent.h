@@ -25,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::vector<::ScriptModuleMinecraft::ScriptFacing>,
         ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
     getConnectedFaces() const;
 
-    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getPower() const;
+    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError> getPower() const;
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::std::optional<::ScriptModuleMinecraft::ScriptFacing>,
         ::ScriptModuleMinecraft::ScriptBlockInvalidComponentError>
     getStronglyPoweredFace() const;
@@ -41,13 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ComponentId();
+    MCAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

@@ -8,15 +8,9 @@ class Default {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6fabea;
-    ::ll::UntypedStorage<8, 8> mUnk841394;
+    ::ll::TypedStorage<8, 8, uint64> mPrimaryWorkerCount;
+    ::ll::TypedStorage<8, 8, uint64> mSecondaryWorkerCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Default& operator=(Default const&);
-    Default(Default const&);
-    Default();
 };
 
 } // namespace Bedrock::Threading::Burst::Strategy

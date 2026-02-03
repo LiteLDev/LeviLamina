@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptContainer.h"
 
@@ -19,7 +20,7 @@ class ScriptInventoryComponentContainer : public ::ScriptModuleMinecraft::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk84a036;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntityRef;
     // NOLINTEND
 
 public:
@@ -42,30 +43,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptInventoryComponentContainer&
+    MCFOLD ::ScriptModuleMinecraft::ScriptInventoryComponentContainer&
     operator=(::ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCNAPI ::Container* $_tryGetContainer() const;
+    MCAPI ::Container* $_tryGetContainer() const;
 
-    MCNAPI ::ItemContext $_getItemContext(int slot) const;
+    MCFOLD ::ItemContext $_getItemContext(int slot) const;
 
 
     // NOLINTEND

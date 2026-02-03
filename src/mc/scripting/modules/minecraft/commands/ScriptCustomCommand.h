@@ -10,6 +10,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+namespace ScriptModuleMinecraft { class CommandClosureStorage; }
+namespace ScriptModuleMinecraft { class ParamStorageBase; }
 namespace ScriptModuleMinecraft { class ScriptCustomCommandOrigin; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -20,15 +22,10 @@ class ScriptCustomCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke038de;
-    ::ll::UntypedStorage<8, 24> mUnk2df370;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptModuleMinecraft::CommandClosureStorage>> mClosureStorage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>>>
+        mParamStorage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCustomCommand& operator=(ScriptCustomCommand const&);
-    ScriptCustomCommand(ScriptCustomCommand const&);
-    ScriptCustomCommand();
 
 public:
     // virtual functions

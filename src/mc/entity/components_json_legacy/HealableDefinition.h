@@ -29,15 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addFeedItem(::FeedItem const& feedItem);
+    MCAPI void addFeedItem(::FeedItem const& feedItem);
 
-    MCNAPI void addFeedItemByName(::std::string const& itemName);
+    MCAPI void addFeedItemByName(::std::string const& itemName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HealableDefinition>>& root
     );
     // NOLINTEND

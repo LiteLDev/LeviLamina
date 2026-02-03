@@ -8,15 +8,9 @@ struct WorkTargetItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5e9a9e;
-    ::ll::UntypedStorage<8, 8> mUnk2a3809;
+    ::ll::TypedStorage<8, 8, uint64> mWorkerCount;
+    ::ll::TypedStorage<8, 8, uint64> mKickCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorkTargetItem& operator=(WorkTargetItem const&);
-    WorkTargetItem(WorkTargetItem const&);
-    WorkTargetItem();
 };
 
 } // namespace Bedrock::Threading::Burst::Details

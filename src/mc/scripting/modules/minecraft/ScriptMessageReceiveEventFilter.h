@@ -12,35 +12,33 @@ namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptMessageReceiveEventFilter {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke1af0d;
-    // NOLINTEND
+    // ScriptMessageReceiveEventFilter inner types define
+    using Data = ::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData;
 
 public:
-    // prevent constructor by default
-    ScriptMessageReceiveEventFilter& operator=(ScriptMessageReceiveEventFilter const&);
-    ScriptMessageReceiveEventFilter(ScriptMessageReceiveEventFilter const&);
-    ScriptMessageReceiveEventFilter();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mNamespaceIds;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
+    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
 
-    MCNAPI ~ScriptMessageReceiveEventFilter();
+    MCAPI ~ScriptMessageReceiveEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bind();
+    MCAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EnableQueueForMainThread(::std::string name);
+    MCAPI explicit EnableQueueForMainThread(::std::string name);
 
-    MCNAPI EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
+    MCAPI EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
+    MCAPI_C ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
+    MCAPI_C ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name);
+    MCAPI void* $ctor(::std::string name);
 
-    MCNAPI void* $ctor(::WorkerPool&, ::Scheduler&, ::std::string);
+    MCAPI void* $ctor(::WorkerPool&, ::Scheduler&, ::std::string);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

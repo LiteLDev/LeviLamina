@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/InstancedThreadLocalValue.h"
 #include "mc/deps/core/threading/SharedRecursiveMutexBase.h"
 
 namespace Bedrock::Threading {
@@ -11,14 +12,8 @@ class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk2c8389;
+    ::ll::TypedStorage<4, 8, ::Bedrock::Threading::InstancedThreadLocalValue<uint>> mSharedRecursionCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SharedRecursiveMutex& operator=(SharedRecursiveMutex const&);
-    SharedRecursiveMutex(SharedRecursiveMutex const&);
-    SharedRecursiveMutex();
 
 public:
     // virtual functions
@@ -35,17 +30,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_threadHoldsSharedLock(::std::thread::id);
+    MCAPI bool $_threadHoldsSharedLock(::std::thread::id);
 
-    MCNAPI bool $_shouldLockForSharedAccess(::std::thread::id);
+    MCAPI bool $_shouldLockForSharedAccess(::std::thread::id);
 
-    MCNAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
+    MCAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
 
 
     // NOLINTEND

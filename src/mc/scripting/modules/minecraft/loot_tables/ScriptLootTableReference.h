@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class LootPoolEntry;
+class LootTableReference;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -17,7 +18,7 @@ class ScriptLootTableReference : public ::ScriptModuleMinecraft::ScriptLootPoolE
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7b67fd;
+    ::ll::TypedStorage<8, 8, ::LootTableReference const&> mLootTableReference;
     // NOLINTEND
 
 public:
@@ -37,19 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string const getPath() const;
+    MCAPI ::std::string const getPath() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootPoolEntry const& $_getEntry() const;
+    MCFOLD ::LootPoolEntry const& $_getEntry() const;
 
 
     // NOLINTEND

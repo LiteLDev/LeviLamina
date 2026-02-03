@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
@@ -17,8 +18,8 @@ class ScriptMobEffectInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6f7818;
-    ::ll::UntypedStorage<8, 24> mUnke266c8;
+    ::ll::TypedStorage<4, 4, uint>             mEffectIdx;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntityRef;
     // NOLINTEND
 
 public:
@@ -30,28 +31,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
+    MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCNAPI ::std::string getDisplayName_010() const;
+    MCAPI ::std::string getDisplayName_010() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> getDuration() const;
+    MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
+    MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
     operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
-    MCNAPI ::MobEffectInstance const* tryGetEffect() const;
+    MCAPI ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

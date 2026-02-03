@@ -54,28 +54,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlockingComponent(::FlockingComponent&&);
+    MCAPI FlockingComponent(::FlockingComponent&&);
 
-    MCNAPI void calculateFlockVector(::Actor const& owner);
+    MCAPI void calculateFlockVector(::Actor const& owner);
 
-    MCNAPI bool canJoinFlock(::Actor& owner) const;
+    MCAPI bool canJoinFlock(::Actor& owner) const;
 
-    MCNAPI void joinFlock(::Actor& owner);
+    MCAPI void joinFlock(::Actor& owner);
 
-    MCNAPI void manageNeighborhood(::Actor& owner);
+    MCAPI void manageNeighborhood(::Actor& owner);
 
-    MCNAPI void mergeNeighborhoods(::Actor& owner);
+    MCAPI void mergeNeighborhoods(::Actor& owner);
 
-    MCNAPI ::FlockingComponent& operator=(::FlockingComponent&&);
+    MCAPI ::FlockingComponent& operator=(::FlockingComponent&&);
 
-    MCNAPI void updateNeighborhoodData(::Actor const& owner);
+    MCAPI void updateNeighborhoodData(::Actor const& owner);
 
-    MCNAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
+    MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FlockingComponent&&);
+    MCAPI void* $ctor(::FlockingComponent&&);
     // NOLINTEND
 };

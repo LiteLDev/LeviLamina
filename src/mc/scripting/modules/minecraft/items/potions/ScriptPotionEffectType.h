@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Potion;
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
 // clang-format on
@@ -17,7 +18,7 @@ class ScriptPotionEffectType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb244c9;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Potion const>>> mPotion;
     // NOLINTEND
 
 public:
@@ -29,18 +30,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
+    MCAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
 
-    MCNAPI ::std::string getPotionNameIdWithPrefix();
+    MCAPI ::std::string getPotionNameIdWithPrefix();
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptPotionEffectType&
+    MCFOLD ::ScriptModuleMinecraft::ScriptPotionEffectType&
     operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -2,8 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptDimension; }
+namespace ScriptModuleMinecraft { class ScriptEntitySpawnType; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,33 +19,29 @@ class ScriptObstructionCallbackArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk847410;
-    ::ll::UntypedStorage<8, 32> mUnk644e39;
-    ::ll::UntypedStorage<8, 32> mUnkce0eb2;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEntitySpawnType>>
+        mEntitySpawnType;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mEntity;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+        mDimension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptObstructionCallbackArgs& operator=(ScriptObstructionCallbackArgs const&);
-    ScriptObstructionCallbackArgs(ScriptObstructionCallbackArgs const&);
-    ScriptObstructionCallbackArgs();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptObstructionCallbackArgs();
+    MCAPI ~ScriptObstructionCallbackArgs();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

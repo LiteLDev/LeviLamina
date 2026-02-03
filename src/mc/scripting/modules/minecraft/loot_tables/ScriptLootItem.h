@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class LootItem;
 class LootPoolEntry;
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptLootItemFunction; }
@@ -20,8 +21,13 @@ class ScriptLootItem : public ::ScriptModuleMinecraft::ScriptLootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1c74a4;
-    ::ll::UntypedStorage<8, 32> mUnk746251;
+    ::ll::TypedStorage<8, 8, ::LootItem const&> mLootItem;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<
+            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>>>>
+        mFunctions;
     // NOLINTEND
 
 public:
@@ -41,23 +47,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>>
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>>
     getFunctions();
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getName() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::LootPoolEntry const& $_getEntry() const;
+    MCFOLD ::LootPoolEntry const& $_getEntry() const;
 
 
     // NOLINTEND

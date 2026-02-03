@@ -20,27 +20,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptInvalidContainerError(::std::string_view functionName);
+    MCAPI explicit ScriptInvalidContainerError(::std::string_view functionName);
 
-    MCNAPI ~ScriptInvalidContainerError();
+    MCAPI ~ScriptInvalidContainerError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ErrorBinding bind();
+    MCAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view functionName);
+    MCAPI void* $ctor(::std::string_view functionName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

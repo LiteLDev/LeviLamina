@@ -22,22 +22,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BoostItem(::BoostItem const&);
+    MCAPI BoostItem(::BoostItem const&);
 
-    MCNAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
+    MCAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
 
-    MCNAPI ~BoostItem();
+    MCAPI ~BoostItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BoostItem const&);
+    MCFOLD void* $ctor(::BoostItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

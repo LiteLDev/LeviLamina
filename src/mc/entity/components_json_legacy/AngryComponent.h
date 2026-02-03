@@ -39,18 +39,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
+    MCAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
 
-    MCNAPI ::AngryComponent& operator=(::AngryComponent&&);
+    MCAPI ::AngryComponent& operator=(::AngryComponent&&);
 
-    MCNAPI void restartTimer(::Mob& owner);
+    MCAPI void restartTimer(::Mob& owner);
 
-    MCNAPI ~AngryComponent();
+    MCAPI ~AngryComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace ScriptModuleMinecraft::EventFilters {
 // functions
 // NOLINTBEGIN
-MCNAPI void bindFilters(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCAPI void bindFilters(::Scripting::ModuleBindingBuilder& moduleBuilder);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::EventFilters

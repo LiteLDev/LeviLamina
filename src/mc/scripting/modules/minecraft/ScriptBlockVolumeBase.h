@@ -12,6 +12,7 @@
 // clang-format off
 class BaseBlockLocationIterator;
 class BlockPos;
+class BlockVolumeBase;
 class BoundingBox;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptBlockLocationIterator; }
@@ -26,14 +27,8 @@ class ScriptBlockVolumeBase : public ::ScriptModuleMinecraft::ScriptBlockVolumeI
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb35746;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::BlockVolumeBase>>> mBlockVolumeBase;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockVolumeBase& operator=(ScriptBlockVolumeBase const&);
-    ScriptBlockVolumeBase(ScriptBlockVolumeBase const&);
-    ScriptBlockVolumeBase();
 
 public:
     // virtual functions
@@ -49,27 +44,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCAPI void forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
+    MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
 
-    MCNAPI int getCapacity() const;
+    MCFOLD int getCapacity() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
 
-    MCNAPI ::Vec3 getSpan() const;
+    MCAPI ::Vec3 getSpan() const;
 
-    MCNAPI bool isInside(::Vec3 const& location) const;
+    MCAPI bool isInside(::Vec3 const& location) const;
 
-    MCNAPI void translate(::Vec3 const& delta);
+    MCAPI void translate(::Vec3 const& delta);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

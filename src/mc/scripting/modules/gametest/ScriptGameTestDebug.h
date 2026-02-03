@@ -13,9 +13,9 @@ class ScriptGameTestDebug {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static void timeout(int seconds);
+    MCAPI static void timeout(int seconds);
     // NOLINTEND
 };
 

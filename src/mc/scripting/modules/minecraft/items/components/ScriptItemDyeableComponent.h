@@ -35,30 +35,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemDyeableComponent(
+    MCAPI ScriptItemDyeableComponent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getColor();
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getColor();
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getDefaultColor();
+    MCAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getDefaultColor();
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::InvalidArgumentError>
+    MCAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::InvalidArgumentError>
     setColor(::std::optional<::ScriptModuleMinecraft::ScriptRGB> const& color);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
+    MCAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::WeakLifetimeScope const&                                          scope
     );

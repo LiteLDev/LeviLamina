@@ -2,24 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/network/NetworkStatisticsConfig.h"
+#include "mc/network/PermissionIPv6.h"
+#include "mc/network/PermissionLAN.h"
+#include "mc/network/RakNetServerLANVisibility.h"
+
 struct NetworkSystemToggles {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk800449;
-    ::ll::UntypedStorage<4, 4>  mUnk2b5faf;
-    ::ll::UntypedStorage<4, 4>  mUnk8878a0;
-    ::ll::UntypedStorage<1, 1>  mUnke93752;
-    ::ll::UntypedStorage<1, 1>  mUnk8e237b;
-    ::ll::UntypedStorage<4, 4>  mUnk812812;
-    ::ll::UntypedStorage<1, 1>  mUnk7c6115;
-    ::ll::UntypedStorage<8, 16> mUnkdb7d23;
-    ::ll::UntypedStorage<2, 2>  mUnkb2d6a8;
+    ::ll::TypedStorage<4, 4, ::PermissionLAN>                          permissionLAN;
+    ::ll::TypedStorage<4, 4, ::PermissionIPv6>                         permissionIPv6;
+    ::ll::TypedStorage<4, 4, ::NetworkStatisticsConfig>                statsConfig;
+    ::ll::TypedStorage<1, 1, bool>                                     disableLanSignaling;
+    ::ll::TypedStorage<1, 1, bool>                                     disableTrickleIce;
+    ::ll::TypedStorage<4, 4, ::RakNetServerLANVisibility>              allowLanDiscovery;
+    ::ll::TypedStorage<1, 1, bool>                                     enablePacketRateLimiting;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>> netherNetTimeout;
+    ::ll::TypedStorage<2, 2, ushort>                                   preferredPort;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkSystemToggles& operator=(NetworkSystemToggles const&);
-    NetworkSystemToggles(NetworkSystemToggles const&);
-    NetworkSystemToggles();
 };

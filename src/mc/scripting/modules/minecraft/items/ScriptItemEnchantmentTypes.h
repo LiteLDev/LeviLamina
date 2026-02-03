@@ -17,32 +17,38 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentTypes {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk419799;
-    // NOLINTEND
+    // ScriptItemEnchantmentTypes inner types define
+    using EnchantmentTypesMap = ::std::unordered_map<
+        ::Enchant::Type,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>;
 
 public:
-    // prevent constructor by default
-    ScriptItemEnchantmentTypes& operator=(ScriptItemEnchantmentTypes const&);
-    ScriptItemEnchantmentTypes(ScriptItemEnchantmentTypes const&);
-    ScriptItemEnchantmentTypes();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::Enchant::Type,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>>
+        mEnchantments;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCAPI void _generateAllEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
+    MCAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
     get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

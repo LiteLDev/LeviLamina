@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class IScriptItemCustomComponentWriter; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentNameError; }
@@ -28,7 +29,7 @@ class ScriptItemComponentRegistry
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3564a8;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::IScriptItemCustomComponentWriter&> mCustomComponentWriter;
     // NOLINTEND
 
 public:
@@ -40,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -55,7 +56,7 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface closures
     );
 
-    MCNAPI ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptCustomComponentNameError,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
@@ -74,7 +75,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

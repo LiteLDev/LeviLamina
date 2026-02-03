@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -13,25 +17,19 @@ class ScriptDimensionType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2919eb;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDimensionType& operator=(ScriptDimensionType const&);
-    ScriptDimensionType(ScriptDimensionType const&);
-    ScriptDimensionType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getTypeId() const;
+    MCAPI ::std::string getTypeId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& module);
+    MCAPI static void bind(::Scripting::ModuleBindingBuilder& module);
     // NOLINTEND
 };
 
