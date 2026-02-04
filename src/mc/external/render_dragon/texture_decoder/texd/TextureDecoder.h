@@ -6,5 +6,5 @@ struct CompressedBlockInfo;
 };
 
 namespace texd {
-CompressedBlockInfo getCompressedBlockSize(CompressionScheme scheme);
+LLAPI CompressedBlockInfo getCompressedBlockSize(CompressionScheme scheme);
 };

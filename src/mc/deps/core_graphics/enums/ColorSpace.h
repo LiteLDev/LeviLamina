@@ -12,6 +12,6 @@ enum class ColorSpace : uchar {
     Linear  = 2,
 };
 
-cg::ColorSpace translateImageUsage(const mce::ImageUsage imageUsage);
+LLAPI cg::ColorSpace translateImageUsage(const mce::ImageUsage imageUsage);
 
 } // namespace cg

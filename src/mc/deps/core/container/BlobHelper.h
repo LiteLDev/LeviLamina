@@ -9,7 +9,7 @@ namespace mce { class Blob; }
 
 namespace mce::BlobHelper {
 
-mce::Blob clone(const mce::Blob& blob);
+LLAPI mce::Blob clone(const mce::Blob& blob);
 
 // functions
 // NOLINTBEGIN

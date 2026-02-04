@@ -72,6 +72,6 @@ enum class TextureFormat : uint {
     R8g8b8Unorm          = 145,
 };
 
-mce::TextureFormat translateImageFormat(const mce::ImageFormat imageFormat);
+LLAPI mce::TextureFormat translateImageFormat(const mce::ImageFormat imageFormat);
 
 } // namespace mce
