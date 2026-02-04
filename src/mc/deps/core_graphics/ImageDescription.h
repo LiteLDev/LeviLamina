@@ -18,8 +18,8 @@ namespace mce { struct Image; }
 namespace cg {
 
 struct ImageDescription {
-    ImageDescription();
-    ImageDescription(
+    LLAPI ImageDescription();
+    LLAPI ImageDescription(
         uint32             width,
         uint32             height,
         mce::TextureFormat format,
@@ -27,21 +27,21 @@ struct ImageDescription {
         cg::ImageType      imageType,
         uint32             arraySizeOrDepth
     );
-    explicit ImageDescription(const mce::Image& image);
+    LLAPI explicit ImageDescription(const mce::Image& image);
     ImageDescription(const ImageDescription&)            = default;
     ImageDescription& operator=(const ImageDescription&) = default;
 
-    bool operator!=(const ImageDescription& rhs) const;
-    bool operator==(const ImageDescription& rhs) const { return !(*this != rhs); }
+    LLAPI bool operator!=(const ImageDescription& rhs) const;
+    bool       operator==(const ImageDescription& rhs) const { return !(*this != rhs); }
 
 
-    void                 setArraySize(uint32 size);
-    [[nodiscard]] uint32 getArraySize() const;
-    [[nodiscard]] uint32 getDepth() const;
-    [[nodiscard]] uint32 getSubimageSize() const;
-    [[nodiscard]] uint64 getStorageSize() const;
+    LLAPI void     setArraySize(uint32 size);
+    LLNDAPI uint32 getArraySize() const;
+    LLNDAPI uint32 getDepth() const;
+    LLNDAPI uint32 getSubimageSize() const;
+    LLNDAPI uint64 getStorageSize() const;
 
-    static uint32 getStrideFromFormat(mce::TextureFormat fmt);
+    LLAPI static uint32 getStrideFromFormat(mce::TextureFormat fmt);
 
     uint32             mWidth{0};
     uint32             mHeight{0};
