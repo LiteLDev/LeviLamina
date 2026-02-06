@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct Step {};
+class Step {};
 
 } // namespace ClientBlockPipeline

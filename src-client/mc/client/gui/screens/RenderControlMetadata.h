@@ -2,30 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/screens/BatchClippingState.h"
+#include "mc/client/gui/screens/BatchVisualState.h"
+
+// auto generated forward declare list
+// clang-format off
+class UIControl;
+// clang-format on
+
 struct RenderControlMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb9a8cf;
-    ::ll::UntypedStorage<4, 20> mUnk819cd8;
-    ::ll::UntypedStorage<4, 8>  mUnk2a3e8a;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIControl>> control;
+    ::ll::TypedStorage<4, 20, ::BatchClippingState>           clippingState;
+    ::ll::TypedStorage<4, 8, ::BatchVisualState>              visualState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderControlMetadata& operator=(RenderControlMetadata const&);
-    RenderControlMetadata(RenderControlMetadata const&);
-    RenderControlMetadata();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~RenderControlMetadata();
+    MCAPI ~RenderControlMetadata();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

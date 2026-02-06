@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct SurfaceExtractionStep {};
+class SurfaceExtractionStep {};
 
 } // namespace ClientBlockPipeline

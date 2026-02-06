@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline::WorldView {
 
-struct BlockSource {};
+class BlockSource {};
 
 } // namespace ClientBlockPipeline::WorldView

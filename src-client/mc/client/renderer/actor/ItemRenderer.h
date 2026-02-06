@@ -16,6 +16,8 @@ class ActorRenderData;
 class BannerBlockActor;
 class BaseActorRenderContext;
 class Block;
+class BlockGraphics;
+class BlockTessellator;
 class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
@@ -24,8 +26,6 @@ class ItemStack;
 class Matrix;
 class SkullBlockActor;
 class Vec3;
-struct BlockGraphics;
-struct BlockTessellator;
 struct ItemGraphics;
 struct TextureUVCoordinateSet;
 namespace dragon { struct RenderMetadata; }

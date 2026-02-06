@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CraftingScreenController {
+class CraftingScreenController {
 public:
     // CraftingScreenController inner types declare
     // clang-format off

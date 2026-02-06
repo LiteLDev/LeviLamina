@@ -32,25 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
+    MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
-    MCNAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
+    MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
-    MCNAPI void addFeedItemByName(::std::string const& itemName);
+    MCAPI void addFeedItemByName(::std::string const& itemName);
 
-    MCNAPI ~AgeableDefinition();
+    MCAPI ~AgeableDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

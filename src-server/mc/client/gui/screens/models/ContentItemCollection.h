@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ContentItemCollection {
+class ContentItemCollection {
 public:
     // ContentItemCollection inner types declare
     // clang-format off

@@ -9,9 +9,9 @@
 // clang-format off
 class ShaderColor;
 namespace mce { class Camera; }
+namespace mce { class GlobalConstantBufferManager; }
 namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
-namespace mce { struct GlobalConstantBufferManager; }
 namespace mce { struct GlobalConstantBuffers; }
 namespace mce { struct ImmediateBuffer; }
 namespace mce { struct QuadIndexBuffer; }

@@ -8,15 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
+class IContentManager;
 class IContentTierManager;
 class IFileAccess;
 class ILevelListCache;
+class LocalPlayer;
 class PackManifestFactory;
 class ResourcePackManager;
 class ServerInstance;
-struct IContentManager;
 struct IOfferRepository;
-struct LocalPlayer;
 struct RealmsAPI;
 struct SunsettingManager;
 namespace Core { class FileSystem; }

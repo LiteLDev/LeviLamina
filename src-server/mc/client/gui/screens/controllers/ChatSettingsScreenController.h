@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ChatSettingsScreenController {
+class ChatSettingsScreenController {
 public:
     // ChatSettingsScreenController inner types declare
     // clang-format off

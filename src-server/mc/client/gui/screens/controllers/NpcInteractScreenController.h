@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NpcInteractScreenController {
+class NpcInteractScreenController {
 public:
     // NpcInteractScreenController inner types declare
     // clang-format off
@@ -10,11 +10,11 @@ public:
     // clang-format on
 
     // NpcInteractScreenController inner types define
+    enum class Section : uchar {};
+
     enum class NpcTextEdit : int {};
 
     enum class NpcTextErrorStatus : uchar {};
-
-    enum class Section : uchar {};
 
     struct NpcActionEditData {};
 };

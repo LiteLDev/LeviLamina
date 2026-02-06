@@ -21,12 +21,12 @@ class IClientInstance;
 class IMinecraftGame;
 class ItemInHandRenderer;
 class ItemRenderer;
+class ParticleSystemEngine;
 class ScreenContext;
 struct ActorBlockRenderer;
 struct BlockActorRenderDispatcher;
 struct DataDrivenRendererContinuousData;
 struct HudIconActorRenderer;
-struct ParticleSystemEngine;
 struct ProcessedDataDrivenRenderers;
 struct SortedMeshDrawList;
 // clang-format on

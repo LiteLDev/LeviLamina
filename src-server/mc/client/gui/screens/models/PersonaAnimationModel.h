@@ -2,16 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaAnimationModel {
+class PersonaAnimationModel {
 public:
     // PersonaAnimationModel inner types declare
     // clang-format off
-    struct ReactAnimationData;
     struct ReactAnimationTypeHash;
+    struct ReactAnimationData;
     // clang-format on
 
     // PersonaAnimationModel inner types define
-    struct ReactAnimationData {};
-
     struct ReactAnimationTypeHash {};
+
+    struct ReactAnimationData {};
 };

@@ -16,12 +16,12 @@ class AABB;
 class Actor;
 class ActorRenderData;
 class BaseActorRenderContext;
+class BlockTessellator;
 class DataDrivenRenderer_tempComponent;
 class Model;
 class RenderParams;
 class Vec3;
 struct ActorResourceDefinition;
-struct BlockTessellator;
 namespace mce { class TextureGroup; }
 // clang-format on
 

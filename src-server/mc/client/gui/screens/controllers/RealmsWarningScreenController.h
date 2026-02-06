@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsWarningScreenController {};
+class RealmsWarningScreenController {};

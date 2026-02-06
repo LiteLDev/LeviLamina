@@ -13,11 +13,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcUIWrapper;
 class Experiments;
+class IContentManager;
 class LevelDataWrapper;
 class LevelSeed64;
-struct DlcUIWrapper;
-struct IContentManager;
 struct LevelSummary;
 struct LocalWorldInfo;
 struct PackManagerContentSource;
@@ -27,6 +27,22 @@ namespace Realms { struct World; }
 // clang-format on
 
 class SettingsScreenControllerBase : public ::MainMenuScreenController {
+public:
+    // SettingsScreenControllerBase inner types define
+    using BooleanOptionGetter = ::std::function<bool()>;
+
+    using BooleanOptionSetter = ::std::function<void(bool)>;
+
+    using StringOptionSetter = ::std::function<void(::std::string const&)>;
+
+    using StringValidator = ::std::function<bool(::std::string const&)>;
+
+    using StringFinished = ::std::function<void()>;
+
+    using IntegerOptionGetter = ::std::function<int()>;
+
+    using IntegerOptionSetter = ::std::function<void(int)>;
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,16 +56,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addResourcePacks(::LocalWorldInfo const& worldInfo);
+    MCAPI void _addResourcePacks(::LocalWorldInfo const& worldInfo);
 
-    MCNAPI bool _copyResourcePacks(
+    MCAPI bool _copyResourcePacks(
         ::PackManagerContentSource* worldContentSource,
         ::IContentManager&          contentManager,
         ::LevelSummary              levelSummary,
         ::std::function<void()>     progressCallback
     );
 
-    MCNAPI ::ui::ViewRequest _createWorld(
+    MCAPI ::ui::ViewRequest _createWorld(
         ::Experiments*                                 experiments,
         ::SettingsScreenMode                           settingsMode,
         ::LevelSeed64                                  levelSeed,
@@ -65,11 +81,11 @@ public:
         ::std::function<void(::std::function<void()>)> postUploadWorldToRealm
     );
 
-    MCNAPI void _initLevelData(::LevelDataWrapper& levelData, bool platformMultiplayerRestrictions);
+    MCAPI void _initLevelData(::LevelDataWrapper& levelData, bool platformMultiplayerRestrictions);
 
-    MCNAPI void _initNewWorldLevelData(::LevelDataWrapper& levelData);
+    MCAPI void _initNewWorldLevelData(::LevelDataWrapper& levelData);
 
-    MCNAPI ::ui::ViewRequest _playWorld(
+    MCAPI ::ui::ViewRequest _playWorld(
         ::SettingsScreenMode        settingsMode,
         ::LevelSummary const&       levelSummary,
         ::LevelDataWrapper&         levelData,
@@ -78,22 +94,22 @@ public:
         ::DlcUIWrapper*             dlcUIWrapper
     );
 
-    MCNAPI void _removeResourcePacks();
+    MCAPI void _removeResourcePacks();
 
-    MCNAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCAPI void confirmationHardcoreDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCNAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCAPI void confirmationNoAchievementsDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCNAPI void setUpCallbacksForBooleanOption(::OptionID optionID, ::std::string const& toggleName);
+    MCAPI void setUpCallbacksForBooleanOption(::OptionID optionID, ::std::string const& toggleName);
 
-    MCNAPI void setUpCallbacksForBooleanOption(
+    MCAPI void setUpCallbacksForBooleanOption(
         ::OptionID           optionID,
         ::std::string const& toggleName,
         ::std::string const& valueBindingName,
         ::std::string const& enabledBindingName
     );
 
-    MCNAPI void setUpCallbacksForBooleanOption(
+    MCAPI void setUpCallbacksForBooleanOption(
         ::std::string const&        toggleName,
         ::std::string const&        valueBindingName,
         ::std::string const&        enabledBindingName,
@@ -102,14 +118,14 @@ public:
         ::std::function<void(bool)> setValue
     );
 
-    MCNAPI void setupCallbacksForStringOption(
+    MCAPI void setupCallbacksForStringOption(
         ::OptionID                                  optionID,
         ::std::string const&                        textboxName,
         ::std::function<bool(::std::string const&)> changedValidator,
         ::std::function<bool(::std::string const&)> finishedValidator
     );
 
-    MCNAPI void setupCallbacksForStringOption(
+    MCAPI void setupCallbacksForStringOption(
         ::OptionID                                  optionID,
         ::std::string const&                        textboxName,
         ::std::string const&                        valueBindingName,
@@ -118,7 +134,7 @@ public:
         ::std::function<bool(::std::string const&)> finishedValidator
     );
 
-    MCNAPI void setupCallbacksForStringOption(
+    MCAPI void setupCallbacksForStringOption(
         ::std::string const&                        textboxName,
         ::std::string const&                        valueBindingName,
         ::std::string const&                        enabledBindingName,
@@ -134,15 +150,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCNAPI void $_displayLockedWorldPopup();
+    MCAPI void $_displayLockedWorldPopup();
     // NOLINTEND
 
 public:

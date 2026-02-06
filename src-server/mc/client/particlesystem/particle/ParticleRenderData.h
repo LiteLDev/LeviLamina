@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ParticleRenderData {
+class ParticleRenderData {
 public:
     // ParticleRenderData inner types declare
     // clang-format off

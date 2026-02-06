@@ -4,6 +4,6 @@
 
 namespace EDUDiscovery {
 
-struct DiscoveryObserver {};
+class DiscoveryObserver {};
 
 } // namespace EDUDiscovery

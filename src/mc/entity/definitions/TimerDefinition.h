@@ -31,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addWeightedChoiceEntry(::WeightChoiceEntry const& entry);
+    MCAPI void addWeightedChoiceEntry(::WeightChoiceEntry const& entry);
 
-    MCNAPI ~TimerDefinition();
+    MCAPI ~TimerDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TimerDefinition>>& root);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

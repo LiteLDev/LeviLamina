@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AnvilScreenController {
+class AnvilScreenController {
 public:
     // AnvilScreenController inner types define
     enum class SlotIndex : int {};

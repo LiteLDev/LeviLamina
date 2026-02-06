@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ElementConstructorScreenController {
+class ElementConstructorScreenController {
 public:
     // ElementConstructorScreenController inner types define
     enum class ParticleType : uchar {};

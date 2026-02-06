@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct BlockTessellatorPipeline {};
+class BlockTessellatorPipeline {};
 
 } // namespace ClientBlockPipeline

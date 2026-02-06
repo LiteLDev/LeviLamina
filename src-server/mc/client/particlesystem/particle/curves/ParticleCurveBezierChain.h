@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct ParticleCurveBezierChain {
+class ParticleCurveBezierChain {
 public:
     // ParticleCurveBezierChain inner types declare
     // clang-format off

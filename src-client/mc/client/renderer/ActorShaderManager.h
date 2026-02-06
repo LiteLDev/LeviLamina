@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -17,7 +20,6 @@ struct Brightness;
 struct BrightnessPair;
 struct TextureUVCoordinateSet;
 namespace mce { class Color; }
-namespace mce { class MaterialPtr; }
 namespace mce { class RenderContext; }
 namespace mce { struct ActorConstants; }
 // clang-format on
@@ -26,16 +28,10 @@ class ActorShaderManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9a9efa;
-    ::ll::UntypedStorage<8, 16> mUnk15cfc5;
-    ::ll::UntypedStorage<8, 16> mUnk12e716;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mEntityMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mTransparentEntityMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mStaticMaterial;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorShaderManager& operator=(ActorShaderManager const&);
-    ActorShaderManager(ActorShaderManager const&);
-    ActorShaderManager();
 
 public:
     // virtual functions
@@ -48,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::mce::MaterialPtr& getEntityMaterial();
+    MCAPI ::mce::MaterialPtr& getEntityMaterial();
 
-    MCNAPI ::mce::MaterialPtr& getStaticMaterial();
+    MCAPI ::mce::MaterialPtr& getStaticMaterial();
 
-    MCNAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
+    MCAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
 
-    MCNAPI void setupFoilShaderParameters(
+    MCAPI void setupFoilShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -66,7 +62,7 @@ public:
         bool                      allowOverlay
     ) const;
 
-    MCNAPI void setupFoilShaderParameters(
+    MCAPI void setupFoilShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -80,7 +76,7 @@ public:
         bool                      allowOverlay
     ) const;
 
-    MCNAPI void setupShaderParameters(
+    MCAPI void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  actor,
@@ -91,9 +87,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color getOverlayColor(::Actor& actor, float);
+    MCAPI static ::mce::Color getOverlayColor(::Actor& actor, float);
 
-    MCNAPI static void setEntityConstants(
+    MCAPI static void setEntityConstants(
         ::mce::ActorConstants& entityConstants,
         ::mce::RenderContext&  renderContext,
         ::mce::Color const&    blockLightColor,
@@ -110,9 +106,9 @@ public:
         float                  uvRot2
     );
 
-    MCNAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
+    MCAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
 
-    MCNAPI static void setupFoilShaderParameters(
+    MCAPI static void setupFoilShaderParameters(
         ::ScreenContext&    screenContext,
         ::mce::Color const& overlay,
         ::mce::Color const& changeColor,
@@ -120,21 +116,21 @@ public:
         ::Vec2 const&       uvScale
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&    screenContext,
         float               br,
         ::mce::Color const& overlayColor,
         bool                dimensionHasCeiling
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&    screenContext,
         ::mce::Color const& overlay,
         ::mce::Color const& changeColor,
         ::mce::Color const& changeColor2
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  actor,
@@ -143,7 +139,7 @@ public:
         ::Brightness lightEmission
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  actor,
@@ -152,7 +148,7 @@ public:
         ::Vec4 const& uvAnim
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&        screenContext,
         ::BlockSource&          source,
         ::BrightnessPair const& lightColorUV,
@@ -163,7 +159,7 @@ public:
         ::Vec4 const&   uvAnim
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&  screenContext,
         ::BlockSource&    source,
         ::BlockPos const& pos,
@@ -174,7 +170,7 @@ public:
         ::Vec4 const&     uvAnim
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -187,7 +183,7 @@ public:
         bool isEnchanted
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&    screenContext,
         ::BlockSource&      source,
         ::BlockPos const&   pos,
@@ -200,7 +196,7 @@ public:
         ::Brightness    lightEmission
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&    screenContext,
         ::mce::Color const& overlay,
         ::mce::Color const& changeColor,
@@ -215,7 +211,7 @@ public:
         float
     );
 
-    MCNAPI static void setupShaderParameters(
+    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -237,20 +233,20 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
+    MCAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
 
-    MCNAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
+    MCAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $_getOverlayColor(::Actor& actor, float a) const;
+    MCAPI ::mce::Color $_getOverlayColor(::Actor& actor, float a) const;
     // NOLINTEND
 };

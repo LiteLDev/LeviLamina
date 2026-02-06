@@ -50,15 +50,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI void $onEntityAdded(::Actor& entity);
+    MCFOLD void $onEntityAdded(::Actor& entity);
 
-    MCNAPI void $onEntityRemoved(::Actor& entity);
+    MCFOLD void $onEntityRemoved(::Actor& entity);
 
-    MCNAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
+    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
 #endif
 
 

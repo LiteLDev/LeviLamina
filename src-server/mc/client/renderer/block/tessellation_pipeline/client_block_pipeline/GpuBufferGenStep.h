@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct GpuBufferGenStep {};
+class GpuBufferGenStep {};
 
 } // namespace ClientBlockPipeline

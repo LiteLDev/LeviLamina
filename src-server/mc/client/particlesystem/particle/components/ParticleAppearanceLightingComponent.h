@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleAppearanceLightingComponent {};
+class ParticleAppearanceLightingComponent {};
 
 } // namespace ParticleSystem

@@ -182,7 +182,11 @@ namespace mce { class UUID; }
 class DataDrivenModel;
 class DataDrivenRenderer;
 class IClientInstance;
+class LocalPlayer;
+class StoreDataDrivenScreenController;
 class Tessellator;
+class UIControl;
+class WorldSeedModel;
 struct ActorAttachableDerivitiveData;
 struct ActorDerivitiveData;
 struct AnimationData;
@@ -202,7 +206,6 @@ struct ExtractedSkeletonData;
 struct FinalRenderingData;
 struct FrameAllocationCount;
 struct GameplayRelatedRenderData;
-struct LocalPlayer;
 struct ModificationOperation;
 struct PreviousTransformationInput;
 struct PreviousTransformationOutput;
@@ -214,13 +217,10 @@ struct ResourceBakingResult;
 struct ResourceOffset;
 struct SearchQuery;
 struct SharedUniformPhase;
-struct StoreDataDrivenScreenController;
 struct TrialManager;
-struct UIControl;
 struct UIPropertyBag;
-struct WorldSeedModel;
 namespace Bedrock { class Platform_GameCore; }
-namespace ParticleSystem { struct ParticleEffectComponentRegistry; }
+namespace ParticleSystem { class ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace cohtml { class Binder; }
 namespace mce { class Camera; }

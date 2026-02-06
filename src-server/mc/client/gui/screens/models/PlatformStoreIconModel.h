@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlatformStoreIconModel {
+class PlatformStoreIconModel {
 public:
     // PlatformStoreIconModel inner types declare
     // clang-format off

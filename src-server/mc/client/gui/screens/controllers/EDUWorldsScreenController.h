@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EDUWorldsScreenController {
+class EDUWorldsScreenController {
 public:
     // EDUWorldsScreenController inner types define
     enum class StartWorldCaller : int {};

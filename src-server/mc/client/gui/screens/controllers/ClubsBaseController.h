@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClubsBaseController {
+class ClubsBaseController {
 public:
     // ClubsBaseController inner types declare
     // clang-format off

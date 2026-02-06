@@ -38,16 +38,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity);
 
-    MCNAPI void $playerTick(::Player& player, ::Tick const& currentTick);
+    MCAPI void $playerTick(::Player& player, ::Tick const& currentTick);
 
-    MCNAPI void $clearDimensionPlayerReplicationList(::Dimension& dimension);
+    MCAPI void $clearDimensionPlayerReplicationList(::Dimension& dimension);
 
-    MCNAPI void $processDimensionPlayerReplication(::Dimension& dimension);
+    MCAPI void $processDimensionPlayerReplication(::Dimension& dimension);
 
-    MCNAPI void $postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick);
+    MCAPI void $postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick);
 
 
     // NOLINTEND

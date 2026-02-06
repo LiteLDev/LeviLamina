@@ -11,7 +11,7 @@ struct ItemRendererData;
 namespace ItemRendererDataHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI void setItemRendererBindings(::ItemRendererData& itemData, ::ItemStackBase const& item);
+MCAPI void setItemRendererBindings(::ItemRendererData& itemData, ::ItemStackBase const& item);
 // NOLINTEND
 
 } // namespace ItemRendererDataHelpers

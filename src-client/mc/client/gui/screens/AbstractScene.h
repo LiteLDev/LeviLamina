@@ -16,11 +16,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractSceneProxy;
+class CachedScenes;
 class RectangleArea;
 class ScreenContext;
 class TaskGroup;
-struct AbstractSceneProxy;
-struct CachedScenes;
 struct FrameRenderObject;
 struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
@@ -35,14 +35,8 @@ class AbstractScene {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkaa79ea;
+    ::ll::TypedStorage<4, 4, uint> mSceneId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbstractScene& operator=(AbstractScene const&);
-    AbstractScene(AbstractScene const&);
-    AbstractScene();
 
 public:
     // virtual functions
@@ -233,7 +227,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

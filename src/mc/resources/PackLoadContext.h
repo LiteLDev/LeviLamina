@@ -7,36 +7,34 @@
 #include "mc/deps/core/utility/BedrockLoadContext.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/UUID.h"
 #include "mc/resources/IPackLoadContext.h"
+#include "mc/resources/MinEngineVersion.h"
+#include "mc/resources/PackLoadStorage.h"
+#include "mc/world/level/storage/Experiments.h"
 
 // auto generated forward declare list
 // clang-format off
-class Experiments;
 class LinkedAssetValidator;
-class MinEngineVersion;
 class PackInstance;
-class PackLoadStorage;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 class PackLoadContext : public ::IPackLoadContext, public ::BedrockLoadContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf67099;
-    ::ll::UntypedStorage<1, 1>  mUnk6aa892;
-    ::ll::UntypedStorage<1, 1>  mUnk4164b4;
-    ::ll::UntypedStorage<8, 16> mUnk36beeb;
-    ::ll::UntypedStorage<8, 72> mUnk8a75c5;
-    ::ll::UntypedStorage<1, 1>  mUnk30bb35;
-    ::ll::UntypedStorage<8, 64> mUnk6abfbf;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
+    ::ll::TypedStorage<1, 1, bool const>           mIsBaseGamePack;
+    ::ll::TypedStorage<1, 1, bool const>           mIsTrustedPack;
+    ::ll::TypedStorage<8, 16, ::mce::UUID const>   mPackId;
+    ::ll::TypedStorage<8, 72, ::Experiments const> mExperiments;
+    ::ll::TypedStorage<1, 1, ::PackType const>     mPackType;
+    ::ll::TypedStorage<8, 64, ::PackLoadStorage>   mStorage;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PackLoadContext& operator=(PackLoadContext const&);
-    PackLoadContext(PackLoadContext const&);
     PackLoadContext();
 
 public:
@@ -70,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackLoadContext(
+    MCAPI PackLoadContext(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
@@ -80,13 +78,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
@@ -96,33 +94,33 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinEngineVersion const& $getMinEngineVersion() const;
+    MCFOLD ::MinEngineVersion const& $getMinEngineVersion() const;
 
-    MCNAPI ::MolangVersion $getMolangVersion() const;
+    MCFOLD ::MolangVersion $getMolangVersion() const;
 
-    MCNAPI bool $isBaseGamePack() const;
+    MCFOLD bool $isBaseGamePack() const;
 
-    MCNAPI bool $isTrustedPack() const;
+    MCFOLD bool $isTrustedPack() const;
 
-    MCNAPI ::mce::UUID const& $getPackUUID() const;
+    MCFOLD ::mce::UUID const& $getPackUUID() const;
 
-    MCNAPI ::Experiments const& $getExperiments() const;
+    MCFOLD ::Experiments const& $getExperiments() const;
 
-    MCNAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
 
-    MCNAPI ::PackLoadStorage& $getStorage();
+    MCFOLD ::PackLoadStorage& $getStorage();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const $getLinkedAssetValidator() const;
+    MCFOLD ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const $getLinkedAssetValidator() const;
 
-    MCNAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
+    MCAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
 
-    MCNAPI ::BedrockLoadContext $toBedrockLoadContext() const;
+    MCAPI ::BedrockLoadContext $toBedrockLoadContext() const;
 
 
     // NOLINTEND

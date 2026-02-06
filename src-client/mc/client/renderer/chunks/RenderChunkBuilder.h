@@ -15,6 +15,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
 class MinecraftGameplayGraphicsResources;
@@ -22,16 +23,15 @@ class SubChunkPos;
 class Tessellator;
 struct AirAndSimpleBlockBits;
 struct BlockQueueEntry;
-struct BlockTessellator;
 struct IRenderChunkGarbage;
 struct RenderChunkCoordinator;
 struct RenderChunkGeometry;
 struct RenderChunkQuadInfo;
 struct RuntimeLocalLightingConfig;
-namespace ClientBlockPipeline { struct BlockTessellatorPipeline; }
-namespace ClientBlockPipeline { struct Description; }
-namespace ClientBlockPipeline { struct MaterialRepository; }
-namespace ClientBlockPipeline { struct TessellatorContext; }
+namespace ClientBlockPipeline { class BlockTessellatorPipeline; }
+namespace ClientBlockPipeline { class Description; }
+namespace ClientBlockPipeline { class MaterialRepository; }
+namespace ClientBlockPipeline { class TessellatorContext; }
 namespace mce { class Mesh; }
 namespace mce { class MeshData; }
 namespace mce::framebuilder { struct FrameLightingModelCapabilities; }

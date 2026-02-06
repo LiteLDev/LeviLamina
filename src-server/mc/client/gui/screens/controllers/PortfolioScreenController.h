@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PortfolioScreenController {
+class PortfolioScreenController {
 public:
     // PortfolioScreenController inner types define
     enum class PortfolioView : uchar {};

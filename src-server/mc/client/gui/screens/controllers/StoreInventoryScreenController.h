@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct StoreInventoryScreenController {
+class StoreInventoryScreenController {
 public:
     // StoreInventoryScreenController inner types declare
     // clang-format off

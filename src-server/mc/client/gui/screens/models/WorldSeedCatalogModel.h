@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldSeedCatalogModel {
+class WorldSeedCatalogModel {
 public:
     // WorldSeedCatalogModel inner types declare
     // clang-format off

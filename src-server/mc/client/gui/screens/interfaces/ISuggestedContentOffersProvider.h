@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ISuggestedContentOffersProvider {
+class ISuggestedContentOffersProvider {
 public:
     // ISuggestedContentOffersProvider inner types define
     enum class CollectionType : int {};

@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct EmitterRateManualComponent {};
+class EmitterRateManualComponent {};
 
 } // namespace ParticleSystem

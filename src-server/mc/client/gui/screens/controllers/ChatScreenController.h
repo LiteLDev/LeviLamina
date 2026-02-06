@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ChatScreenController {
+class ChatScreenController {
 public:
     // ChatScreenController inner types define
     enum class SelectionDirection : int {};

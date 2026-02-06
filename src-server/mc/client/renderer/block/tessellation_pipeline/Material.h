@@ -4,7 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-struct Material {
+class Material {
 public:
     // Material inner types declare
     // clang-format off

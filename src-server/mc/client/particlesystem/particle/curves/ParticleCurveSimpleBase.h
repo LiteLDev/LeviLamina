@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleCurveSimpleBase {};
+class ParticleCurveSimpleBase {};
 
 } // namespace ParticleSystem

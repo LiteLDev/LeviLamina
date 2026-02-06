@@ -2,25 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsSettingsScreenController {
+class RealmsSettingsScreenController {
 public:
     // RealmsSettingsScreenController inner types declare
     // clang-format off
-    struct DelayedStandardModalScreenData;
-    struct RealmsVersionState;
     struct SaveStatusTracker;
+    struct RealmsVersionState;
+    struct DelayedStandardModalScreenData;
     // clang-format on
 
     // RealmsSettingsScreenController inner types define
     enum class PurchaseIntent : int {};
 
-    enum class RealmsSaveAction : int {};
-
     enum class SaveType : int {};
 
-    struct DelayedStandardModalScreenData {};
+    enum class RealmsSaveAction : int {};
+
+    struct SaveStatusTracker {};
 
     struct RealmsVersionState {};
 
-    struct SaveStatusTracker {};
+    struct DelayedStandardModalScreenData {};
 };

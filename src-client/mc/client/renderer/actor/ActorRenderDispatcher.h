@@ -11,6 +11,7 @@
 class Actor;
 class ActorRenderer;
 class BaseActorRenderContext;
+class BlockTessellator;
 class DataDrivenRenderer;
 class Font;
 class HashedString;
@@ -21,7 +22,6 @@ class Vec2;
 class Vec3;
 struct ActorResourceDefinition;
 struct ActorResourceDefinitionGroup;
-struct BlockTessellator;
 struct GeometryGroup;
 struct NameTagRenderObject;
 namespace mce { class Color; }

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlayScreenController {
+class PlayScreenController {
 public:
     // PlayScreenController inner types define
     enum class ConvertProgressState : int {};

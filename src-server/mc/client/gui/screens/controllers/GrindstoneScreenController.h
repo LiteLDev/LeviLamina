@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GrindstoneScreenController {
+class GrindstoneScreenController {
 public:
     // GrindstoneScreenController inner types define
     enum class SlotIndex : int {};

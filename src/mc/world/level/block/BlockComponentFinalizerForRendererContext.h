@@ -5,11 +5,11 @@
 // auto generated forward declare list
 // clang-format off
 class Experiments;
+class BlockCullingGroup;
 struct AtlasItemManager;
-struct BlockCullingGroup;
 struct GeometryGroup;
-namespace ClientBlockPipeline { struct MaterialRepository; }
-namespace ClientBlockPipeline { struct SchematicsRepository; }
+namespace ClientBlockPipeline { class MaterialRepository; }
+namespace ClientBlockPipeline { class SchematicsRepository; }
 // clang-format on
 
 struct BlockComponentFinalizerForRendererContext {

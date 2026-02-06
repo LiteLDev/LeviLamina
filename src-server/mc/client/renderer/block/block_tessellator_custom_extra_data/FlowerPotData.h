@@ -4,6 +4,6 @@
 
 namespace BlockTessellatorCustomExtraData {
 
-struct FlowerPotData {};
+class FlowerPotData {};
 
 } // namespace BlockTessellatorCustomExtraData

@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct Inputs {};
+class Inputs {};
 
 } // namespace ClientBlockPipeline

@@ -15,13 +15,13 @@
 
 // auto generated forward declare list
 // clang-format off
-struct GeneralSettingsScreenController;
-struct MainMenuScreenModel;
-struct RealmsInviteLinkSettingsScreenController;
-struct RealmsSettingsScreenController;
+class GeneralSettingsScreenController;
+class MainMenuScreenModel;
+class RealmsInviteLinkSettingsScreenController;
+class RealmsSettingsScreenController;
+class SocialSettingsScreenController;
+class WorldSettingsScreenController;
 struct SettingsScreenCapabilities;
-struct SocialSettingsScreenController;
-struct WorldSettingsScreenController;
 namespace Json { class Value; }
 namespace ui { struct ScreenTechStackSelector; }
 // clang-format on
@@ -38,34 +38,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkd0c649;
-        ::ll::UntypedStorage<4, 4>  mUnk62d07f;
+        ::ll::TypedStorage<8, 32, ::std::string const> mTabName;
+        ::ll::TypedStorage<4, 4, int const>            mTabVersion;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        SettingsScreenTabInfo& operator=(SettingsScreenTabInfo const&);
-        SettingsScreenTabInfo(SettingsScreenTabInfo const&);
         SettingsScreenTabInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SettingsScreenTabInfo(::std::string tabName, int tabVersion);
+        MCAPI SettingsScreenTabInfo(::std::string tabName, int tabVersion);
 
-        MCNAPI ~SettingsScreenTabInfo();
+        MCAPI ~SettingsScreenTabInfo();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::string tabName, int tabVersion);
+        MCAPI void* $ctor(::std::string tabName, int tabVersion);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

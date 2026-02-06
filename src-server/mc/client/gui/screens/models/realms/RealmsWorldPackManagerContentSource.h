@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsWorldPackManagerContentSource {};
+class RealmsWorldPackManagerContentSource {};
 
 } // namespace Realms

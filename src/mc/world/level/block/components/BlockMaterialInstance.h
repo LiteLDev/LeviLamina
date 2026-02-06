@@ -11,7 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ClientBlockPipeline { struct Material; }
+namespace ClientBlockPipeline { class Material; }
 // clang-format on
 
 struct BlockMaterialInstance {

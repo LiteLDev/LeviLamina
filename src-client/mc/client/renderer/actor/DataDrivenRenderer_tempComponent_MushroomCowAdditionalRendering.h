@@ -10,9 +10,9 @@
 // clang-format off
 class ActorRenderData;
 class BaseActorRenderContext;
+class BlockTessellator;
 class DataDrivenRenderer;
 class RenderParams;
-struct BlockTessellator;
 // clang-format on
 
 class DataDrivenRenderer_tempComponent_MushroomCowAdditionalRendering : public ::DataDrivenRenderer_tempComponent {

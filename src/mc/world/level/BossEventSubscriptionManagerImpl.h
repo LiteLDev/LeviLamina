@@ -60,30 +60,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BossEventSubscriptionManagerImpl();
+    MCAPI BossEventSubscriptionManagerImpl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(::std::function<void(::BossEventUpdateType)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
+    MCAPI ::Bedrock::PubSub::Subscription $subscribeToBossEvent(
         ::std::function<void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&)> callback
     );
 
-    MCNAPI void $broadcastBossEvent(::BossEventUpdateType type);
+    MCAPI void $broadcastBossEvent(::BossEventUpdateType type);
 
-    MCNAPI void
+    MCAPI void
     $broadcastBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
-    MCNAPI bool $areBossEventSubscribersReady() const;
+    MCAPI bool $areBossEventSubscribersReady() const;
 
 
     // NOLINTEND

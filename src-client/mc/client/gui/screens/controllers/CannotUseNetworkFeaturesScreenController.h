@@ -2,4 +2,59 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CannotUseNetworkFeaturesScreenController {};
+// auto generated inclusion list
+#include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
+
+// auto generated forward declare list
+// clang-format off
+class MinecraftScreenModel;
+// clang-format on
+
+class CannotUseNetworkFeaturesScreenController : public ::MinecraftScreenController {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::function<void(bool)>> mCallback;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CannotUseNetworkFeaturesScreenController();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~CannotUseNetworkFeaturesScreenController() /*override*/ = default;
+
+    virtual void onOpen() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CannotUseNetworkFeaturesScreenController(
+        ::std::shared_ptr<::MinecraftScreenModel> model,
+        ::std::function<void(bool)>               callback
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(bool)> callback);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $onOpen();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForScreenController();
+
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+    // NOLINTEND
+};

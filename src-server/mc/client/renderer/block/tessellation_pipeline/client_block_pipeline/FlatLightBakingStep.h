@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct FlatLightBakingStep {};
+class FlatLightBakingStep {};
 
 } // namespace ClientBlockPipeline

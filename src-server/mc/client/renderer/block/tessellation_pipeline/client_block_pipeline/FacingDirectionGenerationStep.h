@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct FacingDirectionGenerationStep {};
+class FacingDirectionGenerationStep {};
 
 } // namespace ClientBlockPipeline

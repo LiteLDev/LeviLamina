@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/game/CoordinateCaptureType.h"
 #include "mc/client/game/IConfigListener.h"
+#include "mc/client/gui/GuiMessage.h"
 #include "mc/client/gui/ScreenSizeData.h"
 #include "mc/client/gui/TitleMessage.h"
 #include "mc/client/gui/screens/MenuPointer.h"
@@ -46,17 +47,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkdb5650;
-        ::ll::UntypedStorage<8, 32> mUnk67df5b;
-        ::ll::UntypedStorage<8, 32> mUnkecb5f8;
-        ::ll::UntypedStorage<8, 40> mUnk481001;
-        ::ll::UntypedStorage<8, 32> mUnk3cc08d;
-        ::ll::UntypedStorage<4, 4>  mUnk7ff951;
-        ::ll::UntypedStorage<1, 1>  mUnk5da9d1;
-        ::ll::UntypedStorage<1, 1>  mUnk143f9d;
-        ::ll::UntypedStorage<8, 32> mUnk4554ac;
-        ::ll::UntypedStorage<8, 32> mUnk165a23;
-        ::ll::UntypedStorage<1, 1>  mUnkad93cd;
+        ::ll::TypedStorage<4, 4, ::GuiMessage::MessageType>       messageType;
+        ::ll::TypedStorage<8, 32, ::std::string>                  username;
+        ::ll::TypedStorage<8, 32, ::std::string>                  message;
+        ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> filteredMessage;
+        ::ll::TypedStorage<8, 32, ::std::string>                  ttsMessage;
+        ::ll::TypedStorage<4, 4, float>                           lifeTime;
+        ::ll::TypedStorage<1, 1, bool>                            forceVisible;
+        ::ll::TypedStorage<1, 1, bool>                            ttsRequired;
+        ::ll::TypedStorage<8, 32, ::std::string>                  xuid;
+        ::ll::TypedStorage<8, 32, ::std::string const>            platformId;
+        ::ll::TypedStorage<1, 1, bool>                            enableEmoticonify;
         // NOLINTEND
 
     public:
@@ -67,21 +68,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI MessageConfig(::GuiData::MessageConfig const&);
+        MCAPI MessageConfig(::GuiData::MessageConfig const&);
 
-        MCNAPI ~MessageConfig();
+        MCAPI ~MessageConfig();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::GuiData::MessageConfig const&);
+        MCAPI void* $ctor(::GuiData::MessageConfig const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

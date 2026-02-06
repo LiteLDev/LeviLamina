@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleAppearanceBillboardComponent {};
+class ParticleAppearanceBillboardComponent {};
 
 } // namespace ParticleSystem

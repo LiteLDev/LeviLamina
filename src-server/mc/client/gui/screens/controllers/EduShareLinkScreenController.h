@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EduShareLinkScreenController {
+class EduShareLinkScreenController {
 public:
     // EduShareLinkScreenController inner types declare
     // clang-format off
@@ -10,9 +10,9 @@ public:
     // clang-format on
 
     // EduShareLinkScreenController inner types define
-    enum class ScreenState : int {};
-
     enum class UriResourceValidationStatus : int {};
+
+    enum class ScreenState : int {};
 
     struct EduShareLinkCapabilities {};
 };

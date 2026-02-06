@@ -18,7 +18,9 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class BookScreenManager;
 class ItemStack;
+class MinecartCommandBlockManager;
 class NpcEventListener;
 class ResourceLocation;
 class StructureEditorData;
@@ -26,9 +28,8 @@ class StructureSettings;
 class StructureTemplate;
 class Vec3;
 struct ActorUniqueID;
-struct BookScreenManager;
+struct BossInfo;
 struct GuiMessage;
-struct MinecartCommandBlockManager;
 struct MinecraftglTFExporter;
 struct PhotoRecord;
 struct TitleMessage;
@@ -41,13 +42,11 @@ class ClientInstanceScreenModel : public ::MinecraftScreenModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9dc14b;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::BossInfo>> mBossInfo;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ClientInstanceScreenModel& operator=(ClientInstanceScreenModel const&);
-    ClientInstanceScreenModel(ClientInstanceScreenModel const&);
     ClientInstanceScreenModel();
 
 public:
@@ -59,176 +58,176 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ClientInstanceScreenModel(::MinecraftScreenModel::Context context);
+    MCAPI explicit ClientInstanceScreenModel(::MinecraftScreenModel::Context context);
 
-    MCNAPI void addPhotoToPortfolio(::std::string const& photoName, ::std::string const& newPhotoName);
+    MCAPI void addPhotoToPortfolio(::std::string const& photoName, ::std::string const& newPhotoName);
 
-    MCNAPI bool canCollectFromCauldron(::BlockPos const& blockPos) const;
+    MCAPI bool canCollectFromCauldron(::BlockPos const& blockPos) const;
 
-    MCNAPI bool canEmptyIntoCauldron(::BlockPos const& blockPos) const;
+    MCAPI bool canEmptyIntoCauldron(::BlockPos const& blockPos) const;
 
-    MCNAPI bool canPlaceHeldBlock() const;
+    MCAPI bool canPlaceHeldBlock() const;
 
-    MCNAPI bool canPlaceHeldItem() const;
+    MCAPI bool canPlaceHeldItem() const;
 
-    MCNAPI bool canPlaceWaterlily() const;
+    MCAPI bool canPlaceWaterlily() const;
 
-    MCNAPI bool canTipArrows(::BlockPos const& blockPos) const;
+    MCAPI bool canTipArrows(::BlockPos const& blockPos) const;
 
-    MCNAPI bool canUseReed() const;
+    MCAPI bool canUseReed() const;
 
-    MCNAPI bool canUseSeed() const;
+    MCAPI bool canUseSeed() const;
 
-    MCNAPI void clearTitleMessages();
+    MCAPI void clearTitleMessages();
 
-    MCNAPI ::std::unique_ptr<::BookScreenManager> createBookScreenManager(int bookSlot, ::BlockActor* lectern);
+    MCAPI ::std::unique_ptr<::BookScreenManager> createBookScreenManager(int bookSlot, ::BlockActor* lectern);
 
-    MCNAPI ::std::unique_ptr<::MinecartCommandBlockManager>
+    MCAPI ::std::unique_ptr<::MinecartCommandBlockManager>
     createCommandBlockManager(bool isMinecart, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
 
-    MCNAPI void createPhotoItem(::PhotoRecord const& record);
+    MCAPI void createPhotoItem(::PhotoRecord const& record);
 
-    MCNAPI void displaySystemMessage(
+    MCAPI void displaySystemMessage(
         ::std::string const&     message,
         ::std::string const&     ttsMessage,
         ::ProfanityFilterContext profanityFilterContext
     );
 
-    MCNAPI float distanceSqrFromPlayerToBlockCenter(::Vec3 const& pos);
+    MCAPI float distanceSqrFromPlayerToBlockCenter(::Vec3 const& pos);
 
-    MCNAPI ::ChatMessageRestrictions executeCommand(::std::string const& commandLine);
+    MCAPI ::ChatMessageRestrictions executeCommand(::std::string const& commandLine);
 
-    MCNAPI bool exportStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
+    MCAPI bool exportStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
 
-    MCNAPI bool findStructure(::StructureEditorData& structureData);
+    MCAPI bool findStructure(::StructureEditorData& structureData);
 
-    MCNAPI bool forceAllowEating() const;
+    MCAPI bool forceAllowEating() const;
 
-    MCNAPI ::Block const& getBlockAt(::BlockPos const& blockPos) const;
+    MCAPI ::Block const& getBlockAt(::BlockPos const& blockPos) const;
 
-    MCNAPI ::BlockActor* getBlockEntity(::BlockPos const& pos, ::BlockActorType blockEntityType);
+    MCAPI ::BlockActor* getBlockEntity(::BlockPos const& pos, ::BlockActorType blockEntityType);
 
-    MCNAPI ::CoordinateCaptureType getCoordinateCaptureType() const;
+    MCAPI ::CoordinateCaptureType getCoordinateCaptureType() const;
 
-    MCNAPI ::std::vector<::GuiMessage>& getGuiMessageList();
+    MCAPI ::std::vector<::GuiMessage>& getGuiMessageList();
 
-    MCNAPI ::std::string getInteractionText() const;
+    MCAPI ::std::string getInteractionText() const;
 
-    MCNAPI int getItemNameOffset(bool showClassicUI, bool showSurvivalUI, bool showLocatorBar) const;
+    MCAPI int getItemNameOffset(bool showClassicUI, bool showSurvivalUI, bool showLocatorBar) const;
 
-    MCNAPI ::std::string const getLastFilteredChatMessage();
+    MCAPI ::std::string const getLastFilteredChatMessage();
 
-    MCNAPI int getNumberOfDaysPlayed() const;
+    MCAPI int getNumberOfDaysPlayed() const;
 
-    MCNAPI ::ItemStack const& getOffhandSlot() const;
+    MCAPI ::ItemStack const& getOffhandSlot() const;
 
-    MCNAPI int getPlayerArmorValue() const;
+    MCAPI int getPlayerArmorValue() const;
 
-    MCNAPI int getPlayerLevel();
+    MCAPI int getPlayerLevel();
 
-    MCNAPI ::Vec3 getPlayerPosition() const;
+    MCAPI ::Vec3 getPlayerPosition() const;
 
-    MCNAPI ::BlockSource* getPlayerRegion() const;
+    MCAPI ::BlockSource* getPlayerRegion() const;
 
-    MCNAPI ::ItemStack const& getSelectedItem() const;
+    MCAPI ::ItemStack const& getSelectedItem() const;
 
-    MCNAPI ::Bedrock::Threading::Async<::ResourceLocation>
+    MCAPI ::Bedrock::Threading::Async<::ResourceLocation>
     getThirdPartyGamerpic(::mce::UUID const& playerId, ::std::string const& platformOnlineID) const;
 
-    MCNAPI ::TitleMessage const& getTitleMessage() const;
+    MCAPI ::TitleMessage const& getTitleMessage() const;
 
-    MCNAPI float getXToScreenRatio(float x) const;
+    MCAPI float getXToScreenRatio(float x) const;
 
-    MCNAPI float getYToScreenRatio(float y) const;
+    MCAPI float getYToScreenRatio(float y) const;
 
-    MCNAPI ::StructureTemplate* importStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
+    MCAPI ::StructureTemplate* importStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
 
-    MCNAPI void initiateGLBFileSave(
+    MCAPI void initiateGLBFileSave(
         ::std::string const&        defaultName,
         ::Core::Path const&         originPath,
         ::std::function<void(bool)> onComplete
     );
 
-    MCNAPI ::std::shared_ptr<::MinecraftglTFExporter> initiateStructureModelExport(
+    MCAPI ::std::shared_ptr<::MinecraftglTFExporter> initiateStructureModelExport(
         ::BlockPos const&            position,
         ::StructureEditorData const& structureEditorData,
         ::std::function<void(bool)>  onFileReady
     );
 
-    MCNAPI bool isBossProperlyRegistered(int index) const;
+    MCAPI bool isBossProperlyRegistered(int index) const;
 
-    MCNAPI bool isChatMute() const;
+    MCAPI bool isChatMute() const;
 
-    MCNAPI bool isDimensionReady() const;
+    MCAPI bool isDimensionReady() const;
 
-    MCNAPI bool const isHudElementVisible(::HudElement hudElement) const;
+    MCAPI bool const isHudElementVisible(::HudElement hudElement) const;
 
-    MCNAPI bool isInteracting() const;
+    MCAPI bool isInteracting() const;
 
-    MCNAPI bool isPlayerFlying() const;
+    MCAPI bool isPlayerFlying() const;
 
-    MCNAPI bool isPlayerHungry() const;
+    MCAPI bool isPlayerHungry() const;
 
-    MCNAPI bool isRemoteProfanityFilterEnabled() const;
+    MCAPI bool isRemoteProfanityFilterEnabled() const;
 
-    MCNAPI bool isTouchPressed() const;
+    MCAPI bool isTouchPressed() const;
 
-    MCNAPI bool itemFrameFilled(::BlockPos const& blockPos) const;
+    MCAPI bool itemFrameFilled(::BlockPos const& blockPos) const;
 
-    MCNAPI void makeStructureBlockRequest(
+    MCAPI void makeStructureBlockRequest(
         ::std::string const&                structureName,
         ::BlockPos const&                   structureBlockPosition,
         ::StructureSettings const&          structureSettings,
         ::StructureTemplateRequestOperation exportOperation
     );
 
-    MCNAPI void navigateToImmersiveReaderScreen(::std::string readerText);
+    MCAPI void navigateToImmersiveReaderScreen(::std::string readerText);
 
-    MCNAPI void navigateToLeaveLevelScreen(bool switchScreen);
+    MCAPI void navigateToLeaveLevelScreen(bool switchScreen);
 
-    MCNAPI void navigateToServerStoreScreen();
+    MCAPI void navigateToServerStoreScreen();
 
-    MCNAPI void queryBossInfo() const;
+    MCAPI void queryBossInfo() const;
 
-    MCNAPI void registerNpcEventListener(::NpcEventListener& listener);
+    MCAPI void registerNpcEventListener(::NpcEventListener& listener);
 
-    MCNAPI void requestDisconnectPlayer(::std::string const& userName);
+    MCAPI void requestDisconnectPlayer(::std::string const& userName);
 
-    MCNAPI void resetCanTakeScreenshot();
+    MCAPI void resetCanTakeScreenshot();
 
-    MCNAPI void sendBlockEntityUpdatePacket(::BlockPos const& pos);
+    MCAPI void sendBlockEntityUpdatePacket(::BlockPos const& pos);
 
-    MCNAPI ::ChatMessageRestrictions sendChatMessage(::std::string const& message);
+    MCAPI ::ChatMessageRestrictions sendChatMessage(::std::string const& message);
 
-    MCNAPI void sendCommandBlockUpdatePacket(::ActorUniqueID const& entityId);
+    MCAPI void sendCommandBlockUpdatePacket(::ActorUniqueID const& entityId);
 
-    MCNAPI void sendCommandBlockUpdatePacket(::BlockPos const& pos);
+    MCAPI void sendCommandBlockUpdatePacket(::BlockPos const& pos);
 
-    MCNAPI void sendRespawnRequest() const;
+    MCAPI void sendRespawnRequest() const;
 
-    MCNAPI void setMenuPointerPressed(bool pressed);
+    MCAPI void setMenuPointerPressed(bool pressed);
 
-    MCNAPI bool shouldDisplayDaysPlayed() const;
+    MCAPI bool shouldDisplayDaysPlayed() const;
 
-    MCNAPI bool shouldDisplayPlayerPosition() const;
+    MCAPI bool shouldDisplayPlayerPosition() const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription subscribeToProfanityToggleEvent(::std::function<void(bool, bool)> callback);
+    MCAPI ::Bedrock::PubSub::Subscription subscribeToProfanityToggleEvent(::std::function<void(bool, bool)> callback);
 
-    MCNAPI bool thirdPartyGamerpicAllowed(::mce::UUID const& playerId) const;
+    MCAPI bool thirdPartyGamerpicAllowed(::mce::UUID const& playerId) const;
 
-    MCNAPI void toggleChatMute();
+    MCAPI void toggleChatMute();
 
-    MCNAPI bool tryBroadcastGlobalPause(bool status);
+    MCAPI bool tryBroadcastGlobalPause(bool status);
 
-    MCNAPI bool tryGetAgentPosition(::BlockPos& result) const;
+    MCAPI bool tryGetAgentPosition(::BlockPos& result) const;
 
-    MCNAPI void unregisterNpcEventListener(::NpcEventListener& listener);
+    MCAPI void unregisterNpcEventListener(::NpcEventListener& listener);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
     // NOLINTEND
 
 public:

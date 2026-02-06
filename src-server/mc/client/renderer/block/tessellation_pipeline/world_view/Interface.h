@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline::WorldView {
 
-struct Interface {};
+class Interface {};
 
 } // namespace ClientBlockPipeline::WorldView

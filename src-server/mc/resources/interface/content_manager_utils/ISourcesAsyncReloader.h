@@ -4,6 +4,6 @@
 
 namespace ContentManagerUtils {
 
-struct ISourcesAsyncReloader {};
+class ISourcesAsyncReloader {};
 
 } // namespace ContentManagerUtils

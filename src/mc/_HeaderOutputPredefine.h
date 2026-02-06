@@ -81,6 +81,7 @@
 #include <vector>        // STL dynamic array container
 #include <future>        // STL future
 #include <regex>         // Regular expression library
+#include <any>           // STL any type
 
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations

@@ -2,15 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class FocusManagerProxy;
+struct ScreenEvent;
+struct VisualTreeProxy;
+// clang-format on
+
 struct ScreenViewProxyCallbacks {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkf4a08e;
-    ::ll::UntypedStorage<8, 64> mUnk2d5ecd;
-    ::ll::UntypedStorage<8, 64> mUnka6a65b;
-    ::ll::UntypedStorage<8, 64> mUnk58de6b;
-    ::ll::UntypedStorage<8, 64> mUnke26b63;
+    ::ll::TypedStorage<8, 64, ::std::function<::VisualTreeProxy*()>>   mGetVisualTree;
+    ::ll::TypedStorage<8, 64, ::std::function<::FocusManagerProxy*()>> mGetFocusManager;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                 mIsInitialized;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, ::ScreenEvent&)>>
+                                                       mTestAutomationHandleRawInputEvent;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>> mIsAnyFocusControlHovered;
     // NOLINTEND
 
 public:
@@ -21,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScreenViewProxyCallbacks(::ScreenViewProxyCallbacks const&);
+    MCAPI ScreenViewProxyCallbacks(::ScreenViewProxyCallbacks const&);
 
-    MCNAPI ~ScreenViewProxyCallbacks();
+    MCAPI ~ScreenViewProxyCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScreenViewProxyCallbacks const&);
+    MCFOLD void* $ctor(::ScreenViewProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

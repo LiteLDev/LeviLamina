@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct EmitterLocalSpaceComponent {};
+class EmitterLocalSpaceComponent {};
 
 } // namespace ParticleSystem

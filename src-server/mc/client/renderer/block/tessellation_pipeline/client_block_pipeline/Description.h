@@ -4,7 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-struct Description {
+class Description {
 public:
     // Description inner types declare
     // clang-format off

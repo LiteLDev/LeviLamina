@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleLifetimeBlockDependentComponent {};
+class ParticleLifetimeBlockDependentComponent {};
 
 } // namespace ParticleSystem

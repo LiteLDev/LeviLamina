@@ -4,7 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-struct SchematicsRepository {
+class SchematicsRepository {
 public:
     // SchematicsRepository inner types define
     enum class Validation : int {};

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LibrarySearchBarScreenController {
+class LibrarySearchBarScreenController {
 public:
     // LibrarySearchBarScreenController inner types declare
     // clang-format off

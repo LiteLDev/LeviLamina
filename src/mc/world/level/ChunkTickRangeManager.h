@@ -26,11 +26,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
+    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCNAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
+    MCAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
 
-    MCNAPI bool isChunkInTickRange(
+    MCAPI bool isChunkInTickRange(
         ::ChunkPos const&  chunkPos,
         ::Dimension const& dimension,
         bool               shouldServerGenerate,
@@ -39,6 +39,6 @@ public:
         int                numActiveUsers
     ) const;
 
-    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
     // NOLINTEND
 };

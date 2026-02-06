@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct ParticleEmitterActual {
+class ParticleEmitterActual {
 public:
     // ParticleEmitterActual inner types declare
     // clang-format off

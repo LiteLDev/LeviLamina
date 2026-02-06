@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct FaceDimmingStep {};
+class FaceDimmingStep {};
 
 } // namespace ClientBlockPipeline

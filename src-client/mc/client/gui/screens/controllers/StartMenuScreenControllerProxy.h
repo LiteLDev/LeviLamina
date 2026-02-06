@@ -7,21 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
-struct MainMenuScreenModel;
+class MainMenuScreenController;
+class MainMenuScreenModel;
 // clang-format on
 
 class StartMenuScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk6a7b95;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::MainMenuScreenController>> mOwnerWeakPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StartMenuScreenControllerProxy& operator=(StartMenuScreenControllerProxy const&);
-    StartMenuScreenControllerProxy(StartMenuScreenControllerProxy const&);
-    StartMenuScreenControllerProxy();
 
 public:
     // virtual functions
@@ -34,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
+    MCAPI ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
     // NOLINTEND
 
 public:

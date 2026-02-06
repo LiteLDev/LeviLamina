@@ -3,24 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/GameVersion.h"
 #include "mc/common/editor/WorldType.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/ContentIdentity.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
+#include "mc/options/EduSharedUriResource.h"
 #include "mc/options/EducationEditionOffer.h"
+#include "mc/options/EducationEditionOfferValue.h"
+#include "mc/util/BaseGameVersion.h"
 #include "mc/world/level/GameType.h"
+#include "mc/world/level/LevelSeed64.h"
+#include "mc/world/level/storage/CloudSaveLevelInfo.h"
+#include "mc/world/level/storage/Experiments.h"
 #include "mc/world/level/storage/StorageVersion.h"
+#include "mc/world/level/storage/WorldIconType.h"
+#include "mc/world/level/storage/edu_cloud/WorldSyncState.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
-class CloudSaveLevelInfo;
-class ContentIdentity;
-class Experiments;
-class GameVersion;
 class LevelData;
-class LevelSeed64;
-struct EduSharedUriResource;
 namespace Core { class Path; }
 // clang-format on
 
@@ -28,52 +31,52 @@ struct LevelSummary {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkda60e7;
-    ::ll::UntypedStorage<8, 32>  mUnk76266f;
-    ::ll::UntypedStorage<8, 8>   mUnk7511c6;
-    ::ll::UntypedStorage<4, 4>   mUnk66426f;
-    ::ll::UntypedStorage<1, 1>   mUnk57412d;
-    ::ll::UntypedStorage<1, 1>   mUnke30c4b;
-    ::ll::UntypedStorage<4, 4>   mUnk298125;
-    ::ll::UntypedStorage<8, 8>   mUnkf73d72;
-    ::ll::UntypedStorage<4, 4>   mUnkeb97bb;
-    ::ll::UntypedStorage<8, 8>   mUnkc435b8;
-    ::ll::UntypedStorage<1, 1>   mUnkf0fffc;
-    ::ll::UntypedStorage<1, 1>   mUnk2493d3;
-    ::ll::UntypedStorage<1, 1>   mUnk414905;
-    ::ll::UntypedStorage<4, 4>   mUnkfbf5b2;
-    ::ll::UntypedStorage<1, 1>   mUnkffd3d7;
-    ::ll::UntypedStorage<4, 4>   mUnka3dd06;
-    ::ll::UntypedStorage<8, 56>  mUnk61d117;
-    ::ll::UntypedStorage<8, 56>  mUnk51c0b3;
-    ::ll::UntypedStorage<4, 4>   mUnk17b9b7;
-    ::ll::UntypedStorage<8, 32>  mUnk47ed0f;
-    ::ll::UntypedStorage<8, 32>  mUnkdcc88b;
-    ::ll::UntypedStorage<8, 32>  mUnkae2e1a;
-    ::ll::UntypedStorage<4, 4>   mUnk1e0d75;
-    ::ll::UntypedStorage<8, 24>  mUnkf49ceb;
-    ::ll::UntypedStorage<8, 32>  mUnk2b57e9;
-    ::ll::UntypedStorage<8, 72>  mUnkf9dbe5;
-    ::ll::UntypedStorage<8, 32>  mUnkf2671b;
-    ::ll::UntypedStorage<1, 1>   mUnk8d22fd;
-    ::ll::UntypedStorage<1, 1>   mUnk5b0010;
-    ::ll::UntypedStorage<8, 64>  mUnk93b919;
-    ::ll::UntypedStorage<4, 4>   mUnkb03051;
-    ::ll::UntypedStorage<8, 176> mUnk1391df;
-    ::ll::UntypedStorage<4, 4>   mUnkf4d60e;
-    ::ll::UntypedStorage<1, 1>   mUnka07096;
-    ::ll::UntypedStorage<8, 32>  mUnk97b1ff;
-    ::ll::UntypedStorage<8, 32>  mUnkc4d743;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mName;
+    ::ll::TypedStorage<8, 8, int64>                                   mLastSaved;
+    ::ll::TypedStorage<4, 4, ::GameType>                              mGameType;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsHardcore;
+    ::ll::TypedStorage<1, 1, bool>                                    mPlayerHasDied;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty>       mGameDifficulty;
+    ::ll::TypedStorage<8, 8, ::LevelSeed64>                           mSeed;
+    ::ll::TypedStorage<4, 4, int>                                     mNetworkProtocolVersion;
+    ::ll::TypedStorage<8, 8, uint64>                                  mSizeOnDisk;
+    ::ll::TypedStorage<1, 1, bool>                                    mConfirmedPlatformLockedContent;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsMultiplayerEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                    mLANBroadcastIntent;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>            mXBLBroadcastIntent;
+    ::ll::TypedStorage<1, 1, bool>                                    mCommandsEnabled;
+    ::ll::TypedStorage<4, 4, ::EducationEditionOfferValue>            mEducationEditionOffer;
+    ::ll::TypedStorage<8, 56, ::GameVersion>                          mLastLoadedGameVersion;
+    ::ll::TypedStorage<8, 56, ::GameVersion>                          mMinCompatibleClientVersion;
+    ::ll::TypedStorage<4, 4, ::StorageVersion>                        mStorageVersion;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mWorldDirectoryPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mWorldIconPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mWorldIconTargetPath;
+    ::ll::TypedStorage<4, 4, ::WorldIconType>                         mWorldIconType;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mPremiumTemplateContentIdentity;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mEducationOid;
+    ::ll::TypedStorage<8, 72, ::Experiments>                          mExperiments;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                      mBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsSingleUseWorld;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsBetaRetailLevel;
+    ::ll::TypedStorage<8, 64, ::EduSharedUriResource>                 mEduSharedUriResource;
+    ::ll::TypedStorage<4, 4, ::Editor::WorldType>                     mEditorWorldType;
+    ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>> mCloudSaveInfo;
+    ::ll::TypedStorage<4, 4, ::EduCloud::WorldSyncState>              mEduCloudWorldSyncState;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasUncompleteWorldFileOnDisk;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mEducationCreatorId;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mEducationCreatorWorldId;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelSummary();
+    MCAPI LevelSummary();
 
-    MCNAPI LevelSummary(::LevelSummary const&);
+    MCAPI LevelSummary(::LevelSummary const&);
 
-    MCNAPI LevelSummary(
+    MCAPI LevelSummary(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -81,7 +84,7 @@ public:
         bool                 isBetaRetailLevel
     );
 
-    MCNAPI LevelSummary(
+    MCAPI LevelSummary(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -113,59 +116,58 @@ public:
         ::std::optional<::CloudSaveLevelInfo> cloudSaveInfo
     );
 
-    MCNAPI ::std::optional<::Core::PathBuffer<::std::string>>
-    _getScreenshotIconPath(::Core::Path const& worldDirectory);
+    MCAPI ::std::optional<::Core::PathBuffer<::std::string>> _getScreenshotIconPath(::Core::Path const& worldDirectory);
 
-    MCNAPI void _initializeWorldIconPath(::Core::Path const& directory);
+    MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
-    MCNAPI_C bool cloudSaveForWorldIsEnabled() const;
+    MCAPI_C bool cloudSaveForWorldIsEnabled() const;
 
-    MCNAPI_C bool isEditionCompatible() const;
+    MCAPI_C bool isEditionCompatible() const;
 
-    MCNAPI_C bool isVersionCompatible() const;
+    MCAPI_C bool isVersionCompatible() const;
 
-    MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
+    MCAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCNAPI_C ::LevelSummary& setId(::std::string Id);
+    MCAPI_C ::LevelSummary& setId(::std::string Id);
 
-    MCNAPI ::LevelSummary& setName(::std::string Name);
+    MCAPI ::LevelSummary& setName(::std::string Name);
 
-    MCNAPI ~LevelSummary();
+    MCAPI ~LevelSummary();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathBuffer<::std::string>
+    MCAPI_C static ::Core::PathBuffer<::std::string>
     buildScreenshotIconPath(::Core::Path const& worldDirectory, ::Core::Path const& previousScreenshotIconPath);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
+    MCAPI static ::Core::PathBuffer<::std::string> const& CUSTOM_ICON_FILENAME();
 
-    MCNAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
+    MCAPI static ::std::string const& DEFAULT_EDU_CLOUD_WORLD_ICON_FILENAME();
 
-    MCNAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
+    MCAPI static ::std::string const& DEFAULT_WORLD_ICON_FILENAME();
 
-    MCNAPI static ::std::string const& INVALID_LEVEL_ID();
+    MCAPI static ::std::string const& INVALID_LEVEL_ID();
 
-    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
+    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_EXTENSION();
 
-    MCNAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
+    MCAPI static ::std::string const& SCREENSHOT_WORLD_ICON_FILENAME_PREFIX();
 
-    MCNAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
+    MCAPI static ::Core::PathBuffer<::std::string> const& WORLD_ICON_FILENAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::LevelSummary const&);
+    MCAPI void* $ctor(::LevelSummary const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const& levelId,
         ::LevelData const&   levelData,
         ::Core::Path const&  levelDirectory,
@@ -173,7 +175,7 @@ public:
         bool                 isBetaRetailLevel
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&                  id,
         ::std::string const&                  name,
         int64                                 lastSaved,
@@ -209,6 +211,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

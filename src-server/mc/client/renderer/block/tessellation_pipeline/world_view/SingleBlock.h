@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline::WorldView {
 
-struct SingleBlock {};
+class SingleBlock {};
 
 } // namespace ClientBlockPipeline::WorldView

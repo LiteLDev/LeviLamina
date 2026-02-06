@@ -23,28 +23,28 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
+class FocusManager;
 class KeyboardManager;
+class LayoutManager;
 class RectangleArea;
 class ScreenController;
+class ScreenLoadTimeTracker;
+class ScreenRenderBatch;
 class ScreenViewProxy;
+class UIAnimationController;
+class UIControl;
+class UIControlFactory;
 class UIMeasureStrategy;
 class UIRenderContext;
 struct DataBindingComponent;
 struct FocusComponent;
-struct FocusManager;
 struct ITTSEventManager;
-struct LayoutManager;
 struct ScreenEvent;
 struct ScreenInputContext;
-struct ScreenLoadTimeTracker;
-struct ScreenRenderBatch;
 struct ScreenSettings;
 struct SliderComponent;
 struct TextEditComponent;
 struct TouchPadTouchEventData;
-struct UIAnimationController;
-struct UIControl;
-struct UIControlFactory;
 struct UIPropertyBag;
 struct VisualTree;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -67,28 +67,26 @@ public:
 
     struct DelayedCommand {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk37ec57;
-        ::ll::UntypedStorage<4, 4>  mUnk5da917;
-        // NOLINTEND
+        // DelayedCommand inner types define
+        using Result = ::std::pair<::ui::DirtyFlag, bool>;
 
     public:
-        // prevent constructor by default
-        DelayedCommand& operator=(DelayedCommand const&);
-        DelayedCommand(DelayedCommand const&);
-        DelayedCommand();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 64, ::std::function<::std::pair<::ui::DirtyFlag, bool>()>> mAction;
+        ::ll::TypedStorage<4, 4, ::ScreenView::DelayedCommandLocation>                   location;
+        // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DelayedCommand();
+        MCAPI ~DelayedCommand();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -96,16 +94,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkf8837f;
-        ::ll::UntypedStorage<4, 8> mUnkeb6c41;
-        ::ll::UntypedStorage<4, 8> mUnk5de813;
+        ::ll::TypedStorage<4, 4, int>         mTouchId;
+        ::ll::TypedStorage<4, 8, ::glm::vec2> mPreviousPosition;
+        ::ll::TypedStorage<4, 8, ::glm::vec2> mCurrentPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TouchPadData& operator=(TouchPadData const&);
-        TouchPadData(TouchPadData const&);
-        TouchPadData();
     };
 
     using clock_type = ::std::chrono::steady_clock;

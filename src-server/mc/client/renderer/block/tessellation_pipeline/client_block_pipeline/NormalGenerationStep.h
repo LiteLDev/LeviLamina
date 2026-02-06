@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct NormalGenerationStep {};
+class NormalGenerationStep {};
 
 } // namespace ClientBlockPipeline

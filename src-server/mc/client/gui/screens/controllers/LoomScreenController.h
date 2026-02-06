@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LoomScreenController {
+class LoomScreenController {
 public:
     // LoomScreenController inner types define
     enum class LeftTabIndex : int {};

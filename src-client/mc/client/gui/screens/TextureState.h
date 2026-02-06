@@ -2,29 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+
 struct TextureState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk25d33c;
-    ::ll::UntypedStorage<1, 1>  mUnk108030;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexturePtr;
+    ::ll::TypedStorage<1, 1, bool>               mActive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextureState& operator=(TextureState const&);
-    TextureState(TextureState const&);
-    TextureState();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~TextureState();
+    MCAPI ~TextureState();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

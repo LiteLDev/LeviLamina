@@ -11,14 +11,22 @@
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
+#include "mc/client/network/realms/GenericStatus.h"
+#include "mc/client/services/messaging/MessageData.h"
+#include "mc/client/social/ProfileImageOptions.h"
 #include "mc/client/social/UserListObserver.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
+class MainMenuScreenModel;
+class SocialButtonScreenController;
+struct ButtonArtSurface;
+struct GatheringConfig;
 struct IEntitlementManager;
-struct MainMenuScreenModel;
 namespace Json { class Value; }
 namespace Social { struct User; }
 namespace edu::auth { struct CredsAuthComplete; }
@@ -36,14 +44,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkfc90bb;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StartMenuScreenController>> mStartMenuScreenController;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SignOutObserver& operator=(SignOutObserver const&);
-        SignOutObserver(SignOutObserver const&);
-        SignOutObserver();
 
     public:
         // virtual functions
@@ -56,7 +58,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
+        MCAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const& user);
         // NOLINTEND
 
     public:
@@ -69,48 +71,46 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkfb1ae6;
-    ::ll::UntypedStorage<8, 24>  mUnkee2b55;
-    ::ll::UntypedStorage<1, 1>   mUnkead9e7;
-    ::ll::UntypedStorage<4, 4>   mUnk8df4cf;
-    ::ll::UntypedStorage<1, 1>   mUnkae1e69;
-    ::ll::UntypedStorage<1, 1>   mUnk6f63ba;
-    ::ll::UntypedStorage<1, 1>   mUnkda940b;
-    ::ll::UntypedStorage<4, 4>   mUnk8fa435;
-    ::ll::UntypedStorage<8, 32>  mUnk999f6e;
-    ::ll::UntypedStorage<8, 8>   mUnk2c619a;
-    ::ll::UntypedStorage<8, 8>   mUnk7e9fa8;
-    ::ll::UntypedStorage<8, 8>   mUnk1717cc;
-    ::ll::UntypedStorage<8, 16>  mUnk330f79;
-    ::ll::UntypedStorage<8, 8>   mUnk9af8a3;
-    ::ll::UntypedStorage<8, 72>  mUnk87c88d;
-    ::ll::UntypedStorage<1, 1>   mUnk3144fa;
-    ::ll::UntypedStorage<1, 1>   mUnkd7b80b;
-    ::ll::UntypedStorage<8, 336> mUnk8d5d3d;
-    ::ll::UntypedStorage<8, 24>  mUnk356acd;
-    ::ll::UntypedStorage<8, 24>  mUnkfac3ef;
-    ::ll::UntypedStorage<8, 640> mUnkf5e79a;
-    ::ll::UntypedStorage<8, 640> mUnk1a01e4;
-    ::ll::UntypedStorage<1, 1>   mUnk2b5ff2;
-    ::ll::UntypedStorage<1, 1>   mUnkcdb60d;
-    ::ll::UntypedStorage<4, 4>   mUnkd19229;
-    ::ll::UntypedStorage<1, 1>   mUnk7f1b8a;
-    ::ll::UntypedStorage<1, 1>   mUnke51a51;
-    ::ll::UntypedStorage<1, 1>   mUnk6c9060;
-    ::ll::UntypedStorage<8, 16>  mUnkfcd5dd;
-    ::ll::UntypedStorage<1, 1>   mUnk30d692;
-    ::ll::UntypedStorage<1, 1>   mUnk3022ce;
-    ::ll::UntypedStorage<4, 4>   mUnkd4c4ff;
-    ::ll::UntypedStorage<8, 16>  mUnkef4eac;
-    ::ll::UntypedStorage<8, 16>  mUnk62c01d;
-    ::ll::UntypedStorage<8, 16>  mUnkd976d6;
-    ::ll::UntypedStorage<1, 1>   mUnk6ac2e9;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SocialButtonScreenController>>    mSocialButtonScreenController;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>> mEntitlementManager;
+    ::ll::TypedStorage<1, 1, bool>                                                  mDirty;
+    ::ll::TypedStorage<4, 4, int>                                                   mPendingInvites;
+    ::ll::TypedStorage<1, 1, bool>                                                  mSigningIn;
+    ::ll::TypedStorage<1, 1, bool>                                                  mNewStoreOffersAvailable;
+    ::ll::TypedStorage<1, 1, bool>                                                  mErrorButtonHovered;
+    ::ll::TypedStorage<4, 4, int>                                                   mAnimationCount;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mAnimatedMessage;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastSigningInAnimation;
+    ::ll::TypedStorage<8, 8, int64>                                                 mNextContentFetchTime;
+    ::ll::TypedStorage<8, 8, int64>                                                 mNextImportTime;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                              mExistenceTracker;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StartMenuScreenController::SignOutObserver>> mSignOutObserver;
+    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                                  mProfileImage;
+    ::ll::TypedStorage<1, 1, bool>                                                            mSetFocusToSignInButton;
+    ::ll::TypedStorage<1, 1, bool>                                                            mCapabilitiesChanged;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                   mTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>                 mStoreButtonArtSurface;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ButtonArtSurface>>                 mPlayButtonArtSurface;
+    ::ll::TypedStorage<8, 640, ::std::optional<::MessageData>>                                mStoreButtonArtData;
+    ::ll::TypedStorage<8, 640, ::std::optional<::MessageData>>                                mPlayButtonArtData;
+    ::ll::TypedStorage<1, 1, bool>                                                            mStoreButtonHovered;
+    ::ll::TypedStorage<1, 1, bool>                                                            mPlayButtonHovered;
+    ::ll::TypedStorage<4, 4, int>                                                             mUnreadInvites;
+    ::ll::TypedStorage<1, 1, bool>                                        mInitialInboxAnimationPlayed;
+    ::ll::TypedStorage<1, 1, bool>                                        mShowingNewPlayerFlowButtons;
+    ::ll::TypedStorage<1, 1, bool>                                        mNeedToPlayMainButtonsShowAnimation;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GatheringConfig const>> mActiveGathering;
+    ::ll::TypedStorage<1, 1, bool>                                        mOwnsRealmsSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                        mRealmsFetched;
+    ::ll::TypedStorage<4, 4, ::Realms::GenericStatus>                     mRealmsStatus;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mPendingInviteCountSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mPrimaryUserSignInSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mTrialModeUpdateSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsTrialModeEnabled;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StartMenuScreenController& operator=(StartMenuScreenController const&);
-    StartMenuScreenController(StartMenuScreenController const&);
     StartMenuScreenController();
 
 public:

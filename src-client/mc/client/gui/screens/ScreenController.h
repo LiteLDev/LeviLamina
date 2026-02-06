@@ -7,6 +7,7 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/ViewRequest.h"
+#include "mc/client/gui/screens/ScreenViewCommand.h"
 #include "mc/client/gui/screens/interfaces/IScreenController.h"
 #include "mc/deps/input/enums/ButtonState.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -16,6 +17,7 @@
 class BlockPos;
 class ScreenControllerProxy;
 class StringHash;
+class TaskGroup;
 class TaskResult;
 struct ActorUniqueID;
 struct FocusMoveScreenEventData;
@@ -24,7 +26,6 @@ struct ItemRendererData;
 struct PointerHeldScreenEventData;
 struct RawInputScreenEventData;
 struct ScreenEvent;
-struct ScreenViewCommand;
 struct TextEditScreenEventData;
 struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
@@ -57,44 +58,311 @@ public:
 
     struct ButtonEventCallbackKeyHasher {};
 
+    using FocusMoveEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::FocusMoveScreenEventData&) const>;
+
+    using InputModeChangedEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::InputModeChangeScreenEventData&) const>;
+
+    using PointerHeldEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::PointerHeldScreenEventData&) const>;
+
+    using ButtonEventHandlerCallback = ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>;
+
+    using TextEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const>;
+
+    using ToggleChangeEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const>;
+
+    using TextEditSelectedStateChangeEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::TextEditSelectedStateChangeEventData&) const>;
+
+    using SliderChangeEventHandlerCallback = ::brstd::move_only_function<::ui::ViewRequest(int, float) const>;
+
+    using AnimationEventHandlerCallback = ::brstd::move_only_function<::ui::ViewRequest() const>;
+
+    using RawInputEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(::RawInputScreenEventData&) const>;
+
+    using ClippedCollectionEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(int, int, ::UIPropertyBag&) const>;
+
+    using ClipStateChangeEventHandlerCallback =
+        ::brstd::move_only_function<::ui::ViewRequest(bool, ::UIPropertyBag&) const>;
+
+    using CustomRendererEventHandlerCallback = ::brstd::move_only_function<::ui::ViewRequest() const>;
+
+    using BindPredicate = ::brstd::move_only_function<bool() const>;
+
+    using BindStringCallback = ::brstd::move_only_function<::std::string() const>;
+
+    using BindBoolCallback = ::brstd::move_only_function<bool() const>;
+
+    using BindIntCallback = ::brstd::move_only_function<int() const>;
+
+    using BindFloatCallback = ::brstd::move_only_function<float() const>;
+
+    using BindGridSizeCallback = ::brstd::move_only_function<::glm::ivec2() const>;
+
+    using BindGlobalGridSizeCallback = ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const>;
+
+    using BindColorCallback = ::brstd::move_only_function<::mce::Color() const>;
+
+    using BindColorWithBagCallback = ::brstd::move_only_function<::mce::Color(::UIPropertyBag&) const>;
+
+    using BindCollectionPredicate = ::brstd::move_only_function<bool(int) const>;
+
+    using BindStringForCollectionCallback = ::brstd::move_only_function<::std::string(int) const>;
+
+    using BindBoolForCollectionCallback = ::brstd::move_only_function<bool(int) const>;
+
+    using BindFloatForCollectionCallback = ::brstd::move_only_function<float(int) const>;
+
+    using BindIntForCollectionCallback = ::brstd::move_only_function<int(int) const>;
+
+    using BindColorForCollectionCallback = ::brstd::move_only_function<::mce::Color(int) const>;
+
+    using BindAnyCollectionPredicate = ::brstd::move_only_function<bool(::std::string const&, int) const>;
+
+    using BindItemDataForAnyCollectionCallback =
+        ::brstd::move_only_function<::ItemRendererData(::std::string const&, int) const>;
+
+    using BindStringForAnyCollectionCallback =
+        ::brstd::move_only_function<::std::string(::std::string const&, int) const>;
+
+    using BindBoolForAnyCollectionCallback = ::brstd::move_only_function<bool(::std::string const&, int) const>;
+
+    using BindIntForAnyCollectionCallback = ::brstd::move_only_function<int(::std::string const&, int) const>;
+
+    using BindFloatForAnyCollectionCallback = ::brstd::move_only_function<float(::std::string const&, int) const>;
+
+    using BindDoubleForAnyCollectionCallback = ::brstd::move_only_function<double(::std::string const&, int) const>;
+
+    using BindForAnyCollectionCallback =
+        ::brstd::move_only_function<void(int, ::std::string const&, ::UIPropertyBag&) const>;
+
+    using BindForCollectionCallback =
+        ::brstd::move_only_function<void(::std::string const&, int, ::std::string const&, ::UIPropertyBag&) const>;
+
+    using BindForGlobalCallback = ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&) const>;
+
+    using ButtonEventCallbackKey = ::std::tuple<uint, ::ButtonState>;
+
+    using ButtonEventCallbackInfo = ::std::tuple<
+        ::ScreenController::PreviousButtonStateRequirement,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>;
+
+    using ButtonEventCallbackInfoVector = ::std::vector<::std::tuple<
+        ::ScreenController::PreviousButtonStateRequirement,
+        ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>>;
+
+    using ButtonEventCallbackMap = ::std::unordered_map<
+        ::std::tuple<uint, ::ButtonState>,
+        ::std::vector<::std::tuple<
+            ::ScreenController::PreviousButtonStateRequirement,
+            ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>>,
+        ::ScreenController::ButtonEventCallbackKeyHasher,
+        ::std::equal_to<::std::tuple<uint, ::ButtonState>>>;
+
+    using ButtonInteractedEventCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>;
+
+    using ButtonInteractedEventCallbackMap = ::std::
+        unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>>;
+
+    using ToggleChangeEventCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const>>;
+
+    using ToggleChangeEventCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const>>>;
+
+    using TextEditSelectedStateChangeEventCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::TextEditSelectedStateChangeEventData&) const>>;
+
+    using TextEditSelectedStateChangeEventCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::TextEditSelectedStateChangeEventData&) const>>>;
+
+    using SliderChangeEventHandlerCallbackInfo = ::std::
+        tuple<::ScreenController::SliderChangeType, ::brstd::move_only_function<::ui::ViewRequest(int, float) const>>;
+
+    using SliderChangeEventCallbackVector = ::std::vector<::std::tuple<
+        ::ScreenController::SliderChangeType,
+        ::brstd::move_only_function<::ui::ViewRequest(int, float) const>>>;
+
+    using SliderChangeEventCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<::std::tuple<
+            ::ScreenController::SliderChangeType,
+            ::brstd::move_only_function<::ui::ViewRequest(int, float) const>>>>;
+
+    using TextEventHandlerCallbackInfo =
+        ::std::tuple<bool, ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const>>;
+
+    using TextEventHandlerCallbackVector = ::std::vector<
+        ::std::tuple<bool, ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const>>>;
+
+    using TextEventHandlerCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<
+            ::std::tuple<bool, ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const>>>>;
+
+    using AnimationEventHandlerCallbackVector = ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>;
+
+    using AnimationEventHandlerCallbackMap =
+        ::std::unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>>;
+
+    using ClippedCollectionEventHandlerCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(int, int, ::UIPropertyBag&) const>>;
+
+    using ClippedCollectionEventHandlerCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(int, int, ::UIPropertyBag&) const>>>;
+
+    using ClipStateChangeHandlerCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(bool, ::UIPropertyBag&) const>>;
+
+    using ClipStateChangeEventHandlerCallbackMap = ::std::unordered_map<
+        uint,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(bool, ::UIPropertyBag&) const>>>;
+
+    using CustomRendererEventHandlerCallbackVector =
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>;
+
+    using CustomRendererEventHandlerCallbackMap =
+        ::std::unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>   mUnk8a7418;
-    ::ll::UntypedStorage<8, 64>   mUnk82db40;
-    ::ll::UntypedStorage<8, 64>   mUnk575ccd;
-    ::ll::UntypedStorage<8, 64>   mUnk5c1102;
-    ::ll::UntypedStorage<8, 8>    mUnk376fda;
-    ::ll::UntypedStorage<1, 1>    mUnkd9ae2b;
-    ::ll::UntypedStorage<1, 1>    mUnk658e75;
-    ::ll::UntypedStorage<1, 1>    mUnka0b766;
-    ::ll::UntypedStorage<8, 1408> mUnkf888ac;
-    ::ll::UntypedStorage<1, 1>    mUnkdcae0f;
-    ::ll::UntypedStorage<8, 64>   mUnke5c710;
-    ::ll::UntypedStorage<8, 64>   mUnka9059e;
-    ::ll::UntypedStorage<8, 64>   mUnk8a2aa4;
-    ::ll::UntypedStorage<8, 24>   mUnkef27f7;
-    ::ll::UntypedStorage<8, 24>   mUnkdd0f55;
-    ::ll::UntypedStorage<8, 24>   mUnk1c1018;
-    ::ll::UntypedStorage<8, 64>   mUnk60893a;
-    ::ll::UntypedStorage<8, 64>   mUnk3c1132;
-    ::ll::UntypedStorage<8, 64>   mUnk20b072;
-    ::ll::UntypedStorage<8, 24>   mUnkc3d6bf;
-    ::ll::UntypedStorage<8, 64>   mUnk392f36;
-    ::ll::UntypedStorage<8, 64>   mUnkaa9757;
-    ::ll::UntypedStorage<8, 64>   mUnk955ba0;
-    ::ll::UntypedStorage<8, 64>   mUnk9c1f6f;
-    ::ll::UntypedStorage<8, 64>   mUnk38743d;
-    ::ll::UntypedStorage<8, 64>   mUnka545bb;
-    ::ll::UntypedStorage<8, 64>   mUnkcd76db;
-    ::ll::UntypedStorage<8, 64>   mUnk1669d5;
-    ::ll::UntypedStorage<8, 8>    mUnk458aec;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::UIPropertyBag const&)>>
+        mControlCreateCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::std::string const&)>>
+                                                                           mControlDestroyCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> mControlDestroyAllCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> mScreenViewSendManualInputEventCallback;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenControllerProxy>>   mProxy;
+    ::ll::TypedStorage<1, 1, bool>                                         mCreateInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                         mInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                         mUsesErrorInfo;
+    ::ll::TypedStorage<8, 1408, ::ScreenViewCommand>                       mScreenViewCommand;
+    ::ll::TypedStorage<1, 1, bool>                                         mIsScrollingLocked;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::tuple<uint, ::ButtonState>,
+            ::std::vector<::std::tuple<
+                ::ScreenController::PreviousButtonStateRequirement,
+                ::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>>,
+            ::ScreenController::ButtonEventCallbackKeyHasher,
+            ::std::equal_to<::std::tuple<uint, ::ButtonState>>>>
+        mButtonEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::
+            unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::UIPropertyBag*) const>>>>
+        mButtonInteractedEventCallbackMap;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::ui::ViewRequest(::RawInputScreenEventData&) const>>
+        mRawInputEventHandlerCallback;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::FocusMoveScreenEventData&) const>>>
+        mFocusMoveEventCallbacks;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::InputModeChangeScreenEventData&) const>>>
+        mInputModeChangedEventCallbacks;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::PointerHeldScreenEventData&) const>>>
+        mPointerHeldEventCallbacks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<::std::tuple<
+                bool,
+                ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const>>>>>
+        mTextEditEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const>>>>
+        mToggleChangeEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<
+                ::brstd::move_only_function<::ui::ViewRequest(::TextEditSelectedStateChangeEventData&) const>>>>
+        mTextEditSelectedStateChangeEventCallbackMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ScreenController>>> mSubControllers;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<::std::tuple<
+                ::ScreenController::SliderChangeType,
+                ::brstd::move_only_function<::ui::ViewRequest(int, float) const>>>>>
+        mSliderChangeEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>>>
+        mAnimationEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<::brstd::move_only_function<::ui::ViewRequest(int, int, ::UIPropertyBag&) const>>>>
+        mClippedCollectionEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::std::vector<::brstd::move_only_function<::ui::ViewRequest(bool, ::UIPropertyBag&) const>>>>
+        mClipStateChangeEventCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<uint, ::std::vector<::brstd::move_only_function<::ui::ViewRequest() const>>>>
+        mCustomRendererEventHandlerCallbackMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<uint, ::brstd::move_only_function<void(::std::string const&, ::UIPropertyBag&)>>>
+        mBindCallbacks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<uint, ::brstd::move_only_function<void(int, ::std::string const&, ::UIPropertyBag&)>>>
+        mCollectionBindCallbacks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            uint,
+            ::brstd::move_only_function<void(::std::string const&, int, ::std::string const&, ::UIPropertyBag&)>>>
+                                                             mAnyCollectionBindCallbacks;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mTaskGroup;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScreenController& operator=(ScreenController const&);
-    ScreenController(ScreenController const&);
     ScreenController();
 
 public:

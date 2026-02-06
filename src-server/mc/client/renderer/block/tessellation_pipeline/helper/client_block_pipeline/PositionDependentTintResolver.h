@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct PositionDependentTintResolver {};
+class PositionDependentTintResolver {};
 
 } // namespace ClientBlockPipeline

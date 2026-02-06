@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BundleHelper {
+class BundleHelper {
 public:
     // BundleHelper inner types define
-    enum class BundleItemScrollWheelDirection : int {};
-
     enum class BundleItemStickScrollDirection : int {};
+
+    enum class BundleItemScrollWheelDirection : int {};
 };

@@ -13,10 +13,11 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DlcUIWrapper;
+class AsyncTracker;
+class DlcUIWrapper;
+class MainMenuScreenModel;
 struct LevelSummary;
 struct LocalWorldInfo;
-struct MainMenuScreenModel;
 struct TextEditScreenEventData;
 namespace Realms { struct World; }
 // clang-format on
@@ -29,14 +30,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk793974;
-    ::ll::UntypedStorage<8, 8>  mUnkfd6e69;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>> mMainMenuScreenModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AsyncTracker>>         mAsyncTracker;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MainMenuScreenController& operator=(MainMenuScreenController const&);
-    MainMenuScreenController(MainMenuScreenController const&);
     MainMenuScreenController();
 
 public:
@@ -52,38 +51,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MainMenuScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
+    MCAPI MainMenuScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
 
-    MCNAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
+    MCAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
 
-    MCNAPI void _displayWorldConversionErrorModalDialog();
+    MCAPI void _displayWorldConversionErrorModalDialog();
 
-    MCNAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
+    MCAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
         ::LocalWorldInfo const&                        world,
         ::DlcUIWrapper&                                dlcUIWrapper,
         ::std::function<void(::LocalWorldInfo const&)> startLocalWorldCallback
     );
 
-    MCNAPI bool _tryCopyWorld(::LevelSummary const& levelSummary);
+    MCAPI bool _tryCopyWorld(::LevelSummary const& levelSummary);
 
-    MCNAPI void
+    MCAPI void
     _verifySkinApprovedBeforeJoin(::std::string const& serverType, ::std::function<void()> const& joinCallback);
 
-    MCNAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
+    MCAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
 
-    MCNAPI void confirmationExperimentalVersionDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCAPI void confirmationExperimentalVersionDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCNAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCNAPI void confirmationNoCrossPlatformMultiplayerSkinDialog(::std::function<void()> callback);
+    MCAPI void confirmationNoCrossPlatformMultiplayerSkinDialog(::std::function<void()> callback);
 
-    MCNAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
+    MCAPI ::std::shared_ptr<::MainMenuScreenModel> getMainMenuScreenModel();
 
-    MCNAPI void needOnlineNetworkForXBLSignInDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCAPI void needOnlineNetworkForXBLSignInDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCNAPI void showInvalidCrossPlatformMultiplayerSkinModal();
+    MCAPI void showInvalidCrossPlatformMultiplayerSkinModal();
 
-    MCNAPI void startRealm(
+    MCAPI void startRealm(
         ::IMinecraftEventing::RealmConnectionFlow fromFlow,
         ::Realms::World&                          world,
         ::std::function<void(::IMinecraftEventing::RealmConnectionResult, ::std::optional<::Realms::FailureReason>)>
@@ -96,21 +95,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
+    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onOpen();
+    MCAPI void $onOpen();
 
-    MCNAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback);
+    MCAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback);
     // NOLINTEND
 
 public:

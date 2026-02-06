@@ -4,6 +4,12 @@
 
 namespace ClientBlockPipeline {
 
-struct BitsetCache {};
+struct BitsetCache {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 1000, ::std::bitset<8000>> mBitSet;
+    // NOLINTEND
+};
 
 } // namespace ClientBlockPipeline

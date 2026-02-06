@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct TessellatorContext {};
+class TessellatorContext {};
 
 } // namespace ClientBlockPipeline

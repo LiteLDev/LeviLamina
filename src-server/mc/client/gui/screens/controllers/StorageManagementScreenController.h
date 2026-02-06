@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct StorageManagementScreenController {
+class StorageManagementScreenController {
 public:
     // StorageManagementScreenController inner types define
     enum class ConvertProgressState : int {};

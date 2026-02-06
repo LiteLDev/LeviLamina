@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DropdownScreenController {
+class DropdownScreenController {
 public:
     // DropdownScreenController inner types declare
     // clang-format off

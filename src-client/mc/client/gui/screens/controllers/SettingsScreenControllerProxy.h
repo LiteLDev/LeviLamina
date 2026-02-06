@@ -4,19 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/ScreenControllerProxy.h"
+#include "mc/client/gui/screens/controllers/SettingsScreenControllerProxyCallbacks.h"
 
 class SettingsScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnkffeb06;
+    ::ll::TypedStorage<8, 320, ::SettingsScreenControllerProxyCallbacks const> mCallbacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SettingsScreenControllerProxy& operator=(SettingsScreenControllerProxy const&);
-    SettingsScreenControllerProxy(SettingsScreenControllerProxy const&);
-    SettingsScreenControllerProxy();
 
 public:
     // virtual functions

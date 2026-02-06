@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct EmitterInitialExpressionComponent {};
+class EmitterInitialExpressionComponent {};
 
 } // namespace ParticleSystem

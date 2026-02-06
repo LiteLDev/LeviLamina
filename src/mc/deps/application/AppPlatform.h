@@ -17,6 +17,7 @@
 #include "mc/deps/core/file/FileAccessType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/AppFocusState.h"
+#include "mc/deps/core/platform/AppLifecycleContext.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
@@ -30,15 +31,21 @@
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/ServiceRegistrationToken.h"
+#include "mc/deps/core/utility/Subject.h"
+#include "mc/deps/core/utility/UniqueService.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/options/UIProfile.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
-class AppLifecycleContext;
 class AppPlatformListener;
+class AppPlatformNetworkSettings;
 class BatteryMonitorInterface;
 class FilePickerSettings;
 class HardwareMemoryTierUtil;
@@ -46,6 +53,7 @@ class IAppPlatformImpl;
 class IFileAccess;
 class IPlatformScreenshots;
 class ImagePickingCallback;
+class NetworkChangeObserver;
 class PDFWriter;
 class PropertyBag;
 class PushNotificationMessage;
@@ -59,10 +67,16 @@ struct IntegrityTokenResult;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPaste; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
+namespace Bedrock { class CommonPlatform; }
+namespace Bedrock { class DeviceIdManager; }
+namespace Bedrock { class FilePickerManager; }
 namespace Bedrock { class IApplicationDataStores; }
-namespace Bedrock::PubSub { class Subscription; }
-namespace Bedrock::Threading { class Mutex; }
+namespace Bedrock { class SignalReceiver; }
+namespace Bedrock { struct PlatformBuildInfo; }
+namespace Bedrock { struct PlatformRuntimeInfo; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class FileStorageArea; }
+namespace Core { class LoadTimeProfiler; }
 namespace Core { class Path; }
 namespace Core { class PathView; }
 namespace mce { class UUID; }
@@ -75,76 +89,84 @@ namespace Webview { struct PlatformArguments; }
 
 class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {
 public:
+    // AppPlatform inner types define
+    using Listener = ::AppPlatformListener;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk49db95;
-    ::ll::UntypedStorage<1, 1>   mUnkcb9aaa;
-    ::ll::UntypedStorage<1, 1>   mUnkbe6f7b;
-    ::ll::UntypedStorage<1, 1>   mUnk513795;
-    ::ll::UntypedStorage<1, 1>   mUnkce9805;
-    ::ll::UntypedStorage<8, 16>  mUnk7a3ae6;
-    ::ll::UntypedStorage<8, 104> mUnke68af5;
-    ::ll::UntypedStorage<1, 1>   mUnk3eb9fc;
+    ::ll::TypedStorage<8, 8, uint64>                                          mFreeMemoryMaximumBytes;
+    ::ll::TypedStorage<1, 1, bool>                                            mRequestedRestart;
+    ::ll::TypedStorage<1, 1, bool>                                            mPointerFocusLost;
+    ::ll::TypedStorage<1, 1, bool>                                            mKeyboardVisible;
+    ::ll::TypedStorage<1, 1, bool>                                            mOnInitUriListenerRegDone;
+    ::ll::TypedStorage<8, 16, ::std::multimap<float, ::AppPlatformListener*>> mListeners;
+    ::ll::TypedStorage<8, 104, ::Core::Subject<::NetworkChangeObserver, ::Bedrock::Threading::Mutex>>
+                                                      mNetworkChangeSubject;
+    ::ll::TypedStorage<1, 1, ::NetworkConnectionType> mNetworkConnectionType;
 #ifdef LL_PLAT_C
-    ::ll::UntypedStorage<8, 8>  mUnk2a484c;
-    ::ll::UntypedStorage<8, 64> mUnkd51380;
+    ::ll::TypedStorage<8, 8, void*>                                                     mHWND;
+    ::ll::TypedStorage<8, 64, ::std::unordered_multimap<::std::string, ::UriListener*>> mUriListeners;
 #endif
-    ::ll::UntypedStorage<8, 64> mUnkb50203;
-    ::ll::UntypedStorage<1, 4>  mUnka5d242;
-    ::ll::UntypedStorage<4, 4>  mUnk678160;
-    ::ll::UntypedStorage<8, 80> mUnkafb54c;
-    ::ll::UntypedStorage<8, 32> mUnked78dc;
-    ::ll::UntypedStorage<8, 32> mUnkb79db9;
-    ::ll::UntypedStorage<8, 32> mUnk2d8cb0;
-    ::ll::UntypedStorage<8, 8>  mUnkdc46a5;
-    ::ll::UntypedStorage<8, 8>  mUnk59b922;
-    ::ll::UntypedStorage<8, 8>  mUnk14a700;
-    ::ll::UntypedStorage<8, 8>  mUnk2c6ecf;
-    ::ll::UntypedStorage<1, 1>  mUnk31e0b7;
-    ::ll::UntypedStorage<8, 32> mUnk6d6135;
-    ::ll::UntypedStorage<8, 8>  mUnk896a24;
-    ::ll::UntypedStorage<8, 8>  mUnk69a5b2;
-    ::ll::UntypedStorage<1, 1>  mUnkd7bea9;
-    ::ll::UntypedStorage<8, 40> mUnk20e405;
-    ::ll::UntypedStorage<8, 8>  mUnk69afa6;
-    ::ll::UntypedStorage<1, 1>  mUnk6e12ac;
-    ::ll::UntypedStorage<1, 1>  mUnkff6e88;
-    ::ll::UntypedStorage<4, 4>  mUnk1d28ac;
-    ::ll::UntypedStorage<4, 4>  mUnk81425d;
-    ::ll::UntypedStorage<1, 1>  mUnkd5341c;
-    ::ll::UntypedStorage<1, 1>  mUnkdcaaf8;
-    ::ll::UntypedStorage<1, 1>  mUnk113b3b;
-    ::ll::UntypedStorage<1, 1>  mUnkbe6182;
-    ::ll::UntypedStorage<1, 1>  mUnkb00e9d;
-    ::ll::UntypedStorage<1, 1>  mUnk78da06;
-    ::ll::UntypedStorage<1, 1>  mUnk2ff939;
-    ::ll::UntypedStorage<8, 32> mUnkd9746f;
-    ::ll::UntypedStorage<8, 80> mUnk267c61;
-    ::ll::UntypedStorage<8, 32> mUnk26e8ea;
-    ::ll::UntypedStorage<8, 80> mUnkd6f5b8;
-    ::ll::UntypedStorage<8, 8>  mUnkb30295;
-    ::ll::UntypedStorage<8, 8>  mUnk40dee2;
-    ::ll::UntypedStorage<8, 8>  mUnk92e07d;
-    ::ll::UntypedStorage<8, 16> mUnk706c14;
-    ::ll::UntypedStorage<8, 16> mUnk391b07;
-    ::ll::UntypedStorage<8, 16> mUnke84b85;
-    ::ll::UntypedStorage<8, 16> mUnkb30208;
-    ::ll::UntypedStorage<8, 8>  mUnkf2b382;
-    ::ll::UntypedStorage<4, 4>  mUnk50488d;
-    ::ll::UntypedStorage<8, 16> mUnkea295c;
-    ::ll::UntypedStorage<8, 8>  mUnk412bfa;
-    ::ll::UntypedStorage<8, 8>  mUnkdd0de7;
-    ::ll::UntypedStorage<8, 8>  mUnkf9ffce;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::StoragePermissionResult)>> mStoragePermissionRequestResultCallback;
+    ::ll::TypedStorage<1, 4, ::AppLifecycleContext>                             mAppLifecycleContext;
+    ::ll::TypedStorage<4, 4, ::AppFocusState>                                   mFocusState;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mShareLock;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mShareTitle;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mShareText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mShareUri;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IFileAccess>>                  mDefaultFileAccess;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IFileAccess>>                  mPackageFileAccess;
+    ::ll::TypedStorage<8, 8, uint64>                                            mMaximumMemoryUsage;
+    ::ll::TypedStorage<8, 8, ::Bedrock::CommonPlatform*>                        mCommonPlatformShim;
+    ::ll::TypedStorage<1, 1, bool>                                              mMockMultiplayerActive;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mLocale;
+    ::ll::TypedStorage<8, 8, double>                                            mActiveSeconds;
+    ::ll::TypedStorage<8, 8, double>                                            mLastActiveTime;
+    ::ll::TypedStorage<1, 1, bool>                                              mAppIsActive;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                   mDeviceTier;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppPlatformNetworkSettings>>   mAppPlatformNetworkSettings;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                               mTerminating;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                               mSuspended;
+    ::ll::TypedStorage<4, 4, int>                                               mForcedDpi;
+    ::ll::TypedStorage<4, 4, ::UIScalingRules>                                  mForcedUIScalingRules;
+    ::ll::TypedStorage<1, 1, bool>                                              mForceUIScalingRules;
+    ::ll::TypedStorage<1, 1, bool>                                              mShowLostFocusToasts;
+    ::ll::TypedStorage<1, 1, bool>                                              mAllowLostFocusToasts;
+    ::ll::TypedStorage<1, 1, bool>                                              mAreThreadsFrozen;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsLowMemoryDevice;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsLowPhysicalMemoryDevice;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsUserStorageInitialized;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mScratchPath;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mScratchPathMutex;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mLastDeviceSessionId;
+    ::ll::TypedStorage<8, 80, ::std::recursive_mutex>                           mListenerLock;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::SignalReceiver>>      mSignalRcvr;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformRuntimeInfo>> mPlatformRuntimeInfo;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PlatformBuildInfo>>   mPlatformBuildInfo;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueService<::Core::LoadTimeProfiler>>          mProfiler;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueService<::Bedrock::IApplicationDataStores>> mApplicationDataStores;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueService<::Bedrock::DeviceIdManager>>        mDeviceIdManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueService<::Bedrock::FilePickerManager>>      mFilePickerManager;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::AppPlatform>> mAppPlatformServiceRegistrationToken;
+    ::ll::TypedStorage<4, 4, uint>                                      mCPUBoostCounter;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mLoadTimerOptionSubscription;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<
+            ::Bedrock::PubSub::Publisher<void(::LowMemorySeverity), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>>
+                                                                          mOnLowMemory;
+    ::ll::TypedStorage<8, 8, int64>                                       mCurrentMemorySeverityIdx;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::HardwareMemoryTierUtil>> mHardwareMemoryTierUtil;
 #ifdef LL_PLAT_C
-    ::ll::UntypedStorage<8, 8> mUnk85aa65;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ThrottledFileWriteManager>> mThrottledFileWriteManager;
 #endif
-    ::ll::UntypedStorage<8, 8> mUnkb00836;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IAppPlatformImpl>>> mImpl;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AppPlatform& operator=(AppPlatform const&);
-    AppPlatform(AppPlatform const&);
     AppPlatform();
 
 public:

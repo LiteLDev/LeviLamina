@@ -9,10 +9,10 @@ public:
     struct LevelRendererDebugInformation;
     struct RainState;
     struct FogBrightnessPair;
-    struct FogBrightnessParams;
     struct PlayerStateParams;
     struct LimitedActorRenderParams;
     struct RenderChunkPosBounds;
+    struct FogBrightnessParams;
     // clang-format on
 
     // LevelRendererCamera inner types define
@@ -22,11 +22,11 @@ public:
 
     struct FogBrightnessPair {};
 
-    struct FogBrightnessParams {};
-
     struct PlayerStateParams {};
 
     struct LimitedActorRenderParams {};
 
     struct RenderChunkPosBounds {};
+
+    struct FogBrightnessParams {};
 };

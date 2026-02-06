@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct ParticleMotionCollisionComponent {
+class ParticleMotionCollisionComponent {
 public:
     // ParticleMotionCollisionComponent inner types declare
     // clang-format off

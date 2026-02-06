@@ -50,16 +50,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _updateDarknessLightData(::BaseLightData& baseLightData, ::Player const& player, ::IOptions const& options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(::Dimension* d);
+    MCFOLD void $init(::Dimension* d);
 
-    MCNAPI bool $buildImage(
+    MCAPI bool $buildImage(
         ::BaseLightData const& lightData,
         ::mce::Image*          targetImage,
         uint                   imageLength,
@@ -68,7 +68,7 @@ public:
         bool                   clampToMinimum
     );
 
-    MCNAPI bool $buildImageSplit(
+    MCAPI bool $buildImageSplit(
         ::BaseLightData const& lightData,
         ::mce::Image*          targetImage,
         uint                   imageLength,
@@ -76,7 +76,7 @@ public:
         bool                   clampToMinimum
     );
 
-    MCNAPI ::std::unique_ptr<::BaseLightData>
+    MCAPI ::std::unique_ptr<::BaseLightData>
     $createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
     // NOLINTEND
 

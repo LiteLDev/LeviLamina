@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DlcBatchModel {
+class DlcBatchModel {
 public:
     // DlcBatchModel inner types define
     enum class DlcProductIdSearch : int {};

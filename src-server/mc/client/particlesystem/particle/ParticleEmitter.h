@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleEmitter {};
+class ParticleEmitter {};
 
 } // namespace ParticleSystem

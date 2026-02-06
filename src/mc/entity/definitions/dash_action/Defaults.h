@@ -5,11 +5,11 @@
 namespace DashAction::Defaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& COOLDOWN_SECONDS();
+MCAPI float const& COOLDOWN_SECONDS();
 
-MCNAPI float const& HORIZONTAL_MOMENTUM();
+MCAPI float const& HORIZONTAL_MOMENTUM();
 
-MCNAPI float const& VERTICAL_MOMENTUM();
+MCAPI float const& VERTICAL_MOMENTUM();
 // NOLINTEND
 
 } // namespace DashAction::Defaults

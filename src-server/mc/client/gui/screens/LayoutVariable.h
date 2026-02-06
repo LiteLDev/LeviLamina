@@ -2,16 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LayoutVariable {
+class LayoutVariable {
 public:
     // LayoutVariable inner types declare
     // clang-format off
-    struct MinMaxRuleValue;
     struct RuleValue;
+    struct MinMaxRuleValue;
     // clang-format on
 
     // LayoutVariable inner types define
-    struct MinMaxRuleValue {};
-
     struct RuleValue {};
+
+    struct MinMaxRuleValue {};
 };

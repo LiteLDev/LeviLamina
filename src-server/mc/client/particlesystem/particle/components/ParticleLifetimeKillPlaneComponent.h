@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleLifetimeKillPlaneComponent {};
+class ParticleLifetimeKillPlaneComponent {};
 
 } // namespace ParticleSystem

@@ -46,11 +46,13 @@ class ActiveDirectoryIdentity;
 class ActorAnimationControllerGroup;
 class ActorAnimationGroup;
 class AppSystemRegistry;
+class BlockCullingGroup;
 class ChunkSource;
 class ClientInstance;
 class ClientNetworkSystem;
 class ContentIdentity;
 class ContentLogFileEndPoint;
+class CubemapBackgroundResources;
 class DateManager;
 class Dimension;
 class EDUSystems;
@@ -65,6 +67,7 @@ class IClientDimensionExtensions;
 class IClientInstance;
 class IContentAccessibilityProvider;
 class IContentKeyProvider;
+class IContentManager;
 class IContentTierManager;
 class IGameModuleShared;
 class ILevelListCache;
@@ -76,6 +79,7 @@ class ItemRegistryRef;
 class LevelDbEnv;
 class LevelSettings;
 class LinkedAssetValidator;
+class LocalPlayer;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
@@ -84,6 +88,7 @@ class Options;
 class PackManifest;
 class PackManifestFactory;
 class PackSourceFactory;
+class ParticleEffectGroup;
 class Player;
 class PushNotificationMessage;
 class RenderControllerGroup;
@@ -91,6 +96,7 @@ class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class ResourcePackStack;
+class SceneFactory;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
 class ServerNetworkHandler;
@@ -104,13 +110,11 @@ class WebSocketCommManager;
 class WorldTemplateManager;
 struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
-struct BlockCullingGroup;
 struct CDNService;
 struct ClubsService;
 struct ContentAcquisition;
 struct ContentCatalogService;
 struct ControllerIDtoClientMap;
-struct CubemapBackgroundResources;
 struct DeferredLighting;
 struct DevConsoleLogger;
 struct EmoticonManager;
@@ -120,7 +124,6 @@ struct FlightingService;
 struct GatheringManager;
 struct GeometryGroup;
 struct GlobalResourcesCrashRecovery;
-struct IContentManager;
 struct IDlcValidation;
 struct IEntitlementManager;
 struct IExternalServerFile;
@@ -132,20 +135,17 @@ struct IUIRepository;
 struct LatencyGraphDisplay;
 struct LevelLoader;
 struct LibraryRepository;
-struct LocalPlayer;
 struct LocalWorldTransferActionFunc;
 struct MarketplaceServicesManager;
 struct MusicManager;
 struct NewPlayerSystem;
 struct PackDownloadManager;
-struct ParticleEffectGroup;
 struct PersonaRepository;
 struct PersonaService;
 struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
 struct RealmsAPI;
-struct SceneFactory;
 struct ScreenshotOptions;
 struct ScreenshotRecorder;
 struct SeasonsRenderer;
@@ -165,7 +165,7 @@ namespace Bedrock { class ActivationArguments; }
 namespace Bedrock { class ScopeExit; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlobCache { struct Cache; }
-namespace ClientBlockPipeline { struct SchematicsRepository; }
+namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 namespace LocalServerLauncher { struct GameDependencies; }

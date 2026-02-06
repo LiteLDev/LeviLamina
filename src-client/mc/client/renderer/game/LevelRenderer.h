@@ -3,13 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/debug/DebugRenderer.h"
+#include "mc/client/renderer/game/LevelBuilder.h"
+#include "mc/client/renderer/game/ShadowCascadeState.h"
+#include "mc/client/renderer/scripting/Renderer.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/application/LowMemorySeverity.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,27 +26,38 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class BlockTessellator;
+class DataDrivenRendererV2RequiredData;
 class Dimension;
 class GameRenderer;
+class GeometryEditorGui;
 class IClientInstance;
+class LevelRendererPlayer;
+class LevelRendererProxy;
+class LevelRendererShadowCamera;
 class Options;
+class ParticleEngine;
+class ParticleSystemEngine;
 class ScreenContext;
 class SoundPlayerInterface;
+class TaskGroup;
 class Tessellator;
 class TextureAtlas;
-class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorResourceDefinitionGroup;
-struct BlockTessellator;
+struct BlockActorRenderDispatcher;
 struct ClientFrameUpdateContext;
 struct FrameRenderObject;
 struct GeometryGroup;
 struct LevelRenderPreRenderUpdateParameters;
 struct MultiPlayerLevel;
+struct PlayerRenderView;
 struct RenderChunkCoordinator;
 struct ScreenshotOptions;
 struct SoundMapping;
+namespace PointLighting { struct PointLightCoordinator; }
 namespace cg { class ImageBuffer; }
+namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -45,50 +65,51 @@ class LevelRenderer : public ::LevelListener, public ::AppPlatformListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>   mUnkbea99f;
-    ::ll::UntypedStorage<8, 8>    mUnkb380ce;
-    ::ll::UntypedStorage<8, 16>   mUnke4a957;
-    ::ll::UntypedStorage<8, 16>   mUnk9d53c7;
-    ::ll::UntypedStorage<8, 16>   mUnk40aa2f;
-    ::ll::UntypedStorage<8, 16>   mUnkbcceea;
-    ::ll::UntypedStorage<8, 16>   mUnkc65a99;
-    ::ll::UntypedStorage<8, 16>   mUnk9a77ad;
-    ::ll::UntypedStorage<8, 16>   mUnk4bf7c4;
-    ::ll::UntypedStorage<8, 16>   mUnkb677c2;
-    ::ll::UntypedStorage<8, 128>  mUnk5d5ee9;
-    ::ll::UntypedStorage<8, 16>   mUnk71ebfe;
-    ::ll::UntypedStorage<8, 32>   mUnkbbc181;
-    ::ll::UntypedStorage<8, 32>   mUnk9bfb16;
-    ::ll::UntypedStorage<8, 32>   mUnkde8b48;
-    ::ll::UntypedStorage<8, 32>   mUnk190996;
-    ::ll::UntypedStorage<8, 32>   mUnk1d6b2b;
-    ::ll::UntypedStorage<8, 32>   mUnka077c6;
-    ::ll::UntypedStorage<8, 24>   mUnk7729a8;
-    ::ll::UntypedStorage<1, 1>    mUnkf50199;
-    ::ll::UntypedStorage<8, 168>  mUnk3d1a10;
-    ::ll::UntypedStorage<8, 8>    mUnkdff7f8;
-    ::ll::UntypedStorage<8, 8>    mUnkd6382a;
-    ::ll::UntypedStorage<8, 8>    mUnk13f3cf;
-    ::ll::UntypedStorage<8, 24>   mUnkb2edd4;
-    ::ll::UntypedStorage<8, 24>   mUnk99a6e0;
-    ::ll::UntypedStorage<8, 16>   mUnk5f5f4e;
-    ::ll::UntypedStorage<8, 8>    mUnk792e5f;
-    ::ll::UntypedStorage<8, 8>    mUnk62856a;
-    ::ll::UntypedStorage<8, 8>    mUnkf50ebb;
-    ::ll::UntypedStorage<8, 8>    mUnkec6d67;
-    ::ll::UntypedStorage<8, 16>   mUnk1320e1;
-    ::ll::UntypedStorage<8, 8>    mUnk7a96cc;
-    ::ll::UntypedStorage<8, 24>   mUnkae90c9;
-    ::ll::UntypedStorage<8, 64>   mUnk31f3c3;
-    ::ll::UntypedStorage<8, 16>   mUnk3e6b51;
-    ::ll::UntypedStorage<8, 16>   mUnk8c07d0;
-    ::ll::UntypedStorage<8, 16>   mUnkf4398c;
-    ::ll::UntypedStorage<4, 4>    mUnk70933e;
-    ::ll::UntypedStorage<8, 1464> mUnk40b2a6;
-    ::ll::UntypedStorage<8, 8>    mUnk4d56ac;
-    ::ll::UntypedStorage<4, 16>   mUnkac3f47;
-    ::ll::UntypedStorage<8, 16>   mUnkf438c2;
-    ::ll::UntypedStorage<8, 8>    mUnk3d299c;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::OwnerPtr<::RenderChunkCoordinator>>>
+                                                                                        mRenderChunkCoordinators;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PointLighting::PointLightCoordinator>> mPointLightCoordinator;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>                   mTextureGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mShadowCylinder;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mShadowOverlayCube;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mShadowDisc;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mSkyMesh;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mStarsMesh;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mEndSkyMesh;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mSunMesh;
+    ::ll::TypedStorage<8, 128, ::std::shared_ptr<::mce::Mesh>[8]>                       mMoonMesh;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                           mNameplateBackgroundMesh;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mAtlasTexture;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mBrightnessTex;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mSunTex;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mSunTexVibrantVisuals;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mMoonTex;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                        mEndSkyTex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::TexturePtr>>                         mCrackFrames;
+    ::ll::TypedStorage<1, 1, ::DebugRenderer>                                           mDebugRenderer;
+    ::ll::TypedStorage<8, 168, ::Scripting::RenderHelper::Renderer>                     mScriptDebugRenderer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                    mTicks;
+    ::ll::TypedStorage<8, 8, ::BlockActorRenderDispatcher&>                             mBlockEntityRenderDispatcher;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTessellator>>                     mLocalRenderer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ParticleEngine>>             mParticleEngine;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ParticleSystemEngine>>       mParticleSystemEngine;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryEditorGui>>                   mGeometryEditorGui;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mTaskGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mSyncTaskGroup;
+    ::ll::TypedStorage<8, 8, ::GameRenderer&>                                           mGameRenderer;
+    ::ll::TypedStorage<8, 8, ::MultiPlayerLevel&>                                       mLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Options>>                             mOptions;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                        mClientInstance;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                          mLocalUser;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                  mReleaseParticleSystemInterfaceProxyCallback;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererPlayer>> mLevelRendererPlayer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererShadowCamera;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererCloudShadowCamera;
+    ::ll::TypedStorage<4, 4, ::ShadowCascadeState>                                  mShadowCascadeState;
+    ::ll::TypedStorage<8, 1464, ::LevelBuilder>                                     mLevelBuilder;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererProxy>>               mProxy;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                         mClearBufferColor;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>                  mPlayerView;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererV2RequiredData>> mDataDrivenRendererV2RequiredData;
     // NOLINTEND
 
 public:
@@ -134,7 +155,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelRenderer(
+    MCAPI LevelRenderer(
         ::IClientInstance&                                                         clientInstance,
         ::MultiPlayerLevel&                                                        level,
         ::std::shared_ptr<::Options>                                               options,
@@ -148,62 +169,62 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup
     );
 
-    MCNAPI void _createMeshes(::Tessellator& tessellator);
+    MCAPI void _createMeshes(::Tessellator& tessellator);
 
-    MCNAPI void _createParticleEngines();
+    MCAPI void _createParticleEngines();
 
-    MCNAPI void _debugDrawClientSideChunkGenBlockDifferences();
+    MCAPI void _debugDrawClientSideChunkGenBlockDifferences();
 
-    MCNAPI void _initPipelineTessellatorResources();
+    MCAPI void _initPipelineTessellatorResources();
 
-    MCNAPI void _initResources();
+    MCAPI void _initResources();
 
-    MCNAPI void _resetMeshes();
+    MCAPI void _resetMeshes();
 
-    MCNAPI void _setLevelRendererCameras();
+    MCAPI void _setLevelRendererCameras();
 
-    MCNAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCNAPI ::BlockTessellator& getBlockRenderer();
+    MCAPI ::BlockTessellator& getBlockRenderer();
 
-    MCNAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
+    MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
-    MCNAPI void onDimensionChanged();
+    MCAPI void onDimensionChanged();
 
-    MCNAPI void onOptionsChanged();
+    MCAPI void onOptionsChanged();
 
-    MCNAPI void preRenderUpdate(
+    MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCNAPI void rebuildAllDDRv2Geometry();
+    MCAPI void rebuildAllDDRv2Geometry();
 
-    MCNAPI void reinit(
+    MCAPI void reinit(
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup
     );
 
-    MCNAPI void renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCNAPI void resetPointLightCoordinator();
+    MCAPI void resetPointLightCoordinator();
 
-    MCNAPI void tickLevelRenderer();
+    MCAPI void tickLevelRenderer();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& Z_FAR_MIN();
+    MCAPI static float const& Z_FAR_MIN();
 
-    MCNAPI static float const& Z_NEAR();
+    MCAPI static float const& Z_NEAR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::IClientInstance&                                                         clientInstance,
         ::MultiPlayerLevel&                                                        level,
         ::std::shared_ptr<::Options>                                               options,
@@ -221,19 +242,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onAppSuspended();
+    MCAPI void $onAppSuspended();
 
-    MCNAPI void $onAppResumed();
+    MCAPI void $onAppResumed();
 
-    MCNAPI void $onDeviceLost();
+    MCAPI void $onDeviceLost();
 
-    MCNAPI void $takePicture(
+    MCAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,
         ::Actor*                                                        target,

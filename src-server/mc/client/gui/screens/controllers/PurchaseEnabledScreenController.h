@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PurchaseEnabledScreenController {
+class PurchaseEnabledScreenController {
 public:
     // PurchaseEnabledScreenController inner types declare
     // clang-format off

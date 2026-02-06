@@ -2,29 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LocalPlayer {
+class LocalPlayer {
 public:
     // LocalPlayer inner types declare
     // clang-format off
+    class RegionListener;
+    class EmoteExpediateData;
+    class FellFromWorldHeightAchievementTracker;
+    class UndergroundTelemetryHeuristic;
     struct ContainerCloseInfo;
-    struct EmoteExpediateData;
-    struct FellFromWorldHeightAchievementTracker;
-    struct RegionListener;
-    struct UndergroundTelemetryHeuristic;
     // clang-format on
 
     // LocalPlayer inner types define
-    struct ContainerCloseInfo {};
+    class RegionListener {};
 
-    struct EmoteExpediateData {};
+    class EmoteExpediateData {};
 
-    struct FellFromWorldHeightAchievementTracker {
+    class FellFromWorldHeightAchievementTracker {
     public:
         // FellFromWorldHeightAchievementTracker inner types define
         enum class FallState : uchar {};
     };
 
-    struct RegionListener {};
+    class UndergroundTelemetryHeuristic {};
 
-    struct UndergroundTelemetryHeuristic {};
+    struct ContainerCloseInfo {};
 };

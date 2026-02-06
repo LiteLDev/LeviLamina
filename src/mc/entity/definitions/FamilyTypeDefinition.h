@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addFamilyName(::std::string const& name);
+    MCAPI void addFamilyName(::std::string const& name);
     // NOLINTEND
 };
