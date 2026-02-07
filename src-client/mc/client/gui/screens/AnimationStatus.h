@@ -4,6 +4,11 @@
 
 namespace ui {
 
-enum class AnimationStatus : ushort {};
+enum class AnimationStatus : ushort {
+    Running         = 0,
+    Finished        = 1,
+    FinishedRefresh = 2,
+    Unknown         = 3,
+};
 
 }

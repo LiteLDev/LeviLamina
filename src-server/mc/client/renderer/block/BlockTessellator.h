@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockTessellator {
+class BlockTessellator {
 public:
     // BlockTessellator inner types declare
     // clang-format off
@@ -11,11 +11,11 @@ public:
     // clang-format on
 
     // BlockTessellator inner types define
-    enum class BambooFenceSlatPieceType : int {};
+    enum class CrossTextureWidth : uchar {};
 
     enum class CrossTextureReverseSideMapping : uchar {};
 
-    enum class CrossTextureWidth : uchar {};
+    enum class BambooFenceSlatPieceType : int {};
 
     enum class FenceGatePieceType : int {};
 

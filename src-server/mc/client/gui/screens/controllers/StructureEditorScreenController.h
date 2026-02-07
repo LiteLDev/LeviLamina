@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct StructureEditorScreenController {
+class StructureEditorScreenController {
 public:
     // StructureEditorScreenController inner types define
     enum class FilePickerType : uchar {};

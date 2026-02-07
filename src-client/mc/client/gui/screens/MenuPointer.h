@@ -2,4 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MenuPointer {};
+class MenuPointer {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mPressed;
+    // NOLINTEND
+};

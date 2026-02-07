@@ -11,12 +11,12 @@ class Level;
 namespace EquipItemDefinitionVersioning {
 // functions
 // NOLINTBEGIN
-MCNAPI bool isSupported(::Level const& level, ::BaseGameVersion version);
+MCFOLD bool isSupported(::Level const& level, ::BaseGameVersion version);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BaseGameVersion const& EXCLUDE_ILLAGERBANNER_VERSION();
+MCAPI ::BaseGameVersion const& EXCLUDE_ILLAGERBANNER_VERSION();
 // NOLINTEND
 
 } // namespace EquipItemDefinitionVersioning

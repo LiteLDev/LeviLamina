@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BookScreenController {
+class BookScreenController {
 public:
     // BookScreenController inner types define
     enum class BookView : uchar {};

@@ -2,21 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AbstractScene;
+class AbstractSceneProxy;
+// clang-format on
+
 struct SceneStackProxyCallbacks {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc5a0c3;
-    ::ll::UntypedStorage<8, 64> mUnk5a57c5;
-    ::ll::UntypedStorage<8, 64> mUnka2ac54;
-    ::ll::UntypedStorage<8, 64> mUnkcbc1d9;
-    ::ll::UntypedStorage<8, 64> mUnk340889;
-    ::ll::UntypedStorage<8, 64> mUnke5b38c;
-    ::ll::UntypedStorage<8, 64> mUnk2ca19e;
-    ::ll::UntypedStorage<8, 64> mUnk97fac5;
-    ::ll::UntypedStorage<8, 64> mUnk36bef9;
-    ::ll::UntypedStorage<8, 64> mUnkbb6d1e;
-    ::ll::UntypedStorage<8, 64> mUnke159e1;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<bool(::AbstractScene const&)>)>> mForEachScreen;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::function<void(::AbstractScene&)>)>>
+        mForEachAlwaysAcceptInputScreenWithTop;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::weak_ptr<::AbstractSceneProxy>()>>        mGetScreen;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::string()>>                                mGetScreenName;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                         mHasScheduledScreens;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::shared_ptr<::AbstractScene>, bool)>> mPushScreen;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                         mSchedulePopScreen;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string)>>                            mScreenOnStack;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                         mGetScreenTicking;
+    ::ll::TypedStorage<8, 64, ::std::function<void(bool)>>                                     mSetScreenTicking;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                         mUpdate;
     // NOLINTEND
 
 public:
@@ -27,20 +34,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SceneStackProxyCallbacks(::SceneStackProxyCallbacks const&);
+    MCAPI SceneStackProxyCallbacks(::SceneStackProxyCallbacks const&);
 
-    MCNAPI ~SceneStackProxyCallbacks();
+    MCAPI ~SceneStackProxyCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SceneStackProxyCallbacks const&);
+    MCAPI void* $ctor(::SceneStackProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

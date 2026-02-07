@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IStorageManagementModel {
+class IStorageManagementModel {
 public:
     // IStorageManagementModel inner types declare
     // clang-format off

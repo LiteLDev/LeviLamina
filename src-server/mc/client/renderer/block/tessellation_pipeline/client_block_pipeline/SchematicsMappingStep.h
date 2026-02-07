@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct SchematicsMappingStep {};
+class SchematicsMappingStep {};
 
 } // namespace ClientBlockPipeline

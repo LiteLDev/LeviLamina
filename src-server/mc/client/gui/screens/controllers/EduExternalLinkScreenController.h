@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EduExternalLinkScreenController {
+class EduExternalLinkScreenController {
 public:
     // EduExternalLinkScreenController inner types declare
     // clang-format off

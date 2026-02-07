@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudScreenController {
+class HudScreenController {
 public:
     // HudScreenController inner types declare
     // clang-format off

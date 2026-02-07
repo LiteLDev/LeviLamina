@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIAnimationController {
+class UIAnimationController {
 public:
     // UIAnimationController inner types declare
     // clang-format off

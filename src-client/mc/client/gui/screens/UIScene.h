@@ -17,25 +17,25 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
+class AbstractSceneProxy;
+class CachedScenes;
 class IClientInstance;
 class KeyboardManager;
+class LayoutManager;
 class RectangleArea;
 class ScreenContext;
 class ScreenController;
 class ScreenView;
 class TaskGroup;
+class UIControlFactory;
 class UIMeasureStrategy;
-struct AbstractSceneProxy;
-struct CachedScenes;
 struct FrameRenderObject;
 struct GamepadCursorData;
 struct ITTSEventManager;
-struct LayoutManager;
 struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TouchPadTouchEventData;
-struct UIControlFactory;
 struct VisualTree;
 // clang-format on
 

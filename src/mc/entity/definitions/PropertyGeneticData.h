@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PropertyGeneticData& operator=(::PropertyGeneticData&&);
+    MCAPI ::PropertyGeneticData& operator=(::PropertyGeneticData&&);
 
-    MCNAPI ~PropertyGeneticData();
+    MCAPI ~PropertyGeneticData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

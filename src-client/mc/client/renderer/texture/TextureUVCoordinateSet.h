@@ -2,36 +2,35 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ResourceLocation;
-// clang-format on
+// auto generated inclusion list
+#include "mc/client/renderer/texture/IsotropicFaceData.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 
 struct TextureUVCoordinateSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk59c033;
-    ::ll::UntypedStorage<4, 4>  mUnk65ef8d;
-    ::ll::UntypedStorage<4, 4>  mUnkee5924;
-    ::ll::UntypedStorage<4, 4>  mUnkf09c68;
-    ::ll::UntypedStorage<4, 4>  mUnk89d2f1;
-    ::ll::UntypedStorage<2, 2>  mUnke9e052;
-    ::ll::UntypedStorage<2, 2>  mUnkff1029;
-    ::ll::UntypedStorage<8, 56> mUnkf46eac;
-    ::ll::UntypedStorage<1, 1>  mUnkfb1c21;
-    ::ll::UntypedStorage<2, 2>  mUnkf4f7b1;
-    ::ll::UntypedStorage<2, 2>  mUnk5269c9;
+    ::ll::TypedStorage<4, 4, float>               weight;
+    ::ll::TypedStorage<4, 4, float>               _u0;
+    ::ll::TypedStorage<4, 4, float>               _v0;
+    ::ll::TypedStorage<4, 4, float>               _u1;
+    ::ll::TypedStorage<4, 4, float>               _v1;
+    ::ll::TypedStorage<2, 2, ushort>              _texSizeW;
+    ::ll::TypedStorage<2, 2, ushort>              _texSizeH;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation> sourceFileLocation;
+    ::ll::TypedStorage<1, 1, ::IsotropicFaceData> mIsotropicFaceData;
+    ::ll::TypedStorage<2, 2, short>               textureSetTranslationIndex;
+    ::ll::TypedStorage<2, 2, ushort>              mPBRTextureDataHandle;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextureUVCoordinateSet();
+    MCAPI TextureUVCoordinateSet();
 
-    MCNAPI TextureUVCoordinateSet(::TextureUVCoordinateSet const&);
+    MCAPI TextureUVCoordinateSet(::TextureUVCoordinateSet const&);
 
-    MCNAPI TextureUVCoordinateSet(
+    MCAPI TextureUVCoordinateSet(
         float              u0,
         float              v0,
         float              u1,
@@ -43,41 +42,41 @@ public:
         ushort             pbrTextureDataHandle
     );
 
-    MCNAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
+    MCAPI ::TextureUVCoordinateSet getFlippedHorizontal() const;
 
-    MCNAPI ::TextureUVCoordinateSet getFlippedVertically() const;
+    MCAPI ::TextureUVCoordinateSet getFlippedVertically() const;
 
-    MCNAPI float offsetHeightPixel(float pixels, float startHeight) const;
+    MCAPI float offsetHeightPixel(float pixels, float startHeight) const;
 
-    MCNAPI float offsetWidthPixel(float pixels, float startWidth) const;
+    MCAPI float offsetWidthPixel(float pixels, float startWidth) const;
 
-    MCNAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
+    MCFOLD ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
 
-    MCNAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet&&);
+    MCAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet&&);
 
-    MCNAPI bool operator==(::TextureUVCoordinateSet const& other) const;
+    MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
 
-    MCNAPI ushort pixelWidth() const;
+    MCAPI ushort pixelWidth() const;
 
-    MCNAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
+    MCAPI ::TextureUVCoordinateSet subTexture(float u0ffset, float v0ffset, int sizeW, int sizeH) const;
 
-    MCNAPI ~TextureUVCoordinateSet();
+    MCAPI ~TextureUVCoordinateSet();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TextureUVCoordinateSet fromOldSystem(int tex);
+    MCAPI static ::TextureUVCoordinateSet fromOldSystem(int tex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::TextureUVCoordinateSet const&);
+    MCAPI void* $ctor(::TextureUVCoordinateSet const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         float              u0,
         float              v0,
         float              u1,
@@ -93,6 +92,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -2,4 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GeneralSettingsScreenControllerProxy {};
+// auto generated inclusion list
+#include "mc/client/gui/screens/controllers/GeneralSettingsScreenControllerProxyCallbacks.h"
+
+class GeneralSettingsScreenControllerProxy {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 320, ::GeneralSettingsScreenControllerProxyCallbacks const> mCallbacks;
+    // NOLINTEND
+};

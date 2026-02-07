@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ISceneStack;
-struct SceneFactory;
+class SceneFactory;
 namespace OreUI { class IRouteMatcher; }
 namespace OreUI { struct DebugData; }
 namespace OreUI { struct Route; }

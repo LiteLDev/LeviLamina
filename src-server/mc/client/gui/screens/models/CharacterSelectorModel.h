@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CharacterSelectorModel {
+class CharacterSelectorModel {
 public:
     // CharacterSelectorModel inner types declare
     // clang-format off

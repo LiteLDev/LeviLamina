@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct ITintResolver {};
+class ITintResolver {};
 
 } // namespace ClientBlockPipeline

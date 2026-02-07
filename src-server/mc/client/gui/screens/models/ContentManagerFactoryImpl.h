@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ContentManagerFactoryImpl {
+class ContentManagerFactoryImpl {
 public:
     // ContentManagerFactoryImpl inner types declare
     // clang-format off

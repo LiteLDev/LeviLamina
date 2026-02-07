@@ -24,7 +24,7 @@ class ItemStackBase;
 class MolangVariableMap;
 class ActorRenderData;
 class DataDrivenModel;
-namespace ParticleSystem { struct ParticleEmitter; }
+namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 
 class RenderParams {

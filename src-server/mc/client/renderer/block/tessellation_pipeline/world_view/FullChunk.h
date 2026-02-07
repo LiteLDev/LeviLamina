@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline::WorldView {
 
-struct FullChunk {};
+class FullChunk {};
 
 } // namespace ClientBlockPipeline::WorldView

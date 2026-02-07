@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ControlCollectionChange : int {};
+enum class ControlCollectionChange : int {
+    Add    = 0,
+    Remove = 1,
+};

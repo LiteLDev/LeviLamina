@@ -88,6 +88,7 @@
 #include <vector>             // STL dynamic array container
 #include <future>             // STL future
 #include <regex>         // Regular expression library
+#include <any>           // STL any type
 
 // STL expected for C++23
 #if _HAS_CXX23

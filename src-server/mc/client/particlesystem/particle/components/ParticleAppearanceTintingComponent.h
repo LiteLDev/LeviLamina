@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct ParticleAppearanceTintingComponent {
+class ParticleAppearanceTintingComponent {
 public:
     // ParticleAppearanceTintingComponent inner types declare
     // clang-format off

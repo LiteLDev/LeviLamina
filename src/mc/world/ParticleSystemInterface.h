@@ -11,7 +11,7 @@ class CompoundTag;
 class HashedString;
 class MolangVariableMap;
 class Vec3;
-struct Particle;
+class Particle;
 // clang-format on
 
 class ParticleSystemInterface {

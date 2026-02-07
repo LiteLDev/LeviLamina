@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlayScreenModel {
+class PlayScreenModel {
 public:
     // PlayScreenModel inner types declare
     // clang-format off

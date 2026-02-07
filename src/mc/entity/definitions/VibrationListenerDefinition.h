@@ -11,6 +11,6 @@ class VibrationListenerDefinition {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initialize(::EntityContext& entity) const;
+    MCAPI void initialize(::EntityContext& entity) const;
     // NOLINTEND
 };

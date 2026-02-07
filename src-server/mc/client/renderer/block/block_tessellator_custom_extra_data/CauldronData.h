@@ -4,6 +4,6 @@
 
 namespace BlockTessellatorCustomExtraData {
 
-struct CauldronData {};
+class CauldronData {};
 
 } // namespace BlockTessellatorCustomExtraData

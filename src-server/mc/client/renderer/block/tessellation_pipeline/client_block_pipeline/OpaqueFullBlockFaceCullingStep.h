@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct OpaqueFullBlockFaceCullingStep {};
+class OpaqueFullBlockFaceCullingStep {};
 
 } // namespace ClientBlockPipeline

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SkinPackCollectionModel {
+class SkinPackCollectionModel {
 public:
     // SkinPackCollectionModel inner types declare
     // clang-format off

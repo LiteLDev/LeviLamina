@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct MaterialRepository {};
+class MaterialRepository {};
 
 } // namespace ClientBlockPipeline

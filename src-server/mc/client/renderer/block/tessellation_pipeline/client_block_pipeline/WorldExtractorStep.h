@@ -4,21 +4,21 @@
 
 namespace ClientBlockPipeline {
 
-struct WorldExtractorStep {
+class WorldExtractorStep {
 public:
     // WorldExtractorStep inner types declare
     // clang-format off
-    struct BlockExtractionData;
     struct BlockIterationData;
     struct ExtractionData;
+    struct BlockExtractionData;
     // clang-format on
 
     // WorldExtractorStep inner types define
-    struct BlockExtractionData {};
-
     struct BlockIterationData {};
 
     struct ExtractionData {};
+
+    struct BlockExtractionData {};
 };
 
 } // namespace ClientBlockPipeline

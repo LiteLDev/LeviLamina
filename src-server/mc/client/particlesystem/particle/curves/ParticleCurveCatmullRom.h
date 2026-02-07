@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleCurveCatmullRom {};
+class ParticleCurveCatmullRom {};
 
 } // namespace ParticleSystem

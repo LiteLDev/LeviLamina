@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NpcDialogScreenController {
+class NpcDialogScreenController {
 public:
     // NpcDialogScreenController inner types define
     enum class InteractionState : schar {};

@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsAllowListScreenController {
+class RealmsAllowListScreenController {
 public:
     // RealmsAllowListScreenController inner types define
-    enum class RealmPlayerList : int {};
-
     enum class SearchState : int {};
+
+    enum class RealmPlayerList : int {};
 };

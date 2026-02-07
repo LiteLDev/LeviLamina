@@ -33,20 +33,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerScreenControllerProxyCallbacks(::ContainerScreenControllerProxyCallbacks&&);
+    MCAPI ContainerScreenControllerProxyCallbacks(::ContainerScreenControllerProxyCallbacks&&);
 
-    MCNAPI ~ContainerScreenControllerProxyCallbacks();
+    MCAPI ~ContainerScreenControllerProxyCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerScreenControllerProxyCallbacks&&);
+    MCAPI void* $ctor(::ContainerScreenControllerProxyCallbacks&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -61,45 +61,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockPalette(::Level& level);
+    MCAPI explicit BlockPalette(::Level& level);
 
-    MCNAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
+    MCAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
 
-    MCNAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
+    MCAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
-    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
+    MCAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
+    MCAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Level& level);
+    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPalette::PaletteType $getPaletteType();
+    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
 
-    MCNAPI void $appendBlock(::Block const& blockState);
+    MCAPI void $appendBlock(::Block const& blockState);
 
-    MCNAPI ::Block const& $getBlock(uint const& networkId) const;
+    MCAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
 
 
     // NOLINTEND
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

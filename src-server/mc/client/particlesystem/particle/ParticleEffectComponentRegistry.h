@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleEffectComponentRegistry {};
+class ParticleEffectComponentRegistry {};
 
 } // namespace ParticleSystem

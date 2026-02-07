@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FileDownloadScreenController {
+class FileDownloadScreenController {
 public:
     // FileDownloadScreenController inner types declare
     // clang-format off

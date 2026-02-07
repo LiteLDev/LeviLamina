@@ -12,9 +12,9 @@
 // clang-format off
 class HashedString;
 class LinkedAssetValidator;
+class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
-struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }

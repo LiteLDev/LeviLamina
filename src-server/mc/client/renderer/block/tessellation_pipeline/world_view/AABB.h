@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline::WorldView {
 
-struct AABB {};
+class AABB {};
 
 } // namespace ClientBlockPipeline::WorldView

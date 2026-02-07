@@ -4,7 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-struct Instance {
+class Instance {
 public:
     // Instance inner types declare
     // clang-format off

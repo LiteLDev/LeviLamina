@@ -26,9 +26,16 @@ public:
     // clang-format on
 
     // Tessellator inner types define
-    enum class UploadMode : int {};
+    enum class UploadMode : int {
+        Buffered = 0,
+        Manual   = 1,
+        Never    = 2,
+    };
 
-    enum class SupplementaryFieldAutoGenerationMode : int {};
+    enum class SupplementaryFieldAutoGenerationMode : int {
+        None               = 0,
+        NormalsAndTangents = 1,
+    };
 
     struct DebugContextCallback {};
 

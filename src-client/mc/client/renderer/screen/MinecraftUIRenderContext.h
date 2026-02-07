@@ -6,29 +6,31 @@
 #include "mc/client/gui/FontHandle.h"
 #include "mc/client/gui/TextAlignment.h"
 #include "mc/client/gui/controls/UIRenderContext.h"
+#include "mc/client/gui/screens/BatchKey.h"
 #include "mc/client/renderer/screen/MinecraftUIMeasureStrategy.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/RectangleArea.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+#include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 
 // auto generated forward declare list
 // clang-format off
+class ComponentRenderBatch;
 class Font;
 class HashedString;
 class IClientInstance;
-class RectangleArea;
 class ResourceLocation;
 class ScreenContext;
 class UIMeasureStrategy;
 class UIScene;
 class UITextureInfoPtr;
-struct BatchKey;
 struct CaretMeasureData;
-struct ComponentRenderBatch;
 struct CustomRenderComponent;
 struct IUIRepository;
 struct NinesliceInfo;
 struct TextMeasureData;
 namespace Core { class Path; }
-namespace mce { class Color; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ClientTexture; }
@@ -48,16 +50,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk504479;
-        ::ll::UntypedStorage<4, 16> mUnk189d72;
-        ::ll::UntypedStorage<8, 32> mUnk844247;
-        ::ll::UntypedStorage<4, 16> mUnk803177;
-        ::ll::UntypedStorage<1, 1>  mUnkbc01ca;
-        ::ll::UntypedStorage<1, 1>  mUnkb392a3;
-        ::ll::UntypedStorage<4, 4>  mUnkf1b65e;
-        ::ll::UntypedStorage<4, 4>  mUnk607c6f;
-        ::ll::UntypedStorage<4, 4>  mUnkad246d;
-        ::ll::UntypedStorage<4, 4>  mUnkf8a40a;
+        ::ll::TypedStorage<8, 8, ::Font&>             mFont;
+        ::ll::TypedStorage<4, 16, ::RectangleArea>    mArea;
+        ::ll::TypedStorage<8, 32, ::std::string>      mText;
+        ::ll::TypedStorage<4, 16, ::mce::Color>       mColor;
+        ::ll::TypedStorage<1, 1, bool>                mShadow;
+        ::ll::TypedStorage<1, 1, bool>                mShowColorSymbol;
+        ::ll::TypedStorage<4, 4, int>                 mCaretLocation;
+        ::ll::TypedStorage<4, 4, float>               mFontScale;
+        ::ll::TypedStorage<4, 4, float>               mLinePadding;
+        ::ll::TypedStorage<4, 4, ::ui::TextAlignment> mAlignment;
         // NOLINTEND
 
     public:
@@ -71,12 +73,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk2cff1d;
-        ::ll::UntypedStorage<4, 8> mUnk8e0ed0;
-        ::ll::UntypedStorage<4, 8> mUnk5109ea;
-        ::ll::UntypedStorage<4, 8> mUnka821f4;
-        ::ll::UntypedStorage<4, 8> mUnk5cdb7d;
-        ::ll::UntypedStorage<1, 1> mUnk9f2c40;
+        ::ll::TypedStorage<8, 8, ::mce::ClientTexture const&> mTexture;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                 mPosition;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                 mSize;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                 mUV;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                 mUVSize;
+        ::ll::TypedStorage<1, 1, bool>                        mColorCorrected;
         // NOLINTEND
 
     public:
@@ -90,24 +92,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 176> mUnk2ebbdd;
-        ::ll::UntypedStorage<8, 24>  mUnk8fd1b1;
-        ::ll::UntypedStorage<4, 4>   mUnke729fc;
-        ::ll::UntypedStorage<4, 4>   mUnka1e24d;
-        ::ll::UntypedStorage<8, 16>  mUnkb037ea;
-        ::ll::UntypedStorage<8, 528> mUnk375457;
+        ::ll::TypedStorage<8, 176, ::BatchKey>                      mFromBatchKey;
+        ::ll::TypedStorage<8, 24, ::std::vector<::mce::TexturePtr>> mTextures;
+        ::ll::TypedStorage<4, 4, uint>                              mNumInstances;
+        ::ll::TypedStorage<4, 4, int>                               mKeepAlive;
+        ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>               mMaterial;
+        ::ll::TypedStorage<8, 528, ::mce::Mesh>                     mMesh;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        PersistentMeshItem& operator=(PersistentMeshItem const&);
-        PersistentMeshItem(PersistentMeshItem const&);
         PersistentMeshItem();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PersistentMeshItem(
+        MCAPI PersistentMeshItem(
             ::BatchKey const&                batchKey,
             ::std::vector<::mce::TexturePtr> textures,
             ::HashedString const&            materialNameHash,
@@ -118,7 +118,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::BatchKey const&                batchKey,
             ::std::vector<::mce::TexturePtr> textures,
             ::HashedString const&            materialNameHash,

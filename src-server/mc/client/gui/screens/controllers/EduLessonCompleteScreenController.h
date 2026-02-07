@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EduLessonCompleteScreenController {
+class EduLessonCompleteScreenController {
 public:
     // EduLessonCompleteScreenController inner types declare
     // clang-format off

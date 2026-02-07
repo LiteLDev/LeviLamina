@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleEvent {};
+class ParticleEvent {};
 
 } // namespace ParticleSystem

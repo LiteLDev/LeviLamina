@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct JoincodeEntryScreenController {
+class JoincodeEntryScreenController {
 public:
     // JoincodeEntryScreenController inner types define
     enum class ActiveScreen : int {};

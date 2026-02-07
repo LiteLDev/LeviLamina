@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CategoryTabState : int {};
+enum class CategoryTabState : int {
+    Visible = 0,
+    Hidden  = 1,
+};

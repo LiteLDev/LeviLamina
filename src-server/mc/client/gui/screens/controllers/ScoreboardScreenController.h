@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ScoreboardScreenController {};
+class ScoreboardScreenController {};

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct Trade2ScreenController {
+class Trade2ScreenController {
 public:
     // Trade2ScreenController inner types declare
     // clang-format off

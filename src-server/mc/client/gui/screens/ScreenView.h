@@ -6,14 +6,14 @@ class ScreenView {
 public:
     // ScreenView inner types declare
     // clang-format off
-    struct DelayedCommand;
     struct TouchPadData;
+    struct DelayedCommand;
     // clang-format on
 
     // ScreenView inner types define
     enum class DelayedCommandLocation : int {};
 
-    struct DelayedCommand {};
-
     struct TouchPadData {};
+
+    struct DelayedCommand {};
 };

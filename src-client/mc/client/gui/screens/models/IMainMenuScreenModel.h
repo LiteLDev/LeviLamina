@@ -2,4 +2,39 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IMainMenuScreenModel {};
+// auto generated inclusion list
+#include "mc/client/network/NetworkFilter.h"
+
+// auto generated forward declare list
+// clang-format off
+struct DlcId;
+struct WorldTemplateInfo;
+namespace mce { class UUID; }
+// clang-format on
+
+class IMainMenuScreenModel {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IMainMenuScreenModel() = default;
+
+    virtual void
+    navigateToDlcProgressScreen(::std::vector<::DlcId> const&, ::std::function<void(bool, bool)>, bool, bool, bool) = 0;
+
+    virtual bool isNetworkEnabled(::NetworkFilter) const = 0;
+
+    virtual bool doesPlatformSupportRealms() const = 0;
+
+    virtual bool isPackIdInRealmsPlus(::std::string const&) const = 0;
+
+    virtual void repopulateWorldTemplates() = 0;
+
+    virtual ::WorldTemplateInfo const* findWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const = 0;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};

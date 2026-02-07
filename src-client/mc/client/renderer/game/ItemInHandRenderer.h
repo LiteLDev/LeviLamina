@@ -15,6 +15,7 @@
 class Actor;
 class BaseActorRenderContext;
 class Block;
+class BlockTessellator;
 class BlockType;
 class IClientInstance;
 class ItemStack;
@@ -24,7 +25,6 @@ class Player;
 class Tessellator;
 class TextureTessellator;
 class Vec3;
-struct BlockTessellator;
 struct Brightness;
 struct ItemInHandRenderFrameId;
 struct ItemRenderCall;

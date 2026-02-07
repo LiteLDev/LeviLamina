@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsInviteLinkSettingsScreenController {
+class RealmsInviteLinkSettingsScreenController {
 public:
     // RealmsInviteLinkSettingsScreenController inner types define
     enum class ExpirationDuration : int {};

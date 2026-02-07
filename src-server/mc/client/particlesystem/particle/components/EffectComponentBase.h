@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct EffectComponentBase {
+class EffectComponentBase {
 public:
     // EffectComponentBase inner types define
     enum class EffectComponentType : int {};

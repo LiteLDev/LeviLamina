@@ -4,6 +4,9 @@
 
 namespace ClientBlockPipeline {
 
-enum class VisualReference : int {};
+enum class VisualReference : int {
+    Block = 0,
+    Item  = 1,
+};
 
 }

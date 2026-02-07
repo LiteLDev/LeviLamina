@@ -204,9 +204,9 @@ namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 class BaseLightTextureImageBuilder;
+class Particle;
 struct CameraRegistry;
 struct MultiPlayerLevel;
-struct Particle;
 struct SubChunkManager;
 struct TrustedSkinHelper;
 // clang-format on

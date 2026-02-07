@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleEffect {};
+class ParticleEffect {};
 
 } // namespace ParticleSystem

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CommandBlockScreenController {
+class CommandBlockScreenController {
 public:
     // CommandBlockScreenController inner types define
     enum class CommandBlockColorContext : int {};

@@ -8,6 +8,7 @@
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/screens/controllers/RealmsPlusTabIndex.h"
 #include "mc/client/gui/screens/models/IMinecraftScreenModel.h"
+#include "mc/client/gui/screens/models/PlatformStoreIconModel.h"
 #include "mc/client/network/clubs/GenericStatus.h"
 #include "mc/client/network/realms/FailureReason.h"
 #include "mc/client/network/realms/GenericStatus.h"
@@ -39,33 +40,45 @@
 
 // auto generated forward declare list
 // clang-format off
+class AbstractScene;
 class ActiveDirectoryIdentity;
+class ClientInstanceModel;
 class ContentIdentity;
 class ContentTierInfo;
+class EduDeeplinkObserver;
 class FilePickerSettings;
 class HitResult;
+class IAdvancedGraphicsOptions;
+class IClientInstance;
+class IDlcBatchModel;
+class IMinecraftGame;
 class IOptions;
+class ISceneStack;
+class IScreenCapabilities;
 class LayeredAbilities;
 class LevelData;
 class LevelSettings;
 class MinecraftCommands;
 class PackManifest;
+class PlatformMultiplayerRestrictions;
+class PlatformUpsellDialog;
 class ResourceLocation;
+class SceneFactory;
+class SkinPackCollectionModel;
+class TaskGroup;
+class ToastMessage;
 class WebviewInterface;
 struct ActorUniqueID;
 struct ContentLogMessage;
 struct DlcId;
 struct DownloadStateObject;
-struct EduDeeplinkObserver;
 struct EducationLevelSettings;
 struct EducationLocalLevelSettings;
-struct IDlcBatchModel;
 struct IEDUDiscoveryService;
 struct IGameConnectionListener;
 struct LevelSummary;
 struct PDFOptions;
 struct PackIdVersion;
-struct PlatformMultiplayerRestrictions;
 struct PlayerAchievementData;
 struct ProgressHandler;
 struct Purchase;
@@ -74,7 +87,6 @@ struct SkinHandle;
 struct StoreCatalogRepository;
 struct StoreContentSources;
 struct StoreDataDrivenScreenParams;
-struct ToastMessage;
 struct TransactionContext;
 struct WireframeQueue;
 namespace Clubs { struct ActivityFeed; }
@@ -93,6 +105,7 @@ namespace Realms { struct WorldCache; }
 namespace SDL { struct SubscriptionInfo; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
+namespace Social { struct FriendList; }
 namespace Social { struct MultiIdentitySigninResult; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlatformUserProfileData; }
@@ -118,30 +131,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd4f179;
-    ::ll::UntypedStorage<8, 24> mUnk5898df;
-    ::ll::UntypedStorage<8, 24> mUnkb8f778;
-    ::ll::UntypedStorage<8, 24> mUnk93fc9a;
-    ::ll::UntypedStorage<8, 16> mUnk8c29e5;
-    ::ll::UntypedStorage<8, 8>  mUnk3c4539;
-    ::ll::UntypedStorage<1, 1>  mUnk5cfbc7;
-    ::ll::UntypedStorage<8, 8>  mUnkaaaefd;
-    ::ll::UntypedStorage<4, 4>  mUnkc9ba95;
-    ::ll::UntypedStorage<8, 8>  mUnkb52f29;
-    ::ll::UntypedStorage<8, 8>  mUnk8c3280;
-    ::ll::UntypedStorage<8, 8>  mUnkb03986;
-    ::ll::UntypedStorage<8, 8>  mUnk3c6d08;
-    ::ll::UntypedStorage<8, 8>  mUnk20edbb;
-    ::ll::UntypedStorage<8, 16> mUnk4e8c10;
-    ::ll::UntypedStorage<8, 8>  mUnkd89614;
-    ::ll::UntypedStorage<8, 16> mUnk866edf;
-    ::ll::UntypedStorage<8, 8>  mUnk6a6185;
-    ::ll::UntypedStorage<8, 16> mUnk41aee7;
-    ::ll::UntypedStorage<8, 8>  mUnk430851;
-    ::ll::UntypedStorage<8, 16> mUnka056cc;
-    ::ll::UntypedStorage<4, 4>  mUnk921493;
-    ::ll::UntypedStorage<1, 1>  mUnke8ca16;
-    ::ll::UntypedStorage<1, 1>  mUnkf47178;
+    ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                          mMinecraft;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>          mClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>>              mSceneStack;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractScene>>                        mLoadingScene;
+    ::ll::TypedStorage<8, 8, ::SceneFactory&>                                            mSceneFactory;
+    ::ll::TypedStorage<1, 1, bool>                                                       mIsDirty;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInstanceModel>>                   mClientModel;
+    ::ll::TypedStorage<4, 4, ::LoadingState>                               mResourcePackConfirmationLoadingState;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SkinPackCollectionModel>> mSkinPackCollectionModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SkinPackCollectionModel>> mPurchasableSkinPackCollectionModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SkinPackCollectionModel>> mOwnedSkinPackCollectionModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SkinPackCollectionModel>> mRealmsPlusSkinPackCollectionModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>               mAsyncTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PlatformUpsellDialog>>   mPlatformUpsellDialog;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IDlcBatcher>>             mDlcBatcher;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>           mStartServerResult;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScreenCapabilities>>     mCapabilities;
+    ::ll::TypedStorage<8, 16, ::PlatformStoreIconModel>                    mPlatformStoreIconModel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>               mStorageCheckTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::FriendList>>     mFriendList;
+    ::ll::TypedStorage<4, 4, uint>                                         mSceneId;
+    ::ll::TypedStorage<1, 1, bool>                                         mPlayerCanceledJoinGame;
+    ::ll::TypedStorage<1, 1, bool>                                         mCurrentlyLoadingScene;
     // NOLINTEND
 
 public:
@@ -203,93 +216,93 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void DEPRECATED_navigateToRealmsPlusPDPScreen(
+    MCAPI void DEPRECATED_navigateToRealmsPlusPDPScreen(
         ::RealmsPlusTabIndex                    tabIndex,
         ::std::function<void(::Realms::World&)> onCreateCallback
     );
 
-    MCNAPI explicit MinecraftScreenModel(::MinecraftScreenModel::Context context);
+    MCAPI explicit MinecraftScreenModel(::MinecraftScreenModel::Context context);
 
-    MCNAPI ::RealmsAPI& _checkAndGetRealmsAPI() const;
+    MCAPI ::RealmsAPI& _checkAndGetRealmsAPI() const;
 
-    MCNAPI bool _isPremium(::PackManifest const& manifest) const;
+    MCAPI bool _isPremium(::PackManifest const& manifest) const;
 
-    MCNAPI bool _isPremiumLocked(::PackManifest const& manifest) const;
+    MCAPI bool _isPremiumLocked(::PackManifest const& manifest) const;
 
-    MCNAPI ::Bedrock::Threading::Async<void> _queueForMainThread(::std::function<void()>&& callback);
+    MCAPI ::Bedrock::Threading::Async<void> _queueForMainThread(::std::function<void()>&& callback);
 
-    MCNAPI void _savePDF(::PDFOptions options, ::std::shared_ptr<::FilePickerSettings> settings);
+    MCAPI void _savePDF(::PDFOptions options, ::std::shared_ptr<::FilePickerSettings> settings);
 
-    MCNAPI void _saveZIP(::PDFOptions options, ::std::shared_ptr<::FilePickerSettings> settings);
+    MCAPI void _saveZIP(::PDFOptions options, ::std::shared_ptr<::FilePickerSettings> settings);
 
-    MCNAPI void _startLocalServerAsync(
+    MCAPI void _startLocalServerAsync(
         ::std::string const&     levelId,
         ::std::string const&     levelName,
         ::ContentIdentity const& contentIdentity,
         ::LevelSettings const&   settings
     );
 
-    MCNAPI void
+    MCAPI void
     addDownloadCallback(::std::weak_ptr<bool> existenceTracker, ::std::function<void(::DownloadStateObject&)> callback);
 
-    MCNAPI void addEduCredentialsObserver(::edu::auth::CredentialsObserver& observer);
+    MCAPI void addEduCredentialsObserver(::edu::auth::CredentialsObserver& observer);
 
-    MCNAPI void addEduDeeplinkObserver(::EduDeeplinkObserver& observer) const;
+    MCAPI void addEduDeeplinkObserver(::EduDeeplinkObserver& observer) const;
 
-    MCNAPI void addToRealmsBlocklist(
+    MCAPI void addToRealmsBlocklist(
         ::Realms::RealmId                              worldId,
         ::std::string const&                           currentUserXuid,
         ::std::string const&                           xuidToBlock,
         ::std::function<void(::Realms::GenericStatus)> callback
     );
 
-    MCNAPI bool canEditPermissionsEDU(::ActorUniqueID const& id);
+    MCAPI bool canEditPermissionsEDU(::ActorUniqueID const& id);
 
-    MCNAPI bool canManageSubscriptionForStoreId(::std::string const& storeId) const;
+    MCAPI bool canManageSubscriptionForStoreId(::std::string const& storeId) const;
 
-    MCNAPI void cancelJoinGame(::LoadingState loadingState);
+    MCAPI void cancelJoinGame(::LoadingState loadingState);
 
-    MCNAPI void checkConnectionEvents();
+    MCAPI void checkConnectionEvents();
 
-    MCNAPI void checkRealmsPaymentService(::std::function<void(bool)> callback);
+    MCAPI void checkRealmsPaymentService(::std::function<void(bool)> callback);
 
-    MCNAPI void clearContentLogMessages();
+    MCAPI void clearContentLogMessages();
 
-    MCNAPI void clearDevConsoleScreenMessages();
+    MCAPI void clearDevConsoleScreenMessages();
 
-    MCNAPI void clearTTSQueue();
+    MCAPI void clearTTSQueue();
 
-    MCNAPI void closeRealmsWorld(
+    MCAPI void closeRealmsWorld(
         ::Realms::RealmId                              worldId,
         ::std::function<void(::Realms::GenericStatus)> callback,
         ::std::function<void(int)>                     retryCallback
     );
 
-    MCNAPI void completeServerForm(uint formId, ::ModalFormCancelReason cancelReason);
+    MCAPI void completeServerForm(uint formId, ::ModalFormCancelReason cancelReason);
 
-    MCNAPI void completeServerForm(uint formId, ::Json::Value response);
+    MCAPI void completeServerForm(uint formId, ::Json::Value response);
 
-    MCNAPI void confirmResourcePackDownload(
+    MCAPI void confirmResourcePackDownload(
         ::ResourcePackResponse response,
         bool                   downloadOptionalResourcePacks,
         bool                   forceServerPacksEnabled
     );
 
-    MCNAPI void connectToPlatformNetwork(
+    MCAPI void connectToPlatformNetwork(
         ::std::function<void(::Social::UserPlatformConnectionResult)> callback,
         bool                                                          isUserInitiated
     );
 
-    MCNAPI ::std::string copyWorld(::std::string const& worldId);
+    MCAPI ::std::string copyWorld(::std::string const& worldId);
 
-    MCNAPI void createAndUploadWorldToRealm(
+    MCAPI void createAndUploadWorldToRealm(
         ::LevelSummary const&                  levelSummary,
         ::LevelSettings const&                 levelSettings,
         ::Realms::World                        world,
         ::std::function<void(::Realms::World)> callback
     );
 
-    MCNAPI void createAndUploadWorldToRealm(
+    MCAPI void createAndUploadWorldToRealm(
         ::std::string const&                   levelId,
         ::std::string                          levelName,
         ::LevelSettings const&                 settings,
@@ -297,384 +310,384 @@ public:
         ::std::function<void(::Realms::World)> callback
     );
 
-    MCNAPI ::std::unique_ptr<::PlatformMultiplayerRestrictions> createPlatformMultiplayerRestrictions();
+    MCAPI ::std::unique_ptr<::PlatformMultiplayerRestrictions> createPlatformMultiplayerRestrictions();
 
-    MCNAPI void deleteAllContentLogs() const;
+    MCAPI void deleteAllContentLogs() const;
 
-    MCNAPI void deleteAllDiagnosticsAndProfilerCaptures() const;
+    MCAPI void deleteAllDiagnosticsAndProfilerCaptures() const;
 
-    MCNAPI void deleteAllLocalScreenshots();
+    MCAPI void deleteAllLocalScreenshots();
 
-    MCNAPI void deleteFeedItem(
+    MCAPI void deleteFeedItem(
         ::Clubs::FeedItem const&                      activityItem,
         ::Realms::RealmId                             realmId,
         ::std::string const&                          clubId,
         ::std::function<void(::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI void destroyGame();
+    MCAPI void destroyGame();
 
-    MCNAPI void devConsoleExecuteCommand(::std::string const& command);
+    MCAPI void devConsoleExecuteCommand(::std::string const& command);
 
-    MCNAPI void displayPremiumUpsellDialogAsync(::std::function<void(bool)> callback);
+    MCAPI void displayPremiumUpsellDialogAsync(::std::function<void(bool)> callback);
 
-    MCNAPI bool doesUserHavePremiumPlatformAccess() const;
+    MCAPI bool doesUserHavePremiumPlatformAccess() const;
 
-    MCNAPI bool doesUserPlatformConnectionAllowMultiplayer() const;
+    MCAPI bool doesUserPlatformConnectionAllowMultiplayer() const;
 
-    MCNAPI void fetchScreenshots(::std::vector<::Core::PathBuffer<::std::string>>& results);
+    MCAPI void fetchScreenshots(::std::vector<::Core::PathBuffer<::std::string>>& results);
 
-    MCNAPI ::std::string filterProfanityFromString(
+    MCAPI ::std::string filterProfanityFromString(
         ::ProfanityFilterContext stringContext,
         ::std::string const&     str,
         bool                     allowFilterOverride
     ) const;
 
-    MCNAPI bool findProfanityInString(::ProfanityFilterContext stringContext, ::std::string const& str) const;
+    MCAPI bool findProfanityInString(::ProfanityFilterContext stringContext, ::std::string const& str) const;
 
-    MCNAPI void fireCodeBuilderCachePerformanceEvent(::CodeBuilderPerformance::Stage stage);
+    MCAPI void fireCodeBuilderCachePerformanceEvent(::CodeBuilderPerformance::Stage stage);
 
-    MCNAPI void fireEventScreenChanged(
+    MCAPI void fireEventScreenChanged(
         ::std::string const&                                      screenName,
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
     );
 
-    MCNAPI void fireEventUserListUpdated(
+    MCAPI void fireEventUserListUpdated(
         ::std::string const& productId,
         ::std::string const& listId,
         ::std::string const& operation,
         bool                 success
     );
 
-    MCNAPI void fireSignOutEdu(::std::string const& action, ::std::string const& error) const;
+    MCAPI void fireSignOutEdu(::std::string const& action, ::std::string const& error) const;
 
-    MCNAPI bool
+    MCFOLD bool
     fulfillPriorEduPurchase(::std::weak_ptr<::Purchase> purchase, ::std::unique_ptr<::TransactionContext> context);
 
-    MCNAPI ::std::shared_ptr<::FilePickerSettings>
+    MCAPI ::std::shared_ptr<::FilePickerSettings>
     generateFilePickerSettingsForAlbum(::PDFOptions const& options, ::std::string const& defaultOutName);
 
-    MCNAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForExport();
+    MCAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForExport();
 
-    MCNAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForExport(
+    MCAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForExport(
         ::std::string const&       levelId,
         ::std::string const&       levelName,
         ::FileArchiver::ExportType type
     );
 
-    MCNAPI ::PlayerAchievementData const& getAchievementData() const;
+    MCAPI ::PlayerAchievementData const& getAchievementData() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> getActiveDirectoryIdentity();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> getActiveDirectoryIdentity();
 
-    MCNAPI ::std::string getBuildDateISOString() const;
+    MCAPI ::std::string getBuildDateISOString() const;
 
-    MCNAPI void getClubFeed(
+    MCAPI void getClubFeed(
         ::std::string const&                                                 clubID,
         ::std::function<void(::Clubs::ActivityFeed, ::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI void getClubProfile(
+    MCAPI void getClubProfile(
         ::std::string const&                                              clubId,
         ::std::function<void(::Clubs::ClubModel, ::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI void
+    MCAPI void
     getClubUnreadCount(::std::string const& clubId, ::std::function<void(int, ::Clubs::GenericStatus)> callback);
 
-    MCNAPI void getClubUnreadCounts(
+    MCAPI void getClubUnreadCounts(
         ::std::vector<::std::string> const&                                           clubIds,
         ::std::function<void(::std::map<::std::string, int>, ::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI ::MinecraftCommands& getCommands();
+    MCAPI ::MinecraftCommands& getCommands();
 
-    MCNAPI ::std::vector<::ContentLogMessage> const& getContentLogMessages() const;
+    MCAPI ::std::vector<::ContentLogMessage> const& getContentLogMessages() const;
 
-    MCNAPI ::ContentTierInfo getContentTierInfo() const;
+    MCAPI ::ContentTierInfo getContentTierInfo() const;
 
-    MCNAPI ::Realms::World& getCurrentRealm();
+    MCAPI ::Realms::World& getCurrentRealm();
 
-    MCNAPI ::std::string getCurrentXUID() const;
+    MCAPI ::std::string getCurrentXUID() const;
 
-    MCNAPI ::SkinHandle getCustomSkinHandle(::DefaultSkin skinType) const;
+    MCAPI ::SkinHandle getCustomSkinHandle(::DefaultSkin skinType) const;
 
-    MCNAPI int getCustomSkinIndex() const;
+    MCAPI int getCustomSkinIndex() const;
 
-    MCNAPI ::WireframeQueue* getDimensionWireframeQueue();
+    MCAPI ::WireframeQueue* getDimensionWireframeQueue();
 
-    MCNAPI ::std::string getDisplayName() const;
+    MCAPI ::std::string getDisplayName() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> getEDUCloudSaveSystem() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> getEDUCloudSaveSystem() const;
 
-    MCNAPI ::IEDUDiscoveryService& getEDUDiscoveryService();
+    MCAPI ::IEDUDiscoveryService& getEDUDiscoveryService();
 
-    MCNAPI float getEDUServicePackProgress() const;
+    MCAPI float getEDUServicePackProgress() const;
 
-    MCNAPI ::std::string getEduOfferPrice();
+    MCAPI ::std::string getEduOfferPrice();
 
-    MCNAPI ::EducationLevelSettings const* getEducationLevelSettings() const;
+    MCAPI ::EducationLevelSettings const* getEducationLevelSettings() const;
 
-    MCNAPI ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo();
+    MCAPI ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo();
 
-    MCNAPI ::IGameConnectionListener const& getGameConnectionListener();
+    MCAPI ::IGameConnectionListener const& getGameConnectionListener();
 
-    MCNAPI ::HitResult& getHitResult() const;
+    MCAPI ::HitResult& getHitResult() const;
 
-    MCNAPI int getHotbarSlotCount() const;
+    MCAPI int getHotbarSlotCount() const;
 
-    MCNAPI ::ResourceLocation const& getImageLocationFromImageRepository(::std::string const& imageName) const;
+    MCAPI ::ResourceLocation const& getImageLocationFromImageRepository(::std::string const& imageName) const;
 
-    MCNAPI bool getIsWaitingForSession() const;
+    MCAPI bool getIsWaitingForSession() const;
 
-    MCNAPI ::LevelData* getLevelData();
+    MCAPI ::LevelData* getLevelData();
 
-    MCNAPI ::LevelData* getLevelData(::std::string const& levelID);
+    MCAPI ::LevelData* getLevelData(::std::string const& levelID);
 
-    MCNAPI void getLinkedPlatformIds(
+    MCAPI void getLinkedPlatformIds(
         ::std::function<void(::std::string, ::std::string)> callback,
         ::std::vector<::std::string> const&                 xuids
     ) const;
 
-    MCNAPI void getLinkedXuids(
+    MCAPI void getLinkedXuids(
         ::std::function<void(::std::string, ::std::string)> callback,
         ::std::vector<::std::string> const&                 platformIds
     ) const;
 
-    MCNAPI ::ActorUniqueID getLocalPlayerEntityID() const;
+    MCAPI ::ActorUniqueID getLocalPlayerEntityID() const;
 
-    MCNAPI ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
+    MCAPI ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
 
-    MCNAPI ::std::string getMarketplacePassPrice(::std::string const& productSku, ::std::string const& caymanId) const;
+    MCAPI ::std::string getMarketplacePassPrice(::std::string const& productSku, ::std::string const& caymanId) const;
 
-    MCNAPI uint getMaxPlatformInvitablePlayers() const;
+    MCAPI uint getMaxPlatformInvitablePlayers() const;
 
-    MCNAPI ::std::string getNetworkInfoStringInGame() const;
+    MCAPI ::std::string getNetworkInfoStringInGame() const;
 
-    MCNAPI bool getNewJukeboxPopupItemText(::std::string& newText, bool& isCreative);
+    MCAPI bool getNewJukeboxPopupItemText(::std::string& newText, bool& isCreative);
 
-    MCNAPI bool getNewPopupItemText(::std::string& newText, bool& isCreative);
+    MCAPI bool getNewPopupItemText(::std::string& newText, bool& isCreative);
 
-    MCNAPI ::SDL::SubscriptionInfo const& getNextAvailableSubscriptionInfo() const;
+    MCAPI ::SDL::SubscriptionInfo const& getNextAvailableSubscriptionInfo() const;
 
-    MCNAPI ::IOptions& getOptions() const;
+    MCAPI ::IOptions& getOptions() const;
 
-    MCNAPI ::std::shared_ptr<::WebviewInterface> getOrCreateWebviewInterface(::WebviewInterfaceType interfaceType);
+    MCAPI ::std::shared_ptr<::WebviewInterface> getOrCreateWebviewInterface(::WebviewInterfaceType interfaceType);
 
-    MCNAPI void
+    MCAPI void
     getPlatformFriendProfiles(::std::function<void(::std::vector<::Social::PlatformUserProfileData> const&)> callback);
 
-    MCNAPI void getPlatformProfile(
+    MCAPI void getPlatformProfile(
         ::std::string const&                                      platformId,
         ::std::function<void(::Social::PlatformUserProfileData&)> callback
     );
 
-    MCNAPI short getPointerX() const;
+    MCAPI short getPointerX() const;
 
-    MCNAPI short getPointerY() const;
+    MCAPI short getPointerY() const;
 
-    MCNAPI void getProfiles(
+    MCAPI void getProfiles(
         ::std::vector<::std::string> const&                                                   xuids,
         ::std::function<void(::std::vector<::Social::XboxLiveUserProfileData const*> const&)> batchedCollectionCallback
     );
 
-    MCNAPI ::std::string getRandomSearchTermUsingCategory(::StoreCatalogCategory const& category) const;
+    MCAPI ::std::string getRandomSearchTermUsingCategory(::StoreCatalogCategory const& category) const;
 
-    MCNAPI void getRealmWorldBackups(
+    MCAPI void getRealmWorldBackups(
         ::Realms::RealmId                                                               worldId,
         ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Backup>)> callback
     );
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService> getRealmsInvitesService();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService> getRealmsInvitesService();
 
-    MCNAPI void getRealmsWorld(
+    MCAPI void getRealmsWorld(
         ::Realms::RealmId                                               worldId,
         ::std::function<void(::Realms::GenericStatus, ::Realms::World)> callback,
         bool                                                            userWaiting
     );
 
-    MCNAPI ::std::shared_ptr<::Realms::WorldCache> getRealmsWorldCache();
+    MCAPI ::std::shared_ptr<::Realms::WorldCache> getRealmsWorldCache();
 
-    MCNAPI ::Realms::World getRealmsWorldContextWorld() const;
+    MCAPI ::Realms::World getRealmsWorldContextWorld() const;
 
-    MCNAPI void getReportedFeedItem(
+    MCAPI void getReportedFeedItem(
         ::Clubs::ReportedItem const&                                                                   reportedItem,
         ::std::function<void(::Clubs::ReportedItem const&, ::Clubs::FeedItem, ::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI void getReportedItemPaths(
+    MCAPI void getReportedItemPaths(
         ::std::string const&                                                                clubId,
         ::std::function<void(::std::vector<::Clubs::ReportedItem>, ::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI ::std::string getScreenName() const;
+    MCAPI ::std::string getScreenName() const;
 
-    MCNAPI ::std::string getScreenTelemetry() const;
+    MCAPI ::std::string getScreenTelemetry() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> getScreenshotPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getScreenshotPath() const;
 
-    MCNAPI ::std::vector<::StoreFilter::FilterCollectionInfo> const& getSessionConfigFilterCollections() const;
+    MCAPI ::std::vector<::StoreFilter::FilterCollectionInfo> const& getSessionConfigFilterCollections() const;
 
-    MCNAPI ::std::string getSessionConfigKnownPageKeyValue(::std::string const& pageId) const;
+    MCAPI ::std::string getSessionConfigKnownPageKeyValue(::std::string const& pageId) const;
 
-    MCNAPI bool getSimPaused() const;
+    MCAPI bool getSimPaused() const;
 
-    MCNAPI ::std::string getSplitscreenJoinText() const;
+    MCAPI ::std::string getSplitscreenJoinText() const;
 
-    MCNAPI ::StoreContentSources getStoreContentSources() const;
+    MCAPI ::StoreContentSources getStoreContentSources() const;
 
-    MCNAPI bool getStoreHasRealmsProducts() const;
+    MCAPI bool getStoreHasRealmsProducts() const;
 
-    MCNAPI ::std::string getStoreId() const;
+    MCAPI ::std::string getStoreId() const;
 
-    MCNAPI ::SDL::SubscriptionInfo const& getSubscriptionFullPriceInfo() const;
+    MCAPI ::SDL::SubscriptionInfo const& getSubscriptionFullPriceInfo() const;
 
-    MCNAPI void getThirdPartyDisplayPicture(
+    MCAPI void getThirdPartyDisplayPicture(
         ::std::string const&                       playerId,
         ::std::function<void(::Core::Path const&)> callback,
         bool                                       isLocal
     );
 
-    MCNAPI bool getTipText(::std::string& text);
+    MCAPI bool getTipText(::std::string& text);
 
-    MCNAPI void getUserMemberOfWorldsCount(::std::function<void(::Realms::GenericStatus, bool)> callback);
+    MCAPI void getUserMemberOfWorldsCount(::std::function<void(::Realms::GenericStatus, bool)> callback);
 
-    MCNAPI ::std::vector<::std::string> getUuidsInLobby() const;
+    MCAPI ::std::vector<::std::string> getUuidsInLobby() const;
 
-    MCNAPI ::std::string getVersionString() const;
+    MCAPI ::std::string getVersionString() const;
 
-    MCNAPI ::std::shared_ptr<::WebviewInterface> getWebviewInterface(::WebviewInterfaceType interfaceType);
+    MCAPI ::std::shared_ptr<::WebviewInterface> getWebviewInterface(::WebviewInterfaceType interfaceType);
 
-    MCNAPI ::std::string getWorldConverterDevVersionNumberString() const;
+    MCAPI ::std::string getWorldConverterDevVersionNumberString() const;
 
-    MCNAPI ::LoadingState getWorldLoadingState() const;
+    MCAPI ::LoadingState getWorldLoadingState() const;
 
-    MCNAPI ::PurchaseResult goToExternalPlatformOffer(
+    MCAPI ::PurchaseResult goToExternalPlatformOffer(
         ::std::string const&             offerId,
         ::std::function<void(bool)>      finishedExternalCoinPurchase,
         ::std::function<void(bool, int)> boughtEnoughCoinsCallback
     );
 
-    MCNAPI bool hasExternalCoinPurchases() const;
+    MCFOLD bool hasExternalCoinPurchases() const;
 
-    MCNAPI bool hasInteractButton() const;
+    MCAPI bool hasInteractButton() const;
 
-    MCNAPI bool hasLocalDeviceEntitlements() const;
+    MCAPI bool hasLocalDeviceEntitlements() const;
 
-    MCNAPI bool hasPlatformIcons() const;
+    MCAPI bool hasPlatformIcons() const;
 
-    MCNAPI bool hasPlatformProfileCards() const;
+    MCAPI bool hasPlatformProfileCards() const;
 
-    MCNAPI void ignoreReportedFeedItem(
+    MCAPI void ignoreReportedFeedItem(
         ::Clubs::ReportedItem const&                  activityItem,
         ::std::string const&                          reason,
         ::std::string const&                          clubId,
         ::std::function<void(::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI void initializeRealmsWorld(
+    MCAPI void initializeRealmsWorld(
         ::Realms::RealmId                                                       worldId,
         ::std::string const&                                                    name,
         ::std::string const&                                                    description,
         ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)> callback
     );
 
-    MCNAPI bool isBanned() const;
+    MCAPI bool isBanned() const;
 
-    MCNAPI bool isCreative() const;
+    MCAPI bool isCreative() const;
 
-    MCNAPI bool isCrossPlatformPlayEnabled() const;
+    MCAPI bool isCrossPlatformPlayEnabled() const;
 
-    MCNAPI bool isDeviceBeingSunset() const;
+    MCAPI bool isDeviceBeingSunset() const;
 
-    MCNAPI bool isDeviceSunset() const;
+    MCAPI bool isDeviceSunset() const;
 
-    MCNAPI bool isDisconnectedFromNEX() const;
+    MCAPI bool isDisconnectedFromNEX() const;
 
-    MCNAPI bool isDisconnectedFromPSN() const;
+    MCAPI bool isDisconnectedFromPSN() const;
 
-    MCNAPI bool isEditorModeEnabled() const;
+    MCAPI bool isEditorModeEnabled() const;
 
-    MCNAPI bool isEduDemo();
+    MCAPI bool isEduDemo();
 
-    MCNAPI bool isEduMode() const;
+    MCFOLD bool isEduMode() const;
 
-    MCNAPI bool isFeatureEnabled(::MinecraftGameFeatures feature) const;
+    MCAPI bool isFeatureEnabled(::MinecraftGameFeatures feature) const;
 
-    MCNAPI bool isHotbarOnlyTouch() const;
+    MCAPI bool isHotbarOnlyTouch() const;
 
-    MCNAPI bool isInputModeTouch() const;
+    MCAPI bool isInputModeTouch() const;
 
-    MCNAPI bool isInviteEnabled(::Social::MultiplayerServiceIdentifier serviceIdentifier) const;
+    MCAPI bool isInviteEnabled(::Social::MultiplayerServiceIdentifier serviceIdentifier) const;
 
-    MCNAPI bool isLeftHanded() const;
+    MCAPI bool isLeftHanded() const;
 
-    MCNAPI ::Social::PermissionCheckResult isMultiplayerAllowed() const;
+    MCAPI ::Social::PermissionCheckResult isMultiplayerAllowed() const;
 
-    MCNAPI bool isNetworkAvailable() const;
+    MCAPI bool isNetworkAvailable() const;
 
-    MCNAPI bool isOnSceneStack(::std::string const& screenName);
+    MCAPI bool isOnSceneStack(::std::string const& screenName);
 
-    MCNAPI bool isOperator() const;
+    MCAPI bool isOperator() const;
 
-    MCNAPI bool isOreUIModerationEnabled() const;
+    MCAPI bool isOreUIModerationEnabled() const;
 
-    MCNAPI bool isPlatformInviteEnabled() const;
+    MCAPI bool isPlatformInviteEnabled() const;
 
-    MCNAPI bool isPlatformThirdPartyConsole() const;
+    MCFOLD bool isPlatformThirdPartyConsole() const;
 
-    MCNAPI bool isPremiumOwnedMissing(::PackIdVersion const& id, ::ContentIdentity const& contentIdentity) const;
+    MCAPI bool isPremiumOwnedMissing(::PackIdVersion const& id, ::ContentIdentity const& contentIdentity) const;
 
-    MCNAPI bool isPremiumPlatformAccessRequiredForMatchmaking() const;
+    MCFOLD bool isPremiumPlatformAccessRequiredForMatchmaking() const;
 
-    MCNAPI bool isRealmLevel() const;
+    MCAPI bool isRealmLevel() const;
 
-    MCNAPI bool isRealmOwner() const;
+    MCAPI bool isRealmOwner() const;
 
-    MCNAPI bool isRealmsEditWorldOreUIFeatureOn() const;
+    MCAPI bool isRealmsEditWorldOreUIFeatureOn() const;
 
-    MCNAPI bool isRealmsEnabled() const;
+    MCFOLD bool isRealmsEnabled() const;
 
-    MCNAPI bool isRealmsInitialized() const;
+    MCAPI bool isRealmsInitialized() const;
 
-    MCNAPI bool isResourceLoadingFinished() const;
+    MCAPI bool isResourceLoadingFinished() const;
 
-    MCNAPI bool isRiding() const;
+    MCAPI bool isRiding() const;
 
-    MCNAPI bool isServiceMultiplayerEnabled(::Social::MultiplayerServiceIdentifier serviceID) const;
+    MCAPI bool isServiceMultiplayerEnabled(::Social::MultiplayerServiceIdentifier serviceID) const;
 
-    MCNAPI bool isServicesLocalizationReady() const;
+    MCAPI bool isServicesLocalizationReady() const;
 
-    MCNAPI bool isSessionConfigAndLocalizationReady() const;
+    MCAPI bool isSessionConfigAndLocalizationReady() const;
 
-    MCNAPI bool isSessionConfigRetrievalDelayed() const;
+    MCAPI bool isSessionConfigRetrievalDelayed() const;
 
-    MCNAPI bool isSessionInfoValid(::Social::MultiplayerServiceIdentifier serviceID) const;
+    MCAPI bool isSessionInfoValid(::Social::MultiplayerServiceIdentifier serviceID) const;
 
-    MCNAPI bool isSignInInProgress() const;
+    MCAPI bool isSignInInProgress() const;
 
-    MCNAPI bool isSignedInToAdhoc() const;
+    MCAPI bool isSignedInToAdhoc() const;
 
-    MCNAPI bool isSignedInToNEX() const;
+    MCAPI bool isSignedInToNEX() const;
 
-    MCNAPI bool isSignedInToPSN() const;
+    MCAPI bool isSignedInToPSN() const;
 
-    MCNAPI bool isSignedInToPlayFabOfflineAndNetworkDisconnected() const;
+    MCAPI bool isSignedInToPlayFabOfflineAndNetworkDisconnected() const;
 
-    MCNAPI bool isSignedInToPlayfab() const;
+    MCAPI bool isSignedInToPlayfab() const;
 
-    MCNAPI bool isSignedInToXBL() const;
+    MCAPI bool isSignedInToXBL() const;
 
-    MCNAPI bool isUITTSEnabled() const;
+    MCAPI bool isUITTSEnabled() const;
 
-    MCNAPI bool isUnableToShowXBLLogo() const;
+    MCFOLD bool isUnableToShowXBLLogo() const;
 
-    MCNAPI bool isValidRealmName(::std::string name);
+    MCAPI bool isValidRealmName(::std::string name);
 
-    MCNAPI void joinEDUDiscoveredWorld();
+    MCAPI void joinEDUDiscoveredWorld();
 
-    MCNAPI void joinRealmFromInvite(::Realms::World world);
+    MCAPI void joinRealmFromInvite(::Realms::World world);
 
-    MCNAPI void joinRealmsWorld(
+    MCAPI void joinRealmsWorld(
         ::Realms::World                                                  world,
         ::std::function<void(::Social::GameConnectionInfo const&, bool)> successCallback,
         ::std::function<void(::Realms::GenericStatus, ::RealmsAPI::JoinStatus, ::Realms::FailureReason)> failCallback,
@@ -685,37 +698,37 @@ public:
             broadcastConnectionEventRealmsResponseFunction
     );
 
-    MCNAPI void launchEduUri(::std::string const& baseUrl);
+    MCAPI void launchEduUri(::std::string const& baseUrl);
 
-    MCNAPI bool launchManageSubscriptions();
+    MCAPI bool launchManageSubscriptions();
 
-    MCNAPI bool launchStore();
+    MCAPI bool launchStore();
 
-    MCNAPI void launchUri(::std::string const& uri);
+    MCAPI void launchUri(::std::string const& uri);
 
-    MCNAPI void launchUserGeneratedUri(::std::string const& uri, ::UserGeneratedUriSource source, bool recordEvent);
+    MCAPI void launchUserGeneratedUri(::std::string const& uri, ::UserGeneratedUriSource source, bool recordEvent);
 
-    MCNAPI void leaveRealmsWorld(::Realms::RealmId worldId, ::std::function<void(::Realms::GenericStatus)> callback);
+    MCAPI void leaveRealmsWorld(::Realms::RealmId worldId, ::std::function<void(::Realms::GenericStatus)> callback);
 
-    MCNAPI void loadStoreDataDrivenScreenFromSidebar(::StoreDataDrivenScreenParams& params);
+    MCAPI void loadStoreDataDrivenScreenFromSidebar(::StoreDataDrivenScreenParams& params);
 
-    MCNAPI void makeBackupOfLevel(::LevelSummary const& editedLevel);
+    MCAPI void makeBackupOfLevel(::LevelSummary const& editedLevel);
 
-    MCNAPI bool multiplayerLostConnectionToSignalingService() const;
+    MCAPI bool multiplayerLostConnectionToSignalingService() const;
 
-    MCNAPI void navigateToControlCustomizationScreen();
+    MCAPI void navigateToControlCustomizationScreen();
 
-    MCNAPI void navigateToDevConsole();
+    MCAPI void navigateToDevConsole();
 
-    MCNAPI void navigateToEduHomeScreen();
+    MCAPI void navigateToEduHomeScreen();
 
-    MCNAPI void navigateToFeedScreen(::Realms::World const& world);
+    MCAPI void navigateToFeedScreen(::Realms::World const& world);
 
-    MCNAPI void navigateToFeedbackPopup();
+    MCAPI void navigateToFeedbackPopup();
 
-    MCNAPI void navigateToInviteScreen();
+    MCAPI void navigateToInviteScreen();
 
-    MCNAPI void navigateToModalProgressScreen(
+    MCAPI void navigateToModalProgressScreen(
         ::std::string const&                 uniqueEventName,
         ::std::unique_ptr<::ProgressHandler> progressHandler,
         bool                                 forceRenderBelow,
@@ -723,135 +736,135 @@ public:
         bool                                 isCancellable
     );
 
-    MCNAPI void navigateToOptionsScreen(
+    MCAPI void navigateToOptionsScreen(
         ::SettingsTabIndex   startingTabIndex,
         bool                 navToMenuOnExit,
         bool                 maintainOldFocus,
         ::std::string const& initialPackId
     );
 
-    MCNAPI void navigateToPlatformNetworkConnectConfirmationScreen(::std::function<void(bool)> callback);
+    MCAPI void navigateToPlatformNetworkConnectConfirmationScreen(::std::function<void(bool)> callback);
 
-    MCNAPI void navigateToPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
+    MCAPI void navigateToPlatformStoreConnectConfirmationScreen(::std::function<void(bool)> callback);
 
-    MCNAPI void navigateToRealmsSlotSettingsScreen(::Realms::World const& world);
+    MCAPI void navigateToRealmsSlotSettingsScreen(::Realms::World const& world);
 
-    MCNAPI void navigateToRealmsSlotsScreen(::Realms::World const& worldWithoutSlotInfo);
+    MCAPI void navigateToRealmsSlotsScreen(::Realms::World const& worldWithoutSlotInfo);
 
-    MCNAPI void navigateToSkinPickerScreen();
+    MCAPI void navigateToSkinPickerScreen();
 
-    MCNAPI void navigateToStartScreen();
+    MCAPI void navigateToStartScreen();
 
-    MCNAPI void navigateToStoreHomeScreen(::std::string const& title);
+    MCAPI void navigateToStoreHomeScreen(::std::string const& title);
 
-    MCNAPI void navigateToTokenFAQScreen();
+    MCAPI void navigateToTokenFAQScreen();
 
-    MCNAPI void navigateToTokenPopupScreen();
+    MCAPI void navigateToTokenPopupScreen();
 
-    MCNAPI void navigateToUpdateWorldHeightScreen(::std::function<void(bool)> startWorldCallback);
+    MCAPI void navigateToUpdateWorldHeightScreen(::std::function<void(bool)> startWorldCallback);
 
-    MCNAPI bool needPlatformConnectionBeforeXBLSignIn() const;
+    MCAPI bool needPlatformConnectionBeforeXBLSignIn() const;
 
-    MCNAPI bool needPlatformConnectionForSplitScreenMultiplayer() const;
+    MCAPI bool needPlatformConnectionForSplitScreenMultiplayer() const;
 
-    MCNAPI void openBannedModal();
+    MCAPI void openBannedModal();
 
-    MCNAPI void openRealmsWorld(
+    MCAPI void openRealmsWorld(
         ::Realms::RealmId                              worldId,
         ::std::function<void(::Realms::GenericStatus)> callback,
         ::std::function<void(int)>                     retryCallback
     );
 
-    MCNAPI void pickCustomSkin(::std::function<void(::PickCustomSkinResult)> callback) const;
+    MCAPI void pickCustomSkin(::std::function<void(::PickCustomSkinResult)> callback) const;
 
-    MCNAPI void prepareToNavigateToGamePlayScreen();
+    MCAPI void prepareToNavigateToGamePlayScreen();
 
-    MCNAPI bool purchaseEduLicense(::std::unique_ptr<::TransactionContext> context);
+    MCAPI bool purchaseEduLicense(::std::unique_ptr<::TransactionContext> context);
 
-    MCNAPI void pushToast(::ToastMessage message);
+    MCAPI void pushToast(::ToastMessage message);
 
-    MCNAPI void rebindKeys();
+    MCAPI void rebindKeys();
 
-    MCNAPI void
+    MCAPI void
     refreshCurrentRealmWorldInfo(::std::function<void(::Realms::GenericStatus, ::Realms::World const&)> callback);
 
-    MCNAPI void removeFromRealmsBlocklist(
+    MCAPI void removeFromRealmsBlocklist(
         ::Realms::RealmId                              worldId,
         ::std::string const&                           xuid,
         ::std::function<void(::Realms::GenericStatus)> callback
     );
 
-    MCNAPI void requestPlayerPermissions(::LayeredAbilities const& abilities, ::ActorUniqueID playerId);
+    MCAPI void requestPlayerPermissions(::LayeredAbilities const& abilities, ::ActorUniqueID playerId);
 
-    MCNAPI bool requiresXBLSigninToPlay() const;
+    MCAPI bool requiresXBLSigninToPlay() const;
 
-    MCNAPI void resetActiveDirectoryAuthenticationState();
+    MCAPI void resetActiveDirectoryAuthenticationState();
 
-    MCNAPI void resetRealmsWorld(
+    MCAPI void resetRealmsWorld(
         ::Realms::RealmId                              worldId,
         ::std::function<void(::Realms::GenericStatus)> callback,
         ::std::function<void(int)>                     retryCallback
     );
 
-    MCNAPI void resetRealmsWorldContext();
+    MCAPI void resetRealmsWorldContext();
 
-    MCNAPI void restoreRealmWorldBackup(
+    MCAPI void restoreRealmWorldBackup(
         ::Realms::RealmId                              worldId,
         ::std::string                                  backupId,
         ::std::function<void(int)>                     retryCallback,
         ::std::function<void(::Realms::GenericStatus)> callback
     );
 
-    MCNAPI void saveLevelData(::std::string const& levelId, ::LevelData const& data);
+    MCAPI void saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
-    MCNAPI void scheduleCheckUserStorageAsync();
+    MCAPI void scheduleCheckUserStorageAsync();
 
-    MCNAPI void sendPurchaseReceiptsToServer();
+    MCAPI void sendPurchaseReceiptsToServer();
 
-    MCNAPI void sendSettingsCommandPacket(::std::string const& command, bool supressOutput);
+    MCAPI void sendSettingsCommandPacket(::std::string const& command, bool supressOutput);
 
-    MCNAPI void sendTrialWelcomeMessage();
+    MCAPI void sendTrialWelcomeMessage();
 
-    MCNAPI bool serverPermissionOpenChat() const;
+    MCAPI bool serverPermissionOpenChat() const;
 
-    MCNAPI void setActiveDirectoryAuthenticationStateComplete();
+    MCAPI void setActiveDirectoryAuthenticationStateComplete();
 
-    MCNAPI void setActiveDirectoryDemoVersion();
+    MCAPI void setActiveDirectoryDemoVersion();
 
-    MCNAPI void setActiveSlot(
+    MCAPI void setActiveSlot(
         ::Realms::RealmId                                                       worldId,
         int                                                                     slotIndex,
         ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)> callback
     );
 
-    MCNAPI void setClubProfile(::Clubs::ClubModel const& model, ::std::function<void(::Clubs::GenericStatus)> callback);
+    MCAPI void setClubProfile(::Clubs::ClubModel const& model, ::std::function<void(::Clubs::GenericStatus)> callback);
 
-    MCNAPI void setEducationLocalLevelSettings(::EducationLocalLevelSettings const& settings);
+    MCAPI void setEducationLocalLevelSettings(::EducationLocalLevelSettings const& settings);
 
-    MCNAPI void setIsCheckoutInProgress(bool isCheckoutInProgress);
+    MCAPI void setIsCheckoutInProgress(bool isCheckoutInProgress);
 
-    MCNAPI void setIsInGameBrowsing(bool isInGameBrowsing);
+    MCAPI void setIsInGameBrowsing(bool isInGameBrowsing);
 
-    MCNAPI void setLanguage();
+    MCAPI void setLanguage();
 
-    MCNAPI void setLastSelectedSlot(int slot, ::ContainerID containerId);
+    MCAPI void setLastSelectedSlot(int slot, ::ContainerID containerId);
 
-    MCNAPI void setNumberOfOwnedRealms(int number);
+    MCAPI void setNumberOfOwnedRealms(int number);
 
-    MCNAPI void setPlayerGameType(::GameType const& gameType);
+    MCAPI void setPlayerGameType(::GameType const& gameType);
 
-    MCNAPI void setRealmsWorldInfo(
+    MCAPI void setRealmsWorldInfo(
         ::Realms::World                                                         world,
         int                                                                     difficulty,
         bool                                                                    allowCheats,
         ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)> callback
     );
 
-    MCNAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+    MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
 
-    MCNAPI void setSimPaused(bool paused);
+    MCAPI void setSimPaused(bool paused);
 
-    MCNAPI void setViewedFeedItem(
+    MCAPI void setViewedFeedItem(
         ::Clubs::FeedItem const&                      activityItem,
         ::Realms::RealmId                             realmId,
         ::std::string const&                          clubId,
@@ -859,122 +872,122 @@ public:
         ::std::function<void(::Clubs::GenericStatus)> callback
     );
 
-    MCNAPI bool shouldShowThirdPartyDisconnected() const;
+    MCAPI bool shouldShowThirdPartyDisconnected() const;
 
-    MCNAPI bool shouldShowVersionUpdateScreen();
+    MCAPI bool shouldShowVersionUpdateScreen();
 
-    MCNAPI void showFriendFinder(::std::function<void()> callback);
+    MCAPI void showFriendFinder(::std::function<void()> callback);
 
-    MCNAPI bool showSignInButton() const;
+    MCAPI bool showSignInButton() const;
 
-    MCNAPI void showStoreFeaturesDisabledWhenSignedOutScreen();
+    MCAPI void showStoreFeaturesDisabledWhenSignedOutScreen();
 
-    MCNAPI void signIn(
+    MCAPI void signIn(
         ::std::function<void()>                                    connectionCompleteCallback,
         ::Social::IdentitySignInTrigger                            signInTrigger,
         ::std::string const&                                       signInSource,
         ::std::function<void(::Social::MultiIdentitySigninResult)> signInCompleteCallback
     );
 
-    MCNAPI void signOut(::std::function<void(::Identity::SignOutResult)> callback);
+    MCAPI void signOut(::std::function<void(::Identity::SignOutResult)> callback);
 
-    MCNAPI void silentSignin(
+    MCAPI void silentSignin(
         ::Social::IdentitySignInTrigger                            signInTrigger,
         ::std::string const&                                       signInSource,
         ::std::function<void(::Social::MultiIdentitySigninResult)> callback
     );
 
-    MCNAPI void startExternalNetworkWorld(::std::string const& serverName, ::std::string const& ipAddress, int port);
+    MCAPI void startExternalNetworkWorld(::std::string const& serverName, ::std::string const& ipAddress, int port);
 
-    MCNAPI void startLocalServerAsync(::LevelSummary const& levelSummary, ::LevelSettings const& levelSettings);
+    MCAPI void startLocalServerAsync(::LevelSummary const& levelSummary, ::LevelSettings const& levelSettings);
 
-    MCNAPI void
+    MCAPI void
     startLocalServerAsync(::std::string const& levelId, ::std::string levelName, ::LevelSettings const& settings);
 
-    MCNAPI bool supportsTTSLanguage(::std::string const& languageCode) const;
+    MCAPI bool supportsTTSLanguage(::std::string const& languageCode) const;
 
-    MCNAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>> takeScreenshotForUploading();
+    MCAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>> takeScreenshotForUploading();
 
-    MCNAPI bool tryNavigateToXblImmediateSignInScreen_DEPRECATED(
+    MCAPI bool tryNavigateToXblImmediateSignInScreen_DEPRECATED(
         ::std::string const&    signInSource,
         ::std::function<void()> callBackAfterSignIn,
         ::std::function<void()> callBackAfterCancel
     );
 
-    MCNAPI bool updateEDUServicePackSystem() const;
+    MCAPI bool updateEDUServicePackSystem() const;
 
-    MCNAPI void updateRealmsAllowList(
+    MCAPI void updateRealmsAllowList(
         ::Realms::RealmId                                               worldId,
         ::std::string const&                                            currentUserXuid,
         ::std::map<::std::string, ::RealmsAPI::InviteAction>            xuidList,
         ::std::function<void(::Realms::GenericStatus, ::Realms::World)> callback
     );
 
-    MCNAPI bool wasSessionCreated(::Social::MultiplayerServiceIdentifier serviceID) const;
+    MCAPI bool wasSessionCreated(::Social::MultiplayerServiceIdentifier serviceID) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static uint& mSceneInstanceCounter();
+    MCAPI static uint& mSceneInstanceCounter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MinecraftScreenModel::Context context);
+    MCAPI void* $ctor(::MinecraftScreenModel::Context context);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $navigateToDisconnectScreen(::Connection::DisconnectFailReason reason, ::std::string const& displayMessageOverride);
 
-    MCNAPI bool $tryNavigateToProfileScreen();
+    MCAPI bool $tryNavigateToProfileScreen();
 
-    MCNAPI bool $tryNavigateToSafeZoneScreenOnFirstSignin();
+    MCAPI bool $tryNavigateToSafeZoneScreenOnFirstSignin();
 
-    MCNAPI void
+    MCAPI void
     $navigateToStoreDataDrivenScreen(::StoreDataDrivenScreenParams const& params, bool forceDisableProgressScreen);
 
-    MCNAPI bool $leaveScreen(::std::string expectedScreenName, bool onlyThis);
+    MCAPI bool $leaveScreen(::std::string expectedScreenName, bool onlyThis);
 
-    MCNAPI bool $isInGame() const;
+    MCFOLD bool $isInGame() const;
 
-    MCNAPI bool $isSelectedSkinInitialized() const;
+    MCFOLD bool $isSelectedSkinInitialized() const;
 
-    MCNAPI ::SubClientId $getSubClientId() const;
+    MCAPI ::SubClientId $getSubClientId() const;
 
-    MCNAPI bool $platformTTSExists() const;
+    MCFOLD bool $platformTTSExists() const;
 
-    MCNAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::DlcId> const& dlcIds);
+    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::DlcId> const& dlcIds);
 
-    MCNAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::std::string> const& productIds);
+    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::std::string> const& productIds);
 
-    MCNAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::PackIdVersion> const& packIds);
+    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::PackIdVersion> const& packIds);
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository() const;
 
-    MCNAPI float $getStoreNetworkFailureTimeout() const;
+    MCFOLD float $getStoreNetworkFailureTimeout() const;
 
-    MCNAPI bool $isAdhocEnabled() const;
+    MCAPI bool $isAdhocEnabled() const;
 
-    MCNAPI bool $isDirty() const;
+    MCFOLD bool $isDirty() const;
 
-    MCNAPI ::SkinHandle const& $getSelectedSkinHandle() const;
+    MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const $getUserManager() const;
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const $getUserManager() const;
 
-    MCNAPI ::std::string const& $getLastPoppedScreenName() const;
+    MCAPI ::std::string const& $getLastPoppedScreenName() const;
     // NOLINTEND
 
 public:

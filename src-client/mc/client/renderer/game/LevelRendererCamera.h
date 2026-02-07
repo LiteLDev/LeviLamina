@@ -3,14 +3,35 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/model/models/SortedMeshDrawList.h"
+#include "mc/client/particlesystem/particle/ParticleRenderData.h"
+#include "mc/client/renderer/HistoricalFrameTimes.h"
+#include "mc/client/renderer/culling/FrustumCuller.h"
+#include "mc/client/renderer/game/ActorRenderCandidates.h"
+#include "mc/client/renderer/game/TerrainMaterialVariationManager.h"
+#include "mc/client/world/level/fog/FogDistanceSetting.h"
+#include "mc/client/world/level/fog/FogVolumetricCoefficientSetting.h"
+#include "mc/client/world/level/fog/FogVolumetricDensitySetting.h"
+#include "mc/client/world/level/fog/FogVolumetricHenyeyGreensteinGSetting.h"
+#include "mc/deps/core/math/FrustumEdges.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/core_graphics/ImageBuffer.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/minecraft_renderer/game/FrustumCullerType.h"
 #include "mc/deps/minecraft_renderer/game/LevelCullerType.h"
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+#include "mc/deps/minecraft_renderer/resources/ClientTexture.h"
+#include "mc/deps/renderer/Camera.h"
 #include "mc/platform/brstd/flat_map.h"
 #include "mc/util/GridArea.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/FogDefinition.h"
+#include "mc/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,32 +44,35 @@ class BlockSource;
 class Dimension;
 class Font;
 class IClientInstance;
+class IConstBlockSource;
 class Level;
 class LevelRenderer;
+class LevelRendererCameraProxy;
+class LocalPlayer;
 class Player;
+class ResourcePackManager;
 class ScreenContext;
-class SubChunkPos;
-class Vec3;
 struct BaseSceneDirectionalLightRenderData;
+struct BiomeBlendingMapRenderer;
+struct CameraAimAssistRenderer;
 struct ChunkRenderObjectCollection;
 struct ClientFrameUpdateContext;
 struct CrackRenderObjectCollection;
-struct FogDistanceSetting;
 struct FogTransitionSetting;
-struct FogVolumetricCoefficientSetting;
-struct FogVolumetricDensitySetting;
-struct FogVolumetricHenyeyGreensteinGSetting;
 struct LevelBuilder;
 struct LevelCullerBase;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
+struct OccluderFace;
 struct RenderChunkInstanced;
 struct RenderChunkShared;
 struct SkyRenderObject;
 struct TerrainLayer;
-struct TerrainMaterialVariationManager;
 struct ViewRenderData;
 struct ViewRenderObject;
+struct WeatherRenderer;
+namespace mce { class TextureGroup; }
+namespace mce { class TexturePtr; }
 // clang-format on
 
 class LevelRendererCamera {
@@ -69,33 +93,27 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24>  mUnk4424c4;
-        ::ll::UntypedStorage<8, 24>  mUnkf2f515;
-        ::ll::UntypedStorage<8, 512> mUnk15d19b;
-        ::ll::UntypedStorage<4, 12>  mUnk90d2e4;
-        ::ll::UntypedStorage<8, 24>  mUnkf4b106;
-        ::ll::UntypedStorage<8, 24>  mUnk57b3d2;
-        ::ll::UntypedStorage<4, 4>   mUnk4db8d6;
+        ::ll::TypedStorage<8, 24, ::std::vector<::FrustumEdges>> lastFrusumEdges;
+        ::ll::TypedStorage<8, 24, ::std::vector<::mce::Camera>>  lastCascadeCameras;
+        ::ll::TypedStorage<8, 512, ::mce::Camera>                lastDebugCamera;
+        ::ll::TypedStorage<4, 12, ::glm::vec3>                   mReferenceForwardVector;
+        ::ll::TypedStorage<8, 24, ::std::vector<::FrustumEdges>> frusumEdges;
+        ::ll::TypedStorage<8, 24, ::std::vector<::mce::Camera>>  cascadeCameras;
+        ::ll::TypedStorage<4, 4, int>                            renderDebugCamera;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LevelRendererDebugInformation& operator=(LevelRendererDebugInformation const&);
-        LevelRendererDebugInformation(LevelRendererDebugInformation const&);
-        LevelRendererDebugInformation();
     };
 
     struct RainState {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkfb5c53;
-        ::ll::UntypedStorage<4, 4>  mUnk118fe9;
-        ::ll::UntypedStorage<4, 4>  mUnkb3862b;
-        ::ll::UntypedStorage<4, 4>  mUnk9a8cff;
-        ::ll::UntypedStorage<4, 4>  mUnk6274da;
-        ::ll::UntypedStorage<8, 24> mUnk101ffe;
-        ::ll::UntypedStorage<8, 24> mUnkb11cf5;
+        ::ll::TypedStorage<4, 4, float>                  mRainPosX;
+        ::ll::TypedStorage<4, 4, float>                  mRainPosY;
+        ::ll::TypedStorage<4, 4, float>                  mRainPosZ;
+        ::ll::TypedStorage<4, 4, int>                    mRainPosSamples;
+        ::ll::TypedStorage<4, 4, int>                    mRainCount;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mSmokeParticles;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mRainSplashParticles;
         // NOLINTEND
 
     public:
@@ -107,15 +125,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::LevelRendererCamera::RainState& operator=(::LevelRendererCamera::RainState&&);
+        MCAPI ::LevelRendererCamera::RainState& operator=(::LevelRendererCamera::RainState&&);
 
-        MCNAPI ~RainState();
+        MCAPI ~RainState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -123,193 +141,185 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkb45339;
-        ::ll::UntypedStorage<4, 4> mUnk58f832;
+        ::ll::TypedStorage<4, 4, float> mCurrentValue;
+        ::ll::TypedStorage<4, 4, float> mOriginalValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FogBrightnessPair& operator=(FogBrightnessPair const&);
-        FogBrightnessPair(FogBrightnessPair const&);
-        FogBrightnessPair();
     };
 
     struct FogBrightnessParams {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk747be1;
-        ::ll::UntypedStorage<1, 1>  mUnkbe7156;
-        ::ll::UntypedStorage<4, 8>  mUnk140f8b;
-        ::ll::UntypedStorage<4, 12> mUnk4d78b0;
-        ::ll::UntypedStorage<8, 8>  mUnk1a6946;
+        ::ll::TypedStorage<1, 1, bool>                                     mIsInEnd;
+        ::ll::TypedStorage<1, 1, bool>                                     mCameraUnderLiquid;
+        ::ll::TypedStorage<4, 8, ::LevelRendererCamera::FogBrightnessPair> mFogBrightnessPair;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                              mCameraPos;
+        ::ll::TypedStorage<8, 8, ::IConstBlockSource*>                     mBlockSource;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FogBrightnessParams& operator=(FogBrightnessParams const&);
-        FogBrightnessParams(FogBrightnessParams const&);
-        FogBrightnessParams();
     };
 
     struct PlayerStateParams {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkdb53d8;
-        ::ll::UntypedStorage<8, 8> mUnk4c97ca;
-        ::ll::UntypedStorage<1, 1> mUnk15539d;
-        ::ll::UntypedStorage<1, 1> mUnk3d37ab;
-        ::ll::UntypedStorage<1, 1> mUnk27b01d;
+        ::ll::TypedStorage<8, 8, ::LocalPlayer*> mLocalPlayer;
+        ::ll::TypedStorage<8, 8, ::Actor const*> mLocalPlayerVehicle;
+        ::ll::TypedStorage<1, 1, bool>           mPlayerHasPassengers;
+        ::ll::TypedStorage<1, 1, bool>           mShouldRenderPlayerModel;
+        ::ll::TypedStorage<1, 1, bool>           mIsSpectator;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerStateParams& operator=(PlayerStateParams const&);
-        PlayerStateParams(PlayerStateParams const&);
-        PlayerStateParams();
     };
 
     struct LimitedActorRenderParams {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnka2770b;
-        ::ll::UntypedStorage<4, 4> mUnkc67bf3;
-        ::ll::UntypedStorage<4, 4> mUnk39d226;
+        ::ll::TypedStorage<4, 4, ::ActorType const> mActorType;
+        ::ll::TypedStorage<4, 4, int const>         mMaxCount;
+        ::ll::TypedStorage<4, 4, int>               mCurrentCount;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LimitedActorRenderParams& operator=(LimitedActorRenderParams const&);
-        LimitedActorRenderParams(LimitedActorRenderParams const&);
-        LimitedActorRenderParams();
     };
 
     struct RenderChunkPosBounds {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk985716;
-        ::ll::UntypedStorage<4, 12> mUnkb03afc;
+        ::ll::TypedStorage<4, 12, ::SubChunkPos> min;
+        ::ll::TypedStorage<4, 12, ::SubChunkPos> max;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RenderChunkPosBounds& operator=(RenderChunkPosBounds const&);
-        RenderChunkPosBounds(RenderChunkPosBounds const&);
-        RenderChunkPosBounds();
     };
+
+    using BlockActorList = ::std::vector<::gsl::not_null<::BlockActor*>>;
+
+    using ActorList = ::std::vector<::Actor*>;
+
+    using LevelRendererArea = ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>;
+
+    using ActorRenderQueue = ::brstd::flat_map<
+        ::gsl::not_null<::Actor*>,
+        ::ShadowContext,
+        ::std::less<::gsl::not_null<::Actor*>>,
+        ::std::vector<::gsl::not_null<::Actor*>>,
+        ::std::vector<::ShadowContext>>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk617fb8;
-    ::ll::UntypedStorage<8, 456> mUnkf4f5be;
-    ::ll::UntypedStorage<8, 24>  mUnkf417e3;
-    ::ll::UntypedStorage<8, 24>  mUnk26a5ea;
-    ::ll::UntypedStorage<8, 56>  mUnkb4b419;
-    ::ll::UntypedStorage<8, 24>  mUnk3c473a;
-    ::ll::UntypedStorage<8, 24>  mUnk2e2335;
-    ::ll::UntypedStorage<8, 24>  mUnkb996f1;
-    ::ll::UntypedStorage<8, 24>  mUnk1962fe;
-    ::ll::UntypedStorage<8, 16>  mUnkf0e27f;
-    ::ll::UntypedStorage<8, 16>  mUnked50e8;
-    ::ll::UntypedStorage<8, 16>  mUnk41ddff;
-    ::ll::UntypedStorage<8, 16>  mUnkb23629;
-    ::ll::UntypedStorage<8, 16>  mUnk3060ef;
-    ::ll::UntypedStorage<8, 16>  mUnke988b1;
-    ::ll::UntypedStorage<8, 16>  mUnkea0b15;
-    ::ll::UntypedStorage<8, 16>  mUnk769b22;
-    ::ll::UntypedStorage<8, 16>  mUnk5d7f41;
-    ::ll::UntypedStorage<8, 16>  mUnk59d899;
-    ::ll::UntypedStorage<8, 24>  mUnk8399eb;
-    ::ll::UntypedStorage<8, 24>  mUnk521887;
-    ::ll::UntypedStorage<8, 8>   mUnk6b0c9c;
-    ::ll::UntypedStorage<8, 56>  mUnk31a87d;
-    ::ll::UntypedStorage<8, 136> mUnkdd7caa;
-    ::ll::UntypedStorage<4, 4>   mUnk3a1651;
-    ::ll::UntypedStorage<4, 4>   mUnk405c5f;
-    ::ll::UntypedStorage<4, 4>   mUnk416b55;
-    ::ll::UntypedStorage<4, 8>   mUnkc3ee2e;
-    ::ll::UntypedStorage<4, 4>   mUnka4a78d;
-    ::ll::UntypedStorage<4, 4>   mUnk7e444b;
-    ::ll::UntypedStorage<4, 8>   mUnkefef34;
-    ::ll::UntypedStorage<4, 8>   mUnk8749ec;
-    ::ll::UntypedStorage<4, 28>  mUnkf94c1d;
-    ::ll::UntypedStorage<4, 28>  mUnk376382;
-    ::ll::UntypedStorage<4, 16>  mUnkc2f44d;
-    ::ll::UntypedStorage<4, 32>  mUnk7fed10;
-    ::ll::UntypedStorage<4, 32>  mUnk3f7cbc;
-    ::ll::UntypedStorage<4, 32>  mUnkd05fe5;
-    ::ll::UntypedStorage<4, 4>   mUnkfe0eed;
-    ::ll::UntypedStorage<4, 4>   mUnk3f3784;
-    ::ll::UntypedStorage<1, 1>   mUnk65e2e6;
-    ::ll::UntypedStorage<1, 1>   mUnke6ca9a;
-    ::ll::UntypedStorage<1, 1>   mUnk1b29f6;
-    ::ll::UntypedStorage<1, 1>   mUnkf7eaa6;
-    ::ll::UntypedStorage<4, 4>   mUnk164bc9;
-    ::ll::UntypedStorage<8, 224> mUnk9eaf57;
-    ::ll::UntypedStorage<4, 4>   mUnkc739ed;
-    ::ll::UntypedStorage<1, 1>   mUnk739602;
-    ::ll::UntypedStorage<4, 4>   mUnkbebec2;
-    ::ll::UntypedStorage<4, 4>   mUnk9290f7;
-    ::ll::UntypedStorage<4, 4>   mUnk734efb;
-    ::ll::UntypedStorage<4, 4>   mUnkd381fc;
-    ::ll::UntypedStorage<4, 4>   mUnkb76067;
-    ::ll::UntypedStorage<4, 4>   mUnk3107f8;
-    ::ll::UntypedStorage<4, 4>   mUnkaecf89;
-    ::ll::UntypedStorage<4, 4>   mUnke2d462;
-    ::ll::UntypedStorage<4, 4>   mUnk848699;
-    ::ll::UntypedStorage<8, 16>  mUnkc64188;
-    ::ll::UntypedStorage<4, 12>  mUnk49c1eb;
-    ::ll::UntypedStorage<4, 12>  mUnke15538;
-    ::ll::UntypedStorage<4, 12>  mUnke22d0f;
-    ::ll::UntypedStorage<4, 12>  mUnk43ad36;
-    ::ll::UntypedStorage<4, 24>  mUnk30ea4e;
-    ::ll::UntypedStorage<4, 12>  mUnk6c5dba;
-    ::ll::UntypedStorage<4, 12>  mUnk78f446;
-    ::ll::UntypedStorage<4, 12>  mUnkab8b69;
-    ::ll::UntypedStorage<4, 204> mUnk96ccd2;
-    ::ll::UntypedStorage<1, 1>   mUnkf00c21;
-    ::ll::UntypedStorage<8, 512> mUnkfb412d;
-    ::ll::UntypedStorage<8, 24>  mUnkac8f93;
-    ::ll::UntypedStorage<8, 8>   mUnk136419;
-    ::ll::UntypedStorage<8, 8>   mUnkb45bb2;
-    ::ll::UntypedStorage<8, 8>   mUnk9b1495;
-    ::ll::UntypedStorage<1, 1>   mUnka5b506;
-    ::ll::UntypedStorage<1, 1>   mUnkd22d2b;
-    ::ll::UntypedStorage<1, 1>   mUnk24e50d;
-    ::ll::UntypedStorage<1, 1>   mUnk40b3e9;
-    ::ll::UntypedStorage<1, 1>   mUnk74676a;
-    ::ll::UntypedStorage<1, 1>   mUnk18047e;
-    ::ll::UntypedStorage<1, 1>   mUnked227c;
-    ::ll::UntypedStorage<8, 8>   mUnk579634;
-    ::ll::UntypedStorage<8, 16>  mUnk52067e;
-    ::ll::UntypedStorage<8, 8>   mUnkbdf50e;
-    ::ll::UntypedStorage<2, 2>   mUnkd66ad2;
-    ::ll::UntypedStorage<8, 8>   mUnk10316a;
-    ::ll::UntypedStorage<8, 16>  mUnka4f0b3;
-    ::ll::UntypedStorage<1, 1>   mUnk869937;
-    ::ll::UntypedStorage<1, 1>   mUnkef7547;
-    ::ll::UntypedStorage<1, 1>   mUnkf3ca7a;
-    ::ll::UntypedStorage<4, 4>   mUnk969e8f;
-    ::ll::UntypedStorage<2, 2>   mUnkde831f;
-    ::ll::UntypedStorage<1, 1>   mUnkc4aa3d;
-    ::ll::UntypedStorage<4, 4>   mUnk5e9948;
-    ::ll::UntypedStorage<4, 4>   mUnk9f9b7e;
-    ::ll::UntypedStorage<4, 12>  mUnk64917b;
-    ::ll::UntypedStorage<4, 12>  mUnk10a0a2;
-    ::ll::UntypedStorage<8, 8>   mUnkb84577;
-    ::ll::UntypedStorage<8, 16>  mUnk5b8974;
-    ::ll::UntypedStorage<8, 24>  mUnk2ec2b9;
-    ::ll::UntypedStorage<8, 64>  mUnkcb8c1e;
-    ::ll::UntypedStorage<8, 16>  mUnka32861;
-    ::ll::UntypedStorage<8, 8>   mUnkce2747;
-    ::ll::UntypedStorage<8, 8>   mUnk23f139;
-    ::ll::UntypedStorage<8, 488> mUnk50073a;
-    ::ll::UntypedStorage<8, 16>  mUnk269f43;
-    ::ll::UntypedStorage<8, 8>   mUnkfb8626;
+    ::ll::TypedStorage<8, 8, uint64>                         mChunkQueueSize;
+    ::ll::TypedStorage<8, 456, uint64[3][19]>                mTerrainChunkQueueSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OccluderFace>> mChunkOccluders;
+    ::ll::TypedStorage<8, 24, ::ActorRenderCandidates>       mActorRenderCandidates;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::gsl::not_null<::Actor*>,
+            ::ShadowContext,
+            ::std::less<::gsl::not_null<::Actor*>>,
+            ::std::vector<::gsl::not_null<::Actor*>>,
+            ::std::vector<::ShadowContext>>>
+                                                                             mActorRenderQueue;
+    ::ll::TypedStorage<8, 24, ::SortedMeshDrawList>                          mSortedMeshDrawList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::BlockActor*>>> mBlockActorRenderQueue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::BlockActor*>>> mBlockActorRenderAlphaQueue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::BlockActor*>>> mBlockActorShadowQueue;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            shadowVolumeBack;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            shadowVolumeFront;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            shadowOverlayMat;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            starsMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            skyPlaneMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            sunMoonMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            endSkyMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            cloudMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            wireframeMaterial;
+    ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                            mCubemapMaterial;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::TexturePtr>>              mCubemapTextures;
+    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>                          mCubemapTexture;
+    ::ll::TypedStorage<8, 8, uint64 const>                                   mAmbientSamplesDefaultSize;
+    ::ll::TypedStorage<8, 56, ::std::optional<::cg::ImageBuffer>>            mSkyAmbientSamplesBuffer;
+    ::ll::TypedStorage<8, 136, ::TerrainMaterialVariationManager>            mTerrainMaterialVariationManager;
+    ::ll::TypedStorage<4, 4, float>                                          mDeltaTime;
+    ::ll::TypedStorage<4, 4, float>                                          mLastTime;
+    ::ll::TypedStorage<4, 4, float>                                          mWaterLevel;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                                    mFogControl;
+    ::ll::TypedStorage<4, 4, float>                                          mBaseFogEnd;
+    ::ll::TypedStorage<4, 4, float>                                          mBaseFogStart;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                                    mCameraLightIntensity;
+    ::ll::TypedStorage<4, 8, ::LevelRendererCamera::FogBrightnessPair>       mFogBrightnessPair;
+    ::ll::TypedStorage<4, 28, ::FogDistanceSetting>                          mCurrentDistanceFog;
+    ::ll::TypedStorage<4, 28, ::FogDistanceSetting>                          mLastTargetDistanceFog;
+    ::ll::TypedStorage<4, 16, ::FogVolumetricDensitySetting>                 mCurrentFogDensity;
+    ::ll::TypedStorage<4, 32, ::FogVolumetricCoefficientSetting>             mAirFogCoefficient;
+    ::ll::TypedStorage<4, 32, ::FogVolumetricCoefficientSetting>             mWaterFogCoefficient;
+    ::ll::TypedStorage<4, 32, ::FogVolumetricCoefficientSetting>             mCloudFogCoefficient;
+    ::ll::TypedStorage<4, 4, ::FogVolumetricHenyeyGreensteinGSetting>        mAirHenyeyGreensteinG;
+    ::ll::TypedStorage<4, 4, ::FogVolumetricHenyeyGreensteinGSetting>        mWaterHenyeyGreensteinG;
+    ::ll::TypedStorage<1, 1, bool>                                           mFogWasUnderwaterLastCheck;
+    ::ll::TypedStorage<1, 1, bool>                                           mFogWasUnderLavaLastCheck;
+    ::ll::TypedStorage<1, 1, bool>                                           mFogWasUnderPowderSnowLastCheck;
+    ::ll::TypedStorage<1, 1, bool>                                           mBlendFogThisFrame;
+    ::ll::TypedStorage<4, 4, float>                                          mMobEffectFogLevel;
+    ::ll::TypedStorage<8, 224, ::ParticleRenderData>                         mParticleRenderData;
+    ::ll::TypedStorage<4, 4, float>                                          mTransitionFogTime;
+    ::ll::TypedStorage<1, 1, bool>                                           mInTransitionFog;
+    ::ll::TypedStorage<4, 4, float const>                                    mRenderDistanceCloudFadeOutMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                          mFakeHDR;
+    ::ll::TypedStorage<4, 4, float>                                          mAverageBrightness;
+    ::ll::TypedStorage<4, 4, uint>                                           mFrameID;
+    ::ll::TypedStorage<4, 4, int>                                            mViewAreaDistance;
+    ::ll::TypedStorage<4, 4, float>                                          mFarChunksDistance;
+    ::ll::TypedStorage<4, 4, float>                                          mRenderDistance;
+    ::ll::TypedStorage<4, 4, float>                                          mCullEndDistance;
+    ::ll::TypedStorage<4, 4, int const>                                      mMaxInflightChunks;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GridArea<::std::shared_ptr<::RenderChunkInstanced>>>> mViewArea;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                      mLastFaceSortPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastFaceSortDir;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastDirtySortPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                      mLastNearbyFaceSortPos;
+    ::ll::TypedStorage<4, 24, ::LevelRendererCamera::RenderChunkPosBounds>     mLastFaceSortBounds;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastChunkResortPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mCameraPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mCameraTargetPos;
+    ::ll::TypedStorage<4, 204, ::FrustumCuller>                                mFrustumCuller;
+    ::ll::TypedStorage<1, 1, ::FrustumCullerType>                              mFrustumCullerType;
+    ::ll::TypedStorage<8, 512, ::mce::Camera>                                  mWorldSpaceCamera;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Actor*>>                         mWaterHoleActorQueue;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WeatherRenderer>>             mWeatherRenderer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeBlendingMapRenderer>>    mBiomeBlendingMapRenderer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkRenderObjectCollection>> mChunkRenderObjects;
+    ::ll::TypedStorage<1, 1, bool>                                             mCameraUnderWater;
+    ::ll::TypedStorage<1, 1, bool>                                             mCameraUnderLiquid;
+    ::ll::TypedStorage<1, 1, bool>                                             mCameraUnderPowderSnow;
+    ::ll::TypedStorage<1, 1, bool>                                             mCameraUnderLava;
+    ::ll::TypedStorage<1, 1, bool>                                             mCameraInRain;
+    ::ll::TypedStorage<1, 1, bool>                                             mShowSky;
+    ::ll::TypedStorage<1, 1, bool>                                             mIsCameraInCaptureMode;
+    ::ll::TypedStorage<8, 8, ::Level&>                                         mLevel;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::BlockSource>>                       mViewRegion;
+    ::ll::TypedStorage<8, 8, ::Dimension*>                                     mDimension;
+    ::ll::TypedStorage<2, 2, short>                                            mCloudHeight;
+    ::ll::TypedStorage<8, 8, ::LevelRenderer&>                                 mLevelRenderer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelCullerBase>>            mLevelCuller;
+    ::ll::TypedStorage<1, 1, ::LevelCullerType>                                mLastCullerType;
+    ::ll::TypedStorage<1, 1, bool>                                             mForceCulling;
+    ::ll::TypedStorage<1, 1, bool>                                             mRecullWhenNotBusy;
+    ::ll::TypedStorage<4, 4, int>                                              mViewAreaSide;
+    ::ll::TypedStorage<2, 2, short>                                            mViewAreaHeight;
+    ::ll::TypedStorage<1, 1, bool>                                             mViewAreaChanged;
+    ::ll::TypedStorage<4, 4, float>                                            mLastFogEnd;
+    ::ll::TypedStorage<4, 4, float>                                            mLastSunAngle;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastCameraPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                          mLastCameraDir;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mResourcePackManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroup>>          mTextureGroup;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockActor*>>                    mTempBlockActorList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>> mPendingPermanentlyRenderedBlockActorRequests;
+    ::ll::TypedStorage<8, 16, ::std::map<::ChunkPos, ::std::unordered_set<::BlockPos>>> mPermanentlyRenderedBlockActors;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererCameraProxy>>             mProxy;
+    ::ll::TypedStorage<8, 8, double>                                                    mLastFrameTimeStart;
+    ::ll::TypedStorage<8, 488, ::HistoricalFrameTimes>                                  mHistoricalFrameTimes;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>                        mChunkFaceSortTaskHandle;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraAimAssistRenderer>>              mCameraAimAssistRenderer;
     // NOLINTEND
 
 public:
@@ -398,11 +408,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelRendererCamera(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+    MCAPI LevelRendererCamera(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
 
-    MCNAPI void _addBiomeFogDefinitionToManager(::BlockPos const& pos) const;
+    MCAPI void _addBiomeFogDefinitionToManager(::BlockPos const& pos) const;
 
-    MCNAPI void _addToRenderChunkQueue(
+    MCAPI void _addToRenderChunkQueue(
         ::ChunkRenderObjectCollection&           collection,
         ::TerrainMaterialVariationManager const& terrainVariationMgr,
         ::TerrainLayer const&                    layer,
@@ -411,90 +421,90 @@ public:
         ::BlockPos const&                        chunkPos
     );
 
-    MCNAPI void _applyAdjustmentsForAir(
+    MCAPI void _applyAdjustmentsForAir(
         ::FogDistanceSetting& setting,
         ::ScreenContext&      screenContext,
         float                 skyIntensityOverride
     ) const;
 
-    MCNAPI void _applyAdjustmentsForUnderwater(::FogDistanceSetting& setting) const;
+    MCAPI void _applyAdjustmentsForUnderwater(::FogDistanceSetting& setting) const;
 
-    MCNAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
+    MCAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
         ::LevelCullerType                      type,
         ::std::weak_ptr<::LevelRendererCamera> levelRendererCamera,
         ::LevelBuilder&                        levelBuilder
     );
 
-    MCNAPI void _freeSkyProbeTexture();
+    MCAPI void _freeSkyProbeTexture();
 
-    MCNAPI ::FogVolumetricCoefficientSetting
+    MCAPI ::FogVolumetricCoefficientSetting
     _getCurrentCoefficientFogSetting(::FogDefinition::CoefficientSettingType settingType) const;
 
-    MCNAPI ::FogVolumetricDensitySetting _getCurrentDensityFogSetting() const;
+    MCAPI ::FogVolumetricDensitySetting _getCurrentDensityFogSetting() const;
 
-    MCNAPI ::FogDistanceSetting _getCurrentFixedDistanceFogSetting(float renderDistance) const;
+    MCAPI ::FogDistanceSetting _getCurrentFixedDistanceFogSetting(float renderDistance) const;
 
-    MCNAPI ::FogTransitionSetting _getCurrentFixedTransitionFogSetting(float renderDistance) const;
+    MCAPI ::FogTransitionSetting _getCurrentFixedTransitionFogSetting(float renderDistance) const;
 
-    MCNAPI ::FogVolumetricHenyeyGreensteinGSetting
+    MCAPI ::FogVolumetricHenyeyGreensteinGSetting
     _getCurrentHenyeyGreensteinGFogSetting(::FogDefinition::HenyeyGreensteinGSettingType settingType) const;
 
-    MCNAPI void _initCubemapTextures(::Dimension const& dimension);
+    MCAPI void _initCubemapTextures(::Dimension const& dimension);
 
-    MCNAPI void _initSkyProbeTexture(::glm::ivec3 size);
+    MCAPI void _initSkyProbeTexture(::glm::ivec3 size);
 
-    MCNAPI void _notifyOrthographicCameraMoved(
+    MCAPI void _notifyOrthographicCameraMoved(
         ::SubChunkPos const&                                         pos,
         ::Vec3 const&                                                viewDir,
         ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea
     );
 
-    MCNAPI void _notifyPerspectiveCameraMoved(
+    MCAPI void _notifyPerspectiveCameraMoved(
         ::SubChunkPos const&                                         pos,
         ::Vec3 const&                                                viewPos,
         bool                                                         accurateSorting,
         ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea
     );
 
-    MCNAPI void _releaseResources();
+    MCAPI void _releaseResources();
 
-    MCNAPI void
+    MCAPI void
     _resortNearbyChunks(::Vec3 const& viewPos, ::GridArea<::std::shared_ptr<::RenderChunkInstanced>> const& viewArea);
 
-    MCNAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
+    MCAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
 
-    MCNAPI void _tryInsertBlockEntityIntoRenderQueues(
+    MCAPI void _tryInsertBlockEntityIntoRenderQueues(
         ::BlockActor*                                                   blockActor,
         ::std::map<::ChunkPos, ::std::unordered_set<::BlockPos>> const& skipList
     );
 
-    MCNAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>& _viewAreaMutable();
+    MCAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>>& _viewAreaMutable();
 
-    MCNAPI ::LevelRendererCamera::RainState calcRainState(::Vec3 const& rainPos) const;
+    MCAPI ::LevelRendererCamera::RainState calcRainState(::Vec3 const& rainPos) const;
 
-    MCNAPI void determineUnderwaterStatus(::BlockSource& region);
+    MCAPI void determineUnderwaterStatus(::BlockSource& region);
 
-    MCNAPI ::LevelRendererCamera::RainState doRainUpdate();
+    MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
-    MCNAPI void doneQueuingChunks();
+    MCAPI void doneQueuingChunks();
 
-    MCNAPI ::optional_ref<::TerrainMaterialVariationManager const> getCurrentVariationManager() const;
+    MCAPI ::optional_ref<::TerrainMaterialVariationManager const> getCurrentVariationManager() const;
 
-    MCNAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
+    MCAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
 
-    MCNAPI ::RenderChunkInstanced* getRenderChunkInstancedAt(::SubChunkPos const& rcp) const;
+    MCAPI ::RenderChunkInstanced* getRenderChunkInstancedAt(::SubChunkPos const& rcp) const;
 
-    MCNAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
+    MCAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
 
-    MCNAPI uint64 getRenderChunkInstancedCount();
+    MCAPI uint64 getRenderChunkInstancedCount();
 
-    MCNAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
+    MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
 
-    MCNAPI void onViewRadiusChanged(bool resetAll);
+    MCAPI void onViewRadiusChanged(bool resetAll);
 
-    MCNAPI void preDimensionChanged(::Player& player);
+    MCAPI void preDimensionChanged(::Player& player);
 
-    MCNAPI void queueChunk(
+    MCAPI void queueChunk(
         ::ChunkRenderObjectCollection&                          collection,
         ::RenderChunkInstanced const&                           renderChunkInstanced,
         float                                                   farDistance2,
@@ -503,163 +513,163 @@ public:
         ::optional_ref<::TerrainMaterialVariationManager const> fadeVariationMgr
     );
 
-    MCNAPI void recaptureViewAreaDimensions();
+    MCAPI void recaptureViewAreaDimensions();
 
-    MCNAPI void renderAtmosphere(
+    MCAPI void renderAtmosphere(
         ::ScreenContext&                             screenContext,
         ::ViewRenderObject const&                    renderObj,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData,
         bool                                         isSkyLit
     ) const;
 
-    MCNAPI void renderCameraAimAssistHighlight(::ScreenContext& screenContext);
+    MCAPI void renderCameraAimAssistHighlight(::ScreenContext& screenContext);
 
-    MCNAPI void renderChunkOccluders(::BaseActorRenderContext& renderContext) const;
+    MCAPI void renderChunkOccluders(::BaseActorRenderContext& renderContext) const;
 
-    MCNAPI void renderEditorCursor(::ScreenContext const& screenContext);
+    MCAPI void renderEditorCursor(::ScreenContext const& screenContext);
 
-    MCNAPI void renderEntities(::BaseActorRenderContext& renderContext);
+    MCAPI void renderEntities(::BaseActorRenderContext& renderContext);
 
-    MCNAPI void renderGameplayMetadata(
+    MCAPI void renderGameplayMetadata(
         ::ScreenContext&                             screenContext,
         ::ViewRenderObject const&                    renderObj,
         bool                                         waitingForLoad,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     ) const;
 
-    MCNAPI void renderPlayerVision(::ScreenContext& screenContext) const;
+    MCAPI void renderPlayerVision(::ScreenContext& screenContext) const;
 
-    MCNAPI void renderSky(
+    MCAPI void renderSky(
         ::ScreenContext&                             screenContext,
         ::ViewRenderObject const&                    renderObj,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     ) const;
 
-    MCNAPI void renderStructureWireframes(
+    MCAPI void renderStructureWireframes(
         ::BaseActorRenderContext& renderContext,
         ::IClientInstance const&  clientInstance,
         ::ViewRenderObject const& renderObj
     );
 
-    MCNAPI void renderVolumetricFog(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
+    MCAPI void renderVolumetricFog(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
 
-    MCNAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
+    MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
 
-    MCNAPI void updateFarChunksDistance();
+    MCAPI void updateFarChunksDistance();
 
-    MCNAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
+    MCAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     renderClouds(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, float levelRenderDistance);
 
-    MCNAPI static void renderEndChaos(
+    MCAPI static void renderEndChaos(
         ::ScreenContext&                             screenContext,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     );
 
-    MCNAPI static void renderShadows(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
+    MCAPI static void renderShadows(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
 
-    MCNAPI static void
+    MCAPI static void
     renderStars(::ScreenContext& screenContext, ::ViewRenderData const& renderData, ::SkyRenderObject const& skyData);
 
-    MCNAPI static void renderSunAndMoon(
+    MCAPI static void renderSunAndMoon(
         ::ScreenContext&                             screenContext,
         ::ViewRenderData const&                      renderData,
         ::SkyRenderObject const&                     skyData,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     );
 
-    MCNAPI static bool
+    MCAPI static bool
     shouldRenderActor(::Actor const& actor, ::LevelRendererCamera::PlayerStateParams const& playerStateParams);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
+    MCAPI void* $ctor(::IClientInstance& clientInstance, ::Level& level, ::LevelRenderer& levelRenderer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $addCameraListenerToRenderChunkCoordinator();
+    MCAPI void $addCameraListenerToRenderChunkCoordinator();
 
-    MCNAPI void $onAppSuspended();
+    MCAPI void $onAppSuspended();
 
-    MCNAPI void $onAppResumed();
+    MCAPI void $onAppResumed();
 
-    MCNAPI void $onDeviceLost();
+    MCAPI void $onDeviceLost();
 
-    MCNAPI void $onLowMemory();
+    MCFOLD void $onLowMemory();
 
-    MCNAPI void $initResources();
+    MCFOLD void $initResources();
 
-    MCNAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCFOLD void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCNAPI void $tickLevelRendererCamera();
+    MCAPI void $tickLevelRendererCamera();
 
-    MCNAPI void $tickRain();
+    MCAPI void $tickRain();
 
-    MCNAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCNAPI void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+    MCFOLD void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
 
-    MCNAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
 
-    MCNAPI void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+    MCFOLD void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
 
-    MCNAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
 
-    MCNAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+    MCFOLD void $renderEntityEffects(::BaseActorRenderContext& renderContext);
 
-    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
-    MCNAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCNAPI bool $getForceFog(::Actor const&) const;
+    MCFOLD bool $getForceFog(::Actor const&) const;
 
-    MCNAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
-    MCNAPI float $getAmbientBrightness() const;
+    MCAPI float $getAmbientBrightness() const;
 
-    MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
-    MCNAPI void $preRenderUpdate(
+    MCAPI void $preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCNAPI void $render(
+    MCAPI void $render(
         ::BaseActorRenderContext& baseEntityRenderContext,
         ::ViewRenderObject const& renderObj,
         ::IClientInstance&        ci
     );
 
-    MCNAPI void $postRenderUpdate();
+    MCFOLD void $postRenderUpdate();
 
-    MCNAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared&, uchar);
+    MCFOLD void $notifyGeoChangedForAffectedEntities(::RenderChunkShared&, uchar);
 
-    MCNAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&);
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const&);
 
-    MCNAPI void $_releaseRespectiveResources();
+    MCFOLD void $_releaseRespectiveResources();
 
-    MCNAPI ::Block const* $_getBlockForBlockEnity(::BlockActor const& blockActor);
+    MCAPI ::Block const* $_getBlockForBlockEnity(::BlockActor const& blockActor);
 
-    MCNAPI void $setupViewArea();
+    MCAPI void $setupViewArea();
 
-    MCNAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
 
-    MCNAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
+    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
     // NOLINTEND
 
 public:

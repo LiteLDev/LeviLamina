@@ -2,4 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class UpdateVersionScreenContext : int {};
+enum class UpdateVersionScreenContext : int {
+    UpdateClientPrompt = 0,
+    StoreNotSupported  = 1,
+};

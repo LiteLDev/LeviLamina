@@ -43,32 +43,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MobEvents(::LevelStorage& levelStorage);
+    MCAPI explicit MobEvents(::LevelStorage& levelStorage);
 
-    MCNAPI void _onSaveEvent(::LevelStorage&);
+    MCAPI void _onSaveEvent(::LevelStorage&);
 
-    MCNAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
+    MCAPI ::MobEventsIndex getIndexFromName(::std::string const& name) const;
 
-    MCNAPI void
+    MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCNAPI void readFromLevelStorage();
+    MCAPI void readFromLevelStorage();
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> serialize() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> serialize() const;
 
-    MCNAPI void writeToLevelStorage();
+    MCAPI void writeToLevelStorage();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& EVENTS_ENABLED_STRING();
+    MCAPI static ::std::string const& EVENTS_ENABLED_STRING();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorage& levelStorage);
+    MCAPI void* $ctor(::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:

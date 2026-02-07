@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsCreateScreenController {
+class RealmsCreateScreenController {
 public:
     // RealmsCreateScreenController inner types define
     enum class State : int {};

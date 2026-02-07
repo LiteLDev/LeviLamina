@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AddExternalServerScreenController {
+class AddExternalServerScreenController {
 public:
     // AddExternalServerScreenController inner types define
     enum class Mode : int {};

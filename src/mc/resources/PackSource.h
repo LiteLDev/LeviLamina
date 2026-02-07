@@ -12,9 +12,12 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
+class IPackIOProvider;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
+class PackStorageContainer;
+class TaskGroup;
 struct PackIdVersion;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
@@ -107,15 +110,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbebb21;
-    ::ll::UntypedStorage<8, 8> mUnk442d24;
-    ::ll::UntypedStorage<8, 8> mUnk809155;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPackIOProvider>> const> mIO;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>>             mTaskGroup;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PackStorageContainer>>>  mContainer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PackSource& operator=(PackSource const&);
-    PackSource(PackSource const&);
     PackSource();
 
 public:
@@ -137,52 +138,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PackSource(::PackSourceOptions options);
+    MCAPI explicit PackSource(::PackSourceOptions options);
 
-    MCNAPI_C void _addPack(::std::shared_ptr<::Pack> pack);
+    MCAPI_C void _addPack(::std::shared_ptr<::Pack> pack);
 
-    MCNAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
+    MCAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
 
-    MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
+    MCAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
-    MCNAPI ::PackSourceLoadResult
+    MCAPI ::PackSourceLoadResult
     _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackSource::PackTaskData>)> task);
 
-    MCNAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);
+    MCAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);
 
-    MCNAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
+    MCAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
 
-    MCNAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
+    MCAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
 
-    MCNAPI_C void forEachPack(::std::function<void(::Pack&)> callback);
+    MCAPI_C void forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCNAPI ::PackSourceReport load(
+    MCAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCNAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
+    MCAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
 
-    MCNAPI void
+    MCAPI void
     resolveUpgradeDependencies(::std::shared_ptr<::Pack> pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackSourceOptions options);
+    MCAPI void* $ctor(::PackSourceOptions options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
+    MCAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
-    MCNAPI ::PackOrigin $getPackOrigin() const;
+    MCFOLD ::PackOrigin $getPackOrigin() const;
 
-    MCNAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
 
-    MCNAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
+    MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
 
     // NOLINTEND

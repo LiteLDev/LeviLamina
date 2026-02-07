@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/screens/ScreenViewProxyCallbacks.h"
+
 class ScreenViewProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnk128b7d;
+    ::ll::TypedStorage<8, 320, ::ScreenViewProxyCallbacks const> mCallbacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScreenViewProxy& operator=(ScreenViewProxy const&);
-    ScreenViewProxy(ScreenViewProxy const&);
-    ScreenViewProxy();
 };

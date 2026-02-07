@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleInitialSpeedComponent {};
+class ParticleInitialSpeedComponent {};
 
 } // namespace ParticleSystem

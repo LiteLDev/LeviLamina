@@ -27,7 +27,7 @@ struct ActorUniqueID;
 struct DealKineticDamageComponent;
 struct PlayerNotificationEvent;
 class IClientInstance;
-struct LocalPlayer;
+class LocalPlayer;
 // clang-format on
 
 class PlayerEventListener {

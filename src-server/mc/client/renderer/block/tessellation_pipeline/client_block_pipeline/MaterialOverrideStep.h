@@ -4,6 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-struct MaterialOverrideStep {};
+class MaterialOverrideStep {};
 
 } // namespace ClientBlockPipeline

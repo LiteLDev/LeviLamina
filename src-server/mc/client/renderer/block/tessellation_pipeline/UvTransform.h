@@ -4,7 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-struct UvTransform {
+class UvTransform {
 public:
     // UvTransform inner types define
     enum class BoxType : uchar {};

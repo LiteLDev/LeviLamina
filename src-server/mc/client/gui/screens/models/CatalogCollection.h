@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CatalogCollection {
+class CatalogCollection {
 public:
     // CatalogCollection inner types declare
     // clang-format off

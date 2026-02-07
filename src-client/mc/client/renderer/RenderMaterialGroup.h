@@ -5,14 +5,17 @@
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/renderer/RenderMaterialGroupBase.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/renderer/SamplerGroupCache.h"
+#include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 class ResourceLoadManager;
-class ResourceLocation;
 class ResourcePackManager;
+struct PackIdVersion;
 namespace mce { class RenderMaterialInfo; }
 namespace mce { struct ShaderGroup; }
 // clang-format on
@@ -23,21 +26,17 @@ class RenderMaterialGroup : public ::AppPlatformListener, public ::mce::RenderMa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk189e7d;
-    ::ll::UntypedStorage<8, 16> mUnkc55fff;
-    ::ll::UntypedStorage<8, 56> mUnk448005;
-    ::ll::UntypedStorage<8, 80> mUnk670274;
-    ::ll::UntypedStorage<1, 1>  mUnkce59a6;
-    ::ll::UntypedStorage<8, 64> mUnk1a1630;
-    ::ll::UntypedStorage<8, 8>  mUnk59a764;
-    ::ll::UntypedStorage<8, 24> mUnkd5d876;
-    ::ll::UntypedStorage<8, 24> mUnk4eb335;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::mce::RenderMaterialInfo>>>
+                                                                                         mMaterials;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::PackIdVersion>>> mLoadedMaterialFiles;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                                        mBoundList;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                               mAsyncLoadLock;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                        mRestartAsyncLoad;
+    ::ll::TypedStorage<8, 64, ::mce::SamplerGroupCache>                                  mSamplerGroupCache;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                                     mResourcePackManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourceLoadManager>>         mResourceLoadManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>>            mShaderGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderMaterialGroup& operator=(RenderMaterialGroup const&);
-    RenderMaterialGroup(RenderMaterialGroup const&);
 
 public:
     // virtual functions

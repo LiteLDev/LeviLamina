@@ -2,32 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct FlyingItemCommand;
+struct SelectNavigationTabCommand;
+// clang-format on
+
 struct ScreenViewCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk217393;
-    ::ll::UntypedStorage<8, 64> mUnkeb2182;
-    ::ll::UntypedStorage<8, 64> mUnk84ed0d;
-    ::ll::UntypedStorage<8, 64> mUnk12794c;
-    ::ll::UntypedStorage<8, 64> mUnk1703b6;
-    ::ll::UntypedStorage<8, 64> mUnk7a9eff;
-    ::ll::UntypedStorage<8, 64> mUnk28813c;
-    ::ll::UntypedStorage<8, 64> mUnk25b620;
-    ::ll::UntypedStorage<8, 64> mUnk51c62f;
-    ::ll::UntypedStorage<8, 64> mUnkba1d83;
-    ::ll::UntypedStorage<8, 64> mUnk619d77;
-    ::ll::UntypedStorage<8, 64> mUnk2625c8;
-    ::ll::UntypedStorage<8, 64> mUnk52b891;
-    ::ll::UntypedStorage<8, 64> mUnk456dd1;
-    ::ll::UntypedStorage<8, 64> mUnk24117b;
-    ::ll::UntypedStorage<8, 64> mUnk69e53c;
-    ::ll::UntypedStorage<8, 64> mUnka3f684;
-    ::ll::UntypedStorage<8, 64> mUnkbab265;
-    ::ll::UntypedStorage<8, 64> mUnkf6db61;
-    ::ll::UntypedStorage<8, 64> mUnk29d629;
-    ::ll::UntypedStorage<8, 64> mUnk9ab41c;
-    ::ll::UntypedStorage<8, 64> mUnka233ef;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::FlyingItemCommand&)>>           sendFlyingItems;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::SelectNavigationTabCommand&)>>  selectNavigationTab;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                               openKeyboard;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                               closeKeyboard;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>           selectControl;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>           selectVisibleControl;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, bool)>>     focusControl;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>           setFocusedTextBoxText;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&)>>           isFocusWithin;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&)>>           isSelected;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, bool)>>     scrollToControl;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>           scrollToControlAndSelect;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int)>>      focusCollectionItem;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, int, int)>> scrollToGridItemOffset;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, int, ::std::string const&, int, int)>>
+                                                                           scrollToGridItemOffsetCollectionIndex;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> resetScrollWithin;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::std::string const&, int)>>
+                                                                           setFocusToFocusIdWhenVisible;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     prepareFocusForModalPopup;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     updateTTSForSlider;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                     forceRepeatTTS;
+    ::ll::TypedStorage<8, 64, ::std::function<void(float)>>                setCustomObfuscatedTime;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> triggerAnimationEvent;
     // NOLINTEND
 
 public:
@@ -38,14 +46,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScreenViewCommand& operator=(::ScreenViewCommand const&);
+    MCAPI ::ScreenViewCommand& operator=(::ScreenViewCommand const&);
 
-    MCNAPI ~ScreenViewCommand();
+    MCAPI ~ScreenViewCommand();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

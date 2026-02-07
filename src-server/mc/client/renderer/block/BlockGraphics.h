@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockGraphics {
+class BlockGraphics {
 public:
     // BlockGraphics inner types declare
     // clang-format off

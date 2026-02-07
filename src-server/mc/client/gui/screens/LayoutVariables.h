@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LayoutVariables {
+class LayoutVariables {
 public:
     // LayoutVariables inner types declare
     // clang-format off

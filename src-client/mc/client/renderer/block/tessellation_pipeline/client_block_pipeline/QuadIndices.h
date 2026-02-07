@@ -4,6 +4,12 @@
 
 namespace ClientBlockPipeline {
 
-struct QuadIndices {};
+struct QuadIndices {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::array<uint64, 4>> mIndices;
+    // NOLINTEND
+};
 
 } // namespace ClientBlockPipeline

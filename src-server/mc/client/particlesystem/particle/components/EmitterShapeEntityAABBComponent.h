@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct EmitterShapeEntityAABBComponent {};
+class EmitterShapeEntityAABBComponent {};
 
 } // namespace ParticleSystem

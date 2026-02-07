@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleCurveBezier {};
+class ParticleCurveBezier {};
 
 } // namespace ParticleSystem

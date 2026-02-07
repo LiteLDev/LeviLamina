@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
-struct LocalPlayer;
 namespace Editor::Services { struct ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }

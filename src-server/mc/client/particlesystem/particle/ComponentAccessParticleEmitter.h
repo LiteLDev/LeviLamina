@@ -4,7 +4,7 @@
 
 namespace ParticleSystem {
 
-struct ComponentAccessParticleEmitter {
+class ComponentAccessParticleEmitter {
 public:
     // ComponentAccessParticleEmitter inner types declare
     // clang-format off

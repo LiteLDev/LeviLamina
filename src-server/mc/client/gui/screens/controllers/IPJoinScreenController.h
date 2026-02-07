@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IPJoinScreenController {
+class IPJoinScreenController {
 public:
     // IPJoinScreenController inner types declare
     // clang-format off

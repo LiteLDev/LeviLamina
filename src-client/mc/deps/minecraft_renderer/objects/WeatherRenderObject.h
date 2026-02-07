@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+#include "mc/deps/minecraft_renderer/resources/ServerTexture.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class MaterialPtr; }
+namespace mce { class Mesh; }
+// clang-format on
+
 struct WeatherRenderObject {
 public:
     // WeatherRenderObject inner types declare
@@ -32,45 +42,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 16> mUnkb32dd5;
-        ::ll::UntypedStorage<4, 16> mUnkdc531f;
+        ::ll::TypedStorage<4, 16, ::glm::vec4> mPositionOffset;
+        ::ll::TypedStorage<4, 16, ::glm::vec4> mForward;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PreviousPosition& operator=(PreviousPosition const&);
-        PreviousPosition(PreviousPosition const&);
-        PreviousPosition();
     };
 
     struct RuntimeValues {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk85ec24;
-        ::ll::UntypedStorage<4, 4>  mUnkb8473b;
-        ::ll::UntypedStorage<4, 12> mUnk77eab4;
-        ::ll::UntypedStorage<4, 12> mUnkcdbe41;
-        ::ll::UntypedStorage<4, 12> mUnk79bf2a;
-        ::ll::UntypedStorage<4, 12> mUnkf513bf;
-        ::ll::UntypedStorage<4, 12> mUnkca6b3a;
-        ::ll::UntypedStorage<4, 4>  mUnk95e497;
+        ::ll::TypedStorage<4, 4, float>        m_fSpeedScale;
+        ::ll::TypedStorage<4, 4, float>        m_fWindScale;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> m_vWind;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> m_vOffset;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> m_vRandom;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> m_vSnowOffset;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> m_vRandomDir;
+        ::ll::TypedStorage<4, 4, int>          m_ParticleIndexOffset;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RuntimeValues& operator=(RuntimeValues const&);
-        RuntimeValues(RuntimeValues const&);
-        RuntimeValues();
     };
 
     struct RenderRuntimeSettings {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 72> mUnk272ea5;
-        ::ll::UntypedStorage<4, 72> mUnkbf7b24;
-        ::ll::UntypedStorage<1, 1>  mUnkef2699;
+        ::ll::TypedStorage<4, 72, ::WeatherRenderObject::RuntimeValues> t0;
+        ::ll::TypedStorage<4, 72, ::WeatherRenderObject::RuntimeValues> t;
+        ::ll::TypedStorage<1, 1, bool>                                  resetMotion;
         // NOLINTEND
 
     public:
@@ -80,21 +78,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RenderRuntimeSettings();
+        MCAPI RenderRuntimeSettings();
 
-        MCNAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings&&);
+        MCAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings&&);
 
-        MCNAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings const&);
+        MCAPI RenderRuntimeSettings(::WeatherRenderObject::RenderRuntimeSettings const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
 
-        MCNAPI void* $ctor(::WeatherRenderObject::RenderRuntimeSettings&&);
+        MCFOLD void* $ctor(::WeatherRenderObject::RenderRuntimeSettings&&);
 
-        MCNAPI void* $ctor(::WeatherRenderObject::RenderRuntimeSettings const&);
+        MCAPI void* $ctor(::WeatherRenderObject::RenderRuntimeSettings const&);
         // NOLINTEND
     };
 
@@ -102,53 +100,48 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk3b4790;
-        ::ll::UntypedStorage<4, 4> mUnkb72192;
-        ::ll::UntypedStorage<4, 4> mUnk77b9ec;
-        ::ll::UntypedStorage<4, 4> mUnk47a3bd;
-        ::ll::UntypedStorage<4, 4> mUnk32d28a;
-        ::ll::UntypedStorage<1, 1> mUnkca4858;
-        ::ll::UntypedStorage<4, 4> mUnka51ae6;
-        ::ll::UntypedStorage<4, 4> mUnk323909;
-        ::ll::UntypedStorage<4, 4> mUnk690589;
+        ::ll::TypedStorage<4, 4, float> fSpeed;
+        ::ll::TypedStorage<4, 4, float> fLength;
+        ::ll::TypedStorage<4, 4, float> fWidth;
+        ::ll::TypedStorage<4, 4, float> fAlpha;
+        ::ll::TypedStorage<4, 4, float> fWindScale;
+        ::ll::TypedStorage<1, 1, bool>  bNormalizeWind;
+        ::ll::TypedStorage<4, 4, float> fGravityScale;
+        ::ll::TypedStorage<4, 4, float> fRandomDirScale;
+        ::ll::TypedStorage<4, 4, float> fDespawnProbability;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeatherParameters& operator=(WeatherParameters const&);
-        WeatherParameters(WeatherParameters const&);
-        WeatherParameters();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>    mUnkdd7ad0;
-    ::ll::UntypedStorage<8, 32>    mUnk5a050b;
-    ::ll::UntypedStorage<8, 24>    mUnk55f5b6;
-    ::ll::UntypedStorage<8, 24>    mUnkafd00f;
-    ::ll::UntypedStorage<8, 24>    mUnka303ff;
-    ::ll::UntypedStorage<4, 4>     mUnk825b45;
-    ::ll::UntypedStorage<8, 8>     mUnk580f78;
-    ::ll::UntypedStorage<8, 8>     mUnk30621c;
-    ::ll::UntypedStorage<8, 8>     mUnkcfdcea;
-    ::ll::UntypedStorage<8, 8>     mUnk551f65;
-    ::ll::UntypedStorage<8, 8>     mUnk26879c;
-    ::ll::UntypedStorage<8, 8>     mUnk8d196b;
-    ::ll::UntypedStorage<8, 8>     mUnk7d7386;
-    ::ll::UntypedStorage<4, 252>   mUnka998fe;
-    ::ll::UntypedStorage<4, 10360> mUnkc33c5b;
-    ::ll::UntypedStorage<4, 4>     mUnka7863b;
-    ::ll::UntypedStorage<4, 4>     mUnkc660f1;
-    ::ll::UntypedStorage<4, 4>     mUnkde76f6;
-    ::ll::UntypedStorage<4, 4>     mUnk98ce12;
-    ::ll::UntypedStorage<4, 4>     mUnk72e943;
-    ::ll::UntypedStorage<4, 4>     mUnkcb4688;
-    ::ll::UntypedStorage<4, 4>     mUnka341e7;
-    ::ll::UntypedStorage<4, 4>     mUnk998f23;
-    ::ll::UntypedStorage<4, 4>     mUnk2e0f1d;
-    ::ll::UntypedStorage<4, 4>     mUnkf1723d;
-    ::ll::UntypedStorage<4, 12>    mUnkd4ec94;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Mesh>>                             mParticleMesh;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                                          mWeatherTexture;
+    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mWeatherSnowOcclusionTexture;
+    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mWeatherOcclusionTexture;
+    ::ll::TypedStorage<8, 24, ::mce::ServerTexture>                                       mBrightnessTexture;
+    ::ll::TypedStorage<4, 4, int>                                                         mOcclusionHeightOffset;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mRainMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mSnowMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mPlanktonMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mRedSporesMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mBlueSporesMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mAshMat;
+    ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>                                   mWhiteAshMat;
+    ::ll::TypedStorage<4, 252, ::std::array<::WeatherRenderObject::WeatherParameters, 7>> mParams;
+    ::ll::TypedStorage<4, 10360, ::std::array<::std::array<::WeatherRenderObject::RenderRuntimeSettings, 10>, 7>>
+                                           mSettings;
+    ::ll::TypedStorage<4, 4, float>        mDensityRain;
+    ::ll::TypedStorage<4, 4, float>        mDensitySnow;
+    ::ll::TypedStorage<4, 4, float>        mDensityPlankton;
+    ::ll::TypedStorage<4, 4, float>        mDensityRedSpores;
+    ::ll::TypedStorage<4, 4, float>        mDensityBlueSpores;
+    ::ll::TypedStorage<4, 4, float>        mDensityAsh;
+    ::ll::TypedStorage<4, 4, float>        mDensityWhiteAsh;
+    ::ll::TypedStorage<4, 4, float>        mParticleBoxSize;
+    ::ll::TypedStorage<4, 4, float>        mLuminance;
+    ::ll::TypedStorage<4, 4, int>          mParticleCount;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mLastOcclusionBlock;
     // NOLINTEND
 
 public:
@@ -160,20 +153,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WeatherRenderObject(::WeatherRenderObject&&);
+    MCAPI WeatherRenderObject(::WeatherRenderObject&&);
 
-    MCNAPI ~WeatherRenderObject();
+    MCAPI ~WeatherRenderObject();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WeatherRenderObject&&);
+    MCAPI void* $ctor(::WeatherRenderObject&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

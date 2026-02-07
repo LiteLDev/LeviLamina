@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace mce { class TexturePtr; }
+namespace mce { class TextureGroupBase; }
 // clang-format on
 
 class OverlayTextureMap {
@@ -15,31 +18,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk4aaa99;
-    ::ll::UntypedStorage<4, 4>  mUnk91e259;
-    ::ll::UntypedStorage<8, 32> mUnkd70734;
-    ::ll::UntypedStorage<8, 64> mUnkb15eaa;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::TextureGroupBase>> mTextureGroup;
+    ::ll::TypedStorage<4, 4, ::OverlayTextureMap::TextureId>              mCachedOverlayTextureId;
+    ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                          mCachedOverlayTexture;
+    ::ll::TypedStorage<8, 64, ::std::array<::std::string, 2>>             mTextureNames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OverlayTextureMap& operator=(OverlayTextureMap const&);
-    OverlayTextureMap(OverlayTextureMap const&);
-    OverlayTextureMap();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
+    MCAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
 
-    MCNAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
+    MCAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
 
-    MCNAPI ~OverlayTextureMap();
+    MCAPI ~OverlayTextureMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

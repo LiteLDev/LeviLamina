@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecoinCatalogModel {
+class MinecoinCatalogModel {
 public:
     // MinecoinCatalogModel inner types declare
     // clang-format off

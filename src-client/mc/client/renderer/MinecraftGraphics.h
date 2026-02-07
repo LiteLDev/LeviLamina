@@ -48,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
+    MCAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
 
-    MCNAPI ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
+    MCAPI ::std::shared_ptr<::mce::ImageResourceLoader> getImageResourceLoader() const;
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::RenderContext& renderContext);
+    MCAPI void* $ctor(::mce::RenderContext& renderContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onAppSuspended();
+    MCFOLD void $onAppSuspended();
 
-    MCNAPI void $onAppTerminated();
+    MCFOLD void $onAppTerminated();
     // NOLINTEND
 
 public:

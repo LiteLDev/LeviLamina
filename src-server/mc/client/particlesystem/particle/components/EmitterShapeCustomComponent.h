@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct EmitterShapeCustomComponent {};
+class EmitterShapeCustomComponent {};
 
 } // namespace ParticleSystem

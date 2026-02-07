@@ -8,6 +8,11 @@
 #include "mc/deps/core/utility/pub_sub/DeferralType.h"
 #include "mc/deps/core/utility/pub_sub/deferred/SubscriptionBody.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::PubSub { class SubscriptionContext; }
+// clang-format on
+
 namespace Bedrock::PubSub::DeferralPolicy {
 
 class KeepAllPolicy {

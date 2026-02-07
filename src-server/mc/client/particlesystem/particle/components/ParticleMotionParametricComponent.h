@@ -4,6 +4,6 @@
 
 namespace ParticleSystem {
 
-struct ParticleMotionParametricComponent {};
+class ParticleMotionParametricComponent {};
 
 } // namespace ParticleSystem

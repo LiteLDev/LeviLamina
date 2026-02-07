@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/screens/ScreenControllerProxyType.h"
+
 // auto generated forward declare list
 // clang-format off
-struct MainMenuScreenModel;
+class MainMenuScreenModel;
 // clang-format on
 
 class ScreenControllerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6d01e7;
+    ::ll::TypedStorage<4, 4, ::ScreenControllerProxyType const> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScreenControllerProxy& operator=(ScreenControllerProxy const&);
-    ScreenControllerProxy(ScreenControllerProxy const&);
-    ScreenControllerProxy();
 
 public:
     // virtual functions
@@ -31,13 +28,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
+    MCFOLD ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
     // NOLINTEND
 
 public:

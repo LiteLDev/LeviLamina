@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AcceptDeclineInvitationScreenController {
+class AcceptDeclineInvitationScreenController {
 public:
     // AcceptDeclineInvitationScreenController inner types define
     enum class AcceptDeclineInvitationState : uchar {};

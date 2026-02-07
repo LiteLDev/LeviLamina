@@ -32,17 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addDynamic(::DynamicAmbientSound const& definition);
+    MCAPI void addDynamic(::DynamicAmbientSound const& definition);
 
-    MCNAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
+    MCAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
 
-    MCNAPI ~AmbientSoundIntervalDefinition();
+    MCAPI ~AmbientSoundIntervalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AmbientSoundIntervalDefinition>>&
             root
     );
@@ -51,6 +51,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

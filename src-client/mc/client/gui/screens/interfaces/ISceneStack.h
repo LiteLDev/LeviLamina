@@ -28,6 +28,26 @@ public:
     // ISceneStack inner types define
     struct SceneElement {};
 
+    using SceneChangeCallback = ::std::function<void(::AbstractScene&)>;
+
+    using PrePushSceneCallback = ::std::function<void(::AbstractScene&)>;
+
+    using PushSceneCallback =
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>;
+
+    using PrePopSceneCallback = ::std::function<void(::AbstractScene*)>;
+
+    using PopSceneCallback =
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>;
+
+    using PostFlushCallback = ::std::function<void()>;
+
+    using VoidSceneVisitor = ::brstd::function_ref<void(::AbstractScene&)>;
+
+    using BoolSceneVisitor = ::brstd::function_ref<bool(::AbstractScene&)>;
+
+    using BoolConstSceneVisitor = ::brstd::function_ref<bool(::AbstractScene const&)>;
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -170,7 +190,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

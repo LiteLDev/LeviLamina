@@ -2,4 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ClassroomSetting : int {};
+enum class ClassroomSetting : int {
+    ResourceUri = 0,
+};
