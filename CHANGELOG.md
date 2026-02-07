@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.5] - 2026-02-07
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.132-server.7
+- Bumped bedrock-runtime-data to v1.21.132-client.8
+- Updated Minecraft headers
+
+### Fixed
+
+- Fixed ChunkGeneratorStructureState.h
+- Added missing export for some functions
+
 ## [1.9.4] - 2026-02-03
 
 ### Fixed
@@ -1330,7 +1343,8 @@ For lip and tooth-hub test only.
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.5...HEAD
+[1.9.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.4...v1.9.5
 [1.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.3...v1.9.4
 [1.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.2...v1.9.3
 [1.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.1...v1.9.2
