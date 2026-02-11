@@ -27,9 +27,11 @@ public:
 
 public:
     MolangVariable(MolangVariable const& rhs) {
-        mValue       = rhs.mValue;
-        mPublicValue = std::make_unique<MolangScriptArg>(*rhs.mPublicValue);
-        mSettings    = rhs.mSettings;
+        mValue = rhs.mValue;
+        if (rhs.mPublicValue) {
+            mPublicValue = std::make_unique<MolangScriptArg>(*rhs.mPublicValue);
+        }
+        mSettings = rhs.mSettings;
     }
 
 public:
