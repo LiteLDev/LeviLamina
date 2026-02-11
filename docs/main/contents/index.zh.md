@@ -1,17 +1,17 @@
 # 欢迎来到LeviLamina文档
 
-[![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)
-](https://discord.gg/v5R5P4vRZk)
-[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)
-](https://t.me/LiteLoader)  
-[![656669024](https://img.shields.io/badge/QQ群-red?style=for-the-badge&logo=tencent%20qq)
-](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024) 
-[![850517473](https://img.shields.io/badge/QQ群-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=YFHRYvpO6mjqE5QeZxcMIlahGzWR3JLA&authKey=M8p8hkdctNSyXJo7Ux%2FzdNu4VL2jLiqMGakM3eHlA4ZLvjdwtL%2F1SIKE51s%2FKcp6&noverify=0&group_code=850517473) 
-[![1evilamina](https://img.shields.io/badge/QQ频道-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
+[![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)](https://discord.gg/v5R5P4vRZk)
+[![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)
+[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
+[![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
+[![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=3Fxt0gwMYkoLPani_vQ9tsNfYrnVy4hK&authKey=2A%2BNk3jmRaK%2FO1FBQSjTIbStAU1kbZWkjEkyh2RTVA015eTg6c4CvVhfByc1BtGZ&noverify=0&group_code=850517473)
+[![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=qq)](https://pd.qq.com/s/a13gu04rv)
 
-LeviLamina 是一个非官方的模组加载器，为 Minecraft 基岩专用服务器（BDS）提供必需的 API 支持。它具有全面的 API、强大的事件系统和实用接口，使开发者能够轻松增强 BDS 的新游戏功能。
+轻量级、模块化和多功能的基岩版模组加载器，LiteLoaderBDS 的后继者
 
-开发者可以使用 C++ 创建模组。这种无缝集成允许轻松自定义，并提供直观的学习体验。
+LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不可少的 API 支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。它提供了一个广泛的 API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强基岩版的附加游戏特征和功能提供了坚实的基础。利用模组，扩展游戏功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
+
+开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
 ## 鸣谢
 
