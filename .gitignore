@@ -10,3 +10,4 @@ src/mc1
 /cmake-build-*/
 /src-test/
 *.txt
+/vsxmake2026
