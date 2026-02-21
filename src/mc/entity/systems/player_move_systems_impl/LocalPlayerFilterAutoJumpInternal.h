@@ -182,7 +182,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void commonTick(
+    MCAPI void commonTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -227,9 +227,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> data);
+    MCAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> data);
 
-    MCNAPI static void _setJumpingIfPlayerCanAutoJump(
+    MCAPI static void _setJumpingIfPlayerCanAutoJump(
         ::StrictEntityContext const&              entity,
         ::AABBShapeComponent const&               aabbShape,
         ::ActorRotationComponent const&           actorRotation,
@@ -283,7 +283,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -323,7 +323,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -370,7 +370,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 
