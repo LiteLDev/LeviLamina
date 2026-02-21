@@ -10,7 +10,7 @@
 
 namespace bgfx {
 
-struct View {
+struct alignas(64) View {
 public:
     // member variables
     // NOLINTBEGIN
