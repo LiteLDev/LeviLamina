@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,8 +14,11 @@ class Actor;
 class BaseActorRenderContext;
 class ClientPBRTextureData;
 class DataDrivenGeometry;
+class ExpressionNode;
+class HashedString;
 class Mob;
 class ModelPart;
+class ModelPartLocator;
 class RenderController;
 class RenderParams;
 class ScreenContext;
@@ -28,23 +33,19 @@ class Model : public ::AppPlatformListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkd6ffb4;
-    ::ll::UntypedStorage<4, 4>  mUnk4a8c3a;
-    ::ll::UntypedStorage<1, 1>  mUnk2d6e55;
-    ::ll::UntypedStorage<1, 1>  mUnk9d6f48;
-    ::ll::UntypedStorage<8, 24> mUnk565535;
-    ::ll::UntypedStorage<8, 64> mUnka1f43e;
-    ::ll::UntypedStorage<8, 64> mUnk46a001;
-    ::ll::UntypedStorage<8, 24> mUnk52e0a6;
-    ::ll::UntypedStorage<8, 24> mUnk2fa2b2;
-    ::ll::UntypedStorage<8, 8>  mUnk8a72cc;
-    ::ll::UntypedStorage<8, 32> mUnk37dfb5;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                   mLeashOffset;
+    ::ll::TypedStorage<4, 4, float>                                                     mAttackTime;
+    ::ll::TypedStorage<1, 1, bool>                                                      mYoung;
+    ::ll::TypedStorage<1, 1, bool>                                                      mRiding;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ModelPart*>>                              mAllParts;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>>     mParticleEffectsMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ModelPartLocator>> mLocators;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::shared_ptr<::RenderController>, ::ExpressionNode>>>
+                                                                                      mRenderControllers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::DataDrivenGeometry>>> mGeometries;
+    ::ll::TypedStorage<8, 8, uint64>                                                  mQueryableGeometryIndex;
+    ::ll::TypedStorage<8, 32, ::MaterialVariants>                                     mMaterialVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Model& operator=(Model const&);
-    Model(Model const&);
 
 public:
     // virtual functions
@@ -82,16 +83,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Model();
+    MCAPI Model();
 
-    MCNAPI void assignPartToGroup(
+    MCAPI void assignPartToGroup(
         ::ModelPart&          part,
         bool                  forceToUniqueGroup,
         int                   skinnedMeshGroupIdentifier,
         ::DataDrivenGeometry* owningGeometry
     );
 
-    MCNAPI void dataDrivenDraw(
+    MCAPI void dataDrivenDraw(
         ::RenderParams&                            renderParams,
         ::dragon::RenderMetadata const&            renderMetadata,
         ::gsl::not_null<::RenderController const*> renderController,
@@ -100,71 +101,71 @@ public:
         ::std::optional<::MERSUniformData> const&  mersUniforms
     );
 
-    MCNAPI void draw(
+    MCAPI void draw(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::mce::ClientTexture const&     texture
     );
 
-    MCNAPI void draw(
+    MCAPI void draw(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ActorTextureInfo const&       textureInfo
     );
 
-    MCNAPI void draw(
+    MCAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::ClientPBRTextureData const&             textureData,
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
-    MCNAPI void prepareSkinning();
+    MCAPI void prepareSkinning();
 
-    MCNAPI void setModelMaterial(::mce::MaterialPtr const& materialPtr);
+    MCAPI void setModelMaterial(::mce::MaterialPtr const& materialPtr);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear();
+    MCAPI void $clear();
 
-    MCNAPI void $onAppSuspended();
+    MCFOLD void $onAppSuspended();
 
-    MCNAPI void $preDraw(::ScreenContext&);
+    MCFOLD void $preDraw(::ScreenContext&);
 
-    MCNAPI void $postDraw(::ScreenContext&);
+    MCFOLD void $postDraw(::ScreenContext&);
 
-    MCNAPI void $render(::ScreenContext&);
+    MCFOLD void $render(::ScreenContext&);
 
-    MCNAPI void $render(::ScreenContext& screenContext, ::Actor&, float, float, float, float, float, float);
+    MCAPI void $render(::ScreenContext& screenContext, ::Actor&, float, float, float, float, float, float);
 
-    MCNAPI void $render(::BaseActorRenderContext&);
+    MCFOLD void $render(::BaseActorRenderContext&);
 
-    MCNAPI void
+    MCFOLD void
     $render(::BaseActorRenderContext& baseActorRenderContext, ::Actor&, float, float, float, float, float, float);
 
-    MCNAPI void $setupAnim(float, float, float, float, float, float);
+    MCFOLD void $setupAnim(float, float, float, float, float, float);
 
-    MCNAPI void $setupAnim();
+    MCFOLD void $setupAnim();
 
-    MCNAPI void $prepareMobModel(::Mob&, float, float, float);
+    MCFOLD void $prepareMobModel(::Mob&, float, float, float);
 
-    MCNAPI float $getHeightAdjustment() const;
+    MCAPI float $getHeightAdjustment() const;
 
-    MCNAPI ::AABB $buildAABB() const;
+    MCAPI ::AABB $buildAABB() const;
     // NOLINTEND
 
 public:

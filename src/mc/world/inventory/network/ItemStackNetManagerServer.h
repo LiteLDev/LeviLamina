@@ -80,66 +80,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
 
-    MCNAPI void _filterStrings(
+    MCAPI void _filterStrings(
         ::ItemStackRequestId                requestId,
         ::std::vector<::std::string> const& stringsToFilter,
         ::TextProcessingEventOrigin const&  stringsToFilterOrigin
     );
 
-    MCNAPI void _handleLegacyTransactionRequest(
+    MCAPI void _handleLegacyTransactionRequest(
         ::ItemStackLegacyRequestId const&                                            legacyClientRequestId,
         ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>> const& legacySetItemSlots
     );
 
-    MCNAPI void
+    MCAPI void
     _handleRequestData(::std::vector<::ItemStackResponseInfo>& responses, ::ItemStackRequestData const* requestData);
 
-    MCNAPI void _processQueue();
+    MCAPI void _processQueue();
 
-    MCNAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
+    MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
-    MCNAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
+    MCAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
 
-    MCNAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
+    MCAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
-    MCNAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
+    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
-    MCNAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
+    MCAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
 
-    MCNAPI_C void handleRequest(
+    MCAPI_C void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
-    MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
+    MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackRequestId $getRequestId() const;
+    MCAPI ::ItemStackRequestId $getRequestId() const;
 
-    MCNAPI bool $retainSetItemStackNetIdVariant() const;
+    MCAPI bool $retainSetItemStackNetIdVariant() const;
 
-    MCNAPI bool $allowInventoryTransactionManager() const;
+    MCAPI bool $allowInventoryTransactionManager() const;
 
-    MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
+    MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 
 
     // NOLINTEND
@@ -147,6 +147,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
 #include "mc/deps/core/math/IRandomSeeded.h"
+#include "mc/util/random/MarsagliaPolarGaussian.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +17,9 @@ class SimpleRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke32ad8;
-    ::ll::UntypedStorage<8, 16> mUnk5a2dc7;
+    ::ll::TypedStorage<8, 8, int64>                     mSeed;
+    ::ll::TypedStorage<8, 16, ::MarsagliaPolarGaussian> mGaussianSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimpleRandom& operator=(SimpleRandom const&);
-    SimpleRandom(SimpleRandom const&);
-    SimpleRandom();
 
 public:
     // virtual functions
@@ -63,39 +58,39 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $nextInt();
+    MCAPI int $nextInt();
 
-    MCNAPI int $nextInt(int bound);
+    MCAPI int $nextInt(int bound);
 
-    MCNAPI int64 $nextLong();
+    MCAPI int64 $nextLong();
 
-    MCNAPI bool $nextBoolean();
+    MCAPI bool $nextBoolean();
 
-    MCNAPI float $nextFloat();
+    MCAPI float $nextFloat();
 
-    MCNAPI double $nextDouble();
+    MCAPI double $nextDouble();
 
-    MCNAPI double $nextGaussianDouble();
+    MCAPI double $nextGaussianDouble();
 
-    MCNAPI void $consumeCount(uint count);
+    MCAPI void $consumeCount(uint count);
 
-    MCNAPI ::std::unique_ptr<::IRandom> $fork();
+    MCAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCNAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
-    MCNAPI void $setSeed(int64 seed);
+    MCAPI void $setSeed(int64 seed);
 
-    MCNAPI void $setSeed(::Seed128Bit seed);
+    MCAPI void $setSeed(::Seed128Bit seed);
 
-    MCNAPI int64 $seed64() const;
+    MCFOLD int64 $seed64() const;
 
-    MCNAPI ::Seed128Bit $seed128() const;
+    MCAPI ::Seed128Bit $seed128() const;
 
 
     // NOLINTEND

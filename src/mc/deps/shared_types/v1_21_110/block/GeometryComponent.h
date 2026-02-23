@@ -52,8 +52,8 @@ public:
         MCAPI ::SharedTypes::v1_21_110::BlockDefinition::GeometryComponent::DetailedGeometry&
         operator=(::SharedTypes::v1_21_110::BlockDefinition::GeometryComponent::DetailedGeometry const&);
 
-        MCAPI bool operator==(
-            ::SharedTypes::v1_21_110::BlockDefinition::GeometryComponent::DetailedGeometry const& geometry
+        MCAPI bool
+        operator==(::SharedTypes::v1_21_110::BlockDefinition::GeometryComponent::DetailedGeometry const& geometry
         ) const;
 
         MCAPI ~DetailedGeometry();

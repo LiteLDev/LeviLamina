@@ -4,6 +4,15 @@
 
 namespace mce {
 
-struct ViewportInfo {};
+struct ViewportInfo {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 8, ::glm::vec2> size;
+    ::ll::TypedStorage<4, 8, ::glm::vec2> offset;
+    ::ll::TypedStorage<4, 4, float>       minDepth;
+    ::ll::TypedStorage<4, 4, float>       maxDepth;
+    // NOLINTEND
+};
 
 } // namespace mce

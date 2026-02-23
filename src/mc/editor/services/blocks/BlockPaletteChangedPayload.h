@@ -34,8 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::BlockPaletteChangedPayload&
-    operator=(::Editor::Network::BlockPaletteChangedPayload const&);
+    MCNAPI ::Editor::Network::BlockPaletteChangedPayload& operator=(::Editor::Network::BlockPaletteChangedPayload const&
+    );
     // NOLINTEND
 
 public:

@@ -81,59 +81,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string _getName(::BlockSource& region) const;
+    MCAPI ::std::string _getName(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::BlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
+    MCAPI static ::std::unique_ptr<::BlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
-    MCNAPI ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCNAPI ::Vec3 $getWorldPosition() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCNAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
-    MCNAPI ::Dimension* $getDimension() const;
+    MCAPI ::Dimension* $getDimension() const;
 
-    MCNAPI ::Actor* $getEntity() const;
+    MCFOLD ::Actor* $getEntity() const;
 
 #ifdef LL_PLAT_S
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 #endif
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCNAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
 
-    MCNAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
+    MCAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
 
 
     // NOLINTEND

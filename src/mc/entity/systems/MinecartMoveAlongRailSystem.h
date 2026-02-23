@@ -32,7 +32,7 @@ class MinecartMoveAlongRailSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _calculateAllPassengersRailMovementInput(
+    MCAPI static bool _calculateAllPassengersRailMovementInput(
         ::std::vector<::StrictActorIDEntityContextPair> const& passengers,
         ::Vec3&                                                posDelta,
         ::ViewT<
@@ -42,7 +42,7 @@ public:
             ::LocalMoveVelocityComponent const> playerView
     );
 
-    MCNAPI static void _calculateRailMovementSystem(
+    MCAPI static void _calculateRailMovementSystem(
         ::StrictEntityContext const&         context,
         ::RailMovementComponent const&       railMovementComponent,
         ::SnapOnRailComponent&               snapOnRailComponent,
@@ -56,7 +56,7 @@ public:
         ::EntityModifier<::MoveRequestComponent> mod
     );
 
-    MCNAPI static void _postRailMovementCalculateMinecartPositionSystem(
+    MCAPI static void _postRailMovementCalculateMinecartPositionSystem(
         ::StrictEntityContext const&                         context,
         ::SnapOnRailComponent const&                         snapOnRailComponent,
         ::StateVectorComponent&                              stateVectorComponent,
@@ -64,7 +64,7 @@ public:
         ::IConstBlockSource const&                           constBlockSource
     );
 
-    MCNAPI static void _preRailMovementCalculateMinecartPositionSystem(
+    MCAPI static void _preRailMovementCalculateMinecartPositionSystem(
         ::StrictEntityContext const&                         context,
         ::OffsetsComponent const&                            offsetsComponent,
         ::StateVectorComponent const&                        stateVectorComponent,
@@ -74,7 +74,7 @@ public:
         ::IConstBlockSource const&                           constBlockSource
     );
 
-    MCNAPI static void _tickCalculateRailMovementSystem(
+    MCAPI static void _tickCalculateRailMovementSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::RailMovementComponent const,
@@ -89,8 +89,8 @@ public:
         ::EntityModifier<::MoveRequestComponent> mod
     );
 
-    MCNAPI static ::TickingSystemWithInfo createCleanupSystem();
+    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
-    MCNAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
+    MCAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
     // NOLINTEND
 };

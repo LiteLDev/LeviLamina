@@ -6,8 +6,8 @@
 // clang-format off
 class Experiments;
 class BlockCullingGroup;
+class GeometryGroup;
 struct AtlasItemManager;
-struct GeometryGroup;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 // clang-format on

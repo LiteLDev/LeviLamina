@@ -9,6 +9,7 @@
 #include "mc/deps/core/platform/FullscreenMode.h"
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
+#include "mc/platform/OSInformation.h"
 #include "mc/win/AppPlatformWindows.h"
 
 // auto generated forward declare list
@@ -17,7 +18,6 @@ class HIDController;
 class SecureStorage;
 class SecureStorageKey;
 class WebviewInterface;
-struct OSInformation;
 namespace Core { class Path; }
 namespace Webview { struct PlatformArguments; }
 // clang-format on
@@ -26,24 +26,22 @@ class AppPlatform_win32 : public ::AppPlatformWindows {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb24ea2;
-    ::ll::UntypedStorage<8, 8>  mUnk356cd6;
-    ::ll::UntypedStorage<8, 8>  mUnkcfaa94;
-    ::ll::UntypedStorage<8, 32> mUnka7d9a1;
-    ::ll::UntypedStorage<8, 32> mUnk1d0c4e;
-    ::ll::UntypedStorage<1, 1>  mUnk113178;
-    ::ll::UntypedStorage<1, 1>  mUnk29784c;
-    ::ll::UntypedStorage<8, 8>  mUnke25532;
-    ::ll::UntypedStorage<8, 8>  mUnk66b4ba;
-    ::ll::UntypedStorage<4, 16> mUnk44554b;
-    ::ll::UntypedStorage<4, 4>  mUnkabbaf7;
-    ::ll::UntypedStorage<8, 40> mUnka50bee;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::HIDController>> mHIDController;
+    ::ll::TypedStorage<8, 8, ::HWND__*>                           mHWnd;
+    ::ll::TypedStorage<8, 8, ::HICON__*>                          mCursor;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>  mDataFolder;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>  mLoggingFolder;
+    ::ll::TypedStorage<1, 1, bool>                                mSimulateTouchWithMouse;
+    ::ll::TypedStorage<1, 1, bool>                                mMouseCapture;
+    ::ll::TypedStorage<8, 8, uint64>                              mPhysicalMemory;
+    ::ll::TypedStorage<8, 8, uint64>                              mVirtualMemory;
+    ::ll::TypedStorage<4, 16, ::tagRECT>                          mSavedWindowSize;
+    ::ll::TypedStorage<4, 4, long>                                mDefaultStyle;
+    ::ll::TypedStorage<8, 40, ::OSInformation>                    mOSInfo;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AppPlatform_win32& operator=(AppPlatform_win32 const&);
-    AppPlatform_win32(AppPlatform_win32 const&);
     AppPlatform_win32();
 
 public:
@@ -152,7 +150,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AppPlatform_win32(
+    MCAPI AppPlatform_win32(
         ::HWND__*            hWnd,
         ::std::string const& dataFolder,
         ::std::string_view,
@@ -161,13 +159,13 @@ public:
         int                                screenHeight
     );
 
-    MCNAPI ::OSInformation _fetchOSInformation() const;
+    MCAPI ::OSInformation _fetchOSInformation() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HWND__*            hWnd,
         ::std::string const& dataFolder,
         ::std::string_view,
@@ -180,106 +178,106 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
+    MCAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
+    MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCNAPI ::std::set<::Core::PathBuffer<::std::string>>
+    MCAPI ::std::set<::Core::PathBuffer<::std::string>>
     $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCNAPI bool $canLaunchUri(::std::string const& uri);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
-    MCNAPI void $launchUri(::std::string const& uri);
+    MCAPI void $launchUri(::std::string const& uri);
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getPackagePath() const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> $getLoggingPath() const;
 
-    MCNAPI ::std::string $getEdition() const;
+    MCAPI ::std::string $getEdition() const;
 
-    MCNAPI ::OsVersion $getOSVersion() const;
+    MCAPI ::OsVersion $getOSVersion() const;
 
-    MCNAPI bool $supportsVibration() const;
+    MCFOLD bool $supportsVibration() const;
 
-    MCNAPI bool $supportsFliteTTS() const;
+    MCFOLD bool $supportsFliteTTS() const;
 
-    MCNAPI int $getScreenWidth() const;
+    MCAPI int $getScreenWidth() const;
 
-    MCNAPI int $getScreenHeight() const;
+    MCAPI int $getScreenHeight() const;
 
-    MCNAPI int $getDisplayWidth();
+    MCAPI int $getDisplayWidth();
 
-    MCNAPI int $getDisplayHeight();
+    MCAPI int $getDisplayHeight();
 
-    MCNAPI void $setScreenSize(int width, int height);
+    MCFOLD void $setScreenSize(int width, int height);
 
-    MCNAPI void $setWindowSize(int width, int height);
+    MCAPI void $setWindowSize(int width, int height);
 
-    MCNAPI void $setWindowText(::std::string const& title);
+    MCAPI void $setWindowText(::std::string const& title);
 
-    MCNAPI ::std::string $getTextBoxBackend() const;
+    MCFOLD ::std::string $getTextBoxBackend() const;
 
-    MCNAPI void $setTextBoxBackend(::std::string const& newText);
+    MCFOLD void $setTextBoxBackend(::std::string const& newText);
 
-    MCNAPI int $getCaretPosition() const;
+    MCFOLD int $getCaretPosition() const;
 
-    MCNAPI void $setCaretPosition(int position);
+    MCFOLD void $setCaretPosition(int position);
 
-    MCNAPI bool $hasBuyButtonWhenInvalidLicense();
+    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
 
-    MCNAPI ::std::string $getApplicationId() const;
+    MCAPI ::std::string $getApplicationId() const;
 
-    MCNAPI bool $isCentennial() const;
+    MCAPI bool $isCentennial() const;
 
-    MCNAPI ::std::string $getPackageFamilyName() const;
+    MCAPI ::std::string $getPackageFamilyName() const;
 
-    MCNAPI ::PlatformType $getPlatformType() const;
+    MCFOLD ::PlatformType $getPlatformType() const;
 
-    MCNAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
+    MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCNAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCNAPI void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
-    MCNAPI ::std::string $getPlatformString() const;
+    MCAPI ::std::string $getPlatformString() const;
 
-    MCNAPI ::std::string $getSubPlatformString() const;
+    MCAPI ::std::string $getSubPlatformString() const;
 
-    MCNAPI uint64 $getFreeMemory() const;
+    MCAPI uint64 $getFreeMemory() const;
 
-    MCNAPI uint64 $getMemoryLimit() const;
+    MCAPI uint64 $getMemoryLimit() const;
 
-    MCNAPI uint64 $getUsedMemory();
+    MCAPI uint64 $getUsedMemory();
 
-    MCNAPI uint64 $getTotalPhysicalMemory() const;
+    MCAPI uint64 $getTotalPhysicalMemory() const;
 
-    MCNAPI ::std::string $getModelName();
+    MCAPI ::std::string $getModelName();
 
-    MCNAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
+    MCAPI void $setFullscreenMode(::FullscreenMode const fullscreenMode);
 
-    MCNAPI bool $isWebviewSupported() const;
+    MCAPI bool $isWebviewSupported() const;
 
-    MCNAPI ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
+    MCFOLD ::std::shared_ptr<::WebviewInterface> $createWebview(::Webview::PlatformArguments&& args) const;
 
-    MCNAPI bool $getPlatformTTSEnabled() const;
+    MCAPI bool $getPlatformTTSEnabled() const;
 
-    MCNAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
+    MCAPI ::std::variant<::HWND__*, ::std::monostate> $getRenderSurfaceParameters() const;
 
-    MCNAPI ::std::optional<bool> $isOnWifiConnectionTelemetryValue();
+    MCAPI ::std::optional<bool> $isOnWifiConnectionTelemetryValue();
 
-    MCNAPI void $hideSplashScreen();
+    MCAPI void $hideSplashScreen();
 
-    MCNAPI int $getPlatformDpi() const;
+    MCFOLD int $getPlatformDpi() const;
 
-    MCNAPI ::UIScalingRules $getPlatformUIScalingRules() const;
+    MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND
 
 public:

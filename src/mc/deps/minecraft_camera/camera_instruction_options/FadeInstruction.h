@@ -26,21 +26,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk55966d;
-        ::ll::UntypedStorage<4, 4> mUnkcd05c2;
-        ::ll::UntypedStorage<4, 4> mUnk1f3986;
+        ::ll::TypedStorage<4, 4, float> mRed;
+        ::ll::TypedStorage<4, 4, float> mGreen;
+        ::ll::TypedStorage<4, 4, float> mBlue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ColorOption& operator=(ColorOption const&);
-        ColorOption(ColorOption const&);
-        ColorOption();
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::ColorOption>
+        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::ColorOption>
         read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
@@ -49,21 +43,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9dc74f;
-        ::ll::UntypedStorage<4, 4> mUnk75ff6b;
-        ::ll::UntypedStorage<4, 4> mUnkdc92c1;
+        ::ll::TypedStorage<4, 4, float> mFadeInTime;
+        ::ll::TypedStorage<4, 4, float> mHoldTime;
+        ::ll::TypedStorage<4, 4, float> mFadeOutTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TimeOption& operator=(TimeOption const&);
-        TimeOption(TimeOption const&);
-        TimeOption();
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::TimeOption>
+        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::TimeOption>
         read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
@@ -71,28 +59,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk452934;
-    ::ll::UntypedStorage<4, 16> mUnk9ec57a;
+    ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstructionOptions::FadeInstruction::TimeOption>>  mTime;
+    ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstructionOptions::FadeInstruction::ColorOption>> mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FadeInstruction& operator=(FadeInstruction const&);
-    FadeInstruction(FadeInstruction const&);
-    FadeInstruction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::CameraInstructionOptions::FadeInstruction const& other) const;
+    MCAPI bool operator==(::CameraInstructionOptions::FadeInstruction const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
 

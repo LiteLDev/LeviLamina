@@ -2,22 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ILevel;
+// clang-format on
+
 class EndChaosLightManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk27fa09;
-    ::ll::UntypedStorage<4, 4> mUnk717ca0;
-    ::ll::UntypedStorage<4, 4> mUnkbc5153;
-    ::ll::UntypedStorage<4, 4> mUnke363e1;
-    ::ll::UntypedStorage<4, 4> mUnkdbd7f3;
-    ::ll::UntypedStorage<4, 4> mUnk1afd00;
-    ::ll::UntypedStorage<4, 4> mUnk2dc62a;
-    ::ll::UntypedStorage<4, 4> mUnk6dc4f4;
-    ::ll::UntypedStorage<4, 4> mUnk6e761c;
-    ::ll::UntypedStorage<4, 4> mUnk49bf5b;
-    ::ll::UntypedStorage<4, 4> mUnk61d7bf;
-    ::ll::UntypedStorage<4, 4> mUnk4c2da4;
+    ::ll::TypedStorage<8, 8, ::ILevel&> mLevel;
+    ::ll::TypedStorage<4, 4, float>     mEndChaosIntensityMultipler;
+    ::ll::TypedStorage<4, 4, float>     mEndChaosPerpendicularAngle;
+    ::ll::TypedStorage<4, 4, float>     mEndChaosAngle;
+    ::ll::TypedStorage<4, 4, float>     mCurrentFlashDurationInTicks;
+    ::ll::TypedStorage<4, 4, float>     mFlashDuration;
+    ::ll::TypedStorage<4, 4, float>     mMinFlashDuration;
+    ::ll::TypedStorage<4, 4, float>     mMaxFlashDuration;
+    ::ll::TypedStorage<4, 4, float>     mCurrentFlashCooldownInTicks;
+    ::ll::TypedStorage<4, 4, float>     mFlashCooldown;
+    ::ll::TypedStorage<4, 4, float>     mMinFlashCooldown;
+    ::ll::TypedStorage<4, 4, float>     mMaxFlashCooldown;
     // NOLINTEND
 
 public:
@@ -29,6 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void tick();
+    MCAPI_C void tick();
     // NOLINTEND
 };

@@ -48,20 +48,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DimensionManager(
+    MCAPI DimensionManager(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
 
-    MCNAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
+    MCAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
-    MCNAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
+    MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
@@ -70,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
 
 
     // NOLINTEND

@@ -55,6 +55,7 @@ class MoveActorAbsolutePacket;
 class MoveActorDeltaPacket;
 class MovePlayerPacket;
 class MovementEffectPacket;
+class MultiPlayerLevel;
 class NetworkSettingsPacket;
 class NetworkStackLatencyPacket;
 class Player;
@@ -85,7 +86,6 @@ struct ActorBlockSyncMessage;
 struct ClientCreateLevelArguments;
 struct IPersonaNetworkHandlerDelegate;
 struct LegacyClientNetworkHandlerArguments;
-struct MultiPlayerLevel;
 struct NetworkChunkInserter;
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }

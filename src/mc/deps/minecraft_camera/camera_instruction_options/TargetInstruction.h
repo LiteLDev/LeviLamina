@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,22 +18,16 @@ struct TargetInstruction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk6b9ff5;
-    ::ll::UntypedStorage<8, 8>  mUnk616e91;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTargetCenterOffset;
+    ::ll::TypedStorage<8, 8, int64>                    mTargetActorId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetInstruction& operator=(TargetInstruction const&);
-    TargetInstruction(TargetInstruction const&);
-    TargetInstruction();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::TargetInstruction> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::TargetInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
 

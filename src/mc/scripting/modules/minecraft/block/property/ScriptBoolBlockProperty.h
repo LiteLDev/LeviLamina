@@ -47,8 +47,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<bool> getState() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty& operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&&
+    );
 
     MCAPI ::Scripting::Result_deprecated<void> setState(bool state);
     // NOLINTEND

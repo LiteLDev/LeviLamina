@@ -2,4 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BeforeLevelForLevelHoldingOwnership {};
+class BeforeLevelForLevelHoldingOwnership {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk393182;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BeforeLevelForLevelHoldingOwnership& operator=(BeforeLevelForLevelHoldingOwnership const&);
+    BeforeLevelForLevelHoldingOwnership(BeforeLevelForLevelHoldingOwnership const&);
+    BeforeLevelForLevelHoldingOwnership();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~BeforeLevelForLevelHoldingOwnership();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+};

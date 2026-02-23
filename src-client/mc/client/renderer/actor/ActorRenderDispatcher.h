@@ -14,6 +14,7 @@ class BaseActorRenderContext;
 class BlockTessellator;
 class DataDrivenRenderer;
 class Font;
+class GeometryGroup;
 class HashedString;
 class ResourceLoadManager;
 class ResourcePackManager;
@@ -22,7 +23,6 @@ class Vec2;
 class Vec3;
 struct ActorResourceDefinition;
 struct ActorResourceDefinitionGroup;
-struct GeometryGroup;
 struct NameTagRenderObject;
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }

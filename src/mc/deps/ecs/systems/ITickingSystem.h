@@ -28,9 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
-    MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
 
 
     // NOLINTEND

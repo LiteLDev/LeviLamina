@@ -22,9 +22,9 @@ struct VexFlagComponent;
 namespace MobMovementFriction {
 // functions
 // NOLINTBEGIN
-MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void tickLavaWalkFriction(
+MCAPI void tickLavaWalkFriction(
     ::StrictEntityContext const&,
     ::NavigationComponent const& navigationComponent,
     ::Optional<::MovementAbilitiesComponent const>,
@@ -35,7 +35,7 @@ MCNAPI void tickLavaWalkFriction(
     ::StateVectorComponent& stateVectorComponent
 );
 
-MCNAPI void tickNormalFriction(
+MCAPI void tickNormalFriction(
     ::StrictEntityContext const&,
     ::MobTravelComponent const& mobTravelComponent,
     ::Optional<::MovementAbilitiesComponent const>,

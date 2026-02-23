@@ -31,8 +31,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent&
-    operator=(::SharedTypes::v1_20_50::PlanterItemComponent const&);
+    MCAPI ::SharedTypes::v1_20_50::PlanterItemComponent& operator=(::SharedTypes::v1_20_50::PlanterItemComponent const&
+    );
 
     MCAPI ~PlanterItemComponent();
     // NOLINTEND
