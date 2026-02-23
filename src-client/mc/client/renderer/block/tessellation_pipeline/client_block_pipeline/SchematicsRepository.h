@@ -11,13 +11,13 @@ class Block;
 class BlockCullingGroup;
 class BlockTransformationComponent;
 class Experiments;
+class GeometryGroup;
 class GeometryPtr;
 class HashedString;
 class Matrix;
 class Vec3;
 struct BlockCullingData;
 struct BlockGeometryComponent;
-struct GeometryGroup;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on

@@ -25,8 +25,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::IItemComponentLegacyFactoryData::Components&
-        operator=(::IItemComponentLegacyFactoryData::Components&&);
+        MCFOLD ::IItemComponentLegacyFactoryData::Components& operator=(::IItemComponentLegacyFactoryData::Components&&
+        );
 
         MCFOLD ::IItemComponentLegacyFactoryData::Components&
         operator=(::IItemComponentLegacyFactoryData::Components const&);

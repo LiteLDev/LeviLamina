@@ -48,13 +48,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValidSlotForContainer(
+    MCAPI bool $isValidSlotForContainer(
         ::ContainerScreenContext const& screenContext,
         ::Container const&              container,
         int const                       slot
     ) const;
 
-    MCNAPI bool $isItemAllowedInSlot(
+    MCFOLD bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
         ::ItemStackBase const&          item,
@@ -62,20 +62,20 @@ public:
         bool
     ) const;
 
-    MCNAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
+    MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& item) const;
+    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& item) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
-    MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCNAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
 
-    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND

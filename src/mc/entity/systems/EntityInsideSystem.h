@@ -45,42 +45,42 @@ struct WaterlilyBlockFlag;
 namespace EntityInsideSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createCleanupSystem();
+MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCNAPI void onBoatAboveBubbleColumn(::Actor& actor);
+MCAPI void onBoatAboveBubbleColumn(::Actor& actor);
 
-MCNAPI void tickBoatInsideBubbleColumnBlock(
+MCAPI void tickBoatInsideBubbleColumnBlock(
     ::InsideBubbleColumnBlockComponent const& insideBlocks,
     ::FallDistanceComponent&                  fallDistanceComponent,
     ::StateVectorComponent&                   svc,
     ::ActorOwnerComponent&                    actorOwnerComponent
 );
 
-MCNAPI void tickInsideBubbleColumnBlock(
+MCAPI void tickInsideBubbleColumnBlock(
     ::InsideBubbleColumnBlockComponent const&          insideBlocks,
     ::FallDistanceComponent&                           fallDistanceComponent,
     ::StateVectorComponent&                            svc,
     ::optional_ref<::MovementAbilitiesComponent const> abilitiesComponent
 );
 
-MCNAPI void tickInsideCactusBlock(
+MCAPI void tickInsideCactusBlock(
     ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag> const& cactus,
     ::InsideBlockComponent&                                         insideBlock
 );
 
-MCNAPI void tickInsideHoneyBlock(
+MCAPI void tickInsideHoneyBlock(
     ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag> const& insideHoneyBlockComponent,
     ::AABBShapeComponent const&                                    aabbShapeComponent,
     ::StateVectorComponent&                                        stateVectorComponent,
     ::FallDistanceComponent&                                       fallDistanceComponent
 );
 
-MCNAPI void tickInsideOnewayBlock(
+MCAPI void tickInsideOnewayBlock(
     ::InsideOnewayBlockComponent const& insideOnewayBlockComponent,
     ::DepenetrationComponent&           depenetrationComponent
 );
 
-MCNAPI void tickInsidePowderSnowBlock(
+MCAPI void tickInsidePowderSnowBlock(
     ::StrictEntityContext const& entity,
     ::EntityModifier<
         ::BlockMovementSlowdownAppliedComponent,
@@ -98,12 +98,12 @@ MCNAPI void tickInsidePowderSnowBlock(
         ::InsideWebBlockComponent> modifier
 );
 
-MCNAPI void tickInsideWaterLilyBlock(
+MCAPI void tickInsideWaterLilyBlock(
     ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
     ::StateVectorComponent&                                    stateVectorComponent
 );
 
-MCNAPI void tickMovementSlowdown(
+MCAPI void tickMovementSlowdown(
     ::StrictEntityContext const&                entity,
     ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
     ::EntityModifier<
@@ -123,7 +123,7 @@ MCNAPI void tickMovementSlowdown(
     ::Vec3                         multiplicationModifier
 );
 
-MCNAPI void tickSetEntityInside(
+MCAPI void tickSetEntityInside(
     ::StrictEntityContext const&    entity,
     ::AABBShapeComponent const&     aabbShape,
     ::DimensionTypeComponent const& dimension,
@@ -146,7 +146,7 @@ MCNAPI void tickSetEntityInside(
     ::LocalConstBlockSource&                       localBlockSource
 );
 
-MCNAPI void tickSpectatorSkipEntityInside(
+MCAPI void tickSpectatorSkipEntityInside(
     ::StrictEntityContext const&    entity,
     ::ActorGameTypeComponent const& gameType,
     ::EntityModifier<

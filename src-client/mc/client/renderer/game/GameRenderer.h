@@ -3,8 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/ScreenContext.h"
+#include "mc/client/renderer/MinecraftGraphicsPipeline.h"
+#include "mc/client/renderer/RenderGraph.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/core/memory/LinearAllocator.h"
+#include "mc/deps/core/timing/Clock.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,11 +22,16 @@ class IClientInstance;
 class Level;
 class LevelRenderer;
 class MinecraftGraphics;
-class ScreenContext;
+class Tessellator;
+class TickingTextureStage;
+struct CommandListQueue;
 struct FrameRenderObject;
+struct IRenderChunkGarbageCollection;
+struct InsideCubeRenderer;
 struct PlayerRenderView;
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
+namespace mce { class RenderStage; }
 // clang-format on
 
 class GameRenderer {
@@ -28,44 +42,49 @@ public:
         Panorama   = 1,
     };
 
+    using PauseStateChangeConnector = ::Bedrock::PubSub::Connector<void(bool)>;
+
+    using FrameObjectPtr = ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72>  mUnkf77c73;
-    ::ll::UntypedStorage<8, 16>  mUnk4bcc9d;
-    ::ll::UntypedStorage<8, 208> mUnkbb71a2;
-    ::ll::UntypedStorage<8, 8>   mUnke80e6d;
-    ::ll::UntypedStorage<8, 24>  mUnkbc4500;
-    ::ll::UntypedStorage<8, 24>  mUnka330b1;
-    ::ll::UntypedStorage<8, 88>  mUnk4cdac0;
-    ::ll::UntypedStorage<4, 24>  mUnk579f17;
-    ::ll::UntypedStorage<8, 8>   mUnk67a789;
-    ::ll::UntypedStorage<8, 8>   mUnkb9a987;
-    ::ll::UntypedStorage<4, 4>   mUnk4c0455;
-    ::ll::UntypedStorage<1, 1>   mUnkdcd0c1;
-    ::ll::UntypedStorage<4, 4>   mUnkf53110;
-    ::ll::UntypedStorage<2, 2>   mUnka0758c;
-    ::ll::UntypedStorage<2, 2>   mUnk69208b;
-    ::ll::UntypedStorage<1, 1>   mUnk4ee18c;
-    ::ll::UntypedStorage<4, 8>   mUnkddec90;
-    ::ll::UntypedStorage<8, 8>   mUnk90f5fb;
-    ::ll::UntypedStorage<8, 8>   mUnk37151f;
-    ::ll::UntypedStorage<8, 24>  mUnk7c8d71;
-    ::ll::UntypedStorage<8, 8>   mUnkb5cc8d;
-    ::ll::UntypedStorage<8, 8>   mUnkcec6f6;
-    ::ll::UntypedStorage<8, 280> mUnk4e03ea;
-    ::ll::UntypedStorage<4, 64>  mUnk958d63;
-    ::ll::UntypedStorage<4, 64>  mUnk1c8c9f;
-    ::ll::UntypedStorage<4, 64>  mUnkf507f2;
-    ::ll::UntypedStorage<4, 64>  mUnka5c459;
-    ::ll::UntypedStorage<4, 64>  mUnk112887;
-    ::ll::UntypedStorage<1, 1>   mUnk39e531;
-    ::ll::UntypedStorage<8, 8>   mUnk3ff461;
-    ::ll::UntypedStorage<1, 1>   mUnk3eb6b9;
-    ::ll::UntypedStorage<8, 32>  mUnke0631b;
-    ::ll::UntypedStorage<8, 32>  mUnk34e304;
-    ::ll::UntypedStorage<8, 8>   mUnk97a74c;
-    ::ll::UntypedStorage<8, 16>  mUnka47328;
+    ::ll::TypedStorage<8, 72, ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>>
+                                                                                    mFrameObject_NoAccessOutsideRender;
+    ::ll::TypedStorage<8, 16, ::LinearAllocator<::FrameRenderObject>>               mLinearAllocator;
+    ::ll::TypedStorage<8, 208, ::MinecraftGraphicsPipeline>                         mMinecraftGraphicsPipeline;
+    ::ll::TypedStorage<8, 8, ::MinecraftGraphics&>                                  mMinecraftGraphics;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IClientInstance>>        mClient;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>     mPrimaryClient;
+    ::ll::TypedStorage<8, 88, ::mce::RenderGraph>                                   mRenderGraph;
+    ::ll::TypedStorage<4, 24, ::mce::Clock>                                         mClock;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                      mTessellator;
+    ::ll::TypedStorage<8, 8, ::TickingTextureStage*>                                mTickingTextureStage;
+    ::ll::TypedStorage<4, 4, float>                                                 mLastClockTime;
+    ::ll::TypedStorage<1, 1, bool>                                                  mFlushedInitCommandList;
+    ::ll::TypedStorage<4, 4, int>                                                   _tick;
+    ::ll::TypedStorage<2, 2, short>                                                 mPointerX;
+    ::ll::TypedStorage<2, 2, short>                                                 mPointerY;
+    ::ll::TypedStorage<1, 1, bool>                                                  mUseLowFrequencyUIRender;
+    ::ll::TypedStorage<4, 8, ::std::optional<::GameRenderer::FrameCaptureMode>>     mFrameCaptureMode;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InsideCubeRenderer>>               mInsideCubeRenderer;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mLastFrameTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PlayerRenderView>>> mPlayerViews;
+    ::ll::TypedStorage<8, 8, ::optional_ref<::mce::RenderStage>>                    mDirectOutputStage;
+    ::ll::TypedStorage<8, 8, ::optional_ref<::CommandListQueue>>                    mCommandListQueue;
+    ::ll::TypedStorage<8, 280, ::std::optional<::ScreenContext>>                    mCurrentFrameScreenContext;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                             mLastLevelViewMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                             mLastLevelViewMatrixAbsolute;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                             mLastLevelProjMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                             mLastLevelWorldMatrix;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                             mCubemapWorldMatrix;
+    ::ll::TypedStorage<1, 1, bool>                                                  mCubemapRotationPaused;
+    ::ll::TypedStorage<8, 8, double>                                                mCubemapRotationSeconds;
+    ::ll::TypedStorage<1, 1, bool>                                                  mHasCustomSoftwareCursor;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mCustomSoftwareCursorAsset;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mExperimentsString;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRenderChunkGarbageCollection>>    mGarbageCollection;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mPauseSubscription;
     // NOLINTEND
 
 public:
@@ -83,62 +102,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameRenderer(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& ci, ::MinecraftGraphics& graphics);
+    MCAPI GameRenderer(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& ci, ::MinecraftGraphics& graphics);
 
-    MCNAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
+    MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
 
-    MCNAPI ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>
+    MCAPI ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>
     _extractFrame(::ScreenContext& screenContext, bool renderGraphContainsPlayScreen);
 
-    MCNAPI void _tickLightTexture(::Dimension& dimension, float a);
+    MCAPI void _tickLightTexture(::Dimension& dimension, float a);
 
-    MCNAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
+    MCAPI ::std::weak_ptr<::PlayerRenderView> addPlayerRenderView(::LevelRenderer& renderer);
 
-    MCNAPI void cleanupRenderGraph();
+    MCAPI void cleanupRenderGraph();
 
-    MCNAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
+    MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
 
-    MCNAPI void endFrame(::mce::RenderContext& renderContext);
+    MCAPI void endFrame(::mce::RenderContext& renderContext);
 
-    MCNAPI ::ScreenContext makeScreenContext(float a);
+    MCAPI ::ScreenContext makeScreenContext(float a);
 
-    MCNAPI void onSubClientRemoved(::IClientInstance const& client);
+    MCAPI void onSubClientRemoved(::IClientInstance const& client);
 
-    MCNAPI void recreateTickingTextureStage();
+    MCAPI void recreateTickingTextureStage();
 
-    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
-    MCNAPI void renderCurrentFrame(float a);
+    MCAPI void renderCurrentFrame(float a);
 
-    MCNAPI void renderCursor(::ScreenContext& screenContext, float xMouse, float yMouse);
+    MCAPI void renderCursor(::ScreenContext& screenContext, float xMouse, float yMouse);
 
-    MCNAPI void renderDebugScreen(::ScreenContext& screenContext, ::IClientInstance& client);
+    MCAPI void renderDebugScreen(::ScreenContext& screenContext, ::IClientInstance& client);
 
-    MCNAPI void setClient(::IClientInstance& ci);
+    MCAPI void setClient(::IClientInstance& ci);
 
-    MCNAPI void setLevel(::Level* level, ::Dimension* dimension);
+    MCAPI void setLevel(::Level* level, ::Dimension* dimension);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color& mClearColor();
+    MCAPI static ::mce::Color& mClearColor();
 
-    MCNAPI static bool& mSplitScreenActive();
+    MCAPI static bool& mSplitScreenActive();
 
-    MCNAPI static ::std::string& mVersionString();
+    MCAPI static ::std::string& mVersionString();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& ci, ::MinecraftGraphics& graphics);
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& ci, ::MinecraftGraphics& graphics);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

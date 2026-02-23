@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace InsidePowderSnowBlockSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createClientSideSpawnParticleSystem();
+MCAPI ::TickingSystemWithInfo createClientSideSpawnParticleSystem();
 
-MCNAPI ::TickingSystemWithInfo createServerSideClearFireSystem();
+MCAPI ::TickingSystemWithInfo createServerSideClearFireSystem();
 // NOLINTEND
 
 } // namespace InsidePowderSnowBlockSystem

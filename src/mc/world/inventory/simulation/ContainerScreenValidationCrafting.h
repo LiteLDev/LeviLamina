@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _appendCraftResult(::ContainerValidationCraftResult& craftResult);
+    MCAPI void _appendCraftResult(::ContainerValidationCraftResult& craftResult);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ContainerValidationResult
+    MCAPI ::ContainerValidationResult
     $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
-    MCNAPI ::ContainerValidationCraftResult
+    MCAPI ::ContainerValidationCraftResult
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
 

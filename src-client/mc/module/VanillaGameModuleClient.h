@@ -19,9 +19,9 @@ class IClientInstance;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
+class MultiPlayerLevel;
 class ResourcePackStack;
 struct GameModuleClientArgs;
-struct MultiPlayerLevel;
 namespace GameplayUI { struct GameplayUIContext; }
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on

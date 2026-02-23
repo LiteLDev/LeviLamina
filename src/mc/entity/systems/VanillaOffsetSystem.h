@@ -68,15 +68,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCNAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
+    MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,

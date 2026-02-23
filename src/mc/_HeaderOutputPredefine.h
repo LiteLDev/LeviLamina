@@ -156,6 +156,7 @@
 #include "concurrentqueue.h" 
 
 struct HWND__;
+struct HICON__;
 struct tagRECT;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;

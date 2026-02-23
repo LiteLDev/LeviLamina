@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/ActorCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -17,14 +18,8 @@ class ActorServerCommandOrigin : public ::ActorCommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk295400;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetOther;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorServerCommandOrigin& operator=(ActorServerCommandOrigin const&);
-    ActorServerCommandOrigin(ActorServerCommandOrigin const&);
-    ActorServerCommandOrigin();
 
 public:
     // virtual functions
@@ -45,15 +40,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCAPI ::CompoundTag $serialize() const;
 
 
     // NOLINTEND

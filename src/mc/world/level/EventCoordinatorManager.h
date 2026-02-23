@@ -61,42 +61,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EventCoordinatorManager();
+    MCAPI EventCoordinatorManager();
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorEventCoordinator> getActorEventCoordinator();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ActorEventCoordinator> getActorEventCoordinator();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::UniqueOwnerPointer<::EventCoordinatorManager>
+    MCAPI static ::Bedrock::UniqueOwnerPointer<::EventCoordinatorManager>
     createEventCoordinatorManager(bool isClientSide);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> $getRemotePlayerEventCoordinator();
+    MCFOLD ::Bedrock::NonOwnerPointer<::PlayerEventCoordinator> $getRemotePlayerEventCoordinator();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> $getClientPlayerEventCoordinator();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ClientPlayerEventCoordinator> $getClientPlayerEventCoordinator();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerEventCoordinator> $getServerPlayerEventCoordinator();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerEventCoordinator> $getServerPlayerEventCoordinator();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::ServerLevelEventCoordinator> $getServerLevelEventCoordinator();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ServerLevelEventCoordinator> $getServerLevelEventCoordinator();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::ServerNetworkEventCoordinator> $getServerNetworkEventCoordinator();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ServerNetworkEventCoordinator> $getServerNetworkEventCoordinator();
 
 
     // NOLINTEND

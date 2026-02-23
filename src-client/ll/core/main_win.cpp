@@ -183,12 +183,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(experiments, repo, stack, baseGameVersion, includeEditorPacks);
 }
 
-
-LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, MinecraftGame, &MinecraftGame::$destroyGame, void) {
+LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, MinecraftGame, &MinecraftGame::$stop, bool) {
     setGamingStatus(GamingStatus::Stopping);
     mod::ModRegistrar::getInstance().disableAllMods();
-    origin();
     setGamingStatus(GamingStatus::Default);
+    return origin();
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(

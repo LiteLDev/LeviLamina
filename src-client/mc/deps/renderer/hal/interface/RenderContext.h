@@ -18,14 +18,8 @@ class RenderContext : public ::mce::RenderContextNull,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbfa895;
+    ::ll::TypedStorage<1, 1, bool> mWithinFrame;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderContext& operator=(RenderContext const&);
-    RenderContext(RenderContext const&);
-    RenderContext();
 
 public:
     // member functions

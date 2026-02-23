@@ -26,8 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptCatmullRomSpline&
-    operator=(::ScriptModuleMinecraft::ScriptCatmullRomSpline&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptCatmullRomSpline& operator=(::ScriptModuleMinecraft::ScriptCatmullRomSpline&&
+    );
     // NOLINTEND
 
 public:

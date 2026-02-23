@@ -40,11 +40,11 @@ struct WasInWaterFlagComponent;
 namespace MobJumpSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createCleanupSystem();
+MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCNAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
+MCAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doMobJumpSystem(
+MCAPI void doMobJumpSystem(
     ::StrictEntityContext const&                          context,
     ::Optional<::JumpControlComponent const>              jumpControl,
     ::Optional<::OnGroundFlagComponent const>             onGround,
@@ -66,9 +66,9 @@ MCNAPI void doMobJumpSystem(
     ::IConstBlockSource const&                            region
 );
 
-MCNAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
+MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doSwimmerSwimUp(
+MCAPI void doSwimmerSwimUp(
     ::Optional<::JumpControlComponent const> const& jumpControl,
     ::Optional<::SquidFlagComponent const> const&   isSquid,
     ::MobEffectsComponent const&                    mobEffects,
@@ -76,7 +76,7 @@ MCNAPI void doSwimmerSwimUp(
     ::StateVectorComponent&                         stateVector
 );
 
-MCNAPI bool shouldAscendLadder(
+MCAPI bool shouldAscendLadder(
     ::Optional<::PlayerComponent const> const&                   isPlayer,
     ::Optional<::CanStandOnSnowFlagComponent const> const&       canStandOnSnow,
     ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily,
@@ -86,14 +86,14 @@ MCNAPI bool shouldAscendLadder(
     ::IConstBlockSource const&                                   region
 );
 
-MCNAPI void tickDecrementNoJumpDelaySystem(
+MCAPI void tickDecrementNoJumpDelaySystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
         ::MobJumpComponent> view
 );
 
-MCNAPI void tickResetNoJumpDelaySystem(
+MCAPI void tickResetNoJumpDelaySystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,

@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerValidationResult(::ContainerValidationResult const&);
+    MCAPI ContainerValidationResult(::ContainerValidationResult const&);
 
-    MCNAPI ~ContainerValidationResult();
+    MCAPI ~ContainerValidationResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerValidationResult const&);
+    MCAPI void* $ctor(::ContainerValidationResult const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

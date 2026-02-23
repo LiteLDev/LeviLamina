@@ -17,8 +17,8 @@ class IClientInstance;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
+class MultiPlayerLevel;
 class ResourcePackStack;
-struct MultiPlayerLevel;
 // clang-format on
 
 class GameModuleClient : public ::AppExtensions::AppExtensionsNonOwner {

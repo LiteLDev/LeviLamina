@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/EasingType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -17,24 +18,18 @@ struct FovInstruction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk729899;
-    ::ll::UntypedStorage<1, 1> mUnk71273f;
-    ::ll::UntypedStorage<4, 4> mUnkf5916e;
-    ::ll::UntypedStorage<4, 4> mUnk588cfc;
+    ::ll::TypedStorage<4, 4, float>        mFov;
+    ::ll::TypedStorage<1, 1, bool>         mFovClear;
+    ::ll::TypedStorage<4, 4, float>        mFovEaseTime;
+    ::ll::TypedStorage<4, 4, ::EasingType> mFovEaseType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FovInstruction& operator=(FovInstruction const&);
-    FovInstruction(FovInstruction const&);
-    FovInstruction();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::FovInstruction> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FovInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
 

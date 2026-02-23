@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
 #include "mc/world/events/ScriptDeferredEventListener.h"
@@ -22,16 +23,16 @@ class ScriptTickListener : public ::LevelEventListener, public ::ScriptDeferredE
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka92da0;
-    ::ll::UntypedStorage<8, 8>  mUnk2bc345;
-    ::ll::UntypedStorage<8, 8>  mUnk5417e6;
-    ::ll::UntypedStorage<8, 8>  mUnke390a2;
-    ::ll::UntypedStorage<8, 8>  mUnke4e75b;
-    ::ll::UntypedStorage<8, 8>  mUnkcc025a;
-    ::ll::UntypedStorage<8, 8>  mUnke6f367;
-    ::ll::UntypedStorage<8, 8>  mUnke18734;
-    ::ll::UntypedStorage<8, 8>  mUnkd3f5bd;
-    ::ll::UntypedStorage<8, 8>  mUnk4ba995;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>        mFlushingCoroutineSubscription;
+    ::ll::TypedStorage<8, 8, ::ScriptDeferredEventCoordinator&>       mDeferredEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::LevelEventCoordinator&>                mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::ScriptPluginManager&>                  mPluginManager;
+    ::ll::TypedStorage<8, 8, ::ScriptDiagnostics&>                    mDiagnostics;
+    ::ll::TypedStorage<8, 8, ::ScriptAsyncJobCoordinator&>            mAsyncJobCoordinator;
+    ::ll::TypedStorage<8, 8, uint64>                                  mCurrentTick;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLevelTickStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mScriptTickStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>              mScriptCoroutineDuration;
     // NOLINTEND
 
 public:
@@ -57,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTickListener(
+    MCAPI ScriptTickListener(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::LevelEventCoordinator&          levelEventCoordinator,
         ::ScriptPluginManager&            pluginManager,
@@ -65,13 +66,13 @@ public:
         ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
     );
 
-    MCNAPI ::ServerPerformanceData& _getServerPerfData();
+    MCAPI ::ServerPerformanceData& _getServerPerfData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
         ::LevelEventCoordinator&          levelEventCoordinator,
         ::ScriptPluginManager&            pluginManager,
@@ -83,13 +84,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onLevelTickStart(::Level& level);
+    MCAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
+    MCAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCNAPI void $onScriptTickStart();
+    MCAPI void $onScriptTickStart();
 
-    MCNAPI void $onScriptTickEnd();
+    MCAPI void $onScriptTickEnd();
 
 
     // NOLINTEND

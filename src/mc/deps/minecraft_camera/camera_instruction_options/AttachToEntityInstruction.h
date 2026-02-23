@@ -17,21 +17,15 @@ struct AttachToEntityInstruction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd5c7e5;
+    ::ll::TypedStorage<8, 8, int64> mAttachToEntityId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttachToEntityInstruction& operator=(AttachToEntityInstruction const&);
-    AttachToEntityInstruction(AttachToEntityInstruction const&);
-    AttachToEntityInstruction();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::CameraInstructionOptions::AttachToEntityInstruction>
+    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::AttachToEntityInstruction>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
