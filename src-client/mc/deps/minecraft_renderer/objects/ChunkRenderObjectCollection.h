@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkRenderObjectCollection(::ChunkRenderObjectCollection&& other);
 
-    MCAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 const* lastLayerQueueSizes[19]);
+    MCAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[19]);
 
     MCAPI uint64 addToChunkQueue(
         ::std::variant<
@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkRenderObjectCollection&& other);
 
-    MCAPI void* $ctor(uint64 lastQueueSize, uint64 const* lastLayerQueueSizes[19]);
+    MCAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[19]);
     // NOLINTEND
 
 public:

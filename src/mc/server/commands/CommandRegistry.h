@@ -352,7 +352,7 @@ public:
         ::ll::TypedStorage<
             8,
             8,
-            bool (::CommandRegistry::*)(
+            bool (CommandRegistry::*)(
                 void*,
                 ::CommandRegistry::ParseToken const&,
                 ::CommandOrigin const&,
@@ -386,7 +386,7 @@ public:
         ::ll::TypedStorage<
             8,
             8,
-            bool (::CommandRegistry::*)(
+            bool (CommandRegistry::*)(
                 void*,
                 ::CommandRegistry::ParseToken const&,
                 ::CommandOrigin const&,

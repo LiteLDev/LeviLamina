@@ -23,8 +23,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ILevelListCache*>             mLevelListCache;
     ::ll::TypedStorage<8, 24, ::std::vector<::LevelSummary>> mLevelSummaryList;
-    ::ll::UntypedStorage<8, 64>
-        mCanAccessWorld; // ::gsl::not_null<::brstd::move_only_function<bool(::LevelSummary const&) const>> const
+    ::ll::TypedStorage<8, 64, ::gsl::not_null<::brstd::move_only_function<bool(::LevelSummary const&) const>> const>
+        mCanAccessWorld;
     // NOLINTEND
 
 public:

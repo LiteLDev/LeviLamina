@@ -6,15 +6,15 @@ if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-add_requires("entt")
-add_requires("gsl")
-add_requires("glm")
+add_requires("entt v3.15.0")
+add_requires("gsl v4.2.0")
+add_requires("glm 1.0.1")
 add_requires("fmt 11")
-add_requires("leveldb")
-add_requires("type_safe")
-add_requires("expected-lite")
+add_requires("leveldb 1.23")
+add_requires("type_safe v0.2.4")
+add_requires("expected-lite v0.6.3")
 add_requires("rapidjson v1.1.0")
-add_requires("concurrentqueue")
+add_requires("concurrentqueue v1.0.4")
 
 target("header_server")
     set_kind("shared")
