@@ -68,7 +68,7 @@ void leviLaminaMain() {
 
     mod::ModRegistrar::getInstance().loadAllMods();
 
-    if (config.modules.vulnerabilityFixes) {
+    if (config.targeted.vulnerabilityFixes.enable) {
         vulnerability_fixes::enableFixes();
     }
 }

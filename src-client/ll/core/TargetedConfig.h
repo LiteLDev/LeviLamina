@@ -8,5 +8,10 @@ struct TargetedConfig {
     struct {
         bool alwaysLaunch = false;
     } playerInfo{};
+    struct {
+        bool enable = true;
+        bool subChunkRequest = true;
+        bool rakNet = true;
+    } vulnerabilityFixes;
 };
 } // namespace ll
