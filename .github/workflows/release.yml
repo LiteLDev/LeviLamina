@@ -87,7 +87,7 @@ jobs:
 
       - name: Validate release stuff (tooth.json, CHANGELOG.md, etc.)
         run: |
-          npm i -g keep-a-changelog
+          npm i -g keep-a-changelog@2.8.0
           python scripts/validate_release.py --tag ${{ github.event.release.tag_name }}
 
       - id: extract-release-notes
