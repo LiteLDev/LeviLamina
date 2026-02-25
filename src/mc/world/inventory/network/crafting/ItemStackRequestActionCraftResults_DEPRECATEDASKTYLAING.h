@@ -41,31 +41,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
+    MCAPI_C void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ItemInstance craftResult);
+    MCAPI_C void* $ctor(::ItemInstance craftResult);
 
-    MCNAPI_C void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
+    MCAPI_C void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI void $_write(::BinaryStream& stream) const;
+    MCAPI void $_write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND
