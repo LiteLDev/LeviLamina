@@ -12,7 +12,7 @@ local is_server = is_config("target_type", "server")
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
 add_requires("entt v3.15.0")
-add_requires("expected-lite v0.6.3")
+add_requires("expected-lite v0.8.0")
 add_requires("fmt 11.2.0")
 add_requires("gsl v4.2.0")
 add_requires("glm 1.0.1")
