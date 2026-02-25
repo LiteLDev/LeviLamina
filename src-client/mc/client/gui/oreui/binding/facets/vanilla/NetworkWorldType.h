@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class NetworkWorldType : schar {};
+enum class NetworkWorldType : schar {
+    ThirdParty = 0,
+    External   = 1,
+};
 
 }

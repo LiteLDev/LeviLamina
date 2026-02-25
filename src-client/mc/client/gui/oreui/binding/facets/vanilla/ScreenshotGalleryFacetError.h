@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class ScreenshotGalleryFacetError : int {};
+enum class ScreenshotGalleryFacetError : int {
+    None      = 0,
+    HttpError = 1,
+};
 
 }

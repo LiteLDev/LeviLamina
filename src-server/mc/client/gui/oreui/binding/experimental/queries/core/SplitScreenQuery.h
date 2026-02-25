@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SplitScreenQuery {};
+class SplitScreenQuery {};
 
 } // namespace OreUI::Experimental

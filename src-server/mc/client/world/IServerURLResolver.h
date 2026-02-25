@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct IServerURLResolver {};
+class IServerURLResolver {};
 
 } // namespace World

@@ -47,6 +47,7 @@ class CubemapBackgroundResources;
 class DateManager;
 class Dimension;
 class EDUSystems;
+class EmoticonManager;
 class EntityContext;
 class FontHandle;
 class GameRenderer;
@@ -63,6 +64,8 @@ class IMinecraftEventing;
 class IResourcePackRepository;
 class ISceneStack;
 class ITextBoxController;
+class IUIDefRepository;
+class IUIRepository;
 class ItemRegistryRef;
 class LevelDbEnv;
 class LevelSettings;
@@ -74,6 +77,7 @@ class Options;
 class PackManifestFactory;
 class PackSourceFactory;
 class ParticleEffectGroup;
+class PixelCalc;
 class Player;
 class RenderControllerGroup;
 class ResetCallbackObject;
@@ -82,6 +86,7 @@ class ResourcePackManager;
 class SceneFactory;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
+class TextToIconMapper;
 class TextureAtlas;
 class UIMeasureStrategy;
 class Vec3;
@@ -96,7 +101,6 @@ struct ContentCatalogService;
 struct ControllerIDtoClientMap;
 struct DeferredLighting;
 struct DevConsoleLogger;
-struct EmoticonManager;
 struct ExternalContentManager;
 struct FlightingService;
 struct GatheringManager;
@@ -107,8 +111,6 @@ struct IExternalServerFile;
 struct IGameModuleApp;
 struct IOfferRepository;
 struct IThirdPartyServerRepository;
-struct IUIDefRepository;
-struct IUIRepository;
 struct LevelLoader;
 struct LibraryRepository;
 struct MarketplaceServicesManager;
@@ -117,7 +119,6 @@ struct NewPlayerSystem;
 struct PackDownloadManager;
 struct PersonaRepository;
 struct PersonaService;
-struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
 struct RealmsAPI;
@@ -130,16 +131,15 @@ struct SkinRepository;
 struct SoundEngine;
 struct StoreCatalogRepository;
 struct SunsettingManager;
-struct TextToIconMapper;
 struct TreatmentPackDownloadMonitor;
 struct TrialManager;
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlobCache { struct Cache; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
-namespace OreUI { struct DataProviderManager_DEPRECATED; }
-namespace OreUI { struct IResourceAllowList; }
-namespace OreUI { struct Router; }
+namespace OreUI { class DataProviderManager_DEPRECATED; }
+namespace OreUI { class IResourceAllowList; }
+namespace OreUI { class Router; }
 namespace Parties { struct PartySystem; }
 namespace Progress { struct ProgressTips; }
 namespace Realms { struct ContentService; }
@@ -154,7 +154,7 @@ namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct PresenceManager; }
 namespace Social { struct SocialSystem; }
 namespace Social { struct User; }
-namespace World { struct WorldSystem; }
+namespace World { class WorldSystem; }
 namespace mce { class TextureGroup; }
 namespace mce { class UUID; }
 // clang-format on

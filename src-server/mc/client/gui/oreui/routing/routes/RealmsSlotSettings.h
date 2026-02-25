@@ -4,7 +4,7 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsSlotSettings {
+class RealmsSlotSettings {
 public:
     // RealmsSlotSettings inner types declare
     // clang-format off

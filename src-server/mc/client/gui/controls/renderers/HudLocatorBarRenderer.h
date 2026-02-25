@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudLocatorBarRenderer {
+class HudLocatorBarRenderer {
 public:
     // HudLocatorBarRenderer inner types declare
     // clang-format off

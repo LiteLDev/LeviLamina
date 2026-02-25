@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct NetworkWorldDetailsFacet {};
+class NetworkWorldDetailsFacet {};
 
 } // namespace OreUI

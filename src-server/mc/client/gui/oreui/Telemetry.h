@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct Telemetry {};
+class Telemetry {};
 
 } // namespace OreUI

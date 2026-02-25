@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IdType {};
+class IdType {};
 
 } // namespace OreUI::Experimental::Detail

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ScreenshotGalleryFacet {};
+class ScreenshotGalleryFacet {};
 
 } // namespace OreUI

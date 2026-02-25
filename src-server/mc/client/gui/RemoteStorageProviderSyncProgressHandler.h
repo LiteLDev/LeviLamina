@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RemoteStorageProviderSyncProgressHandler {
+class RemoteStorageProviderSyncProgressHandler {
 public:
     // RemoteStorageProviderSyncProgressHandler inner types declare
     // clang-format off

@@ -84,6 +84,7 @@ class IMinecraftGame;
 class IOptions;
 class IResourcePackRepository;
 class ISceneStack;
+class IUIRepository;
 class ItemInHandRenderer;
 class ItemRegistryRef;
 class ItemRenderer;
@@ -99,12 +100,15 @@ class LocalPlayer;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
+class MobEffectsLayout;
 class MultiPlayerLevel;
 class Option;
 class Options;
 class PackManifestFactory;
 class PacketSender;
+class PixelCalc;
 class Player;
+class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
 class ScreenContext;
@@ -140,21 +144,17 @@ struct HudIconActorRenderer;
 struct IGameConnectionListener;
 struct ISettingsRegistry;
 struct ITTSEventManager;
-struct IUIRepository;
 struct LatencyGraphDisplay;
 struct ListenerState;
 struct LocalPlayerChangedConnector;
 struct MarketplaceServicesManager;
-struct MobEffectsLayout;
 struct MusicManager;
 struct PacksInfoData;
 struct PersonaRepository;
-struct PixelCalc;
 struct PlayerAuthentication;
 struct PlayerJoinWorldTelemetryInfo;
 struct PlayerReportHandler;
 struct ProfanityContext;
-struct ProgressHandler;
 struct RawGameServerToken;
 struct ScreenshotOptions;
 struct SkinRepository;
@@ -174,10 +174,10 @@ namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
 namespace Editor { class IEditorManager; }
 namespace Editor { class IEditorPlayer; }
+namespace OreUI { class ITelemetry; }
+namespace OreUI { class Router; }
 namespace OreUI { class SceneProvider; }
-namespace OreUI { struct ITelemetry; }
-namespace OreUI { struct Router; }
-namespace OreUI { struct UIBlockThumbnailAtlasManager; }
+namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
@@ -185,13 +185,13 @@ namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct User; }
-namespace World { struct WorldSystem; }
+namespace World { class WorldSystem; }
 namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class ClientInstance : public ::IClientInstance,

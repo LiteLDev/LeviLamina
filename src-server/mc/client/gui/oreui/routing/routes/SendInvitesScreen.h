@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct SendInvitesScreen {};
+class SendInvitesScreen {};
 
 } // namespace OreUI::EntryPoints

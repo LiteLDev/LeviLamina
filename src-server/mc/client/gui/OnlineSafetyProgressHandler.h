@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct OnlineSafetyProgressHandler {
+class OnlineSafetyProgressHandler {
 public:
     // OnlineSafetyProgressHandler inner types define
     enum class State : int {};

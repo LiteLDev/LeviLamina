@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct DeviceInformationFacet {
+class DeviceInformationFacet {
 public:
     // DeviceInformationFacet inner types define
     enum class Platform : uchar {};

@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IProperty {};
+class IProperty {};
 
 } // namespace OreUI::Experimental::Detail

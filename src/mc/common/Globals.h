@@ -181,11 +181,13 @@ namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 class DataDrivenModel;
 class DataDrivenRenderer;
+class ExprToken;
 class IClientInstance;
 class LocalPlayer;
 class StoreDataDrivenScreenController;
 class Tessellator;
 class UIControl;
+class UIPropertyBag;
 class WorldSeedModel;
 struct ActorAttachableDerivitiveData;
 struct ActorDerivitiveData;
@@ -199,7 +201,6 @@ struct DataDrivenRendererDerivitiveData;
 struct DataDrivenRendererPreprocessingContext;
 struct DateRange;
 struct DurableSearchResults;
-struct ExprToken;
 struct ExtractedDataDataDrivenModel;
 struct ExtractedRenderController;
 struct ExtractedSkeletonData;
@@ -218,7 +219,6 @@ struct ResourceOffset;
 struct SearchQuery;
 struct SharedUniformPhase;
 struct TrialManager;
-struct UIPropertyBag;
 namespace Bedrock { class Platform_GameCore; }
 namespace ParticleSystem { class ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }

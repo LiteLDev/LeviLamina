@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class ThirdPartyServersStatus : int {};
+enum class ThirdPartyServersStatus : int {
+    ServersSupported     = 0,
+    Win32DevBuildWarning = 1,
+};
 
 }

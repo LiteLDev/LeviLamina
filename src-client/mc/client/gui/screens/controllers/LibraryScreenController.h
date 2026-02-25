@@ -10,9 +10,9 @@
 // clang-format off
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
+class UIPropertyBag;
 struct LibraryCollection;
 struct LibraryItem;
-struct UIPropertyBag;
 namespace Json { class Value; }
 namespace librarySearch { struct TelemetryData; }
 // clang-format on

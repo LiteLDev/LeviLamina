@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct FramesToPaintQueue {
+class FramesToPaintQueue {
 public:
     // FramesToPaintQueue inner types declare
     // clang-format off

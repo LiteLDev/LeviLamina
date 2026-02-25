@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct View {};
+class View {};
 
 } // namespace OreUI

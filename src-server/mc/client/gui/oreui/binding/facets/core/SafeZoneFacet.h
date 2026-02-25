@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct SafeZoneFacet {};
+class SafeZoneFacet {};
 
 } // namespace OreUI

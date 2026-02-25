@@ -4,6 +4,8 @@
 
 namespace World {
 
-enum class DeleteWorldError : uchar {};
+enum class DeleteWorldError : uchar {
+    IncorrectWorldId = 0,
+};
 
 }

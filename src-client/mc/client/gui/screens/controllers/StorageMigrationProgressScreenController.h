@@ -10,8 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ProgressHandler;
 class StorageMigrationProgressScreenModel;
-struct ProgressHandler;
 namespace Bedrock::StorageMigration { class StorageMigrationService; }
 // clang-format on
 

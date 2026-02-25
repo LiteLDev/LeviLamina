@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct MarketplaceSuggestionsFacet {};
+class MarketplaceSuggestionsFacet {};
 
 } // namespace OreUI

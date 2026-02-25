@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouterEventing {};
+class RouterEventing {};
 
 } // namespace OreUI

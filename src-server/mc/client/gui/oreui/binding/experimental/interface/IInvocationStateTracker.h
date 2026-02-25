@@ -4,7 +4,7 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IInvocationStateTracker {
+class IInvocationStateTracker {
 public:
     // IInvocationStateTracker inner types declare
     // clang-format off

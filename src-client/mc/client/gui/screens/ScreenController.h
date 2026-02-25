@@ -19,6 +19,7 @@ class ScreenControllerProxy;
 class StringHash;
 class TaskGroup;
 class TaskResult;
+class UIPropertyBag;
 struct ActorUniqueID;
 struct FocusMoveScreenEventData;
 struct InputModeChangeScreenEventData;
@@ -29,7 +30,6 @@ struct ScreenEvent;
 struct TextEditScreenEventData;
 struct TextEditSelectedStateChangeEventData;
 struct ToggleChangeEventData;
-struct UIPropertyBag;
 namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on

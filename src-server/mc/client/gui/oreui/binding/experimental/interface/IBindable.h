@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IBindable {};
+class IBindable {};
 
 } // namespace OreUI::Experimental::Detail

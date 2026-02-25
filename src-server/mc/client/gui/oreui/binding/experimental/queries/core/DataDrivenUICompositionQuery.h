@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct DataDrivenUICompositionQuery {};
+class DataDrivenUICompositionQuery {};
 
 } // namespace OreUI::Experimental

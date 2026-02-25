@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class InputSource : int {};
+enum class InputSource : int {
+    Bedrock = 0,
+    Test    = 1,
+};
 
 }

@@ -2,4 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class AnimEvent : int {};
+enum class AnimEvent : int {
+    End = 0,
+};

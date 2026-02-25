@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsPDPFacet {};
+class RealmsPDPFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct JoinablePartyListFacet {};
+class JoinablePartyListFacet {};
 
 } // namespace OreUI

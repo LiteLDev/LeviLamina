@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct NotificationsFacet {};
+class NotificationsFacet {};
 
 } // namespace OreUI

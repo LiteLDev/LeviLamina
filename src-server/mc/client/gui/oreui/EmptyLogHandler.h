@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct EmptyLogHandler {};
+class EmptyLogHandler {};
 
 } // namespace OreUI

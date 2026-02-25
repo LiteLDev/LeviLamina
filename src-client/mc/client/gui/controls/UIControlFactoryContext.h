@@ -2,28 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/threading/SharedLock.h"
+
 class UIControlFactoryContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka1cfc7;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedLock<::std::shared_mutex>> mLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UIControlFactoryContext& operator=(UIControlFactoryContext const&);
-    UIControlFactoryContext(UIControlFactoryContext const&);
-    UIControlFactoryContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~UIControlFactoryContext();
+    MCAPI ~UIControlFactoryContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct DebugSettingsFacet {};
+class DebugSettingsFacet {};
 
 } // namespace OreUI

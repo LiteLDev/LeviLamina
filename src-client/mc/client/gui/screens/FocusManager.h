@@ -9,9 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class FocusContainerComponent;
 class FocusManagerProxy;
 class UIControl;
-struct FocusContainerComponent;
 struct SweepDescription;
 struct SweepResult;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }

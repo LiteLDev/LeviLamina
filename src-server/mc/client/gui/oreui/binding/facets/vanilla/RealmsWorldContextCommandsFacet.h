@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsWorldContextCommandsFacet {};
+class RealmsWorldContextCommandsFacet {};
 
 } // namespace OreUI

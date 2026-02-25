@@ -23,7 +23,7 @@ class SocialSettingsScreenController;
 class WorldSettingsScreenController;
 struct SettingsScreenCapabilities;
 namespace Json { class Value; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class SettingsScreenController : public ::SettingsScreenControllerBase {

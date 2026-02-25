@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct WorldSystem {};
+class WorldSystem {};
 
 } // namespace World

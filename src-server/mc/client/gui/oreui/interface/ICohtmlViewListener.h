@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ICohtmlViewListener {};
+class ICohtmlViewListener {};
 
 } // namespace OreUI

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudArmorRenderer {
+class HudArmorRenderer {
 public:
     // HudArmorRenderer inner types define
     enum class ArmorType : int {};

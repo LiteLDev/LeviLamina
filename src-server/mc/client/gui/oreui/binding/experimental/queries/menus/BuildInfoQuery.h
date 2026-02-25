@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct BuildInfoQuery {};
+class BuildInfoQuery {};
 
 } // namespace OreUI::Experimental

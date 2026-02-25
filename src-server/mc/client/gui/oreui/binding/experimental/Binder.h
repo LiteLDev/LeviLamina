@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct Binder {};
+class Binder {};
 
 } // namespace OreUI::Experimental::Detail

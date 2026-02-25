@@ -29,6 +29,7 @@ class ScreenView;
 class TaskGroup;
 class UIControlFactory;
 class UIMeasureStrategy;
+class VisualTree;
 struct FrameRenderObject;
 struct GamepadCursorData;
 struct ITTSEventManager;
@@ -36,7 +37,6 @@ struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TouchPadTouchEventData;
-struct VisualTree;
 // clang-format on
 
 class UIScene : public ::BaseScreen {

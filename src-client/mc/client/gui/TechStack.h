@@ -4,6 +4,9 @@
 
 namespace ui {
 
-enum class TechStack : int {};
+enum class TechStack : int {
+    JsonUI = 0,
+    OreUI  = 1,
+};
 
 }

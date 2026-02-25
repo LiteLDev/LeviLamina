@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldProcessProgressHandler {
+class WorldProcessProgressHandler {
 public:
     // WorldProcessProgressHandler inner types define
     enum class Type : int {};

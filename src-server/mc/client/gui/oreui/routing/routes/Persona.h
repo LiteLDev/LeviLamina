@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct Persona {};
+class Persona {};
 
 } // namespace OreUI::EntryPoints

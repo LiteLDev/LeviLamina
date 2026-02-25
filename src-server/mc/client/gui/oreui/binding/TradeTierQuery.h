@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct TradeTierQuery {};
+class TradeTierQuery {};
 
 } // namespace OreUI::Experimental

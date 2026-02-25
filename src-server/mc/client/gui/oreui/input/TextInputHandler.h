@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct TextInputHandler {};
+class TextInputHandler {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ClipboardFacet {};
+class ClipboardFacet {};
 
 } // namespace OreUI

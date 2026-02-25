@@ -4,6 +4,9 @@
 
 namespace World {
 
-enum class InGameType : int {};
+enum class InGameType : int {
+    InGame    = 0,
+    OutOfGame = 1,
+};
 
 }

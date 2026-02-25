@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct InGameFacet {};
+class InGameFacet {};
 
 } // namespace OreUI

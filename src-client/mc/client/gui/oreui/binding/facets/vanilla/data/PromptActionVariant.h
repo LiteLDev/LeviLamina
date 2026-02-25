@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class PromptActionVariant : int {};
+enum class PromptActionVariant : int {
+    Primary   = 0,
+    Secondary = 1,
+};
 
 }

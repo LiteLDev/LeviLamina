@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct WorldTemplateListFacet {};
+class WorldTemplateListFacet {};
 
 } // namespace OreUI

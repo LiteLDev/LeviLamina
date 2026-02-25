@@ -17,8 +17,8 @@ class EDUAddServerScreenController;
 class EDUPasswordEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
+class UIPropertyBag;
 struct PackManagerContentSource;
-struct UIPropertyBag;
 namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }

@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsPlusEnded {};
+class RealmsPlusEnded {};
 
 } // namespace OreUI::EntryPoints

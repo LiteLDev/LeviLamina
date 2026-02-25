@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ITouchSystem {};
+class ITouchSystem {};
 
 } // namespace OreUI

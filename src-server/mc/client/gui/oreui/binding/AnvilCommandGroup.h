@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct AnvilCommandGroup {};
+class AnvilCommandGroup {};
 
 } // namespace OreUI::Experimental

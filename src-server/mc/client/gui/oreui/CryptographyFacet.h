@@ -4,6 +4,6 @@
 
 namespace OreUI::FacetCoroutineExample {
 
-struct CryptographyFacet {};
+class CryptographyFacet {};
 
 } // namespace OreUI::FacetCoroutineExample

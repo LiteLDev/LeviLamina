@@ -26,9 +26,9 @@ class CraftingContainerManagerController;
 class ItemStackBase;
 class Player;
 class ToastMessage;
+class UIPropertyBag;
 struct ActorUniqueID;
 struct AutoPlaceResult;
-struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ActorPortraitRenderer {
+class ActorPortraitRenderer {
 public:
     // ActorPortraitRenderer inner types declare
     // clang-format off

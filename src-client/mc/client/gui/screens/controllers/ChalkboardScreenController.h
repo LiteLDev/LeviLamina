@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-struct DeferredTextObject;
+class DeferredTextObject;
 namespace Json { class Value; }
 // clang-format on
 

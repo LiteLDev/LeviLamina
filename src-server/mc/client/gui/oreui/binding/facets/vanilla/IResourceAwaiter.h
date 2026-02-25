@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct IResourceAwaiter {
+class IResourceAwaiter {
 public:
     // IResourceAwaiter inner types define
     enum class Status : uchar {};

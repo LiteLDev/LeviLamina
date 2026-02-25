@@ -11,9 +11,15 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
+class IClientInstance;
 class ISceneStack;
-namespace OreUI { struct Router; }
+namespace OreUI { class FacetRegistryFactory; }
+namespace OreUI { class Library; }
+namespace OreUI { class RouteModeInputHandler; }
+namespace OreUI { class Router; }
 namespace OreUI { struct ViewId; }
+namespace OreUI::Experimental::Detail { class ViewContextFactory; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 namespace OreUI {
@@ -22,12 +28,12 @@ class SceneProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk96c8e8;
-    ::ll::UntypedStorage<8, 8>  mUnkc63264;
-    ::ll::UntypedStorage<8, 8>  mUnk9f6792;
-    ::ll::UntypedStorage<8, 8>  mUnkc95650;
-    ::ll::UntypedStorage<8, 24> mUnk430136;
-    ::ll::UntypedStorage<8, 8>  mUnk1ee385;
+    ::ll::TypedStorage<8, 8, ::OreUI::Library&>                                mUILibrary;
+    ::ll::TypedStorage<8, 8, ::ui::ScreenTechStackSelector const&>             mScreenTechStackSelector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FacetRegistryFactory>> mFacetRegistryFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Experimental::Detail::ViewContextFactory>> mContextFactory;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>                    mClientInstance;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::RouteModeInputHandler>> mRouteModeInputHandler;
     // NOLINTEND
 
 public:

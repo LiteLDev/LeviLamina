@@ -17,17 +17,17 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentRenderBatch;
+class CustomRenderComponent;
 class Font;
 class HashedString;
 class IClientInstance;
+class IUIRepository;
 class ResourceLocation;
 class ScreenContext;
 class UIMeasureStrategy;
 class UIScene;
 class UITextureInfoPtr;
 struct CaretMeasureData;
-struct CustomRenderComponent;
-struct IUIRepository;
 struct NinesliceInfo;
 struct TextMeasureData;
 namespace Core { class Path; }

@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class InputMethod : uchar {};
+enum class InputMethod : uchar {
+    Gamepad = 0,
+    Touch   = 1,
+    Mouse   = 2,
+};
 
 }

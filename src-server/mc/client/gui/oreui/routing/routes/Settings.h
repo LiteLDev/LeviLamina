@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct Settings {};
+class Settings {};
 
 } // namespace OreUI::EntryPoints

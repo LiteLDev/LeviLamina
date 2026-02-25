@@ -4,6 +4,8 @@
 
 namespace OreUI {
 
-enum class PartyCommandError : int {};
+enum class PartyCommandError : int {
+    HTTPError = 0,
+};
 
 }

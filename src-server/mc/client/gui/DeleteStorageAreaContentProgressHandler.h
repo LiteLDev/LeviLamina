@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DeleteStorageAreaContentProgressHandler {
+class DeleteStorageAreaContentProgressHandler {
 public:
     // DeleteStorageAreaContentProgressHandler inner types declare
     // clang-format off

@@ -4,18 +4,18 @@
 
 namespace OreUI {
 
-struct DevServerListener {
+class DevServerListener {
 public:
     // DevServerListener inner types declare
     // clang-format off
-    struct BroadcastListener;
     struct Message;
+    class BroadcastListener;
     // clang-format on
 
     // DevServerListener inner types define
-    struct BroadcastListener {};
-
     struct Message {};
+
+    class BroadcastListener {};
 };
 
 } // namespace OreUI

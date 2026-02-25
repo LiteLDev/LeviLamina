@@ -4,6 +4,8 @@
 
 namespace OreUI::Experimental {
 
-enum class SettingsActionType : int {};
+enum class SettingsActionType : int {
+    ExternalLink = 0,
+};
 
 }

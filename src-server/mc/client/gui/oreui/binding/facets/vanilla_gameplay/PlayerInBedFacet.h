@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerInBedFacet {};
+class PlayerInBedFacet {};
 
 } // namespace OreUI

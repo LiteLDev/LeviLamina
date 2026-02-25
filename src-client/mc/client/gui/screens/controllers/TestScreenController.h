@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class UIPropertyBag;
 struct ScreenEvent;
-struct UIPropertyBag;
 // clang-format on
 
 class TestScreenController : public ::MinecraftScreenController {

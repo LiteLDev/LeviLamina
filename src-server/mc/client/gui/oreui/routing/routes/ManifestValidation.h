@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct ManifestValidation {};
+class ManifestValidation {};
 
 } // namespace OreUI::EntryPoints

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ExprToken {
+class ExprToken {
 public:
     // ExprToken inner types define
     enum class StringOption : int {};

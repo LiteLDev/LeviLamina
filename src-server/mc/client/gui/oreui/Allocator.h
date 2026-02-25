@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct Allocator {};
+class Allocator {};
 
 } // namespace OreUI

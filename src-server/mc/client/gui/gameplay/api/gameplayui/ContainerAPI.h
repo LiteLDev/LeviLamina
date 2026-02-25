@@ -4,6 +4,6 @@
 
 namespace GameplayUI {
 
-struct ContainerAPI {};
+class ContainerAPI {};
 
 } // namespace GameplayUI

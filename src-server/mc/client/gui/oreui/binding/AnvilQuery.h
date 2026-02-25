@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct AnvilQuery {};
+class AnvilQuery {};
 
 } // namespace OreUI::Experimental

@@ -4,6 +4,10 @@
 
 namespace World {
 
-enum class SessionTrackerOperationResult : int {};
+enum class SessionTrackerOperationResult : int {
+    NoChange = 0,
+    Added    = 1,
+    Updated  = 2,
+};
 
 }

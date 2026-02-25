@@ -4,19 +4,19 @@
 
 namespace OreUI {
 
-struct InboxFacet {
+class InboxFacet {
 public:
     // InboxFacet inner types declare
     // clang-format off
-    struct FacetInboxCategoryData;
     struct InboxMessageData;
+    struct FacetInboxCategoryData;
     struct InboxSettings;
     // clang-format on
 
     // InboxFacet inner types define
-    struct FacetInboxCategoryData {};
-
     struct InboxMessageData {};
+
+    struct FacetInboxCategoryData {};
 
     struct InboxSettings {};
 };

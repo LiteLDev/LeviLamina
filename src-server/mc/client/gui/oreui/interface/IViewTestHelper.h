@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IViewTestHelper {};
+class IViewTestHelper {};
 
 } // namespace OreUI

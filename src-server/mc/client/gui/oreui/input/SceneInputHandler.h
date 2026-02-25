@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct SceneInputHandler {
+class SceneInputHandler {
 public:
     // SceneInputHandler inner types define
     enum class SupportedClients : int {};

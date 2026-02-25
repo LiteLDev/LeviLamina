@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct HapticsCommandGroup {};
+class HapticsCommandGroup {};
 
 } // namespace OreUI::Experimental

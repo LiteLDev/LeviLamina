@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct AnimationFacet {};
+class AnimationFacet {};
 
 } // namespace OreUI

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NinePatchLayer {
+class NinePatchLayer {
 public:
     // NinePatchLayer inner types declare
     // clang-format off

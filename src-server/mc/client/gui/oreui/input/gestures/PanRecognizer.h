@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PanRecognizer {};
+class PanRecognizer {};
 
 } // namespace OreUI

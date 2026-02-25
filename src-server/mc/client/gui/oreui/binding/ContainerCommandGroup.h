@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct ContainerCommandGroup {};
+class ContainerCommandGroup {};
 
 } // namespace OreUI::Experimental

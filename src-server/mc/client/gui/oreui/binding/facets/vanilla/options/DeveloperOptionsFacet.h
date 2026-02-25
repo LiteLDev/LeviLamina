@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct DeveloperOptionsFacet {};
+class DeveloperOptionsFacet {};
 
 } // namespace OreUI

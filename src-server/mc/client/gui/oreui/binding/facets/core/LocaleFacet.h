@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct LocaleFacet {};
+class LocaleFacet {};
 
 } // namespace OreUI

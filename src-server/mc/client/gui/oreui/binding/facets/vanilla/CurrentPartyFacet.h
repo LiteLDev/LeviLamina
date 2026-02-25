@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct CurrentPartyFacet {};
+class CurrentPartyFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct GesturePolicy {};
+class GesturePolicy {};
 
 } // namespace OreUI

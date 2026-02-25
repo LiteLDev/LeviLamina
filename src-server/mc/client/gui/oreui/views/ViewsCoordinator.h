@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ViewsCoordinator {
+class ViewsCoordinator {
 public:
     // ViewsCoordinator inner types declare
     // clang-format off

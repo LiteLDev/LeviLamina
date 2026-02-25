@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ViewRenderer {};
+class ViewRenderer {};
 
 } // namespace OreUI

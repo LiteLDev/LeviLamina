@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IQuery {};
+class IQuery {};
 
 } // namespace OreUI::Experimental::Detail

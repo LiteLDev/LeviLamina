@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RoutePrerequisiteHandler {};
+class RoutePrerequisiteHandler {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct VirtualAllocator {};
+class VirtualAllocator {};
 
 } // namespace OreUI

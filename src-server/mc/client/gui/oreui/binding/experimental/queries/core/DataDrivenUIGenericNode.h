@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct DataDrivenUIGenericNode {};
+class DataDrivenUIGenericNode {};
 
 } // namespace OreUI::Experimental

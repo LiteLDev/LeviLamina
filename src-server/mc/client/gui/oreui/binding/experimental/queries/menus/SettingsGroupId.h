@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SettingsGroupId {};
+class SettingsGroupId {};
 
 } // namespace OreUI::Experimental

@@ -4,6 +4,6 @@
 
 namespace OreUI::FacetCoroutineExample {
 
-struct FileSystemFacet {};
+class FileSystemFacet {};
 
 } // namespace OreUI::FacetCoroutineExample

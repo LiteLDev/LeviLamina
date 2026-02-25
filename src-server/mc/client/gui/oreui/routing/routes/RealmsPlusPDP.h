@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsPlusPDP {};
+class RealmsPlusPDP {};
 
 } // namespace OreUI::EntryPoints

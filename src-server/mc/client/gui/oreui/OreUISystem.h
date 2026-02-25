@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct OreUISystem {
+class OreUISystem {
 public:
     // OreUISystem inner types declare
     // clang-format off

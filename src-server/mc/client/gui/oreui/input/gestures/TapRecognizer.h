@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct TapRecognizer {};
+class TapRecognizer {};
 
 } // namespace OreUI

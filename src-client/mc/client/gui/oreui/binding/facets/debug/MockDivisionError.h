@@ -4,6 +4,8 @@
 
 namespace OreUI {
 
-enum class MockDivisionError : int {};
+enum class MockDivisionError : int {
+    DivisionByZero = 0,
+};
 
 }

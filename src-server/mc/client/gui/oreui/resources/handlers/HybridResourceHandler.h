@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct HybridResourceHandler {};
+class HybridResourceHandler {};
 
 } // namespace OreUI

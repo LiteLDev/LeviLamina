@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct InventoryItemRenderer {
+class InventoryItemRenderer {
 public:
     // InventoryItemRenderer inner types declare
     // clang-format off

@@ -12,7 +12,7 @@
 class HashedString;
 namespace mce { class Color; }
 namespace mce { class UUID; }
-struct UIPropertyBag;
+class UIPropertyBag;
 // clang-format on
 
 namespace persona {

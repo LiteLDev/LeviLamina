@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct NetworkJoinedRecord {};
+class NetworkJoinedRecord {};
 
 } // namespace World

@@ -11,7 +11,7 @@
 class PlayScreenModel;
 namespace Json { class Value; }
 namespace Realms { struct World; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class LocalWorldUploadScreenController : public ::PlayScreenController {

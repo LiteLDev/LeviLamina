@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class FacetAvailability : int {};
+enum class FacetAvailability : int {
+    InGame     = 0,
+    OutOfGame  = 1,
+    Everywhere = 2,
+};
 
 }

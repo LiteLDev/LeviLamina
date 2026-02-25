@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct CreateNewWorldFacet_DEPRECATED {
+class CreateNewWorldFacet_DEPRECATED {
 public:
     // CreateNewWorldFacet_DEPRECATED inner types define
     enum class FacetStatus : uchar {};

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsPurchaseQueriesFacet {};
+class RealmsPurchaseQueriesFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,11 @@
 
 namespace OreUI {
 
-enum class ProfileImageState : int {};
+enum class ProfileImageState : int {
+    Undefined = 0,
+    Requested = 1,
+    Success   = 2,
+    Failure   = 3,
+};
 
 }

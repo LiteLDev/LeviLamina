@@ -12,8 +12,8 @@
 class ClientInstanceScreenModel;
 class ImageExportSubController;
 class PortfolioScreenManager;
+class UIPropertyBag;
 struct PhotoRecord;
-struct UIPropertyBag;
 namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on

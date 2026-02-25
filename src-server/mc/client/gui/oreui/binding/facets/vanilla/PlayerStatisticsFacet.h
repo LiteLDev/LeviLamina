@@ -4,20 +4,20 @@
 
 namespace OreUI {
 
-struct PlayerStatisticsFacet {
+class PlayerStatisticsFacet {
 public:
     // PlayerStatisticsFacet inner types declare
     // clang-format off
-    struct FacetPlayerStatisticData;
     struct Statistic;
+    struct FacetPlayerStatisticData;
     // clang-format on
 
     // PlayerStatisticsFacet inner types define
     enum class StatisticIcon : int {};
 
-    struct FacetPlayerStatisticData {};
-
     struct Statistic {};
+
+    struct FacetPlayerStatisticData {};
 };
 
 } // namespace OreUI

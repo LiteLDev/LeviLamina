@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsPlayerListCommandsFacet {};
+class RealmsPlayerListCommandsFacet {};
 
 } // namespace OreUI

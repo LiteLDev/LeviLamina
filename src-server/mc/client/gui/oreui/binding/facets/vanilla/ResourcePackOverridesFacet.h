@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ResourcePackOverridesFacet {
+class ResourcePackOverridesFacet {
 public:
     // ResourcePackOverridesFacet inner types declare
     // clang-format off

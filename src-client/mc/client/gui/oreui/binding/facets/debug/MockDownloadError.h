@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class MockDownloadError : int {};
+enum class MockDownloadError : int {
+    NoInternet      = 0,
+    ConnectionError = 1,
+};
 
 }

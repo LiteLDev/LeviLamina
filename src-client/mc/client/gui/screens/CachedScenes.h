@@ -7,8 +7,8 @@
 class LayoutManager;
 class TaskGroup;
 class UIControlFactory;
+class VisualTree;
 struct CachedScene;
-struct VisualTree;
 namespace Json { class Value; }
 // clang-format on
 

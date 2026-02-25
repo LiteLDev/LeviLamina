@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct QRCodeResourceHandler {};
+class QRCodeResourceHandler {};
 
 } // namespace OreUI

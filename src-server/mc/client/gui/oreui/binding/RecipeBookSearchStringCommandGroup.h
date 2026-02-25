@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct RecipeBookSearchStringCommandGroup {};
+class RecipeBookSearchStringCommandGroup {};
 
 } // namespace OreUI::Experimental

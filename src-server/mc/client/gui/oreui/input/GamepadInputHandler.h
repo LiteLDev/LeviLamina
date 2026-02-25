@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct GamepadInputHandler {};
+class GamepadInputHandler {};
 
 } // namespace OreUI

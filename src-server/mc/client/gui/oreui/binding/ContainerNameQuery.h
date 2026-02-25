@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct ContainerNameQuery {};
+class ContainerNameQuery {};
 
 } // namespace OreUI::Experimental

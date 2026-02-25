@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct BuildSettingsFacet {};
+class BuildSettingsFacet {};
 
 } // namespace OreUI

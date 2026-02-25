@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class RouterAction : int {};
+enum class RouterAction : int {
+    Push    = 0,
+    Pop     = 1,
+    Replace = 2,
+};
 
 }

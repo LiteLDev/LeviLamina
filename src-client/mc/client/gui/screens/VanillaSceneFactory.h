@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct IUIDefRepository;
+class IUIDefRepository;
 namespace Json { class Value; }
 // clang-format on
 

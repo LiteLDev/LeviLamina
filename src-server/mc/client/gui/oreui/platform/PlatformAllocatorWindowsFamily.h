@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlatformAllocatorWindowsFamily {};
+class PlatformAllocatorWindowsFamily {};
 
 } // namespace OreUI

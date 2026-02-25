@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ActiveLevelHardcoreModeFacet {};
+class ActiveLevelHardcoreModeFacet {};
 
 } // namespace OreUI

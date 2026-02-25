@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct CreatePreviewRealmFacet {};
+class CreatePreviewRealmFacet {};
 
 } // namespace OreUI

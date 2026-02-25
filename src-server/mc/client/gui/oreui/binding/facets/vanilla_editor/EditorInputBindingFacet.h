@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct EditorInputBindingFacet {
+class EditorInputBindingFacet {
 public:
     // EditorInputBindingFacet inner types declare
     // clang-format off

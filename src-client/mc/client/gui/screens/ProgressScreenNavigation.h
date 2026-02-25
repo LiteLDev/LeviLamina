@@ -12,9 +12,9 @@
 // auto generated forward declare list
 // clang-format off
 class ISceneStack;
+class ProgressHandler;
 class SceneFactory;
-struct ProgressHandler;
-namespace OreUI { struct Router; }
+namespace OreUI { class Router; }
 // clang-format on
 
 namespace ui {

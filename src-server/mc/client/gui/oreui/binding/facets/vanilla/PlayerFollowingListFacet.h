@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerFollowingListFacet {};
+class PlayerFollowingListFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsHubSettingsScreen {};
+class RealmsHubSettingsScreen {};
 
 } // namespace OreUI::EntryPoints

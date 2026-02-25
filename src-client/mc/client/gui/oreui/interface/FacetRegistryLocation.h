@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class FacetRegistryLocation : int {};
+enum class FacetRegistryLocation : int {
+    InGame    = 0,
+    OutOfGame = 1,
+};
 
 }

@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct EditorProjectConstantsFacet {
+class EditorProjectConstantsFacet {
 public:
     // EditorProjectConstantsFacet inner types declare
     // clang-format off

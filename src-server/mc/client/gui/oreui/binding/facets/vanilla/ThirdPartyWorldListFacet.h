@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ThirdPartyWorldListFacet {};
+class ThirdPartyWorldListFacet {};
 
 } // namespace OreUI

@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct Router {
+class Router {
 public:
     // Router inner types declare
     // clang-format off

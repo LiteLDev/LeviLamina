@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct IWorldResourcePackHandler {};
+class IWorldResourcePackHandler {};
 
 } // namespace World

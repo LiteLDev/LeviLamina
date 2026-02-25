@@ -4,6 +4,11 @@
 
 namespace OreUI {
 
-enum class SocialPresence : uint {};
+enum class SocialPresence : uint {
+    Unknown = 0,
+    Online  = 1,
+    Away    = 2,
+    Offline = 3,
+};
 
 }

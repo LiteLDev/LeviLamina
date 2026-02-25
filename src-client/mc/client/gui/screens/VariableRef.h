@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class LayoutComponent;
 class UIControl;
-struct LayoutComponent;
 // clang-format on
 
 class VariableRef {

@@ -5,14 +5,14 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentRenderBatch;
+class CustomRenderComponent;
+class GridComponent;
 class UIControl;
 class UIRenderContext;
 struct BatchClippingState;
 struct BatchKey;
 struct BatchVisualState;
 struct ClippedControlMetadata;
-struct CustomRenderComponent;
-struct GridComponent;
 struct RenderControlMetadata;
 struct TextureState;
 // clang-format on

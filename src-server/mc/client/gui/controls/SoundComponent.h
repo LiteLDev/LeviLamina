@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SoundComponent {
+class SoundComponent {
 public:
     // SoundComponent inner types declare
     // clang-format off

@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct UIProfileQuery {};
+class UIProfileQuery {};
 
 } // namespace OreUI::Experimental

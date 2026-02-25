@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct Win10TrialConversion {};
+class Win10TrialConversion {};
 
 } // namespace OreUI::EntryPoints

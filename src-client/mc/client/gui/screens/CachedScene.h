@@ -6,7 +6,7 @@
 // clang-format off
 class LayoutManager;
 class UIControlFactory;
-struct VisualTree;
+class VisualTree;
 // clang-format on
 
 struct CachedScene {

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerSocialManagerFacet {};
+class PlayerSocialManagerFacet {};
 
 } // namespace OreUI

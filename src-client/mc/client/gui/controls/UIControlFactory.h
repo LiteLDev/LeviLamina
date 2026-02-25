@@ -11,14 +11,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class ControlScreenAction;
+class CustomRenderComponent;
+class IUIDefRepository;
+class UIAnim;
 class UIControl;
 class UIControlFactoryContext;
-struct ControlScreenAction;
-struct CustomRenderComponent;
-struct IUIDefRepository;
-struct UIAnim;
-struct UIResolvedDef;
-struct UISoundPlayer;
+class UIResolvedDef;
+class UISoundPlayer;
 // clang-format on
 
 class UIControlFactory : public ::std::enable_shared_from_this<::UIControlFactory> {

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct LayoutScheduler {};
+class LayoutScheduler {};
 
 } // namespace OreUI

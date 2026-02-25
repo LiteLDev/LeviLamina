@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct LocalPlayerWeatherLightningFacet {};
+class LocalPlayerWeatherLightningFacet {};
 
 } // namespace OreUI

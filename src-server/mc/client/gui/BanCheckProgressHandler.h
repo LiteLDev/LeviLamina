@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BanCheckProgressHandler {
+class BanCheckProgressHandler {
 public:
     // BanCheckProgressHandler inner types define
     enum class State : int {};

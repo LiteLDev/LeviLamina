@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouteModeInputHandler {};
+class RouteModeInputHandler {};
 
 } // namespace OreUI

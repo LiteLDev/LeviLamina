@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct FacetRegistryFactory {
+class FacetRegistryFactory {
 public:
     // FacetRegistryFactory inner types declare
     // clang-format off

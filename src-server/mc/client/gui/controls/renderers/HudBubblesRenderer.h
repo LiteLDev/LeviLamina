@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudBubblesRenderer {
+class HudBubblesRenderer {
 public:
     // HudBubblesRenderer inner types define
     enum class BubbleType : int {};

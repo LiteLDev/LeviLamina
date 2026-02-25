@@ -6,7 +6,7 @@
 // clang-format off
 class ScreenControllerProxy;
 class ScreenViewProxy;
-namespace OreUI { struct IViewTestHelper; }
+namespace OreUI { class IViewTestHelper; }
 // clang-format on
 
 struct AbstractSceneProxyCallbacks {

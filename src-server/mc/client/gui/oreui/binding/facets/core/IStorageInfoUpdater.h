@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IStorageInfoUpdater {};
+class IStorageInfoUpdater {};
 
 } // namespace OreUI

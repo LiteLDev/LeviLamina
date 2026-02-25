@@ -10,7 +10,7 @@
 // clang-format off
 class DateManager;
 struct ContentCatalogService;
-namespace OreUI { struct IResourceAllowList; }
+namespace OreUI { class IResourceAllowList; }
 namespace Social { class IUserManager; }
 // clang-format on
 

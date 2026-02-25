@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct MobileDataBlockedModal {};
+class MobileDataBlockedModal {};
 
 } // namespace OreUI::EntryPoints

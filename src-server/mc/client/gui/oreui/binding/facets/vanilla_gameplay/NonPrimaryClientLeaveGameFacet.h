@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct NonPrimaryClientLeaveGameFacet {};
+class NonPrimaryClientLeaveGameFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ProfanityFilterFacet {};
+class ProfanityFilterFacet {};
 
 } // namespace OreUI

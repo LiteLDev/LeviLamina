@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct RecipeBookFilteringQuery {};
+class RecipeBookFilteringQuery {};
 
 } // namespace OreUI::Experimental

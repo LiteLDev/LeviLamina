@@ -4,6 +4,9 @@
 
 namespace World {
 
-enum class PackAction : uchar {};
+enum class PackAction : uchar {
+    Activate   = 0,
+    Deactivate = 1,
+};
 
 }

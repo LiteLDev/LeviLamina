@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-struct OnlineSafetyProgressHandler;
+class OnlineSafetyProgressHandler;
 // clang-format on
 
 class OnlineSafetyDialogScreenController : public ::SafetyDialogScreenController {

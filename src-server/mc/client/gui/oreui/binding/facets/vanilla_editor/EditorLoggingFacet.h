@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct EditorLoggingFacet {
+class EditorLoggingFacet {
 public:
     // EditorLoggingFacet inner types declare
     // clang-format off

@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct StartFromTemplate {};
+class StartFromTemplate {};
 
 } // namespace OreUI::EntryPoints

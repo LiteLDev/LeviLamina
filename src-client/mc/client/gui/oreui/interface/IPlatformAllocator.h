@@ -2,8 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cohtml/MemTagsType.h"
+
 namespace OreUI {
 
-struct IPlatformAllocator {};
+class IPlatformAllocator {
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~IPlatformAllocator() = default;
+
+    virtual void* allocate(uint) = 0;
+
+    virtual void* reallocate(void*, uint) = 0;
+
+    virtual void deallocate(void*) = 0;
+
+    virtual void* alignedAllocate(uint, uint) = 0;
+
+    virtual void alignedDeallocate(void*) = 0;
+
+    virtual void* virtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType) = 0;
+
+    virtual bool virtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType) = 0;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
+    // NOLINTEND
+};
 
 } // namespace OreUI

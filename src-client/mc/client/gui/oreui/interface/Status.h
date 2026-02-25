@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class Status : int {};
+enum class Status : int {
+    Ok    = 0,
+    Error = 1,
+};
 
 }

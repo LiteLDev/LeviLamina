@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ShareFacet {};
+class ShareFacet {};
 
 } // namespace OreUI

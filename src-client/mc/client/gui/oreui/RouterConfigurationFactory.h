@@ -28,7 +28,7 @@ namespace Realms { struct RealmsWorldContext; }
 namespace Realms { struct RealmsWorldEditor; }
 namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 namespace OreUI::RouterConfigurationFactory {

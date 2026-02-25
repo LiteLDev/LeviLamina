@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RecentlyPlayedWithListFacet {};
+class RecentlyPlayedWithListFacet {};
 
 } // namespace OreUI

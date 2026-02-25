@@ -4,19 +4,19 @@
 
 namespace OreUI {
 
-struct EditorStructureFacet {
+class EditorStructureFacet {
 public:
     // EditorStructureFacet inner types declare
     // clang-format off
-    struct StructureData;
     struct StructureDescription;
+    struct StructureData;
     struct StructureUpdatePayload;
     // clang-format on
 
     // EditorStructureFacet inner types define
-    struct StructureData {};
-
     struct StructureDescription {};
+
+    struct StructureData {};
 
     struct StructureUpdatePayload {};
 };

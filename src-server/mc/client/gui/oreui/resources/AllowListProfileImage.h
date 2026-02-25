@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct AllowListProfileImage {};
+class AllowListProfileImage {};
 
 } // namespace OreUI

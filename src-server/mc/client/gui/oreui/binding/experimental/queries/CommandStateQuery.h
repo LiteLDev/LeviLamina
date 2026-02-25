@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct CommandStateQuery {};
+class CommandStateQuery {};
 
 } // namespace OreUI::Experimental

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/oreui/views/FramesToPaintQueue.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -10,15 +11,24 @@
 class ResourcePackManager;
 class TaskGroup;
 namespace Core { class Path; }
+namespace OreUI { class IRenderingBackend; }
+namespace OreUI { class InternationalizationManager; }
+namespace OreUI { class LayoutScheduler; }
+namespace OreUI { class MemoryTracker; }
+namespace OreUI { class ResourceHandlerBroker; }
+namespace OreUI { class TemporaryTextureHolder; }
+namespace OreUI { class ViewsCoordinator; }
 namespace OreUI { struct DebugData; }
-namespace OreUI { struct MemoryTracker; }
-namespace OreUI { struct ResourceHandlerBroker; }
-namespace OreUI { struct TemporaryTextureHolder; }
 namespace cohtml { class IAllocator; }
 namespace cohtml { class IFileSystemReader; }
+namespace cohtml { class ITimeZoneProvider; }
 namespace cohtml { class IVirtualAllocator; }
+namespace cohtml { class Library; }
+namespace cohtml { class System; }
+namespace cohtml { class SystemRenderer; }
 namespace cohtml { struct PlatformSpecificParams; }
 namespace cohtml::Logging { class ILogHandler; }
+namespace cohtml::Profile { class IPerformanceHandler; }
 namespace mce { class RenderContext; }
 namespace mce { struct ShaderGroup; }
 // clang-format on
@@ -29,28 +39,28 @@ class Library {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnka8234b;
-    ::ll::UntypedStorage<8, 8>   mUnk649e30;
-    ::ll::UntypedStorage<8, 8>   mUnk985412;
-    ::ll::UntypedStorage<8, 8>   mUnk968968;
-    ::ll::UntypedStorage<8, 8>   mUnka8f6df;
-    ::ll::UntypedStorage<8, 8>   mUnk476135;
-    ::ll::UntypedStorage<8, 8>   mUnk68299f;
-    ::ll::UntypedStorage<8, 8>   mUnk1a7462;
-    ::ll::UntypedStorage<8, 8>   mUnk31fa7b;
-    ::ll::UntypedStorage<8, 8>   mUnk5886ab;
-    ::ll::UntypedStorage<8, 8>   mUnk605dd3;
-    ::ll::UntypedStorage<8, 8>   mUnk3bc6b8;
-    ::ll::UntypedStorage<8, 8>   mUnke58392;
-    ::ll::UntypedStorage<8, 8>   mUnk1b9e17;
-    ::ll::UntypedStorage<8, 8>   mUnka98490;
-    ::ll::UntypedStorage<8, 8>   mUnk622941;
-    ::ll::UntypedStorage<8, 8>   mUnk955deb;
-    ::ll::UntypedStorage<1, 1>   mUnk7b1fc6;
-    ::ll::UntypedStorage<1, 1>   mUnkf3fca3;
-    ::ll::UntypedStorage<1, 1>   mUnk5a7937;
-    ::ll::UntypedStorage<8, 16>  mUnkb73c50;
-    ::ll::UntypedStorage<8, 104> mUnkc82d70;
+    ::ll::TypedStorage<8, 8, ::cohtml::System*>                                         mSystem;
+    ::ll::TypedStorage<8, 8, ::cohtml::SystemRenderer*>                                 mSystemRenderer;
+    ::ll::TypedStorage<8, 8, ::cohtml::Library*>                                        mLibrary;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::IAllocator>>                   mAllocator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::IFileSystemReader>>            mFileSystemReader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ResourceHandlerBroker>>         mResourceHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::InternationalizationManager>>   mInternationalizationManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IRenderingBackend>>             mRenderingBackend;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::Logging::ILogHandler>>         mLogHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::Profile::IPerformanceHandler>> mPerformanceHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::ITimeZoneProvider>>            mTimeZoneProvider;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LayoutScheduler>>               mLayoutScheduler;
+    ::ll::TypedStorage<8, 8, ::OreUI::MemoryTracker&>                                   mMemoryTracker;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewsCoordinator>>              mViews;
+    ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                          mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>                              mPackManager;
+    ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                       mDebugData;
+    ::ll::TypedStorage<1, 1, bool>                                                      mDoCompleteUninitialization;
+    ::ll::TypedStorage<1, 1, bool>                                                      mSuspended;
+    ::ll::TypedStorage<1, 1, bool>                                                      mICUDataInitialized;
+    ::ll::TypedStorage<8, 16, ::std::thread>                                            mResourceThread;
+    ::ll::TypedStorage<8, 104, ::OreUI::FramesToPaintQueue>                             mFramesToPaint;
     // NOLINTEND
 
 public:

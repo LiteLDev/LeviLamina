@@ -26,9 +26,9 @@ class DropdownScreenController;
 class FilePickerSettings;
 class ItemInstance;
 class MinecraftScreenModel;
+class UIPropertyBag;
 struct ModalScreenData;
 struct PDFOptions;
-struct UIPropertyBag;
 namespace Core { class Path; }
 namespace Social { struct MultiIdentitySigninResult; }
 // clang-format on

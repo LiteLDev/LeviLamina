@@ -11,12 +11,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class FileDeleteProgressHandler;
 class IContentKeyProvider;
 class MinecraftScreenModel;
 class PackError;
 class PackManifest;
 class PackManifestFactory;
-struct FileDeleteProgressHandler;
 struct PackContentItem;
 struct PackErrorInfo;
 namespace Core { class Path; }

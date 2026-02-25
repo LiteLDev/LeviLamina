@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ContentLogFileDeleteProgressHandler {
+class ContentLogFileDeleteProgressHandler {
 public:
     // ContentLogFileDeleteProgressHandler inner types define
     enum class FileDeleteTarget : int {};

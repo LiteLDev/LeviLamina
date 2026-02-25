@@ -4,6 +4,11 @@
 
 namespace OreUI {
 
-enum class ViewState : uchar {};
+enum class ViewState : uchar {
+    Idle                               = 0,
+    Active                             = 1,
+    ActiveFirstMeaningfulPaintHappened = 2,
+    Leaving                            = 3,
+};
 
 }

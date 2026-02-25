@@ -28,7 +28,7 @@ struct ScreenSizeData;
 struct TextCharEventData;
 struct TouchPadTouchEventData;
 namespace OreUI { struct ViewDebugSettings; }
-namespace OreUI::Debug { struct ISceneDataProvider; }
+namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
 class AbstractScene {

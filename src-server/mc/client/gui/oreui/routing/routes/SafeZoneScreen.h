@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct SafeZoneScreen {};
+class SafeZoneScreen {};
 
 } // namespace OreUI::EntryPoints

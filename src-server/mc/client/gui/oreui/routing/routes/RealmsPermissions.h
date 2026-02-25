@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsPermissions {};
+class RealmsPermissions {};
 
 } // namespace OreUI::EntryPoints

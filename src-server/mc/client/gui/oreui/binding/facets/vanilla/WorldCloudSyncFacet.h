@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct WorldCloudSyncFacet {};
+class WorldCloudSyncFacet {};
 
 } // namespace OreUI

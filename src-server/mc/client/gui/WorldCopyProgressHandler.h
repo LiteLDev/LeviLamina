@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldCopyProgressHandler {
+class WorldCopyProgressHandler {
 public:
     // WorldCopyProgressHandler inner types define
     enum class Result : int {};

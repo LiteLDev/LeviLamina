@@ -10,9 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class PersonaPiece;
+class UIPropertyBag;
 struct IPersonaRepository;
 struct IStoreCatalogItem;
-struct UIPropertyBag;
 namespace persona { struct PieceOfferWrapper; }
 // clang-format on
 

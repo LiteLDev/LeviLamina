@@ -4,12 +4,12 @@
 
 namespace OreUI {
 
-struct WorldEditorFacet {
+class WorldEditorFacet {
 public:
     // WorldEditorFacet inner types define
-    enum class ClearPlayerDataStatus : int {};
-
     enum class InitializationResult : int {};
+
+    enum class ClearPlayerDataStatus : int {};
 };
 
 } // namespace OreUI

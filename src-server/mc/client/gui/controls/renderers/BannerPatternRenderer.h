@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BannerPatternRenderer {
+class BannerPatternRenderer {
 public:
     // BannerPatternRenderer inner types declare
     // clang-format off

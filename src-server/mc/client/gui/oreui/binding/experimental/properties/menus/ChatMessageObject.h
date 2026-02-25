@@ -4,7 +4,7 @@
 
 namespace OreUI::Experimental {
 
-struct ChatMessageObject {
+class ChatMessageObject {
 public:
     // ChatMessageObject inner types define
     enum class ChatMessageType : uint {};

@@ -4,6 +4,11 @@
 
 namespace ui {
 
-enum class NameResolutionScope : int {};
+enum class NameResolutionScope : int {
+    Global   = 0,
+    Local    = 1,
+    Sibling  = 2,
+    Ancestor = 3,
+};
 
 }

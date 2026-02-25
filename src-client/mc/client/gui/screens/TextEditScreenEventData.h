@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct UIPropertyBag;
+class UIPropertyBag;
 // clang-format on
 
 struct TextEditScreenEventData {

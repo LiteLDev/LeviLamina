@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct WorldCloudSyncer {};
+class WorldCloudSyncer {};
 
 } // namespace World

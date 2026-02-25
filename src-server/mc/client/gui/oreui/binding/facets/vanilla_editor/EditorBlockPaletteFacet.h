@@ -4,23 +4,23 @@
 
 namespace OreUI {
 
-struct EditorBlockPaletteFacet {
+class EditorBlockPaletteFacet {
 public:
     // EditorBlockPaletteFacet inner types declare
     // clang-format off
-    struct BlockPalette;
-    struct BlockPaletteItem;
     struct WeightedBlock;
+    struct BlockPaletteItem;
+    struct BlockPalette;
     // clang-format on
 
     // EditorBlockPaletteFacet inner types define
     enum class BlockPaletteItemType : int {};
 
-    struct BlockPalette {};
+    struct WeightedBlock {};
 
     struct BlockPaletteItem {};
 
-    struct WeightedBlock {};
+    struct BlockPalette {};
 };
 
 } // namespace OreUI

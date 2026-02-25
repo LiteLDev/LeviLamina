@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class GamepadMode : int {};
+enum class GamepadMode : int {
+    Menu         = 0,
+    GameplayGrid = 1,
+};
 
 }

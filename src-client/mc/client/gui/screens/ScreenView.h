@@ -23,30 +23,30 @@
 // auto generated forward declare list
 // clang-format off
 class AbstractScene;
+class DataBindingComponent;
+class FocusComponent;
 class FocusManager;
 class KeyboardManager;
 class LayoutManager;
 class RectangleArea;
 class ScreenController;
+class ScreenInputContext;
 class ScreenLoadTimeTracker;
 class ScreenRenderBatch;
+class ScreenSettings;
 class ScreenViewProxy;
+class SliderComponent;
+class TextEditComponent;
 class UIAnimationController;
 class UIControl;
 class UIControlFactory;
 class UIMeasureStrategy;
+class UIPropertyBag;
 class UIRenderContext;
-struct DataBindingComponent;
-struct FocusComponent;
+class VisualTree;
 struct ITTSEventManager;
 struct ScreenEvent;
-struct ScreenInputContext;
-struct ScreenSettings;
-struct SliderComponent;
-struct TextEditComponent;
 struct TouchPadTouchEventData;
-struct UIPropertyBag;
-struct VisualTree;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Json { class Value; }
 // clang-format on

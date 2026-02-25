@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct ThirdPartyWorldList {};
+class ThirdPartyWorldList {};
 
 } // namespace World

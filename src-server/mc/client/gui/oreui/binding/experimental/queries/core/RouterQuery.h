@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct RouterQuery {};
+class RouterQuery {};
 
 } // namespace OreUI::Experimental

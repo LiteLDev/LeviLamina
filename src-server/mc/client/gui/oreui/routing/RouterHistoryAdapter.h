@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouterHistoryAdapter {};
+class RouterHistoryAdapter {};
 
 } // namespace OreUI

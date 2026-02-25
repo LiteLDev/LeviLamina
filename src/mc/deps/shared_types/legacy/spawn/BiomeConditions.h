@@ -89,8 +89,8 @@ public:
 
     MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions& operator=(::SharedTypes::Legacy::Spawn::BiomeConditions&&);
 
-    MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions& operator=(::SharedTypes::Legacy::Spawn::BiomeConditions const&
-    );
+    MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions&
+    operator=(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
     MCAPI ~BiomeConditions();
     // NOLINTEND

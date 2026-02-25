@@ -4,6 +4,9 @@
 
 namespace ui {
 
-enum class PriorityRule : schar {};
+enum class PriorityRule : schar {
+    Default                   = 0,
+    ShowWhenControlsAreHidden = 1,
+};
 
 }

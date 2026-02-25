@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SelectionWheelComponent {
+class SelectionWheelComponent {
 public:
     // SelectionWheelComponent inner types declare
     // clang-format off

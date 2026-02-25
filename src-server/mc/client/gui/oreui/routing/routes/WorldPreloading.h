@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct WorldPreloading {};
+class WorldPreloading {};
 
 } // namespace OreUI::EntryPoints

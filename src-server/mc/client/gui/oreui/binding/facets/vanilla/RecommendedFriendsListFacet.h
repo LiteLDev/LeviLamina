@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RecommendedFriendsListFacet {};
+class RecommendedFriendsListFacet {};
 
 } // namespace OreUI

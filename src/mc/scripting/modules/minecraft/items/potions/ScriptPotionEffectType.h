@@ -34,8 +34,8 @@ public:
 
     MCAPI ::std::string getPotionNameIdWithPrefix();
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptPotionEffectType& operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&
-    );
+    MCFOLD ::ScriptModuleMinecraft::ScriptPotionEffectType&
+    operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
     // NOLINTEND
 
 public:

@@ -10,10 +10,10 @@
 // auto generated forward declare list
 // clang-format off
 class IContentSourceRepository;
+class IUIDefRepository;
 class ResourcePackManager;
 struct ContentItem;
 struct IEntitlementManager;
-struct IUIDefRepository;
 struct PackContentItem;
 struct PackInstanceId;
 struct PackManagerContentSourceArgs;

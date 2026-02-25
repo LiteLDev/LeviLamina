@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ScreenReaderFacet {};
+class ScreenReaderFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct IHandlerFactory {};
+class IHandlerFactory {};
 
 } // namespace OreUI::Experimental::Detail

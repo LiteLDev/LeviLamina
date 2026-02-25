@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct WorldStartupFacet {
+class WorldStartupFacet {
 public:
     // WorldStartupFacet inner types declare
     // clang-format off

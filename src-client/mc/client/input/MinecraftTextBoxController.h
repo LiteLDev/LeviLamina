@@ -10,7 +10,7 @@
 // clang-format off
 class IMinecraftGame;
 struct TextBoxStateChange;
-namespace OreUI { struct OreUISystem; }
+namespace OreUI { class OreUISystem; }
 // clang-format on
 
 class MinecraftTextBoxController : public ::ITextBoxController {

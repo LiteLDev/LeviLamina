@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct AchievementsFacet {
+class AchievementsFacet {
 public:
     // AchievementsFacet inner types define
     enum class AchievementFacetStatus : uchar {};

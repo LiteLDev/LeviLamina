@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct MarketplacePassWorldTemplateManager {};
+class MarketplacePassWorldTemplateManager {};
 
 } // namespace World

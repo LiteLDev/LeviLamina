@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class UIControl;
-struct VisualTree;
+class VisualTree;
 // clang-format on
 
 class TextEditFocusedListener {

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IViewProvider {};
+class IViewProvider {};
 
 } // namespace OreUI

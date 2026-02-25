@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ExternalServerWorldListFacet {};
+class ExternalServerWorldListFacet {};
 
 } // namespace OreUI

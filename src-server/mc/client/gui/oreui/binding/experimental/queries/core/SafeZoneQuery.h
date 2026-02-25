@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SafeZoneQuery {};
+class SafeZoneQuery {};
 
 } // namespace OreUI::Experimental

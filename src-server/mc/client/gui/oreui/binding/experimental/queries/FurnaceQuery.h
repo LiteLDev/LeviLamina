@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct FurnaceQuery {};
+class FurnaceQuery {};
 
 } // namespace OreUI::Experimental

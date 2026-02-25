@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct ExposedRouterLocation {};
+class ExposedRouterLocation {};
 
 } // namespace OreUI::Experimental

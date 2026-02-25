@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct MemoryTracker {};
+class MemoryTracker {};
 
 } // namespace OreUI

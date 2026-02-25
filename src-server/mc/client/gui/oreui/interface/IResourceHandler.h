@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct IResourceHandler {
+class IResourceHandler {
 public:
     // IResourceHandler inner types define
     enum class Status : int {};

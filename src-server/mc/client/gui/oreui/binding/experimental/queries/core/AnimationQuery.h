@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct AnimationQuery {};
+class AnimationQuery {};
 
 } // namespace OreUI::Experimental

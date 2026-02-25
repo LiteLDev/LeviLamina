@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerDeathInfoFacet {};
+class PlayerDeathInfoFacet {};
 
 } // namespace OreUI

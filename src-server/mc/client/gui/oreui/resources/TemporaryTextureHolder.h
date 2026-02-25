@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct TemporaryTextureHolder {};
+class TemporaryTextureHolder {};
 
 } // namespace OreUI
