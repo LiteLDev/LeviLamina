@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIAnimAlpha {};
+class UIAnimAlpha {};

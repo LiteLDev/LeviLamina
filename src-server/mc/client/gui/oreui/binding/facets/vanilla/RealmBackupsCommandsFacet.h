@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmBackupsCommandsFacet {};
+class RealmBackupsCommandsFacet {};
 
 } // namespace OreUI

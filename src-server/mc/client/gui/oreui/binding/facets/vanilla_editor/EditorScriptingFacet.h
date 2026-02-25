@@ -4,15 +4,15 @@
 
 namespace OreUI {
 
-struct EditorScriptingFacet {
+class EditorScriptingFacet {
 public:
     // EditorScriptingFacet inner types declare
     // clang-format off
-    struct EditorRay;
+    class EditorRay;
     // clang-format on
 
     // EditorScriptingFacet inner types define
-    struct EditorRay {};
+    class EditorRay {};
 };
 
 } // namespace OreUI

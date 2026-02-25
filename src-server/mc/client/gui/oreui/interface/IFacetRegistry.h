@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct IFacetRegistry {
+class IFacetRegistry {
 public:
     // IFacetRegistry inner types define
     enum class Error : int {};

@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct ContainerChestTypeQuery {};
+class ContainerChestTypeQuery {};
 
 } // namespace OreUI::Experimental

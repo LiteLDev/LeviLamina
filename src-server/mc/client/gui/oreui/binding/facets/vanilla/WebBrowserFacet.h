@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct WebBrowserFacet {
+class WebBrowserFacet {
 public:
     // WebBrowserFacet inner types define
     enum class WebBrowserLink : int {};

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CreditsRenderer {
+class CreditsRenderer {
 public:
     // CreditsRenderer inner types declare
     // clang-format off

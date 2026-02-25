@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct LocalWorldListFacet {};
+class LocalWorldListFacet {};
 
 } // namespace OreUI

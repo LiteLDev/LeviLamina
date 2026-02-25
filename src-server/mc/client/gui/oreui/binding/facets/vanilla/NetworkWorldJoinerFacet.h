@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct NetworkWorldJoinerFacet {};
+class NetworkWorldJoinerFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace ui {
 
-struct OreUIScreenConfiguration {};
+class OreUIScreenConfiguration {};
 
 } // namespace ui

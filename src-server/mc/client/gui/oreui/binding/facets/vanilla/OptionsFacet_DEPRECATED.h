@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct OptionsFacet_DEPRECATED {};
+class OptionsFacet_DEPRECATED {};
 
 } // namespace OreUI

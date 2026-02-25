@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GuiMessage {
+class GuiMessage {
 public:
     // GuiMessage inner types define
     enum class MessageType : int {};

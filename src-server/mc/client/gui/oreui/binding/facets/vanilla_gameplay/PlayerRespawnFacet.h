@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerRespawnFacet {};
+class PlayerRespawnFacet {};
 
 } // namespace OreUI

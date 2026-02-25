@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct ICommandGroup {};
+class ICommandGroup {};
 
 } // namespace OreUI::Experimental::Detail

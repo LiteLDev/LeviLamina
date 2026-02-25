@@ -30,7 +30,7 @@ struct ServicesManager;
 namespace Json { class Value; }
 namespace Realms { struct World; }
 namespace Social { struct PermissionCheckResult; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class PlayScreenController : public ::MainMenuScreenController {

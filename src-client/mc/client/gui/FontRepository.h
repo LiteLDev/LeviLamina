@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -19,25 +20,20 @@ class FontRepository : public ::AppPlatformListener, public ::Bedrock::EnableNon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3ee564;
-    ::ll::UntypedStorage<8, 24> mUnkf072cf;
-    ::ll::UntypedStorage<8, 64> mUnk84aa87;
-    ::ll::UntypedStorage<8, 8>  mUnk56c2d2;
-    ::ll::UntypedStorage<8, 8>  mUnkfc28f4;
-    ::ll::UntypedStorage<8, 8>  mUnk9bc0d4;
-    ::ll::UntypedStorage<8, 8>  mUnk5e8073;
-    ::ll::UntypedStorage<8, 8>  mUnk76b378;
-    ::ll::UntypedStorage<8, 8>  mUnkb58b58;
-    ::ll::UntypedStorage<8, 64> mUnk7d2c03;
-    ::ll::UntypedStorage<8, 64> mUnk5c7d20;
-    ::ll::UntypedStorage<8, 24> mUnkfacaf1;
-    ::ll::UntypedStorage<8, 32> mUnk45e53a;
+    ::ll::TypedStorage<1, 1, bool>                                                     mIsInitialized;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Font>>>                mLoadedFonts;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, uint64>>             mFontNameToIdentifier;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mDefaultFontId;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mRuneFontId;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mUnicodeFontId;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mSmoothFontLatinFontId;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mUIFontId;
+    ::ll::TypedStorage<8, 8, uint64>                                                   mSmoothSmallFontID;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>> mOriginalMinecraftFonts;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::shared_ptr<::Font>>> mOverriddenFonts;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Threading::Async<void>>>        mFontLoadingTaskTrackers;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mLanguageCode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FontRepository& operator=(FontRepository const&);
-    FontRepository(FontRepository const&);
 
 public:
     // virtual functions
@@ -52,28 +48,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FontRepository();
+    MCAPI FontRepository();
 
-    MCNAPI void _queueBitmapFont(
+    MCAPI void _queueBitmapFont(
         ::std::string const&                 alias,
         ::Core::Path const&                  asciiName,
         ::Core::Path const&                  unicodeName,
         ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
     );
 
-    MCNAPI void _queueMsdfFont(
+    MCAPI void _queueMsdfFont(
         ::std::string const&                 alias,
         ::Core::Path const&                  fontPagePrefix,
         ::std::weak_ptr<::mce::TextureGroup> textureGroupWeakPtr
     );
 
-    MCNAPI void _setDefaultFont(::std::string const& fontName, uint64 fontId, ::std::shared_ptr<::Font> font);
+    MCAPI void _setDefaultFont(::std::string const& fontName, uint64 fontId, ::std::shared_ptr<::Font> font);
 
-    MCNAPI void _setFontIfOverride(uint64 fontId, ::std::shared_ptr<::Font> font);
+    MCAPI void _setFontIfOverride(uint64 fontId, ::std::shared_ptr<::Font> font);
 
-    MCNAPI uint64 addPreloadedFont(::std::string const& fontName, ::std::shared_ptr<::Font> font);
+    MCAPI uint64 addPreloadedFont(::std::string const& fontName, ::std::shared_ptr<::Font> font);
 
-    MCNAPI void getDefaultFontHandles(
+    MCAPI void getDefaultFontHandles(
         ::FontHandle& defaultFontHandle,
         ::FontHandle& runeFontHandle,
         ::FontHandle& unicodeFontHandle,
@@ -81,53 +77,53 @@ public:
         ::FontHandle& uiFontHandle
     );
 
-    MCNAPI uint64 getFontIdentifier(::std::string const& fontName);
+    MCAPI uint64 getFontIdentifier(::std::string const& fontName);
 
-    MCNAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
+    MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCNAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCNAPI void onLanguageChanged(::std::string const& languageCode);
+    MCAPI void onLanguageChanged(::std::string const& languageCode);
 
-    MCNAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCAPI void parseAndLoadMetadataFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCNAPI void prepForShutdown();
+    MCAPI void prepForShutdown();
 
-    MCNAPI void reloadFontTextures(bool blockingLoad);
+    MCAPI void reloadFontTextures(bool blockingLoad);
 
-    MCNAPI void resetPerFontData();
+    MCAPI void resetPerFontData();
 
-    MCNAPI void setFont(uint64 fontId, ::std::shared_ptr<::Font> font);
+    MCAPI void setFont(uint64 fontId, ::std::shared_ptr<::Font> font);
 
-    MCNAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
+    MCAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
 
-    MCNAPI void setUseFontOverrides(bool useOverrides);
+    MCAPI void setUseFontOverrides(bool useOverrides);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static uint64& INVALID_FONT();
+    MCAPI static uint64& INVALID_FONT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onAppSuspended();
+    MCAPI void $onAppSuspended();
 
-    MCNAPI void $onDeviceLost();
+    MCAPI void $onDeviceLost();
     // NOLINTEND
 
 public:

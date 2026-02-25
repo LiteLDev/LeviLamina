@@ -4,6 +4,14 @@
 
 namespace OreUI {
 
-struct BufferSnapshot {};
+struct BufferSnapshot {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint> id;
+    ::ll::TypedStorage<4, 4, uint> usedSize;
+    ::ll::TypedStorage<4, 4, uint> size;
+    // NOLINTEND
+};
 
 } // namespace OreUI

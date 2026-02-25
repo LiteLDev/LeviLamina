@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class HybridResourceFileSystem : int {};
+enum class HybridResourceFileSystem : int {
+    AppPackage   = 0,
+    ResourcePack = 1,
+};
 
 }

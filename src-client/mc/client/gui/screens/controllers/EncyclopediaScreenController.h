@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-struct UIPropertyBag;
+class UIPropertyBag;
 // clang-format on
 
 class EncyclopediaScreenController : public ::MainMenuScreenController {

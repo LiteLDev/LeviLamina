@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct NewPlayerChoicesFacet {
+class NewPlayerChoicesFacet {
 public:
     // NewPlayerChoicesFacet inner types declare
     // clang-format off

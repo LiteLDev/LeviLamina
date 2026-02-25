@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct InputQuery {};
+class InputQuery {};
 
 } // namespace OreUI::Experimental

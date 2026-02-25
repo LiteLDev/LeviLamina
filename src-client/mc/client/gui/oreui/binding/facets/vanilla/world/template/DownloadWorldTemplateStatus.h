@@ -4,6 +4,12 @@
 
 namespace OreUI {
 
-enum class DownloadWorldTemplateStatus : int {};
+enum class DownloadWorldTemplateStatus : int {
+    Initialising = 0,
+    Downloading  = 1,
+    Importing    = 2,
+    Success      = 3,
+    Fail         = 4,
+};
 
 }

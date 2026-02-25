@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct GestureRecognizerBase {
+class GestureRecognizerBase {
 public:
     // GestureRecognizerBase inner types declare
     // clang-format off

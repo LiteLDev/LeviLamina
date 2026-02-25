@@ -4,7 +4,7 @@
 
 namespace World {
 
-struct IWorldStorageHandler {
+class IWorldStorageHandler {
 public:
     // IWorldStorageHandler inner types declare
     // clang-format off
@@ -12,17 +12,17 @@ public:
     // clang-format on
 
     // IWorldStorageHandler inner types define
+    enum class ReadWorldError : uchar {};
+
+    enum class WriteWorldError : uchar {};
+
     enum class DuplicateWorldResult : uchar {};
 
     enum class ExportWorldResult : uchar {};
 
-    enum class ExportWorldStatus : uchar {};
-
-    enum class ReadWorldError : uchar {};
-
     enum class StartClearPlayerDataError : int {};
 
-    enum class WriteWorldError : uchar {};
+    enum class ExportWorldStatus : uchar {};
 
     struct CachedWorldData {};
 };

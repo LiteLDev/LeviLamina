@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/Font.h"
+#include "mc/client/gui/FontHandle.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/Type.h"
 
 // auto generated forward declare list
 // clang-format off
-class FontHandle;
 class ResourceLocation;
 class ScreenContext;
 namespace Core { class Path; }
@@ -32,10 +32,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk45e29b;
-        ::ll::UntypedStorage<8, 32> mUnk9c4f1e;
-        ::ll::UntypedStorage<8, 24> mUnkec3bd2;
-        ::ll::UntypedStorage<4, 4>  mUnke1aeda;
+        ::ll::TypedStorage<8, 80, ::FontHandle>                         mFontHandle;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mLanguageCode;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<int, int>>> mIncludedUnicodeRanges;
+        ::ll::TypedStorage<4, 4, float>                                 mFontScale;
         // NOLINTEND
 
     public:
@@ -46,42 +46,40 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ReferenceData(::FontAlias::ReferenceData const&);
+        MCAPI ReferenceData(::FontAlias::ReferenceData const&);
 
-        MCNAPI ::FontAlias::ReferenceData& operator=(::FontAlias::ReferenceData&&);
+        MCAPI ::FontAlias::ReferenceData& operator=(::FontAlias::ReferenceData&&);
 
-        MCNAPI ~ReferenceData();
+        MCAPI ~ReferenceData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::FontAlias::ReferenceData const&);
+        MCAPI void* $ctor(::FontAlias::ReferenceData const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7b7975;
-    ::ll::UntypedStorage<8, 32> mUnkdc48d3;
-    ::ll::UntypedStorage<1, 1>  mUnkc30fdf;
-    ::ll::UntypedStorage<1, 1>  mUnk4a9bd0;
-    ::ll::UntypedStorage<1, 1>  mUnk667ea0;
-    ::ll::UntypedStorage<4, 4>  mUnkfa7a74;
-    ::ll::UntypedStorage<4, 4>  mUnk50d4f6;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FontAlias::ReferenceData>> mFontReferences;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mCurrentLanguageCode;
+    ::ll::TypedStorage<1, 1, bool>                                       mAllReferencesMaterialsCanBeOverridden;
+    ::ll::TypedStorage<1, 1, bool>                                       mAllReferencesScreenPixelAligned;
+    ::ll::TypedStorage<1, 1, bool>                                       mAllReferencesSupportShadowInSingleDraw;
+    ::ll::TypedStorage<4, 4, float>                                      mMaxWrapHeight;
+    ::ll::TypedStorage<4, 4, float>                                      mMaxScalar;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FontAlias& operator=(FontAlias const&);
-    FontAlias(FontAlias const&);
     FontAlias();
 
 public:
@@ -158,21 +156,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FontAlias(
+    MCAPI FontAlias(
         ::std::shared_ptr<::mce::TextureGroup>      textureGroup,
         ::std::vector<::FontAlias::ReferenceData>&& fontReferences,
         float                                       scaleFactor
     );
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForSheet(int const& sheet) const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForSheet(int const& sheet) const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForUnicode(int const& character) const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontReferenceForUnicode(int const& character) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::shared_ptr<::mce::TextureGroup>      textureGroup,
         ::std::vector<::FontAlias::ReferenceData>&& fontReferences,
         float                                       scaleFactor
@@ -182,21 +180,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $_getCharWidth(int uniChar, bool forceUnicode);
+    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
-    MCNAPI bool $supportsChar(int const& character);
+    MCAPI bool $supportsChar(int const& character);
 
-    MCNAPI float $getWrapHeight() const;
+    MCAPI float $getWrapHeight() const;
 
-    MCNAPI float $getScaleFactor() const;
+    MCAPI float $getScaleFactor() const;
 
-    MCNAPI float $getScaleFactor(int uniChar) const;
+    MCAPI float $getScaleFactor(int uniChar) const;
 
-    MCNAPI bool $isScreenPixelAligned() const;
+    MCAPI bool $isScreenPixelAligned() const;
 
-    MCNAPI bool $materialCanBeOverridden() const;
+    MCAPI bool $materialCanBeOverridden() const;
 
-    MCNAPI void $setTextConstantsInScreenContext(
+    MCAPI void $setTextConstantsInScreenContext(
         ::ScreenContext&    screenContext,
         int                 glyphSheet,
         float               guiScale,
@@ -204,15 +202,15 @@ public:
         bool                hasShadow
     ) const;
 
-    MCNAPI void $uploadTextureToGPU();
+    MCFOLD void $uploadTextureToGPU();
 
-    MCNAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
+    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
 
-    MCNAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
-    MCNAPI ::mce::Font::Type $getType(int glyphSheet) const;
+    MCAPI ::mce::Font::Type $getType(int glyphSheet) const;
 
-    MCNAPI ::std::optional<::mce::Font::RenderingParameters> $tryGetRenderingParameters(
+    MCAPI ::std::optional<::mce::Font::RenderingParameters> $tryGetRenderingParameters(
         ::ScreenContext const& screenContext,
         int                    glyphSheet,
         float                  guiScale,
@@ -222,15 +220,15 @@ public:
         uint                   textureHeight
     ) const;
 
-    MCNAPI void $loadFontData(bool uploadTextureImmediately);
+    MCFOLD void $loadFontData(bool uploadTextureImmediately);
 
-    MCNAPI bool $_supportsShadowInSingleDraw();
+    MCAPI bool $_supportsShadowInSingleDraw();
 
-    MCNAPI void $onLanguageChanged(::std::string const& languageCode);
+    MCAPI void $onLanguageChanged(::std::string const& languageCode);
 
-    MCNAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCNAPI float $buildChar(
+    MCAPI float $buildChar(
         ::std::vector<::Font::GlyphQuad>& quads,
         int                               i,
         ::mce::Color const&               color,
@@ -240,11 +238,11 @@ public:
         bool                              unicode
     );
 
-    MCNAPI ::std::string $_remapString(::std::string const& str) const;
+    MCAPI ::std::string $_remapString(::std::string const& str) const;
 
-    MCNAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
+    MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
 
-    MCNAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
     // NOLINTEND
 

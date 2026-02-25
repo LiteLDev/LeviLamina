@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct SimulationDistanceFacet {};
+class SimulationDistanceFacet {};
 
 } // namespace OreUI

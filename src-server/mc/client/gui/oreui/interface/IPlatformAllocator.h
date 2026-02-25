@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IPlatformAllocator {};
+class IPlatformAllocator {};
 
 } // namespace OreUI

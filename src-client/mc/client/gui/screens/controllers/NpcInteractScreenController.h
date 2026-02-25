@@ -13,12 +13,12 @@
 // clang-format off
 class Actor;
 class ClientInstanceScreenModel;
+class DeferredTextObject;
 class Player;
+class UIPropertyBag;
 struct ActorUniqueID;
-struct DeferredTextObject;
 struct INpcDialogueData;
 struct NpcGUIOffset;
-struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 

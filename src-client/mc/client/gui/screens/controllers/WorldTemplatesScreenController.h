@@ -16,11 +16,11 @@ class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
 class ResourceLocation;
+class UIPropertyBag;
 struct PackIdVersion;
-struct UIPropertyBag;
 struct WorldTemplateInfo;
 namespace Json { class Value; }
-namespace ui { struct ScreenTechStackSelector; }
+namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class WorldTemplatesScreenController : public ::MainMenuScreenController {

@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsCreateScreen {};
+class RealmsCreateScreen {};
 
 } // namespace OreUI::EntryPoints

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct OpenAndCloseRealmCommandsFacet {};
+class OpenAndCloseRealmCommandsFacet {};
 
 } // namespace OreUI

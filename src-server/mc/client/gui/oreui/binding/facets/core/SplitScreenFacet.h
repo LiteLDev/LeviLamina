@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct SplitScreenFacet {};
+class SplitScreenFacet {};
 
 } // namespace OreUI

@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/oreui/routing/RouteHistoryAction.h"
+
 namespace OreUI {
 
 struct RouteAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6acbe8;
-    ::ll::UntypedStorage<4, 4>  mUnk134fe9;
+    ::ll::TypedStorage<8, 32, ::std::string>              route;
+    ::ll::TypedStorage<4, 4, ::OreUI::RouteHistoryAction> action;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RouteAction& operator=(RouteAction const&);
-    RouteAction(RouteAction const&);
-    RouteAction();
 
 public:
     // member functions

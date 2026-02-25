@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct AchievementCategoriesFacet {};
+class AchievementCategoriesFacet {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouterFacet {};
+class RouterFacet {};
 
 } // namespace OreUI

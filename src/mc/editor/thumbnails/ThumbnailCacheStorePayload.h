@@ -41,8 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::ThumbnailCacheStorePayload& operator=(::Editor::Network::ThumbnailCacheStorePayload const&
-    );
+    MCNAPI ::Editor::Network::ThumbnailCacheStorePayload&
+    operator=(::Editor::Network::ThumbnailCacheStorePayload const&);
     // NOLINTEND
 
 public:

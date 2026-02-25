@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerAchievementsFacet {};
+class PlayerAchievementsFacet {};
 
 } // namespace OreUI

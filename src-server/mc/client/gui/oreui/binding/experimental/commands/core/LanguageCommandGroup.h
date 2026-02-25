@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct LanguageCommandGroup {};
+class LanguageCommandGroup {};
 
 } // namespace OreUI::Experimental

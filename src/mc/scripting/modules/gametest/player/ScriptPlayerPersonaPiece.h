@@ -31,8 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece& operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&
-    );
+    MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
+    operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
 
     MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
     operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);

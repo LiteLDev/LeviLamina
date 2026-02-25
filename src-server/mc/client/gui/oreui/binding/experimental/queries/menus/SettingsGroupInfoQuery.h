@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SettingsGroupInfoQuery {};
+class SettingsGroupInfoQuery {};
 
 } // namespace OreUI::Experimental

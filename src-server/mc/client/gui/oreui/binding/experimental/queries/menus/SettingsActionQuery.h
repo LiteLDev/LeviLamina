@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SettingsActionQuery {};
+class SettingsActionQuery {};
 
 } // namespace OreUI::Experimental

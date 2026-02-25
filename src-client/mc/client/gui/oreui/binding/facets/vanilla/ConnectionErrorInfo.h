@@ -4,6 +4,12 @@
 
 namespace OreUI {
 
-struct ConnectionErrorInfo {};
+struct ConnectionErrorInfo {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> hasLearnMoreLink;
+    // NOLINTEND
+};
 
 } // namespace OreUI

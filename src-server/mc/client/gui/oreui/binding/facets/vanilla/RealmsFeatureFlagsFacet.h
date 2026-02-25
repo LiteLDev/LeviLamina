@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsFeatureFlagsFacet {};
+class RealmsFeatureFlagsFacet {};
 
 } // namespace OreUI

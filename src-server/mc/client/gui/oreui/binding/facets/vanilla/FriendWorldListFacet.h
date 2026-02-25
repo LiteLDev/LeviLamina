@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct FriendWorldListFacet {};
+class FriendWorldListFacet {};
 
 } // namespace OreUI

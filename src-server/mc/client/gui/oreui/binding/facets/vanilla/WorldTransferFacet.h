@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct WorldTransferFacet {};
+class WorldTransferFacet {};
 
 } // namespace OreUI

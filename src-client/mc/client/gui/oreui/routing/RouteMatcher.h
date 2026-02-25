@@ -25,19 +25,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkdf8093;
-        ::ll::UntypedStorage<8, 32> mUnk23955c;
-        ::ll::UntypedStorage<4, 4>  mUnkbfd991;
-        ::ll::UntypedStorage<4, 4>  mUnk1877f3;
-        ::ll::UntypedStorage<4, 4>  mUnkcda4fa;
-        ::ll::UntypedStorage<8, 64> mUnked51b4;
-        ::ll::UntypedStorage<8, 64> mUnk2807b2;
+        ::ll::TypedStorage<8, 32, ::std::string const>       baseScreenId;
+        ::ll::TypedStorage<8, 32, ::std::string const>       pattern;
+        ::ll::TypedStorage<4, 4, ::OreUI::RouteType>         type;
+        ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>         mode;
+        ::ll::TypedStorage<4, 4, ::OreUI::RoutePrerequisite> prerequisite;
+        ::ll::TypedStorage<8, 64, ::std::function<bool()>>   isActiveCallback;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)>>
+            matchCallback;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        RouteEntry& operator=(RouteEntry const&);
-        RouteEntry(RouteEntry const&);
         RouteEntry();
 
     public:
@@ -81,30 +80,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk48da59;
-        ::ll::UntypedStorage<8, 32> mUnkdb2a3f;
+        ::ll::TypedStorage<8, 32, ::std::string const> baseScreenId;
+        ::ll::TypedStorage<8, 32, ::std::string const> route;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DefaultRouteEntry& operator=(DefaultRouteEntry const&);
-        DefaultRouteEntry(DefaultRouteEntry const&);
-        DefaultRouteEntry();
     };
 
     struct RedirectEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf410e4;
-        ::ll::UntypedStorage<8, 64> mUnk5b856f;
-        ::ll::UntypedStorage<8, 64> mUnkff2432;
+        ::ll::TypedStorage<8, 32, ::std::string const>                                  pattern;
+        ::ll::TypedStorage<8, 64, ::std::function<bool()>>                              isActiveCallback;
+        ::ll::TypedStorage<8, 64, ::std::function<::std::string(::std::string const&)>> composer;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        RedirectEntry& operator=(RedirectEntry const&);
-        RedirectEntry(RedirectEntry const&);
         RedirectEntry();
 
     public:
@@ -136,18 +127,19 @@ public:
         // NOLINTEND
     };
 
+    using IsActiveCallback = ::std::function<bool()>;
+
+    using OnMatchCallback = ::std::function<void(::std::string const&, ::OreUI::RouteHistoryAction)>;
+
+    using RouteRedirectComposer = ::std::function<::std::string(::std::string const&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk372d3c;
-    ::ll::UntypedStorage<8, 24> mUnk186545;
-    ::ll::UntypedStorage<8, 24> mUnkc0d45d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouteMatcher::RouteEntry>>        mRoutes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouteMatcher::DefaultRouteEntry>> mDefaultRoutes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RouteMatcher::RedirectEntry>>     mRedirects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RouteMatcher& operator=(RouteMatcher const&);
-    RouteMatcher(RouteMatcher const&);
 
 public:
     // virtual functions

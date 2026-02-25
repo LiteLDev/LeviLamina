@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct DeviceNetworkInformationQuery {};
+class DeviceNetworkInformationQuery {};
 
 } // namespace OreUI::Experimental

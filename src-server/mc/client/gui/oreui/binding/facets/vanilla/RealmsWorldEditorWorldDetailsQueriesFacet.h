@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsWorldEditorWorldDetailsQueriesFacet {};
+class RealmsWorldEditorWorldDetailsQueriesFacet {};
 
 } // namespace OreUI

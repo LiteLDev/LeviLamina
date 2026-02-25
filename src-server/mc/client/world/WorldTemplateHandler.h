@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct WorldTemplateHandler {};
+class WorldTemplateHandler {};
 
 } // namespace World

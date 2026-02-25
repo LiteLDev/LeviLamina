@@ -4,6 +4,6 @@
 
 namespace GameplayUI {
 
-struct GameplayUIClient {};
+class GameplayUIClient {};
 
 } // namespace GameplayUI

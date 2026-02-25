@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct OfferRepositoryFacet {};
+class OfferRepositoryFacet {};
 
 } // namespace OreUI

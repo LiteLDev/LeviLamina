@@ -4,24 +4,24 @@
 
 namespace OreUI {
 
-struct UIRenderDragonBackend {
+class UIRenderDragonBackend {
 public:
     // UIRenderDragonBackend inner types declare
     // clang-format off
-    struct ConstantBuffer;
-    struct IndexBuffer;
     struct TextureData;
     struct VertexBuffer;
+    struct IndexBuffer;
+    struct ConstantBuffer;
     // clang-format on
 
     // UIRenderDragonBackend inner types define
-    struct ConstantBuffer {};
-
-    struct IndexBuffer {};
-
     struct TextureData {};
 
     struct VertexBuffer {};
+
+    struct IndexBuffer {};
+
+    struct ConstantBuffer {};
 };
 
 } // namespace OreUI

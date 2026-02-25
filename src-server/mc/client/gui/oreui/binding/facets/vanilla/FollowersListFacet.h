@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct FollowersListFacet {};
+class FollowersListFacet {};
 
 } // namespace OreUI

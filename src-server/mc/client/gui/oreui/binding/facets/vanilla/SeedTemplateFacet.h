@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct SeedTemplateFacet {};
+class SeedTemplateFacet {};
 
 } // namespace OreUI

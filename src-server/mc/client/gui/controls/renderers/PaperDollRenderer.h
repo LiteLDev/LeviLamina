@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PaperDollRenderer {
+class PaperDollRenderer {
 public:
     // PaperDollRenderer inner types define
     enum class RotationStyle : int {};

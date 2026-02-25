@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct FlatWorldPresetsFacet {};
+class FlatWorldPresetsFacet {};
 
 } // namespace OreUI

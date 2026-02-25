@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class ConnectionType : uchar {};
+enum class ConnectionType : uchar {
+    Lan      = 0,
+    Platform = 1,
+    XboxLive = 2,
+};
 
 }

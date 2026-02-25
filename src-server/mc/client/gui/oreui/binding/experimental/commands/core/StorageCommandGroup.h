@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct StorageCommandGroup {};
+class StorageCommandGroup {};
 
 } // namespace OreUI::Experimental

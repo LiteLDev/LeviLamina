@@ -28,11 +28,11 @@ class ClientInstanceScreenModel;
 class ContainerManagerController;
 class ItemStack;
 class ItemStackBase;
+class UIPropertyBag;
 struct AutoPlaceItem;
 struct ItemStateData;
 struct ItemTransferAmount;
 struct SelectedSlotInfo;
-struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 

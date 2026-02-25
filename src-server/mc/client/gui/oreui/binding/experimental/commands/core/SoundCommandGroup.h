@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct SoundCommandGroup {};
+class SoundCommandGroup {};
 
 } // namespace OreUI::Experimental

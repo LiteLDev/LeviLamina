@@ -4,6 +4,6 @@
 
 namespace OreUI::FacetCoroutineExample {
 
-struct NetworkFacet {};
+class NetworkFacet {};
 
 } // namespace OreUI::FacetCoroutineExample

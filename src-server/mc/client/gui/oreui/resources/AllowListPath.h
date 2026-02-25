@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct AllowListPath {};
+class AllowListPath {};
 
 } // namespace OreUI

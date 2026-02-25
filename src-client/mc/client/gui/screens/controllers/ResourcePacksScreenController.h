@@ -23,13 +23,13 @@ class IContentManagerContext;
 class MainMenuScreenModel;
 class MultiplayerLockState;
 class ResourceLocation;
+class UIPropertyBag;
 struct ContentItem;
 struct DlcChecker;
 struct MoveResourcePackResult;
 struct PackContentItem;
 struct PackIdVersion;
 struct PackMoveResult;
-struct UIPropertyBag;
 // clang-format on
 
 class ResourcePacksScreenController : public ::SettingsScreenControllerBase {

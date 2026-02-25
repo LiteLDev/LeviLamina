@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct BlockResourceHandler {};
+class BlockResourceHandler {};
 
 } // namespace OreUI

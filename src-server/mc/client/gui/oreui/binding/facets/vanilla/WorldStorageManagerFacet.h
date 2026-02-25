@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct WorldStorageManagerFacet {};
+class WorldStorageManagerFacet {};
 
 } // namespace OreUI

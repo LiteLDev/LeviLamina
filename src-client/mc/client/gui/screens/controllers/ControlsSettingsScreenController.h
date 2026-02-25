@@ -15,8 +15,8 @@
 class GamePadRemappingLayout;
 class MainMenuScreenModel;
 class RemappingLayout;
+class UIPropertyBag;
 struct RawInputScreenEventData;
-struct UIPropertyBag;
 // clang-format on
 
 class ControlsSettingsScreenController : public ::SettingsScreenControllerBase {

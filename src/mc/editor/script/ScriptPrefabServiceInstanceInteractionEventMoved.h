@@ -18,8 +18,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPrefabServiceInstanceInteractionEventMoved& operator=(ScriptPrefabServiceInstanceInteractionEventMoved const&
-    );
+    ScriptPrefabServiceInstanceInteractionEventMoved&
+    operator=(ScriptPrefabServiceInstanceInteractionEventMoved const&);
     ScriptPrefabServiceInstanceInteractionEventMoved(ScriptPrefabServiceInstanceInteractionEventMoved const&);
     ScriptPrefabServiceInstanceInteractionEventMoved();
 

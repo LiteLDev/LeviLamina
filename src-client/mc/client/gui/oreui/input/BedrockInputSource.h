@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct BedrockInputSource {};
+class BedrockInputSource {};
 
 } // namespace OreUI

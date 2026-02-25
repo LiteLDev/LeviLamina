@@ -4,6 +4,6 @@
 
 namespace ResourcePackCopyUtils {
 
-struct IEntitlementCheck {};
+class IEntitlementCheck {};
 
 } // namespace ResourcePackCopyUtils

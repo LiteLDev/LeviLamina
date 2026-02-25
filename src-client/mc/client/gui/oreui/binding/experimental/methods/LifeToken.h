@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct LifeToken {};
+class LifeToken {};
 
 } // namespace OreUI::Experimental

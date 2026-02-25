@@ -4,21 +4,21 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct QueryRegistry {
+class QueryRegistry {
 public:
     // QueryRegistry inner types declare
     // clang-format off
+    class QueryTemplate;
+    class LiveQuery;
     struct DirtyQuery;
-    struct LiveQuery;
-    struct QueryTemplate;
     // clang-format on
 
     // QueryRegistry inner types define
+    class QueryTemplate {};
+
+    class LiveQuery {};
+
     struct DirtyQuery {};
-
-    struct LiveQuery {};
-
-    struct QueryTemplate {};
 };
 
 } // namespace OreUI::Experimental::Detail

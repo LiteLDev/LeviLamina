@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ImmediateRespawnFacet {};
+class ImmediateRespawnFacet {};
 
 } // namespace OreUI

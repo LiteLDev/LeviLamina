@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PartyReceivedInviteListFacet {};
+class PartyReceivedInviteListFacet {};
 
 } // namespace OreUI

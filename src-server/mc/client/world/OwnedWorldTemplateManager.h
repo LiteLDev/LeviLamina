@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct OwnedWorldTemplateManager {};
+class OwnedWorldTemplateManager {};
 
 } // namespace World

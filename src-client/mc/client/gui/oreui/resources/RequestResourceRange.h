@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct RequestResourceRange {
+class RequestResourceRange {
 public:
     // RequestResourceRange inner types declare
     // clang-format off
@@ -12,7 +12,20 @@ public:
     // clang-format on
 
     // RequestResourceRange inner types define
-    struct RangeInBytes {};
+    struct RangeInBytes {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64>                   start;
+        ::ll::TypedStorage<8, 16, ::std::optional<uint64>> end;
+        // NOLINTEND
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::OreUI::RequestResourceRange::RangeInBytes> mRangeInBytes;
+    // NOLINTEND
 };
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct CreateNewWorld {};
+class CreateNewWorld {};
 
 } // namespace OreUI::EntryPoints

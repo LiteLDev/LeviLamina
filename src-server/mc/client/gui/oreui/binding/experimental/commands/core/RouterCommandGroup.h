@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct RouterCommandGroup {};
+class RouterCommandGroup {};
 
 } // namespace OreUI::Experimental

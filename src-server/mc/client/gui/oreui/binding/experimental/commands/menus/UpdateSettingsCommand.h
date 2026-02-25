@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct UpdateSettingsCommand {};
+class UpdateSettingsCommand {};
 
 } // namespace OreUI::Experimental

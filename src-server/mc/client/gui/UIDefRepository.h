@@ -2,16 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIDefRepository {
+class UIDefRepository {
 public:
     // UIDefRepository inner types declare
     // clang-format off
-    struct DefEntry;
     struct UIDefNamespace;
+    struct DefEntry;
     // clang-format on
 
     // UIDefRepository inner types define
-    struct DefEntry {};
-
     struct UIDefNamespace {};
+
+    struct DefEntry {};
 };

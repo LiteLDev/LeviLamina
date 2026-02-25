@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct SignIn {};
+class SignIn {};
 
 } // namespace OreUI::EntryPoints

@@ -12,8 +12,8 @@
 class BlockActor;
 class BookScreenManager;
 class ClientInstanceScreenModel;
+class UIPropertyBag;
 struct PageContent;
-struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 

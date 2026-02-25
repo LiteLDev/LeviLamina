@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct LocaleQuery {};
+class LocaleQuery {};
 
 } // namespace OreUI::Experimental

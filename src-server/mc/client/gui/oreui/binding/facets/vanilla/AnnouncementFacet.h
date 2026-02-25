@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct AnnouncementFacet {
+class AnnouncementFacet {
 public:
     // AnnouncementFacet inner types declare
     // clang-format off

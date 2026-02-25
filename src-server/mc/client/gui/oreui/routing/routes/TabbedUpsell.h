@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct TabbedUpsell {};
+class TabbedUpsell {};
 
 } // namespace OreUI::EntryPoints

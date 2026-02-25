@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct FeatureToggleQuery {};
+class FeatureToggleQuery {};
 
 } // namespace OreUI::Experimental

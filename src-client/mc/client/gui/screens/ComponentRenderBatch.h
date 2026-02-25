@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-struct CustomRenderComponent;
-struct SpriteComponent;
-struct TextComponent;
+class CustomRenderComponent;
+class SpriteComponent;
+class TextComponent;
 // clang-format on
 
 class ComponentRenderBatch {

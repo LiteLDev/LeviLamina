@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmWorldUploaderFacet_v2 {};
+class RealmWorldUploaderFacet_v2 {};
 
 } // namespace OreUI

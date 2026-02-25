@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIAnim {
+class UIAnim {
 public:
     // UIAnim inner types define
     enum class State : int {};

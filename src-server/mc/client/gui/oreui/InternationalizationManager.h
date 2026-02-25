@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct InternationalizationManager {};
+class InternationalizationManager {};
 
 } // namespace OreUI

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct UserDefinedFeatureFlags {};
+class UserDefinedFeatureFlags {};
 
 } // namespace OreUI

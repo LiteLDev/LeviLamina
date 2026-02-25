@@ -4,6 +4,12 @@
 
 namespace ui {
 
-enum class LayoutAxisOffsetContainerType : int {};
+enum class LayoutAxisOffsetContainerType : int {
+    Default   = 0,
+    Specified = 1,
+    Fill      = 2,
+    None      = 3,
+    Count     = 4,
+};
 
 }

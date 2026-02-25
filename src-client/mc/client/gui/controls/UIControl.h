@@ -12,16 +12,16 @@
 
 // auto generated forward declare list
 // clang-format off
+class ControlScreenAction;
+class CustomFrameUpdateComponent;
 class RectangleArea;
+class RenderableComponent;
+class ScreenInputContext;
 class UIAnimationController;
-struct ControlScreenAction;
-struct CustomFrameUpdateComponent;
-struct RenderableComponent;
+class UIComponent;
+class UIPropertyBag;
+class VisualTree;
 struct ScreenEvent;
-struct ScreenInputContext;
-struct UIComponent;
-struct UIPropertyBag;
-struct VisualTree;
 // clang-format on
 
 class UIControl : public ::std::enable_shared_from_this<::UIControl> {

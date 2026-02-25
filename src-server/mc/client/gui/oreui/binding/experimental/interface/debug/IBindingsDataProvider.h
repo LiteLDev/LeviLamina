@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Debug {
 
-struct IBindingsDataProvider {};
+class IBindingsDataProvider {};
 
 } // namespace OreUI::Experimental::Debug

@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct EditorSettingsFacet {
+class EditorSettingsFacet {
 public:
     // EditorSettingsFacet inner types define
     enum class EditorOperatorType : int {};

@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Debug {
 
-struct Profile {};
+class Profile {};
 
 } // namespace OreUI::Experimental::Debug

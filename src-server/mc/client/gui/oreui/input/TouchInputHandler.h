@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct TouchInputHandler {
+class TouchInputHandler {
 public:
     // TouchInputHandler inner types declare
     // clang-format off

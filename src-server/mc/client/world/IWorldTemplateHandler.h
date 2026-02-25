@@ -4,7 +4,7 @@
 
 namespace World {
 
-struct IWorldTemplateHandler {
+class IWorldTemplateHandler {
 public:
     // IWorldTemplateHandler inner types define
     enum class Result : int {};

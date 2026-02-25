@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PageIndicatorManagerComponent {
+class PageIndicatorManagerComponent {
 public:
     // PageIndicatorManagerComponent inner types define
     enum class PageIndicatorDirection : uchar {};

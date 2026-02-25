@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct SoundFacet {};
+class SoundFacet {};
 
 } // namespace OreUI

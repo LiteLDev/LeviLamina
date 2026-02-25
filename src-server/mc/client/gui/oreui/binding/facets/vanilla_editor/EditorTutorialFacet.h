@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct EditorTutorialFacet {};
+class EditorTutorialFacet {};
 
 } // namespace OreUI

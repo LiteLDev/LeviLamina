@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class RoutePrerequisite : int {};
+enum class RoutePrerequisite : int {
+    None     = 0,
+    XboxLive = 1,
+};
 
 }

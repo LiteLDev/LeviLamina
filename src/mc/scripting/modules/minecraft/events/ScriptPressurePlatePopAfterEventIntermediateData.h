@@ -24,8 +24,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPressurePlatePopAfterEventIntermediateData& operator=(ScriptPressurePlatePopAfterEventIntermediateData const&
-    );
+    ScriptPressurePlatePopAfterEventIntermediateData&
+    operator=(ScriptPressurePlatePopAfterEventIntermediateData const&);
     ScriptPressurePlatePopAfterEventIntermediateData(ScriptPressurePlatePopAfterEventIntermediateData const&);
     ScriptPressurePlatePopAfterEventIntermediateData();
 };

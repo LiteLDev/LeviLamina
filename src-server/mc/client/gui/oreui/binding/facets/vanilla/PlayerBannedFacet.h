@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerBannedFacet {};
+class PlayerBannedFacet {};
 
 } // namespace OreUI

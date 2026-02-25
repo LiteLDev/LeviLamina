@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IResourceResponse {};
+class IResourceResponse {};
 
 } // namespace OreUI

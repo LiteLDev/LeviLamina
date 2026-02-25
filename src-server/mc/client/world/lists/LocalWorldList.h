@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct LocalWorldList {};
+class LocalWorldList {};
 
 } // namespace World

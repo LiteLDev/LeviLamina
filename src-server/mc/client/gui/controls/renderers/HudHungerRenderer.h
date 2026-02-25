@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudHungerRenderer {
+class HudHungerRenderer {
 public:
     // HudHungerRenderer inner types define
     enum class HungerType : int {};

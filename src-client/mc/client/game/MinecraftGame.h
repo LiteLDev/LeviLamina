@@ -56,6 +56,7 @@ class CubemapBackgroundResources;
 class DateManager;
 class Dimension;
 class EDUSystems;
+class EmoticonManager;
 class EntityContext;
 class FileArchiver;
 class FontHandle;
@@ -76,6 +77,8 @@ class IMinecraftEventing;
 class IResourcePackRepository;
 class ISceneStack;
 class ITextBoxController;
+class IUIDefRepository;
+class IUIRepository;
 class ItemRegistryRef;
 class LevelDbEnv;
 class LevelSettings;
@@ -90,6 +93,7 @@ class PackManifest;
 class PackManifestFactory;
 class PackSourceFactory;
 class ParticleEffectGroup;
+class PixelCalc;
 class Player;
 class PushNotificationMessage;
 class RenderControllerGroup;
@@ -102,6 +106,7 @@ class ServerInstance;
 class ServerInstanceEventCoordinator;
 class ServerNetworkHandler;
 class TaskGroup;
+class TextToIconMapper;
 class TextureAtlas;
 class Timer;
 class UIEventCoordinator;
@@ -118,7 +123,6 @@ struct ContentCatalogService;
 struct ControllerIDtoClientMap;
 struct DeferredLighting;
 struct DevConsoleLogger;
-struct EmoticonManager;
 struct ExternalContentManager;
 struct ExternalWorldTransferActionFunc;
 struct FlightingService;
@@ -130,8 +134,6 @@ struct IExternalServerFile;
 struct IGameModuleApp;
 struct IOfferRepository;
 struct IThirdPartyServerRepository;
-struct IUIDefRepository;
-struct IUIRepository;
 struct LatencyGraphDisplay;
 struct LevelLoader;
 struct LibraryRepository;
@@ -142,7 +144,6 @@ struct NewPlayerSystem;
 struct PackDownloadManager;
 struct PersonaRepository;
 struct PersonaService;
-struct PixelCalc;
 struct PlayerMessagingService;
 struct ProfanityContext;
 struct RealmsAPI;
@@ -156,7 +157,6 @@ struct SkinRepository;
 struct SoundEngine;
 struct StoreCatalogRepository;
 struct SunsettingManager;
-struct TextToIconMapper;
 struct TreatmentPackDownloadMonitor;
 struct TrialManager;
 struct WorldTransferAgent;
@@ -174,9 +174,9 @@ namespace LocalServerLauncher { struct IServerInstanceBuilder; }
 namespace LocalServerLauncher { struct ServerInitData; }
 namespace LocalServerLauncher { struct ServerLaunchResult; }
 namespace LocalServerLauncher::Impl { struct AllDependencies; }
-namespace OreUI { struct DataProviderManager_DEPRECATED; }
-namespace OreUI { struct IResourceAllowList; }
-namespace OreUI { struct Router; }
+namespace OreUI { class DataProviderManager_DEPRECATED; }
+namespace OreUI { class IResourceAllowList; }
+namespace OreUI { class Router; }
 namespace Parties { struct PartySystem; }
 namespace Progress { struct ProgressTips; }
 namespace Realms { struct ContentService; }
@@ -192,7 +192,7 @@ namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct PresenceManager; }
 namespace Social { struct SocialSystem; }
 namespace Social { struct User; }
-namespace World { struct WorldSystem; }
+namespace World { class WorldSystem; }
 namespace edu::auth { struct CredentialsAcquired; }
 namespace edu::auth { struct CredentialsRefreshSuccess; }
 namespace edu::auth { struct CredsLost; }

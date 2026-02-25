@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LivePlayerRenderer {
+class LivePlayerRenderer {
 public:
     // LivePlayerRenderer inner types declare
     // clang-format off

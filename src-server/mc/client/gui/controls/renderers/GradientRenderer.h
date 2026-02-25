@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GradientRenderer {
+class GradientRenderer {
 public:
     // GradientRenderer inner types define
     enum class GradientDirection : int {};

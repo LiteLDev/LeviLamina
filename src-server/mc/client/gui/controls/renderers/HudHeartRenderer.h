@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudHeartRenderer {
+class HudHeartRenderer {
 public:
     // HudHeartRenderer inner types declare
     // clang-format off
-    struct HeartIconData;
     struct SanitizedHealthData;
+    struct HeartIconData;
     // clang-format on
 
     // HudHeartRenderer inner types define
     enum class HeartType : int {};
 
-    struct HeartIconData {};
-
     struct SanitizedHealthData {};
+
+    struct HeartIconData {};
 };

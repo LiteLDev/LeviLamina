@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct InvokeActionCommand {};
+class InvokeActionCommand {};
 
 } // namespace OreUI::Experimental

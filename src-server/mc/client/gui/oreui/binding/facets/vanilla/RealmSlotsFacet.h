@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct RealmSlotsFacet {
+class RealmSlotsFacet {
 public:
     // RealmSlotsFacet inner types define
     enum class FacetStatus : uchar {};

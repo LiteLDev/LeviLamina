@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-struct ProgressHandler;
+class ProgressHandler;
 namespace Json { class Value; }
 // clang-format on
 

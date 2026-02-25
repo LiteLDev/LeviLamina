@@ -4,6 +4,10 @@
 
 namespace OreUI::Experimental {
 
-enum class ECapabilities : uchar {};
+enum class ECapabilities : uchar {
+    None              = 0,
+    MultipleInstances = 2,
+    Updatable         = 4,
+};
 
 }

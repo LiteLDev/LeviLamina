@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct DeathScreen {};
+class DeathScreen {};
 
 } // namespace OreUI::EntryPoints

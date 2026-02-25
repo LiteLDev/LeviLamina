@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ScreenTechStackFacet {};
+class ScreenTechStackFacet {};
 
 } // namespace OreUI

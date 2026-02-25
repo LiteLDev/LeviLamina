@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PrivacyAndOnlineSafetyFacet {};
+class PrivacyAndOnlineSafetyFacet {};
 
 } // namespace OreUI

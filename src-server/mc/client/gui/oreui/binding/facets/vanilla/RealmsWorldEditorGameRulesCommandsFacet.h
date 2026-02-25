@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsWorldEditorGameRulesCommandsFacet {};
+class RealmsWorldEditorGameRulesCommandsFacet {};
 
 } // namespace OreUI

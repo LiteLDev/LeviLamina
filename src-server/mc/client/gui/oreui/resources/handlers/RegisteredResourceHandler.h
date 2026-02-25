@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RegisteredResourceHandler {};
+class RegisteredResourceHandler {};
 
 } // namespace OreUI

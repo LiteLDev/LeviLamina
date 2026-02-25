@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct PlayScreen {};
+class PlayScreen {};
 
 } // namespace OreUI::EntryPoints

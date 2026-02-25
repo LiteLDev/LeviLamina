@@ -4,6 +4,9 @@
 
 namespace OreUI::Experimental {
 
-enum class EQueryState : uchar {};
+enum class EQueryState : uchar {
+    Valid   = 0,
+    Invalid = 1,
+};
 
 }

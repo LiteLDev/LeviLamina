@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsPurchaseReconcilerQueriesFacet {};
+class RealmsPurchaseReconcilerQueriesFacet {};
 
 } // namespace OreUI

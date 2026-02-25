@@ -4,33 +4,33 @@
 
 namespace OreUI {
 
-struct ResourcePacksFacet_DEPRECATED {
+class ResourcePacksFacet_DEPRECATED {
 public:
     // ResourcePacksFacet_DEPRECATED inner types declare
     // clang-format off
     struct FacetPromptDetails;
-    struct PackActivationRequest;
     struct PackCollection;
-    struct PackViewAndItem;
     struct PendingBehaviourPackRemoval;
+    struct PackActivationRequest;
+    struct PackViewAndItem;
     // clang-format on
 
     // ResourcePacksFacet_DEPRECATED inner types define
-    enum class PromptActionType : int {};
+    enum class ResourcePacksFacetStatus : uchar {};
 
     enum class PromptType : int {};
 
-    enum class ResourcePacksFacetStatus : uchar {};
+    enum class PromptActionType : int {};
 
     struct FacetPromptDetails {};
 
-    struct PackActivationRequest {};
-
     struct PackCollection {};
 
-    struct PackViewAndItem {};
-
     struct PendingBehaviourPackRemoval {};
+
+    struct PackActivationRequest {};
+
+    struct PackViewAndItem {};
 };
 
 } // namespace OreUI

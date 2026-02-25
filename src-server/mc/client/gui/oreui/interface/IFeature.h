@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IFeature {};
+class IFeature {};
 
 } // namespace OreUI

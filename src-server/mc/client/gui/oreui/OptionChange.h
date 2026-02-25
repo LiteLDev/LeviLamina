@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct OptionChange {};
+class OptionChange {};
 
 } // namespace OreUI

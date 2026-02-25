@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct EditWorld {};
+class EditWorld {};
 
 } // namespace OreUI::EntryPoints

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DataBindingComponent {
+class DataBindingComponent {
 public:
     // DataBindingComponent inner types declare
     // clang-format off

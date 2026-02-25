@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class ViewCacheMode : int {};
+enum class ViewCacheMode : int {
+    Lookup = 0,
+    Add    = 1,
+};
 
 }

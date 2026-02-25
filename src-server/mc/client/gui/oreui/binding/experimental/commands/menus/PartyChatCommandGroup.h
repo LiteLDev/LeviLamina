@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct PartyChatCommandGroup {};
+class PartyChatCommandGroup {};
 
 } // namespace OreUI::Experimental

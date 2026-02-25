@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct LanWorldListFacet {};
+class LanWorldListFacet {};
 
 } // namespace OreUI

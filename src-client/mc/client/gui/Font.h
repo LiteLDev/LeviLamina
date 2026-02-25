@@ -8,6 +8,8 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
+#include "mc/deps/minecraft_renderer/renderer/Mesh.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/minecraft_renderer/renderer/Type.h"
 
 // auto generated forward declare list
@@ -38,24 +40,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8>  mUnk3013a9;
-        ::ll::UntypedStorage<4, 8>  mUnkc206ed;
-        ::ll::UntypedStorage<4, 8>  mUnk4a26dc;
-        ::ll::UntypedStorage<4, 8>  mUnk3d5642;
-        ::ll::UntypedStorage<4, 4>  mUnkfaaafb;
-        ::ll::UntypedStorage<4, 16> mUnk51fe87;
+        ::ll::TypedStorage<4, 8, ::Vec2>        meshUpperLeft;
+        ::ll::TypedStorage<4, 8, ::Vec2>        meshSize;
+        ::ll::TypedStorage<4, 8, ::Vec2>        textureUpperLeft;
+        ::ll::TypedStorage<4, 8, ::Vec2>        textureBottomRight;
+        ::ll::TypedStorage<4, 4, int>           shear;
+        ::ll::TypedStorage<4, 16, ::mce::Color> color;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GlyphQuad& operator=(GlyphQuad const&);
-        GlyphQuad(GlyphQuad const&);
-        GlyphQuad();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void append(::Tessellator& t, bool linearClampFormat) const;
+        MCAPI void append(::Tessellator& t, bool linearClampFormat) const;
         // NOLINTEND
     };
 
@@ -71,37 +67,25 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 528> mUnk7800af;
-            ::ll::UntypedStorage<8, 32>  mUnk18cb6a;
-            ::ll::UntypedStorage<4, 4>   mUnkc6f829;
+            ::ll::TypedStorage<8, 528, ::mce::Mesh>      mMesh;
+            ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
+            ::ll::TypedStorage<4, 4, int>                mSheet;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            Page& operator=(Page const&);
-            Page(Page const&);
-            Page();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk3485a9;
-        ::ll::UntypedStorage<4, 16> mUnkc92af5;
-        ::ll::UntypedStorage<1, 1>  mUnk8913b2;
-        ::ll::UntypedStorage<1, 1>  mUnk72ea3b;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Font::TextObject::Page>> mPages;
+        ::ll::TypedStorage<4, 16, ::mce::Color>                            mColor;
+        ::ll::TypedStorage<1, 1, bool>                                     mContainsUnicode;
+        ::ll::TypedStorage<1, 1, bool>                                     mShadow;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TextObject& operator=(TextObject const&);
-        TextObject(TextObject const&);
-        TextObject();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void render(
+        MCAPI void render(
             ::ScreenContext&          screenContext,
             ::Font const&             font,
             ::mce::MaterialPtr const* optionalMat,
@@ -113,13 +97,13 @@ public:
                 ::UIStructureVolumeOffscreenCaptureDescription> const& offscreenCaptureDescription
         ) const;
 
-        MCNAPI ~TextObject();
+        MCAPI ~TextObject();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

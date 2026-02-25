@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ResourceAwaiter {};
+class ResourceAwaiter {};
 
 } // namespace OreUI

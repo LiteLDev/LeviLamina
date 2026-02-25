@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct PartyChatMessagesFromRangeQuery {};
+class PartyChatMessagesFromRangeQuery {};
 
 } // namespace OreUI::Experimental

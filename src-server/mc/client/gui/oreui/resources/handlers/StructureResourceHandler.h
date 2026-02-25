@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct StructureResourceHandler {
+class StructureResourceHandler {
 public:
     // StructureResourceHandler inner types declare
     // clang-format off

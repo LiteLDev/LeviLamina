@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct LayoutComponent;
+class LayoutComponent;
 // clang-format on
 
 struct PostOperation {

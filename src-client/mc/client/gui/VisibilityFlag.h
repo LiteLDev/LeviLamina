@@ -4,6 +4,11 @@
 
 namespace ui {
 
-enum class VisibilityFlag : uchar {};
+enum class VisibilityFlag : uchar {
+    None                = 0,
+    Visible             = 1,
+    VisibleInStackPanel = 2,
+    All                 = 3,
+};
 
 }

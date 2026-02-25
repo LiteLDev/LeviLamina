@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct AllowListQRCode {};
+class AllowListQRCode {};
 
 } // namespace OreUI

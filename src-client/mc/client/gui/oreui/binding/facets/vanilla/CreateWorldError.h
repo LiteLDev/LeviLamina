@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class CreateWorldError : int {};
+enum class CreateWorldError : int {
+    NoDiskSpace       = 0,
+    MissingContentKey = 1,
+};
 
 }

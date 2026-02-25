@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EquipmentPreviewRenderer {
+class EquipmentPreviewRenderer {
 public:
     // EquipmentPreviewRenderer inner types declare
     // clang-format off

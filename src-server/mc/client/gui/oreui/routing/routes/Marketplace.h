@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct Marketplace {};
+class Marketplace {};
 
 } // namespace OreUI::EntryPoints

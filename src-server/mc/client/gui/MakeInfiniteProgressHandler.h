@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MakeInfiniteProgressHandler {
+class MakeInfiniteProgressHandler {
 public:
     // MakeInfiniteProgressHandler inner types define
     enum class State : int {};

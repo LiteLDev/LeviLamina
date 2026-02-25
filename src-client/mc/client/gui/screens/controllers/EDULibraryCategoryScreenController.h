@@ -9,8 +9,8 @@
 // clang-format off
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
+class UIPropertyBag;
 struct EDULibraryCategory;
-struct UIPropertyBag;
 namespace Json { class Value; }
 // clang-format on
 

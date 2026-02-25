@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct TrueTypeFont {
+class TrueTypeFont {
 public:
     // TrueTypeFont inner types declare
     // clang-format off

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BohrModelRenderer {
+class BohrModelRenderer {
 public:
     // BohrModelRenderer inner types declare
     // clang-format off

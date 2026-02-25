@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Debug {
 
-struct SettingsUiDebugQuery {};
+class SettingsUiDebugQuery {};
 
 } // namespace OreUI::Experimental::Debug

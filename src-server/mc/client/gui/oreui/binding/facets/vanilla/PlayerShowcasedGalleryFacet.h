@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerShowcasedGalleryFacet {};
+class PlayerShowcasedGalleryFacet {};
 
 } // namespace OreUI

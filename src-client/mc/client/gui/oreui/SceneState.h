@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class SceneState : uchar {};
+enum class SceneState : uchar {
+    InputEnabled  = 0,
+    InputDisabled = 1,
+    Dormant       = 2,
+};
 
 }

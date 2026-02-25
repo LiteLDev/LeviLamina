@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct VenueConnectProgressHandler {};
+class VenueConnectProgressHandler {};

@@ -31,8 +31,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerBreakBlockAfterEventIntermediateData& operator=(ScriptPlayerBreakBlockAfterEventIntermediateData const&
-    );
+    ScriptPlayerBreakBlockAfterEventIntermediateData&
+    operator=(ScriptPlayerBreakBlockAfterEventIntermediateData const&);
     ScriptPlayerBreakBlockAfterEventIntermediateData(ScriptPlayerBreakBlockAfterEventIntermediateData const&);
     ScriptPlayerBreakBlockAfterEventIntermediateData();
 

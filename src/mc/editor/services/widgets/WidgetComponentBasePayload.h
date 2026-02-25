@@ -33,8 +33,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::WidgetComponentBasePayload& operator=(::Editor::Network::WidgetComponentBasePayload&&);
 
-    MCNAPI ::Editor::Network::WidgetComponentBasePayload& operator=(::Editor::Network::WidgetComponentBasePayload const&
-    );
+    MCNAPI ::Editor::Network::WidgetComponentBasePayload&
+    operator=(::Editor::Network::WidgetComponentBasePayload const&);
 
     MCNAPI ~WidgetComponentBasePayload();
     // NOLINTEND

@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class RoutePrerequisiteState : int {};
+enum class RoutePrerequisiteState : int {
+    AllConditionsMetNoFurtherActionsNeeded = 0,
+    ConditionsNotMetNewScreenPushed        = 1,
+};
 
 }

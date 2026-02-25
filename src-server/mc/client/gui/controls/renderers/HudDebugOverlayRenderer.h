@@ -2,28 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HudDebugOverlayRenderer {
+class HudDebugOverlayRenderer {
 public:
     // HudDebugOverlayRenderer inner types declare
     // clang-format off
+    struct WorkerStatsSnapshot;
+    struct WorkerStats;
+    struct TaskStatsSnapshot;
+    struct TaskStats;
     struct SpinLockMetrics;
     struct SpinLockStats;
-    struct TaskStats;
-    struct TaskStatsSnapshot;
-    struct WorkerStats;
-    struct WorkerStatsSnapshot;
     // clang-format on
 
     // HudDebugOverlayRenderer inner types define
-    struct SpinLockMetrics {};
-
-    struct SpinLockStats {};
-
-    struct TaskStats {};
-
-    struct TaskStatsSnapshot {};
+    struct WorkerStatsSnapshot {};
 
     struct WorkerStats {};
 
-    struct WorkerStatsSnapshot {};
+    struct TaskStatsSnapshot {};
+
+    struct TaskStats {};
+
+    struct SpinLockMetrics {};
+
+    struct SpinLockStats {};
 };

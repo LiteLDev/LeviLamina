@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct DeviceDisplayInformationQuery {};
+class DeviceDisplayInformationQuery {};
 
 } // namespace OreUI::Experimental

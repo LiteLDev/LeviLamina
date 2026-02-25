@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct FeatureFlagsFacet {};
+class FeatureFlagsFacet {};
 
 } // namespace OreUI

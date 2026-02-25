@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct UnpairedRealmsListFacet {};
+class UnpairedRealmsListFacet {};
 
 } // namespace OreUI

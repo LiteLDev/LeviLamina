@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ResponseResourceRange {
+class ResponseResourceRange {
 public:
     // ResponseResourceRange inner types declare
     // clang-format off

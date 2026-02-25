@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PackResourceHandler {};
+class PackResourceHandler {};
 
 } // namespace OreUI

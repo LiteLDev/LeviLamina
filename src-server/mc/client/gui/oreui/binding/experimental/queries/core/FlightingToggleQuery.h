@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct FlightingToggleQuery {};
+class FlightingToggleQuery {};
 
 } // namespace OreUI::Experimental

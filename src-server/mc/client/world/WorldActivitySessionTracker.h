@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct WorldActivitySessionTracker {};
+class WorldActivitySessionTracker {};
 
 } // namespace World

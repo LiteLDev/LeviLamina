@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct MarketplacePassWorldTemplateListFacet {};
+class MarketplacePassWorldTemplateListFacet {};
 
 } // namespace OreUI

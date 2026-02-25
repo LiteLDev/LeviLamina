@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ViewListenerWrapper {
+class ViewListenerWrapper {
 public:
     // ViewListenerWrapper inner types declare
     // clang-format off

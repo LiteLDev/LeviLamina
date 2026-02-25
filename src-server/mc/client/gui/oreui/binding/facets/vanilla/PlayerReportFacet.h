@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct PlayerReportFacet {
+class PlayerReportFacet {
 public:
     // PlayerReportFacet inner types declare
     // clang-format off

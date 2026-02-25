@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PanoramaRenderer {
+class PanoramaRenderer {
 public:
     // PanoramaRenderer inner types define
     enum class RotationStyle : int {};

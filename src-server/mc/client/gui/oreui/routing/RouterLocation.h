@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouterLocation {};
+class RouterLocation {};
 
 } // namespace OreUI

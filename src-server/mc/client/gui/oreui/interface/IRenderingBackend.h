@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IRenderingBackend {};
+class IRenderingBackend {};
 
 } // namespace OreUI

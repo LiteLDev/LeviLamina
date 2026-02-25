@@ -4,6 +4,6 @@
 
 namespace OreUI::Debug {
 
-struct ISceneDataProvider {};
+class ISceneDataProvider {};
 
 } // namespace OreUI::Debug

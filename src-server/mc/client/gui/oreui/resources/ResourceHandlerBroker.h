@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ResourceHandlerBroker {
+class ResourceHandlerBroker {
 public:
     // ResourceHandlerBroker inner types declare
     // clang-format off

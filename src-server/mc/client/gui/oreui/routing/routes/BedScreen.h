@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct BedScreen {};
+class BedScreen {};
 
 } // namespace OreUI::EntryPoints

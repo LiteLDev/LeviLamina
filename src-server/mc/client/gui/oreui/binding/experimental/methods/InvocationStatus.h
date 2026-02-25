@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct InvocationStatus {};
+class InvocationStatus {};
 
 } // namespace OreUI::Experimental

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct BlockInformationFacet {};
+class BlockInformationFacet {};
 
 } // namespace OreUI

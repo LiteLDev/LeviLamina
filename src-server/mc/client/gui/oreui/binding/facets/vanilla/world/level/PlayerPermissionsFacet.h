@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct PlayerPermissionsFacet {};
+class PlayerPermissionsFacet {};
 
 } // namespace OreUI

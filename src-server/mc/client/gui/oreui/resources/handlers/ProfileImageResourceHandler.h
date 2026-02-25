@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct ProfileImageResourceHandler {
+class ProfileImageResourceHandler {
 public:
     // ProfileImageResourceHandler inner types declare
     // clang-format off

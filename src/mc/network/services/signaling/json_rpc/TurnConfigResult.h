@@ -37,8 +37,8 @@ public:
         // NOLINTBEGIN
         MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer& operator=(::JsonRpc::TurnConfigResult::TurnAuthServer&&);
 
-        MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer& operator=(::JsonRpc::TurnConfigResult::TurnAuthServer const&
-        );
+        MCNAPI ::JsonRpc::TurnConfigResult::TurnAuthServer&
+        operator=(::JsonRpc::TurnConfigResult::TurnAuthServer const&);
         // NOLINTEND
     };
 

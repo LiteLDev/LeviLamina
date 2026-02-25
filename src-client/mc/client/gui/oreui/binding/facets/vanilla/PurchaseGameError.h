@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class PurchaseGameError : int {};
+enum class PurchaseGameError : int {
+    PlatformHasNoTrialOfferings = 0,
+    UnknownGameStoreError       = 1,
+};
 
 }

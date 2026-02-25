@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsStoriesActionsFacet {};
+class RealmsStoriesActionsFacet {};
 
 } // namespace OreUI

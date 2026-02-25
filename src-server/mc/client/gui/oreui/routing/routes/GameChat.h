@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct GameChat {};
+class GameChat {};
 
 } // namespace OreUI::EntryPoints

@@ -2,4 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SliderManagerBehavior : int {};
+enum class SliderManagerBehavior : int {
+    GatherAll = 0,
+};

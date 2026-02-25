@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct PlayerPermissions {};
+class PlayerPermissions {};
 
 } // namespace OreUI::EntryPoints

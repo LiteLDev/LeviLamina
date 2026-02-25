@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/ILocalPlayerEntityGetter.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,13 +16,11 @@ class ClientInstanceLocalPlayerEntityGetter : public ::ILocalPlayerEntityGetter 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke4079a;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance const> const> mClientInstance;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ClientInstanceLocalPlayerEntityGetter& operator=(ClientInstanceLocalPlayerEntityGetter const&);
-    ClientInstanceLocalPlayerEntityGetter(ClientInstanceLocalPlayerEntityGetter const&);
     ClientInstanceLocalPlayerEntityGetter();
 
 public:
@@ -35,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ClientInstanceLocalPlayerEntityGetter(::IClientInstance const& clientInstance);
+    MCAPI explicit ClientInstanceLocalPlayerEntityGetter(::IClientInstance const& clientInstance);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IClientInstance const& clientInstance);
+    MCAPI void* $ctor(::IClientInstance const& clientInstance);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EntityContext* $getLocalPlayerEntityContext() const;
+    MCAPI ::EntityContext* $getLocalPlayerEntityContext() const;
     // NOLINTEND
 
 public:

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct ExperimentalFeatureToggle {};
+class ExperimentalFeatureToggle {};
 
 } // namespace OreUI

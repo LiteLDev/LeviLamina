@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct DownloadableTemplateManagerBase {};
+class DownloadableTemplateManagerBase {};
 
 } // namespace World

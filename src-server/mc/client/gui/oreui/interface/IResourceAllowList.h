@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IResourceAllowList {};
+class IResourceAllowList {};
 
 } // namespace OreUI

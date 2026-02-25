@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsRolesAndPermissionsQueriesFacet {};
+class RealmsRolesAndPermissionsQueriesFacet {};
 
 } // namespace OreUI

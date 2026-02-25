@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AnimatedGifRenderer {};
+class AnimatedGifRenderer {};

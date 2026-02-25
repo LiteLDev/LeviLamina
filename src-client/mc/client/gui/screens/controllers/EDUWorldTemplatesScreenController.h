@@ -11,8 +11,8 @@
 // clang-format off
 class PackManifest;
 class PlayScreenModel;
+class UIPropertyBag;
 struct LibraryCollection;
-struct UIPropertyBag;
 namespace EDUScreenHelpers { class TemplateWrapper; }
 // clang-format on
 

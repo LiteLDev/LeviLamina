@@ -4,6 +4,6 @@
 
 namespace OreUI::Debug {
 
-struct IFacetProvider {};
+class IFacetProvider {};
 
 } // namespace OreUI::Debug

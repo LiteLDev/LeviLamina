@@ -4,15 +4,15 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct CommandRegistry {
+class CommandRegistry {
 public:
     // CommandRegistry inner types declare
     // clang-format off
-    struct LiveCommands;
+    class LiveCommands;
     // clang-format on
 
     // CommandRegistry inner types define
-    struct LiveCommands {};
+    class LiveCommands {};
 };
 
 } // namespace OreUI::Experimental::Detail

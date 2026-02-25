@@ -12,11 +12,11 @@
 class DlcUIWrapper;
 class IContentManager;
 class PlayScreenModel;
+class UIPropertyBag;
 class WorldsClipboardScreenController;
 struct LevelSummary;
 struct LocalWorldInfo;
 struct PackManagerContentSource;
-struct UIPropertyBag;
 struct WorldsClipboardCallbacks;
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }

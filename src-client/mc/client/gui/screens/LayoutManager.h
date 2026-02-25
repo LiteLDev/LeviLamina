@@ -9,7 +9,7 @@
 // clang-format off
 class LayoutVariables;
 class UIControl;
-struct VisualTree;
+class VisualTree;
 // clang-format on
 
 class LayoutManager {

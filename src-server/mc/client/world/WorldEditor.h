@@ -4,6 +4,6 @@
 
 namespace World {
 
-struct WorldEditor {};
+class WorldEditor {};
 
 } // namespace World

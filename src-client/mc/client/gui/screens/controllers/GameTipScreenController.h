@@ -18,8 +18,8 @@ class ClientInstanceScreenModel;
 class HudContainerManagerController;
 class Option;
 class ToastMessage;
+class UIPropertyBag;
 struct GameTip;
-struct UIPropertyBag;
 // clang-format on
 
 class GameTipScreenController : public ::ClientInstanceScreenController, public ::IToastEventListener {

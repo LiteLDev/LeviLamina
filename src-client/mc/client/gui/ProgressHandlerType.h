@@ -2,4 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ProgressHandlerType : int {};
+enum class ProgressHandlerType : int {
+    None                  = 0,
+    Connection            = 1,
+    SessionConnecting     = 2,
+    ResourcePack          = 3,
+    ResourcePackCopy      = 4,
+    WorldCopy             = 5,
+    WorldGeneration       = 6,
+    ResourceLoading       = 7,
+    Realms                = 8,
+    RealmsConnecting      = 9,
+    RealmsApplyContent    = 10,
+    RealmsLoadingLevel    = 11,
+    ImportExport          = 12,
+    StoreProducts         = 13,
+    Purchase              = 14,
+    MakeInfinite          = 15,
+    WorldConvert          = 16,
+    StorageProvider       = 17,
+    LeaveLevel            = 18,
+    FileDelete            = 19,
+    ContentLogDelete      = 20,
+    ResourceVerification  = 21,
+    OnlineSafety          = 22,
+    IOTask                = 23,
+    AsyncTask             = 24,
+    PreCacheScreen        = 25,
+    NavigateToGameScreen  = 26,
+    CloudCommit           = 27,
+    StorageMigration      = 28,
+    SplitScreenAppearance = 29,
+    Generic               = 30,
+};

@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct Scene {};
+class Scene {};
 
 } // namespace OreUI

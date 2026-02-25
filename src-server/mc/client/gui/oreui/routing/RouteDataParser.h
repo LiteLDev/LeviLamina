@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RouteDataParser {};
+class RouteDataParser {};
 
 } // namespace OreUI

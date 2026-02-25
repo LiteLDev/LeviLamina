@@ -4,15 +4,15 @@
 
 namespace OreUI::Experimental {
 
-struct DeviceStorageInformationQuery {
+class DeviceStorageInformationQuery {
 public:
     // DeviceStorageInformationQuery inner types declare
     // clang-format off
-    struct ThrottledUpdater;
+    class ThrottledUpdater;
     // clang-format on
 
     // DeviceStorageInformationQuery inner types define
-    struct ThrottledUpdater {};
+    class ThrottledUpdater {};
 };
 
 } // namespace OreUI::Experimental

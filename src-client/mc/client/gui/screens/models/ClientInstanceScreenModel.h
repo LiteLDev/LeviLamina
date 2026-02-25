@@ -19,6 +19,7 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class BookScreenManager;
+class GuiMessage;
 class ItemStack;
 class MinecartCommandBlockManager;
 class NpcEventListener;
@@ -26,13 +27,12 @@ class ResourceLocation;
 class StructureEditorData;
 class StructureSettings;
 class StructureTemplate;
+class TitleMessage;
 class Vec3;
 struct ActorUniqueID;
 struct BossInfo;
-struct GuiMessage;
 struct MinecraftglTFExporter;
 struct PhotoRecord;
-struct TitleMessage;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class Path; }
 namespace mce { class UUID; }

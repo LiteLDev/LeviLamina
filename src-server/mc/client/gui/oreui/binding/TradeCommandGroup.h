@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct TradeCommandGroup {};
+class TradeCommandGroup {};
 
 } // namespace OreUI::Experimental

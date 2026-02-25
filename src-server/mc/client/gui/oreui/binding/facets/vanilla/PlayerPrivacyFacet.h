@@ -4,7 +4,7 @@
 
 namespace OreUI {
 
-struct PlayerPrivacyFacet {
+class PlayerPrivacyFacet {
 public:
     // PlayerPrivacyFacet inner types declare
     // clang-format off

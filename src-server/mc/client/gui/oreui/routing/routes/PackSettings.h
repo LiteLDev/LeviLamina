@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct PackSettings {};
+class PackSettings {};
 
 } // namespace OreUI::EntryPoints

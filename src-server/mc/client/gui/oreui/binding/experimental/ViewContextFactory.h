@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental::Detail {
 
-struct ViewContextFactory {};
+class ViewContextFactory {};
 
 } // namespace OreUI::Experimental::Detail

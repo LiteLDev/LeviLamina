@@ -5,8 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class FocusManagerProxy;
+class VisualTreeProxy;
 struct ScreenEvent;
-struct VisualTreeProxy;
 // clang-format on
 
 struct ScreenViewProxyCallbacks {

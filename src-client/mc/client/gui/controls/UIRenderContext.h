@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ComponentRenderBatch;
+class CustomRenderComponent;
 class Font;
 class HashedString;
 class RectangleArea;
@@ -15,7 +16,6 @@ class ResourceLocation;
 class UIMeasureStrategy;
 class UITextureInfoPtr;
 struct CaretMeasureData;
-struct CustomRenderComponent;
 struct NinesliceInfo;
 struct TextMeasureData;
 namespace Core { class Path; }

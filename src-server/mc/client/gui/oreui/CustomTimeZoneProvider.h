@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct CustomTimeZoneProvider {};
+class CustomTimeZoneProvider {};
 
 } // namespace OreUI

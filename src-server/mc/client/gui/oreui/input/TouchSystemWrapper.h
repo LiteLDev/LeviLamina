@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct TouchSystemWrapper {};
+class TouchSystemWrapper {};
 
 } // namespace OreUI

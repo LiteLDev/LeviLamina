@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct InboxSession {};
+class InboxSession {};
 
 } // namespace OreUI

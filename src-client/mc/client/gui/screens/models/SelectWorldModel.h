@@ -6,7 +6,7 @@
 // clang-format off
 namespace Realms { struct World; }
 namespace Realms { struct WorldCache; }
-namespace World { struct LocalWorldList; }
+namespace World { class LocalWorldList; }
 // clang-format on
 
 class SelectWorldModel {

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIThumbnailAtlasRenderer {
+class UIThumbnailAtlasRenderer {
 public:
     // UIThumbnailAtlasRenderer inner types declare
     // clang-format off

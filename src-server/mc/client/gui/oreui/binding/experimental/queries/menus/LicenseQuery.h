@@ -4,6 +4,6 @@
 
 namespace OreUI::Experimental {
 
-struct LicenseQuery {};
+class LicenseQuery {};
 
 } // namespace OreUI::Experimental

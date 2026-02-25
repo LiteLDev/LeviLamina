@@ -26,10 +26,10 @@ class Pack;
 class PlatformMultiplayerRestrictions;
 class RealmsAllowListScreenController;
 class ResourcePacksScreenController;
+class UIPropertyBag;
 struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
-struct UIPropertyBag;
 namespace Realms { struct Backup; }
 namespace Realms { struct ConfigInfo; }
 namespace Realms { struct Content; }

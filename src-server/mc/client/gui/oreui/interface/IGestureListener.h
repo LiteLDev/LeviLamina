@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct IGestureListener {};
+class IGestureListener {};
 
 } // namespace OreUI

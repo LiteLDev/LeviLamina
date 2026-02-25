@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-struct UIPropertyBag;
+class UIPropertyBag;
 namespace Invites { struct Invite; }
 // clang-format on
 

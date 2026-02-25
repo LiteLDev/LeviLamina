@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class PartyPresence : uint {};
+enum class PartyPresence : uint {
+    NotInParty    = 0,
+    InParty       = 1,
+    Disconnecting = 2,
+};
 
 }

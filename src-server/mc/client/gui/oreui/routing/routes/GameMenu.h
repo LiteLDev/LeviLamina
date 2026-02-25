@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct GameMenu {};
+class GameMenu {};
 
 } // namespace OreUI::EntryPoints

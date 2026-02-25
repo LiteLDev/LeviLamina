@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct GamertagSearchFacet {};
+class GamertagSearchFacet {};
 
 } // namespace OreUI

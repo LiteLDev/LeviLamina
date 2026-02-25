@@ -29,11 +29,11 @@ class HudContainerManagerController;
 class Keymapping;
 class RemappingLayout;
 class ScoreboardScreenController;
+class UIPropertyBag;
 struct ActorUniqueID;
-struct UIPropertyBag;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
-namespace OreUI { struct RouterLocation; }
+namespace OreUI { class RouterLocation; }
 namespace mce { class Color; }
 // clang-format on
 

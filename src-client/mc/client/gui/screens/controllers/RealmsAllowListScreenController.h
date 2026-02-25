@@ -15,8 +15,8 @@
 class DropdownScreenController;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
-struct ProgressHandler;
-struct UIPropertyBag;
+class ProgressHandler;
+class UIPropertyBag;
 namespace Json { class Value; }
 namespace Realms { struct Player; }
 namespace Social { struct PlatformUserProfileData; }

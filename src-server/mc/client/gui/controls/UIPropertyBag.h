@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIPropertyBag {
+class UIPropertyBag {
 public:
     // UIPropertyBag inner types declare
     // clang-format off

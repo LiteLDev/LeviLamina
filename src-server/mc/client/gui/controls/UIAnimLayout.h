@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct UIAnimLayout {
+class UIAnimLayout {
 public:
     // UIAnimLayout inner types define
     enum class ApplyTo : int {};

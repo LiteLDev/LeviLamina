@@ -7,13 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class BitmapFont;
 class Font;
 class FontAlias;
 class FontRepository;
-struct BitmapFont;
-struct MSDFFont;
-struct TrueTypeFont;
-struct TrueTypeMsdfFont;
+class MSDFFont;
+class TrueTypeFont;
+class TrueTypeMsdfFont;
 namespace Json { class Value; }
 namespace mce { class TextureGroup; }
 // clang-format on

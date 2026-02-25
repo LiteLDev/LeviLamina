@@ -4,7 +4,7 @@
 
 namespace OreUI::EntryPoints {
 
-struct RealmsAllowList {
+class RealmsAllowList {
 public:
     // RealmsAllowList inner types declare
     // clang-format off

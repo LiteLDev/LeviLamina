@@ -4,6 +4,6 @@
 
 namespace OreUI::EntryPoints {
 
-struct Credits {};
+class Credits {};
 
 } // namespace OreUI::EntryPoints

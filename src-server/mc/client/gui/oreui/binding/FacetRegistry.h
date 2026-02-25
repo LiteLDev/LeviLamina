@@ -4,18 +4,18 @@
 
 namespace OreUI {
 
-struct FacetRegistry {
+class FacetRegistry {
 public:
     // FacetRegistry inner types declare
     // clang-format off
-    struct FacetEntry;
     struct FacetPrototype;
+    struct FacetEntry;
     // clang-format on
 
     // FacetRegistry inner types define
-    struct FacetEntry {};
-
     struct FacetPrototype {};
+
+    struct FacetEntry {};
 };
 
 } // namespace OreUI

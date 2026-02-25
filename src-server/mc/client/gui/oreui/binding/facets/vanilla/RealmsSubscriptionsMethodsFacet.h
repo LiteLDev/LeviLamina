@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct RealmsSubscriptionsMethodsFacet {};
+class RealmsSubscriptionsMethodsFacet {};
 
 } // namespace OreUI
