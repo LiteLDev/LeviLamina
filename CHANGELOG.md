@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.6] - 2026-02-25
+
+### Added
+
+- Added loading of packages from the corresponding directory under the server-side mods @Lovelylavender4
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.132-server.8
+- Bumped bedrock-runtime-data to v1.21.132-client.9
+- Updated Minecraft headers
+- Adjusted compiler macro and name prefix handling @OEOTYAN
+- Bumped gsl to v4.2.0
+
+### Fixed
+
+- Avoided null dereference in MolangVariable copy @OEOTYAN
+- Work around MCPE-228407 crash caused by Mojang's RakNet modifications @wu-vincent  
+  Mojang's modified RakNet adds handlers for packet types 0x86-0x8A that don't exist in upstream RakNet. The 0x86
+  handler reads a SystemAddress without validating packet length, allowing a crafted undersized packet to trigger a
+  buffer over-read and crash the server. Drop these malformed packets before they reach the vulnerable code path.
+
 ## [1.9.5] - 2026-02-07
 
 ### Changed
@@ -66,7 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added packs support for mods @dreamguxiang
 - Added `ll::isClient` @ShrBox
 - Added `ll::service::getDBStorage` @ShrBox
-- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot` @ShrBox
+- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot`
+  @ShrBox
 - Added ClientExitLevelEvent @ShrBox
 - Added ClientStartJoinLevelEvent @ShrBox
 - Added ClientCancelJoinLevelEvent @ShrBox
@@ -106,7 +129,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added packs support for mods @dreamguxiang
 - Added `ll::isClient` @ShrBox
 - Added `ll::service::getDBStorage` @ShrBox
-- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot` @ShrBox
+- Added `Mod::getWorldDataDir, Mod::getWorldConfigDir, ll::getWorldPath, ll::getWorldDataRoot, ll::getWorldConfigRoot`
+  @ShrBox
 - Added ClientExitLevelEvent @ShrBox
 - Added ClientStartJoinLevelEvent @ShrBox
 - Added ClientCancelJoinLevelEvent @ShrBox
@@ -151,7 +175,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Patched a vulnerability that allows malicious clients to continue sending packets after the connection is closed. @wu-vincent
+- Patched a vulnerability that allows malicious clients to continue sending packets after the connection is closed.
+  @wu-vincent
 
 ## [1.7.4] - 2025-11-18
 
@@ -162,7 +187,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Patched a vulnerability where a crafted `LoginPacket` with an excessively long certificate chain could crash the server. @wu-vincent
+- Patched a vulnerability where a crafted `LoginPacket` with an excessively long certificate chain could crash the
+  server. @wu-vincent
 - Patched a vulnerability where a malformed `InventoryTransactionPacket` could freeze the server. @wu-vincent
 
 ## [1.7.3] - 2025-11-09
@@ -180,7 +206,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added  constructor for BlockRandomTickEvent @Lovelylavender4
+- Added constructor for BlockRandomTickEvent @Lovelylavender4
 
 ### Changed
 
@@ -1310,123 +1336,243 @@ First preview release.
 For lip and tooth-hub test only.
 
 [#1172]: https://github.com/LiteLDev/LeviLamina/issues/1172
+
 [#1481]: https://github.com/LiteLDev/LeviLamina/issues/1481
+
 [#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
+
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
+
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
+
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
+
 [#1519]: https://github.com/LiteLDev/LeviLamina/issues/1519
+
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
+
 [#1552]: https://github.com/LiteLDev/LeviLamina/issues/1552
+
 [#1559]: https://github.com/LiteLDev/LeviLamina/issues/1559
+
 [#1574]: https://github.com/LiteLDev/LeviLamina/issues/1574
+
 [#1582]: https://github.com/LiteLDev/LeviLamina/issues/1582
+
 [#1610]: https://github.com/LiteLDev/LeviLamina/issues/1610
+
 [#1611]: https://github.com/LiteLDev/LeviLamina/issues/1611
+
 [#1622]: https://github.com/LiteLDev/LeviLamina/issues/1622
+
 [#1631]: https://github.com/LiteLDev/LeviLamina/issues/1631
+
 [#1636]: https://github.com/LiteLDev/LeviLamina/issues/1636
+
 [#1664]: https://github.com/LiteLDev/LeviLamina/issues/1664
+
 [#1668]: https://github.com/LiteLDev/LeviLamina/issues/1668
+
 [#1669]: https://github.com/LiteLDev/LeviLamina/issues/1669
+
 [#1670]: https://github.com/LiteLDev/LeviLamina/issues/1670
+
 [#1671]: https://github.com/LiteLDev/LeviLamina/issues/1671
+
 [#1672]: https://github.com/LiteLDev/LeviLamina/issues/1672
+
 [#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
+
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
+
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
+
 [#1722]: https://github.com/LiteLDev/LeviLamina/issues/1722
+
 [#1728]: https://github.com/LiteLDev/LeviLamina/issues/1728
+
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
+
 [#1747]: https://github.com/LiteLDev/LeviLamina/issues/1747
+
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
+
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
+
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.6...HEAD
+
+[1.9.6]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.5...v1.9.6
+
 [1.9.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.4...v1.9.5
+
 [1.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.3...v1.9.4
+
 [1.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.2...v1.9.3
+
 [1.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.1...v1.9.2
+
 [1.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.0...v1.9.1
+
 [1.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.2...v1.9.0
+
 [1.8.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.8.0-rc.1...v1.8.0-rc.2
+
 [1.8.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.7...v1.8.0-rc.1
+
 [1.7.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.6...v1.7.7
+
 [1.7.6]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.5...v1.7.6
+
 [1.7.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.4...v1.7.5
+
 [1.7.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.3...v1.7.4
+
 [1.7.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.1...v1.7.3
+
 [1.7.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.7.0...v1.7.1
+
 [1.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.2...v1.7.0
+
 [1.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.1...v1.6.2
+
 [1.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...v1.6.1
+
 [1.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.2...v1.6.0
+
 [1.5.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.1...v1.5.2
+
 [1.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...v1.5.1
+
 [1.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...v1.5.0
+
 [1.4.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...v1.4.4
+
 [1.4.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...v1.4.3
+
 [1.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...v1.4.2
+
 [1.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.4...v1.4.1
+
 [1.3.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.3...v1.3.4
+
 [1.3.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.2...v1.3.3
+
 [1.3.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.1...v1.3.2
+
 [1.3.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.3.0...v1.3.1
+
 [1.3.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.1...v1.3.0
+
 [1.2.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0...v1.2.1
+
 [1.2.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.2...v1.2.0
+
 [1.2.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.2.0-rc.1...v1.2.0-rc.2
+
 [1.2.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.2...v1.2.0-rc.1
+
 [1.1.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.1...v1.1.2
+
 [1.1.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0...v1.1.1
+
 [1.1.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0-rc.1...v1.1.0
+
 [1.1.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.1...v1.1.0-rc.1
+
 [1.0.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0...v1.0.1
+
 [1.0.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.3...v1.0.0
+
 [1.0.0-rc.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...v1.0.0-rc.3
+
 [1.0.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...v1.0.0-rc.2
+
 [1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
+
 [0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
+
 [0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4
+
 [0.13.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...v0.13.3
+
 [0.13.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.1...v0.13.2
+
 [0.13.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.0...v0.13.1
+
 [0.13.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.4...v0.13.0
+
 [0.12.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.3...v0.12.4
+
 [0.12.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.2...v0.12.3
+
 [0.12.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.1...v0.12.2
+
 [0.12.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.12.0...v0.12.1
+
 [0.12.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.1...v0.12.0
+
 [0.11.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.11.0...v0.11.1
+
 [0.11.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.5...v0.11.0
+
 [0.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.4...v0.10.5
+
 [0.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.2...v0.10.4
+
 [0.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.1...v0.10.2
+
 [0.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.10.0...v0.10.1
+
 [0.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.5...v0.10.0
+
 [0.9.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.4...v0.9.5
+
 [0.9.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.3...v0.9.4
+
 [0.9.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.2...v0.9.3
+
 [0.9.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.1...v0.9.2
+
 [0.9.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.9.0...v0.9.1
+
 [0.9.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.4...v0.9.0
+
 [0.8.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.3...v0.8.4
+
 [0.8.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.1...v0.8.3
+
 [0.8.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.8.0...v0.8.1
+
 [0.8.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.2...v0.8.0
+
 [0.7.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...v0.7.2
+
 [0.6.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...v0.6.3
+
 [0.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.1...v0.6.2
+
 [0.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.0...v0.6.1
+
 [0.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.5.1...v0.6.0
+
 [0.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.5.0...v0.5.1
+
 [0.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.2...v0.5.0
+
 [0.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.1...v0.4.2
+
 [0.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.0...v0.4.1
+
 [0.4.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.3.0...v0.4.0
+
 [0.3.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.2.2...v0.3.0
+
 [0.2.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.2.1...v0.2.2
+
 [0.2.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.2.0...v0.2.1
+
 [0.2.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.1.0...v0.2.0
+
 [0.1.0]: https://github.com/LiteLDev/LeviLamina/releases/tag/v0.1.0
