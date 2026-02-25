@@ -27,7 +27,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, void (::ScriptDeferredEventCoordinator::*)(::ScriptDeferredFlushTracker&)>
+        ::ll::TypedStorage<8, 8, void (ScriptDeferredEventCoordinator::*)(::ScriptDeferredFlushTracker&)>
             mExecuteEventsFn;
         ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>>
             mDocumentationGenerationFn;

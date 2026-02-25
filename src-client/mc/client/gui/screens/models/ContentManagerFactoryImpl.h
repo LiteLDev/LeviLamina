@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/client/resources/ContentCatalogPackSource.h"
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ContentFlags.h"
 #include "mc/client/gui/screens/models/ContentManagerFactoryArgs.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/gui/screens/models/IContentManagerFactory.h"
+#include "mc/client/resources/ContentCatalogPackSource.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
@@ -17,7 +17,6 @@
 // clang-format off
 class AppPlatform;
 class CompositePackSource;
-class ContentCatalogPackSource;
 class Pack;
 class PackSource;
 struct CachedHostPackIdProvider;

@@ -59,29 +59,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _getExperienceFromItem(::ItemStack const& stack) const;
+    MCAPI int _getExperienceFromItem(::ItemStack const& stack) const;
 
-    MCNAPI bool
+    MCAPI bool
     _resolveNetIdAndValidate(::ContainerEnumName containerNetId, uchar slot, ::ItemStackNetIdVariant const& netId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ItemStack _getResultItemWithNoEnchants(
+    MCAPI static ::ItemStack _getResultItemWithNoEnchants(
         ::ItemStack&                      result,
         ::std::vector<::ItemStack> const& inputItems,
         bool&                             onlyHasCurses
     );
 
-    MCNAPI static ::std::pair<::ItemStack, ::ItemStackNetIdVariant>
+    MCAPI static ::std::pair<::ItemStack, ::ItemStackNetIdVariant>
     getResultItem(::ItemStack const& input, ::ItemStack const& additional);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_postCraftRequest(bool const wasSuccess);
+    MCAPI void $_postCraftRequest(bool const wasSuccess);
 
 
     // NOLINTEND
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

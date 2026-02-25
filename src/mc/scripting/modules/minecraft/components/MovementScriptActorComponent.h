@@ -19,7 +19,7 @@ class MovementScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Description* ::ActorDefinitionDescriptor::*> mDescriptionMember;
+    ::ll::TypedStorage<8, 8, ::Description * ActorDefinitionDescriptor::*> mDescriptionMember;
     // NOLINTEND
 
 public:

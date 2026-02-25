@@ -34,9 +34,9 @@ public:
             ::std::less<uint>,
             ::std::vector<uint>,
             ::std::vector<::AttributeInstance>>>
-                                                                                       mInstanceMap;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>                mDirtyAttributes;
-    ::ll::TypedStorage<8, 8, void (::BaseAttributeMap::*)(::AttributeInstance const&)> mOnAttributeModified;
+                                                                                     mInstanceMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>              mDirtyAttributes;
+    ::ll::TypedStorage<8, 8, void (BaseAttributeMap::*)(::AttributeInstance const&)> mOnAttributeModified;
     // NOLINTEND
 
 public:
