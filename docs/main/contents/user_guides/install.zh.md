@@ -23,7 +23,7 @@
 
 ### 通过 lip
 
-1. 安装lip，可以参考[lip文档](https://lip.levimc.org/zh/user-guide/installation/)
+1. 下载[lip-cli-win-x64-zh-CN.msi](https://github.com/futrime/lip/releases/download/v0.32.0/lip-cli-win-x64-zh-CN.msi)，执行以安装
 2. (可选)可以通过`lip config set`命令来设置GitHub镜像，例如:
     ```shell
     lip config set github_proxies=https://github.bibk.top
