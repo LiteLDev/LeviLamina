@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/item/ItemStack.h"
 
@@ -23,8 +24,20 @@ public:
 
 public:
     // prevent constructor by default
-    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&);
-    PlayerShootArrowEvent();
+    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&) = default;
+    PlayerShootArrowEvent()                                        = default;
+
+public:
+    PlayerShootArrowEvent(
+        WeakRef<EntityContext> const& player,
+        WeakRef<EntityContext> const& arrow,
+        ItemStack const&              weaponItem,
+        ItemStack const&              arrowItem
+    )
+    : mPlayer(player),
+      mArrow(arrow),
+      mWeaponItem(weaponItem),
+      mArrowItem(arrowItem) {}
 
 public:
     // member functions
