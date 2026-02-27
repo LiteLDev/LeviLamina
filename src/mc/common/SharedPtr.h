@@ -19,6 +19,42 @@ public:
 
     [[nodiscard]] explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 
+    [[nodiscard]] SharedPtr(SharedPtr const& other) {
+        counter = other.counter;
+        if (counter) {
+            counter->addShareCount();
+        }
+    }
+
+    [[nodiscard]] SharedPtr(SharedPtr&& other) noexcept {
+        counter       = other.counter;
+        other.counter = nullptr;
+    }
+
+    SharedPtr& operator=(SharedPtr const& other) {
+        if (this != &other) {
+            if (counter) {
+                counter->release();
+            }
+            counter = other.counter;
+            if (counter) {
+                counter->addShareCount();
+            }
+        }
+        return *this;
+    }
+
+    SharedPtr& operator=(SharedPtr&& other) noexcept {
+        if (this != &other) {
+            if (counter) {
+                counter->release();
+            }
+            counter       = other.counter;
+            other.counter = nullptr;
+        }
+        return *this;
+    }
+
     template <class Y>
     [[nodiscard]] explicit SharedPtr(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)

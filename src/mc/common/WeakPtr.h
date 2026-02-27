@@ -12,6 +12,42 @@ public:
     [[nodiscard]] WeakPtr() noexcept : counter(nullptr) {}
     [[nodiscard]] WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {}
 
+    [[nodiscard]] WeakPtr(WeakPtr const& other) {
+        counter = other.counter;
+        if (counter) {
+            counter->addWeakCount();
+        }
+    }
+
+    [[nodiscard]] WeakPtr(WeakPtr&& other) noexcept {
+        counter       = other.counter;
+        other.counter = nullptr;
+    }
+
+    WeakPtr& operator=(WeakPtr const& other) {
+        if (this != &other) {
+            if (counter) {
+                counter->releaseWeak();
+            }
+            counter = other.counter;
+            if (counter) {
+                counter->addWeakCount();
+            }
+        }
+        return *this;
+    }
+
+    WeakPtr& operator=(WeakPtr&& other) noexcept {
+        if (this != &other) {
+            if (counter) {
+                counter->releaseWeak();
+            }
+            counter       = other.counter;
+            other.counter = nullptr;
+        }
+        return *this;
+    }
+
     template <class Y>
     [[nodiscard]] explicit WeakPtr(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
