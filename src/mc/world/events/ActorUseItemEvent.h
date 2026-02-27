@@ -15,15 +15,16 @@ struct ActorUseItemEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&>               mActor;
-    ::ll::TypedStorage<8, 128, ::ItemInstance const> mItemUsed;
-    ::ll::TypedStorage<4, 4, ::ItemUseMethod>        mItemUseMethod;
+    Actor&             mActor;
+    ItemInstance const mItemUsed;
+    ItemUseMethod      mItemUseMethod;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorUseItemEvent& operator=(ActorUseItemEvent const&);
-    ActorUseItemEvent();
+    ActorUseItemEvent(Actor& actor, ItemInstance const& itemUsed, ItemUseMethod itemUseMethod)
+    : mActor(actor),
+      mItemUsed(itemUsed),
+      mItemUseMethod(itemUseMethod) {}
 
 public:
     // member functions

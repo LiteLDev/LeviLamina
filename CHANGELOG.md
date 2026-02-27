@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added a constructor to PlayerShootArrowEvent @Lovelylavender4
+- Added a constructor to ActorUseItemEvent @Lovelylavender4
 
 ### Fixed
 
