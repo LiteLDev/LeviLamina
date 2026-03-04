@@ -68,7 +68,7 @@ jobs:
 
   upload-to-sentry:
     needs: build
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && !startsWith(github.ref, 'refs/heads/dependabot')
     strategy:
       fail-fast: false
       matrix:
