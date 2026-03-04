@@ -37,7 +37,7 @@ jobs:
       - run: |
           tar -cvf artifact.tar -C site/ .
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: doxygen-pages
           path: |
@@ -57,7 +57,7 @@ jobs:
       - run: |
           tar -cvf artifact.tar -C site/ .
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: mkdocs-pages
           path: |
