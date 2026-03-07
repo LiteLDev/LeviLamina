@@ -15,6 +15,8 @@ on:
       - src-client/**
       - src-test/**
       - xmake.lua
+    branches:
+      - '**'
   workflow_dispatch:
 
 jobs:

@@ -9,6 +9,8 @@ on:
       - .github/workflows/build-docs.yml
       - docs/**
       - src/**/*.h
+    branches:
+      - '**'
   workflow_dispatch:
 
 jobs:
