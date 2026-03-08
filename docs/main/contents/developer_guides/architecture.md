@@ -251,7 +251,6 @@ Implemented via service system:
 
 ### Hook Management
 
-- **MinHook** — Function hooking library (Windows)
 - **HookRegistrar** — Automatic hook registration/cleanup
 - **Priority system** — Control hook execution order
 

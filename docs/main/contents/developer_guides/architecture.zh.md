@@ -251,7 +251,6 @@ option("target_type")
 
 ### 钩子管理
 
-- **MinHook** — 函数钩子库（Windows）
 - **HookRegistrar** — 自动钩子注册/清理
 - **优先级系统** — 控制钩子执行顺序
 

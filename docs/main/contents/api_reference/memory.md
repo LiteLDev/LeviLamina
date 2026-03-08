@@ -167,7 +167,6 @@ void callVirtual(void* obj) {
 
 ## Platform Notes
 
-- Hooking is Windows-only (uses MinHook internally)
 - Use function pointers (`&ClassName::method`) instead of symbol names
 - Hook priority determines execution order (lower number = earlier)
 

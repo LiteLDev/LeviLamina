@@ -167,7 +167,6 @@ void callVirtual(void* obj) {
 
 ## 平台说明
 
-- 钩子仅支持 Windows（内部使用 MinHook）
 - 使用函数指针（`&ClassName::method`）而不是符号名称
 - 钩子优先级决定执行顺序（数字越小越早执行）
 
