@@ -30,8 +30,33 @@ nav:
           - developer_guides/how_to_guides/item_guide.md
           - developer_guides/how_to_guides/command_guide.md
           - developer_guides/how_to_guides/coro_guide.md
+          - developer_guides/how_to_guides/build_guide.md
 
-      - API 🔗: https://lamina.levimc.org/api
+      - Architecture: developer_guides/architecture.md
+
+      - API Reference:
+          - api_reference/index.md
+          - Base: api_reference/base.md
+          - Chrono: api_reference/chrono.md
+          - Command: api_reference/command.md
+          - Config: api_reference/config.md
+          - Coroutine: api_reference/coro.md
+          - Data: api_reference/data.md
+          - Event: api_reference/event.md
+          - Expected: api_reference/expected.md
+          - Form: api_reference/form.md
+          - I18n: api_reference/i18n.md
+          - IO & Logger: api_reference/io.md
+          - Memory & Hook: api_reference/memory.md
+          - Mod: api_reference/mod.md
+          - Network: api_reference/network.md
+          - Reflection: api_reference/reflection.md
+          - Service: api_reference/service.md
+          - Thread: api_reference/thread.md
+          - Utils: api_reference/utils.md
+          - Input (Client): api_reference/input.md
+
+      - Doxygen API 🔗: https://lamina.levimc.org/api
 
   - Maintainer Guides:
       - maintainer_guides/cpp_style_guide.md
@@ -111,7 +136,28 @@ plugins:
             Developer Guides: 开发者指南
             Tutorials: 教程
             How-to Guides: 如何做到······
-            API 🔗: 接口 🔗
+            Architecture: 项目架构
+            API Reference: API 参考
+            Base: 基础类型
+            Chrono: 游戏时间
+            Command: 命令系统
+            Config: 配置系统
+            Coroutine: 协程
+            Data: 数据结构
+            Event: 事件系统
+            Expected: 错误处理
+            Form: 表单 UI
+            I18n: 国际化
+            IO & Logger: 日志系统
+            Memory & Hook: 内存与钩子
+            Mod: 模组系统
+            Network: 网络
+            Reflection: 反射
+            Service: 服务系统
+            Thread: 线程工具
+            Utils: 工具函数
+            Input (Client): 输入系统（客户端）
+            Doxygen API 🔗: Doxygen API 🔗
             Maintainer Guides: 维护者指南
             Supported Versions: 支持的版本
 
