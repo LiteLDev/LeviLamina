@@ -45,19 +45,23 @@ bool unhook(void* target, void* detour, bool suspendThreads = true);
 
 ```cpp
 // Static function hook
-LL_STATIC_HOOK(HookName, HookPriority::Normal, ReturnType, SymbolOrAddress, ParamTypes...) {
+LL_STATIC_HOOK(HookName, HookPriority::Normal, ReturnType, FunctionPointer, ParamTypes...) {
     // Hook implementation
     // Call original: origin(args...)
 }
 
 // Instance method hook
-LL_INSTANCE_HOOK(HookName, ClassName, HookPriority::Normal, ReturnType, MethodName, ParamTypes...) {
+LL_INSTANCE_HOOK(HookName, ClassName, HookPriority::Normal, ReturnType, &ClassName::MethodName, ParamTypes...) {
     // Hook implementation
     // Call original: origin(args...)
 }
 
 // Auto-hook (registers automatically)
-LL_AUTO_STATIC_HOOK(HookName, ReturnType, SymbolOrAddress, ParamTypes...) {
+LL_AUTO_STATIC_HOOK(HookName, ReturnType, FunctionPointer, ParamTypes...) {
+    // ...
+}
+
+LL_AUTO_INSTANCE_HOOK(HookName, ClassName, ReturnType, &ClassName::MethodName, ParamTypes...) {
     // ...
 }
 ```
@@ -89,11 +93,12 @@ T& dAccess(void* ptr, ptrdiff_t off);
 
 ```cpp
 #include "ll/api/memory/Hook.h"
+#include "mc/server/ServerInstance.h"
 
 LL_AUTO_STATIC_HOOK(
     ServerStartHook,
     void,
-    "?start@ServerInstance@@QEAAXXZ"  // Symbol name
+    &ServerInstance::start  // Function pointer
 ) {
     // Code before original
     origin();  // Call original function
@@ -105,12 +110,13 @@ LL_AUTO_STATIC_HOOK(
 
 ```cpp
 #include "ll/api/memory/Hook.h"
+#include "mc/world/actor/player/Player.h"
 
 LL_AUTO_INSTANCE_HOOK(
     PlayerAttackHook,
     Player,
     void,
-    "attack",
+    &Player::attack,  // Method pointer
     Actor& target
 ) {
     // 'this' is the Player instance
@@ -127,7 +133,7 @@ LL_STATIC_HOOK(
     HighPriorityHook,
     ll::memory::HookPriority::High,
     bool,
-    "?someFunction@@YA_NXZ"
+    &SomeClass::someFunction  // Function pointer
 ) {
     // This runs before Normal priority hooks
     return origin();
@@ -162,7 +168,7 @@ void callVirtual(void* obj) {
 ## Platform Notes
 
 - Hooking is Windows-only (uses MinHook internally)
-- Symbol names are mangled C++ names (use a demangler or IDA/Ghidra)
+- Use function pointers (`&ClassName::method`) instead of symbol names
 - Hook priority determines execution order (lower number = earlier)
 
 ## Related

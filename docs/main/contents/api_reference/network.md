@@ -10,16 +10,19 @@ The Network module enables registration and handling of custom network packets b
 
 | Header | Description |
 |--------|-------------|
-| `ll/api/network/packet/Packet.h` | Base packet class |
-| `ll/api/network/packet/PacketRegistrar.h` | Packet registration |
+| `ll/api/network/packet/PacketBase.h` | CRTP base class for custom packets |
+| `ll/api/network/packet/PacketHandlerBase.h` | CRTP base class for packet handlers |
 
 ## Key Classes
 
-### Packet
+### PacketBase
+
+Base class for custom packets using CRTP (Curiously Recurring Template Pattern).
 
 ```cpp
 namespace ll::network {
-class Packet {
+template <class Derived>
+class PacketBase {
 public:
     virtual void write(BinaryStream& stream);
     virtual void read(BinaryStream& stream);
@@ -31,35 +34,33 @@ public:
 }
 ```
 
-### PacketRegistrar
+### PacketHandlerBase
+
+Base class for packet handlers using CRTP.
 
 ```cpp
 namespace ll::network {
-class PacketRegistrar {
+template <class Derived, class PacketType>
+class PacketHandlerBase {
 public:
-    static PacketRegistrar& getInstance();
-    
-    bool registerPacket(
-        std::string const& name,
-        int id,
-        std::function<std::unique_ptr<Packet>()> factory,
-        std::shared_ptr<IPacketHandler> handler
-    );
-    
-    std::unique_ptr<Packet> createPacket(int runtimeId);
+    virtual void handle(NetworkIdentifier const& source, PacketType& packet) = 0;
 };
 }
 ```
 
 ## Usage
 
-```cpp
-#include "ll/api/network/packet/Packet.h"
-#include "ll/api/network/packet/PacketRegistrar.h"
+### Defining a Custom Packet
 
-class MyCustomPacket : public ll::network::Packet {
+```cpp
+#include "ll/api/network/packet/PacketBase.h"
+
+class MyCustomPacket : public ll::network::PacketBase<MyCustomPacket> {
     int data;
 public:
+    void setData(int value) { data = value; }
+    int getData() const { return data; }
+    
     void write(BinaryStream& stream) override {
         stream.writeVarInt(data);
     }
@@ -67,14 +68,38 @@ public:
         data = stream.readVarInt();
     }
 };
+```
 
-void registerPacket() {
-    ll::network::PacketRegistrar::getInstance().registerPacket(
-        "MyCustomPacket",
-        1000,  // Custom packet ID
-        []() { return std::make_unique<MyCustomPacket>(); },
-        nullptr  // Optional handler
-    );
+### Defining a Packet Handler
+
+```cpp
+#include "ll/api/network/packet/PacketHandlerBase.h"
+
+class MyPacketHandler : public ll::network::PacketHandlerBase<MyPacketHandler, MyCustomPacket> {
+public:
+    void handle(NetworkIdentifier const& source, MyCustomPacket& packet) override {
+        // Handle the packet
+        auto data = packet.getData();
+        // Process data...
+    }
+};
+```
+
+### Sending Packets
+
+```cpp
+void sendCustomPacket() {
+    MyCustomPacket packet;
+    packet.setData(42);
+    
+    // Send to server (from client)
+    packet.sendToServer();
+    
+    // Or send to specific client (from server)
+    // packet.sendToClient(networkId, subClientId);
+    
+    // Or broadcast to all clients (from server)
+    // packet.sendBroadcast();
 }
 ```
 

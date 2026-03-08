@@ -45,19 +45,23 @@ bool unhook(void* target, void* detour, bool suspendThreads = true);
 
 ```cpp
 // 静态函数钩子
-LL_STATIC_HOOK(HookName, HookPriority::Normal, ReturnType, SymbolOrAddress, ParamTypes...) {
+LL_STATIC_HOOK(HookName, HookPriority::Normal, ReturnType, FunctionPointer, ParamTypes...) {
     // 钩子实现
     // 调用原函数: origin(args...)
 }
 
 // 实例方法钩子
-LL_INSTANCE_HOOK(HookName, ClassName, HookPriority::Normal, ReturnType, MethodName, ParamTypes...) {
+LL_INSTANCE_HOOK(HookName, ClassName, HookPriority::Normal, ReturnType, &ClassName::MethodName, ParamTypes...) {
     // 钩子实现
     // 调用原函数: origin(args...)
 }
 
 // 自动钩子（自动注册）
-LL_AUTO_STATIC_HOOK(HookName, ReturnType, SymbolOrAddress, ParamTypes...) {
+LL_AUTO_STATIC_HOOK(HookName, ReturnType, FunctionPointer, ParamTypes...) {
+    // ...
+}
+
+LL_AUTO_INSTANCE_HOOK(HookName, ClassName, ReturnType, &ClassName::MethodName, ParamTypes...) {
     // ...
 }
 ```
@@ -89,11 +93,12 @@ T& dAccess(void* ptr, ptrdiff_t off);
 
 ```cpp
 #include "ll/api/memory/Hook.h"
+#include "mc/server/ServerInstance.h"
 
 LL_AUTO_STATIC_HOOK(
     ServerStartHook,
     void,
-    "?start@ServerInstance@@QEAAXXZ"  // 符号名称
+    &ServerInstance::start  // 函数指针
 ) {
     // 原函数之前的代码
     origin();  // 调用原函数
@@ -105,12 +110,13 @@ LL_AUTO_STATIC_HOOK(
 
 ```cpp
 #include "ll/api/memory/Hook.h"
+#include "mc/world/actor/player/Player.h"
 
 LL_AUTO_INSTANCE_HOOK(
     PlayerAttackHook,
     Player,
     void,
-    "attack",
+    &Player::attack,  // 方法指针
     Actor& target
 ) {
     // 'this' 是 Player 实例
@@ -127,7 +133,7 @@ LL_STATIC_HOOK(
     HighPriorityHook,
     ll::memory::HookPriority::High,
     bool,
-    "?someFunction@@YA_NXZ"
+    &SomeClass::someFunction  // 函数指针
 ) {
     // 在 Normal 优先级钩子之前运行
     return origin();
@@ -162,7 +168,7 @@ void callVirtual(void* obj) {
 ## 平台说明
 
 - 钩子仅支持 Windows（内部使用 MinHook）
-- 符号名称是经过修饰的 C++ 名称（使用反修饰工具或 IDA/Ghidra）
+- 使用函数指针（`&ClassName::method`）而不是符号名称
 - 钩子优先级决定执行顺序（数字越小越早执行）
 
 ## 相关模块
