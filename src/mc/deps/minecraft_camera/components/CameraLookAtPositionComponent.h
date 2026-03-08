@@ -8,15 +8,9 @@ struct CameraLookAtPositionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk540e66;
-    ::ll::UntypedStorage<4, 8>  mUnk52e5ea;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mTargetPosition;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>  mTargetRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraLookAtPositionComponent& operator=(CameraLookAtPositionComponent const&);
-    CameraLookAtPositionComponent(CameraLookAtPositionComponent const&);
-    CameraLookAtPositionComponent();
 };
 
 } // namespace MinecraftCamera

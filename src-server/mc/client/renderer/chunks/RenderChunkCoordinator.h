@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RenderChunkCoordinator {
+class RenderChunkCoordinator {
 public:
     // RenderChunkCoordinator inner types declare
     // clang-format off

@@ -21,8 +21,8 @@ public:
 
 public:
     // prevent constructor by default
-    LootItemRandomChanceWithSpecialModifierCondition&
-    operator=(LootItemRandomChanceWithSpecialModifierCondition const&);
+    LootItemRandomChanceWithSpecialModifierCondition& operator=(LootItemRandomChanceWithSpecialModifierCondition const&
+    );
     LootItemRandomChanceWithSpecialModifierCondition(LootItemRandomChanceWithSpecialModifierCondition const&);
     LootItemRandomChanceWithSpecialModifierCondition();
 

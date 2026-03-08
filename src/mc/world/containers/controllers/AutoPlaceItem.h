@@ -19,12 +19,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& _collection, bool _stopWhenPlaced);
+    MCAPI_C void* $ctor(::std::string const& _collection, bool _stopWhenPlaced);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

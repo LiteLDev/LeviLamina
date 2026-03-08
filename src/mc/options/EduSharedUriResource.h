@@ -23,35 +23,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EduSharedUriResource(::EduSharedUriResource&&);
+    MCAPI EduSharedUriResource(::EduSharedUriResource&&);
 
-    MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
+    MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
 
-    MCNAPI ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
+    MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
 
-    MCNAPI bool operator==(::EduSharedUriResource const& rhs) const;
+    MCAPI bool operator==(::EduSharedUriResource const& rhs) const;
 
-    MCNAPI ~EduSharedUriResource();
+    MCAPI ~EduSharedUriResource();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::EduSharedUriResource>
+    MCAPI_C static ::std::optional<::EduSharedUriResource>
     create(::std::unordered_map<::std::string, ::std::string> const& values);
 
-    MCNAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
+    MCAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::EduSharedUriResource&&);
+    MCFOLD void* $ctor(::EduSharedUriResource&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

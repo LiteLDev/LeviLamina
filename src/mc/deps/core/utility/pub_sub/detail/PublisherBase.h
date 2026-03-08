@@ -17,17 +17,25 @@ namespace Bedrock::PubSub::Detail {
 
 class PublisherBase : public ::Bedrock::PubSub::Detail::PublisherDisconnector {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk43b2a1;
-    ::ll::UntypedStorage<4, 4>  mUnk1135b7;
-    // NOLINTEND
+    // PublisherBase inner types define
+    using ConnectionList = ::Bedrock::Intrusive::list<
+        ::Bedrock::PubSub::Detail::SubscriptionBodyBase,
+        ::Bedrock::Intrusive::list_base_hook<::Bedrock::PubSub::Detail::SubscriptionBodyBase>,
+        ::Bedrock::Intrusive::list_base_hook<::Bedrock::PubSub::Detail::SubscriptionBodyBase>>;
 
 public:
-    // prevent constructor by default
-    PublisherBase& operator=(PublisherBase const&);
-    PublisherBase(PublisherBase const&);
-    PublisherBase();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::Bedrock::Intrusive::list<
+            ::Bedrock::PubSub::Detail::SubscriptionBodyBase,
+            ::Bedrock::Intrusive::list_base_hook<::Bedrock::PubSub::Detail::SubscriptionBodyBase>,
+            ::Bedrock::Intrusive::list_base_hook<::Bedrock::PubSub::Detail::SubscriptionBodyBase>>>
+                                   mSubscriptions;
+    ::ll::TypedStorage<4, 4, uint> mSubscriberCount;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -38,9 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _clear();
+    MCAPI void _clear();
 
-    MCNAPI void _insertConnection(
+    MCAPI void _insertConnection(
         ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body,
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group

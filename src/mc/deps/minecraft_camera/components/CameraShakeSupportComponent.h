@@ -8,16 +8,10 @@ struct CameraShakeSupportComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2bd727;
-    ::ll::UntypedStorage<4, 4> mUnkecdbc7;
-    ::ll::UntypedStorage<4, 4> mUnk761311;
+    ::ll::TypedStorage<4, 4, float> mFrequency;
+    ::ll::TypedStorage<4, 4, float> mAmplitude;
+    ::ll::TypedStorage<4, 4, float> mNoiseMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraShakeSupportComponent& operator=(CameraShakeSupportComponent const&);
-    CameraShakeSupportComponent(CameraShakeSupportComponent const&);
-    CameraShakeSupportComponent();
 };
 
 } // namespace MinecraftCamera

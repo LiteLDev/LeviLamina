@@ -35,9 +35,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
+    MCAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
 
-    MCNAPI void $initializeDimension(::Dimension& dimension) const;
+    MCAPI void $initializeDimension(::Dimension& dimension) const;
 
 
     // NOLINTEND

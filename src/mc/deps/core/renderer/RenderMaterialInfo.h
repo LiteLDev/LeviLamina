@@ -2,21 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class RenderMaterial; }
+// clang-format on
+
 namespace mce {
 
 class RenderMaterialInfo : public ::std::enable_shared_from_this<::mce::RenderMaterialInfo> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk7e35a8;
-    ::ll::UntypedStorage<8, 8>  mUnke9244b;
+    ::ll::TypedStorage<8, 48, ::HashedString>                          mHashedName;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::RenderMaterial>> mPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderMaterialInfo& operator=(RenderMaterialInfo const&);
-    RenderMaterialInfo(RenderMaterialInfo const&);
-    RenderMaterialInfo();
 };
 
 } // namespace mce

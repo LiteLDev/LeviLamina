@@ -31,35 +31,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Path();
+    MCAPI Path();
 
-    MCNAPI_C char const* getUtf8CString() const;
+    MCFOLD_C char const* getUtf8CString() const;
 
-    MCNAPI_C ::std::string_view getUtf8StringView() const;
+    MCFOLD_C ::std::string_view getUtf8StringView() const;
 
-    MCNAPI ::Core::Path& operator=(::Core::Path&&);
+    MCFOLD ::Core::Path& operator=(::Core::Path&&);
 
-    MCNAPI ~Path();
+    MCAPI ~Path();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Core::Path const& EMPTY();
+    MCAPI static ::Core::Path const& EMPTY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCNAPI_S void* $ctor(char const* str);
+    MCAPI_S void* $ctor(char const* str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

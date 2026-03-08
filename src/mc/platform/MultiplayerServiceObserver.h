@@ -28,16 +28,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
+    MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
 
 #ifdef LL_PLAT_C
-    MCNAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
 #endif
 
 

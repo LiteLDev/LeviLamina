@@ -152,29 +152,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
+    MCAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
 
-    MCNAPI ::std::string getScope();
+    MCAPI ::std::string getScope();
 
-    MCNAPI void log(bool, ::LogLevel, ::LogArea, ...);
+    MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
 
-    MCNAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
+    MCAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
-    MCNAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
+    MCAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
+    MCAPI_S static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
-    MCNAPI static char const* getLogAreaName(::LogArea area);
+    MCAPI static char const* getLogAreaName(::LogArea area);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

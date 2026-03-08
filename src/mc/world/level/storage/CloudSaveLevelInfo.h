@@ -11,12 +11,12 @@ class CloudSaveLevelInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbe2aee;
-    ::ll::UntypedStorage<8, 32> mUnk739036;
-    ::ll::UntypedStorage<8, 32> mUnkd4a62b;
-    ::ll::UntypedStorage<8, 32> mUnkdd5ebb;
-    ::ll::UntypedStorage<1, 1>  mUnk1a9058;
-    ::ll::UntypedStorage<8, 32> mUnk306006;
+    ::ll::TypedStorage<8, 32, ::std::string> mDriveItemId;
+    ::ll::TypedStorage<8, 32, ::std::string> mCTag;
+    ::ll::TypedStorage<8, 32, ::std::string> mUserId;
+    ::ll::TypedStorage<8, 32, ::std::string> mFileName;
+    ::ll::TypedStorage<1, 1, bool>           mNeedsUpload;
+    ::ll::TypedStorage<8, 32, ::std::string> mLastUpdated;
     // NOLINTEND
 
 public:
@@ -26,31 +26,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
+    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
 
-    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
+    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
-    MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
+    MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
-    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
+    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
-    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
-    MCNAPI void serialize(::CompoundTag& tag) const;
+    MCAPI void serialize(::CompoundTag& tag) const;
 
-    MCNAPI ~CloudSaveLevelInfo();
+    MCAPI ~CloudSaveLevelInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CloudSaveLevelInfo&&);
+    MCAPI void* $ctor(::CloudSaveLevelInfo&&);
 
-    MCNAPI void* $ctor(::CloudSaveLevelInfo const&);
+    MCAPI void* $ctor(::CloudSaveLevelInfo const&);
 
-    MCNAPI void* $ctor(::CompoundTag const& tag);
+    MCAPI void* $ctor(::CompoundTag const& tag);
 
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::std::string driveItemId,
         ::std::string cTag,
         ::std::string userId,
@@ -63,6 +63,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

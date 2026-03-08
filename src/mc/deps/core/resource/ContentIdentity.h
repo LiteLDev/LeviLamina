@@ -16,18 +16,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string asString() const;
+    MCFOLD ::std::string asString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ContentIdentity fromString(::std::string const& uuidString);
+    MCAPI static ::ContentIdentity fromString(::std::string const& uuidString);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ContentIdentity& EMPTY();
+    MCAPI static ::ContentIdentity& EMPTY();
     // NOLINTEND
 };

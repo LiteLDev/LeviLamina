@@ -9,16 +9,14 @@ namespace MinecraftCamera {
 
 struct CameraPerspectiveOptionComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk99fc74;
-    // NOLINTEND
+    // CameraPerspectiveOptionComponent inner types define
+    using PlayerViewMode = ::SharedTypes::v1_21_100::PlayerViewMode;
 
 public:
-    // prevent constructor by default
-    CameraPerspectiveOptionComponent& operator=(CameraPerspectiveOptionComponent const&);
-    CameraPerspectiveOptionComponent(CameraPerspectiveOptionComponent const&);
-    CameraPerspectiveOptionComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::PlayerViewMode> mActivateForViewMode;
+    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

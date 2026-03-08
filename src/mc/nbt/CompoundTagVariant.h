@@ -63,14 +63,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Tag& emplace(::Tag&& tag);
+    MCAPI ::Tag& emplace(::Tag&& tag);
 
-    MCNAPI ~CompoundTagVariant();
+    MCAPI ~CompoundTagVariant();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

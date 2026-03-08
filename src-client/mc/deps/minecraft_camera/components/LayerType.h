@@ -4,6 +4,10 @@
 
 namespace MinecraftCamera {
 
-enum class LayerType : uchar {};
+enum class LayerType : uchar {
+    Pos   = 0,
+    Rot   = 1,
+    Count = 2,
+};
 
 }

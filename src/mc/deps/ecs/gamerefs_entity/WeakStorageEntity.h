@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
+    MCFOLD ::WeakStorageEntity& operator=(::WeakStorageEntity&&);
     // NOLINTEND
 };

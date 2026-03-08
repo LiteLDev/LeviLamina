@@ -120,8 +120,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::OreUI::EditorBlockPaletteFacet::BlockPalette&
-        operator=(::OreUI::EditorBlockPaletteFacet::BlockPalette&&);
+        MCAPI ::OreUI::EditorBlockPaletteFacet::BlockPalette& operator=(::OreUI::EditorBlockPaletteFacet::BlockPalette&&
+        );
 
         MCAPI ~BlockPalette();
         // NOLINTEND

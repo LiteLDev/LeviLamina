@@ -16,8 +16,8 @@ public:
 
 public:
     // prevent constructor by default
-    NatPunchthroughServerDebugInterface_PacketLogger&
-    operator=(NatPunchthroughServerDebugInterface_PacketLogger const&);
+    NatPunchthroughServerDebugInterface_PacketLogger& operator=(NatPunchthroughServerDebugInterface_PacketLogger const&
+    );
     NatPunchthroughServerDebugInterface_PacketLogger(NatPunchthroughServerDebugInterface_PacketLogger const&);
     NatPunchthroughServerDebugInterface_PacketLogger();
 

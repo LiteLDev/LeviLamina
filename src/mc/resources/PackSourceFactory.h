@@ -133,13 +133,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackSourceFactory(
+    MCAPI PackSourceFactory(
         ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
         ::std::unique_ptr<::IPackIOProvider>                               io,
         ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
     );
 
-    MCNAPI ::std::unique_ptr<::DirectoryPackSource> createOwnedDirectoryPackSource(
+    MCAPI ::std::unique_ptr<::DirectoryPackSource> createOwnedDirectoryPackSource(
         ::Core::Path const& path,
         ::PackType          packType,
         ::PackOrigin        packOrigin,
@@ -150,7 +150,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
         ::std::unique_ptr<::IPackIOProvider>                               io,
         ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
@@ -160,66 +160,65 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+    MCAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
         ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
         ::mce::UUID const&                                                  worldTemplateId,
         ::PackType                                                          packType,
         ::PackOrigin                                                        packOrigin
     );
 
-    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+    MCAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
         ::std::unique_ptr<::WorldTemplateCollectionView> view,
         ::mce::UUID const&                               worldTemplateId,
         ::PackType                                       packType,
         ::PackOrigin                                     packOrigin
     );
 
-    MCNAPI ::WorldTemplatePackSource*
+    MCAPI ::WorldTemplatePackSource*
     $getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const;
 
-    MCNAPI ::DirectoryPackSource& $createDirectoryPackSource(
+    MCAPI ::DirectoryPackSource& $createDirectoryPackSource(
         ::Core::Path const& path,
         ::PackType          packType,
         ::PackOrigin        packOrigin,
         bool                isDevDirectory
     );
 
-    MCNAPI ::DirectoryPackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const;
+    MCAPI ::DirectoryPackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const;
 
-    MCNAPI ::InPackagePackSource& $createInPackagePackSource(::PackType packType);
+    MCAPI ::InPackagePackSource& $createInPackagePackSource(::PackType packType);
 
-    MCNAPI ::InPackagePackSource* $getInPackagePackSource(::PackType packType);
+    MCAPI ::InPackagePackSource* $getInPackagePackSource(::PackType packType);
 
-    MCNAPI ::WorldHistoryPackSource&
-    $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
+    MCAPI ::WorldHistoryPackSource& $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
 
-    MCNAPI ::WorldHistoryPackSource*
+    MCAPI ::WorldHistoryPackSource*
     $getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const;
 
-    MCNAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
+    MCAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
 
-    MCNAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
+    MCAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
 
-    MCNAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(
+    MCAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(
         int64                                                       realmId,
         ::PackType                                                  packType,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     );
 
-    MCNAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
+    MCAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
+    MCAPI ::TreatmentPackSource& $createTreatmentPackSource(::Core::Path const& path, ::PackType packType);
 
-    MCNAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
+    MCAPI ::TreatmentPackSource* $getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const;
 
-    MCNAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
+    MCAPI void $removeFromTreatmentPackSource(::Core::Path const& fullPathToPack);
 #endif
 
 

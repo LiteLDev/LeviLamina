@@ -16,14 +16,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk90cf01;
+        ::ll::TypedStorage<8, 8, void (*)(uchar*)> m_func;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Deleter& operator=(Deleter const&);
-        Deleter(Deleter const&);
-        Deleter();
     };
 
     using const_iterator = uchar const*;
@@ -64,19 +58,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void defaultDeleter(uchar* ptr);
+    MCAPI static void defaultDeleter(uchar* ptr);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uint64 size);
+    MCAPI_C void* $ctor(uint64 size);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };
 

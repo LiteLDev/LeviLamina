@@ -8,14 +8,8 @@ class CameraTimeOverrideComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5053a0;
+    ::ll::TypedStorage<8, 64, ::std::function<float()>> mGetDeltaTimeOverride;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraTimeOverrideComponent& operator=(CameraTimeOverrideComponent const&);
-    CameraTimeOverrideComponent(CameraTimeOverrideComponent const&);
-    CameraTimeOverrideComponent();
 };
 
 } // namespace MinecraftCamera

@@ -23,22 +23,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TextureAtlasItem(::TextureAtlasItem const&);
+    MCAPI TextureAtlasItem(::TextureAtlasItem const&);
 
-    MCNAPI ::TextureAtlasItem& operator=(::TextureAtlasItem const&);
+    MCAPI ::TextureAtlasItem& operator=(::TextureAtlasItem const&);
 
-    MCNAPI ~TextureAtlasItem();
+    MCAPI ~TextureAtlasItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TextureAtlasItem const&);
+    MCAPI void* $ctor(::TextureAtlasItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

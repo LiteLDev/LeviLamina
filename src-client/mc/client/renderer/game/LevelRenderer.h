@@ -24,6 +24,7 @@
 // clang-format off
 class Actor;
 class Block;
+class BlockActorRenderDispatcher;
 class BlockPos;
 class BlockSource;
 class BlockTessellator;
@@ -40,6 +41,7 @@ class MultiPlayerLevel;
 class Options;
 class ParticleEngine;
 class ParticleSystemEngine;
+class RenderChunkCoordinator;
 class ScreenContext;
 class SoundPlayerInterface;
 class TaskGroup;
@@ -47,12 +49,10 @@ class Tessellator;
 class TextureAtlas;
 struct ActorBlockSyncMessage;
 struct ActorResourceDefinitionGroup;
-struct BlockActorRenderDispatcher;
 struct ClientFrameUpdateContext;
 struct FrameRenderObject;
 struct LevelRenderPreRenderUpdateParameters;
 struct PlayerRenderView;
-struct RenderChunkCoordinator;
 struct ScreenshotOptions;
 struct SoundMapping;
 namespace PointLighting { struct PointLightCoordinator; }

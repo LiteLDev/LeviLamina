@@ -16,23 +16,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Subscription();
+    MCAPI Subscription();
 
-    MCNAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
+    MCAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
 
-    MCNAPI ~Subscription();
+    MCAPI ~Subscription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

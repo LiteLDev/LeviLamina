@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SystemInfo(::SystemInfo&&);
+    MCAPI SystemInfo(::SystemInfo&&);
 
-    MCNAPI ~SystemInfo();
+    MCAPI ~SystemInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SystemInfo&&);
+    MCAPI void* $ctor(::SystemInfo&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

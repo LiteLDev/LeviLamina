@@ -40,25 +40,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleCoordinatorPlayerGameplayEvent(
+    MCAPI bool _handleCoordinatorPlayerGameplayEvent(
         ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     );
 
-    MCNAPI bool _handleMutablePlayerGameplayEvent(
+    MCAPI bool _handleMutablePlayerGameplayEvent(
         ::MutablePlayerGameplayEvent<::CoordinatorResult>&                                event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCNAPI bool _handlePlayerDisconnectEvent(
+    MCAPI bool _handlePlayerDisconnectEvent(
         ::PlayerDisconnectEvent const&                                                    playerDisconnectEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCNAPI bool _handlePlayerGameModeChangeEvent(
+    MCAPI bool _handlePlayerGameModeChangeEvent(
         ::PlayerGameModeChangeEvent&                                                      playerGameModeChangeEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -68,12 +68,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
+    MCAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
 
 

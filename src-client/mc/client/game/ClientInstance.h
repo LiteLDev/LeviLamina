@@ -34,6 +34,7 @@
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/renderer/MatrixStack.h"
 #include "mc/events/NetworkType.h"
 #include "mc/input/ClientPlayMode.h"
@@ -52,7 +53,9 @@
 class AbstractScene;
 class Actor;
 class ActorAnimationGroup;
+class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class BlockActorRenderDispatcher;
 class BlockCullingGroup;
 class BlockSource;
 class BlockTessellator;
@@ -120,10 +123,8 @@ class UIEventCoordinator;
 class Vec2;
 class Vec3;
 class WeakEntityRef;
-struct ActorBlockRenderer;
 struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
-struct BlockActorRenderDispatcher;
 struct CameraRegistry;
 struct ClientInstanceArguments;
 struct ClientInstanceInitArguments;
@@ -189,7 +190,6 @@ namespace World { class WorldSystem; }
 namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
-namespace mce { class TexturePtr; }
 namespace mce { struct ViewportInfo; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
@@ -211,26 +211,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk9600de;
-        ::ll::UntypedStorage<8, 32> mUnkc84d55;
+        ::ll::TypedStorage<8, 8, ::mce::Texture*>    mUITexture;
+        ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mUICursorTexture;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ClientRenderResources& operator=(ClientRenderResources const&);
-        ClientRenderResources(ClientRenderResources const&);
-        ClientRenderResources();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ClientRenderResources();
+        MCAPI ~ClientRenderResources();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

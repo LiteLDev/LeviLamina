@@ -1086,19 +1086,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
+    MCAPI_C void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MultiPlayerLevel* $asMultiPlayerLevel();
+    MCFOLD ::MultiPlayerLevel* $asMultiPlayerLevel();
 
 
     // NOLINTEND

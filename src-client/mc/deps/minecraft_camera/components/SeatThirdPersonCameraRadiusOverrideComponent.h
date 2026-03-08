@@ -4,6 +4,12 @@
 
 namespace MinecraftCamera {
 
-struct SeatThirdPersonCameraRadiusOverrideComponent {};
+struct SeatThirdPersonCameraRadiusOverrideComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mValue;
+    // NOLINTEND
+};
 
 } // namespace MinecraftCamera

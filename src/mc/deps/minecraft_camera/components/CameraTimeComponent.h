@@ -17,43 +17,25 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkbfa4b0;
-        ::ll::UntypedStorage<4, 8> mUnkef482d;
+        ::ll::TypedStorage<4, 4, float>                  mDeltaTime;
+        ::ll::TypedStorage<4, 8, ::std::optional<float>> mElapsedTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DeltaTime& operator=(DeltaTime const&);
-        DeltaTime(DeltaTime const&);
-        DeltaTime();
     };
 
     struct ElapsedTime {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk4cdc0e;
+        ::ll::TypedStorage<4, 4, float> mElapsedTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ElapsedTime& operator=(ElapsedTime const&);
-        ElapsedTime(ElapsedTime const&);
-        ElapsedTime();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2563c1;
-    ::ll::UntypedStorage<4, 4> mUnkeddecf;
+    ::ll::TypedStorage<4, 4, float> mUpdatedAt;
+    ::ll::TypedStorage<4, 4, float> mDeltaTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraTimeComponent& operator=(CameraTimeComponent const&);
-    CameraTimeComponent(CameraTimeComponent const&);
-    CameraTimeComponent();
 };
 
 } // namespace MinecraftCamera

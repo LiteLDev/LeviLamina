@@ -31,13 +31,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
 
-    MCNAPI ::ItemInstance const& $getRecipeItem(int index) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int index) const;
 
-    MCNAPI bool $canRemove(int slot, int removeCount) const;
+    MCFOLD bool $canRemove(int slot, int removeCount) const;
 #endif
 
 

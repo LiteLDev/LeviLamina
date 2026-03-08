@@ -20,6 +20,12 @@ struct ServerTexture
       ::std::
           variant<::std::monostate, ::mce::Texture, ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>> {
 public:
+    // ServerTexture inner types define
+    using ServerResource = ::mce::ServerResourcePointer<
+        ::std::
+            variant<::std::monostate, ::mce::Texture, ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>>;
+
+public:
     // prevent constructor by default
     ServerTexture& operator=(ServerTexture const&);
 
@@ -32,41 +38,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerTexture();
+    MCAPI ServerTexture();
 
-    MCNAPI ServerTexture(::mce::ServerTexture const&);
+    MCAPI ServerTexture(::mce::ServerTexture const&);
 
-    MCNAPI explicit ServerTexture(
+    MCAPI explicit ServerTexture(
         ::mce::ResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>> const&
     );
 
-    MCNAPI ServerTexture(::mce::ServerTexture&&);
+    MCAPI ServerTexture(::mce::ServerTexture&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCNAPI void* $ctor(::mce::ServerTexture const&);
+    MCFOLD void* $ctor(::mce::ServerTexture const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::mce::ResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>> const&
     );
 
-    MCNAPI void* $ctor(::mce::ServerTexture&&);
+    MCAPI void* $ctor(::mce::ServerTexture&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

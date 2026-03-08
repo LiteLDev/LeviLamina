@@ -4,6 +4,12 @@
 
 namespace MinecraftCamera {
 
-struct TargetCameraRotationSpeedComponent {};
+struct TargetCameraRotationSpeedComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mCameraRotationSpeed;
+    // NOLINTEND
+};
 
 } // namespace MinecraftCamera

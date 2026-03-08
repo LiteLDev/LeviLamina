@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handlScriptModuleShutdownEvent(
+    MCAPI bool _handlScriptModuleShutdownEvent(
         ::ScriptModuleShutdownEvent const&                                                moduleShutdownEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
     ) const;
 
-    MCNAPI bool _handleScriptModuleStartupEvent(
+    MCAPI bool _handleScriptModuleStartupEvent(
         ::ScriptModuleStartupEvent const&                                                 moduleStartupEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
     ) const;
 
-    MCNAPI bool _handleWatchdogTerminateEvent(
+    MCAPI bool _handleWatchdogTerminateEvent(
         ::BeforeWatchdogTerminateEvent&                                                   beforeWatchdogTerminateEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> scriptSystemBeforeEventsHandle
@@ -61,13 +61,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::BeforeWatchdogTerminateEvent& beforeWatchdogTerminateEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ScriptModuleStartupEvent const& moduleStartupEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent);
 
 

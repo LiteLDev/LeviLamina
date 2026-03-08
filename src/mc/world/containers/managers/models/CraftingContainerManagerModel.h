@@ -77,45 +77,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
+    MCAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
         ::ContainerEnumName                                          containerEnumName,
         ::CreativeItemGroupCategory* const                           category,
         bool                                                         doExpando,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
-    MCNAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
+    MCAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
         ::ContainerEnumName                  containerEnumName,
         ::std::vector<::ItemInstance> const& itemInstanceVector,
         bool,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
-    MCNAPI_C ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+    MCAPI_C ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
 
-    MCNAPI_C ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
+    MCAPI_C ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
 
-    MCNAPI_C bool _foundInStartOfAnyWord(::std::string const& itemName) const;
+    MCAPI_C bool _foundInStartOfAnyWord(::std::string const& itemName) const;
 
-    MCNAPI_C bool _hasUnlockedRecipes(::ItemInstance const& item) const;
+    MCAPI_C bool _hasUnlockedRecipes(::ItemInstance const& item) const;
 
-    MCNAPI_C bool _populateContainers(uint64& count);
+    MCAPI_C bool _populateContainers(uint64& count);
 
-    MCNAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+    MCFOLD_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 
-    MCNAPI_C ::std::vector<::std::string> const getCraftingTags() const;
+    MCAPI_C ::std::vector<::std::string> const getCraftingTags() const;
 
-    MCNAPI_C bool hasIngredientSetChanged(::ItemStack const& inHand);
+    MCAPI_C bool hasIngredientSetChanged(::ItemStack const& inHand);
 
-    MCNAPI_C void setIsFiltering(bool filtering);
+    MCAPI_C void setIsFiltering(bool filtering);
 
-    MCNAPI_C void setSearchString(::std::string const& searchString);
+    MCAPI_C void setSearchString(::std::string const& searchString);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::ContainerID        containerId,
         ::Player&            player,
         bool                 workbench,
@@ -129,28 +129,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI void $setSlot(int, ::ItemStack const&, bool);
+    MCFOLD void $setSlot(int, ::ItemStack const&, bool);
 
-    MCNAPI ::ItemStack const& $getSlot(int) const;
+    MCFOLD ::ItemStack const& $getSlot(int) const;
 
-    MCNAPI void $setData(int, int);
+    MCFOLD void $setData(int, int);
 
-    MCNAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
-    MCNAPI bool $tick();
+    MCAPI bool $tick();
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
 #endif
 
 

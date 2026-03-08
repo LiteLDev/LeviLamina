@@ -18,16 +18,16 @@ class ContainerValidatorFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>
+    MCAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>
     createContainerScreenValidator(::ContainerScreenContext const& screenContext);
 
-    MCNAPI static ::std::shared_ptr<::ContainerValidationBase const> createContainerValidator(
+    MCAPI static ::std::shared_ptr<::ContainerValidationBase const> createContainerValidator(
         ::FullContainerName const&      containerId,
         ::ContainerScreenContext const& screenContext,
         ::ContainerValidationCaller     caller
     );
 
-    MCNAPI static ::Container*
+    MCAPI static ::Container*
     getBackingContainer(::FullContainerName const& containerEnumName, ::ContainerScreenContext const& screenContext);
     // NOLINTEND
 };

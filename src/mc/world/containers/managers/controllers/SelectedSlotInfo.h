@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SlotData;
+// clang-format on
+
 struct SelectedSlotInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke3e446;
-    ::ll::UntypedStorage<4, 4> mUnk6a6eed;
+    ::ll::TypedStorage<8, 8, ::SlotData const&> mSlot;
+    ::ll::TypedStorage<4, 4, int const>         mProgressiveTake;
     // NOLINTEND
 
 public:

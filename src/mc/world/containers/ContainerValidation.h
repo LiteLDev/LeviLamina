@@ -30,13 +30,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void assignValidForSlotContainerDelegate(
+    MCAPI_C static void assignValidForSlotContainerDelegate(
         ::SparseContainer&              sparseContainer,
         ::ContainerEnumName             containerEnumName,
         ::ContainerScreenContext const& screenContext
     );
 
-    MCNAPI_C static void assignValidationDelegates(
+    MCAPI_C static void assignValidationDelegates(
         ::SparseContainer&              sparseContainer,
         ::ContainerEnumName             containerEnumName,
         ::ContainerScreenContext const& screenContext

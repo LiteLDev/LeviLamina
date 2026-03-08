@@ -67,56 +67,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initListener(float priority);
+    MCAPI void initListener(float priority);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onAppPaused();
+    MCFOLD void $onAppPaused();
 
-    MCNAPI void $onAppUnpaused();
+    MCFOLD void $onAppUnpaused();
 
-    MCNAPI void $onAppPreSuspended();
+    MCFOLD void $onAppPreSuspended();
 
-    MCNAPI void $onAppSuspended();
+    MCFOLD void $onAppSuspended();
 
-    MCNAPI void $onAppResumed();
+    MCFOLD void $onAppResumed();
 
-    MCNAPI void $onAppFocusLost();
+    MCFOLD void $onAppFocusLost();
 
-    MCNAPI void $onAppFocusGained();
+    MCFOLD void $onAppFocusGained();
 
-    MCNAPI void $onAppTerminated();
+    MCFOLD void $onAppTerminated();
 
-    MCNAPI void $onPerformanceModeChanged(bool const boost);
+    MCFOLD void $onPerformanceModeChanged(bool const boost);
 
-    MCNAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+    MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCNAPI void $onResizeBegin();
+    MCFOLD void $onResizeBegin();
 
-    MCNAPI void $onResizeEnd();
+    MCFOLD void $onResizeEnd();
 
-    MCNAPI void $onDeviceLost();
+    MCFOLD void $onDeviceLost();
 
-    MCNAPI void $onAppSurfaceCreated();
+    MCFOLD void $onAppSurfaceCreated();
 
-    MCNAPI void $onAppSurfaceDestroyed();
+    MCFOLD void $onAppSurfaceDestroyed();
 
-    MCNAPI void $onClipboardCopy(::std::string const&);
+    MCFOLD void $onClipboardCopy(::std::string const&);
 
-    MCNAPI void $onClipboardPaste(::std::string const&);
+    MCFOLD void $onClipboardPaste(::std::string const&);
 
 #ifdef LL_PLAT_C
-    MCNAPI void $onOperationModeChanged(::OperationMode const operationMode);
+    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCNAPI void $onLowMemory(::LowMemorySeverity);
+    MCFOLD void $onLowMemory(::LowMemorySeverity);
 #endif
 
 

@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
+#include "mc/util/BaseGameVersion.h"
+
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class CompoundTag;
 // clang-format on
 
@@ -12,41 +16,39 @@ class WorldTemplateLevelData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9adb40;
-    ::ll::UntypedStorage<8, 48> mUnk15e625;
-    ::ll::UntypedStorage<8, 32> mUnka86a1c;
-    ::ll::UntypedStorage<8, 32> mUnk331089;
-    ::ll::UntypedStorage<1, 1>  mUnkb1a099;
-    ::ll::UntypedStorage<1, 1>  mUnk4582d1;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity> mPremiumTemplateContentIdentity;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>   mWorldTemplateIdentity;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mMaxBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>               mIsFromWorldTemplate;
+    ::ll::TypedStorage<1, 1, bool>               mIsWorldTemplateOptionLocked;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WorldTemplateLevelData& operator=(WorldTemplateLevelData const&);
-    WorldTemplateLevelData(WorldTemplateLevelData const&);
     WorldTemplateLevelData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldTemplateLevelData(
+    MCAPI WorldTemplateLevelData(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
         ::BaseGameVersion const& baseGameVersion,
         ::BaseGameVersion const& maxBaseGameVersion
     );
 
-    MCNAPI void _getTagData(::CompoundTag const& tag);
+    MCAPI void _getTagData(::CompoundTag const& tag);
 
-    MCNAPI void _setTagData(::CompoundTag& tag) const;
+    MCAPI void _setTagData(::CompoundTag& tag) const;
 
-    MCNAPI ~WorldTemplateLevelData();
+    MCAPI ~WorldTemplateLevelData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
         ::BaseGameVersion const& baseGameVersion,
@@ -57,6 +59,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

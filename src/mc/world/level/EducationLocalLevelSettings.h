@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings&&);
+    MCFOLD ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings&&);
 
-    MCNAPI ~EducationLocalLevelSettings();
+    MCAPI ~EducationLocalLevelSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

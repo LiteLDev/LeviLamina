@@ -8,14 +8,8 @@ struct FixedBoomOrientationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk399e1b;
+    ::ll::TypedStorage<4, 8, ::glm::vec2> mTargetRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FixedBoomOrientationComponent& operator=(FixedBoomOrientationComponent const&);
-    FixedBoomOrientationComponent(FixedBoomOrientationComponent const&);
-    FixedBoomOrientationComponent();
 };
 
 } // namespace MinecraftCamera

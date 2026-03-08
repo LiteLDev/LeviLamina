@@ -43,32 +43,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
+    MCAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
 
-    MCNAPI void removeListener();
+    MCAPI void removeListener();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onExtendDiskSpace(
+    MCAPI void $onExtendDiskSpace(
         bool const                                      bSet,
         ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
         uint64                                          freeSpace,
         ::std::function<void()>                         onHandledEventCallback
     );
 
-    MCNAPI void $onLowDiskSpace(bool const bSet);
+    MCFOLD void $onLowDiskSpace(bool const bSet);
 
-    MCNAPI void $onOutOfDiskSpace(bool const bSet);
+    MCFOLD void $onOutOfDiskSpace(bool const bSet);
 
-    MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCFOLD void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 
 
     // NOLINTEND

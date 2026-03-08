@@ -4,6 +4,12 @@
 
 namespace MinecraftCamera {
 
-struct SpecialCameraModeComponent {};
+class SpecialCameraModeComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mTripodCameraModeEnabled;
+    // NOLINTEND
+};
 
 } // namespace MinecraftCamera

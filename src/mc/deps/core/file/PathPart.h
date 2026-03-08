@@ -14,15 +14,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI char const* getUtf8CString() const;
+    MCFOLD char const* getUtf8CString() const;
 
-    MCNAPI ~PathPart();
+    MCAPI ~PathPart();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

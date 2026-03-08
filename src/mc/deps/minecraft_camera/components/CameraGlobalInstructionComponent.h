@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/EasingType.h"
+
 namespace MinecraftCamera {
 
 struct CameraGlobalInstructionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk337231;
-    ::ll::UntypedStorage<4, 8> mUnkdbd510;
-    ::ll::UntypedStorage<4, 4> mUnkdaa4a1;
-    ::ll::UntypedStorage<4, 4> mUnkf1f110;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mPresetIndex;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mDelayPresetIndex;
+    ::ll::TypedStorage<4, 4, ::EasingType>          mEasingType;
+    ::ll::TypedStorage<4, 4, float>                 mEasingTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraGlobalInstructionComponent& operator=(CameraGlobalInstructionComponent const&);
-    CameraGlobalInstructionComponent(CameraGlobalInstructionComponent const&);
-    CameraGlobalInstructionComponent();
 };
 
 } // namespace MinecraftCamera
