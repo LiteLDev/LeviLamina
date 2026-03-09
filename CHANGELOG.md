@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.9.8] - 2026-03-09
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.132-server.9
+- Bumped bedrock-runtime-data to v1.21.132-client.10
+- Updated Minecraft headers
+
 ## [1.9.7] - 2026-02-27
 
 ### Added
@@ -1383,7 +1391,8 @@ For lip and tooth-hub test only.
 [#1789]: https://github.com/LiteLDev/LeviLamina/issues/1789
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.8...HEAD
+[1.9.8]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.7...v1.9.8
 [1.9.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.6...v1.9.7
 [1.9.6]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.5...v1.9.6
 [1.9.5]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.4...v1.9.5
