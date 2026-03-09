@@ -40,41 +40,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EducationLevelSettings();
+    MCAPI EducationLevelSettings();
 
-    MCNAPI EducationLevelSettings(::EducationLevelSettings const&);
+    MCAPI EducationLevelSettings(::EducationLevelSettings const&);
 
-    MCNAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
+    MCAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
     getCommandOverrideFunctor() const;
 
-    MCNAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
+    MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
-    MCNAPI ~EducationLevelSettings();
+    MCAPI ~EducationLevelSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
+    MCAPI_C static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_BORDER_PATH();
+    MCAPI static ::std::string const& DEFAULT_BORDER_PATH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::EducationLevelSettings const&);
+    MCAPI void* $ctor(::EducationLevelSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

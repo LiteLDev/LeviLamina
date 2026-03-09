@@ -163,8 +163,8 @@ public:
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&&);
 
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity const& other) const;
+        MCNAPI bool operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity const& other
+        ) const;
 
         MCNAPI ~ComponentStateEntity();
         // NOLINTEND
@@ -236,8 +236,8 @@ public:
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const&);
 
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const& other) const;
+        MCNAPI bool operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateGrid const& other
+        ) const;
         // NOLINTEND
     };
 
@@ -265,8 +265,8 @@ public:
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline const&);
 
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline const& other) const;
+        MCNAPI bool operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateSpline const& other
+        ) const;
 
         MCNAPI ~ComponentStateSpline();
         // NOLINTEND
@@ -298,8 +298,8 @@ public:
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText&&);
 
-        MCNAPI bool
-        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText const& other) const;
+        MCNAPI bool operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText const& other
+        ) const;
 
         MCNAPI ~ComponentStateText();
         // NOLINTEND
@@ -346,8 +346,8 @@ public:
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline const&);
 
-        MCNAPI bool operator==(
-            ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline const& other
+        MCNAPI bool
+        operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateVolumeOutline const& other
         ) const;
 
         MCNAPI ~ComponentStateVolumeOutline();

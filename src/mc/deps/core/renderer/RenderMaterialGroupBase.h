@@ -12,6 +12,10 @@ namespace mce {
 
 class RenderMaterialGroupBase {
 public:
+    // RenderMaterialGroupBase inner types define
+    using MaterialMap = ::std::unordered_map<::HashedString, ::std::shared_ptr<::mce::RenderMaterialInfo>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
@@ -28,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

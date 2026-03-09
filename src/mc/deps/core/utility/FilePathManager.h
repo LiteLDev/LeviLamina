@@ -19,22 +19,22 @@ class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk572541;
-    ::ll::UntypedStorage<8, 32> mUnk4e130e;
-    ::ll::UntypedStorage<8, 32> mUnk48591c;
-    ::ll::UntypedStorage<8, 32> mUnkd9ba57;
-    ::ll::UntypedStorage<8, 32> mUnk6c2c6e;
-    ::ll::UntypedStorage<8, 32> mUnkf9b714;
-    ::ll::UntypedStorage<8, 32> mUnk369d18;
-    ::ll::UntypedStorage<8, 32> mUnk3ea53f;
-    ::ll::UntypedStorage<8, 32> mUnk4e27dc;
-    ::ll::UntypedStorage<8, 32> mUnka3fac4;
-    ::ll::UntypedStorage<8, 32> mUnk6aabe0;
-    ::ll::UntypedStorage<8, 32> mUnkdaf65b;
-    ::ll::UntypedStorage<8, 32> mUnk725ea5;
-    ::ll::UntypedStorage<8, 32> mUnkbefcf7;
-    ::ll::UntypedStorage<8, 32> mUnk235a6a;
-    ::ll::UntypedStorage<1, 1>  mUnk577587;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mRoot;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mHome;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mWorlds;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mSharedWorlds;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mLevelArchive;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mUserData;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mSharedData;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>       mPersonaPiecePack;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mPackagePath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mDataUrl;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mExternalFilePath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mTemporaryFilePath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mCacheFilePath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mSettingsPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mResourcePacks;
+    ::ll::TypedStorage<1, 1, bool const>                               mIsDedicatedServer;
     // NOLINTEND
 
 public:
@@ -51,43 +51,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilePathManager(::Core::FilePathManager const&);
+    MCAPI FilePathManager(::Core::FilePathManager const&);
 
-    MCNAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
+    MCAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
 
-    MCNAPI_C ::Core::PathView getWorldsPath() const;
+    MCAPI_C ::Core::PathView getWorldsPath() const;
 
-    MCNAPI void setRootPath(::Core::PathView path);
+    MCAPI void setRootPath(::Core::PathView path);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& ARCHIVE_DIR();
 
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_DIR();
 
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& PERSONA_TEST_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& PERSONA_TEST_DIR();
 
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& REALM_WORLDS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& REALM_WORLDS_DIR();
 
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
 
-    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
+    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::FilePathManager const&);
+    MCAPI void* $ctor(::Core::FilePathManager const&);
 
-    MCNAPI void* $ctor(::Core::FilePathManagerPaths&& paths);
+    MCAPI void* $ctor(::Core::FilePathManagerPaths&& paths);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

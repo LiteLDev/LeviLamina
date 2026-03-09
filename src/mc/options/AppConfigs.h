@@ -15,7 +15,9 @@ class IScreenCapabilities;
 class LevelData;
 struct AppConfigsDependencies;
 struct ConnectionDefinition;
+struct LevelSummary;
 struct PackIdVersion;
+struct ScreenCapabilitiesRepo;
 class ISceneStack;
 class SceneFactory;
 // clang-format on
@@ -29,19 +31,22 @@ public:
         Allowed   = 2,
     };
 
+    using LeaveGameCallback =
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&, ::SceneFactory&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9f7098;
-    ::ll::UntypedStorage<8, 8>  mUnke1b346;
-    ::ll::UntypedStorage<8, 8>  mUnk401edb;
-    ::ll::UntypedStorage<8, 64> mUnk6aa499;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::LevelSummary const&)>> mCanAccessWorldCallback;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenCapabilitiesRepo>>   mScreenCapabilities;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::AppConfigsDependencies const>> const> mDependencies;
+    ::ll::
+        TypedStorage<8, 64, ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&, ::SceneFactory&)>>
+            mLeaveGameCallback;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AppConfigs& operator=(AppConfigs const&);
-    AppConfigs(AppConfigs const&);
     AppConfigs();
 
 public:
@@ -129,99 +134,99 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AppConfigs(::AppConfigsDependencies&& dependencies);
+    MCAPI explicit AppConfigs(::AppConfigsDependencies&& dependencies);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AppConfigsDependencies&& dependencies);
+    MCAPI void* $ctor(::AppConfigsDependencies&& dependencies);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $loadFromData(::IAppConfigData const&);
+    MCFOLD void $loadFromData(::IAppConfigData const&);
 
-    MCNAPI bool $arePremiumSkinPacksAllowed() const;
+    MCFOLD bool $arePremiumSkinPacksAllowed() const;
 
-    MCNAPI bool $areResourcePacksAllowed() const;
+    MCFOLD bool $areResourcePacksAllowed() const;
 
-    MCNAPI bool $isPlayScreenAllowed() const;
+    MCFOLD bool $isPlayScreenAllowed() const;
 
-    MCNAPI bool $isChatScreenAllowed() const;
+    MCFOLD bool $isChatScreenAllowed() const;
 
-    MCNAPI bool $isGameTabShownInSettings() const;
+    MCFOLD bool $isGameTabShownInSettings() const;
 
-    MCNAPI bool $areEmotesSupported() const;
+    MCFOLD bool $areEmotesSupported() const;
 
-    MCNAPI bool $useNormalizedFontSize() const;
+    MCFOLD bool $useNormalizedFontSize() const;
 
-    MCNAPI bool $useFullScreenByDefault() const;
+    MCFOLD bool $useFullScreenByDefault() const;
 
-    MCNAPI bool $muteByDefault() const;
+    MCFOLD bool $muteByDefault() const;
 
-    MCNAPI bool $isCoursesCacheEnabled() const;
+    MCFOLD bool $isCoursesCacheEnabled() const;
 
-    MCNAPI bool $shouldPromptBeforeExit() const;
+    MCFOLD bool $shouldPromptBeforeExit() const;
 
-    MCNAPI bool $gameArgumentsNeedAuthentication() const;
+    MCFOLD bool $gameArgumentsNeedAuthentication() const;
 
-    MCNAPI bool $worldBuilderDisabled() const;
+    MCFOLD bool $worldBuilderDisabled() const;
 
-    MCNAPI bool $worldsAreSingleUse() const;
+    MCFOLD bool $worldsAreSingleUse() const;
 
-    MCNAPI ::EducationEditionOffer $getEducationEditionOffering() const;
+    MCFOLD ::EducationEditionOffer $getEducationEditionOffering() const;
 
-    MCNAPI bool $requireTrustedContent() const;
+    MCFOLD bool $requireTrustedContent() const;
 
-    MCNAPI bool $isExternalPlayerCommunicationAllowed() const;
+    MCFOLD bool $isExternalPlayerCommunicationAllowed() const;
 
-    MCNAPI bool $supports3DExport() const;
+    MCAPI bool $supports3DExport() const;
 
-    MCNAPI bool $requireEduLevelSettings() const;
+    MCFOLD bool $requireEduLevelSettings() const;
 
-    MCNAPI ::ConnectionDefinition $getConnectionDefinition() const;
+    MCAPI ::ConnectionDefinition $getConnectionDefinition() const;
 
-    MCNAPI bool $supportsChangingMultiplayerDuringPlay() const;
+    MCFOLD bool $supportsChangingMultiplayerDuringPlay() const;
 
-    MCNAPI bool $webSocketsDisabled() const;
+    MCFOLD bool $webSocketsDisabled() const;
 
-    MCNAPI bool $sendPermissionsTelemetry() const;
+    MCFOLD bool $sendPermissionsTelemetry() const;
 
-    MCNAPI bool $useEduDemoUpsellDialog() const;
+    MCFOLD bool $useEduDemoUpsellDialog() const;
 
-    MCNAPI bool $allowGameArguments() const;
+    MCFOLD bool $allowGameArguments() const;
 
-    MCNAPI bool $canUseAzureNotebooks() const;
+    MCFOLD bool $canUseAzureNotebooks() const;
 
-    MCNAPI ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
+    MCFOLD ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
 
-    MCNAPI bool $isSaveToCloudOn() const;
+    MCFOLD bool $isSaveToCloudOn() const;
 
-    MCNAPI bool $isEduAIOn() const;
+    MCFOLD bool $isEduAIOn() const;
 
-    MCNAPI bool $isDedicatedServerOn() const;
+    MCFOLD bool $isDedicatedServerOn() const;
 
-    MCNAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
+    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
-    MCNAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
+    MCAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
 
-    MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider> $createContentAccessibility() const;
+    MCAPI ::std::unique_ptr<::IContentAccessibilityProvider> $createContentAccessibility() const;
 
-    MCNAPI ::std::string $getFeedbackURL() const;
+    MCAPI ::std::string $getFeedbackURL() const;
 
-    MCNAPI ::std::string $getHelpCenterURL() const;
+    MCAPI ::std::string $getHelpCenterURL() const;
 
-    MCNAPI ::std::string $getPrivacyAndOnlineSafetyURL() const;
+    MCAPI ::std::string $getPrivacyAndOnlineSafetyURL() const;
 
-    MCNAPI void $applyLevelDataOverride(::LevelData&) const;
+    MCFOLD void $applyLevelDataOverride(::LevelData&) const;
 
 
     // NOLINTEND

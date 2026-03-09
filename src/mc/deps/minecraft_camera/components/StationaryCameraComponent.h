@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+
 namespace MinecraftCamera {
 
 class StationaryCameraComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk604b86;
-    ::ll::UntypedStorage<4, 8>  mUnkb14dba;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 8, ::Vec2>  mRot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StationaryCameraComponent& operator=(StationaryCameraComponent const&);
-    StationaryCameraComponent(StationaryCameraComponent const&);
-    StationaryCameraComponent();
 };
 
 } // namespace MinecraftCamera

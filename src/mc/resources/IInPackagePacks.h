@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/resource/ResourceFileSystem.h"
 
 class IInPackagePacks {
 public:
@@ -17,17 +20,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk43d8b5;
-        ::ll::UntypedStorage<1, 1>  mUnk70b4f6;
-        ::ll::UntypedStorage<4, 4>  mUnke50a5c;
-        ::ll::UntypedStorage<4, 4>  mUnk90ff66;
+        ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
+        ::ll::TypedStorage<1, 1, bool>                               mIsHidden;
+        ::ll::TypedStorage<4, 4, ::PackCategory>                     mPackCategory;
+        ::ll::TypedStorage<4, 4, ::ResourceFileSystem>               mFileSystem;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MetaData& operator=(MetaData const&);
-        MetaData(MetaData const&);
-        MetaData();
     };
 
 public:

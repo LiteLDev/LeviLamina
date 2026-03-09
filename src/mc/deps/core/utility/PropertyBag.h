@@ -16,18 +16,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool has(::std::string_view key) const;
+    MCAPI_C bool has(::std::string_view key) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PropertyBag& EMPTY();
+    MCAPI static ::PropertyBag& EMPTY();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

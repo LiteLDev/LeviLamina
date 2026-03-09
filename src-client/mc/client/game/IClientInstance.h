@@ -44,7 +44,9 @@
 class AbstractScene;
 class Actor;
 class ActorAnimationGroup;
+class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class BlockActorRenderDispatcher;
 class BlockCullingGroup;
 class BlockSource;
 class BlockTessellator;
@@ -111,10 +113,8 @@ class UIEventCoordinator;
 class Vec2;
 class Vec3;
 class WeakEntityRef;
-struct ActorBlockRenderer;
 struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
-struct BlockActorRenderDispatcher;
 struct CameraRegistry;
 struct ClientInstanceInitArguments;
 struct ClientRequirementVerifier;
@@ -1071,13 +1071,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&);
+    MCFOLD void $reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&);
     // NOLINTEND
 
 public:

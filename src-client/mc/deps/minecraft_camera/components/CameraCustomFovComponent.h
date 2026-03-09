@@ -4,6 +4,12 @@
 
 namespace MinecraftCamera {
 
-struct CameraCustomFovComponent {};
+struct CameraCustomFovComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mCustomFov;
+    // NOLINTEND
+};
 
 } // namespace MinecraftCamera

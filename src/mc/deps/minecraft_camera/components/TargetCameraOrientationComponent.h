@@ -8,14 +8,8 @@ struct TargetCameraOrientationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkf090ff;
+    ::ll::TypedStorage<4, 16, ::glm::qua<float>> mTargetCameraOrientation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetCameraOrientationComponent& operator=(TargetCameraOrientationComponent const&);
-    TargetCameraOrientationComponent(TargetCameraOrientationComponent const&);
-    TargetCameraOrientationComponent();
 };
 
 } // namespace MinecraftCamera

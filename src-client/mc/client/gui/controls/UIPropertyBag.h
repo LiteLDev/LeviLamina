@@ -21,9 +21,44 @@ public:
     // clang-format on
 
     // UIPropertyBag inner types define
-    struct ContextObject {};
+    struct ContextObject {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int> count;
+        // NOLINTEND
+    };
 
-    struct PropertyChangedNotificationInfo {};
+    struct PropertyChangedNotificationInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                targetPropertyName;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>> targetControl;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::function<void(
+                ::std::weak_ptr<::UIControl> const&,
+                ::std::string_view,
+                ::Json::Value const&,
+                ::UIPropertyBag::ContextObject
+            )>>
+            callback;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~PropertyChangedNotificationInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using PropertyChangedNotificationCallback = ::std::function<void(
         ::std::weak_ptr<::UIControl> const&,

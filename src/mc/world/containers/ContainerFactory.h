@@ -13,15 +13,15 @@ class ContainerFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::shared_ptr<::ContainerController>
+    MCAPI_C static ::std::shared_ptr<::ContainerController>
     createController(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCNAPI_C static ::FullContainerName getContainerEnumName(::std::string const& collectionName);
+    MCAPI_C static ::FullContainerName getContainerEnumName(::std::string const& collectionName);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::FullContainerName const& INVALID_FULL_CONTAINER_ENUM_NAME();
+    MCAPI static ::FullContainerName const& INVALID_FULL_CONTAINER_ENUM_NAME();
     // NOLINTEND
 };

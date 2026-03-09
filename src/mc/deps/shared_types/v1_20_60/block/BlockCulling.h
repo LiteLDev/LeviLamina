@@ -103,8 +103,8 @@ public:
         // NOLINTBEGIN
         MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
 
-        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&);
+        MCAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&
+        );
         // NOLINTEND
     };
 

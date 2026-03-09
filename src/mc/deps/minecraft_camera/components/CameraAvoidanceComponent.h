@@ -11,21 +11,19 @@ namespace MinecraftCamera {
 
 struct CameraAvoidanceComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkab1374;
-    ::ll::UntypedStorage<8, 24> mUnk40851f;
-    ::ll::UntypedStorage<4, 4>  mUnk9afcb1;
-    ::ll::UntypedStorage<4, 4>  mUnkbb1843;
-    ::ll::UntypedStorage<4, 4>  mUnk4bd5a5;
-    ::ll::UntypedStorage<4, 4>  mUnk9f8889;
-    // NOLINTEND
+    // CameraAvoidanceComponent inner types define
+    using CameraAvoidanceRay = ::SharedTypes::v1_21_100::CameraAvoidanceRay;
 
 public:
-    // prevent constructor by default
-    CameraAvoidanceComponent& operator=(CameraAvoidanceComponent const&);
-    CameraAvoidanceComponent(CameraAvoidanceComponent const&);
-    CameraAvoidanceComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_100::CameraAvoidanceRay>> mAvoidanceRaysHorizontal;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_100::CameraAvoidanceRay>> mAvoidanceRaysVertical;
+    ::ll::TypedStorage<4, 4, float> mRelaxDistanceSmoothingStiffness;
+    ::ll::TypedStorage<4, 4, float> mDistanceConstraintMin;
+    ::ll::TypedStorage<4, 4, float> mRelaxDistanceVelocity;
+    ::ll::TypedStorage<4, 4, float> mSmoothedDistanceConstraint;
+    // NOLINTEND
 
 public:
     // member functions

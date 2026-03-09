@@ -2,38 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/util/ScreenshotPostProcessFilter.h"
+#include "mc/deps/core/file/PathBuffer.h"
+
 struct ScreenshotOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6ea098;
-    ::ll::UntypedStorage<4, 4>  mUnk1848ec;
-    ::ll::UntypedStorage<4, 4>  mUnkad8b39;
-    ::ll::UntypedStorage<4, 4>  mUnkd82e4c;
-    ::ll::UntypedStorage<4, 4>  mUnkbcc7aa;
-    ::ll::UntypedStorage<1, 1>  mUnke6fb21;
-    ::ll::UntypedStorage<1, 1>  mUnk579858;
-    ::ll::UntypedStorage<8, 32> mUnkdf15d1;
-    ::ll::UntypedStorage<8, 32> mUnk73ec65;
-    ::ll::UntypedStorage<8, 32> mUnk262910;
-    ::ll::UntypedStorage<1, 1>  mUnk4a744a;
-    ::ll::UntypedStorage<1, 1>  mUnk7288e1;
-    ::ll::UntypedStorage<1, 1>  mUnke613a3;
-    ::ll::UntypedStorage<1, 1>  mUnk98f9eb;
-    ::ll::UntypedStorage<1, 1>  mUnkd658c3;
-    ::ll::UntypedStorage<1, 1>  mUnk44c1a0;
-    ::ll::UntypedStorage<8, 32> mUnk96013f;
-    ::ll::UntypedStorage<8, 32> mUnk2084e9;
-    ::ll::UntypedStorage<8, 32> mUnke0a849;
-    ::ll::UntypedStorage<4, 4>  mUnk1545cd;
-    ::ll::UntypedStorage<8, 32> mUnk5df930;
+    ::ll::TypedStorage<1, 1, bool>                               mCropToRatio;
+    ::ll::TypedStorage<4, 4, int>                                mWidthRatio;
+    ::ll::TypedStorage<4, 4, int>                                mHeightRatio;
+    ::ll::TypedStorage<4, 4, uint>                               mMaxWidth;
+    ::ll::TypedStorage<4, 4, uint>                               mMaxHeight;
+    ::ll::TypedStorage<1, 1, bool>                               mRestrictScreenshotSize;
+    ::ll::TypedStorage<1, 1, bool>                               mApplySquareFrame;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mRequestedFileName;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mRequestedFilePath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mRequestedExtension;
+    ::ll::TypedStorage<1, 1, bool>                               mReplaceImage;
+    ::ll::TypedStorage<1, 1, bool>                               mUseScreenshotsFolder;
+    ::ll::TypedStorage<1, 1, bool>                               mHideUI;
+    ::ll::TypedStorage<1, 1, bool>                               mLogRequest;
+    ::ll::TypedStorage<1, 1, bool>                               mWriteScreenshotToFile;
+    ::ll::TypedStorage<1, 1, bool>                               mIsSavegameScreenshot;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mOutFileName;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mOutFileDir;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mOutExtension;
+    ::ll::TypedStorage<4, 4, ::ScreenshotPostProcessFilter>      mPostProcessFilter;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mScreenshotBorderResourcePath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScreenshotOptions& operator=(ScreenshotOptions const&);
-    ScreenshotOptions(ScreenshotOptions const&);
-    ScreenshotOptions();
 
 public:
     // member functions
@@ -44,16 +42,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
 
-    MCNAPI_C void* $ctor(::ScreenshotOptions&&);
+    MCAPI_C void* $ctor(::ScreenshotOptions&&);
 
-    MCNAPI_C void* $ctor(::ScreenshotOptions const&);
+    MCAPI_C void* $ctor(::ScreenshotOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCAPI_C void $dtor();
     // NOLINTEND
 };

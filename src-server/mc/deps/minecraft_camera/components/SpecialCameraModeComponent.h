@@ -4,6 +4,6 @@
 
 namespace MinecraftCamera {
 
-struct SpecialCameraModeComponent {};
+class SpecialCameraModeComponent {};
 
 } // namespace MinecraftCamera

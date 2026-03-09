@@ -26,8 +26,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptExplosionStartedAfterEventIntermediateData&
-    operator=(ScriptExplosionStartedAfterEventIntermediateData const&);
+    ScriptExplosionStartedAfterEventIntermediateData& operator=(ScriptExplosionStartedAfterEventIntermediateData const&
+    );
     ScriptExplosionStartedAfterEventIntermediateData(ScriptExplosionStartedAfterEventIntermediateData const&);
     ScriptExplosionStartedAfterEventIntermediateData();
 

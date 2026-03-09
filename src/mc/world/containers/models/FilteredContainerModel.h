@@ -59,15 +59,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _refreshContainer(bool fullRefresh);
+    MCAPI_C void _refreshContainer(bool fullRefresh);
 
-    MCNAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
+    MCAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::FullContainerName const&                                   containerName,
         int                                                          size,
         ::ContainerCategory                                          containerCategory,
@@ -82,23 +82,23 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $containerContentChanged(int);
+    MCFOLD void $containerContentChanged(int);
 
-    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCNAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
 
-    MCNAPI void $refreshContainer(bool fullRefresh);
+    MCAPI void $refreshContainer(bool fullRefresh);
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI int $getFilteredContainerSize() const;
+    MCFOLD int $getFilteredContainerSize() const;
 
-    MCNAPI bool $isExpanableItemFiltered(int index) const;
+    MCAPI bool $isExpanableItemFiltered(int index) const;
 
-    MCNAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
-    MCNAPI void $_init();
+    MCFOLD void $_init();
 #endif
 
 

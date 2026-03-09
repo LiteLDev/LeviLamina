@@ -9,18 +9,16 @@ namespace MinecraftCamera {
 
 struct CameraThirdPersonBoomComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk54ed67;
-    ::ll::UntypedStorage<4, 8> mUnkf4fdec;
-    ::ll::UntypedStorage<1, 1> mUnk93a0ed;
-    // NOLINTEND
+    // CameraThirdPersonBoomComponent inner types define
+    using RotationSpace = ::SharedTypes::v1_21_100::RotationSpace;
 
 public:
-    // prevent constructor by default
-    CameraThirdPersonBoomComponent& operator=(CameraThirdPersonBoomComponent const&);
-    CameraThirdPersonBoomComponent(CameraThirdPersonBoomComponent const&);
-    CameraThirdPersonBoomComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>                                   mStartingRadius;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                             mStartingOrientation;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_100::RotationSpace> mRotSpace;
+    // NOLINTEND
 };
 
 } // namespace MinecraftCamera

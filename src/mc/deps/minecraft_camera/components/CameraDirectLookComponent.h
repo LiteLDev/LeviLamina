@@ -8,18 +8,12 @@ struct CameraDirectLookComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2606a4;
-    ::ll::UntypedStorage<4, 4> mUnkc9954b;
-    ::ll::UntypedStorage<4, 4> mUnk540679;
-    ::ll::UntypedStorage<4, 4> mUnk80ae2e;
-    ::ll::UntypedStorage<4, 4> mUnkc56ea8;
+    ::ll::TypedStorage<4, 4, float> mYaw;
+    ::ll::TypedStorage<4, 4, float> mPitch;
+    ::ll::TypedStorage<4, 4, float> mYawDelta;
+    ::ll::TypedStorage<4, 4, float> mPitchMin;
+    ::ll::TypedStorage<4, 4, float> mPitchMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraDirectLookComponent& operator=(CameraDirectLookComponent const&);
-    CameraDirectLookComponent(CameraDirectLookComponent const&);
-    CameraDirectLookComponent();
 };
 
 } // namespace MinecraftCamera

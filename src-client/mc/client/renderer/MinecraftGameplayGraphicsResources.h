@@ -46,24 +46,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
+    MCAPI explicit MinecraftGameplayGraphicsResources(::mce::RenderContext& renderContext);
 
-    MCNAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
+    MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCNAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
+    MCAPI ::mcr::DeferredResourceTransactions getDeferredResourceTransactions();
 
-    MCNAPI ~MinecraftGameplayGraphicsResources();
+    MCAPI ~MinecraftGameplayGraphicsResources();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::RenderContext& renderContext);
+    MCAPI void* $ctor(::mce::RenderContext& renderContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

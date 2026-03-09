@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
@@ -15,25 +17,24 @@ struct DirectoryPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace Core { class Path; }
+namespace PackCommand { class IPackCommandPipeline; }
 // clang-format on
 
 class DirectoryPackSource : public ::PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk821c35;
-    ::ll::UntypedStorage<1, 1>  mUnkb21a6a;
-    ::ll::UntypedStorage<1, 1>  mUnkafda18;
-    ::ll::UntypedStorage<1, 1>  mUnk22bc19;
-    ::ll::UntypedStorage<1, 1>  mUnk780433;
-    ::ll::UntypedStorage<1, 1>  mUnka63529;
-    ::ll::UntypedStorage<8, 24> mUnke5288a;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                               mPath;
+    ::ll::TypedStorage<1, 1, ::PackType const>                                                 mPackType;
+    ::ll::TypedStorage<1, 1, ::PackOrigin const>                                               mPackOrigin;
+    ::ll::TypedStorage<1, 1, bool>                                                             mDiscovered;
+    ::ll::TypedStorage<1, 1, bool const>                                                       mIsRediscoverable;
+    ::ll::TypedStorage<1, 1, bool const>                                                       mIsDevDirectory;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>> mCommands;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DirectoryPackSource& operator=(DirectoryPackSource const&);
-    DirectoryPackSource(DirectoryPackSource const&);
     DirectoryPackSource();
 
 public:
@@ -51,17 +52,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
+    MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
 
-    MCNAPI_C void addPack(::std::shared_ptr<::Pack>&& pack);
+    MCAPI_C void addPack(::std::shared_ptr<::Pack>&& pack);
 
-    MCNAPI void deleteAllPacksAndReset();
+    MCAPI void deleteAllPacksAndReset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void checkAndRemoveIncompletePacks(
+    MCAPI static void checkAndRemoveIncompletePacks(
         ::Core::Path const&      path,
         ::IPackIOProvider const& io,
         bool                     saveEncryptedWorldTemplatePacksAsZips
@@ -71,23 +72,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DirectoryPackSourceOptions options);
+    MCAPI void* $ctor(::DirectoryPackSourceOptions options);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PackOrigin $getPackOrigin() const;
+    MCFOLD ::PackOrigin $getPackOrigin() const;
 
-    MCNAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
 
-    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
+    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&& options);
 
 
     // NOLINTEND

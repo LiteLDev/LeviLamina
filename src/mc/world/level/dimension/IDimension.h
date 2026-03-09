@@ -65,13 +65,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    MCFOLD void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
 
 
     // NOLINTEND

@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { struct ConstantBufferContainer; }
+// clang-format on
+
 namespace mce {
 
 class ConstantBufferConstantsBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2df460;
+    ::ll::TypedStorage<8, 8, ::mce::ConstantBufferContainer*> constantBuffer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConstantBufferConstantsBase& operator=(ConstantBufferConstantsBase const&);
-    ConstantBufferConstantsBase(ConstantBufferConstantsBase const&);
-    ConstantBufferConstantsBase();
 
 public:
     // virtual functions

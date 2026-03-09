@@ -19,6 +19,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Tick const& MAX();
+    MCAPI static ::Tick const& MAX();
     // NOLINTEND
 };

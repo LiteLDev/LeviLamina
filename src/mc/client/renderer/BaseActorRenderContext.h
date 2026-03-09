@@ -15,7 +15,9 @@
 // clang-format off
 class Actor;
 class HashedString;
+class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class BlockActorRenderDispatcher;
 class DataDrivenRenderer;
 class IClientInstance;
 class IMinecraftGame;
@@ -23,8 +25,6 @@ class ItemInHandRenderer;
 class ItemRenderer;
 class ParticleSystemEngine;
 class ScreenContext;
-struct ActorBlockRenderer;
-struct BlockActorRenderDispatcher;
 struct DataDrivenRendererContinuousData;
 struct HudIconActorRenderer;
 struct ProcessedDataDrivenRenderers;

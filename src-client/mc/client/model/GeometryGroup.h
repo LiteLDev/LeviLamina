@@ -10,13 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class GeometryInfo;
 class GeometryPtr;
 class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SemVersion;
-struct GeometryInfo;
 struct GeometryInheritanceTree;
 struct ModelParent;
 struct TextureUVCoordinateSet;

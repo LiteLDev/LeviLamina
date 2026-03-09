@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleActorEffectAddedEvent(
+    MCAPI bool _handleActorEffectAddedEvent(
         ::ActorAddEffectEvent&                                                            actorEffectAddedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
 
-    MCNAPI bool _handleActorRemoveEvent(
+    MCAPI bool _handleActorRemoveEvent(
         ::ActorRemovedEvent const&                                                        actorRemovedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
@@ -51,9 +51,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
 
-    MCNAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
 
     // NOLINTEND

@@ -13,6 +13,8 @@ public:
 
     // SingleThreaded inner types define
     class NullMutex {};
+
+    using MutexType = ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex;
 };
 
 } // namespace Bedrock::PubSub::ThreadModel

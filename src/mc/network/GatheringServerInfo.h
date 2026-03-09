@@ -6,26 +6,20 @@ class GatheringServerInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk79c251;
-    ::ll::UntypedStorage<8, 32> mUnk7056a8;
-    ::ll::UntypedStorage<8, 32> mUnkcbe96d;
+    ::ll::TypedStorage<8, 32, ::std::string> mGatheringId;
+    ::ll::TypedStorage<8, 32, ::std::string> mGatheringIdAsCreatorName;
+    ::ll::TypedStorage<8, 32, ::std::string> mTitle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GatheringServerInfo& operator=(GatheringServerInfo const&);
-    GatheringServerInfo(GatheringServerInfo const&);
-    GatheringServerInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~GatheringServerInfo();
+    MCAPI ~GatheringServerInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

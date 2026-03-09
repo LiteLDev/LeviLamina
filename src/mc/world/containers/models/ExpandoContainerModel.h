@@ -78,15 +78,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _generateCurrentItems();
+    MCAPI_C void _generateCurrentItems();
 
-    MCNAPI_C void _refreshContainer(bool fullRefresh);
+    MCAPI_C void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+    MCAPI_C void* $ctor(
         ::FullContainerName const&                            containerName,
         int                                                   containerSize,
         ::ContainerCategory                                   containerCategory,
@@ -97,44 +97,44 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
-    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCNAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
 
-    MCNAPI bool $isItemInstanceBased() const;
+    MCFOLD bool $isItemInstanceBased() const;
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI ::ItemStack const& $getItemStack(int modelSlot) const;
+    MCFOLD ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCNAPI ::std::vector<::ItemStack> const& $getItems() const;
+    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCNAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI int $getFilteredContainerSize() const;
+    MCFOLD int $getFilteredContainerSize() const;
 
-    MCNAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+    MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
-    MCNAPI ::std::string const& $getItemGroupName(int itemId) const;
+    MCAPI ::std::string const& $getItemGroupName(int itemId) const;
 
-    MCNAPI void $switchItemExpando(int itemId);
+    MCAPI void $switchItemExpando(int itemId);
 
-    MCNAPI void $refreshContainer(bool fullRefresh);
+    MCAPI void $refreshContainer(bool fullRefresh);
 
-    MCNAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
-    MCNAPI void $_init();
+    MCAPI void $_init();
 #endif
 
 

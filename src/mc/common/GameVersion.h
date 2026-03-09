@@ -34,50 +34,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GameVersion(::GameVersion const&);
+    MCAPI GameVersion(::GameVersion const&);
 
-    MCNAPI explicit GameVersion(::ListTag const& tag);
+    MCAPI explicit GameVersion(::ListTag const& tag);
 
-    MCNAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
-    MCNAPI bool operator<(::GameVersion const& other) const;
+    MCAPI bool operator<(::GameVersion const& other) const;
 
-    MCNAPI ::GameVersion& operator=(::GameVersion&&);
+    MCAPI ::GameVersion& operator=(::GameVersion&&);
 
-    MCNAPI ::GameVersion& operator=(::GameVersion const&);
+    MCAPI ::GameVersion& operator=(::GameVersion const&);
 
-    MCNAPI bool operator>=(::GameVersion const& other) const;
+    MCAPI bool operator>=(::GameVersion const& other) const;
 
-    MCNAPI ::std::unique_ptr<::ListTag> serialize() const;
+    MCAPI ::std::unique_ptr<::ListTag> serialize() const;
 
-    MCNAPI ~GameVersion();
+    MCAPI ~GameVersion();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::GameVersion current();
+    MCAPI static ::GameVersion current();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::GameVersion const& Zero();
+    MCAPI static ::GameVersion const& Zero();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::GameVersion const&);
+    MCAPI void* $ctor(::GameVersion const&);
 
-    MCNAPI void* $ctor(::ListTag const& tag);
+    MCAPI void* $ctor(::ListTag const& tag);
 
-    MCNAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -80,9 +80,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void OnAsyncJoinCallback(
-        ::Scripting::Closure<::Scripting::Future<void()>(
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )>                                       closure,
+        ::Scripting::Closure<::Scripting::Future<void(
+        )>(::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>)> closure,
         ::IAsyncJoinRegistrar*                   asyncJoinRegistrar,
         ::PlayerAuthenticationInfo const&        playerInfo,
         ::std::shared_ptr<::AsyncVerdictPromise> promisePtr
@@ -91,9 +90,8 @@ public:
     MCNAPI ::Scripting::Closure<::Scripting::Future<
         void()>(::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>)>
     subscribe(
-        ::Scripting::Closure<::Scripting::Future<void()>(
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>
-        )> closure
+        ::Scripting::Closure<::Scripting::Future<void(
+        )>(::Scripting::StrongTypedObjectHandle<::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent>)> closure
     );
 
     MCNAPI_S void tick();

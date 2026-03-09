@@ -6,15 +6,9 @@ class TextureOffset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8d8425;
-    ::ll::UntypedStorage<4, 4> mUnkf53da6;
+    ::ll::TypedStorage<4, 4, int> x;
+    ::ll::TypedStorage<4, 4, int> y;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextureOffset& operator=(TextureOffset const&);
-    TextureOffset(TextureOffset const&);
-    TextureOffset();
 
 public:
     // virtual functions

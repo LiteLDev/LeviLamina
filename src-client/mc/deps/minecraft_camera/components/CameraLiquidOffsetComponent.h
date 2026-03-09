@@ -4,6 +4,12 @@
 
 namespace MinecraftCamera {
 
-struct CameraLiquidOffsetComponent {};
+struct CameraLiquidOffsetComponent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mCurrentOffset;
+    // NOLINTEND
+};
 
 } // namespace MinecraftCamera

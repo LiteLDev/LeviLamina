@@ -2,44 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/renderer/actor/ActorTextureResourceLocations.h"
+#include "mc/deps/minecraft_renderer/resources/MERSUniformData.h"
+#include "mc/deps/minecraft_renderer/resources/PBRTexturePtrs.h"
+
 struct ActorTextureInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk2a7f2b;
-    ::ll::UntypedStorage<8, 184> mUnk1d72d3;
-    ::ll::UntypedStorage<4, 20>  mUnk8eac29;
+    ::ll::TypedStorage<8, 112, ::PBRTexturePtrs>                  mTexturePtrs;
+    ::ll::TypedStorage<8, 184, ::ActorTextureResourceLocations>   mResourceLocations;
+    ::ll::TypedStorage<4, 20, ::std::optional<::MERSUniformData>> mMERSUniforms;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorTextureInfo();
+    MCAPI ActorTextureInfo();
 
-    MCNAPI ActorTextureInfo(::ActorTextureInfo&&);
+    MCAPI ActorTextureInfo(::ActorTextureInfo&&);
 
-    MCNAPI ActorTextureInfo(::ActorTextureInfo const&);
+    MCAPI ActorTextureInfo(::ActorTextureInfo const&);
 
-    MCNAPI ::ActorTextureInfo& operator=(::ActorTextureInfo const&);
+    MCAPI ::ActorTextureInfo& operator=(::ActorTextureInfo const&);
 
-    MCNAPI ::ActorTextureInfo& operator=(::ActorTextureInfo&&);
+    MCAPI ::ActorTextureInfo& operator=(::ActorTextureInfo&&);
 
-    MCNAPI ~ActorTextureInfo();
+    MCAPI ~ActorTextureInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ActorTextureInfo&&);
+    MCAPI void* $ctor(::ActorTextureInfo&&);
 
-    MCNAPI void* $ctor(::ActorTextureInfo const&);
+    MCAPI void* $ctor(::ActorTextureInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

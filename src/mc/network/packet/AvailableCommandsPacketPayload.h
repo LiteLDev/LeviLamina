@@ -131,8 +131,8 @@ public:
         // NOLINTBEGIN
         MCAPI ::AvailableCommandsPacketPayload::ParamData& operator=(::AvailableCommandsPacketPayload::ParamData&&);
 
-        MCAPI ::AvailableCommandsPacketPayload::ParamData&
-        operator=(::AvailableCommandsPacketPayload::ParamData const&);
+        MCAPI ::AvailableCommandsPacketPayload::ParamData& operator=(::AvailableCommandsPacketPayload::ParamData const&
+        );
         // NOLINTEND
     };
 

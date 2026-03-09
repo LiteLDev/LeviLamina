@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/EntityId.h"
+#include "mc/deps/game_refs/WeakRef.h"
+
 namespace MinecraftCamera {
 
 struct CameraBlendStateComponent {
@@ -17,52 +22,34 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9836a6;
-        ::ll::UntypedStorage<4, 4>  mUnk7c07aa;
-        ::ll::UntypedStorage<4, 12> mUnke2c2ba;
-        ::ll::UntypedStorage<4, 12> mUnka68579;
+        ::ll::TypedStorage<4, 4, float>        mAmount;
+        ::ll::TypedStorage<4, 4, float>        mFieldOfView;
+        ::ll::TypedStorage<4, 12, ::Vec3>      mEulerAngles;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> mPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EaseState& operator=(EaseState const&);
-        EaseState(EaseState const&);
-        EaseState();
     };
 
     struct SnapShotEaseValues {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkb15ad3;
+        ::ll::TypedStorage<4, 12, ::glm::vec3> mTargetPos;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SnapShotEaseValues& operator=(SnapShotEaseValues const&);
-        SnapShotEaseValues(SnapShotEaseValues const&);
-        SnapShotEaseValues();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 36> mUnkc7e2ad;
-    ::ll::UntypedStorage<8, 24> mUnkef16cf;
-    ::ll::UntypedStorage<4, 4>  mUnkbef08b;
-    ::ll::UntypedStorage<8, 8>  mUnk8e5dca;
-    ::ll::UntypedStorage<4, 4>  mUnkb9fd6c;
-    ::ll::UntypedStorage<4, 4>  mUnka520a3;
-    ::ll::UntypedStorage<4, 12> mUnka943fa;
-    ::ll::UntypedStorage<4, 12> mUnk1bfa6b;
-    ::ll::UntypedStorage<4, 12> mUnkbc2cda;
+    ::ll::TypedStorage<4, 36, ::std::optional<::MinecraftCamera::CameraBlendStateComponent::EaseState>> mLastEaseState;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityId>>                                                    mActiveCamera;
+    ::ll::TypedStorage<4, 4, float>                                                                     mPercentage;
+    ::ll::TypedStorage<8, 8, float (*)(float, float, float)>                                            mEaseFunction;
+    ::ll::TypedStorage<4, 4, float>                                                                     mBlendTime;
+    ::ll::TypedStorage<4, 4, float>                                                             mBlendStartFieldOfView;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                           mBlendStartPosition;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                           mBlendStartEulerAngles;
+    ::ll::TypedStorage<4, 12, ::MinecraftCamera::CameraBlendStateComponent::SnapShotEaseValues> mSnapShotEaseValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraBlendStateComponent& operator=(CameraBlendStateComponent const&);
-    CameraBlendStateComponent(CameraBlendStateComponent const&);
-    CameraBlendStateComponent();
 
 public:
     // member functions
