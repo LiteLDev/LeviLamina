@@ -1,4 +1,4 @@
-# 在Windows上安装
+# 在服务器上安装
 
 ## 前提条件
 
@@ -23,10 +23,10 @@
 
 ### 通过 lip
 
-1. 下载[lip-cli-win-x64-zh-CN.msi](https://github.com/futrime/lip/releases/download/v0.32.0/lip-cli-win-x64-zh-CN.msi)，执行以安装
+1. 前往[此处](https://github.com/futrime/lip/releases)，下载以**x64.msi**结尾的安装包，执行以安装
 2. (可选)可以通过`lip config set`命令来设置GitHub镜像，例如:
     ```shell
-    lip config set github_proxies=https://github.bibk.top
+    lip config set github_proxy https://github.bibk.top
     ```
 3. (可选)可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://mcdl.bibk.top`
    。你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`.cache/bdsdown`目录下，如果该目录不存在请手动创建。

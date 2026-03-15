@@ -1,4 +1,4 @@
-# Install on Windows
+# Install on Server
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ You can install LeviLamina in different ways, depending on your needs:
 
 ### Installing via lip
 
-1. Download [lip-cli-win-x64-en-US.msi](https://github.com/futrime/lip/releases/download/v0.32.0/lip-cli-win-x64-en-US.msi), execute it to install lip.
+1. Download the installer ends with **x64.msi** from [here](https://github.com/futrime/lip/releases), execute it to install lip.
 2. Begin by creating a directory for your Minecraft server and navigating into it:
     ```shell
     mkdir myserver
