@@ -1,5 +1,6 @@
 #pragma once
 #include "ll/core/tweak/ForceEnableCheatCommands.h"
+#include "ll/api/reflection/Dispatcher.h"
 
 namespace ll {
 struct TargetedConfig {
