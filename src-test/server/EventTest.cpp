@@ -74,14 +74,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     static std::atomic_uint times{};
 
     auto listener = ll::event::Listener<TestEventB>::create([](TestEventB& ev) {
-        ll::getLogger().debug("I'm 1, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
+        ll::getLogger().debug("I'm 1, receive: {}, str: {}, {}", ev.getId(), ev.some, times++);
     });
     bus.addListener<TestEvent1>(listener);
     bus.addListener<TestEvent2>(listener);
 
     auto listener2 = ll::event::Listener<TestEvent2>::create(
         [](TestEvent2& ev) {
-            ll::getLogger().debug("I'm 2, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
+            ll::getLogger().debug("I'm 2, receive: {}, str: {}, {}", ev.getId(), ev.some, times++);
 
             ll::getLogger().debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
             ll::getLogger().debug("try cancel");
@@ -98,8 +98,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ll::getLogger().debug("I'm 1 myid: {}", listener->getId());
     ll::getLogger().debug("I'm 2 myid: {}", listener2->getId());
 
-    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent1>.name);
-    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent2>.name);
+    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent1>);
+    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent2>);
 
     bus.publish(TestEvent1{});
     TestEvent2 e2{"I'm reused TestEvent2......"};
