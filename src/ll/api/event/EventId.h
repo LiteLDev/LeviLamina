@@ -2,6 +2,8 @@
 
 #include "ll/api/reflection/TypeName.h"
 #include "ll/api/utils/HashUtils.h"
+#include <fmt/format.h>
+#include <format>
 
 namespace ll::event {
 class EventIdView;
@@ -38,3 +40,35 @@ constexpr EventIdView getEventId = []() -> EventIdView {
     }
 }();
 } // namespace ll::event
+
+template <>
+struct fmt::formatter<ll::event::EventId> : fmt::formatter<std::string> {
+    template <typename FormatContext>
+    auto format(ll::event::EventId const& id, FormatContext& ctx) const {
+        return formatter<std::string>::format(id.name, ctx);
+    }
+};
+
+template <>
+struct fmt::formatter<ll::event::EventIdView> : fmt::formatter<std::string_view> {
+    template <typename FormatContext>
+    auto format(ll::event::EventIdView const& id, FormatContext& ctx) const {
+        return formatter<std::string_view>::format(id.name, ctx);
+    }
+};
+
+template <>
+struct std::formatter<ll::event::EventId> : std::formatter<std::string> {
+    template <typename FormatContext>
+    auto format(ll::event::EventId const& id, FormatContext& ctx) const{
+        return std::formatter<std::string>::format(id.name, ctx);
+    }
+};
+
+template <>
+struct std::formatter<ll::event::EventIdView> : std::formatter<std::string_view> {
+    template <typename FormatContext>
+    auto format(ll::event::EventIdView const& id, FormatContext& ctx) const{
+        return std::formatter<std::string_view>::format(id.name, ctx);
+    }
+};
