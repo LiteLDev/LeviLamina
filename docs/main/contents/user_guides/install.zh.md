@@ -24,8 +24,9 @@
 ### 通过 lip
 
 1. 前往[此处](https://github.com/futrime/lip/releases)，下载以**setup.exe**结尾的安装包，执行以安装
-2. (可选)可以通过`lip config set`命令来设置GitHub镜像，例如:
+2. (可选)可以通过`lip config set`命令来设置GitHub和GoProxy镜像，例如:
     ```shell
+    lip config set go_module_proxy https://goproxy.cn
     lip config set github_proxy https://github.bibk.top
     ```
 3. (可选)可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://mcdl.bibk.top`

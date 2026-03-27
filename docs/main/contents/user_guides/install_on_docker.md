@@ -37,7 +37,7 @@ respectively. To use them, download the file to an empty directory and run `dock
   `LATEST` to automatically download the latest version.
 
 - `WINEDEBUG` (`-all`): can be set to customize the Wine debug output.
-  See [Wine Debugging](https://wiki.winehq.org/Debugging) for more information.
+  See [Wine Debugging](https://wiki.winehq.org/Debugging) for more information. Only available in the Wine image.
 
 - `LANG`: can be set to customize the locale used in the container. Default is `en_US.UTF-8`.
 

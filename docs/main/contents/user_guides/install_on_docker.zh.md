@@ -9,7 +9,7 @@ docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:/dat
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
+docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
 ```
 
 或者，如果您想使用 Windows 容器，请运行第一条命令；如果您的服务器在中国大陆，请运行第二条命令以更快快速地安装：
@@ -19,7 +19,7 @@ docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:C:\d
 ```
 
 ```sh
-docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
+docker run -d -it -e EULA=TRUE -e GO_MODULE_PROXY_URL=https://goproxy.cn -e GITHUB_MIRROR_URL=https://github.bibk.top -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
 ```
 
 我们还提供了适用于 Linux 和 Windows 容器的 Docker Compose
@@ -41,7 +41,7 @@ docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -p 1
 - `VERSION`(`LATEST`)：可设置为特定的LeviLamina版本(参见`https://github.com/LiteLDev/LeviLamina/tags`)，或设置为`
   LATEST`以自动下载最新版本。
 
-- `WINEDEBUG`(`-all`)：可设置以自定义Wine的调试输出。欲了解更多信息，请参见 `https://wiki.winehq.org/Debugging` 。
+- `WINEDEBUG`(`-all`)：可设置以自定义Wine的调试输出。欲了解更多信息，请参见 `https://wiki.winehq.org/Debugging` 。仅在Wine镜像中可用。
 
 - `LANG`：可设置容器中使用的语言环境。默认值为`en_US.UTF-8`。
 
