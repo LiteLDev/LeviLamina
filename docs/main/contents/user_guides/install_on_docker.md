@@ -23,14 +23,14 @@ respectively. To use them, download the file to an empty directory and run `dock
 
 - `EULA`: must be set to `TRUE` to accept the [Minecraft End User License Agreement](https://minecraft.net/terms).
 
-- `GITHUB_MIRROR_URL`: can be set to a comma-separated list of GitHub mirror URLs to speed up the installation of
+- `GITHUB_MIRROR_URL`: can be set to a GitHub mirror URL to speed up the installation of
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
-- `GO_MODULE_PROXY_URL`: can be set to a comma-separated list of Go module proxy URLs to speed up the installation of
+- `GO_MODULE_PROXY_URL`: can be set to a Go module proxy URL to speed up the installation of
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
 - `PACKAGES`: can be set to a space-separated list of packages to install on first run. Each package must be a
-  valid [lip specifier](https://lip.levimc.org/zh/user-guide/commands/lip-install/). Both local and remote lip teeth are
+  valid [lip specification](https://lip.levimc.org/cli/commands/install.html). Both local and remote lip teeth are
   supported. For local packages, you may need to mount the packages to the container.
 
 - `VERSION` (`LATEST`): can be set to a specific [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) version or

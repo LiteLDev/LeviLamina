@@ -29,22 +29,22 @@ docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -p 1
 
 ### 环境变量
 
-- `EULA`: 必须设置为 `TRUE` 以接受 [Minecraft 最终用户许可协议](https://minecraft.net/terms)。
+- `EULA`: 必须设置为`TRUE`以接受[Minecraft最终用户许可协议](https://minecraft.net/terms)。
 
-- `GITHUB_MIRROR_URL`：可设置为以逗号(,)分隔的 GitHub 镜像 URL 列表，以加速 LeviLamina 的安装。当您处于防火墙后或在网络较慢的地区时很有用。
+- `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
-- `GO_MODULE_PROXY_URL`：可设置为以逗号(,)分隔的 Go 模块代理 URL 列表，以加速 LeviLamina 的安装。当您处于防火墙后或在网络较慢的地区时很有用。
+- `GO_MODULE_PROXY_URL`：可设置为Go模块代理URL，以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
-- `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须是有效的 `lip`
-  指定器（参见 `https://lip.levimc.org/zh/user-guide/commands/lip-install/`）。支持本地和远程的 lip 包。对于本地包，可能需要将包挂载到容器中。
+- `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合`lip`包名规范(参见
+  `https://lip.levimc.org/cli/commands/install.html`)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
 
-- `VERSION`（`LATEST`）：可设置为特定的 LeviLamina 版本（参见 `https://github.com/LiteLDev/LeviLamina/tags`），或设置为 `
-  LATEST` 以自动下载最新版本。
+- `VERSION`(`LATEST`)：可设置为特定的LeviLamina版本(参见`https://github.com/LiteLDev/LeviLamina/tags`)，或设置为`
+  LATEST`以自动下载最新版本。
 
-- `WINEDEBUG`（`-all`）：可设置以自定义 Wine 的调试输出。欲了解更多信息，请参见 `https://wiki.winehq.org/Debugging`。
+- `WINEDEBUG`(`-all`)：可设置以自定义Wine的调试输出。欲了解更多信息，请参见 `https://wiki.winehq.org/Debugging` 。
 
-- `LANG`：可设置容器中使用的语言环境。默认值为 `en_US.UTF-8`。
+- `LANG`：可设置容器中使用的语言环境。默认值为`en_US.UTF-8`。
 
-- `LC_ALL`：可设置容器中使用的语言环境。默认值为 `en_US.UTF-8`。
+- `LC_ALL`：可设置容器中使用的语言环境。默认值为`en_US.UTF-8`。
 
-- `TZ`：可设置容器使用的时区。默认值为 `UTC`。
+- `TZ`：可设置容器使用的时区。默认值为`UTC`。

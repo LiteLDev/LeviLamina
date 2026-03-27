@@ -7,9 +7,8 @@ nav:
   - FAQ: faq.md
 
   - User Guides:
-      - Install on Server:
-          - user_guides/install.md
-          - user_guides/install_on_docker.md
+      - user_guides/install.md
+      - user_guides/install_on_docker.md
       - user_guides/install_on_client.md
       - user_guides/troubleshooting.md
       - common_guides/usage_guidelines.md
@@ -130,9 +129,6 @@ plugins:
             Home: 主页
             FAQ: 常见问题
             User Guides: 用户指南
-            Install on Server: 在服务器上安装
-            Install on Client: 在客户端上安装
-            Install on Docker: 在Docker上安装
             Developer Guides: 开发者指南
             Tutorials: 教程
             How-to Guides: 如何做到······
