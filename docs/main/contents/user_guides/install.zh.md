@@ -29,7 +29,7 @@
     lip config set go_module_proxy https://goproxy.cn
     lip config set github_proxy https://github.bibk.top
     ```
-3. (可选)可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://mcdl.bibk.top`
+3. (可选)可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://www.minecraft.net`
    。你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`.cache/bdsdown`目录下，如果该目录不存在请手动创建。
    该目录基于您安装BDS的路径，例如`C:\Users\YourName\BDS\.cache\bdsdown`。
 4. 为你的 Minecraft 服务器创建一个目录并切换到该目录:
