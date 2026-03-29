@@ -50,3 +50,4 @@ RemoveSemicolon: true
 SortUsingDeclarations: LexicographicNumeric
 Standard: Latest
 LineEnding: CRLF
+QualifierAlignment: Right
