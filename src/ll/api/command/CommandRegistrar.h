@@ -45,6 +45,10 @@ class CommandRegistrar {
 
 public:
     LLNDAPI static CommandRegistrar& getInstance(bool isClientSide);
+#ifdef LL_PLAT_C
+    [[nodiscard]] static CommandRegistrar& getClientInstance() { return getInstance(true); }
+#endif
+    [[nodiscard]] static CommandRegistrar& getServerInstance() { return getInstance(false); }
 
     void clear();
 
