@@ -8,7 +8,7 @@
 
 namespace ll::memory {
 void* SymbolView::resolve(bool disableErrorOutput) const {
-    static ll::DenseMap<std::string, void*> resultCache;
+    static ll::ConcurrentDenseMap<std::string, void*> resultCache;
 
     void* res{};
     resultCache.lazy_emplace_l(
