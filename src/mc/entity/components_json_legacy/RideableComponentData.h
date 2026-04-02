@@ -4,23 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/entity/components_json_legacy/DismountMode.h"
+
+// auto generated forward declare list
+// clang-format off
+struct SeatDescription;
+// clang-format on
 
 struct RideableComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk872852;
-    ::ll::UntypedStorage<4, 4>  mUnk9abb2b;
-    ::ll::UntypedStorage<1, 1>  mUnk56e2d1;
-    ::ll::UntypedStorage<8, 24> mUnkc053c6;
-    ::ll::UntypedStorage<8, 16> mUnkd0baf3;
-    ::ll::UntypedStorage<8, 32> mUnkb31300;
-    ::ll::UntypedStorage<1, 1>  mUnkc7ffd7;
-    ::ll::UntypedStorage<1, 1>  mUnk87d44f;
-    ::ll::UntypedStorage<4, 4>  mUnkc10431;
-    ::ll::UntypedStorage<1, 1>  mUnkfdb669;
-    ::ll::UntypedStorage<8, 32> mUnkdde8a5;
-    ::ll::UntypedStorage<8, 32> mUnk72d236;
+    ::ll::TypedStorage<4, 4, int>                                                      mSeatCount;
+    ::ll::TypedStorage<4, 4, int>                                                      mControllingSeat;
+    ::ll::TypedStorage<1, 1, bool>                                                     mSkipInteractIfCrouching;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SeatDescription>>                        mSeats;
+    ::ll::TypedStorage<8, 16, ::std::set<::HashedString, ::std::hash<::HashedString>>> mFamilyTypes;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mInteractText;
+    ::ll::TypedStorage<1, 1, bool>                                                     mPullInEntities;
+    ::ll::TypedStorage<1, 1, bool>                                                     mPassengerCanPick;
+    ::ll::TypedStorage<4, 4, float>                                                    mPassengerMaxWidth;
+    ::ll::TypedStorage<1, 1, ::DismountMode>                                           mDismountMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mOnRiderEnterEvent;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mOnRiderExitEvent;
     // NOLINTEND
 
 public:

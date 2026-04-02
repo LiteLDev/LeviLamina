@@ -4,14 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class CommandOrigin;
 class CommandOutput;
-class CommandPosition;
-class CommandPositionFloat;
 class CommandRegistry;
 struct ExecuteCommandPositionData;
 // clang-format on
@@ -27,20 +29,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkd8ebd0;
-    ::ll::UntypedStorage<4, 16>  mUnk246ddb;
-    ::ll::UntypedStorage<4, 16>  mUnkdedb9e;
-    ::ll::UntypedStorage<8, 8>   mUnk826bb1;
-    ::ll::UntypedStorage<4, 4>   mUnk1a4708;
-    ::ll::UntypedStorage<4, 4>   mUnkce1560;
-    ::ll::UntypedStorage<8, 8>   mUnke6d6bd;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>      mPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>           mDetectPosition;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>           mBlock;
+    ::ll::TypedStorage<4, 4, int>                          mBlockData;
+    ::ll::TypedStorage<4, 4, ::ExecuteCommand::Mode>       mMode;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>> mCommand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExecuteCommand& operator=(ExecuteCommand const&);
-    ExecuteCommand(ExecuteCommand const&);
-    ExecuteCommand();
 
 public:
     // virtual functions

@@ -4,32 +4,29 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class PlaySoundCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnke93a0b;
-    ::ll::UntypedStorage<8, 200> mUnk1fb798;
-    ::ll::UntypedStorage<4, 16>  mUnk378eec;
-    ::ll::UntypedStorage<4, 4>   mUnk340a52;
-    ::ll::UntypedStorage<4, 4>   mUnk19049c;
-    ::ll::UntypedStorage<4, 4>   mUnk5ae83f;
-    ::ll::UntypedStorage<1, 1>   mUnk78da2b;
+    ::ll::TypedStorage<8, 32, ::std::string>                mSound;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>       mPosition;
+    ::ll::TypedStorage<4, 4, float>                         mVolume;
+    ::ll::TypedStorage<4, 4, float>                         mPitch;
+    ::ll::TypedStorage<4, 4, float>                         mMinVolume;
+    ::ll::TypedStorage<1, 1, bool>                          mPositionSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlaySoundCommand& operator=(PlaySoundCommand const&);
-    PlaySoundCommand(PlaySoundCommand const&);
-    PlaySoundCommand();
 
 public:
     // virtual functions

@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 struct NpcGUIOffset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk488219;
-    ::ll::UntypedStorage<4, 12> mUnk652a5d;
-    ::ll::UntypedStorage<4, 12> mUnk47765d;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTranslation;
+    ::ll::TypedStorage<4, 12, ::Vec3> mRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3> mScale;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcGUIOffset& operator=(NpcGUIOffset const&);
-    NpcGUIOffset(NpcGUIOffset const&);
-    NpcGUIOffset();
 };

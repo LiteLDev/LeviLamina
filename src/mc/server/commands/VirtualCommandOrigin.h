@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
-class CommandPositionFloat;
 class CompoundTag;
 class Dimension;
 class Level;
 class NetworkIdentifier;
 class ServerLevel;
 class Vec2;
-class Vec3;
 struct CommandOriginIdentity;
 // clang-format on
 
@@ -27,17 +27,15 @@ class VirtualCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk9ecdf8;
-    ::ll::UntypedStorage<8, 8>  mUnk66bd43;
-    ::ll::UntypedStorage<8, 8>  mUnkab4e18;
-    ::ll::UntypedStorage<4, 16> mUnk442c5d;
-    ::ll::UntypedStorage<4, 4>  mUnk40df6d;
+    ::ll::TypedStorage<4, 12, ::Vec3>                            mPos;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOutputReceiver;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>            mCommandPosition;
+    ::ll::TypedStorage<4, 4, int>                                mVersion;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    VirtualCommandOrigin& operator=(VirtualCommandOrigin const&);
-    VirtualCommandOrigin(VirtualCommandOrigin const&);
     VirtualCommandOrigin();
 
 public:
@@ -96,21 +94,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VirtualCommandOrigin(
+    MCAPI VirtualCommandOrigin(
         ::CommandOrigin const&        outputReceiver,
         ::Actor&                      entity,
         ::CommandPositionFloat const& commandPosition,
         int                           version
     );
 
-    MCNAPI VirtualCommandOrigin(
+    MCAPI VirtualCommandOrigin(
         ::CommandOrigin const&        outputReceiver,
         ::CommandOrigin const&        source,
         ::CommandPositionFloat const& commandPosition,
         int                           version
     );
 
-    MCNAPI VirtualCommandOrigin(
+    MCAPI VirtualCommandOrigin(
         ::std::unique_ptr<::CommandOrigin> outputReceiver,
         ::std::unique_ptr<::CommandOrigin> source,
         ::CommandPositionFloat const&      commandPosition,
@@ -121,27 +119,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::VirtualCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    MCAPI static ::std::unique_ptr<::VirtualCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::CommandOrigin const&        outputReceiver,
         ::Actor&                      entity,
         ::CommandPositionFloat const& commandPosition,
         int                           version
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::CommandOrigin const&        outputReceiver,
         ::CommandOrigin const&        source,
         ::CommandPositionFloat const& commandPosition,
         int                           version
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::CommandOrigin> outputReceiver,
         ::std::unique_ptr<::CommandOrigin> source,
         ::CommandPositionFloat const&      commandPosition,
@@ -152,51 +150,51 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getRequestId() const;
+    MCAPI ::std::string const& $getRequestId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCNAPI ::Vec3 $getWorldPosition() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCNAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
-    MCNAPI ::Dimension* $getDimension() const;
+    MCFOLD ::Dimension* $getDimension() const;
 
-    MCNAPI ::Actor* $getEntity() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI ::CommandOrigin const& $getOutputReceiver() const;
+    MCFOLD ::CommandOrigin const& $getOutputReceiver() const;
 
-    MCNAPI bool $hasChatPerms() const;
+    MCAPI bool $hasChatPerms() const;
 
-    MCNAPI bool $hasTellPerms() const;
+    MCAPI bool $hasTellPerms() const;
 
-    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCNAPI bool $isSelectorExpansionAllowed() const;
+    MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI ::NetworkIdentifier const& $getSourceId() const;
+    MCAPI ::NetworkIdentifier const& $getSourceId() const;
 
-    MCNAPI ::CommandOriginIdentity $getIdentity() const;
+    MCAPI ::CommandOriginIdentity $getIdentity() const;
 
-    MCNAPI void $updateValues();
+    MCAPI void $updateValues();
 
-    MCNAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
 
     // NOLINTEND

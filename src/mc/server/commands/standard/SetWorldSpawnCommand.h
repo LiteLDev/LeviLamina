@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +17,9 @@ class SetWorldSpawnCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk212f18;
-    ::ll::UntypedStorage<1, 1>  mUnk344fcf;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat> mSpawnPoint;
+    ::ll::TypedStorage<1, 1, bool>                    mSpawnPointSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetWorldSpawnCommand& operator=(SetWorldSpawnCommand const&);
-    SetWorldSpawnCommand(SetWorldSpawnCommand const&);
-    SetWorldSpawnCommand();
 
 public:
     // virtual functions

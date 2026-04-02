@@ -6,6 +6,12 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/threading/Mutex.h"
+
+// auto generated forward declare list
+// clang-format off
+class TaskGroup;
+// clang-format on
 
 class AsyncCommandExecutor : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -24,29 +30,27 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk8a8ae8;
+        ::ll::TypedStorage<8, 80, ::std::optional<::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>>>
+            mResult;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OperationData& operator=(OperationData const&);
-        OperationData(OperationData const&);
-        OperationData();
     };
+
+    using ExternalOperationCallback = ::std::function<void(::std::shared_ptr<::AsyncCommandExecutor::OperationData>)>;
+
+    using Operation = ::std::function<::Bedrock::Result<void>()>;
+
+    using Result = ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>;
+
+    using ResultOperationCallback =
+        ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>&)>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk5416b7;
-    ::ll::UntypedStorage<4, 4>  mUnke25e02;
-    ::ll::UntypedStorage<8, 8>  mUnk262f82;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>   mStateLock;
+    ::ll::TypedStorage<4, 4, ::AsyncCommandExecutor::State>  mCurrentState;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mAsyncTaskGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AsyncCommandExecutor& operator=(AsyncCommandExecutor const&);
-    AsyncCommandExecutor(AsyncCommandExecutor const&);
-    AsyncCommandExecutor();
 
 public:
     // virtual functions

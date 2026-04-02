@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkViewSource;
+// clang-format on
+
 class CommandArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9867c4;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mChunkSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandArea& operator=(CommandArea const&);
-    CommandArea(CommandArea const&);
-    CommandArea();
 };

@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/util/molang/ExpressionNode.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/level/Tick.h"
 
@@ -12,7 +14,6 @@
 class Actor;
 class CompoundTag;
 class ILevel;
-struct ActorUniqueID;
 // clang-format on
 
 class AngerLevelComponent {
@@ -29,15 +30,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9863dc;
-        ::ll::UntypedStorage<8, 16> mUnkf71226;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode>                      mCondition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConditionalSound& operator=(ConditionalSound const&);
-        ConditionalSound(ConditionalSound const&);
-        ConditionalSound();
 
     public:
         // member functions
@@ -56,30 +51,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk87b9a2;
-        ::ll::UntypedStorage<4, 4> mUnk9415a7;
-        ::ll::UntypedStorage<1, 1> mUnka6bff1;
+        ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
+        ::ll::TypedStorage<4, 4, int>             mAnger;
+        ::ll::TypedStorage<1, 1, uchar>           mPriority;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Nuisance& operator=(Nuisance const&);
-        Nuisance(Nuisance const&);
-        Nuisance();
     };
 
     struct NuisanceCompare {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk927449;
+        ::ll::TypedStorage<4, 4, int> mAngerThreshold;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NuisanceCompare& operator=(NuisanceCompare const&);
-        NuisanceCompare(NuisanceCompare const&);
-        NuisanceCompare();
     };
 
     using ActorNuisance = ::std::pair<::Actor*, int>;

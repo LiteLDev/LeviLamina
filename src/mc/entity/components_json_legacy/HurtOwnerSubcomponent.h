@@ -16,16 +16,10 @@ class HurtOwnerSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka1c6a7;
-    ::ll::UntypedStorage<1, 1> mUnk173a54;
-    ::ll::UntypedStorage<1, 1> mUnkc0e975;
+    ::ll::TypedStorage<4, 4, float> mOwnerDamage;
+    ::ll::TypedStorage<1, 1, bool>  mKnockback;
+    ::ll::TypedStorage<1, 1, bool>  mIgnite;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HurtOwnerSubcomponent& operator=(HurtOwnerSubcomponent const&);
-    HurtOwnerSubcomponent(HurtOwnerSubcomponent const&);
-    HurtOwnerSubcomponent();
 
 public:
     // virtual functions

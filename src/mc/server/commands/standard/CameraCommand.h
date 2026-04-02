@@ -3,16 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/EasingType.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BaseGameVersion;
 class CameraPresets;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Experiments;
+class Player;
 struct CameraInstruction;
 struct ServerCameraStatesComponent;
 namespace SharedTypes::v1_21_90 { struct CameraPreset; }
@@ -47,55 +53,50 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk822547;
-    ::ll::UntypedStorage<1, 1>   mUnk6d2b15;
-    ::ll::UntypedStorage<8, 32>  mUnk602621;
-    ::ll::UntypedStorage<1, 1>   mUnk43793e;
-    ::ll::UntypedStorage<4, 4>   mUnk76eb2f;
-    ::ll::UntypedStorage<4, 4>   mUnkda0689;
-    ::ll::UntypedStorage<1, 1>   mUnk49b356;
-    ::ll::UntypedStorage<4, 16>  mUnk717385;
-    ::ll::UntypedStorage<1, 1>   mUnkbe461d;
-    ::ll::UntypedStorage<4, 8>   mUnkc0d6b9;
-    ::ll::UntypedStorage<4, 8>   mUnk79bee7;
-    ::ll::UntypedStorage<1, 1>   mUnk221b02;
-    ::ll::UntypedStorage<8, 200> mUnkbcf156;
-    ::ll::UntypedStorage<4, 16>  mUnk6890a2;
-    ::ll::UntypedStorage<1, 1>   mUnkb51868;
-    ::ll::UntypedStorage<1, 1>   mUnk87851f;
-    ::ll::UntypedStorage<1, 1>   mUnkcf4eac;
-    ::ll::UntypedStorage<4, 4>   mUnk124698;
-    ::ll::UntypedStorage<4, 4>   mUnkf530ad;
-    ::ll::UntypedStorage<1, 1>   mUnkac13f3;
-    ::ll::UntypedStorage<4, 4>   mUnked6be8;
-    ::ll::UntypedStorage<4, 4>   mUnk5b206e;
-    ::ll::UntypedStorage<4, 4>   mUnk8f6909;
-    ::ll::UntypedStorage<1, 1>   mUnk9cd0bc;
-    ::ll::UntypedStorage<8, 200> mUnk79bdc0;
-    ::ll::UntypedStorage<1, 1>   mUnk3233d4;
-    ::ll::UntypedStorage<1, 1>   mUnk18245b;
-    ::ll::UntypedStorage<8, 200> mUnk90b622;
-    ::ll::UntypedStorage<4, 4>   mUnkf3ad95;
-    ::ll::UntypedStorage<4, 4>   mUnk48d083;
-    ::ll::UntypedStorage<4, 4>   mUnkc0d44c;
-    ::ll::UntypedStorage<1, 1>   mUnk46fd0d;
-    ::ll::UntypedStorage<4, 4>   mUnk623384;
-    ::ll::UntypedStorage<4, 4>   mUnk6220be;
-    ::ll::UntypedStorage<4, 4>   mUnk811594;
-    ::ll::UntypedStorage<1, 1>   mUnk626e12;
-    ::ll::UntypedStorage<4, 4>   mUnkcb9bf0;
-    ::ll::UntypedStorage<4, 4>   mUnk1be6e3;
-    ::ll::UntypedStorage<4, 4>   mUnk7df88a;
-    ::ll::UntypedStorage<1, 1>   mUnkcf2ab3;
-    ::ll::UntypedStorage<4, 4>   mUnkecea45;
-    ::ll::UntypedStorage<4, 4>   mUnk55454d;
-    ::ll::UntypedStorage<4, 4>   mUnk647e26;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>        mPlayerTargets;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mCommandMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCameraPresetName;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mEasingOption;
+    ::ll::TypedStorage<4, 4, ::EasingType>                         mEasingType;
+    ::ll::TypedStorage<4, 4, float>                                mEasingTime;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mPosOption;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mPos;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mRotOption;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mRotX;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mRotY;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mFacingOption;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mFacingEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mFacingPos;
+    ::ll::TypedStorage<1, 1, bool>                                 mFacingIsPosition;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mDefaultOption;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mViewOffsetOption;
+    ::ll::TypedStorage<4, 4, float>                                mViewOffsetX;
+    ::ll::TypedStorage<4, 4, float>                                mViewOffsetY;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mEntityOffsetOption;
+    ::ll::TypedStorage<4, 4, float>                                mEntityOffsetX;
+    ::ll::TypedStorage<4, 4, float>                                mEntityOffsetY;
+    ::ll::TypedStorage<4, 4, float>                                mEntityOffsetZ;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mAttachOption;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mAttachToEntity;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mTargetEntityOption;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mTargetOffsetOption;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mTargetEntity;
+    ::ll::TypedStorage<4, 4, float>                                mTargetCenterOffsetX;
+    ::ll::TypedStorage<4, 4, float>                                mTargetCenterOffsetY;
+    ::ll::TypedStorage<4, 4, float>                                mTargetCenterOffsetZ;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mTimeOption;
+    ::ll::TypedStorage<4, 4, float>                                mFadeInSeconds;
+    ::ll::TypedStorage<4, 4, float>                                mHoldSeconds;
+    ::ll::TypedStorage<4, 4, float>                                mFadeOutSeconds;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mColorOption;
+    ::ll::TypedStorage<4, 4, int>                                  mFadeColorR;
+    ::ll::TypedStorage<4, 4, int>                                  mFadeColorG;
+    ::ll::TypedStorage<4, 4, int>                                  mFadeColorB;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mFovOption;
+    ::ll::TypedStorage<4, 4, ::EasingType>                         mFovEasingType;
+    ::ll::TypedStorage<4, 4, float>                                mFieldOfView;
+    ::ll::TypedStorage<4, 4, float>                                mFovEasingTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraCommand& operator=(CameraCommand const&);
-    CameraCommand(CameraCommand const&);
 
 public:
     // virtual functions

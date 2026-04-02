@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -16,14 +18,9 @@ class KillCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk9d7db7;
-    ::ll::UntypedStorage<1, 1>   mUnk45033c;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<1, 1, bool>                         mFilteredCreativePlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KillCommand& operator=(KillCommand const&);
-    KillCommand(KillCommand const&);
 
 public:
     // virtual functions

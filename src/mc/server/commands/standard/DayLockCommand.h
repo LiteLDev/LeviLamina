@@ -16,14 +16,8 @@ class DayLockCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3068c1;
+    ::ll::TypedStorage<1, 1, bool> mLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DayLockCommand& operator=(DayLockCommand const&);
-    DayLockCommand(DayLockCommand const&);
-    DayLockCommand();
 
 public:
     // virtual functions

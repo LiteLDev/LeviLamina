@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct AutoCompleteOption;
+// clang-format on
+
 struct AutoCompleteInformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf16e88;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AutoCompleteOption>> possibilities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AutoCompleteInformation& operator=(AutoCompleteInformation const&);
-    AutoCompleteInformation(AutoCompleteInformation const&);
-    AutoCompleteInformation();
 };

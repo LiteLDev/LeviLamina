@@ -14,15 +14,9 @@ class DamageOverTimeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6894f9;
-    ::ll::UntypedStorage<4, 4> mUnk82b498;
+    ::ll::TypedStorage<4, 4, int>   mDamagePerHurt;
+    ::ll::TypedStorage<4, 4, float> mTimeBetweenHurt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&);
-    DamageOverTimeDefinition(DamageOverTimeDefinition const&);
-    DamageOverTimeDefinition();
 
 public:
     // static functions

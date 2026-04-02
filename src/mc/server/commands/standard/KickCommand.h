@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandMessage.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
@@ -19,15 +21,9 @@ class KickCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnke1dc0d;
-    ::ll::UntypedStorage<8, 32>  mUnkc1b069;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mPlayers;
+    ::ll::TypedStorage<8, 32, ::CommandMessage>             mMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KickCommand& operator=(KickCommand const&);
-    KickCommand(KickCommand const&);
-    KickCommand();
 
 public:
     // virtual functions

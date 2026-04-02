@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ILevel;
+class Minecraft;
 class NetworkIdentifier;
 struct MCRESULT;
 // clang-format on
@@ -17,7 +18,7 @@ class DefaultCommandsContextProvider : public ::ICommandsContextProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkdca915;
+    ::ll::TypedStorage<8, 8, ::Minecraft&> mMinecraft;
     // NOLINTEND
 
 public:
@@ -46,11 +47,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ILevel* $getLevel();
+    MCAPI ::ILevel* $getLevel();
 
-    MCNAPI ::NetworkIdentifier $getLocalNetworkId() const;
+    MCAPI ::NetworkIdentifier $getLocalNetworkId() const;
 
-    MCNAPI void $onCommandExecuted(
+    MCAPI void $onCommandExecuted(
         ::MCRESULT           result,
         ::CommandOriginType  originType,
         ::std::string const& commandName,

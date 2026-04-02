@@ -40,17 +40,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9a2739;
-    ::ll::UntypedStorage<4, 4> mUnk7a4473;
-    ::ll::UntypedStorage<4, 4> mUnk8af31b;
-    ::ll::UntypedStorage<4, 4> mUnke7c89c;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::Mode>     mMode;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::Query>    mQuery;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::TimeSpec> mSpec;
+    ::ll::TypedStorage<4, 4, int>                     mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TimeCommand& operator=(TimeCommand const&);
-    TimeCommand(TimeCommand const&);
-    TimeCommand();
 
 public:
     // virtual functions

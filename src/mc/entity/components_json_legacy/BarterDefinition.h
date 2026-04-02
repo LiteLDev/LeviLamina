@@ -6,13 +6,7 @@ class BarterDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk985781;
-    ::ll::UntypedStorage<4, 4>  mUnkd61421;
+    ::ll::TypedStorage<8, 32, ::std::string> mBarterItemsTable;
+    ::ll::TypedStorage<4, 4, int>            mCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BarterDefinition& operator=(BarterDefinition const&);
-    BarterDefinition(BarterDefinition const&);
-    BarterDefinition();
 };

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/components_json_legacy/DespawnFromDistanceData.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,22 +16,16 @@ class DespawnDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk53e872;
-    ::ll::UntypedStorage<1, 1>  mUnke961cb;
-    ::ll::UntypedStorage<4, 4>  mUnk553827;
-    ::ll::UntypedStorage<1, 1>  mUnk5f546f;
-    ::ll::UntypedStorage<4, 4>  mUnk4e2d5a;
-    ::ll::UntypedStorage<1, 1>  mUnk16fd17;
-    ::ll::UntypedStorage<1, 1>  mUnka5a077;
-    ::ll::UntypedStorage<4, 8>  mUnk7a21de;
-    ::ll::UntypedStorage<1, 1>  mUnk5d7770;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>       mFilter;
+    ::ll::TypedStorage<1, 1, bool>                      mRemoveChildActors;
+    ::ll::TypedStorage<4, 4, int>                       mMinRangeInactivity;
+    ::ll::TypedStorage<1, 1, bool>                      mDespawnFromInactivity;
+    ::ll::TypedStorage<4, 4, int>                       mMinRangeDespawnChance;
+    ::ll::TypedStorage<1, 1, bool>                      mDespawnFromChance;
+    ::ll::TypedStorage<1, 1, bool>                      mDespawnFromSimulationEdge;
+    ::ll::TypedStorage<4, 8, ::DespawnFromDistanceData> mDespawnFromDistanceData;
+    ::ll::TypedStorage<1, 1, bool>                      mDespawnFromDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DespawnDefinition& operator=(DespawnDefinition const&);
-    DespawnDefinition(DespawnDefinition const&);
-    DespawnDefinition();
 
 public:
     // static functions

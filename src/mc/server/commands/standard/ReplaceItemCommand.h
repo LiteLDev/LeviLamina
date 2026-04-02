@@ -3,10 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/json/Value.h"
+#include "mc/deps/shared_types/legacy/EquipmentSlot.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/level/block/BlockSlot.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -30,25 +37,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk6bda8f;
-    ::ll::UntypedStorage<8, 200> mUnkb10f21;
-    ::ll::UntypedStorage<4, 16>  mUnkbda761;
-    ::ll::UntypedStorage<4, 4>   mUnk9efdb3;
-    ::ll::UntypedStorage<4, 4>   mUnka83d6b;
-    ::ll::UntypedStorage<4, 4>   mUnka988eb;
-    ::ll::UntypedStorage<8, 8>   mUnkdbbbdc;
-    ::ll::UntypedStorage<4, 4>   mUnk75667f;
-    ::ll::UntypedStorage<4, 4>   mUnk81ecf3;
-    ::ll::UntypedStorage<4, 4>   mUnk4dead2;
-    ::ll::UntypedStorage<8, 16>  mUnke1eaec;
-    ::ll::UntypedStorage<1, 1>   mUnkf5c953;
+    ::ll::TypedStorage<4, 4, ::ReplaceItemCommand::TargetType>     mTargetType;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mTargetEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                   mTargetBlock;
+    ::ll::TypedStorage<4, 4, ::BlockSlot>                          mBlockSlot;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
+    ::ll::TypedStorage<4, 4, int>                                  mSlotId;
+    ::ll::TypedStorage<8, 8, ::CommandItem>                        mItem;
+    ::ll::TypedStorage<4, 4, int>                                  mAmount;
+    ::ll::TypedStorage<4, 4, int>                                  mData;
+    ::ll::TypedStorage<4, 4, ::ReplaceItemCommand::ReplaceMode>    mReplaceMode;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                       mComponents;
+    ::ll::TypedStorage<1, 1, bool>                                 mHaveComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplaceItemCommand& operator=(ReplaceItemCommand const&);
-    ReplaceItemCommand(ReplaceItemCommand const&);
-    ReplaceItemCommand();
 
 public:
     // virtual functions

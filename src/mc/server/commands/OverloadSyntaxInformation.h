@@ -4,11 +4,15 @@
 
 struct OverloadSyntaxInformation {
 public:
+    // OverloadSyntaxInformation inner types define
+    using CursorPos = uint;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk328dfd;
-    ::ll::UntypedStorage<4, 4>  mUnk8b9765;
-    ::ll::UntypedStorage<4, 4>  mUnk137e0e;
+    ::ll::TypedStorage<8, 32, ::std::string> text;
+    ::ll::TypedStorage<4, 4, uint>           start;
+    ::ll::TypedStorage<4, 4, uint>           length;
     // NOLINTEND
 
 public:
@@ -20,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
+    MCAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
     // NOLINTEND
 };

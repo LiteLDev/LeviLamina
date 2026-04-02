@@ -16,14 +16,8 @@ class SetMaxPlayersCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk755713;
+    ::ll::TypedStorage<4, 4, int> mMaxPlayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetMaxPlayersCommand& operator=(SetMaxPlayersCommand const&);
-    SetMaxPlayersCommand(SetMaxPlayersCommand const&);
-    SetMaxPlayersCommand();
 
 public:
     // virtual functions

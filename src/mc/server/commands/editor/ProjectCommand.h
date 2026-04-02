@@ -39,15 +39,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk45f2ff;
-    ::ll::UntypedStorage<4, 4> mUnkbd5e90;
+    ::ll::TypedStorage<4, 4, ::ProjectCommand::Subcommand>            mSubcommand;
+    ::ll::TypedStorage<4, 4, ::ProjectCommand::ExportSubcommandTypes> mExportSubcommandType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProjectCommand& operator=(ProjectCommand const&);
-    ProjectCommand(ProjectCommand const&);
-    ProjectCommand();
 
 public:
     // virtual functions

@@ -13,10 +13,9 @@ class CommandOutput;
 namespace ExecuteCommandHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI void
-handleResult(::Command const& command, ::std::vector<::Actor const*> const& failed, ::CommandOutput& output);
+MCAPI void handleResult(::Command const& command, ::std::vector<::Actor const*> const& failed, ::CommandOutput& output);
 
-MCNAPI void runCommand(
+MCAPI void runCommand(
     ::Command const&               command,
     ::CommandOrigin const&         commandOrigin,
     ::Actor const*                 entity,

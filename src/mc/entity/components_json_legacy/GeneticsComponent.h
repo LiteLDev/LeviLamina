@@ -23,15 +23,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9879b9;
-        ::ll::UntypedStorage<4, 4> mUnk644375;
+        ::ll::TypedStorage<4, 4, int> mainAllele;
+        ::ll::TypedStorage<4, 4, int> hiddenAllele;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Gene& operator=(Gene const&);
-        Gene(Gene const&);
-        Gene();
     };
 
 public:

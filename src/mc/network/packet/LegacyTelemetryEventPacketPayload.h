@@ -265,8 +265,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::LegacyTelemetryEventPacketPayload::MobKilled& operator=(::LegacyTelemetryEventPacketPayload::MobKilled&&
-        );
+        MCAPI ::LegacyTelemetryEventPacketPayload::MobKilled&
+        operator=(::LegacyTelemetryEventPacketPayload::MobKilled&&);
 
         MCAPI ::LegacyTelemetryEventPacketPayload::MobKilled&
         operator=(::LegacyTelemetryEventPacketPayload::MobKilled const&);

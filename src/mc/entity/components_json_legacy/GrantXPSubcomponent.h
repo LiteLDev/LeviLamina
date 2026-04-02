@@ -16,15 +16,9 @@ class GrantXPSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4b87ef;
-    ::ll::UntypedStorage<4, 4> mUnk9dbe79;
+    ::ll::TypedStorage<4, 4, int> mMinXPGranted;
+    ::ll::TypedStorage<4, 4, int> mMaxXPGranted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrantXPSubcomponent& operator=(GrantXPSubcomponent const&);
-    GrantXPSubcomponent(GrantXPSubcomponent const&);
-    GrantXPSubcomponent();
 
 public:
     // virtual functions

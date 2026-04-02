@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -17,16 +18,10 @@ class EnableEncryptionCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk219a3e;
-    ::ll::UntypedStorage<8, 32> mUnk24d2e6;
-    ::ll::UntypedStorage<1, 1>  mUnkfabc20;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mPublicKey;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mSalt;
+    ::ll::TypedStorage<1, 1, ::CodeBuilder::EncryptionCipherMode> mCipherMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnableEncryptionCommand& operator=(EnableEncryptionCommand const&);
-    EnableEncryptionCommand(EnableEncryptionCommand const&);
-    EnableEncryptionCommand();
 
 public:
     // virtual functions

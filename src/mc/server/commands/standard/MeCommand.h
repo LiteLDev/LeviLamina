@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 // auto generated forward declare list
@@ -16,14 +17,8 @@ class MeCommand : public ::MessagingCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka847a8;
+    ::ll::TypedStorage<8, 32, ::CommandMessage> mMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MeCommand& operator=(MeCommand const&);
-    MeCommand(MeCommand const&);
-    MeCommand();
 
 public:
     // virtual functions

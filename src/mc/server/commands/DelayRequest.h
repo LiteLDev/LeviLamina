@@ -25,14 +25,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DelayRequest& operator=(::DelayRequest&&);
+    MCAPI ::DelayRequest& operator=(::DelayRequest&&);
 
-    MCNAPI ~DelayRequest();
+    MCAPI ~DelayRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

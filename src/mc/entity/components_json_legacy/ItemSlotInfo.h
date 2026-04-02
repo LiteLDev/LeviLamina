@@ -13,13 +13,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8ab9ee;
-    ::ll::UntypedStorage<1, 1> mUnk5ef5da;
+    ::ll::TypedStorage<4, 4, int>                      mSlot;
+    ::ll::TypedStorage<1, 1, ::ItemSlotInfo::SlotType> mSlotType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemSlotInfo& operator=(ItemSlotInfo const&);
-    ItemSlotInfo(ItemSlotInfo const&);
-    ItemSlotInfo();
 };

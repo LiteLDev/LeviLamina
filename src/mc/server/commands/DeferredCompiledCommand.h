@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Command;
+class CommandOrigin;
 class MinecraftCommands;
 // clang-format on
 
@@ -14,15 +16,9 @@ class DeferredCompiledCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk61084f;
-    ::ll::UntypedStorage<8, 8> mUnk84daa1;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Command*>>        mCompiledCommand;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeferredCompiledCommand& operator=(DeferredCompiledCommand const&);
-    DeferredCompiledCommand(DeferredCompiledCommand const&);
-    DeferredCompiledCommand();
 
 public:
     // virtual functions
@@ -35,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::MinecraftCommands&);
+    MCAPI void $execute(::MinecraftCommands&);
 
 
     // NOLINTEND

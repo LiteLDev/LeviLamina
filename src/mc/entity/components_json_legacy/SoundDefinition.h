@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/molang/ExpressionNode.h"
+
 class SoundDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkad52b6;
-    ::ll::UntypedStorage<8, 16> mUnkcb58b5;
+    ::ll::TypedStorage<8, 32, ::std::string>    mSoundEvent;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mCondition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SoundDefinition& operator=(SoundDefinition const&);
-    SoundDefinition(SoundDefinition const&);
-    SoundDefinition();
 
 public:
     // member functions

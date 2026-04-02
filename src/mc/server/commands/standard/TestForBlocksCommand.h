@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,17 +24,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk210dfe;
-    ::ll::UntypedStorage<4, 16> mUnka177b2;
-    ::ll::UntypedStorage<4, 16> mUnkbc7407;
-    ::ll::UntypedStorage<4, 4>  mUnk2063c2;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>           mBegin;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>           mEnd;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>           mDestination;
+    ::ll::TypedStorage<4, 4, ::TestForBlocksCommand::Mode> mMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TestForBlocksCommand& operator=(TestForBlocksCommand const&);
-    TestForBlocksCommand(TestForBlocksCommand const&);
-    TestForBlocksCommand();
 
 public:
     // virtual functions

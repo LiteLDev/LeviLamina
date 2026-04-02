@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/Subject.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+namespace CodeBuilder { class CommandOutputObserver; }
+namespace Core { class SingleThreadedLock; }
 namespace Json { class Value; }
 struct AutomationCmdOutput;
 // clang-format on
@@ -17,15 +20,13 @@ class CommandOutputSender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9d00b4;
-    ::ll::UntypedStorage<8, 8>  mUnkf1fd72;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::AutomationCmdOutput&)>> mEmplaceTestCommandOutputCallback;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Core::Subject<::CodeBuilder::CommandOutputObserver, ::Core::SingleThreadedLock>>>
+        mCodeBuilderSubject;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandOutputSender& operator=(CommandOutputSender const&);
-    CommandOutputSender(CommandOutputSender const&);
-    CommandOutputSender();
 
 public:
     // virtual functions
@@ -40,32 +41,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
+    MCAPI_C void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
 
-    MCNAPI_C ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
+    MCAPI_C ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
 
-    MCNAPI void
+    MCAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
+    MCFOLD static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCAPI_C void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
+    MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCNAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
+    MCFOLD void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
 
 
     // NOLINTEND

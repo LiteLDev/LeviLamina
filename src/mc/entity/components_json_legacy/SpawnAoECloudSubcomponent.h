@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/entity/components_json_legacy/OnHitSubcomponent.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,21 +19,15 @@ class SpawnAoECloudSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke7e606;
-    ::ll::UntypedStorage<4, 4>  mUnkf1a6ae;
-    ::ll::UntypedStorage<4, 4>  mUnk85c000;
-    ::ll::UntypedStorage<4, 4>  mUnk3d3a04;
-    ::ll::UntypedStorage<4, 4>  mUnk85af42;
-    ::ll::UntypedStorage<4, 4>  mUnk392b11;
-    ::ll::UntypedStorage<4, 16> mUnk644b1c;
-    ::ll::UntypedStorage<1, 1>  mUnkd7fc0f;
+    ::ll::TypedStorage<4, 4, int>              mPotionId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
+    ::ll::TypedStorage<4, 4, ::ParticleType>   mParticle;
+    ::ll::TypedStorage<4, 4, int>              mReapplicationDelay;
+    ::ll::TypedStorage<4, 4, float>            mRadius;
+    ::ll::TypedStorage<4, 4, float>            mRadiusOnUse;
+    ::ll::TypedStorage<4, 16, ::mce::Color>    mParticleColor;
+    ::ll::TypedStorage<1, 1, bool>             mAffectOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnAoECloudSubcomponent& operator=(SpawnAoECloudSubcomponent const&);
-    SpawnAoECloudSubcomponent(SpawnAoECloudSubcomponent const&);
-    SpawnAoECloudSubcomponent();
 
 public:
     // virtual functions

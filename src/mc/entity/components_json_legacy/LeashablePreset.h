@@ -2,23 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components_json_legacy/SpringType.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+
 struct LeashablePreset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke35717;
-    ::ll::UntypedStorage<4, 4>  mUnkbe409c;
-    ::ll::UntypedStorage<4, 4>  mUnkbd82c6;
-    ::ll::UntypedStorage<4, 4>  mUnk53be73;
-    ::ll::UntypedStorage<1, 1>  mUnk41f50a;
-    ::ll::UntypedStorage<4, 4>  mUnk912f5a;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
+    ::ll::TypedStorage<4, 4, float>               mSoftDistance;
+    ::ll::TypedStorage<4, 4, float>               mHardDistance;
+    ::ll::TypedStorage<4, 4, float>               mMaxDistance;
+    ::ll::TypedStorage<1, 1, ::SpringType>        mSpringType;
+    ::ll::TypedStorage<4, 4, float>               mRotationAdjustment;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LeashablePreset& operator=(LeashablePreset const&);
-    LeashablePreset(LeashablePreset const&);
-    LeashablePreset();
 
 public:
     // member functions

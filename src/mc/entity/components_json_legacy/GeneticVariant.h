@@ -2,22 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/IntRange.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+
 struct GeneticVariant {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnkbbfee4;
-    ::ll::UntypedStorage<4, 8>   mUnkc35ea8;
-    ::ll::UntypedStorage<4, 8>   mUnk5f9d7e;
-    ::ll::UntypedStorage<4, 8>   mUnkfd381f;
-    ::ll::UntypedStorage<8, 104> mUnk949cb0;
+    ::ll::TypedStorage<4, 8, ::IntRange>                 mainAllele;
+    ::ll::TypedStorage<4, 8, ::IntRange>                 hiddenAllele;
+    ::ll::TypedStorage<4, 8, ::IntRange>                 eitherAllele;
+    ::ll::TypedStorage<4, 8, ::IntRange>                 bothAllele;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> onBorn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GeneticVariant& operator=(GeneticVariant const&);
-    GeneticVariant(GeneticVariant const&);
-    GeneticVariant();
 
 public:
     // member functions

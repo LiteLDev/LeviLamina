@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,21 +24,19 @@ class Vec2;
 
 class SpreadPlayersCommand : public ::Command {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkcaddae;
-    ::ll::UntypedStorage<4, 8>   mUnkbc1c46;
-    ::ll::UntypedStorage<4, 8>   mUnka2e82a;
-    ::ll::UntypedStorage<4, 8>   mUnkf56085;
-    ::ll::UntypedStorage<4, 4>   mUnk17014b;
-    ::ll::UntypedStorage<4, 4>   mUnk87ff63;
-    // NOLINTEND
+    // SpreadPlayersCommand inner types define
+    using CommandAreas = ::std::map<::ChunkPos, ::std::unique_ptr<::CommandArea>>;
 
 public:
-    // prevent constructor by default
-    SpreadPlayersCommand& operator=(SpreadPlayersCommand const&);
-    SpreadPlayersCommand(SpreadPlayersCommand const&);
-    SpreadPlayersCommand();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>              mX;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>              maxHeight;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>              mZ;
+    ::ll::TypedStorage<4, 4, float>                        mDistance;
+    ::ll::TypedStorage<4, 4, float>                        mMaxRange;
+    // NOLINTEND
 
 public:
     // virtual functions

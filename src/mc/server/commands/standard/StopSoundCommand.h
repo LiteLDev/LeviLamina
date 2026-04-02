@@ -4,27 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class StopSoundCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk7a4009;
-    ::ll::UntypedStorage<8, 32>  mUnkd2e3ca;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>                mSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StopSoundCommand& operator=(StopSoundCommand const&);
-    StopSoundCommand(StopSoundCommand const&);
-    StopSoundCommand();
 
 public:
     // virtual functions

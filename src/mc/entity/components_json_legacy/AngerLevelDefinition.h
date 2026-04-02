@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,22 +18,16 @@ class AngerLevelDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk46a660;
-    ::ll::UntypedStorage<4, 4>  mUnk26bb70;
-    ::ll::UntypedStorage<4, 4>  mUnk8d98e4;
-    ::ll::UntypedStorage<4, 4>  mUnk53b4ae;
-    ::ll::UntypedStorage<1, 1>  mUnkaf65ef;
-    ::ll::UntypedStorage<4, 4>  mUnk194bba;
-    ::ll::UntypedStorage<8, 24> mUnkef5ae5;
-    ::ll::UntypedStorage<4, 4>  mUnk18eb2d;
-    ::ll::UntypedStorage<8, 64> mUnk743d5b;
+    ::ll::TypedStorage<4, 4, int>                               mDefaultAnnoyingness;
+    ::ll::TypedStorage<4, 4, int>                               mDefaultProjectileAnnoyingness;
+    ::ll::TypedStorage<4, 4, int>                               mMaxAngerLevel;
+    ::ll::TypedStorage<4, 4, int>                               mAngryThreshold;
+    ::ll::TypedStorage<1, 1, bool>                              mRemoveTargetBelowAngryThreshold;
+    ::ll::TypedStorage<4, 4, int>                               mAngryBoost;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SoundDefinition>> mOnIncreaseSoundDefinitions;
+    ::ll::TypedStorage<4, 4, float>                             mAngerDecrementIntervalSeconds;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>               mNuisanceFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AngerLevelDefinition& operator=(AngerLevelDefinition const&);
-    AngerLevelDefinition(AngerLevelDefinition const&);
-    AngerLevelDefinition();
 
 public:
     // member functions

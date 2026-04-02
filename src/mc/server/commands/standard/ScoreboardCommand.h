@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandOperator.h"
+#include "mc/server/commands/CommandWildcardInt.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
@@ -51,7 +53,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk2cc304;
+        ::ll::TypedStorage<8, 8, ::Scoreboard&> mScoreboard;
         // NOLINTEND
 
     public:
@@ -65,56 +67,45 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9c3417;
-        ::ll::UntypedStorage<4, 4>  mUnk8cf009;
-        ::ll::UntypedStorage<8, 32> mUnk91e101;
+        ::ll::TypedStorage<4, 4, int>            mSuccessCount;
+        ::ll::TypedStorage<4, 4, int>            mFirstNewScore;
+        ::ll::TypedStorage<8, 32, ::std::string> mFirstSuccess;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SetScoreOutput& operator=(SetScoreOutput const&);
-        SetScoreOutput(SetScoreOutput const&);
-        SetScoreOutput();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~SetScoreOutput();
+        MCAPI ~SetScoreOutput();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkf9fb5c;
-    ::ll::UntypedStorage<4, 4>   mUnk1dde80;
-    ::ll::UntypedStorage<8, 32>  mUnkea14e0;
-    ::ll::UntypedStorage<8, 32>  mUnk7cb10b;
-    ::ll::UntypedStorage<1, 1>   mUnke13bce;
-    ::ll::UntypedStorage<8, 32>  mUnkdd65c4;
-    ::ll::UntypedStorage<8, 32>  mUnk3e0250;
-    ::ll::UntypedStorage<8, 32>  mUnkb1c093;
-    ::ll::UntypedStorage<8, 200> mUnka68af1;
-    ::ll::UntypedStorage<8, 200> mUnkc12ce9;
-    ::ll::UntypedStorage<1, 1>   mUnk3d3370;
-    ::ll::UntypedStorage<4, 8>   mUnk7d2df4;
-    ::ll::UntypedStorage<4, 8>   mUnkbec487;
-    ::ll::UntypedStorage<4, 4>   mUnk67a061;
-    ::ll::UntypedStorage<4, 4>   mUnkbf069a;
-    ::ll::UntypedStorage<4, 4>   mUnk48fdfd;
-    ::ll::UntypedStorage<1, 1>   mUnk5354ab;
+    ::ll::TypedStorage<4, 4, ::ScoreboardCommand::Category>        mCategory;
+    ::ll::TypedStorage<4, 4, ::ScoreboardCommand::Action>          mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mObjective;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mSourceObjective;
+    ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder>                 mOrder;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCriteria;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mDisplayName;
+    ::ll::TypedStorage<8, 200, ::WildcardCommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<8, 200, ::WildcardCommandSelector<::Actor>> mSources;
+    ::ll::TypedStorage<1, 1, ::CommandOperator>                    mOperator;
+    ::ll::TypedStorage<4, 8, ::CommandWildcardInt>                 mMin;
+    ::ll::TypedStorage<4, 8, ::CommandWildcardInt>                 mMax;
+    ::ll::TypedStorage<4, 4, int>                                  mRandMin;
+    ::ll::TypedStorage<4, 4, int>                                  mRandMax;
+    ::ll::TypedStorage<4, 4, int>                                  mValue;
+    ::ll::TypedStorage<1, 1, bool>                                 mTargetsSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScoreboardCommand& operator=(ScoreboardCommand const&);
-    ScoreboardCommand(ScoreboardCommand const&);
 
 public:
     // virtual functions

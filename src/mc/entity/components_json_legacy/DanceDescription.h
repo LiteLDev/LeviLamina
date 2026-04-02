@@ -14,14 +14,8 @@ struct DanceDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk92500a;
+    ::ll::TypedStorage<4, 4, float> mListenDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DanceDescription& operator=(DanceDescription const&);
-    DanceDescription(DanceDescription const&);
-    DanceDescription();
 
 public:
     // virtual functions

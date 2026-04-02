@@ -14,15 +14,9 @@ class GrowsCropDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4b3638;
-    ::ll::UntypedStorage<4, 4> mUnk6bb96a;
+    ::ll::TypedStorage<4, 4, int>   mCharges;
+    ::ll::TypedStorage<4, 4, float> mChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrowsCropDefinition& operator=(GrowsCropDefinition const&);
-    GrowsCropDefinition(GrowsCropDefinition const&);
-    GrowsCropDefinition();
 
 public:
     // static functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,20 +15,14 @@ class RailActivatorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk33b7bc;
-    ::ll::UntypedStorage<8, 104> mUnka78886;
-    ::ll::UntypedStorage<1, 1>   mUnk86e307;
-    ::ll::UntypedStorage<1, 1>   mUnk164319;
-    ::ll::UntypedStorage<1, 1>   mUnkafaf1a;
-    ::ll::UntypedStorage<1, 1>   mUnk543ab5;
-    ::ll::UntypedStorage<1, 1>   mUnkef7465;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnActivate;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDeactivate;
+    ::ll::TypedStorage<1, 1, bool>                       mCheckBlockTypes;
+    ::ll::TypedStorage<1, 1, bool>                       mTickCommandBlockOnActivate;
+    ::ll::TypedStorage<1, 1, bool>                       mTickCommandBlockOnDeactivate;
+    ::ll::TypedStorage<1, 1, bool>                       mEjectOnActivate;
+    ::ll::TypedStorage<1, 1, bool>                       mEjectOnDeactivate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RailActivatorDefinition& operator=(RailActivatorDefinition const&);
-    RailActivatorDefinition(RailActivatorDefinition const&);
-    RailActivatorDefinition();
 
 public:
     // member functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,8 @@ class TagsFromItemCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk37c26e;
+    ::ll::TypedStorage<8, 8, ::CommandItem> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagsFromItemCommand& operator=(TagsFromItemCommand const&);
-    TagsFromItemCommand(TagsFromItemCommand const&);
-    TagsFromItemCommand();
 
 public:
     // virtual functions

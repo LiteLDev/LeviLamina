@@ -2,12 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class CommandRegistry;
+class ICommandsContextProvider;
+// clang-format on
+
 struct MinecraftCommandsArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk39dd7a;
-    ::ll::UntypedStorage<8, 8> mUnk1896e7;
+    ::ll::TypedStorage<8, 8, ::ICommandsContextProvider&>            mContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry>&&> mRegistry;
     // NOLINTEND
 
 public:

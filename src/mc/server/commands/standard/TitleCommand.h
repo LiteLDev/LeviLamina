@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandMessage.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 // auto generated forward declare list
@@ -10,6 +12,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class TitleCommand : public ::MessagingCommand {
@@ -27,19 +30,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk8c3b5e;
-    ::ll::UntypedStorage<8, 200> mUnk28fb71;
-    ::ll::UntypedStorage<8, 32>  mUnkf19dd5;
-    ::ll::UntypedStorage<4, 4>   mUnk189b73;
-    ::ll::UntypedStorage<4, 4>   mUnkc6c5f6;
-    ::ll::UntypedStorage<4, 4>   mUnka4d770;
+    ::ll::TypedStorage<4, 4, ::TitleCommand::Mode>          mMode;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 32, ::CommandMessage>             mMessage;
+    ::ll::TypedStorage<4, 4, int>                           mFadeIn;
+    ::ll::TypedStorage<4, 4, int>                           mStay;
+    ::ll::TypedStorage<4, 4, int>                           mFadeOut;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TitleCommand& operator=(TitleCommand const&);
-    TitleCommand(TitleCommand const&);
-    TitleCommand();
 
 public:
     // virtual functions

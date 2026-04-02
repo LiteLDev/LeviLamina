@@ -16,16 +16,14 @@ class DeferredCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke036cf;
-    ::ll::UntypedStorage<1, 1>  mUnkfecf3f;
-    ::ll::UntypedStorage<1, 1>  mUnk15a3f4;
-    ::ll::UntypedStorage<8, 64> mUnked4707;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandContext>> mContext;
+    ::ll::TypedStorage<1, 1, bool>                                mSuppressOutput;
+    ::ll::TypedStorage<1, 1, bool>                                mIsRequest;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::MCRESULT)>>  mCallback;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DeferredCommand& operator=(DeferredCommand const&);
-    DeferredCommand(DeferredCommand const&);
     DeferredCommand();
 
 public:
@@ -39,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeferredCommand(
+    MCAPI DeferredCommand(
         ::std::unique_ptr<::CommandContext> context,
         bool                                suppressOutput,
         bool                                isRequest,
@@ -50,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::CommandContext> context,
         bool                                suppressOutput,
         bool                                isRequest,
@@ -61,7 +59,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::MinecraftCommands& commands);
+    MCAPI void $execute(::MinecraftCommands& commands);
 
 
     // NOLINTEND

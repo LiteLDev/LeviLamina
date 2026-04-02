@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+
 namespace NpcComponents {
 
 struct LeaveMenuCountdown {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka63225;
-    ::ll::UntypedStorage<8, 24> mUnkd386d2;
+    ::ll::TypedStorage<4, 4, int>              ticksRemaining;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> npc;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LeaveMenuCountdown& operator=(LeaveMenuCountdown const&);
-    LeaveMenuCountdown(LeaveMenuCountdown const&);
-    LeaveMenuCountdown();
 };
 
 } // namespace NpcComponents

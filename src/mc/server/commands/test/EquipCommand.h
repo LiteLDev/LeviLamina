@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 // clang-format on
@@ -15,15 +18,9 @@ class EquipCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkb57fdd;
-    ::ll::UntypedStorage<8, 8>   mUnk131bf2;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<8, 8, ::CommandItem>                mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EquipCommand& operator=(EquipCommand const&);
-    EquipCommand(EquipCommand const&);
-    EquipCommand();
 
 public:
     // virtual functions

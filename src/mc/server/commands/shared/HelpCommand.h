@@ -16,15 +16,9 @@ class HelpCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk563408;
-    ::ll::UntypedStorage<4, 4>  mUnk3dee5d;
+    ::ll::TypedStorage<8, 32, ::std::string> mCommand;
+    ::ll::TypedStorage<4, 4, int>            mPage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HelpCommand& operator=(HelpCommand const&);
-    HelpCommand(HelpCommand const&);
-    HelpCommand();
 
 public:
     // virtual functions

@@ -64,12 +64,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CommandParameterData();
+    MCAPI ~CommandParameterData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

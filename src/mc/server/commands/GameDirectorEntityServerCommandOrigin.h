@@ -37,27 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GameDirectorEntityServerCommandOrigin(::Actor& origin);
+    MCAPI explicit GameDirectorEntityServerCommandOrigin(::Actor& origin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor& origin);
+    MCAPI void* $ctor(::Actor& origin);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
 
     // NOLINTEND

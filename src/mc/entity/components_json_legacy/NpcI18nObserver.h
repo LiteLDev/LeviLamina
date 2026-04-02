@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class NpcComponent;
 class PackManifest;
 // clang-format on
 
@@ -14,8 +16,8 @@ class NpcI18nObserver : public ::I18nObserver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk483061;
-    ::ll::UntypedStorage<8, 8> mUnk28e5d4;
+    ::ll::TypedStorage<8, 8, ::NpcComponent*> mOwner;
+    ::ll::TypedStorage<8, 8, ::Actor&>        mActor;
     // NOLINTEND
 
 public:

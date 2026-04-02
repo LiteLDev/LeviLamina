@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/BlockCommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 
@@ -18,20 +19,17 @@ class CompoundTag;
 class Level;
 class Vec2;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class MinecartBlockCommandOrigin : public ::BlockCommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5eec5b;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mMinecartEntityID;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MinecartBlockCommandOrigin& operator=(MinecartBlockCommandOrigin const&);
-    MinecartBlockCommandOrigin(MinecartBlockCommandOrigin const&);
     MinecartBlockCommandOrigin();
 
 public:
@@ -65,45 +63,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
+    MCAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCAPI void* $ctor(::BlockSource& region, ::ActorUniqueID const& minecartId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getBlockPosition() const;
+    MCFOLD ::BlockPos $getBlockPosition() const;
 
-    MCNAPI ::Vec3 $getWorldPosition() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCNAPI ::Actor* $getEntity() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
+    MCFOLD ::CommandBlockActor* $_getBlockEntity(::BlockSource& region) const;
 
-    MCNAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
+    MCAPI ::BaseCommandBlock* $_getBaseCommandBlock(::BlockSource& region) const;
 
 
     // NOLINTEND

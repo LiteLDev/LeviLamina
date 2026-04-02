@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/RelativeFloat.h"
 #include "mc/server/commands/ServerCommand.h"
 #include "mc/util/rotation_command_utils/FacingResult.h"
 
@@ -13,30 +16,26 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Vec3;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class SummonCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkadd035;
-    ::ll::UntypedStorage<4, 16>  mUnk753489;
-    ::ll::UntypedStorage<8, 32>  mUnk7ed9ce;
-    ::ll::UntypedStorage<8, 32>  mUnk1154bc;
-    ::ll::UntypedStorage<1, 1>   mUnk7c4ae7;
-    ::ll::UntypedStorage<4, 8>   mUnkb5be64;
-    ::ll::UntypedStorage<4, 8>   mUnkd3ecd3;
-    ::ll::UntypedStorage<1, 1>   mUnka70ba0;
-    ::ll::UntypedStorage<1, 1>   mUnka72152;
-    ::ll::UntypedStorage<4, 4>   mUnk8e89d5;
-    ::ll::UntypedStorage<8, 200> mUnk66e3c1;
-    ::ll::UntypedStorage<4, 16>  mUnk484347;
+    ::ll::TypedStorage<8, 8, ::ActorDefinitionIdentifier const*>   mActorId;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mPosition;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mEventName;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mActorName;
+    ::ll::TypedStorage<1, 1, bool>                                 mNameSet;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mYRot;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                      mXRot;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsUsingRotation;
+    ::ll::TypedStorage<1, 1, bool>                                 mFacingIsPosition;
+    ::ll::TypedStorage<4, 4, ::RotationCommandUtils::FacingResult> mHaveFacing;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>         mFacingEntity;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>              mFacingPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SummonCommand& operator=(SummonCommand const&);
-    SummonCommand(SummonCommand const&);
 
 public:
     // virtual functions

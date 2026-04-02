@@ -2,26 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemDescriptor;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/item/ItemDescriptor.h"
 
 struct SpawnActorParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk40f98c;
-    ::ll::UntypedStorage<4, 4>   mUnk55c489;
-    ::ll::UntypedStorage<4, 4>   mUnk472480;
-    ::ll::UntypedStorage<8, 16>  mUnkca10e7;
-    ::ll::UntypedStorage<8, 32>  mUnk1d468a;
-    ::ll::UntypedStorage<8, 32>  mUnkee7547;
-    ::ll::UntypedStorage<8, 104> mUnk5dad47;
-    ::ll::UntypedStorage<8, 64>  mUnk12c523;
-    ::ll::UntypedStorage<1, 1>   mUnkd61ee6;
-    ::ll::UntypedStorage<1, 1>   mUnk1b80b3;
-    ::ll::UntypedStorage<4, 4>   mUnkc5692c;
+    ::ll::TypedStorage<4, 4, int>                                    mSpawnTimeMin;
+    ::ll::TypedStorage<4, 4, int>                                    mSpawnTimeMax;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSpawnSound;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                      mItemDescriptor;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mEntityDefinition;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mSpawnMethod;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnItemSpawnEvent;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                    mFilters;
+    ::ll::TypedStorage<1, 1, bool>                                   mSingleUse;
+    ::ll::TypedStorage<1, 1, bool>                                   mShouldLeash;
+    ::ll::TypedStorage<4, 4, int>                                    mNumToSpawn;
     // NOLINTEND
 
 public:

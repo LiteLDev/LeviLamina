@@ -2,23 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/actor/DealsDamage.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+
 struct DamageSensorTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk98b52d;
-    ::ll::UntypedStorage<8, 104> mUnkc14b2b;
-    ::ll::UntypedStorage<4, 4>   mUnkdbeae6;
-    ::ll::UntypedStorage<4, 4>   mUnk4eb8fa;
-    ::ll::UntypedStorage<4, 4>   mUnk1666d9;
-    ::ll::UntypedStorage<1, 1>   mUnke242c2;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mOnDamageSound;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>              mOnDamage;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::TypedStorage<4, 4, float>                                   mDamageMultipler;
+    ::ll::TypedStorage<4, 4, float>                                   mDamageModifier;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::DealsDamage>      mDealsDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageSensorTrigger& operator=(DamageSensorTrigger const&);
-    DamageSensorTrigger(DamageSensorTrigger const&);
-    DamageSensorTrigger();
 
 public:
     // member functions

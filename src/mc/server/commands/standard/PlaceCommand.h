@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandFilePath.h"
+#include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/ServerCommand.h"
 #include "mc/world/level/levelgen/v2/LiquidSettings.h"
 
@@ -12,7 +14,6 @@ class BlockPos;
 class BoundingBox;
 class CommandOrigin;
 class CommandOutput;
-class CommandPosition;
 class CommandRegistry;
 class Dimension;
 class Experiments;
@@ -31,28 +32,26 @@ public:
         FeatureRule = 3,
     };
 
+    using BiomeDecorationFeatureMap = ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>;
+
+    using PlaceResult = ::nonstd::expected<::BoundingBox, ::std::string_view>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3aa43a;
-    ::ll::UntypedStorage<8, 32> mUnk959a5a;
-    ::ll::UntypedStorage<8, 32> mUnk6570bc;
-    ::ll::UntypedStorage<4, 4>  mUnk194dc9;
-    ::ll::UntypedStorage<4, 16> mUnke003e7;
-    ::ll::UntypedStorage<8, 32> mUnkd4ce49;
-    ::ll::UntypedStorage<8, 8>  mUnkf720b6;
-    ::ll::UntypedStorage<1, 1>  mUnkd7f738;
-    ::ll::UntypedStorage<1, 1>  mUnk663c8d;
-    ::ll::UntypedStorage<1, 1>  mUnk5c7fb5;
-    ::ll::UntypedStorage<1, 1>  mUnk77c817;
-    ::ll::UntypedStorage<1, 1>  mUnk7d4350;
+    ::ll::TypedStorage<4, 4, ::PlaceCommand::PlaceAction>    mPlaceAction;
+    ::ll::TypedStorage<8, 32, ::CommandFilePath>             mPool;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mTarget;
+    ::ll::TypedStorage<4, 4, int>                            mMaxDepth;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>             mPosition;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mStructureOrFeatureName;
+    ::ll::TypedStorage<8, 8, ::IFeature const*>              mFeature;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings> mLiquidSettings;
+    ::ll::TypedStorage<1, 1, bool>                           mPosIsSet;
+    ::ll::TypedStorage<1, 1, bool>                           mIgnoreStartHeight;
+    ::ll::TypedStorage<1, 1, bool>                           mKeepJigsaws;
+    ::ll::TypedStorage<1, 1, bool>                           mIncludeEntities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlaceCommand& operator=(PlaceCommand const&);
-    PlaceCommand(PlaceCommand const&);
-    PlaceCommand();
 
 public:
     // virtual functions

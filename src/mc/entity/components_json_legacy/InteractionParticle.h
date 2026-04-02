@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -23,17 +26,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke48609;
-    ::ll::UntypedStorage<4, 4> mUnk56cbc5;
-    ::ll::UntypedStorage<1, 1> mUnk626a44;
-    ::ll::UntypedStorage<1, 1> mUnk7883f6;
+    ::ll::TypedStorage<4, 4, ::ParticleType>                         mOnStartType;
+    ::ll::TypedStorage<4, 4, float>                                  mOffsetY;
+    ::ll::TypedStorage<1, 1, bool>                                   mOffsetTowardsInteractor;
+    ::ll::TypedStorage<1, 1, ::InteractionParticle::CopperEventType> mCopperEventType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractionParticle& operator=(InteractionParticle const&);
-    InteractionParticle(InteractionParticle const&);
-    InteractionParticle();
 
 public:
     // member functions

@@ -4,26 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class ClearSpawnPointCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk47d72c;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClearSpawnPointCommand& operator=(ClearSpawnPointCommand const&);
-    ClearSpawnPointCommand(ClearSpawnPointCommand const&);
-    ClearSpawnPointCommand();
 
 public:
     // virtual functions

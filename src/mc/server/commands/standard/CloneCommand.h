@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -30,21 +33,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk671ad6;
-    ::ll::UntypedStorage<4, 16> mUnkd6681e;
-    ::ll::UntypedStorage<4, 16> mUnkfb463c;
-    ::ll::UntypedStorage<4, 4>  mUnkc2ba7c;
-    ::ll::UntypedStorage<4, 4>  mUnk747e1c;
-    ::ll::UntypedStorage<8, 8>  mUnk47641f;
-    ::ll::UntypedStorage<8, 24> mUnk8c4eca;
-    ::ll::UntypedStorage<4, 4>  mUnk14ceb4;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mBegin;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mEnd;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mDestination;
+    ::ll::TypedStorage<4, 4, ::CloneCommand::MaskMode>                 mMaskMode;
+    ::ll::TypedStorage<4, 4, ::CloneCommand::CloneMode>                mCloneMode;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>                       mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mBlockStates;
+    ::ll::TypedStorage<4, 4, int>                                      mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CloneCommand& operator=(CloneCommand const&);
-    CloneCommand(CloneCommand const&);
-    CloneCommand();
 
 public:
     // virtual functions

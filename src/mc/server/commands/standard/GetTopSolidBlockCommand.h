@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +17,8 @@ class GetTopSolidBlockCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk8e7cb0;
+    ::ll::TypedStorage<4, 16, ::CommandPosition> mPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GetTopSolidBlockCommand& operator=(GetTopSolidBlockCommand const&);
-    GetTopSolidBlockCommand(GetTopSolidBlockCommand const&);
-    GetTopSolidBlockCommand();
 
 public:
     // virtual functions

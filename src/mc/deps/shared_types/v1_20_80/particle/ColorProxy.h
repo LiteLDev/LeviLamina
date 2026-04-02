@@ -26,8 +26,8 @@ public:
     // NOLINTBEGIN
     MCAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other
-    ) const;
+    MCAPI bool
+    operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
 
     MCAPI ~ColorProxy();
     // NOLINTEND

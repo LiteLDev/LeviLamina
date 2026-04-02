@@ -8,14 +8,8 @@ struct SoftEnum {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka7a31b;
+    ::ll::TypedStorage<8, 8, char const*> name;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SoftEnum& operator=(SoftEnum const&);
-    SoftEnum(SoftEnum const&);
-    SoftEnum();
 };
 
 } // namespace commands

@@ -55,7 +55,7 @@ struct LevelRenderPreRenderUpdateParameters;
 struct PlayerRenderView;
 struct ScreenshotOptions;
 struct SoundMapping;
-namespace PointLighting { struct PointLightCoordinator; }
+namespace PointLighting { class PointLightCoordinator; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }

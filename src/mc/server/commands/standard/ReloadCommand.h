@@ -23,14 +23,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd0d8f6;
+    ::ll::TypedStorage<4, 4, ::ReloadCommand::ReloadAction> mReloadAction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReloadCommand& operator=(ReloadCommand const&);
-    ReloadCommand(ReloadCommand const&);
-    ReloadCommand();
 
 public:
     // virtual functions

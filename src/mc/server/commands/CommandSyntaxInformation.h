@@ -2,30 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct OverloadSyntaxInformation;
+// clang-format on
+
 struct CommandSyntaxInformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk5ba143;
-    ::ll::UntypedStorage<8, 32> mUnk3ba763;
-    ::ll::UntypedStorage<8, 24> mUnkf9e570;
+    ::ll::TypedStorage<1, 1, bool>                                        isValid;
+    ::ll::TypedStorage<8, 32, ::std::string>                              description;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OverloadSyntaxInformation>> possibilities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandSyntaxInformation& operator=(CommandSyntaxInformation const&);
-    CommandSyntaxInformation(CommandSyntaxInformation const&);
-    CommandSyntaxInformation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CommandSyntaxInformation();
+    MCAPI ~CommandSyntaxInformation();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

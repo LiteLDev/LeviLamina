@@ -2,31 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
+
 struct Shareable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkbdbd84;
-    ::ll::UntypedStorage<4, 4>  mUnk335417;
-    ::ll::UntypedStorage<4, 4>  mUnk78f1d3;
-    ::ll::UntypedStorage<4, 4>  mUnk16b2df;
-    ::ll::UntypedStorage<4, 4>  mUnk38d074;
-    ::ll::UntypedStorage<4, 4>  mUnk2b7d77;
-    ::ll::UntypedStorage<4, 4>  mUnkb84081;
-    ::ll::UntypedStorage<4, 4>  mUnk476227;
-    ::ll::UntypedStorage<1, 1>  mUnk7873a7;
-    ::ll::UntypedStorage<1, 1>  mUnkaf9cb5;
-    ::ll::UntypedStorage<1, 1>  mUnk81e035;
-    ::ll::UntypedStorage<1, 1>  mUnkffe206;
-    ::ll::UntypedStorage<1, 1>  mUnkee1d54;
-    ::ll::UntypedStorage<1, 1>  mUnk19c48b;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> itemDescriptor;
+    ::ll::TypedStorage<4, 4, int>               wantAmount;
+    ::ll::TypedStorage<4, 4, int>               surplusAmount;
+    ::ll::TypedStorage<4, 4, int>               maxAmount;
+    ::ll::TypedStorage<4, 4, int>               pickupLimit;
+    ::ll::TypedStorage<4, 4, int>               craftIntoItem;
+    ::ll::TypedStorage<4, 4, int>               craftIntoItemAux;
+    ::ll::TypedStorage<4, 4, int>               itemPriority;
+    ::ll::TypedStorage<1, 1, bool>              admire;
+    ::ll::TypedStorage<1, 1, bool>              barter;
+    ::ll::TypedStorage<1, 1, bool>              storedInInventory;
+    ::ll::TypedStorage<1, 1, bool>              consumeItem;
+    ::ll::TypedStorage<1, 1, bool>              pickupOnly;
+    ::ll::TypedStorage<1, 1, bool>              singularPickup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Shareable& operator=(Shareable const&);
-    Shareable(Shareable const&);
-    Shareable();
 
 public:
     // member functions

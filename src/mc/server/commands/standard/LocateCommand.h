@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/standard/LocateSubcommand.h"
+#include "mc/server/commands/standard/locate_command_util/Biomes.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,17 +19,11 @@ class LocateCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk7f3365;
-    ::ll::UntypedStorage<8, 32> mUnk884b8f;
-    ::ll::UntypedStorage<4, 4>  mUnkeec355;
-    ::ll::UntypedStorage<1, 1>  mUnk3b6959;
+    ::ll::TypedStorage<1, 1, ::LocateSubcommand>          mSubcommand;
+    ::ll::TypedStorage<8, 32, ::std::string>              mFeature;
+    ::ll::TypedStorage<4, 4, ::LocateCommandUtil::Biomes> mBiome;
+    ::ll::TypedStorage<1, 1, bool>                        useNewChunksOnly;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LocateCommand& operator=(LocateCommand const&);
-    LocateCommand(LocateCommand const&);
-    LocateCommand();
 
 public:
     // virtual functions

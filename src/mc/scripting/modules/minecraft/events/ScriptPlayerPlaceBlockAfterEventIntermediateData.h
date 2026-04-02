@@ -27,8 +27,8 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptPlayerPlaceBlockAfterEventIntermediateData& operator=(ScriptPlayerPlaceBlockAfterEventIntermediateData const&
-    );
+    ScriptPlayerPlaceBlockAfterEventIntermediateData&
+    operator=(ScriptPlayerPlaceBlockAfterEventIntermediateData const&);
     ScriptPlayerPlaceBlockAfterEventIntermediateData(ScriptPlayerPlaceBlockAfterEventIntermediateData const&);
     ScriptPlayerPlaceBlockAfterEventIntermediateData();
 

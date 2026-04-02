@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemDescriptor;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/item/ItemDescriptor.h"
 
 struct SlotDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkc45b3c;
-    ::ll::UntypedStorage<8, 24>  mUnkeb9be2;
-    ::ll::UntypedStorage<8, 16>  mUnke3918d;
-    ::ll::UntypedStorage<8, 32>  mUnkf5f1f4;
-    ::ll::UntypedStorage<8, 104> mUnkd74339;
-    ::ll::UntypedStorage<8, 104> mUnk3a5cb1;
+    ::ll::TypedStorage<4, 4, int>                              mSlot;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mAcceptedItems;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                mItemDescriptor;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mInteractText;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnEquip;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnUnequip;
     // NOLINTEND
 
 public:

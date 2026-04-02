@@ -9,6 +9,7 @@
 // clang-format off
 class EntityContext;
 class SpawnActorComponent;
+struct SpawnActorParameters;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -16,14 +17,8 @@ class SpawnActorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb31eff;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SpawnActorParameters>> mSpawnParameters;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnActorDefinition& operator=(SpawnActorDefinition const&);
-    SpawnActorDefinition(SpawnActorDefinition const&);
-    SpawnActorDefinition();
 
 public:
     // member functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,16 +16,10 @@ class HealableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk583cd0;
-    ::ll::UntypedStorage<1, 1>  mUnk60fbdc;
-    ::ll::UntypedStorage<8, 64> mUnkf91ef7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FeedItem>> mHealItems;
+    ::ll::TypedStorage<1, 1, bool>                       mForceUse;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HealableDefinition& operator=(HealableDefinition const&);
-    HealableDefinition(HealableDefinition const&);
-    HealableDefinition();
 
 public:
     // member functions

@@ -6,15 +6,9 @@ class CommandFloatRange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6358a5;
-    ::ll::UntypedStorage<4, 4> mUnkcf518d;
-    ::ll::UntypedStorage<1, 1> mUnk19b2e6;
-    ::ll::UntypedStorage<1, 1> mUnk3abb70;
+    ::ll::TypedStorage<4, 4, float> mMinValue;
+    ::ll::TypedStorage<4, 4, float> mMaxValue;
+    ::ll::TypedStorage<1, 1, bool>  mInvert;
+    ::ll::TypedStorage<1, 1, bool>  mInclusive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandFloatRange& operator=(CommandFloatRange const&);
-    CommandFloatRange(CommandFloatRange const&);
-    CommandFloatRange();
 };

@@ -15,6 +15,7 @@ class IRandom;
 class ItemDescriptor;
 class ItemStack;
 class Player;
+class WeakEntityRef;
 struct BreedableType;
 struct MutableAttributeWithContext;
 // clang-format on
@@ -31,14 +32,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk464dae;
+        ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>> mBabies;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MatingResult& operator=(MatingResult const&);
-        MatingResult(MatingResult const&);
-        MatingResult();
 
     public:
         // member functions

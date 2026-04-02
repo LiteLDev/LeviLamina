@@ -29,8 +29,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString&&);
 
-    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString& operator=(::ScriptModuleServerAdmin::ScriptSecretString const&
-    );
+    MCNAPI ::ScriptModuleServerAdmin::ScriptSecretString&
+    operator=(::ScriptModuleServerAdmin::ScriptSecretString const&);
 
     MCNAPI ~ScriptSecretString();
     // NOLINTEND

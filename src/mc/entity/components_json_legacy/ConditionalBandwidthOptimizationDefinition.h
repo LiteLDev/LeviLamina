@@ -2,24 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ConditionalBandwidthOptimization;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/ConditionalBandwidthOptimization.h"
 
 class ConditionalBandwidthOptimizationDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnk57460f;
-    ::ll::UntypedStorage<8, 24> mUnkb3afaa;
+    ::ll::TypedStorage<8, 88, ::ConditionalBandwidthOptimization>                mDefaultValues;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ConditionalBandwidthOptimization>> mConditionalValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConditionalBandwidthOptimizationDefinition& operator=(ConditionalBandwidthOptimizationDefinition const&);
-    ConditionalBandwidthOptimizationDefinition(ConditionalBandwidthOptimizationDefinition const&);
-    ConditionalBandwidthOptimizationDefinition();
 
 public:
     // member functions

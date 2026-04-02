@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/server/commands/Command.h"
+#include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,47 +35,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkb6cbe1;
-        ::ll::UntypedStorage<8, 32> mUnk86059c;
-        ::ll::UntypedStorage<4, 4>  mUnk433c63;
-        ::ll::UntypedStorage<4, 4>  mUnk22bdf3;
-        ::ll::UntypedStorage<1, 1>  mUnk277e94;
+        ::ll::TypedStorage<1, 1, ::MusicCommand::Action> mAction;
+        ::ll::TypedStorage<8, 32, ::std::string>         mTrackName;
+        ::ll::TypedStorage<4, 4, float>                  mVolume;
+        ::ll::TypedStorage<4, 4, float>                  mFadeSeconds;
+        ::ll::TypedStorage<1, 1, ::MusicRepeatMode>      mRepeatMode;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommandData& operator=(CommandData const&);
-        CommandData(CommandData const&);
-        CommandData();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+        MCAPI_C bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+        MCFOLD_C void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6f871c;
-    ::ll::UntypedStorage<8, 32> mUnkcec6cd;
-    ::ll::UntypedStorage<4, 4>  mUnk13ac16;
-    ::ll::UntypedStorage<4, 4>  mUnk7d7c7f;
-    ::ll::UntypedStorage<1, 1>  mUnk68a0c3;
+    ::ll::TypedStorage<1, 1, ::MusicCommand::Action> mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>         mTrackName;
+    ::ll::TypedStorage<4, 4, float>                  mVolume;
+    ::ll::TypedStorage<4, 4, float>                  mFadeSeconds;
+    ::ll::TypedStorage<1, 1, ::MusicRepeatMode>      mRepeatMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MusicCommand& operator=(MusicCommand const&);
-    MusicCommand(MusicCommand const&);
-    MusicCommand();
 
 public:
     // virtual functions

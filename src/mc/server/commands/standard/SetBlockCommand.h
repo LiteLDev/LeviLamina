@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -24,18 +27,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnka63b9f;
-    ::ll::UntypedStorage<8, 8>  mUnkc41e6f;
-    ::ll::UntypedStorage<8, 24> mUnk714dc2;
-    ::ll::UntypedStorage<4, 4>  mUnk900ebc;
-    ::ll::UntypedStorage<4, 4>  mUnkdcd022;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mPosition;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>                       mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mBlockStates;
+    ::ll::TypedStorage<4, 4, int>                                      mData;
+    ::ll::TypedStorage<4, 4, ::SetBlockCommand::SetBlockMode>          mMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlockCommand& operator=(SetBlockCommand const&);
-    SetBlockCommand(SetBlockCommand const&);
-    SetBlockCommand();
 
 public:
     // virtual functions

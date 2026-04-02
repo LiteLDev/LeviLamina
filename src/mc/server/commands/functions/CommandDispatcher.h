@@ -23,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $performCommand(::CommandOrigin const& origin, ::Command& command);
+    MCAPI int $performCommand(::CommandOrigin const& origin, ::Command& command);
 
 
     // NOLINTEND

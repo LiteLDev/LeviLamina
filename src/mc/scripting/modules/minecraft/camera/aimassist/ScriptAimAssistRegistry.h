@@ -107,8 +107,8 @@ public:
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistPreset>>
     _getPresets() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry& operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptAimAssistRegistry&
+    operator=(::ScriptModuleMinecraft::ScriptAimAssistRegistry&&);
     // NOLINTEND
 
 public:

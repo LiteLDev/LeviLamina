@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class DialogueCommand : public ::Command {
@@ -23,17 +26,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkcd0c80;
-    ::ll::UntypedStorage<8, 200> mUnk724f5e;
-    ::ll::UntypedStorage<8, 200> mUnkbc8e8d;
-    ::ll::UntypedStorage<8, 32>  mUnk95f4fd;
-    ::ll::UntypedStorage<1, 1>   mUnk8ba152;
+    ::ll::TypedStorage<4, 4, ::DialogueCommand::Action>     mAction;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>  mNPCTarget;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mPlayerTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>                mSceneName;
+    ::ll::TypedStorage<1, 1, bool>                          mHasPlayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DialogueCommand& operator=(DialogueCommand const&);
-    DialogueCommand(DialogueCommand const&);
 
 public:
     // virtual functions

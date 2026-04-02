@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ class DifficultyCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk94fa4e;
-    ::ll::UntypedStorage<4, 4> mUnkbb8d42;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mDifficulty;
+    ::ll::TypedStorage<4, 4, int>                               mId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DifficultyCommand& operator=(DifficultyCommand const&);
-    DifficultyCommand(DifficultyCommand const&);
-    DifficultyCommand();
 
 public:
     // virtual functions

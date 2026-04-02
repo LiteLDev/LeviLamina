@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
@@ -26,18 +28,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk643088;
-    ::ll::UntypedStorage<8, 200> mUnk250bbd;
-    ::ll::UntypedStorage<4, 4>   mUnk79080c;
-    ::ll::UntypedStorage<4, 4>   mUnk598fc7;
-    ::ll::UntypedStorage<1, 1>   mUnk507f07;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>            mTargets;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>            mDamager;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::TypedStorage<4, 4, int>                                     mAmount;
+    ::ll::TypedStorage<1, 1, ::DamageCommand::DamageOrigin>           mDamageOrigin;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageCommand& operator=(DamageCommand const&);
-    DamageCommand(DamageCommand const&);
-    DamageCommand();
 
 public:
     // virtual functions

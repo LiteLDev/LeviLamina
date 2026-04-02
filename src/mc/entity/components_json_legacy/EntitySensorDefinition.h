@@ -4,11 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class EntitySensorComponent;
+struct EntitySubsensorDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -16,17 +18,11 @@ struct EntitySensorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk57b5ee;
-    ::ll::UntypedStorage<1, 1>  mUnk4d0751;
-    ::ll::UntypedStorage<8, 64> mUnk55c54d;
-    ::ll::UntypedStorage<8, 24> mUnkd3a7f9;
+    ::ll::TypedStorage<1, 1, bool>                                        mRelativeRange;
+    ::ll::TypedStorage<1, 1, bool>                                        mFindPlayersOnly;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                         mEventCondition;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EntitySubsensorDescriptor>> mSubsensorDescriptors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySensorDefinition& operator=(EntitySensorDefinition const&);
-    EntitySensorDefinition(EntitySensorDefinition const&);
-    EntitySensorDefinition();
 
 public:
     // member functions

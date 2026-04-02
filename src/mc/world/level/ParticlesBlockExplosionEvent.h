@@ -22,16 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void load(::CompoundTag const& data);
+    MCAPI_C void load(::CompoundTag const& data);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCNAPI ~ParticlesBlockExplosionEvent();
+    MCAPI ~ParticlesBlockExplosionEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

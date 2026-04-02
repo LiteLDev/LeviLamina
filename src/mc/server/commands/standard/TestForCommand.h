@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -16,14 +18,8 @@ class TestForCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk67f7b1;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TestForCommand& operator=(TestForCommand const&);
-    TestForCommand(TestForCommand const&);
-    TestForCommand();
 
 public:
     // virtual functions

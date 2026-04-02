@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,18 +15,12 @@ class BalloonableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk771e4f;
-    ::ll::UntypedStorage<4, 4>   mUnkbaa192;
-    ::ll::UntypedStorage<4, 4>   mUnk7e1b86;
-    ::ll::UntypedStorage<8, 104> mUnkcf48f0;
-    ::ll::UntypedStorage<8, 104> mUnkb631eb;
+    ::ll::TypedStorage<4, 4, float>                      mSoftDistance;
+    ::ll::TypedStorage<4, 4, float>                      mMaxDistance;
+    ::ll::TypedStorage<4, 4, float>                      mInvMass;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnBalloon;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnUnballoon;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BalloonableDefinition& operator=(BalloonableDefinition const&);
-    BalloonableDefinition(BalloonableDefinition const&);
-    BalloonableDefinition();
 
 public:
     // member functions

@@ -2,40 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/entity/components_json_legacy/InteractionParticle.h"
+#include "mc/entity/components_json_legacy/ItemSlotInfo.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ItemDefinition.h"
+
 // auto generated forward declare list
 // clang-format off
-struct ItemSlotInfo;
+class GameEvent;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Interaction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkd2c947;
-    ::ll::UntypedStorage<4, 4>   mUnkd9acda;
-    ::ll::UntypedStorage<1, 1>   mUnkb15b5f;
-    ::ll::UntypedStorage<1, 1>   mUnk7e270d;
-    ::ll::UntypedStorage<1, 1>   mUnk9f5093;
-    ::ll::UntypedStorage<1, 1>   mUnk72cb1c;
-    ::ll::UntypedStorage<1, 1>   mUnkb2d40d;
-    ::ll::UntypedStorage<1, 1>   mUnkaa7c58;
-    ::ll::UntypedStorage<4, 4>   mUnkd5328a;
-    ::ll::UntypedStorage<4, 4>   mUnk79e800;
-    ::ll::UntypedStorage<4, 12>  mUnk41fb56;
-    ::ll::UntypedStorage<4, 12>  mUnk2d2b5f;
-    ::ll::UntypedStorage<4, 12>  mUnk73b4f3;
-    ::ll::UntypedStorage<4, 4>   mUnkac64af;
-    ::ll::UntypedStorage<4, 8>   mUnkbbe183;
-    ::ll::UntypedStorage<8, 32>  mUnk3a3d80;
-    ::ll::UntypedStorage<8, 32>  mUnka7364a;
-    ::ll::UntypedStorage<8, 32>  mUnke8c60e;
-    ::ll::UntypedStorage<4, 12>  mUnkbdcf46;
-    ::ll::UntypedStorage<4, 4>   mUnk2de782;
-    ::ll::UntypedStorage<4, 4>   mUnkaceac1;
-    ::ll::UntypedStorage<8, 24>  mUnk968bff;
-    ::ll::UntypedStorage<8, 24>  mUnke9ec1d;
-    ::ll::UntypedStorage<8, 104> mUnk1b388c;
-    ::ll::UntypedStorage<8, 8>   mUnk9fe4c9;
+    ::ll::TypedStorage<4, 4, int>                                                    mRequiresCooldown;
+    ::ll::TypedStorage<4, 4, int>                                                    mCooldownAfterBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool>                                                   mSwing;
+    ::ll::TypedStorage<1, 1, bool>                                                   mUseItem;
+    ::ll::TypedStorage<1, 1, bool>                                                   mBarter;
+    ::ll::TypedStorage<1, 1, bool>                                                   mAdmire;
+    ::ll::TypedStorage<1, 1, bool>                                                   mGiveItem;
+    ::ll::TypedStorage<1, 1, bool>                                                   mTakeItem;
+    ::ll::TypedStorage<4, 4, int>                                                    mHurtItem;
+    ::ll::TypedStorage<4, 4, int>                                                    mAdjustHealthAmount;
+    ::ll::TypedStorage<4, 12, ::std::optional<::ItemSlotInfo>>                       mEquipItemSlot;
+    ::ll::TypedStorage<4, 12, ::std::optional<::ItemSlotInfo>>                       mDropItemSlot;
+    ::ll::TypedStorage<4, 12, ::std::optional<::ItemSlotInfo>>                       mRepairItemSlot;
+    ::ll::TypedStorage<4, 4, int>                                                    mRepairItemAmount;
+    ::ll::TypedStorage<4, 8, ::ItemDefinition>                                       mTransformItem;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mInteractText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mAddItemsTable;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mSpawnItemsTable;
+    ::ll::TypedStorage<4, 12, ::InteractionParticle>                                 mParticleData;
+    ::ll::TypedStorage<4, 4, float>                                                  mDropItemYOffset;
+    ::ll::TypedStorage<4, 4, float>                                                  mSpawnItemsYOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mPlaySounds;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionIdentifier>>            mSpawnEntities;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                             mOnInteraction;
+    ::ll::TypedStorage<8, 8, ::GameEvent const*>                                     mVibration;
     // NOLINTEND
 
 public:

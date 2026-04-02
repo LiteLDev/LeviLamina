@@ -64,8 +64,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::CameraInstructionOptions::SplineInstruction& operator=(::CameraInstructionOptions::SplineInstruction&&);
 
-    MCAPI ::CameraInstructionOptions::SplineInstruction& operator=(::CameraInstructionOptions::SplineInstruction const&
-    );
+    MCAPI ::CameraInstructionOptions::SplineInstruction&
+    operator=(::CameraInstructionOptions::SplineInstruction const&);
 
     MCAPI bool operator==(::CameraInstructionOptions::SplineInstruction const& other) const;
 

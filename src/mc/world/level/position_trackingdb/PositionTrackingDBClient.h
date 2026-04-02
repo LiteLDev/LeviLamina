@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Level;
 class PositionTrackingId;
+namespace PositionTrackingDB { class CacheManager; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
 
@@ -17,8 +19,8 @@ class PositionTrackingDBClient {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3a4557;
-    ::ll::UntypedStorage<8, 8> mUnk3023ee;
+    ::ll::TypedStorage<8, 8, ::Level&>                                              mLevel;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PositionTrackingDB::CacheManager>> mLocalCache;
     // NOLINTEND
 
 public:
@@ -30,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PositionTrackingDB::ResultCode
+    MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
     // NOLINTEND
 };

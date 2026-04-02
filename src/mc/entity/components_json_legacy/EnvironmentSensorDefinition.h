@@ -11,14 +11,8 @@ class EnvironmentSensorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke28070;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mTriggers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnvironmentSensorDefinition& operator=(EnvironmentSensorDefinition const&);
-    EnvironmentSensorDefinition(EnvironmentSensorDefinition const&);
-    EnvironmentSensorDefinition();
 
 public:
     // member functions

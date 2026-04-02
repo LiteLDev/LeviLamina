@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -15,7 +17,6 @@ class BlockPos;
 class CompoundTag;
 class Dimension;
 class Level;
-class NetworkIdentifier;
 class Vec2;
 class Vec3;
 struct CommandOriginData;
@@ -25,17 +26,11 @@ class DevConsoleCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk2a2676;
-    ::ll::UntypedStorage<8, 8>   mUnk81054d;
-    ::ll::UntypedStorage<8, 176> mUnk7078f0;
-    ::ll::UntypedStorage<1, 1>   mUnk485c66;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mPlayerId;
+    ::ll::TypedStorage<8, 8, ::Level*>              mLevel;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mSourceId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>         mSourceSubId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DevConsoleCommandOrigin& operator=(DevConsoleCommandOrigin const&);
-    DevConsoleCommandOrigin(DevConsoleCommandOrigin const&);
-    DevConsoleCommandOrigin();
 
 public:
     // virtual functions
@@ -85,43 +80,43 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
-    MCNAPI ::Vec3 $getWorldPosition() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
+    MCFOLD ::std::optional<::Vec2> $getRotation() const;
 
-    MCNAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
-    MCNAPI ::Dimension* $getDimension() const;
+    MCAPI ::Dimension* $getDimension() const;
 
-    MCNAPI ::Actor* $getEntity() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCNAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
-    MCNAPI ::NetworkIdentifier const& $getSourceId() const;
+    MCFOLD ::NetworkIdentifier const& $getSourceId() const;
 
-    MCNAPI ::SubClientId $getSourceSubId() const;
+    MCFOLD ::SubClientId $getSourceSubId() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI ::CommandOriginData $toCommandOriginData() const;
+    MCAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCFOLD ::CompoundTag $serialize() const;
 
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
-    MCNAPI bool $requiresValidLevel() const;
+    MCFOLD bool $requiresValidLevel() const;
 #endif
 
 

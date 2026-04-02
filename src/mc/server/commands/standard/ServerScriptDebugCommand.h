@@ -17,19 +17,13 @@ class ServerScriptDebugCommand : public ::ScriptDebugCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkbe492c;
-    ::ll::UntypedStorage<4, 4>  mUnk16a659;
-    ::ll::UntypedStorage<4, 4>  mUnk79156f;
-    ::ll::UntypedStorage<4, 4>  mUnke39369;
-    ::ll::UntypedStorage<8, 32> mUnkb35c35;
-    ::ll::UntypedStorage<4, 4>  mUnk9e0646;
+    ::ll::TypedStorage<4, 4, ::ScriptDebugCommand::Mode>              mMode;
+    ::ll::TypedStorage<4, 4, ::ScriptDebugCommand::DebuggerAction>    mDebuggerAction;
+    ::ll::TypedStorage<4, 4, ::ScriptDebugCommand::ProfilerAction>    mProfilerAction;
+    ::ll::TypedStorage<4, 4, ::ScriptDebugCommand::DiagnosticsAction> mDiagnosticsAction;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDebuggerHost;
+    ::ll::TypedStorage<4, 4, int>                                     mDebuggerPort;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerScriptDebugCommand& operator=(ServerScriptDebugCommand const&);
-    ServerScriptDebugCommand(ServerScriptDebugCommand const&);
-    ServerScriptDebugCommand();
 
 public:
     // virtual functions

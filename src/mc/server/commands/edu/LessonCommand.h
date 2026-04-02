@@ -3,31 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/packet/LessonAction.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/edu/LessonActionType.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class LessonCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk205f77;
-    ::ll::UntypedStorage<1, 1>   mUnka78a95;
-    ::ll::UntypedStorage<1, 1>   mUnk1323b8;
-    ::ll::UntypedStorage<8, 32>  mUnk541017;
-    ::ll::UntypedStorage<4, 4>   mUnkd74463;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<1, 1, ::LessonActionType>            mActionType;
+    ::ll::TypedStorage<1, 1, ::LessonAction>                mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>                mActivityId;
+    ::ll::TypedStorage<4, 4, int>                           mScore;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LessonCommand& operator=(LessonCommand const&);
-    LessonCommand(LessonCommand const&);
-    LessonCommand();
 
 public:
     // virtual functions

@@ -4,9 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockStateCommandParam;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -26,22 +29,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkd4781f;
-    ::ll::UntypedStorage<4, 16> mUnk684e91;
-    ::ll::UntypedStorage<8, 8>  mUnk4fb7fe;
-    ::ll::UntypedStorage<8, 8>  mUnk4a3805;
-    ::ll::UntypedStorage<8, 24> mUnk2f9ed1;
-    ::ll::UntypedStorage<8, 24> mUnk487324;
-    ::ll::UntypedStorage<4, 4>  mUnkb7c541;
-    ::ll::UntypedStorage<4, 4>  mUnk70585d;
-    ::ll::UntypedStorage<4, 4>  mUnk741113;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mFrom;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                       mTo;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>                       mBlock;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>                       mReplaceBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mBlockStates;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mReplaceBlockStates;
+    ::ll::TypedStorage<4, 4, ::FillCommand::FillMode>                  mMode;
+    ::ll::TypedStorage<4, 4, int>                                      mBlockData;
+    ::ll::TypedStorage<4, 4, int>                                      mReplaceBlockData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FillCommand& operator=(FillCommand const&);
-    FillCommand(FillCommand const&);
-    FillCommand();
 
 public:
     // virtual functions

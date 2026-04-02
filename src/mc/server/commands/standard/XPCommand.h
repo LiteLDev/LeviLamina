@@ -4,28 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class XPCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk5efbac;
-    ::ll::UntypedStorage<4, 4>   mUnk8f6ae1;
-    ::ll::UntypedStorage<4, 4>   mUnk40396a;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<4, 4, int>                           mXP;
+    ::ll::TypedStorage<4, 4, int>                           mLevels;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    XPCommand& operator=(XPCommand const&);
-    XPCommand(XPCommand const&);
-    XPCommand();
 
 public:
     // virtual functions

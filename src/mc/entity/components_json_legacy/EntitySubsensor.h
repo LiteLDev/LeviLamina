@@ -2,33 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/level/Tick.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Vec3;
-struct Tick;
 // clang-format on
 
 class EntitySubsensor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnke19055;
-    ::ll::UntypedStorage<4, 4>  mUnk565267;
-    ::ll::UntypedStorage<1, 1>  mUnkc5df3d;
-    ::ll::UntypedStorage<4, 4>  mUnk556217;
-    ::ll::UntypedStorage<4, 4>  mUnkc2289e;
-    ::ll::UntypedStorage<8, 8>  mUnkc69f2f;
-    ::ll::UntypedStorage<8, 32> mUnk1ec600;
-    ::ll::UntypedStorage<8, 64> mUnkfd4a67;
-    ::ll::UntypedStorage<8, 16> mUnk59037a;
+    ::ll::TypedStorage<4, 8, ::Vec2>                   mRange;
+    ::ll::TypedStorage<4, 4, float>                    mYOffset;
+    ::ll::TypedStorage<1, 1, bool>                     mRequireAll;
+    ::ll::TypedStorage<4, 4, int>                      mMinimumCount;
+    ::ll::TypedStorage<4, 4, int>                      mMaximumCount;
+    ::ll::TypedStorage<8, 8, uint64>                   mCooldownInTicks;
+    ::ll::TypedStorage<8, 32, ::std::string>           mEvent;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>      mFilter;
+    ::ll::TypedStorage<8, 16, ::std::optional<::Tick>> mNextSensingTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySubsensor& operator=(EntitySubsensor const&);
-    EntitySubsensor(EntitySubsensor const&);
-    EntitySubsensor();
 
 public:
     // member functions

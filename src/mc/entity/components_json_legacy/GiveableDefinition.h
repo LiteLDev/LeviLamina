@@ -11,14 +11,8 @@ class GiveableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk55a84c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GiveableTrigger>> mTriggers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GiveableDefinition& operator=(GiveableDefinition const&);
-    GiveableDefinition(GiveableDefinition const&);
-    GiveableDefinition();
 
 public:
     // member functions

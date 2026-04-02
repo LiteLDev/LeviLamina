@@ -15,14 +15,8 @@ class ItemsWithTagCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3c3774;
+    ::ll::TypedStorage<8, 32, ::std::string> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemsWithTagCommand& operator=(ItemsWithTagCommand const&);
-    ItemsWithTagCommand(ItemsWithTagCommand const&);
-    ItemsWithTagCommand();
 
 public:
     // virtual functions
