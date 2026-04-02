@@ -14,6 +14,7 @@
 #include "ll/core/tweak/VulnerabilityFixes.h"
 
 #include "mc/client/game/ClientInstance.h"
+#include "mc/client/game/MinecraftGame.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
 #include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -75,20 +76,15 @@ void leviLaminaMain() {
 LL_AUTO_TYPE_INSTANCE_HOOK(
     EnableAllModsHook,
     HookPriority::High,
-    ServerScriptManager,
-    &ServerScriptManager::$onServerThreadStarted,
-    EventResult,
-    ::ServerInstance& ins
+    MinecraftGame,
+    &MinecraftGame::_initFinish,
+    SerialWorkList::WorkResult,
+    ::std::shared_ptr<::MinecraftGame::InitContext>& initContext
 ) {
-    getLogger().debug("sendServerInitializeEnd");
-
-    auto result = origin(ins);
 
     mod::ModRegistrar::getInstance().enableAllMods();
-
     setGamingStatus(GamingStatus::Running);
-
-    return result;
+    return origin(initContext);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -187,24 +183,22 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(experiments, repo, stack, baseGameVersion, includeEditorPacks);
 }
 
+LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, MinecraftGame, &MinecraftGame::$stop, bool) {
+    setGamingStatus(GamingStatus::Stopping);
+    mod::ModRegistrar::getInstance().disableAllMods();
+    setGamingStatus(GamingStatus::Default);
+    return origin();
+}
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
-    DisableAllModsHook,
+    StartLeaveGameHook,
     HookPriority::Low,
     ServerInstance,
     &ServerInstance::startLeaveGame,
     void
 ) {
-    setGamingStatus(GamingStatus::Stopping);
-
-    mod::ModRegistrar::getInstance().disableAllMods();
-
     command::CommandRegistrar::getInstance(false).clear();
-
     origin();
-
-    // Back to main menu
-    setGamingStatus(GamingStatus::Default);
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
