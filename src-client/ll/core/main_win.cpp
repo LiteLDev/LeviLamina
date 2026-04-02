@@ -135,7 +135,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
     bool                                                            includeEditorPacks
 ) {
-    repo->forEachPack([&](const ::ResourcePack& pack) {
+    repo->forEachPack([&](::ResourcePack const& pack) {
         if (pack.mPack->mManifest->mPackType == PackType::Resources) {
             auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
@@ -165,7 +165,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::BaseGameVersion const&                                        baseGameVersion,
     bool                                                            includeEditorPacks
 ) {
-    repo->forEachPack([&](const ::ResourcePack& pack) {
+    repo->forEachPack([&](::ResourcePack const& pack) {
         if (pack.mPack->mManifest->mPackType == PackType::Behavior) {
             auto packPath = pack.mPack->mManifest->mLocation->mPath->value;
             if (packPath.find(pl::pl_mods_path) != std::string::npos) {
@@ -188,28 +188,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(DisableAllModsHook, HookPriority::Low, MinecraftGame,
     mod::ModRegistrar::getInstance().disableAllMods();
     setGamingStatus(GamingStatus::Default);
     return origin();
-}
-
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    StartLeaveGameHook,
-    HookPriority::Low,
-    ServerInstance,
-    &ServerInstance::startLeaveGame,
-    void
-) {
-    command::CommandRegistrar::getInstance(false).clear();
-    origin();
-}
-
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    ClearClientCommandHook,
-    HookPriority::Highest,
-    ClientInstance,
-    &ClientInstance::$onLevelExit,
-    void
-) {
-    command::CommandRegistrar::getInstance(true).clear();
-    origin();
 }
 
 LL_AUTO_TYPE_INSTANCE_HOOK(

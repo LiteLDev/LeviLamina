@@ -35,9 +35,32 @@
 
 namespace ll::service::inline bedrock {
 
+
+// ServerInstance
+static std::atomic<ServerInstance*> serverInstance;
+
+LL_TYPE_INSTANCE_HOOK(
+    ServerInstanceConstructor,
+    HookPriority::High,
+    ServerInstance,
+    &ServerInstance::$ctor,
+    void*,
+    ServerInstanceArguments&& args
+) {
+    auto res       = origin(std::move(args));
+    serverInstance = this;
+    return res;
+}
+LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::$dtor, void) {
+    serverInstance = nullptr;
+    origin();
+}
+
+
 optional_ref<AppPlatform> getAppPlatform() { return ServiceLocator<AppPlatform>::get().get().get(); }
 
-optional_ref<ServerInstance> getServerInstance() { return ServiceLocator<ServerInstance>::get().get().get(); }
+optional_ref<ServerInstance> getServerInstance() { return serverInstance.load(); }
+
 optional_ref<ClientInstance> getClientInstance() {
     if (auto plat = sPlatform()) {
         if (auto game = plat->mMinecraftGame_Shim.get()) {
@@ -113,5 +136,9 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     }
     return nullptr;
 }
+
+using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ServerInstanceDestructor>;
+
+static HookReg hookRegister;
 
 } // namespace ll::service::inline bedrock

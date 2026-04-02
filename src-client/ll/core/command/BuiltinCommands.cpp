@@ -4,55 +4,57 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/client/commands/ClientCommands.h"
+#include "mc/client/game/ClientInstance.h"
 #include "mc/client/game/MinecraftGame.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/scripting/ServerScriptManager.h"
+#include "mc/server/commands/CommandRegistry.h"
+#include "mc/server/commands/ServerCommands.h"
+#include "mc/world/Minecraft.h"
 
 
 namespace ll::command {
 
-LL_TYPE_STATIC_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     RegisterBuiltinClientCommands,
     ll::memory::HookPriority::Highest,
-    ClientCommands,
-    &ClientCommands::setupStandard,
+    CommandRegistry,
+    &CommandRegistry::loadRemoteCommands,
     void,
-    ::MinecraftCommands&                   minecraftCommands,
-    ::IMinecraftGame&                      minecraftGame,
-    ::std::shared_ptr<::mce::TextureGroup> textureGroup,
-    ::FileArchiver&                        archiver,
-    bool                                   isHost,
-    ::ActiveDirectoryIdentity const*       adIdentity,
-    bool                                   scriptingEnabled,
-    ::Level const&                         level
+    AvailableCommandsPacket const& packet
 ) {
-    if (!isHost) {
-        origin(minecraftCommands, minecraftGame, textureGroup, archiver, isHost, adIdentity, scriptingEnabled, level);
-        registerVersionCommand(true);
-        registerCrashCommand(true);
-        registerModManageCommand(true);
-        return;
-    }
-    origin(minecraftCommands, minecraftGame, textureGroup, archiver, isHost, adIdentity, scriptingEnabled, level);
+    command::CommandRegistrar::getInstance(true).clear();
+    origin(packet);
+    registerVersionCommand(true);
+    registerCrashCommand(true);
+    registerModManageCommand(true);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_STATIC_HOOK(
     RegisterBuiltinCommands,
     HookPriority::Highest,
-    ServerScriptManager,
-    &ServerScriptManager::$onServerThreadStarted,
-    EventResult,
-    ::ServerInstance& ins
+    &ServerCommands::setupStandardServer,
+    void,
+    Minecraft&         server,
+    std::string const& networkCommands,
+    std::string const& networkTestCommands,
+    PermissionsFile*   permissionsFile
 ) {
-    auto res = origin(ins);
+    origin(server, networkCommands, networkTestCommands, permissionsFile);
     registerVersionCommand(false);
     registerCrashCommand(false);
     registerModManageCommand(false);
     registerTpdimCommand(false);
-    return res;
 }
 
+LL_TYPE_INSTANCE_HOOK(UnRegisterBuiltinCommands, HookPriority::Highest, Minecraft, &Minecraft::$dtor, void) {
+    command::CommandRegistrar::getInstance(false).clear();
+    origin();
+}
+
+
 void registerCommands() {
-    static memory::HookRegistrar<RegisterBuiltinCommands, RegisterBuiltinClientCommands> hooks{};
+    static memory::HookRegistrar<RegisterBuiltinCommands, RegisterBuiltinClientCommands, UnRegisterBuiltinCommands>
+        hooks{};
 }
 } // namespace ll::command

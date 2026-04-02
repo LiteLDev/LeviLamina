@@ -66,6 +66,9 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     auto&           registry  = getRegistry();
     auto            signature = registry.findCommand(name);
     if (!signature) {
+        if (isClient) {
+            flag |= CommandFlagValue::SyncLocal;
+        }
         registry.registerCommand(name, description.c_str(), requirement, flag);
         signature = registry.findCommand(name);
         if (!signature) {
