@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Removed undefined unimplemented for ResourceDropsContext @zimuya4153
+- Bumped bedrock-runtime-data to v1.21.132-server.10 & v1.21.132-client.11
+- Updated Minecraft headers
 
 ### Fixed
 
