@@ -81,6 +81,11 @@ RuntimeOverload& RuntimeOverload::text(std::string_view text) {
     addTextImpl(text, (int)offsetof(RuntimeCommand, placeholder));
     return *this;
 }
+RuntimeOverload& RuntimeOverload::modify(brstd::function_ref<void(CommandParameterData&)> fn) {
+    std::lock_guard l{lock()};
+    fn(back());
+    return *this;
+}
 RuntimeOverload& RuntimeOverload::postfix(std::string_view postfix) {
     std::lock_guard l{lock()};
     back().mEnumNameOrPostfix = storeStr(postfix);

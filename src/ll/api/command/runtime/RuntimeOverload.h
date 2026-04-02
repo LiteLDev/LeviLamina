@@ -26,6 +26,8 @@ public:
 
     LLNDAPI RuntimeOverload& text(std::string_view text);
 
+    LLNDAPI RuntimeOverload& modify(brstd::function_ref<void(CommandParameterData&)> fn);
+
     LLNDAPI RuntimeOverload& postfix(std::string_view postfix);
 
     LLNDAPI RuntimeOverload& option(CommandParameterOption option);
