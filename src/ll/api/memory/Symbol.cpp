@@ -8,7 +8,18 @@
 
 namespace ll::memory {
 void* SymbolView::resolve(bool disableErrorOutput) const {
-    auto res = pl::symbol_provider::pl_resolve_symbol_silent_n(sym.data(), sym.size());
+    static ll::DenseMap<std::string, void*> resultCache;
+
+    void* res{};
+    resultCache.lazy_emplace_l(
+        sym,
+        [&](auto& pair) { res = pair.second; },
+        [&](auto const& ctor) {
+            res = pl::symbol_provider::pl_resolve_symbol_silent_n(sym.data(), sym.size());
+            ctor(sym, res);
+        }
+    );
+
     if (!disableErrorOutput && res == nullptr) {
         getLogger().fatal("Couldn't find: {}", toString());
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
