@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourceDropsContext& operator=(ResourceDropsContext const&);
-    ResourceDropsContext(ResourceDropsContext const&);
-    ResourceDropsContext();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI int getMiningLootBonusLevel() const;
