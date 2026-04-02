@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SlotDescriptor;
+// clang-format on
+
 class EquippableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2e94dc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SlotDescriptor>> mSlots;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EquippableDefinition& operator=(EquippableDefinition const&);
-    EquippableDefinition(EquippableDefinition const&);
-    EquippableDefinition();
 };

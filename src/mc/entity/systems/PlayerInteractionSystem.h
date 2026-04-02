@@ -30,7 +30,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        MCFOLD bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
 
 
         // NOLINTEND
@@ -48,12 +48,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk84c215;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::PlayerInteractionSystem::InteractionMappingBase>>>
+        mInteractionMappings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInteractionSystem& operator=(PlayerInteractionSystem const&);
-    PlayerInteractionSystem(PlayerInteractionSystem const&);
-    PlayerInteractionSystem();
 };

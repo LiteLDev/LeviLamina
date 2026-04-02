@@ -14,14 +14,8 @@ class InsomniaDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk17de4d;
+    ::ll::TypedStorage<4, 4, float> mDaysUntilInsomnia;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InsomniaDefinition& operator=(InsomniaDefinition const&);
-    InsomniaDefinition(InsomniaDefinition const&);
-    InsomniaDefinition();
 
 public:
     // static functions

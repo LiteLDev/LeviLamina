@@ -4,29 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class ClearCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk8a656f;
-    ::ll::UntypedStorage<8, 8>   mUnk7347ab;
-    ::ll::UntypedStorage<4, 4>   mUnk35b9e1;
-    ::ll::UntypedStorage<4, 4>   mUnkf371e0;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 8, ::CommandItem>                 mItem;
+    ::ll::TypedStorage<4, 4, int>                           mData;
+    ::ll::TypedStorage<4, 4, int>                           mMaxCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClearCommand& operator=(ClearCommand const&);
-    ClearCommand(ClearCommand const&);
-    ClearCommand();
 
 public:
     // virtual functions

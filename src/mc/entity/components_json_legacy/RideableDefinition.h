@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/entity/components_json_legacy/DismountMode.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class RideableComponent;
+struct SeatDescription;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -17,25 +19,19 @@ class RideableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk52fcc9;
-    ::ll::UntypedStorage<4, 4>  mUnkb8db96;
-    ::ll::UntypedStorage<1, 1>  mUnk51f749;
-    ::ll::UntypedStorage<8, 24> mUnk5a76ed;
-    ::ll::UntypedStorage<8, 16> mUnk2ea79a;
-    ::ll::UntypedStorage<8, 32> mUnk1b65e3;
-    ::ll::UntypedStorage<1, 1>  mUnk1a2df4;
-    ::ll::UntypedStorage<1, 1>  mUnk26e121;
-    ::ll::UntypedStorage<4, 4>  mUnk3e3757;
-    ::ll::UntypedStorage<1, 1>  mUnk4cd163;
-    ::ll::UntypedStorage<8, 32> mUnk2a85ad;
-    ::ll::UntypedStorage<8, 32> mUnk1c982d;
+    ::ll::TypedStorage<4, 4, int>                                                      mSeatCount;
+    ::ll::TypedStorage<4, 4, int>                                                      mControllingSeat;
+    ::ll::TypedStorage<1, 1, bool>                                                     mSkipInteractIfCrouching;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SeatDescription>>                        mSeats;
+    ::ll::TypedStorage<8, 16, ::std::set<::HashedString, ::std::hash<::HashedString>>> mFamilyTypes;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mInteractText;
+    ::ll::TypedStorage<1, 1, bool>                                                     mPullInEntities;
+    ::ll::TypedStorage<1, 1, bool>                                                     mPassengerCanPick;
+    ::ll::TypedStorage<4, 4, float>                                                    mPassengerMaxWidth;
+    ::ll::TypedStorage<1, 1, ::DismountMode>                                           mDismountMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mOnRiderEnterEvent;
+    ::ll::TypedStorage<8, 32, ::std::string>                                           mOnRiderExitEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RideableDefinition& operator=(RideableDefinition const&);
-    RideableDefinition(RideableDefinition const&);
-    RideableDefinition();
 
 public:
     // member functions

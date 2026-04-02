@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/server/commands/DeferredCommandBase.h"
 
@@ -14,23 +15,27 @@ class MinecraftCommands;
 class ScriptCommandOutput;
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 class DeferredScriptCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk413124;
-    ::ll::UntypedStorage<8, 8>  mUnkb39f82;
-    ::ll::UntypedStorage<8, 16> mUnk79b626;
-    ::ll::UntypedStorage<8, 80> mUnkf01e9a;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptCommandOutput>> mScriptCommandOutput;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandContext>>      mCommandContext;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>          mScope;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
+            ::ScriptModuleMinecraft::ScriptCommandError,
+            void>>
+        mPromise;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DeferredScriptCommand& operator=(DeferredScriptCommand const&);
-    DeferredScriptCommand(DeferredScriptCommand const&);
     DeferredScriptCommand();
 
 public:
@@ -44,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeferredScriptCommand(
+    MCAPI DeferredScriptCommand(
         ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
         ::std::unique_ptr<::CommandContext>      commandContext,
         ::Scripting::WeakLifetimeScope           scope,
@@ -58,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
         ::std::unique_ptr<::CommandContext>      commandContext,
         ::Scripting::WeakLifetimeScope           scope,
@@ -72,13 +77,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::MinecraftCommands& commands);
+    MCAPI void $execute(::MinecraftCommands& commands);
 
 
     // NOLINTEND

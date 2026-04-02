@@ -15,19 +15,13 @@ class ShareableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk757b5b;
-    ::ll::UntypedStorage<1, 1>  mUnk5fb624;
-    ::ll::UntypedStorage<4, 4>  mUnk3db088;
-    ::ll::UntypedStorage<4, 4>  mUnkc2f82b;
-    ::ll::UntypedStorage<4, 4>  mUnke24a76;
-    ::ll::UntypedStorage<1, 1>  mUnk9e52b9;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Shareable>> mItems;
+    ::ll::TypedStorage<1, 1, bool>                        mShareAllItems;
+    ::ll::TypedStorage<4, 4, int>                         mAllItemWantAmount;
+    ::ll::TypedStorage<4, 4, int>                         mAllItemSurplusAmount;
+    ::ll::TypedStorage<4, 4, int>                         mAllItemMaxAmount;
+    ::ll::TypedStorage<1, 1, bool>                        mSingularPickup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShareableDefinition& operator=(ShareableDefinition const&);
-    ShareableDefinition(ShareableDefinition const&);
-    ShareableDefinition();
 
 public:
     // member functions

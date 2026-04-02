@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
+class BlockListEventMap;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -14,16 +16,10 @@ class BlockBreakSensorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke74226;
-    ::ll::UntypedStorage<8, 24> mUnk71c6a4;
-    ::ll::UntypedStorage<8, 24> mUnk60d9dd;
+    ::ll::TypedStorage<4, 4, float>                               mSensorRadius;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockListEventMap>> mBlockSets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorFilterGroup>>  mSourceFilters;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockBreakSensorDefinition& operator=(BlockBreakSensorDefinition const&);
-    BlockBreakSensorDefinition(BlockBreakSensorDefinition const&);
-    BlockBreakSensorDefinition();
 
 public:
     // member functions

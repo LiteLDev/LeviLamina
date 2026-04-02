@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/level/camera/controlscheme/Scheme.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class ControlSchemeCommand : public ::Command {
@@ -23,16 +26,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkecf6f1;
-    ::ll::UntypedStorage<1, 1>   mUnk90a465;
-    ::ll::UntypedStorage<1, 1>   mUnk97d303;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>  mPlayerTargets;
+    ::ll::TypedStorage<1, 1, ::ControlScheme::Scheme>        mControlScheme;
+    ::ll::TypedStorage<1, 1, ::ControlSchemeCommand::Action> mAction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ControlSchemeCommand& operator=(ControlSchemeCommand const&);
-    ControlSchemeCommand(ControlSchemeCommand const&);
-    ControlSchemeCommand();
 
 public:
     // virtual functions

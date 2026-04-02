@@ -6,6 +6,7 @@
 // clang-format off
 class BlockPos;
 class CommandArea;
+class Dimension;
 struct Bounds;
 // clang-format on
 
@@ -13,7 +14,7 @@ class CommandAreaFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8d9568;
+    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
     // NOLINTEND
 
 public:
@@ -25,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CommandArea> _getArea(
+    MCAPI ::std::unique_ptr<::CommandArea> _getArea(
         ::Bounds const& requiredArea,
         bool            allowNonTickingPlayerAndTickingAreaChunks,
         bool            allowUnloadedChunks,
         bool            allowPlayerChunks
     ) const;
 
-    MCNAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
+    MCAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
 
-    MCNAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
+    MCAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
         ::BlockPos const& min,
         ::BlockPos const& max,
         int               commandVersion,

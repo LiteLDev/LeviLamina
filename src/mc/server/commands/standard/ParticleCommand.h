@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +17,9 @@ class ParticleCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2683b2;
-    ::ll::UntypedStorage<4, 16> mUnk516c05;
+    ::ll::TypedStorage<8, 32, ::std::string>          mEffectName;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat> mSpawnPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleCommand& operator=(ParticleCommand const&);
-    ParticleCommand(ParticleCommand const&);
-    ParticleCommand();
 
 public:
     // virtual functions

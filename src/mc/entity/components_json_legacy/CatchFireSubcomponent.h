@@ -16,15 +16,9 @@ class CatchFireSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb67512;
-    ::ll::UntypedStorage<1, 1> mUnk5a048d;
+    ::ll::TypedStorage<4, 4, float> mOnFireTime;
+    ::ll::TypedStorage<1, 1, bool>  mFireAffectedByGriefing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CatchFireSubcomponent& operator=(CatchFireSubcomponent const&);
-    CatchFireSubcomponent(CatchFireSubcomponent const&);
-    CatchFireSubcomponent();
 
 public:
     // virtual functions

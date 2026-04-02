@@ -36,22 +36,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk65b672;
-    ::ll::UntypedStorage<8, 32> mUnk26090e;
-    ::ll::UntypedStorage<4, 4>  mUnk81cc73;
-    ::ll::UntypedStorage<4, 4>  mUnke78c51;
-    ::ll::UntypedStorage<1, 1>  mUnkb367b2;
-    ::ll::UntypedStorage<4, 4>  mUnkdd95a0;
-    ::ll::UntypedStorage<4, 4>  mUnkef546d;
-    ::ll::UntypedStorage<4, 4>  mUnkcac895;
-    ::ll::UntypedStorage<4, 4>  mUnk6e4539;
+    ::ll::TypedStorage<8, 32, ::std::string>          mTestName;
+    ::ll::TypedStorage<8, 32, ::std::string>          mTestTag;
+    ::ll::TypedStorage<4, 4, int>                     mTestRotationSteps;
+    ::ll::TypedStorage<4, 4, int>                     mRepeatCount;
+    ::ll::TypedStorage<1, 1, bool>                    mStopOnFailure;
+    ::ll::TypedStorage<4, 4, ::GameTestCommand::Mode> mMode;
+    ::ll::TypedStorage<4, 4, int>                     mTestCreationWidth;
+    ::ll::TypedStorage<4, 4, int>                     mTestCreationHeight;
+    ::ll::TypedStorage<4, 4, int>                     mTestCreationDepth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameTestCommand& operator=(GameTestCommand const&);
-    GameTestCommand(GameTestCommand const&);
-    GameTestCommand();
 
 public:
     // virtual functions

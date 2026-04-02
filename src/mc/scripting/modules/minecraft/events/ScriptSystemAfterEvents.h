@@ -112,8 +112,8 @@ public:
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents& operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
+    operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
     MCAPI void registerListener(
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemAfterEvents> handle,

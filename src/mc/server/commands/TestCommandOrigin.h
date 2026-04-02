@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -15,7 +17,6 @@ class BlockPos;
 class CompoundTag;
 class Dimension;
 class Level;
-class NetworkIdentifier;
 class Vec2;
 class Vec3;
 struct CommandOriginData;
@@ -25,17 +26,11 @@ class TestCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk940085;
-    ::ll::UntypedStorage<8, 8>   mUnk530d09;
-    ::ll::UntypedStorage<8, 176> mUnk8271b8;
-    ::ll::UntypedStorage<1, 1>   mUnk6bdb4f;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mPlayerId;
+    ::ll::TypedStorage<8, 8, ::Level*>              mLevel;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mSourceId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>         mSourceSubId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TestCommandOrigin& operator=(TestCommandOrigin const&);
-    TestCommandOrigin(TestCommandOrigin const&);
-    TestCommandOrigin();
 
 public:
     // virtual functions

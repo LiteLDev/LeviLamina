@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/position_trackingdb/OperationBase.h"
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
@@ -17,15 +20,9 @@ class UpdateOperation : public ::PositionTrackingDB::OperationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnke09c99;
-    ::ll::UntypedStorage<4, 4>  mUnk1a37d7;
+    ::ll::TypedStorage<4, 12, ::BlockPos>     mUpdatedPosition;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateOperation& operator=(UpdateOperation const&);
-    UpdateOperation(UpdateOperation const&);
-    UpdateOperation();
 
 public:
     // virtual functions

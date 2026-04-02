@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
@@ -23,17 +24,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd825e2;
-    ::ll::UntypedStorage<4, 4> mUnk9dc43a;
-    ::ll::UntypedStorage<4, 4> mUnkc6957d;
-    ::ll::UntypedStorage<1, 1> mUnk6dc97e;
+    ::ll::TypedStorage<4, 4, ::ChangeSettingCommand::Setting>   mSetting;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mDifficulty;
+    ::ll::TypedStorage<4, 4, int>                               mIntValue;
+    ::ll::TypedStorage<1, 1, bool>                              mBoolValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChangeSettingCommand& operator=(ChangeSettingCommand const&);
-    ChangeSettingCommand(ChangeSettingCommand const&);
-    ChangeSettingCommand();
 
 public:
     // virtual functions

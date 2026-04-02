@@ -17,15 +17,9 @@ class GeneticsDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6a83da;
-    ::ll::UntypedStorage<8, 24> mUnk5906e9;
+    ::ll::TypedStorage<4, 4, float>                            mMutationRate;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GeneDefinition>> mGeneDefinitions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GeneticsDefinition& operator=(GeneticsDefinition const&);
-    GeneticsDefinition(GeneticsDefinition const&);
-    GeneticsDefinition();
 
 public:
     // member functions

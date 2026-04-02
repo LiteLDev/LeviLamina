@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/OnHitSubcomponent.h"
+#include "mc/util/FloatRange.h"
+#include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,26 +18,20 @@ class ImpactDamageSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk8e7211;
-    ::ll::UntypedStorage<4, 4> mUnka69f08;
-    ::ll::UntypedStorage<1, 1> mUnk86604d;
-    ::ll::UntypedStorage<1, 1> mUnk9c35c0;
-    ::ll::UntypedStorage<1, 1> mUnk6e61b8;
-    ::ll::UntypedStorage<1, 1> mUnkedacbf;
-    ::ll::UntypedStorage<1, 1> mUnk5b9c0f;
-    ::ll::UntypedStorage<1, 1> mUnk5f06a5;
-    ::ll::UntypedStorage<1, 1> mUnk9cd21d;
-    ::ll::UntypedStorage<1, 1> mUnkb743a5;
-    ::ll::UntypedStorage<4, 4> mUnkf6b3c7;
-    ::ll::UntypedStorage<4, 4> mUnk63cb41;
-    ::ll::UntypedStorage<4, 4> mUnk2a732b;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mProjectileDamage;
+    ::ll::TypedStorage<4, 4, ::ActorType>  mFilter;
+    ::ll::TypedStorage<1, 1, bool>         mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>         mChanneling;
+    ::ll::TypedStorage<1, 1, bool>         mKnockback;
+    ::ll::TypedStorage<1, 1, bool>         mSemiRandomDiffDamage;
+    ::ll::TypedStorage<1, 1, bool>         mDestroyOnHit;
+    ::ll::TypedStorage<1, 1, bool>         mRegisterLastHurtRequiresDamage;
+    ::ll::TypedStorage<1, 1, bool>         mDestroyOnHitRequiresDamage;
+    ::ll::TypedStorage<1, 1, bool>         mApplyKnockbackToBlockingTargets;
+    ::ll::TypedStorage<4, 4, int>          mMaxCriticalDamage;
+    ::ll::TypedStorage<4, 4, int>          mMinCriticalDamage;
+    ::ll::TypedStorage<4, 4, float>        mPowMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ImpactDamageSubcomponent& operator=(ImpactDamageSubcomponent const&);
-    ImpactDamageSubcomponent(ImpactDamageSubcomponent const&);
-    ImpactDamageSubcomponent();
 
 public:
     // virtual functions

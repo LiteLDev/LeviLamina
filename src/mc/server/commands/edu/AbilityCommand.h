@@ -4,29 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class AbilityCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkec5e57;
-    ::ll::UntypedStorage<8, 32>  mUnk7ccbc3;
-    ::ll::UntypedStorage<1, 1>   mUnkd42997;
-    ::ll::UntypedStorage<1, 1>   mUnk1cdcc9;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>                mAbilityName;
+    ::ll::TypedStorage<1, 1, bool>                          mValue;
+    ::ll::TypedStorage<1, 1, bool>                          mHaveValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbilityCommand& operator=(AbilityCommand const&);
-    AbilityCommand(AbilityCommand const&);
-    AbilityCommand();
 
 public:
     // virtual functions

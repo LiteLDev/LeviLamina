@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/world/level/position_trackingdb/AsyncOperationBase.h"
 
 // auto generated forward declare list
@@ -17,14 +18,8 @@ class DestroyOperation : public ::PositionTrackingDB::AsyncOperationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk964b91;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>> mStorageTaskHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DestroyOperation& operator=(DestroyOperation const&);
-    DestroyOperation(DestroyOperation const&);
-    DestroyOperation();
 
 public:
     // virtual functions
@@ -47,14 +42,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getDescription() const;
+    MCAPI char const* $getDescription() const;
 
-    MCNAPI bool $_init(
+    MCAPI bool $_init(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCNAPI bool
+    MCFOLD bool
     $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 

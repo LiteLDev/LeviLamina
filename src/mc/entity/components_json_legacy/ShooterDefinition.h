@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 // auto generated forward declare list
 // clang-format off
+struct ShooterProjectileData;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -14,18 +17,13 @@ class ShooterDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkc8dfdf;
-    ::ll::UntypedStorage<8, 24>  mUnk6332f2;
-    ::ll::UntypedStorage<8, 176> mUnk3826c3;
-    ::ll::UntypedStorage<4, 4>   mUnke363c3;
-    ::ll::UntypedStorage<4, 4>   mUnk570bee;
-    ::ll::UntypedStorage<1, 1>   mUnk3b23d7;
+    ::ll::TypedStorage<4, 4, float>                                   mThrowPower;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterProjectileData>> mShooterProjectileData;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>           mDefaultActorDef;
+    ::ll::TypedStorage<4, 4, int>                                     mDefaultAuxValue;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>  mSoundEvent;
+    ::ll::TypedStorage<1, 1, bool>                                    mMagicAttacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShooterDefinition& operator=(ShooterDefinition const&);
-    ShooterDefinition(ShooterDefinition const&);
 
 public:
     // member functions

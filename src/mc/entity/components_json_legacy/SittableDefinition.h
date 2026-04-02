@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+
 class SittableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnkccd2c1;
-    ::ll::UntypedStorage<8, 104> mUnk92e4be;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnSit;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SittableDefinition& operator=(SittableDefinition const&);
-    SittableDefinition(SittableDefinition const&);
-    SittableDefinition();
 
 public:
     // member functions

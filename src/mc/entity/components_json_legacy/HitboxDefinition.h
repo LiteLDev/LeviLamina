@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct Hitbox;
 struct HitboxJson;
 // clang-format on
 
@@ -11,14 +12,8 @@ class HitboxDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5e2e52;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Hitbox>> mHitboxes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HitboxDefinition& operator=(HitboxDefinition const&);
-    HitboxDefinition(HitboxDefinition const&);
-    HitboxDefinition();
 
 public:
     // member functions

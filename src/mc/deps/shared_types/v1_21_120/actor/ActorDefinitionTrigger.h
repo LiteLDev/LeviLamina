@@ -31,8 +31,8 @@ public:
     // NOLINTBEGIN
     MCAPI ActorDefinitionTrigger();
 
-    MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger& operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&
-    );
+    MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
+    operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
 
     MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
     operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger const&);

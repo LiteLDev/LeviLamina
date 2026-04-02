@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionTrigger;
+// clang-format on
+
 class SchedulerDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3bbcac;
-    ::ll::UntypedStorage<4, 4>  mUnk854e15;
-    ::ll::UntypedStorage<4, 4>  mUnk92c9e3;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mTriggerDefs;
+    ::ll::TypedStorage<4, 4, uint>                                     mMinDelayTicks;
+    ::ll::TypedStorage<4, 4, uint>                                     mMaxDelayTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SchedulerDefinition& operator=(SchedulerDefinition const&);
-    SchedulerDefinition(SchedulerDefinition const&);
-    SchedulerDefinition();
 
 public:
     // member functions

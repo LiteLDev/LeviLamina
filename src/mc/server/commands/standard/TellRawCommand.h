@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/json/Value.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 // auto generated forward declare list
@@ -10,21 +12,16 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class TellRawCommand : public ::MessagingCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkc5d9d9;
-    ::ll::UntypedStorage<8, 16>  mUnkcfd700;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                mRawText;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TellRawCommand& operator=(TellRawCommand const&);
-    TellRawCommand(TellRawCommand const&);
-    TellRawCommand();
 
 public:
     // virtual functions

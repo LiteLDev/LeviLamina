@@ -4,28 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class SpawnPointCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkf22b63;
-    ::ll::UntypedStorage<4, 16>  mUnk19773b;
-    ::ll::UntypedStorage<1, 1>   mUnkb23b78;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>       mSpawnPos;
+    ::ll::TypedStorage<1, 1, bool>                          mSpawnPosSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnPointCommand& operator=(SpawnPointCommand const&);
-    SpawnPointCommand(SpawnPointCommand const&);
-    SpawnPointCommand();
 
 public:
     // virtual functions

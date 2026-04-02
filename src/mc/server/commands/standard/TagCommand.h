@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/WildcardCommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,19 +23,15 @@ public:
         List   = 2,
     };
 
+    using ActorRefList = ::std::vector<::std::reference_wrapper<::Actor>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnkb16b6e;
-    ::ll::UntypedStorage<8, 200> mUnk540c84;
-    ::ll::UntypedStorage<8, 32>  mUnk40035f;
+    ::ll::TypedStorage<1, 1, ::TagCommand::Action>                 mAction;
+    ::ll::TypedStorage<8, 200, ::WildcardCommandSelector<::Actor>> mSelector;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mTagString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagCommand& operator=(TagCommand const&);
-    TagCommand(TagCommand const&);
-    TagCommand();
 
 public:
     // virtual functions

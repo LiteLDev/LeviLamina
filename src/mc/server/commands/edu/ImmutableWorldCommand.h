@@ -16,15 +16,9 @@ class ImmutableWorldCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc8f806;
-    ::ll::UntypedStorage<1, 1> mUnk3ea8b3;
+    ::ll::TypedStorage<1, 1, bool> mValue;
+    ::ll::TypedStorage<1, 1, bool> mHaveValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ImmutableWorldCommand& operator=(ImmutableWorldCommand const&);
-    ImmutableWorldCommand(ImmutableWorldCommand const&);
-    ImmutableWorldCommand();
 
 public:
     // virtual functions

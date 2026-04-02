@@ -5,9 +5,11 @@
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -17,18 +19,13 @@ class PlayAnimationCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkeaf76f;
-    ::ll::UntypedStorage<8, 32>  mUnk193451;
-    ::ll::UntypedStorage<8, 32>  mUnka4c1bf;
-    ::ll::UntypedStorage<8, 32>  mUnk347be9;
-    ::ll::UntypedStorage<8, 32>  mUnk49f5d3;
-    ::ll::UntypedStorage<4, 4>   mUnk83afcb;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>               mAnimation;
+    ::ll::TypedStorage<8, 32, ::std::string>               mNextState;
+    ::ll::TypedStorage<8, 32, ::std::string>               mStopExpression;
+    ::ll::TypedStorage<8, 32, ::std::string>               mController;
+    ::ll::TypedStorage<4, 4, float>                        mBlendOutTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayAnimationCommand& operator=(PlayAnimationCommand const&);
-    PlayAnimationCommand(PlayAnimationCommand const&);
 
 public:
     // virtual functions

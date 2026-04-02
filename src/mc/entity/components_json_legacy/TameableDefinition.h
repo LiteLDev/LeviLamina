@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,16 +16,10 @@ class TameableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk3a69ae;
-    ::ll::UntypedStorage<8, 24>  mUnkf7afa5;
-    ::ll::UntypedStorage<8, 104> mUnk1ae022;
+    ::ll::TypedStorage<4, 4, float>                                     mTameChance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTameItem>> mTameItems;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                mOnTame;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TameableDefinition& operator=(TameableDefinition const&);
-    TameableDefinition(TameableDefinition const&);
-    TameableDefinition();
 
 public:
     // member functions

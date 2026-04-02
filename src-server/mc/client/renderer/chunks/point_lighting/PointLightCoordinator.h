@@ -4,6 +4,6 @@
 
 namespace PointLighting {
 
-struct PointLightCoordinator {};
+class PointLightCoordinator {};
 
 } // namespace PointLighting

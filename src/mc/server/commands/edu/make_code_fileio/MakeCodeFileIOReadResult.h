@@ -2,32 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
+
 namespace MakeCodeFileIO {
 
 struct MakeCodeFileIOReadResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk70adc2;
-    ::ll::UntypedStorage<8, 32> mUnkfad2a8;
+    ::ll::TypedStorage<4, 4, ::MakeCodeFileIO::MakeCodeFileResult> mResult;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mFileContents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MakeCodeFileIOReadResult& operator=(MakeCodeFileIOReadResult const&);
-    MakeCodeFileIOReadResult(MakeCodeFileIOReadResult const&);
-    MakeCodeFileIOReadResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MakeCodeFileIOReadResult();
+    MCAPI ~MakeCodeFileIOReadResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

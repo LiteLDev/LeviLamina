@@ -2,9 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/ecs/EntityId.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/PositionTrackingId.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class Dimension;
 namespace PositionTrackingDB { class OperationBase; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
@@ -23,20 +31,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3f87cd;
-    ::ll::UntypedStorage<4, 12> mUnkc27600;
-    ::ll::UntypedStorage<4, 4>  mUnk87b7c4;
-    ::ll::UntypedStorage<1, 1>  mUnka37564;
-    ::ll::UntypedStorage<1, 1>  mUnkdf665c;
-    ::ll::UntypedStorage<8, 24> mUnkf5c6e6;
-    ::ll::UntypedStorage<8, 32> mUnkb58566;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                                   mId;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                            mPosition;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                                        mDimensionType;
+    ::ll::TypedStorage<1, 1, ::PositionTrackingDB::TrackingRecord::RecordStatus>                     mStatus;
+    ::ll::TypedStorage<1, 1, bool>                                                                   mDirty;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::PositionTrackingDB::OperationBase>>> mPendingOperations;
+    ::ll::TypedStorage<8, 32, ::OwnerPtr<::EntityId>>                                                mEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrackingRecord& operator=(TrackingRecord const&);
-    TrackingRecord(TrackingRecord const&);
-    TrackingRecord();
 
 public:
     // member functions

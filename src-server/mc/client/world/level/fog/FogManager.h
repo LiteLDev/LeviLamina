@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FogManager {
+class FogManager {
 public:
     // FogManager inner types declare
     // clang-format off

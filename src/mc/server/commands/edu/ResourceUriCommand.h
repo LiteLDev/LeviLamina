@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandRawText.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,16 +27,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd0b0ba;
-    ::ll::UntypedStorage<8, 32> mUnk4094e9;
-    ::ll::UntypedStorage<8, 32> mUnk9a446b;
+    ::ll::TypedStorage<4, 4, ::ResourceUriCommand::ActionType> mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mName;
+    ::ll::TypedStorage<8, 32, ::CommandRawText>                mLink;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourceUriCommand& operator=(ResourceUriCommand const&);
-    ResourceUriCommand(ResourceUriCommand const&);
-    ResourceUriCommand();
 
 public:
     // virtual functions

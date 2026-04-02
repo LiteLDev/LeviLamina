@@ -43,8 +43,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::OreUI::PlayerReportFacet::ChatMessageData& operator=(::OreUI::PlayerReportFacet::ChatMessageData const&
-        );
+        MCAPI ::OreUI::PlayerReportFacet::ChatMessageData&
+        operator=(::OreUI::PlayerReportFacet::ChatMessageData const&);
 
         MCAPI ~ChatMessageData();
         // NOLINTEND

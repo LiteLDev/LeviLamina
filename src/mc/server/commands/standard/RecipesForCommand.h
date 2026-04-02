@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,29 +26,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48>  mUnkb0eeeb;
-        ::ll::UntypedStorage<8, 128> mUnkb274ac;
-        ::ll::UntypedStorage<8, 128> mUnk999f6d;
+        ::ll::TypedStorage<8, 48, ::HashedString const>  mFurnaceTag;
+        ::ll::TypedStorage<8, 128, ::ItemInstance const> mIngredient;
+        ::ll::TypedStorage<8, 128, ::ItemInstance const> mOutput;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FurnaceRecipe& operator=(FurnaceRecipe const&);
-        FurnaceRecipe(FurnaceRecipe const&);
-        FurnaceRecipe();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb4d85c;
+    ::ll::TypedStorage<8, 8, ::CommandItem> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RecipesForCommand& operator=(RecipesForCommand const&);
-    RecipesForCommand(RecipesForCommand const&);
-    RecipesForCommand();
 
 public:
     // virtual functions

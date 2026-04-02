@@ -4,12 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandRawText.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class CodeBuilderCommand : public ::Command {
@@ -45,23 +49,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk2534fc;
-    ::ll::UntypedStorage<4, 4>   mUnk988e46;
-    ::ll::UntypedStorage<4, 4>   mUnke0c866;
-    ::ll::UntypedStorage<1, 1>   mUnkf75e94;
-    ::ll::UntypedStorage<1, 1>   mUnk6c474e;
-    ::ll::UntypedStorage<8, 200> mUnk5625b6;
-    ::ll::UntypedStorage<8, 32>  mUnke451d3;
-    ::ll::UntypedStorage<1, 1>   mUnk94326e;
-    ::ll::UntypedStorage<1, 1>   mUnk7176af;
-    ::ll::UntypedStorage<8, 32>  mUnka4de4b;
+    ::ll::TypedStorage<4, 4, ::CodeBuilderCommand::Action>                   mAction;
+    ::ll::TypedStorage<4, 4, ::CodeBuilderCommand::CodeBuilderRuntimeAction> mRuntimeAction;
+    ::ll::TypedStorage<4, 4, ::CodeBuilderCommand::SubscriptionType>         mSubscriptionType;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderCommand::CommandKeyword>           mCode;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderCommand::CommandKeyword>           mCodeStatus;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>                  mPlayerTargets;
+    ::ll::TypedStorage<8, 32, ::CommandRawText>                              mURL;
+    ::ll::TypedStorage<1, 1, bool>                                           mShouldOpenWindow;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus>        mCodeExecStatus;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mScoreboardObjective;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CodeBuilderCommand& operator=(CodeBuilderCommand const&);
-    CodeBuilderCommand(CodeBuilderCommand const&);
-    CodeBuilderCommand();
 
 public:
     // virtual functions

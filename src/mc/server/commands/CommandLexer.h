@@ -73,12 +73,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void step();
+    MCAPI void step();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isIdentifierCharacter(char c);
+    MCAPI static bool isIdentifierCharacter(char c);
     // NOLINTEND
 };

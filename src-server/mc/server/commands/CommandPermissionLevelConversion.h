@@ -8,7 +8,7 @@
 namespace CommandPermissionLevelConversion {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::CommandPermissionLevel> fromString(::std::string const& commandPermLevel);
+MCAPI ::std::optional<::CommandPermissionLevel> fromString(::std::string const& commandPermLevel);
 // NOLINTEND
 
 } // namespace CommandPermissionLevelConversion

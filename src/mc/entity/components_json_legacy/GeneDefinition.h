@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/IntRange.h"
+
 // auto generated forward declare list
 // clang-format off
 struct GeneticVariant;
@@ -11,18 +14,12 @@ struct GeneDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcfea51;
-    ::ll::UntypedStorage<4, 8>  mUnk84b74a;
-    ::ll::UntypedStorage<8, 24> mUnk3fe586;
-    ::ll::UntypedStorage<1, 1>  mUnk91d1ee;
-    ::ll::UntypedStorage<4, 4>  mUnkee0de6;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mName;
+    ::ll::TypedStorage<4, 8, ::IntRange>                       mAlleleRange;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GeneticVariant>> mGeneticVariants;
+    ::ll::TypedStorage<1, 1, bool>                             mUseSimplifiedBreeding;
+    ::ll::TypedStorage<4, 4, float>                            mMutationRateOverride;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GeneDefinition& operator=(GeneDefinition const&);
-    GeneDefinition(GeneDefinition const&);
-    GeneDefinition();
 
 public:
     // member functions

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,16 +15,10 @@ class CombatRegenerationDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdca501;
-    ::ll::UntypedStorage<1, 1> mUnkb1819e;
-    ::ll::UntypedStorage<1, 1> mUnkb99bf6;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mRegenerationDuration;
+    ::ll::TypedStorage<1, 1, bool>             mApplyToSelf;
+    ::ll::TypedStorage<1, 1, bool>             mApplyToFamily;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CombatRegenerationDefinition& operator=(CombatRegenerationDefinition const&);
-    CombatRegenerationDefinition(CombatRegenerationDefinition const&);
-    CombatRegenerationDefinition();
 
 public:
     // member functions

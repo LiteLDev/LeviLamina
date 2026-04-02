@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandMessage.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,14 +18,8 @@ class DedicatedWSServerCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb82e93;
+    ::ll::TypedStorage<8, 32, ::CommandMessage> mServer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DedicatedWSServerCommand& operator=(DedicatedWSServerCommand const&);
-    DedicatedWSServerCommand(DedicatedWSServerCommand const&);
-    DedicatedWSServerCommand();
 
 public:
     // virtual functions

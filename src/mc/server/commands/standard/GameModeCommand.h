@@ -4,28 +4,25 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class GameModeCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnka7b8a9;
-    ::ll::UntypedStorage<4, 4>   mUnk585404;
-    ::ll::UntypedStorage<4, 4>   mUnkf5621b;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mPlayers;
+    ::ll::TypedStorage<4, 4, ::GameType>                    mGameMode;
+    ::ll::TypedStorage<4, 4, int>                           mGameModeNumber;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameModeCommand& operator=(GameModeCommand const&);
-    GameModeCommand(GameModeCommand const&);
-    GameModeCommand();
 
 public:
     // virtual functions

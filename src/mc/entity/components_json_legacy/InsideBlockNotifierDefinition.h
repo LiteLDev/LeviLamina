@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class InsideBlockEventMap;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -14,14 +15,8 @@ class InsideBlockNotifierDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd94296;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InsideBlockEventMap>> mBlockList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&);
-    InsideBlockNotifierDefinition(InsideBlockNotifierDefinition const&);
-    InsideBlockNotifierDefinition();
 
 public:
     // static functions

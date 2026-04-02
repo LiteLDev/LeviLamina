@@ -2,25 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+
 struct EntitySubsensorDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk378f1b;
-    ::ll::UntypedStorage<4, 4>  mUnkc56d21;
-    ::ll::UntypedStorage<1, 1>  mUnkc272c6;
-    ::ll::UntypedStorage<4, 4>  mUnkd28fc0;
-    ::ll::UntypedStorage<4, 4>  mUnke1ba9f;
-    ::ll::UntypedStorage<4, 4>  mUnk2f5a0f;
-    ::ll::UntypedStorage<8, 32> mUnke372ff;
-    ::ll::UntypedStorage<8, 64> mUnkd6ee8e;
+    ::ll::TypedStorage<4, 8, ::Vec2>              mRange;
+    ::ll::TypedStorage<4, 4, float>               mYOffset;
+    ::ll::TypedStorage<1, 1, bool>                mRequireAll;
+    ::ll::TypedStorage<4, 4, int>                 mMinimumCount;
+    ::ll::TypedStorage<4, 4, int>                 mMaximumCount;
+    ::ll::TypedStorage<4, 4, float>               mCooldownInSeconds;
+    ::ll::TypedStorage<8, 32, ::std::string>      mEvent;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySubsensorDescriptor& operator=(EntitySubsensorDescriptor const&);
-    EntitySubsensorDescriptor(EntitySubsensorDescriptor const&);
-    EntitySubsensorDescriptor();
 
 public:
     // member functions

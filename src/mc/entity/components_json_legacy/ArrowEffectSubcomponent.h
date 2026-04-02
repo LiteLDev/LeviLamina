@@ -16,14 +16,8 @@ class ArrowEffectSubcomponent : public ::MobEffectSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka55370;
+    ::ll::TypedStorage<1, 1, bool> mApplyEffectToBlockingTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ArrowEffectSubcomponent& operator=(ArrowEffectSubcomponent const&);
-    ArrowEffectSubcomponent(ArrowEffectSubcomponent const&);
-    ArrowEffectSubcomponent();
 
 public:
     // virtual functions

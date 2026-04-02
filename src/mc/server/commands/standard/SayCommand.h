@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
 // auto generated forward declare list
@@ -19,14 +20,8 @@ class SayCommand : public ::MessagingCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk360023;
+    ::ll::TypedStorage<8, 32, ::CommandMessage> mMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SayCommand& operator=(SayCommand const&);
-    SayCommand(SayCommand const&);
-    SayCommand();
 
 public:
     // virtual functions

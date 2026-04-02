@@ -3,13 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/enums/ClientInputLockCategory.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class InputPermissionCommand : public ::Command {
@@ -29,17 +32,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk917993;
-    ::ll::UntypedStorage<8, 200> mUnk5149e7;
-    ::ll::UntypedStorage<1, 1>   mUnk3497ac;
-    ::ll::UntypedStorage<4, 4>   mUnk493fc3;
+    ::ll::TypedStorage<4, 4, ::InputPermissionCommand::CommandActionType> mActionType;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>               mTargets;
+    ::ll::TypedStorage<1, 1, ::ClientInputLockCategory>                   mPermission;
+    ::ll::TypedStorage<4, 4, ::InputPermissionCommand::CommandValueType>  mValueType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InputPermissionCommand& operator=(InputPermissionCommand const&);
-    InputPermissionCommand(InputPermissionCommand const&);
-    InputPermissionCommand();
 
 public:
     // virtual functions

@@ -18,15 +18,9 @@ class MessagingCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb46796;
-    ::ll::UntypedStorage<1, 1> mUnk547485;
+    ::ll::TypedStorage<1, 1, bool> mRequireChatPerms;
+    ::ll::TypedStorage<1, 1, bool> mRequireTellPerms;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MessagingCommand& operator=(MessagingCommand const&);
-    MessagingCommand(MessagingCommand const&);
-    MessagingCommand();
 
 public:
     // virtual functions

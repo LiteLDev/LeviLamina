@@ -4,28 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
+#include "mc/server/commands/standard/HudOptions.h"
+#include "mc/util/HudVisibility.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class HudCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk5ddfaf;
-    ::ll::UntypedStorage<1, 1>   mUnk45df26;
-    ::ll::UntypedStorage<8, 200> mUnk25d4db;
+    ::ll::TypedStorage<4, 4, ::HudVisibility>               mHudVisible;
+    ::ll::TypedStorage<1, 1, ::HudOptions>                  mHudElement;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HudCommand& operator=(HudCommand const&);
-    HudCommand(HudCommand const&);
-    HudCommand();
 
 public:
     // virtual functions

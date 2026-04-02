@@ -3,11 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/entity/components_json_legacy/OnHitSubcomponent.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
@@ -16,18 +19,21 @@ class ParticleOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk4e61de;
-    ::ll::UntypedStorage<4, 4>  mUnk46defb;
-    ::ll::UntypedStorage<4, 4>  mUnk50b2c7;
-    ::ll::UntypedStorage<1, 1>  mUnkd77bcf;
-    ::ll::UntypedStorage<1, 1>  mUnk946ea2;
+    ::ll::TypedStorage<
+        8,
+        56,
+        ::brstd::flat_map<
+            ::std::string,
+            ::ActorFilterGroup,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::ActorFilterGroup>>>
+                                             mParticleItemName;
+    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
+    ::ll::TypedStorage<4, 4, int>            mNumParticles;
+    ::ll::TypedStorage<1, 1, bool>           mOnEntityHit;
+    ::ll::TypedStorage<1, 1, bool>           mOnOtherHit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleOnHitSubcomponent& operator=(ParticleOnHitSubcomponent const&);
-    ParticleOnHitSubcomponent(ParticleOnHitSubcomponent const&);
-    ParticleOnHitSubcomponent();
 
 public:
     // virtual functions

@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class FogCommand : public ::Command {
@@ -24,17 +26,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkd7c0cd;
-    ::ll::UntypedStorage<4, 4>   mUnk759b03;
-    ::ll::UntypedStorage<8, 32>  mUnk1ad1dd;
-    ::ll::UntypedStorage<8, 32>  mUnkdd8a6b;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<4, 4, ::FogCommand::Mode>            mMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                mFogId;
+    ::ll::TypedStorage<8, 32, ::std::string>                mUserProvidedId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FogCommand& operator=(FogCommand const&);
-    FogCommand(FogCommand const&);
-    FogCommand();
 
 public:
     // virtual functions

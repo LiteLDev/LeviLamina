@@ -10,6 +10,7 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class MobEvents;
 // clang-format on
 
 class MobEventCommand : public ::Command {
@@ -24,7 +25,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk50c0de;
+        ::ll::TypedStorage<8, 8, ::MobEvents&> mMobEvents;
         // NOLINTEND
 
     public:

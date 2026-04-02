@@ -3,29 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/packet/ShowStoreOfferRedirectType.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class SendShowStoreOfferCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnke18603;
-    ::ll::UntypedStorage<8, 32>  mUnkb8fbcc;
-    ::ll::UntypedStorage<1, 1>   mUnkc234e2;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>                mOffer;
+    ::ll::TypedStorage<1, 1, ::ShowStoreOfferRedirectType>  mRedirectType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SendShowStoreOfferCommand& operator=(SendShowStoreOfferCommand const&);
-    SendShowStoreOfferCommand(SendShowStoreOfferCommand const&);
-    SendShowStoreOfferCommand();
 
 public:
     // virtual functions

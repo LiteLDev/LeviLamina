@@ -3,6 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
@@ -16,23 +21,21 @@ class CompoundTag;
 class Dimension;
 class Level;
 class ServerLevel;
-class Vec2;
-class Vec3;
 // clang-format on
 
 class ExecuteContextCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkda6576;
-    ::ll::UntypedStorage<4, 12> mUnk653f48;
-    ::ll::UntypedStorage<4, 12> mUnkef108c;
-    ::ll::UntypedStorage<8, 8>  mUnk7a9c6b;
-    ::ll::UntypedStorage<8, 8>  mUnk537eb8;
-    ::ll::UntypedStorage<4, 4>  mUnk145a23;
-    ::ll::UntypedStorage<4, 4>  mUnk6bc1f5;
-    ::ll::UntypedStorage<8, 8>  mUnk5bc335;
-    ::ll::UntypedStorage<4, 4>  mUnkb8eb4f;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mExecutionEntity;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>             mRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                              mPosition;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mRotationEntity;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mPositionEntity;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation> mAnchor;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                      mDimensionType;
+    ::ll::TypedStorage<8, 8, ::Level&>                             mLevel;
+    ::ll::TypedStorage<4, 4, int>                                  mVersion;
     // NOLINTEND
 
 public:
@@ -81,49 +84,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setPositionEntity(::Actor const& entity);
+    MCAPI void setPositionEntity(::Actor const& entity);
 
-    MCNAPI void setRotationEntity(::Actor const& entity);
+    MCAPI void setRotationEntity(::Actor const& entity);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
+    MCAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
-    MCNAPI ::BlockPos $getBlockPosition() const;
+    MCFOLD ::BlockPos $getBlockPosition() const;
 
-    MCNAPI ::Vec3 $getWorldPosition() const;
+    MCAPI ::Vec3 $getWorldPosition() const;
 
-    MCNAPI ::std::optional<::Vec2> $getRotation() const;
+    MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCNAPI ::Actor* $getEntity() const;
+    MCAPI ::Actor* $getEntity() const;
 
-    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCNAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
-    MCNAPI bool $isValid() const;
+    MCAPI bool $isValid() const;
 
-    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCNAPI ::CompoundTag $serialize() const;
+    MCAPI ::CompoundTag $serialize() const;
 
-    MCNAPI void $updateValues();
+    MCAPI void $updateValues();
 
-    MCNAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
+    MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
-    MCNAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
-    MCNAPI ::Dimension* $getDimension() const;
+    MCAPI ::Dimension* $getDimension() const;
 
 
     // NOLINTEND

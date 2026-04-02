@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
@@ -11,6 +12,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class PermissionsFile;
+class Player;
 // clang-format on
 
 class PermissionCommand : public ::ServerCommand {
@@ -32,16 +34,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk24ccee;
-    ::ll::UntypedStorage<4, 4>   mUnk2d494e;
-    ::ll::UntypedStorage<8, 200> mUnk62d6b2;
+    ::ll::TypedStorage<4, 4, ::PermissionCommand::Action>                            mAction;
+    ::ll::TypedStorage<4, 4, ::PermissionCommand::AvailableCommandPermissionPresets> mPermissionLevel;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>                          mTargetPlayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PermissionCommand& operator=(PermissionCommand const&);
-    PermissionCommand(PermissionCommand const&);
-    PermissionCommand();
 
 public:
     // virtual functions

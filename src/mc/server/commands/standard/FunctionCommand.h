@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandFilePath.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +17,8 @@ class FunctionCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2ef237;
+    ::ll::TypedStorage<8, 32, ::CommandFilePath> mFilePath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FunctionCommand& operator=(FunctionCommand const&);
-    FunctionCommand(FunctionCommand const&);
-    FunctionCommand();
 
 public:
     // virtual functions

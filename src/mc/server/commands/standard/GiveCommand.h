@@ -3,32 +3,30 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/json/Value.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class GiveCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnka2b291;
-    ::ll::UntypedStorage<8, 8>   mUnk14ca77;
-    ::ll::UntypedStorage<4, 4>   mUnk648025;
-    ::ll::UntypedStorage<4, 4>   mUnk79d1c1;
-    ::ll::UntypedStorage<8, 16>  mUnkefc2f9;
-    ::ll::UntypedStorage<1, 1>   mUnk9b697b;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 8, ::CommandItem>                 mItem;
+    ::ll::TypedStorage<4, 4, int>                           mCount;
+    ::ll::TypedStorage<4, 4, int>                           mData;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                mComponents;
+    ::ll::TypedStorage<1, 1, bool>                          mHaveComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GiveCommand& operator=(GiveCommand const&);
-    GiveCommand(GiveCommand const&);
-    GiveCommand();
 
 public:
     // virtual functions

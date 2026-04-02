@@ -16,15 +16,9 @@ class GlobalPauseCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbd8bbe;
-    ::ll::UntypedStorage<1, 1> mUnkd55d28;
+    ::ll::TypedStorage<1, 1, bool> mPause;
+    ::ll::TypedStorage<1, 1, bool> mPauseSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlobalPauseCommand& operator=(GlobalPauseCommand const&);
-    GlobalPauseCommand(GlobalPauseCommand const&);
-    GlobalPauseCommand();
 
 public:
     // virtual functions

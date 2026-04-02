@@ -43,8 +43,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance& operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
+    operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
     MCAPI ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND

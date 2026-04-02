@@ -45,8 +45,8 @@ public:
 
     MCAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase& operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&
-    );
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
+    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
     operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);

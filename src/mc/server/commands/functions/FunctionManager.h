@@ -33,26 +33,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk9600ef;
-        ::ll::UntypedStorage<4, 4> mUnk4c4426;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
+        ::ll::TypedStorage<4, 4, uint>                               mRefCount;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OriginMapping& operator=(OriginMapping const&);
-        OriginMapping(OriginMapping const&);
-        OriginMapping();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~OriginMapping();
+        MCAPI ~OriginMapping();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -60,30 +54,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkcf60d0;
-        ::ll::UntypedStorage<8, 8> mUnkf29853;
+        ::ll::TypedStorage<8, 8, ::IFunctionEntry*>                       mFunction;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::CommandOrigin const*>> mOrigin;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        QueuedCommand& operator=(QueuedCommand const&);
-        QueuedCommand(QueuedCommand const&);
-        QueuedCommand();
     };
 
     struct TickFunction {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk482e9d;
-        ::ll::UntypedStorage<1, 1> mUnk4d0171;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::FunctionEntry*>> mFunction;
+        ::ll::TypedStorage<1, 1, ::FunctionQueueOrder>              mOrder;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TickFunction& operator=(TickFunction const&);
-        TickFunction(TickFunction const&);
-        TickFunction();
     };
 
 public:
@@ -115,19 +97,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FunctionManager(
+    MCAPI FunctionManager(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
     );
 
-    MCNAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
+    MCAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCNAPI void _addTickFunctionsFromJson(::Json::Value const& arrayVal, ::CurrentCmdVersion resourceCommandVersion);
+    MCAPI void _addTickFunctionsFromJson(::Json::Value const& arrayVal, ::CurrentCmdVersion resourceCommandVersion);
 
-    MCNAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
+    MCAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
 
-    MCNAPI void _processFunctionEntry(
+    MCAPI void _processFunctionEntry(
         ::std::string const&                functionName,
         ::std::vector<::std::string> const& lines,
         ::std::vector<::std::string>&       errorList,
@@ -135,32 +117,32 @@ public:
         ::CommandRegistry const&            registry
     );
 
-    MCNAPI void _queueCommandsAfterCaller(
+    MCAPI void _queueCommandsAfterCaller(
         ::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue,
         ::CommandOrigin const&                                    origin
     );
 
-    MCNAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
+    MCAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
 
-    MCNAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
+    MCAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
-    MCNAPI ::FunctionEntry* getFunction(::std::string const& functionName);
+    MCAPI ::FunctionEntry* getFunction(::std::string const& functionName);
 
-    MCNAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
+    MCAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
 
-    MCNAPI void tick();
+    MCAPI void tick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
+    MCAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
         ::std::unique_ptr<::CommandOrigin>      tickOrigin,
         ::GameRule const*                       gameRule
@@ -170,7 +152,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

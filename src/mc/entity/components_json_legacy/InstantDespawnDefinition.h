@@ -14,14 +14,8 @@ class InstantDespawnDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk638b2e;
+    ::ll::TypedStorage<1, 1, bool> mRemoveChildActors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InstantDespawnDefinition& operator=(InstantDespawnDefinition const&);
-    InstantDespawnDefinition(InstantDespawnDefinition const&);
-    InstantDespawnDefinition();
 
 public:
     // static functions

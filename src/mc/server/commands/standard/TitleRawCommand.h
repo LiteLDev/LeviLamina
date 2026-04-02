@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/json/Value.h"
 #include "mc/network/packet/SetTitlePacketPayload.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
@@ -31,19 +33,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk6c5234;
-    ::ll::UntypedStorage<8, 200> mUnkd8086f;
-    ::ll::UntypedStorage<8, 16>  mUnkafc916;
-    ::ll::UntypedStorage<4, 4>   mUnk2c88f9;
-    ::ll::UntypedStorage<4, 4>   mUnkee094f;
-    ::ll::UntypedStorage<4, 4>   mUnk32257a;
+    ::ll::TypedStorage<4, 4, ::TitleRawCommand::Mode>       mMode;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                mMessage;
+    ::ll::TypedStorage<4, 4, int>                           mFadeIn;
+    ::ll::TypedStorage<4, 4, int>                           mStay;
+    ::ll::TypedStorage<4, 4, int>                           mFadeOut;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TitleRawCommand& operator=(TitleRawCommand const&);
-    TitleRawCommand(TitleRawCommand const&);
-    TitleRawCommand();
 
 public:
     // virtual functions

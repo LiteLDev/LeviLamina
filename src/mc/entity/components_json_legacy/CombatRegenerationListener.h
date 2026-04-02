@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/events/ActorEventListener.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorEventCoordinator;
 struct ActorNotificationEvent;
 // clang-format on
 
@@ -15,10 +17,10 @@ class CombatRegenerationListener : public ::ActorEventListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk50a1aa;
-    ::ll::UntypedStorage<8, 8> mUnkd6d85a;
-    ::ll::UntypedStorage<8, 8> mUnkafeee1;
-    ::ll::UntypedStorage<1, 1> mUnke981c0;
+    ::ll::TypedStorage<8, 8, ::ActorEventCoordinator&> mActorEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>          mTargetActorId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>          mMobId;
+    ::ll::TypedStorage<1, 1, bool>                     mTargetKilledByMob;
     // NOLINTEND
 
 public:

@@ -16,31 +16,25 @@ class FlockingDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkcd708e;
-    ::ll::UntypedStorage<1, 1> mUnk40f7c3;
-    ::ll::UntypedStorage<1, 1> mUnk759401;
-    ::ll::UntypedStorage<4, 4> mUnk669350;
-    ::ll::UntypedStorage<4, 4> mUnkbf9017;
-    ::ll::UntypedStorage<4, 4> mUnk8ffe66;
-    ::ll::UntypedStorage<4, 4> mUnkd3fdfa;
-    ::ll::UntypedStorage<4, 4> mUnk8306ee;
-    ::ll::UntypedStorage<4, 4> mUnkec1374;
-    ::ll::UntypedStorage<4, 4> mUnk2a24c5;
-    ::ll::UntypedStorage<4, 4> mUnke5b03e;
-    ::ll::UntypedStorage<4, 4> mUnke5f76a;
-    ::ll::UntypedStorage<4, 4> mUnk9dccb6;
-    ::ll::UntypedStorage<4, 4> mUnk609e81;
-    ::ll::UntypedStorage<4, 4> mUnk9fdda8;
-    ::ll::UntypedStorage<4, 4> mUnka8915a;
-    ::ll::UntypedStorage<4, 4> mUnkb7986a;
-    ::ll::UntypedStorage<4, 4> mUnk7f62e0;
+    ::ll::TypedStorage<1, 1, bool>  mInWater;
+    ::ll::TypedStorage<1, 1, bool>  mMatchVariant;
+    ::ll::TypedStorage<1, 1, bool>  mUseCenterOfMass;
+    ::ll::TypedStorage<4, 4, int>   mLowFlockLimit;
+    ::ll::TypedStorage<4, 4, int>   mHighFlockLimit;
+    ::ll::TypedStorage<4, 4, float> mGoalWeight;
+    ::ll::TypedStorage<4, 4, float> mLonerChance;
+    ::ll::TypedStorage<4, 4, float> mInfluenceRadius;
+    ::ll::TypedStorage<4, 4, float> mBreachInfluence;
+    ::ll::TypedStorage<4, 4, float> mSeparationWeight;
+    ::ll::TypedStorage<4, 4, float> mSeparationThreshold;
+    ::ll::TypedStorage<4, 4, float> mCohesionWeight;
+    ::ll::TypedStorage<4, 4, float> mCohesionThreshold;
+    ::ll::TypedStorage<4, 4, float> mInnerCohesionThres;
+    ::ll::TypedStorage<4, 4, float> mMinHeight;
+    ::ll::TypedStorage<4, 4, float> mMaxHeight;
+    ::ll::TypedStorage<4, 4, float> mBlockDistance;
+    ::ll::TypedStorage<4, 4, float> mBlockWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlockingDefinition& operator=(FlockingDefinition const&);
-    FlockingDefinition(FlockingDefinition const&);
-    FlockingDefinition();
 
 public:
     // member functions

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class FogDefinitionRegistry;
 struct DeferredRenderingBiomeRegistry;
-struct FogDefinitionRegistry;
 // clang-format on
 
 struct ClientBiomeJsonDocumentGlue {

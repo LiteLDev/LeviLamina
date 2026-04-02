@@ -11,14 +11,8 @@ class InteractDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc1876e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Interaction>> mInteractions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractDefinition& operator=(InteractDefinition const&);
-    InteractDefinition(InteractDefinition const&);
-    InteractDefinition();
 
 public:
     // member functions

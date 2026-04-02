@@ -28,15 +28,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5ae04a;
-    ::ll::UntypedStorage<8, 32> mUnkaf2239;
+    ::ll::TypedStorage<4, 4, ::AllowListCommand::Action> mAction;
+    ::ll::TypedStorage<8, 32, ::std::string>             mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AllowListCommand& operator=(AllowListCommand const&);
-    AllowListCommand(AllowListCommand const&);
-    AllowListCommand();
 
 public:
     // virtual functions

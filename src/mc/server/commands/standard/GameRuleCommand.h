@@ -11,6 +11,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class GameRule;
+class GameRules;
 namespace Json { class Value; }
 // clang-format on
 
@@ -26,7 +27,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk895cad;
+        ::ll::TypedStorage<8, 8, ::GameRules&> mGameRules;
         // NOLINTEND
 
     public:
@@ -39,20 +40,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8beb94;
-    ::ll::UntypedStorage<4, 4>  mUnk429d60;
-    ::ll::UntypedStorage<4, 4>  mUnk4140a0;
-    ::ll::UntypedStorage<1, 1>  mUnk7e7790;
-    ::ll::UntypedStorage<1, 1>  mUnk4dbe3f;
-    ::ll::UntypedStorage<1, 1>  mUnkf282fd;
-    ::ll::UntypedStorage<1, 1>  mUnke07538;
+    ::ll::TypedStorage<8, 32, ::std::string> mGameRule;
+    ::ll::TypedStorage<4, 4, float>          mFloatValue;
+    ::ll::TypedStorage<4, 4, int>            mIntValue;
+    ::ll::TypedStorage<1, 1, bool>           mBoolValue;
+    ::ll::TypedStorage<1, 1, bool>           mBoolValueSet;
+    ::ll::TypedStorage<1, 1, bool>           mIntValueSet;
+    ::ll::TypedStorage<1, 1, bool>           mFloatValueSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameRuleCommand& operator=(GameRuleCommand const&);
-    GameRuleCommand(GameRuleCommand const&);
-    GameRuleCommand();
 
 public:
     // virtual functions

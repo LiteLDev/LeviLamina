@@ -6,25 +6,19 @@ struct CommandOriginIdentity {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb57c8f;
-    ::ll::UntypedStorage<8, 32> mUnk177a87;
+    ::ll::TypedStorage<8, 32, ::std::string> mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string> mPlatformOnlineId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandOriginIdentity& operator=(CommandOriginIdentity const&);
-    CommandOriginIdentity(CommandOriginIdentity const&);
-    CommandOriginIdentity();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~CommandOriginIdentity();
+    MCAPI ~CommandOriginIdentity();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

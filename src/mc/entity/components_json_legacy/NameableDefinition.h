@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,17 +16,11 @@ class NameableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk31ecb1;
-    ::ll::UntypedStorage<8, 104> mUnk5ab49d;
-    ::ll::UntypedStorage<1, 1>   mUnke7efe4;
-    ::ll::UntypedStorage<1, 1>   mUnke1428f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::NameAction>> mNameActions;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>   mDefaultActionTrigger;
+    ::ll::TypedStorage<1, 1, bool>                         mAlwaysShow;
+    ::ll::TypedStorage<1, 1, bool>                         mAllowNameTagRenaming;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NameableDefinition& operator=(NameableDefinition const&);
-    NameableDefinition(NameableDefinition const&);
-    NameableDefinition();
 
 public:
     // member functions

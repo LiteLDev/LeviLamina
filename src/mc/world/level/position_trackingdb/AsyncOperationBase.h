@@ -26,15 +26,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka19bdb;
-    ::ll::UntypedStorage<1, 1> mUnkc5b4c7;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingDB::AsyncOperationBase::InternalState> mInternalState;
+    ::ll::TypedStorage<1, 1, bool>                                                    mErrored;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AsyncOperationBase& operator=(AsyncOperationBase const&);
-    AsyncOperationBase(AsyncOperationBase const&);
-    AsyncOperationBase();
 
 public:
     // virtual functions
@@ -63,16 +57,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $tick(
+    MCAPI bool $tick(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCNAPI bool $isAsync() const;
+    MCFOLD bool $isAsync() const;
 
-    MCNAPI bool $isComplete() const;
+    MCAPI bool $isComplete() const;
 
-    MCNAPI bool
+    MCAPI bool
     $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 

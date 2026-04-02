@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,18 +29,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk98b138;
-        ::ll::UntypedStorage<4, 4>   mUnkacf736;
-        ::ll::UntypedStorage<8, 104> mUnk654386;
-        ::ll::UntypedStorage<8, 104> mUnkd7fabb;
-        ::ll::UntypedStorage<8, 104> mUnkc1d3ee;
+        ::ll::TypedStorage<4, 4, float>                      mTotalTime;
+        ::ll::TypedStorage<4, 4, float>                      mWaterBottleAdditionalTime;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnFullyDriedOut;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStoppedDryingOut;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRecoverAfterDriedOut;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&);
-        DryingOutTimerDefinition(DryingOutTimerDefinition const&);
-        DryingOutTimerDefinition();
 
     public:
         // member functions

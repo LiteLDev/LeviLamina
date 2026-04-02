@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
@@ -26,16 +27,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnke2a9c8;
-    ::ll::UntypedStorage<8, 200> mUnkebc694;
-    ::ll::UntypedStorage<8, 32>  mUnk1687d7;
+    ::ll::TypedStorage<4, 4, ::UnlockRecipeCommand::RecipeAction> mAction;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>>       mPlayers;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mRecipe;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UnlockRecipeCommand& operator=(UnlockRecipeCommand const&);
-    UnlockRecipeCommand(UnlockRecipeCommand const&);
-    UnlockRecipeCommand();
 
 public:
     // virtual functions

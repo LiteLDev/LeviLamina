@@ -4,6 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/world/actor/agent/agent_components/CollectionSpecification.h"
+#include "mc/world/actor/agent/agent_components/Direction.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,42 +58,34 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkf919f6;
-        ::ll::UntypedStorage<8, 8>  mUnk90577b;
-        ::ll::UntypedStorage<8, 64> mUnkfa2d1a;
+        ::ll::TypedStorage<4, 4, ::AgentCommand::Mode>                                                     mode;
+        ::ll::TypedStorage<8, 8, char const*>                                                              name;
+        ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::AgentCommands::Command>(::Player&)>> function;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommandInfo& operator=(CommandInfo const&);
-        CommandInfo(CommandInfo const&);
-        CommandInfo();
     };
+
+    using AgentCommandFunction = ::std::function<::std::unique_ptr<::AgentCommands::Command>(::Player&)>;
+
+    using AgentCommandReturnType = ::std::unique_ptr<::AgentCommands::Command>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkc34d46;
-    ::ll::UntypedStorage<1, 1>  mUnk7e8cf7;
-    ::ll::UntypedStorage<1, 1>  mUnk17065b;
-    ::ll::UntypedStorage<8, 8>  mUnke3d3be;
-    ::ll::UntypedStorage<4, 4>  mUnkbc3fab;
-    ::ll::UntypedStorage<4, 4>  mUnk5b16fb;
-    ::ll::UntypedStorage<4, 4>  mUnk4cecef;
-    ::ll::UntypedStorage<4, 4>  mUnkd2d3fb;
-    ::ll::UntypedStorage<4, 16> mUnkbc9d56;
-    ::ll::UntypedStorage<4, 16> mUnkc5efec;
-    ::ll::UntypedStorage<1, 1>  mUnk5875e3;
-    ::ll::UntypedStorage<4, 4>  mUnk374735;
-    ::ll::UntypedStorage<4, 4>  mUnk51861d;
-    ::ll::UntypedStorage<1, 1>  mUnk9050a1;
+    ::ll::TypedStorage<4, 4, ::AgentCommand::Mode>                       mMode;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::CollectionSpecification> mCollectMode;
+    ::ll::TypedStorage<1, 1, ::AgentComponents::Direction>               mDirection;
+    ::ll::TypedStorage<8, 8, ::CommandItem>                              mItem;
+    ::ll::TypedStorage<4, 4, int>                                        mSlot;
+    ::ll::TypedStorage<4, 4, int>                                        mDestination;
+    ::ll::TypedStorage<4, 4, int>                                        mQuantity;
+    ::ll::TypedStorage<4, 4, int>                                        mAux;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                         mPos;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                         mFacing;
+    ::ll::TypedStorage<1, 1, bool>                                       mIsPosSet;
+    ::ll::TypedStorage<4, 4, ::AgentCommand::FacingResult>               mHaveFacing;
+    ::ll::TypedStorage<4, 4, float>                                      mYRot;
+    ::ll::TypedStorage<1, 1, bool>                                       mIsYRotSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AgentCommand& operator=(AgentCommand const&);
-    AgentCommand(AgentCommand const&);
-    AgentCommand();
 
 public:
     // virtual functions

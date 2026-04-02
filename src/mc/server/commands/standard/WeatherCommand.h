@@ -29,16 +29,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk33f1d9;
-    ::ll::UntypedStorage<4, 4> mUnkecacd5;
-    ::ll::UntypedStorage<4, 4> mUnkc5b71d;
+    ::ll::TypedStorage<4, 4, ::WeatherCommand::WeatherRequest> mRequest;
+    ::ll::TypedStorage<4, 4, ::WeatherCommand::WeatherType>    mType;
+    ::ll::TypedStorage<4, 4, int>                              mDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeatherCommand& operator=(WeatherCommand const&);
-    WeatherCommand(WeatherCommand const&);
-    WeatherCommand();
 
 public:
     // virtual functions

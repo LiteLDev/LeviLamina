@@ -32,14 +32,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbdbb95;
+    ::ll::TypedStorage<4, 4, ::SaveCommand::Mode> mMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SaveCommand& operator=(SaveCommand const&);
-    SaveCommand(SaveCommand const&);
-    SaveCommand();
 
 public:
     // virtual functions

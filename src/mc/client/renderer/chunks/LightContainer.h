@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FogDefinitionRegistry {};
+template <typename T0>
+class LightContainer {};

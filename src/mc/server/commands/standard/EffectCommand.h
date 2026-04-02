@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 
 // auto generated forward declare list
@@ -28,19 +29,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk85cfae;
-    ::ll::UntypedStorage<4, 4>   mUnkf69413;
-    ::ll::UntypedStorage<8, 8>   mUnkf22c7d;
-    ::ll::UntypedStorage<4, 4>   mUnkfd7f67;
-    ::ll::UntypedStorage<4, 4>   mUnk1dc2c6;
-    ::ll::UntypedStorage<1, 1>   mUnkfc96bd;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<4, 4, ::EffectCommand::Mode>        mMode;
+    ::ll::TypedStorage<8, 8, ::MobEffect const*>           mEffect;
+    ::ll::TypedStorage<4, 4, int>                          mDuration;
+    ::ll::TypedStorage<4, 4, int>                          mAmplifier;
+    ::ll::TypedStorage<1, 1, bool>                         mHideParticles;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EffectCommand& operator=(EffectCommand const&);
-    EffectCommand(EffectCommand const&);
-    EffectCommand();
 
 public:
     // virtual functions

@@ -25,14 +25,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd7d42c;
+    ::ll::TypedStorage<4, 4, ::ListDCommand::DetailMode> mDetails;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ListDCommand& operator=(ListDCommand const&);
-    ListDCommand(ListDCommand const&);
-    ListDCommand();
 
 public:
     // virtual functions

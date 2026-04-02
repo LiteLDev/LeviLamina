@@ -23,16 +23,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd762c3;
-    ::ll::UntypedStorage<4, 4> mUnk86fc2a;
-    ::ll::UntypedStorage<1, 1> mUnk52c775;
+    ::ll::TypedStorage<1, 1, ::FreezeOnHitSubcomponent::Shape> mShape;
+    ::ll::TypedStorage<4, 4, float>                            mSize;
+    ::ll::TypedStorage<1, 1, bool>                             mSnapToBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FreezeOnHitSubcomponent& operator=(FreezeOnHitSubcomponent const&);
-    FreezeOnHitSubcomponent(FreezeOnHitSubcomponent const&);
-    FreezeOnHitSubcomponent();
 
 public:
     // virtual functions

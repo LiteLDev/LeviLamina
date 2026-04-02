@@ -4,29 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class TakePictureCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk9aad1e;
-    ::ll::UntypedStorage<8, 200> mUnka3a31a;
-    ::ll::UntypedStorage<4, 16>  mUnkd62911;
-    ::ll::UntypedStorage<1, 1>   mUnk5ed6f7;
-    ::ll::UntypedStorage<1, 1>   mUnk5928b9;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>  mCameraTargets;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mPlayerTargets;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>            mCameraSpawnPos;
+    ::ll::TypedStorage<1, 1, bool>                          mCameraPositionProvided;
+    ::ll::TypedStorage<1, 1, bool>                          mCameraTargetProvided;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TakePictureCommand& operator=(TakePictureCommand const&);
-    TakePictureCommand(TakePictureCommand const&);
 
 public:
     // virtual functions

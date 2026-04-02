@@ -17,24 +17,18 @@ class BreathableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9bca87;
-    ::ll::UntypedStorage<4, 4>  mUnk8d5226;
-    ::ll::UntypedStorage<4, 4>  mUnk49df1f;
-    ::ll::UntypedStorage<1, 1>  mUnkac26b1;
-    ::ll::UntypedStorage<1, 1>  mUnke2dc21;
-    ::ll::UntypedStorage<1, 1>  mUnk84ea54;
-    ::ll::UntypedStorage<1, 1>  mUnk642d65;
-    ::ll::UntypedStorage<1, 1>  mUnk4e5b45;
-    ::ll::UntypedStorage<1, 1>  mUnk1390a4;
-    ::ll::UntypedStorage<8, 24> mUnk72afc4;
-    ::ll::UntypedStorage<8, 24> mUnk23a5f5;
+    ::ll::TypedStorage<4, 4, int>                               mTotalSupply;
+    ::ll::TypedStorage<4, 4, int>                               mSuffocateTime;
+    ::ll::TypedStorage<4, 4, float>                             mInhaleTime;
+    ::ll::TypedStorage<1, 1, bool>                              mBreathesAir;
+    ::ll::TypedStorage<1, 1, bool>                              mBreathesWater;
+    ::ll::TypedStorage<1, 1, bool>                              mBreathesLava;
+    ::ll::TypedStorage<1, 1, bool>                              mBreathesSolids;
+    ::ll::TypedStorage<1, 1, bool>                              mCanDehydrate;
+    ::ll::TypedStorage<1, 1, bool>                              mGeneratesBubbles;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBreathableBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mNonBreathableBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreathableDefinition& operator=(BreathableDefinition const&);
-    BreathableDefinition(BreathableDefinition const&);
-    BreathableDefinition();
 
 public:
     // member functions

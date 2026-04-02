@@ -16,14 +16,8 @@ class StickInGroundSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9454ab;
+    ::ll::TypedStorage<4, 4, int> mShakeTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StickInGroundSubcomponent& operator=(StickInGroundSubcomponent const&);
-    StickInGroundSubcomponent(StickInGroundSubcomponent const&);
-    StickInGroundSubcomponent();
 
 public:
     // virtual functions

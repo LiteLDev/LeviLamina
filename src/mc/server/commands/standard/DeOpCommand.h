@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
@@ -10,20 +11,15 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Player;
 // clang-format on
 
 class DeOpCommand : public ::ServerCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnk98f371;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Player>> mTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeOpCommand& operator=(DeOpCommand const&);
-    DeOpCommand(DeOpCommand const&);
-    DeOpCommand();
 
 public:
     // virtual functions

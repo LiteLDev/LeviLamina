@@ -26,12 +26,14 @@ public:
         Not = 2,
     };
 
+    using Ptr = ::std::shared_ptr<::FilterGroup>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdd1627;
-    ::ll::UntypedStorage<8, 24> mUnkc039d0;
-    ::ll::UntypedStorage<8, 24> mUnk378121;
+    ::ll::TypedStorage<4, 4, ::FilterGroup::CollectionType>                    mCollectionType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::FilterGroup>>> mChildren;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::FilterTest>>>  mMembers;
     // NOLINTEND
 
 public:
@@ -54,15 +56,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterGroup(::FilterGroup const&);
+    MCAPI FilterGroup(::FilterGroup const&);
 
-    MCNAPI bool _parseFilterInputs(
+    MCAPI bool _parseFilterInputs(
         ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
         ::FilterTest::Definition const&                filterDef,
         ::FilterInputs&                                inputs
     );
 
-    MCNAPI bool _parseFilterParam(
+    MCAPI bool _parseFilterParam(
         ::std::string const&                                             filter,
         ::std::string const&                                             member,
         ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
@@ -70,34 +72,34 @@ public:
         ::FilterInput&                                                   input
     );
 
-    MCNAPI bool _parseMemberCollection(
+    MCAPI bool _parseMemberCollection(
         ::FilterGroup::CollectionType                   collectionType,
         ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
     );
 
-    MCNAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCAPI bool _parseObject(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCNAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
+    MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
-    MCNAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
+    MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCNAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
+    MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
-    MCNAPI void serialize(::Json::Value& jsonVal) const;
+    MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FilterGroup const&);
+    MCAPI void* $ctor(::FilterGroup const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $parse(::Json::Value const& jsonVal);
+    MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCNAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
+    MCAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
 
 
     // NOLINTEND
@@ -105,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

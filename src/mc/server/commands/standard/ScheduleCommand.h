@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandFilePath.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/world/level/chunk/AreaType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,6 +14,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Dimension;
+class FunctionEntry;
 class FunctionManager;
 class ServerLevel;
 // clang-format on
@@ -48,53 +52,41 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkbf799d;
-        ::ll::UntypedStorage<8, 32> mUnk5133b9;
-        ::ll::UntypedStorage<1, 1>  mUnkbd23dd;
+        ::ll::TypedStorage<8, 8, ::FunctionEntry*> mFunctionEntry;
+        ::ll::TypedStorage<8, 32, ::std::string>   mResolvedPath;
+        ::ll::TypedStorage<1, 1, bool>             mIsValid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FunctionInfo& operator=(FunctionInfo const&);
-        FunctionInfo(FunctionInfo const&);
-        FunctionInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~FunctionInfo();
+        MCAPI ~FunctionInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke40fb1;
-    ::ll::UntypedStorage<4, 4>  mUnk15c438;
-    ::ll::UntypedStorage<4, 4>  mUnk59eba9;
-    ::ll::UntypedStorage<1, 1>  mUnk15a207;
-    ::ll::UntypedStorage<4, 4>  mUnk52f24d;
-    ::ll::UntypedStorage<8, 32> mUnk4b1088;
-    ::ll::UntypedStorage<4, 16> mUnk30f1ab;
-    ::ll::UntypedStorage<4, 16> mUnk53ab9e;
-    ::ll::UntypedStorage<4, 4>  mUnk455eaf;
-    ::ll::UntypedStorage<4, 4>  mUnk1d297b;
-    ::ll::UntypedStorage<1, 1>  mUnk979741;
-    ::ll::UntypedStorage<1, 1>  mUnk72757f;
-    ::ll::UntypedStorage<8, 32> mUnk2d7153;
+    ::ll::TypedStorage<4, 4, ::ScheduleCommand::ScheduleAction> mScheduleAction;
+    ::ll::TypedStorage<4, 4, ::ScheduleCommand::RequestAction>  mRequestAction;
+    ::ll::TypedStorage<4, 4, ::ScheduleCommand::DelayMode>      mDelayMode;
+    ::ll::TypedStorage<1, 1, ::AreaType>                        mAreaType;
+    ::ll::TypedStorage<4, 4, ::ScheduleCommand::ClearType>      mClearType;
+    ::ll::TypedStorage<8, 32, ::CommandFilePath>                mFilePath;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                mFrom;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                mTo;
+    ::ll::TypedStorage<4, 4, int>                               mRadius;
+    ::ll::TypedStorage<4, 4, int>                               mTime;
+    ::ll::TypedStorage<1, 1, bool>                              mSecondsSet;
+    ::ll::TypedStorage<1, 1, bool>                              mDaysSet;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mTickingAreaName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScheduleCommand& operator=(ScheduleCommand const&);
-    ScheduleCommand(ScheduleCommand const&);
-    ScheduleCommand();
 
 public:
     // virtual functions

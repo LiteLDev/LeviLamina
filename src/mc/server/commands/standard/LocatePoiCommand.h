@@ -10,6 +10,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
+namespace Poi { class TagProvider; }
+namespace Poi { struct Registry; }
 // clang-format on
 
 struct LocatePoiCommand : public ::Command {
@@ -30,32 +32,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2> mUnkd306bc;
-        ::ll::UntypedStorage<8, 8> mUnk2c6283;
-        ::ll::UntypedStorage<8, 8> mUnkdcdd27;
-        ::ll::UntypedStorage<8, 8> mUnk1729f7;
+        ::ll::TypedStorage<2, 2, ::Poi::TypeId>       mType;
+        ::ll::TypedStorage<8, 8, uint64>              mTag;
+        ::ll::TypedStorage<8, 8, ::Poi::TagProvider*> mTags;
+        ::ll::TypedStorage<8, 8, ::Poi::Registry*>    mRegistry;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResourceOrTagArg& operator=(ResourceOrTagArg const&);
-        ResourceOrTagArg(ResourceOrTagArg const&);
-        ResourceOrTagArg();
     };
+
+    using PoiType = ::Poi::TypeId;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd4bba5;
-    ::ll::UntypedStorage<2, 2> mUnkf7c960;
-    ::ll::UntypedStorage<8, 8> mUnk6314b8;
+    ::ll::TypedStorage<1, 1, ::LocatePoiCommand::CmdName>    mCmd;
+    ::ll::TypedStorage<2, 2, ::Poi::TypeId>                  mPoiType;
+    ::ll::TypedStorage<8, 8, ::LocatePoiCommand::PoiTagType> mPoiTagType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LocatePoiCommand& operator=(LocatePoiCommand const&);
-    LocatePoiCommand(LocatePoiCommand const&);
-    LocatePoiCommand();
 
 public:
     // virtual functions
