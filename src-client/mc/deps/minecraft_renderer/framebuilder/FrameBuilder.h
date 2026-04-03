@@ -4,18 +4,18 @@
 
 namespace mce::framebuilder {
 
-struct FrameBuilder {
+class FrameBuilder {
 public:
     // FrameBuilder inner types declare
     // clang-format off
     struct FrameTimings;
-    struct InitializationState;
+    class InitializationState;
     // clang-format on
 
     // FrameBuilder inner types define
     struct FrameTimings {};
 
-    struct InitializationState {};
+    class InitializationState {};
 };
 
 } // namespace mce::framebuilder

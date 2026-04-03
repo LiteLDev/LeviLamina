@@ -31,3 +31,9 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool
+operator==(::SentryEnvelopePayloadStacktraceFrame const& __P0, ::SentryEnvelopePayloadStacktraceFrame const& __P1);
+// NOLINTEND

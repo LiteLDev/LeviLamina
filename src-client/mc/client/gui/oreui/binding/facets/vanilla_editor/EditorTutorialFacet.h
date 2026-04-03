@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Services { struct ClientTutorialServiceProvider; }
+namespace Editor::Services { class ClientTutorialServiceProvider; }
 // clang-format on
 
 namespace OreUI {

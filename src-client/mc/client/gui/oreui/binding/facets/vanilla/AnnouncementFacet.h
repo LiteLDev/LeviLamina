@@ -12,8 +12,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class PlayerMessagingService;
 struct MessageData;
-struct PlayerMessagingService;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct MessageImage; }
 // clang-format on

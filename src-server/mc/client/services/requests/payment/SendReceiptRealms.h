@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SendReceiptRealms {
+class SendReceiptRealms {
 public:
     // SendReceiptRealms inner types declare
     // clang-format off

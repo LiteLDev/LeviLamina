@@ -13,7 +13,7 @@
 // clang-format off
 class MainMenuScreenModel;
 class SkinPackCollectionModel;
-struct SkinRepository;
+class SkinRepository;
 // clang-format on
 
 class SkinPickerScreenController : public ::MainMenuScreenController {

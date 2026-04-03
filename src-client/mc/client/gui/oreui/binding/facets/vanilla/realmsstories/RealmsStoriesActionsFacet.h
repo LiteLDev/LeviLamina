@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
 
 namespace OreUI {

@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 struct RealmsWorldInfo;
-namespace Realms { struct RealmsList; }
+namespace Realms { class RealmsList; }
 // clang-format on
 
 namespace OreUI {

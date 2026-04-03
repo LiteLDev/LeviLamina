@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class IContentTierManager;
-struct IEntitlementManager;
-struct IMarketplacePackDownloader;
+class IEntitlementManager;
+class IMarketplacePackDownloader;
 namespace World { class IWorldPackCollectionManager; }
 // clang-format on
 

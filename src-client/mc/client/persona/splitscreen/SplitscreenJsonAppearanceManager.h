@@ -4,6 +4,6 @@
 
 namespace splitscreen {
 
-struct SplitscreenJsonAppearanceManager {};
+class SplitscreenJsonAppearanceManager {};
 
 } // namespace splitscreen

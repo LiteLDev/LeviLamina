@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XblFriendList {};
+class XblFriendList {};
 
 } // namespace Social

@@ -36,21 +36,32 @@
 class ActiveDirectoryIdentity;
 class ActorAnimationControllerGroup;
 class ActorAnimationGroup;
+class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
+class CDNService;
 class ChunkSource;
 class ClientNetworkSystem;
+class ClubsService;
+class ContentAcquisition;
+class ContentCatalogService;
 class ContentIdentity;
 class ContentLogFileEndPoint;
 class CubemapBackgroundResources;
 class DateManager;
+class DeferredLighting;
+class DevConsoleLogger;
 class Dimension;
 class EDUSystems;
 class EmoticonManager;
 class EntityContext;
+class ExternalContentManager;
+class FlightingService;
 class FontHandle;
 class GameRenderer;
+class GatheringManager;
 class GeometryGroup;
+class GlobalResourcesCrashRecovery;
 class GuiData;
 class IApp;
 class IClientInstance;
@@ -58,101 +69,90 @@ class IContentAccessibilityProvider;
 class IContentKeyProvider;
 class IContentManager;
 class IContentTierManager;
+class IDlcValidation;
+class IEntitlementManager;
+class IExternalServerFile;
+class IGameModuleApp;
 class ILevelListCache;
 class IMinecraftEventing;
+class IOfferRepository;
 class IResourcePackRepository;
 class ISceneStack;
 class ITextBoxController;
+class IThirdPartyServerRepository;
 class IUIDefRepository;
 class IUIRepository;
 class ItemRegistryRef;
 class LevelDbEnv;
+class LevelLoader;
 class LevelSettings;
+class LibraryRepository;
 class LinkedAssetValidator;
 class LocalPlayer;
+class MarketplaceServicesManager;
 class MinecraftGraphics;
 class MinecraftInputHandler;
+class MusicManager;
+class NewPlayerSystem;
 class Options;
+class PackDownloadManager;
 class PackManifestFactory;
 class PackSourceFactory;
 class ParticleEffectGroup;
+class PersonaRepository;
+class PersonaService;
 class PixelCalc;
 class Player;
+class PlayerMessagingService;
+class ProfanityContext;
+class RealmsAPI;
 class RenderControllerGroup;
 class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SceneFactory;
+class ScreenshotRecorder;
+class SeasonsRenderer;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
+class ServiceDrivenImageRepository;
+class ServicesManager;
+class SkinRepository;
+class SoundEngine;
+class StoreCatalogRepository;
+class SunsettingManager;
 class TextToIconMapper;
 class TextureAtlas;
+class TreatmentPackDownloadMonitor;
+class TrialManager;
 class UIMeasureStrategy;
 class Vec3;
 class WorldTemplateManager;
-struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
-struct CDNService;
-struct ClubsService;
-struct ContentAcquisition;
-struct ContentCatalogService;
 struct ControllerIDtoClientMap;
-struct DeferredLighting;
-struct DevConsoleLogger;
-struct ExternalContentManager;
-struct FlightingService;
-struct GatheringManager;
-struct GlobalResourcesCrashRecovery;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IExternalServerFile;
-struct IGameModuleApp;
-struct IOfferRepository;
-struct IThirdPartyServerRepository;
-struct LevelLoader;
-struct LibraryRepository;
-struct MarketplaceServicesManager;
-struct MusicManager;
-struct NewPlayerSystem;
-struct PackDownloadManager;
-struct PersonaRepository;
-struct PersonaService;
 struct PlayerJoinWorldContext;
-struct PlayerMessagingService;
-struct ProfanityContext;
-struct RealmsAPI;
 struct ScreenshotOptions;
-struct ScreenshotRecorder;
-struct SeasonsRenderer;
-struct ServiceDrivenImageRepository;
-struct ServicesManager;
-struct SkinRepository;
-struct SoundEngine;
-struct StoreCatalogRepository;
-struct SunsettingManager;
-struct TreatmentPackDownloadMonitor;
-struct TrialManager;
 namespace Bedrock::PubSub { class Subscription; }
-namespace ClientBlobCache { struct Cache; }
+namespace ClientBlobCache { class Cache; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
 namespace OreUI { class DataProviderManager_DEPRECATED; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }
-namespace Parties { struct PartySystem; }
-namespace Progress { struct ProgressTips; }
-namespace Realms { struct ContentService; }
-namespace Realms { struct GenericRequestServiceHandler; }
-namespace Realms { struct RealmsServices; }
-namespace Realms { struct RealmsSystem; }
-namespace Realms { struct SubscriptionService; }
+namespace Parties { class PartySystem; }
+namespace Progress { class ProgressTips; }
+namespace Realms { class ContentService; }
+namespace Realms { class GenericRequestServiceHandler; }
+namespace Realms { class RealmsServices; }
+namespace Realms { class RealmsSystem; }
+namespace Realms { class SubscriptionService; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct PresenceManager; }
-namespace Social { struct SocialSystem; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class PresenceManager; }
+namespace Social { class SocialSystem; }
+namespace Social { class User; }
 namespace World { class WorldSystem; }
 namespace mce { class TextureGroup; }
 namespace mce { class UUID; }

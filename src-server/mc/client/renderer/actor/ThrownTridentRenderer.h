@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ThrownTridentRenderer {
+class ThrownTridentRenderer {
 public:
     // ThrownTridentRenderer inner types declare
     // clang-format off

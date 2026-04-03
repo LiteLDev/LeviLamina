@@ -4,6 +4,6 @@
 
 namespace GameFactoryImpl {
 
-struct AppExtensionsImpl {};
+class AppExtensionsImpl {};
 
 } // namespace GameFactoryImpl

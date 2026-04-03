@@ -4,13 +4,13 @@
 
 namespace Realms {
 
-struct RealmsWorldPackEditor {
+class RealmsWorldPackEditor {
 public:
     // RealmsWorldPackEditor inner types declare
     // clang-format off
     struct FetchStatus;
     struct RealmsWorldContentState;
-    struct RealmsWorldPackEditorImpl;
+    class RealmsWorldPackEditorImpl;
     struct SaveStatus;
     // clang-format on
 
@@ -23,7 +23,7 @@ public:
 
     struct RealmsWorldContentState {};
 
-    struct RealmsWorldPackEditorImpl {};
+    class RealmsWorldPackEditorImpl {};
 
     struct SaveStatus {};
 };

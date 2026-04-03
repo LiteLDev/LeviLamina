@@ -4,12 +4,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace mce { class GlobalConstantBuffers; }
 namespace mce { class RenderContext; }
+namespace mce { class ShaderConstants; }
 namespace mce { class TexturePtr; }
 namespace mce { struct ClientTexture; }
-namespace mce { struct GlobalConstantBuffers; }
 namespace mce { struct ServerTexture; }
-namespace mce { struct ShaderConstants; }
 // clang-format on
 
 namespace mcr {

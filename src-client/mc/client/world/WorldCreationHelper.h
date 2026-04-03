@@ -15,20 +15,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentAcquisition;
 class IContentManager;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class IGameServerStartup;
 class ILevelListCache;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
 class LevelDataWrapper;
 class ResourcePackCopyProgressHandler;
 class ResourcePackManager;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
+class TrialManager;
 struct PackManagerContentSource;
-struct TrialManager;
 // clang-format on
 
 class WorldCreationHelper {

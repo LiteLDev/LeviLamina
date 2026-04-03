@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms::Stories { struct RealmsFeedModeration; }
+namespace Realms::Stories { class RealmsFeedModeration; }
 // clang-format on
 
 namespace OreUI {

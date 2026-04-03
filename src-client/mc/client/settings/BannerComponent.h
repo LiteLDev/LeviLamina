@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct BannerComponent {};
+class BannerComponent {};
 
 } // namespace Settings

@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 namespace Realms::Stories { struct Player; }
 // clang-format on
 

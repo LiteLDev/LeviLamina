@@ -13,8 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TrialManager;
-namespace Realms { struct RealmsWorldEditor; }
+class TrialManager;
+namespace Realms { class RealmsWorldEditor; }
 // clang-format on
 
 namespace OreUI {

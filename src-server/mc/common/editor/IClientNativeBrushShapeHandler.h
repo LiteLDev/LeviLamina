@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct IClientNativeBrushShapeHandler {};
+class IClientNativeBrushShapeHandler {};
 
 } // namespace Editor::ClientBrush

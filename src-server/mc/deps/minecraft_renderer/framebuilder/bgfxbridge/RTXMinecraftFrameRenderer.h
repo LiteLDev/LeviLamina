@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder::bgfxbridge {
 
-struct RTXMinecraftFrameRenderer {};
+class RTXMinecraftFrameRenderer {};
 
 } // namespace mce::framebuilder::bgfxbridge

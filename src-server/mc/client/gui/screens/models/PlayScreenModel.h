@@ -7,11 +7,11 @@ public:
     // PlayScreenModel inner types declare
     // clang-format off
     struct LiveServer;
-    struct PlayScreenLevelListCacheObserver;
+    class PlayScreenLevelListCacheObserver;
     // clang-format on
 
     // PlayScreenModel inner types define
     struct LiveServer {};
 
-    struct PlayScreenLevelListCacheObserver {};
+    class PlayScreenLevelListCacheObserver {};
 };

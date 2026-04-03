@@ -4,6 +4,6 @@
 
 namespace Social::Events {
 
-struct PlayStreamEventListener {};
+class PlayStreamEventListener {};
 
 } // namespace Social::Events

@@ -11,8 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class LibraryItem;
 class MainMenuScreenModel;
-struct LibraryItem;
 namespace Json { class Value; }
 // clang-format on
 

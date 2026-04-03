@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder {
 
-struct RenderingFeatureConfiguration {};
+class RenderingFeatureConfiguration {};
 
 } // namespace mce::framebuilder

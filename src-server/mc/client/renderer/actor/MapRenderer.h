@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MapRenderer {
+class MapRenderer {
 public:
     // MapRenderer inner types declare
     // clang-format off
-    struct MapInstance;
+    class MapInstance;
     // clang-format on
 
     // MapRenderer inner types define
-    struct MapInstance {};
+    class MapInstance {};
 };

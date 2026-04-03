@@ -23,7 +23,7 @@ class ScreenContext;
 class TaskGroup;
 namespace OreUI { struct AtlasIndex; }
 namespace cg { class ImageBuffer; }
-namespace dragon { struct ResolvedImageResource; }
+namespace dragon { class ResolvedImageResource; }
 namespace mce::framebuilder { struct RenderUIMeshDescription; }
 // clang-format on
 

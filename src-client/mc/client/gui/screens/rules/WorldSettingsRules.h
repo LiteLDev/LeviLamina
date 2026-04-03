@@ -8,11 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftCommands;
-struct SkinRepositoryClientInterface;
-struct TrialManager;
+class SkinRepositoryClientInterface;
+class TrialManager;
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class User; }
 // clang-format on
 
 class WorldSettingsRules {

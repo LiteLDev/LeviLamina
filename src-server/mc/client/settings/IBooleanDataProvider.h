@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IBooleanDataProvider {};
+class IBooleanDataProvider {};
 
 } // namespace Settings

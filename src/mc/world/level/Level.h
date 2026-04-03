@@ -237,12 +237,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
+class ArmorTrimUnloader;
 class BaseLightTextureImageBuilder;
+class CameraRegistry;
 class Particle;
-struct ArmorTrimUnloader;
-struct CameraRegistry;
-struct SubChunkManager;
-struct TrustedSkinHelper;
+class SubChunkManager;
+class TrustedSkinHelper;
 // clang-format on
 
 class Level : public ::ILevel, public ::BlockSourceListener, public ::IWorldRegistriesProvider {

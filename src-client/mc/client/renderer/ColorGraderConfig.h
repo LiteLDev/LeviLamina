@@ -16,7 +16,7 @@ class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace dragon::framerenderer::modules { struct ColorGradingParameters; }
@@ -502,3 +502,31 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P1
+);
+// NOLINTEND

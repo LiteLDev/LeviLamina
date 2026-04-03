@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct LevelBooleanDataProvider {};
+class LevelBooleanDataProvider {};
 
 } // namespace Settings

@@ -11,7 +11,7 @@
 // clang-format off
 namespace OreUI { class GameDependencies; }
 namespace OreUI { class InvocationStatus; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
 namespace OreUI {

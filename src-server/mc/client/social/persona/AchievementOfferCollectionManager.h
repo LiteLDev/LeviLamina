@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct AchievementOfferCollectionManager {};
+class AchievementOfferCollectionManager {};
 
 } // namespace persona

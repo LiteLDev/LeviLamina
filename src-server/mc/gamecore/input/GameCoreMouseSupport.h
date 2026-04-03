@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameCoreMouseSupport {
+class GameCoreMouseSupport {
 public:
     // GameCoreMouseSupport inner types declare
     // clang-format off

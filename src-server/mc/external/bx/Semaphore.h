@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct Semaphore {};
+class Semaphore {};
 
 } // namespace bx

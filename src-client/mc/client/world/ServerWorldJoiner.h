@@ -8,21 +8,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class GatheringManager;
 class IAppPlatform;
 class IClientInstance;
 class IMinecraftEventing;
 class INetworkGameConnector;
+class IThirdPartyServerRepository;
 class ProgressHandler;
 class ServerLocator;
 class TaskGroup;
-struct GatheringManager;
-struct IThirdPartyServerRepository;
 struct NetworkWorldInfo;
 struct PingedCompatibleServer;
 namespace Network { struct ServerID; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct User; }
+namespace Social { class User; }
 namespace World { class ExternalServerWorldList; }
 namespace World { class FriendServerWorldList; }
 namespace World { class IServerURLResolver; }

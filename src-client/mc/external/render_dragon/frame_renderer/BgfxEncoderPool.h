@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer {
 
-struct BgfxEncoderPool {};
+class BgfxEncoderPool {};
 
 } // namespace dragon::framerenderer

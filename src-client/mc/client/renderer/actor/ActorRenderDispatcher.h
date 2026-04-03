@@ -11,6 +11,8 @@
 // clang-format off
 class Actor;
 class ActorRenderer;
+class ActorResourceDefinition;
+class ActorResourceDefinitionGroup;
 class BaseActorRenderContext;
 class BlockTessellator;
 class DataDrivenRenderer;
@@ -21,8 +23,6 @@ class ResourcePackManager;
 class Tessellator;
 class Vec2;
 class Vec3;
-struct ActorResourceDefinition;
-struct ActorResourceDefinitionGroup;
 struct NameTagRenderObject;
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }

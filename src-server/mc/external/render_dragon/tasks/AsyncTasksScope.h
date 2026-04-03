@@ -4,6 +4,6 @@
 
 namespace dragon::tasks {
 
-struct AsyncTasksScope {};
+class AsyncTasksScope {};
 
 } // namespace dragon::tasks

@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct UiContext {};
+class UiContext {};
 
 } // namespace Editor

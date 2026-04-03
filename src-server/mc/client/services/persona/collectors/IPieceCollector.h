@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct IPieceCollector {
+class IPieceCollector {
 public:
     // IPieceCollector inner types declare
     // clang-format off

@@ -62,7 +62,7 @@ namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Editor { class IEditorManager; }
 namespace Editor { class IEditorPlayer; }
 namespace mce { class UUID; }
-struct FrameUpdateContextBase;
+class FrameUpdateContextBase;
 // clang-format on
 
 class ServerPlayer : public ::Player {

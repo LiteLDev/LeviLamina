@@ -4,6 +4,6 @@
 
 namespace ImmersiveReaderUtils {
 
-struct ImmersiveReaderHitListener {};
+class ImmersiveReaderHitListener {};
 
 } // namespace ImmersiveReaderUtils

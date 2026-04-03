@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct UniformMetaData {};
+class UniformMetaData {};
 
 } // namespace mce

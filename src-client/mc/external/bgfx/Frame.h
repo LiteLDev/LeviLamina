@@ -27,12 +27,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace bgfx { class UniformBuffer; }
 namespace bgfx { struct RangedBindings; }
 namespace bgfx { struct TextVideoMem; }
 namespace bgfx { struct TextureHandle; }
 namespace bgfx { struct TransientIndexBuffer; }
 namespace bgfx { struct TransientVertexBuffer; }
-namespace bgfx { struct UniformBuffer; }
 // clang-format on
 
 namespace bgfx {

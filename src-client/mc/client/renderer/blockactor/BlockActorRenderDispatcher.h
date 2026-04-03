@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinitionGroup;
 class BaseActorRenderContext;
 class BaseGameVersion;
 class Block;
@@ -22,7 +23,6 @@ class GeometryGroup;
 class ResourceLoadManager;
 class ResourcePackManager;
 class Vec3;
-struct ActorResourceDefinitionGroup;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class MaterialPtr; }
 namespace mce { class TextureGroup; }

@@ -19,7 +19,7 @@ namespace Editor::Input { struct EditorKeyBindingUnregistered; }
 namespace Editor::Input { struct EditorKeyBindingUpdated; }
 namespace Editor::Input { struct EditorMouseBindingRegistered; }
 namespace Editor::Input { struct EditorMouseBindingUnregistered; }
-namespace Editor::Services { struct ClientPlayerInputServiceProvider; }
+namespace Editor::Services { class ClientPlayerInputServiceProvider; }
 // clang-format on
 
 namespace OreUI {

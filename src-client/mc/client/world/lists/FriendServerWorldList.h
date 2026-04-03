@@ -11,8 +11,8 @@
 struct NetworkWorldInfo;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Realms { struct RealmId; }
-namespace Social { struct MultiplayerGameInfo; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerGameInfo; }
+namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
 namespace World {

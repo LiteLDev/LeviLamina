@@ -22,7 +22,7 @@ namespace Editor::Services { struct EditorRealmsWorld; }
 namespace Editor::Services { struct PersistenceGroupItemMetadata; }
 namespace Editor::Services { struct PersistenceGroupMetadata; }
 class KeyboardRemappingLayout;
-namespace Scripting::RenderHelper { struct BasePrimitive; }
+namespace Scripting::RenderHelper { class BasePrimitive; }
 // clang-format on
 
 namespace Editor::Services {

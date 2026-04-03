@@ -16,9 +16,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorResourceDefinition;
 class BoneOrientation;
 class Cube;
 class DataDrivenGeometry;
+class GeometryPtr;
 class Matrix;
 class MinecraftGameplayGraphicsResources;
 class Model;
@@ -26,8 +28,6 @@ class ModelPartLocator;
 class RenderParams;
 class ScreenContext;
 class Tessellator;
-struct ActorResourceDefinition;
-struct GeometryPtr;
 namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
 // clang-format on

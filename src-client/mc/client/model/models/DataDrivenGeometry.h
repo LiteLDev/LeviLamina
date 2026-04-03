@@ -17,7 +17,7 @@ class ModelPart;
 class ModelPartLocator;
 class RenderController;
 class RenderParams;
-struct SkinnedMeshGroup;
+class SkinnedMeshGroup;
 // clang-format on
 
 class DataDrivenGeometry {

@@ -51,3 +51,11 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(
+    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P0,
+    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P1
+);
+// NOLINTEND

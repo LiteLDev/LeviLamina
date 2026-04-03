@@ -11,9 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class ActiveDirectoryPopup;
+class TransactionContext;
 struct EduPurchaseDetails;
 struct Purchase;
-struct TransactionContext;
 // clang-format on
 
 class MockActiveDirectoryAuthentication : public ::ActiveDirectoryAuthenticationInterface {

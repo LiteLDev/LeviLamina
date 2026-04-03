@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsWorldEditor {};
+class RealmsWorldEditor {};
 
 } // namespace Realms

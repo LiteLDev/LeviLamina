@@ -8,24 +8,24 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ContentCatalogService;
-struct IEntitlementManager;
-struct SearchQuery;
-struct StoreCatalogItem;
-struct StoreCatalogRepository;
-struct StoreSearchQuery;
+class ContentCatalogService;
+class IEntitlementManager;
+class SearchQuery;
+class StoreCatalogItem;
+class StoreCatalogRepository;
+class StoreSearchQuery;
 // clang-format on
 
 class CatalogCollection {
 public:
     // CatalogCollection inner types declare
     // clang-format off
-    struct CatalogCollectionListener;
+    class CatalogCollectionListener;
     struct QueryContentInfo;
     // clang-format on
 
     // CatalogCollection inner types define
-    struct CatalogCollectionListener {};
+    class CatalogCollectionListener {};
 
     struct QueryContentInfo {};
 

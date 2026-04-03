@@ -10,9 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
 class SkinPackModel;
-struct IEntitlementManager;
-struct SkinRepositoryClientInterface;
+class SkinRepositoryClientInterface;
 // clang-format on
 
 class SelectedPackCollector : public ::SkinPackCollector {

@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct CuboidPrimitive {};
+class CuboidPrimitive {};
 
 } // namespace Scripting::RenderHelper

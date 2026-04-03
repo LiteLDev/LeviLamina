@@ -12,7 +12,7 @@
 class MainMenuScreenModel;
 class SkinPackCollectionModel;
 class SkinPackModel;
-struct StoreCatalogItem;
+class StoreCatalogItem;
 namespace Json { class Value; }
 // clang-format on
 

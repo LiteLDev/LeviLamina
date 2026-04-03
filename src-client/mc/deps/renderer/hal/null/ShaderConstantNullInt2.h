@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ShaderConstantNullInt2 {};
+class ShaderConstantNullInt2 {};
 
 } // namespace mce

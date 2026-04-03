@@ -14,12 +14,12 @@
 // clang-format off
 class ActivationUri;
 class AppPlatform_GameCore;
+class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
 class IMinecraftGame;
 class PushNotificationMessage;
 class RegistryKey;
-struct GameControllerHandler_GameCore;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
 // clang-format on

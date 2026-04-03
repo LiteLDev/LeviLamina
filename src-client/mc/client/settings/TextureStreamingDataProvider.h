@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct TextureStreamingDataProvider {};
+class TextureStreamingDataProvider {};
 
 } // namespace Settings

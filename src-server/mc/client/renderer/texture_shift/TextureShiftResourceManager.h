@@ -4,6 +4,6 @@
 
 namespace TextureShift {
 
-struct TextureShiftResourceManager {};
+class TextureShiftResourceManager {};
 
 } // namespace TextureShift

@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Dimension;
-struct BiomeTintCache;
 namespace ClientBlockPipeline { class Description; }
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class MaterialRepository; }

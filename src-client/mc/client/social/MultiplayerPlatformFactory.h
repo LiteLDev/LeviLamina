@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct MultiplayerPlatformFactory {};
+class MultiplayerPlatformFactory {};
 
 } // namespace Social

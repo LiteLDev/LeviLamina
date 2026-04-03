@@ -9,11 +9,11 @@
 // clang-format off
 class ClientParticleInitializationComponent;
 class ClientParticleTerminationComponent;
+class ClientParticleTrackingComponent;
 class EntityContext;
 class EntityRegistry;
 class ParticleSystemEngine;
 struct ActorComponent;
-struct ClientParticleTrackingComponent;
 // clang-format on
 
 class ParticleTrackingSystem : public ::ITickingSystem {

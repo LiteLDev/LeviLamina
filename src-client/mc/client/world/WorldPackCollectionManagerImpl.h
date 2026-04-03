@@ -18,11 +18,11 @@
 // clang-format off
 class ContentItemCollection;
 class IContentTierManager;
+class IEntitlementManager;
+class IMarketplacePackDownloader;
 class MutableContentItemCollection;
 struct ContentItem;
 struct ContentSource;
-struct IEntitlementManager;
-struct IMarketplacePackDownloader;
 struct PackContentItemListPosition;
 struct PackIdVersion;
 struct PackSettingsInfo;

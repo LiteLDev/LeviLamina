@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class CachedHostPackIdProvider;
 class IContentSourceRepository;
-struct CachedHostPackIdProvider;
 struct PackManagerContentSourceArgs;
 struct PackManagerContentSourceData;
 struct PackModel;

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RenderChunkShared {
+class RenderChunkShared {
 public:
     // RenderChunkShared inner types declare
     // clang-format off

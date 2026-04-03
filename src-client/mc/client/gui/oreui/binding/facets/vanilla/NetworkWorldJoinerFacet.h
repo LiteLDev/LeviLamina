@@ -14,8 +14,8 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class IEntitlementManager;
 class PlatformMultiplayerRestrictions;
-struct IEntitlementManager;
 namespace OreUI { struct NetworkWorldJoinerSharedData; }
 namespace World { class NetworkWorldJoiner; }
 namespace ui { class ProgressScreenNavigation; }

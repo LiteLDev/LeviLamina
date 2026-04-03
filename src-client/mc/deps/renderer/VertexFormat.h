@@ -4,7 +4,7 @@
 
 namespace mce {
 
-struct VertexFormat {
+class VertexFormat {
 public:
     // VertexFormat inner types declare
     // clang-format off

@@ -4,6 +4,6 @@
 
 namespace dragon::platform {
 
-struct ResourcesManager {};
+class ResourcesManager {};
 
 } // namespace dragon::platform

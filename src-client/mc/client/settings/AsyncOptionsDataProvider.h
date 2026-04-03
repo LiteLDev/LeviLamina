@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct AsyncOptionsDataProvider {};
+class AsyncOptionsDataProvider {};
 
 } // namespace Settings

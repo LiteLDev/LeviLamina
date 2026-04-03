@@ -27,6 +27,7 @@ class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class IClientInstance;
+class ItemRenderCall;
 class Level;
 class Mob;
 class Player;
@@ -35,7 +36,6 @@ class Tessellator;
 class TextureTessellator;
 class Vec3;
 struct Brightness;
-struct ItemRenderCall;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class Camera; }
 namespace mce { class TextureGroup; }

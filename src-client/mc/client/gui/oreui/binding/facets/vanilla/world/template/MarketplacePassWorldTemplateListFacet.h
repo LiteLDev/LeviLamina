@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct MarketplaceServicesManager;
+class MarketplaceServicesManager;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct MarketplaceWorldTemplateDataBindings; }
 namespace World { class MarketplacePassWorldTemplateManager; }

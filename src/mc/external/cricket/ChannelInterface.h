@@ -11,13 +11,13 @@
 namespace cricket { class MediaContentDescription; }
 namespace cricket { class MediaReceiveChannelInterface; }
 namespace cricket { class MediaSendChannelInterface; }
+namespace cricket { class VideoChannel; }
 namespace cricket { class VideoMediaReceiveChannelInterface; }
 namespace cricket { class VideoMediaSendChannelInterface; }
+namespace cricket { class VoiceChannel; }
 namespace cricket { class VoiceMediaReceiveChannelInterface; }
 namespace cricket { class VoiceMediaSendChannelInterface; }
 namespace cricket { struct StreamParams; }
-namespace cricket { struct VideoChannel; }
-namespace cricket { struct VoiceChannel; }
 namespace webrtc { class RtpTransportInternal; }
 // clang-format on
 

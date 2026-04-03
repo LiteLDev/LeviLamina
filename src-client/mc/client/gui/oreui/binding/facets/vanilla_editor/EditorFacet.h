@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { struct EditorUiMessageListener; }
+namespace OreUI { class EditorUiMessageListener; }
 // clang-format on
 
 namespace OreUI {

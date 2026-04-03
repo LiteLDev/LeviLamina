@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XblApiWrapper {};
+class XblApiWrapper {};
 
 } // namespace Social

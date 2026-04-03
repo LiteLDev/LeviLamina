@@ -8,10 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class DlcBatchModel;
+class DlcId;
+class IContentAcquisition;
 class IMinecraftGame;
-struct DlcId;
-struct IContentAcquisition;
-struct IStoreCatalogRepository;
+class IStoreCatalogRepository;
 // clang-format on
 
 class DlcBatchCacheModel {

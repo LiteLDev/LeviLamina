@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct SectionPieceCollector {};
+class SectionPieceCollector {};
 
 } // namespace persona

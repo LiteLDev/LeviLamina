@@ -4,7 +4,7 @@
 
 namespace dragon {
 
-struct ResolvedImageResource {
+class ResolvedImageResource {
 public:
     // ResolvedImageResource inner types define
     enum class State : uchar {};

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SkinRepository {
+class SkinRepository {
 public:
     // SkinRepository inner types declare
     // clang-format off

@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsPurchaseReconciler {};
+class RealmsPurchaseReconciler {};
 
 } // namespace Realms

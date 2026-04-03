@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Block;
 class BlockPos;
-struct BiomeTintCache;
 struct BlockBakedMaterialDataComponent;
 namespace ClientBlockPipeline { struct IResolvedTint; }
 namespace mce { class Color; }

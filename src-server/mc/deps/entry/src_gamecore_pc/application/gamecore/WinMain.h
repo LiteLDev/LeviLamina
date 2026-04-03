@@ -4,6 +4,6 @@
 
 namespace MainGameCore {
 
-struct WinMain {};
+class WinMain {};
 
 } // namespace MainGameCore

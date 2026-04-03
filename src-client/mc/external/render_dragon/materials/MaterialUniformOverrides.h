@@ -4,7 +4,7 @@
 
 namespace dragon::materials {
 
-struct MaterialUniformOverrides {
+class MaterialUniformOverrides {
 public:
     // MaterialUniformOverrides inner types declare
     // clang-format off

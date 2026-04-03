@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClientEntityWaypoint {};
+class ClientEntityWaypoint {};

@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer {
 
-struct BgfxPrimitiveIndexBuffer {};
+class BgfxPrimitiveIndexBuffer {};
 
 } // namespace dragon::framerenderer

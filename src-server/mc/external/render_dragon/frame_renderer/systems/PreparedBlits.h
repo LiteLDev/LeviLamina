@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer {
 
-struct PreparedBlits {};
+class PreparedBlits {};
 
 } // namespace dragon::framerenderer

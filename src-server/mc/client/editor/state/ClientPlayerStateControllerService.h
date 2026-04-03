@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct ClientPlayerStateControllerService {
+class ClientPlayerStateControllerService {
 public:
     // ClientPlayerStateControllerService inner types define
     enum class MovementDirection : int {};

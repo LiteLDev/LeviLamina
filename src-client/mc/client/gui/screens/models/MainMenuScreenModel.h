@@ -21,61 +21,61 @@
 
 // auto generated forward declare list
 // clang-format off
+class AnnouncementSurface;
 class CatalogCollection;
 class CloudSaveLevelInfo;
+class DlcChecker;
+class DlcId;
 class DlcUIWrapper;
 class EDUServersScreenController;
 class IContentAccessibilityProvider;
 class IMinecraftEventing;
+class IStoreCatalogItem;
 class LegacyWorldConverter;
+class LessonItem;
+class LibraryCollection;
+class LibraryCollectionConfig;
+class LibraryItem;
 class MainMenuScreenController;
 class MinecoinCatalogModel;
 class PackManifest;
+class PlatformOfferTransactionContext;
 class PlayScreenModel;
 class ProgressHandler;
 class RealmsCreateParams;
+class RealmsTransactionContext;
 class ResourceLocation;
 class ResourcePackFileUploadManager;
+class SearchQuery;
 class SkinPackCollectionModel;
 class SkinPackModel;
+class SkinPickerUpsellTreatmentQuery;
+class StoreCatalogItem;
+class StoreCatalogRepository;
+class TransactionContext;
+class WorldFileDownloadManager;
+class WorldFileUploadManager;
 class WorldSeedCatalogModel;
 class WorldTemplateManager;
-struct AnnouncementSurface;
-struct DlcChecker;
-struct DlcId;
 struct EDULibraryCategory;
-struct IStoreCatalogItem;
-struct LessonItem;
 struct LevelSummary;
-struct LibraryCollection;
-struct LibraryCollectionConfig;
-struct LibraryItem;
 struct LinksToStyle;
 struct PackContentItem;
-struct PlatformOfferTransactionContext;
 struct Purchase;
-struct RealmsTransactionContext;
-struct SearchQuery;
-struct SkinPickerUpsellTreatmentQuery;
-struct StoreCatalogItem;
-struct StoreCatalogRepository;
 struct StoreDataDrivenScreenParams;
-struct TransactionContext;
-struct WorldFileDownloadManager;
-struct WorldFileUploadManager;
 struct WorldTemplateInfo;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Clubs { struct FeedItem; }
 namespace Core { class Path; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
+namespace Realms { class RealmsWorldContext; }
 namespace Realms { struct RealmId; }
-namespace Realms { struct RealmsWorldContext; }
 namespace Realms { struct World; }
-namespace Realms::Stories { struct FacetStateManager; }
-namespace Realms::Stories { struct RealmEvent; }
+namespace Realms::Stories { class FacetStateManager; }
+namespace Realms::Stories { class RealmEvent; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
+namespace Social { class User; }
 namespace Social { struct EduDedicatedServerDetails; }
-namespace Social { struct User; }
 namespace mce { class UUID; }
 // clang-format on
 

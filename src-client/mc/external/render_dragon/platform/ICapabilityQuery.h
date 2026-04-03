@@ -4,6 +4,6 @@
 
 namespace dragon::platform {
 
-struct ICapabilityQuery {};
+class ICapabilityQuery {};
 
 } // namespace dragon::platform

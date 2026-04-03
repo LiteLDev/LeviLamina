@@ -2,12 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct BlockQueueEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnke42923;
-    ::ll::UntypedStorage<8, 8>  mUnk5390c0;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    pos;
+    ::ll::TypedStorage<8, 8, ::Block const&> blockInfo;
     // NOLINTEND
 
 public:

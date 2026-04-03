@@ -24,11 +24,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorResourceDefinitionGroup;
 class Block;
 class BlockActorRenderDispatcher;
 class BlockPos;
 class BlockSource;
 class BlockTessellator;
+class ClientFrameUpdateContext;
 class DataDrivenRendererV2RequiredData;
 class Dimension;
 class GameRenderer;
@@ -43,23 +45,21 @@ class MultiPlayerLevel;
 class Options;
 class ParticleEngine;
 class ParticleSystemEngine;
+class PlayerRenderView;
 class RenderChunkCoordinator;
+class RuntimeLocalLightingConfig;
 class ScreenContext;
+class SoundMapping;
 class SoundPlayerInterface;
 class TaskGroup;
 class Tessellator;
 class TextureAtlas;
 class TextureShiftManager;
 struct ActorBlockSyncMessage;
-struct ActorResourceDefinitionGroup;
-struct ClientFrameUpdateContext;
 struct FrameRenderObject;
 struct LevelRenderPreRenderUpdateParameters;
-struct PlayerRenderView;
-struct RuntimeLocalLightingConfig;
 struct ScreenshotOptions;
-struct SoundMapping;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
 namespace PointLighting { class PointLightCoordinator; }
 namespace PointLighting { class PointLightShadowProbeManager; }
 namespace cg { class ImageBuffer; }

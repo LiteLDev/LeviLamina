@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder::bgfxbridge {
 
-struct DefineFlags {};
+class DefineFlags {};
 
 } // namespace mce::framebuilder::bgfxbridge

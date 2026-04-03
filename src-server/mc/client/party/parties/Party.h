@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct Party {};
+class Party {};
 
 } // namespace Parties

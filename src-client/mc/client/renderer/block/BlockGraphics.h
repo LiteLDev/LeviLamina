@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -22,7 +23,6 @@ class ResourcePackManager;
 class SemVersion;
 class TextureAtlasItem;
 class Vec3;
-struct AtlasItemManager;
 struct TextureItem;
 struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }

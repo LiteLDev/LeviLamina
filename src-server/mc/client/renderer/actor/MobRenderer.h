@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MobRenderer {
+class MobRenderer {
 public:
     // MobRenderer inner types declare
     // clang-format off

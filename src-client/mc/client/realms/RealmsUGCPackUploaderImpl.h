@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsUGCPackUploaderImpl {};
+class RealmsUGCPackUploaderImpl {};
 
 } // namespace Realms

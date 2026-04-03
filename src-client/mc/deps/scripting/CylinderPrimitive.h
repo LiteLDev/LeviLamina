@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct CylinderPrimitive {};
+class CylinderPrimitive {};
 
 } // namespace Scripting::RenderHelper

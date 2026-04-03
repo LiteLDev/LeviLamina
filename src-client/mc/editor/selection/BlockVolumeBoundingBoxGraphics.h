@@ -4,7 +4,7 @@
 
 namespace Editor {
 
-struct BlockVolumeBoundingBoxGraphics {
+class BlockVolumeBoundingBoxGraphics {
 public:
     // BlockVolumeBoundingBoxGraphics inner types declare
     // clang-format off

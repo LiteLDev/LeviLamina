@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class SoundAction;
 class SoundItem;
-struct SoundAction;
 struct SoundParameter;
 // clang-format on
 

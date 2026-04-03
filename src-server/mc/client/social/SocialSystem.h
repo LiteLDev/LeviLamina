@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct SocialSystem {};
+class SocialSystem {};
 
 } // namespace Social

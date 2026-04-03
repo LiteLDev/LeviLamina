@@ -13,7 +13,7 @@ struct ExperienceConnectionData;
 struct GameConnectionInfoEx;
 struct PlayerJoinWorldContext;
 namespace Realms { struct RealmId; }
-namespace Social { struct MultiplayerGameInfo; }
+namespace Social { class MultiplayerGameInfo; }
 // clang-format on
 
 class UniversalGameJoiner {

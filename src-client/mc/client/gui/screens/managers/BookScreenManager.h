@@ -8,12 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class JpegCommentWriter;
 class PacketSender;
 class Player;
 class ScreenContext;
-struct JpegCommentWriter;
+class SyncedPhotoView;
 struct PageContent;
-struct SyncedPhotoView;
 // clang-format on
 
 class BookScreenManager {

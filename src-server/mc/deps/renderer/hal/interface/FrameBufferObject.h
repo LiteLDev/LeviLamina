@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct FrameBufferObject {};
+class FrameBufferObject {};
 
 } // namespace mce

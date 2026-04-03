@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct Skin {
+class Skin {
 public:
     // Skin inner types define
     enum class SkinType : int {};

@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct LevelBannerDataProvider {};
+class LevelBannerDataProvider {};
 
 } // namespace Settings

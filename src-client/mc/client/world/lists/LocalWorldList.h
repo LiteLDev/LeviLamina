@@ -10,12 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class GenericEntitlementChangeListener;
+class IEntitlementManager;
 class ILevelListCache;
 class Options;
-struct GenericEntitlementChangeListener;
-struct IEntitlementManager;
+class TrialManager;
 struct LevelSummary;
-struct TrialManager;
 // clang-format on
 
 namespace World {

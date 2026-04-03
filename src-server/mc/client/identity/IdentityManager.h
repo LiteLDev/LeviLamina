@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct IdentityManager {};
+class IdentityManager {};
 
 } // namespace Social

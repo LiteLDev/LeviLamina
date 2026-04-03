@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { struct ConstantBufferContainer; }
+namespace mce { class ConstantBufferContainer; }
 // clang-format on
 
 namespace mce {

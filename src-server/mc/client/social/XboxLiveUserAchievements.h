@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XboxLiveUserAchievements {};
+class XboxLiveUserAchievements {};
 
 } // namespace Social

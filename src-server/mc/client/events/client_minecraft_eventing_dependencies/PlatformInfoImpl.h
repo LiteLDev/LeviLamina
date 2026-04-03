@@ -4,6 +4,6 @@
 
 namespace ClientMinecraftEventingDependencies {
 
-struct PlatformInfoImpl {};
+class PlatformInfoImpl {};
 
 } // namespace ClientMinecraftEventingDependencies

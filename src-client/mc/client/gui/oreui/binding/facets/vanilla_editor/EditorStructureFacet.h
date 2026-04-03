@@ -16,7 +16,7 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDataRemoved; }
 namespace Editor { struct EditorStructureDataUpdated; }
 namespace Editor { struct EditorStructureEventListUpdated; }
-namespace Editor::Services { struct ClientStructureServiceProvider; }
+namespace Editor::Services { class ClientStructureServiceProvider; }
 // clang-format on
 
 namespace OreUI {

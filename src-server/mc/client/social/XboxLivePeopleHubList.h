@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XboxLivePeopleHubList {};
+class XboxLivePeopleHubList {};
 
 } // namespace Social

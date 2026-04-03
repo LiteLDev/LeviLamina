@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LevelBuilder {
+class LevelBuilder {
 public:
     // LevelBuilder inner types declare
     // clang-format off

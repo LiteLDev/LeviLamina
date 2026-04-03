@@ -13,7 +13,7 @@ class MinecraftUIRenderContext;
 class ScreenContext;
 class UIControl;
 class UIScene;
-namespace dragon { struct ResolvedImageResource; }
+namespace dragon { class ResolvedImageResource; }
 // clang-format on
 
 class RenderDragonOffscreenStructureVolumeRenderer {

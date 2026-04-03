@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameCoreGamepadSupport {
+class GameCoreGamepadSupport {
 public:
     // GameCoreGamepadSupport inner types declare
     // clang-format off

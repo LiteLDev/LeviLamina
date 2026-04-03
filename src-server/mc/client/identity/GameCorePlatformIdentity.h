@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct GameCorePlatformIdentity {};
+class GameCorePlatformIdentity {};
 
 } // namespace Social

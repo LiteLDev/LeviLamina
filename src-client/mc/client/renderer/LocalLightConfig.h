@@ -11,7 +11,7 @@
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -169,3 +169,11 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P0,
+    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P1
+);
+// NOLINTEND

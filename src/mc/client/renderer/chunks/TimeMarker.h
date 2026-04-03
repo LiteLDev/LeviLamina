@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 class TimeMarker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk572d5d;
-    ::ll::UntypedStorage<4, 4>  mUnkd99be1;
-    ::ll::UntypedStorage<4, 8>  mUnkf0764a;
+    ::ll::TypedStorage<8, 48, ::HashedString>      mName;
+    ::ll::TypedStorage<4, 4, int>                  mTime;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mPeriod;
     // NOLINTEND
 
 public:
@@ -19,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TimeMarker(::TimeMarker const&);
+    MCAPI TimeMarker(::TimeMarker const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TimeMarker const&);
+    MCAPI void* $ctor(::TimeMarker const&);
     // NOLINTEND
 };

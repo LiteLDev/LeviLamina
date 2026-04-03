@@ -4,7 +4,7 @@
 
 namespace Scripting::RenderHelper {
 
-struct LineListPrimitive {
+class LineListPrimitive {
 public:
     // LineListPrimitive inner types declare
     // clang-format off

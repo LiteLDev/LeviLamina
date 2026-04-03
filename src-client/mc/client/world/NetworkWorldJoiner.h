@@ -14,20 +14,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class GatheringManager;
 class IAppPlatform;
 class IClientInstance;
 class IMinecraftEventing;
 class INetworkGameConnector;
+class IThirdPartyServerRepository;
 class ProgressHandler;
+class RealmsAPI;
 class ServerLocator;
-struct GatheringManager;
 struct IGameServerShutdown;
-struct IThirdPartyServerRepository;
-struct RealmsAPI;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Network { struct ServerID; }
 namespace OreUI { class Router; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
 namespace Social { class IUserManager; }
 namespace World { class ExternalServerWorldList; }

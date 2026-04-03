@@ -11,7 +11,7 @@
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on

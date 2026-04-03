@@ -4,6 +4,6 @@
 
 namespace dragon::materials {
 
-struct Pass {};
+class Pass {};
 
 } // namespace dragon::materials

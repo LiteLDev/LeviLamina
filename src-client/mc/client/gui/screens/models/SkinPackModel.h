@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlement;
 class PackManifest;
-struct IEntitlement;
-struct SkinRepositoryClientInterface;
+class SkinRepositoryClientInterface;
 // clang-format on
 
 class SkinPackModel {

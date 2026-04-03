@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct BrushShapeOffsets {};
+class BrushShapeOffsets {};
 
 } // namespace Editor::ClientBrush

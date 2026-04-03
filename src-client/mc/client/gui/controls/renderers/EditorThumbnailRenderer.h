@@ -18,7 +18,7 @@ class StructureVolumeRenderer;
 class UIScene;
 class Vec2;
 namespace cg { class ImageBuffer; }
-namespace dragon { struct ResolvedImageResource; }
+namespace dragon { class ResolvedImageResource; }
 // clang-format on
 
 class EditorThumbnailRenderer {

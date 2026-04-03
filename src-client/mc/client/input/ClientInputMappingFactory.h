@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Config;
 class IOptions;
 class KeyboardRemappingLayout;
-struct Config;
 struct DeviceButtonMapping;
 struct InputMapping;
 struct TouchInputMapping;

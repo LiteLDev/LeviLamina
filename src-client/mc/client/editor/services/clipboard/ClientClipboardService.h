@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientClipboardService {};
+class ClientClipboardService {};
 
 } // namespace Editor::Services

@@ -4,6 +4,6 @@
 
 namespace dragon::materials {
 
-struct MaterialUniformHandles {};
+class MaterialUniformHandles {};
 
 } // namespace dragon::materials

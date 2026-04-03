@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ProfanityContext;
+class ProfanityContext;
 // clang-format on
 
 namespace OreUI {

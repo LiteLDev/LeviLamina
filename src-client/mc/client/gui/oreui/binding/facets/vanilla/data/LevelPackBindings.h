@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
 class LevelDataWrapper;
-struct IEntitlementManager;
 namespace OreUI { class IResourceAllowList; }
 namespace World { struct PackDetails; }
 namespace World { struct WorldPacksData; }

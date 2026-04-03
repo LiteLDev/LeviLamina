@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Settings { struct IRegistry; }
+namespace Settings { class IRegistry; }
 // clang-format on
 
 namespace OreUI {

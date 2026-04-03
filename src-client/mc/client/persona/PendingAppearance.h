@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PendingAppearance {
+class PendingAppearance {
 public:
     // PendingAppearance inner types define
     enum class Status : int {};

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct StartupStatistics {
+class StartupStatistics {
 public:
     // StartupStatistics inner types declare
     // clang-format off

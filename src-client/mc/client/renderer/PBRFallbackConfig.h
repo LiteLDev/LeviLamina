@@ -175,3 +175,16 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P1
+);
+// NOLINTEND

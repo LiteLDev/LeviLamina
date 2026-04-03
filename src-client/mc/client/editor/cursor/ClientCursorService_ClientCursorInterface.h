@@ -4,6 +4,6 @@
 
 namespace Editor::Cursor {
 
-struct ClientCursorService_ClientCursorInterface {};
+class ClientCursorService_ClientCursorInterface {};
 
 } // namespace Editor::Cursor

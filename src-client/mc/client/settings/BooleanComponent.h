@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct BooleanComponent {};
+class BooleanComponent {};
 
 } // namespace Settings

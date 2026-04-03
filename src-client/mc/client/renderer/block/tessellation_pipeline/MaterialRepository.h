@@ -4,9 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class Experiments;
 class TextureShiftManager;
-struct AtlasItemManager;
 struct BlockMaterialInstancesComponent;
 struct TextureUVCoordinateSet;
 namespace ClientBlockPipeline { class Material; }

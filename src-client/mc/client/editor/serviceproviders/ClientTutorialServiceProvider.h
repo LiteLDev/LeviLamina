@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientTutorialServiceProvider {};
+class ClientTutorialServiceProvider {};
 
 } // namespace Editor::Services

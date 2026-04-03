@@ -18,11 +18,11 @@
 // clang-format off
 class AbstractSceneProxy;
 class CachedScenes;
+class MinecraftUIFrameUpdateContext;
 class RectangleArea;
 class ScreenContext;
 class TaskGroup;
 struct FrameRenderObject;
-struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;

@@ -16,13 +16,13 @@
 // auto generated forward declare list
 // clang-format off
 class CatalogCollection;
+class IEntitlementManager;
 class MainMenuScreenModel;
-struct IEntitlementManager;
 namespace Json { class Value; }
 namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 namespace SDL { struct ScreenLayoutQuery; }
 namespace SDL { struct SubscriptionInfo; }
-namespace sidebar { struct NavigationModel; }
+namespace sidebar { class NavigationModel; }
 // clang-format on
 
 class MarketplacePassPDPScreenController : public ::PurchaseEnabledScreenController {

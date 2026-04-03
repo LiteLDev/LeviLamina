@@ -13,7 +13,7 @@
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct AddFriendUserItem; }
 namespace Social { class IUserManager; }
-namespace Social { struct RecommendedFriendsList; }
+namespace Social { class RecommendedFriendsList; }
 // clang-format on
 
 namespace OreUI {

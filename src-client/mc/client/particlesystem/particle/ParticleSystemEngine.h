@@ -20,7 +20,7 @@ class Matrix;
 class MolangVariableMap;
 class ParticleEffectGroup;
 class ParticleEffectInfo;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 

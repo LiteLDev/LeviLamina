@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientVolumeRendererService {};
+class ClientVolumeRendererService {};
 
 } // namespace Editor::Services

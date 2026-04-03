@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CloudSaveSystemWrapper {
+class CloudSaveSystemWrapper {
 public:
     // CloudSaveSystemWrapper inner types declare
     // clang-format off

@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ITTSEventManager;
+class ITTSEventManager;
 namespace OreUI { class ClientDependencies; }
 // clang-format on
 

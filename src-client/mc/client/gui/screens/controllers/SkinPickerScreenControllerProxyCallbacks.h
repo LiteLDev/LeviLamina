@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class SkinHandle;
 class UIPropertyBag;
-struct SkinHandle;
 // clang-format on
 
 struct SkinPickerScreenControllerProxyCallbacks {

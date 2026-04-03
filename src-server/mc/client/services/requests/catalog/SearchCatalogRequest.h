@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SearchCatalogRequest {
+class SearchCatalogRequest {
 public:
     // SearchCatalogRequest inner types declare
     // clang-format off

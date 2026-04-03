@@ -17,7 +17,7 @@ class ResourceLoadManager;
 class ResourcePackManager;
 struct PackIdVersion;
 namespace mce { class RenderMaterialInfo; }
-namespace mce { struct ShaderGroup; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace mce {

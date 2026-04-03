@@ -29,9 +29,9 @@ class ResourceLocationPair;
 struct BedrockTextureData;
 namespace cg { class TextureSetDefinition; }
 namespace mce { class ImageResourceLoader; }
+namespace mce { class LRUCache; }
 namespace mce { class TextureContainer; }
 namespace mce { class TexturePtr; }
-namespace mce { struct LRUCache; }
 namespace mce { struct TextureResourceService; }
 // clang-format on
 

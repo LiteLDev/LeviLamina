@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct MultiplayerBroadcastDataProvider {};
+class MultiplayerBroadcastDataProvider {};
 
 } // namespace Settings

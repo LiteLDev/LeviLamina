@@ -6,9 +6,9 @@ class ContentManagerFactoryImpl {
 public:
     // ContentManagerFactoryImpl inner types declare
     // clang-format off
-    struct PackManagerContentQueriesImpl;
+    class PackManagerContentQueriesImpl;
     // clang-format on
 
     // ContentManagerFactoryImpl inner types define
-    struct PackManagerContentQueriesImpl {};
+    class PackManagerContentQueriesImpl {};
 };

@@ -4,7 +4,7 @@
 
 namespace dragon::res {
 
-struct TextureRead {
+class TextureRead {
 public:
     // TextureRead inner types define
     enum class Error : int {};

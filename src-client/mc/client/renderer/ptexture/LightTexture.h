@@ -9,9 +9,9 @@
 // clang-format off
 class BaseLightTextureImageBuilder;
 class Dimension;
+class FrameUpdateContext;
 class IClientInstance;
 class MinecraftGameplayGraphicsResources;
-struct FrameUpdateContext;
 namespace mce { class Color; }
 // clang-format on
 

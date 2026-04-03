@@ -6,11 +6,11 @@ class StoreDataDrivenScreenController {
 public:
     // StoreDataDrivenScreenController inner types declare
     // clang-format off
-    struct RefreshController;
+    class RefreshController;
     // clang-format on
 
     // StoreDataDrivenScreenController inner types define
-    struct RefreshController {
+    class RefreshController {
     public:
         // RefreshController inner types define
         enum class RefreshCondition : int {};

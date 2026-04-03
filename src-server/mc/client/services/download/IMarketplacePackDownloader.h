@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IMarketplacePackDownloader {
+class IMarketplacePackDownloader {
 public:
     // IMarketplacePackDownloader inner types declare
     // clang-format off

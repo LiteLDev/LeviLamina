@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct IChatChannel {};
+class IChatChannel {};
 
 } // namespace Social

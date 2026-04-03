@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder {
 
-struct CausticsManager {};
+class CausticsManager {};
 
 } // namespace mce::framebuilder

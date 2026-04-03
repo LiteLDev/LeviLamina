@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct NetworkChunkInserter {
+class NetworkChunkInserter {
 public:
     // NetworkChunkInserter inner types declare
     // clang-format off

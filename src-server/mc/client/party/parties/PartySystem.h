@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct PartySystem {};
+class PartySystem {};
 
 } // namespace Parties

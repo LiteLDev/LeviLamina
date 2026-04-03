@@ -22,11 +22,11 @@ class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class ItemActor;
+class ItemGraphics;
 class ItemStack;
 class Matrix;
 class SkullBlockActor;
 class Vec3;
-struct ItemGraphics;
 struct TextureUVCoordinateSet;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class TextureGroup; }

@@ -11,8 +11,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Realms { class RealmsRolesAndPermissions; }
 namespace Realms { struct PlayerRoleWithActionsList; }
-namespace Realms { struct RealmsRolesAndPermissions; }
 // clang-format on
 
 namespace OreUI {

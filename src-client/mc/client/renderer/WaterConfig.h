@@ -20,7 +20,7 @@ class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class TextureGroup; }

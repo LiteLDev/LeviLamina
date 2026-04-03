@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 // clang-format on
 
 class SocialButtonScreenController : public ::MinecraftScreenController {

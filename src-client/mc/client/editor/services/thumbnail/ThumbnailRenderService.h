@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ThumbnailRenderService {};
+class ThumbnailRenderService {};
 
 } // namespace Editor::Services

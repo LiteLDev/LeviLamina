@@ -18,7 +18,7 @@ class BlockSource;
 class ChestBlockActor;
 struct BlockActorRenderData;
 struct BrightnessPair;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
 namespace mce { class TextureGroup; }
 // clang-format on
 

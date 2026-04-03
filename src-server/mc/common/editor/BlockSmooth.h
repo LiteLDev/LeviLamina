@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct BlockSmooth {};
+class BlockSmooth {};
 
 } // namespace Editor::ClientBrush

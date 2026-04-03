@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EcoModeSystem {
+class EcoModeSystem {
 public:
     // EcoModeSystem inner types declare
     // clang-format off

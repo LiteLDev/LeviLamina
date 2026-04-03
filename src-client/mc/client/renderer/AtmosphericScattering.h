@@ -15,7 +15,7 @@ class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace dragon::framerenderer::modules { struct AtmosphericScatteringParameters; }
@@ -344,3 +344,18 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P1
+);
+// NOLINTEND

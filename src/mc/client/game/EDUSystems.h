@@ -19,7 +19,7 @@ namespace Social { class IEduMultiplayerHeadless; }
 namespace edu::auth { struct CredsLost; }
 class IClientInstance;
 class IMinecraftGame;
-struct ServicePackSystem;
+class ServicePackSystem;
 // clang-format on
 
 class EDUSystems : public ::IEDUSystems, public ::edu::auth::CredentialsObserver {

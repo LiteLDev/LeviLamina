@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct Attribute {};
+class Attribute {};
 
 } // namespace mce

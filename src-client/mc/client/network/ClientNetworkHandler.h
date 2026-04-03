@@ -37,6 +37,7 @@ class BiomeDefinitionListPacket;
 class BlockPos;
 class BlockSource;
 class BossEventPacket;
+class CachedHostPackIdProvider;
 class CameraAimAssistActorPriorityPacket;
 class CameraAimAssistPacket;
 class CameraAimAssistPresetsPacket;
@@ -80,6 +81,7 @@ class GraphicsOverrideParameterPacket;
 class GuiDataPickItemPacket;
 class IClientInstance;
 class IContentManager;
+class IGameConnectionListener;
 class IGameServerStartup;
 class ILevel;
 class IPacketSecurityController;
@@ -101,6 +103,7 @@ class NetworkIdentifier;
 class NpcDialoguePacket;
 class OnScreenTextureAnimationPacket;
 class OpenSignPacket;
+class PackDownloadManager;
 class Packet;
 class PacketSender;
 class PhotoTransferPacket;
@@ -161,14 +164,11 @@ class UpdatePlayerGameTypePacket;
 class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
+class VideoCaptureSessionManager;
 class VoxelShapesPacket;
-struct CachedHostPackIdProvider;
 struct ClientNetworkHandlerArguments;
-struct IGameConnectionListener;
 struct NetworkIdentifierWithSubId;
-struct PackDownloadManager;
-struct VideoCaptureSessionManager;
-namespace ClientBlobCache { struct Cache; }
+namespace ClientBlobCache { class Cache; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on

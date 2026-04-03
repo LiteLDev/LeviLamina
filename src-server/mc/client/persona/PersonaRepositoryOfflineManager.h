@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaRepositoryOfflineManager {
+class PersonaRepositoryOfflineManager {
 public:
     // PersonaRepositoryOfflineManager inner types declare
     // clang-format off

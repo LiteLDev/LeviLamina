@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct GizmoGraphics {};
+class GizmoGraphics {};
 
 } // namespace Editor

@@ -4,6 +4,6 @@
 
 namespace Settings::InputControlsSettingsHelper {
 
-struct InputCaptureDataProvider {};
+class InputCaptureDataProvider {};
 
 } // namespace Settings::InputControlsSettingsHelper

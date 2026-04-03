@@ -15,7 +15,7 @@
 class ChunkSource;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
-struct ClientChunkPerformanceData;
+class ClientChunkPerformanceData;
 // clang-format on
 
 struct ChunkPerformanceData : public ::Bedrock::EnableNonOwnerReferences {

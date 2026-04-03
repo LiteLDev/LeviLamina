@@ -4,6 +4,6 @@
 
 namespace dragon::res {
 
-struct WrapApiTextureTransaction {};
+class WrapApiTextureTransaction {};
 
 } // namespace dragon::res

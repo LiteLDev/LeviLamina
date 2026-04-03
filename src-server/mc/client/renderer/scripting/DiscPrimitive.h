@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct DiscPrimitive {};
+class DiscPrimitive {};
 
 } // namespace Scripting::RenderHelper

@@ -4,6 +4,6 @@
 
 namespace ScriptModuleMinecraftClient {
 
-struct ScriptClientMessageListener {};
+class ScriptClientMessageListener {};
 
 } // namespace ScriptModuleMinecraftClient

@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsBackups {};
+class RealmsBackups {};
 
 } // namespace Realms

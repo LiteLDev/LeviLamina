@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct SimulationDistanceDataProvider {};
+class SimulationDistanceDataProvider {};
 
 } // namespace Settings

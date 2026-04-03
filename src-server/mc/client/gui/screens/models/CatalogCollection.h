@@ -6,12 +6,12 @@ class CatalogCollection {
 public:
     // CatalogCollection inner types declare
     // clang-format off
-    struct CatalogCollectionListener;
+    class CatalogCollectionListener;
     struct QueryContentInfo;
     // clang-format on
 
     // CatalogCollection inner types define
-    struct CatalogCollectionListener {};
+    class CatalogCollectionListener {};
 
     struct QueryContentInfo {};
 };

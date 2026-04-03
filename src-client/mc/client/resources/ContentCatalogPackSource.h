@@ -11,11 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentCatalogPackSourceService;
+class IEntitlementManager;
 class IPackManifestFactory;
 class TaskGroup;
 struct ContentCatalogPackSourceOptions;
-struct IContentCatalogPackSourceService;
-struct IEntitlementManager;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
 namespace ContentManagerUtils { class ISourcesAsyncReloader; }

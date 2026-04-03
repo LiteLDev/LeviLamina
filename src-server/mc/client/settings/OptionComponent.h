@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct OptionComponent {};
+class OptionComponent {};
 
 } // namespace Settings

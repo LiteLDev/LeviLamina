@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IBooleanLevelDataPropertyHandler {};
+class IBooleanLevelDataPropertyHandler {};
 
 } // namespace Settings

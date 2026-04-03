@@ -14,8 +14,12 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ArmorTrimIconGenerator;
+class ArmorTrimUnloader;
 class BlockSource;
+class CameraRegistry;
 class ChunkSource;
+class ClientSubChunkLighter;
 class DisplayActorManager;
 class EntityContext;
 class EntitySystems;
@@ -26,22 +30,18 @@ class LevelSettings;
 class MapDataManager;
 class NetworkIdentifier;
 class SerializedSkinRef;
+class SubChunkManager;
 class SubChunkPacket;
 class SubChunkRequestManager;
 class TickTimeManager;
 class TickTimeManagerClient;
+class TrustedSkinHelper;
+class VolumeEntityManagerClient;
 class WeakEntityRef;
 struct ActorUniqueID;
-struct ArmorTrimIconGenerator;
-struct ArmorTrimUnloader;
 struct BiomeJsonDocumentGlueResolvedBiomeData;
-struct CameraRegistry;
-struct ClientSubChunkLighter;
 struct MultiPlayerLevelArguments;
-struct SubChunkManager;
 struct Tick;
-struct TrustedSkinHelper;
-struct VolumeEntityManagerClient;
 namespace GameModeExt { struct MessengerFactory; }
 // clang-format on
 

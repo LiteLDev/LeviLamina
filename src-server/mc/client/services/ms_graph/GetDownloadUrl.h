@@ -4,6 +4,6 @@
 
 namespace MSGraph::Requests {
 
-struct GetDownloadUrl {};
+class GetDownloadUrl {};
 
 } // namespace MSGraph::Requests

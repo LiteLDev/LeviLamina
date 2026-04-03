@@ -13,7 +13,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 // clang-format on
 
 namespace OreUI {

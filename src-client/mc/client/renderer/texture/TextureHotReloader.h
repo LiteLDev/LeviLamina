@@ -12,9 +12,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IResourceLocationExpander;
 class ResourceLocation;
 class TextureAtlas;
-struct IResourceLocationExpander;
 struct ImageResourceManager;
 struct StbImageLoadPolicy;
 struct StdIoStreamPolicy;

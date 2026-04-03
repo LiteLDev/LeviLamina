@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct PartyChatGuiDataProxy {};
+class PartyChatGuiDataProxy {};
 
 } // namespace Social

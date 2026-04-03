@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct LinePrimitive {};
+class LinePrimitive {};
 
 } // namespace Scripting::RenderHelper

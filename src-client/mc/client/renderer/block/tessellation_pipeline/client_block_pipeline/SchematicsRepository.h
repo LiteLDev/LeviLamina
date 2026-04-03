@@ -14,10 +14,10 @@ class BlockCullingGroup;
 class BlockTransformationComponent;
 class Experiments;
 class GeometryGroup;
+class GeometryPtr;
 class Matrix;
 struct BlockCullingData;
 struct BlockGeometryComponent;
-struct GeometryPtr;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { struct BlockSchematic; }
 // clang-format on

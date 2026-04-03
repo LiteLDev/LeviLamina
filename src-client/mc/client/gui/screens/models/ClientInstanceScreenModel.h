@@ -23,6 +23,7 @@ class BookScreenManager;
 class GuiMessage;
 class ItemStack;
 class MinecartCommandBlockManager;
+class MinecraftglTFExporter;
 class NpcEventListener;
 class ResourceLocation;
 class StructureEditorData;
@@ -31,7 +32,6 @@ class StructureTemplate;
 class TitleMessage;
 class Vec3;
 struct BossInfo;
-struct MinecraftglTFExporter;
 struct PhotoRecord;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class Path; }

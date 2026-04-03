@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct EditorClientMinimapService {
+class EditorClientMinimapService {
 public:
     // EditorClientMinimapService inner types declare
     // clang-format off

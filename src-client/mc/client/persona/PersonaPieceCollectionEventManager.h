@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PersonaPieceCollectionEventManager {
+class PersonaPieceCollectionEventManager {
 public:
     // PersonaPieceCollectionEventManager inner types declare
     // clang-format off

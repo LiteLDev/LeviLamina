@@ -50,3 +50,8 @@ public:
     MCAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
+// NOLINTEND

@@ -12,10 +12,10 @@
 // clang-format off
 class ILevelListCache;
 class ISceneStack;
+class RealmsAPI;
 class SceneFactory;
 class ServerInstance;
 class TaskGroup;
-struct RealmsAPI;
 namespace OreUI { class RouteMatcher; }
 namespace OreUI { struct RouteAction; }
 namespace ui { class ScreenTechStackSelector; }

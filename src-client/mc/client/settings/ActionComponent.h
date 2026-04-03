@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct ActionComponent {};
+class ActionComponent {};
 
 } // namespace Settings

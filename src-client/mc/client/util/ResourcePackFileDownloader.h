@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ResourcePackFileDownloader {
+class ResourcePackFileDownloader {
 public:
     // ResourcePackFileDownloader inner types declare
     // clang-format off

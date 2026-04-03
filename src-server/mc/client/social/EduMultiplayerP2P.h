@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct EduMultiplayerP2P {
+class EduMultiplayerP2P {
 public:
     // EduMultiplayerP2P inner types declare
     // clang-format off

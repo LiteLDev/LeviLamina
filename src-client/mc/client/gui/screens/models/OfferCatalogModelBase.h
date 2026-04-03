@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct FlightingService;
-struct IOfferRepository;
+class FlightingService;
+class IOfferRepository;
 struct ProductSku;
 namespace Social { class IUserManager; }
 // clang-format on

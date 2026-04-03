@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IBooleanPropertyHandler {};
+class IBooleanPropertyHandler {};
 
 } // namespace Settings

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { struct Attribute; }
+namespace mce { class Attribute; }
 // clang-format on
 
 namespace mce {

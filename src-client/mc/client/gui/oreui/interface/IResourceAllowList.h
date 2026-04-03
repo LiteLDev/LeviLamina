@@ -14,7 +14,7 @@ namespace Core { class Path; }
 namespace OreUI { class AllowListPath; }
 namespace OreUI { class AllowListProfileImage; }
 namespace OreUI { class AllowListQRCode; }
-namespace Social { struct ProfileImageOptions; }
+namespace Social { class ProfileImageOptions; }
 // clang-format on
 
 namespace OreUI {

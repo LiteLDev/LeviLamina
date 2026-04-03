@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ArmorTrimIconGenerator {
+class ArmorTrimIconGenerator {
 public:
     // ArmorTrimIconGenerator inner types declare
     // clang-format off

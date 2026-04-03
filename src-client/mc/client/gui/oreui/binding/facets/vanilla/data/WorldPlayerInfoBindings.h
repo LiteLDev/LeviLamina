@@ -16,7 +16,7 @@
 // clang-format off
 class LocalPlayer;
 class PlayerListEntry;
-namespace Social { struct User; }
+namespace Social { class User; }
 // clang-format on
 
 namespace OreUI {

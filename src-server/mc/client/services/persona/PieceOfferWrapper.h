@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct PieceOfferWrapper {};
+class PieceOfferWrapper {};
 
 } // namespace persona

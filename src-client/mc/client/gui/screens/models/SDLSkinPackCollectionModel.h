@@ -9,17 +9,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcId;
+class IContentAcquisition;
+class IEntitlementManager;
+class ISkinRepository;
+class ISkinRepositoryClientInterface;
+class IStoreCatalogItem;
+class IStoreCatalogRepository;
 class SkinPackModel;
-struct DlcId;
-struct IContentAcquisition;
-struct IEntitlementManager;
-struct ISkinRepository;
-struct ISkinRepositoryClientInterface;
-struct IStoreCatalogItem;
-struct IStoreCatalogRepository;
-struct SkinRepositoryClientInterface;
+class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
-namespace persona { struct DlcImportTracker; }
+namespace persona { class DlcImportTracker; }
 // clang-format on
 
 class SDLSkinPackCollectionModel {

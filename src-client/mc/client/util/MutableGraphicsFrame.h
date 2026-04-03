@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MutableGraphicsFrame {
+class MutableGraphicsFrame {
 public:
     // MutableGraphicsFrame inner types declare
     // clang-format off

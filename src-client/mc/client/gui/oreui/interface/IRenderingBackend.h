@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { struct ShaderGroup; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace OreUI {

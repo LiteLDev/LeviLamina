@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DlcId;
-struct IContentAcquisition;
-struct IStoreCatalogRepository;
+class DlcId;
+class IContentAcquisition;
+class IStoreCatalogRepository;
 struct PackIdVersion;
 // clang-format on
 

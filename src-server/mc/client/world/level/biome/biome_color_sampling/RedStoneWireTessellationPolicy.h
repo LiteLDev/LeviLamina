@@ -4,6 +4,6 @@
 
 namespace BiomeColorSampling {
 
-struct RedStoneWireTessellationPolicy {};
+class RedStoneWireTessellationPolicy {};
 
 } // namespace BiomeColorSampling

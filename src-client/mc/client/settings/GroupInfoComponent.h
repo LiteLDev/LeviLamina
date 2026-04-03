@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct GroupInfoComponent {};
+class GroupInfoComponent {};
 
 } // namespace Settings

@@ -4,11 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Offer;
 class ResourceLocation;
 struct CommonImage;
-struct Offer;
 struct ProductSku;
-namespace catalog { struct ImageResourceManager; }
+namespace catalog { class ImageResourceManager; }
 // clang-format on
 
 class OfferModelBase {

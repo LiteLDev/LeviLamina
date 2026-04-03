@@ -20,9 +20,9 @@ class IToastEventListener;
 class IToastListener;
 class Option;
 class PushNotificationMessage;
+class RecipeToastDataViewer;
 class RectangleArea;
 class ResourcePackManager;
-struct RecipeToastDataViewer;
 namespace Json { class Value; }
 // clang-format on
 

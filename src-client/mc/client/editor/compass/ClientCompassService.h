@@ -4,7 +4,7 @@
 
 namespace Editor::CompassUI {
 
-struct ClientCompassService {
+class ClientCompassService {
 public:
     // ClientCompassService inner types declare
     // clang-format off

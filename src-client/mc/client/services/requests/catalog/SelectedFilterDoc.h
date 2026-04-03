@@ -4,6 +4,6 @@
 
 namespace catalog {
 
-struct SelectedFilterDoc {};
+class SelectedFilterDoc {};
 
 } // namespace catalog

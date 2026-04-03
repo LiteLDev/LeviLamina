@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
-struct IEntitlementManager;
+class IEntitlementManager;
 // clang-format on
 
 class EntitlementCheck : public ::ResourcePackCopyUtils::IEntitlementCheck {

@@ -9,16 +9,12 @@
 #include "mc/client/gui/HowToPlayTopicIndex.h"
 #include "mc/client/gui/UIDefType.h"
 #include "mc/client/gui/screens/LayoutVariableType.h"
-#include "mc/client/renderer/AmbientLightImpl.h"
 #include "mc/client/renderer/AtmosphericScattering.h"
 #include "mc/client/renderer/ColorGraderConfig.h"
-#include "mc/client/renderer/KeyframedDirectionalLightImpl.h"
-#include "mc/client/renderer/LightingImpl.h"
+#include "mc/client/renderer/LightingGroup.h"
 #include "mc/client/renderer/LocalLightConfig.h"
-#include "mc/client/renderer/OrbitalLights.h"
 #include "mc/client/renderer/PBRFallbackConfig.h"
-#include "mc/client/renderer/SkyIntensityImpl.h"
-#include "mc/client/renderer/SkyboxConfigSettingsV0.h"
+#include "mc/client/renderer/SkyboxConfig.h"
 #include "mc/client/renderer/UpscalingConfiguration.h"
 #include "mc/client/renderer/actor/v2/Destination.h"
 #include "mc/client/renderer/game/ShadowRenderingParameters.h"
@@ -191,8 +187,10 @@ class DataDrivenRenderer;
 class ExprToken;
 class IClientInstance;
 class LocalPlayer;
+class SearchQuery;
 class StoreDataDrivenScreenController;
 class Tessellator;
+class TrialManager;
 class UIControl;
 class UIPropertyBag;
 class WorldSeedModel;
@@ -226,16 +224,13 @@ struct RenderControllerResources;
 struct RequestedRenderEntries;
 struct ResourceBakingResult;
 struct ResourceOffset;
-struct SearchQuery;
 struct SharedUniformPhase;
-struct TrialManager;
-namespace LightingGroup { struct StaticDirectionalLight; }
-namespace MainGameCore { struct WinMain; }
+namespace MainGameCore { class WinMain; }
 namespace ParticleSystem { class ParticleEffectComponentRegistry; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 namespace cohtml { class Binder; }
 namespace mce { class Camera; }
-namespace mce::framebuilder { struct FrameBuilder; }
+namespace mce::framebuilder { class FrameBuilder; }
 namespace mce::framebuilder { struct PerCascadeRenderingParameters; }
 namespace mce::framebuilder { struct RenderBatchActorInstanceDescription; }
 namespace mce::framebuilder { struct ShadowRange; }
@@ -832,175 +827,7 @@ MCAPI_C int nvSWprintf(wchar_t*, uint64, wchar_t const*, ...);
 
 MCAPI_C int nvSprintf(char*, uint64, char const*, ...);
 
-MCAPI bool operator!=(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
-MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
-
-MCAPI_C ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
-
-MCAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
-
-MCAPI bool operator<(
-    ::SemVersionBase<::std::string_view> const&               lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
-MCAPI bool operator<(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
-MCAPI bool operator<(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
-
 MCAPI_C ::std::ostream& operator<<(::std::ostream& os, ::cg::TextureSetLayerType const& type);
-
-MCAPI_C bool operator==(
-    ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P0,
-    ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P0,
-    ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P1
-);
-
-MCFOLD_C bool operator==(
-    ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P0,
-    ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P1
-);
-
-MCFOLD_C bool operator==(
-    ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P0,
-    ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P1
-);
-
-MCFOLD_C bool operator==(::LightingGroup::OrbitalLights<1> const& __P0, ::LightingGroup::OrbitalLights<1> const& __P1);
-
-MCFOLD_C bool operator==(::LightingGroup::OrbitalLights<0> const& __P0, ::LightingGroup::OrbitalLights<0> const& __P1);
-
-MCFOLD_C bool operator==(
-    ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P0,
-    ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P0,
-    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P0,
-    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P1
-);
-
-MCAPI_C bool operator==(::CloudConfiguration const& __P0, ::CloudConfiguration const& __P1);
-
-MCAPI_C bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P1
-);
-
-MCAPI_C bool operator==(::UpscalingConfiguration::Configs const& __P0, ::UpscalingConfiguration::Configs const& __P1);
-
-MCAPI bool operator==(::DiggerBlockTypeInfo const& __P0, ::DiggerBlockTypeInfo const& __P1);
-
-MCAPI_C bool operator==(
-    ::LightingGroup::LightingImpl<1, 21, 80>::LightingSettings::DirectionalLights const& __P0,
-    ::LightingGroup::LightingImpl<1, 21, 80>::LightingSettings::DirectionalLights const& __P1
-);
-
-MCAPI_C bool
-operator==(::DisconnectionErrorStringOverrides const& __P0, ::DisconnectionErrorStringOverrides const& __P1);
-
-MCFOLD_C bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
-        HorizonBlendKeyFrames const& __P0,
-    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
-        HorizonBlendKeyFrames const& __P1
-);
-
-MCFOLD bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
-
-MCAPI_C bool operator==(
-    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P0,
-    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P1
-);
-
-MCFOLD_C bool operator==(
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P0,
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P1
-);
-
-MCAPI_C bool operator==(
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P0,
-    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P1
-);
-
-MCFOLD bool operator==(
-    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P0,
-    ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P1
-);
-
-MCAPI bool
-operator==(::SentryEnvelopePayloadStacktraceFrame const& __P0, ::SentryEnvelopePayloadStacktraceFrame const& __P1);
-
-MCFOLD_C bool operator==(
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P0,
-    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P1
-);
-
-MCAPI_C bool
-operator==(::LightingGroup::StaticDirectionalLight const& __P0, ::LightingGroup::StaticDirectionalLight const& __P1);
-
-MCAPI bool operator==(::ScriptStat const& __P0, ::ScriptStat const& __P1);
-
-MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
-
-MCAPI bool operator==(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
-);
-
-MCAPI bool operator==(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
-
-MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
-
-MCFOLD bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
-
-MCAPI_C bool operator>=(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCAPI ::BlockProperty operator|(::BlockProperty lhs, ::BlockProperty b);
 
 MCAPI_C ::std::string pascalCaseConverter(::std::string const& inString, bool pascalCase);
 

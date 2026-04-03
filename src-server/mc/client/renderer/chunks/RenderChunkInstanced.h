@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RenderChunkInstanced {
+class RenderChunkInstanced {
 public:
     // RenderChunkInstanced inner types define
     enum class SortState : uchar {};

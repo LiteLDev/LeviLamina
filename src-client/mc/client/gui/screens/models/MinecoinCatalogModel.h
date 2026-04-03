@@ -9,10 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
 class DateManager;
-struct ContentCatalogService;
-struct FlightingService;
-struct IOfferRepository;
+class FlightingService;
+class IOfferRepository;
 struct MinecoinDocument;
 struct MinecoinSearchResults;
 namespace Bedrock::Http { class Status; }

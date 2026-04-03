@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct PersonaServiceRequest {};
+class PersonaServiceRequest {};
 
 } // namespace persona

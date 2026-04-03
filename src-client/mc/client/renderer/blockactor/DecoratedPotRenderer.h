@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DecoratedPotRenderer {
+class DecoratedPotRenderer {
 public:
     // DecoratedPotRenderer inner types define
     enum class ModelMaterial : int {};

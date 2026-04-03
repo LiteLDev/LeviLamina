@@ -4,7 +4,7 @@
 
 namespace mce::framebuilder {
 
-struct BgfxFrameBuilder {
+class BgfxFrameBuilder {
 public:
     // BgfxFrameBuilder inner types declare
     // clang-format off

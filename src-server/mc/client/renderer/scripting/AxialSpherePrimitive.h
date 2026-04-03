@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct AxialSpherePrimitive {};
+class AxialSpherePrimitive {};
 
 } // namespace Scripting::RenderHelper

@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XboxLiveIdentity {};
+class XboxLiveIdentity {};
 
 } // namespace Social

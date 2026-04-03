@@ -10,9 +10,9 @@
 // clang-format off
 class Font;
 class FontHandle;
+class ProfanityContext;
 struct CaretMeasureData;
 struct MeasureResult;
-struct ProfanityContext;
 struct TextMeasureData;
 // clang-format on
 

@@ -17,15 +17,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class AchievementData;
+class IStoreCatalogItem;
+class PersonaProfile;
 class SkinPackCollectionModel;
 class SkinPackModel;
-struct AchievementData;
-struct IStoreCatalogItem;
 struct LinksToStyle;
-struct PersonaProfile;
-namespace Social::eventData { struct PersonaOfferClickedData; }
+namespace Social::eventData { class PersonaOfferClickedData; }
+namespace persona { class PieceOfferWrapper; }
 namespace persona { struct PersonaCharacterHandle; }
-namespace persona { struct PieceOfferWrapper; }
 // clang-format on
 
 class PersonaScreenModel : public ::MainMenuScreenModel,

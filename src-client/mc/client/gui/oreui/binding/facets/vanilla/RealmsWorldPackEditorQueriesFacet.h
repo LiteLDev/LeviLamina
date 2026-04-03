@@ -16,7 +16,7 @@
 // clang-format off
 class ContentItemCollection;
 namespace OreUI { class IResourceAllowList; }
-namespace Realms { struct RealmsWorldPackEditor; }
+namespace Realms { class RealmsWorldPackEditor; }
 namespace World { struct PackDetails; }
 // clang-format on
 

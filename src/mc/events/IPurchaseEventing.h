@@ -16,7 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct Offer;
+class Offer;
 struct PlatformOfferPurchaseDetails;
 struct ProductSku;
 // clang-format on

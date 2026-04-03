@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct IOfferRepository;
+class IOfferRepository;
 // clang-format on
 
 namespace OreUI {

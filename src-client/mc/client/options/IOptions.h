@@ -25,13 +25,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChatOptions;
 class ClientInstanceEventCoordinator;
 class GamePadRemappingLayout;
 class KeyboardRemappingLayout;
 class Option;
+class OptionSaveDeferral;
 class OptionsObserver;
-struct ChatOptions;
-struct OptionSaveDeferral;
 struct ScriptDebuggerSettings;
 namespace Scripting { struct WatchdogSettings; }
 // clang-format on

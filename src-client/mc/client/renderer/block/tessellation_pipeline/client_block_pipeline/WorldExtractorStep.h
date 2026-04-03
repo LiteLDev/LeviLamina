@@ -13,8 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Block;
-struct BiomeTintCache;
 namespace ClientBlockPipeline { class ITintResolver; }
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class StepResult; }

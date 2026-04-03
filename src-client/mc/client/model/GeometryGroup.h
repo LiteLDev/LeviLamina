@@ -11,13 +11,13 @@
 // auto generated forward declare list
 // clang-format off
 class GeometryInfo;
+class GeometryInheritanceTree;
+class GeometryPtr;
 class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SemVersion;
-struct GeometryInheritanceTree;
-struct GeometryPtr;
 struct ModelParent;
 struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }

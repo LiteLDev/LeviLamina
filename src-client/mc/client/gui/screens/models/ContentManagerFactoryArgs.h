@@ -7,16 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientPackSourceFactory;
+class ContentCatalogService;
 class IContentTierManager;
+class IEntitlementManager;
 class ILevelListCache;
 class IResourcePackRepository;
 class PackManifestFactory;
 class ResourcePackManager;
+class StoreCatalogRepository;
 class WorldTemplateManager;
-struct ClientPackSourceFactory;
-struct ContentCatalogService;
-struct IEntitlementManager;
-struct StoreCatalogRepository;
 namespace Core { class FilePathManager; }
 // clang-format on
 

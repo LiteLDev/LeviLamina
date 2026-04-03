@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct GraphicsModeDataProvider {};
+class GraphicsModeDataProvider {};
 
 } // namespace Settings

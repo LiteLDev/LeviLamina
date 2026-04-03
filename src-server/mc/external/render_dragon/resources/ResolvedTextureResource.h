@@ -4,7 +4,7 @@
 
 namespace dragon {
 
-struct ResolvedTextureResource {
+class ResolvedTextureResource {
 public:
     // ResolvedTextureResource inner types declare
     // clang-format off

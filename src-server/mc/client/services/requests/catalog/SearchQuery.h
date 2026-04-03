@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SearchQuery {
+class SearchQuery {
 public:
     // SearchQuery inner types define
     enum class TagType : schar {};

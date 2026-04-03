@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct XboxLiveUserInfo {
+class XboxLiveUserInfo {
 public:
     // XboxLiveUserInfo inner types declare
     // clang-format off

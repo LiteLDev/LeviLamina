@@ -52,6 +52,7 @@ class Container;
 class DataLoadHelper;
 class Dimension;
 class EntityContext;
+class FrameUpdateContextBase;
 class HitResult;
 class IClientInstance;
 class IContainerManager;
@@ -65,6 +66,7 @@ class MobEffectInstance;
 class NetworkIdentifier;
 class Packet;
 class PacketSender;
+class PlayerAutomationObserver;
 class PlayerEventCoordinator;
 class SubChunkPos;
 class SubChunkRequestSubscriber;
@@ -72,12 +74,10 @@ class TextObjectRoot;
 class Vec2;
 struct ActorUniqueID;
 struct ArmorSlotAndDamagePair;
-struct FrameUpdateContextBase;
 struct INpcDialogueData;
 struct InventoryOptions;
 struct ItemStackLegacyRequestIdTag;
 struct PlayerAuthenticationInfo;
-struct PlayerAutomationObserver;
 struct Tick;
 namespace Bedrock::DDUI { class DataStoreSyncClient; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }

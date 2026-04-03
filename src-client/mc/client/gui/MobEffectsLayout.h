@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Config;
 class IClientInstance;
-struct Config;
 struct EffectDisplayInfo;
 // clang-format on
 

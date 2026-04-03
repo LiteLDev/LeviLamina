@@ -14,7 +14,7 @@
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class SettingsOption; }
 namespace OreUI { class SettingsOptionConfirmationRequest; }
-namespace Settings { struct IRegistry; }
+namespace Settings { class IRegistry; }
 // clang-format on
 
 namespace OreUI {

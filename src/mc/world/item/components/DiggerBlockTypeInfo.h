@@ -34,3 +34,8 @@ public:
     MCAPI void* $ctor(::DiggerBlockTypeInfo const&);
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(::DiggerBlockTypeInfo const& __P0, ::DiggerBlockTypeInfo const& __P1);
+// NOLINTEND

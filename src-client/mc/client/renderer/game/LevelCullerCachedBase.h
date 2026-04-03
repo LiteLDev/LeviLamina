@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LevelCullerCachedBase {
+class LevelCullerCachedBase {
 public:
     // LevelCullerCachedBase inner types declare
     // clang-format off

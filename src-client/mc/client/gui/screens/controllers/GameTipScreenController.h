@@ -15,11 +15,11 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
+class GameTip;
 class HudContainerManagerController;
 class Option;
 class ToastMessage;
 class UIPropertyBag;
-struct GameTip;
 // clang-format on
 
 class GameTipScreenController : public ::ClientInstanceScreenController, public ::IToastEventListener {

@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct EmptySampleClientService {};
+class EmptySampleClientService {};
 
 } // namespace Editor::Services

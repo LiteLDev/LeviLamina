@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BaseLightData {
+class BaseLightData {
 public:
     // BaseLightData inner types declare
     // clang-format off

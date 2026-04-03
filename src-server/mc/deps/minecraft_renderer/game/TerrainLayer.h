@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct TerrainLayer {
+class TerrainLayer {
 public:
     // TerrainLayer inner types define
     enum class Detail : uchar {};

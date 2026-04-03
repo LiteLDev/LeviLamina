@@ -14,17 +14,17 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class CustomParticle;
 class HashedString;
 class Level;
 class LightTexture;
 class Particle;
 class ParticleSystemEngine;
 class ScreenContext;
+class SeasonsRenderer;
 class Vec3;
-struct CustomParticle;
 struct ParticleLayerRenderObject;
 struct ParticleRenderContext;
-struct SeasonsRenderer;
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 

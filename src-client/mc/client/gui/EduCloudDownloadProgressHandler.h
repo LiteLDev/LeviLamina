@@ -16,8 +16,8 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
+class WorldFileDownloadManager;
 struct SetDownloadProgressHandlerError;
-struct WorldFileDownloadManager;
 // clang-format on
 
 class EduCloudDownloadProgressHandler : public ::EmptyProgressHandler {

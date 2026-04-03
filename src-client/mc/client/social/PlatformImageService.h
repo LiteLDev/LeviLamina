@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct PlatformImageService {};
+class PlatformImageService {};
 
 } // namespace Social

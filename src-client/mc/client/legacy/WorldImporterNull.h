@@ -4,6 +4,6 @@
 
 namespace Legacy {
 
-struct WorldImporterNull {};
+class WorldImporterNull {};
 
 } // namespace Legacy

@@ -4,6 +4,6 @@
 
 namespace bgfx {
 
-struct UniformBufferView {};
+class UniformBufferView {};
 
 } // namespace bgfx

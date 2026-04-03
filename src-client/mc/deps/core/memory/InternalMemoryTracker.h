@@ -4,7 +4,7 @@
 
 namespace Memory {
 
-struct InternalMemoryTracker {
+class InternalMemoryTracker {
 public:
     // InternalMemoryTracker inner types declare
     // clang-format off

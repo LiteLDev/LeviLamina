@@ -6,11 +6,11 @@ class CharacterSelectorModel {
 public:
     // CharacterSelectorModel inner types declare
     // clang-format off
-    struct CharacterSelectorFTUEModel;
+    class CharacterSelectorFTUEModel;
     // clang-format on
 
     // CharacterSelectorModel inner types define
     enum class AppearanceCreationType : int {};
 
-    struct CharacterSelectorFTUEModel {};
+    class CharacterSelectorFTUEModel {};
 };

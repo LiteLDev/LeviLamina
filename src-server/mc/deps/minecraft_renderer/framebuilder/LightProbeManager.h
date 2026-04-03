@@ -4,7 +4,7 @@
 
 namespace mce::framebuilder {
 
-struct LightProbeManager {
+class LightProbeManager {
 public:
     // LightProbeManager inner types declare
     // clang-format off

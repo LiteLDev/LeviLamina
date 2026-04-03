@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlayerRenderView {
+class PlayerRenderView {
 public:
     // PlayerRenderView inner types declare
     // clang-format off

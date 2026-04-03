@@ -10,11 +10,11 @@
 class ShaderColor;
 namespace mce { class Camera; }
 namespace mce { class GlobalConstantBufferManager; }
+namespace mce { class GlobalConstantBuffers; }
+namespace mce { class ImmediateBuffer; }
+namespace mce { class QuadIndexBuffer; }
 namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
-namespace mce { struct GlobalConstantBuffers; }
-namespace mce { struct ImmediateBuffer; }
-namespace mce { struct QuadIndexBuffer; }
 // clang-format on
 
 namespace mce {

@@ -4,6 +4,6 @@
 
 namespace Editor::CompassUI {
 
-struct ClientCompassServiceProvider {};
+class ClientCompassServiceProvider {};
 
 } // namespace Editor::CompassUI

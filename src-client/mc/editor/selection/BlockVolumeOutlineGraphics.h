@@ -4,7 +4,7 @@
 
 namespace Editor {
 
-struct BlockVolumeOutlineGraphics {
+class BlockVolumeOutlineGraphics {
 public:
     // BlockVolumeOutlineGraphics inner types declare
     // clang-format off

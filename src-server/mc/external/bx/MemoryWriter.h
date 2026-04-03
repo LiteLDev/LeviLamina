@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct MemoryWriter {};
+class MemoryWriter {};
 
 } // namespace bx

@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientDataStoreService {};
+class ClientDataStoreService {};
 
 } // namespace Editor::Services

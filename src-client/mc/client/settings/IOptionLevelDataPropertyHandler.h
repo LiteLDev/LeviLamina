@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IOptionLevelDataPropertyHandler {};
+class IOptionLevelDataPropertyHandler {};
 
 } // namespace Settings

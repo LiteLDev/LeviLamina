@@ -20,11 +20,11 @@ class HIDController : public ::Bedrock::Input::KeyboardEventProcessor {
 public:
     // HIDController inner types declare
     // clang-format off
-    struct GamefaceTextEditContext;
+    class GamefaceTextEditContext;
     // clang-format on
 
     // HIDController inner types define
-    struct GamefaceTextEditContext {
+    class GamefaceTextEditContext {
     public:
         // GamefaceTextEditContext inner types define
         enum class StateChange : int {};

@@ -4,7 +4,7 @@
 
 namespace dragon::memory {
 
-struct BufferSource {
+class BufferSource {
 public:
     // BufferSource inner types declare
     // clang-format off

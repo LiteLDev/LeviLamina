@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct PerFrameConstants {};
+class PerFrameConstants {};
 
 } // namespace mce

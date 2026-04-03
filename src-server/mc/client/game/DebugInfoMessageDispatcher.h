@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct DebugInfoMessageDispatcher {
+class DebugInfoMessageDispatcher {
 public:
     // DebugInfoMessageDispatcher inner types declare
     // clang-format off

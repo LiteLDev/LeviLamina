@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher {
 
-struct LocalServerTaskContext {};
+class LocalServerTaskContext {};
 
 } // namespace LocalServerLauncher

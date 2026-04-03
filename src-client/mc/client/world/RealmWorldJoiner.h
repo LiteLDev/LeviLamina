@@ -21,10 +21,10 @@ class IClientInstance;
 class IMinecraftEventing;
 class INetworkGameConnector;
 class ProgressHandler;
+class RealmsAPI;
 struct IGameServerShutdown;
-struct RealmsAPI;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }

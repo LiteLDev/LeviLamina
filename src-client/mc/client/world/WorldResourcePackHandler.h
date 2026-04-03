@@ -19,14 +19,14 @@
 // auto generated forward declare list
 // clang-format off
 class ContentView;
+class IContentAcquisition;
 class IContentManager;
 class IContentManagerContext;
 class IContentTierManager;
+class IEntitlementManager;
 class IResourcePackRepository;
 struct ContentItem;
 struct ContentViews;
-struct IContentAcquisition;
-struct IEntitlementManager;
 struct LevelSummary;
 struct MoveResourcePackResult;
 struct PackIdVersion;

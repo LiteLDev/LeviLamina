@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct LevelOptionsDataProvider {};
+class LevelOptionsDataProvider {};
 
 } // namespace Settings

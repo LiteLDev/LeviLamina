@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct MinecraftServiceIdentity {};
+class MinecraftServiceIdentity {};
 
 } // namespace Social

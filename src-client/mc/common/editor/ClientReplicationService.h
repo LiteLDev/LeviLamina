@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientReplicationService {};
+class ClientReplicationService {};
 
 } // namespace Editor::Services

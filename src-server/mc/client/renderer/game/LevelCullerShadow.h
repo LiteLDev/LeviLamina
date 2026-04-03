@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LevelCullerShadow {
+class LevelCullerShadow {
 public:
     // LevelCullerShadow inner types declare
     // clang-format off

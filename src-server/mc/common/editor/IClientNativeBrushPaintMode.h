@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct IClientNativeBrushPaintMode {};
+class IClientNativeBrushPaintMode {};
 
 } // namespace Editor::ClientBrush

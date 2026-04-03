@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct PlatformFriendList {};
+class PlatformFriendList {};
 
 } // namespace Social

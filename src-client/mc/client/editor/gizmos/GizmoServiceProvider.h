@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct GizmoServiceProvider {};
+class GizmoServiceProvider {};
 
 } // namespace Editor::Services

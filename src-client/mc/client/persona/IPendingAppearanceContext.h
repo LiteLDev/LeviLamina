@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct IPendingAppearanceContext {};
+class IPendingAppearanceContext {};
 
 } // namespace persona

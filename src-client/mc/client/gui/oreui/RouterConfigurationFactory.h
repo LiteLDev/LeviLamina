@@ -12,24 +12,24 @@ class IContentManager;
 class IContentTierManager;
 class IFileAccess;
 class ILevelListCache;
+class IOfferRepository;
 class LocalPlayer;
 class PackManifestFactory;
+class RealmsAPI;
 class ResourcePackManager;
 class ServerInstance;
-struct IOfferRepository;
+class SunsettingManager;
 struct PackSettingsInfo;
-struct RealmsAPI;
-struct SunsettingManager;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
 namespace OreUI { class RouterConfiguration; }
 namespace OreUI { struct DebugData; }
-namespace Realms { struct IRealmsUGCPackUploader; }
-namespace Realms { struct RealmsList; }
-namespace Realms { struct RealmsWorldContext; }
-namespace Realms { struct RealmsWorldEditor; }
+namespace Realms { class IRealmsUGCPackUploader; }
+namespace Realms { class RealmsList; }
+namespace Realms { class RealmsWorldContext; }
+namespace Realms { class RealmsWorldEditor; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 

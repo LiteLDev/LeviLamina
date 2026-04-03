@@ -38,12 +38,12 @@ struct RealmsWorldInfo;
 struct WorldTemplateInfo;
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Legacy { struct WorldImporter; }
-namespace Legacy { struct WorldProcessRequest; }
+namespace Legacy { class WorldImporter; }
+namespace Legacy { class WorldProcessRequest; }
 namespace MSGraph::Models { struct DriveItemCollection; }
 namespace MSGraph::Models { struct GraphError; }
 namespace Realms { struct World; }
-namespace Social { struct MultiplayerGameInfo; }
+namespace Social { class MultiplayerGameInfo; }
 // clang-format on
 
 class PlayScreenModel : public ::MainMenuScreenModel, public ::IWorldsProvider {
@@ -51,13 +51,13 @@ public:
     // PlayScreenModel inner types declare
     // clang-format off
     struct LiveServer;
-    struct PlayScreenLevelListCacheObserver;
+    class PlayScreenLevelListCacheObserver;
     // clang-format on
 
     // PlayScreenModel inner types define
     struct LiveServer {};
 
-    struct PlayScreenLevelListCacheObserver {};
+    class PlayScreenLevelListCacheObserver {};
 
     using PlayerCountMap = ::std::map<::Realms::RealmId, int>;
 

@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IStringPropertyHandler {};
+class IStringPropertyHandler {};
 
 } // namespace Settings

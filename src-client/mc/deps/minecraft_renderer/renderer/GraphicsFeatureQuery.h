@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct GraphicsFeatureQuery {};
+class GraphicsFeatureQuery {};
 
 } // namespace mce

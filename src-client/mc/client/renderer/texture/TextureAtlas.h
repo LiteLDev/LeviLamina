@@ -15,9 +15,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class ResourcePackManager;
 class TextureAtlasTile;
-struct AtlasItemManager;
 struct ParsedAtlasNode;
 struct ParsedAtlasNodeElement;
 struct RuntimeImageGeneratorInfo;
@@ -28,7 +28,7 @@ namespace cg { class TextureSetImageContainer; }
 namespace mce { class Color; }
 namespace mce { class FileWatcherHandle; }
 namespace mce { class TextureGroup; }
-namespace mce::framebuilder { struct PBRTextureDataManager; }
+namespace mce::framebuilder { class PBRTextureDataManager; }
 // clang-format on
 
 class TextureAtlas : public ::Bedrock::EnableNonOwnerReferences {

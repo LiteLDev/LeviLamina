@@ -4,6 +4,6 @@
 
 namespace dragon::res {
 
-struct CreateCubemapTransaction {};
+class CreateCubemapTransaction {};
 
 } // namespace dragon::res

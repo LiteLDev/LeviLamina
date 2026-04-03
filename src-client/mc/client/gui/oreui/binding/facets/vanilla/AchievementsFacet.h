@@ -15,8 +15,8 @@
 class Option;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct FacetAchievementData; }
-namespace Social { struct User; }
-namespace persona { struct AchievementOfferCollectionManager; }
+namespace Social { class User; }
+namespace persona { class AchievementOfferCollectionManager; }
 // clang-format on
 
 namespace OreUI {

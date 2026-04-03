@@ -12,9 +12,9 @@
 // clang-format off
 class Block;
 class BlockPos;
+class RuntimeLocalLightingConfig;
 struct BlockQueueEntry;
 struct Bounds;
-struct RuntimeLocalLightingConfig;
 namespace PointLighting { struct ICandidacyHeuristic; }
 namespace PointLighting { struct ManagedPointLight; }
 namespace dragon::framerenderer { struct PointLightLODingParameters; }

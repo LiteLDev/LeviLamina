@@ -11,7 +11,7 @@
 class ISceneStack;
 class SceneFactory;
 namespace OreUI { class RouteMatcher; }
-namespace Realms { struct IRealmsUGCPackUploader; }
+namespace Realms { class IRealmsUGCPackUploader; }
 namespace Realms { struct RealmId; }
 // clang-format on
 

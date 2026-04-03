@@ -20,11 +20,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct ProfileSystem; }
 namespace Social { struct SocialChangeResult; }
 // clang-format on
 

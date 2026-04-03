@@ -19,10 +19,10 @@ class Vec4;
 struct Brightness;
 struct BrightnessPair;
 struct TextureUVCoordinateSet;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
+namespace mce { class ActorConstants; }
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
-namespace mce { struct ActorConstants; }
 // clang-format on
 
 class ActorShaderManager {

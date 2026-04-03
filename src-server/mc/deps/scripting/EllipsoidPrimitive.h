@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct EllipsoidPrimitive {};
+class EllipsoidPrimitive {};
 
 } // namespace Scripting::RenderHelper

@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct EditorRealmsInterface {};
+class EditorRealmsInterface {};
 
 } // namespace Editor

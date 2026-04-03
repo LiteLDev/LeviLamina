@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PersonaSyncCoordinator {
+class PersonaSyncCoordinator {
 public:
     // PersonaSyncCoordinator inner types declare
     // clang-format off

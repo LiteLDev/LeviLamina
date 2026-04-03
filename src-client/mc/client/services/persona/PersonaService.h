@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaService {
+class PersonaService {
 public:
     // PersonaService inner types declare
     // clang-format off

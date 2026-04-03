@@ -9,14 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class IOfferRepository;
+class IThirdPartyServerRepository;
+class ProfanityContext;
 class ServerLocator;
+class ServicesManager;
 struct ExternalServer;
-struct IOfferRepository;
-struct IThirdPartyServerRepository;
 struct NetworkWorldInfo;
 struct PingedCompatibleServer;
-struct ProfanityContext;
-struct ServicesManager;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 

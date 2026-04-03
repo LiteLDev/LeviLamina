@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct WorldConstants {};
+class WorldConstants {};
 
 } // namespace mce

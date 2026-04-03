@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IStringLevelDataPropertyHandler {};
+class IStringLevelDataPropertyHandler {};
 
 } // namespace Settings

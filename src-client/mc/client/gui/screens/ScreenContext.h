@@ -10,14 +10,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandListQueue;
 class GuiData;
 class MinecraftGraphics;
+class ProfanityContext;
 class Tessellator;
-struct CommandListQueue;
 struct FrameRenderObject;
-struct ProfanityContext;
 namespace mce { class Clock; }
-namespace mce { struct FrameBufferObject; }
+namespace mce { class FrameBufferObject; }
 namespace mce { struct FrameDiscardContext; }
 namespace mce { struct ViewportInfo; }
 // clang-format on

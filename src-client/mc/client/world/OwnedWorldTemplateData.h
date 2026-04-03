@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
+class StoreCatalogItem;
 class WorldTemplatePackManifest;
-struct IEntitlementManager;
-struct StoreCatalogItem;
 struct WorldTemplateInfo;
 // clang-format on
 

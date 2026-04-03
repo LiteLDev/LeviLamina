@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockForceFieldParticle {
+class BlockForceFieldParticle {
 public:
     // BlockForceFieldParticle inner types define
     enum class ParticleDataMask : int {};

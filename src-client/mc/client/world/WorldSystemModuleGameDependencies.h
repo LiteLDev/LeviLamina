@@ -9,42 +9,42 @@
 
 // auto generated forward declare list
 // clang-format off
+class CloudSaveSystemWrapper;
 class DateManager;
+class ExternalContentManager;
 class FileArchiver;
+class GatheringManager;
 class IClientInstance;
+class IContentAcquisition;
 class IContentKeyProvider;
 class IContentManager;
 class IContentTierManager;
+class IDlcValidation;
+class IEntitlementManager;
+class IExternalServerFile;
 class IGameServerStartup;
 class ILevelListCache;
 class IMinecraftEventing;
 class INetworkGameConnector;
+class IOfferRepository;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
+class IThirdPartyServerRepository;
 class LevelDbEnv;
 class LocalPlayer;
+class RealmsAPI;
 class ResourcePackManager;
 class ServerLocator;
+class ServicesManager;
 class ToastManager;
 class WorldTemplateManager;
-struct CloudSaveSystemWrapper;
-struct ExternalContentManager;
-struct GatheringManager;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IExternalServerFile;
 struct IGameServerShutdown;
-struct IOfferRepository;
-struct IStoreCatalogRepository;
-struct IThirdPartyServerRepository;
 struct LocalPlayerChangedConnector;
-struct RealmsAPI;
-struct ServicesManager;
 namespace OreUI { class Router; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
 namespace World {

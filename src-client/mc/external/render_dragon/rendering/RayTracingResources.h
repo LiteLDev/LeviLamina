@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct RayTracingResources {};
+class RayTracingResources {};
 
 } // namespace dragon::rendering

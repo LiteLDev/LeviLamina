@@ -6,9 +6,9 @@ class SkinPackCollectionModel {
 public:
     // SkinPackCollectionModel inner types declare
     // clang-format off
-    struct SkinPackCollectionEntitlementChangeListener;
+    class SkinPackCollectionEntitlementChangeListener;
     // clang-format on
 
     // SkinPackCollectionModel inner types define
-    struct SkinPackCollectionEntitlementChangeListener {};
+    class SkinPackCollectionEntitlementChangeListener {};
 };

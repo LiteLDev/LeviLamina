@@ -14,7 +14,7 @@ class IApp;
 class IMinecraftGame;
 class Level;
 class MinecraftCommands;
-namespace Bedrock::DevTools { struct CommandExecutor; }
+namespace Bedrock::DevTools { class CommandExecutor; }
 namespace mce { class TextureGroup; }
 // clang-format on
 

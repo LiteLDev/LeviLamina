@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { struct RealmsPurchaseReconciler; }
+namespace Realms { class RealmsPurchaseReconciler; }
 // clang-format on
 
 namespace OreUI {

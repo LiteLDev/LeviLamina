@@ -13,14 +13,14 @@
 // auto generated forward declare list
 // clang-format off
 class IOptions;
+class IStoreCatalogItem;
 class MinecraftScreenModel;
 class PartySystemSubController;
 class PerfTurtleScreenController;
+class PersonaRepository;
 class ToastManager;
-struct IStoreCatalogItem;
-struct PersonaRepository;
 namespace Json { class Value; }
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 // clang-format on
 
 class ToastScreenController : public ::MinecraftScreenController, public ::IToastListener {

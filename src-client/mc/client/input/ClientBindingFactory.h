@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInputHandler;
+class Config;
 class IClientInstance;
-struct Config;
 // clang-format on
 
 class ClientBindingFactory : public ::BindingFactory {

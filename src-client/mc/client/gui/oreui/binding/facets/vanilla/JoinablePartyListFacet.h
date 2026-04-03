@@ -11,10 +11,10 @@
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct JoinablePartyFriend; }
-namespace Parties { struct IPartyProvider; }
-namespace Parties { struct JoinablePartyList; }
+namespace Parties { class IPartyProvider; }
+namespace Parties { class JoinablePartyList; }
+namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct ProfileSystem; }
 namespace World { class WorldPlayerListTracker; }
 // clang-format on
 

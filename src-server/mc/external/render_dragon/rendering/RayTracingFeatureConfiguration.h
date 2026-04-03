@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct RayTracingFeatureConfiguration {};
+class RayTracingFeatureConfiguration {};
 
 } // namespace dragon::rendering

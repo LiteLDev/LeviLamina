@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LatencyGraphDisplay {
+class LatencyGraphDisplay {
 public:
     // LatencyGraphDisplay inner types declare
     // clang-format off

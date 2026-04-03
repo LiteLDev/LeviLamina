@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct Mutex {};
+class Mutex {};
 
 } // namespace bx

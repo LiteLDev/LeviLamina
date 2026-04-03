@@ -208,11 +208,11 @@ namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 class BaseLightTextureImageBuilder;
+class CameraRegistry;
 class MultiPlayerLevel;
 class Particle;
-struct CameraRegistry;
-struct SubChunkManager;
-struct TrustedSkinHelper;
+class SubChunkManager;
+class TrustedSkinHelper;
 // clang-format on
 
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {

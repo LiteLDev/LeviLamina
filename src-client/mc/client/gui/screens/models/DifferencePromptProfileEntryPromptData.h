@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenController;
-struct PersonaProfile;
+class PersonaProfile;
 // clang-format on
 
 class DifferencePromptProfileEntryPromptData : public ::IProfileEntryPromptData {

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class LibraryCollection;
 class MainMenuScreenModel;
-struct LibraryCollection;
 // clang-format on
 
 class LibrarySearchBarScreenController : public ::MainMenuScreenController {

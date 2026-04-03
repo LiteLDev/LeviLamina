@@ -116,7 +116,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class IEditorPlayer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
-struct FrameUpdateContextBase;
+class FrameUpdateContextBase;
 // clang-format on
 
 class Player : public ::Mob {

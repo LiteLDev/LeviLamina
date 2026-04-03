@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher {
 
-struct IServerInstanceBuilder {};
+class IServerInstanceBuilder {};
 
 } // namespace LocalServerLauncher

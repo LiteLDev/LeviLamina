@@ -11,7 +11,7 @@
 class Biome;
 class BlockPos;
 namespace BiomeColorSampling { class MapPolicy; }
-namespace BiomeColorSampling { struct TessellationPolicy; }
+namespace BiomeColorSampling { class TessellationPolicy; }
 // clang-format on
 
 namespace BiomeColorSampling {

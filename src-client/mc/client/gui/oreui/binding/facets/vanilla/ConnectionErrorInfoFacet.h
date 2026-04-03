@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DisconnectionRequestHandler;
+class DisconnectionRequestHandler;
 namespace OreUI { struct ConnectionErrorInfo; }
 // clang-format on
 

@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsUploader {};
+class RealmsUploader {};
 
 } // namespace Realms

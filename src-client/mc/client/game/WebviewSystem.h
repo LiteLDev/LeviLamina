@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WebviewSystem {
+class WebviewSystem {
 public:
     // WebviewSystem inner types declare
     // clang-format off

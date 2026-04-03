@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CloudSaveSystemWrapper;
 class ILevelListCache;
 class IMinecraftEventing;
-struct CloudSaveSystemWrapper;
 namespace World { struct WorldID; }
 // clang-format on
 

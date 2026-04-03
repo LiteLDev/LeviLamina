@@ -4,6 +4,6 @@
 
 namespace Settings::RegistryBuilder {
 
-struct IBuilderContext {};
+class IBuilderContext {};
 
 } // namespace Settings::RegistryBuilder

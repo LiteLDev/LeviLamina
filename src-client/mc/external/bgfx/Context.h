@@ -41,10 +41,10 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace bgfx { class CommandBuffer; }
 namespace bgfx { struct AccelerationStructureHandle; }
 namespace bgfx { struct AllocationContext; }
 namespace bgfx { struct Attachment; }
-namespace bgfx { struct CommandBuffer; }
 namespace bgfx { struct Encoder; }
 namespace bgfx { struct EncoderImpl; }
 namespace bgfx { struct EncoderStats; }
@@ -63,9 +63,9 @@ namespace bgfx { struct UniformHandle; }
 namespace bgfx { struct VertexBufferHandle; }
 namespace bgfx { struct VertexDecl; }
 namespace bgfx { struct VertexDeclHandle; }
+namespace bx { class HandleAlloc; }
 namespace bx { class StringT; }
-namespace bx { struct HandleAlloc; }
-namespace bx { struct StringView; }
+namespace bx { class StringView; }
 // clang-format on
 
 namespace bgfx {

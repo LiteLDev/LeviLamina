@@ -85,7 +85,7 @@ namespace mce { class UUID; }
 namespace mce { struct Image; }
 class WebviewInterface;
 namespace Social { struct UserCreationData; }
-namespace Webview { struct PlatformArguments; }
+namespace Webview { class PlatformArguments; }
 // clang-format on
 
 class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {

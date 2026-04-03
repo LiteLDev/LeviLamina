@@ -4,7 +4,7 @@
 
 namespace Realms {
 
-struct RealmsMembership {
+class RealmsMembership {
 public:
     // RealmsMembership inner types declare
     // clang-format off

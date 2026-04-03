@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct Thread {};
+class Thread {};
 
 } // namespace bx

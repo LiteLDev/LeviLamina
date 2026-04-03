@@ -10,7 +10,7 @@
 // clang-format off
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class SettingsGroupId; }
-namespace Settings { struct IRegistry; }
+namespace Settings { class IRegistry; }
 // clang-format on
 
 namespace OreUI {

@@ -13,11 +13,11 @@
 class IOptions;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
-namespace Parties { struct IPartyProvider; }
-namespace Parties { struct Party; }
-namespace Parties { struct PartyTravelManager; }
+namespace Parties { class IPartyProvider; }
+namespace Parties { class Party; }
+namespace Parties { class PartyTravelManager; }
+namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct ProfileSystem; }
 namespace World { class WorldPlayerListTracker; }
 // clang-format on
 

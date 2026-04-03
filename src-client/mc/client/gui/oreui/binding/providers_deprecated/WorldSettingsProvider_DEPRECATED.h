@@ -20,10 +20,10 @@ class IMinecraftGame;
 class MainMenuScreenController;
 class MainMenuScreenModel;
 class OreUIResourcePackFacet;
+class TrialManager;
+class WorldTemplateLoader;
 class WorldTemplateManager;
 struct ContentViews;
-struct TrialManager;
-struct WorldTemplateLoader;
 namespace OreUI { class Router; }
 namespace OreUI { class RouterLocation; }
 namespace Social { class IUserManager; }

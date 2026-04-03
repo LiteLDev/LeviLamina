@@ -26,14 +26,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class Config;
+class DevConsoleLogger;
 class GuiMessage;
 class IClientInstance;
 class ItemStackBase;
 class TextObjectRoot;
 class Vec2;
-struct Config;
 struct ContentLogMessage;
-struct DevConsoleLogger;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 

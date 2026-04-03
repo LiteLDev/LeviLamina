@@ -14,11 +14,11 @@ class EduShareLinkScreenController;
 class EducationContentManagerScreenController;
 class IMinecraftEventing;
 class IResourcePackRepository;
+class LibraryItem;
 class LibrarySearchBarScreenController;
 class PlayScreenModel;
 class ResourcePackManager;
 class ToastManager;
-struct LibraryItem;
 namespace Json { class Value; }
 namespace LibraryInfo { struct BaseLibraryInfo; }
 // clang-format on

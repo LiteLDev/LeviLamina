@@ -4,7 +4,7 @@
 
 namespace Editor::Prefabs {
 
-struct ClientVisiblePrefabInstance {
+class ClientVisiblePrefabInstance {
 public:
     // ClientVisiblePrefabInstance inner types declare
     // clang-format off

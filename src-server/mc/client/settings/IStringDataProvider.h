@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IStringDataProvider {};
+class IStringDataProvider {};
 
 } // namespace Settings

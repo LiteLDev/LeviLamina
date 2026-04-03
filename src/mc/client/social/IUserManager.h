@@ -24,9 +24,9 @@ namespace mce { struct Image; }
 class IClientInstance;
 class IMinecraftGame;
 class Options;
-namespace Social { struct ProfileImageOptions; }
-namespace Social { struct User; }
-namespace Social { struct XboxLiveUser; }
+namespace Social { class ProfileImageOptions; }
+namespace Social { class User; }
+namespace Social { class XboxLiveUser; }
 // clang-format on
 
 namespace Social {

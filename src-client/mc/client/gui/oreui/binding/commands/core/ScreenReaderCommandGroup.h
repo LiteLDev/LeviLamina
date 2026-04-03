@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-struct ITTSEventManager;
+class ITTSEventManager;
 namespace OreUI { class ClientDependencies; }
 namespace OreUI { class GameDependencies; }
 // clang-format on

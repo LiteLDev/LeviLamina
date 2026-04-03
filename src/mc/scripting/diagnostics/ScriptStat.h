@@ -98,3 +98,8 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(::ScriptStat const& __P0, ::ScriptStat const& __P1);
+// NOLINTEND

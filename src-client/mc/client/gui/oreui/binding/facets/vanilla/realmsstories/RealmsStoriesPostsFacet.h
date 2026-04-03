@@ -11,10 +11,10 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct ProfanityContext;
+class ProfanityContext;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI::RealmsStories { struct FacetStoryData; }
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
 
 namespace OreUI {

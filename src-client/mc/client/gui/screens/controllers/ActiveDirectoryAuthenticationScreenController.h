@@ -20,7 +20,7 @@ class ClickSourceContext;
 class MinecraftScreenModel;
 struct Purchase;
 namespace Json { class Value; }
-namespace Progress { struct ProgressTips; }
+namespace Progress { class ProgressTips; }
 // clang-format on
 
 class ActiveDirectoryAuthenticationScreenController : public ::MinecraftScreenController {

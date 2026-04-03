@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace AppExtensions { class ITestExtensions; }
-namespace AppExtensions { struct IGameModuleExtensions; }
+namespace AppExtensions { class IGameModuleExtensions; }
 // clang-format on
 
 namespace AppExtensions {

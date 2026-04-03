@@ -43,6 +43,7 @@ class GameRulesChangedPacket;
 class HurtArmorPacket;
 class IBlockSource;
 class ILevel;
+class IPersonaNetworkHandlerDelegate;
 class InventoryContentPacket;
 class InventorySlotPacket;
 class InventoryTransactionPacket;
@@ -57,6 +58,7 @@ class MoveActorDeltaPacket;
 class MovePlayerPacket;
 class MovementEffectPacket;
 class MultiPlayerLevel;
+class NetworkChunkInserter;
 class NetworkSettingsPacket;
 class NetworkStackLatencyPacket;
 class Player;
@@ -85,9 +87,7 @@ class UpdateBlockPacket;
 class UpdateBlockSyncedPacket;
 struct ActorBlockSyncMessage;
 struct ClientCreateLevelArguments;
-struct IPersonaNetworkHandlerDelegate;
 struct LegacyClientNetworkHandlerArguments;
-struct NetworkChunkInserter;
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on

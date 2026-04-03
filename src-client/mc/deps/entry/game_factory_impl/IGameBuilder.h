@@ -4,6 +4,6 @@
 
 namespace GameFactoryImpl {
 
-struct IGameBuilder {};
+class IGameBuilder {};
 
 } // namespace GameFactoryImpl

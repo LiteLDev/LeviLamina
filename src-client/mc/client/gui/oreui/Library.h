@@ -29,7 +29,7 @@ namespace cohtml { struct PlatformSpecificParams; }
 namespace cohtml::Logging { class ILogHandler; }
 namespace cohtml::Profile { class IPerformanceHandler; }
 namespace mce { class RenderContext; }
-namespace mce { struct ShaderGroup; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace OreUI {

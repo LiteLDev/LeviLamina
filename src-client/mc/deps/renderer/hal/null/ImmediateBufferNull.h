@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ImmediateBufferNull {};
+class ImmediateBufferNull {};
 
 } // namespace mce

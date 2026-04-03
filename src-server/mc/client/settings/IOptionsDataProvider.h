@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IOptionsDataProvider {};
+class IOptionsDataProvider {};
 
 } // namespace Settings

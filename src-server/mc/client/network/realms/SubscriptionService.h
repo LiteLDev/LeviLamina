@@ -4,7 +4,7 @@
 
 namespace Realms {
 
-struct SubscriptionService {
+class SubscriptionService {
 public:
     // SubscriptionService inner types declare
     // clang-format off

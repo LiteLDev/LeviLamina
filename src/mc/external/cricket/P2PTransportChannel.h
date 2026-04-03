@@ -4,7 +4,7 @@
 
 namespace cricket {
 
-struct P2PTransportChannel {
+class P2PTransportChannel {
 public:
     // P2PTransportChannel inner types declare
     // clang-format off

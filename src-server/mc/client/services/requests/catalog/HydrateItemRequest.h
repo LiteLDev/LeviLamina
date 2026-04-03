@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HydrateItemRequest {
+class HydrateItemRequest {
 public:
     // HydrateItemRequest inner types declare
     // clang-format off

@@ -4,7 +4,7 @@
 
 namespace Settings {
 
-struct IRegistry {
+class IRegistry {
 public:
     // IRegistry inner types declare
     // clang-format off

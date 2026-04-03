@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct ConePrimitive {};
+class ConePrimitive {};
 
 } // namespace Scripting::RenderHelper

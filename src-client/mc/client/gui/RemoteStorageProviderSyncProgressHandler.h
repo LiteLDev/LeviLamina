@@ -17,13 +17,13 @@ class RemoteStorageProviderSyncProgressHandler : public ::ProgressHandler {
 public:
     // RemoteStorageProviderSyncProgressHandler inner types declare
     // clang-format off
-    struct SyncState;
+    class SyncState;
     // clang-format on
 
     // RemoteStorageProviderSyncProgressHandler inner types define
     enum class State : int {};
 
-    struct SyncState {};
+    class SyncState {};
 
 public:
     // member variables

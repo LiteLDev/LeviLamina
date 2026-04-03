@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DlcId;
+class DlcId;
 struct WorldTemplateInfo;
 namespace mce { class UUID; }
 // clang-format on

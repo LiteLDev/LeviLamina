@@ -4,6 +4,6 @@
 
 namespace PlayerCapabilities {
 
-struct ClientController {};
+class ClientController {};
 
 } // namespace PlayerCapabilities

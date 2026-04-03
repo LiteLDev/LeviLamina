@@ -20,17 +20,17 @@ class BlockActorRenderDispatcher;
 class DataDrivenRenderer;
 class FontHandle;
 class HashedString;
+class HudIconActorRenderer;
 class IClientInstance;
 class IMinecraftGame;
 class ItemInHandRenderer;
 class ItemRenderer;
 class ParticleSystemEngine;
 class ScreenContext;
+class SortedMeshDrawList;
 struct DataDrivenRendererContinuousData;
-struct HudIconActorRenderer;
 struct ProcessedDataDrivenRenderers;
-struct SortedMeshDrawList;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
 // clang-format on
 
 class BaseActorRenderContext {

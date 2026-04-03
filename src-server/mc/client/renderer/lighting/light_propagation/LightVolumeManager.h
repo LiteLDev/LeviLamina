@@ -4,6 +4,6 @@
 
 namespace LightPropagation {
 
-struct LightVolumeManager {};
+class LightVolumeManager {};
 
 } // namespace LightPropagation

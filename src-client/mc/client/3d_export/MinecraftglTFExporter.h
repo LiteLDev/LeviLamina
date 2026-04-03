@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MinecraftglTFExporter {
+class MinecraftglTFExporter {
 public:
     // MinecraftglTFExporter inner types declare
     // clang-format off

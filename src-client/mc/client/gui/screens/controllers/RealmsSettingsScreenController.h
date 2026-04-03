@@ -29,9 +29,9 @@ class ResourcePacksScreenController;
 struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
+namespace Realms { class ContentService; }
 namespace Realms { struct ConfigInfo; }
 namespace Realms { struct Content; }
-namespace Realms { struct ContentService; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
 namespace Realms { struct WorldBackup; }

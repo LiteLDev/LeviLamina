@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsFileUploader {
+class RealmsFileUploader {
 public:
     // RealmsFileUploader inner types declare
     // clang-format off

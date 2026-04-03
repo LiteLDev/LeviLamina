@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class EnchantingBookModel;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
-struct EnchantingBookModel;
 // clang-format on
 
 class EnchantingBookRenderer : public ::MinecraftUICustomRenderer, public ::ActorShaderManager {

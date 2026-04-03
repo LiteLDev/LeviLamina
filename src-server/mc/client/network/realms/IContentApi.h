@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct IContentApi {};
+class IContentApi {};
 
 } // namespace Realms

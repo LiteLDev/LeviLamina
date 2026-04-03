@@ -11,8 +11,8 @@
 class ISceneStack;
 class SceneFactory;
 namespace OreUI { class RouteMatcher; }
+namespace Realms { class RealmsList; }
 namespace Realms { struct RealmId; }
-namespace Realms { struct RealmsList; }
 // clang-format on
 
 namespace OreUI::EntryPoints {

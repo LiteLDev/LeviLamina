@@ -4,7 +4,7 @@
 
 namespace mce::framebuilder::bgfxbridge {
 
-struct DeferredMinecraftFrameRenderer {
+class DeferredMinecraftFrameRenderer {
 public:
     // DeferredMinecraftFrameRenderer inner types declare
     // clang-format off

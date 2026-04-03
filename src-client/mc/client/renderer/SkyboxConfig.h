@@ -1,0 +1,43 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+class SkyboxConfig {
+public:
+    // SkyboxConfig inner types declare
+    // clang-format off
+    struct SkyboxConfigSettingsV0;
+    // clang-format on
+
+    // SkyboxConfig inner types define
+    struct SkyboxConfigSettingsV0 {
+    public:
+        // SkyboxConfigSettingsV0 inner types declare
+        // clang-format off
+        struct SkyboxParameters;
+        // clang-format on
+
+        // SkyboxConfigSettingsV0 inner types define
+        struct SkyboxParameters {
+        public:
+            // SkyboxParameters inner types declare
+            // clang-format off
+            struct Description;
+            struct Lighting;
+            // clang-format on
+
+            // SkyboxParameters inner types define
+            struct Description {};
+
+            struct Lighting {};
+        };
+    };
+};
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P0,
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P1
+);
+// NOLINTEND

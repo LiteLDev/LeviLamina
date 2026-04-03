@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { struct Method; }
+namespace Bedrock::Http { class Method; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleServerAdmin { class ScriptSecretString; }
 namespace Scripting { struct ClassBinding; }

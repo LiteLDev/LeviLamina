@@ -11,11 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class LegacyOptionsParser;
+class Skin;
 struct ImportResult;
-struct LegacyOptionsParser;
 struct LegacyWorldInfo;
-struct Skin;
-namespace Legacy { struct WorldImporter; }
+namespace Legacy { class WorldImporter; }
 // clang-format on
 
 class DayOneExperienceModel : public ::MainMenuScreenModel {

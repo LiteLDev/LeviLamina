@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct JoinablePartyList {};
+class JoinablePartyList {};
 
 } // namespace Parties

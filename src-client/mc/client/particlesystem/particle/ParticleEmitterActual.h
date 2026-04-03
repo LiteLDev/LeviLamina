@@ -25,6 +25,7 @@
 // clang-format off
 class Actor;
 class BlockSource;
+class ClientFrameUpdateContext;
 class Dimension;
 class ExpressionNode;
 class ParticleRenderData;
@@ -32,8 +33,7 @@ class ParticleSystemEngine;
 class WeakEntityRef;
 struct ActorUniqueID;
 struct BrightnessPair;
-struct ClientFrameUpdateContext;
-namespace LightPropagation { struct LightVolumeManager; }
+namespace LightPropagation { class LightVolumeManager; }
 namespace ParticleSystem { class ParticleEffect; }
 namespace ParticleSystem { class ParticleEmitter; }
 namespace ParticleSystem { class ParticleEvent; }

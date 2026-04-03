@@ -4,11 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseLightData;
 class Dimension;
 class IClientInstance;
 class IOptions;
 class Player;
-struct BaseLightData;
 namespace mce { struct Image; }
 // clang-format on
 

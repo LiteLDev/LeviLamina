@@ -12,7 +12,7 @@
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI::RealmsStories { struct FacetPlayerData; }
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
 
 namespace OreUI {

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CachedHttpRequest {
+class CachedHttpRequest {
 public:
     // CachedHttpRequest inner types declare
     // clang-format off

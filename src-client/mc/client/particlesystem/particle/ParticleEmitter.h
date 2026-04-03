@@ -7,6 +7,7 @@
 class AABB;
 class Actor;
 class BlockPos;
+class ClientFrameUpdateContext;
 class Dimension;
 class ExpressionNode;
 class HashedString;
@@ -14,7 +15,6 @@ class ParticleRenderData;
 class Vec3;
 class WeakEntityRef;
 struct ActorUniqueID;
-struct ClientFrameUpdateContext;
 namespace ParticleSystem { struct ActorBindInfo; }
 // clang-format on
 

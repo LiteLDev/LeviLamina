@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaRepository {
+class PersonaRepository {
 public:
     // PersonaRepository inner types declare
     // clang-format off

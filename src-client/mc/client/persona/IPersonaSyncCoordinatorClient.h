@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct IPersonaSyncCoordinatorClient {};
+class IPersonaSyncCoordinatorClient {};
 
 } // namespace persona

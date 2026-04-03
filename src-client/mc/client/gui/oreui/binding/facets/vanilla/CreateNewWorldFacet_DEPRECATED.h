@@ -17,9 +17,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentAcquisition;
 class ILevelListCache;
 class WorldSettingsRules;
-struct ContentAcquisition;
 struct LevelSummary;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }

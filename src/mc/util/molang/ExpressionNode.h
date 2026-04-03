@@ -213,3 +213,8 @@ public:
     MCFOLD void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
+// NOLINTEND

@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct GuiScaleDataProvider {};
+class GuiScaleDataProvider {};
 
 } // namespace Settings

@@ -4,7 +4,7 @@
 
 namespace Realms {
 
-struct RealmsList {
+class RealmsList {
 public:
     // RealmsList inner types declare
     // clang-format off

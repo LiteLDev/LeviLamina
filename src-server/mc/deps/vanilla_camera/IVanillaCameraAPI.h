@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IVanillaCameraAPI {
+class IVanillaCameraAPI {
 public:
     // IVanillaCameraAPI inner types declare
     // clang-format off

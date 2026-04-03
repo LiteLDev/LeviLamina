@@ -27,6 +27,7 @@ class AbstractScene;
 class DataBindingComponent;
 class FocusComponent;
 class FocusManager;
+class ITTSEventManager;
 class KeyboardManager;
 class LayoutManager;
 class RectangleArea;
@@ -45,7 +46,6 @@ class UIMeasureStrategy;
 class UIPropertyBag;
 class UIRenderContext;
 class VisualTree;
-struct ITTSEventManager;
 struct TouchPadTouchEventData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Json { class Value; }

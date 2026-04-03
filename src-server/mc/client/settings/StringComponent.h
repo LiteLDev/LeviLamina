@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct StringComponent {};
+class StringComponent {};
 
 } // namespace Settings

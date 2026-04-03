@@ -9,12 +9,12 @@
 // clang-format off
 class AppPlatform;
 class FeatureToggles;
+class FlightingService;
 class IAdvancedGraphicsOptions;
 class IDataDrivenUIRepository;
 class IMinecraftGame;
-struct FlightingService;
-namespace Parties { struct PartySystem; }
-namespace flighting { struct TreatmentToggles; }
+namespace Parties { class PartySystem; }
+namespace flighting { class TreatmentToggles; }
 // clang-format on
 
 namespace OreUI {

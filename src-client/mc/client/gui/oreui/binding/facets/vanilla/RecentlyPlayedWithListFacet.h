@@ -13,9 +13,9 @@
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct AddFriendUserItem; }
 namespace OreUI { struct SocialPlayer; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
-namespace Social { struct RecentlyPlayedWithList; }
+namespace Social { class RecentlyPlayedWithList; }
 // clang-format on
 
 namespace OreUI {

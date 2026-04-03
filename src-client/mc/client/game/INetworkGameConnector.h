@@ -11,14 +11,14 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class RealmsAPI;
 struct ExperienceConnectionData;
 struct GameConnectionInfoEx;
 struct PlayerJoinWorldContext;
-struct RealmsAPI;
 namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
-namespace Social { struct MultiplayerGameInfo; }
+namespace Social { class MultiplayerGameInfo; }
 // clang-format on
 
 class INetworkGameConnector {

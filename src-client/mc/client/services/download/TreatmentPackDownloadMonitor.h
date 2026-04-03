@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct TreatmentPackDownloadMonitor {
+class TreatmentPackDownloadMonitor {
 public:
     // TreatmentPackDownloadMonitor inner types define
     enum class FetchState : int {};

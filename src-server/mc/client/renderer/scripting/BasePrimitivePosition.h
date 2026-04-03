@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct BasePrimitivePosition {};
+class BasePrimitivePosition {};
 
 } // namespace Scripting::RenderHelper

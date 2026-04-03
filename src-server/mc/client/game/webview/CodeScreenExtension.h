@@ -4,7 +4,7 @@
 
 namespace Webview {
 
-struct CodeScreenExtension {
+class CodeScreenExtension {
 public:
     // CodeScreenExtension inner types declare
     // clang-format off

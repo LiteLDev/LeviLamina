@@ -4,9 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace LocalServerLauncher { class IGameInterface; }
+namespace LocalServerLauncher { class IServerInstanceBuilder; }
 namespace LocalServerLauncher { struct GameDependencies; }
-namespace LocalServerLauncher { struct IGameInterface; }
-namespace LocalServerLauncher { struct IServerInstanceBuilder; }
 namespace LocalServerLauncher { struct ServerInitData; }
 namespace LocalServerLauncher { struct ServerLaunchResult; }
 // clang-format on

@@ -21,7 +21,7 @@ class IContentManagerContext;
 class MinecraftScreenModel;
 class ProgressHandler;
 namespace Json { class Value; }
-namespace Progress { struct ProgressTips; }
+namespace Progress { class ProgressTips; }
 // clang-format on
 
 class ProgressScreenController : public ::MinecraftScreenController {

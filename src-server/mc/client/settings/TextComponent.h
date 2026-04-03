@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct TextComponent {};
+class TextComponent {};
 
 } // namespace Settings

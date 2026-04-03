@@ -15,8 +15,8 @@ class IMinecraftGame;
 class MainMenuScreenModel;
 struct ImportResult;
 struct LegacyWorldInfo;
-namespace Legacy { struct WorldImporter; }
-namespace Legacy { struct WorldProcessRequest; }
+namespace Legacy { class WorldImporter; }
+namespace Legacy { class WorldProcessRequest; }
 // clang-format on
 
 class LegacyWorldConverter : public ::std::enable_shared_from_this<::LegacyWorldConverter> {

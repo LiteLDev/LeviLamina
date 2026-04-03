@@ -4,6 +4,6 @@
 
 namespace Webview {
 
-struct PlatformArguments {};
+class PlatformArguments {};
 
 } // namespace Webview

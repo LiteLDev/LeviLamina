@@ -4,6 +4,6 @@
 
 namespace catalog {
 
-struct ImageResourceManager {};
+class ImageResourceManager {};
 
 } // namespace catalog

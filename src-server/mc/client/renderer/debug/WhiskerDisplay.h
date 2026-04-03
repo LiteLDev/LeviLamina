@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WhiskerDisplay {
+class WhiskerDisplay {
 public:
     // WhiskerDisplay inner types declare
     // clang-format off

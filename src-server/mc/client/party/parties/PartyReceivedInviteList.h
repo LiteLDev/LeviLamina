@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct PartyReceivedInviteList {};
+class PartyReceivedInviteList {};
 
 } // namespace Parties

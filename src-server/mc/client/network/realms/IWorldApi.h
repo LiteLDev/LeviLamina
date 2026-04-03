@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct IWorldApi {};
+class IWorldApi {};
 
 } // namespace Realms

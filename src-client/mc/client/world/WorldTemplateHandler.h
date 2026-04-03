@@ -14,9 +14,9 @@ class FilePickerSettings;
 class IContentKeyProvider;
 class ILevelListCache;
 class WorldTemplateManager;
+class WorldTemplateProvider;
 struct LevelSummary;
 struct WorldTemplateInfo;
-struct WorldTemplateProvider;
 namespace Social { class IUserManager; }
 namespace World { struct WorldID; }
 // clang-format on

@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct ProfileImageRequester {};
+class ProfileImageRequester {};
 
 } // namespace Social

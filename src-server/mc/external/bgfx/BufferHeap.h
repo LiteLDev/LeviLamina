@@ -4,6 +4,6 @@
 
 namespace bgfx::d3d12 {
 
-struct BufferHeap {};
+class BufferHeap {};
 
 } // namespace bgfx::d3d12

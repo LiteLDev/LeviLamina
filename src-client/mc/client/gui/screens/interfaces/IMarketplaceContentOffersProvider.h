@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct StoreCatalogItem;
+class StoreCatalogItem;
 // clang-format on
 
 class IMarketplaceContentOffersProvider {

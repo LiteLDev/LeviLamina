@@ -4,6 +4,6 @@
 
 namespace BiomeColorSampling {
 
-struct GrassTessellationPolicy {};
+class GrassTessellationPolicy {};
 
 } // namespace BiomeColorSampling

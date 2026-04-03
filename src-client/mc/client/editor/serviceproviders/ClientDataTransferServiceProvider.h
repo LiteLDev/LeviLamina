@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientDataTransferServiceProvider {};
+class ClientDataTransferServiceProvider {};
 
 } // namespace Editor::Services

@@ -15,7 +15,7 @@ class DateManager;
 class TaskGroup;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct GalleryScreenshot; }
-namespace Screenshots { struct ScreenshotGallery; }
+namespace Screenshots { class ScreenshotGallery; }
 namespace Social { class IUserManager; }
 // clang-format on
 

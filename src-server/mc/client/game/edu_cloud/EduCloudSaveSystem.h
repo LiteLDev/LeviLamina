@@ -4,6 +4,6 @@
 
 namespace EduCloud {
 
-struct EduCloudSaveSystem {};
+class EduCloudSaveSystem {};
 
 } // namespace EduCloud

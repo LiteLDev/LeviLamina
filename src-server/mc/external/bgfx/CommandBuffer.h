@@ -4,7 +4,7 @@
 
 namespace bgfx {
 
-struct CommandBuffer {
+class CommandBuffer {
 public:
     // CommandBuffer inner types define
     enum class Enum : int {};

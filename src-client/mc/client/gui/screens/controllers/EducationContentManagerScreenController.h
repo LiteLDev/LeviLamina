@@ -9,12 +9,12 @@
 // clang-format off
 class IMinecraftEventing;
 class IResourcePackRepository;
+class LessonItem;
 class LevelData;
 class PlayScreenModel;
 class ResourcePackManager;
 class ToastManager;
-struct LessonItem;
-struct WorldFileDownloadManager;
+class WorldFileDownloadManager;
 // clang-format on
 
 class EducationContentManagerScreenController : public ::MainMenuScreenController {

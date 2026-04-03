@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ServicePackSystem {
+class ServicePackSystem {
 public:
     // ServicePackSystem inner types declare
     // clang-format off

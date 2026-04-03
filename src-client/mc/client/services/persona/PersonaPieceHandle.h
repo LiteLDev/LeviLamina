@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaPieceHandle {
+class PersonaPieceHandle {
 public:
     // PersonaPieceHandle inner types declare
     // clang-format off

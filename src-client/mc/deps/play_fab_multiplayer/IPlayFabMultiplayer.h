@@ -4,6 +4,6 @@
 
 namespace PlayFabMultiplayer {
 
-struct IPlayFabMultiplayer {};
+class IPlayFabMultiplayer {};
 
 } // namespace PlayFabMultiplayer

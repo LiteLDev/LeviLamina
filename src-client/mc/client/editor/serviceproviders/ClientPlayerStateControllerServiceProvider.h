@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientPlayerStateControllerServiceProvider {};
+class ClientPlayerStateControllerServiceProvider {};
 
 } // namespace Editor::Services

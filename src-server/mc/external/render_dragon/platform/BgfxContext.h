@@ -4,7 +4,7 @@
 
 namespace dragon::platform {
 
-struct BgfxContext {
+class BgfxContext {
 public:
     // BgfxContext inner types declare
     // clang-format off
@@ -17,7 +17,7 @@ public:
     struct InitPending;
     struct InitShaderSDK;
     struct InitTextureStreaming;
-    struct LocalResources;
+    class LocalResources;
     struct RegisteredWindow;
     // clang-format on
 
@@ -40,7 +40,7 @@ public:
 
     struct InitTextureStreaming {};
 
-    struct LocalResources {};
+    class LocalResources {};
 
     struct RegisteredWindow {};
 };

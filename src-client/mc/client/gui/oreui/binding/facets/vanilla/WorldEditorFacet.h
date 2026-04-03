@@ -22,9 +22,9 @@
 
 // auto generated forward declare list
 // clang-format off
-struct IEntitlementManager;
-struct NewPlayerSystem;
-struct TrialManager;
+class IEntitlementManager;
+class NewPlayerSystem;
+class TrialManager;
 namespace OreUI { class IResourceAllowList; }
 namespace World { class WorldEditor; }
 namespace World { struct WorldData; }

@@ -6,12 +6,12 @@ struct CullingPerformanceData {
 public:
     // CullingPerformanceData inner types declare
     // clang-format off
-    struct AtomicCounter;
-    struct AtomicCullerTimer;
+    class AtomicCounter;
+    class AtomicCullerTimer;
     // clang-format on
 
     // CullingPerformanceData inner types define
-    struct AtomicCounter {};
+    class AtomicCounter {};
 
-    struct AtomicCullerTimer {};
+    class AtomicCullerTimer {};
 };

@@ -17,9 +17,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentAcquisition;
 class ILevelListCache;
 class TaskGroup;
-struct ContentAcquisition;
 namespace World { class IWorldCloudSyncer; }
 namespace World { class IWorldResourcePackHandler; }
 namespace World { class LocalWorldStarter; }

@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct GlobalConstantBuffers {};
+class GlobalConstantBuffers {};
 
 } // namespace mce

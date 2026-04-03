@@ -19,14 +19,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcChecker;
 class DlcUIWrapper;
 class PlatformMultiplayerRestrictions;
 class PlayScreenModel;
-struct DlcChecker;
+class ServicesManager;
 struct ImportResult;
 struct LegacyWorldInfo;
 struct NetworkWorldInfo;
-struct ServicesManager;
 namespace Json { class Value; }
 namespace Realms { struct World; }
 namespace Social { struct PermissionCheckResult; }

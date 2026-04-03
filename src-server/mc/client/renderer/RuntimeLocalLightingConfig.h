@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RuntimeLocalLightingConfig {
+class RuntimeLocalLightingConfig {
 public:
     // RuntimeLocalLightingConfig inner types declare
     // clang-format off

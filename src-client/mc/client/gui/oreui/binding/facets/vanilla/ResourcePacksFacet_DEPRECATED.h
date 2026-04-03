@@ -20,23 +20,23 @@
 // clang-format off
 class ContentTierIncompatibleReason;
 class ContentView;
+class DlcChecker;
 class IClientInstance;
+class IContentAcquisition;
 class IContentManager;
 class IContentManagerContext;
 class IContentTierManager;
 class IDlcBatchModel;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class ILevelListCache;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
 class MainMenuScreenModel;
 struct ContentItem;
 struct ContentViews;
-struct DlcChecker;
 struct DlcValidationState;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
 struct LevelSummary;
 struct PackContentItem;
 namespace OreUI { class IResourceAllowList; }

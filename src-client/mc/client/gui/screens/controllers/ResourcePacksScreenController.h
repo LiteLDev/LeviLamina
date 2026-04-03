@@ -17,6 +17,7 @@
 // clang-format off
 class ContentTierIncompatibleReason;
 class ContentView;
+class DlcChecker;
 class DlcUIWrapper;
 class IContentManager;
 class IContentManagerContext;
@@ -25,7 +26,6 @@ class MultiplayerLockState;
 class ResourceLocation;
 class UIPropertyBag;
 struct ContentItem;
-struct DlcChecker;
 struct MoveResourcePackResult;
 struct PackContentItem;
 struct PackIdVersion;

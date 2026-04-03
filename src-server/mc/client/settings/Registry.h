@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct Registry {};
+class Registry {};
 
 } // namespace Settings

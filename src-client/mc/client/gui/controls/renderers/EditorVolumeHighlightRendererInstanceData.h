@@ -9,8 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class RenderChunkBuilder;
-struct RenderChunkInstanced;
-struct RenderChunkSorterSharedInfo;
+class RenderChunkInstanced;
+class RenderChunkSorterSharedInfo;
 // clang-format on
 
 class EditorVolumeHighlightRendererInstanceData {

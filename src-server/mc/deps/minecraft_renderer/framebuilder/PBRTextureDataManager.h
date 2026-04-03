@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder {
 
-struct PBRTextureDataManager {};
+class PBRTextureDataManager {};
 
 } // namespace mce::framebuilder

@@ -11,9 +11,9 @@
 // clang-format off
 class ActiveDirectoryPopup;
 class MinecraftScreenModel;
+class TransactionContext;
 struct EduPurchaseDetails;
 struct Purchase;
-struct TransactionContext;
 // clang-format on
 
 class MinecraftActiveDirectoryAuthentication : public ::ActiveDirectoryAuthenticationInterface {

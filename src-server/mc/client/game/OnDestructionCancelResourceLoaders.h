@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct OnDestructionCancelResourceLoaders {
+class OnDestructionCancelResourceLoaders {
 public:
     // OnDestructionCancelResourceLoaders inner types declare
     // clang-format off

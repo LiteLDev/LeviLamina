@@ -4,7 +4,7 @@
 
 namespace MainGameCore {
 
-struct WndProc_PC {
+class WndProc_PC {
 public:
     // WndProc_PC inner types declare
     // clang-format off

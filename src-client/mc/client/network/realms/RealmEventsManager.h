@@ -4,6 +4,6 @@
 
 namespace Realms::Stories {
 
-struct RealmEventsManager {};
+class RealmEventsManager {};
 
 } // namespace Realms::Stories

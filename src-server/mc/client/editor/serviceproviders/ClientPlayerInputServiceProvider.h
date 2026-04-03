@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientPlayerInputServiceProvider {};
+class ClientPlayerInputServiceProvider {};
 
 } // namespace Editor::Services

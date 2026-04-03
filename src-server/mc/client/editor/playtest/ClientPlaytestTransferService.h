@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientPlaytestTransferService {};
+class ClientPlaytestTransferService {};
 
 } // namespace Editor::Services

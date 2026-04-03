@@ -33,11 +33,11 @@ namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { struct FrameDebugData; }
 namespace OreUI::RenderUtils { struct TextureData; }
 namespace cg { class ImageBuffer; }
+namespace dragon { class ResolvedTextureResource; }
 namespace dragon { struct ResolvedIndexBufferResource; }
-namespace dragon { struct ResolvedTextureResource; }
 namespace dragon { struct ResolvedVertexBufferResource; }
+namespace mce { class ShaderGroup; }
 namespace mce { struct SamplerStateDescription; }
-namespace mce { struct ShaderGroup; }
 namespace renoir { struct DepthStencilTexture; }
 namespace renoir { struct PipelineState; }
 namespace renoir { struct RendererCaps; }

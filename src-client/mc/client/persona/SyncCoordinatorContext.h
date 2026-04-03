@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct SyncCoordinatorContext {};
+class SyncCoordinatorContext {};
 
 } // namespace persona

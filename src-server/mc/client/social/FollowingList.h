@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct FollowingList {};
+class FollowingList {};
 
 } // namespace Social

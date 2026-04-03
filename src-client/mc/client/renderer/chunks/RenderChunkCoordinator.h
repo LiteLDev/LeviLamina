@@ -17,16 +17,16 @@ class BlockPos;
 class BlockSource;
 class ChunkSource;
 class Dimension;
+class IRenderChunkGarbage;
 class Level;
 class LevelChunk;
 class LevelRenderer;
 class LevelRendererCamera;
+class RenderChunkCoordinatorProxy;
+class RenderChunkPerformanceData;
+class RenderChunkShared;
 struct ActorBlockSyncMessage;
 struct BlockActorBlockSyncMessage;
-struct IRenderChunkGarbage;
-struct RenderChunkCoordinatorProxy;
-struct RenderChunkPerformanceData;
-struct RenderChunkShared;
 // clang-format on
 
 class RenderChunkCoordinator : public ::LevelListener {

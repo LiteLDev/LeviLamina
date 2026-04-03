@@ -14,8 +14,10 @@
 // auto generated forward declare list
 // clang-format off
 class ClientMoveInputHandler;
+class Config;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
+class IGameModuleApp;
 class IMinecraftGame;
 class InputHandler;
 class InputSettingsHandler;
@@ -24,9 +26,7 @@ class MinecraftInputHandlerProxy;
 class MinecraftInputMappingFactoryMap;
 class MouseMapper;
 class SplitscreenJoinListener;
-struct Config;
 struct ControllerIDtoClientMap;
-struct IGameModuleApp;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 

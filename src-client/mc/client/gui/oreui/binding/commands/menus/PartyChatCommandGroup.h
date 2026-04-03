@@ -11,7 +11,7 @@
 // clang-format off
 namespace OreUI { class GameDependencies; }
 namespace OreUI { class InvocationStatus; }
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 // clang-format on
 
 namespace OreUI {

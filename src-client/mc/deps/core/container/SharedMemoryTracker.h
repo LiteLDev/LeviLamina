@@ -4,16 +4,16 @@
 
 namespace Core {
 
-struct SharedMemoryTracker {
+class SharedMemoryTracker {
 public:
     // SharedMemoryTracker inner types declare
     // clang-format off
-    struct SharedMemoryTrackerBase;
+    class SharedMemoryTrackerBase;
     template<typename T0> class SharedMemoryTrackerImpl;
     // clang-format on
 
     // SharedMemoryTracker inner types define
-    struct SharedMemoryTrackerBase {};
+    class SharedMemoryTrackerBase {};
 
     template <typename T0>
     class SharedMemoryTrackerImpl {};

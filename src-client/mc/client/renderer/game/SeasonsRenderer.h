@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SeasonsRenderer {
+class SeasonsRenderer {
 public:
     // SeasonsRenderer inner types declare
     // clang-format off
-    struct TintResolver;
+    class TintResolver;
     // clang-format on
 
     // SeasonsRenderer inner types define
-    struct TintResolver {};
+    class TintResolver {};
 };

@@ -15,8 +15,8 @@
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct FacetAchievementData; }
 namespace Social { class IUserManager; }
-namespace Social { struct XboxLiveUserAchievements; }
-namespace persona { struct AchievementOfferCollectionManager; }
+namespace Social { class XboxLiveUserAchievements; }
+namespace persona { class AchievementOfferCollectionManager; }
 // clang-format on
 
 namespace OreUI {

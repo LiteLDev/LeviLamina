@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct BlockPaint {};
+class BlockPaint {};
 
 } // namespace Editor::ClientBrush

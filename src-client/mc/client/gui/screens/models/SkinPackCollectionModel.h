@@ -11,26 +11,26 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
 class IDlcBatchModel;
+class IEntitlementManager;
 class MainMenuScreenModel;
 class SkinPackCollector;
-struct ContentCatalogService;
-struct IEntitlementManager;
+class SkinRepository;
+class SkinRepositoryClientInterface;
 struct PackIdVersion;
 struct SkinPackCollectionListener;
-struct SkinRepository;
-struct SkinRepositoryClientInterface;
 // clang-format on
 
 class SkinPackCollectionModel {
 public:
     // SkinPackCollectionModel inner types declare
     // clang-format off
-    struct SkinPackCollectionEntitlementChangeListener;
+    class SkinPackCollectionEntitlementChangeListener;
     // clang-format on
 
     // SkinPackCollectionModel inner types define
-    struct SkinPackCollectionEntitlementChangeListener {};
+    class SkinPackCollectionEntitlementChangeListener {};
 
 public:
     // member variables

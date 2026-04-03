@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct RenderStageSelectorResource {};
+class RenderStageSelectorResource {};
 
 } // namespace rendergraph

@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct RebindActionDataProvider {};
+class RebindActionDataProvider {};
 
 } // namespace Settings

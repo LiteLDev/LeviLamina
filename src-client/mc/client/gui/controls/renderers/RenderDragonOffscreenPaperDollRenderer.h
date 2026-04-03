@@ -17,7 +17,7 @@ class SerializedSkinRef;
 class UIControl;
 class UIScene;
 namespace cg { class ImageBuffer; }
-namespace dragon { struct ResolvedImageResource; }
+namespace dragon { class ResolvedImageResource; }
 namespace mce::PaperDollOffscreenUtils { struct PaperdollCaptureFrame; }
 // clang-format on
 

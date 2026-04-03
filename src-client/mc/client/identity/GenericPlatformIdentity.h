@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct GenericPlatformIdentity {};
+class GenericPlatformIdentity {};
 
 } // namespace Social

@@ -24,11 +24,11 @@ class EditorVolumeHighlightRendererInstanceData;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class RenderChunkCoordinator;
+class RenderChunkInstanced;
 class Tessellator;
 class UIControl;
 class UICustomRenderer;
 struct ActorBlockSyncMessage;
-struct RenderChunkInstanced;
 namespace ClientBlockPipeline { class TessellatorContext; }
 // clang-format on
 

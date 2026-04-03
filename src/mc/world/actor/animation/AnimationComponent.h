@@ -30,7 +30,7 @@ class Matrix;
 class ModelPartLocator;
 struct AnimationComponentArguments;
 class ActorRenderData;
-struct ClientAnimationComponent;
+class ClientAnimationComponent;
 // clang-format on
 
 class AnimationComponent {

@@ -16,16 +16,16 @@
 // clang-format off
 class DateManager;
 class IClientInstance;
-struct IEntitlementManager;
+class IEntitlementManager;
+class PlayerMessagingService;
+class RealmsAPI;
 struct InboxMessage;
-struct PlayerMessagingService;
-struct RealmsAPI;
 namespace Invites { struct Invite; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class InboxSession; }
 namespace OreUI { struct MessageImage; }
 namespace OreUI { struct MessageItem; }
-namespace Realms { struct InvitesService; }
+namespace Realms { class InvitesService; }
 // clang-format on
 
 namespace OreUI {

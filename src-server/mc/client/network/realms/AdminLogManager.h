@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct AdminLogManager {};
+class AdminLogManager {};
 
 } // namespace Realms

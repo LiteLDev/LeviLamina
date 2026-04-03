@@ -14,20 +14,20 @@ class IAppPlatform;
 class LocalPlayer;
 class MultiPlayerLevel;
 class PlayerAbilitiesManager;
+class TrialManager;
 struct ActorUniqueID;
 struct LocalPlayerChangedConnector;
-struct TrialManager;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
 namespace OreUI { struct WorldPlayerInfoBindings; }
-namespace Parties { struct IPartyProvider; }
+namespace Parties { class IPartyProvider; }
+namespace Social { class FriendList; }
 namespace Social { class IUserManager; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class ProfileSystem; }
+namespace Social { class User; }
 namespace Social { struct FriendData; }
-namespace Social { struct FriendList; }
-namespace Social { struct MultiplayerServiceManager; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct ProfileSystem; }
-namespace Social { struct User; }
 namespace World { class WorldPlayerListTracker; }
 namespace mce { class UUID; }
 // clang-format on

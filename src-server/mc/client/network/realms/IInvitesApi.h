@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct IInvitesApi {};
+class IInvitesApi {};
 
 } // namespace Realms

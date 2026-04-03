@@ -4,6 +4,6 @@
 
 namespace bgfx::vk {
 
-struct StagingBufferVK {};
+class StagingBufferVK {};
 
 } // namespace bgfx::vk

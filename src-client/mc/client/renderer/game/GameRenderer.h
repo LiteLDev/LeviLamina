@@ -17,18 +17,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandListQueue;
 class Dimension;
 class IClientInstance;
+class IRenderChunkGarbageCollection;
+class InsideCubeRenderer;
 class Level;
 class LevelRenderer;
 class MinecraftGraphics;
+class PlayerRenderView;
 class Tessellator;
 class TickingTextureStage;
-struct CommandListQueue;
 struct FrameRenderObject;
-struct IRenderChunkGarbageCollection;
-struct InsideCubeRenderer;
-struct PlayerRenderView;
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
 namespace mce { class RenderStage; }

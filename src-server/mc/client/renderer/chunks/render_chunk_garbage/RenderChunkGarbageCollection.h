@@ -4,6 +4,6 @@
 
 namespace RenderChunkGarbage {
 
-struct RenderChunkGarbageCollection {};
+class RenderChunkGarbageCollection {};
 
 } // namespace RenderChunkGarbage

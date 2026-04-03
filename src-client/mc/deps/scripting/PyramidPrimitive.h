@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct PyramidPrimitive {};
+class PyramidPrimitive {};
 
 } // namespace Scripting::RenderHelper

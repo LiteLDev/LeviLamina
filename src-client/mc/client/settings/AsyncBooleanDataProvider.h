@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct AsyncBooleanDataProvider {};
+class AsyncBooleanDataProvider {};
 
 } // namespace Settings

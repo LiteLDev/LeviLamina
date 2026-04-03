@@ -11,8 +11,8 @@
 struct NetworkWorldInfo;
 namespace Network { struct ServerID; }
 namespace OreUI { struct FriendWorld; }
-namespace Parties { struct PartyTravelManager; }
-namespace Social { struct FriendList; }
+namespace Parties { class PartyTravelManager; }
+namespace Social { class FriendList; }
 namespace World { class FriendServerWorldList; }
 // clang-format on
 

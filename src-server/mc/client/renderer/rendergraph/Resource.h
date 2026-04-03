@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct Resource {};
+class Resource {};
 
 } // namespace rendergraph

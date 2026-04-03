@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct Widget_ServiceInterface {};
+class Widget_ServiceInterface {};
 
 } // namespace Editor::Widgets

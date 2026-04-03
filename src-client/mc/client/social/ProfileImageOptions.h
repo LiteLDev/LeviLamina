@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct ProfileImageOptions {
+class ProfileImageOptions {
 public:
     // ProfileImageOptions inner types define
     enum class ImageSource : int {};

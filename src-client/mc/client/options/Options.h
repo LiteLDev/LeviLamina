@@ -20,17 +20,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChatOptions;
 class ClientInstanceEventCoordinator;
 class GamePadRemappingLayout;
 class IAdvancedGraphicsOptions;
 class IOptions;
 class KeyboardRemappingLayout;
 class Option;
+class OptionSaveDeferral;
+class OptionValueInterface;
 class OptionsObserver;
 class TaskGroup;
-struct ChatOptions;
-struct OptionSaveDeferral;
-struct OptionValueInterface;
 struct ScriptDebuggerSettings;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class SingleThreadedLock; }

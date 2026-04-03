@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct PersonaEventBus {};
+class PersonaEventBus {};
 
 } // namespace persona

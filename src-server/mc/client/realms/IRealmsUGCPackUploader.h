@@ -4,7 +4,7 @@
 
 namespace Realms {
 
-struct IRealmsUGCPackUploader {
+class IRealmsUGCPackUploader {
 public:
     // IRealmsUGCPackUploader inner types declare
     // clang-format off

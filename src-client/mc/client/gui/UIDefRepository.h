@@ -22,12 +22,12 @@ class UIDefRepository : public ::IUIDefRepository {
 public:
     // UIDefRepository inner types declare
     // clang-format off
-    struct UIDefNamespace;
+    class UIDefNamespace;
     struct DefEntry;
     // clang-format on
 
     // UIDefRepository inner types define
-    struct UIDefNamespace {};
+    class UIDefNamespace {};
 
     struct DefEntry {};
 

@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct QuadIndexBuffer {};
+class QuadIndexBuffer {};
 
 } // namespace mce

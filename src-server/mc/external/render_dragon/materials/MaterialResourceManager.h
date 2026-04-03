@@ -4,6 +4,6 @@
 
 namespace dragon::materials {
 
-struct MaterialResourceManager {};
+class MaterialResourceManager {};
 
 } // namespace dragon::materials

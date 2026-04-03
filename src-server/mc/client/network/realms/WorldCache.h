@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct WorldCache {};
+class WorldCache {};
 
 } // namespace Realms

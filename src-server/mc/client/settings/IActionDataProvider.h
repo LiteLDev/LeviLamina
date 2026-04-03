@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IActionDataProvider {};
+class IActionDataProvider {};
 
 } // namespace Settings

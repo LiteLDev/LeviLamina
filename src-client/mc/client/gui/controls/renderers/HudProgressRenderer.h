@@ -8,10 +8,10 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class MinecraftUIFrameUpdateContext;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
-struct MinecraftUIFrameUpdateContext;
 // clang-format on
 
 class HudProgressRenderer : public ::MinecraftUICustomRenderer {

@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CatalogBackend {};
+class CatalogBackend {};

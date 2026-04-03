@@ -13,7 +13,7 @@
 // clang-format off
 class MinecraftScreenModel;
 namespace Json { class Value; }
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 namespace Social { struct PlatformUserProfileData; }
 namespace Social { struct XboxLiveUserProfileData; }
 // clang-format on

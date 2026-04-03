@@ -21,7 +21,7 @@ class SecureStorageKey;
 class WebviewInterface;
 namespace Core { class Path; }
 namespace Core { class PathView; }
-namespace Webview { struct PlatformArguments; }
+namespace Webview { class PlatformArguments; }
 // clang-format on
 
 class AppPlatform_win32 : public ::AppPlatformWindows {

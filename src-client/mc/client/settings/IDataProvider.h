@@ -4,6 +4,6 @@
 
 namespace Settings {
 
-struct IDataProvider {};
+class IDataProvider {};
 
 } // namespace Settings

@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XalApiWrapper {};
+class XalApiWrapper {};
 
 } // namespace Social

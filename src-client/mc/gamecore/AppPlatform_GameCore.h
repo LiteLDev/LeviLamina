@@ -14,11 +14,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ConnectivityHint_GameCore;
 class ITextBoxController;
 class PropertyBag;
 class SecureStorage;
 class SecureStorageKey;
-struct ConnectivityHint_GameCore;
 struct XTaskQueueObject;
 namespace Bedrock { class CommonPlatform; }
 namespace Bedrock { class Platform_GameCore; }
