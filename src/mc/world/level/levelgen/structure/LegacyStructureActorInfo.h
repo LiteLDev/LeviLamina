@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/level/BlockPos.h"
 
 class LegacyStructureActorInfo {

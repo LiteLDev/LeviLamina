@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/edu/CredentialsObserver.h"
 #include "mc/certificates/identity/edu/GenericCredentialsEvent.h"
-#include "mc/deps/certificates/certificates/WebToken.h"
+#include "mc/deps/certificates/WebToken.h"
 
 // auto generated forward declare list
 // clang-format off

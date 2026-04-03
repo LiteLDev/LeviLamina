@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/item/ItemVersion.h"
 
 // auto generated forward declare list

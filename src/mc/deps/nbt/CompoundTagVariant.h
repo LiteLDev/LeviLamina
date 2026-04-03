@@ -7,18 +7,18 @@
 #include "ll/api/base/Meta.h"
 
 // auto generated inclusion list
-#include "mc/deps/nbt/nbt/ByteArrayTag.h"
-#include "mc/deps/nbt/nbt/ByteTag.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
-#include "mc/deps/nbt/nbt/DoubleTag.h"
-#include "mc/deps/nbt/nbt/EndTag.h"
-#include "mc/deps/nbt/nbt/FloatTag.h"
-#include "mc/deps/nbt/nbt/Int64Tag.h"
-#include "mc/deps/nbt/nbt/IntArrayTag.h"
-#include "mc/deps/nbt/nbt/IntTag.h"
-#include "mc/deps/nbt/nbt/ListTag.h"
-#include "mc/deps/nbt/nbt/ShortTag.h"
-#include "mc/deps/nbt/nbt/StringTag.h"
+#include "mc/deps/nbt/ByteArrayTag.h"
+#include "mc/deps/nbt/ByteTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/deps/nbt/DoubleTag.h"
+#include "mc/deps/nbt/EndTag.h"
+#include "mc/deps/nbt/FloatTag.h"
+#include "mc/deps/nbt/Int64Tag.h"
+#include "mc/deps/nbt/IntArrayTag.h"
+#include "mc/deps/nbt/IntTag.h"
+#include "mc/deps/nbt/ListTag.h"
+#include "mc/deps/nbt/ShortTag.h"
+#include "mc/deps/nbt/StringTag.h"
 
 // auto generated forward declare list
 // clang-format off

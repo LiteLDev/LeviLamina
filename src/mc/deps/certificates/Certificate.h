@@ -4,7 +4,7 @@
 #include "mc/certificates/UnverifiedCertificate.h"
 
 // auto generated inclusion list
-#include "mc/deps/certificates/certificates/UnverifiedCertificate.h"
+#include "mc/deps/certificates/UnverifiedCertificate.h"
 
 // auto generated forward declare list
 // clang-format off

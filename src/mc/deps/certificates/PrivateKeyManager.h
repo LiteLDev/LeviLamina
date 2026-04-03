@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/certificates/certificates/KeyManager.h"
+#include "mc/deps/certificates/KeyManager.h"
 #include "mc/deps/crypto/asymmetric/system/System.h"
 
 class PrivateKeyManager : public ::KeyManager {

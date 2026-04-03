@@ -4,7 +4,7 @@
 #include "mc/certificates/WebToken.h"
 
 // auto generated inclusion list
-#include "mc/deps/certificates/certificates/WebToken.h"
+#include "mc/deps/certificates/WebToken.h"
 
 // auto generated forward declare list
 // clang-format off

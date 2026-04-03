@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/events/event_data/ServerTelemetryData.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/legacy/ActorUniqueID.h"
