@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct BoxPrimitive {};
+class BoxPrimitive {};
 
 } // namespace Scripting::RenderHelper

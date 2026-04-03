@@ -22,28 +22,28 @@ class glTFExporter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk11be40;
-    ::ll::UntypedStorage<8, 32>  mUnk7da04e;
-    ::ll::UntypedStorage<8, 32>  mUnk1ecdf7;
-    ::ll::UntypedStorage<8, 32>  mUnk6d52d6;
-    ::ll::UntypedStorage<8, 32>  mUnk777b5f;
+    ::ll::UntypedStorage<8, 32>  mUnk6b2b52;
+    ::ll::UntypedStorage<8, 32>  mUnk8c608f;
+    ::ll::UntypedStorage<8, 32>  mUnk8616b2;
+    ::ll::UntypedStorage<8, 32>  mUnk120142;
+    ::ll::UntypedStorage<8, 32>  mUnk9bc0ba;
     ::ll::UntypedStorage<1, 1>   mUnkfc1c68;
-    ::ll::UntypedStorage<8, 24>  mUnkb182ab;
-    ::ll::UntypedStorage<8, 24>  mUnk818856;
+    ::ll::UntypedStorage<8, 24>  mUnk4999c3;
+    ::ll::UntypedStorage<8, 24>  mUnkf19852;
     ::ll::UntypedStorage<8, 160> mUnkf04c76;
-    ::ll::UntypedStorage<8, 24>  mUnk77f9c5;
-    ::ll::UntypedStorage<8, 24>  mUnk671a36;
-    ::ll::UntypedStorage<8, 24>  mUnk6f71eb;
-    ::ll::UntypedStorage<8, 24>  mUnk7194fe;
-    ::ll::UntypedStorage<8, 24>  mUnk562094;
-    ::ll::UntypedStorage<8, 24>  mUnkb88a89;
-    ::ll::UntypedStorage<8, 24>  mUnk68e147;
-    ::ll::UntypedStorage<8, 24>  mUnk92f774;
-    ::ll::UntypedStorage<8, 24>  mUnkfcdcd7;
-    ::ll::UntypedStorage<8, 24>  mUnk6233e3;
-    ::ll::UntypedStorage<8, 24>  mUnk4be391;
+    ::ll::UntypedStorage<8, 24>  mUnk3cbc3b;
+    ::ll::UntypedStorage<8, 24>  mUnk8e959c;
+    ::ll::UntypedStorage<8, 24>  mUnk81fc79;
+    ::ll::UntypedStorage<8, 24>  mUnk455823;
+    ::ll::UntypedStorage<8, 24>  mUnkc5fffb;
+    ::ll::UntypedStorage<8, 24>  mUnk9a4c47;
+    ::ll::UntypedStorage<8, 24>  mUnk179a42;
+    ::ll::UntypedStorage<8, 24>  mUnka25cfc;
+    ::ll::UntypedStorage<8, 24>  mUnk7de0c4;
+    ::ll::UntypedStorage<8, 24>  mUnkb05d1a;
+    ::ll::UntypedStorage<8, 24>  mUnka8255b;
     ::ll::UntypedStorage<4, 4>   mUnk398e4e;
-    ::ll::UntypedStorage<8, 24>  mUnkd71ebe;
+    ::ll::UntypedStorage<8, 24>  mUnk35d773;
     ::ll::UntypedStorage<8, 80>  mUnk2d25e2;
     // NOLINTEND
 
@@ -103,13 +103,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& BINARY_EXTENSION();
+    MCNAPI_C static ::std::string_view const& BINARY_EXTENSION();
 
     MCNAPI_C static ::std::string_view const& GLB_BUFFER_URI();
 
-    MCNAPI static ::std::string_view const& GLB_EXTENSION();
+    MCNAPI_C static ::std::string_view const& GLB_EXTENSION();
 
-    MCNAPI static ::std::string_view const& GLTF_EXTENSION();
+    MCNAPI_C static ::std::string_view const& GLTF_EXTENSION();
     // NOLINTEND
 
 public:

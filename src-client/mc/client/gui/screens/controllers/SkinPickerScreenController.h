@@ -7,13 +7,13 @@
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
 class SkinPackCollectionModel;
-struct SkinRepository;
+class SkinRepository;
 // clang-format on
 
 class SkinPickerScreenController : public ::MainMenuScreenController {
@@ -60,7 +60,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::std::string _getButtonBDescription() /*override*/;
     // NOLINTEND
@@ -127,6 +127,8 @@ public:
     MCAPI ::ui::ViewRequest $tryExit();
 
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::std::string $_getButtonBDescription();
     // NOLINTEND

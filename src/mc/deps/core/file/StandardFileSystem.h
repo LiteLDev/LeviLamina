@@ -8,6 +8,7 @@
 #include "mc/deps/core/file/FileSystem.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
+#include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
@@ -28,7 +29,7 @@ class StandardFileSystem : public ::Core::FileSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk703cf7;
+    ::ll::UntypedStorage<8, 8> mUnkef3570;
     // NOLINTEND
 
 public:
@@ -65,6 +66,10 @@ public:
     copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) /*override*/;
 
     virtual ::Core::Result readFileData(::Core::PathView filePath, ::std::vector<uchar>& data) /*override*/;
+
+    virtual ::Bedrock::Result<::std::string> readFile(::Core::PathView filePath) /*override*/;
+
+    virtual ::Bedrock::Result<void> writeFile(::Core::PathView filePath, ::std::string_view data) /*override*/;
 
     virtual ::Core::Result createOneDirectory(::Core::PathView directoryPath) /*override*/;
 
@@ -246,6 +251,10 @@ public:
     MCNAPI ::Core::Result $copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
     MCNAPI ::Core::Result $readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
+
+    MCNAPI ::Bedrock::Result<::std::string> $readFile(::Core::PathView filePath);
+
+    MCNAPI ::Bedrock::Result<void> $writeFile(::Core::PathView filePath, ::std::string_view data);
 
     MCNAPI ::Core::Result $createOneDirectory(::Core::PathView directoryPath);
 

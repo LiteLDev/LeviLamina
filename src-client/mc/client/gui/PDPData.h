@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class PDPSection;
-struct StoreCatalogItem;
+class StoreCatalogItem;
 // clang-format on
 
 struct PDPData {

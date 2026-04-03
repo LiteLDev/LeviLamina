@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CatalogInfo;
 class CharacterSelectorModel;
 class PersonaScreenModel;
-struct CatalogInfo;
 // clang-format on
 
 class CastModelPromptData : public ::IProfileEntryPromptData {

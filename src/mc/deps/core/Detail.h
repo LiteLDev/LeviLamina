@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/CallStack.h"
 #include "mc/platform/ErrorInfoBuilder.h"
-#include "mc/platform/diagnostics/LogAreaID.h"
 
 // auto generated forward declare list
 // clang-format off

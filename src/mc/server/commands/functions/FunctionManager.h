@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/server/commands/functions/FunctionQueueOrder.h"
 
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
 class CommandRegistry;
 class FunctionEntry;
 class GameRule;

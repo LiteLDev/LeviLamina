@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SoundMapping {
+class SoundMapping {
 public:
     // SoundMapping inner types declare
     // clang-format off

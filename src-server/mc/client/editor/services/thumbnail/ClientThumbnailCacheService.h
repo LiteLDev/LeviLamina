@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct ClientThumbnailCacheService {
+class ClientThumbnailCacheService {
 public:
     // ClientThumbnailCacheService inner types declare
     // clang-format off

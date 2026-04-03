@@ -10,11 +10,11 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class IEntitlementManager;
 class IMarketplaceContentOffersProvider;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
-struct MarketplaceServicesManager;
-struct ServicesManager;
+class IStoreCatalogRepository;
+class MarketplaceServicesManager;
+class ServicesManager;
 namespace World { struct MarketplaceWorldTemplateData; }
 // clang-format on
 

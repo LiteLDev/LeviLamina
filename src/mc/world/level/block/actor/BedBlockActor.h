@@ -39,9 +39,9 @@ public:
     // NOLINTBEGIN
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual void onPlace(::BlockSource& region) /*override*/;
+    virtual void onPlace(::BlockSource&) /*override*/;
 
-    virtual void onChanged(::BlockSource& region) /*override*/;
+    virtual void onChanged(::BlockSource&) /*override*/;
 
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -53,7 +53,7 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -71,9 +71,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onPlace(::BlockSource& region);
+    MCFOLD void $onPlace(::BlockSource&);
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource&);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -85,7 +85,7 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

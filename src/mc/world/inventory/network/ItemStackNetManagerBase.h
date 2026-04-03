@@ -42,7 +42,7 @@ public:
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                       mEntityRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerScreenStack>> mScreenStack;
     ::ll::TypedStorage<1, 1, bool>                                                mCurrentRequestHasCraftAction;
-    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
+    ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
     // NOLINTEND
 
 public:

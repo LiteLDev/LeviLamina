@@ -38,6 +38,9 @@ MCAPI void CreateNewEmptyStructureBlock(
     ::BlockSource&       region
 );
 
+MCAPI ::StructureBlockActor*
+FindNearestStructureBlock(::BlockPos const& origin, int searchRadius, ::BlockSource& region);
+
 MCAPI ::std::optional<::BlockPos>
 FindStructureBlockContainingPos(::BlockPos const& pos, int searchRadius, ::BlockSource& region);
 

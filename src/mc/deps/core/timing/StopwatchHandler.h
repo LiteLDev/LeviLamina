@@ -11,7 +11,7 @@ class StopwatchHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkfdce37;
+    ::ll::UntypedStorage<8, 16> mUnkd01257;
     ::ll::UntypedStorage<4, 4>  mUnk5eba57;
     // NOLINTEND
 

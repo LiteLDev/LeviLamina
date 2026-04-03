@@ -4,6 +4,6 @@
 
 namespace MSGraph::Requests {
 
-struct GetDriveItem {};
+class GetDriveItem {};
 
 } // namespace MSGraph::Requests

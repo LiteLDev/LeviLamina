@@ -13,7 +13,8 @@ enum class MemberTraits : ushort {
     IsKeyedSetterGetter       = 1 << 3,
     IsConstSelector           = 1 << 4,
     HasDefaultValue           = 1 << 5,
-    EnttEnumAsBitmask         = IsRequired | HasDefaultValue,
+    IsPatternMember           = 1 << 6,
+    EnttEnumAsBitmask         = IsRequired | IsPatternMember,
 };
 
 }

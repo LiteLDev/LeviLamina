@@ -11,7 +11,7 @@ class VolumeDefinitionGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2a9381;
+    ::ll::UntypedStorage<8, 64> mUnk13b3e3;
     ::ll::UntypedStorage<8, 24> mUnk66e645;
     // NOLINTEND
 

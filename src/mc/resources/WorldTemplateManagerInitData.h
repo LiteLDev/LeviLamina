@@ -15,10 +15,10 @@ struct WorldTemplateManagerInitData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk55eda7;
-    ::ll::UntypedStorage<8, 24> mUnk917ae1;
-    ::ll::UntypedStorage<8, 8>  mUnk26b27b;
-    ::ll::UntypedStorage<8, 8>  mUnk728848;
+    ::ll::UntypedStorage<8, 8>  mUnk219b88;
+    ::ll::UntypedStorage<8, 24> mUnkaa4193;
+    ::ll::UntypedStorage<8, 8>  mUnk4814f1;
+    ::ll::UntypedStorage<8, 8>  mUnkfdec2b;
     // NOLINTEND
 
 public:

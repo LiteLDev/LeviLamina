@@ -46,7 +46,7 @@ public:
 
     virtual void setMusicCommandVolumeMultiplier(float) = 0;
 
-    virtual void fadeOut(uint64 soundHandle, float duration) = 0;
+    virtual void fadeOut(uint64, float) = 0;
 
     virtual void stopMusic() = 0;
 
@@ -69,6 +69,8 @@ public:
     virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) = 0;
 
     virtual void unregisterLoop(uint64, bool) = 0;
+
+    virtual ::std::optional<::std::string> getSubtitle(::std::string const&) const = 0;
 
     virtual bool isPlayingSound(uint64) const = 0;
 

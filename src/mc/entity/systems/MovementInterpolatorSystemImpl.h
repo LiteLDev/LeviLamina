@@ -11,7 +11,7 @@
 // clang-format off
 class StrictEntityContext;
 class Vec2;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct MinecartFlagComponent;
 struct MovementInterpolatorComponent;
 struct OnGroundFlagComponent;
@@ -32,7 +32,7 @@ public:
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::MinecartFlagComponent>,
-            ::Include<::ActorMovementTickNeededComponent, ::OnGroundFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::OnGroundFlagComponent>,
             ::MovementInterpolatorComponent const,
             ::StateVectorComponent> view
     );

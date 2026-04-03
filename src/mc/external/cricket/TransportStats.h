@@ -8,8 +8,8 @@ struct TransportStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7cd99e;
-    ::ll::UntypedStorage<8, 24> mUnk8a2cf5;
+    ::ll::UntypedStorage<8, 32> mUnkaeaf20;
+    ::ll::UntypedStorage<8, 24> mUnkc0fab4;
     // NOLINTEND
 
 public:

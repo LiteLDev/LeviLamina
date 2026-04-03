@@ -17,7 +17,6 @@ struct ZipPackArgs;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
-namespace Core { class UnzipFile; }
 // clang-format on
 
 class ZipPackAccessStrategy : public ::PackAccessStrategy {
@@ -25,11 +24,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk18fd21;
-    ::ll::UntypedStorage<8, 8>  mUnk7ca90a;
+    ::ll::UntypedStorage<8, 8>  mUnkf758b1;
     ::ll::UntypedStorage<8, 80> mUnkea609d;
     ::ll::UntypedStorage<8, 56> mUnkadd3fa;
-    ::ll::UntypedStorage<8, 32> mUnka8ffe5;
-    ::ll::UntypedStorage<8, 32> mUnk5887d5;
+    ::ll::UntypedStorage<8, 32> mUnkfb82e0;
+    ::ll::UntypedStorage<8, 32> mUnk21066c;
     ::ll::UntypedStorage<1, 1>  mUnkcea598;
     ::ll::UntypedStorage<1, 1>  mUnk773214;
     // NOLINTEND
@@ -96,12 +95,6 @@ public:
                         fileAccess,
         ::ZipPackArgs&& args
     );
-
-    MCNAPI bool _getAsset(
-        ::gsl::not_null<::Core::UnzipFile*> zipFile,
-        ::Core::Path const&                 packRelativePath,
-        ::std::string&                      result
-    ) const;
 
     MCNAPI bool initZipFile() const;
     // NOLINTEND

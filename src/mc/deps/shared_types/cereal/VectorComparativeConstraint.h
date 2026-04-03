@@ -8,6 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec2;
+namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
@@ -39,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+
+    MCAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

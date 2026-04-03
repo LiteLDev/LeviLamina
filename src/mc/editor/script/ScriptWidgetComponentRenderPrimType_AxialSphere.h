@@ -17,7 +17,7 @@ class ScriptWidgetComponentRenderPrimType_AxialSphere
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnk46ccae;
+    ::ll::UntypedStorage<8, 32> mUnk46ccae;
     ::ll::UntypedStorage<4, 12> mUnk799ee6;
     ::ll::UntypedStorage<4, 4>  mUnk1d30da;
     // NOLINTEND

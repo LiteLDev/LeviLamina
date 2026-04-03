@@ -11,8 +11,8 @@ struct FunctionBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf6fe7c;
-    ::ll::UntypedStorage<8, 24> mUnkceeb8a;
+    ::ll::UntypedStorage<8, 32> mUnk245df8;
+    ::ll::UntypedStorage<8, 24> mUnka16366;
     ::ll::UntypedStorage<8, 16> mUnk5d6400;
     ::ll::UntypedStorage<8, 24> mUnk76729b;
     // NOLINTEND

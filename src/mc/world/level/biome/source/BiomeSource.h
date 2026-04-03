@@ -4,11 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/source/BiomeSourceType.h"
+#include "mc/world/level/block/chunk_volume/VolumeOf.h"
+#include "mc/world/level/newbiome/OperationGraphResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeArea;
+class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
@@ -22,6 +25,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BiomeSource() = default;
+
+    virtual ::ChunkVolume::VolumeOf<::Biome>
+    getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const;
+
+    virtual ::std::optional<::OperationGraphResult<::Biome const*> const> getBiomeAreaToFill(::LevelChunk const&) const;
 
     virtual void fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const*) const = 0;
 
@@ -43,6 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ChunkVolume::VolumeOf<::Biome>
+    $getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const;
+
+    MCFOLD ::std::optional<::OperationGraphResult<::Biome const*> const> $getBiomeAreaToFill(::LevelChunk const&) const;
+
 
     // NOLINTEND
 };

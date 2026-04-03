@@ -8,9 +8,9 @@ struct StunRelayServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdfbae8;
-    ::ll::UntypedStorage<8, 32> mUnk177319;
-    ::ll::UntypedStorage<8, 32> mUnk7bf918;
+    ::ll::UntypedStorage<8, 32> mUnk86c3e4;
+    ::ll::UntypedStorage<8, 32> mUnkf37c87;
+    ::ll::UntypedStorage<8, 32> mUnkc4c5ea;
     // NOLINTEND
 
 public:

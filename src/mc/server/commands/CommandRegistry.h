@@ -38,10 +38,13 @@ class CommandRunStats;
 class CommandSelectorBase;
 class IMinecraftEventing;
 class Packet;
+class PlayerListEntry;
 struct ActorSelectorArgs;
 struct AutoCompleteInformation;
+struct CommandRegistryArguments;
 struct CommandSyntaxInformation;
 namespace Json { class Value; }
+namespace mce { class UUID; }
 // clang-format on
 
 class CommandRegistry {
@@ -711,6 +714,15 @@ public:
     ::std::unordered_set<int>                                mAllowEmptySymbols;
     CommandOverrideFunctor                                   mCommandOverrideFunctor;
     ::std::unique_ptr<::CommandRunStats>                     mCommandRunStats;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::string (*)(
+            ::std::string const&,
+            ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const&,
+            ::AutoCompleteInformation&
+        )>
+        mAutoCompletePlayerMention;
     // NOLINTEND
 
     template <class T>
@@ -750,7 +762,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandRegistry(bool isEduMode);
+    MCAPI explicit CommandRegistry(::CommandRegistryArguments args);
 
     MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                                   name,
@@ -943,7 +955,7 @@ public:
         uint*                               length
     ) const;
 
-    MCAPI ::CommandRegistry::Signature const* findCommand(::std::string const&) const;
+    MCFOLD ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
     MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
 
@@ -1119,25 +1131,7 @@ public:
     // NOLINTBEGIN
     MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
 
-    MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
-
     MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
-
-    MCAPI static char const*& HASITEM_PARAM_DATA();
-
-    MCAPI static char const*& HASITEM_PARAM_ITEM();
-
-    MCAPI static char const*& HASITEM_PARAM_LOCATION();
-
-    MCAPI static char const*& HASITEM_PARAM_QUANTITY();
-
-    MCAPI static char const*& HASITEM_PARAM_SLOT();
-
-    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_DISABLED();
-
-    MCAPI static char const*& HASPERMISSIONSTATE_ENUM_ENABLED();
-
-    MCAPI static char const*& HASPROPERTY_PARAM_PROPERTY_NAME();
 
     MCAPI static ::std::add_lvalue_reference_t<::std::pair<
         bool (CommandRegistry::*)(
@@ -1150,16 +1144,12 @@ public:
         ) const,
         ::CommandRegistry::Symbol> const[]>
     ParseRuleSymbols();
-
-    MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
-
-    MCAPI static char const*& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isEduMode);
+    MCAPI void* $ctor(::CommandRegistryArguments args);
     // NOLINTEND
 
 public:

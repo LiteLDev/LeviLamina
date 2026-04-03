@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class IMinecraftEventing;
 struct BlockCullingData;
 namespace PuvLoadData { struct LoadResultWithTiming; }

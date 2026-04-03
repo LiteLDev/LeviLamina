@@ -6,9 +6,9 @@ struct UrlOverride {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk46e2d6;
-    ::ll::UntypedStorage<8, 32> mUnke2dfc6;
-    ::ll::UntypedStorage<8, 32> mUnk413db6;
+    ::ll::UntypedStorage<8, 32> mUnkf6e712;
+    ::ll::UntypedStorage<8, 32> mUnk8b49db;
+    ::ll::UntypedStorage<8, 32> mUnk20d762;
     // NOLINTEND
 
 public:

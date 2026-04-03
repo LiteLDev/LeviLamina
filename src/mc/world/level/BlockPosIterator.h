@@ -62,6 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::BlockPosIterator begin() const;
+
     MCAPI ::BlockPosIterator end() const;
     // NOLINTEND
 };

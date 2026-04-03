@@ -6,18 +6,18 @@
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/renderer/RenderMaterialGroupBase.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/renderer/SamplerGroupCache.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ResourceLoadManager;
 class ResourcePackManager;
 struct PackIdVersion;
 namespace mce { class RenderMaterialInfo; }
-namespace mce { struct ShaderGroup; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace mce {
@@ -57,6 +57,8 @@ public:
 
     MCAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
+
+    MCAPI void clear();
 
     MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,

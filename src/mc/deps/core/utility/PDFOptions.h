@@ -6,9 +6,9 @@ struct PDFOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk104d74;
-    ::ll::UntypedStorage<8, 32> mUnk7460c2;
-    ::ll::UntypedStorage<8, 32> mUnk7ed398;
+    ::ll::UntypedStorage<8, 24> mUnk8bbeac;
+    ::ll::UntypedStorage<8, 32> mUnk3f3f80;
+    ::ll::UntypedStorage<8, 32> mUnk14994f;
     // NOLINTEND
 
 public:

@@ -4,8 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class Experiments;
-struct AtlasItemManager;
+class TextureShiftManager;
 struct BlockMaterialInstancesComponent;
 struct TextureUVCoordinateSet;
 namespace ClientBlockPipeline { class Material; }
@@ -28,6 +29,7 @@ public:
     MCAPI void initializeMaterials(
         ::BlockMaterialInstancesComponent& materialInstance,
         ::AtlasItemManager const&          atlasItemManager,
+        ::TextureShiftManager const&       textureShiftManager,
         ::Experiments const&               experiments
     );
     // NOLINTEND

@@ -12,7 +12,7 @@ class AsyncVerdictPromise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke03a8b;
+    ::ll::UntypedStorage<8, 80> mUnke03a8b;
     // NOLINTEND
 
 public:

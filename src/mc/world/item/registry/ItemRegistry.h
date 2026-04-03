@@ -13,6 +13,7 @@
 #include "mc/deps/json/Value.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/item/ItemTag.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,16 +25,15 @@ class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
 class IMinecraftEventing;
-class IPackLoadContext;
 class ItemRegistryRef;
 class LevelData;
 class LinkedAssetValidator;
+class PackLoadContext;
 class ResourcePackManager;
 struct ItemData;
 struct ItemIconInfoFactory;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
-struct ItemTag;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Core { class Path; }
@@ -114,10 +114,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::Json::Value>                         mUpgradedJsonRoot;
-        ::ll::TypedStorage<8, 24, ::SemVersion>                          mDocumentVersion;
-        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPackLoadContext>> mPackLoadContext;
-        ::ll::TypedStorage<8, 32, ::std::string>                         mLoadedPackName;
+        ::ll::TypedStorage<8, 16, ::Json::Value>                        mUpgradedJsonRoot;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                         mDocumentVersion;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackLoadContext>> mPackLoadContext;
+        ::ll::TypedStorage<8, 32, ::std::string>                        mLoadedPackName;
         // NOLINTEND
 
     public:
@@ -346,11 +346,11 @@ public:
     );
 
     MCAPI static ::ItemRegistry::ItemLoadResult _tryLoadItemAsset(
-        ::std::string                         jsonData,
-        ::std::shared_ptr<::IPackLoadContext> packLoadContext,
-        ::Core::Path const&                   filenameWithExtension,
-        ::cereal::ReflectionCtx const&        ctx,
-        ::std::string const&                  packName
+        ::std::string                        jsonData,
+        ::std::shared_ptr<::PackLoadContext> packLoadContext,
+        ::Core::Path const&                  filenameWithExtension,
+        ::cereal::ReflectionCtx const&       ctx,
+        ::std::string const&                 packName
     );
     // NOLINTEND
 

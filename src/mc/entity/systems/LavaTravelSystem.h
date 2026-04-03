@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct LavaTravelFlagComponent;
 struct MobTravelComponent;
 struct MovementAttributesComponent;
@@ -22,7 +22,7 @@ public:
     MCNAPI static void tickLavaTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::LavaTravelFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::LavaTravelFlagComponent>,
             ::MovementAttributesComponent const,
             ::MobTravelComponent> view
     );

@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
-namespace ScriptModuleMinecraft { class ScriptAABB; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptAABB _getSpawnAABB(::Vec3 const& position) const;
-
     MCAPI ::ScriptModuleMinecraft::ScriptEntitySpawnType&
     operator=(::ScriptModuleMinecraft::ScriptEntitySpawnType const&);
 

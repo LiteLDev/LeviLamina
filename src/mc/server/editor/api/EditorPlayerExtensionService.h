@@ -26,11 +26,11 @@ class EditorPlayerExtensionService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5a7855;
+    ::ll::UntypedStorage<8, 64> mUnk5a25cf;
     ::ll::UntypedStorage<8, 16> mUnkd0eb60;
     ::ll::UntypedStorage<8, 16> mUnk9e4b1b;
     ::ll::UntypedStorage<8, 16> mUnkf7f171;
-    ::ll::UntypedStorage<8, 24> mUnkade424;
+    ::ll::UntypedStorage<8, 24> mUnk69aec8;
     // NOLINTEND
 
 public:

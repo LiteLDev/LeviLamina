@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LibraryItem {
+class LibraryItem {
 public:
     // LibraryItem inner types define
     enum class BadgeCategory : uint {};

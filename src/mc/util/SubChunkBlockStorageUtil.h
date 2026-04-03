@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/chunk/SubChunkFormat.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 
@@ -17,10 +18,10 @@ namespace SubChunkBlockStorageUtil {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::unique_ptr<::SubChunkStorage<::Block>> makeDeserialized(
-    ::IDataInput&                                                stream,
-    ::std::function<::Block const*(uint64)> const&               runtimeLookUp,
-    ::std::function<::Block const*(::CompoundTag const&)> const& persistentLookUp,
-    ::SubChunkFormat                                             format
+    ::IDataInput&                                                      stream,
+    ::brstd::function_ref<::Block const*(uint64)> const&               runtimeLookUp,
+    ::brstd::function_ref<::Block const*(::CompoundTag const&)> const& persistentLookUp,
+    ::SubChunkFormat                                                   format
 );
 // NOLINTEND
 

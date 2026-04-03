@@ -12,7 +12,8 @@ class BuildSettingsFacet : public ::OreUI::FacetBase<::OreUI::BuildSettingsFacet
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 20, ::OreUI::GameVersionBindings> mCurrentGameVersion;
+    ::ll::TypedStorage<4, 20, ::OreUI::GameVersionBindings>   mCurrentGameVersion;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mDevelopmentVersion;
     // NOLINTEND
 
 public:
@@ -27,6 +28,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::OreUI::GameVersionBindings const& getCurrentGameVersion() const;
+
+    MCFOLD ::std::optional<::std::string> const& getDevelopmentVersion() const;
 
     MCFOLD bool isAnyBeta() const;
 

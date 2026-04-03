@@ -22,7 +22,7 @@ class CherryTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>  mLeavesBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>  mLeavesBlockDescriptor;
     ::ll::TypedStorage<4, 8, ::IntRange>           mHeight;
     ::ll::TypedStorage<4, 8, ::IntRange>           mRadius;
     ::ll::TypedStorage<4, 4, int>                  mTrunkWidth;
@@ -38,12 +38,14 @@ public:
     virtual ~CherryTreeCanopy() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> placeCanopy(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Random&            random,
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::ITreeCanopy::BranchSize const& trunkSize,
+        ::Random&                        random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
     // NOLINTEND
 
@@ -75,12 +77,14 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $placeCanopy(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Random&            random,
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::ITreeCanopy::BranchSize const& trunkSize,
+        ::Random&                        random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const;
 
 

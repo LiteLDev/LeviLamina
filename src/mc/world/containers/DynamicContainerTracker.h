@@ -15,6 +15,7 @@ class ItemStack;
 class StorageItemComponent;
 class StorageWeightLimitItemComponent;
 struct ContainerOwner;
+struct PlayerContainerRefresher;
 // clang-format on
 
 class DynamicContainerTracker {
@@ -51,6 +52,9 @@ public:
     MCAPI void _retrackRecursiveAux(::ItemStack const& item, int depth);
 
     MCAPI ::std::pair<::FullContainerName, ::ItemStack> _tryInitID(::ItemStack const& item) const;
+
+    MCAPI void
+    broadcastChanges(::PlayerContainerRefresher& refresher, ::std::function<void()> contentsChangedCallback) const;
 
     MCAPI void giveContainerLifetimes(::ContainerOwner& containerOwner) const;
 

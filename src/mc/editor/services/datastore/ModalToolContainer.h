@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/datastore/container/Container.h"
 
@@ -20,7 +21,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9e7146;
+    ::ll::UntypedStorage<1, 1>  mUnkf594a1;
     ::ll::UntypedStorage<8, 16> mUnk9e375a;
+    ::ll::UntypedStorage<8, 24> mUnkdb5cbf;
     // NOLINTEND
 
 public:
@@ -65,6 +68,8 @@ public:
         ::Json::Value const&           payload,
         bool                           isNetworkEvent
     );
+
+    MCNAPI void notifyModeChange(::Editor::Mode newMode);
     // NOLINTEND
 
 public:

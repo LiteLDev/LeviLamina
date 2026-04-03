@@ -27,7 +27,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4>  mUnk34eb49;
-        ::ll::UntypedStorage<8, 32> mUnk9340c6;
+        ::ll::UntypedStorage<8, 32> mUnka5ac8c;
         // NOLINTEND
 
     public:
@@ -56,8 +56,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4>  mUnk6cb2bf;
-        ::ll::UntypedStorage<8, 32> mUnk532ea1;
-        ::ll::UntypedStorage<8, 32> mUnk6b5cf2;
+        ::ll::UntypedStorage<8, 32> mUnk41daf1;
+        ::ll::UntypedStorage<8, 32> mUnkce0e5d;
         // NOLINTEND
 
     public:
@@ -83,8 +83,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkd365b1;
-        ::ll::UntypedStorage<8, 24> mUnk8408b9;
+        ::ll::UntypedStorage<1, 1>  mUnkb4df7f;
+        ::ll::UntypedStorage<8, 24> mUnkce6ed9;
+        ::ll::UntypedStorage<8, 24> mUnk76fe3d;
         ::ll::UntypedStorage<8, 64> mUnkd26c34;
         ::ll::UntypedStorage<8, 64> mUnkf668bd;
         // NOLINTEND
@@ -93,11 +94,12 @@ public:
         // prevent constructor by default
         AssetCollection& operator=(AssetCollection const&);
         AssetCollection(AssetCollection const&);
+        AssetCollection();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI AssetCollection();
+        MCNAPI explicit AssetCollection(bool isClientCollection);
 
         MCNAPI ~AssetCollection();
         // NOLINTEND
@@ -105,7 +107,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCNAPI void* $ctor(bool isClientCollection);
         // NOLINTEND
 
     public:
@@ -118,7 +120,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnka69e6e;
+    ::ll::UntypedStorage<8, 104> mUnk23ba6e;
     ::ll::UntypedStorage<1, 1>   mUnk86474b;
     ::ll::UntypedStorage<1, 1>   mUnk1d7f18;
     // NOLINTEND
@@ -138,6 +140,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _initThreadAssetCollection();
+
     MCNAPI_C void addFile(int assetType, ::std::string const& filepath);
 
     MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);

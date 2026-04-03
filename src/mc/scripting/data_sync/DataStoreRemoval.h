@@ -8,7 +8,7 @@ struct DataStoreRemoval {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8f36e6;
+    ::ll::UntypedStorage<8, 32> mUnkec9042;
     // NOLINTEND
 
 public:

@@ -33,17 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI_C static float const& SPLASH_RANGE();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

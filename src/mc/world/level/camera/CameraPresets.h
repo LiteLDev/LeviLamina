@@ -5,14 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/molang/MolangVersion.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Experiments;
 class IMinecraftEventing;
 class LinkedAssetValidator;
-class ReadOnlyBinaryStream;
 class ResourcePackManager;
 namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace SharedTypes::v1_21_90 { struct CameraPreset; }
@@ -95,8 +93,6 @@ public:
     );
 
     MCNAPI ::CameraPresets& operator=(::CameraPresets&&);
-
-    MCNAPI ~CameraPresets();
     // NOLINTEND
 
 public:
@@ -107,13 +103,5 @@ public:
     MCNAPI static bool isAllowedEaseTarget(::std::string const& easeTarget);
 
     MCNAPI static bool isVanillaCamera(::std::string const& cameraName);
-
-    MCNAPI static ::Bedrock::Result<::CameraPresets> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -12,7 +12,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct OnGroundFlagComponent;
 struct SlimeFlagComponent;
 struct SlimeWasOnGroundPreNormalTickComponent;
@@ -33,7 +33,7 @@ public:
     MCNAPI static void _tickSlimePreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::SlimeFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::SlimeFlagComponent>,
             ::ActorOwnerComponent,
             ::Optional<::OnGroundFlagComponent const>>             view,
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod

@@ -12,7 +12,8 @@ struct ScriptBlockCustomComponentRedstoneUpdateEventIntermediateStorage
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mSignalLevel;
+    ::ll::TypedStorage<2, 2, short> mSignalLevel;
+    ::ll::TypedStorage<2, 2, short> mPreviousSignalLevel;
     // NOLINTEND
 };
 

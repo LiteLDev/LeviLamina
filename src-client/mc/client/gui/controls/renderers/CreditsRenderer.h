@@ -135,8 +135,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& FILE_PADDING();
-
     MCAPI static ::std::string_view const& INDENT_TEXT();
 
     MCAPI static ::std::string_view const& SECTION_BORDER_TEXT();

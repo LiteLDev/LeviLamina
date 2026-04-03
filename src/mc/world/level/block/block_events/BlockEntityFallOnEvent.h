@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDamageSource;
 class BlockSource;
 // clang-format on
 
@@ -34,6 +35,12 @@ public:
     virtual ::BlockSource const& getBlockSource() const /*override*/;
 
     virtual ~BlockEntityFallOnEvent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void handleActorFallDamage(float distance, float multiplier, ::ActorDamageSource source);
     // NOLINTEND
 
 public:

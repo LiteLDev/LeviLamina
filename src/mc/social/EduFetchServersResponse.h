@@ -8,8 +8,8 @@ struct EduFetchServersResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk92312f;
-    ::ll::UntypedStorage<8, 64> mUnk8a5135;
+    ::ll::UntypedStorage<8, 72> mUnk92312f;
+    ::ll::UntypedStorage<8, 56> mUnkfcf064;
     // NOLINTEND
 
 public:
@@ -22,6 +22,12 @@ public:
     // member functions
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(::Social::EduFetchServersResponse&&);
     // NOLINTEND
 
 public:

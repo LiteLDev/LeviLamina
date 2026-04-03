@@ -19,6 +19,12 @@ enum class JoinRealmWorldResult : int {
     CannotConnectToRealm                = 11,
     UnknownError                        = 12,
     TimelineRequired                    = 13,
+    RealmSuspended                      = 14,
+    FetchingRealm                       = 15,
+    FailedFetch                         = 16,
+    BlockedByHardcoreWarning            = 17,
+    NonOwnerJoiningFullWorld            = 18,
+    WorldIsNotOpen                      = 19,
 };
 
 }

@@ -6,8 +6,8 @@ struct SubpackInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2e7e5d;
-    ::ll::UntypedStorage<8, 32> mUnk98bbf2;
+    ::ll::UntypedStorage<8, 32> mUnk3084c6;
+    ::ll::UntypedStorage<8, 32> mUnk939ca8;
     ::ll::UntypedStorage<1, 1>  mUnk548b8a;
     // NOLINTEND
 

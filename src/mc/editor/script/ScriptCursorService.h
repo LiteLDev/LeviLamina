@@ -33,6 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<::Editor::ScriptModule::ScriptCursorProperties> getDefaultProperties() const;
+
     MCNAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
 
     MCNAPI ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const;
@@ -47,10 +49,22 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::glm::ivec3 const& offset);
 
+    MCNAPI ::Scripting::Result_deprecated<void> popPropertiesById(::std::string const& identifier);
+
+    MCNAPI ::Scripting::Result_deprecated<void> pushPropertiesById(
+        ::Editor::ScriptModule::ScriptCursorProperties const& properties,
+        ::std::string const&                                  identifier
+    );
+
     MCNAPI ::Scripting::Result_deprecated<void>
     setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
 
     MCNAPI ::Scripting::Result_deprecated<void> setVisible(bool value);
+
+    MCNAPI ::Scripting::Result_deprecated<void> updatePropertiesById(
+        ::Editor::ScriptModule::ScriptCursorProperties const& properties,
+        ::std::optional<::std::string> const&                 identifier
+    );
     // NOLINTEND
 
 public:

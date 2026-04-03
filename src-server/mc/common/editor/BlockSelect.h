@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct BlockSelect {};
+class BlockSelect {};
 
 } // namespace Editor::ClientBrush

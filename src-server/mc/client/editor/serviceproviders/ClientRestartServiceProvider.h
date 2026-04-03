@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientRestartServiceProvider {};
+class ClientRestartServiceProvider {};
 
 } // namespace Editor::Services

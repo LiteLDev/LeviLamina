@@ -17,7 +17,7 @@ class StructureQueryResultPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5eadd0;
+    ::ll::UntypedStorage<8, 24> mUnk2a2302;
     // NOLINTEND
 
 public:

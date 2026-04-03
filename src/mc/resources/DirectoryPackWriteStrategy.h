@@ -9,7 +9,7 @@ class DirectoryPackWriteStrategy : public ::PackWriteStrategy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk824a6d;
+    ::ll::UntypedStorage<8, 32> mUnk59f46f;
     // NOLINTEND
 
 public:

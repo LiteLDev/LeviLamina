@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/input/IconSize.h"
+#include "mc/client/input/RemappingLayoutRawIndex.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/input/enums/RawInputType.h"
 
@@ -32,7 +33,8 @@ public:
         ::std::shared_ptr<
             ::Bedrock::PubSub::
                 Publisher<void(::std::optional<uint64>), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
-        mRefreshKeymappingsPublisher;
+                                                         mRefreshKeymappingsPublisher;
+    ::ll::TypedStorage<8, 32, ::RemappingLayoutRawIndex> mLayoutRawIndex;
     // NOLINTEND
 
 public:
@@ -66,7 +68,7 @@ public:
 
     MCAPI void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
-    MCAPI void defaultKeyAtIndex(uint index);
+    MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string const& action) const;
 
@@ -75,16 +77,7 @@ public:
 
     MCAPI void setMapping(::std::string const& action, ::std::vector<int> const& keys);
 
-    MCAPI void unassignDuplicateKeys(int index);
-
-    MCAPI void unassignKeyAtIndex(uint index);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::DuplicateKey>
-    _generateIndicesOfDuplicatesForMappings(::std::vector<::Keymapping> const& mappings);
+    MCAPI void unassignDuplicateKeys(uint64 index);
     // NOLINTEND
 
 public:

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PacketSerializationController {
+class PacketSerializationController {
 public:
     // PacketSerializationController inner types declare
     // clang-format off

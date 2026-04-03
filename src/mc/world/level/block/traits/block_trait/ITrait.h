@@ -19,9 +19,11 @@ public:
 
     virtual void applyToBlockType(::BlockType&) const = 0;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
-
     virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) = 0;
+
+    virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
+
+    virtual ::std::string const& _getName() const = 0;
     // NOLINTEND
 
 public:

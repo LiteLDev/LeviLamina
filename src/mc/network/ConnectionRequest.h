@@ -76,6 +76,8 @@ public:
 
     MCAPI ::std::string getEduTokenChain() const;
 
+    MCAPI ::std::optional<::std::string> const getPartyId() const;
+
     MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
     MCFOLD ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
@@ -146,6 +148,7 @@ public:
         ::std::string const&                  platformOnlineId,
         ::std::string const&                  platformOfflineId,
         ::std::string const&                  capeId,
+        ::std::string const&                  partyId,
         bool                                  compatibleWithClientSideChunkGen,
         ::SyncedClientOptionsComponent const& options
     );

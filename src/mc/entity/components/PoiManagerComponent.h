@@ -22,7 +22,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Poi::Registry>>    mRegistry;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::DimensionType,
             ::Poi::Manager*,

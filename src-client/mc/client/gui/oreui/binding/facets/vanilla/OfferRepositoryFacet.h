@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct IOfferRepository;
+class IOfferRepository;
 // clang-format on
 
 namespace OreUI {
@@ -64,7 +64,7 @@ public:
 
     MCFOLD bool isFinishedQueryingProductsAndPurchases() const;
 
-    MCAPI bool isRealmsCoreOfferAvailable() const;
+    MCFOLD bool isRealmsCoreOfferAvailable() const;
 
     MCAPI bool isRealmsPlusOfferAvailable() const;
 

@@ -6,8 +6,8 @@ struct PackAccessStrategies {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5b7350;
-    ::ll::UntypedStorage<8, 8> mUnk6ae93b;
+    ::ll::UntypedStorage<8, 8> mUnk337200;
+    ::ll::UntypedStorage<8, 8> mUnk94c915;
     // NOLINTEND
 
 public:

@@ -14,17 +14,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class GatheringManager;
 class IAppPlatform;
 class IClientInstance;
 class IMinecraftEventing;
 class INetworkGameConnector;
+class IThirdPartyServerRepository;
 class ProgressHandler;
+class RealmsAPI;
 class ServerLocator;
-struct GatheringManager;
 struct IGameServerShutdown;
-struct IThirdPartyServerRepository;
-struct RealmsAPI;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Network { struct ServerID; }
+namespace OreUI { class Router; }
+namespace Parties { class IPartyProvider; }
 namespace Realms { struct RealmId; }
 namespace Social { class IUserManager; }
 namespace World { class ExternalServerWorldList; }
@@ -32,6 +35,7 @@ namespace World { class FriendServerWorldList; }
 namespace World { class LanServerWorldList; }
 namespace World { class ThirdPartyWorldList; }
 namespace World { struct RealmsJoinData; }
+namespace ui { class ProgressScreenNavigation; }
 // clang-format on
 
 namespace World {
@@ -40,40 +44,47 @@ class NetworkWorldJoiner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 112, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
+    ::ll::TypedStorage<8, 472, ::World::RealmWorldJoiner>  mRealmWorldJoiner;
     ::ll::TypedStorage<8, 192, ::World::ServerWorldJoiner> mServerWorldJoiner;
-    ::ll::TypedStorage<1, 8, ::World::ServerURLResolver>   mServerURLResolver;
+    ::ll::TypedStorage<8, 8, ::World::ServerURLResolver>   mServerURLResolver;
+    ::ll::TypedStorage<8, 8, ::OreUI::Router&>             mRouter;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    NetworkWorldJoiner& operator=(NetworkWorldJoiner const&);
+    NetworkWorldJoiner(NetworkWorldJoiner const&);
     NetworkWorldJoiner();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkWorldJoiner(
-        ::IClientInstance&                                           client,
-        ::IGameServerShutdown&                                       gameServerShutdown,
-        ::INetworkGameConnector&                                     networkGameConnector,
-        ::IMinecraftEventing&                                        minecraftEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&            appPlatform,
-        ::std::weak_ptr<::RealmsAPI>                                 realmsAPI,
-        ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
-        ::ServerLocator&                                             serverLocator,
-        ::World::ExternalServerWorldList&                            externalServerWorldList,
-        ::World::FriendServerWorldList&                              friendServerWorldList,
-        ::World::LanServerWorldList&                                 lanServerWorldList,
-        ::World::ThirdPartyWorldList&                                thirdPartyWorldList,
-        bool                                                         isEduMode,
-        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&     gatheringManager
+        ::IClientInstance&                                                       client,
+        ::IGameServerShutdown&                                                   gameServerShutdown,
+        ::INetworkGameConnector&                                                 networkGameConnector,
+        ::IMinecraftEventing&                                                    minecraftEventing,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                        appPlatform,
+        ::std::weak_ptr<::RealmsAPI>                                             realmsAPI,
+        ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository>             thirdPartyServerRepository,
+        ::ServerLocator&                                                         serverLocator,
+        ::World::ExternalServerWorldList&                                        externalServerWorldList,
+        ::World::FriendServerWorldList&                                          friendServerWorldList,
+        ::World::LanServerWorldList&                                             lanServerWorldList,
+        ::World::ThirdPartyWorldList&                                            thirdPartyWorldList,
+        bool                                                                     isEduMode,
+        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&                 gatheringManager,
+        ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
+        ::OreUI::Router&                                                         router,
+        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
+        ::std::function<bool(::Realms::RealmId)>                                 isRealmJoinable
     );
 
     MCAPI void joinExternalNetworkWorld(
-        ::std::string const&                                              id,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::std::string const&                                                            id,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
     MCAPI void joinFriendServerWorld(
@@ -100,41 +111,44 @@ public:
         )>  onRealmJoined
     );
 
+    MCAPI void
+    joinRealmWorldWithRoute(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
+
     MCAPI void joinThirdPartyServerWorld(
-        ::std::string const&                                              id,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::std::string const&                                                            id,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
-    MCAPI ~NetworkWorldJoiner();
+    MCAPI ::Bedrock::PubSub::Subscription subscribeToJoinRealmWorldResultPublisher(
+        ::std::function<void(::World::JoinRealmWorldResult)> onJoinRealmWorldResult
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::IClientInstance&                                           client,
-        ::IGameServerShutdown&                                       gameServerShutdown,
-        ::INetworkGameConnector&                                     networkGameConnector,
-        ::IMinecraftEventing&                                        minecraftEventing,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&            appPlatform,
-        ::std::weak_ptr<::RealmsAPI>                                 realmsAPI,
-        ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
-        ::ServerLocator&                                             serverLocator,
-        ::World::ExternalServerWorldList&                            externalServerWorldList,
-        ::World::FriendServerWorldList&                              friendServerWorldList,
-        ::World::LanServerWorldList&                                 lanServerWorldList,
-        ::World::ThirdPartyWorldList&                                thirdPartyWorldList,
-        bool                                                         isEduMode,
-        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&     gatheringManager
+        ::IClientInstance&                                                       client,
+        ::IGameServerShutdown&                                                   gameServerShutdown,
+        ::INetworkGameConnector&                                                 networkGameConnector,
+        ::IMinecraftEventing&                                                    minecraftEventing,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                        appPlatform,
+        ::std::weak_ptr<::RealmsAPI>                                             realmsAPI,
+        ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository>             thirdPartyServerRepository,
+        ::ServerLocator&                                                         serverLocator,
+        ::World::ExternalServerWorldList&                                        externalServerWorldList,
+        ::World::FriendServerWorldList&                                          friendServerWorldList,
+        ::World::LanServerWorldList&                                             lanServerWorldList,
+        ::World::ThirdPartyWorldList&                                            thirdPartyWorldList,
+        bool                                                                     isEduMode,
+        ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> const&                 gatheringManager,
+        ::ui::ProgressScreenNavigation                                           progressScreenNavigation,
+        ::OreUI::Router&                                                         router,
+        ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()> getPartyProvider,
+        ::std::function<bool(::Realms::RealmId)>                                 isRealmJoinable
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

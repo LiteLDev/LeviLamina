@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual ~ImmersiveReaderScreenController() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -93,6 +93,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI ::ui::DirtyFlag $tick();
 
     MCFOLD ::ui::SceneType $getSceneType() const;

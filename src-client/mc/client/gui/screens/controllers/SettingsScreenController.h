@@ -23,7 +23,6 @@ class SocialSettingsScreenController;
 class WorldSettingsScreenController;
 struct SettingsScreenCapabilities;
 namespace Json { class Value; }
-namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
 class SettingsScreenController : public ::SettingsScreenControllerBase {
@@ -85,9 +84,10 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mTTSSettingsScreenName;
     ::ll::TypedStorage<1, 1, bool>                                                 mShowInviteLinkSettings;
     ::ll::TypedStorage<8, 152, ::Realms::InviteLink>                               mInviteLink;
+    ::ll::TypedStorage<1, 1, bool>                                                 mFullscreen;
     ::ll::TypedStorage<8, 16, ::OptionSaveDeferral>                                mOptionsSaveDeferral;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mCurrentFocus;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                     mProvidedLevelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mProvidedLevelSummary;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RealmsSettingsScreenController>> mRealmsSettingsScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RealmsInviteLinkSettingsScreenController>>
         mRealmsInviteLinkSettingsScreenController;
@@ -149,15 +149,6 @@ public:
     MCAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
-        ::SettingsTabIndex                       tabIndex,
-        bool                                     navToMenuOnExit,
-        bool                                     maintainOldFocus,
-        ::std::string const&                     initialPackId
-    );
-
-    MCAPI SettingsScreenController(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
         ::std::string                            packId,
         ::std::function<void()>                  onOpenCallback,
@@ -165,8 +156,15 @@ public:
         bool                                     maintainOldFocus
     );
 
-    MCAPI ::std::string
-    _getGamepadHelperLabelText(::std::string_view localizationKey, ::std::string_view noGamePadKey) const;
+    MCAPI SettingsScreenController(
+        ::std::shared_ptr<::MainMenuScreenModel> model,
+        ::LevelSummary const&                    levelSummary,
+        ::SettingsTabIndex                       tabIndex,
+        bool                                     navToMenuOnExit,
+        bool                                     maintainOldFocus,
+        ::std::string const&                     initialPackId,
+        bool                                     fullscreen
+    );
 
     MCAPI void _init();
 
@@ -183,26 +181,25 @@ public:
     MCAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> _createScreenInfo();
 
     MCAPI static void addStaticScreenVars(
-        ::Json::Value&                       globalVars,
-        bool                                 isWorldCreate,
-        bool                                 isWorldEdit,
-        bool                                 isTemplateCreate,
-        bool                                 isRealmsEdit,
-        bool                                 isRealmsSlot,
-        bool                                 isMultiplayerHost,
-        bool                                 isMultiplayerClient,
-        bool                                 isNonConfigRealmsEnv,
-        bool                                 supportsGamepad,
-        bool                                 supportsKeyboardMouse,
-        bool                                 supportsTouch,
-        bool                                 supportsFliteTTS,
-        bool                                 platformTTSExists,
-        bool                                 isEditorModeEnabled,
-        bool                                 isTrial,
-        bool                                 isPartySystemAvailable,
-        ::SettingsScreenCapabilities const&  capabilities,
-        ::BuildPlatform const&               buildPlatform,
-        ::ui::ScreenTechStackSelector const& screenTechStackSelector
+        ::Json::Value&                      globalVars,
+        bool                                isWorldCreate,
+        bool                                isWorldEdit,
+        bool                                isTemplateCreate,
+        bool                                isRealmsEdit,
+        bool                                isRealmsSlot,
+        bool                                isMultiplayerHost,
+        bool                                isMultiplayerClient,
+        bool                                isNonConfigRealmsEnv,
+        bool                                supportsGamepad,
+        bool                                supportsKeyboardMouse,
+        bool                                supportsTouch,
+        bool                                supportsFliteTTS,
+        bool                                platformTTSExists,
+        bool                                isEditorModeEnabled,
+        bool                                isTrial,
+        bool                                isPartySystemAvailable,
+        ::SettingsScreenCapabilities const& capabilities,
+        ::BuildPlatform const&              buildPlatform
     );
     // NOLINTEND
 
@@ -241,20 +238,21 @@ public:
     MCAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
-        ::SettingsTabIndex                       tabIndex,
-        bool                                     navToMenuOnExit,
-        bool                                     maintainOldFocus,
-        ::std::string const&                     initialPackId
-    );
-
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::MainMenuScreenModel> model,
-        ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
         ::std::string                            packId,
         ::std::function<void()>                  onOpenCallback,
         ::SettingsTabIndex                       tabIndex,
         bool                                     maintainOldFocus
+    );
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::MainMenuScreenModel> model,
+        ::LevelSummary const&                    levelSummary,
+        ::SettingsTabIndex                       tabIndex,
+        bool                                     navToMenuOnExit,
+        bool                                     maintainOldFocus,
+        ::std::string const&                     initialPackId,
+        bool                                     fullscreen
     );
     // NOLINTEND
 

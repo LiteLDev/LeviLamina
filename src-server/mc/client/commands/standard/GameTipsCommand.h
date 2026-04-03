@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameTipsCommand {
+class GameTipsCommand {
 public:
     // GameTipsCommand inner types define
     enum class Status : int {};

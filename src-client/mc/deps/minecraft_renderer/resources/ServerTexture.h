@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/checked_resource_service/ClientResourcePointer.h"
-#include "mc/deps/core/checked_resource_service/ResourcePointer.h"
-#include "mc/deps/core/checked_resource_service/ServerResourcePointer.h"
+#include "mc/external/render_dragon/resources/ResourcePointer.h"
+#include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace dragon { struct ResolvedTextureResource; }
+namespace dragon { class ResolvedTextureResource; }
 namespace mce { class Texture; }
 // clang-format on
 
@@ -66,7 +66,7 @@ public:
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>> const&
     );
 
-    MCAPI void* $ctor(::mce::ServerTexture&&);
+    MCFOLD void* $ctor(::mce::ServerTexture&&);
     // NOLINTEND
 
 public:

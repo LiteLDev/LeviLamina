@@ -8,7 +8,7 @@ struct UpgradeLegacyDependencies {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9f2ecf;
+    ::ll::UntypedStorage<8, 24> mUnk102dc9;
     // NOLINTEND
 
 public:

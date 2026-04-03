@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct UiSceneServiceProvider {};
+class UiSceneServiceProvider {};
 
 } // namespace Editor::Services

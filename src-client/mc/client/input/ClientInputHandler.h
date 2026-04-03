@@ -12,12 +12,12 @@
 class ClientBindingFactory;
 class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
+class Config;
 class IClientInstance;
+class IGameModuleApp;
 class InputHandler;
 class ScreenContext;
 struct ActorDataFlagComponent;
-struct Config;
-struct IGameModuleApp;
 struct MobEffectsComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;

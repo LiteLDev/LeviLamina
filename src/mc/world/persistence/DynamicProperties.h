@@ -40,6 +40,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::DynamicProperties::PropertyCollection& operator=(::DynamicProperties::PropertyCollection&&);
+
+        MCAPI ~PropertyCollection();
         // NOLINTEND
 
     public:
@@ -47,6 +49,12 @@ public:
         // NOLINTBEGIN
         MCAPI static ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>>
         toVariantMap(::DynamicProperties::PropertyCollection const& collection);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,7 +78,8 @@ public:
     // NOLINTBEGIN
     MCAPI DynamicProperties(::DynamicProperties&&);
 
-    MCAPI ::DynamicProperties::PropertyCollection const* _getPropertyCollection(::std::string const&) const;
+    MCFOLD ::DynamicProperties::PropertyCollection const*
+    _getPropertyCollection(::std::string const& collectionName) const;
 
     MCFOLD ::DynamicProperties::PropertyCollection* _getPropertyCollection(::std::string const& collectionName);
 

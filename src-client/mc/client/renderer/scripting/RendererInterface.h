@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct RendererInterface {};
+class RendererInterface {};
 
 } // namespace Scripting::RenderHelper

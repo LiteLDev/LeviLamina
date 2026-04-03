@@ -6,7 +6,7 @@ class GameTestRegistrationBuilderFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk406cef;
+    ::ll::UntypedStorage<8, 32> mUnkb34582;
     ::ll::UntypedStorage<8, 8>  mUnkf2ff95;
     // NOLINTEND
 

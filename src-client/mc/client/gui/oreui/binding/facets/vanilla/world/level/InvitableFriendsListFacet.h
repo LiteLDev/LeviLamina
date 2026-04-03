@@ -14,9 +14,9 @@
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct InvitableFriendBindings; }
+namespace Social { class FriendList; }
 namespace Social { class IUserManager; }
-namespace Social { struct FriendList; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 namespace World { class WorldPlayerListTracker; }
 // clang-format on
 

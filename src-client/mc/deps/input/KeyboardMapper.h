@@ -30,7 +30,7 @@ public:
 
     using KeyboardKeyId = int;
 
-    using KeyToButtonDetailsMap = ::std::unordered_multimap<int, ::KeyboardMapper::KeyboardKeyButtonDetails>;
+    using KeyToButtonDetailsMap = ::std::multimap<int, ::KeyboardMapper::KeyboardKeyButtonDetails>;
 
 public:
     // member variables

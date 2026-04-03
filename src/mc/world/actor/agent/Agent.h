@@ -16,6 +16,7 @@ class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BodyControl;
 class EntityContext;
 class ItemStack;
@@ -66,7 +67,7 @@ public:
 
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -90,9 +91,10 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const id) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
@@ -132,12 +134,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -160,7 +156,7 @@ public:
 
     MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -182,9 +178,9 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const id);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 

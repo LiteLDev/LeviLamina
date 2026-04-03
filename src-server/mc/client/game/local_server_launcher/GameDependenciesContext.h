@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher {
 
-struct GameDependenciesContext {};
+class GameDependenciesContext {};
 
 } // namespace LocalServerLauncher

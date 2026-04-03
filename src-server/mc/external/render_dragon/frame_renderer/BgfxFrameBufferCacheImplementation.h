@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer::details {
 
-struct BgfxFrameBufferCacheImplementation {};
+class BgfxFrameBufferCacheImplementation {};
 
 } // namespace dragon::framerenderer::details

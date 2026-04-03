@@ -30,6 +30,7 @@ class SignalingServiceSignInJob;
 struct ClientNetworkSystemOptions;
 struct NetworkSystemToggles;
 namespace Json { class Value; }
+namespace NetherNet { struct NetworkID; }
 namespace PlayerMessaging { struct NetworkID; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -41,8 +42,7 @@ public:
     // ClientNetworkSystem inner types define
     using DependencyFactory = ::brstd::function_ref<::NetworkSystem::Dependencies()>;
 
-    using StatisticsFactory =
-        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>(), ::std::unique_ptr<::NetworkStatistics>()>;
+    using StatisticsFactory = ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>()>;
 
 public:
     // member variables
@@ -52,7 +52,6 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserLoggingSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mUserConnectionQualitySub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableLanSignalingSub;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mDisableTrickleIceSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
     // NOLINTEND
 
@@ -78,9 +77,10 @@ public:
 
     MCNAPI_C ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
-        bool                                                                         useJsonRpc,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
+
+    MCNAPI_C ::NetherNet::NetworkID getConnectorNetherNetId() const;
 
     MCNAPI_C ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 

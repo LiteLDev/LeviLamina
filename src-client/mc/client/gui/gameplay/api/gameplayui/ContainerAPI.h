@@ -4,19 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/gameplay/api/gameplayui/AnvilInfo.h"
-#include "mc/client/gui/gameplay/api/gameplayui/ChestType.h"
 #include "mc/client/gui/gameplay/api/gameplayui/QueryConnector.h"
+#include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/controllers/ItemCraftType.h"
-#include "mc/world/item/ItemGroup.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class AnvilContainerManagerModel;
+class BrewingStandContainerManagerModel;
 class ChestContainerManagerModel;
 class ContainerManagerController;
 class ContainerModel;
@@ -24,6 +24,7 @@ class CraftingContainerManagerModel;
 class DispenserContainerManagerModel;
 class DropperContainerManagerModel;
 class FurnaceContainerManagerModel;
+class GrindstoneContainerManagerModel;
 class HopperContainerManagerModel;
 class ItemRegistryRef;
 class ItemStackBase;
@@ -40,22 +41,36 @@ namespace GameplayUI {
 
 class ContainerAPI {
 public:
+    // ContainerAPI inner types declare
+    // clang-format off
+    struct SplitMultipleState;
+    struct SplitSingleState;
+    // clang-format on
+
+    // ContainerAPI inner types define
+    struct SplitMultipleState {};
+
+    struct SplitSingleState {};
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LocalPlayer*>                                     mLocalPlayer;
-    ::ll::TypedStorage<8, 64, ::std::function<::ItemRegistryRef()>>              mGetItemRegistryRef;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerManagerController>>    mContainerManagerController;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::AnvilContainerManagerModel>>     mAnvilContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestContainerManagerModel>>     mChestContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CraftingContainerManagerModel>>  mCraftingContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::FurnaceContainerManagerModel>>   mFurnaceContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HopperContainerManagerModel>>    mHopperContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DropperContainerManagerModel>>   mDropperContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DispenserContainerManagerModel>> mDispenserContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Trade2ContainerManagerModel>>    mTrade2ContainerManagerModel;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                        mContainerBlockPos;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                    mUniqueActorId;
-    ::ll::TypedStorage<8, 80, ::GameplayUI::AnvilInfo>                           mAnvilInfo;
+    ::ll::TypedStorage<8, 8, ::LocalPlayer*>                                        mLocalPlayer;
+    ::ll::TypedStorage<8, 64, ::std::function<::ItemRegistryRef()>>                 mGetItemRegistryRef;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerManagerController>>       mContainerManagerController;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::AnvilContainerManagerModel>>        mAnvilContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BrewingStandContainerManagerModel>> mBrewingStandContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestContainerManagerModel>>        mChestContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CraftingContainerManagerModel>>     mCraftingContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::FurnaceContainerManagerModel>>      mFurnaceContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::GrindstoneContainerManagerModel>>   mGrindstoneContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HopperContainerManagerModel>>       mHopperContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DropperContainerManagerModel>>      mDropperContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DispenserContainerManagerModel>>    mDispenserContainerManagerModel;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Trade2ContainerManagerModel>>       mTrade2ContainerManagerModel;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                           mContainerBlockPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mUniqueActorId;
+    ::ll::TypedStorage<8, 80, ::GameplayUI::AnvilInfo>                              mAnvilInfo;
     ::ll::TypedStorage<
         8,
         48,
@@ -68,9 +83,9 @@ public:
         mRecipeBookSearchPublisher;
     ::ll::
         TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-                                            mRecipeBookIsFilteringPublisher;
-    ::ll::TypedStorage<8, 136, ::ItemGroup> mDistributionSource;
-    ::ll::TypedStorage<1, 1, bool>          mDistributionDoneFirstSingleItem;
+                                                                               mRecipeBookIsFilteringPublisher;
+    ::ll::TypedStorage<8, 184, ::GameplayUI::ContainerAPI::SplitMultipleState> mSplitMultipleState;
+    ::ll::TypedStorage<8, 88, ::std::optional<::GameplayUI::ContainerAPI::SplitSingleState>> mSplitSingleState;
     // NOLINTEND
 
 public:
@@ -138,8 +153,6 @@ public:
         int                 destinationIndex
     );
 
-    MCAPI ::GameplayUI::QueryConnector<::std::optional<::GameplayUI::ChestType>> queryChestType();
-
     MCAPI ::GameplayUI::QueryConnector<::GameplayUI::ContainerItem>
     queryContainerItem(::ContainerEnumName containerName, int index);
 
@@ -158,6 +171,13 @@ public:
     MCAPI void setRecipeBookSearchString(::std::string const& searchText);
 
     MCAPI void splitMultipleItems(
+        ::ContainerEnumName selectedName,
+        int                 selectedIndex,
+        ::ContainerEnumName destinationName,
+        int                 destinationIndex
+    );
+
+    MCAPI void splitMultipleItemsTouch(
         ::ContainerEnumName selectedName,
         int                 selectedIndex,
         ::ContainerEnumName destinationName,
@@ -191,6 +211,8 @@ public:
         ::ContainerEnumName sourceName,
         int                 sourceIndex
     );
+
+    MCAPI ::std::optional<::GameplayUI::ChestType> tryGetChestType();
 
     MCAPI ~ContainerAPI();
     // NOLINTEND

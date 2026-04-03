@@ -16,7 +16,7 @@ class BinaryInput : public ::Puv::Input {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkada739;
+    ::ll::UntypedStorage<8, 32> mUnk8082bd;
     ::ll::UntypedStorage<8, 16> mUnk4bb590;
     // NOLINTEND
 

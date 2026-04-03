@@ -36,7 +36,7 @@ public:
 
     MCAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
 
-    MCAPI void validateValue(::std::string const& value, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::std::string_view value, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

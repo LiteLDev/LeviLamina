@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/signal/Signal.h"
+#include "mc/deps/application/signals/Signal.h"
 
 namespace PlayerReportingSignal {
 

@@ -16,7 +16,7 @@ class TypeMapBuilder : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6b7937;
+    ::ll::UntypedStorage<8, 32> mUnkd6418c;
     ::ll::UntypedStorage<8, 16> mUnk411221;
     ::ll::UntypedStorage<8, 80> mUnkfd221a;
     // NOLINTEND

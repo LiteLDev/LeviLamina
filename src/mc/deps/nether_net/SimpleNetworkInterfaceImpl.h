@@ -44,7 +44,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnka9f77d;
     ::ll::UntypedStorage<8, 8>   mUnk960909;
     ::ll::UntypedStorage<8, 24>  mUnk17a828;
-    ::ll::UntypedStorage<8, 8>   mUnkfb8de3;
+    ::ll::UntypedStorage<8, 8>   mUnk407f9c;
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
     ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
@@ -113,6 +113,10 @@ public:
 
     virtual void DisableBroadcastDiscovery() /*override*/;
 
+    virtual void AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port) /*override*/;
+
+    virtual void RemoveLanHost(::NetherNet::NetworkID remote) /*override*/;
+
     virtual void EnableLANSignaling() /*override*/;
 
     virtual void DisableLANSignaling() /*override*/;
@@ -144,7 +148,7 @@ public:
 
     MCNAPI void ReceiveFromSignalingChannel(
         ::NetherNet::NetworkID          from,
-        ::std::string const&            message,
+        ::std::string_view              message,
         ::NetherNet::SignalingChannelId sourceChannel
     );
 
@@ -195,6 +199,10 @@ public:
     MCNAPI void $EnableBroadcastDiscovery();
 
     MCNAPI void $DisableBroadcastDiscovery();
+
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port);
+
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
 
     MCNAPI void $EnableLANSignaling();
 

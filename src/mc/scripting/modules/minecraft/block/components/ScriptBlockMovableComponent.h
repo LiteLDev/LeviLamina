@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockDefinitionalComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 #include "mc/scripting/modules/minecraft/block/components/ScriptMovementType.h"
 #include "mc/scripting/modules/minecraft/block/components/ScriptStickyType.h"
 
@@ -18,7 +18,7 @@ namespace Scripting { struct EnumBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockMovableComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
+class ScriptBlockMovableComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // virtual functions
     // NOLINTBEGIN

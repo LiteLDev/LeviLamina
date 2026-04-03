@@ -24,11 +24,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk87db90;
     ::ll::UntypedStorage<4, 4>  mUnkdbf9d6;
-    ::ll::UntypedStorage<8, 32> mUnk1505e6;
-    ::ll::UntypedStorage<8, 32> mUnk5cd89f;
-    ::ll::UntypedStorage<8, 24> mUnkac3861;
-    ::ll::UntypedStorage<8, 24> mUnkc0a5e6;
-    ::ll::UntypedStorage<8, 32> mUnk4b2206;
+    ::ll::UntypedStorage<8, 32> mUnk2497e1;
+    ::ll::UntypedStorage<8, 32> mUnkf61c5a;
+    ::ll::UntypedStorage<8, 24> mUnk830a04;
+    ::ll::UntypedStorage<8, 24> mUnkbb60b5;
+    ::ll::UntypedStorage<8, 32> mUnk67afb7;
     ::ll::UntypedStorage<4, 4>  mUnkcc6517;
     ::ll::UntypedStorage<4, 4>  mUnk2daa20;
     // NOLINTEND

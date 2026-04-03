@@ -43,13 +43,13 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::HashedString>>                        mComponentNames;
     ::ll::TypedStorage<8, 40, ::IdentifierDescription>                                     mIdentifier;
     ::ll::TypedStorage<8, 40, ::RuntimeIdentifierDescription>                              mRuntimeIdentifier;
-    ::ll::TypedStorage<1, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
-    ::ll::TypedStorage<1, 16, ::IsSummonableDescription>                                   mIsSummonable;
+    ::ll::TypedStorage<8, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
+    ::ll::TypedStorage<8, 16, ::IsSummonableDescription>                                   mIsSummonable;
     ::ll::TypedStorage<8, 72, ::AnimationsDescription>                                     mAnimationsDescription;
     ::ll::TypedStorage<8, 32, ::AnimationScriptsDescription>                               mAnimationScriptsDescription;
     ::ll::TypedStorage<8, 24, ::ActorPropertiesDescription>                                mActorPropertiesDescription;
     ::ll::TypedStorage<8, 32, ::ActorAliasDescription>                                     mActorAliasDescription;
-    ::ll::TypedStorage<4, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
+    ::ll::TypedStorage<8, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
     ::ll::TypedStorage<8, 24, ::std::vector<::LegacyGoalDefinition>>                       mGoalDefinitions;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
@@ -86,7 +86,6 @@ public:
     ::ll::TypedStorage<8, 8, ::Description*>                                               mPersistent;
     ::ll::TypedStorage<8, 8, ::Description*>                                               mPreferredPath;
     ::ll::TypedStorage<8, 8, ::Description*>                                               mProjectile;
-    ::ll::TypedStorage<8, 8, ::Description*>                                               mPushable;
     ::ll::TypedStorage<8, 8, ::Description*>                                               mSlimeMoveControl;
     ::ll::TypedStorage<8, 8, ::Description*>                                               mStrength;
     ::ll::TypedStorage<8, 8, ::Description*>                                               mTrail;

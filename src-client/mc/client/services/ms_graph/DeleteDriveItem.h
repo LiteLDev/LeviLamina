@@ -4,6 +4,6 @@
 
 namespace MSGraph::Requests {
 
-struct DeleteDriveItem {};
+class DeleteDriveItem {};
 
 } // namespace MSGraph::Requests

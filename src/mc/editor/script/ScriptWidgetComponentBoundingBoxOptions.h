@@ -5,9 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/scripting/Axis.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,8 +20,8 @@ class ScriptWidgetComponentBoundingBoxOptions : public ::Editor::ScriptModule::S
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32>  mUnke9bb00;
-    ::ll::UntypedStorage<4, 32>  mUnk6eab3d;
+    ::ll::UntypedStorage<8, 32>  mUnke9bb00;
+    ::ll::UntypedStorage<8, 32>  mUnk6eab3d;
     ::ll::UntypedStorage<1, 2>   mUnk2099d3;
     ::ll::UntypedStorage<1, 2>   mUnk1b40a6;
     ::ll::UntypedStorage<4, 16>  mUnk65fd14;
@@ -32,9 +29,8 @@ public:
     ::ll::UntypedStorage<1, 2>   mUnk204909;
     ::ll::UntypedStorage<1, 2>   mUnk47735e;
     ::ll::UntypedStorage<4, 8>   mUnk772774;
-    ::ll::UntypedStorage<4, 16>  mUnk90f1b2;
-    ::ll::UntypedStorage<4, 16>  mUnka43e75;
-    ::ll::UntypedStorage<8, 112> mUnk75e5be;
+    ::ll::UntypedStorage<4, 36>  mUnk2a63b0;
+    ::ll::UntypedStorage<8, 120> mUnk75e5be;
     // NOLINTEND
 
 public:
@@ -84,23 +80,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::Axis const& DEFAULT_ENABLE_RESIZE_HANDLES();
-
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
-
-    MCNAPI static ::Mirror const& DEFAULT_MIRROR();
 
     MCNAPI static ::Vec3 const& DEFAULT_NORMALIZED_ORIGIN();
 
     MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-
-    MCNAPI static ::Rotation const& DEFAULT_ROTATION();
-
-    MCNAPI static bool const& DEFAULT_SHOW_TERMINATOR();
-
-    MCNAPI static bool const& DEFAULT_VISIBLE_HULL();
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/gui/screens/models/PersonaScreenModelCommon.h"
 #include "mc/client/gui/screens/models/persona/SizeSectionModel.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 #include "mc/client/services/persona/DownloadImportManager.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/actor/player/persona/PieceSide.h"
@@ -17,15 +17,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class AchievementData;
+class IStoreCatalogItem;
+class PersonaProfile;
 class SkinPackCollectionModel;
 class SkinPackModel;
-struct AchievementData;
-struct IStoreCatalogItem;
 struct LinksToStyle;
-struct PersonaProfile;
-namespace Social::eventData { struct PersonaOfferClickedData; }
+namespace Social::eventData { class PersonaOfferClickedData; }
+namespace persona { class PieceOfferWrapper; }
 namespace persona { struct PersonaCharacterHandle; }
-namespace persona { struct PieceOfferWrapper; }
 // clang-format on
 
 class PersonaScreenModel : public ::MainMenuScreenModel,
@@ -122,6 +122,8 @@ public:
     MCAPI void newCharacter(::LinksToStyle const& linkTo, uint defaultAppearanceIndex);
 
     MCAPI bool setUseClassicSkinOnPersona(::persona::PersonaCharacterHandle const& handle, bool usage);
+
+    MCAPI void showProfileSettingsScreen();
 
     MCAPI void syncSelectedSkinHandle();
     // NOLINTEND

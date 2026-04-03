@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsRolesAndPermissions {};
+class RealmsRolesAndPermissions {};
 
 } // namespace Realms

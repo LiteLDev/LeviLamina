@@ -64,12 +64,6 @@ public:
                 PBRData& operator=(PBRData const&);
                 PBRData(PBRData const&);
                 PBRData();
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
         public:
@@ -97,7 +91,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk2066b2;
+        ::ll::UntypedStorage<8, 32> mUnkf77385;
         ::ll::UntypedStorage<4, 64> mUnk1f910a;
         // NOLINTEND
 
@@ -181,3 +175,16 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P1
+);
+// NOLINTEND

@@ -14,6 +14,7 @@ class DimensionStateComponent;
 class LoadingStateComponent;
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct LocalPlayerComponent;
 struct PlayerComponent;
 struct SkipNormalTickComponent;
@@ -26,7 +27,7 @@ public:
     MCNAPI static void tickGenericSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
             ::Optional<::DimensionStateComponent const>> view,
         ::EntityModifier<::SkipNormalTickComponent>      mod
     );

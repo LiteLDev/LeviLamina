@@ -30,11 +30,11 @@ class InventoryItemRenderer : public ::MinecraftUICustomRenderer, public ::Actor
 public:
     // InventoryItemRenderer inner types declare
     // clang-format off
-    struct CachedProperties;
+    class CachedProperties;
     // clang-format on
 
     // InventoryItemRenderer inner types define
-    struct CachedProperties {};
+    class CachedProperties {};
 
 public:
     // member variables
@@ -106,6 +106,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
+
     MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
     // NOLINTEND
 
@@ -132,8 +134,6 @@ public:
 
     MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
-
-    MCAPI ::UIBatchType $getBatchType() const;
 
     MCFOLD int $getCustomId() const;
 

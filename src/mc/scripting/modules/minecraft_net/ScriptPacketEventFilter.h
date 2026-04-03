@@ -14,8 +14,8 @@ struct ScriptPacketEventFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbf85e1;
-    ::ll::UntypedStorage<8, 32> mUnkc0ccd7;
+    ::ll::UntypedStorage<8, 32> mUnk688221;
+    ::ll::UntypedStorage<8, 32> mUnked9f60;
     // NOLINTEND
 
 public:

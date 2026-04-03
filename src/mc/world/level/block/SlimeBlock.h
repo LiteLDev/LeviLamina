@@ -18,8 +18,6 @@ class SlimeBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
@@ -28,6 +26,8 @@ public:
     virtual bool isBounceBlock() const /*override*/;
 
     virtual int getExtraRenderLayers() const /*override*/;
+
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~SlimeBlock() /*override*/ = default;
     // NOLINTEND
@@ -41,8 +41,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
     MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
@@ -50,6 +48,8 @@ public:
     MCFOLD bool $isBounceBlock() const;
 
     MCFOLD int $getExtraRenderLayers() const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

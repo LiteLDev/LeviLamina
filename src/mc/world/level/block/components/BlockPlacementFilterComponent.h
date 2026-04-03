@@ -19,8 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
 };

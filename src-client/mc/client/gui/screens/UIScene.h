@@ -20,8 +20,10 @@ class AbstractScene;
 class AbstractSceneProxy;
 class CachedScenes;
 class IClientInstance;
+class ITTSEventManager;
 class KeyboardManager;
 class LayoutManager;
+class MinecraftUIFrameUpdateContext;
 class RectangleArea;
 class ScreenContext;
 class ScreenController;
@@ -32,8 +34,6 @@ class UIMeasureStrategy;
 class VisualTree;
 struct FrameRenderObject;
 struct GamepadCursorData;
-struct ITTSEventManager;
-struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TouchPadTouchEventData;
@@ -134,7 +134,7 @@ public:
 
     virtual void onFocusGained() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
 
     virtual void reload() /*override*/;
 
@@ -148,9 +148,10 @@ public:
 
     virtual void applyInput(float a) /*override*/;
 
-    virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
+    virtual void handleInputModeChanged(::InputMode) /*override*/;
 
-    virtual void handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool) /*override*/;
+    virtual void
+    handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) /*override*/;
 
     virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
@@ -331,8 +332,6 @@ public:
 
     MCAPI void $onFocusGained();
 
-    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
-
     MCAPI void $reload();
 
     MCAPI void $leaveScreen();
@@ -345,7 +344,7 @@ public:
 
     MCAPI void $applyInput(float a);
 
-    MCAPI void $handleInputModeChanged(::InputMode inputMode);
+    MCAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
 
     MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 

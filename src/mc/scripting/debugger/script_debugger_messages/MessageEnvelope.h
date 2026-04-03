@@ -8,7 +8,7 @@ struct MessageEnvelope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8316e0;
+    ::ll::UntypedStorage<8, 32> mUnk114ba5;
     ::ll::UntypedStorage<8, 72> mUnk696975;
     ::ll::UntypedStorage<8, 56> mUnk7a6c66;
     // NOLINTEND

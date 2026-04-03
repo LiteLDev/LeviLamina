@@ -56,6 +56,10 @@ public:
 
     virtual void DisableBroadcastDiscovery() = 0;
 
+    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) = 0;
+
+    virtual void RemoveLanHost(::NetherNet::NetworkID) = 0;
+
     virtual void EnableLANSignaling() = 0;
 
     virtual void DisableLANSignaling() = 0;

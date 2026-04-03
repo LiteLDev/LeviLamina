@@ -21,6 +21,11 @@ struct VariantParameterList;
 
 class Slime : public ::Monster {
 public:
+    // Slime inner types declare
+    // clang-format off
+    struct Parameters;
+    // clang-format on
+
     // Slime inner types define
     enum class ClientEvent : schar {
         None       = 0,
@@ -28,13 +33,25 @@ public:
         JustJumped = 2,
     };
 
+    struct Parameters {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>            mBaseChildrenOnDeathCount;
+        ::ll::TypedStorage<4, 4, int>            mMaxRandomAdditionalChildren;
+        ::ll::TypedStorage<4, 4, int>            mMinSizeToPlayLandSound;
+        ::ll::TypedStorage<4, 4, float>          mDecreaseSquishFactor;
+        ::ll::TypedStorage<4, 4, ::ParticleType> mLandParticleType;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>          mTargetSquish;
-    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
-    ::ll::TypedStorage<4, 4, float>          mSquish;
-    ::ll::TypedStorage<4, 4, float>          mOldSquish;
+    ::ll::TypedStorage<4, 20, ::Slime::Parameters const> mParameters;
+    ::ll::TypedStorage<4, 4, float>                      mTargetSquish;
+    ::ll::TypedStorage<4, 4, float>                      mSquish;
+    ::ll::TypedStorage<4, 4, float>                      mOldSquish;
     // NOLINTEND
 
 public:
@@ -54,15 +71,7 @@ public:
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    virtual bool doPlayLandSound();
-
-    virtual void playJumpSound();
-
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
-
-    virtual void decreaseSquish();
-
-    virtual ::OwnerPtr<::EntityContext> createChild(int i);
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -77,16 +86,17 @@ public:
     MCAPI Slime(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
+        ::EntityContext&                   entityContext,
+        ::Slime::Parameters                parameters
     );
+
+    MCAPI ::OwnerPtr<::EntityContext> createChild(int);
 
     MCFOLD int getSlimeSize() const;
 
     MCAPI void justJumped();
 
     MCAPI void justLanded();
-
-    MCAPI void postNormalTick(bool wasOnGround);
 
     MCAPI void setSlimeSize(int size);
     // NOLINTEND
@@ -97,7 +107,8 @@ public:
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
+        ::EntityContext&                   entityContext,
+        ::Slime::Parameters                parameters
     );
     // NOLINTEND
 
@@ -120,15 +131,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $doPlayLandSound();
-
-    MCAPI void $playJumpSound();
-
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
-
-    MCAPI void $decreaseSquish();
-
-    MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

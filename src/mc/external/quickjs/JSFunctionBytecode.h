@@ -18,7 +18,6 @@ public:
     uchar                       mUnk4d3fe0 : 1;
     uchar                       mUnk8a51e3 : 1;
     uchar                       mUnkbdea0c : 1;
-    uchar                       mUnk84befe : 1;
     uchar                       mUnk1462b3 : 1;
     uchar                       mUnke7829f : 1;
     ::ll::UntypedStorage<8, 8>  mUnk540546;
@@ -35,9 +34,9 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk539aea;
     ::ll::UntypedStorage<4, 4>  mUnk2ed5b8;
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<8, 32> mUnk9458a2;
+    ::ll::UntypedStorage<8, 40> mUnk705100;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 32> mUnk82272f;
+    ::ll::UntypedStorage<8, 40> mUnkf751fc;
 #endif
     ::ll::UntypedStorage<8, 16> mUnke75f9d;
     // NOLINTEND

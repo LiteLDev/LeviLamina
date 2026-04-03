@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct VanillaXboxLiveAchievementsEventListener {
+class VanillaXboxLiveAchievementsEventListener {
 public:
     // VanillaXboxLiveAchievementsEventListener inner types define
     enum class MovementAxis : int {};

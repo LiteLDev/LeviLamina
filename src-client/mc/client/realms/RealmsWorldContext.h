@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsWorldContext {};
+class RealmsWorldContext {};
 
 } // namespace Realms

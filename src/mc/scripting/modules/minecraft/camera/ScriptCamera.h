@@ -9,7 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { struct ScriptAnimationOptions; }
+namespace ScriptModuleMinecraft { struct ScriptCameraAttachOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraDefaultOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFadeOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFixedBoomOptions; }
@@ -43,6 +45,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_C ::Player* _tryGetPlayer() const;
+
+    MCAPI ::Scripting::Result_deprecated<void> cameraAttachToEntity(
+        ::std::optional<::ScriptModuleMinecraft::ScriptCameraAttachOptions> const& attachOptions
+    ) const;
+
     MCAPI ::Scripting::Result_deprecated<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 

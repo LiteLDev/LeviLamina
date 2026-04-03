@@ -6,7 +6,7 @@ struct PDFError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk128c13;
+    ::ll::UntypedStorage<8, 32> mUnkb47db7;
     // NOLINTEND
 
 public:

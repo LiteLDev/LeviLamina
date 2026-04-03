@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/shared_types/VillageType.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/biome/serialization/BiomeCappedSurfaceData.h"
 #include "mc/world/level/biome/serialization/BiomeClimateData.h"
@@ -41,6 +42,7 @@ public:
     ::ll::TypedStorage<4, 24, ::std::optional<::BiomeMultinoiseGenRulesData>>        mMultinoiseGenRules;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeLegacyWorldGenRulesData>>       mLegacyWorldGenRules;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeReplacementsData>>              mReplaceBiomes;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::VillageType>>            mVillageType;
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 // clang-format on
 
 class DepthBasedBlockSupplier {
@@ -17,11 +16,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mRandomFactory;
     ::ll::TypedStorage<8, 8, ::Block const*>                            mBlock;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
     // NOLINTEND
 };

@@ -12,7 +12,7 @@
 class ISceneStack;
 class SceneFactory;
 namespace OreUI { class RouteMatcher; }
-namespace Realms { struct RealmsList; }
+namespace Realms { class RealmsList; }
 namespace Realms { struct World; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on

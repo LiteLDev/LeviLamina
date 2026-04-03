@@ -8,8 +8,8 @@ struct JSONSchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnke137c8;
-    ::ll::UntypedStorage<8, 40> mUnk79aa8e;
+    ::ll::UntypedStorage<8, 40> mUnk841502;
+    ::ll::UntypedStorage<8, 40> mUnk9aac33;
     // NOLINTEND
 
 public:

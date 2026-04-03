@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
 class DateManager;
-struct ContentCatalogService;
 namespace OreUI { class IResourceAllowList; }
 namespace Social { class IUserManager; }
 // clang-format on

@@ -8,7 +8,7 @@ struct CommandMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2a131d;
+    ::ll::UntypedStorage<8, 32> mUnkdf2016;
     ::ll::UntypedStorage<8, 16> mUnkef2646;
     // NOLINTEND
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/item/Item.h"
 
@@ -82,7 +83,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void
-    forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
+    forEachCustomEgg(::ItemRegistryRef itemRegistry, ::brstd::function_ref<void(::Item const&)> callback);
 
     MCAPI_C static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
 

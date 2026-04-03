@@ -33,11 +33,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
+    MCAPI_C int getAmplifier_010() const;
+
     MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
     MCAPI ::std::string getDisplayName_010() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
+
+    MCAPI_C int getDuration_010() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 
@@ -46,7 +50,7 @@ public:
     MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
     operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
-    MCAPI ::MobEffectInstance const* tryGetEffect() const;
+    MCAPI_S ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND
 
 public:

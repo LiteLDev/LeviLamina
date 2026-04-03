@@ -18,7 +18,7 @@ public:
     ::ll::TypedStorage<1, 1, uchar>               mExposedFace;
     ::ll::TypedStorage<4, 4, int>                 mPlacementRadiusAroundFloor;
     ::ll::TypedStorage<4, 4, float>               mPlacementProbabilityPerValidPosition;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockToPlace;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockToPlace;
     // NOLINTEND
 
 public:

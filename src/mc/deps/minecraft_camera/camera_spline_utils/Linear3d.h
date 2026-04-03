@@ -12,8 +12,8 @@ struct Linear3d : public ::CameraSplineUtils::Spline3d {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk757189;
-    ::ll::UntypedStorage<8, 24> mUnk37c736;
+    ::ll::UntypedStorage<8, 24> mUnkfce2db;
+    ::ll::UntypedStorage<8, 24> mUnk4495fb;
     ::ll::UntypedStorage<1, 1>  mUnkc640a8;
     // NOLINTEND
 

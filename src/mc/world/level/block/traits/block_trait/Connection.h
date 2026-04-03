@@ -67,19 +67,26 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Connection() /*override*/ = default;
+    virtual ~Connection() /*override*/;
 
     virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
 
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
-
     virtual void initializeFromNetwork(::CompoundTag const& compoundTag, ::cereal::ReflectionCtx const&) /*override*/;
+
+    virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const /*override*/;
+
+    virtual ::std::string const& _getName() const /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCAPI static ::BlockTrait::Connection createStandardConnectionTrait(
+        ::Bedrock::EnumSet<::BlockTrait::Connection::EnabledConnectionStates, 1> enabledConnectionStates,
+        int                                                                      updateFlags
+    );
 
     MCAPI static ::NeighborBlockDirections getConnectedDirections(
         ::IConstBlockSource const& region,
@@ -92,13 +99,21 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyToBlockType(::BlockType& blockType) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const&) const;
-
     MCAPI void $initializeFromNetwork(::CompoundTag const& compoundTag, ::cereal::ReflectionCtx const&);
+
+    MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
+
+    MCAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

@@ -15,7 +15,7 @@ class RakTcpProxy : public ::TcpProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkbdae36;
+    ::ll::UntypedStorage<8, 8> mUnk30bf73;
     // NOLINTEND
 
 public:

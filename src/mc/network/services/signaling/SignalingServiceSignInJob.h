@@ -12,6 +12,7 @@
 // clang-format off
 class SignalingService;
 struct NetherNetConnector;
+namespace NetherNet { struct StunRelayServer; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
 namespace PlayerMessaging { struct NetworkID; }
@@ -24,10 +25,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5e1ef6;
     ::ll::UntypedStorage<8, 16> mUnk503029;
-    ::ll::UntypedStorage<8, 8>  mUnk2f768f;
-    ::ll::UntypedStorage<8, 48> mUnk63e84c;
-    ::ll::UntypedStorage<8, 16> mUnk3d4965;
-    ::ll::UntypedStorage<1, 1>  mUnkabebe1;
+    ::ll::UntypedStorage<8, 88> mUnk7fb513;
+    ::ll::UntypedStorage<8, 8>  mUnk83278f;
     ::ll::UntypedStorage<8, 16> mUnk3ab861;
     // NOLINTEND
 
@@ -54,6 +53,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _handleRelayConfig(
+        ::std::vector<::NetherNet::StunRelayServer> const&      config,
+        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
+    ) const;
+
     MCNAPI void _handleSignInResult(
         ::std::error_code                                       error,
         ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,
@@ -69,7 +73,6 @@ public:
     MCNAPI_C void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&&                        netherNetConnector,
         ::std::shared_ptr<::SignalingService>                                        signalingService,
-        bool                                                                         useJsonRpc,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
     // NOLINTEND

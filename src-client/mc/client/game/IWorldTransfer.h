@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class WorldTransferAgent;
 struct ExternalWorldTransferActionFunc;
 struct LocalWorldTransferActionFunc;
-struct WorldTransferAgent;
 // clang-format on
 
 struct IWorldTransfer {

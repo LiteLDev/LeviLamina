@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
-#include "mc/world/actor/player/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,7 +38,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C void _setFromAbilities(::Abilities const& abilities);
-
-    MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
     // NOLINTEND
 };

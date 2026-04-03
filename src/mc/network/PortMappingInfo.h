@@ -6,8 +6,8 @@ struct PortMappingInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkae12e8;
-    ::ll::UntypedStorage<8, 32> mUnkfdfca6;
+    ::ll::UntypedStorage<8, 24> mUnkfc4af5;
+    ::ll::UntypedStorage<8, 32> mUnk5e3ddc;
     // NOLINTEND
 
 public:

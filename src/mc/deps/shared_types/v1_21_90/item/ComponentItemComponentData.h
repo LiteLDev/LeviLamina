@@ -51,7 +51,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace cereal { class DynamicValue; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
@@ -148,7 +147,7 @@ public:
 
     MCAPI ComponentItemComponentData(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
 
-    MCAPI ::std::shared_ptr<::cereal::DynamicValue>
+    MCFOLD ::std::shared_ptr<::cereal::DynamicValue>
     getCustomComponent(::cereal::SerializerContext const& context) const;
 
     MCAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
@@ -157,7 +156,7 @@ public:
     MCAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
 
-    MCAPI void
+    MCFOLD void
     setCustomComponent(::std::shared_ptr<::cereal::DynamicValue> data, ::cereal::SerializerContext const& context);
 
     MCAPI ~ComponentItemComponentData();
@@ -170,15 +169,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersion const& FIRST_VERSION();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::SharedTypes::v1_21_90::ComponentItemComponentData&&);
 
@@ -188,7 +181,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

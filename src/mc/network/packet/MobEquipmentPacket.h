@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void
     handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const
@@ -109,7 +109,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $handle(
         ::ServerPlayer& player,

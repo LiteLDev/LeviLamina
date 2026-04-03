@@ -6,8 +6,8 @@ struct WorldTemplateManagerProxyCallbacks {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkadc531;
-    ::ll::UntypedStorage<8, 64> mUnkc87724;
+    ::ll::UntypedStorage<8, 64> mUnkf80408;
+    ::ll::UntypedStorage<8, 64> mUnkcc2ce5;
     // NOLINTEND
 
 public:

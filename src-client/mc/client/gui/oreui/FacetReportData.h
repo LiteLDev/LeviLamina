@@ -12,8 +12,8 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct ProfanityContext;
-namespace Realms::Stories { struct RealmsFeedModeration; }
+class ProfanityContext;
+namespace Realms::Stories { class RealmsFeedModeration; }
 // clang-format on
 
 namespace OreUI::RealmsStories {

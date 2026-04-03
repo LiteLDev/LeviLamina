@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct ExternalTextureSlice {};
+class ExternalTextureSlice {};
 
 } // namespace rendergraph

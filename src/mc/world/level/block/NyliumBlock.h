@@ -13,8 +13,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Random;
-class Randomize;
+class IRandom;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -30,8 +29,6 @@ public:
     struct CrimsonNyliumBlockVegetationProbabilities {};
 
     struct WarpedNyliumBlockVegetationProbabilities {};
-
-    using RandomPlantProvider = ::std::function<::Block const&(::Randomize const&)>;
 
 public:
     // virtual functions
@@ -51,13 +48,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _scatterVegetation(
-        ::BlockSource&                                      region,
-        ::BlockPos const&                                   pos,
-        ::Random&                                           random,
-        ::std::function<::Block const&(::Randomize const&)> plantProvider
-    ) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
@@ -66,11 +56,11 @@ public:
     // NOLINTBEGIN
     MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& crimsonBlockProvider(::IRandom& random);
 
-    MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& netherSproutBlockProvider(::IRandom& random);
 
-    MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& warpedBlockProvider(::IRandom& random);
     // NOLINTEND
 
 public:

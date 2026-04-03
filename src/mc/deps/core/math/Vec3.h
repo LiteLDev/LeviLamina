@@ -16,8 +16,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool isNan() const;
 
-    MCAPI bool isNear(::Vec3 const& rhs, float e) const;
-
     MCAPI float lengthSquared() const;
 
     MCAPI ::Vec3 normalized() const;
@@ -62,6 +60,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD_C void* $ctor();
+
     MCFOLD_C void* $ctor(::glm::vec3 const& glm);
 
     MCAPI void* $ctor(float s);

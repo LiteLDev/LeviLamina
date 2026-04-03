@@ -10,7 +10,7 @@
 // clang-format off
 class MinecraftScreenModel;
 class SceneFactory;
-struct WorldTemplateLoader;
+class WorldTemplateLoader;
 // clang-format on
 
 class WorldTemplateLoadingProgressHandler : public ::ProgressHandler {

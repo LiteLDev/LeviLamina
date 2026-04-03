@@ -4,6 +4,6 @@
 
 namespace Bedrock {
 
-struct DeviceIdManager_GameCore {};
+class DeviceIdManager_GameCore {};
 
 } // namespace Bedrock

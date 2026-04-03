@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> mDelegate;
-    ::ll::TypedStorage<4, 32, ::IntProvider>                                                                mLimit;
+    ::ll::TypedStorage<8, 32, ::IntProvider>                                                                mLimit;
     // NOLINTEND
 
 public:

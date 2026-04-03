@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct RecentlyPlayedWithList {};
+class RecentlyPlayedWithList {};
 
 } // namespace Social

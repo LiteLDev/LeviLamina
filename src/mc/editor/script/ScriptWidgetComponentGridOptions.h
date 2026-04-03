@@ -11,7 +11,6 @@
 class AABB;
 class Vec2;
 class Vec3;
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -22,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 8>  mUnk2977f6;
-    ::ll::UntypedStorage<4, 32> mUnk2527e5;
+    ::ll::UntypedStorage<8, 32> mUnk2527e5;
     ::ll::UntypedStorage<4, 12> mUnk66bf43;
     ::ll::UntypedStorage<4, 12> mUnk92986b;
     ::ll::UntypedStorage<4, 12> mUnkb77c43;
@@ -67,25 +66,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_COLOR();
-
     MCNAPI static ::Vec2 const& DEFAULT_GRID_COUNT();
 
     MCNAPI static ::Vec2 const& DEFAULT_GRID_SIZE();
 
     MCNAPI static ::Vec2 const& DEFAULT_NORMALIZED_ORIGIN();
-
-    MCNAPI static ::Vec2 const& MAX_GRID_COUNT();
-
-    MCNAPI static ::Vec2 const& MAX_GRID_SIZE();
-
-    MCNAPI static ::Vec2 const& MAX_NORMALIZED_ORIGIN();
-
-    MCNAPI static ::Vec2 const& MIN_GRID_COUNT();
-
-    MCNAPI static ::Vec2 const& MIN_GRID_SIZE();
-
-    MCNAPI static ::Vec2 const& MIN_NORMALIZED_ORIGIN();
     // NOLINTEND
 
 public:

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PropertyGeneticData;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/definitions/OffspringDefinition.h"
 
 struct PropertyGeneticDataSchema {
 public:

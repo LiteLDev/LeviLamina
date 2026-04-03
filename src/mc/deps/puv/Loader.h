@@ -4,7 +4,7 @@
 
 namespace Puv {
 
-template <typename T0>
+template <typename T0, typename T1>
 class Loader {};
 
 } // namespace Puv

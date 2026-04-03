@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ITTSEventManager;
 class Option;
-struct ITTSEventManager;
 namespace OreUI { struct ScreenReaderOptions; }
 // clang-format on
 

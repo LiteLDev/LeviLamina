@@ -4,6 +4,6 @@
 
 namespace SDL {
 
-struct SessionConfig {};
+class SessionConfig {};
 
 } // namespace SDL

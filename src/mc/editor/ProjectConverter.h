@@ -46,11 +46,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk510001;
+    ::ll::UntypedStorage<8, 32> mUnkb54ac5;
     ::ll::UntypedStorage<8, 8>  mUnk77ffb6;
     ::ll::UntypedStorage<8, 24> mUnk1acc17;
     ::ll::UntypedStorage<8, 24> mUnkc7a3bd;
-    ::ll::UntypedStorage<8, 8>  mUnk4fc66b;
+    ::ll::UntypedStorage<8, 8>  mUnk7f5560;
     // NOLINTEND
 
 public:
@@ -76,7 +76,8 @@ public:
         ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
         ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
-        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
     ) /*override*/;
     // NOLINTEND
 
@@ -143,7 +144,8 @@ public:
         ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
         ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
-        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers
+        ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
     );
 
 

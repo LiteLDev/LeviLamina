@@ -8,7 +8,7 @@ class StringBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka2ad69;
+    ::ll::UntypedStorage<8, 32> mUnk163f05;
     // NOLINTEND
 
 public:

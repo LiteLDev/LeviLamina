@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/ConstraintHandle.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { class DynamicValue; }
-namespace cereal { class SerializerContext; }
-// clang-format on
-
 namespace SharedTypes {
 
 class DynamicValueComplexityConstraint
@@ -25,12 +19,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DynamicValueComplexityConstraint() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void validateValue(::cereal::DynamicValue const& value, ::cereal::SerializerContext& serializerContext) const;
     // NOLINTEND
 
 public:

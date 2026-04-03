@@ -12,9 +12,9 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class ItemGraphics;
 class ItemStack;
 class TaskGroup;
-struct ItemGraphics;
 namespace OreUI { struct AtlasIndex; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }

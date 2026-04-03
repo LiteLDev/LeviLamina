@@ -13,10 +13,10 @@ class TransceiverStableState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk4921a8;
+    ::ll::UntypedStorage<8, 40> mUnkd4dcbd;
     ::ll::UntypedStorage<8, 16> mUnkff643b;
-    ::ll::UntypedStorage<8, 32> mUnk2ce988;
-    ::ll::UntypedStorage<8, 32> mUnk604408;
+    ::ll::UntypedStorage<8, 32> mUnka73f86;
+    ::ll::UntypedStorage<8, 32> mUnk1cfb80;
     ::ll::UntypedStorage<1, 1>  mUnkba0e08;
     ::ll::UntypedStorage<1, 1>  mUnkc065fe;
     ::ll::UntypedStorage<4, 12> mUnk799627;

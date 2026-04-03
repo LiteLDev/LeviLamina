@@ -9,7 +9,6 @@
 #include "mc/external/cricket/TlsCertPolicy.h"
 #include "mc/external/rtc/DiffServCodePoint.h"
 #include "mc/external/rtc/Socket.h"
-#include "mc/external/rtc/SocketAddress.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +25,7 @@ namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
 namespace rtc { class ReceivedPacket; }
 namespace rtc { class SSLCertificateVerifier; }
+namespace rtc { class SocketAddress; }
 namespace rtc { struct PacketOptions; }
 namespace rtc { struct SentPacket; }
 namespace webrtc { class FieldTrialsView; }
@@ -75,29 +75,29 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 88> mUnkd723ff;
-    ::ll::UntypedStorage<8, 32> mUnka57938;
+    ::ll::UntypedStorage<8, 32> mUnkb9ee6e;
     ::ll::UntypedStorage<4, 4>  mUnkc0797c;
-    ::ll::UntypedStorage<8, 24> mUnk2ccf8e;
-    ::ll::UntypedStorage<8, 24> mUnk9438eb;
+    ::ll::UntypedStorage<8, 24> mUnkb305a7;
+    ::ll::UntypedStorage<8, 24> mUnk106d78;
     ::ll::UntypedStorage<8, 8>  mUnke2e245;
     ::ll::UntypedStorage<8, 64> mUnkc5a0cb;
     ::ll::UntypedStorage<8, 16> mUnke47f49;
     ::ll::UntypedStorage<8, 16> mUnk192bee;
     ::ll::UntypedStorage<8, 16> mUnkd29c5b;
-    ::ll::UntypedStorage<8, 8>  mUnk6c54d1;
+    ::ll::UntypedStorage<8, 8>  mUnkf0200e;
     ::ll::UntypedStorage<4, 4>  mUnke2b901;
     ::ll::UntypedStorage<4, 4>  mUnk5455ec;
     ::ll::UntypedStorage<8, 88> mUnkc6ed9f;
-    ::ll::UntypedStorage<8, 32> mUnk3f6826;
-    ::ll::UntypedStorage<8, 32> mUnk339372;
-    ::ll::UntypedStorage<8, 32> mUnka14dac;
+    ::ll::UntypedStorage<8, 32> mUnkdff8be;
+    ::ll::UntypedStorage<8, 32> mUnkcc38e5;
+    ::ll::UntypedStorage<8, 32> mUnkdb079c;
     ::ll::UntypedStorage<4, 4>  mUnkc64656;
-    ::ll::UntypedStorage<8, 24> mUnk4af9a5;
+    ::ll::UntypedStorage<8, 24> mUnkc3bf11;
     ::ll::UntypedStorage<4, 4>  mUnkf1b1e6;
     ::ll::UntypedStorage<4, 4>  mUnk65e0d2;
     ::ll::UntypedStorage<8, 8>  mUnk51b81e;
     ::ll::UntypedStorage<8, 8>  mUnkcab8e3;
-    ::ll::UntypedStorage<8, 32> mUnke82c96;
+    ::ll::UntypedStorage<8, 32> mUnkbf6612;
     ::ll::UntypedStorage<8, 8>  mUnk4bc6f5;
     ::ll::UntypedStorage<8, 8>  mUnk61b827;
     // NOLINTEND

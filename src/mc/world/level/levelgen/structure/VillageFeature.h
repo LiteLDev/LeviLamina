@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeRegistry;
 class BiomeSource;
 class BlockPos;
 class ChunkPos;
@@ -22,14 +23,10 @@ class VillageFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> allowedBiomes;
     ::ll::TypedStorage<4, 4, int>                           mTownSpacing;
     ::ll::TypedStorage<4, 4, int>                           mMinTownSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VillageFeature();
 
 public:
     // virtual functions
@@ -71,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VillageFeature(uint seed, int townSpacing, int minTownSeparation);
+
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, int townSpacing, int minTownSeparation);
+    MCAPI_C void* $ctor(uint seed, int townSpacing, int minTownSeparation, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:

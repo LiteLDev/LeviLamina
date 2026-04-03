@@ -142,8 +142,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_HEIGHT();
-
     MCAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
 
     MCAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();

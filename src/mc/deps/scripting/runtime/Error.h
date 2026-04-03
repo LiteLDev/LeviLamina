@@ -28,7 +28,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::Error const&);
+    MCFOLD void* $ctor(::Scripting::Error const&);
 
     MCFOLD void* $ctor(::Scripting::BaseError const& base);
 

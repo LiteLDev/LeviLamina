@@ -11,7 +11,7 @@ class ContextMessageLogger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7692d5;
+    ::ll::UntypedStorage<8, 24> mUnka2c9cf;
     ::ll::UntypedStorage<1, 5>  mUnk522f81;
     ::ll::UntypedStorage<1, 14> mUnk15d953;
     // NOLINTEND

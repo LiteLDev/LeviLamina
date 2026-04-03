@@ -28,11 +28,11 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
@@ -62,11 +62,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
     MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 

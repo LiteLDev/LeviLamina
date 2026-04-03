@@ -6,11 +6,11 @@ class ResourceMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke8d383;
-    ::ll::UntypedStorage<8, 32> mUnkf32c39;
-    ::ll::UntypedStorage<8, 32> mUnka8781f;
-    ::ll::UntypedStorage<8, 32> mUnk7ea2be;
-    ::ll::UntypedStorage<8, 16> mUnk204e24;
+    ::ll::UntypedStorage<8, 24> mUnk4b614e;
+    ::ll::UntypedStorage<8, 32> mUnk29efd1;
+    ::ll::UntypedStorage<8, 32> mUnk482403;
+    ::ll::UntypedStorage<8, 32> mUnk94406c;
+    ::ll::UntypedStorage<8, 16> mUnk7f5f40;
     // NOLINTEND
 
 public:
@@ -25,12 +25,6 @@ public:
     MCNAPI ::ResourceMetadata& operator=(::ResourceMetadata const&);
 
     MCNAPI ~ResourceMetadata();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static char const*& PRODUCT_TYPE_ADD_ON();
     // NOLINTEND
 
 public:

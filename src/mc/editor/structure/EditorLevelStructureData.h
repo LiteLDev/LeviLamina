@@ -11,7 +11,7 @@ struct EditorLevelStructureData : public ::Editor::StructureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1a86d3;
+    ::ll::UntypedStorage<8, 32> mUnkea30f6;
     // NOLINTEND
 
 public:

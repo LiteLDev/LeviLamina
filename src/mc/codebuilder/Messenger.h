@@ -49,6 +49,9 @@ public:
     virtual void blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const
         /*override*/;
 
+    virtual void blockPlacedByCommand(::Block const& block, ushort auxType, int numberOfBlocksPlaced) const
+        /*override*/;
+
     virtual void cameraUsed(bool isSelfie) const /*override*/;
 
     virtual void codeBuilderRuntimeAction(::std::string const& action) const /*override*/;
@@ -173,6 +176,8 @@ public:
     $blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const;
 
     MCNAPI void $blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const;
+
+    MCNAPI void $blockPlacedByCommand(::Block const& block, ushort auxType, int numberOfBlocksPlaced) const;
 
     MCNAPI void $cameraUsed(bool isSelfie) const;
 

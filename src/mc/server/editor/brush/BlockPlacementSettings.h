@@ -11,7 +11,7 @@ struct BlockPlacementSettings : public ::Editor::Brush::CommonPlacementSettings 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3b2fe5;
+    ::ll::UntypedStorage<8, 8> mUnkb09872;
     ::ll::UntypedStorage<4, 4> mUnk5ed4fa;
     // NOLINTEND
 

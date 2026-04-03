@@ -15,8 +15,8 @@ class TextObjectScore : public ::ITextObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk71dadc;
-    ::ll::UntypedStorage<8, 32> mUnk8e694b;
+    ::ll::UntypedStorage<8, 32> mUnk51729d;
+    ::ll::UntypedStorage<8, 32> mUnk92b5cb;
     // NOLINTEND
 
 public:

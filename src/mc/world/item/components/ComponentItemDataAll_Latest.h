@@ -3,17 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/BetaItemComponentData.h"
 #include "mc/world/item/components/ComponentItemData_Legacy.h"
-#include "mc/world/item/components/ComponentItemData_v1_21_110.h"
+#include "mc/world/item/components/ComponentItemData_v1_26_0.h"
 #include "mc/world/item/components/LegacyEventItemComponentData.h"
 
 struct ComponentItemDataAll_Latest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2176, ::ComponentItemData_v1_21_110>                 mCerealData;
-    ::ll::TypedStorage<1, 2, ::std::optional<::BetaItemComponentData>>         mBetaData;
+    ::ll::TypedStorage<8, 2176, ::ComponentItemData_v1_26_0>                   mCerealData;
     ::ll::TypedStorage<8, 192, ::ComponentItemData_Legacy>                     mLegacyData;
     ::ll::TypedStorage<8, 32, ::std::optional<::LegacyEventItemComponentData>> mEvents;
     // NOLINTEND

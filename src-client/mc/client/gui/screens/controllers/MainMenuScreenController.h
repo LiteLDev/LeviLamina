@@ -8,7 +8,6 @@
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/client/network/realms/FailureReason.h"
-#include "mc/client/player/PickCustomSkinResult.h"
 #include "mc/events/IMinecraftEventing.h"
 
 // auto generated forward declare list
@@ -44,8 +43,6 @@ public:
     virtual ~MainMenuScreenController() /*override*/;
 
     virtual void onOpen() /*override*/;
-
-    virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -108,8 +105,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
-
-    MCAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback);
     // NOLINTEND
 
 public:

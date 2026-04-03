@@ -18,6 +18,8 @@
 class LevelEventCoordinator;
 class Player;
 class ServerPlayerEventCoordinator;
+struct DataDrivenScreenPromise;
+struct PlayerDataDrivenScreenClosedEvent;
 struct PlayerFormCloseEvent;
 struct PlayerFormResponseEvent;
 struct ServerScriptManagerEvents;
@@ -50,24 +52,20 @@ public:
             ::std::variant<
                 ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>,
-                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-                    void>,
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
                 ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponseV2>,
-                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-                    void>,
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
                 ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
-                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-                    void>,
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
                 ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponseV2>,
-                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-                    void>,
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
                 ::Scripting::Promise<
                     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
-                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-                    void>>>
+                    ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
+                ::std::shared_ptr<::DataDrivenScreenPromise>>>
                                                         mPromise;
         ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mClientNetworkIdentifier;
         // NOLINTEND
@@ -108,6 +106,8 @@ public:
 
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
+    virtual ::EventResult onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent) /*override*/;
+
     virtual ~ScriptFormPromiseTracker() /*override*/;
 
     virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
@@ -122,9 +122,16 @@ public:
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
 
+    MCNAPI void handleFormClose(::PlayerFormCloseEvent const& formResponse);
+
     MCNAPI void handleFormResponse(uint formId, ::Json::Value const& formResponse);
 
-    MCNAPI void handlePlayerQuit(::NetworkIdentifier const& playerId);
+    MCNAPI void showDataDrivenScreenToPlayer(
+        ::Player const&                              player,
+        ::std::string const&                         screenId,
+        ::std::optional<uint>                        dataInstanceId,
+        ::std::shared_ptr<::DataDrivenScreenPromise> promise
+    );
     // NOLINTEND
 
 public:
@@ -155,6 +162,8 @@ public:
     MCNAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
 
     MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
 
     MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 

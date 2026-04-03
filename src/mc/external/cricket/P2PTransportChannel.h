@@ -4,7 +4,7 @@
 
 namespace cricket {
 
-struct P2PTransportChannel {
+class P2PTransportChannel {
 public:
     // P2PTransportChannel inner types declare
     // clang-format off
@@ -17,7 +17,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 528> mUnk75bb08;
-        ::ll::UntypedStorage<8, 8>   mUnk85d849;
+        ::ll::UntypedStorage<8, 8>   mUnk733e2f;
         // NOLINTEND
 
     public:

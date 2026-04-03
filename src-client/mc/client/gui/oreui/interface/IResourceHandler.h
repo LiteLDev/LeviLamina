@@ -5,9 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class IResourceResponse; }
+namespace OreUI { class ResourceResponse; }
+namespace OreUI { class ResourceStreamResponse; }
 namespace OreUI { struct ResourceRequest; }
-namespace cohtml { class IAsyncResourceStreamResponse; }
 // clang-format on
 
 namespace OreUI {
@@ -27,10 +27,10 @@ public:
     virtual ~IResourceHandler() = default;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const&, ::OreUI::IResourceResponse&) = 0;
+    onResourceRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceResponse&) = 0;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::cohtml::IAsyncResourceStreamResponse*) = 0;
+    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&) = 0;
 
     virtual void update() = 0;
 

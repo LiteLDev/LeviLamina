@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
+#include "mc/deps/shared_types/shared_types/VillageType.h"
 #include "mc/world/level/levelgen/structure/PoolElementStructurePiece.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
@@ -51,7 +51,7 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         ::JigsawStructureRegistry&                          pools,
-        ::VanillaBiomeTypes                                 biomeType,
+        ::SharedTypes::VillageType                          villageType,
         ::Dimension&                                        dimension
     );
     // NOLINTEND

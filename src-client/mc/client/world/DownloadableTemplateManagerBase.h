@@ -9,9 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentAcquisition;
 class IDlcBatcher;
-struct IContentAcquisition;
-struct IStoreCatalogRepository;
+class IStoreCatalogRepository;
 // clang-format on
 
 namespace World {

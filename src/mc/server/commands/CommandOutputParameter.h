@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Actor> const&);
+    MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Actor> const& entities);
+
+    MCAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const& entities);
 
     MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Player> const& players);
-
-    MCAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const&);
 
     MCAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);
 
     MCAPI explicit CommandOutputParameter(::std::vector<::std::string> const& strings);
 
-    MCAPI explicit CommandOutputParameter(char const* text);
+    MCAPI explicit CommandOutputParameter(int value);
 
     MCAPI explicit CommandOutputParameter(::BlockPos value);
 
@@ -55,17 +55,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandSelectorResults<::Actor> const&);
+    MCFOLD void* $ctor(::CommandSelectorResults<::Actor> const& entities);
+
+    MCFOLD void* $ctor(::std::vector<::Actor const*> const& entities);
 
     MCFOLD void* $ctor(::CommandSelectorResults<::Player> const& players);
-
-    MCAPI void* $ctor(::std::vector<::Actor const*> const&);
 
     MCFOLD void* $ctor(::std::vector<::Player const*> const& players);
 
     MCAPI void* $ctor(::std::vector<::std::string> const& strings);
 
-    MCAPI void* $ctor(char const* text);
+    MCAPI void* $ctor(int value);
 
     MCAPI void* $ctor(::BlockPos value);
     // NOLINTEND

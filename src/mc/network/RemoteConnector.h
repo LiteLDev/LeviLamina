@@ -43,8 +43,6 @@ public:
 
     virtual void setDisableLanSignaling(bool) = 0;
 
-    virtual void setDisableTrickleIce(bool) = 0;
-
     virtual ~RemoteConnector() /*override*/;
     // NOLINTEND
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/ProfilerLiteTelemetry.h"
+#include "mc/profile/ProfilerLiteTelemetry.h"
 
 struct ServerboundDiagnosticsPacketPayload {
 public:

@@ -25,7 +25,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
+        ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockDescriptor;
         ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
 

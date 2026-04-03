@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/shared_types/FloatRange.h"
-#include "mc/deps/shared_types/v1_21_120/actor/MeleeAttackGoalBaseDefinition.h"
+#include "mc/deps/shared_types/v1_21_120/actor/MeleeAttackBaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace SharedTypes::v1_21_120 {
 
-struct UseKineticWeaponGoalDefinition : public ::SharedTypes::v1_21_120::MeleeAttackGoalBaseDefinition {
+struct UseKineticWeaponGoalDefinition : public ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,16 +27,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UseKineticWeaponGoalDefinition& operator=(UseKineticWeaponGoalDefinition const&);
-    UseKineticWeaponGoalDefinition(UseKineticWeaponGoalDefinition const&);
-    UseKineticWeaponGoalDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UseKineticWeaponGoalDefinition(::SharedTypes::v1_21_120::UseKineticWeaponGoalDefinition&&);
-
     MCAPI ~UseKineticWeaponGoalDefinition();
     // NOLINTEND
 
@@ -53,15 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::UseKineticWeaponGoalDefinition&&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

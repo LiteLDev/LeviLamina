@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct StoreCatalogItem;
+class StoreCatalogItem;
 namespace Json { class Value; }
 // clang-format on
 

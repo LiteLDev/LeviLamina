@@ -10,8 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcId;
 class MinecraftScreenModel;
-struct DlcId;
 // clang-format on
 
 class ResourcePackProgressHandler : public ::ProgressHandler {
@@ -42,10 +42,7 @@ public:
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onGameEventNotification(
-        ::MinecraftScreenModel&            minecraftScreenModel,
-        ::ui::GameEventNotification const& notification
-    ) /*override*/;
+    virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&) /*override*/;
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
@@ -53,7 +50,7 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -73,12 +70,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::chrono::seconds const& SECONDS_BEFORE_QUITTING();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(bool localServer);
@@ -95,16 +86,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onGameEventNotification(
-        ::MinecraftScreenModel&            minecraftScreenModel,
-        ::ui::GameEventNotification const& notification
-    );
-
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 

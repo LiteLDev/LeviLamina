@@ -4,6 +4,6 @@
 
 namespace dragon::res {
 
-struct UpdateTextureTransaction {};
+class UpdateTextureTransaction {};
 
 } // namespace dragon::res

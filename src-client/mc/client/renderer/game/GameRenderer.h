@@ -17,18 +17,18 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandListQueue;
 class Dimension;
 class IClientInstance;
+class IRenderChunkGarbageCollection;
+class InsideCubeRenderer;
 class Level;
 class LevelRenderer;
 class MinecraftGraphics;
+class PlayerRenderView;
 class Tessellator;
 class TickingTextureStage;
-struct CommandListQueue;
 struct FrameRenderObject;
-struct IRenderChunkGarbageCollection;
-struct InsideCubeRenderer;
-struct PlayerRenderView;
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
 namespace mce { class RenderStage; }
@@ -36,10 +36,41 @@ namespace mce { class RenderStage; }
 
 class GameRenderer {
 public:
+    // GameRenderer inner types declare
+    // clang-format off
+    struct Overlays;
+    // clang-format on
+
     // GameRenderer inner types define
     enum class FrameCaptureMode : int {
         Screenshot = 0,
         Panorama   = 1,
+    };
+
+    struct Overlays {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk326994;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Overlays& operator=(Overlays const&);
+        Overlays(Overlays const&);
+        Overlays();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~Overlays();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
     };
 
     using PauseStateChangeConnector = ::Bedrock::PubSub::Connector<void(bool)>;
@@ -56,6 +87,7 @@ public:
     ::ll::TypedStorage<8, 8, ::MinecraftGraphics&>                                  mMinecraftGraphics;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IClientInstance>>        mClient;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>     mPrimaryClient;
+    ::ll::TypedStorage<8, 8, ::GameRenderer::Overlays>                              mOverlays;
     ::ll::TypedStorage<8, 88, ::mce::RenderGraph>                                   mRenderGraph;
     ::ll::TypedStorage<4, 24, ::mce::Clock>                                         mClock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                      mTessellator;
@@ -108,6 +140,8 @@ public:
 
     MCAPI ::std::unique_ptr<::FrameRenderObject, ::std::function<void(::FrameRenderObject*)>>
     _extractFrame(::ScreenContext& screenContext, bool renderGraphContainsPlayScreen);
+
+    MCAPI void _prepareFrame(::ScreenContext& screenContext);
 
     MCAPI void _tickLightTexture(::Dimension& dimension, float a);
 

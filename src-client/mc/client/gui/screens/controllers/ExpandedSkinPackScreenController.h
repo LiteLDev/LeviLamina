@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
 class SkinPackCollectionModel;
 class SkinPackModel;
-struct StoreCatalogItem;
+class StoreCatalogItem;
 namespace Json { class Value; }
 // clang-format on
 

@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptSphereShape(ScriptSphereShape const&);
-    ScriptSphereShape();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
@@ -33,13 +28,6 @@ public:
     virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
 
     virtual ~ScriptSphereShape() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptSphereShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
     // NOLINTEND
 
 public:

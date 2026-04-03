@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct AuthServiceApi {};
+class AuthServiceApi {};
 
 } // namespace Social

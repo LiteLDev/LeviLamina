@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
@@ -13,10 +12,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class ItemStackBase;
 class Vec3;
-namespace ScriptModuleMinecraft { class IScriptItemCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemComponents; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
@@ -175,9 +172,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind(
-        ::BaseGameVersion const&                                                   baseGameVersion,
-        ::Scripting::Version const&                                                version,
-        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> itemCustomComponentRegistry
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents>& itemComponents,
+        ::Scripting::Version const&                                       version
     );
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>

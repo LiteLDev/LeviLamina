@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Social { class IUserManager; }
-namespace Social { struct XboxLiveUserStatistics; }
+namespace Social { class XboxLiveUserStatistics; }
 // clang-format on
 
 namespace OreUI {

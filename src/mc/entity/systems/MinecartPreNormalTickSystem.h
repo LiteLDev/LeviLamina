@@ -11,7 +11,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct MinecartFlagComponent;
 struct MinecartPreNormalTickBlockPosComponent;
 struct TickingSystemWithInfo;
@@ -30,7 +30,7 @@ public:
     MCNAPI static void _tickMinecartPreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::MinecartFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::MinecartFlagComponent>,
             ::ActorOwnerComponent>                                 view,
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );

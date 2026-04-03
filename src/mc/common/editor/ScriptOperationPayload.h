@@ -11,9 +11,9 @@ class ScriptOperationPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk36fa7f;
-    ::ll::UntypedStorage<8, 64> mUnk2c5ab7;
-    ::ll::UntypedStorage<8, 64> mUnk7dcaa6;
+    ::ll::UntypedStorage<8, 32> mUnk8bc56c;
+    ::ll::UntypedStorage<8, 64> mUnkb8a12b;
+    ::ll::UntypedStorage<8, 64> mUnk20b27b;
     // NOLINTEND
 
 public:

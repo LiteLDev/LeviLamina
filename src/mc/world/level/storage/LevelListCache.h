@@ -34,8 +34,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk7be6fa;
-    ::ll::UntypedStorage<8, 64> mUnkc5bca8;
-    ::ll::UntypedStorage<8, 64> mUnke93906;
+    ::ll::UntypedStorage<8, 64> mUnk3b1acb;
+    ::ll::UntypedStorage<8, 64> mUnk4e62e2;
     ::ll::UntypedStorage<1, 1>  mUnk233d85;
     ::ll::UntypedStorage<8, 32> mUnk92414e;
     ::ll::UntypedStorage<8, 80> mUnk9c4eaf;
@@ -72,7 +72,7 @@ public:
         ::LevelData const&   levelData
     ) /*override*/;
 
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
 
     virtual void createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -81,6 +81,8 @@ public:
     ) /*override*/;
 
     virtual bool hasLevelWithId(::std::string const& levelId) /*override*/;
+
+    virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) /*override*/;
 
     virtual bool checkIfLevelIsCorruptOrMissing(::std::string const& levelId) /*override*/;
 
@@ -201,7 +203,7 @@ public:
         ::LevelData const&   levelData
     );
 
-    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
     MCNAPI void $createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -210,6 +212,8 @@ public:
     );
 
     MCNAPI bool $hasLevelWithId(::std::string const& levelId);
+
+    MCNAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath);
 
     MCNAPI bool $checkIfLevelIsCorruptOrMissing(::std::string const& levelId);
 

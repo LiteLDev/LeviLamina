@@ -17,9 +17,9 @@ class CompositeMediaEngine : public ::cricket::MediaEngineInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk996f98;
-    ::ll::UntypedStorage<8, 8> mUnk3afc8d;
-    ::ll::UntypedStorage<8, 8> mUnka94305;
+    ::ll::UntypedStorage<8, 8> mUnkc40bdd;
+    ::ll::UntypedStorage<8, 8> mUnk409b3a;
+    ::ll::UntypedStorage<8, 8> mUnk8c59dd;
     // NOLINTEND
 
 public:

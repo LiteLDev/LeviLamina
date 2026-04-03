@@ -4,12 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ClientChunkGenerationDifferenceData.h"
-
-// auto generated forward declare list
-// clang-format off
-class ChunkPos;
-// clang-format on
 
 struct GenerationDeterminismTestData : public ::Bedrock::EnableNonOwnerReferences {
 public:

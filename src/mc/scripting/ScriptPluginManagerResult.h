@@ -13,7 +13,7 @@ class ScriptPluginManagerResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3542f8;
+    ::ll::UntypedStorage<8, 24> mUnk2bc955;
     // NOLINTEND
 
 public:

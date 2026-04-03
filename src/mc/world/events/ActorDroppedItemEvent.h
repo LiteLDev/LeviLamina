@@ -12,6 +12,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mEntity;
     ::ll::TypedStorage<8, 128, ::ItemInstance const> mItem;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mItemEntity;
     // NOLINTEND
 
 public:
@@ -30,12 +31,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorDroppedItemEvent const&);
+    MCAPI void* $ctor(::ActorDroppedItemEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

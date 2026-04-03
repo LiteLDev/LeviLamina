@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                                      mMaxCooldownSeconds;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData> mFilters;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mFilters;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

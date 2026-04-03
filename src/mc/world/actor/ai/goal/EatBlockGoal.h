@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockType;
 class ExpressionNode;
 class Mob;
 // clang-format on

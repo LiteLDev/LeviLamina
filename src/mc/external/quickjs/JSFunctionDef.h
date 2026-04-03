@@ -34,7 +34,6 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk2f9fa7;
     ::ll::UntypedStorage<4, 4>  mUnk1a9261;
     ::ll::UntypedStorage<4, 4>  mUnk4529d3;
-    ::ll::UntypedStorage<4, 4>  mUnk4f1820;
     ::JSFunctionKindEnum        mUnk644b65 : 8;
     ::JSParseFunctionEnum       mUnk82c178 : 8;
     ::ll::UntypedStorage<1, 1>  mUnkcc7b61;
@@ -89,6 +88,8 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk925b35;
     ::ll::UntypedStorage<4, 4>  mUnka6fed4;
     ::ll::UntypedStorage<4, 4>  mUnk958180;
+    int                         mUnka68e37 : 1;
+    int                         mUnkaf9aa9 : 1;
     ::ll::UntypedStorage<4, 4>  mUnk434aae;
     ::ll::UntypedStorage<4, 4>  mUnk450e58;
     ::ll::UntypedStorage<8, 48> mUnkfdc442;

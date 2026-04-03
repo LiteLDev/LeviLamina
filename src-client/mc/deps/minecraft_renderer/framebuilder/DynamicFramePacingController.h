@@ -4,6 +4,10 @@
 
 namespace mce::framebuilder {
 
-struct DynamicFramePacingController {};
+class DynamicFramePacingController {
+public:
+    // DynamicFramePacingController inner types define
+    enum class BottleneckType : int {};
+};
 
 } // namespace mce::framebuilder

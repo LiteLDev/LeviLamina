@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct ImageService {
+class ImageService {
 public:
     // ImageService inner types define
     enum class image_priority : int {};

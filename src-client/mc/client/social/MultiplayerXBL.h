@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct MultiplayerXBL {
+class MultiplayerXBL {
 public:
     // MultiplayerXBL inner types declare
     // clang-format off

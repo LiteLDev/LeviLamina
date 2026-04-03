@@ -11,6 +11,8 @@ struct CameraAttachToEntityComponent {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                                 mValidActor;
+    ::ll::TypedStorage<8, 8, int64>                                mActorId;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation> mActorLocation;
     // NOLINTEND
 };

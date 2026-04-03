@@ -15,6 +15,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CachedHostPackIdProvider;
+class ClientPackSourceFactory;
+class ContentCatalogService;
 class ContentIdentity;
 class ContentItemCollection;
 class ContentManagerProxy;
@@ -22,6 +25,7 @@ class IContentCatalogPackSource;
 class IContentManagerContext;
 class IContentManagerFactory;
 class IContentTierManager;
+class IEntitlementManager;
 class ILevelListCache;
 class IPackManifestFactory;
 class IResourcePackRepository;
@@ -32,17 +36,13 @@ class Pack;
 class PackManifestFactory;
 class PackSource;
 class ResourcePackManager;
+class StoreCatalogRepository;
 class TaskGroup;
 class WorldTemplateManager;
-struct CachedHostPackIdProvider;
-struct ClientPackSourceFactory;
-struct ContentCatalogService;
 struct ContentItem;
 struct ContentSource;
-struct IEntitlementManager;
 struct InvalidPacksFilterGroup;
 struct RealmPackManagerContentSource;
-struct StoreCatalogRepository;
 namespace Bedrock::PubSub { class Subscription; }
 namespace ContentManagerUtils { class SourcesAsyncReloader; }
 namespace Core { class FilePathManager; }

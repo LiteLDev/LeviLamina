@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct EditorClientPlayer {};
+class EditorClientPlayer {};
 
 } // namespace Editor

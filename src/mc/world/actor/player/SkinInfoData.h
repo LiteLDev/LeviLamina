@@ -32,13 +32,15 @@ public:
     virtual void updateSkin(::SerializedSkinRef const&, ::mce::Image const*, ::mce::Image const*) = 0;
 
     virtual bool hasValidTexture() = 0;
-
-    virtual bool validateAndResizeSkinData(::mce::Image& image, bool isPremium);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static void resizeHalfSkinData(::mce::Image& image);
+
+    MCAPI_C static void validateAlpha(::mce::Image& image, bool isPremium);
+
     MCAPI_C static bool verifyIsPremiumGeometry(::std::string const& geometryName);
     // NOLINTEND
 
@@ -51,10 +53,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI bool $validateAndResizeSkinData(::mce::Image& image, bool isPremium);
-#endif
-
 
     // NOLINTEND
 

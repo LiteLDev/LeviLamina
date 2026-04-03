@@ -14,13 +14,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk2495f1;
-    ::ll::UntypedStorage<8, 8> mUnkb13177;
-    ::ll::UntypedStorage<8, 8> mUnk694bf9;
-    ::ll::UntypedStorage<8, 8> mUnk99463b;
-    ::ll::UntypedStorage<8, 8> mUnk6afd57;
-    ::ll::UntypedStorage<8, 8> mUnkd7f5c4;
-    ::ll::UntypedStorage<8, 8> mUnk784506;
-    ::ll::UntypedStorage<8, 8> mUnk790548;
+    ::ll::UntypedStorage<8, 8> mUnk77b668;
+    ::ll::UntypedStorage<8, 8> mUnk6ca38e;
+    ::ll::UntypedStorage<8, 8> mUnk2b2770;
+    ::ll::UntypedStorage<8, 8> mUnkc23f07;
+    ::ll::UntypedStorage<8, 8> mUnke635a2;
+    ::ll::UntypedStorage<8, 8> mUnked2c7a;
+    ::ll::UntypedStorage<8, 8> mUnkdf0c55;
     // NOLINTEND
 
 public:

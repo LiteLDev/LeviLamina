@@ -38,9 +38,11 @@ public:
         EduAboutResourcePacks              = 25,
         EduAboutCloud                      = 26,
         FlatWorldFeedbackPage              = 27,
-        SignInCapeTerms                    = 28,
-        ContactSupport                     = 29,
-        RealmsCommitWikiLink               = 30,
+        ContactSupport                     = 28,
+        RealmsCommitWikiLink               = 29,
+        SettingsFeedbackPage               = 30,
+        NewPlayerPathTutorialSurvey        = 31,
+        RealmsFeedbackPage                 = 32,
     };
 
     using LaunchUri = ::std::function<void(::std::string const&)>;

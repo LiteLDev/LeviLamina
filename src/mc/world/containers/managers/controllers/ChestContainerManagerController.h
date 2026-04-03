@@ -24,9 +24,9 @@ public:
     // NOLINTBEGIN
     virtual ~ChestContainerManagerController() /*override*/ = default;
 
-    virtual void _onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
 
-    virtual void _onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot) /*override*/;
+    virtual void _onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,9 +47,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $_onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
-    MCNAPI void $_onItemPlaced(::ItemInstance const& itemInstance, ::SlotData const& dstSlot);
+    MCNAPI void $_onItemPlaced(::ItemInstance const& stack, ::SlotData const& dstSlot);
 #endif
 
 

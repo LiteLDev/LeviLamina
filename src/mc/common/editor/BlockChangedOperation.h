@@ -22,7 +22,7 @@ class BlockChangedOperation : public ::Editor::Transactions::IOperation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk249dee;
+    ::ll::UntypedStorage<8, 24> mUnk4da484;
     // NOLINTEND
 
 public:

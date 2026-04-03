@@ -42,6 +42,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk118e2f;
         ::ll::UntypedStorage<2, 2> mUnk7371af;
         ::ll::UntypedStorage<2, 2> mUnk1bd2ca;
         ::ll::UntypedStorage<4, 4> mUnk4d7832;
@@ -62,7 +63,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnkfae648;
-        ::ll::UntypedStorage<4, 24> mUnk518291;
+        ::ll::UntypedStorage<4, 28> mUnk518291;
         ::ll::UntypedStorage<1, 1>  mUnkcf4c60;
         // NOLINTEND
 
@@ -76,18 +77,23 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4>  mUnk728b5e;
+    ::ll::UntypedStorage<8, 8>  mUnk4785f4;
+    ::ll::UntypedStorage<8, 8>  mUnkaadcc4;
+    ::ll::UntypedStorage<8, 8>  mUnkbeac70;
+    ::ll::UntypedStorage<8, 8>  mUnk6f3dc7;
     ::ll::UntypedStorage<8, 16> mUnk80fa2a;
-    ::ll::UntypedStorage<8, 32> mUnk30b091;
-    ::ll::UntypedStorage<1, 1>  mUnk31adca;
+    ::ll::UntypedStorage<8, 32> mUnkf6cc58;
     ::ll::UntypedStorage<4, 4>  mUnk2fbab8;
     ::ll::UntypedStorage<4, 4>  mUnkb5f0c0;
-    ::ll::UntypedStorage<4, 4>  mUnkb40f82;
-    ::ll::UntypedStorage<4, 4>  mUnkd2a5a9;
+    ::ll::UntypedStorage<4, 4>  mUnk956413;
+    ::ll::UntypedStorage<4, 4>  mUnkb6b525;
+    ::ll::UntypedStorage<4, 4>  mUnkedaf8b;
     ::ll::UntypedStorage<4, 4>  mUnk38964a;
     ::ll::UntypedStorage<8, 64> mUnk204e8e;
-    ::ll::UntypedStorage<8, 24> mUnkeacdea;
+    ::ll::UntypedStorage<8, 24> mUnk70e84f;
     ::ll::UntypedStorage<4, 4>  mUnk86bb66;
-    ::ll::UntypedStorage<8, 24> mUnk86ec16;
+    ::ll::UntypedStorage<8, 24> mUnk3c65b3;
     ::ll::UntypedStorage<4, 4>  mUnkfedc25;
     // NOLINTEND
 
@@ -100,10 +106,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::optional<uint> _claimFirstAvailableSpotInResidencyTable();
-
-    MCNAPI_C ::std::optional<uint> _claimFirstFreeBlock();
-
     MCNAPI_C ::std::optional<::std::vector<uint>> _claimFirstFreeBlocks(uint numberOfBlocks);
 
     MCNAPI_C ::std::vector<::cg::ImageBuffer> _getMipChainForImageMetadata(
@@ -119,23 +121,37 @@ public:
     MCNAPI_C ::std::optional<::dragon::texturestreaming::DiskSerializationManager::ImageMetadata>
     _isImageResident(uint64 const& key);
 
+    MCNAPI_C uint64 _read(void* buffer, uint64& position, uint64 size);
+
     MCNAPI_C ::std::optional<::std::vector<::cg::ImageBuffer>>
     _readImageAt(::dragon::texturestreaming::DiskSerializationManager::ImageMetadata const& imageMetadata);
 
-    MCNAPI_C void
-    _writeMipChainToDisk(::std::vector<::cg::ImageBuffer> const& mipChain, ::std::vector<uint> const& addresses);
+    MCNAPI_C void _write(void const* buffer, uint64& position, uint64 size);
+
+    MCNAPI_C void _writeMipChainToDisk(
+        ::std::vector<::cg::ImageBuffer> const& mipChain,
+        ::std::vector<uint> const&              addresses,
+        uchar                                   firstSerializedMipOffset
+    );
 
     MCNAPI_C bool _writeMipChainToResidencyTable(
         uint64 const&                           key,
         ::std::vector<::cg::ImageBuffer> const& mipChain,
-        ::std::vector<uint> const&              addresses
+        ::std::vector<uint> const&              addresses,
+        uchar                                   startingMipInChain,
+        uchar                                   firstSerializedMipOffset
     );
 
     MCNAPI_C void _writeNewFile();
 
+    MCNAPI_C ::std::optional<::std::pair<::std::vector<::cg::ImageBuffer>, uchar>> deserialize(uint64 const& imageKey);
+
     MCNAPI_C void flush();
 
-    MCNAPI_C void serialize(uint64 const& imageHash, ::std::vector<::cg::ImageBuffer> const& mipChain);
+    MCNAPI_C ::std::vector<::std::pair<uint64, ::std::string>> getSerializationDebugEntries() const;
+
+    MCNAPI_C void
+    serialize(uint64 const& imageHash, ::std::vector<::cg::ImageBuffer> const& mipChain, uchar startingMipInChain);
     // NOLINTEND
 
 public:
@@ -147,7 +163,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string fileLocation, uint blockSize, uint numberOfBlocks, bool forceRestartCache);
+    MCNAPI_C void*
+    $ctor(::std::string fileLocation, uint blockSize, uint maxSize, uint maxMipSize, bool forceRestartCache);
     // NOLINTEND
 
 public:

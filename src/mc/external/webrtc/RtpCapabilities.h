@@ -8,9 +8,9 @@ struct RtpCapabilities {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk69ca65;
-    ::ll::UntypedStorage<8, 24> mUnkc3837d;
-    ::ll::UntypedStorage<8, 24> mUnkd3c68c;
+    ::ll::UntypedStorage<8, 24> mUnkf25ad3;
+    ::ll::UntypedStorage<8, 24> mUnk1f97eb;
+    ::ll::UntypedStorage<8, 24> mUnk2ae35f;
     // NOLINTEND
 
 public:

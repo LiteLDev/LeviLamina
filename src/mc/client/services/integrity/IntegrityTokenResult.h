@@ -6,8 +6,8 @@ struct IntegrityTokenResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk2ec332;
-    ::ll::UntypedStorage<8, 32> mUnk1ed878;
+    ::ll::UntypedStorage<8, 40> mUnk362524;
+    ::ll::UntypedStorage<8, 32> mUnk9c8af7;
     // NOLINTEND
 
 public:

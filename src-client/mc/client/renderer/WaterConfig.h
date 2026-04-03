@@ -7,10 +7,12 @@
 #include "mc/client/renderer/RenderingResourcePackJsonConfig.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/framebuilder/WaterSurfaceParameters.h"
+#include "mc/deps/puv/Loader.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class HashedString;
 class IMinecraftEventing;
 class LinkedAssetValidator;
@@ -18,7 +20,7 @@ class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class TextureGroup; }
@@ -32,6 +34,7 @@ public:
     struct WaterConfigSettingsV0;
     struct WaterConfigSettingsV1;
     struct WaterConfigSettingsV2;
+    struct WaterConfigSettingsV3;
     // clang-format on
 
     // WaterConfig inner types define
@@ -164,18 +167,12 @@ public:
             MCNAPI ::WaterConfig::WaterConfigSettingsV0::WaterSettings&
             operator=(::WaterConfig::WaterConfigSettingsV0::WaterSettings const&);
             // NOLINTEND
-
-        public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk173c70;
+        ::ll::UntypedStorage<8, 32> mUnk21f82b;
         ::ll::UntypedStorage<8, 88> mUnkdb5f45;
         // NOLINTEND
 
@@ -263,7 +260,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnkfd5f6f;
+        ::ll::UntypedStorage<8, 32>  mUnk290fa3;
         ::ll::UntypedStorage<8, 176> mUnkde299c;
         // NOLINTEND
 
@@ -315,6 +312,8 @@ public:
             // NOLINTBEGIN
             MCNAPI WaterSettings();
 
+            MCNAPI WaterSettings(::WaterConfig::WaterConfigSettingsV2::WaterSettings&&);
+
             MCNAPI WaterSettings(::WaterConfig::WaterConfigSettingsV2::WaterSettings const&);
 
             MCNAPI ::WaterConfig::WaterConfigSettingsV2::WaterSettings&
@@ -329,6 +328,8 @@ public:
             // NOLINTBEGIN
             MCNAPI void* $ctor();
 
+            MCNAPI void* $ctor(::WaterConfig::WaterConfigSettingsV2::WaterSettings&&);
+
             MCNAPI void* $ctor(::WaterConfig::WaterConfigSettingsV2::WaterSettings const&);
             // NOLINTEND
         };
@@ -336,24 +337,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnk36eb1b;
+        ::ll::UntypedStorage<8, 32>  mUnk99ad3b;
         ::ll::UntypedStorage<8, 176> mUnk204156;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        WaterConfigSettingsV2& operator=(WaterConfigSettingsV2 const&);
         WaterConfigSettingsV2(WaterConfigSettingsV2 const&);
         WaterConfigSettingsV2();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI WaterConfigSettingsV2(::WaterConfig::WaterConfigSettingsV2&&);
-
-        MCNAPI ::WaterConfig::WaterConfigSettingsV2& operator=(::WaterConfig::WaterConfigSettingsV2 const&);
-
-        MCNAPI ::WaterConfig::WaterConfigSettingsV2& operator=(::WaterConfig::WaterConfigSettingsV2&&);
-
         MCNAPI ~WaterConfigSettingsV2();
         // NOLINTEND
 
@@ -364,9 +360,60 @@ public:
         // NOLINTEND
 
     public:
-        // constructor thunks
+        // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::WaterConfig::WaterConfigSettingsV2&&);
+        MCNAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct WaterConfigSettingsV3 {
+    public:
+        // WaterConfigSettingsV3 inner types declare
+        // clang-format off
+        struct WaterSettings;
+        // clang-format on
+
+        // WaterConfigSettingsV3 inner types define
+        struct WaterSettings : public ::WaterConfig::WaterConfigSettingsV2::WaterSettings {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<4, 4> mUnk5f0f49;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            WaterSettings& operator=(WaterSettings const&);
+            WaterSettings(WaterSettings const&);
+            WaterSettings();
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32>  mUnk6401e6;
+        ::ll::UntypedStorage<8, 184> mUnk20ca9e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WaterConfigSettingsV3(WaterConfigSettingsV3 const&);
+        WaterConfigSettingsV3();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::WaterConfig::WaterConfigSettingsV3& operator=(::WaterConfig::WaterConfigSettingsV3 const&);
+
+        MCNAPI ::WaterConfig::WaterConfigSettingsV3& operator=(::WaterConfig::WaterConfigSettingsV3&&);
+
+        MCNAPI ~WaterConfigSettingsV3();
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::SemVersion const& VERSION();
         // NOLINTEND
 
     public:
@@ -380,8 +427,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnk1de33d;
-    ::ll::UntypedStorage<8, 208> mUnkb2bbcd;
-    ::ll::UntypedStorage<8, 64>  mUnk33e946;
+    ::ll::UntypedStorage<8, 216> mUnka047d8;
+    ::ll::UntypedStorage<8, 64>  mUnk788136;
     // NOLINTEND
 
 public:
@@ -415,9 +462,18 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit WaterConfig(::IMinecraftEventing& eventing);
 
+    MCNAPI bool addNewWaterConfigSetting(
+        ::HashedString const&                 identifier,
+        ::WaterConfig::WaterConfigSettingsV3& inWaterConfigSettings
+    );
+
+    MCNAPI ::WaterConfig::WaterConfigSettingsV3 const& findWaterConfigSettings(::HashedString const& biomeID) const;
+
     MCNAPI ::mce::framebuilder::CausticsParameters getCausticsParameters() const;
 
     MCNAPI void loadTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCNAPI void setDefaultWaterSettings(::WaterConfig::WaterConfigSettingsV3 const& inWaterSettings);
 
     MCNAPI void unloadTextures(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
@@ -427,7 +483,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindWaterParameters(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::Puv::Loader<::WaterConfig::WaterConfigSettingsV3, ::WaterConfig::WaterConfigSettingsV3>
+    _createLoader(::cereal::ReflectionCtx const& ctx, ::BedrockLoadContext const& context);
+
+    MCNAPI static ::Scripting::Result_deprecated<void> registerConfigMappingChangeHandler(
+        ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,
+        ::LocalPlayer&                                         localPlayer
+    );
 
     MCNAPI static ::Scripting::Result_deprecated<void> registerEditorAccessors(
         ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,

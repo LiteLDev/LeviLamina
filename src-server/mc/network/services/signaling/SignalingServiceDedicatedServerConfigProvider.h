@@ -18,7 +18,7 @@ class SignalingServiceDedicatedServerConfigProvider : public ::ISignalingService
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk606fe5;
+    ::ll::UntypedStorage<8, 8>  mUnk676b8e;
     ::ll::UntypedStorage<8, 16> mUnkeeffe2;
     ::ll::UntypedStorage<8, 16> mUnk3f2c31;
     ::ll::UntypedStorage<4, 4>  mUnkd782be;

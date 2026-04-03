@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 // clang-format on
 
 class DragonFireball : public ::Fireball {
@@ -19,7 +20,7 @@ public:
 
     virtual bool shouldBurn() /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
     virtual ~DragonFireball() /*override*/ = default;
     // NOLINTEND
@@ -31,7 +32,7 @@ public:
 
     MCFOLD bool $shouldBurn();
 
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
 
 
     // NOLINTEND

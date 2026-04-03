@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct AsyncBooleanDataProvider {};
+namespace Settings {
+
+class AsyncBooleanDataProvider {};
+
+} // namespace Settings

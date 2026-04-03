@@ -51,7 +51,7 @@ public:
         ::ll::TypedStorage<8, 655360, ::std::array<::Block const*, 81920>> blockBuffer;
         ::ll::TypedStorage<8, 8, float*>                                   fi;
         ::ll::TypedStorage<8, 8, float*>                                   fis;
-        ::ll::TypedStorage<8, 2576, ::Random>                              random;
+        ::ll::TypedStorage<8, 2544, ::Random>                              random;
         // NOLINTEND
     };
 
@@ -69,8 +69,8 @@ public:
             InstancedThreadLocal<::OverworldGenerator::ThreadData, ::std::allocator<::OverworldGenerator::ThreadData>>>
                                                          generatorHelpersPool;
     ::ll::TypedStorage<8, 32, ::MonsterRoomFeature>      monsterRoomFeature;
-    ::ll::TypedStorage<2, 16, ::CanyonFeature>           canyonFeature;
-    ::ll::TypedStorage<2, 16, ::UnderwaterCanyonFeature> underwaterCanyonFeature;
+    ::ll::TypedStorage<8, 16, ::CanyonFeature>           canyonFeature;
+    ::ll::TypedStorage<8, 16, ::UnderwaterCanyonFeature> underwaterCanyonFeature;
     // NOLINTEND
 
 public:

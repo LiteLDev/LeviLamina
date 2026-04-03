@@ -20,6 +20,7 @@ namespace ClientBlockPipeline { struct NamedMeshStreams; }
 namespace ClientBlockPipeline { struct PositionVertexAttributes; }
 namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
 namespace ClientBlockPipeline { struct SmoothLightingUvAttributes; }
+namespace ClientBlockPipeline { struct TextureShiftNoiseVertexAttributes; }
 namespace ClientBlockPipeline { struct TintFaceAttributes; }
 namespace ClientBlockPipeline { struct Transforms; }
 namespace ClientBlockPipeline { struct VertexAOAttributes; }
@@ -47,20 +48,21 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _run(
-        ::ClientBlockPipeline::PositionVertexAttributes const&    vertexPositions,
-        ::ClientBlockPipeline::QuadIndicesFaceAttributes const&   faceIndices,
-        ::ClientBlockPipeline::ImageUvFaceAttributes const&       faceImageUvs,
-        ::ClientBlockPipeline::MaterialFaceAttributes const&      faceMaterials,
-        ::ClientBlockPipeline::TintFaceAttributes const&          faceColors,
-        ::ClientBlockPipeline::FaceDirectionFaceAttributes const& faceFacings,
-        ::ClientBlockPipeline::CulledFaceAttribute const*         culledFaces,
-        ::ClientBlockPipeline::LightUvFaceAttributes const*       faceLightUvs,
-        ::ClientBlockPipeline::SmoothLightingUvAttributes const*  vertexLightUvs,
-        ::ClientBlockPipeline::FaceDimmingAttributes const*       faceDimmings,
-        ::ClientBlockPipeline::FaceNormalAttributes const*        faceNormals,
-        ::ClientBlockPipeline::VertexAOAttributes const*          vertexAO,
-        ::ClientBlockPipeline::Transforms const*                  transforms,
-        ::ClientBlockPipeline::NamedMeshStreams&                  outStreams
+        ::ClientBlockPipeline::PositionVertexAttributes const&          vertexPositions,
+        ::ClientBlockPipeline::QuadIndicesFaceAttributes const&         faceIndices,
+        ::ClientBlockPipeline::ImageUvFaceAttributes const&             faceImageUvs,
+        ::ClientBlockPipeline::MaterialFaceAttributes const&            faceMaterials,
+        ::ClientBlockPipeline::TintFaceAttributes const&                faceColors,
+        ::ClientBlockPipeline::FaceDirectionFaceAttributes const&       faceFacings,
+        ::ClientBlockPipeline::CulledFaceAttribute const*               culledFaces,
+        ::ClientBlockPipeline::LightUvFaceAttributes const*             faceLightUvs,
+        ::ClientBlockPipeline::SmoothLightingUvAttributes const*        vertexLightUvs,
+        ::ClientBlockPipeline::FaceDimmingAttributes const*             faceDimmings,
+        ::ClientBlockPipeline::FaceNormalAttributes const*              faceNormals,
+        ::ClientBlockPipeline::VertexAOAttributes const*                vertexAO,
+        ::ClientBlockPipeline::Transforms const*                        transforms,
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes const* textureShiftVertexNoises,
+        ::ClientBlockPipeline::NamedMeshStreams&                        outStreams
     ) const;
     // NOLINTEND
 

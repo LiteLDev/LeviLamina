@@ -39,7 +39,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk906cc5;
     ::ll::UntypedStorage<8, 64> mUnkdc96a2;
     ::ll::UntypedStorage<8, 80> mUnk3b13c8;
-    ::ll::UntypedStorage<8, 24> mUnkb8342b;
+    ::ll::UntypedStorage<8, 24> mUnk104955;
     ::ll::UntypedStorage<8, 24> mUnkaaf50d;
     // NOLINTEND
 
@@ -93,7 +93,10 @@ public:
         uint64&          outBytesRemaining
     );
 
-    virtual ::Core::Result _readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
+    virtual ::Core::Result
+    _readFileData(::Core::PathView filePath, ::brstd::function_ref<void*(uint64)> data, uint64* bytesRead);
+
+    virtual ::Core::Result _writeFileData(::Core::PathView filePath, void const* data, uint64 size);
 
     virtual ::Core::Result _createOneDirectory(::Core::PathView) = 0;
 
@@ -355,7 +358,10 @@ public:
         uint64&          outBytesRemaining
     );
 
-    MCNAPI ::Core::Result $_readFileData(::Core::PathView filePath, ::std::vector<uchar>& data);
+    MCNAPI ::Core::Result
+    $_readFileData(::Core::PathView filePath, ::brstd::function_ref<void*(uint64)> data, uint64* bytesRead);
+
+    MCNAPI ::Core::Result $_writeFileData(::Core::PathView filePath, void const* data, uint64 size);
 
     MCNAPI ::Core::Result $_createOneDirectoryIfNotExisting(::Core::PathView directoryPath);
 

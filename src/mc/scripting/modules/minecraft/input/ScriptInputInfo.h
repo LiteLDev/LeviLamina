@@ -30,6 +30,8 @@ public:
     getLastInputModeUsed() const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isHotbarOnlyTouch() const;
+
+    MCAPI_C void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 
 public:

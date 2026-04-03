@@ -14,7 +14,6 @@
 class BlockPos;
 class BlockSource;
 class SignBlockActor;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -33,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SignBlockActor const* _tryGetSign() const;
+    MCFOLD ::SignBlockActor const* _tryGetSign() const;
 
     MCFOLD ::SignBlockActor* _tryGetSign();
 
@@ -59,8 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockSignComponent>>

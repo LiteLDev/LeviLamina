@@ -7,19 +7,18 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkd64ba9;
-    ::ll::UntypedStorage<8, 32> mUnk9f6426;
+    ::ll::UntypedStorage<8, 32> mUnk5375d2;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    DynamicAmbientSound& operator=(DynamicAmbientSound const&);
     DynamicAmbientSound(DynamicAmbientSound const&);
     DynamicAmbientSound();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DynamicAmbientSound& operator=(::DynamicAmbientSound const&);
-
     MCAPI ~DynamicAmbientSound();
     // NOLINTEND
 

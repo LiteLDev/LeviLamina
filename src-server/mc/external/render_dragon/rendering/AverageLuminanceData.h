@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct AverageLuminanceData {};
+class AverageLuminanceData {};
 
 } // namespace dragon::rendering

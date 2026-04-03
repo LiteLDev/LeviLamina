@@ -13,6 +13,7 @@ struct ScriptRuntimeStats {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, int64> mMemoryAllocatedLimit;
     ::ll::TypedStorage<8, 8, int64> mMemoryAllocatedCount;
     ::ll::TypedStorage<8, 8, int64> mMemoryAllocatedSize;
     ::ll::TypedStorage<8, 8, int64> mMemoryUsedCount;

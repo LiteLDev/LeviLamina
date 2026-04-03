@@ -9,7 +9,7 @@ class MemorySecureStorage : public ::SecureStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnka8e7ac;
+    ::ll::UntypedStorage<8, 64> mUnk1661ee;
     // NOLINTEND
 
 public:

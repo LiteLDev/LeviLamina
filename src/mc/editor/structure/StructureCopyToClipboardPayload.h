@@ -17,7 +17,7 @@ class StructureCopyToClipboardPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk80d2a8;
+    ::ll::UntypedStorage<8, 32> mUnke3b5e3;
     // NOLINTEND
 
 public:

@@ -21,10 +21,10 @@ class DropdownControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkc2cb70;
-    ::ll::UntypedStorage<8, 24>  mUnk22da8d;
+    ::ll::UntypedStorage<8, 216> mUnk59ecce;
+    ::ll::UntypedStorage<8, 24>  mUnk516966;
     ::ll::UntypedStorage<4, 8>   mUnk2a4364;
-    ::ll::UntypedStorage<8, 224> mUnk9e3fe2;
+    ::ll::UntypedStorage<8, 224> mUnk608e4e;
     // NOLINTEND
 
 public:

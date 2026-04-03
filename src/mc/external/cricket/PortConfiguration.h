@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/cricket/ProtocolType.h"
-#include "mc/external/rtc/SocketAddress.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cricket { struct RelayServerConfig; }
+namespace rtc { class SocketAddress; }
 namespace webrtc { class FieldTrialsView; }
 // clang-format on
 
@@ -20,11 +20,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk3c1af0;
     ::ll::UntypedStorage<8, 16> mUnk5a542f;
-    ::ll::UntypedStorage<8, 24> mUnkd36a8d;
-    ::ll::UntypedStorage<8, 32> mUnka4cebf;
-    ::ll::UntypedStorage<8, 32> mUnk41bfd3;
+    ::ll::UntypedStorage<8, 24> mUnk3ba32a;
+    ::ll::UntypedStorage<8, 32> mUnkc03d52;
+    ::ll::UntypedStorage<8, 32> mUnkb137a3;
     ::ll::UntypedStorage<1, 1>  mUnk27d0d4;
-    ::ll::UntypedStorage<8, 24> mUnk4698cb;
+    ::ll::UntypedStorage<8, 24> mUnk342778;
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 namespace Editor::Playtest {
 
-struct RoundtripInfo {
+class RoundtripInfo {
 public:
     // RoundtripInfo inner types define
     enum class State : int {};

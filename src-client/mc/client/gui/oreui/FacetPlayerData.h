@@ -4,12 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/resources/AllowListProfileImage.h"
+#include "mc/client/realms/PlayerRole.h"
+#include "mc/client/realms/RealmStoriesPlayerRole.h"
 #include "mc/client/realms/stories/FetchStatus.h"
-#include "mc/client/realms/stories/PlayerRole.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 namespace Realms::Stories { struct Player; }
 // clang-format on
 
@@ -39,6 +40,8 @@ public:
 
     MCAPI ::std::string const& getGamerTag() const;
 
+    MCAPI bool getHasAccepted() const;
+
     MCAPI bool getHasOptedIn() const;
 
     MCAPI bool getIsPlayingOnRealm() const;
@@ -49,7 +52,9 @@ public:
 
     MCFOLD ::OreUI::AllowListProfileImage const& getProfileImage() const;
 
-    MCAPI ::Realms::Stories::PlayerRole getRole() const;
+    MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
+
+    MCAPI ::Realms::PlayerRole getRealmsRole() const;
 
     MCFOLD ::std::string const& getXuid() const;
 

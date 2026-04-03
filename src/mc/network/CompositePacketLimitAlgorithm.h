@@ -10,7 +10,7 @@ class CompositePacketLimitAlgorithm : public ::IPacketLimitAlgorithm {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1a756c;
+    ::ll::UntypedStorage<8, 24> mUnkbc306d;
     // NOLINTEND
 
 public:

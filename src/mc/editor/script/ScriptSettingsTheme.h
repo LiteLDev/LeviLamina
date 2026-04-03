@@ -49,8 +49,6 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getThemeName(::std::string const& id) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptRGBA resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
-
     MCNAPI ::Scripting::Result_deprecated<void> setCurrentTheme(::std::string const& id);
 
     MCNAPI ::Scripting::Result_deprecated<void> setThemeName(::std::string const& id, ::std::string const& name);

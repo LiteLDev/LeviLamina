@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct PartyChangePublisher {};
+class PartyChangePublisher {};
 
 } // namespace Parties

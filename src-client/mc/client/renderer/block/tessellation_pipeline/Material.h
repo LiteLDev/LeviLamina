@@ -31,6 +31,7 @@ public:
         bool mRandomizeUVRotation  : 1;
         bool mHasTextureVariations : 1;
         bool mAlphaMaskedTint      : 1;
+        bool mDithering            : 1;
         // NOLINTEND
     };
 
@@ -42,6 +43,7 @@ public:
     ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                                mBlockRenderLayer;
     ::ll::TypedStorage<1, 1, ::TintMethod>                                      mTintMethod;
     ::ll::TypedStorage<1, 1, ::ClientBlockPipeline::Material::PackedBools>      mPackedBools;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>                          mTextureShiftBufferIndex;
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ class EditorServiceList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk55e0ee;
+    ::ll::UntypedStorage<8, 24> mUnk656819;
     // NOLINTEND
 
 public:

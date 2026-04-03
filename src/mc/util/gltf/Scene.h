@@ -8,8 +8,8 @@ struct Scene {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf69cc5;
-    ::ll::UntypedStorage<8, 32> mUnk135110;
+    ::ll::UntypedStorage<8, 24> mUnk4f789c;
+    ::ll::UntypedStorage<8, 32> mUnk3a6c45;
     ::ll::UntypedStorage<4, 4>  mUnk506e0a;
     // NOLINTEND
 

@@ -49,7 +49,9 @@ MCNAPI ::std::string base64url_decode(::std::string encoded);
 
 MCNAPI ::std::string base64url_encode(::std::string str);
 
-MCNAPI_C ::std::string caseFold(::std::string_view str);
+MCNAPI ::std::string caseFold(::std::string_view str);
+
+MCNAPI_S ::std::string commaSeparatedListFromVector(::std::vector<::std::string> const& stringVector);
 
 MCNAPI_C bool containsUnicodeChar(::std::string const& str);
 
@@ -57,7 +59,7 @@ MCNAPI_C uint64 createObfuscated64BitIntegerFromXboxLiveID(::std::string const& 
 
 MCNAPI ::std::string ensureNamespace(::std::string const& id, ::std::string_view defaultNamespace);
 
-MCNAPI bool equalIgnoreCase(::std::string_view lhs, ::std::string_view rhs);
+MCNAPI_C bool equalIgnoreCase(::std::string_view lhs, ::std::string_view rhs);
 
 MCNAPI_C ::std::string filterProfanityFromString(
     ::std::string_view                                                                          inputStr,
@@ -87,6 +89,8 @@ MCNAPI_C ::std::string getFilesizeString(uint64 filesize);
 
 MCNAPI_C ::std::string getFilesizeString(uint64 filesize, ::I18n& loc);
 
+MCNAPI_C ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
+
 MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
 
 MCNAPI_C ::std::string getPackDataDownloadProgressString(
@@ -113,7 +117,7 @@ MCNAPI void normalizeLineEndings(::std::string& str);
 
 MCNAPI ::std::string removeChars(::std::string str, ::std::string const& characters);
 
-MCNAPI_C ::std::string removeFormattingAndColorCodes(::std::string const& input, bool redactObfuscatedText);
+MCNAPI ::std::string removeFormattingAndColorCodes(::std::string const& input, bool redactObfuscatedText);
 
 MCNAPI ::std::string removeIllegalChars(::std::string str);
 
@@ -132,7 +136,7 @@ MCNAPI_C ::std::string simpleFormat(::std::string const& format, ::std::vector<:
 
 MCNAPI ::std::vector<::std::string> split(::std::string_view view, char delim);
 
-MCNAPI ::std::vector<::std::string> splitAndDiscardEmpty(::std::string const& str, char delim);
+MCNAPI ::std::vector<::std::string> splitAndDiscardEmpty(::std::string_view str, char delim);
 
 MCNAPI_C ::std::vector<::std::string> splitAndDiscardEmpty(
     ::std::string const&                str,
@@ -158,7 +162,7 @@ splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string
 
 MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, char delim);
 
-MCNAPI_C bool startsWith(::std::string_view str, ::std::string_view starts);
+MCNAPI bool startsWith(::std::string_view str, ::std::string_view starts);
 
 MCNAPI bool stringContains(::std::string const& s, char character);
 
@@ -176,13 +180,11 @@ MCNAPI ::std::string stringTrim(::std::string const& s);
 
 MCNAPI ::std::string stringTrim(::std::string const& s, ::std::string const& chars);
 
-MCNAPI_C ::std::string stringUTF16ToUTF8(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
-
 MCNAPI bool toBool(::std::string const& input, bool& destination);
 
 MCNAPI ::std::string toCamelCase(::std::string const& src, char delimiter);
 
-MCNAPI_C ::std::string toHex(::std::string_view input);
+MCNAPI ::std::string toHex(::std::string_view input);
 
 MCNAPI ::Util::NumberConversionResult toIntWithMinMax(::std::string_view inputStr, int& destination, int min, int max);
 
@@ -201,13 +203,11 @@ MCNAPI ::std::string toLower(::std::string_view inString);
 
 MCNAPI_C bool toSafeNumber(::std::string const& str, uint& output);
 
-MCNAPI ::std::string toString(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
+MCNAPI_C ::std::string toString(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> inputStr);
 
 MCNAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
 
 MCNAPI int utf8len(::std::string_view str);
-
-MCNAPI_C int utf8lenNoColorCodes(::std::string const& str);
 
 MCNAPI ::std::string utf8substring(::std::string const& str, int startIndex, int endIndex);
 

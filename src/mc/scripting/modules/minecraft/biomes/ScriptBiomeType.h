@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class BiomeRegistry;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -35,12 +36,17 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     ::ll::TypedStorage<8, 8, ::Biome const*>                  mBiome;
+    ::ll::TypedStorage<8, 8, ::BiomeRegistry const*>          mBiomeRegistry;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string getId() const;
+
+    MCAPI ::std::vector<::std::string> getTags() const;
+
+    MCAPI bool hasTags(::std::vector<::std::string> const& tags) const;
     // NOLINTEND
 
 public:
@@ -48,8 +54,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
-    getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> getOrCreateHandle(
+        ::Biome const&                        biome,
+        ::BiomeRegistry const&                registry,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 };
 

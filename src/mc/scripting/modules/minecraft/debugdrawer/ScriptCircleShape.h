@@ -21,25 +21,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptCircleShape(ScriptCircleShape const&);
-    ScriptCircleShape();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
 
-    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
 
     virtual ~ScriptCircleShape() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:
@@ -59,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $populatePacketData(::ShapeDataPayload& packet) const;
 
-    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& packet);
+    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& existing);
 
 
     // NOLINTEND

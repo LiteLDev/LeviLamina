@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnke7aa60;
     ::ll::UntypedStorage<8, 8>  mUnk62b5d6;
-    ::ll::UntypedStorage<8, 24> mUnk29ce5e;
+    ::ll::UntypedStorage<8, 24> mUnk71f643;
     // NOLINTEND
 
 public:
@@ -60,9 +60,11 @@ public:
 
     virtual bool write(::gsl::span<uchar const> view) /*override*/;
 
-    virtual void writeValidityFlag(bool) /*override*/;
+    virtual void writeAdditionalData(bool) /*override*/;
 
-    virtual void writeControlValue(uint) /*override*/;
+    virtual void writeAdditionalData(uint) /*override*/;
+
+    virtual void writeAdditionalData(::std::string_view const) /*override*/;
 
     virtual bool pushMember(::std::string_view const value) /*override*/;
 
@@ -120,9 +122,11 @@ public:
 
     MCNAPI bool $write(::gsl::span<uchar const> view);
 
-    MCNAPI void $writeValidityFlag(bool);
+    MCNAPI void $writeAdditionalData(bool);
 
-    MCNAPI void $writeControlValue(uint);
+    MCNAPI void $writeAdditionalData(uint);
+
+    MCNAPI void $writeAdditionalData(::std::string_view const);
 
     MCNAPI bool $pushMember(::std::string_view const value);
 

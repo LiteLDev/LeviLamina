@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentClipboard {};
+class WidgetComponentClipboard {};
 
 } // namespace Editor::Widgets

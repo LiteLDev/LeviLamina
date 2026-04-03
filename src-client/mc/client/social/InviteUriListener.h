@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct InviteUriListener {};
+class InviteUriListener {};
 
 } // namespace Social

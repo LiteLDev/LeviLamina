@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::ServerTexture>>              mTextures;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkRenderData>>                 mChunkQueue;
-    ::ll::TypedStorage<8, 1368, ::std::vector<::ChunkLayerRenderObject>[3][19]> mTerrainLayerChunkQueue;
+    ::ll::TypedStorage<8, 1728, ::std::vector<::ChunkLayerRenderObject>[3][24]> mTerrainLayerChunkQueue;
     ::ll::TypedStorage<4, 4, uint>                                              mMaximumChunkVertexCount;
     // NOLINTEND
 
@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkRenderObjectCollection(::ChunkRenderObjectCollection&& other);
 
-    MCAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[19]);
+    MCAPI ChunkRenderObjectCollection(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[24]);
 
     MCAPI uint64 addToChunkQueue(
         ::std::variant<
@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkRenderObjectCollection&& other);
 
-    MCAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[19]);
+    MCAPI void* $ctor(uint64 lastQueueSize, uint64 (*const lastLayerQueueSizes)[24]);
     // NOLINTEND
 
 public:

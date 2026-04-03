@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentGuideSensor {};
+class WidgetComponentGuideSensor {};
 
 } // namespace Editor::Widgets

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/crypto/Encoding.h"
-#include "mc/deps/crypto/ThumbprintFormat.h"
+#include "mc/deps/crypto/certificate/Encoding.h"
+#include "mc/deps/crypto/certificate/ThumbprintFormat.h"
 #include "mc/deps/crypto/hash/HashType.h"
 
 namespace Crypto::Certificate {

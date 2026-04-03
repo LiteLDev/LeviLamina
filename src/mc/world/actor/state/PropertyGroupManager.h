@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class CompoundTag;
-class HashedString;
 class PropertyGroup;
 // clang-format on
 

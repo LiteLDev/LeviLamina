@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct ClientTutorialService {
+class ClientTutorialService {
 public:
     // ClientTutorialService inner types declare
     // clang-format off

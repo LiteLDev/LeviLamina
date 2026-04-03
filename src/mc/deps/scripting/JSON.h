@@ -8,7 +8,7 @@ struct JSON {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3b49ec;
+    ::ll::UntypedStorage<8, 32> mUnkbbc95f;
     // NOLINTEND
 
 public:

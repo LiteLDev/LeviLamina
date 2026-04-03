@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/services/Response.h"
 #include "mc/deps/core/http/DispatcherProcess.h"
-#include "mc/deps/core/http/Response.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncResultBase.h"
 
@@ -80,8 +80,8 @@ public:
     ::ll::UntypedStorage<8, 80>  mUnked6186;
     ::ll::UntypedStorage<4, 4>   mUnkd0e8a3;
     ::ll::UntypedStorage<8, 336> mUnk88bbd3;
-    ::ll::UntypedStorage<8, 24>  mUnkd5af65;
-    ::ll::UntypedStorage<8, 32>  mUnkb12c33;
+    ::ll::UntypedStorage<8, 24>  mUnk458717;
+    ::ll::UntypedStorage<8, 32>  mUnk122c3e;
     // NOLINTEND
 
 public:

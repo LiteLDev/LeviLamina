@@ -86,10 +86,8 @@ public:
 
     virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const&) const = 0;
 
-    virtual ::BrightnessPair getMaxBrightnessPairAroundBlock(
-        ::BlockPos const&,
-        ::std::optional<::std::pair<::BlockPos, ::BlockPos>> const&
-    ) const = 0;
+    virtual ::std::pair<::BrightnessPair, ::BlockPos>
+    getBrightestNeighbor(::BlockPos const&, ::ParticleSystem::CommonParticle const&) const = 0;
 
     virtual bool getVisibilityAtBlock(::BlockPos const&) const = 0;
 

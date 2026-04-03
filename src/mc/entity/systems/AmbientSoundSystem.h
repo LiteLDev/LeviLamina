@@ -11,7 +11,7 @@ class Actor;
 class ActorOwnerComponent;
 class AmbientSoundComponent;
 class EntityRegistry;
-class Randomize;
+class IRandom;
 // clang-format on
 
 class AmbientSoundSystem : public ::ITickingSystem {
@@ -32,7 +32,7 @@ public:
     );
 
     MCNAPI_C static void
-    tickAmbientSoundComponent(::Actor& actor, ::AmbientSoundComponent& ambientSoundComponent, ::Randomize& randomize);
+    tickAmbientSoundComponent(::Actor& actor, ::AmbientSoundComponent& ambientSoundComponent, ::IRandom& random);
     // NOLINTEND
 
 public:

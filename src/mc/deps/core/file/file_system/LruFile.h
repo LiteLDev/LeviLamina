@@ -17,8 +17,8 @@ class LruFile : public ::Core::FileImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb9cef7;
-    ::ll::UntypedStorage<8, 32> mUnk1c3fe1;
+    ::ll::UntypedStorage<8, 8>  mUnkbe8510;
+    ::ll::UntypedStorage<8, 32> mUnkf989ef;
     // NOLINTEND
 
 public:

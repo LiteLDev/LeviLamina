@@ -40,6 +40,8 @@ public:
 
     virtual int getArmorValue() const /*override*/;
 
+    virtual int getToughnessValue() const /*override*/;
+
     virtual float getKnockbackResistanceValue() const /*override*/;
 
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
@@ -60,6 +62,8 @@ public:
     MCFOLD bool $isBodyArmor() const;
 
     MCAPI int $getArmorValue() const;
+
+    MCAPI int $getToughnessValue() const;
 
     MCAPI float $getKnockbackResistanceValue() const;
 

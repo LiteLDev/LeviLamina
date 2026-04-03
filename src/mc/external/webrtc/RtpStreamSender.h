@@ -8,9 +8,9 @@ struct RtpStreamSender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk95c14a;
-    ::ll::UntypedStorage<8, 8> mUnk299abe;
-    ::ll::UntypedStorage<8, 8> mUnkc0a976;
+    ::ll::UntypedStorage<8, 8> mUnk91cdbe;
+    ::ll::UntypedStorage<8, 8> mUnka3ebd6;
+    ::ll::UntypedStorage<8, 8> mUnke3c543;
     // NOLINTEND
 
 public:

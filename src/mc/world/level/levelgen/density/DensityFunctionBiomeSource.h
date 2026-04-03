@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/source/BiomeSource.h"
 #include "mc/world/level/biome/source/BiomeSourceType.h"
+#include "mc/world/level/block/chunk_volume/VolumeOf.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeArea;
+class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class DensityCalculators;
@@ -55,6 +57,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                       mCalculatorMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::DensityCalculators>>                      mDensityCalculators;
     ::ll::TypedStorage<8, 24, ::std::vector<::DensityFunctionBiomeSource::BiomeTarget>> mBiomeTargets;
     // NOLINTEND
@@ -63,6 +66,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DensityFunctionBiomeSource() /*override*/ = default;
+
+    virtual ::ChunkVolume::VolumeOf<::Biome>
+    getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const /*override*/;
 
     virtual void fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const*) const /*override*/;
 

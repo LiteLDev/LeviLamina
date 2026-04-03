@@ -52,7 +52,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkdab225;
     ::ll::UntypedStorage<8, 16> mUnk4ad5e7;
     ::ll::UntypedStorage<8, 16> mUnkeded51;
-    ::ll::UntypedStorage<8, 16> mUnka60673;
+    ::ll::UntypedStorage<8, 16> mUnk52348d;
+    ::ll::UntypedStorage<8, 16> mUnk114a95;
+    ::ll::UntypedStorage<8, 16> mUnk98fdb3;
     ::ll::UntypedStorage<8, 16> mUnkab87ec;
     ::ll::UntypedStorage<8, 16> mUnkeb3a2a;
     ::ll::UntypedStorage<8, 16> mUnkdfd0b5;
@@ -72,6 +74,8 @@ public:
     MCNAPI bool isHandleType(::entt::meta_type const& type) const;
 
     MCNAPI bool isNumericType(::entt::meta_type const& type) const;
+
+    MCNAPI bool isPrivilegedClosureTemplateType(::entt::meta_type const& type) const;
     // NOLINTEND
 
 public:

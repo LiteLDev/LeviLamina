@@ -20,7 +20,7 @@ class DividerControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk84685d;
+    ::ll::UntypedStorage<8, 32> mUnkaca5a5;
     // NOLINTEND
 
 public:

@@ -13,9 +13,9 @@ class ZipFileRestrictions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9d4e1a;
-    ::ll::UntypedStorage<8, 16> mUnk405812;
-    ::ll::UntypedStorage<8, 16> mUnk43c397;
+    ::ll::UntypedStorage<8, 16> mUnk19693d;
+    ::ll::UntypedStorage<8, 16> mUnkab9825;
+    ::ll::UntypedStorage<8, 16> mUnkafe69e;
     // NOLINTEND
 
 public:

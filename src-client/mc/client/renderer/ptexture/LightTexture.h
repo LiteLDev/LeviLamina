@@ -9,9 +9,9 @@
 // clang-format off
 class BaseLightTextureImageBuilder;
 class Dimension;
+class FrameUpdateContext;
 class IClientInstance;
 class MinecraftGameplayGraphicsResources;
-struct FrameUpdateContext;
 namespace mce { class Color; }
 // clang-format on
 
@@ -53,12 +53,6 @@ public:
         float                           ambientBoost,
         bool                            clampToMinimum
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static int const& TEXTURE_LENGTH();
     // NOLINTEND
 
 public:

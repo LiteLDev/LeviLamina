@@ -61,7 +61,7 @@ public:
     ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::Legacy::Spawn::HeightFilter>>     mHeightFilter;
     ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::Legacy::Spawn::DistanceFilter>>   mDistanceFilter;
     ::ll::TypedStorage<8, 24, ::std::optional<::SharedTypes::Legacy::Spawn::WorldAgeFilter>>   mWorldAgeFilter;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData>                       mBiomeFilter;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData>                       mBiomeFilter;
     ::ll::TypedStorage<8, 56, ::std::optional<::SharedTypes::Legacy::Spawn::DelayFilter>>      mDelayFilter;
     ::ll::TypedStorage<8, 40, ::std::optional<::SharedTypes::Legacy::Spawn::MobEventFilter>>   mMobEventFilter;
     ::ll::TypedStorage<4, 12, ::std::optional<::SharedTypes::Legacy::Spawn::PlayerInVillageFilter>>

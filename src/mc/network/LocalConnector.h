@@ -96,9 +96,7 @@ public:
 
     MCNAPI ushort $getIPv6Port() const;
 
-#ifdef LL_PLAT_C
     MCNAPI ::TransportLayer $getNetworkType() const;
-#endif
 
 
     // NOLINTEND

@@ -17,10 +17,10 @@ class RTCIceCandidatePairStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkce0798;
-    ::ll::UntypedStorage<8, 40> mUnkbc952a;
-    ::ll::UntypedStorage<8, 40> mUnk6703c3;
-    ::ll::UntypedStorage<8, 40> mUnk4acbe6;
+    ::ll::UntypedStorage<8, 40> mUnkaec1f6;
+    ::ll::UntypedStorage<8, 40> mUnk1797c2;
+    ::ll::UntypedStorage<8, 40> mUnkfb4017;
+    ::ll::UntypedStorage<8, 40> mUnk41220b;
     ::ll::UntypedStorage<8, 16> mUnkabced7;
     ::ll::UntypedStorage<1, 2>  mUnka9e687;
     ::ll::UntypedStorage<1, 2>  mUnk1ef149;

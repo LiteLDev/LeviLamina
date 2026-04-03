@@ -18,10 +18,10 @@ class RTCInboundRtpStreamStats : public ::webrtc::RTCReceivedRtpStreamStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk2befa5;
-    ::ll::UntypedStorage<8, 40> mUnk354fed;
-    ::ll::UntypedStorage<8, 40> mUnka9d361;
-    ::ll::UntypedStorage<8, 40> mUnk6a77df;
+    ::ll::UntypedStorage<8, 40> mUnk8826ad;
+    ::ll::UntypedStorage<8, 40> mUnk2bbecf;
+    ::ll::UntypedStorage<8, 40> mUnke93e34;
+    ::ll::UntypedStorage<8, 40> mUnk8e9593;
     ::ll::UntypedStorage<4, 8>  mUnk156574;
     ::ll::UntypedStorage<8, 16> mUnk269eb7;
     ::ll::UntypedStorage<8, 16> mUnkbeb100;
@@ -64,14 +64,14 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk7bc385;
     ::ll::UntypedStorage<4, 8>  mUnk63dfa2;
     ::ll::UntypedStorage<8, 16> mUnka97835;
-    ::ll::UntypedStorage<8, 40> mUnka17712;
+    ::ll::UntypedStorage<8, 40> mUnkc987d3;
     ::ll::UntypedStorage<8, 16> mUnkf29380;
-    ::ll::UntypedStorage<8, 40> mUnkb30125;
+    ::ll::UntypedStorage<8, 40> mUnkcae819;
     ::ll::UntypedStorage<4, 8>  mUnk13d423;
     ::ll::UntypedStorage<4, 8>  mUnk3bd508;
     ::ll::UntypedStorage<4, 8>  mUnkf2b331;
     ::ll::UntypedStorage<8, 16> mUnk540110;
-    ::ll::UntypedStorage<8, 40> mUnkf4bb77;
+    ::ll::UntypedStorage<8, 40> mUnkd54b15;
     ::ll::UntypedStorage<1, 2>  mUnke99d26;
     ::ll::UntypedStorage<8, 16> mUnkeff2a8;
     ::ll::UntypedStorage<8, 16> mUnkffbfc7;

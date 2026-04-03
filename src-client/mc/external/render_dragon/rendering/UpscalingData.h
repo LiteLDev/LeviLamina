@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct UpscalingData {};
+class UpscalingData {};
 
 } // namespace dragon::rendering

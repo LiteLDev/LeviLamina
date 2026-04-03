@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct EditorClientPersistenceService {};
+class EditorClientPersistenceService {};
 
 } // namespace Editor::Services

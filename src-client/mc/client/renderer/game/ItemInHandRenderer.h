@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/ActorShaderManager.h"
+#include "mc/client/renderer/game/ItemInHandRenderFrameId.h"
 #include "mc/deps/core/math/Matrix.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -26,6 +27,7 @@ class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class IClientInstance;
+class ItemRenderCall;
 class Level;
 class Mob;
 class Player;
@@ -34,8 +36,6 @@ class Tessellator;
 class TextureTessellator;
 class Vec3;
 struct Brightness;
-struct ItemInHandRenderFrameId;
-struct ItemRenderCall;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class Camera; }
 namespace mce { class TextureGroup; }
@@ -180,6 +180,7 @@ public:
         ::BlockType const*             blockType,
         ::BlockShape                   blockShape,
         ::ItemRenderCall const*        renderObjectCall,
+        float                          heldItemScale,
         bool                           posAndRotSetByJSON
     );
 
@@ -229,13 +230,14 @@ public:
     _rebuildItem(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int fallbackFrame);
 
     MCAPI void _renderBannerBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::dragon::RenderMetadata  renderMetadata,
-        ::ItemStack const&        item,
-        ::Actor&                  entity,
-        ::Brightness              lightEmission,
-        float                     frameAlpha,
-        float                     scale
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata            renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        float                               scale
     ) const;
 
     MCAPI void _renderChestBlockItem(
@@ -247,11 +249,12 @@ public:
     ) const;
 
     MCAPI void _renderConduitBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::dragon::RenderMetadata  renderMetadata,
-        ::Actor&                  entity,
-        ::Brightness              lightEmission,
-        float                     frameAlpha
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata            renderMetadata,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
     ) const;
 
     MCAPI void _renderCopperGolemStatueBlockItem(
@@ -285,14 +288,15 @@ public:
     _renderFishingRod(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Actor& entity) const;
 
     MCAPI void _renderGlowstickBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::dragon::RenderMetadata  renderMetadata,
-        ::ItemStack const&        item,
-        ::Actor&                  entity,
-        ::Brightness              lightEmission,
-        float                     frameAlpha,
-        ::ItemContextFlags        itemFlags,
-        float                     scale
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata            renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha,
+        ::ItemContextFlags                  itemFlags,
+        float                               scale
     );
 
     MCAPI void _renderItemInMainHand(
@@ -317,21 +321,23 @@ public:
     _renderPhotoMapItem(::BaseActorRenderContext& renderContext, ::Player& player, float frameAlpha, bool isMainHand);
 
     MCAPI void _renderShulkerBoxBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::dragon::RenderMetadata  renderMetadata,
-        ::ItemStack const&        item,
-        ::Actor&                  entity,
-        ::Brightness              lightEmission,
-        float                     frameAlpha
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata            renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
     ) const;
 
     MCAPI void _renderSkullBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::dragon::RenderMetadata  renderMetadata,
-        ::ItemStack const&        item,
-        ::Actor&                  entity,
-        ::Brightness              lightEmission,
-        float                     frameAlpha
+        ::BaseActorRenderContext&           renderContext,
+        ::dragon::RenderMetadata            renderMetadata,
+        ::ItemStack const&                  item,
+        ::Actor&                            entity,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        float                               frameAlpha
     ) const;
 
     MCAPI bool _shouldRenderOffhandItem(::Player& player) const;
@@ -356,7 +362,8 @@ public:
         ::MatrixStack::MatrixStackRef& worldMatrix,
         ::ItemStack const&             item,
         bool                           isMainHand,
-        ::ItemContextFlags             itemFlags
+        ::ItemContextFlags             itemFlags,
+        float                          textureScale
     );
 
     MCAPI void clearRenderObjects();

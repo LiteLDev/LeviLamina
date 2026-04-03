@@ -3,10 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
 #include "mc/world/level/BlockPos.h"
@@ -16,19 +13,12 @@
 // clang-format off
 class BlockDescriptor;
 class BlockSource;
-class EntityContext;
 class Mob;
 class Path;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class RandomSearchAndDigGoal : public ::Goal {
 public:
-    // RandomSearchAndDigGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
     // RandomSearchAndDigGoal inner types define
     enum class CanUseOutcome : int {
         Ok                    = 0,
@@ -46,96 +36,38 @@ public:
         Done      = 3,
     };
 
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // Definition inner types define
-        using self = ::RandomSearchAndDigGoal::Definition;
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                             mSpeedMod;
-        ::ll::TypedStorage<4, 4, float>                             mGoalRadius;
-        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemPosOffset;
-        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemAfterSeconds;
-        ::ll::TypedStorage<4, 4, int>                               mFindWantedPosRetries;
-        ::ll::TypedStorage<4, 4, int>                               mSearchRangeXZ;
-        ::ll::TypedStorage<4, 4, int>                               mSearchRangeY;
-        ::ll::TypedStorage<4, 4, float>                             mTargetDigPositionOffset;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                      mDiggingDurationRange;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                      mCooldownRangeSeconds;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSearchingStartEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringSearchingEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnDiggingStartEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnItemFoundEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringDiggingEvent;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSuccessEvent;
-        ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetBlocks;
-        ::ll::TypedStorage<8, 32, ::std::string>                    mItemTable;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
-
-        MCAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RandomSearchAndDigGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 744, ::RandomSearchAndDigGoal::Definition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
-    ::ll::TypedStorage<4, 4, ::RandomSearchAndDigGoal::State>        mState;
-    ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSqr;
-    ::ll::TypedStorage<1, 1, bool>                                   mItemFound;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                            mTargetPos;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
-    ::ll::TypedStorage<2, 2, ushort>                                 mCooldownDurationTicks;
-    ::ll::TypedStorage<2, 2, ushort>                                 mDiggingDurationTicks;
-    ::ll::TypedStorage<2, 2, ushort>                                 mSpawnItemAfterTicks;
-    ::ll::TypedStorage<8, 8, ::Tick>                                 mCooldownEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                                 mItemFoundEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                                 mDiggingEndTick;
-    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mDiggingParticleCooldown;
+    ::ll::TypedStorage<4, 4, float>                             mSpeedMod;
+    ::ll::TypedStorage<4, 4, float>                             mGoalRadius;
+    ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemPosOffset;
+    ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemAfterSeconds;
+    ::ll::TypedStorage<4, 4, float>                             mTargetDigPositionOffset;
+    ::ll::TypedStorage<4, 4, int>                               mFindWantedPosRetries;
+    ::ll::TypedStorage<4, 4, int>                               mSearchRangeXZ;
+    ::ll::TypedStorage<4, 4, int>                               mSearchRangeY;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSearchingStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringSearchingEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnDiggingStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnItemFoundEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringDiggingEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSuccessEvent;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetBlocks;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mItemTable;
+    ::ll::TypedStorage<8, 8, ::Mob&>                            mMob;
+    ::ll::TypedStorage<4, 4, ::RandomSearchAndDigGoal::State>   mState;
+    ::ll::TypedStorage<4, 4, float>                             mGoalRadiusSqr;
+    ::ll::TypedStorage<1, 1, bool>                              mItemFound;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mTargetPos;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>         mPath;
+    ::ll::TypedStorage<2, 2, ushort>                            mCooldownDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                            mDiggingDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                            mSpawnItemAfterTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                            mCooldownEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                            mItemFoundEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                            mDiggingEndTick;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>  mDiggingParticleCooldown;
     // NOLINTEND
 
 public:
@@ -159,12 +91,14 @@ public:
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    virtual ~RandomSearchAndDigGoal() /*override*/ = default;
+    virtual ~RandomSearchAndDigGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
+
     MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
 
     MCAPI void _digUpItems();
@@ -176,6 +110,18 @@ public:
     MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
 
     MCAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Mob& mob);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

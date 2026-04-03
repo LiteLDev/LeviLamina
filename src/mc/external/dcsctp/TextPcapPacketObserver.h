@@ -16,7 +16,7 @@ class TextPcapPacketObserver : public ::dcsctp::PacketObserver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk61d6a5;
+    ::ll::UntypedStorage<8, 32> mUnk582332;
     // NOLINTEND
 
 public:

@@ -15,13 +15,13 @@
 class AABB;
 class Actor;
 class ActorRenderData;
+class ActorResourceDefinition;
 class BaseActorRenderContext;
 class BlockTessellator;
 class DataDrivenRenderer_tempComponent;
 class Model;
 class RenderParams;
 class Vec3;
-struct ActorResourceDefinition;
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -88,6 +88,8 @@ public:
     MCAPI void addEnderDragonAdditionalRendering();
 
     MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
+
+    MCAPI void addFoxAdditionalRendering();
 
     MCAPI void addGuardianAdditionalRendering();
 

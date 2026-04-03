@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameCoreKeyboardSupport {
+class GameCoreKeyboardSupport {
 public:
     // GameCoreKeyboardSupport inner types declare
     // clang-format off

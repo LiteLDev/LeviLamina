@@ -47,14 +47,6 @@ public:
     );
 
     MCAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
-
-    MCAPI ~LocalWorldStarter();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

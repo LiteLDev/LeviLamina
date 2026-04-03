@@ -8,19 +8,38 @@ struct GPUMemoryInfo {
 public:
     // GPUMemoryInfo inner types declare
     // clang-format off
+    struct MemoryInfo;
     struct ResourceInfo;
-    struct ResourceArray;
+    struct TextureResources;
+    struct TextureInfo;
     struct BufferResourceInfo;
-    struct BufferArray;
+    struct BufferResources;
+    struct BufferInfo;
     // clang-format on
 
     // GPUMemoryInfo inner types define
+    struct MemoryInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk139589;
+        ::ll::UntypedStorage<8, 8> mUnk7070ef;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MemoryInfo& operator=(MemoryInfo const&);
+        MemoryInfo(MemoryInfo const&);
+        MemoryInfo();
+    };
+
     struct ResourceInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk577a7d;
-        ::ll::UntypedStorage<8, 8> mUnkd40169;
+        ::ll::UntypedStorage<4, 4> mUnkf83da7;
+        ::ll::UntypedStorage<8, 8> mUnk79a849;
         // NOLINTEND
 
     public:
@@ -30,26 +49,44 @@ public:
         ResourceInfo();
     };
 
-    struct ResourceArray {
+    struct TextureResources {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk565365;
-        ::ll::UntypedStorage<8, 8> mUnka4bae1;
+        ::ll::UntypedStorage<8, 16> mUnk5b8c2d;
+        ::ll::UntypedStorage<8, 16> mUnk105dfa;
+        ::ll::UntypedStorage<8, 8>  mUnkdc8096;
+        ::ll::UntypedStorage<8, 8>  mUnkee256a;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        ResourceArray& operator=(ResourceArray const&);
-        ResourceArray(ResourceArray const&);
-        ResourceArray();
+        TextureResources& operator=(TextureResources const&);
+        TextureResources(TextureResources const&);
+        TextureResources();
+    };
+
+    struct TextureInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16>  mUnk873a09;
+        ::ll::UntypedStorage<8, 16>  mUnkf26d0c;
+        ::ll::UntypedStorage<8, 336> mUnk17c5e2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TextureInfo& operator=(TextureInfo const&);
+        TextureInfo(TextureInfo const&);
+        TextureInfo();
     };
 
     struct BufferResourceInfo : public ::renoir::GPUMemoryInfo::ResourceInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk27b2e3;
+        ::ll::UntypedStorage<8, 8> mUnk2295ae;
         // NOLINTEND
 
     public:
@@ -59,51 +96,46 @@ public:
         BufferResourceInfo();
     };
 
-    struct BufferArray {
+    struct BufferResources {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkdef40e;
-        ::ll::UntypedStorage<8, 8> mUnk94c44f;
+        ::ll::UntypedStorage<8, 16> mUnk5ba8b0;
+        ::ll::UntypedStorage<8, 16> mUnkc1ffe0;
+        ::ll::UntypedStorage<8, 8>  mUnk49c54d;
+        ::ll::UntypedStorage<8, 8>  mUnka9f490;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        BufferArray& operator=(BufferArray const&);
-        BufferArray(BufferArray const&);
-        BufferArray();
+        BufferResources& operator=(BufferResources const&);
+        BufferResources(BufferResources const&);
+        BufferResources();
+    };
+
+    struct BufferInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 16>  mUnk430bb0;
+        ::ll::UntypedStorage<8, 16>  mUnke887be;
+        ::ll::UntypedStorage<8, 192> mUnk51555f;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        BufferInfo& operator=(BufferInfo const&);
+        BufferInfo(BufferInfo const&);
+        BufferInfo();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk45855e;
-    ::ll::UntypedStorage<8, 8>   mUnkdede45;
-    ::ll::UntypedStorage<8, 8>   mUnk4f77fe;
-    ::ll::UntypedStorage<8, 8>   mUnk5285ca;
-    ::ll::UntypedStorage<8, 8>   mUnkf4dd55;
-    ::ll::UntypedStorage<8, 8>   mUnk48c0ac;
-    ::ll::UntypedStorage<8, 8>   mUnkbb537a;
-    ::ll::UntypedStorage<8, 8>   mUnk7bc2af;
-    ::ll::UntypedStorage<8, 8>   mUnk8bceda;
-    ::ll::UntypedStorage<8, 8>   mUnk306ef2;
-    ::ll::UntypedStorage<4, 12>  mUnk27197e;
-    ::ll::UntypedStorage<4, 12>  mUnkc73252;
-    ::ll::UntypedStorage<4, 28>  mUnk42327d;
-    ::ll::UntypedStorage<4, 12>  mUnk6b5ed8;
-    ::ll::UntypedStorage<4, 12>  mUnk42db43;
-    ::ll::UntypedStorage<4, 28>  mUnk8ef548;
-    ::ll::UntypedStorage<4, 28>  mUnkb29343;
-    ::ll::UntypedStorage<4, 28>  mUnkaf3ca9;
-    ::ll::UntypedStorage<4, 28>  mUnk401f87;
-    ::ll::UntypedStorage<4, 28>  mUnk8fae60;
-    ::ll::UntypedStorage<4, 28>  mUnk7a8b86;
-    ::ll::UntypedStorage<4, 28>  mUnk9b9446;
-    ::ll::UntypedStorage<8, 112> mUnk92bcce;
-    ::ll::UntypedStorage<8, 112> mUnk851f49;
-    ::ll::UntypedStorage<8, 112> mUnk9a20e9;
-    ::ll::UntypedStorage<8, 48>  mUnk617397;
-    ::ll::UntypedStorage<8, 48>  mUnkf1f03c;
+    ::ll::UntypedStorage<8, 8>   mUnk18d6e0;
+    ::ll::UntypedStorage<8, 8>   mUnkc1236a;
+    ::ll::UntypedStorage<8, 736> mUnk403a29;
+    ::ll::UntypedStorage<8, 672> mUnk5efa1e;
     // NOLINTEND
 
 public:
@@ -115,6 +147,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual uint GetTextureRenoirId(uint) const = 0;
+
     virtual void Release() = 0;
 
     virtual ~GPUMemoryInfo() = default;

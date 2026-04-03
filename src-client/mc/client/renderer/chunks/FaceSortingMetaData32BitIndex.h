@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FaceSortingMetaData32BitIndex {};
+class FaceSortingMetaData32BitIndex {};

@@ -138,6 +138,10 @@ public:
 
     MCAPI_C static ::std::array<::std::string_view, 256>& _keyNames();
 
+    MCAPI_C static ::std::vector<::TextInput>& _nativeTextInputs();
+
+    MCAPI_C static int& _nativeTextInputsIndex();
+
     MCAPI_C static ::std::array<::std::string_view, 256>& _shortKeyNames();
 
     MCAPI_C static ::std::add_lvalue_reference_t<int[]> _states();

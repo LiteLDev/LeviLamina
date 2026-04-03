@@ -16,7 +16,7 @@ struct ScriptPrefabErrorStringInvalidLength : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkabf06c;
+    ::ll::UntypedStorage<8, 32> mUnkc2e09b;
     ::ll::UntypedStorage<4, 4>  mUnkbf01fe;
     ::ll::UntypedStorage<4, 4>  mUnkfdb564;
     // NOLINTEND

@@ -23,12 +23,12 @@ class BohrModelRenderer : public ::MinecraftUICustomRenderer {
 public:
     // BohrModelRenderer inner types declare
     // clang-format off
-    struct Renderable;
+    class Renderable;
     struct State;
     // clang-format on
 
     // BohrModelRenderer inner types define
-    struct Renderable {};
+    class Renderable {};
 
     struct State {};
 

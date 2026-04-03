@@ -4,6 +4,6 @@
 
 namespace Editor::StructureDataCache {
 
-struct ClientItemChangeEvent {};
+class ClientItemChangeEvent {};
 
 } // namespace Editor::StructureDataCache

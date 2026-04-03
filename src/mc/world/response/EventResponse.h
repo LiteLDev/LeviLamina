@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/response/EventResponseBase.h"
 #include "mc/util/Factory.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 
@@ -13,7 +14,7 @@ struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class EventResponse {
+class EventResponse : public ::SharedTypes::Legacy::EventResponseBase {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SerializedActorRenderer {
+class SerializedActorRenderer {
 public:
     // SerializedActorRenderer inner types declare
     // clang-format off

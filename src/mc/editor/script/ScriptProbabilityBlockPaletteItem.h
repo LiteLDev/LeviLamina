@@ -23,7 +23,7 @@ class ScriptProbabilityBlockPaletteItem : public ::Editor::ScriptModule::ScriptI
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk581bf9;
+    ::ll::UntypedStorage<8, 24> mUnkd8d08f;
     ::ll::UntypedStorage<4, 4>  mUnk3353bd;
     // NOLINTEND
 

@@ -23,6 +23,7 @@ struct PlayerDimensionChangeAfterEvent;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct EditorInitParams; }
 // clang-format on
 
 namespace Editor {
@@ -50,6 +51,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnkc284f0;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
     ::ll::UntypedStorage<4, 4>  mUnk2b7012;
+    ::ll::UntypedStorage<8, 8>  mUnk10bddf;
     // NOLINTEND
 
 public:
@@ -91,13 +93,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit EditorPlayerCommon(::Player& player);
+    MCNAPI EditorPlayerCommon(::Player& player, ::gsl::not_null<::Editor::EditorInitParams*> initParams);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Player& player);
+    MCNAPI void* $ctor(::Player& player, ::gsl::not_null<::Editor::EditorInitParams*> initParams);
     // NOLINTEND
 
 public:

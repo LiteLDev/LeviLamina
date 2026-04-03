@@ -17,9 +17,9 @@ class ThemeSettingsNewThemeCreatedPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9449c4;
-    ::ll::UntypedStorage<8, 40> mUnka8bf8d;
-    ::ll::UntypedStorage<8, 40> mUnk772634;
+    ::ll::UntypedStorage<8, 32> mUnk552792;
+    ::ll::UntypedStorage<8, 40> mUnk5f2840;
+    ::ll::UntypedStorage<8, 40> mUnk1aa069;
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct Config;
+class Config;
 // clang-format on
 
 class IConfigListener {

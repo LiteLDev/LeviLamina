@@ -19,7 +19,7 @@ class WidgetAddRenderPrimComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 48> mUnk25a3a6;
+    ::ll::UntypedStorage<4, 76> mUnkf772ab;
     ::ll::UntypedStorage<4, 4>  mUnk6ddb52;
     // NOLINTEND
 

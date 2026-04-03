@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RealmsAPI {
+class RealmsAPI {
 public:
     // RealmsAPI inner types declare
     // clang-format off

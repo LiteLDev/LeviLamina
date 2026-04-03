@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CatalogInfo {
+class CatalogInfo {
 public:
     // CatalogInfo inner types define
     enum class OfferType : ushort {};

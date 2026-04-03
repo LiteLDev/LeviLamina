@@ -21,8 +21,11 @@ class IEduAuth : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8954c5;
-    ::ll::UntypedStorage<8, 64> mUnkc06796;
+    ::ll::UntypedStorage<8, 8>  mUnk932c52;
+    ::ll::UntypedStorage<8, 64> mUnk7eaffe;
+    ::ll::UntypedStorage<8, 32> mUnke91259;
+    ::ll::UntypedStorage<8, 16> mUnk28162c;
+    ::ll::UntypedStorage<8, 72> mUnk6c2a08;
     // NOLINTEND
 
 public:

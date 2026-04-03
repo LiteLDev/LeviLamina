@@ -99,14 +99,12 @@ public:
         ::ll::TypedStorage<4, 4, int>                                               mTotalMobsSpawned;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnData>>                    mNextSpawnData;
         ::ll::TypedStorage<8, 32, ::std::string>                                    mSelectedLootTableName;
-        ::ll::TypedStorage<4, 4, int>                                               mOpeningDelay;
-        ::ll::TypedStorage<4, 4, int>                                               mEjectionDelay;
-        ::ll::TypedStorage<4, 4, int>                                               mMaxDistance;
         ::ll::TypedStorage<8, 24, ::std::vector<::TrialSpawner::WeightedItemStack>> mDispensing;
         ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                     mActorDefId;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                  mDisplayEntity;
         ::ll::TypedStorage<4, 4, float>                                             mCurrentSpinSpeed;
         ::ll::TypedStorage<4, 4, float>                                             mPreviousSpinSpeed;
+        ::ll::TypedStorage<1, 1, bool>                                              mSkipNextMobCleanup;
         // NOLINTEND
 
     public:
@@ -129,7 +127,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos const>      mPosition;
     ::ll::TypedStorage<4, 4, int>                    mPlayerSearchRange;
-    ::ll::TypedStorage<8, 360, ::TrialSpawner::Data> mData;
+    ::ll::TypedStorage<8, 352, ::TrialSpawner::Data> mData;
     ::ll::TypedStorage<8, 144, ::TrialSpawnerConfig> mNormalConfig;
     ::ll::TypedStorage<8, 144, ::TrialSpawnerConfig> mOminousConfig;
     ::ll::TypedStorage<1, 1, bool>                   mIsOminous;

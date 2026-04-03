@@ -59,6 +59,8 @@ public:
 
     MCAPI void _addRealmsFlags(::IClientInstance& clientInstance);
 
+    MCAPI void _addSocialFlags(bool isPartySystemAvailable);
+
     MCAPI void _finalizeFeatureFlags();
 
     MCFOLD ::std::vector<::std::string> const& getAllFeatureFlags() const;

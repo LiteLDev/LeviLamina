@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
@@ -26,7 +27,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnke91993;
     ::ll::UntypedStorage<8, 24>  mUnkde8b6f;
     ::ll::UntypedStorage<8, 40>  mUnk26d3cf;
-    ::ll::UntypedStorage<8, 104> mUnk7c5ced;
+    ::ll::UntypedStorage<8, 112> mUnk7c5ced;
     // NOLINTEND
 
 public:
@@ -60,25 +61,9 @@ public:
     MCNAPI void
     pushBlockStateOverride(::std::string const& stateName, ::std::variant<int, ::std::string, bool> const& stateValue);
 
-    MCNAPI void setBlockFacePlacementBasedOnCamera(bool enable);
-
     MCNAPI ::Scripting::Result_deprecated<void> setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
 
-    MCNAPI void setBrushShapeVisible(bool visible);
-
-    MCNAPI void setElevationBrushRadius(int elevationBrushRadius);
-
-    MCNAPI void setElevationFalloff(int elevationFalloff);
-
-    MCNAPI void setElevationSampleLayers(int elevationSampleLayers);
-
-    MCNAPI void setFlattenSmoothing(int flattenSmoothing);
-
-    MCNAPI void setFloorBlockOverride(bool floorBlockOverride);
-
-    MCNAPI void setInverseEraseMode(bool inverseEraseMode);
-
-    MCNAPI void setTerrainStrength(int terrainStrength);
+    MCNAPI void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode);
 
     MCNAPI ::Scripting::Result_deprecated<void>
     singlePaint(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);

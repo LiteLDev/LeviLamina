@@ -16,6 +16,7 @@
 // clang-format off
 class Actor;
 class Frustum;
+class FullScreenEffectRenderer;
 class HitResult;
 class IClientInstance;
 class IMinecraftGame;
@@ -24,7 +25,6 @@ class Player;
 class RectangleArea;
 class ScreenContext;
 struct FrameRenderObject;
-struct FullScreenEffectRenderer;
 struct ScreenSizeData;
 namespace mce { class Camera; }
 // clang-format on

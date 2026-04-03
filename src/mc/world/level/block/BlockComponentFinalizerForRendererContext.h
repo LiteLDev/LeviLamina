@@ -5,9 +5,10 @@
 // auto generated forward declare list
 // clang-format off
 class Experiments;
+class AtlasItemManager;
 class BlockCullingGroup;
 class GeometryGroup;
-struct AtlasItemManager;
+class TextureShiftManager;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 // clang-format on
@@ -22,6 +23,7 @@ public:
     ::ll::TypedStorage<8, 8, ::AtlasItemManager const&>                    mAtlasItemManager;
     ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::MaterialRepository&>   mMaterialRepository;
     ::ll::TypedStorage<8, 8, ::Experiments const&>                         mExperiments;
+    ::ll::TypedStorage<8, 8, ::TextureShiftManager const&>                 mTextureShiftManager;
     // NOLINTEND
 
 public:

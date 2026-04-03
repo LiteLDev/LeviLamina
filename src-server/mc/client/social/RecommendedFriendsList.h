@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct RecommendedFriendsList {};
+class RecommendedFriendsList {};
 
 } // namespace Social

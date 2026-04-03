@@ -9,10 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct IStoreCatalogRepository;
-struct MarketplaceServicesManager;
-struct ServicesManager;
-struct StoreCatalogItem;
+class IStoreCatalogRepository;
+class MarketplaceServicesManager;
+class ServicesManager;
+class StoreCatalogItem;
 // clang-format on
 
 class MarketplacePassOffersProvider : public ::MarketplaceContentOffersProvider {

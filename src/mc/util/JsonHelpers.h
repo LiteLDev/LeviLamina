@@ -56,4 +56,9 @@ MCNAPI_C bool parseJson(::std::string const& str, ::Json::Value& root);
 MCNAPI_C ::std::string serialize(::Json::Value const& root);
 // NOLINTEND
 
+// static variables
+// NOLINTBEGIN
+MCNAPI ::Json::Value const& EMPTY_JSON();
+// NOLINTEND
+
 } // namespace JsonHelpers

@@ -8,7 +8,7 @@ class SchemaConverterNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk95cf81;
+    ::ll::UntypedStorage<8, 24> mUnk3a1b5d;
     // NOLINTEND
 
 public:

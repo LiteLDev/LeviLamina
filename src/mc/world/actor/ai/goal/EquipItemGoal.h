@@ -39,7 +39,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                       mMob;
-    ::ll::TypedStorage<4, 16, ::EquipItemGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 16, ::EquipItemGoal::Definition> mDefinition;
     // NOLINTEND
 
 public:

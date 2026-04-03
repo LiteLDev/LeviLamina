@@ -8,6 +8,7 @@ struct BuildInfo {
 public:
     // member variables
     // NOLINTBEGIN
+    ::std::string mGameVersion;
     ::std::string mBuildId;
     ::std::string mCommitId;
     ::std::string mBranchId;

@@ -24,8 +24,8 @@ class ScriptWidgetComponentText : public ::Editor::ScriptModule::ScriptWidgetCom
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfe95d9;
-    ::ll::UntypedStorage<4, 24> mUnk7e685f;
+    ::ll::UntypedStorage<8, 32> mUnkdca7cf;
+    ::ll::UntypedStorage<8, 24> mUnk7e685f;
     // NOLINTEND
 
 public:

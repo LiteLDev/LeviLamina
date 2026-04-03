@@ -7,6 +7,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/SceneType.h"
+#include "mc/client/gui/SoundDirection.h"
 #include "mc/client/gui/TitleMessage.h"
 #include "mc/client/gui/oreui/routing/RouterAction.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
@@ -30,6 +31,7 @@ class Keymapping;
 class RemappingLayout;
 class ScoreboardScreenController;
 class UIPropertyBag;
+class Vec3;
 struct ActorUniqueID;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
@@ -61,6 +63,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnBossEventWithPacketSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnBossEventSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mOnLevelSoundEvent;
     ::ll::TypedStorage<1, 1, bool>                                                mEDUDiscoveryObserved;
     ::ll::TypedStorage<4, 4, int>                                                 mInputDelayTimer;
     ::ll::TypedStorage<8, 32, ::std::string>                                      mPopupItemText;
@@ -251,6 +254,8 @@ public:
 
     MCAPI void _handleSlotSelection(int slot, ::ContainerID containerId);
 
+    MCAPI void _handleSubtitleMessages();
+
     MCAPI bool _isHudHidden() const;
 
     MCAPI bool
@@ -262,11 +267,24 @@ public:
 
     MCAPI void _onBossEvent(::BossEventUpdateType type, ::ActorUniqueID const& id, ::BossEventPacket const& packet);
 
+    MCAPI void _onSoundEvent(
+        ::std::string const&           name,
+        ::std::optional<::std::string> subtitle,
+        ::Vec3 const&                  pos,
+        float                          volume,
+        ::Vec3 const&                  forward,
+        ::Vec3 const&                  up
+    );
+
     MCAPI void _pushExistingChatMessages();
 
     MCAPI void _pushNewChatMessage(::std::string const& message, float time);
 
+    MCAPI void _pushNewSubtitleMessage(::std::string const& message, float time, ::SoundDirection direction);
+
     MCAPI void _refreshChatMessages();
+
+    MCAPI void _refreshSubtitleMessages();
 
     MCAPI void _registerEventHandlers();
 
@@ -285,6 +303,8 @@ public:
     MCAPI bool _showPaperDoll() const;
 
     MCAPI bool _showPocketUI() const;
+
+    MCAPI bool _showPopUpItemText() const;
 
     MCAPI bool _showSurvivalUI() const;
 
@@ -314,14 +334,6 @@ public:
     MCAPI void setupControlCustomizationCallbacksForOptions(::ControlOptionType controlOptionType);
 
     MCAPI bool shouldChatAndEmoteInfoBeDisplayed() const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ROOT_CONTROL_NAME();
-
-    MCAPI static char const*& ROOT_CONTROL_NAME_INCLUDING_NAMESPACE();
     // NOLINTEND
 
 public:

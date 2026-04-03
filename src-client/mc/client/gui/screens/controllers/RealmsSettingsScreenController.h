@@ -26,14 +26,12 @@ class Pack;
 class PlatformMultiplayerRestrictions;
 class RealmsAllowListScreenController;
 class ResourcePacksScreenController;
-class UIPropertyBag;
 struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
-namespace Realms { struct Backup; }
+namespace Realms { class ContentService; }
 namespace Realms { struct ConfigInfo; }
 namespace Realms { struct Content; }
-namespace Realms { struct ContentService; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
 namespace Realms { struct WorldBackup; }
@@ -84,10 +82,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                  mIsSlotsScreen;
     ::ll::TypedStorage<1, 1, bool>                                                  mHasSubscriptionInfoBeenReceived;
     ::ll::TypedStorage<1, 1, bool>                                                  mRefreshScreen;
-    ::ll::TypedStorage<1, 1, bool>                                                  mIsReplacingWithBackup;
     ::ll::TypedStorage<1, 1, bool>                                                  mIsUploadingPacks;
-    ::ll::TypedStorage<1, 1, bool>                                                  mHasLoadedBackups;
-    ::ll::TypedStorage<1, 1, bool>                                                  mDidBackupsReceiveNetworkError;
     ::ll::TypedStorage<1, 1, bool>                                                  mRealmsSelectedContentInitialized;
     ::ll::TypedStorage<1, 1, bool>                                                  mDidReplaceWorld;
     ::ll::TypedStorage<1, 1, bool>                                                  mRefreshingWorldInfo;
@@ -98,16 +93,13 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DlcUIWrapper>>                     mDlcUIWrapper;
     ::ll::TypedStorage<8, 8, ::Realms::ContentService&>                             mContentService;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IContentManagerContext>>           mContentManagerContext;
-    ::ll::TypedStorage<1, 8, ::MultiplayerLockState>                                mMultiplayerState;
+    ::ll::TypedStorage<8, 8, ::MultiplayerLockState>                                mMultiplayerState;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSource*>                           mRealmContentSource;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mInitialPackId;
     ::ll::TypedStorage<8, 8, uint64>                                                mLoadedItemsCount;
     ::ll::TypedStorage<1, 3, ::RealmsSettingsScreenController::SaveStatusTracker>   mSaveStatusTracker;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Realms::Backup>>                      mBackups;
-    ::ll::TypedStorage<8, 8, uint64>                                                mRestoreBackupIndex;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mNewSlotWorldName;
     ::ll::TypedStorage<8, 64, ::Realms::WorldBackupList>                            mWorldBackupList;
-    ::ll::TypedStorage<1, 1, bool>                                                  mIsWorldReplicaBasedBackupEnabled;
     ::ll::TypedStorage<1, 1, bool>                                               mDidWorldBackupListReceiveNetworkError;
     ::ll::TypedStorage<1, 1, bool>                                               mHasLoadedWorldBackupList;
     ::ll::TypedStorage<1, 1, bool>                                               mHasLoadedActiveWorldSize;
@@ -116,6 +108,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                              mStorageUsed;
     ::ll::TypedStorage<8, 8, int64>                                              mActiveWorldSizeBytes;
     ::ll::TypedStorage<8, 32, ::std::vector<bool>>                               mManualSavesToggleStates;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                      mBackupIdsToOverwrite;
     ::ll::TypedStorage<4, 4, int>                                                mActiveSavesTabIndex;
     ::ll::TypedStorage<4, 4, int>                                                mSelectedSaveIndex;
     ::ll::TypedStorage<8, 32, ::std::string>                                     mSelectedBackupId;
@@ -227,8 +220,6 @@ public:
 
     MCAPI void _downloadMostRecentBackup();
 
-    MCAPI void _downloadMostRecentBackupV2();
-
     MCAPI void _downloadRealmsBackupInContext();
 
     MCAPI void _downloadRealmsWorld(
@@ -246,8 +237,6 @@ public:
 
     MCAPI void _fetchWorldBackupList();
 
-    MCAPI void _fetchWorldBackups();
-
     MCAPI ::std::vector<::std::shared_ptr<::PackContentItem>> _gatherSelectedContent();
 
     MCAPI ::std::string _getConsumableToSubscriptionInfoText();
@@ -263,10 +252,6 @@ public:
     MCAPI ::std::string _getSubscriptionOriginMismatchLabelText();
 
     MCAPI void _goToManageSubscriptionLink();
-
-    MCAPI void _handleRealmBackupButtonClick(::UIPropertyBag& bag);
-
-    MCAPI void _handleRealmReplaceBackupButtonClick(int index);
 
     MCAPI bool _hasClubInfoChanged() const;
 
@@ -306,10 +291,6 @@ public:
 
     MCAPI void _restoreBackup();
 
-    MCAPI void _restoreBackupProgressTick();
-
-    MCAPI void _restoreBackupV2();
-
     MCAPI void _saveAutoRealmWorldBackup();
 
     MCAPI void _saveClubInfo();
@@ -341,19 +322,15 @@ public:
 
     MCAPI void _setupPacksScreen();
 
-    MCAPI void _showBackupProgressAndExitScreen();
-
     MCAPI void _showErrorPopup(::std::string titleId, ::std::string contentId, ::std::function<void(bool)> action);
 
     MCAPI void _showErrorPopupAndExitScreenAfterDismissed(::std::string titleId, ::std::string contentId);
 
     MCAPI void _showRefreshWorldInfoPopup();
 
-    MCAPI void _showSaveAndDeletePopup(int toDelete);
+    MCAPI void _showSaveAndDeletePopup(int deleteQty);
 
     MCAPI void _showSuccessPopup();
-
-    MCAPI void _switchToOreUITechStack();
 
     MCAPI void _updateRealmBranchConfig(::std::string const& ref);
 

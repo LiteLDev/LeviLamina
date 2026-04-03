@@ -9,8 +9,8 @@
 #include "mc/client/gui/screens/controllers/CodeScreenControllerProxy.h"
 #include "mc/client/gui/screens/controllers/CodeScreenViewOption.h"
 #include "mc/client/gui/screens/controllers/UriData.h"
+#include "mc/deps/code_builder/platform/WebviewObserver.h"
 #include "mc/events/OpenCodeMethod.h"
-#include "mc/platform/WebviewObserver.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -60,7 +60,7 @@ public:
 
     virtual ::ScreenControllerProxy* getProxy() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -121,6 +121,8 @@ public:
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCAPI ::ScreenControllerProxy* $getProxy();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::ui::DirtyFlag $tick();
 

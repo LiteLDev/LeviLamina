@@ -24,24 +24,27 @@ class Vec3;
 class VecXZ;
 struct DynamicPropertyDefinition;
 struct ScoreboardId;
-namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptAABB; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptActorComponents; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockRaycastHit; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptEffectType; }
 namespace ScriptModuleMinecraft { class ScriptEntityRaycastHit; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptMobEffectInstance; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageByProjectileOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
+namespace ScriptModuleMinecraft { struct ScriptActorInvalidComponentError; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
+namespace ScriptModuleMinecraft { struct ScriptContainerRulesError; }
 namespace ScriptModuleMinecraft { struct ScriptEntityEffectOptions; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptGetBlocksStandingOnOptions; }
@@ -212,6 +215,18 @@ public:
         bool                                             showParticles
     );
 
+    MCAPI ::Scripting::Result<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
+        ::ScriptModuleMinecraft::ScriptActorInvalidComponentError,
+        ::ScriptModuleMinecraft::ScriptContainerRulesError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::Error>
+    addItem(
+        ::Scripting::WeakLifetimeScope                                           scope,
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents,
+        ::ScriptModuleMinecraft::ScriptItemStack const&                          item
+    );
+
     MCAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         addTag(::Actor& self, ::std::string const& tag);
@@ -295,17 +310,15 @@ public:
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
     getComponent(
-        ::Scripting::WeakLifetimeScope scope,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
-                             factories,
-        ::std::string const& id
+        ::Scripting::WeakLifetimeScope                                           scope,
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents,
+        ::std::string_view                                                       id
     );
 
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
     getComponents(
-        ::Scripting::WeakLifetimeScope scope,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
-            factories
+        ::Scripting::WeakLifetimeScope                                           scope,
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents
     );
 
     MCAPI ::Scripting::Result<
@@ -429,13 +442,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
     getViewVector_010(::Actor const& self) const;
 
-    MCAPI bool hasComponent(
-        ::Scripting::WeakLifetimeScope scope,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
-                             factories,
-        ::std::string const& name
-    );
-
     MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     hasTag(::Actor const& self, ::std::string const& tag) const;
 
@@ -516,8 +522,7 @@ public:
     MCAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
-            ::ScriptModuleMinecraft::ScriptCommandError,
-            void>,
+            ::ScriptModuleMinecraft::ScriptCommandError>,
         ::ScriptModuleMinecraft::ScriptCommandError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     runCommandAsync(
@@ -610,6 +615,8 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
 
+    MCAPI ::Actor* tryGetActor() const;
+
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     tryTeleport(
         ::Actor&                                                               self,
@@ -621,10 +628,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind(
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
-            supportedComponentFactories
-    );
+    MCAPI static ::Scripting::ClassBinding
+    bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);

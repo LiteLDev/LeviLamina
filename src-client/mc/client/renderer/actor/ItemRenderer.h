@@ -22,11 +22,11 @@ class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class ItemActor;
+class ItemGraphics;
 class ItemStack;
 class Matrix;
 class SkullBlockActor;
 class Vec3;
-struct ItemGraphics;
 struct TextureUVCoordinateSet;
 namespace dragon { struct RenderMetadata; }
 namespace mce { class TextureGroup; }
@@ -148,6 +148,17 @@ public:
         float                     y,
         float                     lightMultiplier,
         float                     scale
+    );
+
+    MCAPI void _renderGuiGlowStickItem(
+        ::BaseActorRenderContext& renderContext,
+        ::ItemStack const&        item,
+        float                     x,
+        float                     y,
+        float                     lightMultiplier,
+        float                     scale,
+        float                     pickupPopPercentage,
+        float                     squeezeAmount
     );
 
     MCAPI void _renderItemGroup(

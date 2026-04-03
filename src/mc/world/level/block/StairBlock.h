@@ -31,7 +31,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockType const&>                         mBase;
-    ::ll::TypedStorage<8, 192, ::std::optional<::BlockDescriptor> const> mBlocksToCornerWith;
+    ::ll::TypedStorage<8, 184, ::std::optional<::BlockDescriptor> const> mBlocksToCornerWith;
+    ::ll::TypedStorage<1, 1, bool const>                                 mLeakyCornersFix;
     // NOLINTEND
 
 public:
@@ -44,13 +45,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     A,
+        ::Vec3 const&     B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual ::AABB const&
@@ -124,7 +125,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StairBlock(::std::string const& nameId, int id, ::BlockType const& base, bool enableCornerStairTag);
+    MCAPI StairBlock(
+        ::std::string const& nameId,
+        int                  id,
+        ::BlockType const&   base,
+        bool                 enableCornerStairTag,
+        bool                 leakyCornersFix
+    );
+
+    MCAPI bool _neighboringBlockCheckForCreatingBarrierInDirection(
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos,
+        int                                                       directionToCheck
+    ) const;
 
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
@@ -154,7 +167,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockType const& base, bool enableCornerStairTag);
+    MCAPI void* $ctor(
+        ::std::string const& nameId,
+        int                  id,
+        ::BlockType const&   base,
+        bool                 enableCornerStairTag,
+        bool                 leakyCornersFix
+    );
     // NOLINTEND
 
 public:
@@ -166,18 +185,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
-#endif
-
     MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
@@ -243,6 +250,18 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+#ifdef LL_PLAT_C
+    MCAPI ::HitResult $clip(
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     A,
+        ::Vec3 const&     B,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
+#endif
 
 
     // NOLINTEND

@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -13,9 +15,7 @@ class BlockTransformationComponent;
 class Experiments;
 class GeometryGroup;
 class GeometryPtr;
-class HashedString;
 class Matrix;
-class Vec3;
 struct BlockCullingData;
 struct BlockGeometryComponent;
 namespace ClientBlockPipeline { class MaterialRepository; }
@@ -36,9 +36,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float const> GEOMETRY_UNIT;
-    ::ll::TypedStorage<4, 4, float const> GEOMETRY_OVERHANG;
-    ::ll::TypedStorage<4, 4, float const> MAX_GEOMETRY_LENGTH;
     ::ll::TypedStorage<
         8,
         64,
@@ -57,6 +54,8 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                          mValdiationErrorCount;
     ::ll::TypedStorage<8, 1024, ::std::array<::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>, 64>>
         mUVlockedUnitCubes;
+    ::ll::TypedStorage<8, 1024, ::std::array<::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>, 64>>
+        mUVlockedUnitCubesV1;
     // NOLINTEND
 
 public:
@@ -71,7 +70,7 @@ public:
     MCAPI SchematicsRepository();
 
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>
-    _createUnitCube(::Matrix const& postModelSpaceTransform, uchar rotX, uchar rotY, uchar rotZ);
+    _createUnitCube(::Matrix const& postModelSpaceTransform, uchar rotX, uchar rotY, uchar rotZ, bool isV1);
 
     MCAPI bool _hasAllPartsWithinBufferLimit(
         ::Vec3 const&                 schematicMin,

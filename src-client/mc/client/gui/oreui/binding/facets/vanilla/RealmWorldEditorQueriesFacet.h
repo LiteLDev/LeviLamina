@@ -13,8 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TrialManager;
-namespace Realms { struct RealmsWorldEditor; }
+class TrialManager;
+namespace Realms { class RealmsWorldEditor; }
 // clang-format on
 
 namespace OreUI {
@@ -26,11 +26,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                            mIsDirty;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsWorldEditor>> mRealmsWorldEditor;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                           mTrialManager;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                           mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                           mLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                    mLevelDataBindings;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                           mLevelDataWrapperSnapshot;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                           mLevelDataWrapperSnapshot;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                    mLevelDataBindingsSnapshot;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mRealmWorldEditorStateSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mRealmAreTexturesRequiredSubscriber;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<bool>>                        mUseRealmsWorldBackendSubVal;
     // NOLINTEND
 

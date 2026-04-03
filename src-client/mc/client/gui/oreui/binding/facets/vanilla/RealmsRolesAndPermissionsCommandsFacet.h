@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { struct RealmsRolesAndPermissions; }
+namespace Realms { class RealmsRolesAndPermissions; }
 // clang-format on
 
 namespace OreUI {
@@ -36,9 +36,11 @@ public:
 
     MCAPI void initRealmsUserRoleAndActions(::std::string const& playerXuid, ::Realms::PlayerRole role);
 
+    MCAPI void refreshAllRealmRolesAndActionsForCurrentUser();
+
     MCAPI void resetState();
 
-    MCAPI void saveRealmsUserRole(::std::string const& playerXuid);
+    MCAPI void saveRealmsUserRole(::std::string const& realmId, ::std::string const& playerXuid);
 
     MCAPI void setRealmsUserRole(::std::string const& playerXuid, ::Realms::PlayerRole role);
     // NOLINTEND

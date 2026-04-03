@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Randomize;
+class IRandom;
 struct ResourceDrops;
 struct ResourceDropsContext;
 // clang-format on
@@ -13,13 +13,13 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops::Modifier {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> applyExplosionDecay(
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> applyExplosionDecay(
+    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategy
 );
 
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)>
 applyNameTagFromBlockActor(
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
+    ::std::function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&)> dropStrategy
 );
 // NOLINTEND
 

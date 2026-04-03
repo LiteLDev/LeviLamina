@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSourceListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 struct ActorBlockSyncMessage;
 // clang-format on

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/Mode.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/serviceproviders/DataStoreServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
@@ -26,15 +27,16 @@ class DataStoreService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk13c2ab;
-    ::ll::UntypedStorage<8, 8>   mUnke835e6;
-    ::ll::UntypedStorage<8, 8>   mUnk53a18a;
-    ::ll::UntypedStorage<8, 8>   mUnk77d480;
-    ::ll::UntypedStorage<8, 8>   mUnkb1b6f3;
+    ::ll::UntypedStorage<8, 8>   mUnkd5574d;
+    ::ll::UntypedStorage<8, 8>   mUnk5ca1df;
+    ::ll::UntypedStorage<8, 8>   mUnkddec22;
+    ::ll::UntypedStorage<8, 8>   mUnk757ac0;
+    ::ll::UntypedStorage<8, 8>   mUnk41f8d2;
     ::ll::UntypedStorage<8, 128> mUnk906987;
     ::ll::UntypedStorage<8, 48>  mUnk16dd40;
     ::ll::UntypedStorage<8, 16>  mUnke703fc;
     ::ll::UntypedStorage<8, 16>  mUnkd4e093;
+    ::ll::UntypedStorage<8, 16>  mUnk66df2e;
     // NOLINTEND
 
 public:
@@ -88,6 +90,8 @@ public:
     MCNAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
+
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
     MCNAPI void _handleScriptReloadEventPacket(::Editor::Network::ServerScriptTeardownRebuildPayload const& packet);
 

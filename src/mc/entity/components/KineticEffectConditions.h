@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct KineticEffectConditions {
 public:
     // member variables
@@ -21,10 +16,4 @@ public:
     KineticEffectConditions& operator=(KineticEffectConditions const&);
     KineticEffectConditions(KineticEffectConditions const&);
     KineticEffectConditions();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };

@@ -4,6 +4,6 @@
 
 namespace Bedrock::Threading {
 
-struct PerformanceHintSession {};
+class PerformanceHintSession {};
 
 } // namespace Bedrock::Threading

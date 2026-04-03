@@ -13,8 +13,8 @@ class SocketAddress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd4ada7;
-    ::ll::UntypedStorage<4, 32> mUnk4f0cfd;
+    ::ll::UntypedStorage<8, 32> mUnk269e11;
+    ::ll::UntypedStorage<8, 32> mUnk4f0cfd;
     ::ll::UntypedStorage<2, 2>  mUnk2c2892;
     ::ll::UntypedStorage<4, 4>  mUnk595326;
     ::ll::UntypedStorage<1, 1>  mUnkf5648f;

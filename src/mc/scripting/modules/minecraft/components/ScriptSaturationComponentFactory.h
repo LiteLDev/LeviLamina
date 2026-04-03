@@ -4,18 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/components/IComponentFactory.h"
+#include "mc/scripting/modules/minecraft/GenericScriptActorComponentFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptSaturationComponent; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptSaturationComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
+class ScriptSaturationComponentFactory : public ::ScriptModuleMinecraft::GenericScriptActorComponentFactory<
+                                             ::ScriptModuleMinecraft::ScriptSaturationComponent> {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -8,9 +8,9 @@ struct VideoMediaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1b9300;
-    ::ll::UntypedStorage<8, 24> mUnk3b139e;
-    ::ll::UntypedStorage<8, 24> mUnkd62f73;
+    ::ll::UntypedStorage<8, 24> mUnka749bc;
+    ::ll::UntypedStorage<8, 24> mUnk312910;
+    ::ll::UntypedStorage<8, 24> mUnkf51e0f;
     ::ll::UntypedStorage<8, 16> mUnkd993e3;
     ::ll::UntypedStorage<8, 16> mUnkba6390;
     // NOLINTEND

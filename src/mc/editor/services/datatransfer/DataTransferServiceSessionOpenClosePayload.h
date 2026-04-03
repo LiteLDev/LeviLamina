@@ -17,7 +17,7 @@ class DataTransferServiceSessionOpenClosePayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3fec24;
+    ::ll::UntypedStorage<8, 32> mUnk96552c;
     ::ll::UntypedStorage<1, 1>  mUnkfbc158;
     // NOLINTEND
 

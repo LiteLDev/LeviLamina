@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientModeService {};
+class ClientModeService {};
 
 } // namespace Editor::Services

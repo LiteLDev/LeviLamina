@@ -4,6 +4,6 @@
 
 namespace Social::eventData {
 
-struct PersonaOfferClickedData {};
+class PersonaOfferClickedData {};
 
 } // namespace Social::eventData

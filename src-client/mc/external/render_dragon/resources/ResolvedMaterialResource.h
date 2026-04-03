@@ -4,6 +4,6 @@
 
 namespace dragon {
 
-struct ResolvedMaterialResource {};
+class ResolvedMaterialResource {};
 
 } // namespace dragon

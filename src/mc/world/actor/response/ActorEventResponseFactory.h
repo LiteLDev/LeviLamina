@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorEventResponse;
-class IPackLoadContext;
+class PackLoadContext;
 struct ActorEventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -37,7 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI void initSchema();
 
-    MCAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCAPI void initializeFactory(::PackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:

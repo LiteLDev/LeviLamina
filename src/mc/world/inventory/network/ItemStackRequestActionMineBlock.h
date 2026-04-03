@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                                                    mPredictedDurability;
     ::ll::TypedStorage<4, 4, int>                                                    mSlot;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                               mNetIdVariant;
+    ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant>                               mNetIdVariant;
     ::ll::TypedStorage<1, 1, ::ItemStackRequestActionMineBlock::PreValidationStatus> mPreValidationStatus;
     // NOLINTEND
 

@@ -9,7 +9,6 @@
 #include "mc/deps/shared_types/item/ItemCooldownType.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
-#include "mc/resources/JsonBetaState.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/enchanting/Enchant.h"
@@ -27,7 +26,6 @@ class CompoundTag;
 class Container;
 class Experiments;
 class IFoodItemComponent;
-class IPackLoadContext;
 class IconItemComponent;
 class InteractionResult;
 class ItemComponent;
@@ -37,6 +35,7 @@ class ItemStackBase;
 class Level;
 class ListTag;
 class Mob;
+class PackLoadContext;
 class Player;
 class SemVersion;
 class Vec3;
@@ -83,8 +82,11 @@ public:
     // NOLINTBEGIN
     virtual ~ComponentItem() /*override*/;
 
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const) /*override*/;
+    virtual ::PuvLoadData::LoadResultWithTiming initServer(
+        ::Json::Value const& data,
+        ::SemVersion const&  documentVersion,
+        ::PackLoadContext&   packLoadContext
+    ) /*override*/;
 
     virtual void tearDown() /*override*/;
 
@@ -232,10 +234,9 @@ public:
     virtual int getVariant(int, int, bool) const;
 
     virtual ::PuvLoadData::LoadResultWithTiming initClient(
-        ::Json::Value const&,
-        ::SemVersion const&,
-        ::JsonBetaState const,
-        ::IPackLoadContext&,
+        ::Json::Value const& data,
+        ::SemVersion const&  documentVersion,
+        ::PackLoadContext&   packLoadContext,
         ::ItemIconInfoFactory
     ) /*override*/;
 
@@ -248,11 +249,11 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     virtual bool shouldUseJsonForRenderMatrix() const;
 
@@ -309,8 +310,7 @@ public:
     MCAPI ::PuvLoadData::LoadResultWithTiming _validateSchemaAndInitItem(
         ::Json::Value const&           itemData,
         ::SemVersion const&            documentVersion,
-        ::JsonBetaState                canUseBeta,
-        ::IPackLoadContext&            packLoadContext,
+        ::PackLoadContext&             packLoadContext,
         bool                           isServer,
         ::cereal::ReflectionCtx const& ctx
     );
@@ -332,6 +332,7 @@ public:
         ::cereal::ReflectionCtx const& ctx,
         ::std::string&                 document,
         ::Core::Path const&            resourceName,
+        bool                           betaApis,
         ::std::optional<::SemVersion>  minVersion
     );
     // NOLINTEND
@@ -351,6 +352,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::PuvLoadData::LoadResultWithTiming
+    $initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
+
     MCFOLD void $tearDown();
 
     MCFOLD bool $isComponentBased() const;
@@ -444,8 +448,6 @@ public:
 
     MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackCriticalHitSound() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
-
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canUseAsAttack() const;
@@ -461,7 +463,9 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+#endif
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
@@ -485,13 +489,16 @@ public:
 
     MCAPI ::SharedTypes::ItemCooldownType $getCooldownType() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
-#endif
-
     MCFOLD bool $useVariant(int, int, bool) const;
 
     MCFOLD int $getVariant(int, int, bool) const;
+
+    MCAPI ::PuvLoadData::LoadResultWithTiming $initClient(
+        ::Json::Value const& data,
+        ::SemVersion const&  documentVersion,
+        ::PackLoadContext&   packLoadContext,
+        ::ItemIconInfoFactory
+    );
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 
@@ -502,11 +509,11 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 
@@ -525,6 +532,10 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+#endif
 
 
     // NOLINTEND

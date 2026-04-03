@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 class Vec3;
 struct RideableComponentData;
@@ -41,7 +42,7 @@ public:
 
     MCAPI bool getFirstAvailableSeatPosition(::Actor const& owner, ::Actor& potentialPassenger, ::Vec3& result) const;
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
     // NOLINTEND

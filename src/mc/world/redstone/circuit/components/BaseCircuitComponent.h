@@ -28,7 +28,8 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                                     mPos;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                     mChunkPosition;
     ::ll::TypedStorage<1, 1, bool>                                            mShouldEvaluate;
-    ::ll::TypedStorage<4, 4, int>                                             mStrength;
+    ::ll::TypedStorage<2, 2, short>                                           mStrength;
+    ::ll::TypedStorage<2, 2, short>                                           mOldStrength;
     ::ll::TypedStorage<1, 1, uchar>                                           mDirection;
     ::ll::TypedStorage<1, 1, bool>                                            mAllowPowerUp;
     ::ll::TypedStorage<1, 1, bool>                                            mAllowPowerDown;
@@ -46,6 +47,8 @@ public:
 
     virtual int getDirection() const;
 
+    virtual void setOldStrength(short strength);
+
     virtual void setStrength(int strength);
 
     virtual void setDirection(uchar direction);
@@ -59,6 +62,8 @@ public:
     virtual bool canStopPower() const;
 
     virtual void setStopPower(bool bPower);
+
+    virtual bool needsUpdate();
 
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
@@ -119,21 +124,25 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getStrength() const;
 
-    MCFOLD int $getDirection() const;
+    MCAPI int $getDirection() const;
 
-    MCFOLD void $setStrength(int strength);
+    MCAPI void $setOldStrength(short strength);
+
+    MCAPI void $setStrength(int strength);
 
     MCAPI void $setDirection(uchar direction);
 
-    MCFOLD void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
+    MCAPI void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 
-    MCFOLD bool $canConsumePowerAnyDirection() const;
+    MCAPI bool $canConsumePowerAnyDirection() const;
 
     MCFOLD bool $canConsumerPower() const;
 
     MCFOLD bool $canStopPower() const;
 
     MCFOLD void $setStopPower(bool bPower);
+
+    MCAPI bool $needsUpdate();
 
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 

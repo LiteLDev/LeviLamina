@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Block;
 class BlockPos;
-struct BiomeTintCache;
 namespace mce { class Color; }
 // clang-format on
 

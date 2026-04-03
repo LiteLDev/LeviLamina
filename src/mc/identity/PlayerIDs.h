@@ -8,8 +8,8 @@ struct PlayerIDs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk76f978;
-    ::ll::UntypedStorage<8, 32> mUnkc58810;
+    ::ll::UntypedStorage<8, 32> mUnkdfe99d;
+    ::ll::UntypedStorage<8, 32> mUnkd4b5d1;
     // NOLINTEND
 
 public:

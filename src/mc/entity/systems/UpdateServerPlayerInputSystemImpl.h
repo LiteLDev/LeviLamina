@@ -10,8 +10,8 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorHeadRotationComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
+struct InterpolateMovementNeededComponent;
 struct PlayerComponent;
 struct PlayerInputModeComponent;
 struct PlayerInteractionModelComponent;
@@ -34,7 +34,7 @@ MCAPI void _handlePlayerAuthInputPacket(
 MCAPI void _tickUpdateServerPlayerInputSystem(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
         ::StateVectorComponent const,
         ::ActorHeadRotationComponent,
         ::ActorRotationComponent,

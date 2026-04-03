@@ -9,7 +9,7 @@ struct AttributesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::BaseAttributeMap> mAttributes;
+    ::ll::TypedStorage<8, 80, ::BaseAttributeMap> mAttributes;
     // NOLINTEND
 
 public:

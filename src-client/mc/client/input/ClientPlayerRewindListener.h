@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/enums/RewindType.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CorrectPlayerMovePredictionPacket;
 class MovePlayerPacket;
 class Player;
 class ReplayStateComponent;
@@ -37,7 +37,8 @@ public:
         ::ReplayStateComponent&                  replay
     );
 
-    MCAPI static ::Actor* _getRewindableActor(::Player& player, ::RewindType rewindType);
+    MCAPI static ::EventResult
+    _onCorrectPlayerMovePredictionPacket(::Player& player, ::CorrectPlayerMovePredictionPacket const& packet);
 
     MCAPI static ::EventResult _onPlayerMovePacketReceived(::Player& player, ::MovePlayerPacket const& packet);
 

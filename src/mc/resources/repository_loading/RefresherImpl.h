@@ -12,7 +12,7 @@ class RefresherImpl : public ::IResourcePackRepositoryRefresher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfb93f7;
+    ::ll::UntypedStorage<8, 8> mUnk31a5be;
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@ struct ClientAssertion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbbe8f9;
+    ::ll::UntypedStorage<8, 32> mUnk8ebb41;
     // NOLINTEND
 
 public:

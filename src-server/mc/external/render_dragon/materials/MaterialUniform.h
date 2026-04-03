@@ -4,7 +4,7 @@
 
 namespace dragon::materials {
 
-struct MaterialUniform {
+class MaterialUniform {
 public:
     // MaterialUniform inner types declare
     // clang-format off

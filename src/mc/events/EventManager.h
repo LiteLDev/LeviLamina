@@ -21,12 +21,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkabddfc;
-    ::ll::UntypedStorage<8, 24> mUnkd72b3b;
-    ::ll::UntypedStorage<8, 64> mUnk1501bd;
-    ::ll::UntypedStorage<8, 64> mUnk58a82c;
-    ::ll::UntypedStorage<8, 64> mUnkf7e314;
-    ::ll::UntypedStorage<8, 64> mUnke48a90;
-    ::ll::UntypedStorage<8, 64> mUnk14f226;
+    ::ll::UntypedStorage<8, 24> mUnk9a5b18;
+    ::ll::UntypedStorage<8, 64> mUnk2488f5;
+    ::ll::UntypedStorage<8, 64> mUnk429183;
+    ::ll::UntypedStorage<8, 64> mUnk5f726d;
+    ::ll::UntypedStorage<8, 64> mUnk2e00a0;
+    ::ll::UntypedStorage<8, 64> mUnkeac8cb;
     ::ll::UntypedStorage<8, 8>  mUnk70a5fe;
     ::ll::UntypedStorage<8, 8>  mUnk5ff13c;
     ::ll::UntypedStorage<8, 8>  mUnk27720e;
@@ -37,7 +37,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk4f8cc4;
     ::ll::UntypedStorage<1, 1>  mUnk6fc9f0;
     ::ll::UntypedStorage<1, 1>  mUnk60b46f;
-    ::ll::UntypedStorage<8, 8>  mUnk893c04;
+    ::ll::UntypedStorage<8, 8>  mUnk7ec861;
     ::ll::UntypedStorage<8, 16> mUnkc396ea;
     // NOLINTEND
 
@@ -74,8 +74,6 @@ public:
     MCNAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
     MCNAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
-
-    MCNAPI void recordDelayedEventAction(::std::string const& action);
 
     MCNAPI void recordEvent(::Social::Events::Event& event);
 

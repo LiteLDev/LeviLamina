@@ -17,7 +17,7 @@ class FossilFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mOreBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mOreBlockDescriptor;
     ::ll::TypedStorage<4, 4, int>                 mMaxEmptyCorners;
     // NOLINTEND
 

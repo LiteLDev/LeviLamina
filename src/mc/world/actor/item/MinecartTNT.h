@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 class Block;
 // clang-format on
 
@@ -28,7 +29,8 @@ public:
 
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
 
@@ -54,7 +56,7 @@ public:
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
 

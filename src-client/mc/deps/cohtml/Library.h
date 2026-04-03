@@ -10,8 +10,9 @@
 // clang-format off
 namespace cohtml { class ScriptCompiler; }
 namespace cohtml { class System; }
+namespace cohtml { struct GPUMemoryInfo; }
 namespace cohtml { struct SystemSettings; }
-namespace renoir { struct GPUMemoryInfo; }
+namespace cohtml { struct UserGPUMemoryInfo; }
 // clang-format on
 
 namespace cohtml {
@@ -32,11 +33,15 @@ public:
 
     virtual void ExecuteWork(::cohtml::WorkType, ::cohtml::WorkExecutionMode, int) = 0;
 
+    virtual void EnableProfiling(bool, char const*, uint) = 0;
+
     virtual void* ReservedMethod(void*, void*) = 0;
 
     virtual ::cohtml::ScriptCompiler* CreateScriptCompiler() = 0;
 
-    virtual ::renoir::GPUMemoryInfo* GetGPUMemoryStats() const = 0;
+    virtual ::cohtml::GPUMemoryInfo* GetGPUMemoryStats() const = 0;
+
+    virtual ::cohtml::UserGPUMemoryInfo* GetUserGPUMemoryStats() const = 0;
 
     virtual void ResetGPUMemoryTrackerPeaks() = 0;
     // NOLINTEND

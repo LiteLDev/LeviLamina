@@ -67,8 +67,13 @@ public:
 
     virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
-    virtual ::Item const*
-    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
+    virtual ::Item const* useTimeDepleted(
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& initialInstance,
+        ::ItemStack&       instance,
+        ::Player&          player,
+        ::Level&           level
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -103,6 +108,14 @@ public:
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
     MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+
+    MCAPI ::Item const* $useTimeDepleted(
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& initialInstance,
+        ::ItemStack&       instance,
+        ::Player&          player,
+        ::Level&           level
+    );
 
 
     // NOLINTEND

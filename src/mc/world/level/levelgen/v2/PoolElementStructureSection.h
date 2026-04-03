@@ -77,7 +77,6 @@ public:
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $postProcess(
         ::BlockSource&                    region,
         ::IRandom&                        random,
@@ -85,7 +84,6 @@ public:
         ::BoundingBox const&              chunkBB,
         ::br::worldgen::JigsawReplacement replacement
     ) const;
-#endif
 
     MCAPI void $placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const;
 

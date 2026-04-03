@@ -12,9 +12,9 @@ struct Hermite3d : public ::CameraSplineUtils::Spline3d {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4aa2f0;
-    ::ll::UntypedStorage<8, 24> mUnk9a00f0;
-    ::ll::UntypedStorage<8, 24> mUnk9d0cd8;
+    ::ll::UntypedStorage<8, 24> mUnk6c3931;
+    ::ll::UntypedStorage<8, 24> mUnk91424b;
+    ::ll::UntypedStorage<8, 24> mUnk524a18;
     ::ll::UntypedStorage<1, 1>  mUnkf32b7d;
     // NOLINTEND
 

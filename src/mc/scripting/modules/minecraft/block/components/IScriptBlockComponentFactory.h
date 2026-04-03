@@ -7,10 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace Scripting { class Release; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -23,11 +26,19 @@ public:
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
     createComponent(::BlockSource&, ::BlockPos const&, ::Scripting::WeakLifetimeScope const&) = 0;
+
+    virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
+
+    virtual bool canAddOn(::Block const& block) const;
+
+    virtual ::std::optional<::Scripting::Release> overrideEnumVersion() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canAddOn(::Block const& block) const;
+
 
     // NOLINTEND
 };

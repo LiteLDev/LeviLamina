@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct UpscalingCameraData {};
+class UpscalingCameraData {};
 
 } // namespace dragon::rendering

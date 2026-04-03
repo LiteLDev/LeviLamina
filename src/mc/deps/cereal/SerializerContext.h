@@ -6,6 +6,12 @@
 #include "mc/deps/cereal/BasicSerializerContext.h"
 #include "mc/deps/cereal/ResultCode.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class StaticOptimizedString; }
+namespace cereal { class LogCheckpoint; }
+// clang-format on
+
 namespace cereal {
 
 class SerializerContext : public ::cereal::BasicSerializerContext {
@@ -45,8 +51,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7fd416;
     ::ll::UntypedStorage<4, 4> mUnk3e0f77;
+    ::ll::UntypedStorage<4, 4> mUnk2db00f;
     // NOLINTEND
 
 public:
@@ -60,16 +66,15 @@ public:
     // NOLINTBEGIN
     MCNAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
 
-    MCNAPI bool hasErrorInGenerations(uint from, uint to, ::cereal::ResultCode filter) const;
+    MCNAPI ::cereal::LogCheckpoint getLogCheckpoint();
 
-    MCNAPI void log(::cereal::ResultCode res, ::std::string msg);
-
-    MCNAPI uint nextGeneration();
+    MCNAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 
     MCNAPI void popContext();
 
-    MCNAPI ::cereal::SerializerContext&
-    pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
+    MCNAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
+
+    MCNAPI ::cereal::SerializerContext& pushContext(::Bedrock::StaticOptimizedString propertyName);
 
     MCNAPI ~SerializerContext();
     // NOLINTEND

@@ -13,7 +13,7 @@ struct DeduplicatePacksVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk36ccdf;
+    ::ll::UntypedStorage<8, 24> mUnk694060;
     // NOLINTEND
 
 public:

@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/EntityNetId.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/network/NetworkBlockPosition.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 #include "mc/resources/MinEngineVersion.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,14 +19,14 @@ struct AddVolumeEntityPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag>          mComponents;
-    ::ll::TypedStorage<8, 32, ::std::string>          mJsonIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>          mInstanceName;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMinBounds;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMaxBounds;
-    ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion>     mMinEngineVersion;
-    ::ll::TypedStorage<4, 4, ::EntityNetId>           mEntityNetId;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>      mComponents;
+    ::ll::TypedStorage<8, 32, ::std::string>      mJsonIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>      mInstanceName;
+    ::ll::TypedStorage<4, 12, ::BlockPos>         mMinBounds;
+    ::ll::TypedStorage<4, 12, ::BlockPos>         mMaxBounds;
+    ::ll::TypedStorage<4, 4, ::DimensionType>     mDimensionType;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
+    ::ll::TypedStorage<4, 4, ::EntityNetId>       mEntityNetId;
     // NOLINTEND
 
 public:

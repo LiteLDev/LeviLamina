@@ -17,13 +17,18 @@ namespace Puv {
 // NOLINTBEGIN
 MCNAPI ::Puv::Logger makeLogger(::cereal::BasicSerializerContext const& log);
 
-MCNAPI ::SemVersion pickJsonFormatVersion(::std::string_view input);
+MCNAPI ::std::optional<::SemVersion> pickJsonFormatVersion(::std::string_view input);
 
 MCNAPI ::SemVersion::MatchType versionFromJson(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& json,
     ::SemVersion&                                                                                                 output
 );
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCNAPI ::std::string const& PATH_WILDCARD();
 // NOLINTEND
 
 } // namespace Puv

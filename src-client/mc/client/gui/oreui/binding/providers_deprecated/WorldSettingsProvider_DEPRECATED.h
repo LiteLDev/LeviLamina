@@ -20,10 +20,10 @@ class IMinecraftGame;
 class MainMenuScreenController;
 class MainMenuScreenModel;
 class OreUIResourcePackFacet;
+class TrialManager;
+class WorldTemplateLoader;
 class WorldTemplateManager;
 struct ContentViews;
-struct TrialManager;
-struct WorldTemplateLoader;
 namespace OreUI { class Router; }
 namespace OreUI { class RouterLocation; }
 namespace Social { class IUserManager; }
@@ -48,13 +48,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                                       mLevelDataWrapper;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::TrialManager const&>                                       mTrialManager;
-    ::ll::TypedStorage<8, 2560, ::WorldCreationHelper>                                    mWorldCreator;
+    ::ll::TypedStorage<8, 2464, ::WorldCreationHelper>                                    mWorldCreator;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mDefaultLevelDataBindings;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                            mLevelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                            mLevelSummary;
     ::ll::TypedStorage<8, 112, ::WorldSettingsRules>                                      mWorldSettingsRules;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mWorldPreviewImagePath;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsWorldCreated;

@@ -8,17 +8,17 @@ struct PlatformRuntimeInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4bd95d;
-    ::ll::UntypedStorage<8, 32> mUnke73ade;
-    ::ll::UntypedStorage<8, 32> mUnk80bf7f;
-    ::ll::UntypedStorage<8, 32> mUnka3d8c7;
-    ::ll::UntypedStorage<8, 32> mUnk67da68;
-    ::ll::UntypedStorage<8, 32> mUnk9e8c61;
-    ::ll::UntypedStorage<8, 32> mUnkc37d3a;
-    ::ll::UntypedStorage<8, 32> mUnkfebc5d;
-    ::ll::UntypedStorage<8, 32> mUnkad06c0;
-    ::ll::UntypedStorage<8, 32> mUnkbb283c;
-    ::ll::UntypedStorage<8, 32> mUnk4f6d87;
+    ::ll::UntypedStorage<8, 32> mUnk42ea1e;
+    ::ll::UntypedStorage<8, 32> mUnk87d0ce;
+    ::ll::UntypedStorage<8, 32> mUnk716bc4;
+    ::ll::UntypedStorage<8, 32> mUnk9cb263;
+    ::ll::UntypedStorage<8, 32> mUnkf9c9d3;
+    ::ll::UntypedStorage<8, 32> mUnkb4d290;
+    ::ll::UntypedStorage<8, 32> mUnka99107;
+    ::ll::UntypedStorage<8, 32> mUnk316409;
+    ::ll::UntypedStorage<8, 32> mUnk1c4702;
+    ::ll::UntypedStorage<8, 32> mUnkaaa3ba;
+    ::ll::UntypedStorage<8, 32> mUnkab22f0;
     ::ll::UntypedStorage<4, 4>  mUnk7be153;
     ::ll::UntypedStorage<8, 8>  mUnke26e46;
     ::ll::UntypedStorage<8, 8>  mUnke184bc;
@@ -56,14 +56,14 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkc6204f;
     ::ll::UntypedStorage<1, 1>  mUnk10ec6e;
     ::ll::UntypedStorage<1, 1>  mUnk683774;
-    ::ll::UntypedStorage<8, 32> mUnk62e7ad;
-    ::ll::UntypedStorage<8, 32> mUnkb4c090;
-    ::ll::UntypedStorage<8, 32> mUnkbd5f0a;
-    ::ll::UntypedStorage<8, 32> mUnkb7559f;
-    ::ll::UntypedStorage<8, 32> mUnk687dba;
-    ::ll::UntypedStorage<8, 32> mUnkeec7af;
-    ::ll::UntypedStorage<8, 32> mUnk7ee4aa;
-    ::ll::UntypedStorage<8, 32> mUnkfbb0f4;
+    ::ll::UntypedStorage<8, 32> mUnkbd7c3c;
+    ::ll::UntypedStorage<8, 32> mUnke5e041;
+    ::ll::UntypedStorage<8, 32> mUnkd4b470;
+    ::ll::UntypedStorage<8, 32> mUnk518ef4;
+    ::ll::UntypedStorage<8, 32> mUnk3b5b2a;
+    ::ll::UntypedStorage<8, 32> mUnkd4d740;
+    ::ll::UntypedStorage<8, 32> mUnkce6174;
+    ::ll::UntypedStorage<8, 32> mUnke72f18;
     // NOLINTEND
 
 public:

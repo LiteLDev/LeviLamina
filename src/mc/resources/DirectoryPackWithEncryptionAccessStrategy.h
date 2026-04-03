@@ -13,6 +13,7 @@
 class ContentIdentity;
 class IContentKeyProvider;
 class IFileAccess;
+class IPackIOProvider;
 class ResourceLocation;
 namespace Core { class Path; }
 // clang-format on
@@ -21,14 +22,15 @@ class DirectoryPackWithEncryptionAccessStrategy : public ::PackAccessStrategy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7ef9b8;
+    ::ll::UntypedStorage<8, 32> mUnkd15dc5;
     ::ll::UntypedStorage<8, 56> mUnk863770;
-    ::ll::UntypedStorage<8, 32> mUnk689ee8;
+    ::ll::UntypedStorage<8, 32> mUnk5a317a;
     ::ll::UntypedStorage<8, 56> mUnke45de1;
     ::ll::UntypedStorage<8, 16> mUnk1b31b5;
     ::ll::UntypedStorage<8, 24> mUnkdf74db;
     ::ll::UntypedStorage<8, 24> mUnk9e54a2;
-    ::ll::UntypedStorage<8, 8>  mUnkeca0b7;
+    ::ll::UntypedStorage<8, 8>  mUnk8f7696;
+    ::ll::UntypedStorage<8, 8>  mUnke91deb;
     // NOLINTEND
 
 public:
@@ -82,7 +84,8 @@ public:
         ::ResourceLocation const&                                         packLocation,
         ::ResourceLocation const&                                         encryptedContentLocation,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::IFileAccess&                                                    fileAccess
+        ::IFileAccess&                                                    fileAccess,
+        ::IPackIOProvider const&                                          io
     );
 
     MCNAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
@@ -95,7 +98,8 @@ public:
         ::ResourceLocation const&                                         packLocation,
         ::ResourceLocation const&                                         encryptedContentLocation,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::IFileAccess&                                                    fileAccess
+        ::IFileAccess&                                                    fileAccess,
+        ::IPackIOProvider const&                                          io
     );
     // NOLINTEND
 

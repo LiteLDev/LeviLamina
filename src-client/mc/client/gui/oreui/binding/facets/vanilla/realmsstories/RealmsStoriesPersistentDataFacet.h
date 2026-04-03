@@ -10,8 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ProfanityContext;
-namespace Realms::Stories { struct FacetStateManager; }
+class ProfanityContext;
+namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
 
 namespace OreUI {

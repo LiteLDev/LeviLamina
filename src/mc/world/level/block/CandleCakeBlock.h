@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/block/AbstractCandleBlock.h"
 
 // auto generated forward declare list
@@ -47,9 +48,9 @@ public:
     virtual int _getNumCandles(::Block const&) const /*override*/;
 
     virtual void _iterateCandles(
-        ::Block const&                            block,
-        ::BlockPos const&                         pos,
-        ::std::function<void(::Vec3 const&, int)> callback
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
@@ -70,9 +71,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    _forEachCandle(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback);
-
     MCAPI static ::Block const& getCandleCakeFromCandle(::Block const& candleBlock);
 
     MCAPI static ::Block const& getCandleFromCandleCake(::Block const& candleCakeBlock);
@@ -105,9 +103,9 @@ public:
     MCFOLD int $_getNumCandles(::Block const&) const;
 
     MCAPI void $_iterateCandles(
-        ::Block const&                            block,
-        ::BlockPos const&                         pos,
-        ::std::function<void(::Vec3 const&, int)> callback
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;

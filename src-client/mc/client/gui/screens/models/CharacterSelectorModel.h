@@ -14,6 +14,8 @@
 // clang-format off
 class MinecraftScreenController;
 class PersonaScreenModel;
+class StoreDataDrivenScreenController;
+class UIPropertyBag;
 struct CharacterSelectorData;
 struct LinksToStyle;
 // clang-format on
@@ -22,13 +24,13 @@ class CharacterSelectorModel : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // CharacterSelectorModel inner types declare
     // clang-format off
-    struct CharacterSelectorFTUEModel;
+    class CharacterSelectorFTUEModel;
     // clang-format on
 
     // CharacterSelectorModel inner types define
     enum class AppearanceCreationType : int {};
 
-    struct CharacterSelectorFTUEModel {};
+    class CharacterSelectorFTUEModel {};
 
 public:
     // member variables
@@ -40,10 +42,10 @@ public:
     ::ll::TypedStorage<8, 40, ::ProfileEntryPromptManager>                                mEntryPromptManager;
     ::ll::TypedStorage<4, 8, ::glm::ivec2>                                                mGridParams;
     ::ll::TypedStorage<4, 4, uint>                                                        mPreviewIndex;
-    ::ll::TypedStorage<8, 2576, ::Random>                                                 mRandom;
+    ::ll::TypedStorage<8, 2544, ::Random>                                                 mRandom;
     ::ll::TypedStorage<4, 4, ::CharacterSelectorModel::AppearanceCreationType>            mAppearanceCreationType;
     ::ll::TypedStorage<4, 4, ::CharacterSelectorVisibility>                               mCastModalVisibility;
-    ::ll::TypedStorage<4, 16, ::CharacterSelectorModel::CharacterSelectorFTUEModel>       mFTUEData;
+    ::ll::TypedStorage<8, 16, ::CharacterSelectorModel::CharacterSelectorFTUEModel>       mFTUEData;
     ::ll::TypedStorage<8, 24, ::std::vector<::CharacterSelectorData>>                     mSectionContent;
     ::ll::TypedStorage<1, 1, bool> mHasSeenLatestDefaultCharacterList;
     ::ll::TypedStorage<1, 1, bool> mSelectedCharacterWasNotReady;
@@ -74,19 +76,35 @@ public:
 
     MCAPI void _closeCreatePersonaPopup();
 
-    MCAPI void _launchDifferenceInformationPopup();
-
     MCAPI void _loadContentFromSkins();
 
-    MCAPI void _registerBinds(::MinecraftScreenController& screen);
+    MCAPI void bindPreviewSkin(::UIPropertyBag& bag);
 
-    MCAPI void _registerEventHandlers(::MinecraftScreenController& screen);
+    MCAPI void castBack(::StoreDataDrivenScreenController& controller);
+
+    MCAPI void castLeft(::StoreDataDrivenScreenController& controller);
+
+    MCAPI void castRight(::StoreDataDrivenScreenController& controller);
 
     MCAPI void closeCharacterSelectModal();
 
+    MCAPI void closeDialog(::StoreDataDrivenScreenController& controller);
+
+    MCAPI ::std::string getPersonaConfirmText() const;
+
+    MCAPI void launchDifferenceInformationPopup();
+
     MCAPI void openCharacterSelectModal(::CharacterSelectorVisibility previewMode);
 
+    MCAPI void openDefaultSelector(::StoreDataDrivenScreenController& controller);
+
     MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void closeDifferencesDialog(::StoreDataDrivenScreenController& controller);
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 namespace bgfx::d3d12 {
 
-struct BufferHeapBlock {
+class BufferHeapBlock {
 public:
     // BufferHeapBlock inner types declare
     // clang-format off

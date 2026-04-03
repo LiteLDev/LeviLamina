@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct ResourceViewInterface {};
+class ResourceViewInterface {};
 
 } // namespace rendergraph

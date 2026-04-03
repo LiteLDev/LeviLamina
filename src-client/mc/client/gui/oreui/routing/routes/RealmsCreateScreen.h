@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class IOfferRepository;
 class ISceneStack;
+class RealmsAPI;
 class SceneFactory;
-struct IOfferRepository;
-struct RealmsAPI;
-struct SunsettingManager;
+class SunsettingManager;
 namespace OreUI { class RouteMatcher; }
 namespace Social { class IUserManager; }
 // clang-format on

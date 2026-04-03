@@ -14,8 +14,8 @@ class Actor;
 class ActorOwnerComponent;
 class StrictEntityContext;
 class Vec3;
-struct ActorMovementTickNeededComponent;
 struct CurrentTickComponent;
+struct InterpolateMovementNeededComponent;
 struct PassengerRenderingRidingOffsetComponent;
 struct TickingSystemWithInfo;
 struct VehicleComponent;
@@ -38,7 +38,7 @@ public:
     MCNAPI_C static void _tickSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
+            ::Include<::InterpolateMovementNeededComponent>,
             ::VehicleComponent const,
             ::ActorOwnerComponent,
             ::VehicleRenderingRidingOffsetComponent>                view,

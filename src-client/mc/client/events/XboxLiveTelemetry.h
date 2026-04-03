@@ -4,6 +4,6 @@
 
 namespace Social::Events {
 
-struct XboxLiveTelemetry {};
+class XboxLiveTelemetry {};
 
 } // namespace Social::Events

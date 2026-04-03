@@ -11,7 +11,7 @@ class FieldTrialStructListBase : public ::webrtc::FieldTrialParameterInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk655c78;
+    ::ll::UntypedStorage<8, 24> mUnk862398;
     // NOLINTEND
 
 public:

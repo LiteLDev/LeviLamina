@@ -13,12 +13,13 @@
 #include "mc/client/network/realms/World.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/LevelListCacheObserver.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContentAcquisition;
 class ILevelListCache;
 class WorldSettingsRules;
-struct ContentAcquisition;
 struct LevelSummary;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }
@@ -28,7 +29,8 @@ namespace OreUI { struct LevelDataBindings; }
 
 namespace OreUI {
 
-class CreateNewWorldFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::CreateNewWorldFacet_DEPRECATED> {
+class CreateNewWorldFacet_DEPRECATED : public ::OreUI::FacetBase<::OreUI::CreateNewWorldFacet_DEPRECATED>,
+                                       public ::LevelListCacheObserver {
 public:
     // CreateNewWorldFacet_DEPRECATED inner types define
     enum class FacetStatus : uchar {
@@ -46,11 +48,10 @@ public:
         StartCreatingWorld        = 11,
         StartLocalServer          = 12,
         UploadToRealm             = 13,
-        WaitForRealmJoin          = 14,
-        WaitForServerStart        = 15,
-        WorldCreationComplete     = 16,
-        WorldCreationFailed       = 17,
-        CheckBannedState          = 18,
+        WaitForServerStart        = 14,
+        WorldCreationComplete     = 15,
+        WorldCreationFailed       = 16,
+        CheckBannedState          = 17,
     };
 
 public:
@@ -69,7 +70,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mShowedAchievementWarning;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                              mUiRouter;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED>> mWorldSettingsProvider;
-    ::ll::TypedStorage<8, 64, ::ui::ProgressScreenNavigation>                               mProgressScreenNavigation;
+    ::ll::TypedStorage<8, 104, ::ui::ProgressScreenNavigation>                              mProgressScreenNavigation;
     ::ll::TypedStorage<8, 656, ::Realms::World>                                             mRealmWorld;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>                  mApplyTemplateTask;
     ::ll::TypedStorage<1, 1, bool>                                                          mCreatingOnRealms;
@@ -93,6 +94,8 @@ public:
     virtual ~CreateNewWorldFacet_DEPRECATED() /*override*/;
 
     virtual bool update() /*override*/;
+
+    virtual void onStorageChanged() /*override*/;
     // NOLINTEND
 
 public:
@@ -191,12 +194,16 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $update();
+
+    MCAPI void $onStorageChanged();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForFacetBase();
+
+    MCNAPI static void** $vftableForLevelListCacheObserver();
     // NOLINTEND
 };
 

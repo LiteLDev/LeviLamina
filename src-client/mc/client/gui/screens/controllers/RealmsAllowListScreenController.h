@@ -34,7 +34,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::RealmPlayer>                                      EMPTY_PLAYER;
+    ::ll::TypedStorage<8, 208, ::RealmPlayer>                                      EMPTY_PLAYER;
     ::ll::TypedStorage<1, 1, bool>                                                 mLoading;
     ::ll::TypedStorage<1, 1, bool>                                                 mListsLoaded;
     ::ll::TypedStorage<1, 1, bool>                                                 mFromExistingWorld;
@@ -47,6 +47,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>              mLastFriendListUpdate;
     ::ll::TypedStorage<1, 1, bool>                                                 mNewWorld;
     ::ll::TypedStorage<1, 1, bool>                                                 mPermissionsDirty;
+    ::ll::TypedStorage<1, 1, bool>                                                 mMembersListDirty;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>              mLastTryJoin;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProgressHandler>>                 mProgressHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlatformMultiplayerRestrictions>> mPlatformMultiplayerRestrictions;
@@ -139,6 +140,8 @@ public:
 
     MCAPI ::RealmsAllowListScreenController::RealmPlayerList const
     _getRealmPlayerListFromCollection(::UIPropertyBag const* bag) const;
+
+    MCAPI void _handleDoesNotHavePermission(::std::function<void()> newWorldCallback);
 
     MCAPI void _handlePlayerInvite(::RealmPlayer& player);
 

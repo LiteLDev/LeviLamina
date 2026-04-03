@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LibraryCollectionConfig {
+class LibraryCollectionConfig {
 public:
     // LibraryCollectionConfig inner types define
     enum class CollectionSource : uint {};

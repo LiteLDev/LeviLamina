@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldTemplateLoader {
+class WorldTemplateLoader {
 public:
     // WorldTemplateLoader inner types define
     enum class Error : int {};

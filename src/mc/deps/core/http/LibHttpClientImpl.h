@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
-struct HC_CALL;
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::Threading { class Mutex; }
+struct HC_CALL;
 // clang-format on
 
 namespace Bedrock::Http {

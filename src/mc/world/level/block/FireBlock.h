@@ -16,8 +16,8 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class IRandom;
 class Random;
-class Randomize;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -67,7 +67,7 @@ public:
         ::BlockSource&    region,
         ::BlockPos const& pos,
         int               chance,
-        ::Randomize&      randomize,
+        ::IRandom&        random,
         int               age,
         ::BlockPos const& firePos
     ) const;

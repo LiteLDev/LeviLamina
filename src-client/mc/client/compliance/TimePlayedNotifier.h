@@ -4,6 +4,6 @@
 
 namespace Compliance {
 
-struct TimePlayedNotifier {};
+class TimePlayedNotifier {};
 
 } // namespace Compliance

@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct Elevation {};
+class Elevation {};
 
 } // namespace Editor::ClientBrush

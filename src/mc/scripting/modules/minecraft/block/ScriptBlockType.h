@@ -48,6 +48,8 @@ public:
     createDefaultBlockPermutationV010() const;
 
     MCAPI ::std::string getId() const;
+
+    MCAPI ::std::string getLocalizationKey() const;
     // NOLINTEND
 
 public:

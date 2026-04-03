@@ -3,18 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/checked_resource_service/ServerResourcePointer.h"
+#include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class ShaderColor;
 namespace mce { class Camera; }
 namespace mce { class GlobalConstantBufferManager; }
+namespace mce { class GlobalConstantBuffers; }
+namespace mce { class ImmediateBuffer; }
+namespace mce { class QuadIndexBuffer; }
 namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
-namespace mce { struct GlobalConstantBuffers; }
-namespace mce { struct ImmediateBuffer; }
-namespace mce { struct QuadIndexBuffer; }
 // clang-format on
 
 namespace mce {

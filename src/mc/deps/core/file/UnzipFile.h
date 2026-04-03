@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/UnzipFileLibrary.h"
-#include "mc/deps/core/file/UnzipResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/UnzipResult.h"
 
 // auto generated forward declare list
 // clang-format off

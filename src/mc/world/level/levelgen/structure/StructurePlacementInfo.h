@@ -47,6 +47,15 @@ public:
 
     MCAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
 
+    MCAPI void handlePostPlacedStructureForArea(
+        ::BlockSource&                                                     region,
+        ::BlockPos const&                                                  startPos,
+        ::BlockPos const&                                                  endPos,
+        ::Rotation                                                         rotation,
+        ::std::function<::BlockPos(::BlockPos const&)> const&              getWorldPosition,
+        ::std::function<void(::BlockPos const&, ::BlockPos const&)> const& preHandleBlock
+    );
+
     MCAPI void
     setBlockPlacementInfo(::BlockPos const& pos, ::Block const& block, ::NeighborAwareBlockUpdateType updateType);
 

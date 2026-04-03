@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentBase {};
+class WidgetComponentBase {};
 
 } // namespace Editor::Widgets

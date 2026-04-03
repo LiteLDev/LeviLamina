@@ -40,8 +40,6 @@ public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static int& DEFAULT_DROP_PACKET_CHANCE();
-
-        MCNAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
         // NOLINTEND
     };
 
@@ -98,7 +96,8 @@ public:
 
     MCNAPI_C void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
-        ::std::chrono::steady_clock::time_point const& receiveTimepoint
+        ::std::chrono::steady_clock::time_point const& receiveTimepoint,
+        bool                                           isPredictableActor
     );
 
     MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);

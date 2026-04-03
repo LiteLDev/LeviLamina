@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/PersistenceGroupType.h"
+#include "mc/common/editor/PersistenceScope.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/services/persistence/PersistentDataType.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-namespace Bedrock::PubSub { class Subscription; }
-namespace Editor::Persistence { struct PersistentData; }
-namespace cereal { struct ReflectionCtx; }
+namespace Editor::Services { class PersistenceGroup; }
 // clang-format on
 
 namespace Editor::Services {
@@ -22,35 +21,45 @@ public:
     // NOLINTBEGIN
     virtual ~EditorPersistenceServiceProvider() = default;
 
-    virtual ::Scripting::Result_deprecated<void>
-    addOrUpdatePersistData(::Editor::Persistence::PersistentData const&) = 0;
-
-    virtual ::Scripting::Result_deprecated<void> addPersistData(::Editor::Persistence::PersistentData const&) = 0;
-
-    virtual ::Scripting::Result_deprecated<void> updatePersistData(::Editor::Persistence::PersistentData const&) = 0;
-
-    virtual ::Scripting::Result_deprecated<void>
-    removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const) = 0;
-
-    virtual ::Scripting::Result_deprecated<::std::string>
-    getPersistData(::HashedString const&, ::Editor::Services::PersistentDataType const) const = 0;
-
-    virtual ::Scripting::Result_deprecated<::std::vector<::HashedString>>
-    getKeysStartWith(::std::string const, ::Editor::Services::PersistentDataType const) const = 0;
-
-    virtual ::Scripting::Result_deprecated<bool>
-    hasData(::HashedString const&, ::Editor::Services::PersistentDataType const) const = 0;
-
-    virtual ::std::string const& getPlayerSaveId() const = 0;
-
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)>) = 0;
-
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
-        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)>
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(
+        ::std::string const&,
+        ::Editor::Services::PersistenceScope,
+        ::std::optional<int>,
+        ::std::optional<::Editor::Services::PersistenceGroupType>
     ) = 0;
 
-    virtual ::std::unique_ptr<::cereal::ReflectionCtx>& getCerealContext() = 0;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> createGroup(
+        ::std::string const&,
+        ::Editor::Services::PersistenceScope,
+        ::std::optional<int>,
+        ::std::optional<::Editor::Services::PersistenceGroupType>
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>
+    getGroup(::std::string const&, ::Editor::Services::PersistenceScope, ::std::optional<int>) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    deleteGroup(::std::string const&, ::Editor::Services::PersistenceScope, ::std::optional<int>) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const) = 0;
+
+    virtual ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> fetchGroups(
+        ::std::optional<::std::string>,
+        ::std::optional<::std::string>,
+        ::std::optional<::Editor::Services::PersistenceScope>,
+        ::std::optional<int>
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> requestGroup(
+        ::std::string const&,
+        ::Editor::Services::PersistenceScope,
+        ::std::optional<int>,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+        syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup>) = 0;
     // NOLINTEND
 
 public:

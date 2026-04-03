@@ -4,20 +4,17 @@
 
 namespace mce::framebuilder::bgfxbridge {
 
-struct DeferredMinecraftFrameRenderer {
+class DeferredMinecraftFrameRenderer {
 public:
     // DeferredMinecraftFrameRenderer inner types declare
     // clang-format off
     struct CascadedShadowMapData;
-    struct PointLightShadowMapData;
     struct ShadowMapBaseData;
     struct ShadowMapData;
     // clang-format on
 
     // DeferredMinecraftFrameRenderer inner types define
     struct CascadedShadowMapData {};
-
-    struct PointLightShadowMapData {};
 
     struct ShadowMapBaseData {};
 

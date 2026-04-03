@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/util/IntRange.h"
 #include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ai/goal/Goal.h"
-#include "mc/world/actor/ai/goal/TimerActorFlagBaseDefinition.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -18,13 +18,14 @@ class TimerActorFlagBaseGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
-    ::ll::TypedStorage<4, 4, ::ActorFlags>                     mActorFlag;
-    ::ll::TypedStorage<8, 240, ::TimerActorFlagBaseDefinition> mDefinition;
-    ::ll::TypedStorage<4, 8, ::IntRange>                       mDurationRangeTicks;
-    ::ll::TypedStorage<4, 8, ::IntRange>                       mCooldownRangeTicks;
-    ::ll::TypedStorage<8, 8, ::Tick>                           mCooldownEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                           mGoalEndTick;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                             mMob;
+    ::ll::TypedStorage<4, 4, ::ActorFlags>                                       mActorFlag;
+    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnStartEvent;
+    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnEndEvent;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                         mDurationRangeTicks;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                         mCooldownRangeTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                                             mCooldownEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                             mGoalEndTick;
     // NOLINTEND
 
 public:
@@ -48,7 +49,7 @@ public:
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
-    virtual ~TimerActorFlagBaseGoal() /*override*/ = default;
+    virtual ~TimerActorFlagBaseGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,6 +62,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob, ::ActorFlags actorFlag);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

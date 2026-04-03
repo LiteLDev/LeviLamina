@@ -6,8 +6,8 @@ struct AppConfigsDependencies {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk621be9;
-    ::ll::UntypedStorage<8, 64> mUnkb33602;
+    ::ll::UntypedStorage<8, 64> mUnk2ff020;
+    ::ll::UntypedStorage<8, 64> mUnk39b0c5;
     ::ll::UntypedStorage<8, 64> mUnk2b5cbe;
     // NOLINTEND
 

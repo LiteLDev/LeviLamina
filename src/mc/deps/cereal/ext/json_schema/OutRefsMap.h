@@ -8,7 +8,7 @@ struct OutRefsMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkbc2888;
+    ::ll::UntypedStorage<8, 64> mUnk68c195;
     ::ll::UntypedStorage<4, 4>  mUnk12f1cf;
     // NOLINTEND
 

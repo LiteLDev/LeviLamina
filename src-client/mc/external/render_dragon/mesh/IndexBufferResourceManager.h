@@ -4,15 +4,15 @@
 
 namespace dragon::mesh {
 
-struct IndexBufferResourceManager {
+class IndexBufferResourceManager {
 public:
     // IndexBufferResourceManager inner types declare
     // clang-format off
-    struct Impl;
+    class Impl;
     // clang-format on
 
     // IndexBufferResourceManager inner types define
-    struct Impl {};
+    class Impl {};
 };
 
 } // namespace dragon::mesh

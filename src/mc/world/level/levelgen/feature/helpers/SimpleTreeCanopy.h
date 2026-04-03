@@ -26,8 +26,8 @@ public:
     ::ll::TypedStorage<4, 4, int>                                  mMinWidth;
     ::ll::TypedStorage<4, 4, float>                                mRiseInv;
     ::ll::TypedStorage<4, 4, int>                                  mRun;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mLeafBlockDescriptor;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mLeafBlockDescriptor;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChanceInformation>>  mVariationChancePerLayer;
     // NOLINTEND
 
@@ -37,12 +37,14 @@ public:
     virtual ~SimpleTreeCanopy() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> placeCanopy(
-        ::IBlockWorldGenAPI&             target,
-        ::BlockPos const&                pos,
-        ::Random&                        random,
-        ::RenderParams&                  renderParams,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::ITreeCanopy::BranchSize const&,
+        ::Random& random,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const&,
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
     // NOLINTEND
 
@@ -50,12 +52,14 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $placeCanopy(
-        ::IBlockWorldGenAPI&             target,
-        ::BlockPos const&                pos,
-        ::Random&                        random,
-        ::RenderParams&                  renderParams,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::ITreeCanopy::BranchSize const&,
+        ::Random& random,
+        ::RenderParams&,
+        ::TreeHelper::TreeParams const&,
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const;
 
 

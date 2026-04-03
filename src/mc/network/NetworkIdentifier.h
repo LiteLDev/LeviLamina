@@ -53,7 +53,7 @@ public:
 
     MCAPI bool operator<(::NetworkIdentifier const& other) const;
 
-    MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+    MCFOLD ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

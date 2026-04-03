@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        40,
+        24,
         ::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>>>
         mLeashedEntities;
     // NOLINTEND

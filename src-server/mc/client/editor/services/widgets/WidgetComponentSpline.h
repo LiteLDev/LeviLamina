@@ -4,7 +4,7 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentSpline {
+class WidgetComponentSpline {
 public:
     // WidgetComponentSpline inner types declare
     // clang-format off

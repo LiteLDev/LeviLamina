@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ConstantBufferContainerNull {};
+class ConstantBufferContainerNull {};
 
 } // namespace mce

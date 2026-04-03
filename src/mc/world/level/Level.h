@@ -32,7 +32,6 @@
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/ILevel.h"
 #include "mc/world/level/IWorldRegistriesProvider.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
@@ -113,6 +112,7 @@ class IEntityRegistryOwner;
 class ILevelRandom;
 class IMinecraftEventing;
 class IRandom;
+class ISubChunkLighter;
 class IUnknownBlockTypeRegistry;
 class InternalComponentRegistry;
 class ItemEventCoordinator;
@@ -199,7 +199,6 @@ class TagCacheManager;
 class TaskGroup;
 class TempEPtrManager;
 class TickDeltaTimeManager;
-class TickTimeManager;
 class TickingAreaList;
 class TickingAreasManager;
 class TradeTables;
@@ -212,9 +211,11 @@ class Vec3;
 class VolumeEntityManagerServer;
 class WeakEntityRef;
 class WeatherManager;
+class WorldClockRegistry;
 class _TickPtr;
 struct ActorUniqueID;
 struct AdventureSettings;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct Bounds;
 struct BreakingItemParticleData;
 struct DerivedDimensionArguments;
@@ -236,12 +237,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
+class ArmorTrimUnloader;
 class BaseLightTextureImageBuilder;
+class CameraRegistry;
 class Particle;
-struct ArmorTrimUnloader;
-struct CameraRegistry;
-struct SubChunkManager;
-struct TrustedSkinHelper;
+class SubChunkManager;
+class TrustedSkinHelper;
 // clang-format on
 
 class ServerLevel;
@@ -410,7 +411,6 @@ public:
         mLevelBlockDestroyer;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TickDeltaTimeManager>>>
                                                                                       mTickDeltaTimeManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManager>>>         mTickTimeManager;
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::LevelChunkSaveManager>>                    mLevelChunkSaveManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::WeatherManager>>>          mWeatherManager;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                     mHandleLowMemoryOnTick;
@@ -436,7 +436,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     ) /*override*/;
 
@@ -610,7 +610,9 @@ public:
     virtual ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> getDynamicContainerSerialization() const
         /*override*/;
 
-    virtual ::VoxelShapes::VoxelShapeRegistry const* getShapeRegistry() const /*override*/;
+    virtual ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry const> getShapeRegistry() const /*override*/;
+
+    virtual ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> getMutableShapeRegistry() const /*override*/;
 
     virtual ::BiomeRegistry const& getBiomeRegistry() const /*override*/;
 
@@ -668,6 +670,10 @@ public:
     virtual ::IWorldRegistriesProvider const& getWorldRegistriesProvider() const /*override*/;
 
     virtual ::IWorldRegistriesProvider& getWorldRegistriesProvider() /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const getWorldClockRegistry() const /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> getWorldClockRegistry() /*override*/;
 
     virtual void addListener(::LevelListener& listener) /*override*/;
 
@@ -882,9 +888,9 @@ public:
 
     virtual ::LevelEventCoordinator& getLevelEventCoordinator() /*override*/;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) /*override*/;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> getLevelEventManager() /*override*/;
 
@@ -895,23 +901,31 @@ public:
     virtual void handleStopMusicEvent() /*override*/;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent,
-        ::Vec3 const&,
-        int,
-        ::UserEntityIdentifierComponent const*
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifier
     ) /*override*/;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent,
-        ::CompoundTag const&,
-        ::UserEntityIdentifierComponent const*
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifier
     ) /*override*/;
 
-    virtual void
-    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void broadcastLocalEvent(
+        ::BlockSource&                    region,
+        ::SharedTypes::Legacy::LevelEvent type,
+        ::Vec3 const&                     pos,
+        int                               data
+    ) /*override*/;
 
-    virtual void
-    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) /*override*/;
+    virtual void broadcastLocalEvent(
+        ::BlockSource&                    region,
+        ::SharedTypes::Legacy::LevelEvent type,
+        ::Vec3 const&                     pos,
+        ::Block const&                    block
+    ) /*override*/;
 
     virtual void broadcastSoundEvent(
         ::BlockSource&                         region,
@@ -1226,6 +1240,8 @@ public:
 
     virtual void flushRunTimeLighting() /*override*/;
 
+    virtual ::std::weak_ptr<::ISubChunkLighter> getSubChunkLighter() const /*override*/;
+
     virtual void loadBlockDefinitionGroup(::Experiments const& experiments) /*override*/;
 
     virtual void initializeBlockDefinitionGroup() /*override*/;
@@ -1340,7 +1356,7 @@ public:
 
     virtual void setSimPaused(bool value) /*override*/;
 
-    virtual bool getSimPaused() /*override*/;
+    virtual bool getSimPaused() const /*override*/;
 
     virtual void setFinishedInitializing() /*override*/;
 
@@ -1502,13 +1518,11 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
 
-    MCAPI_S ::Bedrock::NotNullNonOwnerPtr<::EventCoordinatorManager> getEventCoordinatorManager();
-
     MCAPI_C ::NpcEventCoordinator& getNpcEventCoordinator();
 
     MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
 
-    MCAPI void setShapeRegistry(::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> registry);
+    MCAPI void loadShapeRegistry(::Experiments const& experiments);
     // NOLINTEND
 
 public:
@@ -1548,7 +1562,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     );
 
@@ -1713,7 +1727,9 @@ public:
 
     MCAPI ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> $getDynamicContainerSerialization() const;
 
-    MCAPI ::VoxelShapes::VoxelShapeRegistry const* $getShapeRegistry() const;
+    MCFOLD ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry const> $getShapeRegistry() const;
+
+    MCFOLD ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> $getMutableShapeRegistry() const;
 
     MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
 
@@ -1769,6 +1785,10 @@ public:
     MCFOLD ::IWorldRegistriesProvider const& $getWorldRegistriesProvider() const;
 
     MCFOLD ::IWorldRegistriesProvider& $getWorldRegistriesProvider();
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
+
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> $getWorldClockRegistry();
 
     MCAPI void $addListener(::LevelListener& listener);
 
@@ -1830,9 +1850,7 @@ public:
 
     MCFOLD ::BlockPos const& $getDefaultSpawn() const;
 
-#ifdef LL_PLAT_S
     MCAPI void $setDefaultGameType(::GameType gameType);
-#endif
 
     MCAPI void $setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
@@ -1919,7 +1937,6 @@ public:
     MCAPI void
     $addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas);
 
-#ifdef LL_PLAT_S
     MCAPI void $playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1930,11 +1947,9 @@ public:
 
     MCAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
-#endif
 
     MCAPI void $playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
-#ifdef LL_PLAT_S
     MCAPI void $playSound(
         ::IConstBlockSource const&             region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -1952,7 +1967,6 @@ public:
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
-#endif
 
     MCAPI ::PlayerEventCoordinator& $getRemotePlayerEventCoordinator();
 
@@ -1974,6 +1988,10 @@ public:
 
     MCAPI ::LevelEventCoordinator& $getLevelEventCoordinator();
 
+    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> $getLevelEventManager();
 
     MCAPI void $handleStopSoundEvent(::std::string const& name);
@@ -1982,7 +2000,29 @@ public:
 
     MCAPI void $handleStopMusicEvent();
 
-#ifdef LL_PLAT_S
+    MCAPI void $broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    );
+
+    MCAPI void $broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifier
+    );
+
+    MCAPI void
+    $broadcastLocalEvent(::BlockSource& region, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $broadcastLocalEvent(
+        ::BlockSource&                    region,
+        ::SharedTypes::Legacy::LevelEvent type,
+        ::Vec3 const&                     pos,
+        ::Block const&                    block
+    );
+
     MCAPI void $broadcastSoundEvent(
         ::BlockSource&                         region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -2009,7 +2049,6 @@ public:
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
-#endif
 
     MCAPI void $broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const;
 
@@ -2097,7 +2136,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
 
+#ifdef LL_PLAT_S
     MCAPI void $upgradeStorageVersion(::StorageVersion v);
+#endif
 
     MCAPI void $suspendAndSave();
 
@@ -2247,6 +2288,7 @@ public:
 
     MCFOLD ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
+#ifdef LL_PLAT_S
     MCFOLD void $runCommand(
         ::HashedString const&     commandStr,
         ::CommandOrigin&          origin,
@@ -2255,6 +2297,7 @@ public:
     );
 
     MCFOLD void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+#endif
 
     MCAPI ::PlayerCapabilities::ISharedController const& $getCapabilities() const;
 
@@ -2289,6 +2332,8 @@ public:
 
     MCAPI void $flushRunTimeLighting();
 
+    MCFOLD ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+
     MCAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
 
     MCAPI void $initializeBlockDefinitionGroup();
@@ -2321,9 +2366,9 @@ public:
 
     MCFOLD ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
-    MCAPI bool $isClientSide() const;
+    MCFOLD bool $isClientSide() const;
 
-    MCAPI ::SubClientId $getSubClientId() const;
+    MCFOLD ::SubClientId $getSubClientId() const;
 
     MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
 
@@ -2403,7 +2448,7 @@ public:
 
     MCAPI void $setSimPaused(bool value);
 
-    MCAPI bool $getSimPaused();
+    MCAPI bool $getSimPaused() const;
 
     MCAPI void $setFinishedInitializing();
 
@@ -2468,10 +2513,6 @@ public:
     MCFOLD ::cereal::ReflectionCtx& $_cerealContext();
 
     MCAPI void $_onLowMemory();
-
-#ifdef LL_PLAT_C
-    MCAPI ::GameType $getDefaultGameType() const;
-#endif
 
 
     // NOLINTEND

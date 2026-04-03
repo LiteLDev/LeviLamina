@@ -53,8 +53,6 @@ public:
 
     MCAPI ::OptionalString _parseFormattedString(::std::string const& id) const;
 
-    MCAPI void _replaceTokens(::std::string& string, ::std::vector<::std::string> const& params) const;
-
     MCAPI void
     _replaceUTCDateTimeIdentifier(::std::string& strToParse, ::std::optional<::std::locale> const& locale) const;
 
@@ -101,6 +99,8 @@ public:
     MCAPI_C static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
 
     MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
+
+    MCAPI static void replaceTokens(::std::string& string, ::std::vector<::std::string> const& params);
     // NOLINTEND
 
 public:

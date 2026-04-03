@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer::details {
 
-struct BgfxBufferPoolImplementation {};
+class BgfxBufferPoolImplementation {};
 
 } // namespace dragon::framerenderer::details

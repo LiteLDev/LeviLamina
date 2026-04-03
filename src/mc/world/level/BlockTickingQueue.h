@@ -5,6 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/TickNextTickData.h"
 #include "mc/world/level/TickingQueueType.h"
@@ -89,7 +90,7 @@ public:
     MCAPI void
     add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
-    MCAPI void addTickToLevelChunk(
+    MCAPI_C void addTickToLevelChunk(
         ::LevelChunk&     lc,
         ::BlockPos const& pos,
         ::Block const&    block,
@@ -105,7 +106,7 @@ public:
 
     MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
-    MCAPI void remove(::std::function<bool(::TickNextTickData const&)> const& removeCondition);
+    MCAPI void remove(::brstd::function_ref<bool(::TickNextTickData const&)> removeCondition);
 
     MCAPI void remove(::BlockPos const& pos, ::Block const& block);
 

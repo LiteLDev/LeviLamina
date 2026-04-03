@@ -18,14 +18,13 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class HopperBlock : public ::ActorBlock {
@@ -33,11 +32,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
 
     virtual bool isInteractiveBlock() const /*override*/;
 
@@ -61,13 +55,13 @@ public:
     ) const /*override*/;
 
     virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     origin,
+        ::Vec3 const&     end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
@@ -90,8 +84,6 @@ public:
 
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ~HopperBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -100,9 +92,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -115,10 +113,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
@@ -139,6 +133,16 @@ public:
         ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
+    ) const;
+
+    MCAPI ::HitResult $clip(
+        ::Block const& block,
+        ::BlockSource const&,
+        ::BlockPos const& pos,
+        ::Vec3 const&     origin,
+        ::Vec3 const&     end,
+        ::ShapeType,
+        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
@@ -163,8 +167,6 @@ public:
     MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
     MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

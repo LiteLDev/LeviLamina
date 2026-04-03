@@ -9,10 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
 class DateManager;
-struct ContentCatalogService;
-struct FlightingService;
-struct IOfferRepository;
+class FlightingService;
+class IOfferRepository;
 struct MinecoinDocument;
 struct MinecoinSearchResults;
 namespace Bedrock::Http { class Status; }
@@ -72,8 +72,6 @@ public:
     MCAPI void _fetchKeyArtForActiveOfferModel(::MinecoinCatalogModel::ActiveModelImageTracker& modelFetchImageInfo);
 
     MCAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
-
-    MCAPI void _monitorActiveModelImageTrackers();
 
     MCAPI void _onFetchKeyArtForActiveOfferModelFinished(
         ::std::weak_ptr<bool>   weakExistence,

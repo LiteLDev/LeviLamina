@@ -6,10 +6,8 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
 
@@ -18,7 +16,6 @@
 class ActorDefinitionTrigger;
 class Mob;
 class Path;
-namespace JsonUtil { class EmptyClass; }
 namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
@@ -27,7 +24,6 @@ public:
     // RamAttackGoal inner types declare
     // clang-format off
     struct AttackPos;
-    class Definition;
     // clang-format on
 
     // RamAttackGoal inner types define
@@ -60,60 +56,6 @@ public:
         // NOLINTEND
     };
 
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>                                                    mRamDistance;
-        ::ll::TypedStorage<4, 4, int>                                                    mMinRamDistance;
-        ::ll::TypedStorage<4, 4, float>                                                  mKnockbackForce;
-        ::ll::TypedStorage<4, 4, float>                                                  mKnockbackHeight;
-        ::ll::TypedStorage<4, 4, float>                                                  mBabyKnockbackModifier;
-        ::ll::TypedStorage<4, 4, float>                                                  mRunSpeed;
-        ::ll::TypedStorage<4, 4, float>                                                  mRamSpeed;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>>               mOnStartTriggers;
-        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mPreRamSound;
-        ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::LevelSoundEvent>> mRamImpactSound;
-        ::ll::TypedStorage<4, 8, ::FloatRange>                                           mCooldownTime;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void addPreRamSoundEventByName(::std::string const& name);
-
-        MCAPI void addRamImpactSoundEventByName(::std::string const& name);
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RamAttackGoal::Definition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -128,7 +70,17 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>                                     mRamRetryTimeout;
     ::ll::TypedStorage<4, 4, ::RamAttackGoal::State>                     mState;
     ::ll::TypedStorage<8, 24, ::std::vector<::RamAttackGoal::AttackPos>> mAttackPosVector;
-    ::ll::TypedStorage<8, 128, ::RamAttackGoal::Definition>              mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                        mRamDistance;
+    ::ll::TypedStorage<4, 4, int>                                        mMinRamDistance;
+    ::ll::TypedStorage<4, 4, float>                                      mKnockbackForce;
+    ::ll::TypedStorage<4, 4, float>                                      mKnockbackHeight;
+    ::ll::TypedStorage<4, 4, float>                                      mBabyKnockbackModifier;
+    ::ll::TypedStorage<4, 4, float>                                      mRunSpeed;
+    ::ll::TypedStorage<4, 4, float>                                      mRamSpeed;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>>   mOnStartTriggers;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>     mPreRamSound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>     mRamImpactSound;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                  mCooldownTime;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                            mTargetId;
     ::ll::TypedStorage<1, 1, bool>                                       mHasKnockbacked;
     ::ll::TypedStorage<8, 8, ::Tick>                                     mCooldownTimeout;

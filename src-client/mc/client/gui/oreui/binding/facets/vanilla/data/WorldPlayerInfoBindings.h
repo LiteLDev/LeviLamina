@@ -16,7 +16,7 @@
 // clang-format off
 class LocalPlayer;
 class PlayerListEntry;
-namespace Social { struct User; }
+namespace Social { class User; }
 // clang-format on
 
 namespace OreUI {
@@ -66,7 +66,7 @@ public:
         ::BuildPlatform                          platform
     );
 
-    MCFOLD ::std::string const& getActiveProfileImage() const;
+    MCAPI ::std::string const& getActiveProfileImage() const;
 
     MCAPI ::OreUI::ConnectionType getConnectionType() const;
 

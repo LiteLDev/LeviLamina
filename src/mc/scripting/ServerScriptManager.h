@@ -83,7 +83,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                        mScriptStateEvents;
-    ::ll::TypedStorage<8, 752, ::ScriptSettings>                                   mSettings;
+    ::ll::TypedStorage<8, 760, ::ScriptSettings>                                   mSettings;
     ::ll::TypedStorage<8, 8, ::ServerLevel&>                                       mServerLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPackSettingsCache>>        mPackSettingsCache;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>             mServerScheduler;

@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentVolumeOutline {};
+class WidgetComponentVolumeOutline {};
 
 } // namespace Editor::Widgets

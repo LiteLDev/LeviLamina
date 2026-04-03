@@ -29,7 +29,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                          mRearAnalogStrength;
     ::ll::TypedStorage<4, 4, int>                          mSideAnalogStrengthRight;
     ::ll::TypedStorage<4, 4, int>                          mSideAnalogStrengthLeft;
-    ::ll::TypedStorage<4, 4, int>                          mOldStrength;
     ::ll::TypedStorage<4, 4, ::ComparatorCapacitor::Mode>  mMode;
     ::ll::TypedStorage<4, 4, int>                          mRearStrength;
     ::ll::TypedStorage<4, 4, int>                          mSideStrengths;
@@ -55,6 +54,8 @@ public:
 
     virtual ::RedstoneLogicExecutionFlags getLogicExecutionFlags() const /*override*/;
 
+    virtual void setOldStrength(short strength) /*override*/;
+
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
     virtual ~ComparatorCapacitor() /*override*/ = default;
@@ -74,7 +75,9 @@ public:
 
     MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD void $setOldStrength(short strength);
+
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
 
 
     // NOLINTEND

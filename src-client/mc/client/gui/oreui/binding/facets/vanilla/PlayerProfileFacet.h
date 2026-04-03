@@ -20,12 +20,12 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
-namespace Parties { struct IPartyProvider; }
-namespace Parties { struct Party; }
+namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class ProfileSystem; }
 namespace Social { struct PlayerProfile; }
-namespace Social { struct ProfileSystem; }
+namespace Social { struct SocialChangeResult; }
 // clang-format on
 
 namespace OreUI {
@@ -43,7 +43,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 552, ::Social::PlayerProfileData>    playerProfileData;
+        ::ll::TypedStorage<8, 584, ::Social::PlayerProfileData>    playerProfileData;
         ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> profileImage;
         ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>          platformProfilePic;
         ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage> avatar;
@@ -66,7 +66,7 @@ public:
 
         MCAPI PlayerProfileDataWrapper(::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper&&);
 
-        MCFOLD ::RelationshipStatus favoriteStatus() const;
+        MCAPI ::RelationshipStatus favoriteStatus() const;
 
         MCFOLD ::std::string const& getOfflineName() const;
 
@@ -76,11 +76,13 @@ public:
 
         MCFOLD ::std::string const& getPlatformName() const;
 
+        MCFOLD ::std::string const& getPlayingOnRealmId() const;
+
         MCFOLD ::std::string const& getPlayingOnServerId() const;
 
         MCFOLD ::OreUI::SocialPresence getPresence() const;
 
-        MCAPI ::std::string const& getPresenceMessage() const;
+        MCFOLD ::std::string const& getPresenceMessage() const;
 
         MCFOLD ::std::string const& getRealName() const;
 
@@ -121,7 +123,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 40, ::Social::PlayerProfileState>                            state;
-        ::ll::TypedStorage<8, 1064, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
+        ::ll::TypedStorage<8, 1096, ::OreUI::PlayerProfileFacet::PlayerProfileDataWrapper> data;
         // NOLINTEND
     };
 
@@ -130,17 +132,18 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                                              mDirty;
     ::ll::TypedStorage<1, 1, bool>                                                              mImagesDirty;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>>                              mParty;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerProfileFacet::PlayerProfileWrapper>> mTrackedProfiles;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                       mProfileSystem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>>            mUserManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>       mResourceAllowList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>>
-                                                               mMultiplayerServiceManager;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mAsyncImageSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mImageUpdatedSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mBuildGameListSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPartySubscription;
+                                                                                     mMultiplayerServiceManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mAsyncImageSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mImageUpdatedSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mBuildGameListSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartySubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>> mPartyProvider;
+    ::ll::TypedStorage<4, 4, int>                                                    mSocialChangeToken;
     // NOLINTEND
 
 public:
@@ -159,12 +162,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerProfileFacet(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>        multiplayerServiceManager,
-        ::std::shared_ptr<::Social::ProfileSystem>                                profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>              userManager,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
+        ::std::shared_ptr<::Social::ProfileSystem>                         profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
+
+    MCAPI void _applySocialChange(::Social::SocialChangeResult const& result);
 
     MCAPI ::OreUI::PlayerProfileFacet::PlayerProfileWrapper&
     _updateTrackedProfile(::Social::PlayerProfile const& playerProfile);
@@ -188,11 +193,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>        multiplayerServiceManager,
-        ::std::shared_ptr<::Social::ProfileSystem>                                profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>              partyProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>              userManager,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> multiplayerServiceManager,
+        ::std::shared_ptr<::Social::ProfileSystem>                         profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>         resourceAllowList
     );
     // NOLINTEND
 

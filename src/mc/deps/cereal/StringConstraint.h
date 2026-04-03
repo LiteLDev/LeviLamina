@@ -24,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&);
+    StringConstraint();
 
 public:
     // virtual functions
@@ -34,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StringConstraint();
-
     MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
     MCNAPI StringConstraint(::cereal::StringConstraint const&);
@@ -44,7 +43,7 @@ public:
 
     MCNAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
 
-    MCNAPI void validateValue(::std::string const& str, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::std::string_view str, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
@@ -56,8 +55,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::cereal::StringConstraint&&);
 
     MCNAPI void* $ctor(::cereal::StringConstraint const&);

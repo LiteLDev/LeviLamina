@@ -11,10 +11,10 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct ActorRemovedFlagComponent;
 struct EnderDragonFlagComponent;
 struct HorseFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct ParrotFlagComponent;
 struct SquidFlagComponent;
 struct WitherBossFlagComponent;
@@ -27,7 +27,7 @@ namespace ActorPostAiStep {
 MCNAPI void _tickEach(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::Exclude<::ActorRemovedFlagComponent>,
         ::ActorOwnerComponent>                                                   commonView,
     ::ViewT<::StrictEntityContext, ::Include<::EnderDragonFlagComponent>> const& enderDragons,

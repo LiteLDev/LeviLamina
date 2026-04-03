@@ -47,8 +47,6 @@ public:
     MCAPI ::std::optional<::std::pair<::HashedString, int>>
     getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
 
-    MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
-
     MCAPI ~BlockStateCommandParam();
     // NOLINTEND
 

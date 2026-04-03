@@ -23,21 +23,12 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                               mVibrationIsDisturbance;
     ::ll::TypedStorage<1, 1, bool>                                               mSuspicionIsDisturbance;
     ::ll::TypedStorage<1, 1, bool>                                               mDigsInDaylight;
-    ::ll::TypedStorage<8, 368, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnStartEvent;
+    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnStartEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DigGoalDefinition& operator=(DigGoalDefinition const&);
-    DigGoalDefinition(DigGoalDefinition const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DigGoalDefinition();
-
-    MCAPI ::SharedTypes::v1_21_120::DigGoalDefinition& operator=(::SharedTypes::v1_21_120::DigGoalDefinition&&);
-
     MCAPI ~DigGoalDefinition();
     // NOLINTEND
 
@@ -54,15 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

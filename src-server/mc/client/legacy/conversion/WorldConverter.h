@@ -4,7 +4,7 @@
 
 namespace Legacy {
 
-struct WorldConverter {
+class WorldConverter {
 public:
     // WorldConverter inner types define
     enum class ConversionResult : int {};

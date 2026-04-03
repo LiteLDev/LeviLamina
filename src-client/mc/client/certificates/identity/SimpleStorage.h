@@ -4,6 +4,6 @@
 
 namespace Identity::Strategies {
 
-struct SimpleStorage {};
+class SimpleStorage {};
 
 } // namespace Identity::Strategies

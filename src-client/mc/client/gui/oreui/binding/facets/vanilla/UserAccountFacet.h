@@ -14,11 +14,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class GenericEntitlementChangeListener;
+class IEntitlementManager;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
-struct GenericEntitlementChangeListener;
-struct IEntitlementManager;
-namespace Social { struct User; }
+namespace Social { class User; }
 // clang-format on
 
 namespace OreUI {

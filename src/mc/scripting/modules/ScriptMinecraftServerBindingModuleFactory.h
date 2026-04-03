@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -66,9 +65,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
-    getActorComponentFactories();
-
     MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
 
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
@@ -77,8 +73,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ModuleName();
-
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

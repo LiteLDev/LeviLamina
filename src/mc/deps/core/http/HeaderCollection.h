@@ -8,7 +8,7 @@ class HeaderCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1f0eba;
+    ::ll::UntypedStorage<8, 64> mUnk689353;
     // NOLINTEND
 
 public:

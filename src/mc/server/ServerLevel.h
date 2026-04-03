@@ -7,16 +7,15 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
 #include "mc/world/actor/player/PlayerDeathManager.h"
-#include "mc/world/item/trading/TradeTables.h"
 #include "mc/world/level/BossbarManager.h"
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/LevelChunkMetaDataManager.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/persistence/DynamicPropertiesDefinition.h"
 
 // auto generated forward declare list
@@ -29,6 +28,7 @@ class CommandOrigin;
 class DynamicPropertiesManager;
 class Experiments;
 class HashedString;
+class ISubChunkLighter;
 class LevelSettings;
 class MapDataManager;
 class MobEvents;
@@ -39,11 +39,17 @@ class Random;
 class ResourcePackManager;
 class ServerMapDataManager;
 class ServerPlayerSleepManager;
+class ServerSubChunkLighter;
 class TagCacheManager;
+class TickTimeManager;
+class TickTimeManagerServer;
+class TradeTables;
 class VolumeEntityManagerServer;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct LevelTagIDType;
 struct LevelTagSetIDType;
 struct ServerLevelArguments;
+namespace GameModeExt { struct MessengerFactory; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
 
@@ -53,7 +59,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mServerResourcePackManager;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mClientResourcePackManager;
-    ::ll::TypedStorage<8, 64, ::TradeTables>                                   mTradeTable;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TradeTables>>                 mTradeTable;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::CommandManager>> mCommandManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MobEvents>>                   mMobEvents;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TagCacheManager>>> mTagCacheManager;
@@ -65,14 +71,16 @@ public:
     ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                 mDynamicPropertiesDefinition;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnActorEntityAdded;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ChunkGenerationManager>>>
-        mChunkGenerationManager;
+                                                                                    mChunkGenerationManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManagerServer>>> mTickTimeManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerPlayerSleepManager>>>
                                                                mServerPlayerSleepManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerWakeUpSubscription;
     ::ll::TypedStorage<8, 168, ::PlayerDeathManager>           mPlayerDeathManager;
     ::ll::TypedStorage<8, 48, ::LevelChunkMetaDataManager>     mLevelChunkMetaDataManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerMapDataManager>>> mMapDataManager;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextTelemetrySendTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>     mNextTelemetrySendTime;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerSubChunkLighter>> mServerSubChunkLighter;
     // NOLINTEND
 
 public:
@@ -92,7 +100,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     ) /*override*/;
 
@@ -156,7 +164,15 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
+    virtual ::GameModeExt::MessengerFactory createMessengerFactory() const /*override*/;
+
+    virtual ::std::weak_ptr<::ISubChunkLighter> getSubChunkLighter() const /*override*/;
+
     virtual void _subTick() /*override*/;
+
+    virtual ::TickTimeManager const& _getTickTimeManager() const /*override*/;
+
+    virtual ::TickTimeManager& _getTickTimeManager() /*override*/;
 
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
@@ -204,7 +220,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     );
 
@@ -225,13 +241,6 @@ public:
     MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
 
     MCAPI ::TradeTables* $getTradeTables();
-
-    MCAPI void $runCommand(
-        ::HashedString const&     commandStr,
-        ::CommandOrigin&          origin,
-        ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion const commandVersion
-    );
 
     MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
@@ -265,13 +274,30 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
+    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
+
+    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+
     MCAPI void $_subTick();
+
+    MCFOLD ::TickTimeManager const& $_getTickTimeManager() const;
+
+    MCFOLD ::TickTimeManager& $_getTickTimeManager();
 
     MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
 
     MCAPI ::MapDataManager& $_getMapDataManager();
 
     MCAPI void $_initializeMapDataManager();
+
+#ifdef LL_PLAT_C
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    );
+#endif
 
 
     // NOLINTEND

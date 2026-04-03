@@ -8,9 +8,12 @@ struct source_location {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk26653a;
-    ::ll::UntypedStorage<4, 4>  mUnkc62311;
-    ::ll::UntypedStorage<4, 4>  mUnkd301d2;
+    ::ll::UntypedStorage<8, 8> mUnka5a291;
+    ::ll::UntypedStorage<8, 8> mUnka63487;
+    ::ll::UntypedStorage<4, 4> mUnk6299c8;
+    ::ll::UntypedStorage<4, 4> mUnk7d4674;
+    ::ll::UntypedStorage<4, 4> mUnkd253b0;
+    ::ll::UntypedStorage<4, 4> mUnk3d56d9;
     // NOLINTEND
 
 public:

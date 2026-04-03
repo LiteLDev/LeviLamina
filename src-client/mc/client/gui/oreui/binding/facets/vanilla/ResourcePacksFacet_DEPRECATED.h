@@ -20,23 +20,23 @@
 // clang-format off
 class ContentTierIncompatibleReason;
 class ContentView;
+class DlcChecker;
 class IClientInstance;
+class IContentAcquisition;
 class IContentManager;
 class IContentManagerContext;
 class IContentTierManager;
 class IDlcBatchModel;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class ILevelListCache;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
 class MainMenuScreenModel;
 struct ContentItem;
 struct ContentViews;
-struct DlcChecker;
 struct DlcValidationState;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
 struct LevelSummary;
 struct PackContentItem;
 namespace OreUI { class IResourceAllowList; }
@@ -329,8 +329,6 @@ public:
 
     MCAPI void _showUnspecifiedErrorPrompt();
 
-    MCAPI void _startDownload();
-
     MCAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
 
     MCAPI void _updateContentView(
@@ -347,7 +345,7 @@ public:
 
     MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
+    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
 
     MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
 
@@ -365,7 +363,7 @@ public:
 
     MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
 
-    MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
+    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
 
     MCFOLD ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
 

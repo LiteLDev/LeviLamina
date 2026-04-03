@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct PresenceTickable {};
+class PresenceTickable {};
 
 } // namespace Social

@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GraphicsModeDataProvider {};
+namespace Settings {
+
+class GraphicsModeDataProvider {};
+
+} // namespace Settings

@@ -30,7 +30,7 @@ public:
 
     MCNAPI ::Json::Value toJson() const;
 
-    MCNAPI ::std::string toString() const;
+    MCNAPI_S ::std::string toString() const;
     // NOLINTEND
 
 public:

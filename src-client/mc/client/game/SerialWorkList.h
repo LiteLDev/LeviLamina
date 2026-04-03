@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SerialWorkList {
+class SerialWorkList {
 public:
     // SerialWorkList inner types declare
     // clang-format off

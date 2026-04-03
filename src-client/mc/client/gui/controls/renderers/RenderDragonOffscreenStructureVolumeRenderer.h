@@ -20,7 +20,7 @@ class RenderDragonOffscreenStructureVolumeRenderer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 624, ::StructureVolumeRenderer>                                    mStructureVolumeRenderer;
+    ::ll::TypedStorage<8, 704, ::StructureVolumeRenderer>                                    mStructureVolumeRenderer;
     ::ll::TypedStorage<8, 240, ::VisualTree>                                                 mVisualTree;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIControl>>                                 mUIControl;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftUIRenderContext>>                  mRenderContext;

@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 struct DeserializeDataParams;
 // clang-format on
 

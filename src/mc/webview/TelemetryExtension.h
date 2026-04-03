@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/webview/Extension.h"
+#include "mc/deps/code_builder/platform/webview/Extension.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,8 +17,8 @@ class TelemetryExtension : public ::Webview::Extension {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk23041c;
-    ::ll::UntypedStorage<8, 64>  mUnkf89661;
+    ::ll::UntypedStorage<8, 64>  mUnkb496ab;
+    ::ll::UntypedStorage<8, 64>  mUnk8cb07a;
     ::ll::UntypedStorage<8, 112> mUnk584b82;
     // NOLINTEND
 

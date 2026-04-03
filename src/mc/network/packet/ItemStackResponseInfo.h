@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ItemStackNetResult>                             mResult;
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                            mClientRequestId;
+    ::ll::TypedStorage<8, 16, ::ItemStackRequestId>                            mClientRequestId;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>> mContainers;
     // NOLINTEND
 

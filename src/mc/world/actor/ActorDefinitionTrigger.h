@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
+// clang-format on
+
 class ActorDefinitionTrigger {
 public:
     // member variables
@@ -23,6 +28,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDefinitionTrigger();
+
+    MCAPI void convertToSharedTypeActorDefinitionTrigger(
+        ::SharedTypes::v1_21_120::ActorDefinitionTrigger& outputSharedTypeTrigger
+    ) const;
 
     MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
 

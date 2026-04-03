@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI ItemContext(::ItemContext&&);
 
-    MCAPI ItemContext(::WeakEntityRef const& entityRef, int slot);
-
     MCAPI ::ItemStack const& _getItem() const;
 
     MCAPI void _setItem(::ItemStack const& item);
@@ -101,7 +99,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemContext&&);
 
-    MCAPI void* $ctor(::WeakEntityRef const& entityRef, int slot);
+    MCAPI_S void* $ctor(::WeakEntityRef const& entityRef, int slot);
     // NOLINTEND
 
 public:

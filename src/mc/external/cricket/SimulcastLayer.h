@@ -8,7 +8,7 @@ struct SimulcastLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk720aa8;
+    ::ll::UntypedStorage<8, 32> mUnkc41ff2;
     ::ll::UntypedStorage<1, 1>  mUnkaec753;
     // NOLINTEND
 

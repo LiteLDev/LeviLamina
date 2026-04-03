@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct EditorWorldFileUploadManager {};
+class EditorWorldFileUploadManager {};
 
 } // namespace Editor

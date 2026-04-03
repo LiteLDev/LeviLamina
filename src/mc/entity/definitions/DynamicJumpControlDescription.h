@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI char const* $getJsonName() const;
 
-    MCFOLD void $deserializeData(::DeserializeDataParams deserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
 
 
     // NOLINTEND

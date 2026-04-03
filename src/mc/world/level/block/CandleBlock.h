@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/block/AbstractCandleBlock.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
@@ -35,9 +36,9 @@ public:
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
     virtual void _iterateCandles(
-        ::Block const&                            block,
-        ::BlockPos const&                         pos,
-        ::std::function<void(::Vec3 const&, int)> callback
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
@@ -56,8 +57,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    _forEachCandle(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback);
+    MCAPI static void _forEachCandle(
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+    );
 
     MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
     // NOLINTEND
@@ -71,21 +75,19 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+
     MCAPI int $_getNumCandles(::Block const& block) const;
 
     MCAPI void $_iterateCandles(
-        ::Block const&                            block,
-        ::BlockPos const&                         pos,
-        ::std::function<void(::Vec3 const&, int)> callback
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const;
 
     MCAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-#ifdef LL_PLAT_C
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
 
 
     // NOLINTEND

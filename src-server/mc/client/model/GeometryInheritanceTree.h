@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GeometryInheritanceTree {
+class GeometryInheritanceTree {
 public:
     // GeometryInheritanceTree inner types declare
     // clang-format off

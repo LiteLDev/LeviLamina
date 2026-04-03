@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct RenderContext {};
+class RenderContext {};
 
 } // namespace rendergraph

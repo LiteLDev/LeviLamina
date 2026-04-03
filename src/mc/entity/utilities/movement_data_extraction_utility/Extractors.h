@@ -8,7 +8,7 @@ struct Extractors {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2a9b20;
+    ::ll::UntypedStorage<8, 24> mUnk183981;
     // NOLINTEND
 
 public:

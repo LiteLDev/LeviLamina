@@ -16,7 +16,7 @@ class WorldTemplateCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8c6f65;
+    ::ll::UntypedStorage<8, 16> mUnke6f53b;
     ::ll::UntypedStorage<8, 64> mUnkb4d91e;
     // NOLINTEND
 

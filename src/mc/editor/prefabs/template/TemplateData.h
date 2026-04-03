@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 {
@@ -15,12 +14,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk407c8f;
-    ::ll::UntypedStorage<8, 32> mUnk54bf68;
-    ::ll::UntypedStorage<8, 32> mUnke25480;
-    ::ll::UntypedStorage<8, 32> mUnkf6c926;
-    ::ll::UntypedStorage<8, 32> mUnka8bd0d;
-    ::ll::UntypedStorage<8, 24> mUnkb766b2;
-    ::ll::UntypedStorage<8, 24> mUnk9e6280;
+    ::ll::UntypedStorage<8, 32> mUnkf2eff5;
+    ::ll::UntypedStorage<8, 32> mUnk41fa9c;
+    ::ll::UntypedStorage<8, 32> mUnk2dc610;
+    ::ll::UntypedStorage<8, 32> mUnkaf2386;
+    ::ll::UntypedStorage<8, 24> mUnkf288d5;
+    ::ll::UntypedStorage<8, 24> mUnka83605;
     // NOLINTEND
 
 public:
@@ -40,12 +39,6 @@ public:
     operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
 
     MCNAPI ~TemplateData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

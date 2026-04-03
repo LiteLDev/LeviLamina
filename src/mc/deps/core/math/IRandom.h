@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
 // auto generated forward declare list
 // clang-format off
 class IPositionalRandomFactory;
 // clang-format on
 
-class IRandom : public ::Bedrock::EnableNonOwnerReferences {
+class IRandom {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IRandom() /*override*/;
+    virtual ~IRandom() = default;
 
     virtual int nextInt() = 0;
 
@@ -35,18 +32,46 @@ public:
     virtual ::std::unique_ptr<::IRandom> fork() = 0;
 
     virtual ::std::unique_ptr<::IPositionalRandomFactory> forkPositional();
+
+    virtual bool chance(int likeliness, int possibilities);
+
+    virtual bool chanceOneIn(int possibilities);
+
+    virtual bool chanceAllButOneIn(int possibilities);
+
+    virtual bool chanceFloatLessThan(float probability);
+
+    virtual bool chanceFloatLessOrEqual(float probability);
+
+    virtual bool chanceFloatGreaterThan(float improbability);
+
+    virtual bool chanceFloatGreaterOrEqual(float improbability);
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // static variables
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+
+    MCAPI bool $chance(int likeliness, int possibilities);
+
+    MCAPI bool $chanceOneIn(int possibilities);
+
+    MCAPI bool $chanceAllButOneIn(int possibilities);
+
+    MCAPI bool $chanceFloatLessThan(float probability);
+
+    MCAPI bool $chanceFloatLessOrEqual(float probability);
+
+    MCAPI bool $chanceFloatGreaterThan(float improbability);
+
+    MCAPI bool $chanceFloatGreaterOrEqual(float improbability);
 
 
     // NOLINTEND

@@ -44,7 +44,7 @@ public:
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

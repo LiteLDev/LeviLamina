@@ -87,6 +87,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                              mPlatformId;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mGalleryScreenshotId;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                                         mSelectedChatMessages;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mPartyId;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::ChatMessageData>> mReportableChatMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::DropdownOption>>  mReportAreaOptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PlayerReportFacet::DropdownOption>>  mReportReasonOptions;
@@ -122,7 +123,7 @@ public:
 
     MCAPI bool getHasReachedReportLimit() const;
 
-    MCAPI bool isChatAvailable() const;
+    MCAPI bool isWorldChatAvailable() const;
 
     MCAPI void
     startReport(::std::string const& xuid, ::std::string const& platformId, ::std::string const& galleryScreenshotId);

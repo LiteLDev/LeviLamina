@@ -5,15 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/StablePriorityQueue.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/block/BlockVolume.h"
-#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/structurepools/alias/PoolAliasBinding.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
-class ChunkPos;
+class BoundingBox;
 class Dimension;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;

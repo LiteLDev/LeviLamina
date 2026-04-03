@@ -8,10 +8,10 @@ struct ProtocolResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf70fe4;
+    ::ll::UntypedStorage<8, 32> mUnk37da2a;
     ::ll::UntypedStorage<4, 4>  mUnk823392;
     ::ll::UntypedStorage<8, 24> mUnk38dffa;
-    ::ll::UntypedStorage<8, 40> mUnk488818;
+    ::ll::UntypedStorage<8, 40> mUnkbfeaa2;
     // NOLINTEND
 
 public:

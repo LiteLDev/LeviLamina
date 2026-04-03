@@ -4,6 +4,6 @@
 
 namespace BiomeColorSampling {
 
-struct WhiteTessellationPolicy {};
+class WhiteTessellationPolicy {};
 
 } // namespace BiomeColorSampling

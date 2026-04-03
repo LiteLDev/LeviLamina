@@ -17,8 +17,8 @@ class RTCMediaSourceStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk757c26;
-    ::ll::UntypedStorage<8, 40> mUnk3683dd;
+    ::ll::UntypedStorage<8, 40> mUnkefc653;
+    ::ll::UntypedStorage<8, 40> mUnk21585f;
     // NOLINTEND
 
 public:

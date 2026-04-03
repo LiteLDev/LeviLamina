@@ -11,10 +11,10 @@ struct ShowcasedScreenshot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6ebbd6;
-    ::ll::UntypedStorage<8, 32> mUnk4f2b25;
-    ::ll::UntypedStorage<8, 32> mUnka28229;
-    ::ll::UntypedStorage<8, 32> mUnk54c4dd;
+    ::ll::UntypedStorage<8, 32> mUnk8b21db;
+    ::ll::UntypedStorage<8, 32> mUnk8e80e1;
+    ::ll::UntypedStorage<8, 32> mUnk1044fa;
+    ::ll::UntypedStorage<8, 32> mUnk3cb73e;
     ::ll::UntypedStorage<8, 8>  mUnkcb3aa1;
     ::ll::UntypedStorage<8, 8>  mUnkbe6df5;
     ::ll::UntypedStorage<1, 1>  mUnk4060f7;

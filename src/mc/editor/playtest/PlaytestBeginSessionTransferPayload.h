@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class PlaytestBeginSessionTransferPayload
@@ -17,9 +12,9 @@ class PlaytestBeginSessionTransferPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk808178;
-    ::ll::UntypedStorage<8, 32> mUnk6c28c0;
-    ::ll::UntypedStorage<8, 32> mUnkd4ac60;
+    ::ll::UntypedStorage<8, 32> mUnkfb666b;
+    ::ll::UntypedStorage<8, 32> mUnkbd2004;
+    ::ll::UntypedStorage<8, 32> mUnk5e1fbe;
     // NOLINTEND
 
 public:
@@ -38,12 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::PlaytestBeginSessionTransferPayload&
     operator=(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

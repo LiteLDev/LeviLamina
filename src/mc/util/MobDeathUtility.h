@@ -87,15 +87,6 @@ MCNAPI void serverMobTickDeath(
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
 );
 
-MCNAPI void serverSpawnExperience(
-    ::MobDeathWrapper const&                   mobDeath,
-    ::DimensionTypeComponent const&            dimensionType,
-    ::ExperienceRewardComponent const&         experienceReward,
-    ::StateVectorComponent const&              stateVector,
-    ::SpawnExperienceOrbRequestQueueComponent& experienceOrbRequestQueue,
-    ::Optional<::PlayerComponent>              player
-);
-
 MCNAPI void serverTickWitherDie(
     ::WitherBossDeathWrapper&                     witherWrapper,
     ::StrictEntityContext const&                  entity,

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LevelCullerNoneAsync {
+class LevelCullerNoneAsync {
 public:
     // LevelCullerNoneAsync inner types declare
     // clang-format off

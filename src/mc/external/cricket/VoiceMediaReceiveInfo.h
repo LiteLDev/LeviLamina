@@ -8,7 +8,7 @@ struct VoiceMediaReceiveInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfede12;
+    ::ll::UntypedStorage<8, 24> mUnk94680a;
     ::ll::UntypedStorage<8, 16> mUnk33642b;
     ::ll::UntypedStorage<4, 4>  mUnk5af374;
     // NOLINTEND

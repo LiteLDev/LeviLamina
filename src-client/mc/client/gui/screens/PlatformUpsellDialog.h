@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Social { struct User; }
+namespace Social { class User; }
 // clang-format on
 
 class PlatformUpsellDialog {

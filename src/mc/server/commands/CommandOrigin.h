@@ -186,7 +186,7 @@ public:
 
     MCFOLD bool $requiresValidLevel() const;
 
-    MCAPI void $_setUUID(::mce::UUID const& uuid);
+    MCFOLD void $_setUUID(::mce::UUID const& uuid);
 
 
     // NOLINTEND

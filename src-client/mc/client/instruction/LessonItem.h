@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LessonItem {
+class LessonItem {
 public:
     // LessonItem inner types declare
     // clang-format off

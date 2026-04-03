@@ -6,8 +6,8 @@ struct SentryEnvelopePayloadStacktraceFrame {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkfa12e5;
-    ::ll::UntypedStorage<8, 40> mUnk488cb1;
+    ::ll::UntypedStorage<8, 40> mUnkad8632;
+    ::ll::UntypedStorage<8, 40> mUnk736c1e;
     ::ll::UntypedStorage<4, 8>  mUnkfd1560;
     // NOLINTEND
 
@@ -31,3 +31,9 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool
+operator==(::SentryEnvelopePayloadStacktraceFrame const& __P0, ::SentryEnvelopePayloadStacktraceFrame const& __P1);
+// NOLINTEND

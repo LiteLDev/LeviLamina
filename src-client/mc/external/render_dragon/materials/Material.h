@@ -4,6 +4,6 @@
 
 namespace dragon::materials {
 
-struct Material {};
+class Material {};
 
 } // namespace dragon::materials

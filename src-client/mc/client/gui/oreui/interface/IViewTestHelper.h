@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class FunctionalTestApi; }
-namespace OreUI { class SceneInputHandler; }
+namespace OreUI { class ViewInputHandler; }
 // clang-format on
 
 namespace OreUI {
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ::OreUI::FunctionalTestApi& getFunctionalTestApi() = 0;
 
-    virtual ::OreUI::SceneInputHandler& getInputHandler() = 0;
+    virtual ::OreUI::ViewInputHandler& getInputHandler() = 0;
 
     virtual ::OreUI::ViewState getCurrentState() const = 0;
     // NOLINTEND

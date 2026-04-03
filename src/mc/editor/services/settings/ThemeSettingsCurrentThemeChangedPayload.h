@@ -17,7 +17,7 @@ class ThemeSettingsCurrentThemeChangedPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6f01b2;
+    ::ll::UntypedStorage<8, 32> mUnkac1088;
     // NOLINTEND
 
 public:

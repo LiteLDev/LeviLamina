@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 class EntityRegistry;
 class StrictEntityContext;
 struct AttributesComponent;
@@ -27,6 +28,8 @@ MCNAPI_C void extractPackedSnapshot(
     ::StrictEntityContext const& target,
     bool                         removeWhenMissing
 );
+
+MCNAPI_C void tryStoreImmutableDataSnapshotOnEntity(::EntityContext& liveEntity);
 
 MCNAPI_C void unpackImmutableSnapshot(
     ::EntityRegistry&            sourceContext,

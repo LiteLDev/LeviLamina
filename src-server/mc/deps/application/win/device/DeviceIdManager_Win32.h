@@ -5,13 +5,23 @@
 // auto generated inclusion list
 #include "mc/deps/application/device/DeviceIdManager_Common.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { struct DeviceIDPlatformEnvironment; }
+namespace Bedrock { struct DeviceIdEnvironment; }
+// clang-format on
+
 namespace Bedrock {
 
 class DeviceIdManager_Win32 : public ::Bedrock::DeviceIdManager_Common {
 public:
+    // prevent constructor by default
+    DeviceIdManager_Win32();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _initializePlatform(bool const isAnonymous) /*override*/;
+    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment) /*override*/;
 
     virtual ~DeviceIdManager_Win32() /*override*/ = default;
     // NOLINTEND
@@ -19,19 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeviceIdManager_Win32();
+    MCNAPI explicit DeviceIdManager_Win32(::Bedrock::DeviceIdEnvironment&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::Bedrock::DeviceIdEnvironment&&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_initializePlatform(bool const isAnonymous);
+    MCNAPI void $_initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const& environment);
     // NOLINTEND
 
 public:

@@ -36,7 +36,8 @@ public:
         ::mce::MeshData&                            outputMesh,
         ::std::vector<::TessellatorQuadInfo>&       outputFaceInfo,
         ::mce::MeshData const&                      inputMesh,
-        ::std::vector<::TessellatorQuadInfo> const& inputFaceInfo
+        ::std::vector<::TessellatorQuadInfo> const& inputFaceInfo,
+        bool                                        textureShiftsEnabled
     ) const;
 
     MCAPI ~BlockTessellatorPipeline();

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class StrictEntityContext;
 // clang-format on
 
 struct IsSolidMobNearbyComponent {

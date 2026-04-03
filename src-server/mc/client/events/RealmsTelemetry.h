@@ -4,7 +4,7 @@
 
 namespace Social::Events {
 
-struct RealmsTelemetry {
+class RealmsTelemetry {
 public:
     // RealmsTelemetry inner types declare
     // clang-format off

@@ -29,7 +29,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId> mLegacyRequestId;
+    ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId> mLegacyRequestId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>>
                                                                                mLegacySetItemSlots;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ComplexInventoryTransaction>> mTransaction;
@@ -43,7 +43,7 @@ public:
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SessionIdArgumentValidator {};
+class SessionIdArgumentValidator {};

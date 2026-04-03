@@ -21,8 +21,8 @@ class SentryUploadManagerImpl : public ::Bedrock::SentryUploadManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6d8b88;
-    ::ll::UntypedStorage<8, 32> mUnk747b7e;
+    ::ll::UntypedStorage<8, 32> mUnk7943f1;
+    ::ll::UntypedStorage<8, 32> mUnke384dd;
     // NOLINTEND
 
 public:

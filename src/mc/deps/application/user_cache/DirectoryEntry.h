@@ -8,7 +8,7 @@ struct DirectoryEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk52d55b;
+    ::ll::UntypedStorage<8, 32> mUnk1ba14a;
     ::ll::UntypedStorage<8, 8>  mUnk3689d0;
     // NOLINTEND
 

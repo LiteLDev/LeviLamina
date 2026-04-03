@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LevelCullerManhattan {
+class LevelCullerManhattan {
 public:
     // LevelCullerManhattan inner types declare
     // clang-format off

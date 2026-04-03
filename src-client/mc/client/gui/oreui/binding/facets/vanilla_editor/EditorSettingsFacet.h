@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class IClientInstance;
-namespace Editor::Services { class EditorPersistenceServiceV2Provider; }
+namespace Editor::Services { class EditorPersistenceServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
 namespace Editor::Settings { struct ThemePalette; }
 namespace Editor::Settings { struct ThemeProps; }
@@ -70,7 +70,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EditorSettingsFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::Editor::Services::EditorPersistenceServiceV2Provider* _getEditorPersistenceProvider();
+    MCAPI ::Editor::Services::EditorPersistenceServiceProvider* _getEditorPersistenceProvider();
 
     MCAPI ::Editor::Services::EditorSettingsServiceProvider* _getEditorSettingsProvider();
 

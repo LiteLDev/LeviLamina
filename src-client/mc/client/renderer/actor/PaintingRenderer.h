@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PaintingRenderer {
+class PaintingRenderer {
 public:
     // PaintingRenderer inner types declare
     // clang-format off

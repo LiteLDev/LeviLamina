@@ -6,8 +6,8 @@ class ActivationUri {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5b6d24;
-    ::ll::UntypedStorage<8, 64> mUnkfa4f30;
+    ::ll::UntypedStorage<8, 32> mUnk351dee;
+    ::ll::UntypedStorage<8, 64> mUnka02957;
     // NOLINTEND
 
 public:

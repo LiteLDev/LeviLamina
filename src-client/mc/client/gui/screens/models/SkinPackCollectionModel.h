@@ -5,32 +5,32 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/SkinPackCollectionStatus.h"
 #include "mc/client/gui/screens/models/SkinPackModel.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
 class IDlcBatchModel;
+class IEntitlementManager;
 class MainMenuScreenModel;
 class SkinPackCollector;
-struct ContentCatalogService;
-struct IEntitlementManager;
+class SkinRepository;
+class SkinRepositoryClientInterface;
 struct PackIdVersion;
 struct SkinPackCollectionListener;
-struct SkinRepository;
-struct SkinRepositoryClientInterface;
 // clang-format on
 
 class SkinPackCollectionModel {
 public:
     // SkinPackCollectionModel inner types declare
     // clang-format off
-    struct SkinPackCollectionEntitlementChangeListener;
+    class SkinPackCollectionEntitlementChangeListener;
     // clang-format on
 
     // SkinPackCollectionModel inner types define
-    struct SkinPackCollectionEntitlementChangeListener {};
+    class SkinPackCollectionEntitlementChangeListener {};
 
 public:
     // member variables
@@ -49,7 +49,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::SkinPackCollector>>>  mCollectors;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SkinPackModel>>                     mVanillaSkinPack;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SkinPackModel>>>      mSkinPacks;
-    ::ll::TypedStorage<8, 2632, ::SkinPackModel>                                      mInvalidSkinPackModel;
+    ::ll::TypedStorage<8, 2640, ::SkinPackModel>                                      mInvalidSkinPackModel;
     ::ll::TypedStorage<8, 112, ::SkinHandle>                                          mPreviewSkin;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::std::unique_ptr<::IDlcBatchModel>>> mTrackedImports;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SkinPackCollectionModel::SkinPackCollectionEntitlementChangeListener>>
@@ -81,8 +81,6 @@ public:
     MCAPI bool areRecentSkinsDownloading() const;
 
     MCAPI void checkPendingSkinPack();
-
-    MCAPI void equipPreviewSkin(bool withToast);
 
     MCAPI ::SkinHandle getRecentSkinHandleAtIndex(int index);
 

@@ -22,17 +22,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SeatDescription();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SeatDescription(::SeatDescription const&);
-
     MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
-
-    MCAPI ::SeatDescription& operator=(::SeatDescription const&);
 
     MCAPI bool operator==(::SeatDescription const& seat) const;
 
@@ -52,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SeatDescription const&);
+    MCAPI_S void* $ctor(::SeatDescription const&);
     // NOLINTEND
 
 public:

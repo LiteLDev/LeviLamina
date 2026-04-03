@@ -4,6 +4,6 @@
 
 namespace Screenshots {
 
-struct ScreenshotGalleryHttpCall {};
+class ScreenshotGalleryHttpCall {};
 
 } // namespace Screenshots

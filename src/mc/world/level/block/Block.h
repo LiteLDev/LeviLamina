@@ -5,7 +5,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockType.h"
@@ -22,21 +22,21 @@ class BlockPos;
 class BlockSource;
 class BlockState;
 class BlockType;
-class DefinitionTrigger;
 class GetCollisionShapeInterface;
 class HashedString;
 class HitResult;
 class IClientBlockData;
 class IConstBlockSource;
+class IRandom;
 class ItemActor;
 class ItemInstance;
 class ItemStackBase;
 class NeighborBlockDirections;
 class Player;
 class Random;
-class RenderParams;
 class Vec3;
 struct BlockAnimateTickData;
+struct ResourceDropsContext;
 namespace VoxelShapes { class VoxelShape; }
 // clang-format on
 
@@ -92,8 +92,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>             mComponents;
-    ::ll::TypedStorage<2, 2, ushort const>                          mData;
+    ::ll::TypedStorage<8, 80, ::BlockComponentStorage>              mComponents;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>         mBlockType;
     ::ll::TypedStorage<4, 8, ::CachedComponentData>                 mCachedComponentData;
     ::ll::TypedStorage<8, 96, ::BlockComponentDirectData>           mDirectData;
@@ -102,8 +101,9 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                mSerializationIdHash;
     ::ll::TypedStorage<4, 4, uint>                                  mSerializationIdHashForNetwork;
     ::ll::TypedStorage<4, 4, uint>                                  mNetworkId;
-    ::ll::TypedStorage<1, 1, bool>                                  mHasRuntimeId;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IClientBlockData>> mClientData;
+    ::ll::TypedStorage<2, 2, ushort const>                          mData;
+    ::ll::TypedStorage<1, 1, bool>                                  mHasRuntimeId;
     // NOLINTEND
 
 public:
@@ -137,7 +137,9 @@ public:
 
     MCAPI bool canConnect(::Block const& connectionBlock, uchar toOther) const;
 
-    MCAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb) const;
+    MCAPI bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::HitResult clip(
         ::BlockSource const&                               region,
@@ -167,8 +169,6 @@ public:
         ::BlockPos const&    pos,
         ::Actor*             actor
     ) const;
-
-    MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
 
     MCAPI_C void forEachState(::brstd::function_ref<bool(::BlockState const&, int)> callback) const;
 
@@ -219,6 +219,8 @@ public:
 
     MCAPI void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
+    MCAPI void onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
+
     MCAPI void onFallOn(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, float fallDistance) const;
 
     MCAPI void onPlace(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousBlock) const;
@@ -239,6 +241,13 @@ public:
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool shouldRandomTick() const;
+
+    MCAPI void spawnResources(
+        ::BlockSource&                region,
+        ::BlockPos const&             pos,
+        ::IRandom&                    random,
+        ::ResourceDropsContext const& resourceDropsContext
+    ) const;
 
     MCAPI ::std::string toDebugString() const;
 

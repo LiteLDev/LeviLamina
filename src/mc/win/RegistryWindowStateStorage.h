@@ -9,7 +9,7 @@ class RegistryWindowStateStorage : public ::WindowStateStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk659f63;
+    ::ll::UntypedStorage<8, 8> mUnk85aa8b;
     // NOLINTEND
 
 public:

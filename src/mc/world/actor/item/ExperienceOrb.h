@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -54,7 +55,7 @@ public:
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
 
     virtual void doWaterSplashEffect() /*override*/;
 
@@ -104,7 +105,7 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
     MCFOLD void $doWaterSplashEffect();
 

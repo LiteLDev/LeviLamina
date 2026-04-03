@@ -34,9 +34,9 @@ public:
     ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchLength;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchPos;
     ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mBranchChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mTrunkBlockDescriptor;
     ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                 mBranchCanopy;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
     // NOLINTEND
 

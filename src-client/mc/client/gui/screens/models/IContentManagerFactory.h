@@ -13,11 +13,11 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class CachedHostPackIdProvider;
 class CompositePackSource;
 class IContentCatalogPackSource;
 class Pack;
 class PackSource;
-struct CachedHostPackIdProvider;
 struct ContentSource;
 struct InvalidPacksFilterGroup;
 struct InvalidResourceSource;

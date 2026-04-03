@@ -12,10 +12,10 @@
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct CanStandOnSnowFlagComponent;
 struct FallDistanceComponent;
 struct HasLightweightFamilyFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;

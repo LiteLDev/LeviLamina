@@ -24,7 +24,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                              mBreathesWater;
     ::ll::TypedStorage<1, 1, bool>                              mBreathesLava;
     ::ll::TypedStorage<1, 1, bool>                              mBreathesSolids;
-    ::ll::TypedStorage<1, 1, bool>                              mCanDehydrate;
     ::ll::TypedStorage<1, 1, bool>                              mGeneratesBubbles;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBreathableBlocks;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mNonBreathableBlocks;

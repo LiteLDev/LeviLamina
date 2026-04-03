@@ -4,6 +4,6 @@
 
 namespace PurchaseEventing {
 
-struct PurchaseEventingImpl {};
+class PurchaseEventingImpl {};
 
 } // namespace PurchaseEventing

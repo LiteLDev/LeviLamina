@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI::Experimental {
+namespace OreUI {
 
 class AnvilCommandGroup {};
 
-} // namespace OreUI::Experimental
+} // namespace OreUI

@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Progress { struct ProgressTips; }
+namespace Progress { class ProgressTips; }
 // clang-format on
 
 class AuthLoadingMessages {

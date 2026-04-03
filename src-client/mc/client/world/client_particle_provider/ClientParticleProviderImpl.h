@@ -4,6 +4,6 @@
 
 namespace ClientParticleProvider {
 
-struct ClientParticleProviderImpl {};
+class ClientParticleProviderImpl {};
 
 } // namespace ClientParticleProvider

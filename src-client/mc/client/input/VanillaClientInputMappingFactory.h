@@ -52,6 +52,13 @@ public:
 
     MCAPI void _addClassicDPadButtons(::TouchInputMapping& touchMapping, bool sneak, bool jump) const;
 
+    MCAPI void _addCommandMacrosKeyboardAndMouseMapping(
+        ::KeyboardInputMapping& screenKeyboardMapping,
+        ::MouseInputMapping&    screenMouseMapping
+    );
+
+    MCAPI void _addCommandMacrosKeyboardAndMouseMappingChord(::std::vector<::ChordButtonMapping>& result);
+
     MCAPI void _addDebugChords(::std::vector<::ChordButtonMapping>& result);
 
     MCAPI void
@@ -69,6 +76,8 @@ public:
         ::KeyboardInputMapping& normalGamePlayKeyboardMapping,
         ::MouseInputMapping&    normalGamePlayMouseMapping
     );
+
+    MCAPI void _addInvariantGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
 
     MCAPI void _addInvariantGamePlayGameControllerControls(::GameControllerInputMapping& gameControllerMapping);
 

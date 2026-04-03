@@ -27,6 +27,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
 
+    MCAPI bool operator==(::MinEngineVersion const& rhs) const;
+
     MCAPI ~MinEngineVersion();
     // NOLINTEND
 
@@ -34,6 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MinEngineVersion fromString(::std::string const& string);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI_C void* $ctor(::MinEngineVersion const&);
     // NOLINTEND
 
 public:

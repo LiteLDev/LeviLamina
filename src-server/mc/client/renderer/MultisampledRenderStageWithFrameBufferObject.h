@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct MultisampledRenderStageWithFrameBufferObject {};
+class MultisampledRenderStageWithFrameBufferObject {};
 
 } // namespace mce

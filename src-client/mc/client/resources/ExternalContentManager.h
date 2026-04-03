@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ExternalContentManager {
+class ExternalContentManager {
 public:
     // ExternalContentManager inner types declare
     // clang-format off

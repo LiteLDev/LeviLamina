@@ -19,8 +19,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mTitleMessage;
     ::ll::TypedStorage<8, 32, ::std::string> mTelemetryOverride;
     ::ll::TypedStorage<8, 32, ::std::string> mDisconnectString;
-    ::ll::TypedStorage<1, 1, bool const>     mLeaveGame;
-    ::ll::TypedStorage<1, 1, bool const>     mIsSubClient;
     ::ll::TypedStorage<1, 1, bool>           mShowAccountSettingUriButton;
     // NOLINTEND
 
@@ -53,9 +51,7 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleMessage,
         ::std::string const&                      displayMessage,
-        ::std::string const&                      telemetryOverride,
-        bool                                      leaveGame,
-        bool                                      isSubClient
+        ::std::string const&                      telemetryOverride
     );
     // NOLINTEND
 
@@ -66,9 +62,7 @@ public:
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleMessage,
         ::std::string const&                      displayMessage,
-        ::std::string const&                      telemetryOverride,
-        bool                                      leaveGame,
-        bool                                      isSubClient
+        ::std::string const&                      telemetryOverride
     );
     // NOLINTEND
 
@@ -85,7 +79,7 @@ public:
 
     MCAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCFOLD ::std::string $getTelemetryOverride() const;
+    MCAPI ::std::string $getTelemetryOverride() const;
 
     MCFOLD ::ui::SceneType $getSceneType() const;
 

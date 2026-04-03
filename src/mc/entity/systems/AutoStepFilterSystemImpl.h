@@ -10,6 +10,7 @@
 // clang-format off
 class StrictEntityContext;
 struct AutoStepRequestFlagComponent;
+struct CanAlwaysAutoStepFlagComponent;
 struct MaxAutoStepComponent;
 struct MoveRequestComponent;
 struct MovementAbilitiesComponent;
@@ -20,12 +21,13 @@ namespace AutoStepFilterSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void doAutoStepFilterSystem(
-    ::StrictEntityContext const&                     context,
-    ::MoveRequestComponent const&                    moveRequestComponent,
-    ::MaxAutoStepComponent const&                    maxAutoStepComponent,
-    ::Optional<::OnGroundFlagComponent const>        onGroundFlagComponent,
-    ::Optional<::MovementAbilitiesComponent const>   abilitiesComponent,
-    ::EntityModifier<::AutoStepRequestFlagComponent> mod
+    ::StrictEntityContext const&                                                       context,
+    ::MoveRequestComponent const&                                                      moveRequestComponent,
+    ::MaxAutoStepComponent const&                                                      maxAutoStepComponent,
+    ::Optional<::OnGroundFlagComponent const>                                          onGroundFlagComponent,
+    ::Optional<::MovementAbilitiesComponent const>                                     movementAbilitiesComponent,
+    ::Optional<::CanAlwaysAutoStepFlagComponent const>                                 canAlwaysAutoStepFlagComponent,
+    ::EntityModifier<::AutoStepRequestFlagComponent, ::CanAlwaysAutoStepFlagComponent> mod
 );
 // NOLINTEND
 

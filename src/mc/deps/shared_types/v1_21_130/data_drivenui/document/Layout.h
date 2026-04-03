@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_130::DataDrivenUI { struct Container; }
+namespace SharedTypes::v1_21_130::DataDrivenUI { struct ContainerLayout; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Context; }
 namespace SharedTypes::v1_21_130::DataDrivenUI { struct Panel; }
 namespace cereal { struct ReflectionCtx; }
@@ -20,10 +20,16 @@ public:
         8,
         24,
         ::std::vector<::std::variant<
-            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Container>,
+            ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::ContainerLayout>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Context>,
             ::std::shared_ptr<::SharedTypes::v1_21_130::DataDrivenUI::Panel>>>>
         mMarkup;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~Layout();
     // NOLINTEND
 
 public:
@@ -36,6 +42,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& NAME();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

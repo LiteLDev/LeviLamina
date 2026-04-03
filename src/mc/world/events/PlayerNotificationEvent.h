@@ -49,6 +49,7 @@ struct PlayerAddLevelEvent;
 struct PlayerArmorExchangeEvent;
 struct PlayerCloseContainerEvent;
 struct PlayerDamageEvent;
+struct PlayerDataDrivenScreenClosedEvent;
 struct PlayerDestroyBlockEvent;
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerDimensionChangeBeforeEvent;
@@ -60,6 +61,7 @@ struct PlayerFormCloseEvent;
 struct PlayerFormResponseEvent;
 struct PlayerGameModeChangeEvent;
 struct PlayerGetExperienceOrbEvent;
+struct PlayerHasInvalidContainerEvent;
 struct PlayerHotbarSelectedSlotChangeEvent;
 struct PlayerInitialSpawnEvent;
 struct PlayerInputModeChangeEvent;
@@ -98,10 +100,12 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerDisconnectEvent const,
                                      ::PlayerFormCloseEvent const,
                                      ::PlayerFormResponseEvent const,
+                                     ::PlayerDataDrivenScreenClosedEvent const,
                                      ::PlayerInputModeChangeEvent const,
                                      ::PlayerInitialSpawnEvent const,
                                      ::PlayerOpenContainerEvent const,
                                      ::PlayerCloseContainerEvent const,
+                                     ::PlayerHasInvalidContainerEvent const,
                                      ::PlayerShootArrowEvent const,
                                      ::PlayerSwingStartEvent const,
                                      ::PlayerRespawnEvent const,

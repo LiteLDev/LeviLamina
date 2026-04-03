@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct Flatten {};
+class Flatten {};
 
 } // namespace Editor::ClientBrush

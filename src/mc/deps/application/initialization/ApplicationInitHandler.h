@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class DeviceIdManager; }
+// clang-format on
+
 namespace Bedrock {
 
 class ApplicationInitHandler {
@@ -44,11 +49,17 @@ public:
     virtual ::Bedrock::ApplicationInitHandler::InstallCrashHandlerResult onInstallCrashHandler() = 0;
 
     virtual void onShutdownCompleted() = 0;
+
+    virtual ::std::unique_ptr<::Bedrock::DeviceIdManager> createDeviceIdManager();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::std::unique_ptr<::Bedrock::DeviceIdManager> $createDeviceIdManager();
+#endif
+
 
     // NOLINTEND
 };

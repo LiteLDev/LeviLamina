@@ -8,7 +8,7 @@ class Properties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2f3c59;
+    ::ll::UntypedStorage<8, 24> mUnkd1b489;
     // NOLINTEND
 
 public:

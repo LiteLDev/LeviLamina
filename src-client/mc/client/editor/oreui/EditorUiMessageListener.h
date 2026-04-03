@@ -4,6 +4,6 @@
 
 namespace OreUI {
 
-struct EditorUiMessageListener {};
+class EditorUiMessageListener {};
 
 } // namespace OreUI

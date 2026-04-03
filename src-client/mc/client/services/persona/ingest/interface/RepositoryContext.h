@@ -4,6 +4,6 @@
 
 namespace persona::ingest {
 
-struct RepositoryContext {};
+class RepositoryContext {};
 
 } // namespace persona::ingest

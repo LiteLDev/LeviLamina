@@ -27,7 +27,7 @@ class ItemStack : public ::ItemStackBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant> mNetIdVariant;
     // NOLINTEND
 
 public:

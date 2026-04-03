@@ -20,6 +20,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getHash() const;
+
+    MCFOLD_C ::std::string toString() const;
     // NOLINTEND
 
 public:

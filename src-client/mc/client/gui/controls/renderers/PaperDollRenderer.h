@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/platform/UUID.h"
 #include "mc/util/MolangVariableMap.h"
 
@@ -11,7 +12,6 @@
 // clang-format off
 class ActorAnimationGroup;
 class AnimationComponent;
-class HashedString;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class SerializedSkinRef;

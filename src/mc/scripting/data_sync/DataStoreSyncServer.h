@@ -16,7 +16,7 @@ class DataStoreSyncServer : public ::Bedrock::DDUI::DataStoreSync {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk501a09;
+    ::ll::UntypedStorage<8, 64> mUnk6ca290;
     // NOLINTEND
 
 public:
@@ -46,18 +46,14 @@ public:
         ::std::string const& path
     );
 
+    MCNAPI void clearAll(bool addToOutgoingChanges);
+
     MCNAPI void setPropertyUpdateAllowed(
         ::std::string const& dataStoreName,
         ::std::string const& propertyName,
         ::std::string const& path,
         bool                 value
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
     // NOLINTEND
 
 public:

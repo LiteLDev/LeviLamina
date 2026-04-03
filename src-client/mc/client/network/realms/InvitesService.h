@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct InvitesService {};
+class InvitesService {};
 
 } // namespace Realms

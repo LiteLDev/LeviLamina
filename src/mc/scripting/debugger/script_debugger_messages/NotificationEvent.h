@@ -8,9 +8,9 @@ struct NotificationEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke7838c;
+    ::ll::UntypedStorage<8, 32> mUnk3158cd;
     ::ll::UntypedStorage<4, 4>  mUnk4af042;
-    ::ll::UntypedStorage<8, 32> mUnk9b4639;
+    ::ll::UntypedStorage<8, 32> mUnk3062cf;
     // NOLINTEND
 
 public:

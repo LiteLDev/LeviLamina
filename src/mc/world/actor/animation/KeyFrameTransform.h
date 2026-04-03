@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/animation/BoneTransformType.h"
 #include "mc/world/actor/animation/KeyFrameLerpMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class BoneOrientation;
 class ExpressionNode;
 class KeyFrameTransformData;
-class RenderParams;
 class Vec3;
 // clang-format on
 
@@ -33,20 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void animate(
-        ::RenderParams&     renderParams,
-        ::BoneOrientation&  destBoneOrientation,
-        float               scale,
-        ::BoneTransformType boneTransformType
-    ) const;
-
     MCAPI ::KeyFrameTransform& operator=(::KeyFrameTransform&&);
-
-    MCAPI bool optimizeAndGetDataValues(::Vec3& minValue, ::Vec3& maxValue);
 
     MCAPI void set(::ExpressionNode const& expression);
 
-    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+    MCAPI_S void set(::ExpressionNode const& expression, ::Vec3 const& axis);
 
     MCAPI void set(::ExpressionNode const& expression, int axisIndex);
 

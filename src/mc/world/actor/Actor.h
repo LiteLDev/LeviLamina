@@ -49,6 +49,7 @@ class ActorDamageSource;
 class ActorDefinitionDescriptor;
 class ActorDefinitionDiffList;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class ActorInteraction;
 class ActorRuntimeID;
 class AnimationComponent;
@@ -69,6 +70,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ILevel;
 class IOptionsReader;
+class InteractionResult;
 class ItemActor;
 class ItemDescriptor;
 class ItemStack;
@@ -94,7 +96,6 @@ struct ActorDefinitionIdentifier;
 struct ActorLink;
 struct DistanceSortedActor;
 struct EquipmentTable;
-struct InterpolationPair;
 namespace Bedrock::Safety { class RedactableString; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
 namespace VehicleUtils { struct VehicleRootInfo; }
@@ -347,8 +348,6 @@ public:
 
     virtual bool canShowNameTag() const;
 
-    virtual ::std::string getFormattedNameTag() const;
-
     virtual ::mce::Color getNameTagTextColor() const;
 
     virtual float getShadowRadius() const;
@@ -387,7 +386,7 @@ public:
 
     virtual bool isValidTarget(::Actor*) const;
 
-    virtual bool attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
+    virtual ::ActorHurtResult attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
 
     virtual void performRangedAttack(::Actor& target, float);
 
@@ -413,7 +412,7 @@ public:
 
     virtual ::SharedTypes::Legacy::ActorDamageCause getBlockDamageCause(::Block const& block) const;
 
-    virtual bool doFireHurt(int amount);
+    virtual ::ActorHurtResult doFireHurt(int amount);
 
     virtual void onLightningHit();
 
@@ -517,13 +516,13 @@ public:
 
     virtual bool drop(::ItemStack const& item, bool const randomly);
 
-    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
+    virtual ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
 
     virtual bool canDestroyBlock(::Block const&) const;
 
     virtual void setAuxValue(int);
 
-    virtual void renderDebugServerState(::IOptionsReader const&);
+    virtual void renderDebugServerState(::IOptionsReader const& options);
 
     virtual void kill();
 
@@ -554,7 +553,7 @@ public:
 
     virtual bool _shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -607,6 +606,8 @@ public:
 
     MCAPI void _syncTickCountIfAnimationComponentShared();
 
+    MCAPI bool _tryApplyDye(::Player& player, ::ItemStack const& dyeItem, ::ActorInteraction& interaction);
+
     MCAPI void _tryPlantWitherRose();
 
     MCAPI void _updateComposition(bool reload);
@@ -625,11 +626,9 @@ public:
 
     MCAPI bool canBeginOrContinueClimbingLadder() const;
 
-    MCAPI bool canCurrentlySwim() const;
+    MCAPI_S bool canCurrentlySwim() const;
 
     MCAPI bool canFly() const;
-
-    MCAPI bool canMate(::Actor const& partner) const;
 
     MCAPI bool canReceiveMobEffectsFromGameplay() const;
 
@@ -711,8 +710,6 @@ public:
 
     MCAPI ::ItemStack const& getEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
 
-    MCAPI ::Vec3 getEyePos() const;
-
     MCAPI float getFallDistance() const;
 
     MCAPI ::Actor* getFirstPassenger() const;
@@ -732,6 +729,8 @@ public:
     MCAPI ::Player* getLastHurtByPlayer();
 
     MCAPI ::ActorUniqueID getLeashHolder() const;
+
+    MCAPI uint64 getLevelTimeStamp() const;
 
     MCAPI ::std::vector<::ActorLink> getLinks() const;
 
@@ -758,8 +757,6 @@ public:
     MCFOLD ::ActorUniqueID const getOwnerId() const;
 
     MCAPI int getPassengerIndex(::Actor const& passenger) const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> getPersistingTradeOffers();
 
     MCAPI ::Player* getPlayerOwner() const;
 
@@ -799,8 +796,6 @@ public:
 
     MCAPI ::WeakRef<::EntityContext> const getWeakEntity() const;
 
-    MCAPI_C ::InterpolationPair getYHeadRotationsNewOld() const;
-
     MCAPI void handleFallDamage(float fallDistance, float multiplier, ::ActorDamageSource source);
 
     MCAPI void handleLeftoverFallDamage(float damage, ::ActorDamageSource source);
@@ -825,7 +820,7 @@ public:
 
     MCAPI void heal(int heal);
 
-    MCAPI bool hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI bool inDownwardFlowingLiquid() const;
 
@@ -837,8 +832,6 @@ public:
     MCAPI bool isAdventure() const;
 
     MCAPI bool isAttackableGamemode() const;
-
-    MCAPI bool isAutonomous() const;
 
     MCAPI bool isBaby() const;
 
@@ -868,31 +861,23 @@ public:
 
     MCAPI bool isInThunderstorm() const;
 
-    MCAPI bool isInWater() const;
+    MCAPI_C bool isInWater() const;
 
     MCAPI bool isInWaterOrRain() const;
 
     MCAPI bool isInWorld() const;
 
-    MCAPI bool isInvertedHealAndHarm() const;
-
-    MCAPI bool isJumping() const;
-
     MCAPI bool isLeashed() const;
 
-    MCFOLD bool isLocalPlayer() const;
+    MCAPI_C bool isLocalPlayer() const;
 
     MCAPI bool isOverWater() const;
 
     MCAPI bool isPassenger(::Actor const& passenger) const;
 
-    MCAPI bool isPersistent() const;
+    MCAPI_C bool isPlayer() const;
 
-    MCFOLD bool isPlayer() const;
-
-    MCAPI bool isPowered() const;
-
-    MCAPI bool isRemotePlayer() const;
+    MCAPI_S bool isRemotePlayer() const;
 
     MCAPI bool isRiding() const;
 
@@ -918,7 +903,7 @@ public:
 
     MCAPI bool isTrading() const;
 
-    MCAPI bool isType(::ActorType type) const;
+    MCAPI_C bool isType(::ActorType type) const;
 
     MCAPI bool isUnderLiquid(::MaterialType type) const;
 
@@ -1057,8 +1042,6 @@ public:
 
     MCAPI void setTradingPlayer(::Player* player);
 
-    MCAPI_C void setUIRendering(bool isInUI);
-
     MCAPI_C void setUniqueID(::ActorUniqueID id);
 
     MCFOLD void setVariant(int value);
@@ -1068,6 +1051,8 @@ public:
     MCAPI bool shouldOrphan(::BlockSource& source);
 
     MCAPI bool shouldRender() const;
+
+    MCAPI bool shouldTick() const;
 
     MCAPI ::ItemActor* spawnAtLocation(::ItemStack const& item, float yOffs);
 
@@ -1217,17 +1202,11 @@ public:
 
     MCAPI void $addPassenger(::Actor& passenger);
 
-#ifdef LL_PLAT_S
-    MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
-#endif
-
     MCAPI ::std::string $getEntityLocNameString() const;
 
     MCAPI bool $isInvisible() const;
 
     MCAPI bool $canShowNameTag() const;
-
-    MCAPI ::std::string $getFormattedNameTag() const;
 
     MCFOLD ::mce::Color $getNameTagTextColor() const;
 
@@ -1257,7 +1236,7 @@ public:
 
     MCFOLD bool $isAlive() const;
 
-    MCFOLD bool $isOnFire() const;
+    MCAPI bool $isOnFire() const;
 
     MCFOLD bool $isSurfaceMob() const;
 
@@ -1267,9 +1246,7 @@ public:
 
     MCFOLD bool $isValidTarget(::Actor*) const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
-#endif
+    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
 
     MCAPI void $performRangedAttack(::Actor& target, float);
 
@@ -1293,11 +1270,9 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::SharedTypes::Legacy::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
-#endif
 
-    MCAPI bool $doFireHurt(int amount);
+    MCAPI ::ActorHurtResult $doFireHurt(int amount);
 
     MCAPI void $onLightningHit();
 
@@ -1401,13 +1376,13 @@ public:
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
+    MCAPI ::InteractionResult $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
 
     MCFOLD bool $canDestroyBlock(::Block const&) const;
 
     MCFOLD void $setAuxValue(int);
 
-    MCFOLD void $renderDebugServerState(::IOptionsReader const&);
+    MCFOLD void $renderDebugServerState(::IOptionsReader const& options);
 
     MCAPI void $kill();
 
@@ -1438,11 +1413,15 @@ public:
 
     MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+#endif
 
 
     // NOLINTEND

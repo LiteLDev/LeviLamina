@@ -44,12 +44,14 @@ class BookEditPacket;
 class BookSignPacket;
 class BookSwapPagesPacket;
 class BossEventPacket;
+class CameraAimAssistActorPriorityPacket;
 class CameraAimAssistPacket;
 class CameraAimAssistPresetsPacket;
 class CameraInstructionPacket;
 class CameraPacket;
 class CameraPresetsPacket;
 class CameraShakePacket;
+class CameraSplinePacket;
 class ChangeDimensionPacket;
 class ChangeMobPropertyPacket;
 class ChunkRadiusUpdatedPacket;
@@ -59,11 +61,16 @@ class ClientCacheStatusPacket;
 class ClientCameraAimAssistPacket;
 class ClientMovementPredictionSyncPacket;
 class ClientToServerHandshakePacket;
+class ClientboundAttributeLayerSyncPacket;
 class ClientboundCloseFormPacket;
 class ClientboundControlSchemeSetPacket;
+class ClientboundDataDrivenUICloseScreenPacket;
+class ClientboundDataDrivenUIReloadPacket;
+class ClientboundDataDrivenUIShowScreenPacket;
 class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
+class ClientboundTextureShiftPacket;
 class CodeBuilderPacket;
 class CodeBuilderSourcePacket;
 class CommandBlockUpdatePacket;
@@ -115,6 +122,7 @@ class LevelChunkPacket;
 class LevelEventGenericPacket;
 class LevelEventPacket;
 class LevelSoundEventPacket;
+class LocatorBarPacket;
 class LoginPacket;
 class MapCreateLockedCopyPacket;
 class MapInfoRequestPacket;
@@ -139,6 +147,7 @@ class OnScreenTextureAnimationPacket;
 class OpenSignPacket;
 class Packet;
 class PacketViolationWarningPacket;
+class PartyChangedPacket;
 class PhotoTransferPacket;
 class PlaySoundPacket;
 class PlayStatusPacket;
@@ -173,6 +182,7 @@ class ResourcePackClientResponsePacket;
 class ResourcePackDataInfoPacket;
 class ResourcePackStackPacket;
 class ResourcePacksInfoPacket;
+class ResourcePacksReadyForValidationPacket;
 class RespawnPacket;
 class ScriptMessagePacket;
 class ServerPlayerPostMovePositionPacket;
@@ -180,6 +190,7 @@ class ServerSettingsRequestPacket;
 class ServerSettingsResponsePacket;
 class ServerStatsPacket;
 class ServerToClientHandshakePacket;
+class ServerboundDataDrivenScreenClosedPacket;
 class ServerboundDataStorePacket;
 class ServerboundDiagnosticsPacket;
 class ServerboundLoadingScreenPacket;
@@ -219,6 +230,7 @@ class SubChunkPacket;
 class SubChunkRequestPacket;
 class SubClientLoginPacket;
 class SyncActorPropertyPacket;
+class SyncWorldClocksPacket;
 class TakeItemActorPacket;
 class TextPacket;
 class TickingAreasLoadStatusPacket;
@@ -238,6 +250,7 @@ class UpdatePlayerGameTypePacket;
 class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
+class VoxelShapesPacket;
 struct NetworkIdentifierWithSubId;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -252,7 +265,7 @@ public:
 
     virtual void onConnect(::NetworkIdentifier const&);
 
-    virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&);
+    virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&);
 
     virtual void onTick();
 
@@ -266,7 +279,8 @@ public:
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
         ::Connection::DisconnectionStage const,
-        ::std::string const& message,
+        ::std::string const& messageFromServer,
+        ::std::string const& messageBodyOverride,
         bool                 skipMessage,
         ::std::string const& telemetryOverride
     );
@@ -315,6 +329,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::EmotePacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::LoginPacket>);
+
+    virtual void handle(::NetworkIdentifier const&, ::PartyChangedPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::SubClientLoginPacket>);
 
@@ -494,6 +510,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
 
+    virtual void handle(::NetworkIdentifier const&, ::VoxelShapesPacket const&);
+
     virtual void handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
@@ -505,6 +523,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::CommandBlockUpdatePacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
 
@@ -520,6 +540,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::CameraShakePacket const&);
 
+    virtual void handle(::NetworkIdentifier const&, ::CameraSplinePacket const&);
+
     virtual void handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
@@ -529,6 +551,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkRequestPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePacksReadyForValidationPacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const&);
 
@@ -734,6 +758,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::DebugDrawerPacket const&);
 
+    virtual void handle(::NetworkIdentifier const&, ::LocatorBarPacket const&);
+
     virtual void handle(::NetworkIdentifier const&, ::ServerboundPackSettingChangePacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::ServerboundDataStorePacket const&);
@@ -741,6 +767,20 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const&);
 
     virtual void handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ServerboundDataDrivenScreenClosedPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const&);
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const&);
     // NOLINTEND
 
 public:
@@ -756,13 +796,15 @@ public:
 
     MCFOLD void $onConnect(::NetworkIdentifier const&);
 
-    MCFOLD void $onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&);
+    MCFOLD void $onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&);
 
     MCFOLD void $onTick();
 
+#ifdef LL_PLAT_S
     MCFOLD void $onOutgoingPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
 
     MCFOLD void $onValidPacketReceived(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
+#endif
 
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const, ::std::string const& offerID);
 
@@ -770,25 +812,15 @@ public:
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
         ::Connection::DisconnectionStage const,
-        ::std::string const& message,
+        ::std::string const& messageFromServer,
+        ::std::string const& messageBodyOverride,
         bool                 skipMessage,
         ::std::string const& telemetryOverride
     );
 
     MCFOLD void $onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
 
-    MCFOLD void $handlePacketViolation(
-        ::std::shared_ptr<::IPacketSecurityController> const&,
-        ::std::error_code const&,
-        ::PacketViolationResponse const,
-        ::MinecraftPacketIds const,
-        ::std::string&&,
-        ::NetworkIdentifier const&,
-        ::SubClientId const,
-        ::SubClientId const,
-        uint const
-    );
-
+#ifdef LL_PLAT_S
     MCFOLD void $sendPacketViolationWarningPacket(
         ::std::error_code const&,
         ::PacketViolationResponse,
@@ -797,6 +829,7 @@ public:
         ::NetworkIdentifier const&,
         ::SubClientId
     );
+#endif
 
     MCFOLD void $onTransferRequest(::NetworkIdentifier const&, ::Social::GameConnectionInfo const&);
 
@@ -813,6 +846,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::EmotePacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::LoginPacket>);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::PartyChangedPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::SubClientLoginPacket>);
 
@@ -992,6 +1027,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::VoxelShapesPacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
@@ -1003,6 +1040,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::CommandBlockUpdatePacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
 
@@ -1018,6 +1057,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::CameraShakePacket const&);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::CameraSplinePacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
@@ -1027,6 +1068,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackChunkRequestPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePacksReadyForValidationPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const&);
 
@@ -1232,6 +1275,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::DebugDrawerPacket const&);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::LocatorBarPacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerboundPackSettingChangePacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ServerboundDataStorePacket const&);
@@ -1239,6 +1284,20 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ServerboundDataDrivenScreenClosedPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const&);
 
 
     // NOLINTEND

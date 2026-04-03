@@ -47,10 +47,10 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk1bd645;
     ::ll::UntypedStorage<8, 8>   mUnk833228;
     ::ll::UntypedStorage<4, 8>   mUnk578608;
-    ::ll::UntypedStorage<8, 8>   mUnka39a8a;
-    ::ll::UntypedStorage<8, 16>  mUnk128197;
+    ::ll::UntypedStorage<8, 8>   mUnk989b2c;
+    ::ll::UntypedStorage<8, 16>  mUnke8e2bf;
     ::ll::UntypedStorage<8, 216> mUnke7eec4;
-    ::ll::UntypedStorage<8, 16>  mUnkd82181;
+    ::ll::UntypedStorage<8, 16>  mUnkd38fdf;
     ::ll::UntypedStorage<4, 4>   mUnk889ecb;
     ::ll::UntypedStorage<4, 4>   mUnkd4aecc;
     ::ll::UntypedStorage<4, 24>  mUnk5b0730;

@@ -31,6 +31,8 @@ MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const&
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
 
+MCNAPI_C ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
+
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getSystemServicePackPath(::AppPlatform const& platform);
@@ -43,6 +45,8 @@ MCNAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath(::
 // static variables
 // NOLINTBEGIN
 MCNAPI ::std::string const& BEHAVIOR_PACK_PATH();
+
+MCNAPI ::std::string const& CUSTOM_SKIN_CACHE_PATH();
 
 MCNAPI ::std::string const& DEVELOPMENT_BEHAVIOR_PACKS_PATH();
 

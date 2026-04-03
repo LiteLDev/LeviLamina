@@ -11,7 +11,6 @@
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal::ext::internal { struct OutRefsMap; }
-namespace cereal::internal { struct SchemaInfo; }
 // clang-format on
 
 namespace cereal::ext::internal {
@@ -26,8 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);
-
-    MCNAPI explicit JSONSchemaDef(::cereal::internal::SchemaInfo const& info);
 
     MCNAPI JSONSchemaDef(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
 
@@ -49,8 +46,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaDef const&);
-
-    MCNAPI void* $ctor(::cereal::internal::SchemaInfo const& info);
 
     MCNAPI void* $ctor(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
     // NOLINTEND

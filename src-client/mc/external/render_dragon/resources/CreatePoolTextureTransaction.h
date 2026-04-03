@@ -4,6 +4,6 @@
 
 namespace dragon::res {
 
-struct CreatePoolTextureTransaction {};
+class CreatePoolTextureTransaction {};
 
 } // namespace dragon::res

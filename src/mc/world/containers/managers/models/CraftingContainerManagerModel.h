@@ -33,7 +33,7 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                          mBlockPos;
     ::ll::TypedStorage<1, 1, bool>                                 mWorkbench;
     ::ll::TypedStorage<1, 1, bool>                                 mPocket;
-    ::ll::TypedStorage<1, 1, bool>                                 mFiltering;
+    ::ll::TypedStorage<1, 1, bool>                                 mCraftableFilterOn;
     ::ll::TypedStorage<8, 32, ::std::string>                       mSearchString;
     ::ll::TypedStorage<8, 32, ::std::string>                       mCaseFoldedSearchString;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mInventoryContainerModel;
@@ -85,9 +85,9 @@ public:
     );
 
     MCAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
-        ::ContainerEnumName                  containerEnumName,
-        ::std::vector<::ItemInstance> const& itemInstanceVector,
-        bool,
+        ::ContainerEnumName                                          containerEnumName,
+        ::std::vector<::ItemInstance> const&                         itemInstanceVector,
+        bool                                                         doExpando,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
@@ -107,7 +107,7 @@ public:
 
     MCAPI_C bool hasIngredientSetChanged(::ItemStack const& inHand);
 
-    MCAPI_C void setIsFiltering(bool filtering);
+    MCAPI_C void setIsFiltering(bool craftableFilterOn);
 
     MCAPI_C void setSearchString(::std::string const& searchString);
     // NOLINTEND
@@ -120,7 +120,7 @@ public:
         ::Player&            player,
         bool                 workbench,
         bool                 pocket,
-        bool                 filtering,
+        bool                 craftableFilterOn,
         ::BlockPos const&    pos,
         ::std::string const& inventorySearch
     );

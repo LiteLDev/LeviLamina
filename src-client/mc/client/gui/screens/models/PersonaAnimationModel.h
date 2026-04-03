@@ -9,11 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class IPersonaRepository;
+class IStoreCatalogItem;
 class PersonaPiece;
 class UIPropertyBag;
-struct IPersonaRepository;
-struct IStoreCatalogItem;
-namespace persona { struct PieceOfferWrapper; }
+namespace persona { class PieceOfferWrapper; }
 // clang-format on
 
 class PersonaAnimationModel {

@@ -6,8 +6,8 @@ struct PackMaps {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd9bc9f;
-    ::ll::UntypedStorage<8, 64> mUnk937677;
+    ::ll::UntypedStorage<8, 64> mUnk81712c;
+    ::ll::UntypedStorage<8, 64> mUnk73a8f7;
     // NOLINTEND
 
 public:

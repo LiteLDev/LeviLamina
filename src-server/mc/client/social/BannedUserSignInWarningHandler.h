@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct BannedUserSignInWarningHandler {};
+class BannedUserSignInWarningHandler {};
 
 } // namespace Social

@@ -18,7 +18,7 @@ class Tmmbn : public ::webrtc::rtcp::Rtpfb {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6c8f5d;
+    ::ll::UntypedStorage<8, 24> mUnk7e45fc;
     // NOLINTEND
 
 public:

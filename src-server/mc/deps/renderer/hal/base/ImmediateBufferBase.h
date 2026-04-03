@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ImmediateBufferBase {};
+class ImmediateBufferBase {};
 
 } // namespace mce

@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GuiScaleDataProvider {};
+namespace Settings {
+
+class GuiScaleDataProvider {};
+
+} // namespace Settings

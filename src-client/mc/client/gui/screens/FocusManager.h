@@ -75,6 +75,8 @@ public:
 
     MCAPI bool _handleFocusContainerLogic(::ui::CardinalDirection direction, ::std::shared_ptr<::UIControl> toControl);
 
+    MCAPI bool _passesParentClipping(::std::shared_ptr<::UIControl> const& control, ::glm::vec2 const& checkPos);
+
     MCAPI void _setFocusControlFromIndex(int focusControlIndex, bool overrideLastFocus);
 
     MCAPI void _setFocusControlFromWeakPtr(::std::weak_ptr<::UIControl> control);
@@ -103,6 +105,8 @@ public:
 
     MCAPI void
     _sweepToNextFocusObject(::ui::CardinalDirection direction, bool overrideOrigin, ::glm::vec2 const& overridePos);
+
+    MCAPI bool _trySetLastGoodFocus(::std::shared_ptr<::UIControl> oldFocusedControl);
 
     MCAPI void _updateFocusContainer(
         ::std::weak_ptr<::UIControl> oldFocusedControl,

@@ -15,14 +15,13 @@ class TextObjectRoot : public ::ITextObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk76d2b9;
+    ::ll::UntypedStorage<8, 24> mUnk59ae9c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     TextObjectRoot& operator=(TextObjectRoot const&);
     TextObjectRoot(TextObjectRoot const&);
-    TextObjectRoot();
 
 public:
     // virtual functions
@@ -39,7 +38,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI TextObjectRoot();
+
     MCNAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

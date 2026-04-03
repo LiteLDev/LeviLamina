@@ -21,12 +21,12 @@ class FlipbookTexture {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk3e10d2;
+    ::ll::UntypedStorage<8, 24>  mUnkbca3d9;
     ::ll::UntypedStorage<8, 88>  mUnkba2b97;
     ::ll::UntypedStorage<4, 4>   mUnk3e9001;
     ::ll::UntypedStorage<8, 32>  mUnk662201;
     ::ll::UntypedStorage<8, 16>  mUnk31f342;
-    ::ll::UntypedStorage<8, 8>   mUnkc8f59e;
+    ::ll::UntypedStorage<8, 8>   mUnk5e4cdc;
     ::ll::UntypedStorage<8, 528> mUnk3657f7;
     ::ll::UntypedStorage<8, 56>  mUnk350955;
     ::ll::UntypedStorage<4, 4>   mUnkdd2ba5;

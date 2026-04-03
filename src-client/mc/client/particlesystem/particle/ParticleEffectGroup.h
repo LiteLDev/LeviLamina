@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
@@ -10,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class IMinecraftEventing;
 class LinkedAssetValidator;
 class MinEngineVersion;
@@ -35,7 +35,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::ParticleEffectInfo>>>
                                                            mParticleEffectInfos;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mParticleEffectInfoLock;
-    ::ll::TypedStorage<8, 232, ::Bedrock::Resources::CategoryLoader<::ParticleSystem::ParticleEffectLoaderTraits>>
+    ::ll::TypedStorage<8, 264, ::Bedrock::Resources::CategoryLoader<::ParticleSystem::ParticleEffectLoaderTraits>>
                                                     mLoader;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
     // NOLINTEND

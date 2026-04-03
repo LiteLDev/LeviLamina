@@ -32,16 +32,6 @@ public:
 
     MCAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool const& ALLOW_UNDERWATER_DEFAULT();
-
-    MCAPI static bool const& BREAKS_BLOCKS_DEFAULT();
-
-    MCAPI static bool const& CAUSES_FIRE_DEFAULT();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

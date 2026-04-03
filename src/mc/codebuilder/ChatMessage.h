@@ -8,10 +8,10 @@ struct ChatMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6a4db7;
-    ::ll::UntypedStorage<8, 32> mUnk736701;
-    ::ll::UntypedStorage<8, 32> mUnk931b6a;
-    ::ll::UntypedStorage<8, 32> mUnkf59595;
+    ::ll::UntypedStorage<8, 32> mUnk1e10fb;
+    ::ll::UntypedStorage<8, 32> mUnkdc9074;
+    ::ll::UntypedStorage<8, 32> mUnka490a2;
+    ::ll::UntypedStorage<8, 32> mUnk8af4dc;
     // NOLINTEND
 
 public:

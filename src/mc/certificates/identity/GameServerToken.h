@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/WebToken.h"
+#include "mc/deps/certificates/certificates/WebToken.h"
 #include "mc/options/DiscoveryEnvironment.h"
 
 // auto generated forward declare list
@@ -12,6 +12,7 @@ class MinecraftServiceKeyManager;
 class PrivateKeyManager;
 struct PlayerAuthenticationInfo;
 struct RawGameServerToken;
+namespace mce { class UUID; }
 // clang-format on
 
 class GameServerToken {
@@ -28,9 +29,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::DiscoveryEnvironment> getIssuerEnvironment() const;
 
+    MCAPI ::mce::UUID getLegacyUuid() const;
+
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo() const;
 
-    MCAPI ::std::string getXuid(bool trustSelfSigned) const;
+    MCAPI ::std::string getXuid() const;
 
     MCAPI ~GameServerToken();
     // NOLINTEND
@@ -48,9 +51,9 @@ public:
     MCAPI static bool _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
 
     MCAPI static ::GameServerToken
-    createAndValidateSelfSigned(::RawGameServerToken const& rawToken, bool checkExpiration);
+    createAndValidateSelfSigned(::RawGameServerToken const& rawToken, int64 currentTime, bool checkExpiration);
 
-    MCAPI_C static ::RawGameServerToken createSelfSigned(
+    MCAPI_C static ::RawGameServerToken createLocal(
         ::PrivateKeyManager const&        signer,
         int64                             expirationDate,
         ::std::string const&              keyId,

@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class IBlockSource;
+class Block;
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -21,10 +21,13 @@ public:
     // NOLINTBEGIN
     virtual ~IScriptBlockCustomComponentReader() = default;
 
+    virtual ::std::vector<::std::string_view> getValidComponentsForBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const&
+    ) const = 0;
+
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-    tryGetCustomComponentParametersForItem(
-        ::IBlockSource const&,
-        ::BlockPos,
+    tryGetCustomComponentParametersForBlock(
+        ::Block const&,
         ::std::string_view,
         ::Scripting::WeakLifetimeScope const&
     ) const = 0;

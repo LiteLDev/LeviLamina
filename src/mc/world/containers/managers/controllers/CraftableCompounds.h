@@ -18,10 +18,10 @@ class CraftableCompounds {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5ed814;
-    ::ll::UntypedStorage<8, 64> mUnkf8c572;
-    ::ll::UntypedStorage<8, 64> mUnk66c4f9;
-    ::ll::UntypedStorage<8, 64> mUnka6490c;
+    ::ll::UntypedStorage<8, 64> mUnke6f603;
+    ::ll::UntypedStorage<8, 64> mUnk7112c4;
+    ::ll::UntypedStorage<8, 64> mUnk34bcd8;
+    ::ll::UntypedStorage<8, 64> mUnk938d66;
     // NOLINTEND
 
 public:

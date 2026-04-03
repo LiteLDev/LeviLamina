@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct SecureStorageProvider {};
+class SecureStorageProvider {};
 
 } // namespace Social

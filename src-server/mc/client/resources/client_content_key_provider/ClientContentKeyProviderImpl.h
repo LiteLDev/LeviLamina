@@ -4,6 +4,6 @@
 
 namespace ClientContentKeyProvider {
 
-struct ClientContentKeyProviderImpl {};
+class ClientContentKeyProviderImpl {};
 
 } // namespace ClientContentKeyProvider

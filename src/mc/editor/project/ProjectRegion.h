@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BoundingBox;
+class ChunkPos;
 class ChunkSource;
 class Dimension;
 class LevelChunk;
@@ -58,7 +58,7 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnkc56775;
         ::ll::UntypedStorage<8, 88> mUnk63a12f;
         ::ll::UntypedStorage<8, 64> mUnka710be;
-        ::ll::UntypedStorage<8, 24> mUnkc00b4f;
+        ::ll::UntypedStorage<8, 24> mUnk2429f3;
         ::ll::UntypedStorage<1, 1>  mUnk17d311;
         // NOLINTEND
 
@@ -111,11 +111,11 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnke68e15;
     ::ll::UntypedStorage<8, 8>  mUnk3ed219;
     ::ll::UntypedStorage<8, 16> mUnk71bc73;
-    ::ll::UntypedStorage<8, 8>  mUnkad564d;
+    ::ll::UntypedStorage<8, 8>  mUnkf091ed;
     ::ll::UntypedStorage<4, 48> mUnk9bf443;
     ::ll::UntypedStorage<8, 72> mUnk92e626;
-    ::ll::UntypedStorage<8, 24> mUnkb9249f;
-    ::ll::UntypedStorage<8, 24> mUnkc87b8f;
+    ::ll::UntypedStorage<8, 24> mUnk1dc8dd;
+    ::ll::UntypedStorage<8, 24> mUnk85c920;
     ::ll::UntypedStorage<8, 48> mUnka10fb0;
     ::ll::UntypedStorage<4, 52> mUnk8d2203;
     ::ll::UntypedStorage<4, 16> mUnk569f22;
@@ -155,6 +155,8 @@ public:
     MCNAPI void _updateChunksToProcess();
 
     MCNAPI bool isAreaAvailable(::BoundingBox const& area);
+
+    MCNAPI bool isAvailable() const;
 
     MCNAPI ::Scripting::Result_deprecated<::mce::UUID> requestAvailabilityCheck(
         ::std::function<void(::Scripting::Result_deprecated<void>)> callback,

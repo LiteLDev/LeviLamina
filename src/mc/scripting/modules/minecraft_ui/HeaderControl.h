@@ -21,7 +21,7 @@ class HeaderControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkf5be6a;
+    ::ll::UntypedStorage<8, 216> mUnk8c12e0;
     // NOLINTEND
 
 public:

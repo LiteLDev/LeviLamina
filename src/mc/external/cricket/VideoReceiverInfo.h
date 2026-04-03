@@ -11,8 +11,8 @@ struct VideoReceiverInfo : public ::cricket::MediaReceiverInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk27c5f6;
-    ::ll::UntypedStorage<8, 40>  mUnk2ccbec;
+    ::ll::UntypedStorage<8, 24>  mUnkec3dee;
+    ::ll::UntypedStorage<8, 40>  mUnk1de3ac;
     ::ll::UntypedStorage<1, 2>   mUnk178f7d;
     ::ll::UntypedStorage<4, 4>   mUnk866167;
     ::ll::UntypedStorage<4, 4>   mUnke408a3;

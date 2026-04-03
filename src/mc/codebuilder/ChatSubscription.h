@@ -8,8 +8,8 @@ struct ChatSubscription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd13679;
-    ::ll::UntypedStorage<8, 64> mUnk16e17c;
+    ::ll::UntypedStorage<8, 24> mUnkc96b4d;
+    ::ll::UntypedStorage<8, 64> mUnk52d004;
     // NOLINTEND
 
 public:

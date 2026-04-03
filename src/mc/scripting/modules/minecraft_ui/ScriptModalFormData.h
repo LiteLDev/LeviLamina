@@ -47,8 +47,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnkeb0364;
-        ::ll::UntypedStorage<8, 40> mUnk1a30e5;
+        ::ll::UntypedStorage<8, 40> mUnkcc4970;
+        ::ll::UntypedStorage<8, 40> mUnk307e5b;
         // NOLINTEND
 
     public:
@@ -76,10 +76,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk28da49;
+    ::ll::UntypedStorage<8, 216> mUnke8f652;
     ::ll::UntypedStorage<8, 80>  mUnke408cd;
-    ::ll::UntypedStorage<8, 24>  mUnka818d5;
-    ::ll::UntypedStorage<8, 224> mUnk53c5ed;
+    ::ll::UntypedStorage<8, 24>  mUnkb58338;
+    ::ll::UntypedStorage<8, 224> mUnkb93266;
     // NOLINTEND
 
 public:
@@ -131,8 +131,7 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponseV2>,
-            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-            void>,
+            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
         ::Scripting::EngineError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptRawMessageError>
@@ -145,8 +144,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
-        ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-        void>>
+        ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>>
     showV010(
         ::Scripting::ContextConfig const&      config,
         ::Scripting::ScriptObjectFactory&      factory,
@@ -157,8 +155,7 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptModalFormResponse>,
-            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-            void>,
+            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
         ::Scripting::EngineError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptRawMessageError>

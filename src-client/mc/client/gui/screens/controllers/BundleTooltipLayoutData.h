@@ -14,7 +14,7 @@ public:
     ::ll::TypedStorage<4, 4, int> numShownItemStacks;
     ::ll::TypedStorage<4, 4, int> numHiddenItemStacks;
     ::ll::TypedStorage<4, 4, int> hiddenItemsCount;
-    ::ll::TypedStorage<8, 56, ::brstd::flat_map<int, int, ::std::less<int>, ::std::vector<int>, ::std::vector<int>>>
+    ::ll::TypedStorage<8, 48, ::brstd::flat_map<int, int, ::std::less<int>, ::std::vector<int>, ::std::vector<int>>>
         itemOrderToContainerIndexMap;
     // NOLINTEND
 

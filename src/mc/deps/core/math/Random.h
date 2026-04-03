@@ -52,7 +52,7 @@ public:
 
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
-    virtual ~Random() /*override*/;
+    virtual ~Random() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,13 +76,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
-    // NOLINTEND
+    MCAPI_C void* $ctor();
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 
 public:

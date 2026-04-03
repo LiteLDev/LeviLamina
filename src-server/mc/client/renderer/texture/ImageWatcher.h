@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ImageWatcher {};
+class ImageWatcher {};
 
 } // namespace mce

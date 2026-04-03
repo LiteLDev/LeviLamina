@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBuff(::AttributeBuff const& buff);
+    MCAPI ::std::optional<float> addBuff(::AttributeBuff const& buff);
 
     MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
 

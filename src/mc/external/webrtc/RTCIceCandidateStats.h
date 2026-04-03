@@ -17,24 +17,24 @@ class RTCIceCandidateStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkbab829;
+    ::ll::UntypedStorage<8, 40> mUnk986655;
     ::ll::UntypedStorage<1, 2>  mUnk6748a5;
-    ::ll::UntypedStorage<8, 40> mUnk34748a;
-    ::ll::UntypedStorage<8, 40> mUnk52a1d5;
-    ::ll::UntypedStorage<8, 40> mUnk6a678c;
+    ::ll::UntypedStorage<8, 40> mUnk4169f8;
+    ::ll::UntypedStorage<8, 40> mUnkde8025;
+    ::ll::UntypedStorage<8, 40> mUnkfd71a6;
     ::ll::UntypedStorage<4, 8>  mUnka4a56a;
-    ::ll::UntypedStorage<8, 40> mUnk2e96a1;
-    ::ll::UntypedStorage<8, 40> mUnk61362f;
-    ::ll::UntypedStorage<8, 40> mUnkb0182b;
+    ::ll::UntypedStorage<8, 40> mUnk40d17f;
+    ::ll::UntypedStorage<8, 40> mUnkfeca4d;
+    ::ll::UntypedStorage<8, 40> mUnkab5e21;
     ::ll::UntypedStorage<4, 8>  mUnk3b0203;
-    ::ll::UntypedStorage<8, 40> mUnk2d9568;
-    ::ll::UntypedStorage<8, 40> mUnke5d5eb;
-    ::ll::UntypedStorage<8, 40> mUnk812fe5;
+    ::ll::UntypedStorage<8, 40> mUnk2f20c8;
+    ::ll::UntypedStorage<8, 40> mUnk44e159;
+    ::ll::UntypedStorage<8, 40> mUnk45d10a;
     ::ll::UntypedStorage<4, 8>  mUnkd51704;
-    ::ll::UntypedStorage<8, 40> mUnka86b7a;
-    ::ll::UntypedStorage<8, 40> mUnk69f42b;
+    ::ll::UntypedStorage<8, 40> mUnk953390;
+    ::ll::UntypedStorage<8, 40> mUnk12703a;
     ::ll::UntypedStorage<1, 2>  mUnkb7d605;
-    ::ll::UntypedStorage<8, 40> mUnkc7c4a8;
+    ::ll::UntypedStorage<8, 40> mUnk8007c5;
     // NOLINTEND
 
 public:

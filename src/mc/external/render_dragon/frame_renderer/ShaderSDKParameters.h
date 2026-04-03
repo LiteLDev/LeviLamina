@@ -8,7 +8,7 @@ struct ShaderSDKParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke62cac;
+    ::ll::UntypedStorage<8, 32> mUnk70dc27;
     ::ll::UntypedStorage<2, 2>  mUnka881ae;
     ::ll::UntypedStorage<2, 2>  mUnk693c6d;
     // NOLINTEND

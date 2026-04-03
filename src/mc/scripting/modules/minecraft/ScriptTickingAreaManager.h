@@ -7,14 +7,15 @@
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/platform/UUID.h"
 #include "mc/util/Bounds.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class Dimension;
 class ServerLevel;
 class Vec3;
@@ -27,7 +28,6 @@ namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -53,15 +53,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> mName;
-        ::ll::TypedStorage<4, 48, ::Bounds>      mBounds;
-        ::ll::TypedStorage<
-            8,
-            80,
-            ::Scripting::Promise<::ScriptModuleMinecraft::ScriptTickingArea, ::Scripting::Error, void>>
-                                                  mPromise;
-        ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
-        ::ll::TypedStorage<1, 1, bool>            mFinishedLoading;
+        ::ll::TypedStorage<8, 32, ::std::string>                                  mName;
+        ::ll::TypedStorage<4, 48, ::Bounds>                                       mBounds;
+        ::ll::TypedStorage<8, 80, ::Scripting::Promise<void, ::Scripting::Error>> mPromise;
+        ::ll::TypedStorage<4, 4, ::DimensionType>                                 mDimensionType;
+        ::ll::TypedStorage<1, 1, bool>                                            mFinishedLoading;
         // NOLINTEND
 
     public:
@@ -127,7 +123,7 @@ public:
     MCAPI void _removeTickingChunksFromCache(::DimensionType const& dimensionId, ::Bounds const& bounds);
 
     MCAPI ::Scripting::Result<
-        ::Scripting::Promise<::ScriptModuleMinecraft::ScriptTickingArea, ::Scripting::Error, void>,
+        ::Scripting::Promise<void, ::Scripting::Error>,
         ::ScriptModuleMinecraft::ScriptTickingAreaError,
         ::Scripting::EngineError>
     createTickingArea(
@@ -149,8 +145,6 @@ public:
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptTickingAreaError, ::Scripting::EngineError>
     removeTickingArea(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptTickingArea> const& area);
-
-    MCAPI bool tryResolvePromise(::mce::UUID uuid);
     // NOLINTEND
 
 public:

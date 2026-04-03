@@ -45,7 +45,7 @@ public:
         ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptTickSignal::IntervalStatus> status;
         ::ll::TypedStorage<4, 4, uint>                                                      initialInterval;
         ::ll::TypedStorage<4, 4, uint>                                                      currentInterval;
-        ::ll::TypedStorage<8, 112, ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>>> closure;
+        ::ll::TypedStorage<8, 120, ::std::variant<::Scripting::Closure<void()>, ::std::function<void()>>> closure;
         // NOLINTEND
 
     public:
@@ -79,7 +79,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::ScriptModuleMinecraft::ScriptTickSignal::Slot> slot;
+        ::ll::TypedStorage<8, 144, ::ScriptModuleMinecraft::ScriptTickSignal::Slot> slot;
         // NOLINTEND
 
     public:
@@ -126,13 +126,7 @@ public:
         ::std::vector<::ScriptModuleMinecraft::ScriptTickSignal::Slot>&      activeList
     );
 
-    MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
-
-    MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
-
     MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
-
-    MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
     // NOLINTEND
 };
 

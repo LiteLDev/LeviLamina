@@ -4,6 +4,6 @@
 
 namespace Editor::Input {
 
-struct ContextKeyBindingContainer {};
+class ContextKeyBindingContainer {};
 
 } // namespace Editor::Input

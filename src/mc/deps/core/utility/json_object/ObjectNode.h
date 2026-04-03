@@ -32,9 +32,9 @@ public:
 
     MCNAPI void clear();
 
-    MCNAPI_C ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
+    MCNAPI_S ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
 
-    MCNAPI_C ::Bedrock::JSONObject::ObjectNode::iterator_base<1> find(::std::string_view keyStr) const;
+    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> find(::std::string_view keyStr) const;
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0>
     insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);

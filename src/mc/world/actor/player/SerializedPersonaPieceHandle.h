@@ -25,7 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle&&);
+
     MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
+
+    MCAPI bool operator==(::SerializedPersonaPieceHandle const&) const;
 
     MCAPI ~SerializedPersonaPieceHandle();
     // NOLINTEND

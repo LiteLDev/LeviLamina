@@ -159,11 +159,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
-
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
+
+    virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const& ctx) const /*override*/;
+
+    virtual ::std::string const& _getName() const /*override*/;
 
     virtual ~PlacementDirection() /*override*/;
     // NOLINTEND
@@ -181,6 +183,8 @@ public:
     );
 
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
+    MCFOLD static ::std::string const& getName();
     // NOLINTEND
 
 public:
@@ -192,11 +196,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
-
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
     MCAPI void $applyToBlockType(::BlockType& blockType) const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+
+    MCFOLD ::std::string const& $_getName() const;
 
 
     // NOLINTEND

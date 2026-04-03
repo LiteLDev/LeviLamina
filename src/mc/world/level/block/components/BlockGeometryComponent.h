@@ -44,6 +44,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                      mUseBlockTypeLightAbsorption;
     ::ll::TypedStorage<1, 1, bool>                                                      mIsFullBlock;
     ::ll::TypedStorage<1, 1, bool>                                                      mIgnoreGeometryForIsSolid;
+    ::ll::TypedStorage<1, 1, bool>                                                      mIsFullBlockV1;
     ::ll::TypedStorage<8, 48, ::HashedString>                                           mCullingLayer;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
                                                                                 mSharedInitializationData;

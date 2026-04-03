@@ -22,7 +22,7 @@ class ScriptCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkdeb5b0;
+    ::ll::UntypedStorage<8, 64> mUnk1d1783;
     ::ll::UntypedStorage<1, 1>  mUnk2fa62e;
     ::ll::UntypedStorage<8, 8>  mUnk22118d;
     ::ll::UntypedStorage<8, 8>  mUnkff69b3;

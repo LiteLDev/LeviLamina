@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct IUserDataObject {};
+class IUserDataObject {};
 
 } // namespace Social

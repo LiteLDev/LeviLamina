@@ -33,14 +33,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
 
-    MCAPI_C void animate(
+    MCAPI void animate(
         ::RenderParams&     renderParams,
         ::BoneOrientation&  destBoneOrientation,
         float               scale,
         ::BoneTransformType boneTransformType
     ) const;
-
-    MCAPI bool getDataValues(::Vec3& minValue, ::Vec3& maxValue) const;
 
     MCAPI bool operator==(::ChannelTransform const& rhs) const;
     // NOLINTEND

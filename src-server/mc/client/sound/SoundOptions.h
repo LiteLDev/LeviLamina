@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SoundOptions {
+class SoundOptions {
 public:
     // SoundOptions inner types declare
     // clang-format off

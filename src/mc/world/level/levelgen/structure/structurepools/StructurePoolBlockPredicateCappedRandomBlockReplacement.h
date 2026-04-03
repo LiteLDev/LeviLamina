@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolBlockPredicateType.h"
@@ -12,7 +13,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
 class IRandom;
 class Randomize;
 namespace Bedrock::Threading { class Mutex; }
@@ -32,9 +32,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const& block, ::Randomize&) const /*override*/;
+    virtual bool test(::Block const& block, ::IRandom&) const /*override*/;
 
-    virtual bool test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const /*override*/;
+    virtual bool test(::BlockPos const& worldPos, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual bool finalize(::BlockSource& region, ::IRandom& random) /*override*/;
 
@@ -64,9 +64,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::Randomize&) const;
+    MCAPI bool $test(::Block const& block, ::IRandom&) const;
 
-    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::Randomize&) const;
+    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::IRandom&) const;
 
     MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 

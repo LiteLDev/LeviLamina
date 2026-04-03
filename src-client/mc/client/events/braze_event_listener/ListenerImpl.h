@@ -4,6 +4,6 @@
 
 namespace BrazeEventListener {
 
-struct ListenerImpl {};
+class ListenerImpl {};
 
 } // namespace BrazeEventListener

@@ -26,9 +26,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 2, ::PermissionsHandler>            mPermissions;
+    ::ll::TypedStorage<8, 24, ::PermissionsHandler>           mPermissions;
     ::ll::TypedStorage<4, 1440, ::std::array<::Abilities, 6>> mLayers;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    LayeredAbilities(LayeredAbilities const&);
 
 public:
     // member functions
@@ -47,13 +51,17 @@ public:
         ::Ability::Options                                               requiredOptions
     ) const;
 
-    MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
-
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
     MCAPI_C bool loadSaveData(::CompoundTag const& parentTag);
 
     MCAPI_C void onSwitchToCustom();
+
+    MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
+
+    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
+
+    MCAPI ~LayeredAbilities();
     // NOLINTEND
 
 public:
@@ -72,5 +80,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };

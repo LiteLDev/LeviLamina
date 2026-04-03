@@ -16,7 +16,7 @@ class RenderGraph {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk544b08;
+    ::ll::UntypedStorage<8, 24> mUnk7d84d1;
     ::ll::UntypedStorage<8, 64> mUnk794996;
     // NOLINTEND
 

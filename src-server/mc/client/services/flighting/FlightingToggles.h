@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct FlightingToggles {
+class FlightingToggles {
 public:
     // FlightingToggles inner types declare
     // clang-format off

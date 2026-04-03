@@ -21,6 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkbbe1db;
     ::ll::UntypedStorage<8, 16> mUnk788873;
+    ::ll::UntypedStorage<8, 8>  mUnk696781;
     // NOLINTEND
 
 public:
@@ -41,6 +42,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() /*override*/;
+
+    virtual bool isClientSide() const /*override*/;
     // NOLINTEND
 
 public:
@@ -65,6 +68,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::optional_ref<::PlayerEventCoordinator> $getPlayerEventCoordinator();
+
+    MCNAPI bool $isClientSide() const;
 
 
     // NOLINTEND

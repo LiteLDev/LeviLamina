@@ -4,7 +4,7 @@
 
 namespace mce {
 
-struct CurveBase {
+class CurveBase {
 public:
     // CurveBase inner types declare
     // clang-format off

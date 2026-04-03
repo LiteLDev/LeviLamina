@@ -16,11 +16,11 @@ class MinecraftInputMappingFactoryMap : public ::InputMappingFactoryMap {
 public:
     // MinecraftInputMappingFactoryMap inner types declare
     // clang-format off
-    struct NullInputMappingFactory;
+    class NullInputMappingFactory;
     // clang-format on
 
     // MinecraftInputMappingFactoryMap inner types define
-    struct NullInputMappingFactory {};
+    class NullInputMappingFactory {};
 
 public:
     // member variables

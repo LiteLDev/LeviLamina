@@ -11,10 +11,10 @@ struct RidDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkaf5714;
+    ::ll::UntypedStorage<8, 32> mUnk70f2f5;
     ::ll::UntypedStorage<4, 4>  mUnkdfb901;
-    ::ll::UntypedStorage<8, 24> mUnk222ffa;
-    ::ll::UntypedStorage<8, 16> mUnkf8adf6;
+    ::ll::UntypedStorage<8, 24> mUnkc526b1;
+    ::ll::UntypedStorage<8, 16> mUnk2ada1e;
     // NOLINTEND
 
 public:

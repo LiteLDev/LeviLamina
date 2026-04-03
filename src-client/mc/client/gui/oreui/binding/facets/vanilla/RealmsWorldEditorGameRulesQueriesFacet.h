@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { struct RealmsWorldEditor; }
+namespace Realms { class RealmsWorldEditor; }
 // clang-format on
 
 namespace OreUI {
@@ -59,7 +59,7 @@ public:
 
     MCFOLD bool getFireSpreads() const;
 
-    MCFOLD bool getImmediateRespawn() const;
+    MCAPI bool getImmediateRespawn() const;
 
     MCFOLD bool getMobsDropLoot() const;
 
@@ -79,7 +79,7 @@ public:
 
     MCAPI int getSleepSkipNightPercent() const;
 
-    MCFOLD bool getTNTExplodes() const;
+    MCAPI bool getTNTExplodes() const;
 
     MCFOLD bool getTileDrops() const;
     // NOLINTEND

@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
 
     MCAPI_C void* $ctor(::cg::ImageBuffer&& other);
 

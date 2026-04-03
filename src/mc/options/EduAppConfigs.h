@@ -17,7 +17,7 @@ class EduAppConfigs : public ::DataBackedAppConfigs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5b8c8b;
+    ::ll::UntypedStorage<8, 16> mUnk74c3b8;
     // NOLINTEND
 
 public:

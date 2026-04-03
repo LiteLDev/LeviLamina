@@ -12,7 +12,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canSpawnNaturally(::ILevel const& level);
-
-    MCAPI static bool canSpawnWithWorldGeneration(::ILevel const& level);
     // NOLINTEND
 };

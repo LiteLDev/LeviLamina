@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlayerMessagingService {
+class PlayerMessagingService {
 public:
     // PlayerMessagingService inner types declare
     // clang-format off

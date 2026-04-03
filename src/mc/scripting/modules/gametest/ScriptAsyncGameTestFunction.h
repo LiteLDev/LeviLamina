@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        104,
+        112,
         ::Scripting::Closure<
             ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>>
         mFunction;

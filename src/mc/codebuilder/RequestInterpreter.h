@@ -17,8 +17,8 @@ class RequestInterpreter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2fd027;
-    ::ll::UntypedStorage<8, 16> mUnka1a369;
+    ::ll::UntypedStorage<8, 8>  mUnk180610;
+    ::ll::UntypedStorage<8, 16> mUnk6fe2ec;
     // NOLINTEND
 
 public:

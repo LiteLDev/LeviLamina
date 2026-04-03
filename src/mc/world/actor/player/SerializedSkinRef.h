@@ -14,6 +14,7 @@ class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class SerializedSkinImpl;
 class TintMapColor;
+struct SkinImage;
 namespace Json { class Value; }
 namespace mce { class Color; }
 namespace mce { struct Image; }
@@ -70,7 +71,19 @@ public:
 
     MCFOLD ::SerializedSkinRef& operator=(::SerializedSkinRef const&);
 
+    MCAPI_C void setCapeImageData(::mce::Image const* image);
+
+    MCAPI void setCapeImageDataCereal(::SkinImage const& image);
+
     MCAPI_C void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
+
+    MCAPI void setGeometryDataCereal(::Json::Value data);
+
+    MCAPI void setGeometryDataMinEngineVersion(::MinEngineVersion minEngineVersion);
+
+    MCAPI_C void setImageData(::mce::Image const* image);
+
+    MCAPI void setImageDataCereal(::SkinImage const& image);
 
     MCAPI void setPersonaAppearanceData(
         ::persona::ArmSize::Type const&                                   armSizeType,

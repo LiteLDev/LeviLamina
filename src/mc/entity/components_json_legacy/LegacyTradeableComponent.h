@@ -9,11 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
 class MerchantRecipeList;
-class Player;
 class UpdateTradePacket;
 struct Trade;
 struct TradeTable;
@@ -55,8 +53,6 @@ public:
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
-
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
 

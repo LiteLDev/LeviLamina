@@ -9,10 +9,10 @@
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/math/Vec4.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 struct MERSUniformData;
 struct PBRTexturePtrs;
 namespace mce { class MaterialPtr; }
@@ -47,6 +47,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 16, ::mce::Color>                        mColor;
         ::ll::TypedStorage<1, 2, ::BrightnessPair>                     mAmbientLighting;
+        ::ll::TypedStorage<4, 16, ::mce::Color>                        mLightColor;
         ::ll::TypedStorage<4, 8, ::Vec2>                               mUV0;
         ::ll::TypedStorage<4, 8, ::Vec2>                               mUV1;
         ::ll::TypedStorage<4, 12, ::Vec3>                              mWorldPos;

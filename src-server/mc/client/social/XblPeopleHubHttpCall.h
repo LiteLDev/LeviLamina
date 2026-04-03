@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XblPeopleHubHttpCall {};
+class XblPeopleHubHttpCall {};
 
 } // namespace Social

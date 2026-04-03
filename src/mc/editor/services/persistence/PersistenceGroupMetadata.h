@@ -16,12 +16,12 @@ struct PersistenceGroupMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1a25db;
-    ::ll::UntypedStorage<8, 32> mUnka1c78e;
+    ::ll::UntypedStorage<8, 32> mUnkf0496d;
+    ::ll::UntypedStorage<8, 32> mUnkd77ace;
     ::ll::UntypedStorage<4, 4>  mUnkddf34d;
     ::ll::UntypedStorage<1, 1>  mUnk59537f;
-    ::ll::UntypedStorage<8, 24> mUnk3f5927;
-    ::ll::UntypedStorage<8, 32> mUnkb00e71;
+    ::ll::UntypedStorage<8, 24> mUnk4b864f;
+    ::ll::UntypedStorage<8, 32> mUnkdc5718;
     // NOLINTEND
 
 public:

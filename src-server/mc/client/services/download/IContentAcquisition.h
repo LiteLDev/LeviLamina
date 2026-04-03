@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IContentAcquisition {
+class IContentAcquisition {
 public:
     // IContentAcquisition inner types declare
     // clang-format off

@@ -24,6 +24,7 @@ class Level;
 class LevelData;
 class LevelDbEnv;
 class LevelStorage;
+class LevelStorageSource;
 class PackInstance;
 class Scheduler;
 class TaskGroup;
@@ -42,6 +43,7 @@ public:
     class ProgressReporter;
     struct Result;
     struct ExportData;
+    struct WorldConverterExportSettings;
     class IWorldConverter;
     struct InterventionPublishers;
     // clang-format on
@@ -225,6 +227,14 @@ public:
         // NOLINTEND
     };
 
+    struct WorldConverterExportSettings {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>> mKeepPlayerData;
+        // NOLINTEND
+    };
+
     class IWorldConverter {
     public:
         // virtual functions
@@ -243,7 +253,8 @@ public:
             ::std::shared_ptr<::FileArchiver::ExportData>&,
             ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
             ::Bedrock::Threading::Async<void>&,
-            ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>>
+            ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>>,
+            ::std::optional<::FileArchiver::WorldConverterExportSettings> const
         ) = 0;
         // NOLINTEND
 
@@ -358,6 +369,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>                mDisplayMessageCallback;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>>   mResourcePackRepository;
     ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                          mLevelListCache;
+    ::ll::TypedStorage<8, 8, ::LevelStorageSource&>                                       mLevelStorageSource;
     ::ll::TypedStorage<8, 24, ::std::vector<::Core::PathBuffer<::std::string>>>           mSuccessfullyFiledArchives;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                              mIOTaskGroup;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver::IWorldConverter>>          mWorldConverter;
@@ -389,6 +401,7 @@ public:
     MCAPI FileArchiver(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
+        ::LevelStorageSource&                                           levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&   pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         bool                                                            isEditorModeEnabled,
@@ -411,7 +424,8 @@ public:
         ::FileArchiver::ShowToast                                                  showToast,
         ::Bedrock::Threading::Async<void>                                          preTaskHandle,
         ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
-        ::std::function<void(::FileArchiver::Result&)>                             cleanupTask
+        ::std::function<void(::FileArchiver::Result&)>                             cleanupTask,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings>              exportSetting
     );
 
     MCAPI void _exportLevelFiles(
@@ -457,6 +471,7 @@ public:
         ::Level*                                                                   level,
         ::Core::Path const&                                                        exportFilePath,
         ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+        ::std::optional<::FileArchiver::WorldConverterExportSettings>              exportSetting,
         ::FileArchiver::ExportType                                                 exportType,
         ::FileArchiver::ShowToast                                                  toast
     );
@@ -552,6 +567,7 @@ public:
     MCAPI void* $ctor(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
+        ::LevelStorageSource&                                           levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&   pathManager,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         bool                                                            isEditorModeEnabled,

@@ -16,7 +16,7 @@ struct DisconnectedError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk916ba3;
+    ::ll::UntypedStorage<8, 32> mUnka36eba;
     // NOLINTEND
 
 public:

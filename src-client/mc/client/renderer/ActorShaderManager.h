@@ -19,9 +19,10 @@ class Vec4;
 struct Brightness;
 struct BrightnessPair;
 struct TextureUVCoordinateSet;
+namespace LightPropagation { class LightVolumeManager; }
+namespace mce { class ActorConstants; }
 namespace mce { class Color; }
 namespace mce { class RenderContext; }
-namespace mce { struct ActorConstants; }
 // clang-format on
 
 class ActorShaderManager {
@@ -51,29 +52,31 @@ public:
     MCAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
 
     MCAPI void setupFoilShaderParameters(
-        ::ScreenContext&          screenContext,
-        ::BaseActorRenderContext& entityContext,
-        ::Actor&                  entity,
-        ::mce::Color const&       changeColor,
-        ::mce::Color const&       changeColor2,
-        ::Vec2 const&             uvScale,
-        float                     a,
-        ::Brightness              lightEmission,
-        bool                      allowOverlay
+        ::ScreenContext&                    screenContext,
+        ::BaseActorRenderContext&           entityContext,
+        ::Actor&                            entity,
+        ::mce::Color const&                 changeColor,
+        ::mce::Color const&                 changeColor2,
+        ::Vec2 const&                       uvScale,
+        float                               a,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        bool                                allowOverlay
     ) const;
 
     MCAPI void setupFoilShaderParameters(
-        ::ScreenContext&          screenContext,
-        ::BaseActorRenderContext& entityContext,
-        ::Actor&                  entity,
-        ::mce::Color const&       overlayColor,
-        ::mce::Color const&       changeColor,
-        ::mce::Color const&       changeColor2,
-        ::Vec2 const&             uvScale,
-        ::Vec4 const&             uvAnim,
-        float                     br,
-        ::Brightness              lightEmission,
-        bool                      allowOverlay
+        ::ScreenContext&                    screenContext,
+        ::BaseActorRenderContext&           entityContext,
+        ::Actor&                            entity,
+        ::mce::Color const&                 overlayColor,
+        ::mce::Color const&                 changeColor,
+        ::mce::Color const&                 changeColor2,
+        ::Vec2 const&                       uvScale,
+        ::Vec4 const&                       uvAnim,
+        float                               br,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor,
+        bool                                allowOverlay
     ) const;
 
     MCAPI void setupShaderParameters(
@@ -92,8 +95,9 @@ public:
     MCAPI static void setEntityConstants(
         ::mce::ActorConstants& entityConstants,
         ::mce::RenderContext&  renderContext,
-        ::mce::Color const&    blockLightColor,
+        ::mce::Color const&    tileLightColor,
         ::Vec2 const&          tileLightColorUV,
+        ::glm::vec4 const&     blockLightColor,
         ::mce::Color const&    overlay,
         ::mce::Color const&    changeColor,
         ::mce::Color const&    changeColor2,
@@ -136,7 +140,7 @@ public:
         ::Actor&                  actor,
         ::mce::Color const&       overlay,
         float,
-        ::Brightness lightEmission
+        ::Vec4 const& uvAnim
     );
 
     MCAPI static void setupShaderParameters(
@@ -145,13 +149,15 @@ public:
         ::Actor&                  actor,
         ::mce::Color const&       overlay,
         float,
-        ::Vec4 const& uvAnim
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor
     );
 
     MCAPI static void setupShaderParameters(
         ::ScreenContext&        screenContext,
         ::BlockSource&          source,
         ::BrightnessPair const& lightColorUV,
+        ::glm::vec4 const&      blockLightColor,
         float,
         bool            ignoreLighting,
         ::LightTexture& lightTexture,
@@ -160,14 +166,15 @@ public:
     );
 
     MCAPI static void setupShaderParameters(
-        ::ScreenContext&  screenContext,
-        ::BlockSource&    source,
-        ::BlockPos const& pos,
-        float             a,
-        bool              ignoreLighting,
-        ::LightTexture&   lightTexture,
-        ::Vec2 const&     uvScale,
-        ::Vec4 const&     uvAnim
+        ::ScreenContext&                                               screenContext,
+        ::BlockSource&                                                 source,
+        ::BlockPos const&                                              pos,
+        float                                                          a,
+        bool                                                           ignoreLighting,
+        ::LightTexture&                                                lightTexture,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
+        ::Vec2 const&                                                  uvScale,
+        ::Vec4 const&                                                  uvAnim
     );
 
     MCAPI static void setupShaderParameters(
@@ -181,19 +188,6 @@ public:
         float                     br,
         float,
         bool isEnchanted
-    );
-
-    MCAPI static void setupShaderParameters(
-        ::ScreenContext&    screenContext,
-        ::BlockSource&      source,
-        ::BlockPos const&   pos,
-        ::mce::Color const& changeColor,
-        ::mce::Color const& changeColor2,
-        float,
-        ::LightTexture& lightTexture,
-        ::Vec2 const&   uvScale,
-        bool            ignoreLighting,
-        ::Brightness    lightEmission
     );
 
     MCAPI static void setupShaderParameters(
@@ -212,21 +206,37 @@ public:
     );
 
     MCAPI static void setupShaderParameters(
-        ::ScreenContext&          screenContext,
-        ::BaseActorRenderContext& entityContext,
-        ::Actor&                  entity,
-        ::mce::Color const&       overlay,
-        ::mce::Color const&       changeColor,
-        ::mce::Color const&       changeColor2,
-        ::mce::Color const&       glintColor,
-        float                     uvOffset1,
-        float                     uvOffset2,
-        float                     uvRot1,
-        float                     uvRot2,
-        ::Vec2 const&             glintUVScale,
-        ::Vec4 const&             uvAnim,
-        float                     br,
-        ::Brightness              lightEmission
+        ::ScreenContext&    screenContext,
+        ::BlockSource&      source,
+        ::BlockPos const&   pos,
+        ::mce::Color const& changeColor,
+        ::mce::Color const& changeColor2,
+        float,
+        ::LightTexture&                                                lightTexture,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
+        ::Vec2 const&                                                  uvScale,
+        bool                                                           ignoreLighting,
+        ::Brightness                                                   lightEmission,
+        ::std::optional<::glm::vec3> const&                            lightEmissionColor
+    );
+
+    MCAPI static void setupShaderParameters(
+        ::ScreenContext&                    screenContext,
+        ::BaseActorRenderContext&           entityContext,
+        ::Actor&                            entity,
+        ::mce::Color const&                 overlay,
+        ::mce::Color const&                 changeColor,
+        ::mce::Color const&                 changeColor2,
+        ::mce::Color const&                 glintColor,
+        float                               uvOffset1,
+        float                               uvOffset2,
+        float                               uvRot1,
+        float                               uvRot2,
+        ::Vec2 const&                       glintUVScale,
+        ::Vec4 const&                       uvAnim,
+        float                               br,
+        ::Brightness                        lightEmission,
+        ::std::optional<::glm::vec3> const& lightEmissionColor
     );
     // NOLINTEND
 

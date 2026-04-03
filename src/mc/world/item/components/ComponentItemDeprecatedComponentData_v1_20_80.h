@@ -33,6 +33,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_80&&);
+
+    MCAPI_C void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
     // NOLINTEND
 
 public:

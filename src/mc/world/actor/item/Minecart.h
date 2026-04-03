@@ -11,6 +11,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -69,7 +70,7 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
     virtual void applyNaturalSlowdown(::BlockSource&);
 
@@ -143,7 +144,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
     MCAPI void $applyNaturalSlowdown(::BlockSource&);
 

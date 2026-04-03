@@ -214,6 +214,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::TextCharEventData>> mBufferedTextCharEventData;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Options>>         mOptions;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mAsyncLoadOptionSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mScreenAnimationsSubscription;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mSceneStackDestroyedPublisher;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<void*, ::std::function<void(::AbstractScene&)>>>>
@@ -333,11 +334,11 @@ public:
 
     virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool popScreensBackTo(::ui::SceneType const sceneType) /*override*/;
+    virtual bool popScreensBackTo(::ui::SceneType const) /*override*/;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) /*override*/;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) /*override*/;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) /*override*/;
+    virtual bool popTopScreensOfType(::ui::SceneType const) /*override*/;
 
     virtual bool update() /*override*/;
 
@@ -563,12 +564,6 @@ public:
 
     MCAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
 
-    MCAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
-
-    MCAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
-
-    MCAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
-
     MCAPI bool $update();
 
     MCAPI void $resetScreenChangeDirtyFlag();
@@ -635,7 +630,7 @@ public:
 
     MCAPI void $setScreenThreshold(::ScreenThreshold const& screenThreshold);
 
-    MCAPI ::Bedrock::PubSub::Subscription $registerSceneStackDestroyedListener(::std::function<void()> callback);
+    MCFOLD ::Bedrock::PubSub::Subscription $registerSceneStackDestroyedListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:

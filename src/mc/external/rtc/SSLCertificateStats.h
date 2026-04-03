@@ -8,10 +8,10 @@ struct SSLCertificateStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke82e96;
-    ::ll::UntypedStorage<8, 32> mUnk21c60e;
-    ::ll::UntypedStorage<8, 32> mUnkaa5991;
-    ::ll::UntypedStorage<8, 8>  mUnkf8f1f3;
+    ::ll::UntypedStorage<8, 32> mUnkeb40fa;
+    ::ll::UntypedStorage<8, 32> mUnk1c6f4c;
+    ::ll::UntypedStorage<8, 32> mUnkea79e7;
+    ::ll::UntypedStorage<8, 8>  mUnk56eeb2;
     // NOLINTEND
 
 public:

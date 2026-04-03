@@ -34,13 +34,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExpandoContainerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    virtual ~ExpandoContainerModel() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~ExpandoContainerModel() /*override*/;
-#endif
 
     virtual void containerContentChanged(int slot) /*override*/;
 
@@ -78,15 +78,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _generateCurrentItems();
+    MCAPI ExpandoContainerModel(
+        ::FullContainerName const&                            containerName,
+        int                                                   containerSize,
+        ::ContainerCategory                                   containerCategory,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
+    );
 
-    MCAPI_C void _refreshContainer(bool fullRefresh);
+    MCAPI void _generateCurrentItems();
+
+    MCAPI void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::FullContainerName const&                            containerName,
         int                                                   containerSize,
         ::ContainerCategory                                   containerCategory,
@@ -103,7 +110,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCAPI void $containerContentChanged(int slot);
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
@@ -118,7 +124,7 @@ public:
 
     MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
-    MCFOLD ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
     MCFOLD int $getContainerSize() const;
 
@@ -135,7 +141,6 @@ public:
     MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
     MCAPI void $_init();
-#endif
 
 
     // NOLINTEND

@@ -9,9 +9,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcId;
 class IDlcBatchModel;
 class MainMenuScreenModel;
-struct DlcId;
 namespace Json { class Value; }
 // clang-format on
 
@@ -60,6 +60,10 @@ public:
         bool                                     processingUpdates,
         bool                                     disableExitWhileInProgress
     );
+
+    MCAPI ::std::string const _getDownloadProgress() const;
+
+    MCAPI ::std::string const _getImportProgress() const;
 
     MCAPI ::std::string const _getLocalizedImportProgress() const;
 

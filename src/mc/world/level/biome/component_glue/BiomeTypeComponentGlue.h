@@ -9,17 +9,15 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
 struct BiomeTypeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
+    virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) /*override*/;
 
-    virtual void applyToBiome(::Biome&, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const /*override*/;
+    virtual void applyToBiome(::Biome&, ::entt::meta_any const&) const /*override*/;
 
     virtual ~BiomeTypeComponentGlue() /*override*/ = default;
     // NOLINTEND

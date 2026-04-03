@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientNativeBrushServiceProvider {};
+class ClientNativeBrushServiceProvider {};
 
 } // namespace Editor::Services

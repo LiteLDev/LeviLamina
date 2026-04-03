@@ -11,7 +11,9 @@
 // clang-format off
 class BlockConnectionComponent;
 class BlockCustomComponentsComponent;
+class BlockDeprecatedR16EventListenerComponent;
 class BlockEntityFallOnConfigurationComponent;
+class BlockMultiBlockComponent;
 class BlockRandomOffsetComponent;
 class BlockRedstoneConsumerComponent;
 class BlockTickConfigurationComponent;
@@ -24,6 +26,7 @@ class OnPlayerPlacingTrigger;
 class OnStepOffTrigger;
 class OnStepOnTrigger;
 struct BlockAmbientSoundComponent;
+struct BlockChestObstructionComponent;
 struct BlockCollisionBoxComponent;
 struct BlockConnectionRuleComponent;
 struct BlockCraftingTableComponent;
@@ -80,7 +83,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::Bedrock::typeid_t<void>,
             ::std::unique_ptr<::BlockComponentStorage::ComponentBase>,
@@ -90,7 +93,7 @@ public:
         mComponents;
     ::ll::TypedStorage<
         8,
-        40,
+        24,
         ::brstd::flat_set<
             ::Bedrock::typeid_t<void>,
             ::std::less<::Bedrock::typeid_t<void>>,

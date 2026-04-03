@@ -9,12 +9,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SubChunkPos const& MAX();
-
-    MCAPI static ::SubChunkPos const& MIN();
-
-    MCAPI static ::SubChunkPos const& ONE();
-
     MCAPI static ::SubChunkPos const& ZERO();
     // NOLINTEND
 };

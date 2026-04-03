@@ -16,8 +16,8 @@ class MinecraftScriptSentryRequestSender : public ::ScriptModuleDiagnostics::ISc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkfa069e;
-    ::ll::UntypedStorage<8, 32>  mUnk646b87;
+    ::ll::UntypedStorage<8, 128> mUnkfa069e;
+    ::ll::UntypedStorage<8, 32>  mUnkbedda0;
     // NOLINTEND
 
 public:

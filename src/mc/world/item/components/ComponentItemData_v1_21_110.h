@@ -25,17 +25,12 @@ public:
 
 public:
     // prevent constructor by default
+    ComponentItemData_v1_21_110(ComponentItemData_v1_21_110 const&);
     ComponentItemData_v1_21_110();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110&&);
-
-    MCAPI ComponentItemData_v1_21_110(::ComponentItemData_v1_21_110 const&);
-
-    MCAPI ::ComponentItemData_v1_21_110& operator=(::ComponentItemData_v1_21_110&&);
-
     MCFOLD ::ComponentItemData_v1_21_110& operator=(::ComponentItemData_v1_21_110 const&);
 
     MCAPI ~ComponentItemData_v1_21_110();
@@ -46,7 +41,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void moveDeprecatedData(::ComponentItemData_v1_21_90& oldData, ::ComponentItemData_v1_21_110& newData);
+    MCFOLD static void
+    moveDeprecatedData(::ComponentItemData_v1_21_90& oldData, ::ComponentItemData_v1_21_110& newData);
 
     MCAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_90, ::ComponentItemData_v1_21_110, nullptr_t>& upgrader);
@@ -56,14 +52,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemData_v1_21_110&&);
-
-    MCAPI void* $ctor(::ComponentItemData_v1_21_110 const&);
     // NOLINTEND
 
 public:

@@ -142,11 +142,11 @@ public:
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-#ifdef LL_PLAT_C
+#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 #endif
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

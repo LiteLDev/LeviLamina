@@ -28,7 +28,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk319d42;
+        ::ll::UntypedStorage<8, 8>  mUnka3b5b8;
         ::ll::UntypedStorage<8, 16> mUnk16e763;
         // NOLINTEND
 
@@ -55,13 +55,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk5861b3;
-    ::ll::UntypedStorage<8, 64>  mUnkee8ec5;
-    ::ll::UntypedStorage<8, 64>  mUnkbb1fce;
+    ::ll::UntypedStorage<8, 64>  mUnk19d3ca;
+    ::ll::UntypedStorage<8, 64>  mUnkc85114;
     ::ll::UntypedStorage<8, 80>  mUnk1a0d61;
-    ::ll::UntypedStorage<8, 64>  mUnke31280;
-    ::ll::UntypedStorage<8, 120> mUnk4502ec;
-    ::ll::UntypedStorage<8, 8>   mUnkeb1c6f;
-    ::ll::UntypedStorage<8, 24>  mUnk2d6f06;
+    ::ll::UntypedStorage<8, 64>  mUnk29ed83;
+    ::ll::UntypedStorage<8, 128> mUnk4502ec;
+    ::ll::UntypedStorage<8, 8>   mUnkcb9720;
+    ::ll::UntypedStorage<8, 24>  mUnkecd6dc;
     ::ll::UntypedStorage<8, 8>   mUnkaeebe0;
     ::ll::UntypedStorage<8, 16>  mUnk63ee1e;
     // NOLINTEND

@@ -18,7 +18,7 @@ struct ObjectFactory : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk68fdc7;
+    ::ll::UntypedStorage<8, 32> mUnk695cd0;
     ::ll::UntypedStorage<8, 16> mUnkac19c1;
     ::ll::UntypedStorage<8, 16> mUnkf51b36;
     // NOLINTEND

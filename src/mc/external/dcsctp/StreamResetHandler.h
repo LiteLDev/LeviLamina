@@ -39,7 +39,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 8>  mUnk7526ed;
         ::ll::UntypedStorage<4, 4>  mUnk6407d2;
-        ::ll::UntypedStorage<8, 24> mUnk639e19;
+        ::ll::UntypedStorage<8, 24> mUnk3dee64;
         // NOLINTEND
 
     public:
@@ -58,7 +58,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk429750;
     ::ll::UntypedStorage<8, 8>  mUnkfc9914;
     ::ll::UntypedStorage<8, 16> mUnkb30ce0;
-    ::ll::UntypedStorage<8, 8>  mUnk724ccd;
+    ::ll::UntypedStorage<8, 8>  mUnke56da1;
     ::ll::UntypedStorage<4, 4>  mUnkc24295;
     ::ll::UntypedStorage<8, 48> mUnk541a8a;
     ::ll::UntypedStorage<8, 8>  mUnk5bba38;

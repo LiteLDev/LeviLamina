@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldTemplateProvider {
+class WorldTemplateProvider {
 public:
     // WorldTemplateProvider inner types define
     enum class Result : int {};

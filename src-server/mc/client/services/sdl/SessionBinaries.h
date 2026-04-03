@@ -4,6 +4,6 @@
 
 namespace SDL {
 
-struct SessionBinaries {};
+class SessionBinaries {};
 
 } // namespace SDL

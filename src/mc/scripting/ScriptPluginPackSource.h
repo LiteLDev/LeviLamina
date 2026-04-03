@@ -15,7 +15,7 @@ class ScriptPluginPackSource : public ::IScriptPluginSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka6c77a;
+    ::ll::UntypedStorage<8, 32> mUnk758692;
     ::ll::UntypedStorage<8, 8>  mUnkec988c;
     // NOLINTEND
 

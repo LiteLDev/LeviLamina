@@ -12,11 +12,10 @@
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
-namespace Parties { struct IPartyProvider; }
-namespace Parties { struct Party; }
-namespace Realms { struct RealmsList; }
+namespace Parties { class IPartyProvider; }
+namespace Realms { class RealmsList; }
+namespace Social { class FriendList; }
 namespace Social { class IUserManager; }
-namespace Social { struct FriendList; }
 namespace World { class WorldPlayerListTracker; }
 // clang-format on
 
@@ -34,7 +33,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>>      mUserManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mPartySubscription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>>                        mParty;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>>      mPartyProvider;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mXblFriends;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mPlatformFriends;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
@@ -64,12 +63,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FriendsListFacet(
-        ::std::shared_ptr<::Social::FriendList>                                   friendList,
-        ::std::shared_ptr<::Realms::RealmsList>                                   realmsList,
-        ::World::WorldPlayerListTracker&                                          worldPlayerListTracker,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider
+        ::std::shared_ptr<::Social::FriendList>                    friendList,
+        ::World::WorldPlayerListTracker&                           worldPlayerListTracker,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
 
     MCAPI void _copyFriendsList();
@@ -95,12 +93,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::Social::FriendList>                                   friendList,
-        ::std::shared_ptr<::Realms::RealmsList>                                   realmsList,
-        ::World::WorldPlayerListTracker&                                          worldPlayerListTracker,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList,
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                     userManager,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider
+        ::std::shared_ptr<::Social::FriendList>                    friendList,
+        ::World::WorldPlayerListTracker&                           worldPlayerListTracker,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider
     );
     // NOLINTEND
 

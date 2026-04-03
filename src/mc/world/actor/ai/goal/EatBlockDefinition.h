@@ -6,10 +6,10 @@
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockType;
 class ExpressionNode;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on

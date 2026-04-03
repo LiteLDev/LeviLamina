@@ -41,8 +41,13 @@ namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrim; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_AxialSphere; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Box; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cone; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cuboid; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cylinder; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Disc; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Ellipsoid; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Line; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Pyramid; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentSpline; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentSplineOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentText; }
@@ -86,12 +91,14 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3faea0;
     ::ll::UntypedStorage<1, 1>   mUnk1d10b8;
     ::ll::UntypedStorage<1, 1>   mUnkcc57da;
-    ::ll::UntypedStorage<8, 32>  mUnk65f63a;
+    ::ll::UntypedStorage<8, 32>  mUnkd72480;
     ::ll::UntypedStorage<4, 24>  mUnk8b3e64;
     ::ll::UntypedStorage<4, 4>   mUnkd94f43;
-    ::ll::UntypedStorage<8, 104> mUnk30dd27;
-    ::ll::UntypedStorage<8, 64>  mUnkfa8e26;
-    ::ll::UntypedStorage<8, 24>  mUnk100eaa;
+    ::ll::UntypedStorage<1, 1>   mUnk3f5c44;
+    ::ll::UntypedStorage<4, 8>   mUnk1d6cf3;
+    ::ll::UntypedStorage<8, 112> mUnk30dd27;
+    ::ll::UntypedStorage<8, 64>  mUnk50bcf6;
+    ::ll::UntypedStorage<8, 24>  mUnka95670;
     // NOLINTEND
 
 public:
@@ -195,7 +202,12 @@ public:
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const&    primitiveType,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cylinder,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Ellipsoid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cuboid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cone> const&           primitiveType,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> const& options
     );
 
@@ -260,12 +272,18 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>>
     _getComponentByName(::std::string const& componentName) const;
 
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _getIgnoreEditorModeVisibilityOverride() const;
+
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getLockToSurface() const;
 
     MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getSnapToBlock() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptGetCollisionOffset() const;
+
+    MCNAPI ::Scripting::Result<::std::optional<::std::string>, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _scriptGetDimensionId() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptGetPosition() const;
@@ -287,6 +305,9 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _scriptSetCollisionOffset(::Vec3 const& position);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _scriptSetDimensionId(::std::optional<::std::string> const& dimensionId);
 
     MCNAPI ::Scripting::Result_deprecated<void> _scriptSetPosition(::Vec3 const& position);
 
@@ -315,6 +336,9 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> _setCollisionType(::Editor::Widgets::WidgetCollisionType collisionType);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
+    _setIgnoreEditorModeVisibilityOverride(bool ignore);
+
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
     _setLockToSurface(bool lockToSurface);
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
@@ -322,7 +346,11 @@ public:
 
     MCNAPI void _setVisible(bool visible);
 
+    MCNAPI ::std::optional<::std::string> getDimensionId() const;
+
     MCNAPI ::mce::UUID const& getGroupId() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void> setDimensionId(::std::optional<::std::string> const& dimensionId);
 
     MCNAPI void setPosition(::Vec3 const& pos);
 

@@ -4,6 +4,6 @@
 
 namespace rendergraph {
 
-struct DeclarationInterface {};
+class DeclarationInterface {};
 
 } // namespace rendergraph

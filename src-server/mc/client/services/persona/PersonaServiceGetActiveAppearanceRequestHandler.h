@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PersonaServiceGetActiveAppearanceRequestHandler {
+class PersonaServiceGetActiveAppearanceRequestHandler {
 public:
     // PersonaServiceGetActiveAppearanceRequestHandler inner types declare
     // clang-format off

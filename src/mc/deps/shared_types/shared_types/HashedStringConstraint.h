@@ -18,7 +18,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~HashedStringConstraint() /*override*/ = default;
+    virtual ~HashedStringConstraint() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,21 +10,20 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/TextBoxCaretMovement.h"
-#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class IGamefaceTextInputProxy;
 struct TextBoxStateChange;
 namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class IFacetRegistry; }
 namespace OreUI { class IView; }
 namespace OreUI { class LayoutScheduler; }
-namespace OreUI { class MemoryTracker; }
-namespace OreUI { class SceneInputHandler; }
-namespace OreUI { class ViewListenerWrapper; }
+namespace OreUI { class TextInputHandler; }
+namespace OreUI { class ViewInputHandler; }
 namespace OreUI { struct DebugData; }
-namespace OreUI::Experimental::Detail { class ViewContextFactory; }
+namespace OreUI::Detail { class ViewContextFactory; }
 namespace cohtml { class ITimeZoneProvider; }
 namespace cohtml { class System; }
 namespace cohtml { class SystemRenderer; }
@@ -57,22 +56,11 @@ public:
     ::ll::TypedStorage<8, 8, ::cohtml::System*>                                    mSystem;
     ::ll::TypedStorage<8, 8, ::cohtml::SystemRenderer*>                            mSystemRenderer;
     ::ll::TypedStorage<8, 8, ::cohtml::ITimeZoneProvider*>                         mTimeZoneProvider;
-    ::ll::TypedStorage<8, 8, ::OreUI::MemoryTracker&>                              mMemoryTracker;
     ::ll::TypedStorage<8, 8, ::OreUI::LayoutScheduler&>                            mLayoutScheduler;
     ::ll::TypedStorage<8, 8, ::OreUI::FramesToPaintQueue&>                         mFramesToPaint;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::ViewsCoordinator::ViewEntry>> mViews;
     ::ll::TypedStorage<8, 96, ::OreUI::ViewsCacheRegistry>                         mViewsCacheRegistry;
     ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                  mDebugData;
-    ::ll::TypedStorage<
-        8,
-        56,
-        ::brstd::flat_map<
-            ::OreUI::ViewId,
-            ::std::chrono::nanoseconds,
-            ::std::less<::OreUI::ViewId>,
-            ::std::vector<::OreUI::ViewId>,
-            ::std::vector<::std::chrono::nanoseconds>>>
-        mLastUpdateDurations;
     // NOLINTEND
 
 public:
@@ -84,7 +72,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ViewsCoordinator() /*override*/;
+    virtual ~ViewsCoordinator() /*override*/ = default;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const /*override*/;
 
@@ -94,17 +82,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::OreUI::SceneInputHandler> _createInputHandler(
-        ::cohtml::View&               cohtmlView,
-        ::OreUI::ViewListenerWrapper& viewListenerWrapper,
-        ::IClientInstance&            clientInstance
+    MCAPI ::std::unique_ptr<::OreUI::ViewInputHandler> _createInputHandler(
+        ::cohtml::View&                              gamefaceView,
+        ::std::unique_ptr<::OreUI::TextInputHandler> textInputHandler,
+        ::IClientInstance&                           clientInstance
     ) const;
 
     MCAPI ::OreUI::ViewId _createView(
-        ::OreUI::Experimental::Detail::ViewContextFactory& contextFactory,
-        ::IClientInstance&                                 clientInstance,
-        ::std::string const&                               url,
-        ::std::unique_ptr<::OreUI::IFacetRegistry>         facets
+        ::OreUI::Detail::ViewContextFactory&       contextFactory,
+        ::IClientInstance&                         clientInstance,
+        ::std::string const&                       url,
+        ::std::unique_ptr<::OreUI::IFacetRegistry> facets
     );
 
     MCAPI void _destroyView(::OreUI::ViewId viewId);
@@ -116,24 +104,20 @@ public:
     MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
     MCAPI ::OreUI::ViewId createView(
-        ::OreUI::Experimental::Detail::ViewContextFactory& contextFactory,
-        ::std::string const&                               viewPath,
-        ::std::unique_ptr<::OreUI::IFacetRegistry>         facets,
-        ::IClientInstance&                                 clientInstance,
-        ::OreUI::ViewCacheMode                             viewCacheMode
+        ::OreUI::Detail::ViewContextFactory&       contextFactory,
+        ::std::string const&                       viewPath,
+        ::std::unique_ptr<::OreUI::IFacetRegistry> facets,
+        ::IClientInstance&                         clientInstance,
+        ::OreUI::ViewCacheMode                     viewCacheMode
     );
+
+    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy();
 
     MCAPI void onKeyboardDismissed();
 
     MCAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
 
     MCAPI void update(double time);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -36,6 +36,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldActivitySessionTracker();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~WorldActivitySessionTracker() /*override*/;
@@ -46,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit WorldActivitySessionTracker(::Core::PathBuffer<::std::string> const& tempDirectory);
+
     MCAPI ::World::SessionTrackerOperationResult
     _addOrUpdate(::std::unique_ptr<::World::WorldJoinedRecord> pJoinedRecord);
 
@@ -61,6 +67,12 @@ public:
     joinedNetworkGame(::Social::GameConnectionInfo const& gameConnectionInfo, ::ILevel const* const level);
 
     MCAPI ::World::SessionTrackerOperationResult joinedRealm(::Realms::World* const realmWorld);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const& tempDirectory);
     // NOLINTEND
 
 public:

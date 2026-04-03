@@ -9,11 +9,12 @@ struct AquaticChargeAttackSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                     maxChargeDistance;
-    ::ll::TypedStorage<4, 4, float>                     chargeSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float>                     attackReach;
-    ::ll::TypedStorage<4, 4, float>                     knockbackForce;
-    ::ll::TypedStorage<4, 4, float>                     overshootDistance;
-    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> cooldownTimeSeconds;
+    ::ll::TypedStorage<4, 4, float>                     mMaxChargeDistance;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>    mLegacyChargeSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>                     mChargeSpeed;
+    ::ll::TypedStorage<4, 4, float>                     mAttackReach;
+    ::ll::TypedStorage<4, 4, float>                     mKnockbackForce;
+    ::ll::TypedStorage<4, 4, float>                     mOvershootDistance;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownTimeSeconds;
     // NOLINTEND
 };

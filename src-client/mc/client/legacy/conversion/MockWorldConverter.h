@@ -4,6 +4,6 @@
 
 namespace Legacy {
 
-struct MockWorldConverter {};
+class MockWorldConverter {};
 
 } // namespace Legacy

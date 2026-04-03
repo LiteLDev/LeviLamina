@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct FeatureSupportNull {};
+class FeatureSupportNull {};
 
 } // namespace mce

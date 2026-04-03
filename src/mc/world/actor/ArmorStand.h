@@ -12,10 +12,12 @@
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
+class InteractionResult;
 class ItemStack;
 class Player;
 struct ActorDefinitionIdentifier;
@@ -63,13 +65,14 @@ public:
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::InteractionResult
+    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     virtual void kill() /*override*/;
 
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -105,36 +108,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::ArmorStand::Pose const& POSE_ATHENA();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_BRANDISH();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_A();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_CANCAN_B();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_DEFAULT();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ENTERTAIN();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_HERO();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_HONOR();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_RIPOSTE();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_SALUTE();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_SOLEMN();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
-
-    MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -153,13 +126,14 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCAPI void $kill();
 
     MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
     MCAPI void $normalTick();
 

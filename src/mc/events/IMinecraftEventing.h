@@ -22,7 +22,6 @@
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/ValidationStatus.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/RawInputType.h"
@@ -37,7 +36,6 @@
 #include "mc/events/IPackTelemetry.h"
 #include "mc/events/IScreenChangedEventing.h"
 #include "mc/events/IUIEventTelemetry.h"
-#include "mc/events/IWebviewTelemetry.h"
 #include "mc/events/NetworkType.h"
 #include "mc/events/OpenCodeMethod.h"
 #include "mc/events/TextProcessingEventOrigin.h"
@@ -56,6 +54,7 @@
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/server/safety/ChatFloodingAction.h"
+#include "mc/util/ValidationStatus.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/player/LoadingState.h"
 #include "mc/world/actor/player/persona/ProfileType.h"
@@ -94,6 +93,7 @@ struct AsyncJoinDeny;
 struct ChunkRecyclerTelemetryOutput;
 struct DBStoragePerformanceTelemetryData;
 struct ExtraLicenseData;
+struct ImageTelemetryInfo;
 struct LevelStorageEventingContext;
 struct LowMemoryReport;
 struct NewBlockID;
@@ -102,7 +102,6 @@ struct ProfilerLiteTelemetry;
 struct SplitScreenUpdatedEventData;
 struct StackStats;
 struct WebviewDownloadInfo;
-struct glTFExportData;
 namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
@@ -110,28 +109,26 @@ namespace Bedrock::Http { class Status; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core::Profile { struct FileCounters; }
 namespace Json { class Value; }
-namespace PlayerMessaging { struct SigninID; }
 namespace PuvLoadData { struct TelemetryEventData; }
 namespace Social { class GameConnectionInfo; }
-namespace Social { class IUserManager; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlayerIDs; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class EventManager; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Measurement; }
+namespace Social::Events { class OptionChange; }
 namespace Social::Events { class Property; }
 namespace Social::Events { struct InboxSummaryData; }
+namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace mce { class UUID; }
-namespace Legacy { struct WorldConversionReport; }
 // clang-format on
 
 class IMinecraftEventing : public ::Bedrock::EnableNonOwnerReferences,
                            public ::IPackTelemetry,
                            public ::IScreenChangedEventing,
                            public ::IConnectionEventing,
-                           public ::IWebviewTelemetry,
                            public ::IUIEventTelemetry,
                            public ::IExternalSessionTelemetry,
                            public ::IMinecraftEventingProvider {
@@ -342,6 +339,8 @@ public:
         ConnectToRealmLink     = 7,
         EditWorld              = 8,
         TimelineRequiredScreen = 9,
+        RealmsPurchase         = 10,
+        PartyTravel            = 11,
     };
 
     enum class RealmConnectionLambda : int {
@@ -452,10 +451,7 @@ public:
     // NOLINTBEGIN
     virtual ~IMinecraftEventing() /*override*/;
 
-    virtual void init(
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&
-    ) = 0;
+    virtual void init(::Bedrock::NonOwnerPointer<::AppPlatform> const&) = 0;
 
     virtual void initDeviceAndSessionIds() = 0;
 
@@ -546,6 +542,10 @@ public:
         ::std::string const&,
         ::std::string const&,
         ::std::string const&,
+        ::std::string const&,
+        bool,
+        bool,
+        bool,
         bool,
         ::Social::GameConnectionInfo const&
     ) = 0;
@@ -557,13 +557,12 @@ public:
         ::SignalServiceConnectStage,
         bool,
         ::Json::Value const&,
-        ::PlayerMessaging::SigninID const&,
+        ::std::string const&,
         ::std::string const&,
         bool
     ) = 0;
 
-    virtual void
-    fireEventSignalMessagePerformance(::PlayerMessaging::SigninID const&, ::MessagePerformance const&, bool) = 0;
+    virtual void fireEventSignalMessagePerformance(::std::string const&, ::MessagePerformance const&, bool) = 0;
 
     virtual void fireEventOnClientDisconnect(
         ::SubClientId,
@@ -619,6 +618,7 @@ public:
     virtual void fireEventOnAppSuspend(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
         ::IMinecraftEventing::SuspendTriggersDisconnect,
+        bool,
         bool
     ) = 0;
 
@@ -649,9 +649,19 @@ public:
     virtual void
     fireEventChatSettingsUpdated(::Player const*, ::std::vector<::Social::Events::Property> const&) const = 0;
 
-    virtual void fireEventPerformanceMetrics(::ProfilerLiteTelemetry const&, bool, int) = 0;
+    virtual void fireEventPerformanceMetrics(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
+        ::ProfilerLiteTelemetry const&,
+        bool,
+        int
+    ) = 0;
 
-    virtual void fireEventPerformanceContext(::PerfContextTrackerReport const&, bool, int) = 0;
+    virtual void fireEventPerformanceContext(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
+        ::PerfContextTrackerReport const&,
+        bool,
+        int
+    ) = 0;
 
     virtual void fireEventDevSlashCommandExecuted(::std::string const&, ::std::string const&) = 0;
 
@@ -836,14 +846,8 @@ public:
     virtual void
     fireEventStoreErrorPage(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    virtual void setServerIdsforClient(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&
-    ) = 0;
+    virtual void
+    setServerIdsforClient(::std::string const&, ::std::string const&, ::Social::Events::ServerTelemetryData const&) = 0;
 
     virtual void setConnectionGUID(::std::string const&) = 0;
 
@@ -876,12 +880,7 @@ public:
     virtual void fireEventServerDrivenLayoutImagesLoaded(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
         ::std::string,
-        int,
-        uint64,
-        int,
-        int,
-        int,
-        ::std::vector<ushort>&
+        ::ImageTelemetryInfo const&
     ) = 0;
 
     virtual void fireEventLockedItemGiven() = 0;
@@ -922,7 +921,9 @@ public:
 
     virtual void fireContentDecryptionFailure(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    virtual void fireWorldConversionAttemptEvent(::Legacy::WorldConversionReport const&) = 0;
+    virtual void fireWorldConversionAttemptEvent(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>
+    ) = 0;
 
     virtual void fireWorldConversionInitiatedEvent(::std::string const&) = 0;
 
@@ -1094,6 +1095,11 @@ public:
     virtual void
     fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) const = 0;
 
+    virtual void fireEventOptionsChangedAlt(
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const&
+    ) const = 0;
+
     virtual void fireEventTagButtonPressed(::std::string const&, bool) const = 0;
 
     virtual void fireEventLevelDataOverride(::std::string_view) const = 0;
@@ -1158,7 +1164,7 @@ public:
     virtual void fireEventRealmUrlGenerated(::std::string const&, int64 const&) = 0;
 
     virtual void fireEventStructureExport(
-        ::glTFExportData const&,
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
         ::IMinecraftEventing::ExportOutcome,
         ::IMinecraftEventing::ExportStage
     ) const = 0;
@@ -1240,8 +1246,6 @@ public:
     virtual void fireEventTrialDeviceIdCorrelation(int64, ::std::string const&, int64, ::std::string const&) = 0;
 
     virtual void fireEventDeviceIdManagerFailOnIdentityGained() = 0;
-
-    virtual void fireEventPushNotificationPermission(bool, ::std::string const&) = 0;
 
     virtual void fireEventPushNotificationReceived(::PushNotificationMessage const&) = 0;
 
@@ -1438,20 +1442,6 @@ public:
 
     virtual void fireEventPersonaLoadingPieces(uint, double) = 0;
 
-    virtual void fireEventPersonaStillLoading(
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        ::std::vector<::persona::ProfileType> const&,
-        int,
-        double
-    ) = 0;
-
     virtual void fireEventPersonaCreationFailed(
         ::std::string const&,
         ::std::string const&,
@@ -1520,8 +1510,10 @@ public:
 
     virtual void fireDBStorageError(::LevelStorageEventingContext const&, ::std::string const&) = 0;
 
-    virtual void
-    fireServerStarted(::LevelSettings const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
+    virtual void fireServerStarted(
+        ::Social::Events::ServerTelemetryData const&,
+        ::std::unordered_map<::std::string, ::std::string> const&
+    ) = 0;
 
     virtual void fireServerShutdown() = 0;
 
@@ -1603,6 +1595,8 @@ public:
     virtual void
     fireEventUwpToGdkMigrationComplete(::Bedrock::DeviceIdContext const&, ::std::string const&, ::std::string_view) = 0;
 
+    virtual void fireEventOSKErrorEncountered(::std::string_view) = 0;
+
     virtual void fireNetworkChangedEvent(::std::string const&) = 0;
 
     virtual void fireEventMessageServiceImpression(
@@ -1620,6 +1614,8 @@ public:
         ::std::string const&,
         bool const
     ) = 0;
+
+    virtual void fireEventPartyPlayFabError(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
     virtual void fireEventGoogleAccountHoldWarning(bool) = 0;
 
@@ -1678,7 +1674,10 @@ public:
         ::std::vector<::std::string> const&
     ) = 0;
 
-    virtual void fireEventLowMemoryDetected(::LowMemoryReport const&) = 0;
+    virtual void fireEventLowMemoryDetected(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)>,
+        ::LowMemoryReport const&
+    ) = 0;
 
     virtual void fireEventReceivedApplicationExitInfo(
         ::std::string const&,
@@ -1698,6 +1697,8 @@ public:
     virtual void fireEventPacketSerializationMismatch(::MinecraftPacketIds, ::std::string_view, ::std::string_view) = 0;
 
     virtual void fireEventPUVLoad(::std::string const&, ::PuvLoadData::TelemetryEventData&&) = 0;
+
+    virtual void fireEventRemoteDesktop(bool) = 0;
     // NOLINTEND
 
 public:
@@ -1728,8 +1729,6 @@ public:
     MCNAPI static void** $vftableForIExternalSessionTelemetry();
 
     MCNAPI static void** $vftableForIMinecraftEventingProvider();
-
-    MCNAPI static void** $vftableForIWebviewTelemetry();
 
     MCNAPI static void** $vftableForIScreenChangedEventing();
     // NOLINTEND

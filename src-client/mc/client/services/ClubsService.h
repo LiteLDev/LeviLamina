@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClubsService {
+class ClubsService {
 public:
     // ClubsService inner types declare
     // clang-format off

@@ -11,8 +11,8 @@
 class ISceneStack;
 class SceneFactory;
 namespace OreUI { class RouteMatcher; }
+namespace Realms { class RealmsWorldContext; }
 namespace Realms { struct RealmId; }
-namespace Realms { struct RealmsWorldContext; }
 // clang-format on
 
 namespace OreUI::EntryPoints {
@@ -54,6 +54,8 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> MANAGE_MEMBERS_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SAVES_ROUTE();
     // NOLINTEND
 
 public:

@@ -12,11 +12,11 @@
 // auto generated forward declare list
 // clang-format off
 namespace mce { class ImageResourceLoader; }
+namespace mce { class ImmediateBuffer; }
+namespace mce { class QuadIndexBuffer; }
 namespace mce { class RenderContext; }
-namespace mce { struct ImmediateBuffer; }
-namespace mce { struct QuadIndexBuffer; }
-namespace mce { struct ShaderGroup; }
-namespace mce::framebuilder { struct PBRTextureDataManager; }
+namespace mce { class ShaderGroup; }
+namespace mce::framebuilder { class PBRTextureDataManager; }
 // clang-format on
 
 class MinecraftGraphics : public ::Bedrock::EnableNonOwnerReferences, public ::AppPlatformListener {

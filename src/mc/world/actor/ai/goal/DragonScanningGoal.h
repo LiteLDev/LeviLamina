@@ -43,16 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float& SITTING_ATTACK_VIEW_RANGE();
-
-    MCAPI static float& SITTING_CHARGE_VIEW_RANGE();
-
-    MCAPI static int& SITTING_SCANNING_IDLE_TICKS();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();

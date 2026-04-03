@@ -13,7 +13,7 @@ class PacketQueue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk61366b;
+    ::ll::UntypedStorage<8, 40> mUnkb52f1d;
     ::ll::UntypedStorage<8, 8>  mUnkf0b2ce;
     // NOLINTEND
 

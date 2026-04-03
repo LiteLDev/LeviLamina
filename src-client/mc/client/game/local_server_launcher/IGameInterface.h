@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher {
 
-struct IGameInterface {};
+class IGameInterface {};
 
 } // namespace LocalServerLauncher

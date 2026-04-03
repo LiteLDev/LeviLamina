@@ -8,8 +8,8 @@ struct LoadTaskData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkafe948;
-    ::ll::UntypedStorage<8, 8>  mUnkd79205;
+    ::ll::UntypedStorage<8, 8>  mUnkca2a0f;
+    ::ll::UntypedStorage<8, 8>  mUnk1a6566;
     ::ll::UntypedStorage<8, 8>  mUnkbc3885;
     ::ll::UntypedStorage<8, 24> mUnk262e36;
     ::ll::UntypedStorage<8, 8>  mUnk543e5c;

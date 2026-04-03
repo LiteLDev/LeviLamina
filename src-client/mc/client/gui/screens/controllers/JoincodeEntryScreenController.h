@@ -60,6 +60,8 @@ public:
 
     MCAPI void _closeScreen(::std::string const& popupControlId);
 
+    MCAPI void _openConnectingScreen();
+
     MCAPI void _openEntryScreen();
 
     MCAPI void _openErrorScreen(::EDUDiscovery::Error const& error);
@@ -68,7 +70,8 @@ public:
 
     MCAPI void _openIPEntryScreen();
 
-    MCAPI void _openScreen(::std::string const& popupControlId, ::std::string const& ttsTitle);
+    MCAPI void
+    _openScreen(::std::string const& popupControlId, ::std::string const& ttsTitle, ::std::string const& ttsContent);
 
     MCAPI void _registerEntryScreenBindings();
 

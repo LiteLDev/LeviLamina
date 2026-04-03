@@ -17,10 +17,10 @@ class RTCCertificateStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkee87f0;
-    ::ll::UntypedStorage<8, 40> mUnkf29804;
-    ::ll::UntypedStorage<8, 40> mUnk4ea391;
-    ::ll::UntypedStorage<8, 40> mUnk232905;
+    ::ll::UntypedStorage<8, 40> mUnk625cb1;
+    ::ll::UntypedStorage<8, 40> mUnk86e064;
+    ::ll::UntypedStorage<8, 40> mUnkb62695;
+    ::ll::UntypedStorage<8, 40> mUnk4af99c;
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Bedrock::Resources::Archive { class Reader; }
+namespace Bedrock::Resources::Archive { class TOCReader; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -56,6 +57,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnk3091c8;
+    ::ll::UntypedStorage<8, 16>  mUnk1ee3a4;
     // NOLINTEND
 
 public:
@@ -68,6 +70,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PreloadCache(::Bedrock::Resources::PreloadCache::SharedOnlyConstructionTag);
+
+    MCNAPI ::std::shared_ptr<::Bedrock::Resources::Archive::TOCReader> _cacheTOCReader(
+        ::Core::LRUCache<
+            ::Core::Path,
+            ::Bedrock::Resources::Archive::TOCReader,
+            ::std::shared_ptr<::Bedrock::Resources::Archive::TOCReader>>& tocCache,
+        ::Core::Path const&                                               archivePath
+    ) const;
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle _findPreloadedPath(
         ::Bedrock::Resources::PreloadCache::PreloadedContentMaps const& contentMaps,

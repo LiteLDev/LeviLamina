@@ -14,8 +14,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct FrameUpdateContext;
-struct RuntimeLocalLightingConfig;
+class FrameUpdateContext;
+class RuntimeLocalLightingConfig;
 namespace mce { class RenderContext; }
 namespace mce { struct BufferResourceService; }
 namespace mcr { struct DeferredResourceTransactions; }

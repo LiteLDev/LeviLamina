@@ -9,12 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class IExternalServerFile;
+class ProfanityContext;
 class ServerLocator;
 struct ExternalServer;
-struct IExternalServerFile;
 struct NetworkWorldInfo;
 struct PingedCompatibleServer;
-struct ProfanityContext;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on

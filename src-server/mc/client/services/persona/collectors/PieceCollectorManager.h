@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PieceCollectorManager {
+class PieceCollectorManager {
 public:
     // PieceCollectorManager inner types define
     enum class PrioritySearchFinishedState : uint {};

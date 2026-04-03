@@ -9,10 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class LibraryCollection;
 class PackManifest;
 class PlayScreenModel;
 class UIPropertyBag;
-struct LibraryCollection;
 namespace EDUScreenHelpers { class TemplateWrapper; }
 // clang-format on
 

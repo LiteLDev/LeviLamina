@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/legacy/ActorUniqueID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,6 @@ class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
 class PacketSender;
-struct ActorUniqueID;
 // clang-format on
 
 class MapDataManager {

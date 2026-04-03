@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/webrtc/RtpCodec.h"
-#include "mc/external/webrtc/ScalabilityMode.h"
 
 namespace webrtc {
 

@@ -16,8 +16,8 @@ class MemoryFileSystemEntryFile : public ::Core::MemoryFileSystemEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1869c1;
-    ::ll::UntypedStorage<8, 24> mUnk38561b;
+    ::ll::UntypedStorage<8, 24> mUnk822d93;
+    ::ll::UntypedStorage<8, 24> mUnk1f225d;
     // NOLINTEND
 
 public:

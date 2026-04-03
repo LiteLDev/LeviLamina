@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct HandleAlloc {};
+class HandleAlloc {};
 
 } // namespace bx

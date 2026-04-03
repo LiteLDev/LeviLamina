@@ -12,11 +12,10 @@ enum class JoinServerWorldResult : int {
     UserNeedsToBeSignedInError            = 4,
     BlockedByPlatformError                = 5,
     BlockedByXBLError                     = 6,
-    BlockedByVersionError                 = 7,
-    UserBannedError                       = 8,
-    ThirdPartyBadIPError                  = 9,
-    ThirdPartyNoServerOrServerLockedError = 10,
-    UnknownError                          = 11,
+    UserBannedError                       = 7,
+    ThirdPartyBadIPError                  = 8,
+    ThirdPartyNoServerOrServerLockedError = 9,
+    UnknownError                          = 10,
 };
 
 }

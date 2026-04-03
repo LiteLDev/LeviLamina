@@ -22,7 +22,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk34f8f2;
+    ::ll::UntypedStorage<8, 24> mUnk26485c;
     ::ll::UntypedStorage<8, 24> mUnkd5595a;
     // NOLINTEND
 
@@ -48,6 +48,7 @@ public:
             ::rapidjson::CrtAllocator>&                   document,
         ::Core::Path const&                               resourceName,
         bool                                              allowMissingVersionAsZero,
+        bool                                              betaApis,
         ::std::optional<::SemVersion> const&              minVersion,
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
@@ -63,6 +64,7 @@ public:
             ::rapidjson::CrtAllocator>&                   document,
         ::Core::Path const&                               resourceName,
         ::std::optional<::SemVersion> const&              minVersion,
+        bool                                              betaApis,
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
 

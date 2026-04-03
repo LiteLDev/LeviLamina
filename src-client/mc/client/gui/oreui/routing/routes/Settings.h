@@ -12,10 +12,10 @@
 // clang-format off
 class ILevelListCache;
 class ISceneStack;
+class RealmsAPI;
 class SceneFactory;
 class ServerInstance;
 class TaskGroup;
-struct RealmsAPI;
 namespace OreUI { class RouteMatcher; }
 namespace OreUI { struct RouteAction; }
 namespace ui { class ScreenTechStackSelector; }
@@ -29,11 +29,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::ILevelListCache&()>> mGetLevelListCache;
     ::ll::TypedStorage<8, 64, ::std::function<::ServerInstance*()>>  mGetServerInstance;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>               mIsInGame;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>               mIsInServer;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>               mIsInRealms;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>         mAsyncTaskGroup;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RealmsAPI>>          mRealms;
     ::ll::TypedStorage<8, 8, ::ui::ScreenTechStackSelector&>         mScreenTechStackSelector;
-    ::ll::TypedStorage<8, 32, ::std::string>                         mRoute;
-    ::ll::TypedStorage<1, 1, bool>                                   mEnableTechStackSelectorCheck;
     // NOLINTEND
 
 public:
@@ -60,12 +61,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Settings(
-        ::std::string_view                    route,
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance,
+        ::std::function<bool()>               isInGame,
+        ::std::function<bool()>               isInServer,
+        ::std::function<bool()>               isInRealms,
         ::std::weak_ptr<::RealmsAPI>          realms,
-        ::ui::ScreenTechStackSelector&        screenTechStackSelector,
-        bool                                  enableTechStackSelectorCheck
+        ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
 
     MCAPI void _navigateToScreen(
@@ -73,7 +75,9 @@ public:
         ::std::string const&                                path,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
-        ::OreUI::RouteAction const&                         routeAction
+        ::OreUI::RouteAction const&                         routeAction,
+        bool                                                fullscreen,
+        bool                                                skipLegacyProgress
     ) const;
 
     MCAPI bool _tryToPushRealmsManageTab(
@@ -100,6 +104,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
 
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> OREUI_ROUTE();
+
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
@@ -107,12 +113,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::string_view                    route,
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance,
+        ::std::function<bool()>               isInGame,
+        ::std::function<bool()>               isInServer,
+        ::std::function<bool()>               isInRealms,
         ::std::weak_ptr<::RealmsAPI>          realms,
-        ::ui::ScreenTechStackSelector&        screenTechStackSelector,
-        bool                                  enableTechStackSelectorCheck
+        ::ui::ScreenTechStackSelector&        screenTechStackSelector
     );
     // NOLINTEND
 
@@ -125,7 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddToConfiguration() const;
+    MCFOLD bool $shouldAddToConfiguration() const;
 
     MCAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,

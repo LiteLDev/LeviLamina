@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientLoggingService {};
+class ClientLoggingService {};
 
 } // namespace Editor::Services

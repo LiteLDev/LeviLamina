@@ -13,7 +13,7 @@ class RecursiveFIFODeferredSubscriptionHub : public ::Bedrock::PubSub::PriorityD
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkba7cf2;
+    ::ll::UntypedStorage<4, 4> mUnkba7cf2;
     // NOLINTEND
 
 public:

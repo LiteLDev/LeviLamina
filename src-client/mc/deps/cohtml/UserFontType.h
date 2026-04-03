@@ -5,8 +5,9 @@
 namespace cohtml::Fonts {
 
 enum class UserFontType : int {
-    Bitmap = 0,
-    Msdf   = 1,
+    Bitmap      = 0,
+    Msdf        = 1,
+    ColorBitmap = 2,
 };
 
 }

@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientPrefabPlayerService {};
+class ClientPrefabPlayerService {};
 
 } // namespace Editor::Services

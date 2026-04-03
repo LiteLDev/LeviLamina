@@ -41,20 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 getDiffVector(::Vec3 const& wantedPosition, ::Mob const& mob);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MIN_DELTA_TO_MOVE();
-
-    MCAPI static float const& MIN_SPEED_SQR();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);

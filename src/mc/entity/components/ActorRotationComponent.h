@@ -9,7 +9,7 @@ struct ActorRotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegree;
-    ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegreePrevious;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRot;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRotPrev;
     // NOLINTEND
 };

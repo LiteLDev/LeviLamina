@@ -4,6 +4,6 @@
 
 namespace ImportCompleteStep {
 
-struct IImporters {};
+class IImporters {};
 
 } // namespace ImportCompleteStep

@@ -36,6 +36,7 @@ public:
             ::NetworkIdentifier const&,
             ::Connection::DisconnectFailReason const,
             ::std::string const&,
+            ::std::string const&,
             bool,
             ::Json::Value const&
         ) = 0;
@@ -104,10 +105,6 @@ public:
     MCFOLD ushort $getIPv4Port() const;
 
     MCFOLD ushort $getIPv6Port() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::TransportLayer $getNetworkType() const;
-#endif
 
 
     // NOLINTEND

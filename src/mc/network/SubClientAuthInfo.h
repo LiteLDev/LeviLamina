@@ -16,7 +16,7 @@ struct SubClientAuthInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>       userSigner;
+    ::ll::TypedStorage<8, 8, ::PrivateKeyManager const&> userSigner;
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType> authenticationType;
     ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>   token;
     ::ll::TypedStorage<8, 32, ::RawGameServerToken>      newToken;

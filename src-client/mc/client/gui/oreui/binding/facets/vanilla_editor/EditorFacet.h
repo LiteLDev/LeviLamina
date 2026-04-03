@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { struct EditorUiMessageListener; }
+namespace OreUI { class EditorUiMessageListener; }
 // clang-format on
 
 namespace OreUI {
@@ -57,8 +57,6 @@ public:
     MCAPI void openConsole();
 
     MCAPI void openPauseMenu();
-
-    MCAPI void resizeViewport(float width, float height, float offsetX, float offsetY);
 
     MCAPI void setEditorMode(::Editor::Mode newMode);
 

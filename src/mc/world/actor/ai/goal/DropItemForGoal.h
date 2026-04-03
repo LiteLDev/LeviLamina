@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/util/FloatRange.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
@@ -32,7 +32,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                  mLootTable;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mDropForID;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnDropAttempt;
-    ::ll::TypedStorage<4, 8, ::FloatRange>                    mTimeOfDayRange;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>       mTimeOfDayRange;
     ::ll::TypedStorage<4, 12, ::Vec3>                         mTargetRange;
     ::ll::TypedStorage<4, 12, ::Vec3>                         mTeleportDistanceFromTarget;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetFilter;

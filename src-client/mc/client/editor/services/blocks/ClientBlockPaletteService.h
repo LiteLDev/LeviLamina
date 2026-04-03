@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientBlockPaletteService {};
+class ClientBlockPaletteService {};
 
 } // namespace Editor::Services

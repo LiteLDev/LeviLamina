@@ -34,6 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptInputEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&&);
+
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
 
@@ -44,6 +46,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&&);
     // NOLINTEND
 
 public:

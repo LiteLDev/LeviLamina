@@ -10,7 +10,7 @@ class NetworkSessionOwner : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka7bd76;
+    ::ll::UntypedStorage<8, 8> mUnka4b08c;
     // NOLINTEND
 
 public:

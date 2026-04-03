@@ -4,7 +4,7 @@
 
 namespace Bedrock::Resources {
 
-template <typename T0, int T1, int T2, int T3, int T4>
+template <typename T0, int T1, int T2, int T3, int T4, int T5>
 class CategoryLoaderRegistry {};
 
 } // namespace Bedrock::Resources

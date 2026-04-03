@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                  mDescription;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::Legacy::ActorDefinitions> mDefinitions;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ActorDefinitions> mDefinitions;
     ::ll::TypedStorage<
         8,
         64,

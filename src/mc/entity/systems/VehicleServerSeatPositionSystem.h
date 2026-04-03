@@ -53,7 +53,7 @@ public:
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
-    MCNAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
+    MCNAPI_S static void _setSeatDescriptionToActorDataSystemSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<
             ::StrictEntityContext,

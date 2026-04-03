@@ -9,19 +9,19 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentAcquisition;
+class DlcChecker;
 class IContentManager;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class ILevelListCache;
+class IStoreCatalogRepository;
 class MainMenuScreenController;
 class MainMenuScreenModel;
 class TaskGroup;
 class WorldTemplateManager;
-struct ContentAcquisition;
-struct DlcChecker;
 struct DlcValidationState;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
 struct PackIdVersion;
 // clang-format on
 

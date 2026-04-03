@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/MousePointerType.h"
-#include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppAction.h"
 #include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/DeviceSunsetTier.h"
 #include "mc/deps/application/IAppPlatform.h"
 #include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/application/OsVersion.h"
+#include "mc/deps/application/ProcessExecutionState.h"
 #include "mc/deps/application/StoragePermissionResult.h"
 #include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
@@ -38,7 +37,9 @@
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/options/UIProfile.h"
+#include "mc/platform/Result.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list
@@ -64,6 +65,7 @@ class ThermalMonitorInterface;
 class ThrottledFileWriteManager;
 class UriListener;
 struct IntegrityTokenResult;
+struct TextBoxSelection;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPaste; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
@@ -82,14 +84,32 @@ namespace Core { class PathView; }
 namespace mce { class UUID; }
 namespace mce { struct Image; }
 class WebviewInterface;
-namespace Social { struct MultiplayerService; }
 namespace Social { struct UserCreationData; }
-namespace Webview { struct PlatformArguments; }
+namespace Webview { class PlatformArguments; }
 // clang-format on
 
 class AppPlatform : public ::IAppPlatform, public ::ISecureStorageKeySystem {
 public:
+    // AppPlatform inner types declare
+    // clang-format off
+    struct ReadMode;
+    // clang-format on
+
     // AppPlatform inner types define
+    struct ReadMode {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnka0c5b9;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ReadMode& operator=(ReadMode const&);
+        ReadMode(ReadMode const&);
+        ReadMode();
+    };
+
     using Listener = ::AppPlatformListener;
 
 public:
@@ -118,8 +138,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IFileAccess>>                  mDefaultFileAccess;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IFileAccess>>                  mPackageFileAccess;
     ::ll::TypedStorage<8, 8, uint64>                                            mMaximumMemoryUsage;
-    ::ll::TypedStorage<8, 8, ::Bedrock::CommonPlatform*>                        mCommonPlatformShim;
-    ::ll::TypedStorage<1, 1, bool>                                              mMockMultiplayerActive;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mLocale;
     ::ll::TypedStorage<8, 8, double>                                            mActiveSeconds;
     ::ll::TypedStorage<8, 8, double>                                            mLastActiveTime;
@@ -192,6 +210,8 @@ public:
 
     virtual void removeListener(::AppPlatformListener* l);
 
+    virtual ::ProcessExecutionState getProcessExecutionState() const;
+
     virtual void restartApp(bool restart);
 
     virtual bool restartRequested() /*override*/;
@@ -236,7 +256,7 @@ public:
 
     virtual bool refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    virtual void setMousePointerType(::ui::MousePointerType);
+    virtual void setMousePointerType(::Bedrock::Input::PointerType);
 
     virtual void hideMousePointer();
 
@@ -255,6 +275,8 @@ public:
     virtual bool getPointerFocus();
 
     virtual void setPointerFocus(bool lostFocus);
+
+    virtual bool isInvertScrollEnabled() const;
 
     virtual void toggleSimulateTouchWithMouse();
 
@@ -522,13 +544,15 @@ public:
 
     virtual void setCaretPosition(int) = 0;
 
+    virtual void setTextBoxSelection(::TextBoxSelection selection);
+
     virtual bool supportsVibration() const;
 
     virtual void vibrate(int milliSeconds);
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename);
 
-    virtual ::std::string _readAssetFileInternal(::Core::Path const& filename);
+    virtual ::Bedrock::Result<::std::string> _readAssetFileInternal(::Core::PathView filename);
 
     virtual bool hasAssetFile(::Core::Path const& filename);
 
@@ -563,7 +587,7 @@ public:
 
     virtual void setNetworkConnectionType(::NetworkConnectionType connectionType);
 
-    virtual int getDefaultNetworkMaxPlayers() const;
+    virtual int getDefaultNetworkMaxPlayers() const /*override*/;
 
     virtual bool multiplayerRequiresPremiumAccess() const /*override*/;
 
@@ -775,11 +799,6 @@ public:
 
     virtual ::IPlatformScreenshots& getPlatformScreenshots();
 
-    virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
-
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
-    getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
-
     virtual uint maxFileDataRequestConcurrency() const;
 
     virtual void goToExternalConsumablesStoreListing() const /*override*/;
@@ -859,6 +878,8 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const = 0;
 
+    virtual ::Core::PathBuffer<::std::string> _getSharedDataPath() const = 0;
+
 #ifdef LL_PLAT_C
     virtual void _notifyUriListeners(::ActivationUri const& uri, bool ignoreVerb);
 
@@ -866,6 +887,8 @@ public:
     virtual bool _tryEnableCPUBoost();
 
     virtual void _disableCPUBoost();
+
+    virtual ::Bedrock::CommonPlatform* getPlatformShim() const;
 
     virtual void _initializeFileStorageAreas();
 
@@ -893,7 +916,7 @@ public:
 
     MCAPI_C void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
 
-    MCAPI void _fireAppTerminated();
+    MCAPI_S void _fireAppTerminated();
 
     MCAPI void _initializeLoadProfiler();
 
@@ -917,6 +940,9 @@ public:
 
     MCAPI_C ::mce::Image loadTextureFromStream(::std::string const& fileStream);
 
+    MCAPI ::Bedrock::Result<::std::string>
+    readAssetFile(::Core::PathView filename, ::AppPlatform::ReadMode const& readMode);
+
     MCAPI_C bool requiresNetworkOutageMessaging() const;
 
     MCAPI_C void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
@@ -925,15 +951,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool updateImGuiKeyboard(uchar param, bool isDown);
+    MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
+
+    MCAPI_C static bool mouseInputHandledByImGui();
+
+    MCAPI_C static void updateImGuiMousePosition(float x, float y);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& HOME_PATH();
-
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& LOG_PATH();
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SETTINGS_PATH();
 
@@ -978,6 +1006,8 @@ public:
     MCAPI void $addListener(::AppPlatformListener* l, float priority);
 
     MCAPI void $removeListener(::AppPlatformListener* l);
+
+    MCAPI ::ProcessExecutionState $getProcessExecutionState() const;
 
     MCAPI void $restartApp(bool restart);
 
@@ -1107,13 +1137,15 @@ public:
 
     MCFOLD bool $supportsAutoSaveOnDBCompaction() const;
 
+    MCAPI void $setTextBoxSelection(::TextBoxSelection selection);
+
     MCFOLD bool $supportsVibration() const;
 
     MCFOLD void $vibrate(int milliSeconds);
 
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
+    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename);
 
     MCAPI bool $hasAssetFile(::Core::Path const& filename);
 
@@ -1198,9 +1230,9 @@ public:
 
     MCAPI void $calculateIfLowMemoryDevice();
 
-    MCAPI bool $isLowMemoryDevice() const;
+    MCFOLD bool $isLowMemoryDevice() const;
 
-    MCAPI bool $isLowPhysicalMemoryDevice() const;
+    MCFOLD bool $isLowPhysicalMemoryDevice() const;
 
     MCFOLD uint64 $getTextureMemoryBudget() const;
 
@@ -1324,11 +1356,6 @@ public:
 
     MCAPI ::IPlatformScreenshots& $getPlatformScreenshots();
 
-    MCFOLD ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
-
-    MCFOLD ::std::vector<::Social::MultiplayerServiceIdentifier>
-    $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
-
     MCFOLD uint $maxFileDataRequestConcurrency() const;
 
     MCFOLD void $goToExternalConsumablesStoreListing() const;
@@ -1394,6 +1421,8 @@ public:
 
     MCFOLD void $_disableCPUBoost();
 
+    MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
+
     MCFOLD void $_initializeFileStorageAreas();
 
     MCAPI void $_teardownFileStorageAreas();
@@ -1433,6 +1462,8 @@ public:
 
     MCAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
+    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType);
+
     MCFOLD void $hideMousePointer();
 
     MCFOLD void $showMousePointer();
@@ -1450,6 +1481,8 @@ public:
     MCAPI bool $getPointerFocus();
 
     MCAPI void $setPointerFocus(bool lostFocus);
+
+    MCFOLD bool $isInvertScrollEnabled() const;
 
     MCFOLD void $toggleSimulateTouchWithMouse();
 
@@ -1551,7 +1584,7 @@ public:
 
     MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCFOLD ::Bedrock::PubSub::Subscription
         $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
 
     MCAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);

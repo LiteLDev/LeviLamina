@@ -14,17 +14,17 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class CustomParticle;
 class HashedString;
 class Level;
 class LightTexture;
 class Particle;
 class ParticleSystemEngine;
 class ScreenContext;
+class SeasonsRenderer;
 class Vec3;
-struct CustomParticle;
 struct ParticleLayerRenderObject;
 struct ParticleRenderContext;
-struct SeasonsRenderer;
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 
@@ -38,20 +38,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2376, ::std::vector<::std::unique_ptr<::Particle>>[99]> mInactiveParticlesPool;
-    ::ll::TypedStorage<8, 8, ::Level&>                                            mLevel;
-    ::ll::TypedStorage<8, 6336, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[99]>
+    ::ll::TypedStorage<8, 2424, ::std::vector<::std::unique_ptr<::Particle>>[101]> mInactiveParticlesPool;
+    ::ll::TypedStorage<8, 8, ::Level&>                                             mLevel;
+    ::ll::TypedStorage<8, 6464, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[101]>
                                                                                     mActiveParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CustomParticle>>>   customParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Particle>>>         mNewParticles;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SeasonsRenderer>>        mSeasons;
     ::ll::TypedStorage<8, 8, ::LightTexture&>                                       mLightTexture;
-    ::ll::TypedStorage<8, 2576, ::Random>                                           random;
+    ::ll::TypedStorage<8, 2544, ::Random>                                           random;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   opaqueMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   alphaTestMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   blendMat;
-    ::ll::TypedStorage<4, 396, uint[99]>                                            maxParticleCount;
-    ::ll::TypedStorage<4, 396, uint[99]>                                            particleCount;
+    ::ll::TypedStorage<4, 404, uint[101]>                                           maxParticleCount;
+    ::ll::TypedStorage<4, 404, uint[101]>                                           particleCount;
     ::ll::TypedStorage<1, 1, bool>                                                  mTemporaryCameraActive;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ParticleType, ::HashedString>> mNewParticleSystemJsonLookup;
     ::ll::TypedStorage<

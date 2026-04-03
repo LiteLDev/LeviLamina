@@ -8,9 +8,9 @@ struct ArgumentBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk85c51a;
+    ::ll::UntypedStorage<8, 32>  mUnk9a9c1d;
     ::ll::UntypedStorage<8, 16>  mUnk3a8eaa;
-    ::ll::UntypedStorage<8, 264> mUnkb650d4;
+    ::ll::UntypedStorage<8, 272> mUnkb650d4;
     // NOLINTEND
 
 public:

@@ -12,7 +12,7 @@ class SubpackInfoCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf3d8c0;
+    ::ll::UntypedStorage<8, 24> mUnka263b4;
     // NOLINTEND
 
 public:

@@ -18,6 +18,7 @@ namespace Editor { struct EditorBlockPaletteEventItemUpdated; }
 namespace Editor { struct EditorBlockPaletteEventPaletteRemoved; }
 namespace Editor { struct EditorBlockPaletteEventPaletteUpdated; }
 namespace Editor { struct EditorBlockPaletteEventSelectedItemIndexChanged; }
+namespace Editor::Cursor { class ServerCursorServiceProvider; }
 namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
 namespace Editor::Selection { struct SelectionVolumeEvent; }
@@ -72,8 +73,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkf45d6d;
     ::ll::UntypedStorage<8, 16> mUnk86589b;
     ::ll::UntypedStorage<8, 8>  mUnk586770;
-    ::ll::UntypedStorage<8, 24> mUnkb230da;
-    ::ll::UntypedStorage<8, 8>  mUnk6d997e;
+    ::ll::UntypedStorage<8, 24> mUnk21fe84;
+    ::ll::UntypedStorage<8, 8>  mUnkd307a2;
     // NOLINTEND
 
 public:
@@ -105,12 +106,16 @@ public:
     );
 
     MCNAPI void _handleCursorPositionChanged(
+        ::Editor::Cursor::ServerCursorServiceProvider*     cursorService,
         ::std::optional<::Editor::Cursor::Position> const& newPosition,
         ::Editor::Cursor::CursorState const&               cursorState
     );
 
-    MCNAPI void
-    _handleCursorStateChanged(::Editor::Cursor::CursorState const& from, ::Editor::Cursor::CursorState const& to);
+    MCNAPI void _handleCursorStateChanged(
+        ::Editor::Cursor::ServerCursorServiceProvider* cursorService,
+        ::Editor::Cursor::CursorState const&           from,
+        ::Editor::Cursor::CursorState const&           to
+    );
 
     MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 

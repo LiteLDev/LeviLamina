@@ -4,6 +4,6 @@
 
 namespace Scripting::RenderHelper {
 
-struct ArrowPrimitive {};
+class ArrowPrimitive {};
 
 } // namespace Scripting::RenderHelper

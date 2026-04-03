@@ -189,7 +189,7 @@ public:
 
     MCAPI ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCAPI ::std::vector<::ItemStack> const& $getItems() const;
+    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 

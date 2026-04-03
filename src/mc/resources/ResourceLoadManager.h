@@ -13,6 +13,7 @@
 class Scheduler;
 class TaskResult;
 class WorkerPool;
+namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -46,10 +47,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 3>  mUnkb71d1e;
+        ::ll::UntypedStorage<8, 8>  mUnk448294;
         ::ll::UntypedStorage<4, 4>  mUnkfb510f;
-        ::ll::UntypedStorage<8, 8>  mUnk5decd4;
-        ::ll::UntypedStorage<8, 24> mUnkbd7168;
+        ::ll::UntypedStorage<8, 8>  mUnk6c2afd;
+        ::ll::UntypedStorage<8, 24> mUnk43122d;
         ::ll::UntypedStorage<8, 16> mUnkac15ed;
         ::ll::UntypedStorage<1, 1>  mUnkd78565;
         // NOLINTEND
@@ -74,11 +75,12 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI_C void* $ctor(
-            ::std::string_view                groupName,
-            ::ResourceLoadType                loadType,
-            ::std::vector<::ResourceLoadType> dependencies,
-            ::Scheduler&                      scheduler,
-            ::WorkerPool&                     workerPool
+            ::std::string_view                                    groupName,
+            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
+            ::ResourceLoadType                                    loadType,
+            ::std::vector<::ResourceLoadType>                     dependencies,
+            ::Scheduler&                                          scheduler,
+            ::WorkerPool&                                         workerPool
         );
         // NOLINTEND
     };
@@ -89,7 +91,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk641f6f;
     ::ll::UntypedStorage<8, 8>  mUnkbc3f4e;
     ::ll::UntypedStorage<8, 8>  mUnk833b4d;
-    ::ll::UntypedStorage<8, 16> mUnk174289;
+    ::ll::UntypedStorage<8, 16> mUnk2466a3;
     ::ll::UntypedStorage<8, 8>  mUnkb77267;
     ::ll::UntypedStorage<1, 1>  mUnk8953d0;
     // NOLINTEND
@@ -147,9 +149,10 @@ public:
     );
 
     MCNAPI_C void registerResourceLoadTaskGroup(
-        ::std::string_view                groupName,
-        ::ResourceLoadType                resourceLoadType,
-        ::std::vector<::ResourceLoadType> dependencies
+        ::std::string_view                                    groupName,
+        ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
+        ::ResourceLoadType                                    resourceLoadType,
+        ::std::vector<::ResourceLoadType>                     dependencies
     );
 
     MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);

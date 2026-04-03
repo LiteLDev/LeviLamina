@@ -18,16 +18,15 @@
 // clang-format off
 class AbstractSceneProxy;
 class CachedScenes;
+class MinecraftUIFrameUpdateContext;
 class RectangleArea;
 class ScreenContext;
 class TaskGroup;
 struct FrameRenderObject;
-struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;
 struct TouchPadTouchEventData;
-namespace OreUI { struct ViewDebugSettings; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
@@ -218,8 +217,6 @@ public:
     virtual void sendScreenEvent(::std::string const&, ::std::string const&) = 0;
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) = 0;
-
-    virtual void setDebugSettings(::OreUI::ViewDebugSettings const&) const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const = 0;
     // NOLINTEND

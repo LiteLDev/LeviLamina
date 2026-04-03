@@ -19,6 +19,7 @@ class IResourcePackRepository;
 class PacketSender;
 class Scheduler;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct EditorInitParams; }
 namespace Scripting { struct ContextId; }
 // clang-format on
 
@@ -31,6 +32,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka0ac2a;
+    ::ll::UntypedStorage<8, 8>  mUnkb39dbf;
     // NOLINTEND
 
 public:
@@ -68,13 +70,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorManager(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
+    MCNAPI EditorManager(
+        bool                                         isClient,
+        ::PacketSender&                              packetSender,
+        ::IMinecraftEventing&                        eventing,
+        ::gsl::not_null<::Editor::EditorInitParams*> params
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(
+        bool                                         isClient,
+        ::PacketSender&                              packetSender,
+        ::IMinecraftEventing&                        eventing,
+        ::gsl::not_null<::Editor::EditorInitParams*> params
+    );
     // NOLINTEND
 
 public:

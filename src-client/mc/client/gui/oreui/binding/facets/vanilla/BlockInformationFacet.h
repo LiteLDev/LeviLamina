@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
-
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-// clang-format on
+#include "mc/deps/core/string/HashedString.h"
 
 namespace OreUI {
 

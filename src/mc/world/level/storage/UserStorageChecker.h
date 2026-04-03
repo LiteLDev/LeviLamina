@@ -11,8 +11,8 @@ class UserStorageChecker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8064a4;
-    ::ll::UntypedStorage<8, 8> mUnk2dbcef;
+    ::ll::UntypedStorage<8, 8> mUnkb0f536;
+    ::ll::UntypedStorage<8, 8> mUnk6cf0ff;
     // NOLINTEND
 
 public:

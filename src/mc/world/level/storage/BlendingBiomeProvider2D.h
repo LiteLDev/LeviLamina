@@ -6,7 +6,7 @@ class BlendingBiomeProvider2D {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkad6e1b;
+    ::ll::UntypedStorage<8, 8> mUnk97c99f;
     ::ll::UntypedStorage<1, 1> mUnk9de33d;
     // NOLINTEND
 

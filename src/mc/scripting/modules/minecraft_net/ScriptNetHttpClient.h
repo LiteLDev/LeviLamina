@@ -10,12 +10,18 @@
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
+namespace ScriptModuleMinecraftNet { class INativeHttpDelegate; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestBodyTooLargeError; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestNotAllowedError; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedHttpRequestError; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetModuleConfig; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct BaseError; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct Error; }
+namespace Util::Url { struct ComponentsView; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -33,9 +39,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk6ca84e;
-        ::ll::UntypedStorage<8, 8>  mUnk459b0a;
-        ::ll::UntypedStorage<8, 8>  mUnk88f6c5;
+        ::ll::UntypedStorage<8, 80>  mUnk6ca84e;
+        ::ll::UntypedStorage<8, 8>   mUnk824904;
+        ::ll::UntypedStorage<8, 8>   mUnk3ae71d;
+        ::ll::UntypedStorage<8, 128> mUnk701c9f;
+        ::ll::UntypedStorage<8, 8>   mUnk6b00db;
         // NOLINTEND
 
     public:
@@ -47,23 +55,45 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RequestProcessor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+        MCNAPI RequestProcessor(
+            ::std::string&&                                                    taskGroupName,
+            ::Bedrock::NonOwnerPointer<::Scheduler>                            serverScheduler,
+            ::ScriptModuleMinecraftNet::ScriptNetModuleConfig                  config,
+            ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
+        );
+
+        MCNAPI bool _uriAllowed(::std::string const& uri, ::Util::Url::ComponentsView const& requestComponents) const;
 
         MCNAPI ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-            ::Scripting::BaseError,
-            void>
+            ::Scripting::Error,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
+            ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
         process(
             ::Scripting::WeakLifetimeScope const&,
             ::Scripting::ScriptObjectFactory&                                                         factory,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
         );
+
+        MCNAPI ~RequestProcessor();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::string&& taskGroupName, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+        MCNAPI void* $ctor(
+            ::std::string&&                                                    taskGroupName,
+            ::Bedrock::NonOwnerPointer<::Scheduler>                            serverScheduler,
+            ::ScriptModuleMinecraftNet::ScriptNetModuleConfig                  config,
+            ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -81,13 +111,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptNetHttpClient(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+    MCNAPI ScriptNetHttpClient(
+        ::std::string const&                                               descriptorString,
+        ::Bedrock::NonOwnerPointer<::Scheduler>                            serverScheduler,
+        ::ScriptModuleMinecraftNet::ScriptNetModuleConfig                  config,
+        ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
+    );
 
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-        ::Scripting::BaseError,
-        void>
+        ::Scripting::Error,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
+        ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
     get(::Scripting::WeakLifetimeScope const& scope,
         ::Scripting::ScriptObjectFactory&     factory,
         ::std::string const&                  uri);
@@ -97,8 +133,10 @@ public:
 
     MCNAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-        ::Scripting::BaseError,
-        void>
+        ::Scripting::Error,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
+        ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
+        ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError>
     request(
         ::Scripting::WeakLifetimeScope const&                                                     scope,
         ::Scripting::ScriptObjectFactory&                                                         factory,
@@ -117,7 +155,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& descriptorString, ::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler);
+    MCNAPI void* $ctor(
+        ::std::string const&                                               descriptorString,
+        ::Bedrock::NonOwnerPointer<::Scheduler>                            serverScheduler,
+        ::ScriptModuleMinecraftNet::ScriptNetModuleConfig                  config,
+        ::std::unique_ptr<::ScriptModuleMinecraftNet::INativeHttpDelegate> delegate
+    );
     // NOLINTEND
 
 public:

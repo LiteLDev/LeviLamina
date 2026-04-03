@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class LevelChunk;
 struct LevelChunkFinalDeleter;
 // clang-format on

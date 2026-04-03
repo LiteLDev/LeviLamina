@@ -48,10 +48,14 @@ public:
 
     virtual void RegisterFont(char const*, ::cohtml::FontDescription const&, ::cohtml::Fonts::FontSDF) = 0;
 
+    virtual bool UnregisterFont(char const*) = 0;
+
     virtual void AddUserFont(char const**, uint*, uint, ::cohtml::UserFontDescription const&) = 0;
 
     virtual void
     AddUserFont(::cohtml::IAsyncResourceResponse::UserImageData const*, uint, ::cohtml::UserFontDescription const&) = 0;
+
+    virtual bool RemoveUserFont(::cohtml::UserFontDescription const&) = 0;
 
     virtual void SetDefaultFallbackFontName_DEPRECATED(char const*) = 0;
 

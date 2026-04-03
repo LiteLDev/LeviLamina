@@ -22,11 +22,11 @@ class SrtpTransport : public ::webrtc::RtpTransport {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8092d9;
-    ::ll::UntypedStorage<8, 8>  mUnkfe375f;
-    ::ll::UntypedStorage<8, 8>  mUnkfea983;
-    ::ll::UntypedStorage<8, 8>  mUnkd385e7;
-    ::ll::UntypedStorage<8, 8>  mUnk62d06f;
+    ::ll::UntypedStorage<8, 32> mUnkfda4b5;
+    ::ll::UntypedStorage<8, 8>  mUnk1f0d2b;
+    ::ll::UntypedStorage<8, 8>  mUnke67a94;
+    ::ll::UntypedStorage<8, 8>  mUnkb10ca3;
+    ::ll::UntypedStorage<8, 8>  mUnk77dbf6;
     ::ll::UntypedStorage<4, 8>  mUnk69d279;
     ::ll::UntypedStorage<4, 8>  mUnk129ed6;
     ::ll::UntypedStorage<8, 24> mUnk109469;
@@ -63,7 +63,7 @@ public:
 
     virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
-    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
+    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
     virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route) /*override*/;
 
@@ -131,7 +131,7 @@ public:
 
     MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& packet);
 
-    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
+    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
 
     MCNAPI void $OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 

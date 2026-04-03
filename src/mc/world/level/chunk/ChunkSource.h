@@ -31,6 +31,7 @@ class LevelStorage;
 class Random;
 class TaskResult;
 struct ActorUnloadedChunkTransferEntry;
+struct ChunkDeletionMetadata;
 struct LevelChunkFinalDeleter;
 // clang-format on
 
@@ -99,6 +100,18 @@ public:
 
     virtual void postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
+    virtual void deleteAllChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
+    virtual void deleteStoredChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
     virtual bool saveLiveChunk(::LevelChunk& lc);
 
     virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk);
@@ -141,6 +154,8 @@ public:
     virtual bool canLaunchTasks() const;
 
     virtual bool chunkPosNeedsBlending(::ChunkPos const& cp);
+
+    virtual void _clearBlendingCache();
     // NOLINTEND
 
 public:
@@ -231,6 +246,8 @@ public:
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
+    MCAPI_C void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
+
     MCAPI_C void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
@@ -308,6 +325,18 @@ public:
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
+    MCAPI void $deleteAllChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
+    MCAPI void $deleteStoredChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
     MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
@@ -350,6 +379,8 @@ public:
     MCAPI bool $canLaunchTasks() const;
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+
+    MCAPI void $_clearBlendingCache();
 
 
     // NOLINTEND

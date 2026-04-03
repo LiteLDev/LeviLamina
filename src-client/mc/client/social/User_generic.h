@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct User_generic {};
+class User_generic {};
 
 } // namespace Social

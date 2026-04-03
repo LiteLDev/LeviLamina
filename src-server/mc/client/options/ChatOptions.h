@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ChatOptions {
+class ChatOptions {
 public:
     // ChatOptions inner types declare
     // clang-format off

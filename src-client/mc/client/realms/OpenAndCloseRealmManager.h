@@ -4,7 +4,7 @@
 
 namespace Realms {
 
-struct OpenAndCloseRealmManager {
+class OpenAndCloseRealmManager {
 public:
     // OpenAndCloseRealmManager inner types declare
     // clang-format off

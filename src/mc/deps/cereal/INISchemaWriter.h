@@ -58,9 +58,11 @@ public:
 
     virtual bool write(::gsl::span<uchar const>) /*override*/;
 
-    virtual void writeValidityFlag(bool) /*override*/;
+    virtual void writeAdditionalData(bool) /*override*/;
 
-    virtual void writeControlValue(uint) /*override*/;
+    virtual void writeAdditionalData(uint) /*override*/;
+
+    virtual void writeAdditionalData(::std::string_view const) /*override*/;
 
     virtual bool pushMember(::std::string_view const) /*override*/;
 

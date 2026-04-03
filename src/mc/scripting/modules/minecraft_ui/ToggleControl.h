@@ -21,9 +21,9 @@ class ToggleControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk1d829b;
+    ::ll::UntypedStorage<8, 216> mUnk4bedaa;
     ::ll::UntypedStorage<1, 2>   mUnke05b7d;
-    ::ll::UntypedStorage<8, 224> mUnk5f1360;
+    ::ll::UntypedStorage<8, 224> mUnk18eab1;
     // NOLINTEND
 
 public:

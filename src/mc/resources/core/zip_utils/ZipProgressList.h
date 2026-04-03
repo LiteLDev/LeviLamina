@@ -13,7 +13,7 @@ struct ZipProgressList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkff54df;
+    ::ll::UntypedStorage<8, 24> mUnk2b0950;
     ::ll::UntypedStorage<8, 80> mUnkdebe11;
     // NOLINTEND
 

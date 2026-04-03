@@ -4,6 +4,6 @@
 
 namespace mce::framebuilder {
 
-struct DynamicResolutionController {};
+class DynamicResolutionController {};
 
 } // namespace mce::framebuilder

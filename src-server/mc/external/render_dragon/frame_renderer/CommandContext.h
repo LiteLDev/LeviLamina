@@ -4,7 +4,7 @@
 
 namespace dragon::framerenderer {
 
-struct CommandContext {
+class CommandContext {
 public:
     // CommandContext inner types declare
     // clang-format off

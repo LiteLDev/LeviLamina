@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XboxLiveStorageHandlerContext {};
+class XboxLiveStorageHandlerContext {};
 
 } // namespace Social

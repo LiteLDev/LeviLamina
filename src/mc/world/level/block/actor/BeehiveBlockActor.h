@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
@@ -83,12 +83,6 @@ public:
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI bool tryAdmit(::Actor& actor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI_C static uint const& MAX_OCCUPANCY();
     // NOLINTEND
 
 public:

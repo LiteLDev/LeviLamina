@@ -10,7 +10,6 @@
 #include "mc/client/game/DiskStatus.h"
 #include "mc/client/game/IClientInstance.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
 #include "mc/client/gui/screens/controllers/InventoryTabIndex.h"
@@ -33,6 +32,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/renderer/MatrixStack.h"
@@ -55,45 +55,59 @@ class Actor;
 class ActorAnimationGroup;
 class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class ActorResourceDefinitionGroup;
 class BlockActorRenderDispatcher;
 class BlockCullingGroup;
 class BlockSource;
 class BlockTessellator;
 class BuildActionIntention;
 class CachedScenes;
+class CameraRegistry;
 class ClientHitDetectCoordinator;
 class ClientInputHandler;
 class ClientInstanceEventCoordinator;
 class ClientMoveInputHandler;
 class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
+class ClientRequirementVerifier;
 class ClientScriptEventCoordinator;
+class ClientScriptManager;
 class DateManager;
+class DeferredLighting;
+class DevConsoleLogger;
+class DisconnectionRequestHandler;
 class EDUSystems;
 class EntityContext;
 class EntitySystems;
+class FileDataRequest;
 class FogDefinitionRegistry;
 class FogManager;
 class FontHandle;
+class FrameUpdateContext;
 class GameModuleClient;
 class GameRenderer;
 class GeometryGroup;
 class GuiData;
+class GuidedFlowManager;
 class HitDetectSystem;
 class HitResult;
+class HudIconActorRenderer;
 class IClientInstances;
 class IConnectionEventing;
 class IContentKeyProvider;
+class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
 class IOptions;
 class IResourcePackRepository;
 class ISceneStack;
+class ITTSEventManager;
 class IUIRepository;
 class ItemInHandRenderer;
 class ItemRegistryRef;
 class ItemRenderer;
 class KeyboardManager;
+class LatencyGraphDisplay;
 class LegacyClientNetworkHandler;
 class LegacyMultiplayerToken;
 class Level;
@@ -102,71 +116,57 @@ class LevelRendererCameraProxy;
 class LightTexture;
 class LinkedAssetValidator;
 class LocalPlayer;
+class MarketplaceServicesManager;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class MobEffectsLayout;
 class MultiPlayerLevel;
+class MusicManager;
 class Option;
 class Options;
 class PackManifestFactory;
 class PacketSender;
+class PersonaRepository;
 class PixelCalc;
 class Player;
+class PlayerAuthentication;
+class PlayerReportHandler;
+class ProfanityContext;
 class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
 class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
+class SkinRepository;
+class SkinRepositoryClientInterface;
+class SoundEngine;
+class StoreCatalogItem;
+class StoreCatalogRepository;
 class TaskGroup;
+class TextToSpeechClient;
 class ToastManager;
+class TrialManager;
 class UIEventCoordinator;
 class Vec2;
 class Vec3;
 class WeakEntityRef;
-struct ActorResourceDefinitionGroup;
+class WorldTransferAgent;
 struct ActorUniqueID;
-struct CameraRegistry;
 struct ClientInstanceArguments;
 struct ClientInstanceInitArguments;
-struct ClientRequirementVerifier;
-struct ClientScriptManager;
-struct DeferredLighting;
-struct DevConsoleLogger;
 struct DisconnectionErrorDetails;
-struct DisconnectionRequestHandler;
 struct DisconnectionScreenParams;
 struct ExperienceConnectionData;
-struct FileDataRequest;
-struct FrameUpdateContext;
-struct GuidedFlowManager;
-struct HudIconActorRenderer;
-struct IGameConnectionListener;
-struct ISettingsRegistry;
-struct ITTSEventManager;
-struct LatencyGraphDisplay;
 struct ListenerState;
 struct LocalPlayerChangedConnector;
-struct MarketplaceServicesManager;
-struct MusicManager;
 struct PacksInfoData;
-struct PersonaRepository;
-struct PlayerAuthentication;
+struct PlayerJoinWorldContext;
 struct PlayerJoinWorldTelemetryInfo;
-struct PlayerReportHandler;
-struct ProfanityContext;
 struct RawGameServerToken;
 struct ScreenshotOptions;
-struct SkinRepository;
-struct SkinRepositoryClientInterface;
-struct SoundEngine;
 struct SplitScreenInfo;
-struct StoreCatalogItem;
-struct StoreCatalogRepository;
-struct TextToSpeechClient;
-struct TrialManager;
-struct WorldTransferAgent;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
@@ -182,10 +182,11 @@ namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
+namespace Settings { class IRegistry; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class User; }
 namespace World { class WorldSystem; }
 namespace mce { class Camera; }
 namespace mce { class Texture; }
@@ -264,37 +265,37 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnkeb8701;
-    ::ll::UntypedStorage<8, 64>  mUnkfab32a;
+    ::ll::UntypedStorage<8, 64>  mUnkab1ca4;
     ::ll::UntypedStorage<8, 64>  mUnk2c0603;
-    ::ll::UntypedStorage<8, 64>  mUnk275af8;
+    ::ll::UntypedStorage<8, 64>  mUnk53ac0e;
     ::ll::UntypedStorage<8, 24>  mUnk4f1aef;
     ::ll::UntypedStorage<8, 8>   mUnk9379d1;
     ::ll::UntypedStorage<8, 24>  mUnk421768;
     ::ll::UntypedStorage<8, 8>   mUnke2a76f;
-    ::ll::UntypedStorage<8, 8>   mUnk599652;
+    ::ll::UntypedStorage<8, 8>   mUnka26806;
     ::ll::UntypedStorage<1, 1>   mUnk13fce4;
-    ::ll::UntypedStorage<8, 8>   mUnkd1e630;
-    ::ll::UntypedStorage<8, 8>   mUnk703d29;
-    ::ll::UntypedStorage<8, 8>   mUnk6d90fa;
-    ::ll::UntypedStorage<8, 8>   mUnkace9a6;
-    ::ll::UntypedStorage<8, 8>   mUnk59f993;
-    ::ll::UntypedStorage<8, 8>   mUnk5310df;
-    ::ll::UntypedStorage<8, 8>   mUnk12a970;
+    ::ll::UntypedStorage<8, 8>   mUnk5125ae;
+    ::ll::UntypedStorage<8, 8>   mUnked6a44;
+    ::ll::UntypedStorage<8, 8>   mUnk415024;
+    ::ll::UntypedStorage<8, 8>   mUnk9cdb03;
+    ::ll::UntypedStorage<8, 8>   mUnk93a1c9;
+    ::ll::UntypedStorage<8, 8>   mUnk5a4d7d;
+    ::ll::UntypedStorage<8, 8>   mUnka653a9;
     ::ll::UntypedStorage<8, 16>  mUnk3a3d21;
-    ::ll::UntypedStorage<8, 8>   mUnk9fe1ff;
-    ::ll::UntypedStorage<8, 8>   mUnk29790b;
+    ::ll::UntypedStorage<8, 8>   mUnkb0301c;
+    ::ll::UntypedStorage<8, 8>   mUnk4fe84c;
     ::ll::UntypedStorage<8, 24>  mUnk10018d;
     ::ll::UntypedStorage<8, 24>  mUnk6d935d;
     ::ll::UntypedStorage<8, 24>  mUnk9bcffe;
     ::ll::UntypedStorage<8, 48>  mUnk586e60;
-    ::ll::UntypedStorage<8, 8>   mUnkba00d2;
+    ::ll::UntypedStorage<8, 8>   mUnkc8308f;
     ::ll::UntypedStorage<4, 4>   mUnkfbfba1;
     ::ll::UntypedStorage<1, 1>   mUnkd6f5bb;
     ::ll::UntypedStorage<1, 1>   mUnkc69553;
     ::ll::UntypedStorage<1, 1>   mUnk20b577;
     ::ll::UntypedStorage<1, 1>   mUnka7e48d;
     ::ll::UntypedStorage<4, 4>   mUnk9e92ce;
-    ::ll::UntypedStorage<8, 32>  mUnkdbed7b;
+    ::ll::UntypedStorage<8, 32>  mUnk6638d4;
     ::ll::UntypedStorage<1, 1>   mUnk48d2a2;
     ::ll::UntypedStorage<1, 1>   mUnk44a215;
     ::ll::UntypedStorage<8, 64>  mUnkc2143d;
@@ -309,30 +310,30 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk445360;
     ::ll::UntypedStorage<8, 16>  mUnke10317;
     ::ll::UntypedStorage<4, 4>   mUnk47ffc0;
-    ::ll::UntypedStorage<8, 8>   mUnk1052cb;
-    ::ll::UntypedStorage<8, 8>   mUnkc24d28;
-    ::ll::UntypedStorage<8, 8>   mUnkadcd43;
+    ::ll::UntypedStorage<8, 8>   mUnk7ebe5b;
+    ::ll::UntypedStorage<8, 8>   mUnk5e5288;
+    ::ll::UntypedStorage<8, 8>   mUnkdd7dc7;
     ::ll::UntypedStorage<8, 16>  mUnkdb25a3;
     ::ll::UntypedStorage<8, 16>  mUnked2a78;
-    ::ll::UntypedStorage<8, 8>   mUnkdcfcea;
-    ::ll::UntypedStorage<8, 8>   mUnk82dfd0;
-    ::ll::UntypedStorage<8, 8>   mUnk984c7a;
+    ::ll::UntypedStorage<8, 8>   mUnk213553;
+    ::ll::UntypedStorage<8, 8>   mUnkcb57e4;
+    ::ll::UntypedStorage<8, 8>   mUnkfc8a9f;
     ::ll::UntypedStorage<8, 16>  mUnkb79e26;
-    ::ll::UntypedStorage<8, 8>   mUnk149f78;
-    ::ll::UntypedStorage<8, 8>   mUnk5a8bdb;
-    ::ll::UntypedStorage<8, 8>   mUnk8fed4e;
-    ::ll::UntypedStorage<8, 8>   mUnk269b14;
-    ::ll::UntypedStorage<8, 8>   mUnk32b0ff;
-    ::ll::UntypedStorage<8, 8>   mUnkbbb9b5;
-    ::ll::UntypedStorage<8, 8>   mUnk2b5396;
+    ::ll::UntypedStorage<8, 8>   mUnk3baa74;
+    ::ll::UntypedStorage<8, 8>   mUnkc7931f;
+    ::ll::UntypedStorage<8, 8>   mUnkdf551f;
+    ::ll::UntypedStorage<8, 8>   mUnk60be02;
+    ::ll::UntypedStorage<8, 8>   mUnk94c5d6;
+    ::ll::UntypedStorage<8, 8>   mUnk53fa4f;
+    ::ll::UntypedStorage<8, 8>   mUnkb410ae;
     ::ll::UntypedStorage<8, 16>  mUnk5da2d9;
     ::ll::UntypedStorage<1, 1>   mUnkfa0970;
-    ::ll::UntypedStorage<8, 8>   mUnkf4ba26;
-    ::ll::UntypedStorage<8, 8>   mUnk79da84;
-    ::ll::UntypedStorage<8, 8>   mUnk8d9725;
-    ::ll::UntypedStorage<8, 8>   mUnkbc94b5;
+    ::ll::UntypedStorage<8, 8>   mUnk291bf9;
+    ::ll::UntypedStorage<8, 8>   mUnk42ba34;
+    ::ll::UntypedStorage<8, 8>   mUnkc613e5;
+    ::ll::UntypedStorage<8, 8>   mUnkf955c2;
     ::ll::UntypedStorage<1, 1>   mUnk563a7c;
-    ::ll::UntypedStorage<8, 8>   mUnkda37dc;
+    ::ll::UntypedStorage<8, 8>   mUnk8320a2;
     ::ll::UntypedStorage<4, 4>   mUnk97285b;
     ::ll::UntypedStorage<4, 4>   mUnke5e0bf;
     ::ll::UntypedStorage<8, 16>  mUnk968bec;
@@ -351,39 +352,40 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk923860;
     ::ll::UntypedStorage<8, 8>   mUnk108e78;
     ::ll::UntypedStorage<4, 4>   mUnk7d3d83;
-    ::ll::UntypedStorage<8, 40>  mUnke83ed9;
-    ::ll::UntypedStorage<8, 40>  mUnk3e9e2f;
+    ::ll::UntypedStorage<8, 40>  mUnk4bd629;
+    ::ll::UntypedStorage<8, 40>  mUnk8195f7;
     ::ll::UntypedStorage<8, 16>  mUnkcf1108;
-    ::ll::UntypedStorage<8, 64>  mUnk393002;
+    ::ll::UntypedStorage<8, 64>  mUnk7c17c7;
     ::ll::UntypedStorage<8, 16>  mUnk1e3691;
-    ::ll::UntypedStorage<8, 8>   mUnkbe2831;
-    ::ll::UntypedStorage<8, 8>   mUnke03b83;
-    ::ll::UntypedStorage<8, 8>   mUnkee44b0;
-    ::ll::UntypedStorage<8, 8>   mUnka8bb72;
-    ::ll::UntypedStorage<8, 8>   mUnk5e2ef9;
+    ::ll::UntypedStorage<8, 8>   mUnk28391d;
+    ::ll::UntypedStorage<8, 8>   mUnkb7e3c5;
+    ::ll::UntypedStorage<8, 8>   mUnk73a2b8;
+    ::ll::UntypedStorage<8, 8>   mUnkbefb0a;
+    ::ll::UntypedStorage<8, 8>   mUnkf76b2d;
     ::ll::UntypedStorage<8, 16>  mUnkf8f09a;
     ::ll::UntypedStorage<4, 8>   mUnk973753;
     ::ll::UntypedStorage<4, 8>   mUnk600c92;
     ::ll::UntypedStorage<4, 4>   mUnk737de1;
     ::ll::UntypedStorage<8, 8>   mUnk6aa9fd;
-    ::ll::UntypedStorage<8, 8>   mUnkd40519;
+    ::ll::UntypedStorage<8, 8>   mUnk8a8a63;
     ::ll::UntypedStorage<8, 24>  mUnk5c4c80;
-    ::ll::UntypedStorage<8, 8>   mUnk1f7c97;
+    ::ll::UntypedStorage<8, 8>   mUnkd7ca73;
     ::ll::UntypedStorage<8, 16>  mUnk52193b;
-    ::ll::UntypedStorage<8, 8>   mUnk8d9ec3;
-    ::ll::UntypedStorage<8, 8>   mUnkc5b1ea;
-    ::ll::UntypedStorage<8, 8>   mUnkb1ffcd;
+    ::ll::UntypedStorage<8, 8>   mUnkc4e9e8;
+    ::ll::UntypedStorage<8, 8>   mUnk82a9fa;
+    ::ll::UntypedStorage<8, 8>   mUnk8ca999;
     ::ll::UntypedStorage<8, 24>  mUnk7ffd34;
     ::ll::UntypedStorage<8, 16>  mUnk99ef24;
     ::ll::UntypedStorage<8, 16>  mUnk6182e1;
-    ::ll::UntypedStorage<8, 8>   mUnkc5852d;
-    ::ll::UntypedStorage<8, 8>   mUnkc94ec9;
-    ::ll::UntypedStorage<8, 136> mUnkea7af0;
+    ::ll::UntypedStorage<8, 8>   mUnk84dba0;
+    ::ll::UntypedStorage<8, 8>   mUnk9ffd30;
+    ::ll::UntypedStorage<8, 176> mUnkea7af0;
     ::ll::UntypedStorage<8, 16>  mUnk8b8d16;
     ::ll::UntypedStorage<8, 16>  mUnk2caa57;
     ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
     ::ll::UntypedStorage<8, 24>  mUnkfbc948;
     ::ll::UntypedStorage<8, 24>  mUnk1e1098;
+    ::ll::UntypedStorage<8, 24>  mUnk51c002;
     ::ll::UntypedStorage<1, 1>   mUnkc75c08;
     ::ll::UntypedStorage<4, 4>   mUnkcef468;
     ::ll::UntypedStorage<4, 4>   mUnk573d1d;
@@ -391,10 +393,11 @@ public:
     ::ll::UntypedStorage<8, 80>  mUnk3892fa;
     ::ll::UntypedStorage<8, 16>  mUnka5c62e;
     ::ll::UntypedStorage<8, 16>  mUnk7dafcc;
-    ::ll::UntypedStorage<8, 8>   mUnk513b4d;
+    ::ll::UntypedStorage<8, 8>   mUnkdfdcca;
     ::ll::UntypedStorage<8, 24>  mUnk7433ce;
     ::ll::UntypedStorage<8, 8>   mUnk4efc95;
-    ::ll::UntypedStorage<8, 16>  mUnk3ae8c5;
+    ::ll::UntypedStorage<8, 16>  mUnkc2c7c8;
+    ::ll::UntypedStorage<8, 16>  mUnk6335eb;
     // NOLINTEND
 
 public:
@@ -440,7 +443,7 @@ public:
         ::std::string const&                   worldName,
         ::NetworkType                          networkTypeOverride,
         ::Social::MultiplayerServiceIdentifier service,
-        bool                                   isServerTransfer
+        ::PlayerJoinWorldContext               context
     ) /*override*/;
 
     virtual void onCancelJoinGame() /*override*/;
@@ -467,7 +470,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInWorld) /*override*/;
+    virtual bool update(bool isInitFinished) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -556,8 +559,6 @@ public:
     virtual bool isSelectedSkinInitialized() const /*override*/;
 
     virtual ::SplitScreenInfo getSplitScreenInfo() const /*override*/;
-
-    virtual int getCurrentMaxGUIScaleIndex() const /*override*/;
 
     virtual bool getHandlingControllerDisconnect() /*override*/;
 
@@ -791,7 +792,7 @@ public:
 
     virtual ::std::shared_ptr<::Social::User> const& getUser() const /*override*/;
 
-    virtual ::std::shared_ptr<::ISettingsRegistry> getSettingsRegistry() /*override*/;
+    virtual ::std::shared_ptr<::Settings::IRegistry> getSettingsRegistry() /*override*/;
 
     virtual ::Option const& getShowLearningPromptsOption() const /*override*/;
 
@@ -1070,7 +1071,7 @@ public:
 
     virtual void refocusMouse(bool lostMouse) /*override*/;
 
-    virtual void setMouseType(::ui::MousePointerType type) /*override*/;
+    virtual void setMouseType(::Bedrock::Input::PointerType type) /*override*/;
 
     virtual void resetBai(int baiFlags) /*override*/;
 
@@ -1111,13 +1112,14 @@ public:
     virtual void startExternalNetworkWorld(
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
-        bool                         isTransfer
+        ::PlayerJoinWorldContext     context
     ) /*override*/;
 
     virtual void connectToExperience(
-        ::ExperienceConnectionData                                        data,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> joinServerCallback,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::ExperienceConnectionData                                                      data,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> joinServerCallback,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
+        ::PlayerJoinWorldContext                                                        context
     ) /*override*/;
 
     virtual bool isReadyToReconnect() const /*override*/;
@@ -1251,7 +1253,8 @@ public:
 
     virtual void setClientInstanceState(::ClientInstanceState const& newstate) /*override*/;
 
-    virtual void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator) /*override*/;
+    virtual void
+    setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> getUIEventCoordinator() /*override*/;
 
@@ -1424,16 +1427,12 @@ public:
     MCAPI void _startExternalNetworkWorld(
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
-        bool                         isServerTransfer
+        ::PlayerJoinWorldContext     context
     );
 
     MCAPI void _startLeaveGame();
 
-    MCAPI void _startWorldPrimaryClient(
-        ::PlayerAuthenticationType authType,
-        ::LegacyMultiplayerToken&& token,
-        ::RawGameServerToken&&     newToken
-    );
+    MCAPI void _startWorldPrimaryClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
 
     MCAPI void _startWorldSubClient(
         ::PlayerAuthenticationType authType,
@@ -1507,7 +1506,7 @@ public:
         ::std::string const&                   worldName,
         ::NetworkType                          networkTypeOverride,
         ::Social::MultiplayerServiceIdentifier service,
-        bool                                   isServerTransfer
+        ::PlayerJoinWorldContext               context
     );
 
     MCAPI void $onCancelJoinGame();
@@ -1534,7 +1533,7 @@ public:
 
     MCAPI void $preFrameTick();
 
-    MCAPI bool $update(bool isInWorld);
+    MCAPI bool $update(bool isInitFinished);
 
     MCFOLD void $endFrame();
 
@@ -1622,8 +1621,6 @@ public:
     MCAPI bool $isSelectedSkinInitialized() const;
 
     MCAPI ::SplitScreenInfo $getSplitScreenInfo() const;
-
-    MCAPI int $getCurrentMaxGUIScaleIndex() const;
 
     MCAPI bool $getHandlingControllerDisconnect();
 
@@ -1776,7 +1773,7 @@ public:
         ::OwnerPtr<::EntityContext>                                          userEntity
     );
 
-    MCFOLD ::PlayerAuthentication& $getPlayerAuthentication();
+    MCAPI ::PlayerAuthentication& $getPlayerAuthentication();
 
     MCAPI void $createPlayerAuthentication();
 
@@ -1854,7 +1851,7 @@ public:
 
     MCAPI ::std::shared_ptr<::Social::User> const& $getUser() const;
 
-    MCAPI ::std::shared_ptr<::ISettingsRegistry> $getSettingsRegistry();
+    MCAPI ::std::shared_ptr<::Settings::IRegistry> $getSettingsRegistry();
 
     MCAPI ::Option const& $getShowLearningPromptsOption() const;
 
@@ -1955,7 +1952,7 @@ public:
 
     MCFOLD ::SceneFactory& $getSceneFactory() const;
 
-    MCAPI ::OreUI::SceneProvider& $getSceneProvider() const;
+    MCFOLD ::OreUI::SceneProvider& $getSceneProvider() const;
 
     MCAPI ::ui::ScreenTechStackSelector& $getScreenTechStackSelector();
 
@@ -2131,7 +2128,7 @@ public:
 
     MCAPI void $refocusMouse(bool lostMouse);
 
-    MCAPI void $setMouseType(::ui::MousePointerType type);
+    MCAPI void $setMouseType(::Bedrock::Input::PointerType type);
 
     MCAPI void $resetBai(int baiFlags);
 
@@ -2155,7 +2152,7 @@ public:
 
     MCAPI ::TaskGroup& $getTaskGroup();
 
-    MCAPI void $onFullVanillaPackOnStack();
+    MCFOLD void $onFullVanillaPackOnStack();
 
     MCAPI bool $isFullVanillaPackOnStack() const;
 
@@ -2172,13 +2169,14 @@ public:
     MCAPI void $startExternalNetworkWorld(
         ::Social::GameConnectionInfo connection,
         ::std::string const&         serverName,
-        bool                         isTransfer
+        ::PlayerJoinWorldContext     context
     );
 
     MCAPI void $connectToExperience(
-        ::ExperienceConnectionData                                        data,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> joinServerCallback,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::ExperienceConnectionData                                                      data,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> joinServerCallback,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
+        ::PlayerJoinWorldContext                                                        context
     );
 
     MCAPI bool $isReadyToReconnect() const;
@@ -2272,7 +2270,7 @@ public:
 
     MCAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
 
-    MCAPI ::std::deque<::std::string>& $getSentMessageHistory();
+    MCFOLD ::std::deque<::std::string>& $getSentMessageHistory();
 
     MCAPI ::std::deque<::std::string>& $getDevConsoleMessageHistory();
 
@@ -2311,7 +2309,7 @@ public:
 
     MCAPI void $setClientInstanceState(::ClientInstanceState const& newstate);
 
-    MCAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator);
+    MCAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> $getUIEventCoordinator();
 
@@ -2329,7 +2327,7 @@ public:
 
     MCAPI ::GameModuleClient* $getGameModule();
 
-    MCAPI ::ClientHitDetectCoordinator& $getHitEventCoordinator();
+    MCFOLD ::ClientHitDetectCoordinator& $getHitEventCoordinator();
 
     MCAPI void $sendClientEnteredLevel();
 

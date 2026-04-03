@@ -40,7 +40,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlock;
+            ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlock;
             ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
             ::ll::TypedStorage<4, 4, int>                 mWeight;
             // NOLINTEND

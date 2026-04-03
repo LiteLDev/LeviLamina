@@ -51,8 +51,8 @@ public:
     ::ll::TypedStorage<4, 8, ::DirtyTicksCounter>                               mDirtyTicksCounter;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>>    mSkyLight;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>>    mBlockLight;
-    ::ll::TypedStorage<1, 1, bool>                                              mHasMaxSkyLight;
     ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>                         mSubChunkState;
+    ::ll::TypedStorage<1, 1, bool>                                              mHasMaxSkyLight;
     ::ll::TypedStorage<1, 1, bool>                                              mNeedsInitLighting;
     ::ll::TypedStorage<1, 1, bool>                                              mNeedsClientLighting;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::SubChunkStorage<::Block>>[2]> mBlocks;

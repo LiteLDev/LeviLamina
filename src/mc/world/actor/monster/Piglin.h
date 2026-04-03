@@ -10,6 +10,7 @@
 class ActorDefinitionGroup;
 class ActorInteraction;
 class EntityContext;
+class InteractionResult;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -23,7 +24,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::InteractionResult
+    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
@@ -59,7 +61,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 

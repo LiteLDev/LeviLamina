@@ -27,7 +27,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk907704;
+    ::ll::UntypedStorage<8, 64> mUnk392c85;
     ::ll::UntypedStorage<1, 1>  mUnka00334;
     // NOLINTEND
 
@@ -48,6 +48,8 @@ public:
     MCNAPI ComponentStorageConstraint(::cereal::ComponentStorageConstraint const&);
 
     MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+
+    MCNAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::initializer_list<::std::string> keys);
 
     MCNAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
     // NOLINTEND

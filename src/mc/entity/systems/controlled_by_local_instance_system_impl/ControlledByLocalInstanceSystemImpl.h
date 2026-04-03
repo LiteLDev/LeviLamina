@@ -11,9 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct ActorDataFlagComponent;
 struct ControlledByLocalInstanceComponent;
 struct LocalPlayerComponent;
 struct PlayerComponent;
+struct VehicleComponent;
 // clang-format on
 
 namespace ControlledByLocalInstanceSystemImpl {
@@ -26,7 +28,8 @@ MCNAPI void _addOrRemoveCBLI(
 );
 
 MCNAPI void _calculateBoatControlledByLocalInstanceSystem(
-    ::StrictEntityContext const&                                                                            entity,
+    ::StrictEntityContext const& entity,
+    ::VehicleComponent const&    vehicleComponent,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
     ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
     void (*setCBLI)(
@@ -38,7 +41,9 @@ MCNAPI void _calculateBoatControlledByLocalInstanceSystem(
 );
 
 MCNAPI void _calculateHorseControlledByLocalInstanceSystem(
-    ::StrictEntityContext const&                                                                            entity,
+    ::StrictEntityContext const&    entity,
+    ::VehicleComponent const&       vehicleComponent,
+    ::ActorDataFlagComponent const& actorData,
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const& players,
     ::EntityModifier<::ControlledByLocalInstanceComponent>                                                  modifier,
     void (*setCBLI)(

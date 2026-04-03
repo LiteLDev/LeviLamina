@@ -13,8 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-struct ActorAttackEvent;
-struct ActorHealthChangedEvent;
 struct ActorRemovedEvent;
 struct ProjectileHitEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
@@ -37,10 +35,6 @@ public:
     // NOLINTBEGIN
     virtual ::EventResult onEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
-    virtual ::EventResult onEvent(::ActorAttackEvent const& actorAttackEvent) /*override*/;
-
-    virtual ::EventResult onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent) /*override*/;
-
     virtual ::EventResult onEvent(::ProjectileHitEvent const& projectileHitEvent) /*override*/;
 
     virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
@@ -52,10 +46,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
-
-    MCAPI ::EventResult $onEvent(::ActorAttackEvent const& actorAttackEvent);
-
-    MCAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& actorHealthChangedEvent);
 
     MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
 

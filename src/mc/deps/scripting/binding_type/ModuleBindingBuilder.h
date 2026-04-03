@@ -38,16 +38,16 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnk791e57;
         ::ll::UntypedStorage<8, 96> mUnk7003d2;
-        ::ll::UntypedStorage<8, 24> mUnk4eacd6;
-        ::ll::UntypedStorage<8, 24> mUnk79fcda;
-        ::ll::UntypedStorage<8, 24> mUnka08202;
-        ::ll::UntypedStorage<8, 24> mUnk12ae0a;
-        ::ll::UntypedStorage<8, 24> mUnk904f94;
-        ::ll::UntypedStorage<8, 24> mUnkb1808e;
-        ::ll::UntypedStorage<8, 24> mUnk7703db;
-        ::ll::UntypedStorage<8, 24> mUnk6bcb57;
-        ::ll::UntypedStorage<8, 24> mUnk8fa1fb;
-        ::ll::UntypedStorage<8, 32> mUnk2ebd1a;
+        ::ll::UntypedStorage<8, 24> mUnk4e5f71;
+        ::ll::UntypedStorage<8, 24> mUnk8da241;
+        ::ll::UntypedStorage<8, 24> mUnkc9781f;
+        ::ll::UntypedStorage<8, 24> mUnkce8547;
+        ::ll::UntypedStorage<8, 24> mUnk497dc8;
+        ::ll::UntypedStorage<8, 24> mUnk143183;
+        ::ll::UntypedStorage<8, 24> mUnk9f2b94;
+        ::ll::UntypedStorage<8, 24> mUnk985790;
+        ::ll::UntypedStorage<8, 24> mUnkcbd8d1;
+        ::ll::UntypedStorage<8, 32> mUnkbcacb4;
         // NOLINTEND
 
     public:

@@ -39,7 +39,7 @@ public:
 
     virtual int getEnchantValue() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -61,14 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& CHARGE_THRESHOLD_TIME();
-
-    MCAPI static int const& THROW_THRESHOLD_TIME();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
@@ -86,7 +78,7 @@ public:
 
     MCFOLD int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

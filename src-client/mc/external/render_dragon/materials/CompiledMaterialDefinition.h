@@ -4,14 +4,14 @@
 
 namespace dragon::materials {
 
-struct CompiledMaterialDefinition {
+class CompiledMaterialDefinition {
 public:
     // CompiledMaterialDefinition inner types declare
     // clang-format off
     struct Pass;
     struct ShaderCode;
     struct Variant;
-    struct VariantSet;
+    class VariantSet;
     // clang-format on
 
     // CompiledMaterialDefinition inner types define
@@ -21,7 +21,7 @@ public:
 
     struct Variant {};
 
-    struct VariantSet {};
+    class VariantSet {};
 };
 
 } // namespace dragon::materials

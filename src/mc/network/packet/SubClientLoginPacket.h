@@ -30,7 +30,7 @@ public:
     virtual ~SubClientLoginPacket() /*override*/;
 #endif
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
@@ -50,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI ::MinecraftPacketIds $getId() const;
 

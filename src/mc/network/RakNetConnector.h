@@ -42,11 +42,11 @@ public:
         // NOLINTBEGIN
         virtual ~ConnectionCallbacks() /*override*/ = default;
 
-        virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
+        virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, bool) = 0;
 
-        virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
+        virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, bool) = 0;
 
-        virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, ::std::string const&) = 0;
+        virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) = 0;
 
         virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>) = 0;
         // NOLINTEND
@@ -277,8 +277,6 @@ public:
 
     virtual void setDisableLanSignaling(bool) /*override*/;
 
-    virtual void setDisableTrickleIce(bool) /*override*/;
-
     virtual void _onDisable() /*override*/;
 
     virtual void _onEnable() /*override*/;
@@ -365,17 +363,13 @@ public:
 
     MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCFOLD void $setDisableLanSignaling(bool);
+    MCFOLD ::TransportLayer $getNetworkType() const;
 
-    MCFOLD void $setDisableTrickleIce(bool);
+    MCFOLD void $setDisableLanSignaling(bool);
 
     MCAPI void $_onDisable();
 
     MCAPI void $_onEnable();
-
-#ifdef LL_PLAT_C
-    MCFOLD ::TransportLayer $getNetworkType() const;
-#endif
 
 
     // NOLINTEND

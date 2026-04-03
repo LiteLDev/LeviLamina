@@ -11,6 +11,7 @@ namespace cohtml { class IEventHandler; }
 namespace cohtml { class Property; }
 namespace cohtml { class TypeDescription; }
 namespace cohtml { class TypeInfo; }
+namespace cohtml { struct PreciseHandle; }
 // clang-format on
 
 namespace cohtml {
@@ -206,6 +207,18 @@ public:
     virtual void ReadMapEnd() = 0;
 
     virtual ::cohtml::ValueType PeekValueType() = 0;
+
+    virtual ::cohtml::PreciseHandle CreatePreciseHandle(void*, char const*, ::cohtml::TypeInfo const*) = 0;
+
+    virtual bool UpdatePreciseHandle(void*, ::cohtml::PreciseHandle) = 0;
+
+    virtual void InstanceMoved(void*, void*) = 0;
+
+    virtual bool ElementUpdated(void*, ::cohtml::PreciseHandle, uint64) = 0;
+
+    virtual bool ElementAdded(void*, ::cohtml::PreciseHandle, uint64) = 0;
+
+    virtual bool ElementRemoved(void*, ::cohtml::PreciseHandle, uint64) = 0;
     // NOLINTEND
 
 public:

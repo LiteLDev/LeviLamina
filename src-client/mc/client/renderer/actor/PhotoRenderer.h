@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PhotoRenderer {
+class PhotoRenderer {
 public:
     // PhotoRenderer inner types declare
     // clang-format off
-    struct PhotoInstance;
+    class PhotoInstance;
     // clang-format on
 
     // PhotoRenderer inner types define
-    struct PhotoInstance {};
+    class PhotoInstance {};
 };

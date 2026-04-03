@@ -16,13 +16,13 @@ struct RelayServerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka997b0;
+    ::ll::UntypedStorage<8, 24> mUnkdb23be;
     ::ll::UntypedStorage<8, 64> mUnkd81b79;
     ::ll::UntypedStorage<4, 4>  mUnk765d45;
-    ::ll::UntypedStorage<8, 24> mUnkf894b9;
-    ::ll::UntypedStorage<8, 24> mUnkb36e86;
+    ::ll::UntypedStorage<8, 24> mUnka2ee85;
+    ::ll::UntypedStorage<8, 24> mUnkb2ef54;
     ::ll::UntypedStorage<8, 8>  mUnk3888a0;
-    ::ll::UntypedStorage<8, 32> mUnkb68e75;
+    ::ll::UntypedStorage<8, 32> mUnkf2f6b8;
     // NOLINTEND
 
 public:

@@ -45,9 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
+    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const&);
 
-    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& difficulty, ::Horse const& otherHorse);
+    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const&, ::Horse const& otherHorse);
 
     MCAPI ::Player* _getClosestPlayer() const;
     // NOLINTEND

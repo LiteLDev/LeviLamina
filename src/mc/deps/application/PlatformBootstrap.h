@@ -116,7 +116,7 @@ public:
         uint64             errorBufferSize
     );
 
-    MCNAPI_C ::Bedrock::PlatformBootstrap::SaveResult _rawSaveFile_cstdio(
+    MCNAPI ::Bedrock::PlatformBootstrap::SaveResult _rawSaveFile_cstdio(
         char const*        buffer,
         uint64             bufferSize,
         ::std::string_view root,
@@ -137,6 +137,8 @@ public:
 
     MCNAPI static ::Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
+
+    MCNAPI_S static ::Bedrock::PlatformBootstrap& getSharedInstance();
     // NOLINTEND
 
 public:

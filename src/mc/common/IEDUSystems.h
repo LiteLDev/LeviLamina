@@ -17,7 +17,7 @@ class IEDUSystems : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk48a625;
+    ::ll::UntypedStorage<8, 8> mUnk28a258;
     // NOLINTEND
 
 public:

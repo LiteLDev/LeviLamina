@@ -13,7 +13,7 @@ class BlockPos;
 class ChunkSource;
 class Dimension;
 class IStructureWireframeQueue;
-struct ClientDimensionExtensions;
+class ClientDimensionExtensions;
 // clang-format on
 
 class IClientDimensionExtensions {

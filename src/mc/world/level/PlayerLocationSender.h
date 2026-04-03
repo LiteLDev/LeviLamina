@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::ActorUniqueID,
             ::PlayerLocationSender::PlayerLocationData,
@@ -59,7 +59,7 @@ public:
         mCurrentPlayerLocationData;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::std::pair<::ActorUniqueID, ::ActorUniqueID>,
             ::std::optional<::Vec3>,
@@ -94,6 +94,8 @@ public:
     ) const;
 
     MCAPI void _updatePlayerData(::Player const& player);
+
+    MCAPI_S void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
 
     MCAPI ~PlayerLocationSender();
     // NOLINTEND

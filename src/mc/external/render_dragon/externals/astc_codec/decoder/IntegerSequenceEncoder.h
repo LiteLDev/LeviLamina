@@ -11,7 +11,7 @@ class IntegerSequenceEncoder : public ::astc_codec::IntegerSequenceCodec {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2d5940;
+    ::ll::UntypedStorage<8, 24> mUnkd5a1da;
     // NOLINTEND
 
 public:

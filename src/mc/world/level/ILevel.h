@@ -24,7 +24,6 @@
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/GameType.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
 // auto generated forward declare list
@@ -96,6 +95,7 @@ class IDynamicContainerSerialization;
 class ILevelRandom;
 class IMinecraftEventing;
 class IRandom;
+class ISubChunkLighter;
 class IUnknownBlockTypeRegistry;
 class IWorldRegistriesProvider;
 class InternalComponentRegistry;
@@ -172,6 +172,7 @@ class TagCacheManager;
 class TaskGroup;
 class TempEPtrManager;
 class TickDeltaTimeManager;
+class TickTimeManager;
 class TickingAreaList;
 class TickingAreasManager;
 class TradeTables;
@@ -181,9 +182,11 @@ class UserEntityIdentifierComponent;
 class Vec3;
 class VolumeEntityManagerServer;
 class WeakEntityRef;
+class WorldClockRegistry;
 class _TickPtr;
 struct ActorUniqueID;
 struct AdventureSettings;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct Bounds;
 struct BreakingItemParticleData;
 struct DerivedDimensionArguments;
@@ -194,6 +197,7 @@ struct PlayerSleepStatus;
 struct ResolvedItemIconInfo;
 struct ScreenshotOptions;
 struct Tick;
+namespace GameModeExt { struct MessengerFactory; }
 namespace PlayerCapabilities { struct ISharedController; }
 namespace PositionTrackingDB { class PositionTrackingDBClient; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
@@ -204,11 +208,11 @@ namespace cg { class ImageBuffer; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 class BaseLightTextureImageBuilder;
+class CameraRegistry;
 class MultiPlayerLevel;
 class Particle;
-struct CameraRegistry;
-struct SubChunkManager;
-struct TrustedSkinHelper;
+class SubChunkManager;
+class TrustedSkinHelper;
 // clang-format on
 
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {
@@ -223,7 +227,7 @@ public:
         ::Experiments const&,
         ::std::string const*,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
     ) = 0;
 
     virtual void startLeaveGame() = 0;
@@ -380,7 +384,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::TickDeltaTimeManager const> getTickDeltaTimeManager() const = 0;
 
-    virtual ::VoxelShapes::VoxelShapeRegistry const* getShapeRegistry() const = 0;
+    virtual ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry const> getShapeRegistry() const = 0;
+
+    virtual ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> getMutableShapeRegistry() const = 0;
 
     virtual ::BiomeRegistry const& getBiomeRegistry() const = 0;
 
@@ -434,6 +440,10 @@ public:
     virtual ::IWorldRegistriesProvider const& getWorldRegistriesProvider() const = 0;
 
     virtual ::IWorldRegistriesProvider& getWorldRegistriesProvider() = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const getWorldClockRegistry() const = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> getWorldClockRegistry() = 0;
 
     virtual void addListener(::LevelListener&) = 0;
 
@@ -494,6 +504,8 @@ public:
     virtual ::GameType getDefaultGameType() const = 0;
 
     virtual void setDifficulty(::SharedTypes::Legacy::Difficulty) = 0;
+
+    virtual ::GameModeExt::MessengerFactory createMessengerFactory() const = 0;
 
     virtual void setMultiplayerGameIntent(bool) = 0;
 
@@ -902,6 +914,8 @@ public:
 
     virtual void flushRunTimeLighting() = 0;
 
+    virtual ::std::weak_ptr<::ISubChunkLighter> getSubChunkLighter() const = 0;
+
     virtual void loadBlockDefinitionGroup(::Experiments const&) = 0;
 
     virtual void initializeBlockDefinitionGroup() = 0;
@@ -990,7 +1004,7 @@ public:
 
     virtual void setSimPaused(bool paused) = 0;
 
-    virtual bool getSimPaused() = 0;
+    virtual bool getSimPaused() const = 0;
 
     virtual void setFinishedInitializing() = 0;
 
@@ -1077,6 +1091,10 @@ public:
     virtual ::PlayerDeathManager* _getPlayerDeathManager() = 0;
 
     virtual ::MapDataManager& _getMapDataManager() = 0;
+
+    virtual ::TickTimeManager const& _getTickTimeManager() const = 0;
+
+    virtual ::TickTimeManager& _getTickTimeManager() = 0;
 
     virtual ::cereal::ReflectionCtx& _cerealContext() = 0;
 

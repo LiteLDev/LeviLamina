@@ -4,6 +4,6 @@
 
 namespace bgfx::d3d12 {
 
-struct StagingBufferD3D12 {};
+class StagingBufferD3D12 {};
 
 } // namespace bgfx::d3d12

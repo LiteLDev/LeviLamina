@@ -5,11 +5,13 @@
 namespace Bedrock::Resources {
 
 enum class ResourceCategory : ushort {
-    Unknown    = 0,
-    Particle   = 1,
-    Camera     = 2,
-    VoxelShape = 3,
-    TradeTable = 4,
+    Unknown      = 0,
+    Particle     = 1,
+    Camera       = 2,
+    VoxelShape   = 3,
+    TradeTable   = 4,
+    CameraSpline = 5,
+    Actor        = 6,
 };
 
 }

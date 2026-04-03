@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GameTip {
+class GameTip {
 public:
     // GameTip inner types declare
     // clang-format off

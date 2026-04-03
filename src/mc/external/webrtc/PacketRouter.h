@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/webrtc/PacingController.h"
-#include "mc/external/webrtc/RtpRtcpInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataSize; }
 namespace webrtc { class RtpPacketToSend; }
+namespace webrtc { class RtpRtcpInterface; }
 namespace webrtc { struct PacedPacketInfo; }
 // clang-format on
 
@@ -22,15 +22,15 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk3e3400;
     ::ll::UntypedStorage<8, 64> mUnk621066;
-    ::ll::UntypedStorage<8, 16> mUnke6b6cb;
+    ::ll::UntypedStorage<8, 16> mUnk9cd181;
     ::ll::UntypedStorage<8, 8>  mUnkd321a7;
-    ::ll::UntypedStorage<8, 24> mUnkf3edee;
-    ::ll::UntypedStorage<8, 24> mUnk61f8d8;
-    ::ll::UntypedStorage<8, 24> mUnkb30e09;
+    ::ll::UntypedStorage<8, 24> mUnk13d7c6;
+    ::ll::UntypedStorage<8, 24> mUnk7ca385;
+    ::ll::UntypedStorage<8, 24> mUnk15bfe9;
     ::ll::UntypedStorage<8, 8>  mUnk7b2465;
     ::ll::UntypedStorage<8, 8>  mUnk678034;
     ::ll::UntypedStorage<8, 32> mUnkd39471;
-    ::ll::UntypedStorage<8, 24> mUnkb01db3;
+    ::ll::UntypedStorage<8, 24> mUnkae9644;
     ::ll::UntypedStorage<8, 16> mUnk199a69;
     // NOLINTEND
 

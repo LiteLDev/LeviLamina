@@ -4,16 +4,9 @@
 
 class InteractionResult {
 public:
-    // InteractionResult inner types define
-    enum class Result : int {
-        Fail    = 0,
-        Success = 1,
-        Swing   = 2,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    Result mResult;
+    bool mSuccess : 1;
+    bool mSwing   : 1;
     // NOLINTEND
 };

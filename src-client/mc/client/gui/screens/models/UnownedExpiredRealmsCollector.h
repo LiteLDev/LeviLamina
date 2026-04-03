@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
 class SkinPackModel;
-struct IEntitlementManager;
-struct SkinRepositoryClientInterface;
+class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
 // clang-format on
 

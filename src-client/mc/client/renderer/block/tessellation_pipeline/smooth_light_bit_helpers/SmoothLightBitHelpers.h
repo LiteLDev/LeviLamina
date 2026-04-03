@@ -24,7 +24,7 @@ MCAPI ::ClientBlockPipeline::SmoothLightBitHelpers::SampledLightValues _computeL
     ::BlockPos const&                                               bottomLeft,
     ::Vec3 const&                                                   position,
     ::Vec3 const&                                                   normal,
-    bool                                                            calculate_ao
+    ::Vec3 const&                                                   scaledNormal
 );
 
 MCAPI ::ClientBlockPipeline::SmoothLightBitHelpers::CachedData _generateCache(

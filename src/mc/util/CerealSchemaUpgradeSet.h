@@ -11,7 +11,7 @@ class CerealSchemaUpgradeSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka33e81;
+    ::ll::UntypedStorage<8, 24> mUnke8490a;
     // NOLINTEND
 
 public:

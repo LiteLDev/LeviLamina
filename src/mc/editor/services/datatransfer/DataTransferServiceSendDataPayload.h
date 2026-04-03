@@ -17,13 +17,15 @@ class DataTransferServiceSendDataPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2a34f2;
-    ::ll::UntypedStorage<8, 32> mUnk56e017;
+    ::ll::UntypedStorage<8, 32> mUnkd2ba27;
+    ::ll::UntypedStorage<8, 32> mUnk17e16c;
+    ::ll::UntypedStorage<8, 32> mUnk3b5148;
+    ::ll::UntypedStorage<1, 1>  mUnk497cd7;
+    ::ll::UntypedStorage<8, 24> mUnk518bc7;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DataTransferServiceSendDataPayload& operator=(DataTransferServiceSendDataPayload const&);
     DataTransferServiceSendDataPayload(DataTransferServiceSendDataPayload const&);
     DataTransferServiceSendDataPayload();
 
@@ -31,6 +33,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~DataTransferServiceSendDataPayload() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
+    operator=(::Editor::Network::DataTransferServiceSendDataPayload&&);
+
+    MCNAPI ::Editor::Network::DataTransferServiceSendDataPayload&
+    operator=(::Editor::Network::DataTransferServiceSendDataPayload const&);
     // NOLINTEND
 
 public:

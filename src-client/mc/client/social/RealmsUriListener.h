@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct RealmsUriListener {};
+class RealmsUriListener {};
 
 } // namespace Social

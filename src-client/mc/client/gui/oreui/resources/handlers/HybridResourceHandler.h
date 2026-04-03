@@ -13,11 +13,11 @@ class IFileAccess;
 class ResourcePackManager;
 namespace Core { class FileSystem; }
 namespace Core { class Path; }
-namespace OreUI { class IResourceResponse; }
+namespace OreUI { class ResourceResponse; }
+namespace OreUI { class ResourceStreamResponse; }
 namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { struct HybridResourceLocation; }
 namespace OreUI { struct ResourceRequest; }
-namespace cohtml { class IAsyncResourceStreamResponse; }
 namespace cohtml { class ISyncStreamReader; }
 // clang-format on
 
@@ -48,11 +48,11 @@ public:
     virtual ~HybridResourceHandler() /*override*/;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response) /*override*/;
+    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
 
     virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const&         request,
-        ::cohtml::IAsyncResourceStreamResponse* response
+        ::OreUI::ResourceRequest const&  request,
+        ::OreUI::ResourceStreamResponse& response
     ) /*override*/;
 
     virtual void update() /*override*/;
@@ -81,10 +81,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response);
+    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
 
     MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::cohtml::IAsyncResourceStreamResponse* response);
+    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response);
 
     MCFOLD void $update();
     // NOLINTEND

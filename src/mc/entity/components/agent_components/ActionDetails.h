@@ -8,7 +8,7 @@ struct ActionDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk11df84;
+    ::ll::UntypedStorage<8, 32> mUnka60ca8;
     ::ll::UntypedStorage<4, 4>  mUnka6f6b0;
     // NOLINTEND
 

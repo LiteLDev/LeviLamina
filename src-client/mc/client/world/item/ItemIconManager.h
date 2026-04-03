@@ -4,11 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class ItemRegistryRef;
 class ItemStackBase;
 class ResourceLocation;
 class TextureAtlasItem;
-struct AtlasItemManager;
 struct ResolvedItemIconInfo;
 struct TextureUVCoordinateSet;
 namespace cg { class TextureSetImageContainer; }

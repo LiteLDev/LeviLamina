@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureEditorData.h"
 
 // auto generated forward declare list
@@ -19,7 +19,7 @@ class StructureBlockUpdatePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mBlockPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>             mBlockPos;
     ::ll::TypedStorage<8, 216, ::StructureEditorData> mData;
     ::ll::TypedStorage<1, 1, bool>                    mTrigger;
     ::ll::TypedStorage<1, 1, bool>                    mIsWaterlogged;
@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

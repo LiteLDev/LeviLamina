@@ -10,5 +10,6 @@ public:
     bool mRandomizeUVRotation       : 1;
     bool mSupportsTextureVariations : 1;
     bool mAlphaMaskedTint           : 1;
+    bool mDithering                 : 1;
     // NOLINTEND
 };

@@ -4,6 +4,6 @@
 
 namespace MSGraph::Requests {
 
-struct CreateUploadSession {};
+class CreateUploadSession {};
 
 } // namespace MSGraph::Requests

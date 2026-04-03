@@ -16,6 +16,7 @@ class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -121,7 +122,8 @@ public:
 
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~WitherBoss() /*override*/ = default;
     // NOLINTEND
@@ -221,7 +223,7 @@ public:
 
     MCAPI ::Vec3 $getFiringPos() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

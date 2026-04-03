@@ -13,8 +13,8 @@ struct ScriptModalFormDataTextFieldOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 224> mUnkbb823c;
-    ::ll::UntypedStorage<8, 224> mUnk7f2cd1;
+    ::ll::UntypedStorage<8, 224> mUnkfacf55;
+    ::ll::UntypedStorage<8, 224> mUnk4bb75a;
     // NOLINTEND
 
 public:

@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher::Impl {
 
-struct GameInterfaceImpl {};
+class GameInterfaceImpl {};
 
 } // namespace LocalServerLauncher::Impl

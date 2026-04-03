@@ -12,7 +12,7 @@ class EntityGoalFactory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8112d0;
+    ::ll::UntypedStorage<8, 64> mUnk5eecb6;
     // NOLINTEND
 
 public:
@@ -25,13 +25,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
-
-    MCNAPI ~EntityGoalFactory();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

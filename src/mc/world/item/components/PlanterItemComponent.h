@@ -14,6 +14,7 @@ class Actor;
 class Block;
 class BlockDescriptor;
 class BlockPos;
+class BlockType;
 class ComponentItem;
 class CompoundTag;
 class HashedString;
@@ -21,11 +22,27 @@ class ItemStack;
 class ItemStackBase;
 class SemVersion;
 class Vec3;
-namespace SharedTypes::v1_21_40 { struct PlanterItemComponent; }
+namespace SharedTypes::v1_26_0 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class PlanterItemComponent : public ::NetworkedItemComponent<::PlanterItemComponent> {
+public:
+    // PlanterItemComponent inner types declare
+    // clang-format off
+    struct BlockPlacementContext;
+    // clang-format on
+
+    // PlanterItemComponent inner types define
+    struct BlockPlacementContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BlockType const*> mBlock;
+        ::ll::TypedStorage<1, 1, bool const>         mAlignedPlacement;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,6 +51,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
     ::ll::TypedStorage<1, 1, bool>                              mCanUseBlockAsIcon;
     ::ll::TypedStorage<1, 1, bool>                              mReplaceBlockItem;
+    ::ll::TypedStorage<1, 1, bool>                              mAlignedPlacement;
     // NOLINTEND
 
 public:
@@ -57,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent component);
 
     MCAPI bool _placeBlock(
         ::ItemStack&      item,
@@ -94,13 +112,15 @@ public:
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
+    MCAPI static ::PlanterItemComponent::BlockPlacementContext getBlockPlacementContext(::ItemStackBase const& item);
+
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent component);
     // NOLINTEND
 
 public:

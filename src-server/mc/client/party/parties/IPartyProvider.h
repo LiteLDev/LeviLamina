@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct IPartyProvider {};
+class IPartyProvider {};
 
 } // namespace Parties

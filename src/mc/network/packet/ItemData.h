@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/world/item/registry/ItemVersion.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/world/item/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off

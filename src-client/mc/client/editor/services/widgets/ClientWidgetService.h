@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientWidgetService {};
+class ClientWidgetService {};
 
 } // namespace Editor::Services

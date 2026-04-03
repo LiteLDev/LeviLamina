@@ -876,6 +876,8 @@ MCAPI ::HashedString const& GoldBlock();
 
 MCAPI ::HashedString const& GoldOre();
 
+MCAPI ::HashedString const& GoldenDandelion();
+
 MCAPI ::HashedString const& GoldenRail();
 
 MCAPI ::HashedString const& Granite();

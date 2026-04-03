@@ -12,7 +12,7 @@ class ServerCommunicationInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk921281;
+    ::ll::UntypedStorage<8, 8>   mUnk48044d;
     ::ll::UntypedStorage<8, 136> mUnkd080df;
     // NOLINTEND
 

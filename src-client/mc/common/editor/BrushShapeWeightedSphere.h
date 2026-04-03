@@ -4,7 +4,7 @@
 
 namespace Editor::ClientBrush {
 
-struct BrushShapeWeightedSphere {
+class BrushShapeWeightedSphere {
 public:
     // BrushShapeWeightedSphere inner types declare
     // clang-format off

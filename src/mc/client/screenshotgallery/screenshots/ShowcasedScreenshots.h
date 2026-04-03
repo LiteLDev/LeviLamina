@@ -21,10 +21,10 @@ class ShowcasedScreenshots {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk501be4;
-    ::ll::UntypedStorage<8, 8>   mUnkc598fa;
-    ::ll::UntypedStorage<8, 8>   mUnk4f71e5;
-    ::ll::UntypedStorage<8, 32>  mUnkab068e;
+    ::ll::UntypedStorage<8, 8>   mUnk880b99;
+    ::ll::UntypedStorage<8, 8>   mUnk33fe27;
+    ::ll::UntypedStorage<8, 8>   mUnk3f91d0;
+    ::ll::UntypedStorage<8, 32>  mUnkf2c31f;
     ::ll::UntypedStorage<8, 24>  mUnk12c9dd;
     ::ll::UntypedStorage<8, 8>   mUnk17bb98;
     ::ll::UntypedStorage<8, 184> mUnk792f8e;

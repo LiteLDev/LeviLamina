@@ -21,16 +21,19 @@ namespace cereal { struct ReflectionCtx; }
 namespace CameraAimAssistRegistryInternal {
 // functions
 // NOLINTBEGIN
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile>
+MCAPI ::Puv::Loader<
+    ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile,
+    ::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile>
 getCategoriesLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_120::CameraAimAssistPresetFile>
-getPresetLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+MCAPI ::Puv::
+    Loader<::SharedTypes::v1_21_120::CameraAimAssistPresetFile, ::SharedTypes::v1_21_120::CameraAimAssistPresetFile>
+    getPresetLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
-MCAPI_C ::CameraAimAssist::PriorityCategory
+MCAPI ::CameraAimAssist::PriorityCategory
 makePriorityCategoryFromData(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const& categoryDefinition);
 
-MCAPI_C ::CameraAimAssist::PriorityPreset
+MCAPI ::CameraAimAssist::PriorityPreset
 makePriorityPresetFromData(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const& presetDefinition);
 // NOLINTEND
 

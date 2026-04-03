@@ -8,6 +8,7 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
@@ -37,7 +38,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk698b95;
+        ::ll::UntypedStorage<8, 32> mUnka2f01d;
         ::ll::UntypedStorage<8, 8>  mUnk7ec39a;
         // NOLINTEND
 
@@ -99,6 +100,10 @@ public:
     virtual ::Core::Result copyFileWithLimit(::Core::PathView, ::Core::PathView) = 0;
 
     virtual ::Core::Result readFileData(::Core::PathView, ::std::vector<uchar>&) = 0;
+
+    virtual ::Bedrock::Result<::std::string> readFile(::Core::PathView) = 0;
+
+    virtual ::Bedrock::Result<void> writeFile(::Core::PathView, ::std::string_view) = 0;
 
     virtual ::Core::Result createOneDirectory(::Core::PathView) = 0;
 

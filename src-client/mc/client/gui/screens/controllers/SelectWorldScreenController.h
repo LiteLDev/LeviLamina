@@ -64,7 +64,7 @@ public:
 
     MCAPI void _displayCopyFailedModal(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _downloadRealmsWorld(::Realms::World const& world);
+    MCAPI void _downloadLatestRealmsBackup(::Realms::World const& world);
 
     MCAPI void _exit(::SelectWorldResult result);
 

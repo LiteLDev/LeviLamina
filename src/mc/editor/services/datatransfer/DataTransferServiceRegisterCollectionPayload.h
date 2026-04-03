@@ -17,9 +17,10 @@ class DataTransferServiceRegisterCollectionPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9c010d;
-    ::ll::UntypedStorage<8, 32> mUnkd74638;
-    ::ll::UntypedStorage<8, 32> mUnk9e5337;
+    ::ll::UntypedStorage<8, 32> mUnke5c60e;
+    ::ll::UntypedStorage<8, 32> mUnkaab0d6;
+    ::ll::UntypedStorage<8, 32> mUnk711ab7;
+    ::ll::UntypedStorage<1, 1>  mUnk128784;
     // NOLINTEND
 
 public:

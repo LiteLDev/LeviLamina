@@ -11,10 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
 class IResourcePackRepository;
 class MinecraftScreenModel;
 class TaskGroup;
-struct IEntitlementManager;
 // clang-format on
 
 class ResourcePackCopyProgressHandler : public ::ProgressHandler {

@@ -4,6 +4,6 @@
 
 namespace Realms::Stories {
 
-struct RealmsFeedModeration {};
+class RealmsFeedModeration {};
 
 } // namespace Realms::Stories

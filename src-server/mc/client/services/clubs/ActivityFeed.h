@@ -4,7 +4,7 @@
 
 namespace Clubs {
 
-struct ActivityFeed {
+class ActivityFeed {
 public:
     // ActivityFeed inner types define
     enum class Type : int {};

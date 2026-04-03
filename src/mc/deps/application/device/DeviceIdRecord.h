@@ -21,7 +21,7 @@ class DeviceIdRecord {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbbff58;
+    ::ll::UntypedStorage<8, 32> mUnked1b8f;
     ::ll::UntypedStorage<1, 1>  mUnk6df0be;
     // NOLINTEND
 

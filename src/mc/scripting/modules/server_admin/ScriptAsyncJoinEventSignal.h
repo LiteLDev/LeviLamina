@@ -31,7 +31,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 72>  mUnkef0809;
-        ::ll::UntypedStorage<8, 104> mUnk7e080c;
+        ::ll::UntypedStorage<8, 112> mUnk7e080c;
         // NOLINTEND
 
     public:
@@ -43,15 +43,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Subscriber(::ScriptModuleServerAdmin::ScriptAsyncJoinEventSignal::Subscriber&&);
-
         MCNAPI ~Subscriber();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::ScriptModuleServerAdmin::ScriptAsyncJoinEventSignal::Subscriber&&);
         // NOLINTEND
 
     public:
@@ -66,8 +58,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk2799a2;
     ::ll::UntypedStorage<8, 16> mUnk6aa83e;
-    ::ll::UntypedStorage<8, 24> mUnk28a6f8;
-    ::ll::UntypedStorage<8, 24> mUnk212ab1;
+    ::ll::UntypedStorage<8, 24> mUnka4e0c0;
+    ::ll::UntypedStorage<8, 24> mUnkd55acd;
     // NOLINTEND
 
 public:

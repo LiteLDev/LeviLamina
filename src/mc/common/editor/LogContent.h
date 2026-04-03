@@ -8,8 +8,8 @@ struct LogContent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk4cc7b7;
-    ::ll::UntypedStorage<8, 80> mUnkbeef9e;
+    ::ll::UntypedStorage<8, 72> mUnkc5c790;
+    ::ll::UntypedStorage<8, 80> mUnk4062c3;
     // NOLINTEND
 
 public:

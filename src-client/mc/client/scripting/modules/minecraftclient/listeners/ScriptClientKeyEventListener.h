@@ -4,6 +4,6 @@
 
 namespace ScriptModuleMinecraftClient {
 
-struct ScriptClientKeyEventListener {};
+class ScriptClientKeyEventListener {};
 
 } // namespace ScriptModuleMinecraftClient

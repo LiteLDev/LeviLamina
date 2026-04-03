@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationControllerPtr;
 class ActorSkeletalAnimationPtr;
-class HashedString;
 struct MolangVariableSettings;
 struct NamedMolangScript;
 // clang-format on
@@ -29,8 +31,6 @@ public:
     MCAPI CommonResourceDefinitionMap();
 
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
-
-    MCAPI_C uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
 
     MCAPI_C void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
 

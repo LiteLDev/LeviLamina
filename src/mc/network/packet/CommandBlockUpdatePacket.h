@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/safety/RedactableString.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/CommandBlockMode.h"
 
 // auto generated forward declare list
@@ -23,7 +23,7 @@ class CommandBlockUpdatePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mBlockPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mBlockPos;
     ::ll::TypedStorage<2, 2, ::CommandBlockMode>                   mMode;
     ::ll::TypedStorage<1, 1, bool>                                 mRedstoneMode;
     ::ll::TypedStorage<1, 1, bool>                                 mIsConditional;
@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -81,7 +81,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

@@ -18,12 +18,12 @@ struct TransportDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk570b49;
-    ::ll::UntypedStorage<8, 32> mUnk6a52b1;
-    ::ll::UntypedStorage<8, 32> mUnk426746;
+    ::ll::UntypedStorage<8, 24> mUnkbce948;
+    ::ll::UntypedStorage<8, 32> mUnk6d8b61;
+    ::ll::UntypedStorage<8, 32> mUnkab9040;
     ::ll::UntypedStorage<4, 4>  mUnk99f4fa;
     ::ll::UntypedStorage<4, 4>  mUnk3bd252;
-    ::ll::UntypedStorage<8, 8>  mUnk3e5eb5;
+    ::ll::UntypedStorage<8, 8>  mUnkfde7dc;
     // NOLINTEND
 
 public:

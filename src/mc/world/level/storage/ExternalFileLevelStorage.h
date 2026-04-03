@@ -36,10 +36,6 @@ MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
 
 MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
-MCNAPI ::std::string getLevelIDFromPath(::Core::Path const& levelRootPath, ::Core::Path const& worldsPath);
-
-MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
-
 MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
@@ -83,12 +79,6 @@ MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 
 // static variables
 // NOLINTBEGIN
-MCNAPI char const* const& CLOUD_SYNC_LOCK();
-
-MCNAPI char const* const& FN_CORRUPTED_WORLD_MARKER();
-
-MCNAPI char const* const& FN_LEVEL_DAT();
-
 MCNAPI ::std::atomic<bool>& writingToCache();
 // NOLINTEND
 

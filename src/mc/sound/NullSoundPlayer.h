@@ -26,6 +26,8 @@ public:
 
     virtual uint64 playUI(::std::string const&, float, float) /*override*/;
 
+    virtual ::std::optional<::std::string> getSubtitle(::std::string const&) const /*override*/;
+
     virtual void playMusic(::std::string const&, float, uint&) /*override*/;
 
     virtual void playMusic(::std::string const&, float) /*override*/;
@@ -57,7 +59,7 @@ public:
 
     virtual void stop(uint64) /*override*/;
 
-    virtual void fadeOut(uint64 soundHandle, float duration) /*override*/;
+    virtual void fadeOut(uint64, float) /*override*/;
 
     virtual void stopAllSounds() /*override*/;
 
@@ -86,6 +88,8 @@ public:
     MCNAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float);
 
     MCNAPI uint64 $playUI(::std::string const&, float, float);
+
+    MCNAPI ::std::optional<::std::string> $getSubtitle(::std::string const&) const;
 
     MCNAPI void $playMusic(::std::string const&, float, uint&);
 
@@ -117,7 +121,7 @@ public:
 
     MCNAPI void $stop(uint64);
 
-    MCNAPI void $fadeOut(uint64 soundHandle, float duration);
+    MCNAPI void $fadeOut(uint64, float);
 
     MCNAPI void $stopAllSounds();
 

@@ -11,6 +11,7 @@
 class ScriptStat;
 namespace Core { class Path; }
 namespace Core { class Result; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ScriptDiagnosticsPublishToFile : public ::IScriptStatPublisher {
@@ -27,7 +28,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnka64202;
         ::ll::UntypedStorage<8, 8>  mUnkf9c1a3;
-        ::ll::UntypedStorage<8, 8>  mUnk3d53df;
+        ::ll::UntypedStorage<8, 8>  mUnkfe8cec;
         // NOLINTEND
 
     public:
@@ -66,9 +67,9 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkd0b8ad;
     ::ll::UntypedStorage<4, 4>  mUnk547915;
     ::ll::UntypedStorage<8, 32> mUnk4c3726;
-    ::ll::UntypedStorage<8, 32> mUnkfcfb98;
-    ::ll::UntypedStorage<8, 8>  mUnk193591;
-    ::ll::UntypedStorage<8, 8>  mUnke47e3c;
+    ::ll::UntypedStorage<8, 32> mUnk21bd13;
+    ::ll::UntypedStorage<8, 8>  mUnkf50aea;
+    ::ll::UntypedStorage<8, 8>  mUnk707dad;
     // NOLINTEND
 
 public:
@@ -90,6 +91,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptDiagnosticsPublishToFile(
+        ::cereal::ReflectionCtx& ctx,
+        bool                     autoStart,
+        ::std::optional<uint>    maxCaptureFiles,
+        ::std::optional<uint>    maxCaptureFileSize
+    );
+
     MCNAPI bool _createNewCapture(::Core::Path capturePath);
 
     MCNAPI bool _cyclePreviousCaptures();
@@ -101,6 +109,17 @@ public:
     MCNAPI bool startCapture();
 
     MCNAPI ::std::optional<::Core::Path> stopCapture();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::cereal::ReflectionCtx& ctx,
+        bool                     autoStart,
+        ::std::optional<uint>    maxCaptureFiles,
+        ::std::optional<uint>    maxCaptureFileSize
+    );
     // NOLINTEND
 
 public:

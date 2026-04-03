@@ -26,6 +26,7 @@ struct ScriptingWorldInitializeEvent;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
+namespace Editor { struct EditorInitParams; }
 namespace Editor::Network { class INetworkPayload; }
 namespace Scripting { class GenericModuleBindingFactory; }
 namespace Scripting { struct ContextId; }
@@ -46,6 +47,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk62d704;
     ::ll::UntypedStorage<8, 48> mUnkc95cac;
     ::ll::UntypedStorage<8, 48> mUnk86a141;
+    ::ll::UntypedStorage<8, 8>  mUnke15a95;
     // NOLINTEND
 
 public:
@@ -93,8 +95,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    EditorManagerServer(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
+    MCNAPI EditorManagerServer(
+        ::ServerInstance&                                      server,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
+        ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
+    );
 
     MCNAPI void _dispatchToServerPlayers(::Editor::Network::INetworkPayload& payload);
 
@@ -104,7 +109,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager);
+    MCNAPI void* $ctor(
+        ::ServerInstance&                                      server,
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> fileManager,
+        ::std::unique_ptr<::Editor::EditorInitParams>          editorInitParams
+    );
     // NOLINTEND
 
 public:

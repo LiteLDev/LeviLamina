@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 struct WalkDistComponent;
 // clang-format on
@@ -19,7 +19,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _tickWalkDistPrevSystem(
-        ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::WalkDistComponent> view
+        ::ViewT<::StrictEntityContext, ::Include<::InterpolateMovementNeededComponent>, ::WalkDistComponent> view
     );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();

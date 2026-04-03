@@ -4,6 +4,6 @@
 
 namespace Screenshots {
 
-struct LocalScreenshots {};
+class LocalScreenshots {};
 
 } // namespace Screenshots

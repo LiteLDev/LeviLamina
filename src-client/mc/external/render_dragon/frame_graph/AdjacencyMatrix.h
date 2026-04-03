@@ -4,7 +4,7 @@
 
 namespace dragon::framegraph::detail {
 
-struct AdjacencyMatrix {
+class AdjacencyMatrix {
 public:
     // AdjacencyMatrix inner types define
     enum class ConnectionType : int {};

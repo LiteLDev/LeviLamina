@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClientDimensionExtensions {
+class ClientDimensionExtensions {
 public:
     // ClientDimensionExtensions inner types declare
     // clang-format off

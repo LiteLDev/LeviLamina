@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct GenericNetworkIdentity {};
+class GenericNetworkIdentity {};
 
 } // namespace Social

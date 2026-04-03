@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentRenderPrim {};
+class WidgetComponentRenderPrim {};
 
 } // namespace Editor::Widgets

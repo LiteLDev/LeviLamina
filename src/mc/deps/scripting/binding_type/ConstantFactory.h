@@ -16,7 +16,7 @@ struct ConstantFactory : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk56382c;
+    ::ll::UntypedStorage<8, 32> mUnk9acbec;
     ::ll::UntypedStorage<8, 16> mUnk2f1d92;
     ::ll::UntypedStorage<1, 1>  mUnk35e387;
     ::ll::UntypedStorage<8, 64> mUnk88f6ea;

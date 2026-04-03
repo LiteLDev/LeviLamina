@@ -11,7 +11,6 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct ActorRemovedFlagComponent;
 struct BatFlagComponent;
 struct BeeFlagComponent;
@@ -19,6 +18,7 @@ struct ExperienceOrbFlagComponent;
 struct FireworksRocketFlagComponent;
 struct FishingHookFlagComponent;
 struct HorseFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct ItemActorFlagComponent;
 struct MinecartFlagComponent;
 struct MinecartPreNormalTickBlockPosComponent;
@@ -37,7 +37,7 @@ MCNAPI void _tickEach(
     bool isClientSide,
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::Exclude<::ActorRemovedFlagComponent>,
         ::ActorOwnerComponent> const&                                                          commonView,
     ::ViewT<::StrictEntityContext, ::Include<::BeeFlagComponent>> const&                       bees,

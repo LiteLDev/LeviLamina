@@ -45,10 +45,6 @@ MCAPI uint UpdateNetworkLoop(void* arguments);
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
 MCFOLD void _RakFree_Ex(void* p, char const* file, uint line);
-
-MCFOLD void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
-
-MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
 // NOLINTEND
 
 // static variables

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ClubsPostScreenshotRequest {
+class ClubsPostScreenshotRequest {
 public:
     // ClubsPostScreenshotRequest inner types declare
     // clang-format off

@@ -122,6 +122,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI_C bool _createApp();
+
+    MCAPI_C bool init(::Bedrock::ActivationArguments const& actArgs);
+
+    MCAPI_C bool startApp(::Bedrock::ActivationArguments const& actArgs);
+
+    MCAPI_C int update(bool canRender);
     // NOLINTEND
 
 public:

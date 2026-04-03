@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 struct HC_PERFORM_ENV;
-struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
+struct HC_WEBSOCKET_OBSERVER;
 // clang-format on
 
 namespace Bedrock::Http {

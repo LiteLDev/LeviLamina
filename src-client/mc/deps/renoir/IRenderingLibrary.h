@@ -17,6 +17,8 @@ public:
 
     virtual void DestroyRenderingResources() = 0;
 
+    virtual void UnloadFonts(uint*, uint64) = 0;
+
     virtual void Uninitialize() = 0;
 
     virtual char const* GetVersion() const = 0;
@@ -72,6 +74,8 @@ public:
     virtual void ClearCommandProcessorPoolFreeList() = 0;
 
     virtual void ClearTextAtlases() = 0;
+
+    virtual void ClearTextAtlasesImmediate() = 0;
 
     virtual void* ReservedMethod(void*, void*) = 0;
 

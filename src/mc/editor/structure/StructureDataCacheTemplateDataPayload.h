@@ -18,7 +18,8 @@ class StructureDataCacheTemplateDataPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5ab1b0;
+    ::ll::UntypedStorage<8, 16> mUnk1919a8;
+    ::ll::UntypedStorage<8, 32> mUnka45f9e;
     // NOLINTEND
 
 public:
@@ -30,45 +31,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool load(::CompoundTag const* tag) /*override*/;
-
-    virtual ::CompoundTag save() const /*override*/;
-
     virtual ~StructureDataCacheTemplateDataPayload() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureDataCacheTemplateDataPayload(::mce::UUID const& itemId, ::CompoundTag&& data);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& ITEM_ID_KEY();
+    MCNAPI StructureDataCacheTemplateDataPayload(::mce::UUID const& itemId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag&& data);
+    MCNAPI void* $ctor(::mce::UUID const& itemId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $load(::CompoundTag const* tag);
-
-    MCNAPI ::CompoundTag $save() const;
-
-
     // NOLINTEND
 
 public:

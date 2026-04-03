@@ -13,7 +13,7 @@ namespace AppExtensions { class IAppClientInstanceTestInterface; }
 namespace AppExtensions { class IAppTestClientInterface; }
 class IClientInstance;
 class IMinecraftGame;
-namespace Bedrock::DevTools { struct CommandExecutor; }
+namespace Bedrock::DevTools { class CommandExecutor; }
 // clang-format on
 
 namespace AppExtensions {

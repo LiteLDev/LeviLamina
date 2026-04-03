@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                              mFormatVersion;
-    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition> mDefinition;
+    ::ll::TypedStorage<8, 296, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition> mDefinition;
     // NOLINTEND
 
 public:

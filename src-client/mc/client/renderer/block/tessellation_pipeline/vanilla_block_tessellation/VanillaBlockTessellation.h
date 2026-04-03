@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Dimension;
-struct BiomeTintCache;
 namespace ClientBlockPipeline { class Description; }
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class MaterialRepository; }
@@ -46,7 +46,8 @@ MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository,
     ::DimensionType const&                                       dimension,
     ::BakedBlockLightType                                        lightingType,
-    ::BiomeTintCache*                                            biomeTintCache
+    ::BiomeTintCache*                                            biomeTintCache,
+    bool                                                         textureShiftsEnabled
 );
 // NOLINTEND
 

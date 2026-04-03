@@ -15,7 +15,6 @@ class PlayerUpdateEntityOverridesPacket;
 class Potion;
 class PropertyComponent;
 class PropertyMetadata;
-namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class ParamStorageBase; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
@@ -43,10 +42,6 @@ MCNAPI ::std::vector<::CommandParameterData> CreateCommandParameters(
 MCNAPI ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>>
 CreateParamStorage(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface);
 
-MCNAPI ::std::
-    unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
-    _getOrCreateNativeItemComponentFactories();
-
 MCNAPI ::Scripting::Error
 _handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
 
@@ -72,6 +67,10 @@ MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
     ::Actor const*            actor,
     ::std::string const&      identifier
 );
+
+MCNAPI ::Scripting::EnumBinding bindActorHealCause();
+
+MCNAPI ::Scripting::EnumBinding bindActorLocatorEnum();
 
 MCNAPI ::Scripting::EnumBinding bindActorSwingSource();
 

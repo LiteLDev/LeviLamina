@@ -9,8 +9,8 @@ struct ActiveDirectoryScreenCapabilities : public ::TypedScreenCapabilities<::Ac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3c0f13;
-    ::ll::UntypedStorage<8, 32> mUnke090f0;
+    ::ll::UntypedStorage<8, 32> mUnk9281b0;
+    ::ll::UntypedStorage<8, 32> mUnkdfc555;
     // NOLINTEND
 
 public:

@@ -37,7 +37,7 @@ public:
         ::ll::TypedStorage<1, 1, bool>        mHasBuildDirection;
         ::ll::TypedStorage<1, 1, bool>        mHasLastBuiltPosition;
         ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasInteractive;
-        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasSnappable;
+        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockAlignedPlacement;
         ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockHadSuccessfulUse;
         ::ll::TypedStorage<4, 12, ::BlockPos> mLastBuiltBlockPosition;
         ::ll::TypedStorage<4, 12, ::BlockPos> mBuildDirection;
@@ -207,8 +207,6 @@ public:
         bool              isFirstEvent
     ) const;
 
-    MCAPI_C bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
-
     MCAPI bool baseUseItem(::ItemStack const& item);
 
     MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection);
@@ -252,8 +250,6 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI float $getPickRange(::InputMode const& currentInputMode);
-
     MCAPI bool $useItem(::ItemStack& item);
 
     MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
@@ -278,6 +274,10 @@ public:
     MCFOLD bool $isInTrialMode();
 
     MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)>);
+
+#ifdef LL_PLAT_C
+    MCAPI float $getPickRange(::InputMode const& currentInputMode);
+#endif
 
 
     // NOLINTEND

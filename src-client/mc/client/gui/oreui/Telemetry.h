@@ -11,6 +11,7 @@ class IClientInstance;
 class IMinecraftEventing;
 namespace OreUI { struct DataTracker; }
 namespace Social::Events { class Measurement; }
+namespace Social::Events { class OptionChange; }
 namespace Social::Events { class Property; }
 // clang-format on
 
@@ -61,6 +62,11 @@ public:
         ::std::unordered_map<::std::string, int> const& events
     ) /*override*/;
 
+    virtual void fireEventOptionsChangedAlt(
+        ::std::string const&                                                       optionsGroup,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
+    ) /*override*/;
+
     virtual void fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,
         ::std::string const& action,
@@ -99,6 +105,11 @@ public:
 
     MCAPI void
     $fireEventOptionsChanged(::std::string const& optionsGroup, ::std::unordered_map<::std::string, int> const& events);
+
+    MCAPI void $fireEventOptionsChangedAlt(
+        ::std::string const&                                                       optionsGroup,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
+    );
 
     MCAPI void $fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,

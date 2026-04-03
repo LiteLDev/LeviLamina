@@ -7,17 +7,17 @@ public:
     // RenderChunkPerformanceTrackingData inner types declare
     // clang-format off
     struct LogTimeEntry;
-    struct NewTessellatorStepDetails;
-    struct RenderChunkBuildDetails;
+    class NewTessellatorStepDetails;
+    class RenderChunkBuildDetails;
     struct RenderChunkBuildStats;
     // clang-format on
 
     // RenderChunkPerformanceTrackingData inner types define
     struct LogTimeEntry {};
 
-    struct NewTessellatorStepDetails {};
+    class NewTessellatorStepDetails {};
 
-    struct RenderChunkBuildDetails {};
+    class RenderChunkBuildDetails {};
 
     struct RenderChunkBuildStats {};
 };

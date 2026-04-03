@@ -22,8 +22,8 @@ class ServerLoggingService : public ::Editor::Services::LoggingService {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7b780e;
-    ::ll::UntypedStorage<8, 24> mUnkbc876c;
+    ::ll::UntypedStorage<8, 8>  mUnkda3b11;
+    ::ll::UntypedStorage<8, 24> mUnkb52efe;
     // NOLINTEND
 
 public:

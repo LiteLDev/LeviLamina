@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct PlayFabApi {};
+class PlayFabApi {};
 
 } // namespace Social

@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/molang/SourceTree.h"
+// auto generated forward declare list
+// clang-format off
+namespace Molang::details { class SourceTree; }
+// clang-format on
 
 namespace Molang::details {
 // functions

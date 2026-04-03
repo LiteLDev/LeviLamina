@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/diagnostics/CrashDumpLogBlobHeader.h"
+#include "mc/deps/core/utility/CrashDumpLogBlobHeader.h"
 
 // auto generated forward declare list
 // clang-format off

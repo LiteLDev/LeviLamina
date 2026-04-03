@@ -4,20 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockDefinitionalComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockCustomComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
+class ScriptBlockCustomComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,15 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponent(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
-
-    MCAPI ScriptBlockCustomComponent(
-        ::BlockSource&       region,
-        ::BlockPos           position,
-        ::std::string const& name,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-                                              parameters,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:
@@ -64,15 +52,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
-
-    MCAPI void* $ctor(
-        ::BlockSource&       region,
-        ::BlockPos           position,
-        ::std::string const& name,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-                                              parameters,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:

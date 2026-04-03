@@ -11,7 +11,7 @@ class HurtOnConditionDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk553feb;
+    ::ll::UntypedStorage<8, 24> mUnk4b6a61;
     // NOLINTEND
 
 public:

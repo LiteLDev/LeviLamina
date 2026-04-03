@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class Level;
 class LevelChunk;
 namespace Bedrock::Threading { class Mutex; }

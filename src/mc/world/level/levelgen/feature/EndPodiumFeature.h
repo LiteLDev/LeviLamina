@@ -30,8 +30,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& END_PODIUM_CHUNK_POSITION();
-
     MCAPI static ::BlockPos const& END_PODIUM_LOCATION();
     // NOLINTEND
 

@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct CurveHermite {};
+class CurveHermite {};
 
 } // namespace mce

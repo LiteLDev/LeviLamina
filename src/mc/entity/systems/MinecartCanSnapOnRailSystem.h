@@ -11,7 +11,7 @@
 // clang-format off
 class IConstBlockSource;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct RailMovementComponent;
 struct SnapOnRailComponent;
 struct StateVectorComponent;

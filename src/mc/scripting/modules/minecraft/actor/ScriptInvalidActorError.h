@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
 
@@ -24,11 +25,14 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptInvalidActorError& operator=(ScriptInvalidActorError const&);
     ScriptInvalidActorError();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptInvalidActorError(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
+
     MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
         ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
@@ -56,11 +60,20 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptInvalidActorError const&);
+
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType    memberType,
         ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
         ::std::string_view                          functionName,
         ::std::string_view                          entityName
+    );
+
+    MCAPI_C void* $ctor(
+        ::ScriptModuleMinecraft::ErrorMemberType        memberType,
+        ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
+        ::std::string_view                              functionName,
+        ::std::string_view                              entityName
     );
 
     MCAPI void* $ctor(

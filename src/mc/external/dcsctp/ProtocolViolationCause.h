@@ -18,7 +18,7 @@ class ProtocolViolationCause : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc5c65c;
+    ::ll::UntypedStorage<8, 32> mUnkb48b34;
     // NOLINTEND
 
 public:

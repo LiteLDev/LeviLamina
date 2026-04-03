@@ -8,7 +8,7 @@ struct EduAddServerResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk95caf4;
+    ::ll::UntypedStorage<8, 72> mUnk95caf4;
     // NOLINTEND
 
 public:

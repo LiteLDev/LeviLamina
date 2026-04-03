@@ -92,10 +92,10 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk500b9b;
     ::ll::UntypedStorage<8, 72>  mUnk7302f0;
     ::ll::UntypedStorage<8, 80>  mUnke94bfc;
-    ::ll::UntypedStorage<8, 8>   mUnk233445;
-    ::ll::UntypedStorage<8, 8>   mUnk929b5d;
-    ::ll::UntypedStorage<8, 8>   mUnk279d00;
-    ::ll::UntypedStorage<8, 8>   mUnk3bba68;
+    ::ll::UntypedStorage<8, 8>   mUnk4820cc;
+    ::ll::UntypedStorage<8, 8>   mUnk15683e;
+    ::ll::UntypedStorage<8, 8>   mUnka75c9f;
+    ::ll::UntypedStorage<8, 8>   mUnk9f9912;
     ::ll::UntypedStorage<8, 8>   mUnk89a610;
     ::ll::UntypedStorage<8, 8>   mUnk8c66f0;
     ::ll::UntypedStorage<8, 8>   mUnk3df8d0;

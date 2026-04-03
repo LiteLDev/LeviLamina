@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
-#include "mc/deps/game_refs/WeakRef.h"
 
 namespace Editor::Prefabs {
 
@@ -30,12 +29,6 @@ public:
     PrefabDBTemplateStructureRef& operator=(PrefabDBTemplateStructureRef const&);
     PrefabDBTemplateStructureRef(PrefabDBTemplateStructureRef const&);
     PrefabDBTemplateStructureRef();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::WeakRef<::Editor::Prefabs::PrefabDBTemplateStructureRef> getWeakRef();
-    // NOLINTEND
 };
 
 } // namespace Editor::Prefabs

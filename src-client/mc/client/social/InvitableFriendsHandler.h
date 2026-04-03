@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct InvitableFriendsHandler {};
+class InvitableFriendsHandler {};
 
 } // namespace Social

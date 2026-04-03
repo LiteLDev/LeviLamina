@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SyncedPhotoView {
+class SyncedPhotoView {
 public:
     // SyncedPhotoView inner types define
     enum class PhotoStatus : int {};

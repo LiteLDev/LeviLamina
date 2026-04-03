@@ -13,7 +13,7 @@ class CommandOutput;
 namespace CodeBuilder { class CommandOutputObserver; }
 namespace Core { class SingleThreadedLock; }
 namespace Json { class Value; }
-struct AutomationCmdOutput;
+class AutomationCmdOutput;
 // clang-format on
 
 class CommandOutputSender {

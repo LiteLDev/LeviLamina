@@ -6,8 +6,8 @@ struct RealmsUnknownPackSources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6763b1;
-    ::ll::UntypedStorage<8, 8> mUnkf75346;
+    ::ll::UntypedStorage<8, 8> mUnkcd975c;
+    ::ll::UntypedStorage<8, 8> mUnk12b143;
     // NOLINTEND
 
 public:

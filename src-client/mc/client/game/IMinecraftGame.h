@@ -12,7 +12,6 @@
 #include "mc/client/game/ISplitScreenChangedPublisher.h"
 #include "mc/client/game/IWorldTransfer.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/common/IMinecraftApp.h"
 #include "mc/common/SubClientId.h"
@@ -25,7 +24,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/input/TextboxTextUpdateReason.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/events/NetworkType.h"
 #include "mc/platform/MultiplayerLockedContext.h"
 #include "mc/server/commands/test/TestAssetCommandType.h"
@@ -37,21 +36,32 @@
 class ActiveDirectoryIdentity;
 class ActorAnimationControllerGroup;
 class ActorAnimationGroup;
+class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
+class CDNService;
 class ChunkSource;
 class ClientNetworkSystem;
+class ClubsService;
+class ContentAcquisition;
+class ContentCatalogService;
 class ContentIdentity;
 class ContentLogFileEndPoint;
 class CubemapBackgroundResources;
 class DateManager;
+class DeferredLighting;
+class DevConsoleLogger;
 class Dimension;
 class EDUSystems;
 class EmoticonManager;
 class EntityContext;
+class ExternalContentManager;
+class FlightingService;
 class FontHandle;
 class GameRenderer;
+class GatheringManager;
 class GeometryGroup;
+class GlobalResourcesCrashRecovery;
 class GuiData;
 class IApp;
 class IClientInstance;
@@ -59,101 +69,90 @@ class IContentAccessibilityProvider;
 class IContentKeyProvider;
 class IContentManager;
 class IContentTierManager;
+class IDlcValidation;
+class IEntitlementManager;
+class IExternalServerFile;
+class IGameModuleApp;
 class ILevelListCache;
 class IMinecraftEventing;
+class IOfferRepository;
 class IResourcePackRepository;
 class ISceneStack;
 class ITextBoxController;
+class IThirdPartyServerRepository;
 class IUIDefRepository;
 class IUIRepository;
 class ItemRegistryRef;
 class LevelDbEnv;
+class LevelLoader;
 class LevelSettings;
+class LibraryRepository;
 class LinkedAssetValidator;
 class LocalPlayer;
+class MarketplaceServicesManager;
 class MinecraftGraphics;
 class MinecraftInputHandler;
+class MusicManager;
+class NewPlayerSystem;
 class Options;
+class PackDownloadManager;
 class PackManifestFactory;
 class PackSourceFactory;
 class ParticleEffectGroup;
+class PersonaRepository;
+class PersonaService;
 class PixelCalc;
 class Player;
+class PlayerMessagingService;
+class ProfanityContext;
+class RealmsAPI;
 class RenderControllerGroup;
 class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SceneFactory;
+class ScreenshotRecorder;
+class SeasonsRenderer;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
+class ServiceDrivenImageRepository;
+class ServicesManager;
+class SkinRepository;
+class SoundEngine;
+class StoreCatalogRepository;
+class SunsettingManager;
 class TextToIconMapper;
 class TextureAtlas;
+class TreatmentPackDownloadMonitor;
+class TrialManager;
 class UIMeasureStrategy;
 class Vec3;
-class WebSocketCommManager;
 class WorldTemplateManager;
-struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
-struct CDNService;
-struct ClubsService;
-struct ContentAcquisition;
-struct ContentCatalogService;
 struct ControllerIDtoClientMap;
-struct DeferredLighting;
-struct DevConsoleLogger;
-struct ExternalContentManager;
-struct FlightingService;
-struct GatheringManager;
-struct GlobalResourcesCrashRecovery;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IExternalServerFile;
-struct IGameModuleApp;
-struct IOfferRepository;
-struct IThirdPartyServerRepository;
-struct LevelLoader;
-struct LibraryRepository;
-struct MarketplaceServicesManager;
-struct MusicManager;
-struct NewPlayerSystem;
-struct PackDownloadManager;
-struct PersonaRepository;
-struct PersonaService;
-struct PlayerMessagingService;
-struct ProfanityContext;
-struct RealmsAPI;
+struct PlayerJoinWorldContext;
 struct ScreenshotOptions;
-struct ScreenshotRecorder;
-struct SeasonsRenderer;
-struct ServiceDrivenImageRepository;
-struct ServicesManager;
-struct SkinRepository;
-struct SoundEngine;
-struct StoreCatalogRepository;
-struct SunsettingManager;
-struct TreatmentPackDownloadMonitor;
-struct TrialManager;
 namespace Bedrock::PubSub { class Subscription; }
-namespace ClientBlobCache { struct Cache; }
+namespace ClientBlobCache { class Cache; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
 namespace OreUI { class DataProviderManager_DEPRECATED; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }
-namespace Parties { struct PartySystem; }
-namespace Progress { struct ProgressTips; }
-namespace Realms { struct ContentService; }
-namespace Realms { struct GenericRequestServiceHandler; }
-namespace Realms { struct RealmsServices; }
-namespace Realms { struct RealmsSystem; }
-namespace Realms { struct SubscriptionService; }
+namespace Parties { class PartySystem; }
+namespace Progress { class ProgressTips; }
+namespace Realms { class ContentService; }
+namespace Realms { class GenericRequestServiceHandler; }
+namespace Realms { class RealmsServices; }
+namespace Realms { class RealmsSystem; }
+namespace Realms { class SubscriptionService; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct PresenceManager; }
-namespace Social { struct SocialSystem; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class PresenceManager; }
+namespace Social { class SocialSystem; }
+namespace Social { class User; }
 namespace World { class WorldSystem; }
 namespace mce { class TextureGroup; }
 namespace mce { class UUID; }
@@ -231,10 +230,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> getSoundEngine() const = 0;
 
-    virtual void setTextboxText(::std::string const&, int const, ::TextboxTextUpdateReason) = 0;
-
-    virtual void onKeyboardDismissed(int const) = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> getTextBoxController() = 0;
 
     virtual void openPauseMenu() = 0;
@@ -260,7 +255,7 @@ public:
         ::std::string const&,
         ::std::string const&,
         ::NetworkType,
-        bool
+        ::PlayerJoinWorldContext
     ) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> getOfferRepository() const = 0;
@@ -423,6 +418,8 @@ public:
 
     virtual void navigateToPlayScreenFriendsTab() = 0;
 
+    virtual bool isInServer() const = 0;
+
     virtual bool isInRealm() const = 0;
 
     virtual bool isShowingLoadingScreen() const = 0;
@@ -437,9 +434,9 @@ public:
 
     virtual ::GameRenderer& getGameRenderer() const = 0;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> getTextureAtlas() const = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getItemTextureAtlas() = 0;
 
     virtual bool hasActorResourceDefinitionGroup() const = 0;
 
@@ -501,7 +498,7 @@ public:
 
     virtual void refocusMouse(bool) = 0;
 
-    virtual void setMouseType(::ui::MousePointerType) = 0;
+    virtual void setMouseType(::Bedrock::Input::PointerType) = 0;
 
     virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
 
@@ -535,7 +532,7 @@ public:
 
     virtual ::Social::SocialSystem& getSocialSystem() const = 0;
 
-    virtual ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> getPartySystem() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::Parties::PartySystem> getPartySystem() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> getUIProgressTips() const = 0;
 
@@ -599,8 +596,6 @@ public:
 
     virtual void joinRealmFromInvite(::Realms::World const&) = 0;
 
-    virtual void joinRealmFromConnectLink(::Realms::World const&) = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServices> getRealmsServices() = 0;
 
     virtual ::std::weak_ptr<::ClubsService> getClubsService() = 0;
@@ -648,8 +643,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationControllerGroup> getActorAnimationControllerGroup() const = 0;
 
     virtual bool isMultiplayerServiceManagerReady() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::WebSocketCommManager> getWebSocketCommManager() = 0;
 
     virtual void doPrimaryClientReadyWork(::std::function<void()>) = 0;
 

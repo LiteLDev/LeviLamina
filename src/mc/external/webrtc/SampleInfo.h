@@ -8,7 +8,7 @@ struct SampleInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk70a362;
+    ::ll::UntypedStorage<8, 32> mUnk16af47;
     ::ll::UntypedStorage<4, 4>  mUnkcec79e;
     ::ll::UntypedStorage<4, 4>  mUnk5f593d;
     ::ll::UntypedStorage<8, 8>  mUnka21e13;

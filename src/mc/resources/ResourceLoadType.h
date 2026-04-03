@@ -42,6 +42,7 @@ enum class ResourceLoadType : uint {
     Water                       = 36,
     JigsawStructure             = 37,
     BlockThumbnailAtlas         = 38,
-    All                         = 39,
-    Count                       = 39,
+    TextureShift                = 39,
+    All                         = 40,
+    Count                       = 40,
 };

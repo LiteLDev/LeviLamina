@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
-struct FlightingService;
-struct IOfferRepository;
+class FlightingService;
+class IOfferRepository;
 struct ProductSku;
 namespace Social { class IUserManager; }
 // clang-format on
@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, ::OfferCatalogStatus>                               mCatalogStatus;
     ::ll::TypedStorage<8, 24, ::std::vector<::PlatformOfferModel>>               mOfferModels;
     ::ll::TypedStorage<8, 24, ::std::vector<::PlatformOfferModel>>               mActiveOfferModels;
-    ::ll::TypedStorage<8, 320, ::PlatformOfferModel>                             mInvalidOfferModel;
+    ::ll::TypedStorage<8, 328, ::PlatformOfferModel>                             mInvalidOfferModel;
     // NOLINTEND
 
 public:

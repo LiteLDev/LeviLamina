@@ -12,6 +12,9 @@
 class Actor;
 class Player;
 struct ActorAddEffectEvent;
+struct ActorBeforeAcquireItemEvent;
+struct ActorBeforeHealEvent;
+struct ActorBeforeHurtEvent;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
@@ -23,6 +26,9 @@ struct PlayerInteractWithEntityBeforeEvent;
 namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHurtBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemPickupBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
@@ -73,11 +79,21 @@ public:
 
     virtual void onBeforePlayerLeave(::Player const&);
 
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
+    onBeforeActorHeal(::Actor const&, ::ActorBeforeHealEvent const&);
+
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
+    onBeforeActorHurt(::Actor const&, ::ActorBeforeHurtEvent const&);
+
     virtual void onBeforeActorRemove(::Actor const&);
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
+
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
+    onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent&);
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
@@ -109,16 +125,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
     );
 
-#ifdef LL_PLAT_S
-    MCFOLD ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
-    $onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        int
-    );
-#endif
-
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
@@ -127,17 +133,29 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
+#ifdef LL_PLAT_S
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
+#endif
 
     MCFOLD void $onBeforePlayerLeave(::Player const&);
+
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
+    $onBeforeActorHeal(::Actor const&, ::ActorBeforeHealEvent const&);
+
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
+    $onBeforeActorHurt(::Actor const&, ::ActorBeforeHurtEvent const&);
 
     MCFOLD void $onBeforeActorRemove(::Actor const&);
 
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
+
+    MCFOLD ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
+    $onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent&);
 
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>

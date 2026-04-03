@@ -4,7 +4,7 @@
 
 namespace bgfx {
 
-struct NonLocalAllocator {
+class NonLocalAllocator {
 public:
     // NonLocalAllocator inner types declare
     // clang-format off

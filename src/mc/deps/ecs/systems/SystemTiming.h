@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                        mSystemName;
-    ::ll::TypedStorage<4, 4, int>                                   mEntityCount;
-    ::ll::TypedStorage<4, 4, float>                                 mTimeMs;
+    ::ll::TypedStorage<8, 8, uint64>                                mEntityCount;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>            mTime;
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mCategory;
     // NOLINTEND
 

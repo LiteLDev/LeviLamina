@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct EditorManagerClient {};
+class EditorManagerClient {};
 
 } // namespace Editor

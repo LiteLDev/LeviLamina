@@ -12,6 +12,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class Block;
 class CompoundTag;
 class DataLoadHelper;
@@ -73,7 +74,7 @@ public:
 
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -128,7 +129,7 @@ public:
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct ClientDataTransferService {
+class ClientDataTransferService {
 public:
     // ClientDataTransferService inner types declare
     // clang-format off

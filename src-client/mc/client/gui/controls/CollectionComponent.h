@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CollectionItemComponent const* const _findLastChildColletionItemComponent();
+    MCAPI ::CollectionItemComponent const* const _findLastChildCollectionItemComponent();
 
     MCAPI void _reinitializeCollection();
 

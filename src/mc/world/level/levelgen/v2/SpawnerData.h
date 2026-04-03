@@ -85,7 +85,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::SpawnerData
+    MCAPI_C static ::br::worldgen::SpawnerData
     make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 

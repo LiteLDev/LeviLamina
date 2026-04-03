@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class ActorRenderData;
+class ActorResourceDefinition;
 class DataDrivenRenderer;
 class ExpressionNode;
 class GameVersion;
@@ -17,7 +18,6 @@ class HashedString;
 class ItemStack;
 class RenderParams;
 class Vec3;
-struct ActorResourceDefinition;
 // clang-format on
 
 class DataDrivenModel : public ::Model {

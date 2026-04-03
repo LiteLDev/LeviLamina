@@ -18,11 +18,12 @@ struct JSONSchema : public ::cereal::ext::internal::JSONSchemaDef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk15868f;
-    ::ll::UntypedStorage<8, 32> mUnkab4a80;
-    ::ll::UntypedStorage<8, 32> mUnk4ac68d;
-    ::ll::UntypedStorage<8, 32> mUnk160668;
-    ::ll::UntypedStorage<8, 72> mUnka0304c;
+    ::ll::UntypedStorage<8, 32> mUnkd36771;
+    ::ll::UntypedStorage<8, 32> mUnkd07188;
+    ::ll::UntypedStorage<8, 32> mUnkf7fce6;
+    ::ll::UntypedStorage<8, 32> mUnk6e7fa1;
+    ::ll::UntypedStorage<4, 8>  mUnkfffa36;
+    ::ll::UntypedStorage<8, 72> mUnk67cde9;
     // NOLINTEND
 
 public:
@@ -49,7 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCNAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);

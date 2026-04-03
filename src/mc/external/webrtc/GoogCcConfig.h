@@ -8,8 +8,8 @@ struct GoogCcConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd7c87b;
-    ::ll::UntypedStorage<8, 8> mUnk53822f;
+    ::ll::UntypedStorage<8, 8> mUnkc6f54a;
+    ::ll::UntypedStorage<8, 8> mUnkc4f670;
     ::ll::UntypedStorage<1, 1> mUnkb6873b;
     // NOLINTEND
 

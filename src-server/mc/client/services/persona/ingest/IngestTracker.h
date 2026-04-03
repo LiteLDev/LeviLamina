@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct IngestTracker {};
+class IngestTracker {};
 
 } // namespace persona

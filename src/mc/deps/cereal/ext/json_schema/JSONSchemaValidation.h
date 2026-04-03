@@ -15,14 +15,15 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk47f1f0;
     ::ll::UntypedStorage<8, 16> mUnk457dd9;
     ::ll::UntypedStorage<8, 16> mUnkae9293;
-    ::ll::UntypedStorage<8, 40> mUnk53c233;
-    ::ll::UntypedStorage<8, 40> mUnk5ed659;
+    ::ll::UntypedStorage<8, 40> mUnkcf1b22;
+    ::ll::UntypedStorage<8, 40> mUnka4d454;
     ::ll::UntypedStorage<8, 16> mUnk59d779;
     ::ll::UntypedStorage<8, 16> mUnk6160b9;
     ::ll::UntypedStorage<1, 2>  mUnk2f06e7;
     ::ll::UntypedStorage<8, 16> mUnkf06836;
     ::ll::UntypedStorage<8, 16> mUnk26a133;
-    ::ll::UntypedStorage<8, 40> mUnk40ba91;
+    ::ll::UntypedStorage<8, 40> mUnk9ac884;
+    ::ll::UntypedStorage<8, 40> mUnk6acb5a;
     // NOLINTEND
 
 public:
@@ -34,9 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI JSONSchemaValidation(::cereal::ext::internal::JSONSchemaValidation&&);
+
     MCNAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation&&);
 
     MCNAPI ~JSONSchemaValidation();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaValidation&&);
     // NOLINTEND
 
 public:

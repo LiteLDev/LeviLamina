@@ -8,8 +8,8 @@ class FieldTrialParameterInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2a665f;
-    ::ll::UntypedStorage<8, 32> mUnk82b305;
+    ::ll::UntypedStorage<8, 24> mUnk70f77c;
+    ::ll::UntypedStorage<8, 32> mUnke74f6d;
     ::ll::UntypedStorage<1, 1>  mUnk2ebeb5;
     // NOLINTEND
 

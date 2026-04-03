@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components_json_legacy/BuoyancyMovementType.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockDescriptor;
@@ -18,8 +21,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                             mDragDownOnRemoval;
     ::ll::TypedStorage<4, 4, float>                             mBigWaveProbability;
     ::ll::TypedStorage<4, 4, float>                             mBigWaveSpeedMultiplier;
-    ::ll::TypedStorage<1, 1, bool>                              mSimulateWaves;
+    ::ll::TypedStorage<1, 1, ::BuoyancyMovementType>            mMovementType;
     ::ll::TypedStorage<1, 1, bool>                              mApplyGravity;
+    ::ll::TypedStorage<1, 1, bool>                              mCanAutoStepFromLiquid;
     ::ll::TypedStorage<8, 8, double>                            mTimer;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mLiquidBlocks;
     // NOLINTEND

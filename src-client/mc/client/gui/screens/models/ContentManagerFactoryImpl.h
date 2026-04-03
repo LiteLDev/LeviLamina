@@ -16,10 +16,10 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class CachedHostPackIdProvider;
 class CompositePackSource;
 class Pack;
 class PackSource;
-struct CachedHostPackIdProvider;
 struct ContentSource;
 struct InvalidPacksFilterGroup;
 struct InvalidResourceSource;
@@ -40,11 +40,11 @@ class ContentManagerFactoryImpl : public ::IContentManagerFactory {
 public:
     // ContentManagerFactoryImpl inner types declare
     // clang-format off
-    struct PackManagerContentQueriesImpl;
+    class PackManagerContentQueriesImpl;
     // clang-format on
 
     // ContentManagerFactoryImpl inner types define
-    struct PackManagerContentQueriesImpl {};
+    class PackManagerContentQueriesImpl {};
 
 public:
     // member variables

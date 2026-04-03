@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/level/BlockPos.h"
@@ -14,7 +15,6 @@
 // clang-format off
 class Block;
 class BlockPalette;
-class HashedString;
 class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
 // clang-format on
@@ -82,12 +82,6 @@ public:
     MCAPI void updateBoundingBoxFromChunkPos();
 
     MCAPI ~LegacyStructureSettings();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& INTEGRITY_MAX();
     // NOLINTEND
 
 public:

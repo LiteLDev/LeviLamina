@@ -14,9 +14,9 @@
 class StrictEntityContext;
 struct ActorDataControllingSeatIndexComponent;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct BoatFlagComponent;
 struct ExitFromPassengerFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct LocalPlayerComponent;
 struct MobFlagComponent;
 struct MobIsJumpingFlagComponent;
@@ -34,11 +34,11 @@ public:
     MCNAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent, ::MobIsJumpingFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::MobIsJumpingFlagComponent>,
             ::PassengerComponent const> view,
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
+            ::Include<::InterpolateMovementNeededComponent>,
             ::Exclude<::BoatFlagComponent>,
             ::Optional<::MobFlagComponent const>,
             ::MovementAttributesComponent const,
@@ -53,7 +53,7 @@ public:
         ::PassengerComponent const&  passengerComponent,
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
+            ::Include<::InterpolateMovementNeededComponent>,
             ::Exclude<::BoatFlagComponent>,
             ::Optional<::MobFlagComponent const>,
             ::MovementAttributesComponent const,

@@ -4,6 +4,6 @@
 
 namespace Parties {
 
-struct PartyTravelManager {};
+class PartyTravelManager {};
 
 } // namespace Parties

@@ -4,26 +4,26 @@
 
 namespace Editor::Services {
 
-struct ClientVolumeRenderItem {
+class ClientVolumeRenderItem {
 public:
     // ClientVolumeRenderItem inner types declare
     // clang-format off
-    struct BaseComponent;
-    struct BoundingBoxComponent;
-    struct StructureComponent;
-    struct VolumeOutlineComponent;
+    class BaseComponent;
+    class BoundingBoxComponent;
+    class StructureComponent;
+    class VolumeOutlineComponent;
     // clang-format on
 
     // ClientVolumeRenderItem inner types define
     enum class ComponentTypes : int {};
 
-    struct BaseComponent {};
+    class BaseComponent {};
 
-    struct BoundingBoxComponent {};
+    class BoundingBoxComponent {};
 
-    struct StructureComponent {};
+    class StructureComponent {};
 
-    struct VolumeOutlineComponent {};
+    class VolumeOutlineComponent {};
 };
 
 } // namespace Editor::Services

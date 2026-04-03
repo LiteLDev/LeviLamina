@@ -16,8 +16,8 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
+class WorldFileDownloadManager;
 struct SetDownloadProgressHandlerError;
-struct WorldFileDownloadManager;
 // clang-format on
 
 class EduCloudDownloadProgressHandler : public ::EmptyProgressHandler {
@@ -132,6 +132,8 @@ public:
     MCAPI ::std::string $getName() const;
 
     MCFOLD ::std::string $getTTSProgressMessage() const;
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND

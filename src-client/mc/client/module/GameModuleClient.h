@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorMigratedDefinitionFactory;
 class BaseGameVersion;
 class ClientInputMappingFactory;
 class CommandRegistry;
@@ -68,6 +69,8 @@ public:
     virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&) = 0;
 
     virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance&) = 0;
+
+    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory&) const = 0;
     // NOLINTEND
 
 public:

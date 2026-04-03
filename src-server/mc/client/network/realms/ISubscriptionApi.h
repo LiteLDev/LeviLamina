@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct ISubscriptionApi {};
+class ISubscriptionApi {};
 
 } // namespace Realms

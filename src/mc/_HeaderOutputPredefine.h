@@ -16,6 +16,10 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
+#ifndef LL_NO_UNIQUE_ADDRESS
+#define LL_NO_UNIQUE_ADDRESS [[no_unique_address]]
+#endif
+
 #if defined(LL_PLAT_S)
 #define MCAPI_C  [[deprecated("Client API not available on SERVER")]] MCAPI
 #define MCAPI_S  MCAPI
@@ -177,10 +181,11 @@ struct asn1_string_st;
 struct bio_st;
 struct XUser;
 struct tagPOINT;
+struct _INITIALIZE_OPTIONS;
+struct HC_CALL;
 namespace winrt
 {
     struct event_token;
-
     namespace Windows
     {
         namespace UI::Text::Core
@@ -193,8 +198,9 @@ namespace winrt
             struct DataTransferManager;
         }
     }
-    
-
+}
+namespace DirectX {
+    struct XMMATRIX;
 }
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
@@ -290,7 +296,7 @@ namespace Puv {
 template <typename From, typename To, typename CustomData>
 class CerealUpgrader;
 
-template <typename T0, typename T1, typename T2>
+template <typename T0, typename T1, typename T2, typename T3>
 class SlicedLoader;
 }
 

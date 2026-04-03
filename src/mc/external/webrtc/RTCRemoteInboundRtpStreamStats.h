@@ -18,7 +18,7 @@ class RTCRemoteInboundRtpStreamStats : public ::webrtc::RTCReceivedRtpStreamStat
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnke1cb4a;
+    ::ll::UntypedStorage<8, 40> mUnk38ef30;
     ::ll::UntypedStorage<8, 16> mUnka2dc63;
     ::ll::UntypedStorage<8, 16> mUnk929b66;
     ::ll::UntypedStorage<8, 16> mUnk82da7c;

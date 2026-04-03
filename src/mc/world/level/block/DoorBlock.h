@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -15,15 +16,14 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
 class Material;
 class Player;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class DoorBlock : public ::BlockType {
@@ -111,11 +111,6 @@ public:
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual bool isInteractiveBlock() const /*override*/;
 
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
@@ -126,8 +121,6 @@ public:
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     virtual bool isDoorBlock() const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
@@ -141,11 +134,13 @@ public:
     // NOLINTBEGIN
     MCAPI DoorBlock(::std::string const& nameId, int id, ::Material const& material, ::DoorBlock::DoorType type);
 
+    MCAPI bool _hasSupport(::BlockPos const& pos, uchar face, ::BlockSupportType, ::BlockSource& region) const;
+
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI ::Direction::Type getBlockedDirection(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI bool isToggled(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void setToggled(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool toggled) const;
 
@@ -159,6 +154,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool
+    _isDoorToggled(::IConstBlockSource const& region, ::BlockType const& blockType, ::BlockPos const& pos);
+
+    MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static void getDoorBlocks(
         ::IConstBlockSource const& region,
         ::BlockType const&         expectedDoorBlockType,
@@ -223,10 +223,6 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
@@ -236,8 +232,6 @@ public:
     MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCFOLD bool $isDoorBlock() const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
     MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 

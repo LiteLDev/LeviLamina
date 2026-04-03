@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/DetectionRule.h"
-#include "mc/world/level/block/LiquidType.h"
+#include "mc/deps/shared_types/v1_26_0/block/DetectionRule.h"
+#include "mc/deps/shared_types/v1_26_0/block/LiquidType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,12 +15,12 @@ struct BlockLiquidDetectionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 4, ::DetectionRule> mWaterDetectionRule;
+    ::ll::TypedStorage<1, 5, ::SharedTypes::v1_26_0::DetectionRule> mWaterDetectionRule;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::set<::LiquidType> const& supportedLiquids();
+    MCAPI static ::std::set<::SharedTypes::v1_26_0::LiquidType> const& supportedLiquids();
     // NOLINTEND
 };

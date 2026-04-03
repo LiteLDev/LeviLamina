@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct PlayerPositionModeComponent;
 // clang-format on
 
@@ -18,7 +18,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void tickResetPositionModeSystem(
-        ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::PlayerPositionModeComponent>
+        ::ViewT<::StrictEntityContext, ::Include<::InterpolateMovementNeededComponent>, ::PlayerPositionModeComponent>
             view
     );
     // NOLINTEND

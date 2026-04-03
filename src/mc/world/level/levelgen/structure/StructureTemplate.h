@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/block/Block.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateData.h"
@@ -13,7 +14,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
 class BlockPalette;
 class BlockPos;
 class BlockSource;
@@ -166,6 +166,8 @@ public:
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
+    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const getUnknownBlockRegistry() const;
+
     MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
     MCAPI ::StructureTemplate& operator=(::StructureTemplate&&);
@@ -261,8 +263,6 @@ public:
 
     MCAPI void $fillEmpty(::BlockPos const& size);
 
-    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
-
     MCAPI bool $_allowReadBlock(::BlockPos const&, ::Block const& block) const;
 
     MCAPI bool $_allowReadActor(::Actor const& actor) const;
@@ -270,6 +270,10 @@ public:
     MCAPI ::BlockPos $rawSize() const;
 
     MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos randomPosSeed) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
+#endif
 
 
     // NOLINTEND

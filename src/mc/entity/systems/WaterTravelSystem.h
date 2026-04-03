@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct DolphinFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct MobTravelComponent;
 struct MovementAttributesComponent;
 struct MovementSpeedComponent;
@@ -29,7 +29,7 @@ public:
     MCNAPI static void tickWaterTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent const, ::WaterTravelFlagComponent const>,
+            ::Include<::InterpolateMovementNeededComponent const, ::WaterTravelFlagComponent const>,
             ::MovementAttributesComponent const,
             ::MovementSpeedComponent const,
             ::SwimSpeedMultiplierComponent const,

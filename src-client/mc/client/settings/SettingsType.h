@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+namespace Settings {
+
 enum class SettingsType : int {};
+
+}

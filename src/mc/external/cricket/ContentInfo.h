@@ -13,11 +13,11 @@ class ContentInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1e8cb0;
+    ::ll::UntypedStorage<8, 32> mUnk3c5417;
     ::ll::UntypedStorage<4, 4>  mUnka3b407;
     ::ll::UntypedStorage<1, 1>  mUnka04fd8;
     ::ll::UntypedStorage<1, 1>  mUnkad8ec6;
-    ::ll::UntypedStorage<8, 8>  mUnk709375;
+    ::ll::UntypedStorage<8, 8>  mUnkff74fe;
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct RenderPositionComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
@@ -28,7 +28,7 @@ public:
     MCNAPI static void _tickUpdateRenderPosSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
+            ::Include<::InterpolateMovementNeededComponent>,
             ::StateVectorComponent const,
             ::RenderPositionComponent> view
     );

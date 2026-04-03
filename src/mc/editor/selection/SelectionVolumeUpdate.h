@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +28,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnk83f8d2;
-    ::ll::UntypedStorage<8, 104> mUnkead264;
+    ::ll::UntypedStorage<8, 104> mUnkd38f27;
     // NOLINTEND
 
 public:

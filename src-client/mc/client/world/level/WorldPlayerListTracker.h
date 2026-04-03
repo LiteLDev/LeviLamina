@@ -46,6 +46,8 @@ public:
     // NOLINTBEGIN
     virtual ~WorldPlayerListTracker();
 
+    virtual ::std::vector<::mce::UUID> const& getPlayerList();
+
     virtual ::PlayerListEntry const* getPlayerEntry(::mce::UUID const& uuid);
 
     virtual ::std::vector<::mce::UUID> _getCurrentLobby() const;
@@ -60,6 +62,8 @@ public:
     );
 
     MCAPI void _init();
+
+    MCAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
 
     MCAPI void refresh();
 
@@ -84,6 +88,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::std::vector<::mce::UUID> const& $getPlayerList();
+
     MCAPI ::PlayerListEntry const* $getPlayerEntry(::mce::UUID const& uuid);
 
     MCAPI ::std::vector<::mce::UUID> $_getCurrentLobby() const;

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/Value.h"
+#include "mc/entity/components_json_legacy/BuoyancyMovementType.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
@@ -22,8 +23,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                             mDragDownOnRemoval;
     ::ll::TypedStorage<4, 4, float>                             mBigWaveProbability;
     ::ll::TypedStorage<4, 4, float>                             mBigWaveSpeedMultiplier;
-    ::ll::TypedStorage<1, 1, bool>                              mSimulateWaves;
+    ::ll::TypedStorage<1, 1, ::BuoyancyMovementType>            mMovementType;
     ::ll::TypedStorage<1, 1, bool>                              mApplyGravity;
+    ::ll::TypedStorage<1, 1, bool>                              mCanAutoStepFromLiquid;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mLiquidBlocks;
     ::ll::TypedStorage<8, 16, ::Json::Value>                    mFloatData;
     // NOLINTEND
@@ -36,6 +38,8 @@ public:
     MCAPI ::Json::Value _serialize() const;
 
     MCAPI void initialize(::EntityContext& entity, ::BuoyancyComponent& component) const;
+
+    MCAPI void setMovementType(::std::string const& movementType);
 
     MCAPI void uninitialize(::EntityContext& entity, ::BuoyancyComponent&) const;
 

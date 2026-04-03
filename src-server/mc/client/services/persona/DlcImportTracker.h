@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct DlcImportTracker {};
+class DlcImportTracker {};
 
 } // namespace persona

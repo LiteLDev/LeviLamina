@@ -24,6 +24,7 @@ struct ScoreboardId;
 namespace ScriptModuleMinecraft { class ScriptClientSystemInfo; }
 namespace ScriptModuleMinecraft { class ScriptInputInfo; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptLocatorBar; }
 namespace ScriptModuleMinecraft { class ScriptMolangVariableMap; }
 namespace ScriptModuleMinecraft { class ScriptPlayerAimAssist; }
 namespace ScriptModuleMinecraft { class ScriptPlayerInputPermissions; }
@@ -77,6 +78,8 @@ public:
         mClientSystemInfo;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptInputInfo>>
         mInputInfo;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLocatorBar>>
+        mLocatorBar;
     // NOLINTEND
 
 public:
@@ -169,11 +172,16 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<int> getItemCooldownLeft(::std::string const& type) const;
 
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLocatorBar> getLocatorBar();
+
     MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScreenDisplay>>
     getOrCreateScreenDisplay();
+
+    MCAPI ::Scripting::Result<::std::optional<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getPartyId() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getPlayerLevel() const;
 
@@ -279,6 +287,8 @@ public:
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     stopSound(::std::string const& soundID);
+
+    MCAPI_C ::Player* tryGetPlayer() const;
     // NOLINTEND
 
 public:

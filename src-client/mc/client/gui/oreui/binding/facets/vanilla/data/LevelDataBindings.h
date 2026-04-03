@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class LevelDataWrapper;
-struct TrialManager;
+class TrialManager;
 namespace OreUI { class ExperimentalFeatureToggle; }
 // clang-format on
 

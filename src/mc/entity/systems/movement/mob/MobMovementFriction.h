@@ -13,7 +13,6 @@ struct ActorDataFlagComponent;
 struct FrictionModifierComponent;
 struct MobTravelComponent;
 struct MovementAbilitiesComponent;
-struct PlayerInputModeComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 struct VexFlagComponent;
@@ -22,13 +21,15 @@ struct VexFlagComponent;
 namespace MobMovementFriction {
 // functions
 // NOLINTBEGIN
+MCAPI void
+applyFriction(bool isVex, ::StateVectorComponent& stateVector, float finalFriction, bool doesVerticalFriction);
+
 MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickLavaWalkFriction(
     ::StrictEntityContext const&,
     ::NavigationComponent const& navigationComponent,
     ::Optional<::MovementAbilitiesComponent const>,
-    ::Optional<::PlayerInputModeComponent const>,
     ::Optional<::VexFlagComponent const> vexFlagComponent,
     ::FrictionModifierComponent const&   frictionModifierComponent,
     ::ActorDataFlagComponent const&,
@@ -39,7 +40,6 @@ MCAPI void tickNormalFriction(
     ::StrictEntityContext const&,
     ::MobTravelComponent const& mobTravelComponent,
     ::Optional<::MovementAbilitiesComponent const>,
-    ::Optional<::PlayerInputModeComponent const>,
     ::Optional<::VexFlagComponent const> vexFlagComponent,
     ::FrictionModifierComponent const&   frictionModifierComponent,
     ::ActorDataFlagComponent const&,

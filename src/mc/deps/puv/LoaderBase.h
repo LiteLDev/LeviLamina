@@ -20,8 +20,8 @@ class LoaderBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk18f589;
-    ::ll::UntypedStorage<8, 16> mUnkd44185;
+    ::ll::UntypedStorage<8, 24> mUnk8c6785;
+    ::ll::UntypedStorage<8, 16> mUnkeaa9c8;
     // NOLINTEND
 
 public:

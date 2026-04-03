@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientSelectionServiceProvider {};
+class ClientSelectionServiceProvider {};
 
 } // namespace Editor::Services

@@ -14,7 +14,7 @@ struct FileDataContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke0fdf3;
+    ::ll::UntypedStorage<8, 32> mUnk3baf87;
     ::ll::UntypedStorage<8, 80> mUnkd47861;
     // NOLINTEND
 
@@ -33,11 +33,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static ::std::optional<::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer>
     fromString(
-        ::Puv::SlicedLoader<::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData, nullptr_t, nullptr_t>& loader,
-        ::std::string&                jsonString,
-        ::std::vector<::std::string>& outErrors
+        ::Puv::SlicedLoader<
+            ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData,
+            nullptr_t,
+            nullptr_t,
+            ::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData>& loader,
+        ::std::string&                                                    jsonString,
+        ::std::vector<::std::string>&                                     outErrors
     );
 
     MCNAPI static ::std::optional<::std::string> toString(

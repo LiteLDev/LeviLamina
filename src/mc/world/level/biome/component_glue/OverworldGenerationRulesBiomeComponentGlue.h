@@ -9,7 +9,6 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
 struct OverworldGenerationRulesBiomeComponentGlue : public ::IBiomeComponentGlue {
@@ -25,14 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool resolveAndValidate(
-        ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
-        ::BiomeRegistry const&                              biomeRegistry
-    ) /*override*/;
+    virtual bool
+    resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry) /*override*/;
 
-    virtual void
-    applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
-        /*override*/;
+    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const /*override*/;
 
     virtual ~OverworldGenerationRulesBiomeComponentGlue() /*override*/;
     // NOLINTEND
@@ -46,13 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(
-        ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
-        ::BiomeRegistry const&                              biomeRegistry
-    );
+    MCAPI bool $resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry);
 
-    MCAPI void
-    $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
+    MCAPI void $applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const;
 
 
     // NOLINTEND

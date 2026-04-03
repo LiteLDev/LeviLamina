@@ -19,17 +19,18 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                             mType;
     ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject>       mTarget;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData> mFilter;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mFilter;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ActorDefinitionTrigger(ActorDefinitionTrigger const&);
+    ActorDefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionTrigger();
+    MCAPI ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
 
     MCAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
     operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
@@ -49,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
     // NOLINTEND
 
 public:

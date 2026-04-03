@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PackDownloadManager {
+class PackDownloadManager {
 public:
     // PackDownloadManager inner types declare
     // clang-format off

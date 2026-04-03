@@ -17,7 +17,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<4, 4, int>    mAttackTicks;
     ::ll::TypedStorage<4, 4, int>    mCooldownTicks;
-    ::ll::TypedStorage<4, 4, float>  mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>  mMaxHeadRotationX;
     ::ll::TypedStorage<4, 4, float>  mMaxHeadRotationY;
     ::ll::TypedStorage<4, 4, float>  mMaxDistance;
     ::ll::TypedStorage<4, 4, float>  mMaxSneakRange;
@@ -41,9 +41,9 @@ public:
 
     virtual bool canContinueToUse() /*override*/;
 
-    virtual void stop() /*override*/;
-
     virtual void tick() /*override*/;
+
+    virtual void stop() /*override*/;
 
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
@@ -57,9 +57,9 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $stop();
-
     MCAPI void $tick();
+
+    MCAPI void $stop();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 

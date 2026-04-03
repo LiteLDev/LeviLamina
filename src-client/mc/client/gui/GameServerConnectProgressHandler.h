@@ -92,6 +92,8 @@ public:
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+
     MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getTitleText() const;

@@ -20,5 +20,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            maxNumConnections;
     ::ll::TypedStorage<1, 1, bool>                                           isServerVisibleToLanDiscovery;
     ::ll::TypedStorage<1, 1, bool>                                           allowUnconnectedPongs;
+    ::ll::TypedStorage<1, 1, bool>                                           disableTrickleIce;
     // NOLINTEND
 };

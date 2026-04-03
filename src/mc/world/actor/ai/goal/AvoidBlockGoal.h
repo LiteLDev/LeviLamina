@@ -14,6 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
+class BlockSource;
 class ItemDescriptor;
 class Mob;
 class Path;
@@ -68,6 +69,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _findRandomTargetBlock(::BlockSource& region, ::BlockPos const& mobPos);
+
     MCAPI bool _findTargetBlock();
     // NOLINTEND
 

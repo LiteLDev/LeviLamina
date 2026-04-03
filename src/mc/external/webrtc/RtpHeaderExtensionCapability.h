@@ -8,7 +8,7 @@ struct RtpHeaderExtensionCapability {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6a3206;
+    ::ll::UntypedStorage<8, 32> mUnk51b558;
     ::ll::UntypedStorage<4, 8>  mUnk171596;
     ::ll::UntypedStorage<1, 1>  mUnke13f99;
     ::ll::UntypedStorage<4, 4>  mUnk52cf04;

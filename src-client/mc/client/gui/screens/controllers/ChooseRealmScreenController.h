@@ -34,6 +34,7 @@ public:
     ::ll::TypedStorage<4, 4, ::SlotSelectedAction>                    mSlotSelectedAction;
     ::ll::TypedStorage<1, 1, bool>                                    mRealmSlotSelected;
     ::ll::TypedStorage<1, 1, bool>                                    mShowingConfirmationDialog;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsChangingSlot;
     // NOLINTEND
 
 public:

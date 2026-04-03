@@ -6,7 +6,7 @@ struct LootTableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk13423b;
+    ::ll::UntypedStorage<8, 32> mUnk2a30af;
     // NOLINTEND
 
 public:

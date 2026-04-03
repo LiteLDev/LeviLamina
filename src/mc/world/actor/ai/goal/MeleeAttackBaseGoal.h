@@ -14,6 +14,7 @@
 class Actor;
 class Mob;
 class Path;
+namespace SharedTypes::v1_21_120 { struct MeleeAttackBaseGoalDefinition; }
 // clang-format on
 
 class MeleeAttackBaseGoal : public ::Goal {
@@ -25,6 +26,10 @@ public:
 
     // MeleeAttackBaseGoal inner types define
     struct NavigationSettings {
+    public:
+        // NavigationSettings inner types define
+        using DefinitionType = ::SharedTypes::v1_21_120::MeleeAttackBaseGoalDefinition;
+
     public:
         // member variables
         // NOLINTBEGIN

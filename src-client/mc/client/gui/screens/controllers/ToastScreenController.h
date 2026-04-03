@@ -13,14 +13,14 @@
 // auto generated forward declare list
 // clang-format off
 class IOptions;
+class IStoreCatalogItem;
 class MinecraftScreenModel;
 class PartySystemSubController;
 class PerfTurtleScreenController;
+class PersonaRepository;
 class ToastManager;
-struct IStoreCatalogItem;
-struct PersonaRepository;
 namespace Json { class Value; }
-namespace Parties { struct PartySystem; }
+namespace Parties { class PartySystem; }
 // clang-format on
 
 class ToastScreenController : public ::MinecraftScreenController, public ::IToastListener {
@@ -54,7 +54,7 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void showToast(::ToastMessage message, bool animateIn) /*override*/;
 
@@ -67,11 +67,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ToastScreenController(
-        ::std::shared_ptr<::MinecraftScreenModel>                              model,
-        ::PersonaRepository&                                                   personaRepository,
-        ::IOptions&                                                            Options,
-        ::ToastManager&                                                        toastManager,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::PersonaRepository&                               personaRepository,
+        ::IOptions&                                        Options,
+        ::ToastManager&                                    toastManager,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
 
     MCAPI void _destroySplitscreenJoinPopup();
@@ -89,11 +89,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::MinecraftScreenModel>                              model,
-        ::PersonaRepository&                                                   personaRepository,
-        ::IOptions&                                                            Options,
-        ::ToastManager&                                                        toastManager,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::PersonaRepository&                               personaRepository,
+        ::IOptions&                                        Options,
+        ::ToastManager&                                    toastManager,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
     // NOLINTEND
 
@@ -109,6 +109,8 @@ public:
     MCAPI ::ui::DirtyFlag $tick();
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI void $showToast(::ToastMessage message, bool animateIn);
 

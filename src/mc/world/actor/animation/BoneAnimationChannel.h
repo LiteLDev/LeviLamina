@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::KeyFrameTransform& addKeyFrame(float time);
 
-    MCAPI_C void animate(
+    MCAPI void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,
         float                         scale,

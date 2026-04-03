@@ -4,6 +4,6 @@
 
 namespace Realms::Stories {
 
-struct FacetStateManager {};
+class FacetStateManager {};
 
 } // namespace Realms::Stories

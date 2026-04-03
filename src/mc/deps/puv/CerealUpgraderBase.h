@@ -156,8 +156,6 @@ public:
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCNAPI bool isSupported(::entt::meta_type const& t) const;
-
     MCNAPI int iterate(
         ::entt::meta_type const&                           type,
         ::entt::meta_any&                                  inputAny,

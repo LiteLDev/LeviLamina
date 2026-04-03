@@ -6,7 +6,7 @@ struct OnActorLeaveVolumeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4cfee3;
+    ::ll::UntypedStorage<8, 24> mUnk7b4cfd;
     // NOLINTEND
 
 public:

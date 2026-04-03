@@ -4,6 +4,6 @@
 
 namespace Editor::BlockUtils {
 
-struct ClientBlockUtilityService {};
+class ClientBlockUtilityService {};
 
 } // namespace Editor::BlockUtils

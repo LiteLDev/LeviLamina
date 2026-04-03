@@ -17,6 +17,7 @@ class Actor;
 class BlockSource;
 class CompoundTag;
 class ParticleEngine;
+class Vec2;
 struct ParticleRenderContext;
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
@@ -36,7 +37,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mSize;
     ::ll::TypedStorage<4, 4, float>                     mGravity;
     ::ll::TypedStorage<4, 16, ::mce::Color>             mColor;
-    ::ll::TypedStorage<4, 16, ::mce::Color>             mLightColor;
+    ::ll::TypedStorage<4, 16, ::mce::Color>             mVanillaLightColor;
     ::ll::TypedStorage<1, 2, ::BrightnessPair>          mAmbientLight;
     ::ll::TypedStorage<4, 4, ::ParticleType>            mType;
     ::ll::TypedStorage<4, 4, ::ParticleLayer>           mLayer;
@@ -108,6 +109,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initStaticResources(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCAPI static ::Vec2 packLighting(::BrightnessPair const& ambientLighting, ::mce::Color const& lightColor);
     // NOLINTEND
 
 public:

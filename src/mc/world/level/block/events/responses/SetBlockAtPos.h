@@ -20,7 +20,7 @@ class SetBlockAtPos : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockType;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockType;
     ::ll::TypedStorage<4, 12, ::Vec3>             mBlockOffset;
     // NOLINTEND
 

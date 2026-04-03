@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct EnderManPreAIStepSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+namespace EnderManPreAIStepSystem {
+// functions
+// NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace EnderManPreAIStepSystem

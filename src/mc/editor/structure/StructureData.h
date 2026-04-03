@@ -8,8 +8,8 @@ struct StructureData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8ef057;
-    ::ll::UntypedStorage<8, 32> mUnk40bdca;
+    ::ll::UntypedStorage<8, 32> mUnk6003a1;
+    ::ll::UntypedStorage<8, 32> mUnk8fd4d3;
     // NOLINTEND
 
 public:

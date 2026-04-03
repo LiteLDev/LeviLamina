@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/cricket/Connection.h"
 #include "mc/external/cricket/IceControllerInterface.h"
 #include "mc/external/cricket/IceMode.h"
 #include "mc/external/cricket/IceSwitchReason.h"
@@ -12,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cricket { class Connection; }
 namespace cricket { struct IceConfig; }
 namespace cricket { struct IceControllerFactoryArgs; }
 namespace rtc { class Network; }
@@ -29,7 +29,7 @@ public:
     ::ll::UntypedStorage<4, 124> mUnk1ecf17;
     ::ll::UntypedStorage<8, 8>   mUnke01ba0;
     ::ll::UntypedStorage<8, 8>   mUnk9ed3fc;
-    ::ll::UntypedStorage<8, 24>  mUnk5761ce;
+    ::ll::UntypedStorage<8, 24>  mUnk58e222;
     ::ll::UntypedStorage<8, 16>  mUnk54c456;
     ::ll::UntypedStorage<8, 16>  mUnk954483;
     ::ll::UntypedStorage<8, 8>   mUnk3dbb79;

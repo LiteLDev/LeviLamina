@@ -4,6 +4,6 @@
 
 namespace MSGraph::Requests {
 
-struct DeleteUploadSession {};
+class DeleteUploadSession {};
 
 } // namespace MSGraph::Requests

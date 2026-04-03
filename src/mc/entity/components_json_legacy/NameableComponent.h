@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -21,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND

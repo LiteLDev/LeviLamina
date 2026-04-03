@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class CompoundTag;
-class HashedString;
 namespace BlockSerializationUtils { struct NbtToBlockCache; }
 // clang-format on
 

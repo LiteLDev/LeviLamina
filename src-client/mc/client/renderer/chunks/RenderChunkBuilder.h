@@ -7,6 +7,7 @@
 #include "mc/client/renderer/chunks/RenderChunkPerformanceTrackingData.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/game/RangeIndices.h"
+#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/phys/AABB.h"
 
@@ -18,16 +19,16 @@ class BlockSource;
 class BlockTessellator;
 class ChunkSource;
 class ChunkViewSource;
+class IRenderChunkGarbage;
 class MinecraftGameplayGraphicsResources;
 class RenderChunkCoordinator;
+class RenderChunkGeometry;
+class RuntimeLocalLightingConfig;
 class SubChunkPos;
 class Tessellator;
 struct AirAndSimpleBlockBits;
 struct BlockQueueEntry;
-struct IRenderChunkGarbage;
-struct RenderChunkGeometry;
 struct RenderChunkQuadInfo;
-struct RuntimeLocalLightingConfig;
 namespace ClientBlockPipeline { class BlockTessellatorPipeline; }
 namespace ClientBlockPipeline { class Description; }
 namespace ClientBlockPipeline { class MaterialRepository; }
@@ -48,10 +49,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mBlendCanRenderAsOpaque;
     ::ll::TypedStorage<4, 4, float>                                                         mAverageSkyLight;
     ::ll::TypedStorage<8, 168, ::std::array<::std::vector<::RenderChunkQuadInfo>, 7>>       mFaceMetadata;
-    ::ll::TypedStorage<4, 136, ::std::array<::RangeIndices, 17>>                            mRenderLayerRanges;
+    ::ll::TypedStorage<4, 176, ::std::array<::RangeIndices, 22>>                            mRenderLayerRanges;
     ::ll::TypedStorage<8, 8, ::std::vector<::BlockQueueEntry>*>                             mQueues;
     ::ll::TypedStorage<8, 8, ::std::vector<::BlockQueueEntry>*>                             mSimpleOpaqueBlockQueue;
-    ::ll::TypedStorage<8, 136, uint64[17]>                                                  mQueueIndexCounts;
+    ::ll::TypedStorage<8, 176, uint64[22]>                                                  mQueueIndexCounts;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Tessellator>>                              mOwnedTessellator;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository>> mMaterialRepository;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::RuntimeLocalLightingConfig const>>          mLocalLightingConfig;
@@ -63,6 +64,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                               mGUIRendering;
     ::ll::TypedStorage<4, 24, ::AABB>                                                            mBuildBoundingBox;
     ::ll::TypedStorage<1, 1, bool>                                    mUseNewTessellationPipeline;
+    ::ll::TypedStorage<1, 1, bool>                                    mTextureShiftsEnabled;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IRenderChunkGarbage>> mRenderChunkGarbage;
     ::ll::TypedStorage<8, 16, ::WeakRef<::RenderChunkCoordinator>>    mRenderChunkCoordinator;
     // NOLINTEND
@@ -99,7 +101,11 @@ public:
 
     MCAPI void _buildRanges(::RenderChunkPerformanceTrackingData::RenderChunkBuildDetails& renderChunkBuildDetails);
 
-    MCAPI void _overrideStaticBlockLighting(::BlockSource& region, ::SubChunkPos const& subChunkPos);
+    MCAPI void _overrideStaticBlockLighting(
+        ::BlockSource&                 region,
+        ::SubChunkPos const&           subChunkPos,
+        ::AirAndSimpleBlockBits const& airAndSimpleBlocks
+    );
 
     MCAPI bool _sortBlocks(
         ::BlockSource&                                                 region,
@@ -140,7 +146,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void checkNeighborBlockIsAirOrSimpleBlock(
+    MCAPI static void _checkForAirAndOpaque(
+        int                      x,
+        int                      y,
+        int                      z,
+        ::BlockPos const&        min,
+        ::BlockPos const&        max,
+        bool                     guiRendering,
+        ::BlockSource&           region,
+        ::AirAndSimpleBlockBits& airAndSimpleBlocks
+    );
+
+    MCAPI static bool checkAndSetSimpleBlockInfo(
+        ::BlockRenderLayer       renderLayer,
         ::Block const&           block,
         uint64                   blockBitsetIndex,
         ::AirAndSimpleBlockBits& airAndSimpleBlocks

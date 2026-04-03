@@ -17,7 +17,7 @@ class RequestDownloadWorldPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc6d953;
+    ::ll::UntypedStorage<8, 32> mUnkb3bb31;
     ::ll::UntypedStorage<4, 4>  mUnkbce38a;
     // NOLINTEND
 

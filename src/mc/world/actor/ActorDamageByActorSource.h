@@ -65,18 +65,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDamageByActorSource(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+
+    MCAPI ActorDamageByActorSource(::BlockSource const& region, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+
+    MCAPI void* $ctor(::BlockSource const& region, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -87,7 +91,7 @@ public:
     MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCFOLD bool $getIsCreative() const;
+    MCAPI bool $getIsCreative() const;
 
     MCFOLD bool $getIsWorldBuilder() const;
 
@@ -95,7 +99,7 @@ public:
 
     MCFOLD ::ActorType $getEntityType() const;
 
-    MCAPI ::ActorCategory $getEntityCategories() const;
+    MCFOLD ::ActorCategory $getEntityCategories() const;
 
     MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
 

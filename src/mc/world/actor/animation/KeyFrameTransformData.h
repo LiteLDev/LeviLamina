@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/animation/BoneTransformType.h"
+
 // auto generated forward declare list
 // clang-format off
+class BoneOrientation;
 class ChannelTransform;
 class ChannelTransform_Float;
 class ExpressionNode;
+class RenderParams;
 // clang-format on
 
 class KeyFrameTransformData {
@@ -28,6 +33,13 @@ public:
     MCAPI KeyFrameTransformData(::KeyFrameTransformData const&);
 
     MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
+
+    MCAPI void animate(
+        ::RenderParams&     renderParams,
+        ::BoneOrientation&  destBoneOrientation,
+        float               scale,
+        ::BoneTransformType boneTransformType
+    ) const;
 
     MCAPI bool operator==(::KeyFrameTransformData const& rhs) const;
     // NOLINTEND

@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/ChunkPos.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class BeardAndShaverDescription;
@@ -10,7 +13,6 @@ class BeardDescription;
 class BlockPos;
 class BoundingBox;
 class BuryDescription;
-class ChunkPos;
 struct BeardKernel;
 // clang-format on
 

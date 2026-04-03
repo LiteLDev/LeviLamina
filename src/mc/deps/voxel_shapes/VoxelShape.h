@@ -11,6 +11,7 @@
 class AABB;
 class Vec3;
 namespace VoxelShapes { class Cells; }
+namespace VoxelShapes { struct SerializableVoxelShape; }
 // clang-format on
 
 namespace VoxelShapes {
@@ -27,7 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    VoxelShape& operator=(VoxelShape const&);
     VoxelShape();
 
 public:
@@ -48,11 +48,15 @@ public:
 
     MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
-    MCNAPI bool operator==(::VoxelShapes::VoxelShape const&) const;
+    MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape const&);
+
+    MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
 
     MCNAPI void rotate(::Vec3 const& rotationDegrees, ::Vec3 const& rotationPivot);
 
     MCNAPI ::std::vector<::AABB> toAabbs() const;
+
+    MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 
     MCNAPI ~VoxelShape();
     // NOLINTEND
@@ -64,6 +68,10 @@ public:
     createCuboidShape(float xMin, float yMin, float zMin, float xMax, float yMax, float zMax);
 
     MCNAPI static ::VoxelShapes::VoxelShape createEmptyShape();
+
+    MCNAPI static ::VoxelShapes::VoxelShape createShapeFromAabbs(::gsl::span<::AABB const> boxes);
+
+    MCNAPI static ::VoxelShapes::VoxelShape fromSerializable(::VoxelShapes::SerializableVoxelShape const& serializable);
 
     MCNAPI static ::VoxelShapes::VoxelShape join(
         ::VoxelShapes::VoxelShape const& first,

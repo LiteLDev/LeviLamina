@@ -54,7 +54,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string composeRoute(::PlayScreenDefaultTab tab, ::std::string const& dirtyLevelId);
+    MCAPI static ::std::string
+    composeRoute(::PlayScreenDefaultTab tab, bool isEditorMode, ::std::string const& dirtyLevelId);
 
     MCAPI static ::std::string getLastPlayScreenTab(::std::vector<::OreUI::RouterLocation> const& routerHistory);
     // NOLINTEND
@@ -63,6 +64,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> BASE_SCREEN_ID();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> LEGACY_ROUTE();
 

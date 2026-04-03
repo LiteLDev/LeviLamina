@@ -7,9 +7,9 @@ public:
 // member variables
 // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<8, 16> mUnkd54b53;
+    ::ll::UntypedStorage<8, 16> mUnk2d5848;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 16> mUnk2b6445;
+    ::ll::UntypedStorage<8, 16> mUnkc001a3;
 #endif
     // NOLINTEND
 

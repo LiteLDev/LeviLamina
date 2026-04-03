@@ -8,7 +8,7 @@ struct EventEnvelope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnka1b3f6;
+    ::ll::UntypedStorage<8, 32>  mUnk7a4d7d;
     ::ll::UntypedStorage<8, 104> mUnk58698e;
     // NOLINTEND
 

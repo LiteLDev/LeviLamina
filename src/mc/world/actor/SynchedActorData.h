@@ -70,8 +70,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
-    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mDirtyFlags;
-    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mHasComponentData;
+    ::ll::TypedStorage<8, 24, ::std::bitset<139>>                           mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<139>>                           mHasComponentData;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
         ::std::optional<uint64>                             targetFrame
     );
 
-    MCAPI void markDirty(::DataItem& item);
+    MCAPI_C int getInt(ushort id) const;
 
     MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 

@@ -47,8 +47,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf568e7;
-        ::ll::UntypedStorage<8, 32> mUnk59b4c0;
+        ::ll::UntypedStorage<8, 32> mUnk700306;
+        ::ll::UntypedStorage<8, 32> mUnke0450c;
         ::ll::UntypedStorage<4, 4>  mUnka30b10;
         ::ll::UntypedStorage<4, 4>  mUnk7f5665;
         ::ll::UntypedStorage<4, 4>  mUnk9c0fab;
@@ -124,7 +124,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk4c52e9;
+        ::ll::UntypedStorage<8, 24> mUnk47b2d8;
         ::ll::UntypedStorage<4, 4>  mUnke4ceed;
         ::ll::UntypedStorage<4, 4>  mUnkafd9c7;
         ::ll::UntypedStorage<4, 4>  mUnkc2e940;
@@ -201,25 +201,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk89c4ef;
-    ::ll::UntypedStorage<8, 64> mUnkf49aaa;
-    ::ll::UntypedStorage<8, 64> mUnk51cf3f;
+    ::ll::UntypedStorage<8, 64> mUnk471f4b;
+    ::ll::UntypedStorage<8, 64> mUnkde3b17;
+    ::ll::UntypedStorage<8, 64> mUnkf988f6;
     ::ll::UntypedStorage<8, 8>  mUnk2218c2;
     ::ll::UntypedStorage<8, 16> mUnk5f4202;
     ::ll::UntypedStorage<8, 24> mUnkd55261;
     ::ll::UntypedStorage<8, 64> mUnk2876ef;
-    ::ll::UntypedStorage<8, 24> mUnkaa5135;
+    ::ll::UntypedStorage<8, 24> mUnkb30369;
     ::ll::UntypedStorage<1, 1>  mUnkfa3d98;
     ::ll::UntypedStorage<4, 4>  mUnk7ebf28;
     ::ll::UntypedStorage<4, 8>  mUnkc145b0;
     ::ll::UntypedStorage<4, 4>  mUnk3962a5;
     ::ll::UntypedStorage<4, 4>  mUnk3d87f2;
-    ::ll::UntypedStorage<8, 24> mUnk5bfbd1;
-    ::ll::UntypedStorage<8, 24> mUnk73f382;
-    ::ll::UntypedStorage<8, 40> mUnk5a36d6;
+    ::ll::UntypedStorage<8, 24> mUnk3bbb85;
+    ::ll::UntypedStorage<8, 24> mUnk87606a;
+    ::ll::UntypedStorage<8, 40> mUnk26b996;
     ::ll::UntypedStorage<1, 1>  mUnk2c445a;
     ::ll::UntypedStorage<8, 64> mUnkc78041;
-    ::ll::UntypedStorage<8, 32> mUnkf39ac9;
+    ::ll::UntypedStorage<8, 32> mUnkc98a78;
     ::ll::UntypedStorage<4, 4>  mUnk8bcebb;
     ::ll::UntypedStorage<8, 80> mUnkd855a4;
     ::ll::UntypedStorage<8, 80> mUnk518100;
@@ -227,7 +227,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkf403ed;
     ::ll::UntypedStorage<8, 96> mUnk8970d6;
     ::ll::UntypedStorage<4, 4>  mUnk8d92b1;
-    ::ll::UntypedStorage<8, 40> mUnk2f8047;
+    ::ll::UntypedStorage<8, 40> mUnk7ba1da;
     // NOLINTEND
 
 public:
@@ -242,18 +242,17 @@ public:
     virtual ~RakNetServerLocator() /*override*/;
 
     virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           gameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     ) /*override*/;
 
-    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
+    virtual void stopAnnouncingServer() /*override*/;
 
     virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
@@ -385,18 +384,17 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           gameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     );
 
-    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer();
 
     MCNAPI void $startServerDiscovery(::PortPair ports);
 

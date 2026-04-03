@@ -44,8 +44,8 @@ class PrefabDBService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e21f6;
-    ::ll::UntypedStorage<8, 32> mUnk26e0d3;
+    ::ll::UntypedStorage<8, 32> mUnke4ef26;
+    ::ll::UntypedStorage<8, 32> mUnk5db5bc;
     ::ll::UntypedStorage<8, 64> mUnk8132d3;
     ::ll::UntypedStorage<8, 64> mUnk50d9ea;
     ::ll::UntypedStorage<8, 16> mUnkaab249;

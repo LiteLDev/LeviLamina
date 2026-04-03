@@ -19,17 +19,17 @@ class DataStoreSync {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk99d615;
-    ::ll::UntypedStorage<8, 64> mUnkf8de64;
-    ::ll::UntypedStorage<8, 64> mUnkc497df;
-    ::ll::UntypedStorage<8, 24> mUnk227ca8;
+    ::ll::UntypedStorage<8, 64> mUnkdbc653;
+    ::ll::UntypedStorage<8, 64> mUnk4b8e07;
+    ::ll::UntypedStorage<8, 64> mUnk1938e1;
+    ::ll::UntypedStorage<8, 64> mUnk4d84f4;
+    ::ll::UntypedStorage<8, 24> mUnk1d154f;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DataStoreSync& operator=(DataStoreSync const&);
     DataStoreSync(DataStoreSync const&);
-    DataStoreSync();
 
 public:
     // virtual functions
@@ -44,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DataStoreSync();
+
     MCNAPI ::cereal::DynamicValue const* get(::std::string const& datastoreName, ::std::string const& property) const;
 
     MCNAPI ::nonstd::
@@ -53,6 +55,7 @@ public:
     MCNAPI ::Bedrock::PubSub::Subscription listen(
         ::std::string const&                                 datastoreName,
         ::std::string const&                                 property,
+        ::std::string const&                                 path,
         ::std::function<void(::cereal::DynamicValue const*)> onChange
     );
 
@@ -62,19 +65,28 @@ public:
         ::cereal::DynamicValue const& obj,
         bool                          addToOutgoingChanges);
 
+    MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setObjectPath(
+        ::std::string const&          dataStoreName,
+        ::std::string const&          propertyName,
+        ::std::string const&          path,
+        ::cereal::DynamicValue const& currentData,
+        ::std::string const&          newDataString
+    );
+
     MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
         ::std::string const&                               dataStoreName,
         ::std::string const&                               propertyName,
         ::std::string const&                               path,
         ::std::variant<double, bool, ::std::string> const& data,
-        bool                                               addToOutgoing
+        bool                                               addToOutgoing,
+        bool                                               allowStringToObjectUpdates
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

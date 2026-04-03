@@ -9,12 +9,20 @@
 // auto generated forward declare list
 // clang-format off
 class MainMenuScreenModel;
-namespace Realms::Stories { struct FacetStateManager; }
+namespace Realms::Stories { class FacetStateManager; }
 // clang-format on
 
 namespace OreUI {
 
 class RealmsStoriesActionsFacet : public ::OreUI::FacetBase<::OreUI::RealmsStoriesActionsFacet> {
+public:
+    // RealmsStoriesActionsFacet inner types define
+    enum class OptInTelemetryUserState : int {
+        CanNotChangeRealmOptIn = 0,
+        CanChangeRealmOptIn    = 1,
+        IsOwner                = 2,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _blockPlayerFromRealm(::std::string const& xuid);
+
     MCAPI void _clearDeleteStatus(::std::string const& feedItemId);
 
     MCAPI void _clearEventsStatus();
@@ -89,6 +99,8 @@ public:
 
     MCAPI void _postStory();
 
+    MCAPI void _removePlayerFromRealm(::std::string const& xuid);
+
     MCAPI void _reportFeedItemToXbox(
         ::std::string const& feedItemId,
         ::std::string const& feedItemRoot,
@@ -106,14 +118,16 @@ public:
 
     MCAPI void _reportToClubOwner(::std::string const& feedItemId, ::std::string const& feedItemRoot);
 
+    MCAPI void _resetManageMembersStatus();
+
     MCAPI void _resetProvider();
 
     MCAPI void _setPlayerOptInStatusAndPostWithOptInTelemetry(
-        ::std::string const& realmId,
-        ::Realms::OptInState state,
-        ::std::string const& correlationId,
-        ::std::string const& action,
-        bool                 isOwner
+        ::std::string const&                                        realmId,
+        ::Realms::OptInState                                        state,
+        ::std::string const&                                        correlationId,
+        ::std::string const&                                        action,
+        ::OreUI::RealmsStoriesActionsFacet::OptInTelemetryUserState userState
     );
 
     MCAPI void _setRealmEventsState(bool state);

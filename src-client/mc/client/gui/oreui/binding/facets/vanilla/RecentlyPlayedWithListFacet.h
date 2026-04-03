@@ -13,10 +13,9 @@
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct AddFriendUserItem; }
 namespace OreUI { struct SocialPlayer; }
-namespace Parties { struct IPartyProvider; }
-namespace Parties { struct Party; }
+namespace Parties { class IPartyProvider; }
 namespace Social { class IUserManager; }
-namespace Social { struct RecentlyPlayedWithList; }
+namespace Social { class RecentlyPlayedWithList; }
 // clang-format on
 
 namespace OreUI {
@@ -31,9 +30,9 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mRecentlyPlayedWith;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mPrevRecentlyPlayedWith;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mRecentlyPlayedWithListSubscriber;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mPartySubscription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>> mParty;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mRecentlyPlayedWithListSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartySubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>> mPartyProvider;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const>> mUserManager;
     // NOLINTEND
 
@@ -53,9 +52,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI RecentlyPlayedWithListFacet(
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const>               userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>       partyProvider
     );
 
     MCFOLD ::std::vector<::OreUI::AddFriendUserItem>& getDisplayableList();
@@ -77,9 +76,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const>               userManager,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>       partyProvider
     );
     // NOLINTEND
 

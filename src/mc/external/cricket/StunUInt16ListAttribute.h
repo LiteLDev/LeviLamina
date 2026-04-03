@@ -18,7 +18,7 @@ class StunUInt16ListAttribute : public ::cricket::StunAttribute {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk525de0;
+    ::ll::UntypedStorage<8, 8> mUnk84d867;
     // NOLINTEND
 
 public:

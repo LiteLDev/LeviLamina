@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/settings/GraphicsProps.h"
+// auto generated forward declare list
+// clang-format off
+namespace Editor::Settings { struct GraphicsProps; }
+// clang-format on
 
 namespace Editor::Settings {
 // functions

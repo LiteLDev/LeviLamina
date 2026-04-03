@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 class BlockPos;
 // clang-format on
 
@@ -30,7 +31,8 @@ public:
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
 
@@ -48,11 +50,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
+#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+#endif
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 

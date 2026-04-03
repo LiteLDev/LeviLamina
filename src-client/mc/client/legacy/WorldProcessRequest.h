@@ -4,6 +4,6 @@
 
 namespace Legacy {
 
-struct WorldProcessRequest {};
+class WorldProcessRequest {};
 
 } // namespace Legacy

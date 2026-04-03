@@ -6,11 +6,6 @@
 #include "mc/deps/json/Features.h"
 #include "mc/deps/json/Value.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 namespace Json {
 
 class Reader {

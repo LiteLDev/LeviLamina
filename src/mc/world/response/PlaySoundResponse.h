@@ -18,7 +18,7 @@ class PlaySoundResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9264b9;
+    ::ll::UntypedStorage<8, 32> mUnkc886cc;
     ::ll::UntypedStorage<2, 2>  mUnkb10826;
     // NOLINTEND
 
@@ -36,7 +36,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
@@ -57,7 +57,7 @@ public:
     MCNAPI void $executeAction(::RenderParams& params) const;
 
     MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
 

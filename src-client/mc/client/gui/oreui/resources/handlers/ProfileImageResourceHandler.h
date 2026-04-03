@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
+#include "mc/client/gui/oreui/resources/ResourceResponse.h"
 #include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/core/threading/TaskGroup.h"
@@ -11,13 +12,11 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { class IResourceResponse; }
 namespace OreUI { class ResourceAllowList; }
+namespace OreUI { class ResourceStreamResponse; }
 namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { struct ResourceRequest; }
 namespace Social { class IUserManager; }
-namespace cohtml { class IAsyncResourceResponse; }
-namespace cohtml { class IAsyncResourceStreamResponse; }
 // clang-format on
 
 namespace OreUI {
@@ -34,10 +33,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::cohtml::IAsyncResourceResponse*> response;
-        ::ll::TypedStorage<8, 32, ::std::string>                    requestUrl;
-        ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>    imageOptions;
-        ::ll::TypedStorage<1, 1, bool>                              succeeded;
+        ::ll::TypedStorage<8, 8, ::OreUI::ResourceResponse>      response;
+        ::ll::TypedStorage<8, 32, ::std::string>                 requestUrl;
+        ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> imageOptions;
+        ::ll::TypedStorage<1, 1, bool>                           succeeded;
         // NOLINTEND
 
     public:
@@ -65,7 +64,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::cohtml::IAsyncResourceResponse*>>>
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>>>
                                                                                                    mRequestQueue;
     ::ll::TypedStorage<8, 616, ::MPMCQueue<::OreUI::ProfileImageResourceHandler::FinishedRequest>> mFinishedRequests;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::OreUI::ResourceAllowList> const>        mResourceAllowList;
@@ -86,12 +85,10 @@ public:
     virtual ~ProfileImageResourceHandler() /*override*/;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response) /*override*/;
+    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const& request,
-        ::cohtml::IAsyncResourceStreamResponse*
-    ) /*override*/;
+    virtual ::OreUI::IResourceHandler::Status
+    onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -132,10 +129,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response);
+    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
 
     MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::cohtml::IAsyncResourceStreamResponse*);
+    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&);
 
     MCAPI void $update();
     // NOLINTEND

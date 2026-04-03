@@ -8,10 +8,13 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace personaDefault::skinRepository {
+// functions
+// NOLINTBEGIN
+MCNAPI_C ::mce::UUID const& getCustomSkinPackUUID();
+// NOLINTEND
+
 // static variables
 // NOLINTBEGIN
-MCNAPI ::mce::UUID const& CUSTOM_SKIN_PACK_UUID();
-
 MCNAPI ::mce::UUID const& PERSONA_SKIN_PACK_UUID();
 
 MCNAPI ::mce::UUID const& VANILLA_SKIN_PACK_UUID();

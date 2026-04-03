@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/SharedAsync.h"
-#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/resources/interface/content_manager_utils/ISourcesAsyncReloader.h"
 
 // auto generated forward declare list
 // clang-format off
 class IContentManager;
+class TaskGroup;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -25,9 +25,13 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IContentManager>>      mWeakOwner;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedAsync<void>> mInitTask;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                            mOnSourcesReloadedAsyncPublisher;
-    ::ll::TypedStorage<8, 336, ::TaskGroup> mTaskGroup;
+                                                                              mOnSourcesReloadedAsyncPublisher;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>> mTaskGroup;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SourcesAsyncReloader();
 
 public:
     // virtual functions
@@ -40,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SourcesAsyncReloader();
+    MCAPI explicit SourcesAsyncReloader(::std::unique_ptr<::TaskGroup> taskGroup);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::std::unique_ptr<::TaskGroup> taskGroup);
     // NOLINTEND
 
 public:

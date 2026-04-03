@@ -5,12 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/EasingType.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -36,13 +33,6 @@ public:
         ::ll::TypedStorage<4, 4, ::EasingType> mEasingType;
         ::ll::TypedStorage<4, 4, float>        mEasingTime;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::EaseOption>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
     };
 
     struct EntityOffsetOption {
@@ -53,13 +43,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mEntityOffsetY;
         ::ll::TypedStorage<4, 4, float> mEntityOffsetZ;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::EntityOffsetOption>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
     };
 
     struct FacingOption {
@@ -68,13 +51,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mFacingPos;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::FacingOption>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
     };
 
     struct PosOption {
@@ -82,13 +58,6 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::PosOption>
-        read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
 
@@ -99,13 +68,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mRotX;
         ::ll::TypedStorage<4, 4, float> mRotY;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::RotOption>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
     };
 
     struct ViewOffsetOption {
@@ -114,13 +76,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mViewOffsetX;
         ::ll::TypedStorage<4, 4, float> mViewOffsetY;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction::ViewOffsetOption>
-        read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
 
@@ -144,16 +99,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::CameraInstructionOptions::SetInstruction const& other) const;
-
-    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::SetInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
 

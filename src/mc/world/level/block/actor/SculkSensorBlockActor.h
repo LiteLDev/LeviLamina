@@ -41,7 +41,7 @@ public:
 
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    virtual ~SculkSensorBlockActor() /*override*/ = default;
+    virtual ~SculkSensorBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -68,6 +68,12 @@ public:
         uint                                              listenerRange,
         ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

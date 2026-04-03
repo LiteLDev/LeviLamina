@@ -15,20 +15,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class IContentAcquisition;
 class IContentManager;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class IGameServerStartup;
 class ILevelListCache;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
 class LevelDataWrapper;
 class ResourcePackCopyProgressHandler;
 class ResourcePackManager;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
+class TrialManager;
 struct PackManagerContentSource;
-struct TrialManager;
 // clang-format on
 
 class WorldCreationHelper {
@@ -57,11 +57,11 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                  mExistenceTracker;
     ::ll::TypedStorage<4, 4, ::WorldCreationHelper::WorldCreationMode>                  mCreationMode;
     ::ll::TypedStorage<1, 1, bool>                                                      mCreatingFromTemplate;
-    ::ll::TypedStorage<8, 1440, ::LevelSettings>                                        mLevelSettings;
+    ::ll::TypedStorage<8, 1336, ::LevelSettings>                                        mLevelSettings;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mLevelName;
     ::ll::TypedStorage<8, 48, ::PackIdVersion>                                          mPackIdVersion;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSource*>                               mWorldContentSource;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                          mLevelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                          mLevelSummary;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackCopyProgressHandler>>      mProgressHandler;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>                        mCopyResourcePacksFuture;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedAsync<void>>                  mStartResult;

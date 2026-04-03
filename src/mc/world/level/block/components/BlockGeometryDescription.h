@@ -41,7 +41,9 @@ public:
     ::ll::TypedStorage<1, 1, bool>            mNeedsLegacyTopRotation;
     ::ll::TypedStorage<1, 1, bool>            mUseBlockTypeLightAbsorption;
     ::ll::TypedStorage<1, 1, bool>            mIgnoreGeometryForIsSolid;
+    ::ll::TypedStorage<1, 1, bool>            mIsFullBlockV1;
     ::ll::TypedStorage<8, 48, ::HashedString> mCullingLayer;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCullingShapeName;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
                                                                                 mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
@@ -76,9 +78,11 @@ public:
     MCAPI BlockGeometryDescription(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
+        ::HashedString const&                                   cullingShapeName,
         ::HashedString const&                                   cullingLayer,
         ::std::variant<bool, ::std::set<::HashedString>> const& uvLock,
-        ::BlockRendererDescription const&                       renderer
+        ::BlockRendererDescription const&                       renderer,
+        bool                                                    isFullBlockV1
     );
 
     MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
@@ -111,7 +115,15 @@ public:
 
     MCAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
 
+    MCAPI static ::HashedString const& CULLING_SHAPE_DEFAULT();
+
+    MCAPI static ::std::string const& CULLING_SHAPE_DOCUMENTATION();
+
+    MCAPI static ::std::string const& CULLING_SHAPE_NAME_CONSTRAINT();
+
     MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
+
+    MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME_V1();
 
     MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
 
@@ -130,9 +142,11 @@ public:
     MCAPI void* $ctor(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
+        ::HashedString const&                                   cullingShapeName,
         ::HashedString const&                                   cullingLayer,
         ::std::variant<bool, ::std::set<::HashedString>> const& uvLock,
-        ::BlockRendererDescription const&                       renderer
+        ::BlockRendererDescription const&                       renderer,
+        bool                                                    isFullBlockV1
     );
     // NOLINTEND
 

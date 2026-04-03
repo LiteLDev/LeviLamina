@@ -4,6 +4,6 @@
 
 namespace dragon::res {
 
-struct CreateCompressedTextureTransaction {};
+class CreateCompressedTextureTransaction {};
 
 } // namespace dragon::res

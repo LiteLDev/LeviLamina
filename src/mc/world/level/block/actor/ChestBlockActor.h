@@ -58,7 +58,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                                  mSpeed;
     ::ll::TypedStorage<1, 1, bool>                                   mIsGlobalChest;
-    ::ll::TypedStorage<1, 1, bool>                                   mUsesBlockTypeDetection;
+    ::ll::TypedStorage<1, 1, bool>                                   mAlwayCheckObstructionComponent;
     ::ll::TypedStorage<4, 4, float>                                  mObstructionHeight;
     bool                                                             mPairLead : 1;
     ::ll::TypedStorage<4, 4, float>                                  mOpenness;
@@ -95,9 +95,9 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
@@ -254,9 +254,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -282,7 +282,7 @@ public:
 
     MCAPI void $startOpen(::Actor& actor);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCAPI void $onRemoved(::BlockSource& region);
 
     MCAPI void $stopOpen(::Actor& actor);
 

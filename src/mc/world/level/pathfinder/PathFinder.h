@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/CachedChunkBlockSource.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/pathfinder/ActorPathingData.h"
@@ -17,7 +18,6 @@
 class AABB;
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class BreakBlocksComponent;
 class IPathBlockSource;

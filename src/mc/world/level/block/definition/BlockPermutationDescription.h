@@ -15,15 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockPermutationDescription(BlockPermutationDescription const&);
-    BlockPermutationDescription();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
-
     MCAPI ~BlockPermutationDescription();
     // NOLINTEND
 

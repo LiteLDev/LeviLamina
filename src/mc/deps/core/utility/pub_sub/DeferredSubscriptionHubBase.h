@@ -17,7 +17,7 @@ class DeferredSubscriptionHubBase : public ::Bedrock::PubSub::DeferredSubscripti
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb58fe3;
+    ::ll::UntypedStorage<8, 24> mUnk5fdd14;
     // NOLINTEND
 
 public:

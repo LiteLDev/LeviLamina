@@ -22,13 +22,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ButtonArtSurface;
+class GatheringConfig;
+class IEntitlementManager;
 class MainMenuScreenModel;
 class SocialButtonScreenController;
-struct ButtonArtSurface;
-struct GatheringConfig;
-struct IEntitlementManager;
 namespace Json { class Value; }
-namespace Social { struct User; }
+namespace Social { class User; }
 namespace edu::auth { struct CredsAuthComplete; }
 // clang-format on
 
@@ -134,7 +134,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -172,6 +172,8 @@ public:
     MCAPI bool _hasAnimatedGatheringBadge() const;
 
     MCAPI bool _hasValidGathering() const;
+
+    MCAPI bool _isNxAdHocEnabled() const;
 
     MCAPI bool _isProfileButtonBEnabled() const;
 
@@ -243,6 +245,8 @@ public:
     MCAPI void $onInit();
 
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 

@@ -14,6 +14,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Player;
+namespace BlockEvents { class ActorEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -48,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void onEvent(::BlockEvents::ActorEvent& event) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND

@@ -17,9 +17,9 @@ class RequestUploadWorldPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb38101;
+    ::ll::UntypedStorage<8, 32> mUnk780ad9;
     ::ll::UntypedStorage<4, 4>  mUnk61f918;
-    ::ll::UntypedStorage<8, 32> mUnk31b2b8;
+    ::ll::UntypedStorage<8, 32> mUnk8f3e2f;
     // NOLINTEND
 
 public:

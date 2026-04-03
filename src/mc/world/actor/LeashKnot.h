@@ -12,6 +12,7 @@ class ActorInteraction;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class InteractionResult;
 class Player;
 class Vec3;
 struct VariantParameterList;
@@ -41,7 +42,8 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::InteractionResult
+    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     virtual void teleportTo(
         ::Vec3 const& pos,
@@ -77,7 +79,8 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);

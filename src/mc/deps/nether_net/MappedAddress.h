@@ -8,9 +8,9 @@ struct MappedAddress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk91d548;
+    ::ll::UntypedStorage<8, 32> mUnk544926;
     ::ll::UntypedStorage<2, 2>  mUnk3d39e1;
-    ::ll::UntypedStorage<8, 32> mUnkd33126;
+    ::ll::UntypedStorage<8, 32> mUnk5403f7;
     ::ll::UntypedStorage<2, 2>  mUnkd6b8de;
     // NOLINTEND
 

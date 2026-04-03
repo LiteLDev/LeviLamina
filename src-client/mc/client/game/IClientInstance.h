@@ -7,7 +7,6 @@
 #include "mc/client/game/ClientInstanceState.h"
 #include "mc/client/game/ControlOptionType.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
 #include "mc/client/gui/screens/controllers/InventoryTabIndex.h"
@@ -28,6 +27,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
 #include "mc/deps/renderer/MatrixStack.h"
 #include "mc/events/NetworkType.h"
@@ -46,114 +46,114 @@ class Actor;
 class ActorAnimationGroup;
 class ActorBlockRenderer;
 class ActorRenderDispatcher;
+class ActorResourceDefinitionGroup;
 class BlockActorRenderDispatcher;
 class BlockCullingGroup;
 class BlockSource;
 class BlockTessellator;
 class BuildActionIntention;
 class CachedScenes;
+class CameraRegistry;
 class ClientHitDetectCoordinator;
 class ClientInputHandler;
 class ClientInstanceEventCoordinator;
 class ClientMoveInputHandler;
 class ClientNetworkEventCoordinator;
 class ClientNetworkSystem;
+class ClientRequirementVerifier;
 class ClientScriptEventCoordinator;
+class ClientScriptManager;
 class DateManager;
+class DeferredLighting;
+class DevConsoleLogger;
+class DisconnectionRequestHandler;
 class EDUSystems;
 class EntityContext;
 class EntitySystems;
+class FileDataRequest;
 class FogDefinitionRegistry;
 class FogManager;
 class FontHandle;
+class FrameUpdateContext;
 class GameCallbacks;
 class GameModuleClient;
 class GameRenderer;
 class GeometryGroup;
 class GuiData;
+class GuidedFlowManager;
 class HitDetectSystem;
 class HitResult;
+class HudIconActorRenderer;
 class IClientInstances;
 class IConnectionEventing;
 class IContentKeyProvider;
+class IGameConnectionListener;
 class IMinecraftEventing;
 class IMinecraftGame;
 class IOptions;
 class IResourcePackRepository;
 class ISceneStack;
+class ITTSEventManager;
 class IUIRepository;
 class ItemInHandRenderer;
 class ItemRegistryRef;
 class ItemRenderer;
 class KeyboardManager;
+class LatencyGraphDisplay;
 class Level;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LightTexture;
 class LinkedAssetValidator;
 class LocalPlayer;
+class MarketplaceServicesManager;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
 class MobEffectsLayout;
 class MultiPlayerLevel;
+class MusicManager;
 class Option;
 class Options;
 class PackManifestFactory;
 class PacketSender;
+class PersonaRepository;
 class PixelCalc;
 class Player;
+class PlayerAuthentication;
+class PlayerReportHandler;
+class ProfanityContext;
 class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
 class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
+class SkinRepository;
+class SkinRepositoryClientInterface;
+class SoundEngine;
+class StoreCatalogItem;
+class StoreCatalogRepository;
 class TaskGroup;
+class TextToSpeechClient;
 class ToastManager;
+class TrialManager;
 class UIEventCoordinator;
 class Vec2;
 class Vec3;
 class WeakEntityRef;
-struct ActorResourceDefinitionGroup;
+class WorldTransferAgent;
 struct ActorUniqueID;
-struct CameraRegistry;
 struct ClientInstanceInitArguments;
-struct ClientRequirementVerifier;
-struct ClientScriptManager;
-struct DeferredLighting;
-struct DevConsoleLogger;
-struct DisconnectionRequestHandler;
 struct DisconnectionScreenParams;
 struct ExperienceConnectionData;
-struct FileDataRequest;
-struct FrameUpdateContext;
-struct GuidedFlowManager;
-struct HudIconActorRenderer;
-struct IGameConnectionListener;
-struct ISettingsRegistry;
-struct ITTSEventManager;
-struct LatencyGraphDisplay;
 struct ListenerState;
 struct LocalPlayerChangedConnector;
-struct MarketplaceServicesManager;
-struct MusicManager;
 struct PacksInfoData;
-struct PersonaRepository;
-struct PlayerAuthentication;
+struct PlayerJoinWorldContext;
 struct PlayerJoinWorldTelemetryInfo;
-struct PlayerReportHandler;
-struct ProfanityContext;
 struct ScreenshotOptions;
-struct SkinRepository;
-struct SkinRepositoryClientInterface;
-struct SoundEngine;
 struct SplitScreenInfo;
-struct StoreCatalogItem;
-struct StoreCatalogRepository;
-struct TextToSpeechClient;
-struct TrialManager;
-struct WorldTransferAgent;
 namespace ApplicationSignal { class ClipboardCopy; }
 namespace ApplicationSignal { class ClipboardPasteRequest; }
 namespace Automation { class AutomationClient; }
@@ -169,10 +169,11 @@ namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
+namespace Settings { class IRegistry; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class User; }
 namespace World { class WorldSystem; }
 namespace mce { class Camera; }
 namespace mce { class Texture; }
@@ -217,7 +218,7 @@ public:
         ::std::string const&,
         ::NetworkType,
         ::Social::MultiplayerServiceIdentifier,
-        bool
+        ::PlayerJoinWorldContext
     ) = 0;
 
     virtual void onCancelJoinGame() = 0;
@@ -332,8 +333,6 @@ public:
     virtual bool isSelectedSkinInitialized() const = 0;
 
     virtual ::SplitScreenInfo getSplitScreenInfo() const = 0;
-
-    virtual int getCurrentMaxGUIScaleIndex() const = 0;
 
     virtual bool getHandlingControllerDisconnect() = 0;
 
@@ -564,7 +563,7 @@ public:
 
     virtual ::std::shared_ptr<::Social::User> const& getUser() const = 0;
 
-    virtual ::std::shared_ptr<::ISettingsRegistry> getSettingsRegistry() = 0;
+    virtual ::std::shared_ptr<::Settings::IRegistry> getSettingsRegistry() = 0;
 
     virtual ::Option const& getShowLearningPromptsOption() const = 0;
 
@@ -836,7 +835,7 @@ public:
 
     virtual void refocusMouse(bool) = 0;
 
-    virtual void setMouseType(::ui::MousePointerType) = 0;
+    virtual void setMouseType(::Bedrock::Input::PointerType) = 0;
 
     virtual void resetBai(int) = 0;
 
@@ -876,11 +875,13 @@ public:
 
     virtual void connectToExperience(
         ::ExperienceConnectionData,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>,
-        ::std::function<void(::World::JoinServerWorldResult)>
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)>,
+        ::std::function<void(::World::JoinServerWorldResult)>,
+        ::PlayerJoinWorldContext
     ) = 0;
 
-    virtual void startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, bool) = 0;
+    virtual void
+    startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, ::PlayerJoinWorldContext) = 0;
 
     virtual bool isReadyToReconnect() const = 0;
 

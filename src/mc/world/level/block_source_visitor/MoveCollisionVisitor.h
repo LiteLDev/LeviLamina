@@ -8,7 +8,7 @@ struct MoveCollisionVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6499f8;
+    ::ll::UntypedStorage<8, 8> mUnkc2e4c1;
     // NOLINTEND
 
 public:

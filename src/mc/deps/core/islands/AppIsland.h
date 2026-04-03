@@ -16,7 +16,7 @@ class AppIsland : public ::Bedrock::IIslandCore {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5bfdb3;
+    ::ll::UntypedStorage<8, 8> mUnkcf2467;
     // NOLINTEND
 
 public:

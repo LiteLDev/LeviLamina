@@ -107,8 +107,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool _hasReachedHome() const;
 
-    MCAPI bool _hasRequiredComponents() const;
-
     MCAPI void _triggerOnFailedEvents();
     // NOLINTEND
 

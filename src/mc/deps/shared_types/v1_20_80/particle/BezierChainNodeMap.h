@@ -26,6 +26,8 @@ public:
     // NOLINTBEGIN
     MCAPI BezierChainNodeMap(::SharedTypes::v1_20_80::BezierChainNodeMap const&);
 
+    MCFOLD ::SharedTypes::v1_20_80::BezierChainNodeMap& operator=(::SharedTypes::v1_20_80::BezierChainNodeMap&&);
+
     MCAPI ~BezierChainNodeMap();
     // NOLINTEND
 

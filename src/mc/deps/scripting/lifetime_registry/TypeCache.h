@@ -8,7 +8,7 @@ class TypeCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8409a9;
+    ::ll::UntypedStorage<8, 64> mUnk1a4e06;
     // NOLINTEND
 
 public:

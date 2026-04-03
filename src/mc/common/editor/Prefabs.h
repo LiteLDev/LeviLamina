@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/PrefabTemplateErrorState.h"
-#include "mc/editor/prefabs/VisiblePrefabInstanceStructureRef.h"
 #include "mc/editor/services/prefabs/PrefabInstanceErrorState.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor::Prefabs { class VisiblePrefabInstanceStructureRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

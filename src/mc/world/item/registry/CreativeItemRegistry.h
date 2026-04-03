@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/CreativeItemCategory.h"
 
@@ -48,7 +49,7 @@ public:
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
     createCategories();
 
-    MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
+    MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
 
     MCAPI_C ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
 

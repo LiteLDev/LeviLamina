@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
@@ -12,7 +13,6 @@
 // clang-format off
 class CompoundBlockVolumeItem;
 class CompoundBlockVolumeIterator;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
@@ -42,7 +42,7 @@ public:
 
     MCAPI ::CompoundBlockVolumeIterator begin() const;
 
-    MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
+    MCAPI void forEachPosition(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
 
     MCAPI bool isInside(::BlockPos const& pos) const;
 
@@ -52,12 +52,6 @@ public:
 
     MCAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

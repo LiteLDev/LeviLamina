@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/PositionTrackingId.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class Dimension;
 class Level;
-class PositionTrackingId;
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
 

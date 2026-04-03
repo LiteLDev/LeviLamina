@@ -13,8 +13,9 @@ enum class ProfileType : uchar {
     Persona5    = 5,
     Count       = 6,
     NotFound    = 7,
-    Multiplayer = 8,
-    Temporary   = 9,
+    DefaultCast = 8,
+    Multiplayer = 9,
+    Temporary   = 10,
 };
 
 }

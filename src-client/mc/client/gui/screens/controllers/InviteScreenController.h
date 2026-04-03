@@ -7,11 +7,13 @@
 #include "mc/client/gui/screens/controllers/EntryType.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/network/realms/World.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
 namespace Json { class Value; }
+namespace Parties { class PartySystem; }
 namespace Social { struct PlatformUserProfileData; }
 namespace Social { struct XboxLiveUserProfileData; }
 // clang-format on
@@ -38,25 +40,27 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::InviteScreenController::XboxLiveUserEntryData>> mXboxLiveEntries;
     ::ll::TypedStorage<8, 24, ::std::vector<::InviteScreenController::PlatformUserEntryData>> mPlatformEntries;
     ::ll::TypedStorage<8, 24, ::std::vector<::InviteScreenController::LinkedUserEntryData>>   mLinkedEntries;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>> mDataRequestExistenceTracker;
-    ::ll::TypedStorage<4, 4, int>                      mSelectedXboxCount;
-    ::ll::TypedStorage<4, 4, int>                      mSelectedPlatformCount;
-    ::ll::TypedStorage<4, 4, int>                      mSelectedLinkedAccountCount;
-    ::ll::TypedStorage<4, 4, uint>                     mXboxOnlineOffset;
-    ::ll::TypedStorage<4, 4, uint>                     mPlatformOnlineOffset;
-    ::ll::TypedStorage<4, 4, uint>                     mLinkedAccountOnlineOffset;
-    ::ll::TypedStorage<4, 24, ::std::array<uint, 6>>   mEntryPages;
-    ::ll::TypedStorage<1, 1, bool>                     mDirty;
-    ::ll::TypedStorage<1, 1, bool>                     mInRealm;
-    ::ll::TypedStorage<1, 1, bool>                     mIsRealmOwner;
-    ::ll::TypedStorage<8, 656, ::Realms::World>        mCurrentRealm;
-    ::ll::TypedStorage<1, 1, bool>                     mDataRefresh;
-    ::ll::TypedStorage<1, 1, bool>                     mIsLoadingFriends;
-    ::ll::TypedStorage<4, 4, int>                      mNumFriendsToLoad;
-    ::ll::TypedStorage<1, 1, bool>                     mShowLinkedAccounts;
-    ::ll::TypedStorage<1, 1, bool>                     mShowPlatformInvites;
-    ::ll::TypedStorage<1, 1, bool>                     mUsePagination;
-    ::ll::TypedStorage<4, 4, uint>                     mEntriesPerPage;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                            mDataRequestExistenceTracker;
+    ::ll::TypedStorage<4, 4, int>                                                 mSelectedXboxCount;
+    ::ll::TypedStorage<4, 4, int>                                                 mSelectedPlatformCount;
+    ::ll::TypedStorage<4, 4, int>                                                 mSelectedLinkedAccountCount;
+    ::ll::TypedStorage<4, 4, uint>                                                mXboxOnlineOffset;
+    ::ll::TypedStorage<4, 4, uint>                                                mPlatformOnlineOffset;
+    ::ll::TypedStorage<4, 4, uint>                                                mLinkedAccountOnlineOffset;
+    ::ll::TypedStorage<4, 24, ::std::array<uint, 6>>                              mEntryPages;
+    ::ll::TypedStorage<1, 1, bool>                                                mDirty;
+    ::ll::TypedStorage<1, 1, bool>                                                mInRealm;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanManageRealmMembers;
+    ::ll::TypedStorage<8, 656, ::Realms::World>                                   mCurrentRealm;
+    ::ll::TypedStorage<1, 1, bool>                                                mDataRefresh;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsLoadingFriends;
+    ::ll::TypedStorage<4, 4, int>                                                 mNumFriendsToLoad;
+    ::ll::TypedStorage<1, 1, bool>                                                mShowLinkedAccounts;
+    ::ll::TypedStorage<1, 1, bool>                                                mShowPlatformInvites;
+    ::ll::TypedStorage<1, 1, bool>                                                mUsePagination;
+    ::ll::TypedStorage<1, 1, bool>                                                mMakePartyInvite;
+    ::ll::TypedStorage<4, 4, uint>                                                mEntriesPerPage;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
     // NOLINTEND
 
 public:
@@ -84,7 +88,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InviteScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCAPI InviteScreenController(
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
+    );
 
     MCAPI void _addToDataList(::Social::PlatformUserProfileData const& user);
 
@@ -127,7 +134,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
+    );
     // NOLINTEND
 
 public:

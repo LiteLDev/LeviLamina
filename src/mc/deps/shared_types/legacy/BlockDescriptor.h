@@ -73,6 +73,14 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor&&);
 
+    MCAPI explicit BlockDescriptor(::std::string name);
+
+    MCAPI BlockDescriptor(
+        ::std::string                                                               name,
+        ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> states,
+        ::std::string                                                               tags
+    );
+
     MCFOLD ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor&&);
 
     MCAPI ::SharedTypes::Legacy::BlockDescriptor& operator=(::SharedTypes::Legacy::BlockDescriptor const&);
@@ -84,6 +92,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor&&);
+
+    MCAPI void* $ctor(::std::string name);
+
+    MCAPI void* $ctor(
+        ::std::string                                                               name,
+        ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> states,
+        ::std::string                                                               tags
+    );
     // NOLINTEND
 
 public:

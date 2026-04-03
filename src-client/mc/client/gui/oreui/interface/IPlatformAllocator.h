@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/cohtml/MemTagsType.h"
-
 namespace OreUI {
 
 class IPlatformAllocator {
@@ -23,9 +20,9 @@ public:
 
     virtual void alignedDeallocate(void*) = 0;
 
-    virtual void* virtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType) = 0;
+    virtual void* virtualAllocate(void*, uint, int, int) = 0;
 
-    virtual bool virtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType) = 0;
+    virtual bool virtualFree(void*, uint, int) = 0;
     // NOLINTEND
 
 public:

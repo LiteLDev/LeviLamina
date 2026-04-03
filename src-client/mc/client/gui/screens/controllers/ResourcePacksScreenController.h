@@ -17,6 +17,7 @@
 // clang-format off
 class ContentTierIncompatibleReason;
 class ContentView;
+class DlcChecker;
 class DlcUIWrapper;
 class IContentManager;
 class IContentManagerContext;
@@ -25,7 +26,6 @@ class MultiplayerLockState;
 class ResourceLocation;
 class UIPropertyBag;
 struct ContentItem;
-struct DlcChecker;
 struct MoveResourcePackResult;
 struct PackContentItem;
 struct PackIdVersion;
@@ -96,7 +96,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
     // NOLINTEND
 
 public:
@@ -246,8 +246,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 
 public:

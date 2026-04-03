@@ -27,7 +27,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<::LocalPlayer*()>>                          mGetCurrentLocalPlayer;
     ::ll::TypedStorage<8, 64, ::std::function<::LevelSummary*(::std::string)>>            mGetCurrentLevelSummary;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                                     mWorldIconPathString;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                            mLevelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                            mLevelSummary;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mWorldName;
     ::ll::TypedStorage<1, 1, bool>                                                        mStateChanged;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsInitialized;
@@ -62,7 +62,7 @@ public:
 
     MCFOLD ::OreUI::AllowListPath const& getWorldIconPath() const;
 
-    MCFOLD ::std::string const& getWorldName() const;
+    MCAPI ::std::string const& getWorldName() const;
     // NOLINTEND
 
 public:

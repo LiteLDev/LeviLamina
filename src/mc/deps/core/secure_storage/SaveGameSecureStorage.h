@@ -9,7 +9,7 @@ class SaveGameSecureStorage : public ::SecureStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka87d76;
+    ::ll::UntypedStorage<8, 32> mUnkd39adc;
     ::ll::UntypedStorage<8, 16> mUnkbdcba3;
     ::ll::UntypedStorage<1, 1>  mUnk6fe983;
     // NOLINTEND

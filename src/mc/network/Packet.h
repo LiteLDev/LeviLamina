@@ -99,7 +99,7 @@ public:
 
     virtual ::MinecraftPacketIds getId() const = 0;
 
-    virtual ::std::string getName() const = 0;
+    virtual ::std::string_view getName() const = 0;
 
     virtual uint64 getMaxSize() const;
 

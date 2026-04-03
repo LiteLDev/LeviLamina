@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PlayerAuthentication {
+class PlayerAuthentication {
 public:
     // PlayerAuthentication inner types declare
     // clang-format off
-    struct UserListObserver;
+    class UserListObserver;
     // clang-format on
 
     // PlayerAuthentication inner types define
-    struct UserListObserver {};
+    class UserListObserver {};
 };

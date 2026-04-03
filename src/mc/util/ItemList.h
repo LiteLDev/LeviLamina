@@ -6,7 +6,7 @@ class ItemList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk52df2b;
+    ::ll::UntypedStorage<8, 24> mUnk3aa1c9;
     // NOLINTEND
 
 public:

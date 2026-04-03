@@ -61,9 +61,11 @@ public:
     virtual ::Bedrock::Result<void>
     asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength) /*override*/;
 
-    virtual ::std::optional<bool> readValidityFlag() /*override*/;
+    virtual ::std::optional<bool> additionalDataAsBool() /*override*/;
 
-    virtual ::std::optional<uint> readControlValue() /*override*/;
+    virtual ::std::optional<uint> additionalDataAsUInt32() /*override*/;
+
+    virtual ::std::optional<::std::string> additionalDataAsString(uint64 maxInputLength) /*override*/;
 
     virtual uint64 members() /*override*/;
 
@@ -116,9 +118,11 @@ public:
     MCAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCFOLD ::std::optional<bool> $readValidityFlag();
+    MCFOLD ::std::optional<bool> $additionalDataAsBool();
 
-    MCFOLD ::std::optional<uint> $readControlValue();
+    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
+
+    MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64 maxInputLength);
 
     MCFOLD uint64 $members();
 

@@ -6,8 +6,8 @@ class CatmullRomSpline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk751108;
-    ::ll::UntypedStorage<8, 24> mUnkd900f2;
+    ::ll::UntypedStorage<8, 24> mUnk2e0798;
+    ::ll::UntypedStorage<8, 24> mUnkc28a35;
     ::ll::UntypedStorage<1, 1>  mUnk57b1b4;
     // NOLINTEND
 

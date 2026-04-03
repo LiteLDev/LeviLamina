@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientPlayerInputDeviceService {};
+class ClientPlayerInputDeviceService {};
 
 } // namespace Editor::Services

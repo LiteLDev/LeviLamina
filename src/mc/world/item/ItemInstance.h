@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ItemInstance const& rhs);
+    MCFOLD void* $ctor(::ItemInstance const& rhs);
 
     MCFOLD void* $ctor(::ItemStackBase const& rhs);
 

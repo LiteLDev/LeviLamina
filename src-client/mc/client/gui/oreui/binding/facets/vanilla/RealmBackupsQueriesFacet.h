@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class IResourceAllowList; }
-namespace Realms { struct RealmsBackups; }
+namespace Realms { class RealmsBackups; }
 // clang-format on
 
 namespace OreUI {

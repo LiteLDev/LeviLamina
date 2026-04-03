@@ -14,7 +14,7 @@ class RenderStage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk59b11f;
+    ::ll::UntypedStorage<8, 24> mUnk55f6f2;
     ::ll::UntypedStorage<4, 4>  mUnk77539e;
     ::ll::UntypedStorage<1, 1>  mUnk29f6ab;
     ::ll::UntypedStorage<1, 1>  mUnk7e2334;

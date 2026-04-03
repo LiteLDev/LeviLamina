@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/module/GameModuleServer.h"
 
 // auto generated forward declare list
@@ -25,6 +24,7 @@ class ResourcePackStack;
 class ServerInstance;
 class ServerNetworkHandler;
 class ServerScriptManager;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct SpawnSettings;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -33,9 +33,9 @@ class VanillaGameModuleServer : public ::GameModuleServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1138e3;
-    ::ll::UntypedStorage<8, 8>  mUnk1e51f3;
-    ::ll::UntypedStorage<8, 8>  mUnk2d0737;
+    ::ll::UntypedStorage<8, 8>  mUnk7ee23b;
+    ::ll::UntypedStorage<8, 8>  mUnk3398c6;
+    ::ll::UntypedStorage<8, 8>  mUnkf51e1c;
     ::ll::UntypedStorage<8, 16> mUnkf08fc4;
     // NOLINTEND
 
@@ -67,7 +67,7 @@ public:
         ::BaseGameVersion const&                baseGameVersion,
         ::ServerScriptManager const*            scriptManager,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     ) /*override*/;
 
@@ -101,7 +101,7 @@ public:
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     );
 
@@ -128,7 +128,7 @@ public:
         ::BaseGameVersion const&                baseGameVersion,
         ::ServerScriptManager const*            scriptManager,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     );
 

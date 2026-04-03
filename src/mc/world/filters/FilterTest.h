@@ -22,8 +22,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkba715e;
-        ::ll::UntypedStorage<8, 32> mUnk1e4808;
+        ::ll::UntypedStorage<8, 32> mUnk784197;
+        ::ll::UntypedStorage<8, 32> mUnkecefe1;
         ::ll::UntypedStorage<8, 8>  mUnkedef7d;
         ::ll::UntypedStorage<8, 8>  mUnke70633;
         ::ll::UntypedStorage<8, 8>  mUnk411256;

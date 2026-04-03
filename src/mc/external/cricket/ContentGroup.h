@@ -8,8 +8,8 @@ class ContentGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8493f8;
-    ::ll::UntypedStorage<8, 24> mUnk1d7d34;
+    ::ll::UntypedStorage<8, 32> mUnkd02b34;
+    ::ll::UntypedStorage<8, 24> mUnkc4dd01;
     // NOLINTEND
 
 public:

@@ -3,9 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/image/Image.h"
+#include "mc/world/actor/player/SkinImage.h"
 #include "mc/world/actor/player/persona/AnimatedTextureType.h"
 #include "mc/world/actor/player/persona/AnimationExpression.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { struct Image; }
+// clang-format on
 
 class AnimatedImageData {
 public:
@@ -13,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::persona::AnimatedTextureType> mType;
     ::ll::TypedStorage<4, 4, ::persona::AnimationExpression> mAnimationExpression;
-    ::ll::TypedStorage<8, 48, ::mce::Image>                  mImage;
+    ::ll::TypedStorage<8, 48, ::SkinImage>                   mImage;
     ::ll::TypedStorage<4, 4, float>                          mFrames;
     // NOLINTEND
 
@@ -33,6 +38,10 @@ public:
     );
 
     MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+
+    MCAPI bool operator==(::AnimatedImageData const&) const;
+
+    MCAPI void setSkinImage(::SkinImage const& image);
     // NOLINTEND
 
 public:

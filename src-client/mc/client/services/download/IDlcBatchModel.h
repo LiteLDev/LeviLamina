@@ -8,9 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DlcId;
-struct IContentAcquisition;
-struct IStoreCatalogRepository;
+class DlcId;
+class IContentAcquisition;
+class IStoreCatalogRepository;
+struct PackIdVersion;
 // clang-format on
 
 class IDlcBatchModel : public ::Bedrock::EnableNonOwnerReferences {
@@ -19,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual ~IDlcBatchModel() /*override*/;
 
-    virtual void searchForProductIds(::std::function<void(bool)>) = 0;
+    virtual void searchForProductIds(::std::function<void()>) = 0;
 
     virtual void beginExclusiveDownload() = 0;
 
@@ -61,6 +62,8 @@ public:
 
     virtual ::std::optional<int> getIndexOfActiveDownload() const = 0;
 
+    virtual bool isImportComplete() const = 0;
+
     virtual bool isImporting() const = 0;
 
     virtual bool isImportWaiting() const = 0;
@@ -71,13 +74,19 @@ public:
 
     virtual float getImportProgress() const = 0;
 
-    virtual int getIndexOfActiveImport() const = 0;
+    virtual ::std::optional<int> getIndexOfActiveImport() const = 0;
 
     virtual ::std::vector<::DlcId> const& getDlcIds() const = 0;
 
+    virtual ::std::vector<::PackIdVersion> const& getPackIds() const = 0;
+
     virtual ::ItemInstallState getDlcInstalledState() const = 0;
 
+    virtual ::std::vector<::std::string> getProductIdList() const = 0;
+
     virtual bool isContentSearchComplete() = 0;
+
+    virtual bool isContentSearchInProgress() const = 0;
 
     virtual bool isFailed() const = 0;
 

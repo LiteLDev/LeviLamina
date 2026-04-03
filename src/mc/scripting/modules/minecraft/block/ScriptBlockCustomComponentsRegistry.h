@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/scripting/Version.h"
@@ -21,13 +22,11 @@
 // clang-format off
 class Block;
 class BlockCustomComponentsComponent;
-class BlockPos;
 class BlockType;
-class HashedString;
-class IBlockSource;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredFlushTracker;
 struct ServerScriptManagerEvents;
+namespace BlockEvents { class ActorEvent; }
 namespace BlockEvents { class BlockBreakEvent; }
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -40,6 +39,7 @@ namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentAlreadyRegisteredError; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentReloadNewComponentError; }
@@ -68,9 +68,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 12>>
+        ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 13>>
             mEventsUsed;
-        ::ll::TypedStorage<8, 256, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
+        ::ll::TypedStorage<8, 272, ::std::optional<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface>>
                                                         mClosures;
         ::ll::TypedStorage<8, 40, ::Scripting::Version> mVersionBoundWith;
         ::ll::TypedStorage<1, 1, bool>                  mInitialized;
@@ -109,7 +109,7 @@ public:
             ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry::ScriptBlockCustomComponentData>>
                                                                                             mComponents;
     ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptCustomComponentAfterEventList> mAsyncEventQueues;
-    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 12>>
+    ::ll::TypedStorage<2, 2, ::Bedrock::EnumSet<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 13>>
         mV1EventSubscriptionList;
     ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&>
         mCustomComponentParameterCache;
@@ -136,10 +136,13 @@ public:
 
     virtual ~ScriptBlockCustomComponentsRegistry() /*override*/;
 
+    virtual ::std::vector<::std::string_view> getValidComponentsForBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation
+    ) const /*override*/;
+
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-    tryGetCustomComponentParametersForItem(
-        ::IBlockSource const&                 region,
-        ::BlockPos                            blockPos,
+    tryGetCustomComponentParametersForBlock(
+        ::Block const&                        block,
         ::std::string_view                    componentName,
         ::Scripting::WeakLifetimeScope const& scope
     ) const /*override*/;
@@ -236,6 +239,8 @@ public:
         ::BlockCustomComponentsComponent const&                       customComponents
     ) const;
 
+    MCAPI void onActor(::BlockEvents::ActorEvent const& eventData) const;
+
     MCAPI void onBreak(::BlockEvents::BlockBreakEvent const& eventData) const;
 
     MCAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
@@ -324,10 +329,13 @@ public:
 
     MCAPI void $_onReload();
 
+    MCAPI ::std::vector<::std::string_view> $getValidComponentsForBlock(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> const& permutation
+    ) const;
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-    $tryGetCustomComponentParametersForItem(
-        ::IBlockSource const&                 region,
-        ::BlockPos                            blockPos,
+    $tryGetCustomComponentParametersForBlock(
+        ::Block const&                        block,
         ::std::string_view                    componentName,
         ::Scripting::WeakLifetimeScope const& scope
     ) const;

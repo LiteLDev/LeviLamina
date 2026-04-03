@@ -150,7 +150,7 @@ public:
 
     MCAPI void* $ctor(char const* str);
 
-    MCAPI_C void* $ctor(::std::string_view str);
+    MCAPI void* $ctor(::std::string_view str);
 
     MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND
@@ -161,6 +161,15 @@ public:
     MCFOLD void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
+
+MCNAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
+
+MCNAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+// NOLINTEND
 
 namespace std {
 

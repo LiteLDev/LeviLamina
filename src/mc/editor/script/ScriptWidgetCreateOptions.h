@@ -20,11 +20,13 @@ public:
     ::ll::UntypedStorage<1, 2>   mUnk91901b;
     ::ll::UntypedStorage<1, 2>   mUnkebb8cf;
     ::ll::UntypedStorage<1, 2>   mUnkdf15ce;
-    ::ll::UntypedStorage<8, 40>  mUnk45e023;
+    ::ll::UntypedStorage<8, 40>  mUnkbaabc5;
     ::ll::UntypedStorage<4, 16>  mUnk41ac7c;
     ::ll::UntypedStorage<4, 16>  mUnkfc3427;
-    ::ll::UntypedStorage<8, 112> mUnkd41faf;
+    ::ll::UntypedStorage<8, 120> mUnkd41faf;
     ::ll::UntypedStorage<4, 8>   mUnk82e11c;
+    ::ll::UntypedStorage<1, 2>   mUnkbb0b4b;
+    ::ll::UntypedStorage<8, 40>  mUnkc53364;
     // NOLINTEND
 
 public:
@@ -34,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
+
     MCNAPI ScriptWidgetCreateOptions(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
@@ -54,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
+
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
     // NOLINTEND
 

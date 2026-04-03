@@ -9,6 +9,7 @@ public:
     struct WaterConfigSettingsV0;
     struct WaterConfigSettingsV1;
     struct WaterConfigSettingsV2;
+    struct WaterConfigSettingsV3;
     // clang-format on
 
     // WaterConfig inner types define
@@ -60,6 +61,17 @@ public:
         // clang-format on
 
         // WaterConfigSettingsV2 inner types define
+        struct WaterSettings {};
+    };
+
+    struct WaterConfigSettingsV3 {
+    public:
+        // WaterConfigSettingsV3 inner types declare
+        // clang-format off
+        struct WaterSettings;
+        // clang-format on
+
+        // WaterConfigSettingsV3 inner types define
         struct WaterSettings {};
     };
 };

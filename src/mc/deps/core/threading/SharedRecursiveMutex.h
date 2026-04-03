@@ -12,7 +12,7 @@ class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Bedrock::Threading::InstancedThreadLocalValue<uint>> mSharedRecursionCount;
+    ::ll::TypedStorage<4, 4, ::Bedrock::Threading::InstancedThreadLocalValue<uint>> mSharedRecursionCount;
     // NOLINTEND
 
 public:

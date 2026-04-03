@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BiomeTintCache;
+class BiomeTintCache;
 namespace ClientBlockPipeline { class Material; }
 namespace ClientBlockPipeline { class MaterialRepository; }
 // clang-format on
@@ -28,6 +28,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mShouldEmitColors;
     ::ll::TypedStorage<1, 1, bool>                                                          mEmitPBRTextures;
     ::ll::TypedStorage<1, 1, bool>                                                          mFaceCulling;
+    ::ll::TypedStorage<1, 1, bool>                                                          mTextureShiftsEnabled;
     ::ll::TypedStorage<4, 24, ::std::array<float, 6>>                                       mDimensionDimmingScalars;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository>> mMaterialRepository;
     ::ll::TypedStorage<4, 12, ::SubChunkPos>                                                mRenderChunkPos;

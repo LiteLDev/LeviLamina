@@ -69,6 +69,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canSwimWith(::Actor& entity);
+
     MCAPI bool _setWantedMob();
     // NOLINTEND
 

@@ -5,20 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/cohtml/IVirtualAllocator.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace OreUI { class MemoryTracker; }
-// clang-format on
-
 namespace OreUI {
 
 class VirtualAllocator : public ::cohtml::IVirtualAllocator {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::OreUI::MemoryTracker*> mMemoryTracker;
-    // NOLINTEND
-
 public:
     // virtual functions
     // NOLINTBEGIN

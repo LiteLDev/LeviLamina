@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct XboxLiveUserPrivacy {};
+class XboxLiveUserPrivacy {};
 
 } // namespace Social

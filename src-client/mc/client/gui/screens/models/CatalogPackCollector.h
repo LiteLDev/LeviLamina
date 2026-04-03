@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ContentCatalogService;
-struct SearchQuery;
+class ContentCatalogService;
+class SearchQuery;
 struct SkinPackMeta;
 // clang-format on
 

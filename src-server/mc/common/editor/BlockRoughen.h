@@ -4,6 +4,6 @@
 
 namespace Editor::ClientBrush {
 
-struct BlockRoughen {};
+class BlockRoughen {};
 
 } // namespace Editor::ClientBrush

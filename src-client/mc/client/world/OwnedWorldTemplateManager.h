@@ -15,18 +15,18 @@
 // clang-format off
 class AppPlatform;
 class CatalogCollection;
+class ExternalContentManager;
 class FileArchiver;
+class GenericEntitlementChangeListener;
+class IContentAcquisition;
+class IEntitlementManager;
 class IMinecraftEventing;
 class IResourcePackRepository;
+class IStoreCatalogRepository;
 class IToastManager;
+class ImportContext;
 class ResourcePackManager;
 class WorldTemplateManager;
-struct ExternalContentManager;
-struct GenericEntitlementChangeListener;
-struct IContentAcquisition;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
-struct ImportContext;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace World { struct OwnedWorldTemplateData; }
 // clang-format on

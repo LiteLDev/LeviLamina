@@ -8,13 +8,10 @@
 #include "mc/deps/shared_types/util/Identifier.h"
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_21_50/camera/CameraAimAssistCommandPresetDefinition.h"
-#include "mc/platform/Result.h"
 #include "mc/world/level/camera/controlscheme/Scheme.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -73,8 +70,6 @@ public:
 
     MCFOLD void setEntityOffset(::std::optional<::std::array<float, 3>> opt);
 
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~CameraPreset();
     // NOLINTEND
 
@@ -82,8 +77,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_90::CameraPreset> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

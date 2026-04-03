@@ -10,8 +10,8 @@
 // clang-format off
 class EntitySystems;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct AttributesComponent;
+struct InterpolateMovementNeededComponent;
 struct MobEffectsComponent;
 namespace TickMobEffectsSystem { struct RemoveMobEffectsRequestComponent; }
 // clang-format on
@@ -26,7 +26,7 @@ MCNAPI void _removeMobEffects(
 );
 
 MCNAPI void _tickMobEffects(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                                               entity,
     ::MobEffectsComponent&                                                     mobEffectsComponent,
     ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod

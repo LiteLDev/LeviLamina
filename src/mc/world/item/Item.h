@@ -10,7 +10,6 @@
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/resources/JsonBetaState.h"
 #include "mc/util/BaseGameVersion.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
 #include "mc/world/item/CreativeItemCategory.h"
@@ -19,8 +18,8 @@
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemCommandVisibility.h"
 #include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/item/ItemVersion.h"
 #include "mc/world/item/Rarity.h"
-#include "mc/world/item/registry/ItemVersion.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -38,7 +37,6 @@ class IDataInput;
 class IDataOutput;
 class IFoodItemComponent;
 class ILevel;
-class IPackLoadContext;
 class InteractionResult;
 class ItemComponent;
 class ItemDescriptor;
@@ -46,6 +44,7 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Mob;
+class PackLoadContext;
 class Player;
 class ReadOnlyBinaryStream;
 class RenderParams;
@@ -125,12 +124,8 @@ public:
     // NOLINTBEGIN
     virtual ~Item();
 
-    virtual ::PuvLoadData::LoadResultWithTiming initServer(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::IPackLoadContext& packLoadContext,
-        ::JsonBetaState const
-    );
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initServer(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext& packLoadContext);
 
     virtual void tearDown();
 
@@ -323,6 +318,10 @@ public:
 
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
+    virtual ::Bedrock::Safety::RedactableString getRedactedCustomName(::ItemStackBase const& stack) const;
+
+    virtual bool hasCustomHoverName(::ItemStackBase const& stack) const;
+
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     virtual void
@@ -366,13 +365,8 @@ public:
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
-    virtual ::PuvLoadData::LoadResultWithTiming initClient(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::JsonBetaState const,
-        ::IPackLoadContext&,
-        ::ItemIconInfoFactory iconFactory
-    );
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
 
     virtual ::Item& setIconInfo(::std::string const& name, int index);
 
@@ -497,8 +491,6 @@ public:
     MCAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
 
     MCAPI static ::std::string const& TAG_DAMAGE();
-
-    MCAPI static bool const& mGenerateDenyParticleEffect();
     // NOLINTEND
 
 public:
@@ -516,20 +508,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::PuvLoadData::LoadResultWithTiming $initServer(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::IPackLoadContext& packLoadContext,
-        ::JsonBetaState const
-    );
-#endif
+    MCAPI ::PuvLoadData::LoadResultWithTiming
+    $initServer(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext& packLoadContext);
 
     MCFOLD void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
 
-    MCFOLD ::std::string const& $getDescriptionId() const;
+    MCAPI ::std::string const& $getDescriptionId() const;
 
     MCAPI int $getMaxUseDuration(::ItemStack const*) const;
 
@@ -554,10 +540,6 @@ public:
     MCFOLD bool $isDyeable() const;
 
     MCFOLD bool $isDye() const;
-
-#ifdef LL_PLAT_S
-    MCFOLD ::ItemColor $getItemColor() const;
-#endif
 
     MCFOLD bool $isFertilizer() const;
 
@@ -718,6 +700,10 @@ public:
 
     MCFOLD ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
+    MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
+
+    MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
+
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     MCAPI void
@@ -753,25 +739,14 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
-#ifdef LL_PLAT_S
-    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
-#endif
-
     MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $useInterruptedByAttacking() const;
 
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::PuvLoadData::LoadResultWithTiming $initClient(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::JsonBetaState const,
-        ::IPackLoadContext&,
-        ::ItemIconInfoFactory iconFactory
-    );
-#endif
+    MCAPI ::PuvLoadData::LoadResultWithTiming
+    $initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
@@ -802,6 +777,10 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::ItemColor $getItemColor() const;
+#endif
 
 
     // NOLINTEND

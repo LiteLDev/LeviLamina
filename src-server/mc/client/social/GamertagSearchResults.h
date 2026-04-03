@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct GamertagSearchResults {};
+class GamertagSearchResults {};
 
 } // namespace Social

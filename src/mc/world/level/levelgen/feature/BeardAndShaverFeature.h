@@ -20,8 +20,8 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
     ::ll::TypedStorage<4, 24, ::BoundingBox>         mBoundingBox;
     ::ll::TypedStorage<4, 4, float>                  mYDelta;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>    mSurfaceBlock;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>    mSupportBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>    mSurfaceBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>    mSupportBlock;
     ::ll::TypedStorage<4, 4, float>                  mBeardRaggednessMin;
     ::ll::TypedStorage<4, 4, float>                  mBeardRaggednessMax;
     // NOLINTEND

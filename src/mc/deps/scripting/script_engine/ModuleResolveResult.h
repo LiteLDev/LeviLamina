@@ -8,11 +8,11 @@ struct ModuleResolveResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk552071;
-    ::ll::UntypedStorage<8, 24> mUnk5f8d62;
-    ::ll::UntypedStorage<8, 24> mUnk7416be;
-    ::ll::UntypedStorage<8, 24> mUnka7c28c;
-    ::ll::UntypedStorage<8, 24> mUnk315a8b;
+    ::ll::UntypedStorage<8, 24> mUnk89d9eb;
+    ::ll::UntypedStorage<8, 24> mUnk885506;
+    ::ll::UntypedStorage<8, 24> mUnk687eb0;
+    ::ll::UntypedStorage<8, 24> mUnk120dd9;
+    ::ll::UntypedStorage<8, 24> mUnk7020a3;
     // NOLINTEND
 
 public:

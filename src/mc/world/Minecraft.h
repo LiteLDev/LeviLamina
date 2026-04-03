@@ -54,7 +54,6 @@ struct PackIdVersion;
 struct ServerNetworkHandlerDependencies;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
-namespace mce { class UUID; }
 // clang-format on
 
 class Minecraft : public ::IEntityRegistryOwner {
@@ -143,8 +142,6 @@ public:
 
     MCAPI void _tryCatchupMovementTicks();
 
-    MCAPI_S void activateAllowList();
-
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
     MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
@@ -164,7 +161,7 @@ public:
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::mce::UUID const&                                                   localPlayerId,
+        ::std::string const&                                                 hostPublicKey,
         ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
         int                                                                  maxChunkRadius,
         bool                                                                 shouldAnnounce,

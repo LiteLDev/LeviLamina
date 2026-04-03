@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/controllers/PackCategory.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
@@ -94,6 +94,8 @@ public:
     virtual ::Core::PathBuffer<::std::string> const getBehaviorPacksPath() const = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const = 0;
+
+    virtual ::Core::PathBuffer<::std::string> const getCustomSkinDirectoryPath() const = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const = 0;
 

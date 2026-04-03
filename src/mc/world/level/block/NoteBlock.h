@@ -10,12 +10,11 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Level;
 class Player;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class NoteBlock : public ::ActorBlock {
@@ -30,16 +29,9 @@ public:
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
 
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~NoteBlock() /*override*/ = default;
     // NOLINTEND
@@ -47,11 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
 
     MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
-
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -61,15 +53,9 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
     MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

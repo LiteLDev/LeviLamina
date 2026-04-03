@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct SkullBlockRenderer {};
+class SkullBlockRenderer {};

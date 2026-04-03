@@ -8,12 +8,12 @@ struct RtpCodec {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke76fb9;
+    ::ll::UntypedStorage<8, 32> mUnkbfd2af;
     ::ll::UntypedStorage<4, 4>  mUnkf0367e;
     ::ll::UntypedStorage<4, 8>  mUnk692631;
     ::ll::UntypedStorage<4, 8>  mUnk9494d1;
-    ::ll::UntypedStorage<8, 24> mUnk969709;
-    ::ll::UntypedStorage<8, 16> mUnkee4baf;
+    ::ll::UntypedStorage<8, 24> mUnk32c47b;
+    ::ll::UntypedStorage<8, 16> mUnkfe7756;
     // NOLINTEND
 
 public:

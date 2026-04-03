@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -27,7 +26,7 @@ public:
         ::Scripting::WeakLifetimeScope const&
     ) const = 0;
 
-    virtual ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&) const = 0;
+    virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
 
     virtual bool canAddOn(::ScriptModuleMinecraft::ScriptItemStack&) const = 0;
     // NOLINTEND

@@ -13,8 +13,8 @@ public:
     using BlockTagRulesLookupMap =
         ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>;
 
-    using BlockTagRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
+    using BlockTagRulesRegistryMap = ::std::vector<::std::unique_ptr<::std::vector<
+        ::std::unique_ptr<::StructurePoolBlockTagRule, ::std::default_delete<::StructurePoolBlockTagRule>>>>>;
 
 public:
     // member variables
@@ -22,7 +22,8 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>>
+        ::std::vector<::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolBlockTagRule, ::std::default_delete<::StructurePoolBlockTagRule>>>>>>
         mBlockTagRulesRegistry;
     ::ll::TypedStorage<
         8,
@@ -37,8 +38,10 @@ public:
     MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
 
     MCAPI void registerBlockTagRules(
-        ::std::string                                                                      name,
-        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>&& ruleList
+        ::std::string name,
+        ::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolBlockTagRule, ::std::default_delete<::StructurePoolBlockTagRule>>>>&&
+            ruleList
     );
 
     MCAPI ~JigsawStructureBlockTagRulesRegistry();

@@ -4,6 +4,6 @@
 
 namespace Editor::Selection {
 
-struct ClientSelectionContainer {};
+class ClientSelectionContainer {};
 
 } // namespace Editor::Selection

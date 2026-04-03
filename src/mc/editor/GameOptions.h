@@ -16,11 +16,12 @@ class GameOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk3231c4;
+    ::ll::UntypedStorage<8, 40> mUnk8c2cad;
     ::ll::UntypedStorage<4, 16> mUnk76ad7d;
     ::ll::UntypedStorage<4, 8>  mUnke2f52b;
     ::ll::UntypedStorage<4, 8>  mUnk8b4d53;
     ::ll::UntypedStorage<1, 2>  mUnk8af916;
+    ::ll::UntypedStorage<1, 2>  mUnk6f8d02;
     ::ll::UntypedStorage<1, 2>  mUnk8d511f;
     ::ll::UntypedStorage<1, 2>  mUnke9602a;
     ::ll::UntypedStorage<1, 2>  mUnkd7a1c1;
@@ -39,7 +40,7 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnk83ba42;
     ::ll::UntypedStorage<1, 2>  mUnkc70a5d;
     ::ll::UntypedStorage<4, 8>  mUnk81fb84;
-    ::ll::UntypedStorage<8, 40> mUnk845420;
+    ::ll::UntypedStorage<8, 40> mUnk3f8e87;
     ::ll::UntypedStorage<4, 8>  mUnk26f451;
     ::ll::UntypedStorage<1, 2>  mUnk73d972;
     ::ll::UntypedStorage<1, 2>  mUnk923f85;

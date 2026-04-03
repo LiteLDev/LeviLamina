@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/Item.h"
-
 struct ItemControlDefinition {
 public:
     // member variables

@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct IEntitlement;
+class IEntitlement;
 // clang-format on
 
 class PremiumOwnedCachePackEntitlementValidator : public ::IPremiumCachePackEntitlementValidator {

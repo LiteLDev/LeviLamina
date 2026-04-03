@@ -131,7 +131,7 @@ public:
 
     virtual bool _supportsShadowInSingleDraw() /*override*/;
 
-    virtual void onLanguageChanged(::std::string const& languageCode) /*override*/;
+    virtual void onLanguageChanged(::std::string_view languageCode) /*override*/;
 
     virtual void _scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode) /*override*/;
 
@@ -145,7 +145,7 @@ public:
         bool                              unicode
     ) /*override*/;
 
-    virtual ::std::string _remapString(::std::string const& str) const /*override*/;
+    virtual ::std::string _remapString(::std::string_view str) const /*override*/;
 
     virtual void switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName) /*override*/;
 
@@ -224,7 +224,7 @@ public:
 
     MCAPI bool $_supportsShadowInSingleDraw();
 
-    MCAPI void $onLanguageChanged(::std::string const& languageCode);
+    MCAPI void $onLanguageChanged(::std::string_view languageCode);
 
     MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
@@ -238,7 +238,7 @@ public:
         bool                              unicode
     );
 
-    MCAPI ::std::string $_remapString(::std::string const& str) const;
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
 
     MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
 

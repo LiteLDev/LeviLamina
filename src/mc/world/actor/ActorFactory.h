@@ -28,7 +28,6 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
 struct ActorInfo;
-struct VanillaActorData;
 // clang-format on
 
 class ActorFactory {
@@ -40,6 +39,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ActorDefinitionGroup>>      mDefinitions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorFactoryData>> mFactoryFunctions;
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                               mExperimentalEntities;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorFactoryData>>                       mVanillaActors;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorComponentFactory>>               mComponentFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorGoalFactory>>                    mGoalFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorMigratedDefinitionFactory>>      mActorMigratedFactory;
@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
 
     MCAPI void _buildSummonableActorList(
         ::Experiments const&                                                   experiments,
@@ -136,7 +136,7 @@ public:
 
     MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
 
-    MCAPI_C void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
+    MCFOLD_C void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
     // NOLINTEND
 
 public:
@@ -148,29 +148,12 @@ public:
         ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
         ::ActorFactoryData&                                            data
     );
-
-    MCAPI static void registerEntityMapping(
-        ::ActorType const& actorType,
-        bool               allowSummon,
-        ::std::unique_ptr<::Actor> (*const& factory)(
-            ::ActorDefinitionGroup*,
-            ::ActorDefinitionIdentifier const&,
-            ::EntityContext&
-        ),
-        ::std::optional<int> experimentIndex
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::VanillaActorData>& builtinEntityMappings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
     // NOLINTEND
 
 public:

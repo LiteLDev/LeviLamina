@@ -15,7 +15,7 @@ class LinkedAssetValidator;
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersionConstant;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 namespace dragon::framerenderer::modules { struct AtmosphericScatteringParameters; }
@@ -203,7 +203,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnk9ac781;
+        ::ll::UntypedStorage<8, 32>  mUnk849e4b;
         ::ll::UntypedStorage<8, 352> mUnk9cdae9;
         // NOLINTEND
 
@@ -273,16 +273,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool addNewAtmosphereSetting(
+        ::HashedString const&                                         identifier,
+        ::AtmosphericScattering::AtmosphericScatteringConfigSettings& inAtmosphereSettings
+    );
+
     MCNAPI ::dragon::framerenderer::modules::AtmosphericScatteringParameters calculateAtmosphericScatteringParameters(
         ::AtmosphericScattering::AtmosphericScatteringConfigSettings const& atmosphereSettings,
         float                                                               timeOfDay
     ) const;
+
+    MCNAPI ::AtmosphericScattering::AtmosphericScatteringConfigSettings const&
+    findAtmosphereSettings(::HashedString const& identifier) const;
+
+    MCNAPI void setDefaultAtmosphereSettings(
+        ::AtmosphericScattering::AtmosphericScatteringConfigSettings const& inAtmosphereSettings
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindAtmosphericParameters(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static ::Scripting::Result_deprecated<void> registerConfigMappingChangeHandler(
+        ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,
+        ::LocalPlayer&                                         localPlayer
+    );
 
     MCNAPI static ::Scripting::Result_deprecated<void> registerEditorAccessors(
         ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,
@@ -327,3 +344,18 @@ public:
     MCNAPI static void** $vftable();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P1
+);
+// NOLINTEND

@@ -4,7 +4,7 @@
 
 namespace Editor::Services {
 
-struct UiControllerService {
+class UiControllerService {
 public:
     // UiControllerService inner types define
     enum class EditorUIState : int {};

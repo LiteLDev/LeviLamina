@@ -9,22 +9,22 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_21_130 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_10 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
 public:
     // ActorDocumentDataParams inner types define
-    using Definitions = ::SharedTypes::v1_21_130::ActorDefinitions;
+    using Definitions = ::SharedTypes::v1_26_10::ActorDefinitions;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_130::ActorDefinitions&> mValue;
-    ::ll::TypedStorage<8, 24, ::SemVersion const>                         mFormatVersion;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion const>                   mMinEngineVersion;
-    ::ll::TypedStorage<1, 1, bool const>                                  mIsBaseGamePack;
-    ::ll::TypedStorage<1, 1, ::JsonBetaState const>                       mCanUseBeta;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_26_10::ActorDefinitions&> mValue;
+    ::ll::TypedStorage<8, 24, ::SemVersion const>                        mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion const>                  mMinEngineVersion;
+    ::ll::TypedStorage<1, 1, bool const>                                 mIsBaseGamePack;
+    ::ll::TypedStorage<1, 1, ::JsonBetaState const>                      mCanUseBeta;
     // NOLINTEND
 
 public:
@@ -38,11 +38,11 @@ public:
     MCAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
     MCAPI ActorDocumentDataParams(
-        ::SharedTypes::v1_21_130::ActorDefinitions& value,
-        ::SemVersion const&                         formatVersion,
-        ::MinEngineVersion const&                   minEngineVersion,
-        bool                                        isBaseGamePack,
-        ::JsonBetaState                             canUseBeta
+        ::SharedTypes::v1_26_10::ActorDefinitions& value,
+        ::SemVersion const&                        formatVersion,
+        ::MinEngineVersion const&                  minEngineVersion,
+        bool                                       isBaseGamePack,
+        ::JsonBetaState                            canUseBeta
     );
 
     MCAPI ~ActorDocumentDataParams();
@@ -54,11 +54,11 @@ public:
     MCAPI void* $ctor(::ActorDocumentDataParams const&);
 
     MCAPI void* $ctor(
-        ::SharedTypes::v1_21_130::ActorDefinitions& value,
-        ::SemVersion const&                         formatVersion,
-        ::MinEngineVersion const&                   minEngineVersion,
-        bool                                        isBaseGamePack,
-        ::JsonBetaState                             canUseBeta
+        ::SharedTypes::v1_26_10::ActorDefinitions& value,
+        ::SemVersion const&                        formatVersion,
+        ::MinEngineVersion const&                  minEngineVersion,
+        bool                                       isBaseGamePack,
+        ::JsonBetaState                            canUseBeta
     );
     // NOLINTEND
 

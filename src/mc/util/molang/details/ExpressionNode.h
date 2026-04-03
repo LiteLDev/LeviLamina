@@ -37,7 +37,7 @@ public:
 #else // LL_PLAT_C
     ::ll::UntypedStorage<8, 96> mUnka6816f;
 #endif
-    ::ll::UntypedStorage<8, 24> mUnk58ba9b;
+    ::ll::UntypedStorage<8, 24> mUnk731c4e;
     // NOLINTEND
 
 public:

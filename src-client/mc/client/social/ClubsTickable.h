@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct ClubsTickable {};
+class ClubsTickable {};
 
 } // namespace Social

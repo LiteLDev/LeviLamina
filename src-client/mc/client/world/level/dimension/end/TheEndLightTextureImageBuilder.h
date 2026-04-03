@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct BaseLightData;
+class BaseLightData;
 namespace mce { struct Image; }
 // clang-format on
 

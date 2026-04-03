@@ -9,7 +9,7 @@ struct CameraSplineInstructionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::CameraInstructionOptions::SplineInstruction> mCameraSplineInstruction;
+    ::ll::TypedStorage<8, 112, ::CameraInstructionOptions::SplineInstruction> mCameraSplineInstruction;
     // NOLINTEND
 
 public:

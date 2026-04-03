@@ -7,6 +7,7 @@
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/packet/ArrowDataPayload.h"
 #include "mc/network/packet/BoxDataPayload.h"
 #include "mc/network/packet/LineDataPayload.h"
@@ -31,6 +32,7 @@ public:
     ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>                                      mColor;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mTimeLeftTotalSec;
     ::ll::TypedStorage<4, 8, ::std::optional<::DimensionType>>                                    mDimensionId;
+    ::ll::TypedStorage<8, 16, ::std::optional<::ActorRuntimeID>>                                  mAttachedToId;
     ::ll::TypedStorage<
         8,
         48,
@@ -52,12 +54,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ShapeDataPayload(::ShapeDataPayload&&);
+
     MCAPI ShapeDataPayload(::ShapeDataPayload const&);
+
+    MCAPI ~ShapeDataPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ShapeDataPayload&&);
+
     MCAPI void* $ctor(::ShapeDataPayload const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

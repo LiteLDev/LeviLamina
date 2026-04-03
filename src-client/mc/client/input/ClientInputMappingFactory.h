@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Config;
 class IOptions;
 class KeyboardRemappingLayout;
-struct Config;
 struct DeviceButtonMapping;
 struct InputMapping;
 struct TouchInputMapping;
@@ -30,7 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsXY;
     ::ll::TypedStorage<1, 1, bool>                                                 mSwapGamepadButtonsAB;
     ::ll::TypedStorage<4, 4, float>                                                mSensitivity;
-    ::ll::TypedStorage<8, 96, ::GamePadRemappingLayout>                            mGameControllerRemappingLayout;
+    ::ll::TypedStorage<8, 128, ::GamePadRemappingLayout>                           mGameControllerRemappingLayout;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::KeyboardRemappingLayout>>          mKeyboardRemappingLayout;
     // NOLINTEND
 

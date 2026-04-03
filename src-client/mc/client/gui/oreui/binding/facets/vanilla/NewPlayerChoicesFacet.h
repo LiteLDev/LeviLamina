@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct NewPlayerSystem;
-struct SkinRepositoryClientInterface;
+class NewPlayerSystem;
+class SkinRepositoryClientInterface;
 // clang-format on
 
 namespace OreUI {

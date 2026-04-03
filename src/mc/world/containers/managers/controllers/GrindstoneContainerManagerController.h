@@ -28,7 +28,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::GrindstoneContainerManagerModel>> mGrindstoneContainerManagerModel;
     ::ll::TypedStorage<8, 40, ::SlotData const>                                   mCreatedItemOutputSlot;
     ::ll::TypedStorage<8, 128, ::ItemInstance>                                    mResultItemPreview;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                            mSrcItemNetId;
+    ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant>                            mSrcItemNetId;
     // NOLINTEND
 
 public:

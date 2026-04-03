@@ -4,7 +4,7 @@
 
 namespace Editor::StructureDataCache {
 
-struct ClientStructureDataCacheItem {
+class ClientStructureDataCacheItem {
 public:
     // ClientStructureDataCacheItem inner types define
     enum class StructureState : int {};

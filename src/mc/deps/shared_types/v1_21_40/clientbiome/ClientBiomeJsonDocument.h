@@ -163,12 +163,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::SharedTypes::v1_21_40::ClientBiomeJsonDocument&&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD_C void $dtor();

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/controllers/PackCategory.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackIdVersion.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"

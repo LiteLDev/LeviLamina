@@ -10,9 +10,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class GatheringConfig;
 class MainMenuScreenModel;
-struct GatheringConfig;
-struct ServicesManager;
+class ServicesManager;
 namespace Json { class Value; }
 // clang-format on
 

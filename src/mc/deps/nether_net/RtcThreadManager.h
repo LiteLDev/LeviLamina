@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { struct ThreadInit; }
+struct ThreadConfiguration;
 namespace rtc { class SocketServer; }
 namespace rtc { class Thread; }
 // clang-format on
@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk47090c;
-    ::ll::UntypedStorage<8, 8>  mUnk4bb523;
+    ::ll::UntypedStorage<8, 8>  mUnk8b9d08;
     // NOLINTEND
 
 public:
@@ -32,9 +32,11 @@ public:
 
     MCNAPI void Initialize(
         char const*                              threadName,
-        ::NetherNet::ThreadInit const&           threadInit,
+        ::ThreadConfiguration const&             threadConfiguration,
         ::std::unique_ptr<::rtc::SocketServer>&& socketServer
     );
+
+    MCNAPI void SetRtcThread(::std::shared_ptr<::rtc::Thread> rtcThread);
 
     MCNAPI void Shutdown();
     // NOLINTEND

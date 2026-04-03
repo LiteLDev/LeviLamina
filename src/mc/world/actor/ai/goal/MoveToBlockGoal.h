@@ -93,6 +93,8 @@ public:
 
     MCAPI void _checkIfStuck();
 
+    MCAPI bool _findRandomTargetBlock(::BlockSource& region, ::BlockPos const& mobPos);
+
     MCAPI bool _findTargetBlock();
 
     MCAPI bool _isValidTarget(::BlockSource& region, ::BlockPos& pos) const;

@@ -89,7 +89,11 @@ public:
 
     MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCAPI_S void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
+    MCFOLD void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
+
+    MCFOLD void foreachDescriptionMutable(::std::function<void(::BlockComponentDescription&)> callback) const;
+
+    MCAPI ::BlockComponentDescription* getComponentDescription(::std::string const& name) const;
 
     MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 

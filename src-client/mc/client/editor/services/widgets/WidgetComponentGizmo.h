@@ -4,7 +4,7 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentGizmo {
+class WidgetComponentGizmo {
 public:
     // WidgetComponentGizmo inner types declare
     // clang-format off

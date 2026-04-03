@@ -34,6 +34,7 @@ public:
     ::ll::TypedStorage<8, 200, ::ThirdPartyInfo>            mThirdPartyServerInfo;
     ::ll::TypedStorage<8, 96, ::GatheringServerInfo>        mGatheringServerInfo;
     ::ll::TypedStorage<1, 1, bool>                          mAllowSmallDownloads;
+    ::ll::TypedStorage<1, 1, bool>                          mDisableTrickleIce;
     // NOLINTEND
 
 public:

@@ -6,6 +6,8 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/legacy/ActorRuntimeID.h"
+#include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/scripting/modules/minecraft/ScriptRGB.h"
 #include "mc/scripting/modules/minecraft/debugdrawer/ScriptDebugShapeType.h"
 
@@ -13,6 +15,7 @@
 // clang-format off
 class Dimension;
 struct ShapeDataPayload;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
@@ -38,6 +41,7 @@ public:
         UpdateArrowHeadLength = 1024,
         UpdateArrowHeadRadius = 2048,
         UpdateSegmentCount    = 4096,
+        UpdateAttachedTo      = 8192,
         SerializeAll          = 4294967294,
     };
 
@@ -53,15 +57,21 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                             mLocation;
     ::ll::TypedStorage<4, 12, ::Vec3>                             mRotation;
     ::ll::TypedStorage<4, 4, float>                               mScale;
-    ::ll::TypedStorage<4, 24, ::ScriptModuleMinecraft::ScriptRGB> mColor;
+    ::ll::TypedStorage<8, 24, ::ScriptModuleMinecraft::ScriptRGB> mColor;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>              mTimeLeftSec;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>              mTimeLeftTotalSec;
     ::ll::
         TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
-                                     mVisibleTo;
-    ::ll::TypedStorage<8, 8, uint64> mNetworkId;
-    ::ll::TypedStorage<4, 4, uint>   mFlags;
-    ::ll::TypedStorage<1, 1, bool>   mExistsInWorld;
+                                                                        mVisibleTo;
+    ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mVisibleToClients;
+    ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mSentToClients;
+    ::ll::TypedStorage<8, 8, uint64>                                    mNetworkId;
+    ::ll::TypedStorage<4, 4, uint>                                      mFlags;
+    ::ll::TypedStorage<1, 1, bool>                                      mExistsInWorld;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+                                               mAttachedTo;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mAttachedToId;
     // NOLINTEND
 
 public:
@@ -96,6 +106,10 @@ public:
     operator=(::ScriptModuleDebugUtilities::ScriptDebugShape const&);
 
     MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
+
+    MCAPI void setVisibleTo(
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& visibleTo
+    );
     // NOLINTEND
 
 public:
@@ -120,7 +134,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

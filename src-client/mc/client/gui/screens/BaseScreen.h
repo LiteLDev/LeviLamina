@@ -20,16 +20,15 @@
 class AbstractSceneProxy;
 class AbstractScreenSetupCleanupStrategy;
 class CachedScenes;
+class MinecraftUIFrameUpdateContext;
 class RectangleArea;
 class ScreenContext;
 class TaskGroup;
 struct FrameRenderObject;
-struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;
 struct TouchPadTouchEventData;
-namespace OreUI { struct ViewDebugSettings; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
@@ -74,7 +73,7 @@ public:
 
     virtual void onLeave() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
 
     virtual void leaveScreen() /*override*/;
 
@@ -100,7 +99,8 @@ public:
 
     virtual void handleButtonRelease(uint buttonId, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool) /*override*/;
+    virtual void
+    handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) /*override*/;
 
     virtual bool handlePointerLocation(
         ::PointerLocationEventData const& pointerLocationData,
@@ -227,8 +227,6 @@ public:
 
     virtual void sendScreenEvent(::std::string const&, ::std::string const&) /*override*/;
 
-    virtual void setDebugSettings(::OreUI::ViewDebugSettings const&) const /*override*/;
-
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const
@@ -285,8 +283,6 @@ public:
 
     MCFOLD void $onLeave();
 
-    MCFOLD void $onGameEventNotification(::ui::GameEventNotification notification);
-
     MCFOLD void $leaveScreen();
 
     MCFOLD void $preFrameTick();
@@ -306,6 +302,8 @@ public:
     MCFOLD void $handleButtonPress(uint buttonId, ::FocusImpact focusImpact);
 
     MCFOLD void $handleButtonRelease(uint buttonId, ::FocusImpact focusImpact);
+
+    MCFOLD void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
 
     MCFOLD bool
     $handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact);
@@ -427,8 +425,6 @@ public:
     MCFOLD bool $hasFinishedLoading() const;
 
     MCFOLD void $sendScreenEvent(::std::string const&, ::std::string const&);
-
-    MCFOLD void $setDebugSettings(::OreUI::ViewDebugSettings const&) const;
 
     MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
 

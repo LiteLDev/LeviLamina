@@ -8,7 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDamageSource;
+class ILevel;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -44,6 +47,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBinding bind();
+
+    MCAPI static ::ScriptModuleMinecraft::ScriptActorDamageSource
+    create(::ILevel const& level, ::ActorDamageSource const& actorDamageSource, ::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:

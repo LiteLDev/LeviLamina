@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class LibraryCollection;
+class LibraryItem;
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
 class UIPropertyBag;
-struct LibraryCollection;
-struct LibraryItem;
 namespace Json { class Value; }
 namespace librarySearch { struct TelemetryData; }
 // clang-format on

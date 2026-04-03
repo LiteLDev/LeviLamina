@@ -21,6 +21,12 @@ public:
     XUID();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI_C ::std::string toString() const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI_C static ::Bedrock::Result<::Social::XUID> parse(::std::string_view xuidString, bool allowGuestXUIDs);

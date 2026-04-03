@@ -71,6 +71,17 @@ public:
     virtual ::EventResult
     onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName) /*override*/;
 
+    virtual ::EventResult onShowDataDrivenScreen(
+        ::LocalPlayer&,
+        ::std::string const&  screenId,
+        uint                  formId,
+        ::std::optional<uint> dataInstanceId
+    ) /*override*/;
+
+    virtual ::EventResult onCloseDataDrivenScreen(::LocalPlayer&, uint formId) /*override*/;
+
+    virtual ::EventResult onCloseAllDataDrivenScreens(::LocalPlayer&) /*override*/;
+
     virtual ~GameplayUIClient() /*override*/ = default;
     // NOLINTEND
 
@@ -108,6 +119,17 @@ public:
 
     MCAPI ::EventResult
     $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
+
+    MCAPI ::EventResult $onShowDataDrivenScreen(
+        ::LocalPlayer&,
+        ::std::string const&  screenId,
+        uint                  formId,
+        ::std::optional<uint> dataInstanceId
+    );
+
+    MCAPI ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint formId);
+
+    MCAPI ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
     // NOLINTEND
 
 public:

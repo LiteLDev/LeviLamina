@@ -47,8 +47,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& ATTACHED_TAG();
 
-    MCAPI static float const& FENCE_BALLOON_RANGE();
-
     MCAPI static ::std::string const& MAX_HEIGHT_TAG();
 
     MCAPI static ::std::string const& SHOULD_DROP_TAG();

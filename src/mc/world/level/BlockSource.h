@@ -8,6 +8,8 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/platform/brstd/function_ref.h"
+#include "mc/util/IDType.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/BlockDataFetchResult.h"
@@ -33,7 +35,6 @@ class BlockSourceListener;
 class BlockTickingQueue;
 class BlockType;
 class BlockVolume;
-class BoundingBox;
 class ChunkSource;
 class Dimension;
 class EntityContext;
@@ -53,9 +54,11 @@ class WeakEntityRef;
 struct ActorBlockSyncMessage;
 struct ActorDefinitionIdentifier;
 struct BiomeIdLatticeBatch;
+struct BiomeTagIDType;
 struct Bounds;
 struct Brightness;
 struct ClipParameters;
+struct WellKnownBiomeTags;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 
@@ -151,10 +154,10 @@ public:
 
     virtual short getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves) const /*override*/;
 
-    virtual short getHeight(::std::function<bool(::Block const&)> const& type, ::BlockPos const& pos) const
+    virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const& type, ::BlockPos const& pos) const
         /*override*/;
 
-    virtual short getHeight(::std::function<bool(::Block const&)> const& type, int x, int z) const /*override*/;
+    virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const& type, int x, int z) const /*override*/;
 
     virtual ::Material const& getMaterial(::BlockPos const& pos) const /*override*/;
 
@@ -198,12 +201,8 @@ public:
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
-    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    ) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
     virtual void
     fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const
@@ -261,14 +260,14 @@ public:
     virtual bool isUnderWater(::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     virtual void fireBlockChanged(
-        ::BlockPos const&,
-        uint,
-        ::Block const&,
-        ::Block const&,
-        int,
-        ::BlockChangedEventTarget,
-        ::ActorBlockSyncMessage const*,
-        ::Actor*
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            flags,
+        ::BlockChangedEventTarget      eventTarget,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::Actor*                       source
     ) /*override*/;
 
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
@@ -415,6 +414,8 @@ public:
 
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
 
+    MCAPI bool biomeAtPosHasTag(::BlockPos const& pos, ::IDType<::BiomeTagIDType> const& tagId) const;
+
     MCAPI_C void blockEvent(int x, int y, int z, int b0, int b1);
 
     MCAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
@@ -422,8 +423,6 @@ public:
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
     MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
-
-    MCAPI bool containsAnyBlockInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
     MCAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
 
@@ -448,26 +447,6 @@ public:
 
     MCAPI bool fetchBlocks(::BlockPos const& origin, ::BlockVolume& volume) const;
 
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
-    fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
-
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
-    fetchBlocksInBoxSorted(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
-
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
-        ::BlockPos const&                     centerPos,
-        uint                                  radius,
-        uint                                  height,
-        ::std::function<bool(::Block const&)> predicate
-    );
-
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinderSorted(
-        ::BlockPos const&                     centerPos,
-        uint                                  radius,
-        uint                                  height,
-        ::std::function<bool(::Block const&)> predicate
-    );
-
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
         ::AABB const&                                bb,
@@ -482,7 +461,11 @@ public:
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
+    MCAPI bool findNextTopSolidBlockAbove(::BlockPos& pos);
+
     MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
+
+    MCAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
 
     MCAPI void fireBlockEntityChanged(::BlockActor& te);
 
@@ -490,7 +473,7 @@ public:
 
     MCAPI_C ::BiomeIdLatticeBatch getBiomeIdsInBatch(::BlockPos const& centerPos, int areaOffset, int gridOffset) const;
 
-    MCAPI ::BlockActor* getBlockEntity(::BlockPos const&);
+    MCFOLD ::BlockActor* getBlockEntity(::BlockPos const& pos);
 
     MCAPI_C ::BrightnessPair getLightColor(::BlockPos const& pos, ::Brightness minBlockLight) const;
 
@@ -506,6 +489,8 @@ public:
         ::Vec3 const& posToMinimizeDistanceToIfMatchingHeight,
         float&        currentDistanceSqr
     ) const;
+
+    MCAPI ::WellKnownBiomeTags const& getWellKnownBiomeTags() const;
 
     MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     hasSubChunksAt(::BlockPos const& min, ::BlockPos const& max) const;
@@ -535,8 +520,6 @@ public:
 
     MCAPI void
     postGameEvent(::Actor* source, ::GameEvent const& gameEvent, ::Vec3 const& originPos, ::Block const* affectedBlock);
-
-    MCAPI ::std::shared_ptr<::BlockActor> removeBlockEntity(::BlockPos const& blockPos);
 
     MCAPI bool setBlock(
         ::BlockPos const&               pos,
@@ -629,9 +612,9 @@ public:
 
     MCAPI short $getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves) const;
 
-    MCAPI short $getHeight(::std::function<bool(::Block const&)> const& type, ::BlockPos const& pos) const;
+    MCAPI short $getHeight(::brstd::function_ref<bool(::Block const&)> const& type, ::BlockPos const& pos) const;
 
-    MCAPI short $getHeight(::std::function<bool(::Block const&)> const& type, int x, int z) const;
+    MCAPI short $getHeight(::brstd::function_ref<bool(::Block const&)> const& type, int x, int z) const;
 
     MCAPI ::Material const& $getMaterial(::BlockPos const& pos) const;
 
@@ -674,13 +657,6 @@ public:
 
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
-        ::ActorType                     entityTypeId,
-        ::AABB const&                   bb,
-        ::Actor const*                  except,
-        ::std::function<bool(::Actor*)> selector
-    );
 
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;
@@ -791,6 +767,19 @@ public:
         ::BlockPos const&  originPos,
         ::Block const*     affectedBlock
     );
+
+#ifdef LL_PLAT_C
+    MCAPI void $fireBlockChanged(
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            flags,
+        ::BlockChangedEventTarget      eventTarget,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::Actor*                       source
+    );
+#endif
 
 
     // NOLINTEND

@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct EditorClientRealmsService {};
+class EditorClientRealmsService {};
 
 } // namespace Editor::Services

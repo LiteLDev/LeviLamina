@@ -19,9 +19,9 @@ class PersistenceItem : public ::EnableGetWeakRef<::Editor::Services::Persistenc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4eff3b;
-    ::ll::UntypedStorage<8, 32> mUnkf6b9f8;
-    ::ll::UntypedStorage<8, 32> mUnkd8855d;
+    ::ll::UntypedStorage<8, 32> mUnkd90b71;
+    ::ll::UntypedStorage<8, 32> mUnk30d710;
+    ::ll::UntypedStorage<8, 32> mUnkb1f01f;
     ::ll::UntypedStorage<1, 1>  mUnk454b40;
     ::ll::UntypedStorage<8, 8>  mUnk35a7d4;
     ::ll::UntypedStorage<8, 48> mUnk2c1fe8;

@@ -4,6 +4,6 @@
 
 namespace Editor::Widgets {
 
-struct WidgetComponentBoundingBox {};
+class WidgetComponentBoundingBox {};
 
 } // namespace Editor::Widgets

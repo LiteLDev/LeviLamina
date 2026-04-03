@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct LocalPlayerComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
@@ -30,7 +30,7 @@ public:
     MCNAPI static void _tickStorePreviousRideStatsSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
             ::StateVectorComponent const,
             ::VanillaClientGameplayComponent> view
     );

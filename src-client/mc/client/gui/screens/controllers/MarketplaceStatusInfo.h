@@ -6,9 +6,10 @@ struct MarketplaceStatusInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> isMarketplaceDisabled;
-    ::ll::TypedStorage<1, 1, bool> isSessionConfigInProgress;
-    ::ll::TypedStorage<1, 1, bool> isServicesManagerReady;
-    ::ll::TypedStorage<1, 1, bool> isPersonaOfflineEnabled;
+    ::ll::TypedStorage<1, 1, bool> mIsMarketplaceDisabled;
+    ::ll::TypedStorage<1, 1, bool> mIsOffline;
+    ::ll::TypedStorage<1, 1, bool> mIsSessionConfigInProgress;
+    ::ll::TypedStorage<1, 1, bool> mIsServicesManagerReady;
+    ::ll::TypedStorage<1, 1, bool> mIsPersonaOfflineEnabled;
     // NOLINTEND
 };

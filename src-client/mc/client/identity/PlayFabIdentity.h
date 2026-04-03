@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct PlayFabIdentity {
+class PlayFabIdentity {
 public:
     // PlayFabIdentity inner types define
     enum class RetryType : int {};

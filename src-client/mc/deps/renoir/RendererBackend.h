@@ -25,6 +25,7 @@ namespace renoir { struct Texture2DObject; }
 namespace renoir { struct TextureObject; }
 namespace renoir { struct UpdateBox; }
 namespace renoir { struct VertexBufferObject; }
+namespace renoir { struct float2; }
 // clang-format on
 
 namespace renoir {
@@ -84,7 +85,6 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnkd277ca;
         ::ll::UntypedStorage<8, 8> mUnka765fd;
-        ::ll::UntypedStorage<4, 4> mUnk675020;
         ::ll::UntypedStorage<4, 4> mUnk27394e;
         // NOLINTEND
 
@@ -156,6 +156,13 @@ public:
     CreateDepthStencilTexture(::renoir::DepthStencilTextureObject, ::renoir::DepthStencilTexture const&) = 0;
 
     virtual void DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject) = 0;
+
+    virtual void CopyTextureToTexture(
+        ::renoir::Texture2DObject,
+        ::renoir::Texture2DObject,
+        ::renoir::UpdateBox,
+        ::renoir::float2
+    ) = 0;
 
     virtual bool CreateSampler2D(::renoir::Sampler2DObject, ::renoir::Sampler2D const&) = 0;
 

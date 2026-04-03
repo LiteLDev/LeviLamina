@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/client/game/CoordinateCaptureType.h"
-#include "mc/client/gui/screens/models/ChatMessageRestrictions.h"
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
+#include "mc/client/util/ChatMessageRestrictions.h"
 #include "mc/deps/core/threading/Async.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/packet/StructureTemplateRequestOperation.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/ProfanityFilterContext.h"
@@ -22,6 +23,7 @@ class BookScreenManager;
 class GuiMessage;
 class ItemStack;
 class MinecartCommandBlockManager;
+class MinecraftglTFExporter;
 class NpcEventListener;
 class ResourceLocation;
 class StructureEditorData;
@@ -29,9 +31,7 @@ class StructureSettings;
 class StructureTemplate;
 class TitleMessage;
 class Vec3;
-struct ActorUniqueID;
 struct BossInfo;
-struct MinecraftglTFExporter;
 struct PhotoRecord;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class Path; }
@@ -95,8 +95,6 @@ public:
 
     MCAPI float distanceSqrFromPlayerToBlockCenter(::Vec3 const& pos);
 
-    MCAPI ::ChatMessageRestrictions executeCommand(::std::string const& commandLine);
-
     MCAPI bool exportStructureBlock(::std::string const& structureName, ::Core::Path const& filePath);
 
     MCAPI bool findStructure(::StructureEditorData& structureData);
@@ -130,6 +128,8 @@ public:
     MCAPI ::BlockSource* getPlayerRegion() const;
 
     MCAPI ::ItemStack const& getSelectedItem() const;
+
+    MCAPI ::std::vector<::GuiMessage>& getSubtitleList();
 
     MCAPI ::Bedrock::Threading::Async<::ResourceLocation>
     getThirdPartyGamerpic(::mce::UUID const& playerId, ::std::string const& platformOnlineID) const;
@@ -212,6 +212,17 @@ public:
     MCAPI bool shouldDisplayPlayerPosition() const;
 
     MCAPI ::Bedrock::PubSub::Subscription subscribeToProfanityToggleEvent(::std::function<void(bool, bool)> callback);
+
+    MCAPI ::Bedrock::PubSub::Subscription subscribeToSoundEvent(
+        ::std::function<void(
+            ::std::string const&,
+            ::std::optional<::std::string>,
+            ::Vec3 const&,
+            float,
+            ::Vec3 const&,
+            ::Vec3 const&
+        )> callback
+    );
 
     MCAPI bool thirdPartyGamerpicAllowed(::mce::UUID const& playerId) const;
 

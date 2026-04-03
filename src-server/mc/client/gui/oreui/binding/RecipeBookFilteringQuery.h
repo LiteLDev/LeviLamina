@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace OreUI::Experimental {
+namespace OreUI {
 
 class RecipeBookFilteringQuery {};
 
-} // namespace OreUI::Experimental
+} // namespace OreUI

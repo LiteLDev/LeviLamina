@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 namespace ScriptModuleMinecraft { struct ScriptPropertyTargetSelectorOption; }
 namespace ScriptModuleMinecraft { struct ScriptScoreTargetSelectorOption; }
 namespace Scripting { struct InterfaceBinding; }
@@ -51,6 +52,8 @@ public:
     MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter&&);
 
     MCAPI ScriptActorFilter(::ScriptModuleMinecraft::ScriptActorFilter const&);
+
+    MCAPI bool operator()(::Actor const& actor) const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptActorFilter& operator=(::ScriptModuleMinecraft::ScriptActorFilter&&);
 

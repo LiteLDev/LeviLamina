@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
+#include "mc/platform/brstd/basic_cstring_view.h"
 
 #include "mc/deps/core/file/Path.h"
 

@@ -104,8 +104,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 

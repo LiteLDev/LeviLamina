@@ -11,6 +11,7 @@ class Actor;
 class ActorInteraction;
 class BlockSource;
 class Interaction;
+class InteractionResult;
 class ItemStack;
 class Level;
 class LootTables;
@@ -31,7 +32,7 @@ public:
     MCAPI bool
     _runInteraction(::Actor& owner, ::Interaction const& desc, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
 public:

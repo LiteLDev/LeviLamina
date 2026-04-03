@@ -17,9 +17,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr> mDefaultMaterial;
-    ::ll::TypedStorage<8, 584, ::ModelPart>       mLid;
-    ::ll::TypedStorage<8, 584, ::ModelPart>       mBottom;
-    ::ll::TypedStorage<8, 584, ::ModelPart>       mLock;
+    ::ll::TypedStorage<8, 576, ::ModelPart>       mLid;
+    ::ll::TypedStorage<8, 576, ::ModelPart>       mBottom;
+    ::ll::TypedStorage<8, 576, ::ModelPart>       mLock;
     ::ll::TypedStorage<1, 1, bool>                mIsLarge;
     // NOLINTEND
 

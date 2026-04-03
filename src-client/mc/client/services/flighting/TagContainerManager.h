@@ -4,7 +4,7 @@
 
 namespace flighting {
 
-struct TagContainerManager {
+class TagContainerManager {
 public:
     // TagContainerManager inner types define
     enum class FetchState : int {};

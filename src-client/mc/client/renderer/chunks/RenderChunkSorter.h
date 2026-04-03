@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RenderChunkSorter {
+class RenderChunkSorter {
 public:
     // RenderChunkSorter inner types declare
     // clang-format off

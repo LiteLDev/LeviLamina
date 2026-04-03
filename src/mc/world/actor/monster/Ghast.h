@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockPos;
 class EntityContext;
 struct ActorDefinitionIdentifier;
@@ -32,7 +33,8 @@ public:
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~Ghast() /*override*/ = default;
     // NOLINTEND
@@ -68,7 +70,7 @@ public:
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/network/NetworkIdentifierWithSubId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,10 +21,9 @@ public:
         8,
         24,
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugShape>>>
-                                                                        mShapes;
-    ::ll::TypedStorage<8, 8, ::ILevel*>                                 mLevel;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>   mLastUpdate;
-    ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mSentToClients;
+                                                                      mShapes;
+    ::ll::TypedStorage<8, 8, ::ILevel*>                               mLevel;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastUpdate;
     // NOLINTEND
 };
 

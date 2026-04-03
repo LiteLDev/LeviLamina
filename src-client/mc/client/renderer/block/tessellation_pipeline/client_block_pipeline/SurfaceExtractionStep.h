@@ -29,6 +29,8 @@ namespace ClientBlockPipeline { struct PartialOpaqueFullBlock; }
 namespace ClientBlockPipeline { struct PartialOpaqueFullBlockIds; }
 namespace ClientBlockPipeline { struct PositionVertexAttributes; }
 namespace ClientBlockPipeline { struct QuadIndicesFaceAttributes; }
+namespace ClientBlockPipeline { struct TextureShiftNoiseCache; }
+namespace ClientBlockPipeline { struct TextureShiftNoiseVertexAttributes; }
 namespace ClientBlockPipeline { struct TintFaceAttributes; }
 // clang-format on
 
@@ -78,7 +80,9 @@ public:
         ::ClientBlockPipeline::QuadIndicesFaceAttributes&               faceIndices,
         ::ClientBlockPipeline::ImageUvFaceAttributes&                   faceImageUvs,
         ::ClientBlockPipeline::MaterialFaceAttributes&                  faceMaterials,
-        ::ClientBlockPipeline::TintFaceAttributes&                      faceTints
+        ::ClientBlockPipeline::TintFaceAttributes&                      faceTints,
+        ::ClientBlockPipeline::TextureShiftNoiseCache const*            textureShiftNoiseCache,
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&       textureShiftVertexNoises
     );
 
     MCAPI static void extractFaceMaterialsFromCompleteOpaqueFullBlocks(
@@ -112,7 +116,9 @@ public:
         ::std::vector<::ClientBlockPipeline::CompleteOpaqueFullBlock> const& completeOpaqueFullBlocks,
         ::ClientBlockPipeline::CompleteOpaqueFullBlockIds const&             completeOpaqueFullBlockIds,
         ::ClientBlockPipeline::PositionVertexAttributes&                     vertexPositions,
-        ::ClientBlockPipeline::QuadIndicesFaceAttributes&                    faceIndices
+        ::ClientBlockPipeline::QuadIndicesFaceAttributes&                    faceIndices,
+        ::ClientBlockPipeline::TextureShiftNoiseCache const*                 textureShiftNoiseCache,
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&            textureShiftVertexNoises
     );
 
     MCAPI static void extractVerticesAndQuadsFromPartialOpaqueFullBlocks(
@@ -122,7 +128,9 @@ public:
         ::std::vector<::ClientBlockPipeline::PartialOpaqueFullBlock> const& partialOpaqueFullBlocks,
         ::ClientBlockPipeline::PartialOpaqueFullBlockIds const&             partialOpaqueFullBlockIds,
         ::ClientBlockPipeline::PositionVertexAttributes&                    vertexPositions,
-        ::ClientBlockPipeline::QuadIndicesFaceAttributes&                   faceIndices
+        ::ClientBlockPipeline::QuadIndicesFaceAttributes&                   faceIndices,
+        ::ClientBlockPipeline::TextureShiftNoiseCache const*                textureShiftNoiseCache,
+        ::ClientBlockPipeline::TextureShiftNoiseVertexAttributes&           textureShiftVertexNoises
     );
     // NOLINTEND
 

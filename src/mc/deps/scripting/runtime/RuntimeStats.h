@@ -9,6 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, int64> mMallocLimit;
+    ::ll::TypedStorage<8, 8, int64> mMallocSoftLimit;
     ::ll::TypedStorage<8, 8, int64> mMemoryUsedCount;
     ::ll::TypedStorage<8, 8, int64> mMemoryUsedSize;
     ::ll::TypedStorage<8, 8, int64> mMallocCount;

@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/input/BindingInfo.h"
+// auto generated forward declare list
+// clang-format off
+namespace Editor::Input { struct BindingInfo; }
+// clang-format on
 
 namespace Editor::Input {
 // functions

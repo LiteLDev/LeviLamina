@@ -8,9 +8,9 @@ struct ProfilerCapture {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnked88bc;
-    ::ll::UntypedStorage<8, 32> mUnkc63d4c;
-    ::ll::UntypedStorage<8, 32> mUnk2140ba;
+    ::ll::UntypedStorage<8, 32> mUnk78193b;
+    ::ll::UntypedStorage<8, 32> mUnkb80510;
+    ::ll::UntypedStorage<8, 32> mUnkdcf7c4;
     // NOLINTEND
 
 public:

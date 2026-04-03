@@ -4,12 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/options/DebugHudOptions.h"
+#include "mc/deps/core/threading/BackgroundWorker.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
-
-// auto generated forward declare list
-// clang-format off
-class BackgroundWorker;
-// clang-format on
 
 class HudDebugOverlayRenderer {
 public:

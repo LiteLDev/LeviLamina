@@ -9,7 +9,7 @@
 // clang-format off
 class Block;
 class BlockPos;
-class Randomize;
+class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
 
@@ -30,9 +30,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const&, ::Randomize&) const /*override*/;
+    virtual bool test(::Block const&, ::IRandom&) const /*override*/;
 
-    virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const /*override*/;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
 

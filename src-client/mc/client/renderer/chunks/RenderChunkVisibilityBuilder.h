@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-struct RenderChunkShared;
+class RenderChunkShared;
 // clang-format on
 
 class RenderChunkVisibilityBuilder {
@@ -31,6 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void buildVisibilityData(::RenderChunkShared& renderChunkShared);
+    MCAPI void buildVisibilityData(::RenderChunkShared& renderChunkShared);
     // NOLINTEND
 };

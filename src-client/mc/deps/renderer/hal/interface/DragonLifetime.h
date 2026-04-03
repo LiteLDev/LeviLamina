@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct DragonLifetime {};
+class DragonLifetime {};
 
 } // namespace mce

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
 #include "mc/deps/shared_types/v1_21_130/actor/ActorDefinitions.h"
+#include "mc/deps/shared_types/v1_21_130/actor/brain/BrainDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,8 +18,9 @@ struct ActorDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                     mDescription;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_130::ActorDefinitions> mDefinitions;
+    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                                             mDescription;
+    ::ll::TypedStorage<8, 136, ::std::optional<::SharedTypes::v1_21_130::Brain::BrainDefinition>> mBrainDefinition;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::ActorDefinitions>                         mDefinitions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::v1_21_130::ActorDefinitions>>
                                                       mDefinitionGroups;
     ::ll::TypedStorage<8, 72, ::cereal::DynamicValue> mEvents;
@@ -28,12 +30,11 @@ public:
     // prevent constructor by default
     ActorDocument& operator=(ActorDocument const&);
     ActorDocument(ActorDocument const&);
+    ActorDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument();
-
     MCAPI ActorDocument(::SharedTypes::v1_21_130::ActorDocument&&);
 
     MCAPI ~ActorDocument();
@@ -48,8 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::SharedTypes::v1_21_130::ActorDocument&&);
     // NOLINTEND
 

@@ -16,12 +16,25 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
+class HashedString;
 class IConstBlockSource;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class FarmBlock : public ::BlockType {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::HashedString const&> mBaseBlock;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FarmBlock& operator=(FarmBlock const&);
+    FarmBlock(FarmBlock const&);
+    FarmBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,7 +55,8 @@ public:
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const
+    virtual void
+    transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const
         /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -61,12 +75,6 @@ public:
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _becomeDirt(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource);
     // NOLINTEND
 
 public:
@@ -94,11 +102,14 @@ public:
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, float fallDistance) const;
+    MCAPI void
+    $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
+#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+#endif
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

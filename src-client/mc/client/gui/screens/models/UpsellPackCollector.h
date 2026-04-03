@@ -10,13 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContentCatalogService;
+class IEntitlementManager;
 class MainMenuScreenModel;
 class SkinPackModel;
-struct ContentCatalogService;
-struct IEntitlementManager;
+class SkinPickerUpsellTreatmentQuery;
+class SkinRepositoryClientInterface;
 struct SkinPackMeta;
-struct SkinPickerUpsellTreatmentQuery;
-struct SkinRepositoryClientInterface;
 namespace mce { class UUID; }
 // clang-format on
 

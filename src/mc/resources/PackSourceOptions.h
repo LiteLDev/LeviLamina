@@ -6,7 +6,7 @@ struct PackSourceOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6e886d;
+    ::ll::UntypedStorage<8, 8> mUnkb0a517;
     // NOLINTEND
 
 public:

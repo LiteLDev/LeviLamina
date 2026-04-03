@@ -19,19 +19,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnkd10b43;
-    ::ll::UntypedStorage<8, 8>  mUnk6e1369;
-    ::ll::UntypedStorage<8, 8>  mUnk4ef779;
+    ::ll::UntypedStorage<8, 8>  mUnk4efd62;
+    ::ll::UntypedStorage<8, 8>  mUnk3f3b70;
     ::ll::UntypedStorage<8, 8>  mUnk949300;
     ::ll::UntypedStorage<8, 16> mUnkca2db6;
     ::ll::UntypedStorage<8, 8>  mUnk301f31;
     ::ll::UntypedStorage<8, 40> mUnkcdc30f;
-    ::ll::UntypedStorage<8, 8>  mUnk7ed853;
+    ::ll::UntypedStorage<8, 8>  mUnkb34e88;
     ::ll::UntypedStorage<8, 56> mUnke1da77;
-    ::ll::UntypedStorage<8, 8>  mUnkc3355c;
-    ::ll::UntypedStorage<8, 8>  mUnk32be4e;
-    ::ll::UntypedStorage<8, 8>  mUnk730c99;
-    ::ll::UntypedStorage<8, 8>  mUnke24da4;
-    ::ll::UntypedStorage<8, 8>  mUnk14cc47;
+    ::ll::UntypedStorage<8, 8>  mUnk579b2c;
+    ::ll::UntypedStorage<8, 8>  mUnk715c4d;
+    ::ll::UntypedStorage<8, 8>  mUnkb0ad00;
+    ::ll::UntypedStorage<8, 8>  mUnkb74e90;
+    ::ll::UntypedStorage<8, 8>  mUnkf57cee;
     ::ll::UntypedStorage<1, 1>  mUnk510df9;
     // NOLINTEND
 

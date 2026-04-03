@@ -13,7 +13,7 @@ class IceCredentialsIterator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4c662c;
+    ::ll::UntypedStorage<8, 24> mUnk8fa56e;
     // NOLINTEND
 
 public:

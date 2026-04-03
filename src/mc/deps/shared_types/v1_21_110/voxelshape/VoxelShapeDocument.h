@@ -18,13 +18,21 @@ struct VoxelShapeDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_110::Description> mDescription;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_110::Description> mDescription;
     ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_110::Shape>       mShape;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    VoxelShapeDocument& operator=(VoxelShapeDocument const&);
+    VoxelShapeDocument(VoxelShapeDocument const&);
+    VoxelShapeDocument();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_110::VoxelShapeDocument& operator=(::SharedTypes::v1_21_110::VoxelShapeDocument&&);
+
     MCAPI ~VoxelShapeDocument();
     // NOLINTEND
 

@@ -23,13 +23,13 @@ class Trade2ScreenController : public ::ContainerScreenController {
 public:
     // Trade2ScreenController inner types declare
     // clang-format off
-    struct TradeItemCollections;
+    class TradeItemCollections;
     // clang-format on
 
     // Trade2ScreenController inner types define
     enum class LeftTabIndex : int {};
 
-    struct TradeItemCollections {};
+    class TradeItemCollections {};
 
 public:
     // member variables

@@ -22,11 +22,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk21b924;
     ::ll::UntypedStorage<8, 64> mUnk1b7674;
-    ::ll::UntypedStorage<8, 24> mUnkba7c36;
-    ::ll::UntypedStorage<8, 24> mUnka9ea43;
-    ::ll::UntypedStorage<8, 8>  mUnk7103cd;
+    ::ll::UntypedStorage<8, 24> mUnkf9be2e;
+    ::ll::UntypedStorage<8, 24> mUnk8d0a12;
+    ::ll::UntypedStorage<8, 8>  mUnk62d7f4;
     ::ll::UntypedStorage<4, 4>  mUnke52d45;
-    ::ll::UntypedStorage<8, 8>  mUnkff9d96;
+    ::ll::UntypedStorage<8, 8>  mUnkd25d6d;
     ::ll::UntypedStorage<1, 1>  mUnk763143;
     ::ll::UntypedStorage<8, 16> mUnkfa4478;
     ::ll::UntypedStorage<8, 16> mUnk26cd31;

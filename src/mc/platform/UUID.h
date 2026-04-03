@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& EMPTY();
 
-    MCAPI static uint64& STRING_LENGTH();
+    MCAPI_C static uint64& STRING_LENGTH();
     // NOLINTEND
 };
 

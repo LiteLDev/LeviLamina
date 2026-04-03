@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct BufferBase {};
+class BufferBase {};
 
 } // namespace mce

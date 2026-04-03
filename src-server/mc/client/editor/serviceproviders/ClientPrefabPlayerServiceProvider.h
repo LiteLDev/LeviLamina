@@ -4,6 +4,6 @@
 
 namespace Editor::Prefabs {
 
-struct ClientPrefabPlayerServiceProvider {};
+class ClientPrefabPlayerServiceProvider {};
 
 } // namespace Editor::Prefabs

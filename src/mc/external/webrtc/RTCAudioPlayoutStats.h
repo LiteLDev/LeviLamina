@@ -17,7 +17,7 @@ class RTCAudioPlayoutStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk5e0647;
+    ::ll::UntypedStorage<8, 40> mUnka1cc9e;
     ::ll::UntypedStorage<8, 16> mUnk6c3840;
     ::ll::UntypedStorage<8, 16> mUnk548713;
     ::ll::UntypedStorage<8, 16> mUnkada058;

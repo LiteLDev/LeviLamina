@@ -8,11 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { class IResourceResponse; }
 namespace OreUI { class ResourceAllowList; }
+namespace OreUI { class ResourceResponse; }
+namespace OreUI { class ResourceStreamResponse; }
 namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { struct ResourceRequest; }
-namespace cohtml { class IAsyncResourceStreamResponse; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -38,12 +38,10 @@ public:
     virtual ~QRCodeResourceHandler() /*override*/ = default;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response) /*override*/;
+    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
 
-    virtual ::OreUI::IResourceHandler::Status onResourceStreamRequest(
-        ::OreUI::ResourceRequest const& request,
-        ::cohtml::IAsyncResourceStreamResponse*
-    ) /*override*/;
+    virtual ::OreUI::IResourceHandler::Status
+    onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&) /*override*/;
 
     virtual void update() /*override*/;
     // NOLINTEND
@@ -67,10 +65,10 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response);
+    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
 
     MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::cohtml::IAsyncResourceStreamResponse*);
+    $onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse&);
 
     MCFOLD void $update();
     // NOLINTEND

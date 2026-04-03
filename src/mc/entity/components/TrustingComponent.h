@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 // clang-format on
 
@@ -25,6 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _becomeTrusting(::Actor& owner);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

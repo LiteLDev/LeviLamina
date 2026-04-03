@@ -3,24 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/experimental/QueryBase.h"
-#include "mc/client/gui/oreui/binding/experimental/properties/Property.h"
+#include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI::Experimental { class ClientDependencies; }
-namespace OreUI::Experimental { class GameDependencies; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
-namespace OreUI::Experimental {
+namespace OreUI {
 
-class ContainerNameQuery : public ::OreUI::Experimental::QueryBase<::OreUI::Experimental::ContainerNameQuery> {
+class ContainerNameQuery : public ::OreUI::QueryBase<::OreUI::ContainerNameQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                 mSubscription;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>> mName;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>   mSubscription;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mName;
     // NOLINTEND
 
 public:
@@ -36,17 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerNameQuery(
-        ::OreUI::Experimental::GameDependencies const&   game,
-        ::OreUI::Experimental::ClientDependencies const& client
-    );
+    MCAPI ContainerNameQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::OreUI::Experimental::GameDependencies const& game, ::OreUI::Experimental::ClientDependencies const& client);
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
@@ -58,4 +54,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace OreUI::Experimental
+} // namespace OreUI

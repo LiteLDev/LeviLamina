@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IBooleanDataProvider {};
+namespace Settings {
+
+class IBooleanDataProvider {};
+
+} // namespace Settings

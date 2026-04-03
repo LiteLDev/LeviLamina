@@ -2,13 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ContentTracker {
+class ContentTracker {
 public:
     // ContentTracker inner types declare
     // clang-format off
-    struct HydrateItemResponseStatus;
+    class HydrateItemResponseStatus;
     // clang-format on
 
     // ContentTracker inner types define
-    struct HydrateItemResponseStatus {};
+    class HydrateItemResponseStatus {};
 };

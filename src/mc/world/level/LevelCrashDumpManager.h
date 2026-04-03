@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/diagnostics/CrashDumpLogStringID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/world/level/ILevelCrashDumpManager.h"
 
 class LevelCrashDumpManager : public ::ILevelCrashDumpManager {

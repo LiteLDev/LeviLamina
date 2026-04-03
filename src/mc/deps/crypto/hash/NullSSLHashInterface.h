@@ -12,7 +12,7 @@ class NullSSLHashInterface : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 160, ::Crypto::Hash::md5> mMd5;
+    ::ll::TypedStorage<8, 160, ::Crypto::Hash::md5> mMd5;
     // NOLINTEND
 
 public:

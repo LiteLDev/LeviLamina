@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/platform/Result.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -36,7 +37,7 @@ public:
 
     virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const /*override*/;
 
-    virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const /*override*/;
+    virtual bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const /*override*/;
 
     virtual ::std::string getFullName() const /*override*/;
 
@@ -83,7 +84,7 @@ public:
 
     MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
-    MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+    MCAPI bool $forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
     MCFOLD ::std::string $getFullName() const;
 

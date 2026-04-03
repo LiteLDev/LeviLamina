@@ -21,10 +21,10 @@ struct ContextConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5da6f2;
-    ::ll::UntypedStorage<8, 32> mUnk782aa9;
+    ::ll::UntypedStorage<8, 32> mUnk785f32;
+    ::ll::UntypedStorage<8, 32> mUnk8946f9;
     ::ll::UntypedStorage<8, 96> mUnkc9edc0;
-    ::ll::UntypedStorage<8, 32> mUnk7da5d5;
+    ::ll::UntypedStorage<8, 32> mUnk8d4a5a;
     ::ll::UntypedStorage<1, 1>  mUnkae7c5b;
     ::ll::UntypedStorage<8, 24> mUnk8dcce4;
     ::ll::UntypedStorage<4, 4>  mUnke423f8;

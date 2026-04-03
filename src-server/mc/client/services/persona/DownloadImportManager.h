@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct DownloadImportManager {};
+class DownloadImportManager {};
 
 } // namespace persona

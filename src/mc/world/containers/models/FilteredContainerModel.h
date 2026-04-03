@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    FilteredContainerModel();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FilteredContainerModel() /*override*/ = default;
@@ -59,7 +63,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _refreshContainer(bool fullRefresh);
+    MCAPI FilteredContainerModel(
+        ::FullContainerName const&                                   containerName,
+        int                                                          size,
+        ::ContainerCategory                                          containerCategory,
+        ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>        creativeItemRegistry,
+        bool                                                         doExpandoGroups,
+        bool                                                         filter,
+        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
+    );
+
+    MCAPI void _refreshContainer(bool fullRefresh);
 
     MCAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
     // NOLINTEND
@@ -67,7 +81,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::FullContainerName const&                                   containerName,
         int                                                          size,
         ::ContainerCategory                                          containerCategory,
@@ -81,7 +95,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
     MCFOLD void $containerContentChanged(int);
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
@@ -99,7 +112,6 @@ public:
     MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
     MCFOLD void $_init();
-#endif
 
 
     // NOLINTEND

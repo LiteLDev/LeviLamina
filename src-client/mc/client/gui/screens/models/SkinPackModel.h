@@ -8,9 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlement;
 class PackManifest;
-struct IEntitlement;
-struct SkinRepositoryClientInterface;
+class SkinRepositoryClientInterface;
 // clang-format on
 
 class SkinPackModel {
@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<8, 8, ::SkinRepositoryClientInterface&> mSkinRepositoryClientInterface;
     ::ll::TypedStorage<8, 8, ::IEntitlement const*>            mEntitlement;
     ::ll::TypedStorage<8, 48, ::PackIdVersion>                 mPackIdentity;
-    ::ll::TypedStorage<8, 2544, ::SkinPackMeta>                mSkinPackMetaData;
+    ::ll::TypedStorage<8, 2552, ::SkinPackMeta>                mSkinPackMetaData;
     ::ll::TypedStorage<4, 4, int>                              mFirstVisibleSkinIndex;
     ::ll::TypedStorage<4, 4, int>                              mSelectedSkinIndex;
     ::ll::TypedStorage<1, 1, bool>                             mIsOfflineLoaded;

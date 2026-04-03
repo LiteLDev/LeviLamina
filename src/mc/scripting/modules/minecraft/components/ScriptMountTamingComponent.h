@@ -11,7 +11,6 @@
 // clang-format off
 class MountTameableDefinition;
 class MountTamingComponent;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -48,14 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

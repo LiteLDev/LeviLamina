@@ -4,6 +4,6 @@
 
 namespace Social {
 
-struct TitleIdentityInfo {};
+class TitleIdentityInfo {};
 
 } // namespace Social

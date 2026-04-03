@@ -18,6 +18,9 @@ class Actor;
 class Level;
 class Player;
 struct ActorAddEffectEvent;
+struct ActorBeforeAcquireItemEvent;
+struct ActorBeforeHealEvent;
+struct ActorBeforeHurtEvent;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
@@ -30,6 +33,9 @@ namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
 namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
 namespace ScriptModuleMinecraft { struct EmptyFilter; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHurtBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemPickupBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedBeforeEvent; }
@@ -44,6 +50,9 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct SignalNameSubscriberCount; }
+namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHealEventFilter; }
+namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorHurtBeforeEventFilter; }
+namespace ScriptModuleMinecraft::EventFilters { struct ScriptActorItemPickupEventFilter; }
 namespace ScriptModuleMinecraft::EventFilters { struct ScriptBlockEventFilter; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
@@ -111,10 +120,34 @@ public:
         8,
         32,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptActorHealBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter>>>
+        mBeforeActorHealEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter>>>
+        mBeforeActorHurtEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptActorRemoveBeforeEvent,
             1,
             ::ScriptModuleMinecraft::EmptyFilter>>>
         mBeforeActorRemoveEventSignal;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
+            ::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent,
+            1,
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter>>>
+        mBeforeActorItemPickupEventSignal;
     ::ll::TypedStorage<
         8,
         32,
@@ -184,6 +217,12 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptWorldBeforeEvents() /*override*/;
 
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
+    onBeforeActorHeal(::Actor const& actor, ::ActorBeforeHealEvent const& eventData) /*override*/;
+
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
+    onBeforeActorHurt(::Actor const& actor, ::ActorBeforeHurtEvent const& eventData) /*override*/;
+
     virtual void onBeforeActorRemove(::Actor const& actor) /*override*/;
 
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
@@ -240,11 +279,15 @@ public:
     onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor) /*override*/;
 
     virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
+    onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent& actorItemPickupEvent) /*override*/;
+
+    virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
-        int                                        duration
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType,
+        int
     ) /*override*/;
     // NOLINTEND
 
@@ -286,6 +329,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
+    $onBeforeActorHeal(::Actor const& actor, ::ActorBeforeHealEvent const& eventData);
+
+    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
+    $onBeforeActorHurt(::Actor const& actor, ::ActorBeforeHurtEvent const& eventData);
+
     MCAPI void $onBeforeActorRemove(::Actor const& actor);
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
@@ -335,12 +384,8 @@ public:
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor);
 
     MCAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
-    $onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
-        int                                        duration
-    );
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
+    $onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent& actorItemPickupEvent);
 
 
     // NOLINTEND

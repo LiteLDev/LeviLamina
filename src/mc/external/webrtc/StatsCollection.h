@@ -17,7 +17,7 @@ class StatsCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk164237;
+    ::ll::UntypedStorage<8, 16> mUnk107bea;
     ::ll::UntypedStorage<1, 1>  mUnk21a3e8;
     // NOLINTEND
 

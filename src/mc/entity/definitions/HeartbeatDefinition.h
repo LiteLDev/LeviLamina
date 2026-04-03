@@ -16,7 +16,7 @@ class HeartbeatDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc972be;
+    ::ll::UntypedStorage<8, 32> mUnk45c731;
     ::ll::UntypedStorage<8, 16> mUnk6a3f0a;
     // NOLINTEND
 
@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::HeartbeatServerComponent& component) const;
+    MCAPI_S void initialize(::EntityContext& entity, ::HeartbeatServerComponent& component) const;
     // NOLINTEND
 
 public:

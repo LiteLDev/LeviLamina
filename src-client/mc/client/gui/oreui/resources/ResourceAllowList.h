@@ -6,6 +6,7 @@
 #include "mc/client/gui/oreui/interface/IResourceAllowList.h"
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
 #include "mc/client/gui/oreui/interface/ProfileImageState.h"
+#include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 
@@ -18,7 +19,6 @@ namespace OreUI { class AllowListPath; }
 namespace OreUI { class AllowListProfileImage; }
 namespace OreUI { class AllowListQRCode; }
 namespace OreUI { struct ResourcePath; }
-namespace Social { class ProfileImageOptions; }
 // clang-format on
 
 namespace OreUI {

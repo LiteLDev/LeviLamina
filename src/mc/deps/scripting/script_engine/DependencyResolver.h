@@ -19,7 +19,7 @@ class DependencyResolver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk96ed20;
+    ::ll::UntypedStorage<8, 8> mUnke3be7c;
     ::ll::UntypedStorage<4, 4> mUnkcb02eb;
     // NOLINTEND
 

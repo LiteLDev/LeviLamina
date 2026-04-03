@@ -21,7 +21,7 @@ class IContentManagerContext;
 class MinecraftScreenModel;
 class ProgressHandler;
 namespace Json { class Value; }
-namespace Progress { struct ProgressTips; }
+namespace Progress { class ProgressTips; }
 // clang-format on
 
 class ProgressScreenController : public ::MinecraftScreenController {
@@ -78,6 +78,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mDownloadAlreadyConfirmedByUser;
     ::ll::TypedStorage<1, 1, bool>                          mCurrentlyShowAddonWarning;
     ::ll::TypedStorage<1, 1, bool>                          mServerJoined;
+    ::ll::TypedStorage<1, 1, bool>                          mPartyPartiallyEligible;
+    ::ll::TypedStorage<1, 1, bool>                          mPartyNotEligible;
     // NOLINTEND
 
 public:
@@ -93,7 +95,7 @@ public:
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -154,6 +156,10 @@ public:
 
     MCAPI void _openConfirmationDialog();
 
+    MCAPI void _openPartyNotEligibleModal();
+
+    MCAPI void _openPartyPartiallyEligibleModal();
+
     MCAPI void _registerEventHandlers();
 
     MCAPI void _registerProgressBindings();
@@ -207,6 +213,8 @@ public:
     MCAPI void $onCreation();
 
     MCAPI void $onOpen();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::ui::DirtyFlag $tick();
 

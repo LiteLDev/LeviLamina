@@ -15,14 +15,13 @@ public:
 public:
     // prevent constructor by default
     LegacyOnUseTriggerItemComponentData& operator=(LegacyOnUseTriggerItemComponentData const&);
+    LegacyOnUseTriggerItemComponentData(LegacyOnUseTriggerItemComponentData const&);
     LegacyOnUseTriggerItemComponentData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
-
-    MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
 
     MCAPI ~LegacyOnUseTriggerItemComponentData();
     // NOLINTEND
@@ -32,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
 
-    MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
+    MCFOLD_S void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
     // NOLINTEND
 
 public:

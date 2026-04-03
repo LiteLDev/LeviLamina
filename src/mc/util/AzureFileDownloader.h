@@ -9,7 +9,7 @@ class AzureFileDownloader : public ::FileDownloadManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb90acb;
+    ::ll::UntypedStorage<8, 32> mUnkf3ab6d;
     ::ll::UntypedStorage<1, 1>  mUnkae9c0d;
     // NOLINTEND
 

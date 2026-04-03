@@ -16,7 +16,7 @@ class StructureListPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkeebd00;
+    ::ll::UntypedStorage<8, 24> mUnk526dd3;
     // NOLINTEND
 
 public:

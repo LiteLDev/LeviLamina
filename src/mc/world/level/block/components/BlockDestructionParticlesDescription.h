@@ -64,10 +64,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uchar const& DEFAULT_NON_CUBE_PARTICLE_COUNT();
-
-    MCAPI static uchar const& DEFAULT_PARTICLE_COUNT();
-
     MCAPI static ::std::string const& NameID();
 
     MCAPI static ::std::string const& ParticleCountID();
@@ -94,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

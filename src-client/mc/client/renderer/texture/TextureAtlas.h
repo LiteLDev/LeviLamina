@@ -15,9 +15,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class AtlasItemManager;
 class ResourcePackManager;
 class TextureAtlasTile;
-struct AtlasItemManager;
 struct ParsedAtlasNode;
 struct ParsedAtlasNodeElement;
 struct RuntimeImageGeneratorInfo;
@@ -28,7 +28,7 @@ namespace cg { class TextureSetImageContainer; }
 namespace mce { class Color; }
 namespace mce { class FileWatcherHandle; }
 namespace mce { class TextureGroup; }
-namespace mce::framebuilder { struct PBRTextureDataManager; }
+namespace mce::framebuilder { class PBRTextureDataManager; }
 // clang-format on
 
 class TextureAtlas : public ::Bedrock::EnableNonOwnerReferences {
@@ -43,6 +43,8 @@ public:
     using ImageAtlasFinishedCallback = ::std::function<void()> const;
 
     using RuntimeImageGenerators = ::std::vector<::std::weak_ptr<::RuntimeImageGeneratorInfo>>;
+
+    using SourceImagesSignature = void(::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer> const&);
 
 public:
     // member variables

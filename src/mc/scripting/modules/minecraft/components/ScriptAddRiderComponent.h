@@ -9,16 +9,15 @@
 // auto generated forward declare list
 // clang-format off
 struct AddRiderComponent;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { struct ClassBinding; }
-namespace SharedTypes::v1_21_130 { struct AddRiderDefinition; }
+namespace SharedTypes::v1_21_130 { struct AddRiderComponentDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptAddRiderComponent
 : public ::ScriptModuleMinecraft::
-      ECSScriptActorComponent<::AddRiderComponent, ::SharedTypes::v1_21_130::AddRiderDefinition> {
+      ECSScriptActorComponent<::AddRiderComponent, ::SharedTypes::v1_21_130::AddRiderComponentDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,14 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

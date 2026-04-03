@@ -144,7 +144,7 @@ public:
 
     MCAPI bool _shouldPopCurrentScreenOnReplacingWithIncompatibleRoute() const;
 
-    MCAPI ::Bedrock::PubSub::Subscription addObserver(
+    MCFOLD ::Bedrock::PubSub::Subscription addObserver(
         ::std::function<void(
             ::std::optional<::OreUI::RouterLocation> const&,
             ::std::optional<::OreUI::RouterLocation> const&,

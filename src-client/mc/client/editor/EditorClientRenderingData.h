@@ -4,6 +4,6 @@
 
 namespace Editor {
 
-struct EditorClientRenderingData {};
+class EditorClientRenderingData {};
 
 } // namespace Editor

@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                     mDescription;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_110::ActorDefinitions> mDefinitions;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_110::ActorDefinitions> mDefinitions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::v1_21_110::ActorDefinitions>>
                                                       mDefinitionGroups;
     ::ll::TypedStorage<8, 72, ::cereal::DynamicValue> mEvents;
@@ -28,12 +28,11 @@ public:
     // prevent constructor by default
     ActorDocument& operator=(ActorDocument const&);
     ActorDocument(ActorDocument const&);
+    ActorDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument();
-
     MCAPI ActorDocument(::SharedTypes::v1_21_110::ActorDocument&&);
 
     MCAPI ~ActorDocument();
@@ -48,8 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::SharedTypes::v1_21_110::ActorDocument&&);
     // NOLINTEND
 

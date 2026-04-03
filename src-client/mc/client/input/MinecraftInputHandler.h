@@ -7,14 +7,17 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/ButtonState.h"
 #include "mc/deps/input/enums/RawInputType.h"
 
 // auto generated forward declare list
 // clang-format off
 class ClientMoveInputHandler;
+class Config;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
+class IGameModuleApp;
 class IMinecraftGame;
 class InputHandler;
 class InputSettingsHandler;
@@ -23,9 +26,7 @@ class MinecraftInputHandlerProxy;
 class MinecraftInputMappingFactoryMap;
 class MouseMapper;
 class SplitscreenJoinListener;
-struct Config;
 struct ControllerIDtoClientMap;
-struct IGameModuleApp;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -51,7 +52,13 @@ public:
         128,
         ::Bedrock::PubSub::
             Publisher<void(int, ::RawInputType, ::ButtonState, bool), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                                                              mRawInputEventPublisher;
+        mRawInputEventPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::IClientInstance&, ::InputMode), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                                              mInputModePublisher;
     ::ll::TypedStorage<8, 8, ::MouseMapper*>                                  mMouseMapper;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftInputHandlerProxy>> mProxy;
     // NOLINTEND

@@ -21,8 +21,8 @@ class PersistentWebSocket : public ::Bedrock::Http::WebSocket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk5730d9;
-    ::ll::UntypedStorage<8, 104> mUnkd613a3;
+    ::ll::UntypedStorage<8, 8>   mUnk13cdc9;
+    ::ll::UntypedStorage<8, 136> mUnkd613a3;
     // NOLINTEND
 
 public:

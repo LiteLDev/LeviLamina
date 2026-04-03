@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                                                                mChance;
-    ::ll::TypedStorage<8, 2576, ::Random>                                                          mRandom;
+    ::ll::TypedStorage<8, 2544, ::Random>                                                          mRandom;
     ::ll::TypedStorage<1, 1, bool>                                                                 mHasGravity;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>    mBlockRules;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*> mBlockTagRules;
@@ -31,19 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BlockTypePlacementProcessor(::LegacyStructureSettings const& settings);
-
-    MCAPI ~BlockTypePlacementProcessor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::LegacyStructureSettings const& settings);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

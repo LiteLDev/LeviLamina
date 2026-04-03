@@ -4,6 +4,6 @@
 
 namespace persona {
 
-struct PersonaSubCategory {};
+class PersonaSubCategory {};
 
 } // namespace persona

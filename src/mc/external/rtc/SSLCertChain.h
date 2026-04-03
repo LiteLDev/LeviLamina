@@ -14,7 +14,7 @@ class SSLCertChain {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk85c7d5;
+    ::ll::UntypedStorage<8, 24> mUnk4af01b;
     // NOLINTEND
 
 public:

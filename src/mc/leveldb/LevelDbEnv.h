@@ -9,7 +9,7 @@ class LevelDbEnv : public ::Bedrock::EnableNonOwnerReferences, public ::leveldb:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk98e970;
+    ::ll::UntypedStorage<8, 8> mUnkcc5166;
     ::ll::UntypedStorage<4, 4> mUnkfe3fa7;
     // NOLINTEND
 
@@ -45,7 +45,7 @@ public:
 
     virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
 
-    virtual ::leveldb::Status RemoveDir(::std::string const& name) /*override*/;
+    virtual ::leveldb::Status RemoveDir(::std::string const& dirname) /*override*/;
 
     virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
 
@@ -93,7 +93,7 @@ public:
 
     MCNAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& name);
+    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& dirname);
 
     MCNAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 

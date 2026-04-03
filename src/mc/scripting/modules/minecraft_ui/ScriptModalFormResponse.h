@@ -16,7 +16,7 @@ class ScriptModalFormResponse : public ::ScriptModuleMinecraftServerUI::BaseScri
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkacade9;
+    ::ll::UntypedStorage<8, 32> mUnk463249;
     // NOLINTEND
 
 public:

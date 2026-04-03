@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Realms { class RealmsSubscriptions; }
 namespace Realms { struct RealmsSubscriptionInfo; }
-namespace Realms { struct RealmsSubscriptions; }
 // clang-format on
 
 namespace OreUI {
@@ -23,6 +23,7 @@ public:
     ::ll::TypedStorage<4, 4, ::Realms::RealmsSubscriptionsState>                mState;
     ::ll::TypedStorage<1, 1, bool>                                              mCanBuyPlusRealm;
     ::ll::TypedStorage<1, 1, bool>                                              mCanBuyCoreRealm;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mClientStoreId;
     ::ll::TypedStorage<1, 1, bool>                                              mIsDirty;
     ::ll::TypedStorage<8, 24, ::std::vector<::Realms::RealmsSubscriptionInfo>>  mRealmsSubscriptionInfo;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                  mStateChangedSubscription;
@@ -35,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~RealmsSubscriptionsDataFacet() /*override*/ = default;
+    virtual ~RealmsSubscriptionsDataFacet() /*override*/;
 
     virtual bool update() /*override*/;
     // NOLINTEND
@@ -49,9 +50,13 @@ public:
 
     MCAPI bool getCanBuyPlusRealm() const;
 
+    MCFOLD ::std::string const& getClientStoreId() const;
+
     MCFOLD ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
 
     MCFOLD ::Realms::RealmsSubscriptionsState getState() const;
+
+    MCAPI void setFacetDirty(::Realms::RealmsSubscriptionsState realmsSubscriptionsState);
     // NOLINTEND
 
 public:
@@ -64,6 +69,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

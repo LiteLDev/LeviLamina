@@ -35,17 +35,13 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddItemActorPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~AddItemActorPacket() /*override*/ = default;
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -55,12 +51,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AddItemActorPacket();
+
     MCAPI explicit AddItemActorPacket(::ItemActor& itemEntity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::ItemActor& itemEntity);
     // NOLINTEND
 
@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

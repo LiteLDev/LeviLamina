@@ -6,8 +6,8 @@ class ContentKeysFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk13b0be;
-    ::ll::UntypedStorage<8, 64> mUnkf77bd6;
+    ::ll::UntypedStorage<8, 32> mUnk2d4e60;
+    ::ll::UntypedStorage<8, 64> mUnk9f86c5;
     // NOLINTEND
 
 public:

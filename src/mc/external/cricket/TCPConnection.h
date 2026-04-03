@@ -24,7 +24,7 @@ class TCPConnection : public ::cricket::Connection, public ::sigslot::has_slots<
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2308f7;
+    ::ll::UntypedStorage<8, 8> mUnk6c063b;
     ::ll::UntypedStorage<4, 4> mUnk8ca25d;
     ::ll::UntypedStorage<1, 1> mUnka7b132;
     ::ll::UntypedStorage<1, 1> mUnk8a6d3a;

@@ -12,3 +12,8 @@ public:
     // UpscalingConfiguration inner types define
     struct Configs {};
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI_C bool operator==(::UpscalingConfiguration::Configs const& __P0, ::UpscalingConfiguration::Configs const& __P1);
+// NOLINTEND

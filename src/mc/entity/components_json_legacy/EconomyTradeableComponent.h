@@ -13,6 +13,7 @@ class ActorInteraction;
 class BaseGameVersion;
 class CompoundTag;
 class DataLoadHelper;
+class InteractionResult;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
@@ -78,7 +79,7 @@ public:
 
     MCAPI int getCurrentNearbyCuredDiscount() const;
 
-    MCAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::MerchantRecipeList* getOffers();
 

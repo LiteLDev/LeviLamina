@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct GraphUploadDriveItem {
+class GraphUploadDriveItem {
 public:
     // GraphUploadDriveItem inner types declare
     // clang-format off

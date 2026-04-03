@@ -30,7 +30,7 @@ public:
 
     MCAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
 
-    MCAPI ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
+    MCFOLD ::MapInfoRequestPacketPayload& operator=(::MapInfoRequestPacketPayload&&);
 
     MCAPI ~MapInfoRequestPacketPayload();
     // NOLINTEND

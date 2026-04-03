@@ -4,17 +4,17 @@
 
 namespace Realms {
 
-struct RealmsWorldPackContext {
+class RealmsWorldPackContext {
 public:
     // RealmsWorldPackContext inner types declare
     // clang-format off
-    struct RealmsWorldPackContextImpl;
+    class RealmsWorldPackContextImpl;
     // clang-format on
 
     // RealmsWorldPackContext inner types define
     enum class RealmsWorldPackContextState : int {};
 
-    struct RealmsWorldPackContextImpl {};
+    class RealmsWorldPackContextImpl {};
 };
 
 } // namespace Realms

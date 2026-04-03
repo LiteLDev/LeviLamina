@@ -12,7 +12,6 @@
 #include "mc/client/game/StartIntent.h"
 #include "mc/client/game/local_server_launcher/ILocalServerLauncherImpl.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/options/OptionsObserver.h"
 #include "mc/client/renderer/texture/TextureAtlasStatus.h"
 #include "mc/client/social/JoinGameStatus.h"
@@ -28,7 +27,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/input/TextboxTextUpdateReason.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/events/IMinecraftEventing.h"
 #include "mc/events/NetworkType.h"
 #include "mc/locale/I18nObserver.h"
@@ -45,24 +44,35 @@
 class ActiveDirectoryIdentity;
 class ActorAnimationControllerGroup;
 class ActorAnimationGroup;
+class ActorResourceDefinitionGroup;
 class AppSystemRegistry;
 class BlockCullingGroup;
+class CDNService;
 class ChunkSource;
 class ClientInstance;
 class ClientNetworkSystem;
+class ClubsService;
+class ContentAcquisition;
+class ContentCatalogService;
 class ContentIdentity;
 class ContentLogFileEndPoint;
 class CubemapBackgroundResources;
 class DateManager;
+class DeferredLighting;
+class DevConsoleLogger;
 class Dimension;
 class EDUSystems;
 class EmoticonManager;
 class EntityContext;
+class ExternalContentManager;
 class FileArchiver;
+class FlightingService;
 class FontHandle;
 class GameModuleClient;
 class GameRenderer;
+class GatheringManager;
 class GeometryGroup;
+class GlobalResourcesCrashRecovery;
 class GuiData;
 class IApp;
 class IClientDimensionExtensions;
@@ -71,127 +81,120 @@ class IContentAccessibilityProvider;
 class IContentKeyProvider;
 class IContentManager;
 class IContentTierManager;
+class IDlcValidation;
+class IEntitlementManager;
+class IExternalServerFile;
+class IGameModuleApp;
 class IGameModuleShared;
 class ILevelListCache;
 class IMinecraftEventing;
+class IOfferRepository;
 class IResourcePackRepository;
 class ISceneStack;
 class ITextBoxController;
+class IThirdPartyServerRepository;
 class IUIDefRepository;
 class IUIRepository;
 class ItemRegistryRef;
+class LatencyGraphDisplay;
 class LevelDbEnv;
+class LevelLoader;
 class LevelSettings;
+class LibraryRepository;
 class LinkedAssetValidator;
 class LocalPlayer;
+class MarketplaceServicesManager;
 class Minecraft;
 class MinecraftGraphics;
 class MinecraftInputHandler;
+class MusicManager;
+class NewPlayerSystem;
 class Option;
 class Options;
+class PackDownloadManager;
 class PackManifest;
 class PackManifestFactory;
 class PackSourceFactory;
 class ParticleEffectGroup;
+class PersonaRepository;
+class PersonaService;
 class PixelCalc;
 class Player;
+class PlayerMessagingService;
+class ProfanityContext;
 class PushNotificationMessage;
+class RealmsAPI;
 class RenderControllerGroup;
 class ResetCallbackObject;
 class ResourceLoadManager;
 class ResourcePackManager;
 class ResourcePackStack;
 class SceneFactory;
+class ScreenshotRecorder;
+class SeasonsRenderer;
+class SerialWorkList;
 class ServerInstance;
 class ServerInstanceEventCoordinator;
 class ServerNetworkHandler;
+class ServiceDrivenImageRepository;
+class ServicesManager;
+class SkinRepository;
+class SoundEngine;
+class StoreCatalogRepository;
+class SunsettingManager;
 class TaskGroup;
 class TextToIconMapper;
 class TextureAtlas;
 class Timer;
+class TreatmentPackDownloadMonitor;
+class TrialManager;
 class UIEventCoordinator;
 class UIMeasureStrategy;
 class Vec3;
-class WebSocketCommManager;
 class WorldTemplateManager;
-struct ActorResourceDefinitionGroup;
+class WorldTransferAgent;
 struct ActorUniqueID;
-struct CDNService;
-struct ClubsService;
-struct ContentAcquisition;
-struct ContentCatalogService;
 struct ControllerIDtoClientMap;
-struct DeferredLighting;
-struct DevConsoleLogger;
-struct ExternalContentManager;
+struct ExperienceConnectionData;
 struct ExternalWorldTransferActionFunc;
-struct FlightingService;
-struct GatheringManager;
-struct GlobalResourcesCrashRecovery;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IExternalServerFile;
-struct IGameModuleApp;
-struct IOfferRepository;
-struct IThirdPartyServerRepository;
-struct LatencyGraphDisplay;
-struct LevelLoader;
-struct LibraryRepository;
+struct GameConnectionInfoEx;
 struct LocalWorldTransferActionFunc;
-struct MarketplaceServicesManager;
-struct MusicManager;
-struct NewPlayerSystem;
-struct PackDownloadManager;
-struct PersonaRepository;
-struct PersonaService;
-struct PlayerMessagingService;
-struct ProfanityContext;
-struct RealmsAPI;
+struct MinecraftGameArguments;
+struct PlayerJoinWorldContext;
 struct ScreenshotOptions;
-struct ScreenshotRecorder;
-struct SeasonsRenderer;
-struct SerialWorkList;
-struct ServiceDrivenImageRepository;
-struct ServicesManager;
-struct SkinRepository;
-struct SoundEngine;
-struct StoreCatalogRepository;
-struct SunsettingManager;
-struct TreatmentPackDownloadMonitor;
-struct TrialManager;
-struct WorldTransferAgent;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock { class ScopeExit; }
 namespace Bedrock::PubSub { class Subscription; }
-namespace ClientBlobCache { struct Cache; }
+namespace ClientBlobCache { class Cache; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
+namespace LocalServerLauncher { class IGameInterface; }
+namespace LocalServerLauncher { class IServerInstanceBuilder; }
 namespace LocalServerLauncher { struct GameDependencies; }
-namespace LocalServerLauncher { struct IGameInterface; }
-namespace LocalServerLauncher { struct IServerInstanceBuilder; }
 namespace LocalServerLauncher { struct ServerInitData; }
 namespace LocalServerLauncher { struct ServerLaunchResult; }
 namespace LocalServerLauncher::Impl { struct AllDependencies; }
 namespace OreUI { class DataProviderManager_DEPRECATED; }
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { class Router; }
-namespace Parties { struct PartySystem; }
-namespace Progress { struct ProgressTips; }
-namespace Realms { struct ContentService; }
-namespace Realms { struct GenericRequestServiceHandler; }
-namespace Realms { struct RealmsServices; }
-namespace Realms { struct RealmsSystem; }
-namespace Realms { struct SubscriptionService; }
+namespace Parties { class PartySystem; }
+namespace Progress { class ProgressTips; }
+namespace Realms { class ContentService; }
+namespace Realms { class GenericRequestServiceHandler; }
+namespace Realms { class RealmsServices; }
+namespace Realms { class RealmsSystem; }
+namespace Realms { class SubscriptionService; }
+namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
-namespace Social { struct MultiplayerGameInfo; }
-namespace Social { struct MultiplayerServiceManager; }
-namespace Social { struct PresenceManager; }
-namespace Social { struct SocialSystem; }
-namespace Social { struct User; }
+namespace Social { class MultiplayerGameInfo; }
+namespace Social { class MultiplayerServiceManager; }
+namespace Social { class PresenceManager; }
+namespace Social { class SocialSystem; }
+namespace Social { class User; }
 namespace World { class WorldSystem; }
 namespace edu::auth { struct CredentialsAcquired; }
 namespace edu::auth { struct CredentialsRefreshSuccess; }
@@ -276,56 +279,55 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16>  mUnk31cb40;
     ::ll::UntypedStorage<8, 64>  mUnk26362f;
-    ::ll::UntypedStorage<8, 8>   mUnkf85e5c;
+    ::ll::UntypedStorage<8, 8>   mUnk5833c3;
     ::ll::UntypedStorage<8, 8>   mUnk707e20;
-    ::ll::UntypedStorage<8, 8>   mUnkfdf457;
-    ::ll::UntypedStorage<8, 8>   mUnk3ed801;
+    ::ll::UntypedStorage<8, 8>   mUnk77bae9;
+    ::ll::UntypedStorage<8, 8>   mUnk39dbf1;
     ::ll::UntypedStorage<8, 8>   mUnkb9a1e2;
-    ::ll::UntypedStorage<8, 8>   mUnkbd99eb;
-    ::ll::UntypedStorage<8, 8>   mUnkb27992;
-    ::ll::UntypedStorage<8, 8>   mUnka239d7;
-    ::ll::UntypedStorage<8, 8>   mUnk736ec3;
-    ::ll::UntypedStorage<8, 8>   mUnk3662ee;
-    ::ll::UntypedStorage<8, 8>   mUnkefbf07;
-    ::ll::UntypedStorage<8, 8>   mUnk60f945;
-    ::ll::UntypedStorage<8, 8>   mUnkf91664;
-    ::ll::UntypedStorage<8, 8>   mUnk119261;
-    ::ll::UntypedStorage<8, 8>   mUnk184122;
-    ::ll::UntypedStorage<8, 8>   mUnk6596ff;
-    ::ll::UntypedStorage<8, 8>   mUnk699449;
+    ::ll::UntypedStorage<8, 8>   mUnka617fc;
+    ::ll::UntypedStorage<8, 8>   mUnk1a8ba7;
+    ::ll::UntypedStorage<8, 8>   mUnk8c1a51;
+    ::ll::UntypedStorage<8, 8>   mUnkdcd0a8;
+    ::ll::UntypedStorage<8, 8>   mUnk27a9f1;
+    ::ll::UntypedStorage<8, 8>   mUnk6449d7;
+    ::ll::UntypedStorage<8, 8>   mUnk6585d8;
+    ::ll::UntypedStorage<8, 8>   mUnk18dd91;
+    ::ll::UntypedStorage<8, 8>   mUnke812cf;
+    ::ll::UntypedStorage<8, 8>   mUnk102e50;
+    ::ll::UntypedStorage<8, 8>   mUnkd0fa73;
+    ::ll::UntypedStorage<8, 8>   mUnk30cf6e;
     ::ll::UntypedStorage<1, 1>   mUnk73dd14;
     ::ll::UntypedStorage<8, 64>  mUnkc4eefd;
     ::ll::UntypedStorage<8, 64>  mUnk4d9a8c;
     ::ll::UntypedStorage<8, 16>  mUnke052b6;
-    ::ll::UntypedStorage<8, 64>  mUnke1cb1d;
-    ::ll::UntypedStorage<8, 64>  mUnk1af806;
-    ::ll::UntypedStorage<8, 8>   mUnk5ed71b;
-    ::ll::UntypedStorage<8, 8>   mUnk627e8a;
-    ::ll::UntypedStorage<8, 8>   mUnk18196d;
+    ::ll::UntypedStorage<8, 64>  mUnk1a273c;
+    ::ll::UntypedStorage<8, 64>  mUnk84236d;
+    ::ll::UntypedStorage<8, 8>   mUnk79ddba;
+    ::ll::UntypedStorage<8, 8>   mUnkf926be;
+    ::ll::UntypedStorage<8, 8>   mUnk37afa1;
     ::ll::UntypedStorage<8, 8>   mUnk68dc1e;
     ::ll::UntypedStorage<8, 16>  mUnka2869f;
-    ::ll::UntypedStorage<8, 8>   mUnk45c508;
-    ::ll::UntypedStorage<8, 8>   mUnk41ca25;
-    ::ll::UntypedStorage<8, 8>   mUnk214fbf;
-    ::ll::UntypedStorage<8, 8>   mUnkf99ec7;
-    ::ll::UntypedStorage<8, 8>   mUnkc20972;
-    ::ll::UntypedStorage<8, 8>   mUnkcc6575;
-    ::ll::UntypedStorage<8, 32>  mUnk18d727;
-    ::ll::UntypedStorage<8, 8>   mUnk91269f;
-    ::ll::UntypedStorage<8, 8>   mUnkf50521;
+    ::ll::UntypedStorage<8, 8>   mUnkde38fc;
+    ::ll::UntypedStorage<8, 8>   mUnk9a183a;
+    ::ll::UntypedStorage<8, 8>   mUnk46def3;
+    ::ll::UntypedStorage<8, 8>   mUnkc587de;
+    ::ll::UntypedStorage<8, 8>   mUnk4a17b1;
+    ::ll::UntypedStorage<8, 8>   mUnk812bde;
+    ::ll::UntypedStorage<8, 32>  mUnkb501e6;
+    ::ll::UntypedStorage<8, 8>   mUnk8f8079;
+    ::ll::UntypedStorage<8, 8>   mUnkcd6826;
     ::ll::UntypedStorage<8, 16>  mUnk5849e3;
     ::ll::UntypedStorage<8, 16>  mUnk336443;
     ::ll::UntypedStorage<1, 1>   mUnkb6d61e;
-    ::ll::UntypedStorage<8, 8>   mUnke1c34e;
     ::ll::UntypedStorage<8, 16>  mUnkd61d74;
     ::ll::UntypedStorage<4, 4>   mUnkda7647;
     ::ll::UntypedStorage<4, 4>   mUnk730c95;
     ::ll::UntypedStorage<1, 1>   mUnk391e21;
     ::ll::UntypedStorage<4, 4>   mUnk859534;
     ::ll::UntypedStorage<8, 8>   mUnk8b857f;
-    ::ll::UntypedStorage<8, 8>   mUnka18ee6;
+    ::ll::UntypedStorage<8, 8>   mUnkeb3d6b;
     ::ll::UntypedStorage<8, 16>  mUnk8598e2;
-    ::ll::UntypedStorage<8, 32>  mUnkb88adc;
+    ::ll::UntypedStorage<8, 32>  mUnk29d8a4;
     ::ll::UntypedStorage<8, 16>  mUnk8120e2;
     ::ll::UntypedStorage<1, 1>   mUnkbf9e1f;
     ::ll::UntypedStorage<1, 1>   mUnkf1c360;
@@ -342,6 +344,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk7f0094;
     ::ll::UntypedStorage<1, 1>   mUnk1f7e9d;
     ::ll::UntypedStorage<1, 1>   mUnk71b5c7;
+    ::ll::UntypedStorage<8, 32>  mUnk570845;
     ::ll::UntypedStorage<4, 4>   mUnk785de7;
     ::ll::UntypedStorage<8, 408> mUnke04be5;
     ::ll::UntypedStorage<1, 1>   mUnk19eccc;
@@ -361,225 +364,231 @@ public:
     ::ll::UntypedStorage<8, 56>  mUnk2fd9a7;
     ::ll::UntypedStorage<8, 8>   mUnke44711;
     ::ll::UntypedStorage<8, 80>  mUnk27b53a;
-    ::ll::UntypedStorage<8, 8>   mUnk9a660d;
+    ::ll::UntypedStorage<8, 8>   mUnk3ee8f3;
     ::ll::UntypedStorage<8, 16>  mUnk5d44d0;
-    ::ll::UntypedStorage<1, 1>   mUnk53d0ba;
     ::ll::UntypedStorage<1, 1>   mUnk64a982;
     ::ll::UntypedStorage<1, 1>   mUnk456e9b;
     ::ll::UntypedStorage<1, 1>   mUnkd57772;
     ::ll::UntypedStorage<1, 1>   mUnk780cef;
     ::ll::UntypedStorage<8, 8>   mUnkbbeca7;
-    ::ll::UntypedStorage<8, 8>   mUnke317d1;
+    ::ll::UntypedStorage<8, 8>   mUnk523cee;
     ::ll::UntypedStorage<8, 40>  mUnka60eca;
     ::ll::UntypedStorage<8, 32>  mUnk78c4dd;
     ::ll::UntypedStorage<1, 1>   mUnka2f794;
     ::ll::UntypedStorage<1, 1>   mUnk90b4e5;
     ::ll::UntypedStorage<8, 16>  mUnk3fa9bf;
-    ::ll::UntypedStorage<8, 8>   mUnk5d8ac6;
+    ::ll::UntypedStorage<8, 8>   mUnkfa9b14;
     ::ll::UntypedStorage<8, 8>   mUnk975fa0;
-    ::ll::UntypedStorage<8, 8>   mUnk953c89;
+    ::ll::UntypedStorage<8, 8>   mUnkc95a9f;
     ::ll::UntypedStorage<8, 8>   mUnkdef9e3;
     ::ll::UntypedStorage<8, 16>  mUnk44f519;
-    ::ll::UntypedStorage<8, 8>   mUnk6fa1a3;
+    ::ll::UntypedStorage<8, 8>   mUnka426aa;
     ::ll::UntypedStorage<8, 16>  mUnkd412af;
     ::ll::UntypedStorage<8, 16>  mUnk333c36;
     ::ll::UntypedStorage<8, 8>   mUnkab5b49;
-    ::ll::UntypedStorage<8, 8>   mUnk825eab;
-    ::ll::UntypedStorage<8, 8>   mUnka86be7;
-    ::ll::UntypedStorage<8, 8>   mUnk211fcc;
-    ::ll::UntypedStorage<8, 8>   mUnk58aa88;
-    ::ll::UntypedStorage<8, 8>   mUnk7bf1f0;
-    ::ll::UntypedStorage<8, 8>   mUnk5dc6b5;
-    ::ll::UntypedStorage<8, 8>   mUnk26c295;
-    ::ll::UntypedStorage<8, 8>   mUnk99a362;
-    ::ll::UntypedStorage<8, 8>   mUnk7695e4;
-    ::ll::UntypedStorage<8, 8>   mUnk1b0d15;
+    ::ll::UntypedStorage<8, 8>   mUnk2d070e;
+    ::ll::UntypedStorage<8, 8>   mUnkffc4a2;
+    ::ll::UntypedStorage<8, 8>   mUnk87a54d;
+    ::ll::UntypedStorage<8, 8>   mUnk80cd0e;
+    ::ll::UntypedStorage<8, 8>   mUnk692520;
+    ::ll::UntypedStorage<8, 8>   mUnkb8db74;
+    ::ll::UntypedStorage<8, 8>   mUnkb69251;
+    ::ll::UntypedStorage<8, 8>   mUnk138dbc;
+    ::ll::UntypedStorage<8, 8>   mUnk125782;
+    ::ll::UntypedStorage<8, 8>   mUnk116bf2;
     ::ll::UntypedStorage<8, 8>   mUnkf25a9b;
-    ::ll::UntypedStorage<8, 8>   mUnk873c7f;
-    ::ll::UntypedStorage<8, 8>   mUnkc0df7f;
+    ::ll::UntypedStorage<8, 8>   mUnk75183c;
+    ::ll::UntypedStorage<8, 8>   mUnk984c5b;
     ::ll::UntypedStorage<8, 16>  mUnk795ad2;
-    ::ll::UntypedStorage<8, 8>   mUnk38450a;
+    ::ll::UntypedStorage<8, 8>   mUnkd9da77;
     ::ll::UntypedStorage<8, 16>  mUnkcc1ee6;
-    ::ll::UntypedStorage<8, 8>   mUnk80ff22;
-    ::ll::UntypedStorage<8, 8>   mUnk59b2cf;
+    ::ll::UntypedStorage<8, 8>   mUnk291774;
+    ::ll::UntypedStorage<8, 8>   mUnk8f0421;
     ::ll::UntypedStorage<8, 16>  mUnk9ac038;
     ::ll::UntypedStorage<8, 64>  mUnk33501c;
-    ::ll::UntypedStorage<8, 8>   mUnka6a0fa;
-    ::ll::UntypedStorage<8, 8>   mUnkbf242b;
-    ::ll::UntypedStorage<8, 8>   mUnk4e62ab;
-    ::ll::UntypedStorage<8, 8>   mUnk5211d9;
-    ::ll::UntypedStorage<8, 8>   mUnk47bccf;
-    ::ll::UntypedStorage<8, 8>   mUnk30af55;
-    ::ll::UntypedStorage<8, 8>   mUnk158ab2;
-    ::ll::UntypedStorage<8, 8>   mUnkcdd3b2;
-    ::ll::UntypedStorage<8, 8>   mUnkc4f6c0;
-    ::ll::UntypedStorage<8, 8>   mUnk4fa6e2;
+    ::ll::UntypedStorage<8, 8>   mUnk95a9d2;
+    ::ll::UntypedStorage<8, 8>   mUnk78243e;
+    ::ll::UntypedStorage<8, 8>   mUnkb0966b;
+    ::ll::UntypedStorage<8, 8>   mUnke4850d;
+    ::ll::UntypedStorage<8, 8>   mUnk949250;
+    ::ll::UntypedStorage<8, 8>   mUnk94c9dc;
+    ::ll::UntypedStorage<8, 8>   mUnk56924c;
+    ::ll::UntypedStorage<8, 8>   mUnk7c70a9;
+    ::ll::UntypedStorage<8, 8>   mUnka6f4b7;
+    ::ll::UntypedStorage<8, 8>   mUnk4c8c20;
     ::ll::UntypedStorage<8, 16>  mUnkde6f9f;
     ::ll::UntypedStorage<8, 16>  mUnk51caaa;
     ::ll::UntypedStorage<8, 16>  mUnk88dd50;
     ::ll::UntypedStorage<8, 8>   mUnkf13f9f;
-    ::ll::UntypedStorage<8, 8>   mUnkf20323;
+    ::ll::UntypedStorage<8, 8>   mUnk46f031;
     ::ll::UntypedStorage<8, 8>   mUnkad7e31;
-    ::ll::UntypedStorage<8, 8>   mUnk3c79e5;
+    ::ll::UntypedStorage<8, 8>   mUnk41ce20;
     ::ll::UntypedStorage<8, 8>   mUnk5cf030;
-    ::ll::UntypedStorage<8, 8>   mUnk1969fb;
-    ::ll::UntypedStorage<8, 8>   mUnk6fceb5;
-    ::ll::UntypedStorage<8, 8>   mUnk9d32e4;
+    ::ll::UntypedStorage<8, 8>   mUnkb9503e;
     ::ll::UntypedStorage<8, 8>   mUnk9c023b;
-    ::ll::UntypedStorage<8, 8>   mUnkd82d00;
+    ::ll::UntypedStorage<8, 8>   mUnk5315ca;
     ::ll::UntypedStorage<8, 8>   mUnk276668;
-    ::ll::UntypedStorage<8, 8>   mUnkedede9;
+    ::ll::UntypedStorage<8, 8>   mUnk3ec43f;
     ::ll::UntypedStorage<8, 8>   mUnkb5e444;
     ::ll::UntypedStorage<8, 16>  mUnk36c9d2;
-    ::ll::UntypedStorage<8, 8>   mUnk1949fd;
-    ::ll::UntypedStorage<8, 8>   mUnk8c78fe;
+    ::ll::UntypedStorage<8, 8>   mUnkeee60b;
+    ::ll::UntypedStorage<8, 8>   mUnkc1e9f3;
     ::ll::UntypedStorage<8, 48>  mUnka02940;
+    ::ll::UntypedStorage<8, 16>  mUnk748223;
+    ::ll::UntypedStorage<8, 16>  mUnkec6beb;
+    ::ll::UntypedStorage<8, 8>   mUnk55dcf8;
     ::ll::UntypedStorage<8, 16>  mUnk4877d7;
-    ::ll::UntypedStorage<8, 8>   mUnkdd77bc;
-    ::ll::UntypedStorage<8, 8>   mUnkc09b07;
+    ::ll::UntypedStorage<8, 8>   mUnkd72bcd;
+    ::ll::UntypedStorage<8, 8>   mUnk6c5fec;
     ::ll::UntypedStorage<8, 16>  mUnk2b5c1a;
     ::ll::UntypedStorage<8, 16>  mUnkdaad93;
-    ::ll::UntypedStorage<8, 8>   mUnk57ad58;
-    ::ll::UntypedStorage<8, 8>   mUnk845b9f;
-    ::ll::UntypedStorage<8, 8>   mUnk7b80aa;
+    ::ll::UntypedStorage<8, 8>   mUnk2a83b2;
+    ::ll::UntypedStorage<8, 8>   mUnkd10826;
+    ::ll::UntypedStorage<8, 8>   mUnk64ddee;
     ::ll::UntypedStorage<8, 64>  mUnkd24a7a;
-    ::ll::UntypedStorage<8, 8>   mUnk869a2c;
-    ::ll::UntypedStorage<8, 8>   mUnkc996a6;
-    ::ll::UntypedStorage<8, 8>   mUnkbc335d;
-    ::ll::UntypedStorage<8, 8>   mUnke4360f;
+    ::ll::UntypedStorage<8, 8>   mUnkec79fd;
+    ::ll::UntypedStorage<8, 8>   mUnk74222f;
+    ::ll::UntypedStorage<8, 8>   mUnk468478;
+    ::ll::UntypedStorage<8, 8>   mUnkea13b7;
     ::ll::UntypedStorage<8, 72>  mUnk9bce63;
     ::ll::UntypedStorage<8, 16>  mUnkbf42d0;
     ::ll::UntypedStorage<8, 16>  mUnk469d3c;
-    ::ll::UntypedStorage<8, 8>   mUnk3aad27;
-    ::ll::UntypedStorage<8, 64>  mUnkb69f23;
-    ::ll::UntypedStorage<8, 8>   mUnk6b3266;
-    ::ll::UntypedStorage<8, 8>   mUnke9d91e;
+    ::ll::UntypedStorage<8, 8>   mUnkf245c7;
+    ::ll::UntypedStorage<8, 64>  mUnk1c142c;
+    ::ll::UntypedStorage<8, 8>   mUnk6906a6;
+    ::ll::UntypedStorage<8, 8>   mUnka198d7;
     ::ll::UntypedStorage<8, 64>  mUnk63da8b;
     ::ll::UntypedStorage<8, 64>  mUnk19e15f;
-    ::ll::UntypedStorage<8, 8>   mUnk11c0c9;
-    ::ll::UntypedStorage<8, 8>   mUnk5fbab9;
+    ::ll::UntypedStorage<8, 8>   mUnk68bd55;
+    ::ll::UntypedStorage<8, 8>   mUnkd56e6e;
     ::ll::UntypedStorage<8, 64>  mUnk6331f9;
     ::ll::UntypedStorage<8, 64>  mUnkfb3c1e;
-    ::ll::UntypedStorage<8, 8>   mUnkd99a63;
-    ::ll::UntypedStorage<8, 8>   mUnk34046c;
-    ::ll::UntypedStorage<8, 8>   mUnk5a12aa;
+    ::ll::UntypedStorage<8, 8>   mUnkb4aa43;
+    ::ll::UntypedStorage<8, 8>   mUnkfd4a2e;
+    ::ll::UntypedStorage<8, 8>   mUnk4764de;
+    ::ll::UntypedStorage<8, 8>   mUnk2db41b;
     ::ll::UntypedStorage<8, 64>  mUnk4282e8;
-    ::ll::UntypedStorage<8, 8>   mUnkf7e0b8;
+    ::ll::UntypedStorage<8, 8>   mUnk313b8d;
     ::ll::UntypedStorage<8, 16>  mUnka4d1d6;
-    ::ll::UntypedStorage<8, 8>   mUnkec5a96;
+    ::ll::UntypedStorage<8, 8>   mUnkb98e22;
     ::ll::UntypedStorage<8, 64>  mUnk358786;
-    ::ll::UntypedStorage<8, 8>   mUnk40cdcc;
-    ::ll::UntypedStorage<8, 8>   mUnk700303;
-    ::ll::UntypedStorage<8, 8>   mUnke2de6c;
-    ::ll::UntypedStorage<8, 8>   mUnka91e2e;
-    ::ll::UntypedStorage<8, 8>   mUnk5d2556;
-    ::ll::UntypedStorage<8, 8>   mUnka479b7;
+    ::ll::UntypedStorage<8, 8>   mUnk633776;
+    ::ll::UntypedStorage<8, 8>   mUnkc61c3a;
+    ::ll::UntypedStorage<8, 8>   mUnk910337;
+    ::ll::UntypedStorage<8, 8>   mUnkd6ff96;
+    ::ll::UntypedStorage<8, 8>   mUnk51e772;
+    ::ll::UntypedStorage<8, 8>   mUnkf2c3d8;
     ::ll::UntypedStorage<8, 64>  mUnkc5fc6f;
-    ::ll::UntypedStorage<8, 8>   mUnk153915;
-    ::ll::UntypedStorage<8, 8>   mUnk5f7a99;
-    ::ll::UntypedStorage<8, 8>   mUnk5b3248;
-    ::ll::UntypedStorage<8, 8>   mUnk252dbb;
+    ::ll::UntypedStorage<8, 8>   mUnk7e94f8;
+    ::ll::UntypedStorage<8, 8>   mUnkf60a71;
+    ::ll::UntypedStorage<8, 8>   mUnkf164a7;
+    ::ll::UntypedStorage<8, 8>   mUnkea5b46;
     ::ll::UntypedStorage<8, 16>  mUnk5f5935;
     ::ll::UntypedStorage<8, 8>   mUnkd12853;
     ::ll::UntypedStorage<8, 16>  mUnk9f4932;
-    ::ll::UntypedStorage<8, 8>   mUnkb14492;
+    ::ll::UntypedStorage<8, 8>   mUnk93ccfd;
     ::ll::UntypedStorage<1, 1>   mUnk4d836f;
     ::ll::UntypedStorage<8, 16>  mUnk626810;
-    ::ll::UntypedStorage<8, 8>   mUnkee5663;
-    ::ll::UntypedStorage<8, 8>   mUnka351bd;
+    ::ll::UntypedStorage<8, 8>   mUnkce7b8c;
+    ::ll::UntypedStorage<8, 8>   mUnka05418;
     ::ll::UntypedStorage<8, 16>  mUnkfb7cce;
-    ::ll::UntypedStorage<8, 8>   mUnk91ee4c;
-    ::ll::UntypedStorage<8, 8>   mUnk7dbf0c;
-    ::ll::UntypedStorage<8, 8>   mUnkc05be1;
-    ::ll::UntypedStorage<8, 8>   mUnk6794d2;
-    ::ll::UntypedStorage<8, 8>   mUnk19f558;
-    ::ll::UntypedStorage<8, 8>   mUnk6626ca;
-    ::ll::UntypedStorage<8, 8>   mUnk1f586b;
+    ::ll::UntypedStorage<8, 8>   mUnk17a5e5;
+    ::ll::UntypedStorage<8, 8>   mUnk1d082c;
+    ::ll::UntypedStorage<8, 8>   mUnk721c07;
+    ::ll::UntypedStorage<8, 8>   mUnk75c011;
+    ::ll::UntypedStorage<8, 8>   mUnk662066;
+    ::ll::UntypedStorage<8, 8>   mUnka63939;
+    ::ll::UntypedStorage<8, 8>   mUnkd68cd6;
     ::ll::UntypedStorage<8, 16>  mUnkd0c917;
-    ::ll::UntypedStorage<8, 8>   mUnke6efa6;
-    ::ll::UntypedStorage<8, 8>   mUnk8b226c;
-    ::ll::UntypedStorage<8, 8>   mUnka123fe;
-    ::ll::UntypedStorage<8, 8>   mUnkfa1ebf;
+    ::ll::UntypedStorage<8, 8>   mUnka64c85;
+    ::ll::UntypedStorage<8, 8>   mUnk31922c;
+    ::ll::UntypedStorage<8, 8>   mUnkb92250;
+    ::ll::UntypedStorage<8, 8>   mUnkc46d8a;
     ::ll::UntypedStorage<8, 64>  mUnk391b07;
     ::ll::UntypedStorage<8, 80>  mUnk36d9f1;
     ::ll::UntypedStorage<8, 80>  mUnk2de6a0;
     ::ll::UntypedStorage<8, 80>  mUnkc7328a;
     ::ll::UntypedStorage<8, 80>  mUnk880945;
     ::ll::UntypedStorage<8, 80>  mUnk26d14c;
-    ::ll::UntypedStorage<8, 8>   mUnke971cd;
+    ::ll::UntypedStorage<8, 8>   mUnk3dc5d4;
     ::ll::UntypedStorage<8, 8>   mUnk6622a0;
+    ::ll::UntypedStorage<8, 16>  mUnke27718;
     ::ll::UntypedStorage<8, 16>  mUnk9599c5;
-    ::ll::UntypedStorage<8, 8>   mUnkc5f359;
+    ::ll::UntypedStorage<8, 8>   mUnk1498bc;
+    ::ll::UntypedStorage<8, 16>  mUnkc84d4d;
+    ::ll::UntypedStorage<8, 8>   mUnk7757ed;
     ::ll::UntypedStorage<8, 8>   mUnk8b5a69;
-    ::ll::UntypedStorage<8, 16>  mUnka897dd;
-    ::ll::UntypedStorage<8, 8>   mUnke7d111;
-    ::ll::UntypedStorage<8, 8>   mUnk251ef9;
-    ::ll::UntypedStorage<8, 456> mUnke5c301;
-    ::ll::UntypedStorage<8, 8>   mUnk31fd6e;
-    ::ll::UntypedStorage<8, 8>   mUnkcdcb80;
-    ::ll::UntypedStorage<8, 8>   mUnk34ad29;
-    ::ll::UntypedStorage<8, 8>   mUnkdde387;
+    ::ll::UntypedStorage<8, 16>  mUnk8a114f;
+    ::ll::UntypedStorage<8, 8>   mUnk2c648f;
+    ::ll::UntypedStorage<8, 8>   mUnkef66f4;
+    ::ll::UntypedStorage<8, 8>   mUnk5cb7cc;
+    ::ll::UntypedStorage<8, 432> mUnke5c301;
+    ::ll::UntypedStorage<8, 8>   mUnkd18639;
+    ::ll::UntypedStorage<8, 8>   mUnk67d5dd;
+    ::ll::UntypedStorage<8, 8>   mUnkc0bd78;
+    ::ll::UntypedStorage<8, 8>   mUnk8ac119;
     ::ll::UntypedStorage<8, 16>  mUnkddfaa0;
-    ::ll::UntypedStorage<8, 8>   mUnkbac8bf;
+    ::ll::UntypedStorage<8, 8>   mUnk20b98a;
     ::ll::UntypedStorage<8, 8>   mUnkcb59ec;
-    ::ll::UntypedStorage<8, 8>   mUnk7c5611;
+    ::ll::UntypedStorage<8, 8>   mUnk82663e;
     ::ll::UntypedStorage<8, 8>   mUnkb6a170;
-    ::ll::UntypedStorage<8, 8>   mUnka2905a;
-    ::ll::UntypedStorage<8, 8>   mUnkd2daa5;
+    ::ll::UntypedStorage<8, 8>   mUnk8673bc;
+    ::ll::UntypedStorage<8, 8>   mUnk1187d6;
     ::ll::UntypedStorage<8, 8>   mUnk807b24;
-    ::ll::UntypedStorage<8, 8>   mUnkbef787;
+    ::ll::UntypedStorage<8, 8>   mUnke45c86;
     ::ll::UntypedStorage<8, 8>   mUnk1cf921;
-    ::ll::UntypedStorage<8, 8>   mUnk3a4918;
+    ::ll::UntypedStorage<8, 8>   mUnk70c996;
     ::ll::UntypedStorage<8, 8>   mUnk89400e;
-    ::ll::UntypedStorage<8, 8>   mUnk8552f5;
+    ::ll::UntypedStorage<8, 8>   mUnk946503;
     ::ll::UntypedStorage<8, 8>   mUnk781ed2;
-    ::ll::UntypedStorage<8, 8>   mUnkb05ee7;
+    ::ll::UntypedStorage<8, 8>   mUnk871dc6;
     ::ll::UntypedStorage<8, 8>   mUnkf2f2ba;
-    ::ll::UntypedStorage<8, 8>   mUnk618e77;
+    ::ll::UntypedStorage<8, 8>   mUnk4daba7;
     ::ll::UntypedStorage<8, 8>   mUnkd4beeb;
-    ::ll::UntypedStorage<8, 8>   mUnk429e22;
+    ::ll::UntypedStorage<8, 8>   mUnkde4441;
     ::ll::UntypedStorage<8, 8>   mUnk8f12bc;
-    ::ll::UntypedStorage<8, 8>   mUnkaaf78f;
+    ::ll::UntypedStorage<8, 8>   mUnkc2e1c6;
     ::ll::UntypedStorage<8, 8>   mUnk3ed686;
-    ::ll::UntypedStorage<8, 8>   mUnkbf99cc;
+    ::ll::UntypedStorage<8, 8>   mUnk45b4b1;
     ::ll::UntypedStorage<8, 8>   mUnk777677;
-    ::ll::UntypedStorage<8, 8>   mUnk8a9858;
+    ::ll::UntypedStorage<8, 8>   mUnk1d6e6b;
     ::ll::UntypedStorage<8, 8>   mUnk7fca88;
-    ::ll::UntypedStorage<8, 8>   mUnkc27cc8;
+    ::ll::UntypedStorage<8, 8>   mUnk71d6b7;
     ::ll::UntypedStorage<8, 8>   mUnk8d4567;
-    ::ll::UntypedStorage<8, 8>   mUnk42438c;
+    ::ll::UntypedStorage<8, 8>   mUnkfdb8ca;
     ::ll::UntypedStorage<8, 8>   mUnkf68a87;
-    ::ll::UntypedStorage<8, 8>   mUnk59e22b;
+    ::ll::UntypedStorage<8, 8>   mUnk45501b;
     ::ll::UntypedStorage<8, 8>   mUnk10c987;
     ::ll::UntypedStorage<8, 48>  mUnk3703bb;
     ::ll::UntypedStorage<8, 8>   mUnkdd5b99;
     ::ll::UntypedStorage<8, 16>  mUnk1c3779;
     ::ll::UntypedStorage<8, 16>  mUnk4b4e23;
-    ::ll::UntypedStorage<8, 24>  mUnk28373c;
-    ::ll::UntypedStorage<8, 24>  mUnkf0fc9f;
+    ::ll::UntypedStorage<8, 24>  mUnk698964;
+    ::ll::UntypedStorage<8, 24>  mUnk8d1118;
     ::ll::UntypedStorage<8, 16>  mUnk99fad5;
-    ::ll::UntypedStorage<8, 24>  mUnk7221dd;
-    ::ll::UntypedStorage<8, 24>  mUnka0027a;
-    ::ll::UntypedStorage<8, 8>   mUnka18b52;
-    ::ll::UntypedStorage<8, 8>   mUnk79cf31;
-    ::ll::UntypedStorage<8, 8>   mUnk385332;
-    ::ll::UntypedStorage<8, 8>   mUnkb6ecdb;
-    ::ll::UntypedStorage<8, 8>   mUnkc5ce80;
+    ::ll::UntypedStorage<8, 24>  mUnk4f11c0;
+    ::ll::UntypedStorage<8, 24>  mUnk205f41;
+    ::ll::UntypedStorage<8, 8>   mUnk952a89;
+    ::ll::UntypedStorage<8, 8>   mUnk2ac62b;
+    ::ll::UntypedStorage<8, 8>   mUnk185e8d;
+    ::ll::UntypedStorage<8, 8>   mUnk94b524;
+    ::ll::UntypedStorage<8, 8>   mUnk308f25;
     ::ll::UntypedStorage<8, 8>   mUnk5dd8f3;
-    ::ll::UntypedStorage<8, 8>   mUnk4405d3;
+    ::ll::UntypedStorage<8, 8>   mUnkceb4ab;
     ::ll::UntypedStorage<8, 8>   mUnk50a24d;
     ::ll::UntypedStorage<8, 16>  mUnk976824;
-    ::ll::UntypedStorage<8, 8>   mUnk74ab3c;
-    ::ll::UntypedStorage<8, 8>   mUnk47bf27;
+    ::ll::UntypedStorage<8, 8>   mUnkcd32cf;
+    ::ll::UntypedStorage<8, 8>   mUnk32d240;
     ::ll::UntypedStorage<8, 16>  mUnkaa8c49;
+    ::ll::UntypedStorage<8, 616> mUnkbfced1;
     ::ll::UntypedStorage<8, 16>  mUnka3a452;
-    ::ll::UntypedStorage<8, 8>   mUnkafd28b;
+    ::ll::UntypedStorage<8, 8>   mUnk7f0a19;
     ::ll::UntypedStorage<8, 16>  mUnk968b3f;
-    ::ll::UntypedStorage<8, 8>   mUnkf0e174;
-    ::ll::UntypedStorage<8, 8>   mUnk82a7f6;
-    ::ll::UntypedStorage<8, 8>   mUnka1c986;
-    ::ll::UntypedStorage<8, 8>   mUnka20e01;
-    ::ll::UntypedStorage<8, 8>   mUnk3eb0c5;
+    ::ll::UntypedStorage<8, 8>   mUnk67f34e;
+    ::ll::UntypedStorage<8, 8>   mUnkc456b9;
+    ::ll::UntypedStorage<8, 8>   mUnk92ee4c;
+    ::ll::UntypedStorage<8, 8>   mUnke4e7c9;
+    ::ll::UntypedStorage<8, 8>   mUnk5e4634;
     ::ll::UntypedStorage<8, 64>  mUnk12c89f;
     ::ll::UntypedStorage<8, 16>  mUnk42b15f;
     ::ll::UntypedStorage<8, 16>  mUnk48c2a3;
@@ -591,12 +600,16 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk205ada;
     ::ll::UntypedStorage<8, 16>  mUnk41bdf3;
     ::ll::UntypedStorage<8, 16>  mUnkad2805;
+    ::ll::UntypedStorage<8, 16>  mUnk6b22bf;
+    ::ll::UntypedStorage<8, 64>  mUnkf160e9;
+    ::ll::UntypedStorage<8, 64>  mUnk19d968;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     MinecraftGame& operator=(MinecraftGame const&);
     MinecraftGame(MinecraftGame const&);
+    MinecraftGame();
 
 public:
     // virtual functions
@@ -660,11 +673,6 @@ public:
 
     virtual ::MusicManager* getMusicManagerNonConst() const /*override*/;
 
-    virtual void
-    setTextboxText(::std::string const& text, int const controllerId, ::TextboxTextUpdateReason reason) /*override*/;
-
-    virtual void onKeyboardDismissed(int const controllerId) /*override*/;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> getTextBoxController() /*override*/;
 
     virtual void onLowMemory(::LowMemorySeverity) /*override*/;
@@ -676,6 +684,21 @@ public:
     virtual void onAppPaused() /*override*/;
 
     virtual void onAppUnpaused() /*override*/;
+
+    virtual void setReconnectionCookie(
+        ::std::optional<::std::variant<
+            ::GameConnectionInfoEx,
+            ::Social::MultiplayerGameInfo,
+            ::ExperienceConnectionData,
+            ::Realms::RealmId>> const& reconnectCookie
+    ) /*override*/;
+
+    virtual ::std::optional<::std::variant<
+        ::GameConnectionInfoEx,
+        ::Social::MultiplayerGameInfo,
+        ::ExperienceConnectionData,
+        ::Realms::RealmId>>
+    getReconnectionCookie() /*override*/;
 
     virtual void onAppPreSuspended() /*override*/;
 
@@ -736,17 +759,26 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> getUIDefRepo() const /*override*/;
 
-    virtual void
-    joinRealmsGame(::Realms::World const& realm, ::Social::GameConnectionInfo const& gameConnection) /*override*/;
+    virtual void joinRealmsGame(
+        ::Realms::World const&              realm,
+        ::Social::GameConnectionInfo const& gameConnection,
+        ::PlayerJoinWorldContext            context
+    ) /*override*/;
 
     virtual void joinRealmFromInvite(::Realms::World const& world) /*override*/;
 
-    virtual void joinRealmFromConnectLink(::Realms::World const& world) /*override*/;
+    virtual void joinRealmFromConnectLink(::Realms::World const& world, ::PlayerJoinWorldContext context) /*override*/;
 
     virtual void setRealmsLoadingLink(bool state) /*override*/;
 
+    virtual void joinRealm(
+        ::Realms::World const&                    world,
+        ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow,
+        ::PlayerJoinWorldContext                  context
+    ) /*override*/;
+
     virtual ::Bedrock::Threading::Async<void>
-    joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo) /*override*/;
+    joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context) /*override*/;
 
     virtual void joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
@@ -754,14 +786,15 @@ public:
         ::std::string const&         serverName,
         ::std::string const&         worldName,
         ::NetworkType                networkTypeOverride,
-        bool                         isServerTransfer
+        ::PlayerJoinWorldContext     context
     ) /*override*/;
 
     virtual void joinRemoteServerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
         ::std::string const&         serverName,
         ::std::string const&         worldName,
-        ::NetworkType                networkTypeOverride
+        ::NetworkType                networkTypeOverride,
+        ::PlayerJoinWorldContext     context
     ) /*override*/;
 
     virtual bool isLocalPlayer(::ActorUniqueID const& id) const /*override*/;
@@ -879,7 +912,7 @@ public:
 
     virtual ::Social::SocialSystem& getSocialSystem() const /*override*/;
 
-    virtual ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> getPartySystem() const /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::Parties::PartySystem> getPartySystem() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> getUIProgressTips() const /*override*/;
 
@@ -1001,8 +1034,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> getAutomationClient() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::WebSocketCommManager> getWebSocketCommManager() /*override*/;
-
     virtual bool isDedicatedServer() const /*override*/;
 
     virtual bool isEduMode() const /*override*/;
@@ -1061,9 +1092,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> getMinecraftGraphics() /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> getTextureAtlas() const /*override*/;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() /*override*/;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getItemTextureAtlas() /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> getUIRepository() const /*override*/;
 
@@ -1173,6 +1204,8 @@ public:
     virtual void resetThreadCallbacks() /*override*/;
 
     virtual bool isInGame() const /*override*/;
+
+    virtual bool isInServer() const /*override*/;
 
     virtual bool isInRealm() const /*override*/;
 
@@ -1298,7 +1331,7 @@ public:
 
     virtual void refocusMouse(bool lostMouse) /*override*/;
 
-    virtual void setMouseType(::ui::MousePointerType type) /*override*/;
+    virtual void setMouseType(::Bedrock::Input::PointerType type) /*override*/;
 
     virtual void onNotify(::edu::auth::CredentialsAcquired const& state) /*override*/;
 
@@ -1319,7 +1352,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecraftGame();
+    MCAPI explicit MinecraftGame(::MinecraftGameArguments&& args);
 
     MCAPI void _InitComplete();
 
@@ -1350,6 +1383,8 @@ public:
     _createDimensionExtensionsFactory(bool isClientSide);
 
     MCAPI ::std::unique_ptr<::GameModuleClient> _createGameModuleClient(::SubClientId id);
+
+    MCAPI void _createPartySystem();
 
     MCAPI void _cycleRoundRobinClientSubId();
 
@@ -1490,7 +1525,7 @@ public:
 
     MCAPI ::SerialWorkList::WorkResult _initTTS();
 
-    MCFOLD ::SerialWorkList::WorkResult _initTestClientInterface();
+    MCAPI ::SerialWorkList::WorkResult _initTestClientInterface();
 
     MCAPI ::SerialWorkList::WorkResult _initTimePlayedNotifier();
 
@@ -1550,8 +1585,11 @@ public:
 
     MCAPI ::Bedrock::Threading::Async<void> _joinMultiplayerGame(
         ::Social::MultiplayerGameInfo const& gameToJoin,
-        ::std::string const&                 multiplayerCorrelationId
+        ::std::string const&                 multiplayerCorrelationId,
+        ::PlayerJoinWorldContext             context
     );
+
+    MCAPI void _joinRealmFromMultiplayerServiceInvite(::Social::MultiplayerGameInfo const& newGame);
 
     MCAPI void _loadAdditionalPackResources(bool fullVanillaPackOnStack);
 
@@ -1672,8 +1710,6 @@ public:
 
     MCAPI void _removePendingSubclients();
 
-    MCAPI void _setProfilerOptions();
-
     MCAPI void _setupFrameBuilderOptimizer();
 
     MCAPI void _setupRenderer();
@@ -1688,7 +1724,9 @@ public:
 
     MCAPI void _updateLightingModel();
 
-    MCAPI void _updateProfiler();
+    MCAPI void _updatePackStackForLeaveGame();
+
+    MCAPI void _updateProfilerLite();
 
     MCAPI void _updateTextureAtlasPBRData(::TextureAtlas const& textureAtlas, bool terrain);
 
@@ -1724,9 +1762,6 @@ public:
 
     MCAPI bool isServerVisible();
 
-    MCAPI void
-    joinRealm(::Realms::World const& world, ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow);
-
     MCAPI void onTick();
 
     MCAPI bool primaryLevelExists() const;
@@ -1751,7 +1786,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::MinecraftGameArguments&& args);
     // NOLINTEND
 
 public:
@@ -1820,10 +1855,6 @@ public:
 
     MCFOLD ::MusicManager* $getMusicManagerNonConst() const;
 
-    MCAPI void $setTextboxText(::std::string const& text, int const controllerId, ::TextboxTextUpdateReason reason);
-
-    MCAPI void $onKeyboardDismissed(int const controllerId);
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> $getTextBoxController();
 
     MCAPI void $onLowMemory(::LowMemorySeverity);
@@ -1835,6 +1866,21 @@ public:
     MCAPI void $onAppPaused();
 
     MCAPI void $onAppUnpaused();
+
+    MCAPI void $setReconnectionCookie(
+        ::std::optional<::std::variant<
+            ::GameConnectionInfoEx,
+            ::Social::MultiplayerGameInfo,
+            ::ExperienceConnectionData,
+            ::Realms::RealmId>> const& reconnectCookie
+    );
+
+    MCAPI ::std::optional<::std::variant<
+        ::GameConnectionInfoEx,
+        ::Social::MultiplayerGameInfo,
+        ::ExperienceConnectionData,
+        ::Realms::RealmId>>
+    $getReconnectionCookie();
 
     MCAPI void $onAppPreSuspended();
 
@@ -1891,19 +1937,30 @@ public:
 
     MCAPI void $onClientCreatedLevel(::IClientInstance& client);
 
-    MCFOLD ::GameRenderer& $getGameRenderer() const;
+    MCAPI ::GameRenderer& $getGameRenderer() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> $getUIDefRepo() const;
 
-    MCAPI void $joinRealmsGame(::Realms::World const& realm, ::Social::GameConnectionInfo const& gameConnection);
+    MCAPI void $joinRealmsGame(
+        ::Realms::World const&              realm,
+        ::Social::GameConnectionInfo const& gameConnection,
+        ::PlayerJoinWorldContext            context
+    );
 
     MCAPI void $joinRealmFromInvite(::Realms::World const& world);
 
-    MCAPI void $joinRealmFromConnectLink(::Realms::World const& world);
+    MCAPI void $joinRealmFromConnectLink(::Realms::World const& world, ::PlayerJoinWorldContext context);
 
     MCAPI void $setRealmsLoadingLink(bool state);
 
-    MCAPI ::Bedrock::Threading::Async<void> $joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo);
+    MCAPI void $joinRealm(
+        ::Realms::World const&                    world,
+        ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow,
+        ::PlayerJoinWorldContext                  context
+    );
+
+    MCAPI ::Bedrock::Threading::Async<void>
+    $joinMultiplayerGame(::Social::MultiplayerGameInfo const& gameInfo, ::PlayerJoinWorldContext context);
 
     MCAPI void $joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
@@ -1911,14 +1968,15 @@ public:
         ::std::string const&         serverName,
         ::std::string const&         worldName,
         ::NetworkType                networkTypeOverride,
-        bool                         isServerTransfer
+        ::PlayerJoinWorldContext     context
     );
 
     MCAPI void $joinRemoteServerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
         ::std::string const&         serverName,
         ::std::string const&         worldName,
-        ::NetworkType                networkTypeOverride
+        ::NetworkType                networkTypeOverride,
+        ::PlayerJoinWorldContext     context
     );
 
     MCAPI bool $isLocalPlayer(::ActorUniqueID const& id) const;
@@ -1929,9 +1987,9 @@ public:
 
     MCAPI void $ensureAllClientsAreLeaving() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> $getPrimaryClientInstance();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> $getPrimaryClientInstance();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::IClientInstance const> $getPrimaryClientInstance() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance const> $getPrimaryClientInstance() const;
 
     MCAPI ::ItemRegistryRef $getClientItemRegistry() const;
 
@@ -1945,7 +2003,7 @@ public:
 
     MCAPI uint $getUIRenderClientMask() const;
 
-    MCAPI uint64 $getClientInstanceCount() const;
+    MCFOLD uint64 $getClientInstanceCount() const;
 
     MCAPI void $forEachClientInstance(::std::function<void(::IClientInstance&)> callback);
 
@@ -1967,7 +2025,7 @@ public:
 
     MCAPI void $resetInput();
 
-    MCFOLD ::PixelCalc const& $getDpadScale() const;
+    MCAPI ::PixelCalc const& $getDpadScale() const;
 
     MCAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
 
@@ -2029,7 +2087,7 @@ public:
 
     MCAPI ::Social::SocialSystem& $getSocialSystem() const;
 
-    MCAPI ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> $getPartySystem() const;
+    MCAPI ::Bedrock::NonOwnerPointer<::Parties::PartySystem> $getPartySystem() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> $getUIProgressTips() const;
 
@@ -2051,7 +2109,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> $getContentTierManager() const;
 
-    MCFOLD ::PackSourceFactory& $getPackSourceFactory() const;
+    MCAPI ::PackSourceFactory& $getPackSourceFactory() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> $getResourceLoadManager();
 
@@ -2059,17 +2117,17 @@ public:
 
     MCAPI bool $hasAllValidCrossPlatformSkin() const;
 
-    MCFOLD ::PackDownloadManager& $getPackDownloadManager();
+    MCAPI ::PackDownloadManager& $getPackDownloadManager();
 
     MCFOLD ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator() const;
 
-    MCAPI bool $isMultiplayerServiceManagerReady() const;
+    MCFOLD bool $isMultiplayerServiceManagerReady() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> $getMultiplayerServiceManager() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
 
-    MCAPI ::IMinecraftEventing& $getEventing() const;
+    MCFOLD ::IMinecraftEventing& $getEventing() const;
 
     MCAPI ::ServerInstance* $getServerInstance();
 
@@ -2146,8 +2204,6 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WebSocketCommManager> $getWebSocketCommManager();
-
     MCFOLD bool $isDedicatedServer() const;
 
     MCFOLD bool $isEduMode() const;
@@ -2205,9 +2261,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> $getTextureAtlas() const;
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getTextureAtlas();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getTextureAtlas();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getItemTextureAtlas();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
 
@@ -2233,7 +2289,7 @@ public:
 
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> $getTextToIconMapper();
 
-    MCAPI bool $getMouseGrabbed() const;
+    MCFOLD bool $getMouseGrabbed() const;
 
     MCAPI void $navigateToPlayScreenFriendsTab();
 
@@ -2297,7 +2353,7 @@ public:
         ::std::shared_ptr<::Social::User> user
     );
 
-    MCAPI bool $isHostingLocalDedicatedServer() const;
+    MCFOLD bool $isHostingLocalDedicatedServer() const;
 
     MCAPI void $shutdownServer();
 
@@ -2314,6 +2370,8 @@ public:
     MCAPI void $resetThreadCallbacks();
 
     MCAPI bool $isInGame() const;
+
+    MCAPI bool $isInServer() const;
 
     MCAPI bool $isInRealm() const;
 
@@ -2379,7 +2437,7 @@ public:
 
     MCAPI void $stopCustomMusic(float fadeoutSeconds);
 
-    MCFOLD ::EntityContext& $getEntity() const;
+    MCAPI ::EntityContext& $getEntity() const;
 
     MCAPI ::AppSystemRegistry& $getAppSystemRegistry();
 
@@ -2427,7 +2485,7 @@ public:
 
     MCAPI void $refocusMouse(bool lostMouse);
 
-    MCAPI void $setMouseType(::ui::MousePointerType type);
+    MCAPI void $setMouseType(::Bedrock::Input::PointerType type);
 
     MCAPI void $onNotify(::edu::auth::CredentialsAcquired const& state);
 

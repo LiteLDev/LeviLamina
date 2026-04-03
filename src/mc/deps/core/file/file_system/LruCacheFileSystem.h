@@ -25,7 +25,7 @@ class LruCacheFileSystem : public ::Core::FileSystemImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka33e58;
+    ::ll::UntypedStorage<8, 8> mUnk1199a3;
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 #include "mc/client/world/PackDownloadError.h"
 #include "mc/client/world/PackStatus.h"
 #include "mc/client/world/PendingPackActionHash.h"
+#include "mc/client/world/PendingPackActionKey.h"
 #include "mc/client/world/WorldID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
@@ -18,14 +19,14 @@
 // auto generated forward declare list
 // clang-format off
 class ContentView;
+class IContentAcquisition;
 class IContentManager;
 class IContentManagerContext;
 class IContentTierManager;
+class IEntitlementManager;
 class IResourcePackRepository;
 struct ContentItem;
 struct ContentViews;
-struct IContentAcquisition;
-struct IEntitlementManager;
 struct LevelSummary;
 struct MoveResourcePackResult;
 struct PackIdVersion;
@@ -35,7 +36,6 @@ namespace World { struct PackCollection; }
 namespace World { struct PackDetails; }
 namespace World { struct PackDownloadProgressInfo; }
 namespace World { struct PackViewAndItem; }
-namespace World { struct PendingPackActionKey; }
 namespace World { struct PendingPackActivation; }
 namespace World { struct PendingPackRemoval; }
 namespace World { struct WorldPacks; }

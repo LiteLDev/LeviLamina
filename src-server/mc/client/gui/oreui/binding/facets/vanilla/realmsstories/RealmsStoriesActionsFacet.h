@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-class RealmsStoriesActionsFacet {};
+class RealmsStoriesActionsFacet {
+public:
+    // RealmsStoriesActionsFacet inner types define
+    enum class OptInTelemetryUserState : int {};
+};
 
 } // namespace OreUI

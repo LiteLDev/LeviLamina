@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/facets/vanilla/data/GameVersionBindings.h"
 #include "mc/client/gui/oreui/resources/AllowListPath.h"
+#include "mc/network/GamePublishSetting.h"
 #include "mc/world/level/GameType.h"
 
 namespace OreUI {
@@ -22,6 +23,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          isExperimental;
     ::ll::TypedStorage<1, 1, bool>                          isHardcore;
     ::ll::TypedStorage<1, 1, bool>                          playerHasDied;
+    ::ll::TypedStorage<4, 4, int>                           daysPlayed;
+    ::ll::TypedStorage<1, 1, bool>                          showDaysPlayed;
     ::ll::TypedStorage<4, 20, ::OreUI::GameVersionBindings> gameVersion;
     ::ll::TypedStorage<4, 20, ::OreUI::GameVersionBindings> templateVersion;
     ::ll::TypedStorage<1, 1, bool>                          isTemplateCompatibleWithAnyVersion;
@@ -29,6 +32,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          requiresCloudSync;
     ::ll::TypedStorage<1, 1, bool>                          isMultiplayerEnabled;
     ::ll::TypedStorage<8, 8, uint64>                        sizeOnDiskMB;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>  xblBroadcastIntent;
+    ::ll::TypedStorage<1, 1, bool>                          isEditorWorld;
     // NOLINTEND
 
 public:

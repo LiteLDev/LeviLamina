@@ -158,7 +158,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::CompactionStatus)>> mExternallyRegisteredCompactionCallback;
     ::ll::TypedStorage<
         8,
-        40,
+        24,
         ::brstd::flat_set<::DBChunkStorage*, ::std::less<::DBChunkStorage*>, ::std::vector<::DBChunkStorage*>>>
                                                                                            mChunkStorages;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelStorageObserver>>>    mObservers;
@@ -286,6 +286,8 @@ public:
     MCAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
+    MCAPI void _removeCorruptedMark() const;
+
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(
@@ -317,8 +319,10 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
+#endif
 
     MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 

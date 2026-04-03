@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IStringDataProvider {};
+namespace Settings {
+
+class IStringDataProvider {};
+
+} // namespace Settings

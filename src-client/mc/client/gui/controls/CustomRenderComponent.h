@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
+    MCFOLD void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
 
     MCAPI bool updateCustom(::IClientInstance& client, ::UIScene const& scene);
     // NOLINTEND

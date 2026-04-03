@@ -72,6 +72,8 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const&, bool) const = 0;
 
+    virtual ::std::string getLevelIdFromPath(::Core::Path const&, ::Core::Path const&) const = 0;
+
     virtual bool isBetaRetailLevel(::std::string const&) const = 0;
     // NOLINTEND
 

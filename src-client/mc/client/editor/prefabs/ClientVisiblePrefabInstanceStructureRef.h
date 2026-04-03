@@ -4,6 +4,6 @@
 
 namespace Editor::Prefabs {
 
-struct ClientVisiblePrefabInstanceStructureRef {};
+class ClientVisiblePrefabInstanceStructureRef {};
 
 } // namespace Editor::Prefabs

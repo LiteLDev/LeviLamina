@@ -86,7 +86,7 @@ public:
 
     virtual int _getReplacementCharacter() /*override*/;
 
-    virtual ::std::string _remapString(::std::string const& str) const /*override*/;
+    virtual ::std::string _remapString(::std::string_view str) const /*override*/;
 
     virtual void switchFontsource(::Core::Path const&, ::Core::Path const&) /*override*/;
 
@@ -180,7 +180,7 @@ public:
 
     MCFOLD int $_getReplacementCharacter();
 
-    MCAPI ::std::string $_remapString(::std::string const& str) const;
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
 
     MCAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
 

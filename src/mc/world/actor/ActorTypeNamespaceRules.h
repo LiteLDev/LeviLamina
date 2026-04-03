@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorTypeNamespaceRules : int {
+enum class ActorTypeNamespaceRules : uchar {
     ReturnWithoutNamespace = 0,
     ReturnWithNamespace    = 1,
 };

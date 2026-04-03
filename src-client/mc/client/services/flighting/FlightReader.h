@@ -4,7 +4,7 @@
 
 namespace flighting {
 
-struct FlightReader {
+class FlightReader {
 public:
     // FlightReader inner types define
     enum class TextureStreamingConfiguration : int {};

@@ -13,8 +13,8 @@ struct EnvironmentQueryResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk80e9f5;
-    ::ll::UntypedStorage<8, 16> mUnkf2e698;
+    ::ll::UntypedStorage<8, 16> mUnk1fb873;
+    ::ll::UntypedStorage<8, 16> mUnk891ef2;
     // NOLINTEND
 
 public:

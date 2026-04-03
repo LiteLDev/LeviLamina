@@ -27,7 +27,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                              mMapWaterColorARGB;
     ::ll::TypedStorage<1, 1, bool>                                             mRain;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeTagsData>>                mTags;
-    ::ll::TypedStorage<8, 504, ::std::optional<::BiomeDefinitionChunkGenData>> mChunkGenData;
+    ::ll::TypedStorage<8, 512, ::std::optional<::BiomeDefinitionChunkGenData>> mChunkGenData;
     // NOLINTEND
 
 public:

@@ -38,7 +38,7 @@ public:
     ::ll::TypedStorage<4, 8, ::SharedTypes::v1_21_30::TradeItem::Quantity> mQuantity;
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<10>>                mItem;
     ::ll::TypedStorage<8, 24, ::std::vector<::cereal::DynamicValue>>       mFunctions;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData>   mFilters;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData>   mFilters;
     ::ll::TypedStorage<4, 4, float>                                        mPriceMultiplier;
     ::ll::TypedStorage<8, 16, ::Json::Value>                               mLegacyFunctions;
     ::ll::TypedStorage<8, 16, ::Json::Value>                               mLegacyFilters;
@@ -47,11 +47,12 @@ public:
 public:
     // prevent constructor by default
     TradeItem(TradeItem const&);
+    TradeItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem();
+    MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
 
     MCAPI ::SharedTypes::v1_21_30::TradeItem& operator=(::SharedTypes::v1_21_30::TradeItem&&);
 
@@ -77,7 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
     // NOLINTEND
 
 public:

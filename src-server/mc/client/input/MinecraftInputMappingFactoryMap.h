@@ -6,9 +6,9 @@ class MinecraftInputMappingFactoryMap {
 public:
     // MinecraftInputMappingFactoryMap inner types declare
     // clang-format off
-    struct NullInputMappingFactory;
+    class NullInputMappingFactory;
     // clang-format on
 
     // MinecraftInputMappingFactoryMap inner types define
-    struct NullInputMappingFactory {};
+    class NullInputMappingFactory {};
 };

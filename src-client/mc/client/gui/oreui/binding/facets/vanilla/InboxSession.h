@@ -12,12 +12,12 @@
 // clang-format off
 class DateManager;
 class IClientInstance;
-struct PlayerMessagingService;
-struct RealmsAPI;
+class PlayerMessagingService;
+class RealmsAPI;
 namespace Core { class Path; }
 namespace Invites { struct Invite; }
 namespace OreUI { class IResourceAllowList; }
-namespace Realms { struct InvitesService; }
+namespace Realms { class InvitesService; }
 // clang-format on
 
 namespace OreUI {

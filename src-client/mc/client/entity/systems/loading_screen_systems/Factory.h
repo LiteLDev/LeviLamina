@@ -4,6 +4,6 @@
 
 namespace LoadingScreenSystems {
 
-struct Factory {};
+class Factory {};
 
 } // namespace LoadingScreenSystems

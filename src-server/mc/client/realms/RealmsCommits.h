@@ -4,6 +4,6 @@
 
 namespace Realms {
 
-struct RealmsCommits {};
+class RealmsCommits {};
 
 } // namespace Realms

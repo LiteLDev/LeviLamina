@@ -10,12 +10,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class IGamefaceTextInputProxy;
 class ScreenContext;
 struct TextBoxStateChange;
 namespace OreUI { class IScene; }
 namespace OreUI { class IViewTestHelper; }
 namespace OreUI { class RouterLocation; }
-namespace OreUI { struct ViewDebugSettings; }
 // clang-format on
 
 namespace OreUI {
@@ -71,7 +71,7 @@ public:
 
     virtual void triggerEvent(::std::string const&, ::std::string const&) = 0;
 
-    virtual void setDebugSettings(::OreUI::ViewDebugSettings const&) = 0;
+    virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
 
     virtual ::OreUI::IViewTestHelper* getViewTestHelper() = 0;
     // NOLINTEND
@@ -86,6 +86,12 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

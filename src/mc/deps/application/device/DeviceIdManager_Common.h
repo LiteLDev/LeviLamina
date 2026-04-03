@@ -4,12 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/device/DeviceIdManager.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { struct DeviceIDPlatformEnvironment; }
 namespace Bedrock { struct DeviceIdContext; }
-namespace Core { class FileSystem; }
 // clang-format on
 
 namespace Bedrock {
@@ -18,10 +17,10 @@ class DeviceIdManager_Common : public ::Bedrock::DeviceIdManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk3b65a6;
-    ::ll::UntypedStorage<8, 32>  mUnk64cddd;
-    ::ll::UntypedStorage<8, 32>  mUnka9a7fd;
+    ::ll::UntypedStorage<8, 32>  mUnk64126c;
+    ::ll::UntypedStorage<8, 32>  mUnkae3728;
     ::ll::UntypedStorage<8, 120> mUnkf13734;
+    ::ll::UntypedStorage<8, 120> mUnk66feb1;
     // NOLINTEND
 
 public:
@@ -33,7 +32,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initialize(::Bedrock::NonOwnerPointer<::Core::FileSystem> fileSystem) /*override*/;
+    virtual void initialize() /*override*/;
 
     virtual void updateDeviceId(bool const isAnonymous) /*override*/;
 
@@ -45,7 +44,7 @@ public:
 
     virtual bool isDeviceIdValid() const /*override*/;
 
-    virtual void _initializePlatform(bool const) = 0;
+    virtual void _initializePlatform(::Bedrock::DeviceIDPlatformEnvironment const&) = 0;
 
     virtual ~DeviceIdManager_Common() /*override*/;
     // NOLINTEND
@@ -59,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initialize(::Bedrock::NonOwnerPointer<::Core::FileSystem> fileSystem);
+    MCNAPI void $initialize();
 
     MCNAPI void $updateDeviceId(bool const isAnonymous);
 
@@ -69,11 +68,17 @@ public:
 
     MCNAPI ::Bedrock::DeviceIdContext const& $getDeviceIdContext() const;
 
-#ifdef LL_PLAT_S
     MCNAPI bool $isDeviceIdValid() const;
-#endif
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 class WitherBoss;
 struct ActorDefinitionIdentifier;
@@ -42,9 +43,10 @@ public:
     // NOLINTBEGIN
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    virtual ::ActorHurtResult
+    doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     virtual void setTarget(::Actor* entity) /*override*/;
 
@@ -84,7 +86,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCFOLD void $setTarget(::Actor* entity);
 

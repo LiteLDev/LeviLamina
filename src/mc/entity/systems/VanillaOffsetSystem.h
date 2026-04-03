@@ -18,8 +18,8 @@
 class Actor;
 class Vec3;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct BaseGameVersionComponent;
+struct InterpolateMovementNeededComponent;
 struct IsHorizontalPoseFlagComponent;
 struct OffsetsComponent;
 struct PlayerComponent;
@@ -29,7 +29,7 @@ struct VanillaOffsetComponent;
 // clang-format on
 
 struct VanillaOffsetSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                                 ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+                                 ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
                                  ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
                                  ::Write<::VanillaOffsetComponent>,
                                  ::AddRemove<::IsHorizontalPoseFlagComponent>,
@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+            ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
             ::Write<::VanillaOffsetComponent>,
             ::AddRemove<::IsHorizontalPoseFlagComponent>,
@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
+            ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
             ::Write<::VanillaOffsetComponent>,
             ::AddRemove<::IsHorizontalPoseFlagComponent>,

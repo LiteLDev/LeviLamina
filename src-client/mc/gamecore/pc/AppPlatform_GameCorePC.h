@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/deps/application/ClipboardFeatureFlags.h"
 #include "mc/deps/application/OsVersion.h"
 #include "mc/deps/core/debug/AssertDialogResponse.h"
@@ -12,6 +11,7 @@
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/gamecore/AppPlatform_GameCore.h"
 
 // auto generated forward declare list
@@ -19,6 +19,7 @@
 class FilePickerSettings;
 class ImagePickingCallback;
 class RectangleArea;
+namespace Bedrock { class Platform_GameCore; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -26,12 +27,12 @@ class AppPlatform_GameCorePC : public ::AppPlatform_GameCore {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd0deff;
-    ::ll::UntypedStorage<8, 8>  mUnkb80b30;
+    ::ll::UntypedStorage<8, 32> mUnkbde1f9;
+    ::ll::UntypedStorage<8, 8>  mUnkfbcc2c;
     ::ll::UntypedStorage<8, 8>  mUnkc2204d;
     ::ll::UntypedStorage<8, 8>  mUnka8c638;
     ::ll::UntypedStorage<1, 1>  mUnk587e2e;
-    ::ll::UntypedStorage<4, 8>  mUnk459e6c;
+    ::ll::UntypedStorage<1, 1>  mUnk15dc10;
     // NOLINTEND
 
 public:
@@ -65,15 +66,27 @@ public:
         float const            guiScale
     ) /*override*/;
 
+    virtual float getKeyboardHeight() const /*override*/;
+
     virtual bool isMouseInsideClient() const /*override*/;
 
     virtual bool canScroll() const /*override*/;
+
+    virtual bool isRemoteSession() const /*override*/;
+
+    virtual bool isMouseClickLockEnabled() const /*override*/;
+
+    virtual bool isMouseSonarEnabled() const /*override*/;
+
+    virtual uint getMouseClickLockTime() const /*override*/;
 
     virtual void hideMousePointer() /*override*/;
 
     virtual void showMousePointer() /*override*/;
 
-    virtual void setMousePointerType(::ui::MousePointerType pointerType) /*override*/;
+    virtual void setMousePointerType(::Bedrock::Input::PointerType pointerType) /*override*/;
+
+    virtual void toggleSimulateTouchWithMouse() /*override*/;
 
     virtual int getDisplayWidth() /*override*/;
 
@@ -124,6 +137,8 @@ public:
 
     virtual ::std::string getSubPlatformString() const /*override*/;
 
+    virtual ::std::string getClientUpdateUrl() const /*override*/;
+
     virtual ::std::string getEdition() const /*override*/;
 
     virtual ::std::string getModelName() /*override*/;
@@ -140,6 +155,18 @@ public:
 
     virtual bool isHandheldDevice() const /*override*/;
 
+    virtual bool getSimulateTouchWithMouse() const /*override*/;
+
+    virtual float getDefaultSafeZoneScaleX() const /*override*/;
+
+    virtual float getDefaultSafeZoneScaleY() const /*override*/;
+
+    virtual float getDefaultSafeZoneScaleAll() const /*override*/;
+
+    virtual float getDefaultScreenPositionX() const /*override*/;
+
+    virtual float getDefaultScreenPositionY() const /*override*/;
+
     virtual void _initializeFileStorageAreas() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) /*override*/;
@@ -148,6 +175,8 @@ public:
 
     virtual void _onInitialize() /*override*/;
 
+    virtual bool isInvertScrollEnabled() const /*override*/;
+
     virtual ::UIScalingRules getPlatformUIScalingRules() const /*override*/;
     // NOLINTEND
 
@@ -155,11 +184,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI AppPlatform_GameCorePC(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view   appName,
-        int                  screenWidth,
-        int                  screenHeight
+        ::HWND__*                                      hWnd,
+        ::std::string const&                           dataFolder,
+        ::std::string_view                             appName,
+        int                                            screenWidth,
+        int                                            screenHeight,
+        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
     // NOLINTEND
 
@@ -167,11 +197,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view   appName,
-        int                  screenWidth,
-        int                  screenHeight
+        ::HWND__*                                      hWnd,
+        ::std::string const&                           dataFolder,
+        ::std::string_view                             appName,
+        int                                            screenWidth,
+        int                                            screenHeight,
+        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
     // NOLINTEND
 
@@ -198,15 +229,27 @@ public:
         float const            guiScale
     );
 
+    MCAPI float $getKeyboardHeight() const;
+
     MCAPI bool $isMouseInsideClient() const;
 
     MCAPI bool $canScroll() const;
+
+    MCAPI bool $isRemoteSession() const;
+
+    MCAPI bool $isMouseClickLockEnabled() const;
+
+    MCAPI bool $isMouseSonarEnabled() const;
+
+    MCAPI uint $getMouseClickLockTime() const;
 
     MCAPI void $hideMousePointer();
 
     MCAPI void $showMousePointer();
 
-    MCAPI void $setMousePointerType(::ui::MousePointerType pointerType);
+    MCAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
+
+    MCAPI void $toggleSimulateTouchWithMouse();
 
     MCAPI int $getDisplayWidth();
 
@@ -256,6 +299,8 @@ public:
 
     MCAPI ::std::string $getSubPlatformString() const;
 
+    MCAPI ::std::string $getClientUpdateUrl() const;
+
     MCAPI ::std::string $getEdition() const;
 
     MCAPI ::std::string $getModelName();
@@ -272,6 +317,18 @@ public:
 
     MCAPI bool $isHandheldDevice() const;
 
+    MCAPI bool $getSimulateTouchWithMouse() const;
+
+    MCFOLD float $getDefaultSafeZoneScaleX() const;
+
+    MCFOLD float $getDefaultSafeZoneScaleY() const;
+
+    MCFOLD float $getDefaultSafeZoneScaleAll() const;
+
+    MCFOLD float $getDefaultScreenPositionX() const;
+
+    MCFOLD float $getDefaultScreenPositionY() const;
+
     MCAPI void $_initializeFileStorageAreas();
 
     MCAPI ::Core::PathBuffer<::std::string> $_getUserFolderFromXUID(::std::string_view xuid);
@@ -279,6 +336,8 @@ public:
     MCAPI void $_retrieveSavedWindowSize(::tagRECT& size);
 
     MCAPI void $_onInitialize();
+
+    MCAPI bool $isInvertScrollEnabled() const;
 
     MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND

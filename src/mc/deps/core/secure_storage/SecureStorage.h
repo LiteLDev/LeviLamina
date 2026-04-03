@@ -6,7 +6,7 @@ class SecureStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkae0628;
+    ::ll::UntypedStorage<8, 32> mUnk9a5d0b;
     // NOLINTEND
 
 public:

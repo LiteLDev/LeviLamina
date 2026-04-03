@@ -4,6 +4,6 @@
 
 namespace ServicesManagerDiscoverySource {
 
-struct KeySourceImpl {};
+class KeySourceImpl {};
 
 } // namespace ServicesManagerDiscoverySource

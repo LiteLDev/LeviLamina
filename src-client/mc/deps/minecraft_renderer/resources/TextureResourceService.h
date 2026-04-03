@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace dragon { struct ResolvedTextureResource; }
+namespace dragon { class ResolvedTextureResource; }
 namespace mce { class Texture; }
 // clang-format on
 

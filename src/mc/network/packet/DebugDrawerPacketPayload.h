@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct ShapeDataPayload;
+namespace ScriptModuleDebugUtilities { class ScriptDebugShape; }
 // clang-format on
 
 struct DebugDrawerPacketPayload {
@@ -17,12 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addShapeToPacket(::ScriptModuleDebugUtilities::ScriptDebugShape& shape, bool serializeFully);
+
     MCAPI ~DebugDrawerPacketPayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

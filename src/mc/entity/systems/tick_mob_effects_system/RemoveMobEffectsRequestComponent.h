@@ -8,7 +8,7 @@ struct RemoveMobEffectsRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8b658f;
+    ::ll::UntypedStorage<8, 24> mUnk6d5cab;
     // NOLINTEND
 
 public:

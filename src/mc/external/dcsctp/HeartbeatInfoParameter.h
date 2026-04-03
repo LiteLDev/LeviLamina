@@ -18,7 +18,7 @@ class HeartbeatInfoParameter : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6ce4db;
+    ::ll::UntypedStorage<8, 24> mUnk73d6ac;
     // NOLINTEND
 
 public:

@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct IActionDataProvider {};
+namespace Settings {
+
+class IActionDataProvider {};
+
+} // namespace Settings

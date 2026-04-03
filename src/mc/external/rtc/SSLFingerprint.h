@@ -15,7 +15,7 @@ struct SSLFingerprint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd9a44f;
+    ::ll::UntypedStorage<8, 32> mUnkd7ba29;
     ::ll::UntypedStorage<8, 24> mUnkf98647;
     // NOLINTEND
 

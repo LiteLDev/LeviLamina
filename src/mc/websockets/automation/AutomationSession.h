@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/IRequestHandler.h"
-#include "mc/platform/WebviewObserver.h"
+#include "mc/deps/code_builder/platform/WebviewObserver.h"
 #include "mc/websockets/CloseStatusCode.h"
 #include "mc/websockets/WSConnectionResult.h"
 
@@ -31,19 +31,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1248> mUnk75b341;
-    ::ll::UntypedStorage<8, 16>   mUnk121c38;
-    ::ll::UntypedStorage<8, 64>   mUnke5b334;
-    ::ll::UntypedStorage<8, 64>   mUnk75cfe4;
-    ::ll::UntypedStorage<8, 64>   mUnke9a807;
+    ::ll::UntypedStorage<8, 16>   mUnk9fe8d2;
+    ::ll::UntypedStorage<8, 64>   mUnkf0f0de;
+    ::ll::UntypedStorage<8, 64>   mUnk44d59e;
+    ::ll::UntypedStorage<8, 64>   mUnkeb22c5;
     ::ll::UntypedStorage<8, 32>   mUnkc9dfaf;
-    ::ll::UntypedStorage<8, 32>   mUnkc258f4;
+    ::ll::UntypedStorage<8, 32>   mUnkacf3a2;
     ::ll::UntypedStorage<1, 1>    mUnk7dd1d3;
     ::ll::UntypedStorage<4, 4>    mUnkf3b921;
     ::ll::UntypedStorage<4, 4>    mUnk65741b;
     ::ll::UntypedStorage<1, 1>    mUnkb724a5;
-    ::ll::UntypedStorage<8, 8>    mUnk965284;
-    ::ll::UntypedStorage<8, 32>   mUnk7347c6;
-    ::ll::UntypedStorage<8, 64>   mUnk2747d5;
+    ::ll::UntypedStorage<8, 8>    mUnk8222ca;
+    ::ll::UntypedStorage<8, 32>   mUnkde3238;
+    ::ll::UntypedStorage<8, 64>   mUnk5c58a9;
     ::ll::UntypedStorage<8, 8>    mUnkc5c47e;
     ::ll::UntypedStorage<8, 24>   mUnk27d909;
     // NOLINTEND

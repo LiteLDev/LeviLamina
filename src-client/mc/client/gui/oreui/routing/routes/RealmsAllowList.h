@@ -12,7 +12,7 @@
 class ISceneStack;
 class SceneFactory;
 namespace OreUI { class RouteMatcher; }
-namespace Realms { struct RealmsWorldContext; }
+namespace Realms { class RealmsWorldContext; }
 // clang-format on
 
 namespace OreUI::EntryPoints {

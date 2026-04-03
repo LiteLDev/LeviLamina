@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct RebindActionDataProvider {};
+namespace Settings {
+
+class RebindActionDataProvider {};
+
+} // namespace Settings

@@ -13,6 +13,7 @@ class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct BoatPaddleComponent;
 struct ControlledByLocalInstanceComponent;
+struct InterpolateMovementNeededComponent;
 struct SynchedActorDataComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -23,7 +24,7 @@ namespace BoatRowTimeSyncSystem {
 MCNAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::Exclude<::ControlledByLocalInstanceComponent>,
         ::BoatPaddleComponent,
         ::SynchedActorDataComponent const> view

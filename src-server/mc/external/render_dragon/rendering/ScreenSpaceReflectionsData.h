@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct ScreenSpaceReflectionsData {};
+class ScreenSpaceReflectionsData {};
 
 } // namespace dragon::rendering

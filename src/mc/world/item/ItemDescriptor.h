@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -69,7 +70,7 @@ public:
 
         virtual ::ItemDescriptor::ItemEntry getItem() const;
 
-        virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+        virtual bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
         virtual ::std::map<::std::string, ::std::string> toMap() const = 0;
 
@@ -109,7 +110,7 @@ public:
 
         MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
-        MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+        MCAPI bool $forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
         MCAPI void $serialize(::Json::Value& val) const;
 
@@ -169,7 +170,7 @@ public:
 
     MCAPI void _resolve() const;
 
-    MCAPI bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+    MCAPI bool forEachItemUntil(::brstd::function_ref<bool(::Item const&, short)> func) const;
 
     MCAPI short getAuxValue() const;
 
@@ -187,7 +188,7 @@ public:
 
     MCAPI ::std::string getRawNameId() const;
 
-    MCAPI ::std::string getSerializedNameAndAux() const;
+    MCAPI ::std::string getSerializedNameAndAux(bool removeInvalidAux) const;
 
     MCAPI bool isNull() const;
 

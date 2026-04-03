@@ -4,6 +4,6 @@
 
 namespace dragon::rendering {
 
-struct VolumeScatteringData {};
+class VolumeScatteringData {};
 
 } // namespace dragon::rendering

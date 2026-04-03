@@ -22,10 +22,10 @@ namespace dragon { struct RenderMetadata; }
 namespace dragon { struct ResolvedIndexBufferResource; }
 namespace dragon { struct ResolvedVertexBufferResource; }
 namespace dragon::mesh { class Mesh; }
+namespace mce { class Buffer; }
 namespace mce { class MaterialPtr; }
 namespace mce { class MeshContext; }
 namespace mce { class TexturePtr; }
-namespace mce { struct Buffer; }
 namespace mce { struct BufferResourceService; }
 namespace mce { struct ClientTexture; }
 namespace mce { struct ServerTexture; }

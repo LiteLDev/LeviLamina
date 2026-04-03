@@ -21,7 +21,7 @@ public:
     ::ll::TypedStorage<4, 140, ::ViewRenderData>                    mViewData;
     ::ll::TypedStorage<1, 1, ::ClientRenderData>                    mClientData;
     ::ll::TypedStorage<8, 72, ::CloudRenderObject>                  mCloudState;
-    ::ll::TypedStorage<8, 1424, ::ChunkRenderObjectCollection>      mChunksState;
+    ::ll::TypedStorage<8, 1784, ::ChunkRenderObjectCollection>      mChunksState;
     ::ll::TypedStorage<8, 128, ::ActorShadowRenderObjectCollection> mEntityShadowsState;
     ::ll::TypedStorage<8, 144, ::ParticleRenderObjectCollection>    mParticleState;
     ::ll::TypedStorage<8, 288, ::SkyRenderObject>                   mSkyState;

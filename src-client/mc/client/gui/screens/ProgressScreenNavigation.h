@@ -15,6 +15,7 @@ class ISceneStack;
 class ProgressHandler;
 class SceneFactory;
 namespace OreUI { class Router; }
+namespace World { struct RealmsJoinData; }
 // clang-format on
 
 namespace ui {
@@ -23,9 +24,9 @@ class ProgressScreenNavigation : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SceneFactory&>                               mSceneFactory;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>> mSceneStack;
-    ::ll::TypedStorage<8, 8, ::OreUI::Router&>                              mRouter;
+    ::ll::TypedStorage<8, 8, ::SceneFactory&>                                                  mSceneFactory;
+    ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()>> mGetSceneStack;
+    ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                                 mRouter;
     // NOLINTEND
 
 public:
@@ -43,11 +44,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void navigateToJoinServerProgressScreen(
+    MCAPI ProgressScreenNavigation(
+        ::SceneFactory&                                                 sceneFactory,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStackCallback,
+        ::OreUI::Router&                                                router
+    );
+
+    MCAPI void leaveProgressScreen();
+
+    MCAPI void navigateToJoinLanServerProgressScreen(
         ::std::unique_ptr<::ProgressHandler> connectHandler,
-        bool                                 allowSmallDownloads,
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
+
+    MCAPI void navigateToJoinServerProgressScreen(
+        ::std::deque<::std::unique_ptr<::ProgressHandler>> connectHandlers,
+        bool                                               allowSmallDownloads,
+        ::OnlineSafetyDialogVisibility                     onlineSafetyDialogVisibility
+    );
+
+    MCAPI void navigateToRealmsWarningScreen(::World::RealmsJoinData& realmsJoinData);
 
     MCAPI void navigateToRealmsWorldProgressScreen(
         ::std::unique_ptr<::ProgressHandler> connectHandler,
@@ -63,6 +79,16 @@ public:
         ::std::string const&  eventName,
         ::ProgressContentType contentType,
         ::GameType            gameType
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::SceneFactory&                                                 sceneFactory,
+        ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStackCallback,
+        ::OreUI::Router&                                                router
     );
     // NOLINTEND
 

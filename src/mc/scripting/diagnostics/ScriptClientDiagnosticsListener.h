@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 struct DiagnosticsEvent;
+struct ScriptDiagnosticsPayload;
 // clang-format on
 
 class ScriptClientDiagnosticsListener : public ::ServerNetworkEventListener {
@@ -31,6 +32,12 @@ public:
     virtual ~ScriptClientDiagnosticsListener() /*override*/ = default;
 
     virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::optional<::ScriptDiagnosticsPayload> getAndClearDiagnosticsPayload();
     // NOLINTEND
 
 public:

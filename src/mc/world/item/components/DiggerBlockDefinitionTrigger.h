@@ -10,7 +10,7 @@ struct DiggerBlockDefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>  filter;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>  filter;
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> onDig;
     // NOLINTEND
 

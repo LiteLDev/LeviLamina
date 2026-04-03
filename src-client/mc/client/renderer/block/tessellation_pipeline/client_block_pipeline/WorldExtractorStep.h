@@ -13,8 +13,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeTintCache;
 class Block;
-struct BiomeTintCache;
 namespace ClientBlockPipeline { class ITintResolver; }
 namespace ClientBlockPipeline { class Inputs; }
 namespace ClientBlockPipeline { class StepResult; }
@@ -25,6 +25,7 @@ namespace ClientBlockPipeline { struct CompleteOpaqueFullBlockIds; }
 namespace ClientBlockPipeline { struct CustomGeometryBlock; }
 namespace ClientBlockPipeline { struct PipelineError; }
 namespace ClientBlockPipeline { struct PotentiallyFaceCulledBlock; }
+namespace ClientBlockPipeline { struct TextureShiftNoiseCache; }
 namespace ClientBlockPipeline::WorldView { class Interface; }
 // clang-format on
 
@@ -66,8 +67,9 @@ public:
         ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::CompleteOpaqueFullBlockIds&>             unitCubeBlocksIds;
         ::ll::TypedStorage<8, 8, ::std::vector<::ClientBlockPipeline::CustomGeometryBlock>&>     customGeometry;
         ::ll::TypedStorage<8, 8, ::std::vector<::ClientBlockPipeline::PotentiallyFaceCulledBlock>*>
-                                                                      potentiallyFaceCulledBlocks;
-        ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::BitsetCache*> opaqueFullBlockCache;
+                                                                                 potentiallyFaceCulledBlocks;
+        ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::BitsetCache*>            opaqueFullBlockCache;
+        ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::TextureShiftNoiseCache*> textureShiftNoiseCache;
         // NOLINTEND
 
     public:
@@ -96,6 +98,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>              mShouldGenerateFaceCulling;
+    ::ll::TypedStorage<1, 1, bool>              mTextureShiftsEnabled;
     ::ll::TypedStorage<8, 8, ::BiomeTintCache*> mBiomeTintCache;
     // NOLINTEND
 

@@ -5,21 +5,20 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
-#include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
-#include "mc/client/gui/screens/ProgressScreenNavigation.h"
-#include "mc/client/network/realms/FailureReason.h"
 #include "mc/client/world/JoinRealmWorldResult.h"
 #include "mc/client/world/JoinServerWorldResult.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/events/IMinecraftEventing.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class IEntitlementManager;
 class PlatformMultiplayerRestrictions;
-struct IEntitlementManager;
+namespace OreUI { struct NetworkWorldJoinerSharedData; }
 namespace World { class NetworkWorldJoiner; }
-namespace World { struct RealmsJoinData; }
+namespace ui { class ProgressScreenNavigation; }
 // clang-format on
 
 namespace OreUI {
@@ -29,17 +28,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::World::NetworkWorldJoiner&>                         mNetworkWorldJoiner;
-    ::ll::TypedStorage<8, 64, ::ui::ProgressScreenNavigation>                      mProgressScreenNavigation;
     ::ll::TypedStorage<8, 8, ::DateManager const&>                                 mDateManager;
     ::ll::TypedStorage<8, 8, ::IEntitlementManager&>                               mEntitlementManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlatformMultiplayerRestrictions>> mPlatformMultiplayerRestrictions;
     ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool()>>                 mIsUsingUnifiedJoinRealmFlow;
     ::ll::TypedStorage<1, 1, bool>                                                 mIsDirty;
-    ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::JoinServerWorldResult>> mJoinThirdPartyServerTask;
-    ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::JoinServerWorldResult>> mJoinExternalServerTask;
-    ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::JoinRealmWorldResult>>  mJoinRealmTask;
-    ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::JoinServerWorldResult>> mJoinFriendServerTask;
-    ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::World::JoinServerWorldResult>> mJoinLANServerTask;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::NetworkWorldJoinerSharedData>> mSharedData;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mRealmsWorldJoinerJoinRealmWorldResultSubscription;
     // NOLINTEND
 
 public:
@@ -51,9 +46,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool update() /*override*/;
-
     virtual ~NetworkWorldJoinerFacet() /*override*/ = default;
+
+    virtual bool update() /*override*/;
     // NOLINTEND
 
 public:
@@ -70,13 +65,6 @@ public:
 
     MCAPI void _joinRealmWorld(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
-    MCAPI void _onRealmJoinedConnectionHandler(
-        ::IMinecraftEventing::RealmConnectionResult result,
-        ::std::optional<::Realms::FailureReason>    failureReason,
-        ::std::optional<::World::RealmsJoinData>    realmsJoinData,
-        ::std::optional<::std::string>              realmId
-    );
-
     MCAPI void clearJoinExternalServerTaskState();
 
     MCAPI void clearJoinFriendServerTaskState();
@@ -89,11 +77,11 @@ public:
 
     MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinExternalServerResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getJoinExternalServerTaskState() const;
+    MCAPI ::OreUI::FacetTaskState getJoinExternalServerTaskState() const;
 
     MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinFriendServerResult();
 
-    MCFOLD ::OreUI::FacetTaskState const getJoinFriendServerTaskState();
+    MCAPI ::OreUI::FacetTaskState const getJoinFriendServerTaskState();
 
     MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinLANServerResult();
 
@@ -101,11 +89,11 @@ public:
 
     MCAPI ::std::optional<::World::JoinRealmWorldResult> const& getJoinRealmResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getJoinRealmTaskState() const;
+    MCAPI ::OreUI::FacetTaskState getJoinRealmTaskState() const;
 
     MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinThirdPartyServerResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getJoinThirdPartyServerTaskState() const;
+    MCAPI ::OreUI::FacetTaskState getJoinThirdPartyServerTaskState() const;
 
     MCAPI void joinExternalServer(::std::string const& serverID);
 

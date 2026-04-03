@@ -42,8 +42,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<2, 2>  mUnk3e9543;
-        ::ll::UntypedStorage<8, 24> mUnk51254a;
-        ::ll::UntypedStorage<8, 32> mUnk448aaf;
+        ::ll::UntypedStorage<8, 24> mUnkb41697;
+        ::ll::UntypedStorage<8, 32> mUnkd44d5c;
         // NOLINTEND
 
     public:
@@ -70,9 +70,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkecd095;
-        ::ll::UntypedStorage<8, 24> mUnk70d724;
-        ::ll::UntypedStorage<8, 24> mUnk6f2eb0;
-        ::ll::UntypedStorage<8, 32> mUnkd94ab9;
+        ::ll::UntypedStorage<8, 24> mUnk4f5fdc;
+        ::ll::UntypedStorage<8, 24> mUnk89974d;
+        ::ll::UntypedStorage<8, 32> mUnk615a04;
         // NOLINTEND
 
     public:
@@ -99,7 +99,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkfab5d3;
-        ::ll::UntypedStorage<8, 32> mUnka4294f;
+        ::ll::UntypedStorage<8, 32> mUnkb040ef;
         // NOLINTEND
 
     public:
@@ -124,24 +124,28 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6de64c;
-    ::ll::UntypedStorage<8, 24> mUnk2f2a6c;
-    ::ll::UntypedStorage<8, 24> mUnkbfc3b7;
+    ::ll::UntypedStorage<8, 24> mUnk2f69a4;
+    ::ll::UntypedStorage<8, 24> mUnkb27419;
+    ::ll::UntypedStorage<8, 24> mUnk9fdd72;
+    ::ll::UntypedStorage<2, 2>  mUnka1ba32;
+    ::ll::UntypedStorage<1, 1>  mUnk3c26f9;
+    ::ll::UntypedStorage<1, 1>  mUnka0317f;
     ::ll::UntypedStorage<1, 1>  mUnkbcb18b;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Logger& operator=(Logger const&);
+    Logger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Logger();
-
     MCNAPI Logger(::Puv::Logger&&);
 
     MCNAPI Logger(::Puv::Logger const&);
+
+    MCNAPI explicit Logger(::cereal::ResultCode parseErrorCodes);
 
     MCNAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 
@@ -174,11 +178,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Puv::Logger&&);
 
     MCNAPI void* $ctor(::Puv::Logger const&);
+
+    MCNAPI void* $ctor(::cereal::ResultCode parseErrorCodes);
     // NOLINTEND
 
 public:

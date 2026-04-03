@@ -14,8 +14,8 @@ class EduKeyProvider : public ::IContentAccessibilityProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk7175c2;
-    ::ll::UntypedStorage<8, 64> mUnk3ad3ad;
+    ::ll::UntypedStorage<8, 64> mUnk561b0d;
+    ::ll::UntypedStorage<8, 64> mUnk6ee137;
     // NOLINTEND
 
 public:

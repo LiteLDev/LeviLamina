@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientVolumeRenderOrientation {};
+class ClientVolumeRenderOrientation {};
 
 } // namespace Editor::Services

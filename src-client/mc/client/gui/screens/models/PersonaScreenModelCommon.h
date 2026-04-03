@@ -16,12 +16,12 @@
 class IClientInstance;
 class IMinecraftEventing;
 class IMinecraftGame;
-struct PersonaAppearance;
-struct SkinHandle;
-struct SkinRepositoryClientInterface;
+class PersonaAppearance;
+class SkinHandle;
+class SkinRepositoryClientInterface;
 namespace mce { class UUID; }
+namespace persona { class PieceOfferWrapper; }
 namespace persona { struct FreeItemState; }
-namespace persona { struct PieceOfferWrapper; }
 namespace persona::color { class ColorInfo; }
 // clang-format on
 
@@ -118,6 +118,8 @@ public:
     revertPersona(::persona::PersonaCharacterHandle const& characterHandle, ::std::function<void()> callback);
 
     MCAPI void saveCurrentCharacterPersona();
+
+    MCAPI void savePersona(::persona::PersonaCharacterHandle const& characterHandle);
 
     MCAPI void updatePersonaWithNewAppearance(
         ::PersonaAppearance const&               newAppearance,

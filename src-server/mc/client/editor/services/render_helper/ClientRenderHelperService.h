@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientRenderHelperService {};
+class ClientRenderHelperService {};
 
 } // namespace Editor::Services

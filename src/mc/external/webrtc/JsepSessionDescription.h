@@ -20,11 +20,11 @@ class JsepSessionDescription : public ::webrtc::SessionDescriptionInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9fe00b;
-    ::ll::UntypedStorage<8, 32> mUnke3092f;
-    ::ll::UntypedStorage<8, 32> mUnka36c00;
+    ::ll::UntypedStorage<8, 8>  mUnkd958bc;
+    ::ll::UntypedStorage<8, 32> mUnk45b0d1;
+    ::ll::UntypedStorage<8, 32> mUnkf608db;
     ::ll::UntypedStorage<4, 4>  mUnk429f56;
-    ::ll::UntypedStorage<8, 24> mUnk88d7a1;
+    ::ll::UntypedStorage<8, 24> mUnke7df2e;
     // NOLINTEND
 
 public:

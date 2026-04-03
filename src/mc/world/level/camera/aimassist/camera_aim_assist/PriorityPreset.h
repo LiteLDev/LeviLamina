@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/string/HashedString.h"
-
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace CameraAimAssist { struct PriorityPresetExclusionData; }
 // clang-format on
 
@@ -17,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48>  mUnk6002d4;
-    ::ll::UntypedStorage<8, 192> mUnk16bd26;
+    ::ll::UntypedStorage<8, 256> mUnk16bd26;
     ::ll::UntypedStorage<8, 64>  mUnk8e40ff;
     ::ll::UntypedStorage<8, 64>  mUnk115493;
     ::ll::UntypedStorage<8, 48>  mUnkaf34d6;
@@ -27,12 +25,14 @@ public:
 public:
     // prevent constructor by default
     PriorityPreset& operator=(PriorityPreset const&);
-    PriorityPreset(PriorityPreset const&);
-    PriorityPreset();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PriorityPreset();
+
+    MCNAPI PriorityPreset(::CameraAimAssist::PriorityPreset const&);
+
     MCNAPI PriorityPreset(
         ::HashedString const&                                       id,
         ::CameraAimAssist::PriorityPresetExclusionData const&       exclusionList,
@@ -41,6 +41,8 @@ public:
         ::HashedString const&                                       handCategory,
         ::HashedString const&                                       defaultCategory
     );
+
+    MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
 
     MCNAPI ~PriorityPreset();
     // NOLINTEND
@@ -54,9 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::CameraAimAssist::PriorityPreset const&);
+    MCNAPI void* $ctor(::CameraAimAssist::PriorityPreset const&);
 
     MCNAPI void* $ctor(
         ::HashedString const&                                       id,

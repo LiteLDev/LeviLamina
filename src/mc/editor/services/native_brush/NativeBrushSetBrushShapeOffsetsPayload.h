@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class NativeBrushSetBrushShapeOffsetsPayload
@@ -17,7 +12,7 @@ class NativeBrushSetBrushShapeOffsetsPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk709284;
+    ::ll::UntypedStorage<8, 24> mUnka3ae97;
     // NOLINTEND
 
 public:
@@ -30,12 +25,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~NativeBrushSetBrushShapeOffsetsPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

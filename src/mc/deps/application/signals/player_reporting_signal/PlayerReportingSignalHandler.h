@@ -18,8 +18,8 @@ class PlayerReportingSignalHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9595d8;
-    ::ll::UntypedStorage<8, 16> mUnkeea946;
+    ::ll::UntypedStorage<8, 16> mUnka9415e;
+    ::ll::UntypedStorage<8, 16> mUnkfd49d2;
     ::ll::UntypedStorage<1, 1>  mUnkf9318b;
     // NOLINTEND
 

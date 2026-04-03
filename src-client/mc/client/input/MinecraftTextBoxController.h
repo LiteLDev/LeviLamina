@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IGamefaceTextInputProxy;
 class IMinecraftGame;
 struct TextBoxStateChange;
 namespace OreUI { class OreUISystem; }
@@ -37,6 +38,8 @@ public:
     virtual void onKeyboardDismissed(int controllerId) /*override*/;
 
     virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) /*override*/;
+
+    virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() /*override*/;
     // NOLINTEND
 
 public:
@@ -47,6 +50,8 @@ public:
     MCAPI void $onKeyboardDismissed(int controllerId);
 
     MCAPI ::std::optional<int> $calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);
+
+    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
     // NOLINTEND
 
 public:

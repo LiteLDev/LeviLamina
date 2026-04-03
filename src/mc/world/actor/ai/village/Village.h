@@ -54,23 +54,7 @@ public:
         // NOLINTEND
     };
 
-    struct StandingModifiers {
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static int const& GOLEM_DEATH_PENALTY();
-
-        MCAPI static int const& LARGE_PENALTY();
-
-        MCAPI static int const& LARGE_REWARD();
-
-        MCAPI static int const& MEDIUM_PENALTY();
-
-        MCAPI static int const& SMALL_PENALTY();
-
-        MCAPI static int const& SMALL_REWARD();
-        // NOLINTEND
-    };
+    struct StandingModifiers {};
 
     using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
 
@@ -264,21 +248,7 @@ public:
 
     MCAPI static bool& DEBUG_DRAWING();
 
-    MCAPI static ::Vec3 const& RAID_BOUNDS_PADDING();
-
     MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
-
-    MCAPI static int const& RAID_FINISHED_DELAY_IN_TICKS();
-
-    MCAPI static int const& RAID_GROUP_COMPLETE_DELAY_IN_TICKS();
-
-    MCAPI static int const& RAID_LOCATION_HELP_DELAY_IN_TICKS();
-
-    MCAPI static uchar const& RAID_MAX_SPAWN_FAILURES();
-
-    MCAPI static int const& RAID_PREP_TIME_IN_TICKS();
-
-    MCAPI static ::Tick const& RAID_TIMEOUT_IN_TICKS();
 
     MCAPI static ::std::string const& STORAGE_KEY_DWELLERS();
 

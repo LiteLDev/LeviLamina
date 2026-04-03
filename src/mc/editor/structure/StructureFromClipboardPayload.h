@@ -17,8 +17,8 @@ class StructureFromClipboardPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk45890b;
-    ::ll::UntypedStorage<8, 40> mUnkf1b1d8;
+    ::ll::UntypedStorage<8, 32> mUnk4b8e3b;
+    ::ll::UntypedStorage<8, 40> mUnkf5dc93;
     // NOLINTEND
 
 public:

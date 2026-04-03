@@ -8,9 +8,9 @@ struct TelemetryCommonProperties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5e7e37;
-    ::ll::UntypedStorage<8, 32> mUnk11cd23;
-    ::ll::UntypedStorage<8, 40> mUnkf4aec7;
+    ::ll::UntypedStorage<8, 32> mUnkaee8a1;
+    ::ll::UntypedStorage<8, 32> mUnk1fc2a6;
+    ::ll::UntypedStorage<8, 40> mUnk80d437;
     // NOLINTEND
 
 public:

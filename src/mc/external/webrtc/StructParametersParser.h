@@ -13,7 +13,7 @@ class StructParametersParser {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5ab1c0;
+    ::ll::UntypedStorage<8, 24> mUnka53842;
     // NOLINTEND
 
 public:

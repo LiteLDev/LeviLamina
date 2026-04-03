@@ -50,39 +50,39 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ui::DirtyFlag> mDirty;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CraftingContainerManagerController>>
-                                                              mCraftingContainerManagerController;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mDelayedCraftingContainerManagerControllerSearchString;
-    ::ll::TypedStorage<1, 1, bool>                            mWorkbench;
-    ::ll::TypedStorage<1, 1, bool>                            mPocket;
-    ::ll::TypedStorage<1, 1, bool>                            mFilteringOn;
-    ::ll::TypedStorage<4, 4, ::CraftingType>                  mCraftingType;
-    ::ll::TypedStorage<1, 1, bool>                            mEntered;
-    ::ll::TypedStorage<4, 4, int>                             mInventoryLayout;
-    ::ll::TypedStorage<4, 4, int>                             mSavedInventoryLayout;
-    ::ll::TypedStorage<4, 4, int>                             mCurrentlySelectedIndex;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>                mCurrentlySelectedItem;
-    ::ll::TypedStorage<1, 1, bool>                            mNeedReselectRecipeIndex;
-    ::ll::TypedStorage<1, 1, bool>                            mCanReselectRecipeIndex;
-    ::ll::TypedStorage<1, 1, bool>                            mIngredientSetChanged;
-    ::ll::TypedStorage<1, 1, bool>                            mNeedFirstTabSelection;
-    ::ll::TypedStorage<1, 1, bool>                            mNeedDefaultFocusSet;
-    ::ll::TypedStorage<4, 4, int>                             mSelectedLeftTab;
-    ::ll::TypedStorage<4, 4, int>                             mSelectedRightTab;
-    ::ll::TypedStorage<1, 1, bool>                            mSearchBarSelected;
-    ::ll::TypedStorage<1, 1, bool>                            mCanCreativeHotbarSwap;
-    ::ll::TypedStorage<1, 1, bool>                            mRecipeLocked;
-    ::ll::TypedStorage<1, 1, bool>                            mHasInitalCategoryTabsState;
-    ::ll::TypedStorage<1, 1, bool>                            mUseRecipeUnlocking;
-    ::ll::TypedStorage<4, 4, int>                             mFocusRestorationContextSelectedTab;
-    ::ll::TypedStorage<8, 40, ::SlotData>                     mFocusRestorationContext;
-    ::ll::TypedStorage<4, 4, int>                             mTabFiltersDirty;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mRepeatCollectionName;
-    ::ll::TypedStorage<4, 4, int>                             mRepeatCollectionIndex;
-    ::ll::TypedStorage<4, 4, int>                             mRepeatCraftStartTime;
-    ::ll::TypedStorage<4, 4, int>                             mRepeatCraftLoopStartTime;
-    ::ll::TypedStorage<4, 4, int>                             mTicksLeftUntilCategoryTabUpdate;
-    ::ll::TypedStorage<8, 48, ::CraftingScreenController::ScrollItemData>                        mNeedToScrollToItem;
-    ::ll::TypedStorage<8, 136, ::RepeatCraftButtonData>                                          mRepeatCraftButton;
+                                                                          mCraftingContainerManagerController;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>             mDelayedSearchString;
+    ::ll::TypedStorage<1, 1, bool>                                        mWorkbench;
+    ::ll::TypedStorage<1, 1, bool>                                        mPocket;
+    ::ll::TypedStorage<1, 1, bool>                                        mCraftableFilterOn;
+    ::ll::TypedStorage<4, 4, ::CraftingType>                              mCraftingType;
+    ::ll::TypedStorage<1, 1, bool>                                        mEntered;
+    ::ll::TypedStorage<4, 4, int>                                         mLayout;
+    ::ll::TypedStorage<4, 4, int>                                         mSavedLayout;
+    ::ll::TypedStorage<4, 4, int>                                         mCurrentlySelectedIndex;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                            mCurrentlySelectedItem;
+    ::ll::TypedStorage<1, 1, bool>                                        mNeedReselectRecipeIndex;
+    ::ll::TypedStorage<1, 1, bool>                                        mCanReselectRecipeIndex;
+    ::ll::TypedStorage<1, 1, bool>                                        mIngredientSetChanged;
+    ::ll::TypedStorage<1, 1, bool>                                        mNeedFirstTabSelection;
+    ::ll::TypedStorage<1, 1, bool>                                        mNeedDefaultFocusSet;
+    ::ll::TypedStorage<1, 1, bool>                                        mSearchBarSelected;
+    ::ll::TypedStorage<1, 1, bool>                                        mCanCreativeHotbarSwap;
+    ::ll::TypedStorage<1, 1, bool>                                        mRecipeLocked;
+    ::ll::TypedStorage<1, 1, bool>                                        mUseRecipeUnlocking;
+    ::ll::TypedStorage<4, 4, int>                                         mFocusRestorationContextSelectedTab;
+    ::ll::TypedStorage<8, 40, ::SlotData>                                 mFocusRestorationContext;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mRepeatCollectionName;
+    ::ll::TypedStorage<4, 4, int>                                         mRepeatCollectionIndex;
+    ::ll::TypedStorage<4, 4, int>                                         mRepeatCraftStartTime;
+    ::ll::TypedStorage<4, 4, int>                                         mRepeatCraftLoopStartTime;
+    ::ll::TypedStorage<8, 48, ::CraftingScreenController::ScrollItemData> mNeedToScrollToItem;
+    ::ll::TypedStorage<8, 136, ::RepeatCraftButtonData>                   mRepeatCraftButton;
+    ::ll::TypedStorage<1, 1, bool>                                        mHasInitalCategoryTabsState;
+    ::ll::TypedStorage<4, 4, int>                                         mTicksLeftUntilCategoryTabUpdate;
+    ::ll::TypedStorage<4, 4, int>                                         mTabFiltersDirty;
+    ::ll::TypedStorage<4, 4, int>                                         mSelectedLeftTab;
+    ::ll::TypedStorage<4, 4, int>                                         mSelectedRightTab;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::InventoryLeftTabIndex, ::CategoryTabState>> mCategoryTabsState;
     // NOLINTEND
 
@@ -97,13 +97,13 @@ public:
 
     virtual void onOpen() /*override*/;
 
+    virtual void onEntered() /*override*/;
+
     virtual void onTerminate() /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
-
-    virtual void onEntered() /*override*/;
 
     virtual void showToast(::ToastMessage message, bool animateIn) /*override*/;
 
@@ -172,14 +172,12 @@ public:
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId,
-        bool                                           workbench,
-        bool                                           pocket,
         ::CraftingType                                 craftingType
     );
 
     MCAPI bool _currentItemIsSelected(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void _cycleInventoryLayout(int dir);
+    MCAPI void _cycleLayout(int dir);
 
     MCAPI void _cycleRightSideInventoryTab(int dir);
 
@@ -189,7 +187,7 @@ public:
 
     MCAPI int _findNextLeftSideInventoryTab(int dir) const;
 
-    MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex);
+    MCAPI void _focusCollectionItem(::std::string const& collectionName, int collectionIndex, bool forceFocus);
 
     MCAPI ::std::string _getButtonLeftStickDescription() const;
 
@@ -207,7 +205,7 @@ public:
 
     MCAPI void _handleRecipeSelect(::std::string const& collectionName, int collectionIndex, bool displayOnly);
 
-    MCAPI bool _isCreativeLayoutAvailable() const;
+    MCAPI bool _isRecipeBookOnlyLayoutAvailable() const;
 
     MCAPI void _loadPlayerInventoryOptions();
 
@@ -224,13 +222,13 @@ public:
 
     MCAPI void _savePlayerInventoryOptions();
 
-    MCAPI void _sendActiveInventoryLayoutInfo();
+    MCAPI void _sendActiveLayoutInfo();
 
     MCAPI void _setInitialTabsSelected(int defaultLeftTab, int defaultRightTab);
 
-    MCAPI void _setInventoryLayout(int layoutIndex, bool saveOptions);
+    MCAPI void _setIsFiltering(bool craftableFilterOn);
 
-    MCAPI void _setIsFiltering(bool filter);
+    MCAPI void _setLayout(int layoutIndex, bool saveOptions);
 
     MCAPI void _setLeftSideInventoryTab(int tabIndex, bool saveOptions);
 
@@ -279,8 +277,6 @@ public:
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId,
-        bool                                           workbench,
-        bool                                           pocket,
         ::CraftingType                                 craftingType
     );
     // NOLINTEND
@@ -296,13 +292,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $onOpen();
 
+    MCAPI void $onEntered();
+
     MCAPI void $onTerminate();
 
     MCAPI ::ui::DirtyFlag $tick();
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
-
-    MCAPI void $onEntered();
 
     MCAPI void $showToast(::ToastMessage message, bool animateIn);
 

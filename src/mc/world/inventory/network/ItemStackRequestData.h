@@ -19,7 +19,7 @@ class ItemStackRequestData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                                       mClientRequestId;
+    ::ll::TypedStorage<8, 16, ::ItemStackRequestId>                                       mClientRequestId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                               mStringsToFilter;
     ::ll::TypedStorage<4, 4, ::TextProcessingEventOrigin>                                 mStringsToFilterOrigin;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ItemStackRequestAction>>> mActions;

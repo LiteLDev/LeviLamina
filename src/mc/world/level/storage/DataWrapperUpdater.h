@@ -6,7 +6,7 @@ class DataWrapperUpdater {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9a0681;
+    ::ll::UntypedStorage<8, 32> mUnkd315fe;
     ::ll::UntypedStorage<8, 8>  mUnkd7efe6;
     // NOLINTEND
 

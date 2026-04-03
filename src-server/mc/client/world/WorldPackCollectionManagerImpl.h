@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WorldPackCollectionManagerImpl {};
+namespace World {
+
+class WorldPackCollectionManagerImpl {};
+
+} // namespace World

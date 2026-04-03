@@ -38,12 +38,12 @@ struct RealmsWorldInfo;
 struct WorldTemplateInfo;
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Legacy { struct WorldImporter; }
-namespace Legacy { struct WorldProcessRequest; }
+namespace Legacy { class WorldImporter; }
+namespace Legacy { class WorldProcessRequest; }
 namespace MSGraph::Models { struct DriveItemCollection; }
 namespace MSGraph::Models { struct GraphError; }
 namespace Realms { struct World; }
-namespace Social { struct MultiplayerGameInfo; }
+namespace Social { class MultiplayerGameInfo; }
 // clang-format on
 
 class PlayScreenModel : public ::MainMenuScreenModel, public ::IWorldsProvider {
@@ -51,13 +51,13 @@ public:
     // PlayScreenModel inner types declare
     // clang-format off
     struct LiveServer;
-    struct PlayScreenLevelListCacheObserver;
+    class PlayScreenLevelListCacheObserver;
     // clang-format on
 
     // PlayScreenModel inner types define
     struct LiveServer {};
 
-    struct PlayScreenLevelListCacheObserver {};
+    class PlayScreenLevelListCacheObserver {};
 
     using PlayerCountMap = ::std::map<::Realms::RealmId, int>;
 
@@ -93,7 +93,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                     mUnpairedWorldsFetched;
     ::ll::TypedStorage<8, 16, ::std::map<::Realms::RealmId, int>>                      mUnreadCounts;
     ::ll::TypedStorage<4, 4, int>                                                      mRealmWorldPartitionIndex;
-    ::ll::TypedStorage<4, 16, ::std::array<int, 4>>                                    mSeenUnreadPosts;
+    ::ll::TypedStorage<4, 20, ::std::array<int, 5>>                                    mSeenUnreadPosts;
     ::ll::TypedStorage<1, 1, bool>                                                     mLocalWorldsPopulated;
     ::ll::TypedStorage<1, 1, bool>                                                     mHasPendingInvites;
     ::ll::TypedStorage<4, 4, int>                                                      mPendingInviteCount;
@@ -178,8 +178,6 @@ public:
     MCAPI bool _isCrossPlatformGame(::Social::MultiplayerGameInfo const& gameInfo) const;
 
     MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
-
-    MCAPI void _pingServer(::ExternalServer& externalServer);
 
     MCAPI void _populateAdditionalRealmsWorldsInfo();
 
@@ -282,8 +280,6 @@ public:
     MCAPI bool supportsEduCloudWorlds() const;
 
     MCAPI void triggerMultiplayerGameRefresh(bool tryToReconnect);
-
-    MCAPI void updateNetworkWorldSorting();
 
     MCAPI void uploadLocalWorldFileAtIndex(
         ::std::string const&                                  realmID,

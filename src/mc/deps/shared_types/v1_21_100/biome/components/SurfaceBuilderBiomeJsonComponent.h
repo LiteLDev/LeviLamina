@@ -10,7 +10,6 @@
 #include "mc/deps/shared_types/v1_21_100/biome/components/OverworldSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/SwampSurfaceSettings.h"
 #include "mc/deps/shared_types/v1_21_100/biome/components/TheEndSurfaceSettings.h"
-#include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,8 +38,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BiomeComponentVersion getType() const /*override*/;
-
     virtual ~SurfaceBuilderBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
@@ -53,17 +50,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::BiomeComponentVersion $getType() const;
-
-
     // NOLINTEND
 
 public:

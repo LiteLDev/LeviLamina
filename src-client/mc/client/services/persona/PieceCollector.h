@@ -4,7 +4,7 @@
 
 namespace persona {
 
-struct PieceCollector {
+class PieceCollector {
 public:
     // PieceCollector inner types define
     enum class State : schar {};

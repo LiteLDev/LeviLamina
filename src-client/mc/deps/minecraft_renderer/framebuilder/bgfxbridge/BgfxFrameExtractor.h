@@ -4,7 +4,7 @@
 
 namespace mce::framebuilder::bgfxbridge {
 
-struct BgfxFrameExtractor {
+class BgfxFrameExtractor {
 public:
     // BgfxFrameExtractor inner types declare
     // clang-format off

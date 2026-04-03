@@ -4,7 +4,7 @@
 
 namespace Social {
 
-struct EduMultiplayerHeadlessJoiner {
+class EduMultiplayerHeadlessJoiner {
 public:
     // EduMultiplayerHeadlessJoiner inner types declare
     // clang-format off

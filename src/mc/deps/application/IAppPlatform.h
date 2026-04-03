@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -55,12 +54,11 @@ public:
 
     virtual bool multiplayerRequiresUGCEnabled() const = 0;
 
+    virtual int getDefaultNetworkMaxPlayers() const = 0;
+
     virtual ::BuildPlatform getBuildPlatform() const = 0;
 
     virtual ::std::string getPlatformString() const = 0;
-
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
-    getBroadcastingMultiplayerServiceIds(bool, bool) const = 0;
 
     virtual uint64 getLowPhysicalMemoryThreshold() const = 0;
 

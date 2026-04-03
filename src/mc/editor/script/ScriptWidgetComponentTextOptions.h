@@ -17,7 +17,7 @@ class ScriptWidgetComponentTextOptions : public ::Editor::ScriptModule::ScriptWi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnk40e2a4;
+    ::ll::UntypedStorage<8, 32> mUnk40e2a4;
     // NOLINTEND
 
 public:

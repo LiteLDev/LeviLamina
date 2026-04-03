@@ -11,4 +11,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 64, ::std::array<::mce::Color, 4>> colors;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool operator==(::TintMapColor const& rhs) const;
+    // NOLINTEND
 };

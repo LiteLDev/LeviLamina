@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorHurtResult;
 class CompoundTag;
 class DataLoadHelper;
 class Mob;
@@ -47,7 +48,8 @@ public:
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~Wolf() /*override*/ = default;
     // NOLINTEND
@@ -79,13 +81,15 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
+#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+#endif
 
     MCAPI bool $isAlliedTo(::Mob* other);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class DlcId;
 class IDlcBatchModel;
-struct DlcId;
 struct PackIdVersion;
 // clang-format on
 

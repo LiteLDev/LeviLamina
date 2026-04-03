@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96> mUnk21bb5f;
     ::ll::UntypedStorage<8, 8>  mUnke11cc5;
-    ::ll::UntypedStorage<8, 8>  mUnk1a7f3a;
+    ::ll::UntypedStorage<8, 8>  mUnkaccc23;
     // NOLINTEND
 
 public:
@@ -59,9 +59,11 @@ public:
 
     virtual ::Bedrock::Result<void> asRawBytes(::std::function<::gsl::span<uchar>(uint64)>, uint64) /*override*/;
 
-    virtual ::std::optional<bool> readValidityFlag() /*override*/;
+    virtual ::std::optional<bool> additionalDataAsBool() /*override*/;
 
-    virtual ::std::optional<uint> readControlValue() /*override*/;
+    virtual ::std::optional<uint> additionalDataAsUInt32() /*override*/;
+
+    virtual ::std::optional<::std::string> additionalDataAsString(uint64) /*override*/;
 
     virtual uint64 members() /*override*/;
 

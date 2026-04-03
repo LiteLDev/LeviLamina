@@ -9,12 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class DateManager;
+class IEntitlementManager;
 class MainMenuScreenModel;
-struct IEntitlementManager;
 struct RealmsWorldInfo;
+namespace Realms { class SubscriptionService; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct SubscriptionInfo; }
-namespace Realms { struct SubscriptionService; }
 namespace Realms { struct World; }
 namespace RealmsScreenUtils { struct RealmsWorldLoadingDetails; }
 namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }

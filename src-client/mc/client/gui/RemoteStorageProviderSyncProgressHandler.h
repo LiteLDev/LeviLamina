@@ -17,13 +17,13 @@ class RemoteStorageProviderSyncProgressHandler : public ::ProgressHandler {
 public:
     // RemoteStorageProviderSyncProgressHandler inner types declare
     // clang-format off
-    struct SyncState;
+    class SyncState;
     // clang-format on
 
     // RemoteStorageProviderSyncProgressHandler inner types define
     enum class State : int {};
 
-    struct SyncState {};
+    class SyncState {};
 
 public:
     // member variables
@@ -53,7 +53,7 @@ public:
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
 
@@ -71,12 +71,6 @@ public:
         ::std::function<void(::Core::Result)>                                   onProgressHandlerCompletion,
         ::std::string const&                                                    screenName
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::chrono::seconds const& SECONDS_BEFORE_CANCELLABLE();
     // NOLINTEND
 
 public:
@@ -106,6 +100,8 @@ public:
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 

@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class MultiPlayerLevel;
-namespace Social { struct MultiplayerServiceManager; }
+namespace Social { class MultiplayerServiceManager; }
 // clang-format on
 
 namespace OreUI {

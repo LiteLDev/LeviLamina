@@ -109,7 +109,7 @@ public:
 
     MCAPI void $parseRuntimeStates(::Json::Value const& root);
 
-    MCFOLD void $parseShader(::Json::Value const& root);
+    MCAPI void $parseShader(::Json::Value const& root);
 
     MCFOLD void $appendShaderPathForGfxAPI();
     // NOLINTEND

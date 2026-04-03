@@ -2,4 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct ConnectivityHint_GameCore {};
+class ConnectivityHint_GameCore {};

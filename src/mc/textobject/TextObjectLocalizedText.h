@@ -15,7 +15,7 @@ class TextObjectLocalizedText : public ::ITextObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbecb4b;
+    ::ll::UntypedStorage<8, 32> mUnk617c6e;
     // NOLINTEND
 
 public:

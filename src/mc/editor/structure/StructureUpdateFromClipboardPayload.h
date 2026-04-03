@@ -17,7 +17,7 @@ class StructureUpdateFromClipboardPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e96f6;
+    ::ll::UntypedStorage<8, 32> mUnk6a52fd;
     // NOLINTEND
 
 public:

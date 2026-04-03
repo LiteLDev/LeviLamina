@@ -65,13 +65,5 @@ public:
     MCAPI ::TradeTable* fetchTable(::std::string const& path);
 
     MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
-
-    MCAPI ~TradeTables();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

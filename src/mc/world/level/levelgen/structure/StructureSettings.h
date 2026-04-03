@@ -53,7 +53,7 @@ public:
 
     MCAPI bool operator==(::StructureSettings const& rhs) const;
 
-    MCAPI void setPaletteName(::std::string paletteName);
+    MCFOLD void setPaletteName(::std::string paletteName);
 
     MCAPI void setPivotFromBoundedUnitVector(::Vec3 const& boundedUnitVector);
 

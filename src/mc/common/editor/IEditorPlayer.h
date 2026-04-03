@@ -27,6 +27,8 @@ public:
 
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
 
+    virtual bool isClientSide() const = 0;
+
     virtual void _onTick() = 0;
     // NOLINTEND
 

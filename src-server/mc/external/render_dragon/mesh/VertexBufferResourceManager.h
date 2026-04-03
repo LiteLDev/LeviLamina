@@ -4,15 +4,15 @@
 
 namespace dragon::mesh {
 
-struct VertexBufferResourceManager {
+class VertexBufferResourceManager {
 public:
     // VertexBufferResourceManager inner types declare
     // clang-format off
-    struct Impl;
+    class Impl;
     // clang-format on
 
     // VertexBufferResourceManager inner types define
-    struct Impl {};
+    class Impl {};
 };
 
 } // namespace dragon::mesh

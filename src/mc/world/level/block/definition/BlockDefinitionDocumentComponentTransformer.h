@@ -5,24 +5,19 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentGroupDescription;
-namespace SharedTypes::v1_21_110::BlockDefinition { struct BlockComponents; }
+namespace SharedTypes::v1_26_10::BlockDefinition { struct BlockComponents; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockDefinitionDocumentComponentTransformer {
 public:
-    // BlockDefinitionDocumentComponentTransformer inner types define
-    using TransformFunction = ::std::function<
-        void(::SharedTypes::v1_21_110::BlockDefinition::BlockComponents const&, ::BlockComponentGroupDescription&)>;
-
-public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
-        ::std::string_view,
-        ::std::function<void(
-            ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents const&,
-            ::BlockComponentGroupDescription&
-        )>>&
-    mTransformers();
+    MCAPI static void transform(
+        ::cereal::ReflectionCtx const&                                   ctx,
+        ::std::string const&                                             name,
+        ::SharedTypes::v1_26_10::BlockDefinition::BlockComponents const& blockComponents,
+        ::BlockComponentGroupDescription&                                blockComponentGroupDescription
+    );
     // NOLINTEND
 };

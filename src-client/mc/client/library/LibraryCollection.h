@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct LibraryCollection {
+class LibraryCollection {
 public:
     // LibraryCollection inner types define
     enum class LibrarySortMode : uchar {};

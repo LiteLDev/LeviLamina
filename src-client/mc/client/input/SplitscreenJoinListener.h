@@ -31,10 +31,4 @@ public:
     // NOLINTBEGIN
     MCAPI void _handleAddClientRequest(::IMinecraftGame& mg, int controllerId, bool isConfirmation);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::chrono::seconds const& sJoinConfirmationTimeout();
-    // NOLINTEND
 };

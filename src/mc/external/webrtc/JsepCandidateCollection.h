@@ -18,7 +18,7 @@ class JsepCandidateCollection : public ::webrtc::IceCandidateCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5c3fe1;
+    ::ll::UntypedStorage<8, 24> mUnk8bb427;
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
 
     virtual void clearSelectedRecipe() /*override*/;
 
-    virtual bool _canRemove(int slot, int removeCount) const /*override*/;
+    virtual bool _canRemove(int modelSlot, int removeCount) const /*override*/;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 
     MCNAPI void $clearSelectedRecipe();
 
-    MCNAPI bool $_canRemove(int slot, int removeCount) const;
+    MCNAPI bool $_canRemove(int modelSlot, int removeCount) const;
 #endif
 
 

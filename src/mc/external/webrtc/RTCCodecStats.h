@@ -17,12 +17,12 @@ class RTCCodecStats : public ::webrtc::RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk98f11b;
+    ::ll::UntypedStorage<8, 40> mUnke81430;
     ::ll::UntypedStorage<4, 8>  mUnkf5396a;
-    ::ll::UntypedStorage<8, 40> mUnk90d860;
+    ::ll::UntypedStorage<8, 40> mUnked7a42;
     ::ll::UntypedStorage<4, 8>  mUnkf00e35;
     ::ll::UntypedStorage<4, 8>  mUnk68fa62;
-    ::ll::UntypedStorage<8, 40> mUnk2f5a11;
+    ::ll::UntypedStorage<8, 40> mUnk26bf4b;
     // NOLINTEND
 
 public:

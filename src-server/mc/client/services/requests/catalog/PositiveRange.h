@@ -4,6 +4,6 @@
 
 namespace catalog {
 
-struct PositiveRange {};
+class PositiveRange {};
 
 } // namespace catalog

@@ -21,10 +21,10 @@ class TextInputControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk3be11b;
-    ::ll::UntypedStorage<8, 216> mUnk2c44a9;
-    ::ll::UntypedStorage<8, 224> mUnk422f53;
-    ::ll::UntypedStorage<8, 224> mUnkbff3ef;
+    ::ll::UntypedStorage<8, 216> mUnk587019;
+    ::ll::UntypedStorage<8, 216> mUnk497bd7;
+    ::ll::UntypedStorage<8, 224> mUnkfb5b19;
+    ::ll::UntypedStorage<8, 224> mUnk85d543;
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class SoundAction;
 class SoundItem;
-struct SoundAction;
 struct SoundParameter;
 // clang-format on
 
@@ -14,6 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                   mCategory;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mSubtitle;
     ::ll::TypedStorage<8, 32, ::std::string>                   mExternalEventName;
     ::ll::TypedStorage<8, 24, ::std::vector<::SoundItem>>      mAllSoundItems;
     ::ll::TypedStorage<8, 24, ::std::vector<::SoundAction>>    mSoundActions;

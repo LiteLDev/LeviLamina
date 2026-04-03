@@ -4,6 +4,6 @@
 
 namespace mce {
 
-struct ShaderGroup {};
+class ShaderGroup {};
 
 } // namespace mce

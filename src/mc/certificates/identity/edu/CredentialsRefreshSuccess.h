@@ -8,7 +8,7 @@ struct CredentialsRefreshSuccess {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7f22c4;
+    ::ll::UntypedStorage<8, 32> mUnke3e762;
     // NOLINTEND
 
 public:

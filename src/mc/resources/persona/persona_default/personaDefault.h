@@ -6,6 +6,11 @@
 #include "mc/platform/UUID.h"
 
 namespace personaDefault {
+// functions
+// NOLINTBEGIN
+MCNAPI_C bool isBuiltinSkinPack(::mce::UUID const& packId);
+// NOLINTEND
+
 // static variables
 // NOLINTBEGIN
 MCNAPI ::std::set<::mce::UUID> const& ALLOW_ITEM_LIST();

@@ -16,9 +16,9 @@ class ConduitBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitBlock() /*override*/ = default;
-
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+
+    virtual ~ConduitBlock() /*override*/ = default;
     // NOLINTEND
 
 public:

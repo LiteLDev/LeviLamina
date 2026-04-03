@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::LevelData&>                        levelData;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                    levelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                    levelSummary;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelSettings>> levelSettings;
     ::ll::TypedStorage<1, 1, bool>                                isDirty;
     // NOLINTEND

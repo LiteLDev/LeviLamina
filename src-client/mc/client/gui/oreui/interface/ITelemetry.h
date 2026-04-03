@@ -6,6 +6,7 @@
 // clang-format off
 namespace OreUI { struct DataTracker; }
 namespace Social::Events { class Measurement; }
+namespace Social::Events { class OptionChange; }
 namespace Social::Events { class Property; }
 // clang-format on
 
@@ -34,6 +35,11 @@ public:
     fireEventButtonPressed(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
 
     virtual void fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) = 0;
+
+    virtual void fireEventOptionsChangedAlt(
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const&
+    ) = 0;
 
     virtual void
     fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;

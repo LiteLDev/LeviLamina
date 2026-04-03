@@ -45,7 +45,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_100::CameraDocument::Description> mDescription;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_21_100::CameraDefinitions>           mComponents;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_100::CameraDefinitions>           mComponents;
     // NOLINTEND
 
 public:

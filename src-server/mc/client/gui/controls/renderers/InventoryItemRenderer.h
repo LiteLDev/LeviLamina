@@ -6,9 +6,9 @@ class InventoryItemRenderer {
 public:
     // InventoryItemRenderer inner types declare
     // clang-format off
-    struct CachedProperties;
+    class CachedProperties;
     // clang-format on
 
     // InventoryItemRenderer inner types define
-    struct CachedProperties {};
+    class CachedProperties {};
 };

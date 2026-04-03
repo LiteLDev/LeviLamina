@@ -4,6 +4,6 @@
 
 namespace LocalServerLauncher::Impl {
 
-struct ServerInstanceBuilderImpl {};
+class ServerInstanceBuilderImpl {};
 
 } // namespace LocalServerLauncher::Impl

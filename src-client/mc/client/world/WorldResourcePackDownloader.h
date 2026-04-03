@@ -10,14 +10,14 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
+class IContentAcquisition;
 class IDlcBatchModel;
 class IDlcBatcher;
+class IDlcValidation;
+class IEntitlementManager;
 class ILevelListCache;
+class IStoreCatalogRepository;
 struct DlcValidationState;
-struct IContentAcquisition;
-struct IDlcValidation;
-struct IEntitlementManager;
-struct IStoreCatalogRepository;
 struct PackIdVersion;
 namespace World { struct PackCheckResult; }
 namespace World { struct PackDownloadProgressInfo; }

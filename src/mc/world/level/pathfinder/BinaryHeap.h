@@ -11,7 +11,7 @@ class BinaryHeap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3dbce0;
+    ::ll::UntypedStorage<8, 24> mUnkbb48fa;
     ::ll::UntypedStorage<4, 4>  mUnkb6697e;
     // NOLINTEND
 

@@ -39,11 +39,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk970aac;
-        ::ll::UntypedStorage<8, 64> mUnk61c9d5;
+        ::ll::UntypedStorage<8, 64> mUnkc3e914;
+        ::ll::UntypedStorage<8, 64> mUnk2af202;
         ::ll::UntypedStorage<8, 64> mUnk861ce2;
         ::ll::UntypedStorage<8, 8>  mUnkc68b28;
-        ::ll::UntypedStorage<8, 64> mUnk5dfe9b;
+        ::ll::UntypedStorage<8, 64> mUnk3064b7;
         ::ll::UntypedStorage<8, 8>  mUnk504f10;
         // NOLINTEND
 
@@ -56,14 +56,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::Core::Profile::ProfileGroup* find(::std::string_view groupName);
+        MCNAPI ::Core::Profile::ProfileGroup* find(::std::string_view groupName);
+
+        MCNAPI ::Core::Profile::ProfileGroup& findOrCreate(::std::string_view groupName, uint color);
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfabb44;
+    ::ll::UntypedStorage<8, 8> mUnk2c2558;
     // NOLINTEND
 
 public:
@@ -75,7 +77,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::Profile::ProfileGroupManager& getSharedInstance();
+    MCNAPI static ::Core::Profile::ProfileGroupManager& getSharedInstance();
     // NOLINTEND
 };
 

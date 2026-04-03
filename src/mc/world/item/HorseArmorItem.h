@@ -48,6 +48,8 @@ public:
 
     virtual int getArmorValue() const /*override*/;
 
+    virtual int getToughnessValue() const /*override*/;
+
     virtual float getKnockbackResistanceValue() const /*override*/;
 
     virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
@@ -86,6 +88,8 @@ public:
 
     MCAPI int $getArmorValue() const;
 
+    MCAPI int $getToughnessValue() const;
+
     MCAPI float $getKnockbackResistanceValue() const;
 
     MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
@@ -100,7 +104,7 @@ public:
 
     MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCFOLD void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,

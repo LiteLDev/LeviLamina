@@ -23,8 +23,8 @@ class File {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk222808;
-    ::ll::UntypedStorage<8, 8> mUnke0759b;
+    ::ll::UntypedStorage<8, 8> mUnk7813fc;
+    ::ll::UntypedStorage<8, 8> mUnk6dd4a2;
     // NOLINTEND
 
 public:

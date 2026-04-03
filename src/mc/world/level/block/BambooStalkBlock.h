@@ -17,6 +17,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Vec3;
+struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
@@ -44,13 +45,15 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
 
     virtual bool isLavaBlocking() const /*override*/;
 
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+
+    virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
@@ -95,13 +98,15 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
     MCFOLD bool $isLavaBlocking() const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

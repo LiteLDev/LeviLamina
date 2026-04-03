@@ -8,7 +8,7 @@ struct EventMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1a26d4;
+    ::ll::UntypedStorage<8, 32> mUnk7f2f12;
     ::ll::UntypedStorage<8, 16> mUnke430fe;
     // NOLINTEND
 

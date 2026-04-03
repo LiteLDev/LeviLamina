@@ -6,7 +6,7 @@ struct AccessTokenInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc2cf82;
+    ::ll::UntypedStorage<8, 32> mUnkb9bab6;
     ::ll::UntypedStorage<8, 8>  mUnk705dd3;
     // NOLINTEND
 

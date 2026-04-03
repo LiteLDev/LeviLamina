@@ -7,6 +7,7 @@
 #include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/json/Value.h"
@@ -14,6 +15,7 @@
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
 #include "mc/options/EducationEditionOfferValue.h"
+#include "mc/platform/brstd/flat_map.h"
 #include "mc/world/actor/player/Abilities.h"
 #include "mc/world/actor/player/PermissionsHandler.h"
 #include "mc/world/level/BlockPos.h"
@@ -29,6 +31,7 @@
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
 #include "mc/world/level/storage/GameRules.h"
+#include "mc/world/level/storage/LevelDataProperty.h"
 #include "mc/world/level/storage/StorageVersion.h"
 #include "mc/world/level/storage/WorldTemplateLevelData.h"
 
@@ -36,7 +39,6 @@
 // clang-format off
 class BaseGameVersion;
 class CompoundTag;
-class HashedString;
 class ILevelStorageManagerConnector;
 class LevelSeed64;
 class LevelSettings;
@@ -49,6 +51,13 @@ namespace RakNet { class BitStream; }
 
 class LevelData {
 public:
+    // LevelData inner types define
+    using LevelDataPublisher = ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>;
+
+    using LevelDataPublisherRefWrapper = ::std::reference_wrapper<
+        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 5, ::AdventureSettings>                                     mAdventureSettings;
@@ -56,7 +65,7 @@ public:
     ::ll::TypedStorage<8, 192, ::GameRules>                                           mGameRules;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                    mExperiments;
     ::ll::TypedStorage<4, 240, ::Abilities>                                           mDefaultAbilities;
-    ::ll::TypedStorage<1, 2, ::PermissionsHandler>                                    mDefaultPermissions;
+    ::ll::TypedStorage<8, 24, ::PermissionsHandler>                                   mDefaultPermissions;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mLevelName;
     ::ll::TypedStorage<4, 4, ::StorageVersion>                                        mStorageVersion;
     ::ll::TypedStorage<8, 56, ::GameVersion>                                          mMinCompatibleClientVersion;
@@ -120,6 +129,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                    mCustomSkinsDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                    mEmoteChatMuted;
+    ::ll::TypedStorage<1, 1, bool>                                                    mUseAllowList;
     ::ll::TypedStorage<1, 1, bool>                                                    mHasUncompleteWorldFileOnDisk;
     ::ll::TypedStorage<1, 1, ::NetherWorldType>                                       mNetherType;
     ::ll::TypedStorage<8, 48, ::SpawnSettings>                                        mSpawnSettings;
@@ -134,7 +144,18 @@ public:
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
                                                                mIsHardcoreSubscribers;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelData;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>  mExperienceWorldId;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::brstd::flat_map<
+            ::LevelDataProperty,
+            ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>,
+            ::std::less<::LevelDataProperty>,
+            ::std::vector<::LevelDataProperty>,
+            ::std::vector<::std::unique_ptr<
+                ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>>>
+                                                              mLevelDataPropertiesPublishers;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExperienceWorldId;
     // NOLINTEND
 
 public:
@@ -163,7 +184,13 @@ public:
 
     MCAPI void _determineMaxBaseGameVersion();
 
+    MCAPI void _dispatchLevelDataPropertyPublisher(::LevelDataProperty property) const;
+
+    MCAPI void _initLevelDataPropertyPublishers();
+
     MCAPI_C void _resetDefaultAdvancedSettingsData(bool isTrial);
+
+    MCAPI_C void _resetDefaultGeneralSettingsData();
 
     MCAPI_C void _resetDefaultScriptingCodingSettingsData();
 
@@ -183,6 +210,8 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
+    MCAPI void disableAchievements();
+
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
     MCAPI_C ::CloudSaveLevelInfo& getCloudSaveInfo();
@@ -201,11 +230,16 @@ public:
 
     MCAPI ::WorldVersion getWorldVersion() const;
 
-    MCAPI_C bool isAlwaysDay() const;
+    MCAPI bool isAlwaysDay() const;
 
     MCAPI_C bool isEditionCompatible() const;
 
+    MCAPI ::LevelData& operator=(::LevelData&&);
+
     MCAPI_C ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
+
+    MCAPI_C ::Bedrock::PubSub::Subscription
+    registerLevelDataPropertyListener(::LevelDataProperty property, ::std::function<void()> callback) const;
 
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
@@ -219,17 +253,25 @@ public:
 
     MCAPI void setBiomeOverride(::std::string const& biomeName);
 
+    MCAPI void setCommandsEnabled(bool commandsEnabled);
+
     MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 
     MCAPI void setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
 
     MCAPI void setEducationEditionOffer(::EducationEditionOffer offer);
 
+    MCAPI void setEducationFeaturesEnabled(bool educationEnabled);
+
     MCAPI void setEducationOid(::std::string const& educationOid);
+
+    MCAPI_C void setExperienceWorldId(::std::string const& experienceWorldId);
 
     MCAPI void setFlatWorldOptions(::Json::Value const& options);
 
     MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
+
+    MCAPI void setGameDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCAPI void setGameType(::GameType type);
 
@@ -241,13 +283,19 @@ public:
 
     MCAPI void setSeed(::LevelSeed64 seed);
 
+    MCAPI_C void setServerChunkTickRange(uint newRange);
+
     MCAPI void setSpawnPos(::BlockPos const& spawn);
 
     MCAPI_C void setSpawnSettings(::SpawnSettings const& settings);
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
+    MCAPI void setTime(int time);
+
     MCAPI_C void setWorldTemplateIdentity(::PackIdVersion const& packIdVersion);
+
+    MCAPI_C void setWorldTemplateOptionLocked(bool isLocked);
 
     MCAPI void setWorldVersion(::WorldVersion version);
 

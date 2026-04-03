@@ -6,7 +6,7 @@ class ServerInfoFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6e8b0d;
+    ::ll::UntypedStorage<8, 32> mUnk326d93;
     // NOLINTEND
 
 public:

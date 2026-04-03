@@ -25,11 +25,11 @@
 class AbstractSceneProxy;
 class AbstractScreenSetupCleanupStrategy;
 class CachedScenes;
+class MinecraftUIFrameUpdateContext;
 class RectangleArea;
 class ScreenContext;
 class TaskGroup;
 struct FrameRenderObject;
-struct MinecraftUIFrameUpdateContext;
 struct PointerLocationEventData;
 struct ScreenSizeData;
 struct TextCharEventData;
@@ -39,7 +39,6 @@ namespace OreUI { class IViewProvider; }
 namespace OreUI { class RouteModeInputHandler; }
 namespace OreUI { class Router; }
 namespace OreUI { class RouterLocation; }
-namespace OreUI { struct ViewDebugSettings; }
 namespace OreUI::Debug { class ISceneDataProvider; }
 // clang-format on
 
@@ -129,7 +128,7 @@ public:
 
     virtual void handleTextChar(::std::string const&, ::FocusImpact) /*override*/;
 
-    virtual void handleCaretLocation(int caretLocation, ::FocusImpact) /*override*/;
+    virtual void handleCaretLocation(int, ::FocusImpact) /*override*/;
 
     virtual void handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact) /*override*/;
 
@@ -249,8 +248,6 @@ public:
 
     virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
 
-    virtual void setDebugSettings(::OreUI::ViewDebugSettings const& viewSettings) const /*override*/;
-
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const
         /*override*/;
 
@@ -361,7 +358,7 @@ public:
 
     MCFOLD void $handleTextChar(::std::string const&, ::FocusImpact);
 
-    MCFOLD void $handleCaretLocation(int caretLocation, ::FocusImpact);
+    MCFOLD void $handleCaretLocation(int, ::FocusImpact);
 
     MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
 
@@ -403,7 +400,7 @@ public:
 
     MCFOLD bool $shouldBeSkippedInAutomation() const;
 
-    MCFOLD int $getWidth();
+    MCAPI int $getWidth();
 
     MCAPI int $getHeight();
 
@@ -477,11 +474,9 @@ public:
 
     MCAPI bool $hasFinishedLoading() const;
 
-    MCFOLD void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
+    MCAPI void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
 
     MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
-
-    MCAPI void $setDebugSettings(::OreUI::ViewDebugSettings const& viewSettings) const;
 
     MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
 

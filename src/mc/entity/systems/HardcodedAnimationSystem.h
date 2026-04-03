@@ -11,10 +11,10 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorWalkAnimationComponent;
 struct BlazeFlagComponent;
 struct DynamicRenderOffsetComponent;
+struct InterpolateMovementNeededComponent;
 struct LavaSlimeFlagComponent;
 struct MobAnimationComponent;
 struct MobBodyRotationComponent;
@@ -51,17 +51,17 @@ MCNAPI void doHardcodedAnimation(
 MCNAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::StateVectorComponent const,
         ::ActorWalkAnimationComponent> speedView,
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::DynamicRenderOffsetComponent const,
         ::ActorWalkAnimationComponent> offsetView,
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
         ::MobAnimationComponent,
         ::MobBodyRotationComponent const,
         ::MobHurtTimeComponent const,

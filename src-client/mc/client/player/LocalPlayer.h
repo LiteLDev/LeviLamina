@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
+#include "mc/client/world/actor/player/ClientLocatorBar.h"
 #include "mc/common/Brightness.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
@@ -17,7 +20,6 @@
 #include "mc/events/OpenCodeMethod.h"
 #include "mc/network/packet/PlayerRespawnState.h"
 #include "mc/platform/UUID.h"
-#include "mc/platform/diagnostics/CrashDumpLogStringID.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorResetRule.h"
@@ -37,6 +39,7 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorHurtResult;
 class BlockActor;
 class BlockSource;
 class ChalkboardBlockActor;
@@ -49,6 +52,7 @@ class Container;
 class DataLoadHelper;
 class Dimension;
 class EntityContext;
+class FrameUpdateContextBase;
 class HitResult;
 class IClientInstance;
 class IContainerManager;
@@ -62,6 +66,7 @@ class MobEffectInstance;
 class NetworkIdentifier;
 class Packet;
 class PacketSender;
+class PlayerAutomationObserver;
 class PlayerEventCoordinator;
 class SubChunkPos;
 class SubChunkRequestSubscriber;
@@ -69,14 +74,13 @@ class TextObjectRoot;
 class Vec2;
 struct ActorUniqueID;
 struct ArmorSlotAndDamagePair;
-struct FrameUpdateContextBase;
 struct INpcDialogueData;
 struct InventoryOptions;
 struct ItemStackLegacyRequestIdTag;
 struct PlayerAuthenticationInfo;
-struct PlayerAutomationObserver;
 struct Tick;
 namespace Bedrock::DDUI { class DataStoreSyncClient; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class IEditorManager; }
 namespace Editor { class IEditorPlayer; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
@@ -196,6 +200,7 @@ public:
     ::ll::TypedStorage<8, 152, ::ItemStack>                                  mSentInventoryItem;
     ::ll::TypedStorage<4, 4, int>                                            mSentSelectedSlot;
     ::ll::TypedStorage<1, 2, ::LocalPlayer::ContainerCloseInfo>              mContainerCloseInfo;
+    ::ll::TypedStorage<8, 72, ::ClientLocatorBar>                            mClientLocatorBar;
     ::ll::TypedStorage<8, 8, uint64>                                         mSessionTickCount;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalPlayer::RegionListener*>> mRegionListeners;
     ::ll::TypedStorage<1, 1, bool>                                           mDamagedByMobThisFrame;
@@ -225,6 +230,12 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                 mLastXPContainerClosedTimePoint;
     ::ll::TypedStorage<1, 1, bool>                                                    mPreparedMainChunkSource;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mVisibleTouchJoystickLockSubscription;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+        mClientPlayerGameTypePublisher;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+        mLocalPlayerDeathPublisher;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+        mLocalPlayerRespawnPublisher;
     // NOLINTEND
 
 public:
@@ -314,7 +325,7 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos) /*override*/;
+    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& pos) /*override*/;
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
@@ -378,7 +389,7 @@ public:
 
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
@@ -414,7 +425,8 @@ public:
 
     virtual void emitCriticalHitParticles(::Actor const& target, int particleCount) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
 public:
@@ -453,6 +465,8 @@ public:
     MCAPI void _prepareMainChunkSource(::ChunkPos const& center);
 
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
+
+    MCAPI void describeBlock();
 
     MCAPI void fireEventPersonaEmotePlayed(bool emoteEndedEarly);
 
@@ -497,14 +511,6 @@ public:
     );
 
     MCAPI static void sendInput(::EntityContext& entity, ::PacketSender& packetSender);
-
-    MCAPI static ::LocalPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::chrono::nanoseconds const& MAX_DIMENSION_LOAD_IN_TIME();
     // NOLINTEND
 
 public:
@@ -609,7 +615,7 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedBlockPos);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& pos);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
@@ -668,7 +674,7 @@ public:
 
     MCFOLD bool $isActorRelevant(::Actor const& actor);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $checkMovementStats(::Vec3 const& d);
 
@@ -701,7 +707,7 @@ public:
 
     MCAPI void $emitCriticalHitParticles(::Actor const& target, int particleCount);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:

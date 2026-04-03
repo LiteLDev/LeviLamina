@@ -8,7 +8,7 @@ class TelemetryHeartbeat {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3af22c;
+    ::ll::UntypedStorage<8, 32> mUnk3252d9;
     ::ll::UntypedStorage<8, 8>  mUnke888c1;
     ::ll::UntypedStorage<8, 8>  mUnkcfacbe;
     ::ll::UntypedStorage<8, 8>  mUnka0f533;

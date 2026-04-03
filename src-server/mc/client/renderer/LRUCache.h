@@ -4,7 +4,7 @@
 
 namespace mce {
 
-struct LRUCache {
+class LRUCache {
 public:
     // LRUCache inner types declare
     // clang-format off

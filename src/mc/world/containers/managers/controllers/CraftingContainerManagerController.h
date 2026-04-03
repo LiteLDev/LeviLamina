@@ -84,18 +84,6 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI void $onBlockChanged(
-            ::BlockSource&                 source,
-            ::BlockPos const&              pos,
-            uint                           layer,
-            ::Block const&                 block,
-            ::Block const&                 oldBlock,
-            int                            updateFlags,
-            ::ActorBlockSyncMessage const* syncMsg,
-            ::BlockChangedEventTarget      eventTarget,
-            ::Actor*                       blockChangeSource
-        );
-
         MCNAPI void $onSourceDestroyed(::BlockSource& source);
 #endif
 
@@ -238,7 +226,7 @@ public:
 
     MCNAPI_C ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI_C ::ItemInstance const& getGhostItem(::std::string const& collectionName, int collectionIndex);
+    MCNAPI_C ::ItemInstance const& getGhostItem(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI_C int getIndexForCreativeItem(::std::string const& collectionName, ::ItemStackBase const& item) const;
 

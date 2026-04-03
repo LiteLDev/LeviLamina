@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TrialManager;
+class TrialManager;
 // clang-format on
 
 namespace OreUI {

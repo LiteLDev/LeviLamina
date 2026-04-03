@@ -37,8 +37,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ConduitBlockActor() /*override*/ = default;
-
     virtual void tick(::BlockSource& region) /*override*/;
 
     virtual bool hasAlphaLayer() const /*override*/;
@@ -47,15 +45,19 @@ public:
 
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
+
+    virtual ~ConduitBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _animateTick(::BlockSource& region) const;
+
+    MCAPI void _applyEffects(::BlockSource& region);
 
     MCAPI void _checkShape(::BlockSource& region);
 
@@ -73,7 +75,7 @@ public:
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

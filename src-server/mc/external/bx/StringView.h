@@ -4,6 +4,6 @@
 
 namespace bx {
 
-struct StringView {};
+class StringView {};
 
 } // namespace bx

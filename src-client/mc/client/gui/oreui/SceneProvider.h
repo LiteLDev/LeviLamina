@@ -18,7 +18,7 @@ namespace OreUI { class Library; }
 namespace OreUI { class RouteModeInputHandler; }
 namespace OreUI { class Router; }
 namespace OreUI { struct ViewId; }
-namespace OreUI::Experimental::Detail { class ViewContextFactory; }
+namespace OreUI::Detail { class ViewContextFactory; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
@@ -28,12 +28,12 @@ class SceneProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::OreUI::Library&>                                mUILibrary;
-    ::ll::TypedStorage<8, 8, ::ui::ScreenTechStackSelector const&>             mScreenTechStackSelector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FacetRegistryFactory>> mFacetRegistryFactory;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Experimental::Detail::ViewContextFactory>> mContextFactory;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>                    mClientInstance;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::RouteModeInputHandler>> mRouteModeInputHandler;
+    ::ll::TypedStorage<8, 8, ::OreUI::Library&>                                      mUILibrary;
+    ::ll::TypedStorage<8, 8, ::ui::ScreenTechStackSelector const&>                   mScreenTechStackSelector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FacetRegistryFactory>>       mFacetRegistryFactory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>> mContextFactory;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>      mClientInstance;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::RouteModeInputHandler>>      mRouteModeInputHandler;
     // NOLINTEND
 
 public:

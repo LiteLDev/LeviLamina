@@ -15,9 +15,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEntitlementManager;
 class MainMenuScreenModel;
 class RealmsCreateParams;
-struct IEntitlementManager;
 struct ProductSku;
 struct Purchase;
 namespace Json { class Value; }

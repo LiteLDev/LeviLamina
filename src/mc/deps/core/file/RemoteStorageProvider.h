@@ -19,7 +19,7 @@ class RemoteStorageProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk4f2a23;
+    ::ll::UntypedStorage<8, 16> mUnk4791cb;
     // NOLINTEND
 
 public:
@@ -43,16 +43,9 @@ public:
 
     virtual float getSyncProgress() = 0;
 
-    virtual void tick() = 0;
-
     virtual void onAppSuspend() = 0;
 
     virtual void onAppResume() = 0;
-
-    virtual void onSignOut() = 0;
-
-    virtual ::CallbackToken
-        onSignIn(::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>) = 0;
 
     virtual ::CallbackToken deleteContainer(
         ::std::shared_ptr<::CallbackTokenContext<::std::function<void(::Core::Result)>>>,

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HttpRequestHandler {
+class HttpRequestHandler {
 public:
     // HttpRequestHandler inner types define
     enum class RequestStatus : int {};

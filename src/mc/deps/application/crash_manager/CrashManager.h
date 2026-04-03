@@ -11,6 +11,7 @@ class Scheduler;
 namespace Bedrock { class CrashFileProcessor; }
 namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
+namespace Bedrock { struct CrashManagerConfig; }
 // clang-format on
 
 namespace Bedrock {
@@ -19,7 +20,7 @@ class CrashManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedroc
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initialize(::std::string_view) = 0;
+    virtual void initialize(::Bedrock::CrashManagerConfig const&) = 0;
 
     virtual void setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>) = 0;
 

@@ -8,8 +8,8 @@ struct InboxSummaryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk2de992;
-    ::ll::UntypedStorage<8, 16> mUnk906881;
+    ::ll::UntypedStorage<8, 16> mUnk78ad8e;
+    ::ll::UntypedStorage<8, 16> mUnk5434f6;
     ::ll::UntypedStorage<8, 8>  mUnk861a0d;
     ::ll::UntypedStorage<8, 8>  mUnk56b48d;
     ::ll::UntypedStorage<1, 1>  mUnkffded2;

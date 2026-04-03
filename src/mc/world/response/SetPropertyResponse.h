@@ -18,7 +18,7 @@ class SetPropertyResponse : public ::ActorEventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb47209;
+    ::ll::UntypedStorage<8, 24> mUnk2a4e45;
     // NOLINTEND
 
 public:

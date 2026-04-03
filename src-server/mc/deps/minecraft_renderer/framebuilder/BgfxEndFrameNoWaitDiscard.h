@@ -4,7 +4,7 @@
 
 namespace mce::framebuilder {
 
-struct BgfxEndFrameNoWaitDiscard {
+class BgfxEndFrameNoWaitDiscard {
 public:
     // BgfxEndFrameNoWaitDiscard inner types declare
     // clang-format off

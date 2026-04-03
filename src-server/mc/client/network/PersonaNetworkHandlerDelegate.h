@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PersonaNetworkHandlerDelegate {
+class PersonaNetworkHandlerDelegate {
 public:
     // PersonaNetworkHandlerDelegate inner types declare
     // clang-format off

@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CachedHostPackIdProvider;
 class ContentIdentity;
 class ContentItemCollection;
 class ContentManagerProxy;
@@ -19,7 +20,6 @@ class IContentManagerContext;
 class IVersionedContentItemCollection;
 class Pack;
 class TaskGroup;
-struct CachedHostPackIdProvider;
 struct ContentItem;
 struct ContentSource;
 struct InvalidPacksFilterGroup;

@@ -37,6 +37,8 @@ public:
     ::ll::TypedStorage<4, 4, ::GameType>                              mGameType;
     ::ll::TypedStorage<1, 1, bool>                                    mIsHardcore;
     ::ll::TypedStorage<1, 1, bool>                                    mPlayerHasDied;
+    ::ll::TypedStorage<4, 4, int>                                     mTime;
+    ::ll::TypedStorage<1, 1, bool>                                    mShowDaysPlayed;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty>       mGameDifficulty;
     ::ll::TypedStorage<8, 8, ::LevelSeed64>                           mSeed;
     ::ll::TypedStorage<4, 4, int>                                     mNetworkProtocolVersion;
@@ -91,6 +93,8 @@ public:
         ::GameType                            gameType,
         bool                                  isHardcore,
         bool                                  playerHasDied,
+        int                                   time,
+        bool                                  showDaysPlayed,
         ::SharedTypes::Legacy::Difficulty     gameDifficulty,
         ::LevelSeed64                         seed,
         int                                   npv,
@@ -182,6 +186,8 @@ public:
         ::GameType                            gameType,
         bool                                  isHardcore,
         bool                                  playerHasDied,
+        int                                   time,
+        bool                                  showDaysPlayed,
         ::SharedTypes::Legacy::Difficulty     gameDifficulty,
         ::LevelSeed64                         seed,
         int                                   npv,

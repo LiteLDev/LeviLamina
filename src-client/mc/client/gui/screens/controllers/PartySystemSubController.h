@@ -14,6 +14,9 @@
 class MinecraftScreenModel;
 class ToastManager;
 class ToastMessage;
+namespace Parties { class PartySystem; }
+namespace Parties { struct PartyDestinationGathering; }
+namespace Parties { struct PartyDestinationRealm; }
 namespace Parties { struct PartyDestinationXblP2P; }
 namespace Parties { struct PartyEventAcceptInviteFailed; }
 namespace Parties { struct PartyEventCreateFailed; }
@@ -29,7 +32,6 @@ namespace Parties { struct PartyEventMemberLeft; }
 namespace Parties { struct PartyEventRemoveMemberFailed; }
 namespace Parties { struct PartyEventSendInviteFailed; }
 namespace Parties { struct PartyEventSetLeaderFailed; }
-namespace Parties { struct PartySystem; }
 // clang-format on
 
 class PartySystemSubController : public ::MinecraftScreenController, public ::IToastEventListener {
@@ -68,7 +70,11 @@ public:
         ::ToastManager&                                       toastManager
     );
 
-    MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P dest);
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationGathering destGathering);
+
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationRealm destRealm);
+
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P destXbl);
 
     MCAPI void _onEvent(::Parties::PartyEventCreateFailed const&);
 

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace mce { struct Attribute; }
+namespace mce { class Attribute; }
 // clang-format on
 
 namespace mce {
@@ -21,7 +21,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkfc8a8c;
+        ::ll::UntypedStorage<8, 24> mUnk8fc1cf;
         // NOLINTEND
 
     public:
@@ -34,8 +34,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5933ad;
-    ::ll::UntypedStorage<8, 8>  mUnkd2c845;
+    ::ll::UntypedStorage<8, 24> mUnk8d1908;
+    ::ll::UntypedStorage<8, 8>  mUnk59cd37;
     ::ll::UntypedStorage<1, 1>  mUnke4e578;
     // NOLINTEND
 

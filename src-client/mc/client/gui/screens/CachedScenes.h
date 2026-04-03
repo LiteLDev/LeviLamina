@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+
 // auto generated forward declare list
 // clang-format off
 class LayoutManager;
@@ -9,7 +12,6 @@ class TaskGroup;
 class UIControlFactory;
 class VisualTree;
 struct CachedScene;
-namespace Json { class Value; }
 // clang-format on
 
 class CachedScenes {

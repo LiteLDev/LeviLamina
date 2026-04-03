@@ -4,6 +4,6 @@
 
 namespace dragon::framerenderer::details {
 
-struct BgfxTexture2DPoolImplementation {};
+class BgfxTexture2DPoolImplementation {};
 
 } // namespace dragon::framerenderer::details

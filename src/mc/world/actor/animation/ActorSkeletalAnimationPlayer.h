@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
 #include "mc/world/actor/animation/ActorAnimationType.h"
@@ -11,9 +12,9 @@
 // auto generated forward declare list
 // clang-format off
 class AnimationComponent;
+class ApplyAnimationContext;
 class BoneOrientation;
 class ExpressionNode;
-class HashedString;
 class RenderParams;
 struct AnimationVisitor;
 struct BoneAnimationPlayer;
@@ -41,6 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
         float                                                                             blendWeight
@@ -80,19 +82,17 @@ public:
         ::ExpressionNode const&     blendExpression
     );
 
-    MCAPI_C void _animateBones(
+    MCAPI void _animateBones(
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
         float                                                                             blendWeight
     );
 
-    MCAPI_C void _fireParticleEvents(::RenderParams& renderParams);
-
     MCAPI_C void _fireSoundEvents(::RenderParams& renderParams);
 
     MCAPI_C void _rebuildBoneAnimationPlayers();
 
-    MCAPI_C void _setDefaultPose(
+    MCAPI void _setDefaultPose(
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap
     ) const;
@@ -121,6 +121,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationMap,
         float                                                                             blendWeight

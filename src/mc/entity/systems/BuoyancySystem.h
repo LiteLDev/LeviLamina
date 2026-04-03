@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 class BuoyancyComponent;
 class EntitySystems;
 class IConstBlockSource;
@@ -16,12 +17,23 @@ class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct BaseGameVersionComponent;
 struct BuoyancyFloatRequestComponent;
+struct CanAlwaysAutoStepFlagComponent;
 struct StateVectorComponent;
 // clang-format on
 
 namespace BuoyancySystem {
 // functions
 // NOLINTBEGIN
+MCNAPI void buoyancyFloatSystem(
+    ::StrictEntityContext const&                        entity,
+    ::BuoyancyComponent const&                          buoyancyComponent,
+    ::BuoyancyFloatRequestComponent const&              floatRequestComponent,
+    ::BaseGameVersion const&                            baseGameVersion,
+    ::StateVectorComponent&                             stateVectorComponent,
+    ::ActorDataFlagComponent&                           actorDataFlagComponent,
+    ::EntityModifier<::CanAlwaysAutoStepFlagComponent>& mod
+);
+
 MCNAPI void checkAndAddFloatRequest(
     ::StrictEntityContext const&                       entity,
     ::StateVectorComponent const&                      stateVectorComponent,
@@ -39,6 +51,7 @@ MCNAPI void tickBuoyancyFloatSystem(
         ::BuoyancyFloatRequestComponent,
         ::StateVectorComponent,
         ::ActorDataFlagComponent>                      view,
+    ::EntityModifier<::CanAlwaysAutoStepFlagComponent> mod,
     ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion
 );
 // NOLINTEND

@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPattern;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             char,
             ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const>,

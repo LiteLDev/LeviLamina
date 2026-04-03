@@ -10,6 +10,7 @@
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/platform/UIScalingRules.h"
 #include "mc/platform/OSInformation.h"
+#include "mc/platform/Result.h"
 #include "mc/win/AppPlatformWindows.h"
 
 // auto generated forward declare list
@@ -19,7 +20,8 @@ class SecureStorage;
 class SecureStorageKey;
 class WebviewInterface;
 namespace Core { class Path; }
-namespace Webview { struct PlatformArguments; }
+namespace Core { class PathView; }
+namespace Webview { class PlatformArguments; }
 // clang-format on
 
 class AppPlatform_win32 : public ::AppPlatformWindows {
@@ -49,12 +51,9 @@ public:
     // NOLINTBEGIN
     virtual ~AppPlatform_win32() /*override*/;
 
-    virtual ::std::string _readAssetFileInternal(::Core::Path const& filename) /*override*/;
+    virtual ::Bedrock::Result<::std::string> _readAssetFileInternal(::Core::PathView filename) /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
-
-    virtual ::std::set<::Core::PathBuffer<::std::string>>
-    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
@@ -184,12 +183,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
+    MCAPI ::Bedrock::Result<::std::string> $_readAssetFileInternal(::Core::PathView filename);
 
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
-
-    MCAPI ::std::set<::Core::PathBuffer<::std::string>>
-    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 

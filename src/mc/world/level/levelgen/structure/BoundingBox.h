@@ -85,10 +85,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
     // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
-    // NOLINTEND
 };

@@ -11,6 +11,7 @@
 #include "mc/client/world/PackActionError.h"
 #include "mc/client/world/PackDownloadError.h"
 #include "mc/client/world/SaveWorldError.h"
+#include "mc/client/world/WorldID.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/LevelListCacheObserver.h"
@@ -29,7 +30,6 @@ namespace World { class IWorldResourcePackHandler; }
 namespace World { class IWorldStorageHandler; }
 namespace World { class IWorldTemplateHandler; }
 namespace World { struct WorldData; }
-namespace World { struct WorldID; }
 namespace World { struct WorldPacksData; }
 // clang-format on
 

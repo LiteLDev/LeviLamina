@@ -12,10 +12,10 @@ struct MessToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkad30ac;
-    ::ll::UntypedStorage<8, 32> mUnkf61fd9;
-    ::ll::UntypedStorage<8, 32> mUnk282bfd;
-    ::ll::UntypedStorage<8, 32> mUnkc6c0f2;
+    ::ll::UntypedStorage<8, 32> mUnk91d335;
+    ::ll::UntypedStorage<8, 32> mUnk65d12b;
+    ::ll::UntypedStorage<8, 32> mUnkcc6428;
+    ::ll::UntypedStorage<8, 32> mUnk7a5ce8;
     // NOLINTEND
 
 public:

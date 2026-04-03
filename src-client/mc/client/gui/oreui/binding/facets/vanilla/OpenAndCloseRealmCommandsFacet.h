@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Realms { struct OpenAndCloseRealmManager; }
+namespace Realms { class OpenAndCloseRealmManager; }
 // clang-format on
 
 namespace OreUI {

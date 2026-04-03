@@ -18,9 +18,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::BlockPos     pos;
+    int            priorityOffset;
     ::Block const* mBlock;
     ::Tick         tick;
-    int            priorityOffset;
+
     // NOLINTEND
 
 public:

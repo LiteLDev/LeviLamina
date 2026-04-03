@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
 class PacketSender;
 class SubChunkPacket;
-class SubChunkPos;
 class SubChunkRequestSubscriber;
 // clang-format on
 

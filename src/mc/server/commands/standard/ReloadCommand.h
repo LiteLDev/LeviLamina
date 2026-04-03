@@ -18,6 +18,7 @@ public:
     enum class ReloadAction : int {
         ScriptsAndFunctions = 0,
         Everything          = 1,
+        DataDrivenUI        = 2,
     };
 
 public:

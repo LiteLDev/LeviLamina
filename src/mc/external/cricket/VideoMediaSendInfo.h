@@ -8,8 +8,8 @@ struct VideoMediaSendInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdab669;
-    ::ll::UntypedStorage<8, 24> mUnk2ea507;
+    ::ll::UntypedStorage<8, 24> mUnk28fdee;
+    ::ll::UntypedStorage<8, 24> mUnke61a73;
     ::ll::UntypedStorage<8, 16> mUnk6d241a;
     // NOLINTEND
 

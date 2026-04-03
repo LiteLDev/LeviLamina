@@ -26,7 +26,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::mce::Color const&);
+    MCAPI void* $ctor(::mce::Color const&);
     // NOLINTEND
 };
 

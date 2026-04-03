@@ -5,22 +5,16 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentDescription;
-namespace SharedTypes::v1_21_110::BlockDefinition { struct BlockComponents; }
+namespace SharedTypes::v1_26_10::BlockDefinition { struct BlockComponents; }
 // clang-format on
 
 struct BlockComponentDescriptionTransformer {
 public:
-    // BlockComponentDescriptionTransformer inner types define
-    using TransformFunction = ::std::function<
-        void(::BlockComponentDescription const&, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents&)>;
-
-public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
-        ::std::string_view,
-        ::std::function<
-            void(::BlockComponentDescription const&, ::SharedTypes::v1_21_110::BlockDefinition::BlockComponents&)>>&
-    mTransformers();
+    MCAPI static void transform(
+        ::BlockComponentDescription const&                         blockComponentDescription,
+        ::SharedTypes::v1_26_10::BlockDefinition::BlockComponents& blockComponents
+    );
     // NOLINTEND
 };

@@ -8,8 +8,8 @@ struct EditorRealmsWorld {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf2d294;
-    ::ll::UntypedStorage<8, 32> mUnk6531eb;
+    ::ll::UntypedStorage<8, 32> mUnk3fdb9e;
+    ::ll::UntypedStorage<8, 32> mUnk5d5b20;
     // NOLINTEND
 
 public:

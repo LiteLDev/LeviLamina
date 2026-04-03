@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 // clang-format on
 
@@ -15,6 +16,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _sitEvent(::Actor& actor, bool sit);
 
-    MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

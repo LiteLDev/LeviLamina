@@ -17,6 +17,7 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
@@ -30,10 +31,12 @@
 // clang-format off
 class Actor;
 class ActorSoundIdentifier;
+class AmbientSoundController;
 class BaseActorRenderContext;
 class Block;
 class BlockActor;
 class BlockSource;
+class ClientFrameUpdateContext;
 class CompoundTag;
 class EntityContext;
 class Font;
@@ -47,30 +50,29 @@ class Mob;
 class Options;
 class Player;
 class Random;
+class RenderChunkShared;
 class ScreenContext;
+class SoundMapping;
 class SoundPlayerInterface;
 class Tessellator;
 class TextureAtlas;
 class TextureTessellator;
 struct ActorShadowRenderObjectCollection;
-struct AmbientSoundController;
 struct BlockDestructInfo;
 struct BreakingItemParticleData;
-struct ClientFrameUpdateContext;
 struct CloudRenderObject;
 struct CrackRenderObject;
 struct CrackRenderObjectCollection;
 struct DeferredSound;
 struct LevelRenderPreRenderUpdateParameters;
 struct NameTagRenderObjectCollection;
-struct RenderChunkShared;
 struct ResolvedItemIconInfo;
 struct SkyRenderObject;
 struct Sound;
-struct SoundMapping;
 struct TextureUVCoordinateSet;
 struct ViewRenderData;
 struct ViewRenderObject;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace ParticleSystem { class ParticleEmitter; }
 namespace mce { class Camera; }
 namespace mce { class Mesh; }
@@ -201,8 +203,25 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopLevelSoundEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopAllLevelSoundsEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnStopMusicEvent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mSubtitlesOptionSubscription;
+    ::ll::TypedStorage<1, 1, bool>                                        mSubtitlesEnabled;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelAnimateTickHelper>> mLevelAnimateTickHelper;
-    ::ll::TypedStorage<8, 640, ::ServerGraphicsOverrideManager>           mScriptGraphicsOverrideManager;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(
+                ::std::string const&,
+                ::std::optional<::std::string>,
+                ::Vec3 const&,
+                float,
+                ::Vec3 const&,
+                ::Vec3 const&
+            ),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+                                                                 mOnSoundPlayed;
+    ::ll::TypedStorage<8, 3136, ::ServerGraphicsOverrideManager> mScriptGraphicsOverrideManager;
     // NOLINTEND
 
 public:
@@ -254,9 +273,9 @@ public:
 
     virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) /*override*/;
 
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
@@ -359,8 +378,6 @@ public:
 
     MCAPI void _playBabySoundEvent(::Sound const& sound, ::Vec3 const& pos, ::Random& rand) const;
 
-    MCAPI void _playNamedSound(::HashedString const& name, ::Vec3 const& pos) const;
-
     MCAPI void _renderHighlightSelection(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
@@ -421,6 +438,8 @@ public:
 
     MCAPI float getFovWithoutGameplay() const;
 
+    MCAPI ::DirectionalLightRenderData getSunState() const;
+
     MCAPI void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) const;
 
     MCAPI void reinit(::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& terrainTexture);
@@ -439,12 +458,12 @@ public:
 
     MCAPI void tickSkyColor();
 
-    MCAPI void tryReassignSound(
+    MCAPI void tryReassignSoundToFallback(
         ::SharedTypes::Legacy::LevelSoundEvent& eventType,
-        ::Sound&                                s,
+        ::Sound&                                sound,
         ::ActorSoundIdentifier const&           actorSoundIdentifier,
         ::std::string const&                    blockType,
-        ::Random&                               rand
+        ::Random&                               random
     );
 
     MCAPI void updateDestroyBlock(::BlockPos const& tp, float destroyRate);
@@ -530,10 +549,6 @@ public:
     MCAPI bool $getForceFog(::Actor const& cameraActor) const;
 
     MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
-
-    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
-
-    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
     MCFOLD void $addCameraListenerToRenderChunkCoordinator();
 

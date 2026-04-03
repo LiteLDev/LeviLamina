@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 namespace VoxelShapes { class RegistryHandle; }
 namespace VoxelShapes { class VoxelShape; }
 // clang-format on
@@ -14,41 +15,39 @@ class VoxelShapeRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd2e60a;
-    ::ll::UntypedStorage<8, 64> mUnk5c0ed1;
+    ::ll::UntypedStorage<1, 1>  mUnk3a4b31;
     ::ll::UntypedStorage<2, 2>  mUnk937122;
     ::ll::UntypedStorage<2, 2>  mUnk11cf12;
+    ::ll::UntypedStorage<8, 8>  mUnk903343;
+    ::ll::UntypedStorage<8, 8>  mUnka5e922;
+    ::ll::UntypedStorage<8, 24> mUnk92b9be;
+    ::ll::UntypedStorage<8, 64> mUnka8a263;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     VoxelShapeRegistry& operator=(VoxelShapeRegistry const&);
     VoxelShapeRegistry(VoxelShapeRegistry const&);
+    VoxelShapeRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VoxelShapeRegistry();
+    MCNAPI ::VoxelShapes::RegistryHandle _addNonBuiltIn(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
 
-    MCNAPI ::VoxelShapes::RegistryHandle _addNonBuiltIn(::VoxelShapes::VoxelShape&& shape);
+    MCNAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
 
-    MCNAPI ::VoxelShapes::RegistryHandle _findExistingShapeIndex(::VoxelShapes::VoxelShape const& shape) const;
-
-    MCNAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape);
+    MCNAPI void initialize();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& EMPTY_ID();
+    MCNAPI static ::HashedString const& EMPTY_ID();
 
-    MCNAPI static ::std::string const& UNIT_CUBE_ID();
-    // NOLINTEND
+    MCNAPI static uint64 const& UNIQUE_SHAPES_MAX();
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI static ::HashedString const& UNIT_CUBE_ID();
     // NOLINTEND
 };
 

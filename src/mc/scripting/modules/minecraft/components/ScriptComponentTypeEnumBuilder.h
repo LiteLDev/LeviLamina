@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { struct ConstantFactory; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -32,6 +33,9 @@ public:
     MCAPI explicit ScriptComponentTypeEnumBuilder(::ScriptModuleMinecraft::ScriptComponentType componentType);
 
     MCAPI ::Scripting::EnumBinding bind(::std::optional<::Scripting::Version> releaseVersion);
+
+    MCAPI ::Scripting::ConstantFactory&
+    bindComponentId(::std::string const& componentName, ::std::string const& componentId);
 
     MCAPI ~ScriptComponentTypeEnumBuilder();
     // NOLINTEND

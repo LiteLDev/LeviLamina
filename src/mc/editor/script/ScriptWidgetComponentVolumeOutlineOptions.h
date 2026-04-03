@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,10 +20,10 @@ class ScriptWidgetComponentVolumeOutlineOptions : public ::Editor::ScriptModule:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnk337e61;
-    ::ll::UntypedStorage<4, 32> mUnk9f8bb6;
-    ::ll::UntypedStorage<4, 32> mUnk1fa68a;
-    ::ll::UntypedStorage<4, 32> mUnk29cd7c;
+    ::ll::UntypedStorage<8, 32> mUnk337e61;
+    ::ll::UntypedStorage<8, 32> mUnk9f8bb6;
+    ::ll::UntypedStorage<8, 32> mUnk1fa68a;
+    ::ll::UntypedStorage<8, 32> mUnk29cd7c;
     ::ll::UntypedStorage<1, 2>  mUnk6f9f4f;
     ::ll::UntypedStorage<1, 2>  mUnkc49051;
     ::ll::UntypedStorage<1, 2>  mUnkb1ac46;
@@ -82,19 +80,11 @@ public:
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
 
-    MCNAPI static ::Mirror const& DEFAULT_MIRROR();
-
     MCNAPI static ::Vec3 const& DEFAULT_NORMALIZED_ORIGIN();
 
     MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-
-    MCNAPI static ::Rotation const& DEFAULT_ROTATION();
-
-    MCNAPI static bool const& DEFAULT_VISIBLE_HIGHLIGHT_OUTLINE();
-
-    MCNAPI static bool const& DEFAULT_VISIBLE_OUTLINE();
     // NOLINTEND
 
 public:

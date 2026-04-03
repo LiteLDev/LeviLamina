@@ -98,14 +98,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4>   mUnkb10304;
         ::ll::UntypedStorage<4, 4>   mUnk4a0133;
-        ::ll::UntypedStorage<8, 24>  mUnka46ecb;
-        ::ll::UntypedStorage<8, 24>  mUnk6e029d;
+        ::ll::UntypedStorage<8, 24>  mUnke0f0c6;
+        ::ll::UntypedStorage<8, 24>  mUnk200c9d;
         ::ll::UntypedStorage<8, 16>  mUnk63fb49;
         ::ll::UntypedStorage<4, 4>   mUnkb69d48;
-        ::ll::UntypedStorage<8, 8>   mUnkb75852;
+        ::ll::UntypedStorage<8, 8>   mUnk22422c;
         ::ll::UntypedStorage<4, 172> mUnk6b762e;
         ::ll::UntypedStorage<8, 144> mUnk521b78;
-        ::ll::UntypedStorage<8, 8>   mUnk212b96;
+        ::ll::UntypedStorage<8, 8>   mUnkd2a463;
         // NOLINTEND
 
     public:
@@ -222,7 +222,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk70b0df;
         ::ll::UntypedStorage<1, 1>  mUnk703cf5;
-        ::ll::UntypedStorage<8, 24> mUnk740af4;
+        ::ll::UntypedStorage<8, 24> mUnk47bc82;
         ::ll::UntypedStorage<8, 16> mUnkad2270;
         // NOLINTEND
 
@@ -271,16 +271,16 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk643873;
     ::ll::UntypedStorage<4, 4>  mUnkdc1ae4;
     ::ll::UntypedStorage<8, 40> mUnk15b893;
-    ::ll::UntypedStorage<8, 16> mUnkb42c49;
-    ::ll::UntypedStorage<8, 32> mUnk1bf561;
+    ::ll::UntypedStorage<8, 16> mUnka72441;
+    ::ll::UntypedStorage<8, 32> mUnk80dd77;
     ::ll::UntypedStorage<1, 1>  mUnkd92c89;
     ::ll::UntypedStorage<8, 16> mUnkca010f;
     ::ll::UntypedStorage<8, 8>  mUnk756ec7;
-    ::ll::UntypedStorage<8, 32> mUnkf1bdce;
-    ::ll::UntypedStorage<8, 32> mUnk5ff1f2;
-    ::ll::UntypedStorage<8, 32> mUnk2776ee;
-    ::ll::UntypedStorage<8, 32> mUnk7ef52c;
-    ::ll::UntypedStorage<8, 32> mUnk23f4e0;
+    ::ll::UntypedStorage<8, 32> mUnka83f27;
+    ::ll::UntypedStorage<8, 32> mUnka12cd9;
+    ::ll::UntypedStorage<8, 32> mUnk2839b5;
+    ::ll::UntypedStorage<8, 32> mUnk2c1b45;
+    ::ll::UntypedStorage<8, 32> mUnk10a57b;
     ::ll::UntypedStorage<8, 8>  mUnkfb80d4;
     ::ll::UntypedStorage<8, 8>  mUnk77efb5;
     ::ll::UntypedStorage<8, 8>  mUnk4a4374;

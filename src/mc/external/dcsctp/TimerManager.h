@@ -19,7 +19,7 @@ class TimerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9bc522;
+    ::ll::UntypedStorage<8, 64> mUnkf8d7eb;
     ::ll::UntypedStorage<8, 16> mUnkca67e3;
     ::ll::UntypedStorage<4, 4>  mUnk4dd664;
     // NOLINTEND

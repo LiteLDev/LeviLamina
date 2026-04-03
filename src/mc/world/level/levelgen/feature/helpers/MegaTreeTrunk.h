@@ -30,9 +30,9 @@ public:
     ::ll::TypedStorage<4, 4, float>                                mBranchSlope;
     ::ll::TypedStorage<4, 4, float>                                mMinBranchAltitudeFactor;
     ::ll::TypedStorage<4, 4, float>                                mMaxBranchAltitudeFactor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mTrunkBlockDescriptor;
     ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                 mBranchCanopy;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
     // NOLINTEND
 

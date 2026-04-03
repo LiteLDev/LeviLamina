@@ -4,6 +4,6 @@
 
 namespace ClientBlobCache {
 
-struct Cache {};
+class Cache {};
 
 } // namespace ClientBlobCache

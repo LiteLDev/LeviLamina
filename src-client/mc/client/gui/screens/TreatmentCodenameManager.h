@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct FlightingService;
-struct RealmsAPI;
+class FlightingService;
+class RealmsAPI;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 

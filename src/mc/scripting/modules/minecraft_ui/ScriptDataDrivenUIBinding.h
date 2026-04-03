@@ -20,7 +20,7 @@ struct ScriptDataDrivenUIBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkff3a52;
+    ::ll::UntypedStorage<8, 24> mUnkedb43e;
     // NOLINTEND
 
 public:
@@ -80,19 +80,9 @@ public:
 
     MCNAPI ::Scripting::Result<
         ::Scripting::Closure<void(::std::optional<::std::string>)>,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    subscribe(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
-        ::std::string const&                                                        dataStoreName,
-        ::std::string const&                                                        property,
-        ::Scripting::Closure<void(::std::optional<::std::string>)>                  closure
-    );
-
-    MCNAPI ::Scripting::Result<
-        ::Scripting::Closure<void(::std::optional<::std::string>)>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptInvalidPathError>
-    subscribePath(
+    subscribe(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
         ::std::string const&                                                        dataStoreName,
         ::std::string const&                                                        property,

@@ -122,6 +122,12 @@ public:
         char const*                                   controlDocFieldName
     );
 
+    virtual bool writeTypeBegin_DocHelper(char const*, char const*, char const*);
+
+    virtual void writeTypeEnd_DocHelper();
+
+    virtual void writeEnum_DocHelper(char const*, char const*);
+
     virtual void _writeArray(
         ::std::function<void(::BinaryStream&)>&& sizeWriter,
         ::std::function<void(::BinaryStream&)>&& writer,
@@ -220,6 +226,12 @@ public:
         ::std::vector<int> const&                     docControlSet,
         char const*                                   controlDocFieldName
     );
+
+    MCFOLD bool $writeTypeBegin_DocHelper(char const*, char const*, char const*);
+
+    MCFOLD void $writeTypeEnd_DocHelper();
+
+    MCFOLD void $writeEnum_DocHelper(char const*, char const*);
 
     MCAPI void $_writeArray(
         ::std::function<void(::BinaryStream&)>&& sizeWriter,

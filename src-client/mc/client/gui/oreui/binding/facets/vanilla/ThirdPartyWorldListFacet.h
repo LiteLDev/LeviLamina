@@ -29,7 +29,8 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mThirdpartyListSubscription;
     ::ll::TypedStorage<4, 4, ::OreUI::ThirdPartyServersStatus>                            mThirdPartyServersStatus;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::NetworkWorldData>>                   mThirdPartyWorldData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::NetworkWorldData>>                   mFeaturedWorldData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::NetworkWorldData>>                   mCreatorWorldData;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>                mFetchThirdPartyWorldTask;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
     // NOLINTEND
@@ -68,11 +69,13 @@ public:
 
     MCAPI bool _shouldRefresh();
 
-    MCAPI ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
+    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getCreatorWorlds() const;
+
+    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getFeaturedWorlds() const;
+
+    MCFOLD ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
 
     MCFOLD ::OreUI::ThirdPartyServersStatus const getThirdPartyServersStatus() const;
-
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getThirdPartyWorlds() const;
     // NOLINTEND
 
 public:

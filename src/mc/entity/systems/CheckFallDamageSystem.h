@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-class CheckFallDamageSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
-    // NOLINTEND
-};
+namespace CheckFallDamageSystem {
+// functions
+// NOLINTBEGIN
+MCNAPI ::TickingSystemWithInfo createSystem();
+// NOLINTEND
+
+} // namespace CheckFallDamageSystem

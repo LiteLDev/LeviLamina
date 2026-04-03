@@ -11,7 +11,7 @@
 class LocalPlayer;
 class ResourcePackManager;
 class SemVersion;
-namespace Editor::Services { struct ClientDataTransferServiceProvider; }
+namespace Editor::Services { class ClientDataTransferServiceProvider; }
 namespace Puv { class LoadResultAny; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -63,7 +63,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk8de834;
+        ::ll::UntypedStorage<8, 32> mUnk8a7d6a;
         ::ll::UntypedStorage<4, 8>  mUnk27dc97;
         // NOLINTEND
 
@@ -141,6 +141,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
+
+    MCNAPI static ::std::string_view const& SHADOW_STYLIZATION_GLOBAL_CONFIG_FILE();
     // NOLINTEND
 
 public:

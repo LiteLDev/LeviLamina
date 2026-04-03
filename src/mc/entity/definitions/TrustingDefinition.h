@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/item/Item.h"
 
 // auto generated forward declare list
 // clang-format off

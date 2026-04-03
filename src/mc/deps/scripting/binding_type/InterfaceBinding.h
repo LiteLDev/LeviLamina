@@ -17,10 +17,10 @@ struct InterfaceBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk181714;
+    ::ll::UntypedStorage<8, 32> mUnk64d7ec;
     ::ll::UntypedStorage<8, 16> mUnk96316b;
     ::ll::UntypedStorage<8, 16> mUnke35bb1;
-    ::ll::UntypedStorage<8, 24> mUnk32c523;
+    ::ll::UntypedStorage<8, 24> mUnk1e9e9e;
     ::ll::UntypedStorage<8, 24> mUnk5db97e;
     ::ll::UntypedStorage<8, 24> mUnkbb4feb;
     // NOLINTEND

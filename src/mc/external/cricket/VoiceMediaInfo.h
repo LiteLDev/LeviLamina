@@ -8,8 +8,8 @@ struct VoiceMediaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkce4045;
-    ::ll::UntypedStorage<8, 24> mUnkb55ab1;
+    ::ll::UntypedStorage<8, 24> mUnkfb9707;
+    ::ll::UntypedStorage<8, 24> mUnk8573bb;
     ::ll::UntypedStorage<8, 16> mUnkbad7c4;
     ::ll::UntypedStorage<8, 16> mUnkc41a45;
     ::ll::UntypedStorage<4, 4>  mUnk76a474;

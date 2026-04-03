@@ -4,6 +4,6 @@
 
 namespace Editor::Services {
 
-struct ClientStructureDataCacheService {};
+class ClientStructureDataCacheService {};
 
 } // namespace Editor::Services
