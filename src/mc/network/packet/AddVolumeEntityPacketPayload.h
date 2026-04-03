@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/ecs/EntityNetId.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/resources/MinEngineVersion.h"
 #include "mc/world/level/BlockPos.h"
 

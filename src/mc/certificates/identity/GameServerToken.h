@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/certificates/certificates/WebToken.h"
+#include "mc/deps/certificates/WebToken.h"
 #include "mc/options/DiscoveryEnvironment.h"
 
 // auto generated forward declare list

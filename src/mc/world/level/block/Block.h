@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/BlockType.h"
