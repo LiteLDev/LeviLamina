@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
+#include "mc/deps/shared_types/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
 
 namespace SharedTypes::v1_21_40 {
 

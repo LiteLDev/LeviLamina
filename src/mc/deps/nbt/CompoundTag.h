@@ -4,7 +4,7 @@
 #include "ll/api/Expected.h"
 
 // auto generated inclusion list
-#include "mc/nbt/Tag.h"
+#include "mc/deps/nbt/Tag.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
