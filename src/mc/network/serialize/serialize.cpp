@@ -1,6 +1,6 @@
 #include "mc/network/serialize/serialize.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/nbt/NbtIo.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/deps/nbt/NbtIo.h"
 #include "mc/util/VarIntDataInput.h"
 #include "mc/util/VarIntDataOutput.h"
 

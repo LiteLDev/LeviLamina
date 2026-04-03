@@ -4,7 +4,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "magic_enum/magic_enum_all.hpp"
 #include "mc/deps/json/Value.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"

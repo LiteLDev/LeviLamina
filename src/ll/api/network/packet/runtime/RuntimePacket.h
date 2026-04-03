@@ -60,7 +60,7 @@ public:
 
 private:
     [[nodiscard]] MinecraftPacketIds getId() const override;
-    [[nodiscard]] std::string        getName() const override;
+    [[nodiscard]] std::string_view   getName() const override;
     void                             write(BinaryStream&) const override;
     Bedrock::Result<void>            _read(ReadOnlyBinaryStream&) override;
 };

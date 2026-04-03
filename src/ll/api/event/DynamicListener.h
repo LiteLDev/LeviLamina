@@ -3,7 +3,7 @@
 #include "ll/api/event/Event.h"
 #include "ll/api/event/ListenerBase.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event {
 class DynamicListener : public ListenerBase {

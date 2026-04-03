@@ -9,7 +9,7 @@
 #include "ll/api/mod/Mod.h"
 #include "ll/core/LeviLamina.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::service {
 class PlayerInfo::Impl {

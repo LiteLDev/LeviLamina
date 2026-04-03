@@ -4,7 +4,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDataIDs.h"
 #include "mc/world/level/BlockPos.h"
 

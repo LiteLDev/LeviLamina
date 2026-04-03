@@ -18,7 +18,7 @@
 
 #include "ll/api/utils/SystemUtils.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/standard/FillCommand.h"
 

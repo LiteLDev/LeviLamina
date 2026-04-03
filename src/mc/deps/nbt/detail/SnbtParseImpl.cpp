@@ -1,7 +1,7 @@
 #include "ll/api/utils/Base64Utils.h"
 #include "ll/api/utils/HashUtils.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/nbt/detail/SnbtErrorCode.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/deps/nbt/detail/SnbtErrorCode.h"
 
 namespace ll::nbt::detail {
 Expected<CompoundTagVariant> parseSnbtValue(std::string_view& s) noexcept;
@@ -98,7 +98,7 @@ Expected<ldouble> stold(std::string_view const& s, size_t& n) {
     char const* ptr      = s.data();
     char*       eptr;
     errnoRef          = 0;
-    const ldouble res = strtold(ptr, &eptr);
+    ldouble const res = strtold(ptr, &eptr);
 
     if (ptr == eptr) {
         return makeSnbtError(SnbtErrorCode::NotANumber);
@@ -216,7 +216,7 @@ Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
 Expected<int> get_codepoint(std::string_view& s) {
     int codepoint = 0;
 
-    for (const auto factor : {12u, 8u, 4u, 0u}) {
+    for (auto const factor : {12u, 8u, 4u, 0u}) {
         auto current = get(s);
 
         if (current >= '0' && current <= '9') {

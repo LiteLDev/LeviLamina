@@ -4,7 +4,7 @@
 
 #include "mc/world/level/BlockSource.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline world {
 void LevelEvent::serialize(CompoundTag& nbt) const {

@@ -4,8 +4,8 @@
 #include "ll/core/LeviLamina.h"
 
 #include "mc/deps/core/math/Color.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/nbt/UniqueTagPtr.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/deps/nbt/UniqueTagPtr.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/util/ColorFormat.h"
 

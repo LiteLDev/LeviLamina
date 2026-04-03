@@ -6,7 +6,7 @@
 #include "mc/world/gamemode/GameMode.h"
 #include "mc/world/gamemode/InteractionResult.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
 
@@ -41,7 +41,7 @@ LL_TYPE_INSTANCE_HOOK(
         PlayerInteractBlockEvent(this->mPlayer, item, blockPos, *reinterpret_cast<FacingID*>(&face), clickPos, block);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
-        return {InteractionResult::Result::Fail};
+        return {};
     }
     return origin(item, blockPos, face, clickPos, block, isFirstEvent);
 }

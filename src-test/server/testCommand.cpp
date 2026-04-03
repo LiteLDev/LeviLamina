@@ -13,7 +13,7 @@
 
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 #include <ranges>
 

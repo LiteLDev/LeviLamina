@@ -1,5 +1,5 @@
 #include "mc/world/item/ItemStackBase.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/util/IDataInput.h"
 #include "mc/world/item/Item.h"
 

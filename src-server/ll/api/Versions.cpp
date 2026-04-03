@@ -9,7 +9,8 @@ data::Version getGameVersion() {
         auto info    = Common::getBuildInfo();
         auto v       = data::Version{info.mBuildId};
         v.preRelease = data::PreRelease{};
-        v.preRelease->values.emplace_back((uint16_t)SharedConstants::RevisionVersion());
+        //TODO
+        // v.preRelease->values.emplace_back((uint16_t)SharedConstants::RevisionVersion());
         v.preRelease->values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion());
         v.build = info.mCommitId.substr(0, std::min(info.mCommitId.size(), (size_t)7));
         return v;

@@ -1,6 +1,6 @@
-#include "mc/nbt/Tag.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/nbt/ListTag.h"
+#include "mc/deps/nbt/Tag.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/deps/nbt/ListTag.h"
 namespace ll::nbt::detail {
 std::string TypedToSnbt(ByteTag const&, uchar, SnbtFormat);
 std::string TypedToSnbt(ShortTag const&, uchar, SnbtFormat);

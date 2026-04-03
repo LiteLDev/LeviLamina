@@ -1,4 +1,4 @@
-#include "mc/nbt/detail/SnbtErrorCode.h"
+#include "mc/deps/nbt/detail/SnbtErrorCode.h"
 
 #include <system_error>
 

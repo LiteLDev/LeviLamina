@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/certificates/WebToken.h"
 
 // auto generated inclusion list
 #include "mc/deps/certificates/WebToken.h"

@@ -2,7 +2,7 @@
 #include "ll/api/utils/Base64Utils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "mc/deps/core/math/Color.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/util/ColorFormat.h"
 
 #include "nlohmann/json.hpp"
@@ -39,7 +39,7 @@ namespace {
 
 namespace cf = ColorFormat;
 
-const std::string base64Id = " /*BASE64*/";
+std::string const base64Id = " /*BASE64*/";
 
 template <std::integral T>
 std::string getString(T value) {

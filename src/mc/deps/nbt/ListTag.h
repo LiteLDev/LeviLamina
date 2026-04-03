@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/nbt/UniqueTagPtr.h"
+#include "mc/deps/nbt/UniqueTagPtr.h"
 
 // auto generated inclusion list
 #include "mc/deps/nbt/Tag.h"

@@ -4,7 +4,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/client/module/GameModuleClient.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline client {
 

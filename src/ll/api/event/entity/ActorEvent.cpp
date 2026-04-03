@@ -1,7 +1,7 @@
 #include "ll/api/event/entity/ActorEvent.h"
 #include "ll/api/event/EventRefObjSerializer.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline entity {
 

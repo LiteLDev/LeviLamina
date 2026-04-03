@@ -47,7 +47,7 @@ public:
 
     virtual void                                  write(::BinaryStream&) const  = 0;
     [[nodiscard]] virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&) = 0;
-    [[nodiscard]] virtual ::std::string           getName() const               = 0;
+    [[nodiscard]] virtual ::std::string_view      getName() const               = 0;
 
     [[nodiscard]] virtual PacketRuntimeId getRuntimeId() const;
 
@@ -81,8 +81,8 @@ protected:
     using Packet::Packet;
 
 public:
-    [[nodiscard]] ::std::string getName() const override {
-        return ::std::string(reflection::type_unprefix_name_v<Derived>);
+    [[nodiscard]] ::std::string_view getName() const override {
+        return reflection::type_unprefix_name_v<Derived>;
     }
     [[nodiscard]] PacketRuntimeId getRuntimeId() const override {
         constexpr PacketRuntimeId runtimeId = ll::hash_utils::doHash(reflection::type_unprefix_name_v<Derived>);

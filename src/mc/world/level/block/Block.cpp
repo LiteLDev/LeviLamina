@@ -1,7 +1,7 @@
 #include "mc/world/level/block/Block.h"
 
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/BlockPalette.h"
 #include "mc/world/level/block/BedrockBlockNames.h"

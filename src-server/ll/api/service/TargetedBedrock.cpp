@@ -16,6 +16,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/server/commands/CommandRegistryArguments.h"
 
 namespace ll::service::inline bedrock {
 
@@ -29,7 +30,7 @@ LL_TYPE_INSTANCE_HOOK(
     &DedicatedServer::runDedicatedServerLoop,
     ::DedicatedServer::StartResult,
     ::Core::FilePathManager&                                     filePathManager,
-    ::PropertiesSettings&                                        properties,
+    ::PropertiesSettings const&                                  properties,
     ::LevelSettings&                                             settings,
     ::AllowListFile&                                             userAllowList,
     ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
@@ -37,7 +38,7 @@ LL_TYPE_INSTANCE_HOOK(
     ::Bedrock::ActivationArguments const&                        args,
     ::TestConfig&                                                testConfig
 ) {
-    propertiesSettings               = &properties;
+    propertiesSettings               = const_cast<PropertiesSettings*>(&properties);
     DedicatedServer::StartResult res = origin(
         filePathManager,
         properties,
@@ -197,9 +198,9 @@ LL_TYPE_INSTANCE_HOOK(
     CommandRegistry,
     &CommandRegistry::$ctor,
     void*,
-    bool eduMode
+    CommandRegistryArguments args
 ) {
-    auto res        = origin(eduMode);
+    auto res        = origin(args);
     commandRegistry = this;
     return res;
 }

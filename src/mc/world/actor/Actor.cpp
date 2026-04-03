@@ -11,12 +11,12 @@
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityRegistry.h"
 #include "mc/deps/ecs/strict/StrictEntityContext.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
@@ -36,6 +36,7 @@
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
+#include "mc/world/actor/ActorHurtResult.h"
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
@@ -67,9 +68,18 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(SharedTypes::Legacy::
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const { return isPlayer() && static_cast<Player const*>(this)->isSimulated(); }
+bool Actor::isSimulatedPlayer() const {
 
-bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
+    // TODO
+    return false;
+    // return isPlayer() && static_cast<Player const*>(this)->isSimulated();
+ }
+
+bool Actor::isOnGround() const { 
+    //TODO
+    return false;
+    // return ActorCollision::isOnGround(getEntityContext());
+ }
 
 void Actor::setOnFire(int time, bool isEffect) {
     if (isEffect) {
@@ -151,7 +161,7 @@ class HitResult Actor::traceRay(
 }
 
 void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation) {
-    Vec2 relativeRotation = rotation - mBuiltInComponents->mActorRotationComponent->mRotationDegree;
+    Vec2 relativeRotation = rotation - mBuiltInComponents->mActorRotationComponent->mRot;
     TeleportCommand::applyTarget(
         *this,
         TeleportCommand::computeTarget(

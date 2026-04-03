@@ -6,6 +6,7 @@
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/sim/sim.h"
+#include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/actor/ai/navigation/PathNavigation.h"
 #include "mc/world/actor/player/Inventory.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
@@ -16,6 +17,7 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/phys/HitResult.h"
+#include "mc/world/gamemode/InteractionResult.h"
 
 
 optional_ref<SimulatedPlayer>
@@ -140,7 +142,7 @@ bool SimulatedPlayer::simulateDropSelectedItem() {
     }
     return false;
 }
-bool SimulatedPlayer::simulateInteract(Actor& actor) { return isAlive() && interact(actor, 0); }
+bool SimulatedPlayer::simulateInteract(Actor& actor) { return isAlive() && interact(actor, 0).mSuccess; }
 void SimulatedPlayer::simulateStopInteracting() { deleteContainerManager(); }
 bool SimulatedPlayer::isSimulatingDestroyingBlock() { return *mDestroyingBlockPos && *mDestroyingBlockFace; }
 // void SimulatedPlayer::simulateLookAt(Vec3 const& pos, sim::LookDuration lookType) {

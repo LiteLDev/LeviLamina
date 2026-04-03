@@ -2,7 +2,7 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/level/block/FireBlock.h"
 #include "mc/world/level/block/block_events/BlockPlaceEvent.h"
 

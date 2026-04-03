@@ -39,30 +39,6 @@ public:
         error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
-    void error(std::string_view str) { mMessages.emplace_back(CommandOutputMessageType::Error, std::string{str}); }
-    void success(std::string_view str) {
-        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{str});
-        mSuccessCount++;
-    }
-
-    void error(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
-        std::vector<std::string> args;
-        args.reserve(params.size());
-        for (auto& param : params) {
-            args.emplace_back(param);
-        }
-        mMessages.emplace_back(CommandOutputMessageType::Error, std::string{msgId}, std::move(args));
-    }
-    void success(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
-        std::vector<std::string> args;
-        args.reserve(params.size());
-        for (auto& param : params) {
-            args.emplace_back(param);
-        }
-        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{msgId}, std::move(args));
-        mSuccessCount++;
-    }
-
 public:
     // prevent constructor by default
     CommandOutput();
@@ -82,11 +58,11 @@ public:
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
-    MCAPI void error(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params);
+    MCAPI void error(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
-    MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params);
+    MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params = {});
 
     MCAPI ~CommandOutput();
     // NOLINTEND

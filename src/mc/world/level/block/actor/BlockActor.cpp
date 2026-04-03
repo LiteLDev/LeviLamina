@@ -1,9 +1,8 @@
 #include "mc/world/level/block/actor/BlockActor.h"
 
 #include "mc/dataloadhelper/NewUniqueIdsDataLoadHelper.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/packet/BlockActorDataPacket.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"

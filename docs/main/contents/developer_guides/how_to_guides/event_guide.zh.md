@@ -112,7 +112,7 @@ LL_TYPE_INSTANCE_HOOK(
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/scripting/ServerScriptManager.h"
 
 namespace ll::event::inline server {

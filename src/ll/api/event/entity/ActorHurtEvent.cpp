@@ -3,7 +3,8 @@
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorHurtResult.h"
 
 namespace ll::event::inline entity {
 
@@ -32,7 +33,7 @@ LL_TYPE_INSTANCE_HOOK(
     HookPriority::Normal,
     Actor,
     &Actor::hurt,
-    bool,
+    ActorHurtResult,
     ActorDamageSource const& source,
     float                    damage,
     bool                     knock,
@@ -41,7 +42,7 @@ LL_TYPE_INSTANCE_HOOK(
     auto ev = ActorHurtEvent(*this, source, damage, knock, ignite);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
-        return false;
+        return {};
     }
     return origin(source, damage, knock, ignite);
 }

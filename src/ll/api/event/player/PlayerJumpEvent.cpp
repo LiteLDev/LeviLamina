@@ -4,9 +4,9 @@
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/ecs/strict/StrictEntityContext.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/WasOnGroundFlagComponent.h"
 #include "mc/entity/systems/ServerPlayerMovementCorrectionSystem.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/PlayerAuthInputPacket.h"
 #include "mc/server/ServerPlayer.h"
@@ -21,8 +21,8 @@ void PlayerJumpEvent::serialize(CompoundTag& nbt) const {
     nbt["fromPosition"] = ListTag{mFromPosition.x, mFromPosition.y, mFromPosition.z};
     nbt["toPosition"]   = ListTag{mToPosition.x, mToPosition.y, mToPosition.z};
 }
-const Vec3& PlayerJumpEvent::fromPosition() { return mFromPosition; }
-const Vec3& PlayerJumpEvent::toPosition() { return mToPosition; }
+Vec3 const& PlayerJumpEvent::fromPosition() { return mFromPosition; }
+Vec3 const& PlayerJumpEvent::toPosition() { return mToPosition; }
 
 // From
 // https://github.com/EndstoneMC/endstone/blob/main/src/endstone/runtime/bedrock_hooks/server_player_movement_correction_system.cpp

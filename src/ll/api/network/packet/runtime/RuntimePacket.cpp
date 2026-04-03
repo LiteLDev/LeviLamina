@@ -8,7 +8,7 @@ namespace ll::network {
 
 MinecraftPacketIds RuntimePacket::getId() const { return MinecraftPacketIds::LeviLaminaRuntimePacket; }
 
-std::string RuntimePacket::getName() const { return "LeviLaminaRuntimePacket"; }
+std::string_view RuntimePacket::getName() const { return "LeviLaminaRuntimePacket"; }
 
 void RuntimePacket::write(BinaryStream& bs) const {
     bs.writeUnsignedInt64(runtimeId, "RuntimeId", "The runtime id of the packet");

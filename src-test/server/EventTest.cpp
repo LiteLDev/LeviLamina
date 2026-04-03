@@ -16,7 +16,7 @@
 #include "ll/api/event/MultiListener.h"
 #include "ll/api/io/FileUtils.h"
 #include "mc/deps/core/utility/MCRESULT.h"
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/item/ItemStack.h"

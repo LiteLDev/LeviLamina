@@ -5,7 +5,7 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
 

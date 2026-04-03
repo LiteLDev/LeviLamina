@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/certificates/Certificate.h"
+#include "mc/deps/certificates/Certificate.h"
 #include "mc/entity/components/UserEntityIdentifierComponent.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/world/inventory/EnderChestContainer.h"

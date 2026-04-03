@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mc/nbt/Tag.h"
+#include "mc/deps/nbt/Tag.h"
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"

@@ -7,5 +7,5 @@
 
 struct DimensionIdType : public ::NewType<ushort> {
 public:
-    using BlockPos::BlockPos;
+    using NewType<ushort>::NewType;
 };

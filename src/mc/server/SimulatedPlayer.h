@@ -182,13 +182,9 @@ public:
 
     MCAPI bool simulateAttack();
 
-    MCAPI bool simulateAttack(::Actor* actor);
-
     MCAPI void simulateChat(::std::string const& message);
 
     MCAPI bool simulateInteract();
-
-    MCAPI bool simulateInteract(::Actor& actor);
 
     MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
 

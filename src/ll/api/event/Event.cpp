@@ -1,7 +1,7 @@
 #include "ll/api/event/Event.h"
 #include "ll/api/reflection/TypeName.h"
 
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event {
 
