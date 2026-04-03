@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/Tag.h"
+#include "mc/deps/nbt/Tag.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
