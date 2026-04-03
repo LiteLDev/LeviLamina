@@ -166,9 +166,7 @@ public:
 
     [[nodiscard]] Vec3 const& getPosDelta() const { return mBuiltInComponents->mStateVectorComponent->mPosDelta; }
 
-    [[nodiscard]] Vec2 const& getRotation() const {
-        return mBuiltInComponents->mActorRotationComponent->mRotationDegree;
-    }
+    [[nodiscard]] Vec2 const& getRotation() const { return mBuiltInComponents->mActorRotationComponent->mRot; }
 
     [[nodiscard]] bool hasCategory(ActorCategory category) const { return (mCategories & category) == category; }
 
