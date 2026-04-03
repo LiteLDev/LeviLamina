@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BeehiveBlockActor;
 class Block;
 class BlockPos;
@@ -16,6 +15,7 @@ class Experiments;
 class ItemStack;
 class Player;
 struct BlockAnimateTickData;
+namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
@@ -24,14 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int getVariant(::Block const& block) const /*override*/;
-
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -67,6 +59,8 @@ public:
 
     MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
 
+    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -85,14 +79,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

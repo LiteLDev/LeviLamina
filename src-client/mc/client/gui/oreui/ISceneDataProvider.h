@@ -11,8 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class IFacet; }
-namespace OreUI::Experimental::Debug { struct QueryInformation; }
-namespace OreUI::Experimental::Detail { class ICommandGroup; }
+namespace OreUI::Debug { struct QueryInformation; }
+namespace OreUI::Detail { class ICommandGroup; }
 // clang-format on
 
 namespace OreUI::Debug {
@@ -30,9 +30,9 @@ public:
     virtual ::std::unordered_map<::std::string, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IFacet>>
     getActiveFacets() const = 0;
 
-    virtual ::std::vector<::OreUI::Experimental::Debug::QueryInformation> getQueryInformation() const = 0;
+    virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const = 0;
 
-    virtual ::std::vector<::OreUI::Experimental::Detail::ICommandGroup*> getCommands() const = 0;
+    virtual ::std::vector<::OreUI::Detail::ICommandGroup*> getCommands() const = 0;
     // NOLINTEND
 
 public:

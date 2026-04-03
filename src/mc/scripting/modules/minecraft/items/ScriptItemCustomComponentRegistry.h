@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/scripting/Version.h"
@@ -15,7 +16,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class Item;
 class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
@@ -224,7 +224,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                                        scope
     ) const;
 
-    MCFOLD ::ScriptDeferredEventListener& $getEventListener();
+    MCAPI ::ScriptDeferredEventListener& $getEventListener();
 
     MCAPI void $setCerealContext(::cereal::ReflectionCtx& ctx);
 

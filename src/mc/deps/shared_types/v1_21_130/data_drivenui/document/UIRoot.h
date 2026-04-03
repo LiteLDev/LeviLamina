@@ -22,16 +22,18 @@ public:
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription> mDescription;
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_130::DataDrivenUI::AttribsRoot>         mAttribs;
     ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_130::DataDrivenUI::Layout>              mLayout;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                         mExtensionPoints;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    UIRoot(UIRoot const&);
     UIRoot();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIRoot(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
+
     MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot& operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&&);
 
     MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&
@@ -52,6 +54,12 @@ public:
     MCAPI static ::std::string_view const& UI_ROOT_PAYLOAD_KEY();
 
     MCAPI static ::SemVersionConstant const& VERSION();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
     // NOLINTEND
 
 public:

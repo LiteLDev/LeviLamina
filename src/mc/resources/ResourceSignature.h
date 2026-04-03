@@ -15,7 +15,7 @@ class ResourceSignature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk143e26;
+    ::ll::UntypedStorage<8, 64> mUnke8472c;
     // NOLINTEND
 
 public:

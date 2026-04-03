@@ -163,9 +163,9 @@ public:
     // NOLINTBEGIN
     virtual ~NetherNetConnector() /*override*/;
 
-    virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
+    virtual bool closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
 
-    virtual void setDisableTrickleIce(bool disableTrickleIce) /*override*/;
+    virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
 
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
@@ -216,13 +216,13 @@ public:
         ::std::optional<::NetherNet::NetworkID> networkId
     );
 
+    MCAPI void _createEventQueue();
+
     MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
         ::NetherNet::NetworkID const& remoteId,
         uint64                        sessionId,
         ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
     );
-
-    MCAPI void _prepareForNewSession();
 
     MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
 
@@ -248,9 +248,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
+    MCAPI bool $closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
 
-    MCAPI void $setDisableTrickleIce(bool disableTrickleIce);
+    MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
     MCFOLD bool $host(::ConnectionDefinition const& definition);
 

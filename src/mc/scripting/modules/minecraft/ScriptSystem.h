@@ -68,7 +68,7 @@ public:
         ::gsl::not_null<::ServerLevel*>                      level
     );
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
     MCAPI void
@@ -101,10 +101,10 @@ public:
         ::Scripting::EngineError>
     sendScriptEvent(::std::string const& messageId, ::std::string const& messagePayload);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::Scripting::EngineError>
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
     MCAPI ~ScriptSystem();

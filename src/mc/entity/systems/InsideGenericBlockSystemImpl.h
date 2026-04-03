@@ -10,8 +10,8 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct InsideGenericBlockComponent;
+struct InterpolateMovementNeededComponent;
 // clang-format on
 
 namespace InsideGenericBlockSystemImpl {
@@ -20,7 +20,7 @@ namespace InsideGenericBlockSystemImpl {
 MCNAPI void insideGenericBlockSystem(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
         ::InsideGenericBlockComponent,
         ::ActorOwnerComponent> view
 );

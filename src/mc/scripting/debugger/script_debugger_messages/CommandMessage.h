@@ -8,8 +8,8 @@ struct CommandMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk199c72;
-    ::ll::UntypedStorage<8, 32> mUnk6c3f8d;
+    ::ll::UntypedStorage<8, 32> mUnkf6e024;
+    ::ll::UntypedStorage<8, 32> mUnk9f7021;
     // NOLINTEND
 
 public:

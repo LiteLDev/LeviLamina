@@ -8,9 +8,9 @@ struct AzureIdentityConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk89fe6c;
-    ::ll::UntypedStorage<8, 32> mUnkad6937;
-    ::ll::UntypedStorage<8, 32> mUnk737f2b;
+    ::ll::UntypedStorage<8, 32> mUnkdbc3f9;
+    ::ll::UntypedStorage<8, 32> mUnkf13a47;
+    ::ll::UntypedStorage<8, 32> mUnk8a183b;
     // NOLINTEND
 
 public:

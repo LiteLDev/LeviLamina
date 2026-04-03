@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -50,7 +51,7 @@ MCNAPI void doFlyingPlayerMoveSystems(
     ::IConstBlockSource const&                region
 );
 
-MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
 
 MCNAPI void horizontalMovement(
     ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,

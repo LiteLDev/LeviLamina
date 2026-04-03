@@ -13,13 +13,12 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Container;
-class Experiments;
 class ItemStack;
 class Player;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class DispenserBlock : public ::ActorBlock {
@@ -40,11 +39,6 @@ public:
 
     virtual bool isContainerBlock() const /*override*/;
 
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual bool hasComparatorSignal() const /*override*/;
 
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
@@ -57,14 +51,14 @@ public:
 
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ~DispenserBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void ejectItem(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
@@ -76,8 +70,6 @@ public:
     ) const;
 
     MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
-
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -116,10 +108,6 @@ public:
 
     MCFOLD bool $isContainerBlock() const;
 
-    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCFOLD bool $hasComparatorSignal() const;
 
     MCFOLD int
@@ -130,8 +118,6 @@ public:
     MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
     MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

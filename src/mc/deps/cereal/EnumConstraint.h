@@ -11,7 +11,7 @@ class EnumConstraint : public ::cereal::ConstraintHandle<::cereal::EnumConstrain
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdc1a9b;
+    ::ll::UntypedStorage<8, 24> mUnk533231;
     // NOLINTEND
 
 public:

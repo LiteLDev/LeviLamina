@@ -10,6 +10,7 @@
 // clang-format off
 class ActorAnimationControllerPlayer;
 class ActorAnimationControllerState;
+class ApplyAnimationContext;
 class RenderParams;
 // clang-format on
 
@@ -41,16 +42,17 @@ public:
 
     MCAPI void resolveTransitionStateIndices();
 
-    MCAPI_C void updateActiveParticleState(
+    MCAPI void updateActiveParticleState(
+        ::ApplyAnimationContext const&    applyContext,
         ::RenderParams&                   renderParams,
         int                               oldStateIndex,
         int                               newStateIndex,
         ::ActorAnimationControllerPlayer& player
     ) const;
 
-    MCAPI_C void updateActiveSoundEffectState(
-        ::RenderParams&                   renderParams,
-        int                               oldStateIndex,
+    MCAPI void updateActiveSoundEffectState(
+        ::RenderParams& renderParams,
+        int,
         int                               newStateIndex,
         ::ActorAnimationControllerPlayer& player
     ) const;

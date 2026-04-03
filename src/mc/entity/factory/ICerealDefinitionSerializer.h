@@ -14,7 +14,7 @@ class ICerealDefinitionSerializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc4f8e2;
+    ::ll::UntypedStorage<8, 32> mUnka5ad39;
     // NOLINTEND
 
 public:

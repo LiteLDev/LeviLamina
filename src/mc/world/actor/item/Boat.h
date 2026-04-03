@@ -12,6 +12,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
@@ -55,7 +56,7 @@ public:
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
     virtual ~Boat() /*override*/ = default;
     // NOLINTEND
@@ -97,7 +98,9 @@ public:
 
     MCFOLD float $getShadowRadius() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
+#endif
 
     MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
@@ -107,7 +110,7 @@ public:
 
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
 
 
     // NOLINTEND

@@ -27,7 +27,7 @@ public:
 
     MCAPI AllowListPath(::std::string id, ::Core::Path path);
 
-    MCAPI ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath&&);
+    MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath&&);
 
     MCFOLD ::OreUI::AllowListPath& operator=(::OreUI::AllowListPath const&);
 

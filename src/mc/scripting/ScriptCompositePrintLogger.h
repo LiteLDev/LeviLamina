@@ -15,7 +15,7 @@ class ScriptCompositePrintLogger : public ::Scripting::IPrinter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk23130d;
+    ::ll::UntypedStorage<8, 24> mUnk638a35;
     // NOLINTEND
 
 public:

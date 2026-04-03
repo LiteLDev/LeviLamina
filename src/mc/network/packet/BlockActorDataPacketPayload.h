@@ -3,20 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
-#include "mc/network/NetworkBlockPosition.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
+#include "mc/deps/nbt/nbt/CompoundTag.h"
+#include "mc/world/level/BlockPos.h"
 
 struct BlockActorDataPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>          mData;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mPos;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mData;
     // NOLINTEND
 
 public:

@@ -13,8 +13,8 @@ struct VolumeStorageDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc0514c;
-    ::ll::UntypedStorage<8, 32> mUnkd5307d;
+    ::ll::UntypedStorage<8, 32> mUnk526e8a;
+    ::ll::UntypedStorage<8, 32> mUnk9c727e;
     ::ll::UntypedStorage<4, 12> mUnk531db0;
     ::ll::UntypedStorage<4, 12> mUnk71dbde;
     ::ll::UntypedStorage<4, 4>  mUnk5328d3;

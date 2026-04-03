@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/server/commands/CommandOutputType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
@@ -21,7 +22,6 @@ class CommandOutputSender;
 class CommandRegistry;
 class DeferredCommandBase;
 class Experiments;
-class HashedString;
 class ICommandsContextProvider;
 class ItemRegistryRef;
 class Level;

@@ -16,15 +16,12 @@ public:
 
 public:
     // prevent constructor by default
-    NamedMolangScript(NamedMolangScript const&);
     NamedMolangScript();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI NamedMolangScript(::HashedString const& name, ::ExpressionNode const& script);
-
-    MCNAPI ::NamedMolangScript& operator=(::NamedMolangScript const&);
 
     MCNAPI ~NamedMolangScript();
     // NOLINTEND

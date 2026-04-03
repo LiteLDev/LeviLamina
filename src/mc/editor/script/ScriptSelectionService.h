@@ -41,15 +41,15 @@ public:
     MCNAPI
     ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Scripting::Promise<double, ::Scripting::Error, void>
+    MCNAPI ::Scripting::Promise<double, ::Scripting::Error>
     deselectBlocks(::Scripting::ScriptObjectFactory& factory, ::std::string const& blockIdentifier);
 
-    MCNAPI ::Scripting::Promise<::Editor::ScriptModule::ScriptSelectionManifestData, ::Scripting::Error, void>
+    MCNAPI ::Scripting::Promise<::Editor::ScriptModule::ScriptSelectionManifestData, ::Scripting::Error>
     generateManifest(::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::std::optional<::Editor::ScriptModule::ScriptSelectionManifestData> getCurrentManifest() const;
 
-    MCNAPI ::Scripting::Promise<double, ::Scripting::Error, void> replaceBlocks(
+    MCNAPI ::Scripting::Promise<double, ::Scripting::Error> replaceBlocks(
         ::Scripting::ScriptObjectFactory& factory,
         ::std::string const&              fromBlockIdentifier,
         ::std::string const&              toBlockIdentifier

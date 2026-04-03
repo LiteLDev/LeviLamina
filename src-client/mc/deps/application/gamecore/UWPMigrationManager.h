@@ -30,6 +30,13 @@ public:
         Criticalerror  = 3,
     };
 
+    enum class MigrationState : int {
+        None               = 0,
+        PreviouslyMigrated = 1,
+        AttemptFailed      = 2,
+        Finished           = 3,
+    };
+
     struct MoveOperation {
     public:
         // MoveOperation inner types define
@@ -44,8 +51,8 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnk99cb0a;
         ::ll::UntypedStorage<1, 1>  mUnk5dcea8;
-        ::ll::UntypedStorage<8, 32> mUnkc44eb6;
-        ::ll::UntypedStorage<8, 32> mUnk53541f;
+        ::ll::UntypedStorage<8, 32> mUnkebafbc;
+        ::ll::UntypedStorage<8, 32> mUnk915989;
         ::ll::UntypedStorage<4, 4>  mUnk459421;
         // NOLINTEND
 
@@ -180,11 +187,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk806ad7;
-    ::ll::UntypedStorage<8, 32> mUnk3a354c;
-    ::ll::UntypedStorage<8, 32> mUnk2524e5;
+    ::ll::UntypedStorage<8, 32> mUnk1ac443;
+    ::ll::UntypedStorage<8, 32> mUnked99d9;
+    ::ll::UntypedStorage<8, 32> mUnka670fc;
+    ::ll::UntypedStorage<4, 4>  mUnke89d35;
     ::ll::UntypedStorage<4, 4>  mUnk26a1a9;
-    ::ll::UntypedStorage<8, 24> mUnk113a50;
+    ::ll::UntypedStorage<8, 24> mUnk37721e;
     // NOLINTEND
 
 public:
@@ -200,12 +208,15 @@ public:
         ::Core::PathBuffer<::std::string> const& externalStoragePath,
         ::Core::PathBuffer<::std::string> const& userStorageRootPath,
         ::Core::PathBuffer<::std::string> const& logsPath,
-        ::Core::PathBuffer<::std::string> const& uwpInstallationPath
+        ::Core::PathBuffer<::std::string> const& uwpInstallationPath,
+        uint                                     migrationVersion
     );
 
     MCNAPI ::Core::PathBuffer<::std::string> getMigrationFilePath() const;
 
     MCNAPI ::Bedrock::Result<void> migrateFromUWP();
+
+    MCNAPI bool onLatestMigration() const;
 
     MCNAPI ~UWPMigrationManager();
     // NOLINTEND
@@ -222,6 +233,8 @@ public:
     MCNAPI static ::std::string& sErrors();
 
     MCNAPI static ::std::string_view const& sLogsFileName();
+
+    MCNAPI static ::UWPMigrationManager::MigrationState& sMigrationState();
     // NOLINTEND
 
 public:
@@ -231,7 +244,8 @@ public:
         ::Core::PathBuffer<::std::string> const& externalStoragePath,
         ::Core::PathBuffer<::std::string> const& userStorageRootPath,
         ::Core::PathBuffer<::std::string> const& logsPath,
-        ::Core::PathBuffer<::std::string> const& uwpInstallationPath
+        ::Core::PathBuffer<::std::string> const& uwpInstallationPath,
+        uint                                     migrationVersion
     );
     // NOLINTEND
 

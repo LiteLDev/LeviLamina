@@ -11,6 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Profile { class ScopeStackStorage; }
+namespace Bedrock::Profiler::details { struct DynamicProfLabel; }
+namespace Bedrock::Profiler::details { struct StaticProfLabel; }
 namespace Core::Profile { class CPUProfileToken; }
 namespace Core::Profile { class CounterToken; }
 namespace Core::Profile { class GPUProfileToken; }
@@ -45,6 +47,12 @@ public:
 
     virtual void enterCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
 
+    virtual void enterCPUProfileDynamic(
+        ::Bedrock::Profile::ScopeStackStorage&  scope,
+        ::Core::Profile::CPUProfileToken const& token,
+        ::Bedrock::Profiler::details::DynamicProfLabel
+    );
+
     virtual void leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
 
     virtual uchar createGPUContext(char const*, int64, float, bool, bool);
@@ -72,7 +80,15 @@ public:
 
     virtual void setMarker(char const*, uint) const;
 
-    virtual void generateCPUProfileToken(
+    virtual void generateCPUProfileTokenStatic(
+        ::Core::Profile::CPUProfileToken&             target,
+        char const*                                   group,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
+    );
+
+    virtual void generateCPUProfileTokenLegacy(
         ::Core::Profile::CPUProfileToken&,
         char const*,
         char const*,
@@ -82,7 +98,6 @@ public:
 
     virtual void generateCPUProfileTokenDynamic(
         ::Core::Profile::CPUProfileToken&,
-        char const*,
         char const*,
         uint,
         ::brstd::source_location const&
@@ -136,11 +151,13 @@ public:
 
     MCNAPI void $onMainThreadCreate();
 
-    MCNAPI void $onHeapAllocation(void const*, uint64, ::Memory::MemoryCategory, char const*);
-
-    MCNAPI void $onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
-
     MCNAPI void $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
+
+    MCNAPI void $enterCPUProfileDynamic(
+        ::Bedrock::Profile::ScopeStackStorage&  scope,
+        ::Core::Profile::CPUProfileToken const& token,
+        ::Bedrock::Profiler::details::DynamicProfLabel
+    );
 
     MCNAPI void $leaveCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
 
@@ -169,7 +186,15 @@ public:
 
     MCNAPI void $setMarker(char const*, uint) const;
 
-    MCNAPI void $generateCPUProfileToken(
+    MCNAPI void $generateCPUProfileTokenStatic(
+        ::Core::Profile::CPUProfileToken&             target,
+        char const*                                   group,
+        ::Bedrock::Profiler::details::StaticProfLabel label,
+        uint                                          color,
+        ::brstd::source_location const&               location
+    );
+
+    MCNAPI void $generateCPUProfileTokenLegacy(
         ::Core::Profile::CPUProfileToken&,
         char const*,
         char const*,
@@ -179,7 +204,6 @@ public:
 
     MCNAPI void $generateCPUProfileTokenDynamic(
         ::Core::Profile::CPUProfileToken&,
-        char const*,
         char const*,
         uint,
         ::brstd::source_location const&

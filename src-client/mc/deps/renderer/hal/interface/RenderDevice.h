@@ -13,7 +13,7 @@ class RenderDevice : public ::mce::ResourceBase<::mce::RenderDeviceNull>, public
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk20dcc2;
+    ::ll::UntypedStorage<8, 8> mUnkc3e12c;
     // NOLINTEND
 
 public:

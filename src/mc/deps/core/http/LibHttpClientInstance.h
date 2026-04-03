@@ -16,9 +16,9 @@ class LibHttpClientInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk44b57d;
-    ::ll::UntypedStorage<8, 8> mUnkc11edd;
-    ::ll::UntypedStorage<8, 8> mUnk917c90;
+    ::ll::UntypedStorage<8, 8> mUnkaefb5e;
+    ::ll::UntypedStorage<8, 8> mUnk42bd1b;
+    ::ll::UntypedStorage<8, 8> mUnkf15df7;
     // NOLINTEND
 
 public:

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/legacy/ActorUniqueID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,6 @@ class GameplayUserManager;
 class LayeredAbilities;
 class PacketSender;
 class Player;
-struct ActorUniqueID;
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 

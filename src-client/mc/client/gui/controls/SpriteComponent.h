@@ -20,6 +20,7 @@
 class UIComponent;
 class UIControl;
 class UIRenderContext;
+namespace Core { class PathView; }
 // clang-format on
 
 class SpriteComponent : public ::RenderableComponent {
@@ -110,11 +111,15 @@ public:
     MCAPI void
     _getClippedInfo(::glm::vec2& clipPos, ::glm::vec2& clipSize, ::glm::vec2& clipUV, ::glm::vec2& clipUVSize) const;
 
+    MCAPI bool _handleTextureChange(::mce::TexturePtr const& texture);
+
     MCAPI void render(::UIRenderContext& context);
 
     MCAPI void setNineSliceSize(::ui::SliceSize const& sliceSize);
 
     MCAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
+
+    MCAPI void setZipFolder(::Core::PathView zipFolder);
     // NOLINTEND
 
 public:

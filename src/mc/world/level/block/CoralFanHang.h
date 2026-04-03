@@ -42,8 +42,6 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
-
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -88,8 +86,6 @@ public:
 
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
@@ -24,11 +25,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk77850e;
     ::ll::UntypedStorage<4, 12> mUnkfe2614;
-    ::ll::UntypedStorage<8, 24> mUnk942c8a;
+    ::ll::UntypedStorage<8, 24> mUnk83c576;
     ::ll::UntypedStorage<4, 4>  mUnk6756a4;
     ::ll::UntypedStorage<4, 4>  mUnkd8738a;
     ::ll::UntypedStorage<4, 16> mUnkbfff20;
-    ::ll::UntypedStorage<8, 8>  mUnkba4444;
+    ::ll::UntypedStorage<8, 8>  mUnk89b559;
     // NOLINTEND
 
 public:
@@ -52,7 +53,7 @@ public:
 
     virtual void translate(::BlockPos const& delta) /*override*/;
 
-    virtual void forEach(::std::function<bool(::BlockPos const&)> callback) const /*override*/;
+    virtual void forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const /*override*/;
 
     virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
@@ -91,6 +92,8 @@ public:
     MCNAPI_C void forEachRelativeBlockPosition(::std::function<bool(::BlockPos const&)> callback) const;
 
     MCNAPI ::std::vector<::BlockPos> getBlockPositionList(bool relative) const;
+
+    MCNAPI ::std::unordered_set<::BlockPos> getBlockPositionSet(bool relative) const;
 
     MCNAPI bool hasAdjacent(::BlockPos const& pos, ::BlockPos const& offset) const;
 
@@ -152,7 +155,7 @@ public:
 
     MCNAPI void $translate(::BlockPos const& delta);
 
-    MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCNAPI void $forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
 
     MCNAPI ::std::set<::ChunkPos> $getChunks() const;
 

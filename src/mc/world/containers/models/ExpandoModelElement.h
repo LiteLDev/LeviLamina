@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+    MCNAPI ~ExpandoModelElement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

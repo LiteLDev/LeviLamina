@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
 #include "mc/world/containers/IContainerRegistryAccess.h"
 #include "mc/world/containers/IContainerRegistryTracker.h"
 #include "mc/world/containers/IDynamicContainerSerialization.h"
@@ -19,7 +20,6 @@ class StorageItemComponent;
 class StorageItemContainerModel;
 class StorageWeightLimitItemComponent;
 struct DynamicTrackedContainer;
-struct FullContainerName;
 namespace Bedrock::Threading { class SharedRecursiveMutex; }
 // clang-format on
 

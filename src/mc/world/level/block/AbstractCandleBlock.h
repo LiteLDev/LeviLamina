@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -43,7 +44,8 @@ public:
 
     virtual int _getNumCandles(::Block const&) const;
 
-    virtual void _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)>) const;
+    virtual void
+    _iterateCandles(::Block const&, ::BlockPos const&, ::brstd::function_ref<void(::Vec3 const&, int)>) const;
 
     virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 

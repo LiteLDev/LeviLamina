@@ -39,7 +39,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2576, ::Random> random;
+        ::ll::TypedStorage<8, 2544, ::Random> random;
         // NOLINTEND
     };
 
@@ -54,11 +54,12 @@ public:
             ::std::allocator<::DensityFunctionWorldGenerator::ThreadData>>>
                                                                       generatorHelpersPool;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>>        mBiomeSource;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                     mCalculatorMutex;
     ::ll::TypedStorage<8, 32, ::DensityCalculators>                   mDensityCalculators;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>>         mFillBlock;
-    ::ll::TypedStorage<8, 2576, ::Random>                             mMaterialAdjRandom;
+    ::ll::TypedStorage<8, 2544, ::Random>                             mMaterialAdjRandom;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mMaterialAdjNoise;
-    ::ll::TypedStorage<8, 64, ::XoroshiroRandom>                      mSurfaceRandom;
+    ::ll::TypedStorage<8, 48, ::XoroshiroRandom>                      mSurfaceRandom;
     ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise>                   mSurfaceNoise;
     // NOLINTEND
 

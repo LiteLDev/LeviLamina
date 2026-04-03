@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/definitions/JumpDataDescriptor.h"
 #include "mc/world/actor/ActorComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,7 +15,9 @@ struct JumpControlDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mJumpPower;
+    ::ll::TypedStorage<4, 4, float>                 mJumpPower;
+    ::ll::TypedStorage<4, 16, ::JumpDataDescriptor> mRegularSkipData;
+    ::ll::TypedStorage<4, 16, ::JumpDataDescriptor> mFastSkipData;
     // NOLINTEND
 
 public:

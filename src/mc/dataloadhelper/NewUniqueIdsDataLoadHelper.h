@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
 #include "mc/dataloadhelper/DataLoadHelperType.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
@@ -16,7 +17,6 @@ class BlockPos;
 class HashedString;
 class ILevel;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
@@ -50,7 +50,7 @@ public:
 
     virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
-    virtual ::Rotation loadRotation(::Rotation) /*override*/;
+    virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
     virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
@@ -113,6 +113,10 @@ public:
     MCFOLD bool $shouldResetTime();
 
     MCFOLD ::DataLoadHelperType $getType() const;
+
+#ifdef LL_PLAT_C
+    MCFOLD ::Rotation $loadRotation(::Rotation rotation);
+#endif
 
 
     // NOLINTEND

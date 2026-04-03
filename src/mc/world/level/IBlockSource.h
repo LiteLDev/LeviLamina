@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/vanilla_components/IConstBlockSource.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/ShapeType.h"
@@ -93,9 +94,9 @@ public:
 
     virtual short getAboveTopSolidBlock(::BlockPos const&, bool, bool, bool) const = 0;
 
-    virtual short getHeight(::std::function<bool(::Block const&)> const&, ::BlockPos const&) const = 0;
+    virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const&, ::BlockPos const&) const = 0;
 
-    virtual short getHeight(::std::function<bool(::Block const&)> const&, int, int) const = 0;
+    virtual short getHeight(::brstd::function_ref<bool(::Block const&)> const&, int, int) const = 0;
 
     virtual ::HitResult clip(
         ::Vec3 const&,

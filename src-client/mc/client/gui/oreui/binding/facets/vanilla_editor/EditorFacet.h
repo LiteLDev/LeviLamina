@@ -58,8 +58,6 @@ public:
 
     MCAPI void openPauseMenu();
 
-    MCAPI void resizeViewport(float width, float height, float offsetX, float offsetY);
-
     MCAPI void setEditorMode(::Editor::Mode newMode);
 
     MCAPI bool shouldDisplayReloadModal() const;

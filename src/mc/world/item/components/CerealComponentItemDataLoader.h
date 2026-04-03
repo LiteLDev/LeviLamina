@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class BedrockLoadContext;
-class IPackLoadContext;
-struct ComponentItemData_v1_21_110;
+class PackLoadContext;
+struct ComponentItemData_v1_26_0;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,7 +17,10 @@ class CerealComponentItemDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ComponentItemData_v1_21_110, ::BedrockLoadContext, nullptr_t>>
+    ::ll::TypedStorage<
+        8,
+        256,
+        ::Puv::SlicedLoader<::ComponentItemData_v1_26_0, ::BedrockLoadContext, nullptr_t, ::ComponentItemData_v1_26_0>>
                                             mLoader;
     ::ll::TypedStorage<8, 24, ::SemVersion> mDocumentVersion;
     // NOLINTEND
@@ -31,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI CerealComponentItemDataLoader(
         ::SemVersion                   documentVersion,
-        ::IPackLoadContext const&      packLoadContext,
+        ::PackLoadContext const&       packLoadContext,
         ::cereal::ReflectionCtx const& ctx
     );
 
@@ -42,7 +45,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    $ctor(::SemVersion documentVersion, ::IPackLoadContext const& packLoadContext, ::cereal::ReflectionCtx const& ctx);
+    $ctor(::SemVersion documentVersion, ::PackLoadContext const& packLoadContext, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

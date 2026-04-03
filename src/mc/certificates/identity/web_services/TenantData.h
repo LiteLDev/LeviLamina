@@ -8,7 +8,7 @@ struct TenantData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd2c4ca;
+    ::ll::UntypedStorage<8, 32> mUnk3f8b0c;
     // NOLINTEND
 
 public:

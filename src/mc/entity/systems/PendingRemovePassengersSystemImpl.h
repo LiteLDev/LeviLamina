@@ -9,8 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct ExitFromPassengerFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct PendingRemovePassengersComponent;
 struct RemovePassengersComponent;
 struct VehicleComponent;
@@ -20,7 +20,7 @@ namespace PendingRemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void pendingRemovePassengers(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::VehicleComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::VehicleComponent>>,
     ::StrictEntityContext const&        vehicle,
     ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,
     ::EntityModifier<::ExitFromPassengerFlagComponent, ::PendingRemovePassengersComponent, ::RemovePassengersComponent>

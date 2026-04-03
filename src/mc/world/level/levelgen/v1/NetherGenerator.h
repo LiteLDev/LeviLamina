@@ -39,7 +39,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2576, ::Random>                              random;
+        ::ll::TypedStorage<8, 2544, ::Random>                              random;
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
     };
@@ -75,7 +75,7 @@ public:
     // NOLINTBEGIN
     virtual ~NetherGenerator() /*override*/;
 
-    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 
     virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhoodIn) /*override*/;
 
@@ -136,7 +136,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 

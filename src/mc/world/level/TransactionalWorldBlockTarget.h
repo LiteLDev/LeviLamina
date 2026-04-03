@@ -105,7 +105,7 @@ public:
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
-    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+    MCFOLD bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
@@ -115,11 +115,11 @@ public:
 
     MCAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
 
-    MCFOLD bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
     MCFOLD short $getMaxHeight() const;
 
@@ -127,7 +127,7 @@ public:
 
     MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
-    MCFOLD short $getHeightmap(int x, int z);
+    MCAPI short $getHeightmap(int x, int z);
 
     MCFOLD bool $isLegacyLevel();
 
@@ -135,11 +135,11 @@ public:
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
+    MCFOLD short $getLocalWaterLevel(::BlockPos const& pos) const;
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCFOLD ::WorldGenContext const& $getContext();
+    MCAPI ::WorldGenContext const& $getContext();
 
     MCFOLD void $disableBlockSimple();
 

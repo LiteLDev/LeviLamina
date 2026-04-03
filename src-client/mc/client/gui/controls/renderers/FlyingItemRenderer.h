@@ -8,12 +8,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseActorRenderContext;
 class IClientInstance;
 class MinecraftUIRenderContext;
 class UIControl;
 class UICustomRenderer;
 class UIPropertyBag;
 class UIScene;
+struct UIItemRenderInfo;
 namespace ui { struct FlyingItem; }
 // clang-format on
 
@@ -54,6 +56,12 @@ public:
         float                       scale,
         int                         zOrder
     );
+
+    MCAPI void _renderMesh(
+        ::MinecraftUIRenderContext& renderContext,
+        ::BaseActorRenderContext&   entityRenderContext,
+        ::UIItemRenderInfo const&   itemRenderInfo
+    );
     // NOLINTEND
 
 public:
@@ -64,8 +72,6 @@ public:
     MCAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
-
-    MCFOLD ::UIBatchType $getBatchType() const;
     // NOLINTEND
 
 public:

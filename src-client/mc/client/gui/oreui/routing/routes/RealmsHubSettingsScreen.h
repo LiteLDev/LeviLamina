@@ -54,6 +54,8 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<char const[]> MANAGE_MEMBERS_ROUTE();
 
     MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+
+    MCAPI static ::std::add_lvalue_reference_t<char const[]> SAVES_ROUTE();
     // NOLINTEND
 
 public:

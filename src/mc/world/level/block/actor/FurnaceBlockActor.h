@@ -74,7 +74,7 @@ public:
     // NOLINTBEGIN
     virtual ::ItemStack const& getItem(int index) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual ::std::string getName() const /*override*/;
 
@@ -171,15 +171,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& BURN_DURATION_KEY();
 
-    MCAPI static int const& BURN_INTERVAL();
-
     MCAPI static ::std::string const& BURN_TIME_KEY();
 
     MCAPI static ::std::string const& COOK_TIME_KEY();
 
     MCAPI static ::std::string const& CUSTOM_NAME_KEY();
-
-    MCAPI static float const& DEFAULT_SMELTING_TIME();
 
     MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
 
@@ -220,7 +216,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int index) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 

@@ -17,7 +17,7 @@ class StructureFromSelectionPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6b58e9;
+    ::ll::UntypedStorage<8, 32> mUnk512cf7;
     // NOLINTEND
 
 public:

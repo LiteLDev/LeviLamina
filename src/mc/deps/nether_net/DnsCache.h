@@ -16,7 +16,7 @@ class DnsCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkaa518e;
+    ::ll::UntypedStorage<8, 112> mUnk9a8643;
     // NOLINTEND
 
 public:

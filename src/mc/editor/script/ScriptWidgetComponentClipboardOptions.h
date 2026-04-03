@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,10 +25,10 @@ public:
     ::ll::UntypedStorage<4, 16> mUnk320886;
     ::ll::UntypedStorage<4, 16> mUnkac6d6a;
     ::ll::UntypedStorage<1, 2>  mUnk12aa80;
-    ::ll::UntypedStorage<4, 32> mUnk4bcb08;
-    ::ll::UntypedStorage<4, 32> mUnkfd7ba1;
-    ::ll::UntypedStorage<4, 32> mUnk10d5e2;
-    ::ll::UntypedStorage<4, 32> mUnk44a836;
+    ::ll::UntypedStorage<8, 32> mUnk4bcb08;
+    ::ll::UntypedStorage<8, 32> mUnkfd7ba1;
+    ::ll::UntypedStorage<8, 32> mUnk10d5e2;
+    ::ll::UntypedStorage<8, 32> mUnk44a836;
     // NOLINTEND
 
 public:
@@ -73,23 +71,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Mirror const& DEFAULT_CLIPBOARD_MIRROR();
-
     MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_OFFSET();
 
     MCNAPI static ::Vec3 const& DEFAULT_CLIPBOARD_ORIGIN();
-
-    MCNAPI static ::Rotation const& DEFAULT_CLIPBOARD_ROTATION();
-
-    MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_HULL_COLOR();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HIGHLIGHT_OUTLINE_COLOR();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_HULL_COLOR();
 
     MCNAPI static ::ScriptModuleMinecraft::ScriptRGBA const& DEFAULT_OUTLINE_COLOR();
-
-    MCNAPI static bool const& DEFAULT_SHOW_OUTLINE();
     // NOLINTEND
 
 public:

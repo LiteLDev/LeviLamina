@@ -11,8 +11,8 @@ struct LegacyPackIdVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd49ab2;
-    ::ll::UntypedStorage<8, 32> mUnk747309;
+    ::ll::UntypedStorage<8, 32> mUnkd3a327;
+    ::ll::UntypedStorage<8, 32> mUnk11a54a;
     // NOLINTEND
 
 public:

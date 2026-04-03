@@ -23,11 +23,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockEventBase() = default;
+    virtual ~BlockEventBase();
 
     virtual ::Block const& getBlock() const;
 
     virtual ::BlockSource const& getBlockSource() const = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

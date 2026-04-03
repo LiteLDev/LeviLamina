@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/common/editor/MouseActionCategory.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/editor/input/KeyInputType.h"
 #include "mc/editor/input/Modifier.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Input { class ContextKeyBinding; }
 namespace Editor::Input { struct EditorKeyBindingRegistered; }

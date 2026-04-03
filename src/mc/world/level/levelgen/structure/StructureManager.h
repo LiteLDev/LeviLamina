@@ -186,11 +186,13 @@ public:
     _loadMetadataRegistries(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& packManager, bool excludeLatest);
 
     MCAPI static void _metadataPackForEachCallback(
-        ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry&            registry,
-        ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>& loader,
-        ::PackInstance const&                                                pack,
-        ::std::string&                                                       fileData,
-        ::Core::Path const&                                                  filenameWithExtension
+        ::SharedTypes::v1_21_80::JigsawStructureMetadataRegistry& registry,
+        ::Puv::Loader<
+            ::SharedTypes::v1_21_80::JigsawStructureMetadataFile,
+            ::SharedTypes::v1_21_80::JigsawStructureMetadataFile>& loader,
+        ::PackInstance const&                                      pack,
+        ::std::string&                                             fileData,
+        ::Core::Path const&                                        filenameWithExtension
     );
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
@@ -201,8 +203,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& BEHAVIOR_PACK_STRUCTURES_FOLDER();
-
-    MCAPI static char const*& LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX();
     // NOLINTEND
 
 public:

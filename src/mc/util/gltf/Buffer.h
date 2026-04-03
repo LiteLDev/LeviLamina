@@ -8,9 +8,9 @@ struct Buffer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk971192;
+    ::ll::UntypedStorage<8, 32> mUnkecc731;
     ::ll::UntypedStorage<4, 4>  mUnkf25ebd;
-    ::ll::UntypedStorage<8, 32> mUnkbfda20;
+    ::ll::UntypedStorage<8, 32> mUnk7f9932;
     ::ll::UntypedStorage<4, 4>  mUnk916439;
     // NOLINTEND
 

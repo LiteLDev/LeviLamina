@@ -52,7 +52,7 @@ public:
 
     MCFOLD ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet const&);
 
-    MCAPI ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet&&);
+    MCFOLD ::TextureUVCoordinateSet& operator=(::TextureUVCoordinateSet&&);
 
     MCAPI bool operator==(::TextureUVCoordinateSet const& other) const;
 

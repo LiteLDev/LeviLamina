@@ -30,8 +30,8 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnk1e2144;
         ::ll::UntypedStorage<1, 1>  mUnkd4776a;
-        ::ll::UntypedStorage<8, 32> mUnkaae551;
-        ::ll::UntypedStorage<8, 32> mUnke0cd00;
+        ::ll::UntypedStorage<8, 32> mUnk56f049;
+        ::ll::UntypedStorage<8, 32> mUnk1ad345;
         ::ll::UntypedStorage<8, 8>  mUnke36722;
         ::ll::UntypedStorage<8, 8>  mUnka9f509;
         ::ll::UntypedStorage<8, 8>  mUnk811586;

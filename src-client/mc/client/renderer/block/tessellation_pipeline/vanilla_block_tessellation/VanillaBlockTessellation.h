@@ -46,7 +46,8 @@ MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository,
     ::DimensionType const&                                       dimension,
     ::BakedBlockLightType                                        lightingType,
-    ::BiomeTintCache*                                            biomeTintCache
+    ::BiomeTintCache*                                            biomeTintCache,
+    bool                                                         textureShiftsEnabled
 );
 // NOLINTEND
 

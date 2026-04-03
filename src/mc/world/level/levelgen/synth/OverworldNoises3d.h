@@ -45,6 +45,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI OverworldNoises3d(::OverworldNoises3d&&);
+
     MCAPI OverworldNoises3d(::OverworldNoises3d const&);
 
     MCAPI OverworldNoises3d(
@@ -78,7 +80,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OverworldNoises3d const&);
+    MCFOLD void* $ctor(::OverworldNoises3d&&);
+
+    MCFOLD void* $ctor(::OverworldNoises3d const&);
 
     MCAPI void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> temperatureNoise,

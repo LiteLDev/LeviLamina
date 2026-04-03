@@ -39,10 +39,10 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk62bf0a;
     ::ll::UntypedStorage<4, 12> mUnk865513;
     ::ll::UntypedStorage<1, 1>  mUnkba9362;
-    ::ll::UntypedStorage<4, 24> mUnk86fec1;
-    ::ll::UntypedStorage<4, 24> mUnkaa0b3f;
-    ::ll::UntypedStorage<4, 24> mUnk75e7a4;
-    ::ll::UntypedStorage<4, 24> mUnk118379;
+    ::ll::UntypedStorage<8, 24> mUnk86fec1;
+    ::ll::UntypedStorage<8, 24> mUnkaa0b3f;
+    ::ll::UntypedStorage<8, 24> mUnk75e7a4;
+    ::ll::UntypedStorage<8, 24> mUnk118379;
     // NOLINTEND
 
 public:

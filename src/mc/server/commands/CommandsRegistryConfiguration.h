@@ -46,6 +46,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI_S void* $ctor();
+
     MCAPI void* $ctor(::CommandsRegistryConfiguration&&);
     // NOLINTEND
 

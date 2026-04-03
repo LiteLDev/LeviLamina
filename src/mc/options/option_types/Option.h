@@ -44,6 +44,11 @@ public:
             mInputModeChangedPublisher;
         ::ll::TypedStorage<
             8,
+            128,
+            ::Bedrock::PubSub::Publisher<void(::Option const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+            mValueResetPublisher;
+        ::ll::TypedStorage<
+            8,
             8,
             ::std::unique_ptr<
                 ::Bedrock::PubSub::Publisher<void(bool&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>>
@@ -199,6 +204,9 @@ public:
 
     MCAPI ::Bedrock::PubSub::Subscription
     registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
+
+    MCAPI_C ::Bedrock::PubSub::Subscription
+    registerResetObserver(::std::function<void(::Option const&)> onValueResetCallback);
 
     MCAPI_C ::Option&
     registerTelemetryProperty(::std::string const& propertyName, ::Social::Events::PrivacyTagEnterprise propertyTag);

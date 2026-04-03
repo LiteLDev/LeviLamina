@@ -13,10 +13,10 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk70bb87;
     ::ll::UntypedStorage<1, 1>  mUnkae0d56;
     ::ll::UntypedStorage<1, 1>  mUnkd4b3bf;
-    ::ll::UntypedStorage<8, 32> mUnk4105f3;
+    ::ll::UntypedStorage<8, 32> mUnkc75be5;
     ::ll::UntypedStorage<1, 5>  mUnk284341;
-    ::ll::UntypedStorage<8, 24> mUnkcafb82;
-    ::ll::UntypedStorage<8, 24> mUnk873374;
+    ::ll::UntypedStorage<8, 24> mUnkbb6882;
+    ::ll::UntypedStorage<8, 24> mUnkff5858;
     ::ll::UntypedStorage<1, 1>  mUnk23d6d4;
     // NOLINTEND
 

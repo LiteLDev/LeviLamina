@@ -46,7 +46,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Level&>    mLevel;
-    ::ll::TypedStorage<8, 2576, ::Random> mRandom;
+    ::ll::TypedStorage<8, 2544, ::Random> mRandom;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::unordered_set<::PortalRecord>>>
         mPortalRecords;
     // NOLINTEND

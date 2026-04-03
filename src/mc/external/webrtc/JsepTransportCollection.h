@@ -14,10 +14,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk1f4845;
-    ::ll::UntypedStorage<8, 16> mUnk77bd73;
-    ::ll::UntypedStorage<8, 16> mUnk30001c;
-    ::ll::UntypedStorage<8, 16> mUnkab9818;
-    ::ll::UntypedStorage<8, 64> mUnkafb72e;
+    ::ll::UntypedStorage<8, 16> mUnkb9d3c8;
+    ::ll::UntypedStorage<8, 16> mUnkf64894;
+    ::ll::UntypedStorage<8, 16> mUnkd50bf3;
+    ::ll::UntypedStorage<8, 64> mUnk4ff06a;
     ::ll::UntypedStorage<8, 64> mUnkb06921;
     // NOLINTEND
 
@@ -38,11 +38,11 @@ public:
 
     MCNAPI void DestroyUnusedTransports();
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportByName(::std::string const& transport_name) const;
 
     MCNAPI ::cricket::JsepTransport* GetTransportByName(::std::string const& transport_name);
 
-    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const&) const;
+    MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string const& mid) const;
 
     MCNAPI ::cricket::JsepTransport const* GetTransportForMid(::std::string_view mid) const;
 

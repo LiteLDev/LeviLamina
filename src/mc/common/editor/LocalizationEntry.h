@@ -2,19 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor {
 
 struct LocalizationEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2985dc;
-    ::ll::UntypedStorage<8, 32> mUnk2614f9;
+    ::ll::UntypedStorage<8, 32> mUnkf0713b;
+    ::ll::UntypedStorage<8, 32> mUnk418ca2;
     // NOLINTEND
 
 public:
@@ -30,12 +25,6 @@ public:
     MCNAPI ::Editor::LocalizationEntry& operator=(::Editor::LocalizationEntry const&);
 
     MCNAPI ~LocalizationEntry();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

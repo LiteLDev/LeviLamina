@@ -23,7 +23,7 @@ public:
     ::ll::TypedStorage<4, 4, int>         mStayTicks;
     ::ll::TypedStorage<4, 4, int>         mMaxStayTicks;
     ::ll::TypedStorage<1, 1, bool>        mReachedTarget;
-    ::ll::TypedStorage<4, 4, float>       mSpeedMod;
+    ::ll::TypedStorage<4, 4, float>       mSpeedMultiplier;
     ::ll::TypedStorage<4, 4, float>       mGoalRadiusSq;
     ::ll::TypedStorage<8, 8, uint64>      mCooldownCounter;
     ::ll::TypedStorage<8, 8, uint64>      mCooldownTimeoutTime;
@@ -68,6 +68,8 @@ public:
 
     virtual uint64 _getRepathTime() const;
 
+    virtual void setInterval(int const interval);
+
     virtual ~BaseMoveToGoal() /*override*/ = default;
     // NOLINTEND
 
@@ -99,6 +101,8 @@ public:
     MCAPI ::Vec3 $_getTargetPosition() const;
 
     MCFOLD uint64 $_getRepathTime() const;
+
+    MCFOLD void $setInterval(int const interval);
 
 
     // NOLINTEND

@@ -27,9 +27,12 @@ namespace RepositoryLoading {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Bedrock::Threading::Async<void>
+findVanillaPacks(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
+
+MCNAPI ::Bedrock::Threading::Async<void>
 initialize(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
 
-MCNAPI ::Bedrock::Threading::Async<::PackSourceLoadResult> loadAndUpgradePacks(
+MCNAPI ::Bedrock::Threading::Async<::PackSourceLoadResult> loadAndProcessCommands(
     ::PackSource&                        packSource,
     ::IPackManifestFactory&              manifestFactory,
     ::IContentKeyProvider const&         keyProvider,

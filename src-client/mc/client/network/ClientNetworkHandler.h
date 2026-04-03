@@ -37,20 +37,27 @@ class BiomeDefinitionListPacket;
 class BlockPos;
 class BlockSource;
 class BossEventPacket;
+class CameraAimAssistActorPriorityPacket;
 class CameraAimAssistPacket;
 class CameraAimAssistPresetsPacket;
 class CameraInstructionPacket;
 class CameraPacket;
 class CameraPresetsPacket;
 class CameraShakePacket;
+class CameraSplinePacket;
 class ChunkPos;
 class ChunkRadiusUpdatedPacket;
 class ClientNetworkSystem;
+class ClientboundAttributeLayerSyncPacket;
 class ClientboundCloseFormPacket;
 class ClientboundControlSchemeSetPacket;
+class ClientboundDataDrivenUICloseScreenPacket;
+class ClientboundDataDrivenUIReloadPacket;
+class ClientboundDataDrivenUIShowScreenPacket;
 class ClientboundDataStorePacket;
 class ClientboundDebugRendererPacket;
 class ClientboundMapItemDataPacket;
+class ClientboundTextureShiftPacket;
 class CodeBuilderPacket;
 class CommandOutputPacket;
 class CommandRequestPacket;
@@ -85,6 +92,7 @@ class LevelEventGenericPacket;
 class LevelEventPacket;
 class LevelSoundEventPacket;
 class LocalPlayer;
+class LocatorBarPacket;
 class MinecraftCommands;
 class ModalFormRequestPacket;
 class MultiplayerSettingsPacket;
@@ -135,9 +143,11 @@ class StopSoundPacket;
 class StructureTemplateDataResponsePacket;
 class SubChunkPacket;
 class SyncActorPropertyPacket;
+class SyncWorldClocksPacket;
 class TakeItemActorPacket;
 class TaskGroup;
 class TextPacket;
+class TextureShiftManager;
 class TickingAreasLoadStatusPacket;
 class ToastRequestPacket;
 class TransferPacket;
@@ -151,6 +161,7 @@ class UpdatePlayerGameTypePacket;
 class UpdateSoftEnumPacket;
 class UpdateSubChunkBlocksPacket;
 class UpdateTradePacket;
+class VoxelShapesPacket;
 struct CachedHostPackIdProvider;
 struct ClientNetworkHandlerArguments;
 struct IGameConnectionListener;
@@ -159,6 +170,7 @@ struct PackDownloadManager;
 struct VideoCaptureSessionManager;
 namespace ClientBlobCache { struct Cache; }
 namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
+namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
 class ClientNetworkHandler : public ::NetEventCallback {
@@ -182,16 +194,18 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MPMCQueue<uint64>>>                         mCacheMisses;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MPMCQueue<uint64>>>                         mCacheHits;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VoxelShapes::VoxelShapeRegistry>>            mVoxelShapeRegistry;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                              mClient;
     ::ll::TypedStorage<8, 8, ::PacketSender&>                                                 mPacketSender;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IGameConnectionListener>>                     mGameConnectionListener;
     ::ll::TypedStorage<8, 8, ::IGameServerStartup&>                                           mGameServerStartup;
     ::ll::TypedStorage<8, 8, ::ClientNetworkSystem&>                                          mNetwork;
-    ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                            mClientKeys;
+    ::ll::TypedStorage<8, 8, ::PrivateKeyManager const&>                                      mClientKeys;
     ::ll::TypedStorage<8, 8, ::MinecraftCommands&>                                            mMinecraftCommands;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ILevel>>                           mLevel;
     ::ll::TypedStorage<1, 1, bool>                                                            mHasMessage;
     ::ll::TypedStorage<1, 1, bool>                                                            mIsLoggedIn;
+    ::ll::TypedStorage<1, 1, bool>                                                            mHasHandshaked;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>>                                        mExistenceTracker;
     ::ll::TypedStorage<1, 1, bool>                                                            mPacketTelemetryEnabled;
     ::ll::TypedStorage<
@@ -214,7 +228,8 @@ public:
                                                                                         mConnectionPausedCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                            mIOTaskGroup;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::VideoCaptureSessionManager>> mVideoCaptureSessionManager;
-    ::ll::TypedStorage<8, 64, ::ClientNetworkPackDependencies>                          mPackDependencies;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager>>     mTextureShiftManager;
+    ::ll::TypedStorage<8, 128, ::ClientNetworkPackDependencies>                         mPackDependencies;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CachedHostPackIdProvider>>            mCachedHostPackIdProvider;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                          mHostPacksReceivedSub;
     // NOLINTEND
@@ -250,6 +265,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::CameraPacket const& packet) /*override*/;
@@ -257,6 +274,8 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet) /*override*/;
 
@@ -451,6 +470,24 @@ public:
 
     virtual void handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet) /*override*/;
 
+    virtual void
+    handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&) /*override*/;
+
+    virtual void
+    handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet) /*override*/;
+
     virtual void onOutgoingPacket(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
@@ -469,12 +506,13 @@ public:
     onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID) /*override*/;
 
     virtual void onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     message,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        ::std::string const&
     ) /*override*/;
 
     virtual ::IncomingPacketFilterResult allowIncomingPacketId(
@@ -588,6 +626,8 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet);
+
     MCAPI void $handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::CameraPacket const& packet);
@@ -595,6 +635,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet);
 
@@ -788,6 +830,22 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet);
+
     MCAPI void $onOutgoingPacket(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
@@ -803,15 +861,6 @@ public:
     );
 
     MCAPI void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
-
-    MCAPI void $onDisconnect(
-        ::NetworkIdentifier const&               source,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     message,
-        bool                                     skipMessage,
-        ::std::string const&                     telemetryOverride
-    );
 
     MCAPI ::IncomingPacketFilterResult
     $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);

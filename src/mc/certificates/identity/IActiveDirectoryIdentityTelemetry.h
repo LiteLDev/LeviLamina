@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/certificates/identity/LastClickedSource.h"
 #include "mc/certificates/identity/edu/Role.h"
-#include "mc/codebuilder/CodeBuilderPerformance.h"
+#include "mc/deps/code_builder/CodeBuilderPerformance.h"
 #include "mc/events/identity/EduSignInStage.h"
 
 class IActiveDirectoryIdentityTelemetry {

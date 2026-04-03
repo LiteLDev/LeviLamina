@@ -65,7 +65,7 @@ public:
 
     MCAPI float _sanitizeValue(float value);
 
-    MCAPI void addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
+    MCAPI ::std::optional<float> addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
 
     MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 

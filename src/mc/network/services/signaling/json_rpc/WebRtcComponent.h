@@ -21,8 +21,8 @@ class WebRtcComponent : public ::IJsonRpcComponent, public ::std::enable_shared_
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb87f51;
-    ::ll::UntypedStorage<8, 24> mUnkb025a5;
+    ::ll::UntypedStorage<8, 8>  mUnkbe99df;
+    ::ll::UntypedStorage<8, 24> mUnk1bb34c;
     ::ll::UntypedStorage<8, 80> mUnkcc2ad6;
     ::ll::UntypedStorage<8, 64> mUnk2d2bc1;
     ::ll::UntypedStorage<8, 16> mUnk1c8606;

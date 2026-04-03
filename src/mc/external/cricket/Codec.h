@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/webrtc/ScalabilityMode.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace cricket { class FeedbackParam; }
@@ -35,14 +32,14 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk5f1c96;
     ::ll::UntypedStorage<4, 4>  mUnk98a0b7;
-    ::ll::UntypedStorage<8, 32> mUnka5c2d4;
+    ::ll::UntypedStorage<8, 32> mUnk7d8fe0;
     ::ll::UntypedStorage<4, 4>  mUnkfa2b23;
     ::ll::UntypedStorage<4, 4>  mUnk554d30;
     ::ll::UntypedStorage<8, 8>  mUnkff3fb9;
-    ::ll::UntypedStorage<8, 40> mUnkb80ab5;
+    ::ll::UntypedStorage<8, 40> mUnk4a0872;
     ::ll::UntypedStorage<8, 48> mUnk89b0fc;
-    ::ll::UntypedStorage<8, 40> mUnka1b7da;
-    ::ll::UntypedStorage<8, 16> mUnk60d08e;
+    ::ll::UntypedStorage<8, 40> mUnk452fcb;
+    ::ll::UntypedStorage<8, 16> mUnkee9390;
     ::ll::UntypedStorage<8, 24> mUnk5ab74a;
     // NOLINTEND
 

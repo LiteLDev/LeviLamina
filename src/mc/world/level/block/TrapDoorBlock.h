@@ -22,6 +22,7 @@ class Material;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class TrapDoorBlock : public ::BlockType {
@@ -42,11 +43,6 @@ public:
 
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
-
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -72,6 +68,8 @@ public:
     // NOLINTBEGIN
     MCAPI TrapDoorBlock(::std::string const& nameId, int id, ::Material const& material);
 
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void toggleOpen(::BlockSource& region, ::Actor* user, ::BlockPos const& pos) const;
@@ -83,6 +81,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::AABB const& _getShape(::Block const& block, ::AABB& bufferAABB, bool addBufferSpacing);
+
+    MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -120,10 +120,6 @@ public:
         ::Vec3 const&     clickPos,
         int               itemValue
     ) const;
-
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

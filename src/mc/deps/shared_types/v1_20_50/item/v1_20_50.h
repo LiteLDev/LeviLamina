@@ -8,6 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace SharedTypes::v1_20_50 { struct ComponentItemComponentData; }
+namespace SharedTypes::v1_20_50 { struct ShooterItemComponent; }
+namespace SharedTypes::v1_20_50 { struct TagsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,8 +25,23 @@ MCAPI bool operator==(
 );
 
 MCAPI bool operator==(
+    ::SharedTypes::v1_20_50::ComponentItemComponentData const& __P0,
+    ::SharedTypes::v1_20_50::ComponentItemComponentData const& __P1
+);
+
+MCAPI bool operator==(
     ::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const& __P0,
     ::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const& __P1
+);
+
+MCAPI bool operator==(
+    ::SharedTypes::v1_20_50::ShooterItemComponent const& __P0,
+    ::SharedTypes::v1_20_50::ShooterItemComponent const& __P1
+);
+
+MCFOLD bool operator==(
+    ::SharedTypes::v1_20_50::TagsItemComponent const& __P0,
+    ::SharedTypes::v1_20_50::TagsItemComponent const& __P1
 );
 // NOLINTEND
 

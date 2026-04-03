@@ -35,8 +35,6 @@ public:
 
     MCAPI_C void addExpectedAction(::InventoryAction const& action);
 
-    MCAPI void forceBalanceTransaction();
-
     MCAPI ~InventoryTransactionManager();
     // NOLINTEND
 

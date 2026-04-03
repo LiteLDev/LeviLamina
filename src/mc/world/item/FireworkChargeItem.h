@@ -36,7 +36,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const /*override*/;
 
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
@@ -115,7 +115,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;

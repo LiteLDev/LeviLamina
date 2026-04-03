@@ -21,16 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAimAssistPresetsPacketPayload& operator=(CameraAimAssistPresetsPacketPayload const&);
-    CameraAimAssistPresetsPacketPayload(CameraAimAssistPresetsPacketPayload const&);
-    CameraAimAssistPresetsPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraAimAssistPresetsPacketPayload& operator=(::CameraAimAssistPresetsPacketPayload&&);
-
     MCAPI ~CameraAimAssistPresetsPacketPayload();
     // NOLINTEND
 

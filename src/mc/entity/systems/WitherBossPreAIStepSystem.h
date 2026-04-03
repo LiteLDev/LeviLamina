@@ -11,7 +11,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 struct WitherBossFlagComponent;
 struct WitherBossPreAIStepResultComponent;
@@ -30,7 +30,7 @@ public:
     MCNAPI static void _tickWitherBossPreAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::WitherBossFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::WitherBossFlagComponent>,
             ::ActorOwnerComponent>                             view,
         ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );

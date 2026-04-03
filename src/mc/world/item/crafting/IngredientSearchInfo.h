@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+    MCAPI ~IngredientSearchInfo();
     // NOLINTEND
 
 public:
@@ -30,6 +30,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -31,8 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool _clearOfObstacles(::Mob const& mob, float x, float z, int distance) const;
 
-    MCAPI void _handleBreaching(::Mob& mob);
-
     MCAPI bool _isInWater(::Mob const& mob) const;
 
     MCAPI void _setupBreach(::Mob& mob);

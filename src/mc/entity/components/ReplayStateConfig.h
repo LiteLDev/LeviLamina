@@ -16,10 +16,4 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                          mMaxCorrectionDelay;
     ::ll::TypedStorage<2, 2, ushort>                         mHistorySize;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI_S void setReplayStateConfigThresholds(float baseThreshold);
-    // NOLINTEND
 };

@@ -2,10 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/TextBoxCaretMovement.h"
+
 // auto generated forward declare list
 // clang-format off
 struct TextBoxSelection;
-namespace OreUI { class ViewListenerWrapper; }
+namespace OreUI { class TextInputHandler; }
 namespace cohtml { class View; }
 // clang-format on
 
@@ -15,8 +18,8 @@ class TextInputProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::cohtml::View&>               mView;
-    ::ll::TypedStorage<8, 8, ::OreUI::ViewListenerWrapper&> mViewListenerWrapper;
+    ::ll::TypedStorage<8, 8, ::cohtml::View&>            mView;
+    ::ll::TypedStorage<8, 8, ::OreUI::TextInputHandler&> mTextInputHandler;
     // NOLINTEND
 
 public:
@@ -28,9 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI int calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);
+
     MCAPI void clearSelection();
 
-    MCAPI void insertTextAtCaret(::std::string const& text);
+    MCAPI void clearText();
+
+    MCAPI void insertTextAtCaret(::std::string_view text);
 
     MCAPI void setCaretPosition(int targetPos);
 

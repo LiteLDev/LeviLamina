@@ -9,7 +9,7 @@ class PacketRateLimitFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk49ad54;
+    ::ll::UntypedStorage<8, 32> mUnkd5bd6e;
     // NOLINTEND
 
 public:

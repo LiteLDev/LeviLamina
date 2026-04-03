@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     virtual ~DeathScreenController() /*override*/ = default;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void onOpen() /*override*/;
 
@@ -65,6 +65,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI void $onOpen();
 
     MCAPI void $onDelete();

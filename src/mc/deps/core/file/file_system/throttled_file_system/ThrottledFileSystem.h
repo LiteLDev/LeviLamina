@@ -27,8 +27,8 @@ class ThrottledFileSystem : public ::Core::FileSystemImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8fe63a;
-    ::ll::UntypedStorage<8, 8>  mUnka1d3a3;
+    ::ll::UntypedStorage<8, 64> mUnk51168a;
+    ::ll::UntypedStorage<8, 8>  mUnk32da3f;
     ::ll::UntypedStorage<8, 16> mUnke52853;
     // NOLINTEND
 

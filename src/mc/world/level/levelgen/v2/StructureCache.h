@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class ChunkPos;
 namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { struct Structure; }
 // clang-format on

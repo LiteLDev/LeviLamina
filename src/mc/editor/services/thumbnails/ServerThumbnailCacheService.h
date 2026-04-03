@@ -25,7 +25,7 @@ class ServerThumbnailCacheService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>   mUnkdbecfe;
+    ::ll::UntypedStorage<8, 64>   mUnk1110e6;
     ::ll::UntypedStorage<8, 1032> mUnkd7b0f7;
     ::ll::UntypedStorage<8, 24>   mUnk511273;
     // NOLINTEND

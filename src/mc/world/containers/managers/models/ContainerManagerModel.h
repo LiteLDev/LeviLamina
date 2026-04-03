@@ -9,12 +9,12 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/IContainerManager.h"
+#include "mc/world/containers/managers/controllers/ContainerManagerController.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class ContainerManagerController;
 class ContainerModel;
 class DynamicContainerTracker;
 class HashedString;
@@ -109,6 +109,8 @@ public:
     virtual void broadcastChanges() /*override*/;
 
     virtual ::ContainerScreenContext _postInit() = 0;
+
+    virtual void _onDynamicContainerContentsChanged();
     // NOLINTEND
 
 public:
@@ -188,6 +190,8 @@ public:
     MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
     MCAPI void $broadcastChanges();
+
+    MCFOLD void $_onDynamicContainerContentsChanged();
 
 
     // NOLINTEND

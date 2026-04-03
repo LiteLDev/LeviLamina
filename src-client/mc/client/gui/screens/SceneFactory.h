@@ -25,6 +25,7 @@
 #include "mc/client/store/sidebar/Type.h"
 #include "mc/client/tts/TTSEnabledStatus.h"
 #include "mc/deps/core/file/FileUploadType.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
@@ -44,7 +45,6 @@ class BlockActor;
 class BlockPos;
 class CachedScenes;
 class Dimension;
-class HashedString;
 class IAdvancedGraphicsOptions;
 class IClientInstance;
 class IContentKeyProvider;
@@ -299,9 +299,7 @@ public:
         ::std::string const& titleMessage,
         ::std::string const& displayMessage,
         ::std::string const& screenNameOverride,
-        ::std::string const& telemetryOverride,
-        bool                 leaveGame,
-        bool                 isSubClient
+        ::std::string const& telemetryOverride
     );
 
     MCAPI ::std::shared_ptr<::AbstractScene> createDlcProgressScreen(
@@ -502,8 +500,6 @@ public:
         ::sidebar::navigationLayout::Type sidebarLayoutType
     );
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createMarketplacePassPDPViewAllPacksScreen();
-
     MCAPI ::std::shared_ptr<::AbstractScene> createMarketplacePassPurchaseAmazonDeviceWarningScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createMarketplacePassPurchaseWarningScreen();
@@ -534,6 +530,14 @@ public:
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
+    MCAPI ::std::shared_ptr<::AbstractScene> createNetworkProgressScreen(
+        ::std::string const&                               uniqueEventName,
+        ::std::deque<::std::unique_ptr<::ProgressHandler>> connectHandlers,
+        bool                                               allowSmallDownloads,
+        bool                                               sendProgressTelem,
+        ::OnlineSafetyDialogVisibility                     onlineSafetyDialogVisibility
+    );
+
     MCAPI ::std::shared_ptr<::AbstractScene> createNoInvitesOrJoiningScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createNoLicenseScreen();
@@ -556,7 +560,8 @@ public:
         ::SettingsTabIndex   startingTabIndex,
         bool                 navToMenuOnExit,
         bool                 maintainOldFocus,
-        ::std::string const& initialPackId
+        ::std::string const& initialPackId,
+        bool                 fullscreen
     );
 
     MCAPI ::std::shared_ptr<::AbstractScene> createOptionsScreen(
@@ -564,12 +569,13 @@ public:
         ::SettingsTabIndex    startingTabIndex,
         bool                  navToMenuOnExit,
         bool                  maintainOldFocus,
-        ::std::string const&  initialPackId
+        ::std::string const&  initialPackId,
+        bool                  fullscreen
     );
 
     MCAPI ::std::shared_ptr<::AbstractScene> createPackSettingsScreen(::PackSettingsInfo packSettingsInfo);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createPauseScreen();
+    MCAPI ::std::shared_ptr<::AbstractScene> createPauseScreen(bool overlaySocialDrawerOnce);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createPermissionsScreen(::ActorUniqueID defaultPlayerId);
 
@@ -649,13 +655,13 @@ public:
     MCAPI ::std::shared_ptr<::AbstractScene>
     createRealmsManageScreen(::Realms::World const& world, ::SettingsTabIndex initialTab);
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsPDPViewAllPacksScreen();
-
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsPackErrorsScreen();
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsPendingInvitesScreen(bool hasPendingInvites);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsPlusPurchaseWarningScreen(::std::function<void()> callback);
+
+    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSavesScreen(::Realms::World const& world);
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsSettingsScreen(
         ::Realms::World const& world,
@@ -674,7 +680,7 @@ public:
 
     MCAPI ::std::shared_ptr<::AbstractScene> createRealmsWarningScreen();
 
-    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsWarningScreen(
+    MCAPI ::std::shared_ptr<::AbstractScene> createRealmsWarningScreenWithParams(
         ::Realms::World const& world,
         ::std::string const&   ip,
         int                    port,

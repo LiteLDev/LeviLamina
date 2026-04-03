@@ -36,7 +36,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Player&>                                  mPlayer;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                   mSrcItemNetId;
+    ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant>                   mSrcItemNetId;
     ::ll::TypedStorage<4, 8, ::CraftHandlerGrindstone::ExperienceAmount> mExperienceAmount;
     // NOLINTEND
 

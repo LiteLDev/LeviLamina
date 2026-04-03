@@ -8,11 +8,12 @@ struct DataStoreUpdate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb52e5b;
-    ::ll::UntypedStorage<8, 32> mUnkddf472;
-    ::ll::UntypedStorage<4, 4>  mUnk3624eb;
-    ::ll::UntypedStorage<8, 32> mUnk4d4802;
-    ::ll::UntypedStorage<8, 40> mUnkf23dc6;
+    ::ll::UntypedStorage<8, 32> mUnkb92e53;
+    ::ll::UntypedStorage<8, 32> mUnk68343c;
+    ::ll::UntypedStorage<4, 4>  mUnkfd4430;
+    ::ll::UntypedStorage<4, 4>  mUnkb71650;
+    ::ll::UntypedStorage<8, 32> mUnk33050a;
+    ::ll::UntypedStorage<8, 40> mUnk93c84c;
     // NOLINTEND
 
 public:

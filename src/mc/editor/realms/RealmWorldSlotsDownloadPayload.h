@@ -17,7 +17,7 @@ class RealmWorldSlotsDownloadPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5a2810;
+    ::ll::UntypedStorage<8, 24> mUnk990b0c;
     ::ll::UntypedStorage<4, 4>  mUnka21459;
     // NOLINTEND
 

@@ -42,7 +42,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ChunkBuildOrderPolicy::Influence>> mPositionMap;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                                 mChunkPosAsyncSpinLock;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                                 mChunkPosAsyncSpinLock;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkBuildOrderPolicy::Influence>> mChunkPosAndDirectionAsync;
     ::ll::TypedStorage<4, 4, uint>                                               mLastHandle;
     // NOLINTEND

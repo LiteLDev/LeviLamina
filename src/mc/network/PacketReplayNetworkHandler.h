@@ -14,6 +14,7 @@
 // clang-format off
 class DisconnectPacket;
 class NetworkIdentifier;
+class NetworkSettingsPacket;
 class NetworkStackLatencyPacket;
 class Packet;
 class ResourcePackStackPacket;
@@ -28,8 +29,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnkeb8045;
-    ::ll::UntypedStorage<8, 32>  mUnkcda77f;
-    ::ll::UntypedStorage<8, 152> mUnk24357c;
+    ::ll::UntypedStorage<8, 32>  mUnk26a662;
+    ::ll::UntypedStorage<8, 184> mUnk24357c;
     ::ll::UntypedStorage<8, 8>   mUnk1f5293;
     ::ll::UntypedStorage<1, 1>   mUnk45deb5;
     ::ll::UntypedStorage<1, 1>   mUnk517a45;
@@ -54,16 +55,20 @@ public:
     virtual ::OutgoingPacketFilterResult
     allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) /*override*/;
 
-    virtual void onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
+    virtual void
+    onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&, ::std::string const&) /*override*/;
 
     virtual void onDisconnect(
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
         ::Connection::DisconnectionStage const,
         ::std::string const&,
+        ::std::string const&,
         bool,
         ::std::string const&
     ) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;
 

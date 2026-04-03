@@ -8,8 +8,8 @@ struct EduDSTelemetryIdentifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7ba2db;
-    ::ll::UntypedStorage<8, 32> mUnk79da49;
+    ::ll::UntypedStorage<8, 32> mUnke7ad31;
+    ::ll::UntypedStorage<8, 32> mUnkf1c17b;
     // NOLINTEND
 
 public:

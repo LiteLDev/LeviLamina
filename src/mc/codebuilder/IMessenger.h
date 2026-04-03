@@ -33,6 +33,8 @@ public:
 
     virtual void blockPlaced(::Player const*, ::Block const&, bool, ushort) const = 0;
 
+    virtual void blockPlacedByCommand(::Block const&, ushort, int) const = 0;
+
     virtual void cameraUsed(bool) const = 0;
 
     virtual void codeBuilderRuntimeAction(::std::string const&) const = 0;

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -16,14 +17,13 @@ class StructureDataPayload : public ::Editor::Network::NetworkPayload<::Editor::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb4467f;
+    ::ll::UntypedStorage<8, 32> mUnk4e7594;
     ::ll::UntypedStorage<4, 4>  mUnk43a478;
-    ::ll::UntypedStorage<8, 8>  mUnk184b99;
+    ::ll::UntypedStorage<8, 32> mUnk17c43e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StructureDataPayload& operator=(StructureDataPayload const&);
     StructureDataPayload(StructureDataPayload const&);
     StructureDataPayload();
 
@@ -31,26 +31,26 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~StructureDataPayload() /*override*/;
+    // NOLINTEND
 
-    virtual bool load(::CompoundTag const* tag) /*override*/;
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::StructureDataPayload& operator=(::Editor::Network::StructureDataPayload const&);
 
-    virtual ::CompoundTag save() const /*override*/;
+    MCNAPI void setData(::CompoundTag const& data);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCNAPI bool $load(::CompoundTag const* tag);
-
-    MCNAPI ::CompoundTag $save() const;
-
-
     // NOLINTEND
 
 public:

@@ -8,7 +8,9 @@ struct EduAuthParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkfab10b;
+    ::ll::UntypedStorage<8, 64> mUnkf8f857;
+    ::ll::UntypedStorage<8, 32> mUnkf114cb;
+    ::ll::UntypedStorage<8, 8>  mUnkd3647c;
     // NOLINTEND
 
 public:

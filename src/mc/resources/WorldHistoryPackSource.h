@@ -15,13 +15,14 @@ class WorldPackHistory;
 class WorldPacksHistoryFile;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
+struct WorldHistoryPackSourceOptions;
 // clang-format on
 
 class WorldHistoryPackSource : public ::PackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbc6895;
+    ::ll::UntypedStorage<8, 32> mUnk521049;
     ::ll::UntypedStorage<1, 1>  mUnk712674;
     ::ll::UntypedStorage<8, 24> mUnk4f8c50;
     ::ll::UntypedStorage<1, 1>  mUnkb16dc9;
@@ -48,6 +49,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit WorldHistoryPackSource(::WorldHistoryPackSourceOptions options);
+
     MCNAPI void _addPackFromHistoryPack(
         ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>& packs,
         ::WorldPackHistory const&                                  worldPackHistory
@@ -58,6 +61,12 @@ public:
     MCNAPI bool _readWorldHistoryFile(::WorldPacksHistoryFile& file) const;
 
     MCNAPI_C ::Bedrock::Threading::Async<void> saveHistoryFile();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::WorldHistoryPackSourceOptions options);
     // NOLINTEND
 
 public:

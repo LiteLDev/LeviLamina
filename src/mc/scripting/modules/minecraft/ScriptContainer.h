@@ -54,6 +54,10 @@ public:
 
     virtual ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    getItemV010(int slot) const;
+
+    virtual ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getItem(int slot) const;
 
     virtual ::Scripting::Result_deprecated<void>
@@ -112,6 +116,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::Scripting::Error> _isSlotBeyondMaxCapacity(::Container& container, int slot);
+
     MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
     MCAPI static ::Scripting::ClassBinding bind();
@@ -141,6 +147,10 @@ public:
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
+
+    MCAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    $getItemV010(int slot) const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>

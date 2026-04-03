@@ -10,7 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -22,7 +22,7 @@ public:
     MCNAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
             ::ActorOwnerComponent> view
     );
 

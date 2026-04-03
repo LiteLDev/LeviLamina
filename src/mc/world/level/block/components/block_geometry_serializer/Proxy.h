@@ -22,6 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString>                                   mGeometryName;
     ::ll::TypedStorage<8, 48, ::HashedString>                                   mCullingName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                   mCullingShapeName;
     ::ll::TypedStorage<8, 48, ::HashedString>                                   mCullingLayer;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>>      mBoneVisibilities;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;

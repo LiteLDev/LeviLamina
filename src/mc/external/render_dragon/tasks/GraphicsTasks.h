@@ -157,7 +157,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnkcd79c5;
     ::ll::UntypedStorage<4, 4>   mUnk430d7c;
     ::ll::UntypedStorage<8, 8>   mUnk408564;
-    ::ll::UntypedStorage<8, 24>  mUnk81ab20;
+    ::ll::UntypedStorage<8, 24>  mUnk6be7a2;
     ::ll::UntypedStorage<8, 8>   mUnkc29824;
     ::ll::UntypedStorage<8, 16>  mUnk98af7b;
     ::ll::UntypedStorage<8, 16>  mUnke9e17e;
@@ -167,9 +167,9 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnkc8a6de;
     ::ll::UntypedStorage<8, 16>  mUnk9bafe7;
     ::ll::UntypedStorage<8, 104> mUnk6f2218;
-    ::ll::UntypedStorage<8, 16>  mUnka908bc;
-    ::ll::UntypedStorage<8, 16>  mUnk2c8251;
-    ::ll::UntypedStorage<8, 8>   mUnk79ea81;
+    ::ll::UntypedStorage<8, 16>  mUnkd3d3b5;
+    ::ll::UntypedStorage<8, 16>  mUnkd32ece;
+    ::ll::UntypedStorage<8, 8>   mUnk55b8b6;
     ::ll::UntypedStorage<4, 4>   mUnk20cffb;
     ::ll::UntypedStorage<8, 8>   mUnkb1d24c;
     ::ll::UntypedStorage<8, 8>   mUnk6421c7;
@@ -184,6 +184,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI_C bool _executeSynchronousRenderOperation(::std::function<void()> const& callback);
+
     MCNAPI_C void _forCounter(
         uint64                               count,
         ::std::function<void(uint64)> const& workerCallback,

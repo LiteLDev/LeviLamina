@@ -24,7 +24,6 @@ class IConstBlockSource;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
@@ -60,10 +59,6 @@ public:
     ) const /*override*/;
 
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
-        /*override*/;
 
     virtual bool isWallBlock() const /*override*/;
 
@@ -106,8 +101,6 @@ public:
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
-
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -115,13 +108,7 @@ public:
     // NOLINTBEGIN
     MCAPI static float const& POST_HEIGHT();
 
-    MCAPI_C static float const& POST_WIDTH();
-
     MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
-    MCAPI_C static float const& WALL_HEIGHT();
-
-    MCAPI_C static float const& WALL_WIDTH();
     // NOLINTEND
 
 public:
@@ -162,13 +149,11 @@ public:
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
-
     MCFOLD bool $isWallBlock() const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
+#ifdef LL_PLAT_S
     MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -178,8 +163,9 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+#endif
 
-    MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

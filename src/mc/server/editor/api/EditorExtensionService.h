@@ -31,11 +31,11 @@ class EditorExtensionService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk35849b;
-    ::ll::UntypedStorage<8, 24> mUnkc7b66d;
-    ::ll::UntypedStorage<8, 24> mUnk988000;
-    ::ll::UntypedStorage<8, 48> mUnkf52108;
-    ::ll::UntypedStorage<8, 48> mUnkdbb512;
+    ::ll::UntypedStorage<8, 64> mUnke526ae;
+    ::ll::UntypedStorage<8, 24> mUnkc44169;
+    ::ll::UntypedStorage<8, 24> mUnk1c2616;
+    ::ll::UntypedStorage<8, 48> mUnk9d11de;
+    ::ll::UntypedStorage<8, 48> mUnk74826b;
     ::ll::UntypedStorage<8, 16> mUnkf82241;
     // NOLINTEND
 

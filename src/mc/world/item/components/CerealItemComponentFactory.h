@@ -11,8 +11,8 @@
 // clang-format off
 class CerealDocumentUpgrader;
 class Experiments;
-class IPackLoadContext;
 class ItemComponent;
+class PackLoadContext;
 class PackLoadRequirement;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
@@ -116,7 +116,7 @@ public:
     MCAPI static bool validateCerealComponent(
         ::std::string const&           componentName,
         ::SemVersion const&            documentVersion,
-        ::IPackLoadContext const&      packLoadContext,
+        ::PackLoadContext const&       packLoadContext,
         ::cereal::ReflectionCtx const& ctx,
         bool                           forBetaParsing,
         ::JsonBetaState                canUseBeta

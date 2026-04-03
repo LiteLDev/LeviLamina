@@ -20,12 +20,17 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDeathMessageOverride;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ActorDamageSource();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ActorDamageSource() = default;
+    virtual ~ActorDamageSource();
 
     virtual bool isEntitySource() const;
 
@@ -72,6 +77,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorDamageSource(::SharedTypes::Legacy::ActorDamageCause cause, ::std::string deathMessageOverride);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
@@ -88,6 +99,18 @@ public:
     MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
 
     MCAPI static ::std::string const& lookupCauseName(::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Legacy::ActorDamageCause cause, ::std::string deathMessageOverride);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

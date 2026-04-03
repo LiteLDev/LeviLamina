@@ -19,9 +19,9 @@ class SessionDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke64bef;
-    ::ll::UntypedStorage<8, 24> mUnk417d8a;
-    ::ll::UntypedStorage<8, 24> mUnkfe2896;
+    ::ll::UntypedStorage<8, 24> mUnkb87bbf;
+    ::ll::UntypedStorage<8, 24> mUnk82a4b5;
+    ::ll::UntypedStorage<8, 24> mUnkc0aba6;
     ::ll::UntypedStorage<4, 4>  mUnk9e054b;
     ::ll::UntypedStorage<1, 1>  mUnke3e683;
     // NOLINTEND
@@ -56,7 +56,7 @@ public:
 
     MCNAPI ::std::vector<::cricket::ContentGroup const*> GetGroupsByName(::std::string const& name) const;
 
-    MCNAPI ::cricket::TransportInfo const* GetTransportInfoByName(::std::string const&) const;
+    MCNAPI ::cricket::TransportInfo const* GetTransportInfoByName(::std::string const& name) const;
 
     MCNAPI ::cricket::TransportInfo* GetTransportInfoByName(::std::string const& name);
 

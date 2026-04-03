@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IPlatformAllocator.h"
-#include "mc/deps/cohtml/MemTagsType.h"
 
 namespace OreUI {
 
@@ -22,10 +21,9 @@ public:
 
     virtual void alignedDeallocate(void* ptr) /*override*/;
 
-    virtual void*
-    virtualAllocate(void* hint, uint size, int protection, int flags, ::cohtml::MemTags::MemTagsType) /*override*/;
+    virtual void* virtualAllocate(void* hint, uint size, int protection, int flags) /*override*/;
 
-    virtual bool virtualFree(void* ptr, uint size, int flags, ::cohtml::MemTags::MemTagsType) /*override*/;
+    virtual bool virtualFree(void* ptr, uint size, int flags) /*override*/;
 
     virtual ~PlatformAllocatorWindowsFamily() /*override*/ = default;
     // NOLINTEND
@@ -43,9 +41,9 @@ public:
 
     MCAPI void $alignedDeallocate(void* ptr);
 
-    MCAPI void* $virtualAllocate(void* hint, uint size, int protection, int flags, ::cohtml::MemTags::MemTagsType);
+    MCAPI void* $virtualAllocate(void* hint, uint size, int protection, int flags);
 
-    MCAPI bool $virtualFree(void* ptr, uint size, int flags, ::cohtml::MemTags::MemTagsType);
+    MCAPI bool $virtualFree(void* ptr, uint size, int flags);
     // NOLINTEND
 
 public:

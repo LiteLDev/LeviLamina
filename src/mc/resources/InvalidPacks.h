@@ -11,10 +11,10 @@ class InvalidPacks {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfc5cab;
-    ::ll::UntypedStorage<8, 24> mUnk2d6a38;
-    ::ll::UntypedStorage<8, 24> mUnkfe0ed3;
-    ::ll::UntypedStorage<8, 24> mUnk475a67;
+    ::ll::UntypedStorage<8, 24> mUnk8e3c55;
+    ::ll::UntypedStorage<8, 24> mUnk1ad14b;
+    ::ll::UntypedStorage<8, 24> mUnk76cedd;
+    ::ll::UntypedStorage<8, 24> mUnkf4d38b;
     // NOLINTEND
 
 public:

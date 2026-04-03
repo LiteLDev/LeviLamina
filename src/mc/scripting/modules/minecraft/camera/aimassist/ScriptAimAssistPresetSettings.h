@@ -16,12 +16,12 @@ class ScriptAimAssistPresetSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                                               mIdentifier;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>>          mItemSettings;
-    ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptAimAssistPresetExclusionData> mExcludedTargets;
-    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>>               mLiquidTargetingItems;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mDefaultItemSettings;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mHandSettings;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mIdentifier;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>>           mItemSettings;
+    ::ll::TypedStorage<8, 128, ::ScriptModuleMinecraft::ScriptAimAssistPresetExclusionData> mExcludedTargets;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::std::string>>>                mLiquidTargetingItems;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                               mDefaultItemSettings;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                               mHandSettings;
     // NOLINTEND
 
 public:
@@ -33,6 +33,8 @@ public:
 
     MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTargets() const;
 
+    MCAPI ::std::optional<::std::vector<::std::string>> _getExcludedEntityTypeFamilyTargets() const;
+
     MCAPI ::std::unordered_map<::std::string, ::std::string> _getItemSettings() const;
 
     MCAPI ::std::optional<::std::vector<::std::string>> _getLiquidTargetingItems() const;
@@ -42,6 +44,9 @@ public:
     MCAPI void setExcludedBlockTargets(::std::optional<::std::vector<::std::string>> blockTargets);
 
     MCAPI void setExcludedEntityTargets(::std::optional<::std::vector<::std::string>> entityTargets);
+
+    MCAPI void
+    setExcludedEntityTypeFamilyTargets(::std::optional<::std::vector<::std::string>> entityTypeFamilyTargets);
 
     MCAPI void setItemSettings(::std::unordered_map<::std::string, ::std::string> itemSettings);
 

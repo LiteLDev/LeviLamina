@@ -55,6 +55,8 @@ public:
 
     MCFOLD void $onExit(::MinecraftScreenModel&);
 
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+
     MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
     MCFOLD ::std::string $getTitleText() const;

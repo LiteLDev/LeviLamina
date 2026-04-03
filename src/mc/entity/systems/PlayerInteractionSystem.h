@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 // clang-format on
 
@@ -24,21 +25,13 @@ public:
         // NOLINTBEGIN
         virtual ~InteractionMappingBase() = default;
 
-        virtual bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        virtual ::InteractionResult getInteraction(::Actor&, ::Player&, ::ActorInteraction&) const = 0;
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
 
-
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 

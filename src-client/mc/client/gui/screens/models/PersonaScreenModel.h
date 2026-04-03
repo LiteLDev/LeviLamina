@@ -8,7 +8,7 @@
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/gui/screens/models/PersonaScreenModelCommon.h"
 #include "mc/client/gui/screens/models/persona/SizeSectionModel.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 #include "mc/client/services/persona/DownloadImportManager.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/actor/player/persona/PieceSide.h"
@@ -122,6 +122,8 @@ public:
     MCAPI void newCharacter(::LinksToStyle const& linkTo, uint defaultAppearanceIndex);
 
     MCAPI bool setUseClassicSkinOnPersona(::persona::PersonaCharacterHandle const& handle, bool usage);
+
+    MCAPI void showProfileSettingsScreen();
 
     MCAPI void syncSelectedSkinHandle();
     // NOLINTEND

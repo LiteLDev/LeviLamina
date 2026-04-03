@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/rtc/SocketAddress.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
 #include "mc/external/webrtc/PortPrunePolicy.h"
@@ -17,6 +16,7 @@ namespace cricket { class PortAllocatorSession; }
 namespace cricket { struct IceParameters; }
 namespace cricket { struct RelayServerConfig; }
 namespace rtc { class NetworkMask; }
+namespace rtc { class SocketAddress; }
 namespace webrtc { class TurnCustomizer; }
 // clang-format on
 
@@ -35,14 +35,14 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk8e7c9c;
     ::ll::UntypedStorage<1, 1>  mUnk190a86;
     ::ll::UntypedStorage<4, 4>  mUnk4f51fc;
-    ::ll::UntypedStorage<8, 32> mUnk505686;
+    ::ll::UntypedStorage<8, 32> mUnk7fa3a7;
     ::ll::UntypedStorage<1, 1>  mUnkd13226;
     ::ll::UntypedStorage<4, 4>  mUnkc94d35;
     ::ll::UntypedStorage<8, 16> mUnk94c684;
-    ::ll::UntypedStorage<8, 24> mUnke2a5a8;
-    ::ll::UntypedStorage<8, 24> mUnk504b40;
+    ::ll::UntypedStorage<8, 24> mUnkee7a4a;
+    ::ll::UntypedStorage<8, 24> mUnk6058ac;
     ::ll::UntypedStorage<4, 4>  mUnk468809;
-    ::ll::UntypedStorage<8, 24> mUnk2d974e;
+    ::ll::UntypedStorage<8, 24> mUnkd18b75;
     ::ll::UntypedStorage<4, 4>  mUnkedf6f9;
     ::ll::UntypedStorage<8, 8>  mUnk56a4b5;
     ::ll::UntypedStorage<4, 8>  mUnk8219ff;

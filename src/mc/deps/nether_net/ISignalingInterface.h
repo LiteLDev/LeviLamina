@@ -20,8 +20,12 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingInterface() = default;
 
-    virtual void
-    SendSignal(::NetherNet::NetworkID, ::std::string const&, ::std::function<void(::NetherNet::ESessionError)>&&) = 0;
+    virtual void SendSignal(
+        ::NetherNet::NetworkID,
+        ::NetherNet::NetworkID,
+        ::std::string const&,
+        ::std::function<void(::NetherNet::ESessionError)>&&
+    ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) = 0;
     // NOLINTEND

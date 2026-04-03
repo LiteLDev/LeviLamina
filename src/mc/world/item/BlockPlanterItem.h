@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
@@ -32,7 +32,7 @@ public:
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    virtual ::BlockPlanterItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::BlockPlanterItem& setDescriptionId(::std::string const& description) /*override*/;
 
     virtual ~BlockPlanterItem() /*override*/ = default;
     // NOLINTEND
@@ -64,7 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -72,7 +72,7 @@ public:
     MCFOLD ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::BlockPlanterItem& $setDescriptionId(::std::string const& descriptionId);
+    MCFOLD ::BlockPlanterItem& $setDescriptionId(::std::string const& description);
 
 
     // NOLINTEND

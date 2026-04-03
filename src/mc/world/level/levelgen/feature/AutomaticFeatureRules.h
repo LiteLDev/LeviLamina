@@ -61,8 +61,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        192,
-        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::AutomaticFeatureRulesData, ::BedrockLoadContext, nullptr_t>>
+        256,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::AutomaticFeatureRulesData,
+            ::BedrockLoadContext,
+            nullptr_t,
+            ::SharedTypes::v1_21_20::AutomaticFeatureRulesData>>
                                                     mLoader;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
     // NOLINTEND

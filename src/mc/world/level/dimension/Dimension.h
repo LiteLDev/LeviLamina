@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/Brightness.h"
 #include "mc/common/BrightnessPair.h"
+#include "mc/common/DimensionIdType.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -14,7 +15,10 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/SubChunkPos.h"
+#include "mc/world/level/chunk/ChunkKey.h"
 #include "mc/world/level/chunk/LevelChunkGarbageCollector.h"
 #include "mc/world/level/dimension/ActorReplication.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
@@ -34,9 +38,7 @@ class BlockEventDispatcher;
 class BlockPos;
 class BlockSource;
 class ChunkBuildOrderPolicyBase;
-class ChunkKey;
 class ChunkLoadActionList;
-class ChunkPos;
 class ChunkSource;
 class CircuitSystem;
 class CompoundTag;
@@ -56,7 +58,6 @@ class PostprocessingManager;
 class RuntimeLightingManager;
 class Seasons;
 class SubChunkInterlocker;
-class SubChunkPos;
 class TaskGroup;
 class TickingAreaList;
 class Vec3;
@@ -71,7 +72,6 @@ struct BiomeIdType;
 struct DimensionArguments;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
-struct UpdateSubChunkNetworkBlockInfo;
 namespace Poi { class Manager; }
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
@@ -141,7 +141,7 @@ public:
     ::ll::TypedStorage<2, 4, ::DimensionHeightRange>                                  mHeightRange;
     ::ll::TypedStorage<2, 2, short>                                                   mSeaLevel;
     ::ll::TypedStorage<1, 1, uchar>                                                   mMonsterSpawnBlockLightLimit;
-    ::ll::TypedStorage<4, 32, ::IntProvider>                                          mMonsterSpawnLightTest;
+    ::ll::TypedStorage<8, 32, ::IntProvider>                                          mMonsterSpawnLightTest;
     ::ll::TypedStorage<8, 16, ::OwnerPtr<::BlockSource>>                              mBlockSource;
     ::ll::TypedStorage<1, 1, bool>                                                    mHasWeather;
     ::ll::TypedStorage<4, 28, float[7]>                                               mMobsPerChunkSurface;
@@ -152,6 +152,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RuntimeLightingManager>>             mRuntimeLightingManager;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mName;
     ::ll::TypedStorage<4, 4, ::DimensionType>                                         mId;
+    ::ll::TypedStorage<2, 2, ::DimensionIdType const>                                 mRegistryId;
     ::ll::TypedStorage<1, 1, bool>                                                    mUltraWarm;
     ::ll::TypedStorage<1, 1, bool>                                                    mHasCeiling;
     ::ll::TypedStorage<1, 1, bool>                                                    mHasSkylight;
@@ -344,8 +345,6 @@ public:
 
     MCAPI void _sendBlocksChangedPackets();
 
-    MCAPI void _sendUpdateBlockPacket(::UpdateSubChunkNetworkBlockInfo const& info, uint const& layer);
-
     MCAPI void _tickEntityChunkMoves();
 
     MCAPI void addWither(::ActorUniqueID const& id);
@@ -417,8 +416,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<float const[]> MOON_BRIGHTNESS_PER_PHASE();
-
-    MCAPI static ::std::chrono::seconds const& STRUCTURE_PRUNE_INTERVAL();
     // NOLINTEND
 
 public:
@@ -506,18 +503,6 @@ public:
 
     MCAPI void $onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
 
-    MCAPI void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
-
     MCAPI void $onLevelDestruction(::std::string const&);
 
     MCFOLD ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
@@ -533,6 +518,20 @@ public:
     MCAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
     MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
+
+#ifdef LL_PLAT_C
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
+#endif
 
 
     // NOLINTEND

@@ -29,6 +29,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>         mHasIsotropicMaterial;
     ::ll::TypedStorage<1, 1, bool>         mHasTextureVariations;
     ::ll::TypedStorage<1, 1, bool>         mHasAlphaMaskedTint;
+    ::ll::TypedStorage<1, 1, bool>         mHasTextureShifts;
     // NOLINTEND
 
 public:

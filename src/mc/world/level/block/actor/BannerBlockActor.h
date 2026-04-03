@@ -49,12 +49,7 @@ public:
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-#ifdef LL_PLAT_S
-    virtual ~BannerBlockActor() /*override*/ = default;
-#else // LL_PLAT_C
     virtual ~BannerBlockActor() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
@@ -94,8 +89,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_PATTERNS();
-
     MCAPI static ::std::string const& TAG_BASE_COLOR();
 
     MCAPI static ::std::string const& TAG_COLOR();

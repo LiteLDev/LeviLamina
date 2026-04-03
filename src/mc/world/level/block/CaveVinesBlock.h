@@ -19,6 +19,7 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -66,14 +67,6 @@ public:
 
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
-
     virtual bool
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
@@ -92,6 +85,8 @@ public:
 
     MCAPI void
     _updateVineBlockAndBroadcastEvents(::BlockSource& region, ::BlockPos const& pos, ::Block const& vineBlock) const;
+
+    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -138,14 +133,6 @@ public:
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
-
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
 
     MCAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;

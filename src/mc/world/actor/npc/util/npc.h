@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -33,17 +32,6 @@ MCAPI ::Json::Value toJson(::npc::ActionContainer const& container);
 MCAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
 
 MCAPI ::std::string toString(::npc::ActionContainer const& container);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCAPI char const& COMMAND_DELIMITER();
-
-MCAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
-
-MCAPI uint64 const& MAX_NAME_LENGTH();
-
-MCAPI_C uint64 const& UNUSED_ACTION_INDEX();
 // NOLINTEND
 
 } // namespace npc

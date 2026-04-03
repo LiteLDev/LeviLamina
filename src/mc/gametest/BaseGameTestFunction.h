@@ -15,10 +15,10 @@ class BaseGameTestFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd88a72;
-    ::ll::UntypedStorage<8, 32> mUnkc38784;
-    ::ll::UntypedStorage<8, 32> mUnk511710;
-    ::ll::UntypedStorage<8, 32> mUnkede228;
+    ::ll::UntypedStorage<8, 24> mUnk103145;
+    ::ll::UntypedStorage<8, 32> mUnkd5830f;
+    ::ll::UntypedStorage<8, 32> mUnk5b45ab;
+    ::ll::UntypedStorage<8, 32> mUnkfb10aa;
     ::ll::UntypedStorage<4, 16> mUnk5533a3;
     ::ll::UntypedStorage<4, 8>  mUnkd60431;
     ::ll::UntypedStorage<1, 1>  mUnk42288f;

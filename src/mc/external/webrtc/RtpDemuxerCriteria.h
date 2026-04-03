@@ -8,10 +8,10 @@ class RtpDemuxerCriteria {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk58e583;
-    ::ll::UntypedStorage<8, 32> mUnk3ea728;
-    ::ll::UntypedStorage<8, 32> mUnk204006;
-    ::ll::UntypedStorage<8, 32> mUnk565f96;
+    ::ll::UntypedStorage<8, 32> mUnk21d91e;
+    ::ll::UntypedStorage<8, 32> mUnk74a33b;
+    ::ll::UntypedStorage<8, 32> mUnkc6ad4e;
+    ::ll::UntypedStorage<8, 32> mUnkb8ee54;
     // NOLINTEND
 
 public:

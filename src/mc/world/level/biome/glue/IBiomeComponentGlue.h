@@ -8,7 +8,6 @@ class Biome;
 class BiomeRegistry;
 class Block;
 namespace SharedTypes::v1_20_60 { struct BlockSpecifier; }
-namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
 struct IBiomeComponentGlue {
@@ -17,9 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~IBiomeComponentGlue() = default;
 
-    virtual bool resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) = 0;
+    virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) = 0;
 
-    virtual void applyToBiome(::Biome&, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const = 0;
+    virtual void applyToBiome(::Biome&, ::entt::meta_any const&) const = 0;
     // NOLINTEND
 
 public:

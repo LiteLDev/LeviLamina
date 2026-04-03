@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class EventResponse;
-class IPackLoadContext;
+class PackLoadContext;
 class SemVersion;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~EventResponseFactory();
 
-    virtual void initializeFactory(::IPackLoadContext const& packLoadContext) = 0;
+    virtual void initializeFactory(::PackLoadContext const& packLoadContext) = 0;
 
     virtual void initSchema() = 0;
     // NOLINTEND

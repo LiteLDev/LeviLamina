@@ -17,7 +17,7 @@ class OpenSSLAesAdapter : public ::NetherNet::AesAdapter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk398b94;
+    ::ll::UntypedStorage<8, 8> mUnkeafa02;
     // NOLINTEND
 
 public:

@@ -34,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
@@ -106,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 

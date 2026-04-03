@@ -101,9 +101,7 @@ public:
         int               itemValue
     ) const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
-#endif
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

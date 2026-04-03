@@ -56,9 +56,11 @@ public:
 
     virtual bool write(::gsl::span<uchar const> view) /*override*/;
 
-    virtual void writeValidityFlag(bool value) /*override*/;
+    virtual void writeAdditionalData(bool value) /*override*/;
 
-    virtual void writeControlValue(uint value) /*override*/;
+    virtual void writeAdditionalData(uint value) /*override*/;
+
+    virtual void writeAdditionalData(::std::string_view const value) /*override*/;
 
     virtual bool pushMember(::std::string_view const) /*override*/;
 
@@ -78,35 +80,37 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $write(::cereal::NullType);
 
-    MCAPI bool $write(bool value);
+    MCFOLD bool $write(bool value);
 
     MCFOLD bool $write(schar);
 
-    MCAPI bool $write(uchar value);
+    MCFOLD bool $write(uchar value);
 
-    MCAPI bool $write(short value);
+    MCFOLD bool $write(short value);
 
-    MCAPI bool $write(ushort value);
+    MCFOLD bool $write(ushort value);
 
-    MCAPI bool $write(int value);
+    MCFOLD bool $write(int value);
 
-    MCAPI bool $write(uint value);
+    MCFOLD bool $write(uint value);
 
-    MCAPI bool $write(int64 value);
+    MCFOLD bool $write(int64 value);
 
-    MCAPI bool $write(uint64 value);
+    MCFOLD bool $write(uint64 value);
 
-    MCAPI bool $write(float value);
+    MCFOLD bool $write(float value);
 
-    MCAPI bool $write(double value);
+    MCFOLD bool $write(double value);
 
-    MCAPI bool $write(::std::string_view const value);
+    MCFOLD bool $write(::std::string_view const value);
 
-    MCAPI bool $write(::gsl::span<uchar const> view);
+    MCFOLD bool $write(::gsl::span<uchar const> view);
 
-    MCAPI void $writeValidityFlag(bool value);
+    MCFOLD void $writeAdditionalData(bool value);
 
-    MCAPI void $writeControlValue(uint value);
+    MCFOLD void $writeAdditionalData(uint value);
+
+    MCFOLD void $writeAdditionalData(::std::string_view const value);
 
     MCFOLD bool $pushMember(::std::string_view const);
 
@@ -114,7 +118,7 @@ public:
 
     MCFOLD ::cereal::SchemaRWType $openObject();
 
-    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCFOLD ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCFOLD void $close();
 

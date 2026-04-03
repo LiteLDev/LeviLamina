@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,21 +50,13 @@ public:
 
     MCAPI_C ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
 
-    MCAPI_C void
-    getPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName, ::std::string& resultData);
-
     MCAPI_C ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
+
+    MCAPI_C ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
 
     MCAPI_C void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
     MCAPI_C void storePhoto(
-        ::PhotoStorageContainer const& container,
-        ::std::string const&           photoName,
-        ::std::string const&           photoData
-    );
-
-    MCAPI_C ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
-        ::Player&                      owner,
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData

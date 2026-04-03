@@ -29,7 +29,7 @@ public:
 
     virtual void tick(::MinecraftScreenModel&) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -44,6 +44,8 @@ public:
     MCAPI void $onStart(::MinecraftScreenModel&);
 
     MCFOLD void $tick(::MinecraftScreenModel&);
+
+    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 

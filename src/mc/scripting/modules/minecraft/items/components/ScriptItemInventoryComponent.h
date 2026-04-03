@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class DynamicContainerTracker;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidContainerError; }
@@ -61,8 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::std::string const& getTypeName();
     // NOLINTEND

@@ -15,11 +15,12 @@ public:
 public:
     // prevent constructor by default
     ResultAny(ResultAny const&);
-    ResultAny();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResultAny();
+
     MCAPI ResultAny(::Scripting::ResultAny&&);
 
     MCAPI explicit ResultAny(::entt::meta_any&& resultAny);
@@ -28,7 +29,7 @@ public:
 
     MCAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const&);
 
-    MCAPI ::entt::meta_any toAny();
+    MCAPI_C ::entt::meta_any toAny();
 
     MCAPI ::entt::meta_any toAny() const;
 
@@ -48,6 +49,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
     MCFOLD void* $ctor(::Scripting::ResultAny&&);
 
     MCAPI void* $ctor(::entt::meta_any&& resultAny);

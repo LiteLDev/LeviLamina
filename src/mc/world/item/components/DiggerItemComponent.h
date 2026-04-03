@@ -29,7 +29,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 184, ::BlockDescriptor> filter;
+        ::ll::TypedStorage<8, 176, ::BlockDescriptor> filter;
         ::ll::TypedStorage<4, 4, int>                 destroySpeed;
         // NOLINTEND
 

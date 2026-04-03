@@ -51,14 +51,6 @@ public:
     MCAPI bool _isThirdPartyServer(::PingedCompatibleServer const& lanServer) const;
 
     MCAPI bool _refreshWorlds();
-
-    MCAPI ~LanServerWorldList();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

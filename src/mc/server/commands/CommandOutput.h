@@ -37,18 +37,18 @@ public:
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
     MCAPI void addMessage(
-        ::std::string const&                           msgId,
+        ::std::string_view                             msgId,
         ::std::vector<::CommandOutputParameter> const& params,
         ::CommandOutputMessageType                     type
     );
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
-    MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
+    MCAPI void error(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI ::CommandOutput& operator=(::CommandOutput const& rhs);
 
-    MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
+    MCAPI void success(::std::string_view msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI ~CommandOutput();
     // NOLINTEND

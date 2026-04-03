@@ -24,13 +24,11 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Carpe
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChemistryTableIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChiseledCopperBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoarseIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CobblestoneWallIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ColoredTorchIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcreteBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcretePowderIds();
 
@@ -38,21 +36,13 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Coppe
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBlockIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBulbBlockIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChainBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChestBlockIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperDoorBlockIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGolemStatueBlockIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGrateBlockIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperLanternBlockIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperTrapdoorBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralBlockIds();
 
@@ -61,10 +51,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Coral
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralWallFanIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperBlockIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperSlabBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperStairsBlockIds();
 
@@ -86,8 +72,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardS
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassPaneIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& InfestedBlockIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LeavesBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightBlockIds();
@@ -100,6 +84,10 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogBl
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& MossBlockIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& NewStoneSlabIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OccludesLiquidNotFacingUp();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLeavesBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLogAndStrippedLogBlockIds();
@@ -108,15 +96,17 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLo
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldPlanksBlockIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldStoneDoubleSlabIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldStoneSlabIds();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldWoodAndStrippedWoodBlockIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PaleOakBlockIds();
 
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PathIds();
+
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PrismarineIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PurpurBlockIds();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& QuartzIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RedSandstoneIds();
 
@@ -144,21 +134,11 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Stone
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBricksIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab1Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsBigDripLeaf();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab2Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsCrops();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab3Ids();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab4Ids();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab1Ids();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab2Ids();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab3Ids();
-
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab4Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SupportsVegetation();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TerracottaIds();
 

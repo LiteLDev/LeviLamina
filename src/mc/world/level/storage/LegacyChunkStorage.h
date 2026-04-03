@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 #include "mc/world/level/storage/StorageVersion.h"
@@ -12,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ChunkPos;
 class LevelChunk;
 class LevelStorage;
 class RegionFile;
@@ -70,6 +70,8 @@ public:
     MCNAPI void _loadEntities();
 
     MCNAPI void _markChunkAsImported(::ChunkPos const& pos);
+
+    MCNAPI bool _openRegionFile();
     // NOLINTEND
 
 public:

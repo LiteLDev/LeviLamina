@@ -67,8 +67,6 @@ public:
 
     MCAPI bool _isTargetTooClose(::Actor const& target) const;
 
-    MCAPI void _startAttacking();
-
     MCAPI void _startCooldown(::Actor const& target);
 
     MCAPI void _tryFindRandomRetreatPosition(::SharedTypes::FloatRange distance);

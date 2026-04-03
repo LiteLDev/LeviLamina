@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ServerPlayer;
-namespace mce { class UUID; }
 // clang-format on
 
 struct ServerNetworkController : public ::IServerNetworkController {
@@ -17,7 +16,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk522e4e;
-    ::ll::UntypedStorage<8, 16> mUnk1ced00;
     ::ll::UntypedStorage<8, 64> mUnk733c97;
     // NOLINTEND
 
@@ -32,9 +30,7 @@ public:
     // NOLINTBEGIN
     virtual bool isDedicatedServer() const /*override*/;
 
-    virtual bool isHost(::mce::UUID const& playerID) const /*override*/;
-
-    virtual bool canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const /*override*/;
+    virtual bool canChangePermission(::ServerPlayer const& player) const /*override*/;
 
     virtual ~ServerNetworkController() /*override*/ = default;
     // NOLINTEND
@@ -44,9 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isDedicatedServer() const;
 
-    MCNAPI bool $isHost(::mce::UUID const& playerID) const;
-
-    MCNAPI bool $canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const;
+    MCNAPI bool $canChangePermission(::ServerPlayer const& player) const;
 
 
     // NOLINTEND

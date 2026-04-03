@@ -6,8 +6,8 @@ struct FogCommandSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk97d3d7;
-    ::ll::UntypedStorage<8, 32> mUnk690a7f;
+    ::ll::UntypedStorage<8, 32> mUnkfc971f;
+    ::ll::UntypedStorage<8, 32> mUnk8ee9a7;
     // NOLINTEND
 
 public:

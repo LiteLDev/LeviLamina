@@ -106,7 +106,10 @@ public:
 
     virtual ::FileStorageDirectory getFileStorageLocation() const /*override*/;
 
-    virtual void setFileStorageLocation(::FileStorageDirectory, ::std::function<void(bool)>) /*override*/;
+    virtual void setFileStorageLocation(
+        ::FileStorageDirectory      fileStorageDirectory,
+        ::std::function<void(bool)> onComplete
+    ) /*override*/;
 
     virtual bool isValidOption(::OptionID optionId) const /*override*/;
 
@@ -134,7 +137,7 @@ public:
 
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
-    virtual ::std::array<::std::unique_ptr<::Option>, 777> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 803> const& getAllRegisteredOptions() /*override*/;
 
     virtual void forEachOption(::std::function<void(::Option*)> callback) /*override*/;
 
@@ -300,6 +303,11 @@ public:
     MCAPI void
     $setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const& coordinator);
 
+    MCAPI ::FileStorageDirectory $getFileStorageLocation() const;
+
+    MCAPI void
+    $setFileStorageLocation(::FileStorageDirectory fileStorageDirectory, ::std::function<void(bool)> onComplete);
+
     MCFOLD bool $isValidOption(::OptionID optionId) const;
 
     MCFOLD ::gsl::not_null<::Option*> $get(::OptionID optionId);
@@ -326,7 +334,7 @@ public:
 
     MCFOLD ::ChatOptions& $getChatOptions();
 
-    MCFOLD ::std::array<::std::unique_ptr<::Option>, 777> const& $getAllRegisteredOptions();
+    MCFOLD ::std::array<::std::unique_ptr<::Option>, 803> const& $getAllRegisteredOptions();
 
     MCFOLD void $forEachOption(::std::function<void(::Option*)> callback);
 

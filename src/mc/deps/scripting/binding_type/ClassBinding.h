@@ -20,14 +20,14 @@ struct ClassBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc3213e;
+    ::ll::UntypedStorage<8, 32> mUnkd7d7d1;
     ::ll::UntypedStorage<8, 16> mUnk73d31d;
     ::ll::UntypedStorage<8, 16> mUnk14e611;
-    ::ll::UntypedStorage<8, 24> mUnk70649c;
+    ::ll::UntypedStorage<8, 24> mUnka427d8;
     ::ll::UntypedStorage<8, 16> mUnk7411e3;
-    ::ll::UntypedStorage<8, 24> mUnkcf5277;
-    ::ll::UntypedStorage<8, 24> mUnk3ab719;
-    ::ll::UntypedStorage<8, 24> mUnkdd6337;
+    ::ll::UntypedStorage<8, 24> mUnk5a5946;
+    ::ll::UntypedStorage<8, 24> mUnkdca5e0;
+    ::ll::UntypedStorage<8, 24> mUnke39415;
     ::ll::UntypedStorage<8, 24> mUnk706766;
     ::ll::UntypedStorage<8, 24> mUnk77c25d;
     // NOLINTEND

@@ -62,8 +62,6 @@ namespace VanillaStates {
 // functions
 // NOLINTBEGIN
 MCAPI ::BlockState const* getState(::HashedString const& name);
-
-MCAPI void registerStates();
 // NOLINTEND
 
 // static variables

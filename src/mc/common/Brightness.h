@@ -19,8 +19,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::Brightness const& INVALID();
-
     MCAPI static ::Brightness const& MAX();
 
     MCAPI static ::Brightness const& MIN();

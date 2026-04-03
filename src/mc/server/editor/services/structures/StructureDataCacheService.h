@@ -6,7 +6,6 @@
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
-#include "mc/platform/UUID.h"
 #include "mc/server/editor/serviceproviders/StructureDataCacheServiceProvider.h"
 
 // auto generated forward declare list
@@ -16,6 +15,7 @@ namespace Editor { class EditorStructureTemplate; }
 namespace Editor::Network { class StructureDataCacheReleaseStructurePayload; }
 namespace Editor::Network { class StructureDataCacheRequestStructurePayload; }
 namespace Editor::StructureDataCache { class IStructureDataProvider; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -26,7 +26,7 @@ class StructureDataCacheService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5fa966;
+    ::ll::UntypedStorage<8, 24> mUnk6d6f76;
     ::ll::UntypedStorage<8, 64> mUnk96b4f4;
     // NOLINTEND
 

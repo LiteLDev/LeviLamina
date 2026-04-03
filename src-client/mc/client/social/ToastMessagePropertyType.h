@@ -5,8 +5,6 @@
 namespace ToastMessagePropertyType {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& ButtonIdGlyph();
-
 MCNAPI ::std::string const& ButtonText();
 
 MCNAPI ::std::string const& DisplayToastSubtitle();

@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/NetworkEnableDisableListener.h"
 #include "mc/network/ServerConnectivityTestResult.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class AsynchronousIPResolver;
 struct PingedCompatibleServer;
 struct PortPair;
@@ -22,19 +20,10 @@ public:
     // NOLINTBEGIN
     virtual ~ServerLocator() /*override*/;
 
-    virtual void startAnnouncingServer(
-        ::std::string const&,
-        ::std::string const&,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool,
-        bool
-    ) = 0;
+    virtual void
+    startAnnouncingServer(::std::string const&, ::std::string const&, ::GameType, int, int, bool, bool, bool) = 0;
 
-    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) = 0;
+    virtual void stopAnnouncingServer() = 0;
 
     virtual void startServerDiscovery(::PortPair) = 0;
 

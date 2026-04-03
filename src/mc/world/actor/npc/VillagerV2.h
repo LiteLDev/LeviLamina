@@ -12,6 +12,7 @@
 class ActorDamageSource;
 class ActorInteraction;
 class DwellerComponent;
+class InteractionResult;
 class Player;
 class Vec3;
 struct VariantParameterList;
@@ -31,7 +32,8 @@ public:
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
+    virtual ::InteractionResult
+    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
@@ -57,7 +59,8 @@ public:
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 

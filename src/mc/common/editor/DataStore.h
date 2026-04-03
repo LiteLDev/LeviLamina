@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/datastore/PayloadDescription.h"
+// auto generated forward declare list
+// clang-format off
+namespace Editor::DataStore { struct PayloadDescription; }
+// clang-format on
 
 namespace Editor::DataStore {
 // functions

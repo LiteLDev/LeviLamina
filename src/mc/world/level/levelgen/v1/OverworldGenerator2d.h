@@ -119,7 +119,7 @@ public:
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
-    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCFOLD ::PerlinSimplexNoise const& $getSurfaceNoise();
 
     MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 

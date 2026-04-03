@@ -21,7 +21,6 @@ class FreezingComponent;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
-struct ActorMovementTickNeededComponent;
 struct BlockMovementSlowdownAppliedComponent;
 struct BlockMovementSlowdownMultiplierComponent;
 struct BoatFlagComponent;
@@ -37,6 +36,7 @@ struct InsideBlockComponent;
 struct InsideBubbleColumnBlockComponent;
 struct InsideGenericBlockComponent;
 struct InsideWebBlockComponent;
+struct InterpolateMovementNeededComponent;
 struct IsDeadFlagComponent;
 struct LocalConstBlockSourceFactoryComponent;
 struct MovementAbilitiesComponent;
@@ -53,7 +53,7 @@ namespace EntityInsideSystemImpl {
 struct EntityInside
 : public ::IStrictTickingSystem<::StrictExecutionContext<
       ::Filter<
-          ::ActorMovementTickNeededComponent,
+          ::InterpolateMovementNeededComponent,
           ::BoatFlagComponent,
           ::FreezeImmuneFlagComponent,
           ::IsDeadFlagComponent,
@@ -99,7 +99,7 @@ public:
     virtual void tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,
@@ -136,7 +136,7 @@ public:
     virtual void singleTick(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,
@@ -180,7 +180,7 @@ public:
     MCNAPI static auto createContextObjects(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,
@@ -217,7 +217,7 @@ public:
     MCNAPI static auto createServerSideContextObjects(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,
@@ -258,7 +258,7 @@ public:
     MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,
@@ -295,7 +295,7 @@ public:
     MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
-                ::ActorMovementTickNeededComponent,
+                ::InterpolateMovementNeededComponent,
                 ::BoatFlagComponent,
                 ::FreezeImmuneFlagComponent,
                 ::IsDeadFlagComponent,

@@ -19,17 +19,18 @@
 class ActorComponentFactory;
 class ActorDefinition;
 class IMinecraftEventing;
-class IPackLoadContext;
 class Level;
 class LinkedAssetValidator;
 class PackInstance;
+class PackLoadContext;
 class ResourcePackManager;
 class SemVersion;
+class SemVersionView;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
-namespace SharedTypes::v1_21_130 { struct ActorDefinitions; }
-namespace SharedTypes::v1_21_130 { struct ActorDocument; }
+namespace SharedTypes::v1_26_10 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -122,10 +123,10 @@ public:
 
     MCAPI void _getResources(::Level& level);
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_130::ActorDocument> _initActorDefinition(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_26_10::ActorDocument> _initActorDefinition(
         ::Puv::Input const&  input,
         ::SemVersion const&  formatVersion,
-        ::IPackLoadContext&  packLoadContext,
+        ::PackLoadContext&   packLoadContext,
         ::std::string const& relativeResourceFilepath,
         ::JsonBetaState      useBetaFeatures,
         ::std::string const& identifier,
@@ -135,31 +136,32 @@ public:
 
     MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
-        ::IPackLoadContext&                  packLoadContext,
+        ::PackLoadContext&                   packLoadContext,
         ::std::string const&                 relativeResourceFilepath,
         ::Json::Value&                       root,
         ::std::unordered_set<::std::string>& definitions,
         ::LogArea                            logArea
     );
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_130::ActorDocument> _loadDefinitionFromJSON(
-        ::SemVersion const&  formatVersion,
-        ::IPackLoadContext&  packLoadContext,
-        ::std::string const& relativeResourceFilepath,
-        ::Json::Value        minecraftEntityNode,
-        ::JsonBetaState      useBetaFeatures,
-        ::std::string const& identifier,
-        ::Level&             level,
-        ::LogArea            logArea
+    MCAPI ::ActorDefinitionParseStatus _loadTemplates(
+        ::Level&                                                                        level,
+        ::std::string const&                                                            base,
+        ::std::unordered_map<::std::string, ::SharedTypes::v1_26_10::ActorDefinitions>& componentsGroup,
+        ::SemVersion const&                                                             formatVersion,
+        ::PackLoadContext const&                                                        packLoadContext,
+        ::JsonBetaState                                                                 useBetaFeatures
     );
 
-    MCAPI ::ActorDefinitionParseStatus _loadTemplates(
-        ::Level&                                                                         level,
-        ::std::string const&                                                             base,
-        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_130::ActorDefinitions>& componentsGroup,
-        ::SemVersion const&                                                              formatVersion,
-        ::IPackLoadContext const&                                                        packLoadContext,
-        ::JsonBetaState                                                                  useBetaFeatures
+    MCAPI bool _parseEntityJsonFromActorDocument(
+        ::SharedTypes::v1_26_10::ActorDocument& actorDocument,
+        ::std::unique_ptr<::ActorDefinition>&   def,
+        ::SemVersion const&                     formatVersion,
+        ::PackLoadContext&                      packLoadContext,
+        ::std::string const&                    relativeResourceFilepath,
+        ::JsonBetaState                         useBetaFeatures,
+        ::std::string const&                    identifier,
+        ::Level&                                level,
+        ::LogArea                               logArea
     );
 
     MCAPI void _removeRef(::ActorDefinitionPtr& ptr);
@@ -178,15 +180,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    filterBalloonableComponent(::std::string const& idToExclude, ::std::string const& currentId, ::Json::Value& root);
-
-    MCAPI static void forEachComponentOf(
-        ::Json::Value&                                               entityValue,
-        ::std::string const&                                         componentName,
-        ::std::function<void(::Json::Value&, ::Json::Value&)> const& callback
-    );
-
     MCAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,
         ::SemVersion const&  formatVersion,
@@ -194,9 +187,9 @@ public:
     );
 
     MCAPI static bool loadActorDefinitionRuntimeIdentifier(
-        ::Json::Value const& root,
-        ::SemVersion const&  formatVersion,
-        ::std::string&       runtimeIdentifier
+        ::Json::Value const&    root,
+        ::SemVersionView const& formatVersion,
+        ::std::string&          runtimeIdentifier
     );
 
     MCAPI static bool

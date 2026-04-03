@@ -37,7 +37,9 @@ public:
     // NOLINTBEGIN
     MCAPI_S ::Social::GameConnectionInfo _convertToDestination() const;
 
-    MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
+    MCAPI_S ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
+
+    MCAPI_C ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -53,7 +54,8 @@ public:
 
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
@@ -99,13 +101,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+#endif
 
     MCFOLD bool $checkSpawnObstruction() const;
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 

@@ -29,10 +29,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& CurrentVersion();
-    // NOLINTEND
 };

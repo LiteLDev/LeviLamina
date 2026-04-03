@@ -31,10 +31,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _triggerButtonEvents(::cohtml::View& view, ::OreUI::GamepadMode gamepadMode);
+    MCAPI void _triggerButtonEvents(
+        ::cohtml::View&              view,
+        ::OreUI::GamepadMode         gamepadMode,
+        ::OreUI::GamepadInput const& gamepadInput
+    );
 
     MCAPI void
-    handle(::OreUI::GamepadInput const& gamepadInpput, ::cohtml::View& view, ::OreUI::GamepadMode gamepadMode);
+    handle(::OreUI::GamepadInput const& gamepadInput, ::cohtml::View& view, ::OreUI::GamepadMode gamepadMode);
     // NOLINTEND
 };
 

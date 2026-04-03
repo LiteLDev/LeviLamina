@@ -17,7 +17,7 @@ class IJsonDefinitionSerializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2c8ee3;
+    ::ll::UntypedStorage<8, 32> mUnkff0ac1;
     // NOLINTEND
 
 public:

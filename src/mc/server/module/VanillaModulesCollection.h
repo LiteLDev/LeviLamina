@@ -18,10 +18,10 @@ class VanillaModulesCollection : public ::IECSModulesCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6b9567;
-    ::ll::UntypedStorage<8, 8>  mUnkb889c6;
-    ::ll::UntypedStorage<8, 8>  mUnk7aae83;
-    ::ll::UntypedStorage<8, 24> mUnk84a01b;
+    ::ll::UntypedStorage<8, 8>  mUnk6b23ff;
+    ::ll::UntypedStorage<8, 8>  mUnk2a9c01;
+    ::ll::UntypedStorage<8, 8>  mUnk7008f3;
+    ::ll::UntypedStorage<8, 24> mUnk7202ee;
     // NOLINTEND
 
 public:

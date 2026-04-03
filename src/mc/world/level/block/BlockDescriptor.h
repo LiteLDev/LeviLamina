@@ -119,7 +119,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*>                                   mBlock;
     ::ll::TypedStorage<1, 1, bool>                                             mValid;
     ::ll::TypedStorage<1, 1, bool>                                             mIsDeferred;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                  mLock;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                  mLock;
     // NOLINTEND
 
 public:

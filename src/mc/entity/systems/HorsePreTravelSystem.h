@@ -12,10 +12,10 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct AirSpeedComponent;
 struct HorseFlagComponent;
 struct HorseWasOnGroundPreTravelComponent;
+struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct OnGroundFlagComponent;
 struct VehicleComponent;
@@ -28,7 +28,7 @@ public:
     MCNAPI static void tickHorsePreTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::HorseFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>,
             ::Optional<::VehicleComponent>,
             ::ActorDataFlagComponent const,
             ::AirSpeedComponent>                                      mainView,

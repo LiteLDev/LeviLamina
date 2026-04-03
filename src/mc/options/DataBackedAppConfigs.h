@@ -17,10 +17,27 @@ class DataBackedAppConfigs : public ::AppConfigs {
 public:
     // DataBackedAppConfigs inner types declare
     // clang-format off
+    struct EduDedicatedServerConfigData;
     struct Data;
     // clang-format on
 
     // DataBackedAppConfigs inner types define
+    struct EduDedicatedServerConfigData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk85dec8;
+        ::ll::UntypedStorage<8, 8> mUnkd7e679;
+        ::ll::UntypedStorage<8, 8> mUnkb3eef7;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EduDedicatedServerConfigData& operator=(EduDedicatedServerConfigData const&);
+        EduDedicatedServerConfigData(EduDedicatedServerConfigData const&);
+        EduDedicatedServerConfigData();
+    };
+
     struct Data {
     public:
         // member variables
@@ -43,7 +60,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkd1f2c4;
         ::ll::UntypedStorage<1, 1>  mUnkf0c77b;
         ::ll::UntypedStorage<1, 1>  mUnk7a6716;
-        ::ll::UntypedStorage<1, 1>  mUnk9d0dab;
+        ::ll::UntypedStorage<8, 32> mUnk32a255;
         ::ll::UntypedStorage<1, 1>  mUnkeff0d7;
         ::ll::UntypedStorage<1, 1>  mUnkafa516;
         ::ll::UntypedStorage<1, 1>  mUnk4b7f87;
@@ -51,11 +68,11 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk6b66c7;
         ::ll::UntypedStorage<1, 1>  mUnk468138;
         ::ll::UntypedStorage<4, 4>  mUnk241cfc;
-        ::ll::UntypedStorage<8, 8>  mUnkc9ec04;
+        ::ll::UntypedStorage<8, 8>  mUnkc1eb70;
         ::ll::UntypedStorage<1, 1>  mUnkf20421;
-        ::ll::UntypedStorage<8, 8>  mUnke21764;
-        ::ll::UntypedStorage<8, 8>  mUnkab1964;
-        ::ll::UntypedStorage<8, 32> mUnk6f9474;
+        ::ll::UntypedStorage<8, 8>  mUnkf78b2d;
+        ::ll::UntypedStorage<8, 8>  mUnk9f2779;
+        ::ll::UntypedStorage<8, 32> mUnkb97fe3;
         // NOLINTEND
 
     public:
@@ -68,7 +85,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk83fb84;
+    ::ll::UntypedStorage<8, 136> mUnk83fb84;
     // NOLINTEND
 
 public:
@@ -116,7 +133,15 @@ public:
 
     virtual bool isEduAIOn() const /*override*/;
 
-    virtual bool isDedicatedServerOn() const /*override*/;
+    virtual bool isEduDedicatedServerOn() const /*override*/;
+
+    virtual void setIsEduDedicatedServerOn(bool) /*override*/;
+
+    virtual bool isTimeForEduDedicatedServerRefresh() const /*override*/;
+
+    virtual void setEduDedicatedServerRefreshed() /*override*/;
+
+    virtual void setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds) /*override*/;
 
     virtual bool requireEduLevelSettings() const /*override*/;
 

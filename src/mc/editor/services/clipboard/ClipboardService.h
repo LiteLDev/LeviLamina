@@ -32,7 +32,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk77bff1;
-    ::ll::UntypedStorage<8, 24> mUnk1b2191;
+    ::ll::UntypedStorage<8, 24> mUnkd80d12;
     ::ll::UntypedStorage<8, 48> mUnka57520;
     ::ll::UntypedStorage<8, 16> mUnk71522b;
     // NOLINTEND
@@ -118,6 +118,8 @@ public:
     MCNAPI explicit ClipboardService(::Editor::ServiceProviderCollection& providers);
 
     MCNAPI void _onItemChanged(::Editor::Services::ClipboardItem const& item) const;
+
+    MCNAPI void _sendChangeItemToClient(::mce::UUID const& id) const;
     // NOLINTEND
 
 public:

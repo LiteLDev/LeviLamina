@@ -44,8 +44,6 @@ public:
     MCAPI float getProgress();
 
     MCAPI void importWorld(::std::function<void(::World::TransferResult)> onImportComplete);
-
-    MCAPI ~WorldTransferer();
     // NOLINTEND
 
 public:
@@ -53,12 +51,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string
     calculateImportedWorldName(::std::string const& originalName, ::ILevelListCache& levelListCache);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -11,8 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct ControlledByLocalInstanceComponent;
+struct InterpolateMovementNeededComponent;
 struct PassengerComponent;
 struct SetMovingFlagRequestComponent;
 struct StateVectorComponent;
@@ -22,7 +22,7 @@ namespace UpdateMovingFlagSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void doTickMovingFlagSystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                                                    context,
     ::StateVectorComponent const&                                                   stateVectorComponent,
     ::Optional<::PassengerComponent const>                                          passengerComponent,

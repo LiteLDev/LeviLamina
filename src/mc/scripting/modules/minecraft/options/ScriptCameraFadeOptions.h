@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeTimeOptions>> mTimeOptions;
-    ::ll::TypedStorage<4, 32, ::std::optional<::ScriptModuleMinecraft::ScriptRGB>>                   mFadeColor;
+    ::ll::TypedStorage<8, 32, ::std::optional<::ScriptModuleMinecraft::ScriptRGB>>                   mFadeColor;
     // NOLINTEND
 
 public:

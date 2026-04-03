@@ -77,6 +77,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackBase();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ItemStackBase();
@@ -97,8 +101,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackBase();
-
     MCAPI explicit ItemStackBase(::RecipeIngredient const& ingredient);
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
@@ -234,7 +236,7 @@ public:
 
     MCAPI_C bool isAttachableEquipment() const;
 
-    MCAPI bool isBlock() const;
+    MCAPI_C bool isBlock() const;
 
     MCAPI_C bool isBlockInstance(::HashedString const& blockName) const;
 
@@ -280,7 +282,7 @@ public:
 
     MCAPI bool isValidAuxValue(int value) const;
 
-    MCFOLD bool matches(::ItemStackBase const& other) const;
+    MCFOLD_C bool matches(::ItemStackBase const& other) const;
 
     MCAPI bool matchesEitherWearableCase(::CompoundTag const* userData) const;
 
@@ -330,6 +332,8 @@ public:
 
     MCAPI void setUserData(::std::unique_ptr<::CompoundTag> tag);
 
+    MCAPI void startCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
+
     MCAPI bool updateComponent(::std::string const& name, ::Json::Value const& data);
     // NOLINTEND
 
@@ -378,8 +382,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::RecipeIngredient const& ingredient);
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);

@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct BlockPosTrackerComponent;
+struct InterpolateMovementNeededComponent;
 struct OnGroundFlagComponent;
 struct StandOnHoneyOrSlimeBlockFlagComponent;
 struct StandOnOtherBlockFlagComponent;
@@ -22,7 +22,7 @@ namespace BlockPosNotificationSystem {
 // functions
 // NOLINTBEGIN
 MCNAPI void tickNotifierFilter(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::OnGroundFlagComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::OnGroundFlagComponent>>,
     ::StrictEntityContext const&                                                                strictEntityContext,
     ::BlockPosTrackerComponent const&                                                           tracker,
     ::Optional<::VehicleInputIntentComponent const> const&                                      vehicleInputIntent,

@@ -13,7 +13,7 @@ struct ErrorMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk61afcd;
+    ::ll::UntypedStorage<8, 32> mUnk83c360;
     ::ll::UntypedStorage<8, 16> mUnk5ccd40;
     // NOLINTEND
 

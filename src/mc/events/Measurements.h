@@ -8,7 +8,7 @@ class Measurements {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka6c12a;
+    ::ll::UntypedStorage<8, 24> mUnke4ba1d;
     // NOLINTEND
 
 public:

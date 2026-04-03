@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
-    MCAPI bool isInHomeDimension(::Actor const& owner) const;
-
     MCAPI ::HomeComponent& operator=(::HomeComponent&&);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);

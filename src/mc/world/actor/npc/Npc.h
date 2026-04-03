@@ -11,6 +11,7 @@
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
@@ -50,7 +51,7 @@ public:
 
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     virtual ~Npc() /*override*/ = default;
     // NOLINTEND
@@ -109,7 +110,7 @@ public:
 
     MCFOLD bool $canExistWhenDisallowMob() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
 
     // NOLINTEND

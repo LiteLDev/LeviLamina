@@ -3,28 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/experimental/QueryBase.h"
-#include "mc/client/gui/oreui/binding/experimental/properties/Property.h"
+#include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace GameplayUI { struct GameplayUIContext; }
-namespace OreUI::Experimental { class ClientDependencies; }
-namespace OreUI::Experimental { class GameDependencies; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
-namespace OreUI::Experimental {
+namespace OreUI {
 
-class TradeOverviewQuery : public ::OreUI::Experimental::QueryBase<::OreUI::Experimental::TradeOverviewQuery> {
+class TradeOverviewQuery : public ::OreUI::QueryBase<::OreUI::TradeOverviewQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<bool>>          mIsExperienceBarVisible;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<float>>         mExperienceProgress;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<float>>         mExperiencePossibleProgress;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>> mTraderName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<int>>           mTradeTiers;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>          mIsExperienceBarVisible;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>         mExperienceProgress;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<float>>         mExperiencePossibleProgress;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>> mTraderName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>           mTradeTiers;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     // NOLINTEND
 
@@ -43,10 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeOverviewQuery(
-        ::OreUI::Experimental::GameDependencies const&   game,
-        ::OreUI::Experimental::ClientDependencies const& client
-    );
+    MCAPI TradeOverviewQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
@@ -58,8 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::OreUI::Experimental::GameDependencies const& game, ::OreUI::Experimental::ClientDependencies const& client);
+    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
@@ -77,4 +73,4 @@ public:
     // NOLINTEND
 };
 
-} // namespace OreUI::Experimental
+} // namespace OreUI

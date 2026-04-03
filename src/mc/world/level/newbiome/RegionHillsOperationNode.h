@@ -44,28 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RegionHillsOperationNode(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $_fillArea(

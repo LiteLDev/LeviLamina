@@ -25,8 +25,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                         mEDUPermissionsPopupActive;
     ::ll::TypedStorage<1, 1, bool>                                         mPermissionDropdownActive;
-    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                        mStartAbilityCache;
-    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                        mAbilities;
+    ::ll::TypedStorage<8, 1464, ::LayeredAbilities>                        mStartAbilityCache;
+    ::ll::TypedStorage<8, 1464, ::LayeredAbilities>                        mAbilities;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mDefaultPlayerId;
     ::ll::TypedStorage<8, 8, uint64>                                       mSelectedPlayerIndex;
     ::ll::TypedStorage<1, 1, bool>                                         mCanEdit;
@@ -50,7 +50,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -137,6 +137,8 @@ public:
     MCAPI void $onOpen();
 
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 

@@ -8,12 +8,12 @@ struct PlatformBuildInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk95cbc8;
-    ::ll::UntypedStorage<8, 32> mUnkca7202;
-    ::ll::UntypedStorage<8, 32> mUnk91de1d;
-    ::ll::UntypedStorage<8, 32> mUnk4d745e;
-    ::ll::UntypedStorage<8, 32> mUnk66df0a;
-    ::ll::UntypedStorage<8, 32> mUnke45549;
+    ::ll::UntypedStorage<8, 32> mUnk91bfc1;
+    ::ll::UntypedStorage<8, 32> mUnk9fc24e;
+    ::ll::UntypedStorage<8, 32> mUnk2feb4d;
+    ::ll::UntypedStorage<8, 32> mUnk4636d8;
+    ::ll::UntypedStorage<8, 32> mUnk4a17cb;
+    ::ll::UntypedStorage<8, 32> mUnke61579;
     ::ll::UntypedStorage<1, 1>  mUnk5b333f;
     // NOLINTEND
 

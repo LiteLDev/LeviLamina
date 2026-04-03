@@ -60,6 +60,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit RealmSlotsFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
 
+    MCAPI void activateSlot(int index);
+
     MCAPI void confirm();
 
     MCAPI bool didFailToActivateSlot() const;

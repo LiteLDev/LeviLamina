@@ -89,7 +89,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                             mInteractingButtonId;
     ::ll::TypedStorage<1, 1, bool>                                             mIsDraggingTooFast;
     ::ll::TypedStorage<1, 1, bool>                                             mProgressBarShowing;
-    ::ll::TypedStorage<8, 152, ::BundleHelper>                                 mBundleHelper;
+    ::ll::TypedStorage<8, 144, ::BundleHelper>                                 mBundleHelper;
     ::ll::TypedStorage<4, 4, ::ui::DirtyFlag>                                  mDirty;
     ::ll::TypedStorage<1, 1, bool>                                             mStartOutputSlotDeciding;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mOutputCollectionName;
@@ -114,13 +114,13 @@ public:
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void onLeave() /*override*/;
 
     virtual void setAssociatedBlockPos(::BlockPos const& pos) /*override*/;
 
-    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID) /*override*/;
+    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -342,11 +342,13 @@ public:
 
     MCAPI void $onOpen();
 
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI void $onLeave();
 
     MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
+    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 

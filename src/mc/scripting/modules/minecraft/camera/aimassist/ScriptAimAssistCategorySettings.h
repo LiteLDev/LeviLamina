@@ -17,6 +17,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mEntityPriorities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mBlockPriorities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mBlockTagPriorities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mEntityTypeFamilyPriorities;
     ::ll::TypedStorage<4, 4, int>                                       mDefaultEntityPriority;
     ::ll::TypedStorage<4, 4, int>                                       mDefaultBlockPriority;
     // NOLINTEND
@@ -36,11 +37,15 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
 
+    MCAPI ::std::unordered_map<::std::string, int> getEntityTypeFamilyPriorities() const;
+
     MCAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
 
     MCAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
 
     MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
+
+    MCAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
 
     MCAPI ~ScriptAimAssistCategorySettings();
     // NOLINTEND

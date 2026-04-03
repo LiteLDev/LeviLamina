@@ -17,7 +17,7 @@ class ThemeSettingsThemeDeletedPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfbe353;
+    ::ll::UntypedStorage<8, 32> mUnk363aaa;
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components_json_legacy/NpcGUIOffset.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorDataIDs.h"
 #include "mc/world/actor/npc/ActionContainer.h"
 
@@ -13,9 +14,9 @@ class Actor;
 class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
+class InteractionResult;
 class NpcI18nObserver;
 class Player;
-struct ActorUniqueID;
 struct SkinData;
 namespace Json { class Value; }
 namespace npc { struct CommandAction; }
@@ -77,7 +78,7 @@ public:
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI_C ::std::string const& getInteractiveRawText(::Actor const& owner) const;
 

@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>                  mSoundEvent;
     ::ll::TypedStorage<4, 8, ::FloatRange>                                            mSoundIntervalRange;
     ::ll::TypedStorage<8, 8, ::Tick>                                                  mNextSoundEventTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                  mNextNavigationTick;
     // NOLINTEND
 
 public:
@@ -73,8 +74,6 @@ public:
     );
 
     MCAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
-
-    MCAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
     // NOLINTEND
 
 public:

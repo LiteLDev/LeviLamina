@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
-class ChunkPos;
 class Dimension;
 namespace br::worldgen { struct BlockVolumeCacheItem; }
 // clang-format on
@@ -23,9 +23,13 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::BiomeSource const*>> mBiomeSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::br::worldgen::BlockVolumeCacheItem>>>
         mBlockCache;
-    ::ll::
-        TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>>
-            mChunkHeightCache;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::std::unordered_map<
+            ::ChunkPos,
+            ::std::unique_ptr<::std::vector<short>, ::std::default_delete<::std::vector<short>>>>>>
+        mChunkHeightCache;
     // NOLINTEND
 
 public:

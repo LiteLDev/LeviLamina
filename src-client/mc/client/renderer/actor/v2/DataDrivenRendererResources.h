@@ -6,12 +6,12 @@ struct DataDrivenRendererResources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9bb23c;
-    ::ll::UntypedStorage<8, 24> mUnkc88d6b;
-    ::ll::UntypedStorage<8, 24> mUnka85028;
-    ::ll::UntypedStorage<8, 24> mUnk5be7cd;
-    ::ll::UntypedStorage<8, 24> mUnk79602f;
-    ::ll::UntypedStorage<8, 24> mUnkc2d9df;
+    ::ll::UntypedStorage<8, 24> mUnkdc3e99;
+    ::ll::UntypedStorage<8, 24> mUnk430c5f;
+    ::ll::UntypedStorage<8, 24> mUnkbf533a;
+    ::ll::UntypedStorage<8, 24> mUnk3ce70a;
+    ::ll::UntypedStorage<8, 24> mUnkf0bb73;
+    ::ll::UntypedStorage<8, 24> mUnkff7eb4;
     // NOLINTEND
 
 public:

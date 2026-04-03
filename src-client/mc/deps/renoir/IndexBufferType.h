@@ -5,9 +5,10 @@
 namespace renoir {
 
 enum class IndexBufferType : int {
-    U8  = 0,
-    U16 = 1,
-    U32 = 2,
+    U8    = 0,
+    U16   = 1,
+    U32   = 2,
+    Count = 3,
 };
 
 }

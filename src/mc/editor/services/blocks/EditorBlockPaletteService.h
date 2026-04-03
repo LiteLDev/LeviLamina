@@ -40,11 +40,11 @@ class EditorBlockPaletteService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk208e72;
+    ::ll::UntypedStorage<8, 24>  mUnkdacf4d;
     ::ll::UntypedStorage<8, 16>  mUnkc25d79;
     ::ll::UntypedStorage<4, 4>   mUnk498fce;
     ::ll::UntypedStorage<8, 736> mUnk53b476;
-    ::ll::UntypedStorage<8, 24>  mUnk71f343;
+    ::ll::UntypedStorage<8, 24>  mUnk26e6bb;
     ::ll::UntypedStorage<8, 48>  mUnkce286d;
     // NOLINTEND
 

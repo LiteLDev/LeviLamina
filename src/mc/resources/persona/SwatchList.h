@@ -16,7 +16,7 @@ class SwatchList : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc236b2;
+    ::ll::UntypedStorage<8, 24> mUnkedc9a4;
     // NOLINTEND
 
 public:

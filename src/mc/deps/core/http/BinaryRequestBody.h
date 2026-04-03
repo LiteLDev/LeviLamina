@@ -11,7 +11,7 @@ class BinaryRequestBody : public ::Bedrock::Http::Internal::IRequestBody {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkafd1fc;
+    ::ll::UntypedStorage<8, 24> mUnk82c336;
     ::ll::UntypedStorage<8, 8>  mUnk8f0a1f;
     // NOLINTEND
 

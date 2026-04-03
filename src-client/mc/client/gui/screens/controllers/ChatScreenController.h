@@ -31,6 +31,9 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                mCurrentMessage;
     ::ll::TypedStorage<8, 32, ::std::string>                mCurrentHistoryPrefix;
     ::ll::TypedStorage<1, 1, bool>                          mRefreshChatMessages;
+    ::ll::TypedStorage<1, 1, bool>                          mLockMessagesUpdates;
+    ::ll::TypedStorage<1, 1, bool>                          mScrollChatToBottom;
+    ::ll::TypedStorage<1, 1, bool>                          mHasUnreadMessages;
     ::ll::TypedStorage<8, 8, uint64>                        mCurrentSentMessageIndex;
     ::ll::TypedStorage<1, 1, bool>                          mNeedsLayoutUpdate;
     ::ll::TypedStorage<1, 1, bool>                          mLastKeyboardActive;
@@ -135,12 +138,6 @@ public:
     MCAPI void _teleportWhereHelper();
 
     MCAPI void _teleportWhoHelper();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& DEV_CONSOLE_SCREEN_NAME();
     // NOLINTEND
 
 public:

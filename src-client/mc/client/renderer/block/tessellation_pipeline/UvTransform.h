@@ -14,7 +14,8 @@ public:
     enum class BoxType : uchar {
         CustomBoxWithLegacyTopRotation = 0,
         CustomBoxNoLegacyTopRotation   = 1,
-        MinecraftFullBlock             = 2,
+        MinecraftFullBlockV1           = 2,
+        MinecraftFullBlock             = 3,
     };
 
 public:

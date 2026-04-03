@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $deserializeData(::DeserializeDataParams);
+    MCAPI void $deserializeData(::DeserializeDataParams);
 
 
     // NOLINTEND

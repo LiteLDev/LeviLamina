@@ -18,7 +18,7 @@ class UnrecognizedChunkTypeCause : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2f8b91;
+    ::ll::UntypedStorage<8, 24> mUnkffe25c;
     // NOLINTEND
 
 public:

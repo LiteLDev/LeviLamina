@@ -19,7 +19,7 @@ class FeatureLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::Puv::Loader<::FeatureResult>> mLoader;
+    ::ll::TypedStorage<8, 168, ::Puv::Loader<::FeatureResult, ::FeatureResult>> mLoader;
     // NOLINTEND
 
 public:

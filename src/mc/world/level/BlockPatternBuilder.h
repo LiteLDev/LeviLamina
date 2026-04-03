@@ -9,7 +9,7 @@ class BlockPatternBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::BlockPatternData> mData;
+    ::ll::TypedStorage<8, 80, ::BlockPatternData> mData;
     // NOLINTEND
 
 public:

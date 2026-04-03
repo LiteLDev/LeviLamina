@@ -47,7 +47,7 @@ public:
 
     virtual bool containsProductId(::std::string const& productId) const /*override*/;
 
-    virtual void searchForProductIds(::std::function<void(bool)> searchCompleteCallback) /*override*/;
+    virtual void searchForProductIds(::std::function<void()> searchCompleteCallback) /*override*/;
 
     virtual void beginExclusiveDownload() /*override*/;
 
@@ -89,6 +89,8 @@ public:
 
     virtual bool isImporting() const /*override*/;
 
+    virtual bool isImportComplete() const /*override*/;
+
     virtual bool isImportWaiting() const /*override*/;
 
     virtual uint64 getImportTotal() const /*override*/;
@@ -97,13 +99,19 @@ public:
 
     virtual float getImportProgress() const /*override*/;
 
-    virtual int getIndexOfActiveImport() const /*override*/;
+    virtual ::std::optional<int> getIndexOfActiveImport() const /*override*/;
 
     virtual ::std::vector<::DlcId> const& getDlcIds() const /*override*/;
+
+    virtual ::std::vector<::PackIdVersion> const& getPackIds() const /*override*/;
+
+    virtual ::std::vector<::std::string> getProductIdList() const /*override*/;
 
     virtual ::ItemInstallState getDlcInstalledState() const /*override*/;
 
     virtual bool isContentSearchComplete() /*override*/;
+
+    virtual bool isContentSearchInProgress() const /*override*/;
 
     virtual bool isFailed() const /*override*/;
 
@@ -126,21 +134,10 @@ public:
     MCAPI explicit DlcBatchModel(::IDlcBatchModel const& ref);
 
     MCAPI DlcBatchModel(
-        ::IContentAcquisition&        contentAcquisition,
-        ::IStoreCatalogRepository&    storeCatalog,
-        ::std::vector<::DlcId> const& dlcIds
-    );
-
-    MCAPI DlcBatchModel(
-        ::IContentAcquisition&                contentAcquisition,
-        ::IStoreCatalogRepository&            storeCatalog,
-        ::std::vector<::PackIdVersion> const& packIds
-    );
-
-    MCAPI DlcBatchModel(
-        ::IContentAcquisition&              contentAcquisition,
-        ::IStoreCatalogRepository&          storeCatalog,
-        ::std::vector<::std::string> const& productIds
+        ::IContentAcquisition&         contentAcquisition,
+        ::IStoreCatalogRepository&     storeCatalog,
+        ::std::vector<::DlcId>         dlcIds,
+        ::std::vector<::PackIdVersion> packIds
     );
 
     MCAPI bool _canBeginDownload() const;
@@ -154,21 +151,10 @@ public:
     MCAPI void* $ctor(::IDlcBatchModel const& ref);
 
     MCAPI void* $ctor(
-        ::IContentAcquisition&        contentAcquisition,
-        ::IStoreCatalogRepository&    storeCatalog,
-        ::std::vector<::DlcId> const& dlcIds
-    );
-
-    MCAPI void* $ctor(
-        ::IContentAcquisition&                contentAcquisition,
-        ::IStoreCatalogRepository&            storeCatalog,
-        ::std::vector<::PackIdVersion> const& packIds
-    );
-
-    MCAPI void* $ctor(
-        ::IContentAcquisition&              contentAcquisition,
-        ::IStoreCatalogRepository&          storeCatalog,
-        ::std::vector<::std::string> const& productIds
+        ::IContentAcquisition&         contentAcquisition,
+        ::IStoreCatalogRepository&     storeCatalog,
+        ::std::vector<::DlcId>         dlcIds,
+        ::std::vector<::PackIdVersion> packIds
     );
     // NOLINTEND
 
@@ -183,7 +169,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $containsProductId(::std::string const& productId) const;
 
-    MCAPI void $searchForProductIds(::std::function<void(bool)> searchCompleteCallback);
+    MCAPI void $searchForProductIds(::std::function<void()> searchCompleteCallback);
 
     MCAPI void $beginExclusiveDownload();
 
@@ -225,6 +211,8 @@ public:
 
     MCAPI bool $isImporting() const;
 
+    MCAPI bool $isImportComplete() const;
+
     MCAPI bool $isImportWaiting() const;
 
     MCAPI uint64 $getImportTotal() const;
@@ -233,13 +221,19 @@ public:
 
     MCAPI float $getImportProgress() const;
 
-    MCAPI int $getIndexOfActiveImport() const;
+    MCAPI ::std::optional<int> $getIndexOfActiveImport() const;
 
     MCFOLD ::std::vector<::DlcId> const& $getDlcIds() const;
+
+    MCFOLD ::std::vector<::PackIdVersion> const& $getPackIds() const;
+
+    MCAPI ::std::vector<::std::string> $getProductIdList() const;
 
     MCAPI ::ItemInstallState $getDlcInstalledState() const;
 
     MCFOLD bool $isContentSearchComplete();
+
+    MCAPI bool $isContentSearchInProgress() const;
 
     MCAPI bool $isFailed() const;
 

@@ -8,9 +8,9 @@ struct Registry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk630408;
+    ::ll::UntypedStorage<8, 72> mUnk873d81;
     ::ll::UntypedStorage<8, 72> mUnkd5eaad;
-    ::ll::UntypedStorage<8, 24> mUnkdf4703;
+    ::ll::UntypedStorage<8, 24> mUnk6f9e5d;
     // NOLINTEND
 
 public:

@@ -54,10 +54,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MovementType const& DEFAULT_MOVEMENT_TYPE();
-
-    MCAPI static ::StickyType const& DEFAULT_STICKY_TYPE();
-
     MCAPI static ::std::string const& NameID();
     // NOLINTEND
 

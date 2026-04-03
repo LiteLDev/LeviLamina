@@ -8,7 +8,7 @@ class LogLineRef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka432fc;
+    ::ll::UntypedStorage<8, 32> mUnk8a8870;
     ::ll::UntypedStorage<8, 16> mUnke9c224;
     ::ll::UntypedStorage<4, 4>  mUnkc58bfd;
     ::ll::UntypedStorage<4, 8>  mUnkcab455;

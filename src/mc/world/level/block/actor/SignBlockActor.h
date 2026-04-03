@@ -219,7 +219,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~SignBlockActor() /*override*/ = default;
+    virtual ~SignBlockActor() /*override*/;
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
@@ -275,6 +275,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI_S void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

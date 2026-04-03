@@ -13,7 +13,7 @@ struct DirectoryIterationItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1011ef;
+    ::ll::UntypedStorage<8, 32> mUnkba94d0;
     ::ll::UntypedStorage<8, 32> mUnk2172c9;
     ::ll::UntypedStorage<8, 8>  mUnk657388;
     ::ll::UntypedStorage<8, 8>  mUnk5990e0;

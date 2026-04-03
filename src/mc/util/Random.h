@@ -15,13 +15,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2552, ::Bedrock::Application::ThreadOwner<::Core::Random, 0>> mRandom;
+    ::ll::TypedStorage<8, 2536, ::Bedrock::Application::ThreadOwner<::Core::Random, 0>> mRandom;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~Random() /*override*/;
+    virtual ~Random() /*override*/ = default;
 
     virtual bool nextBoolean() /*override*/;
 
@@ -78,12 +78,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

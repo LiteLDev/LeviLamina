@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ISignalingServiceTelemetry;
 class MessagePerformance;
 namespace JsonRpc { class JsonRpcError; }
 namespace mce { class UUID; }
@@ -62,7 +63,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk3969f8;
     ::ll::UntypedStorage<8, 80> mUnkc507e5;
-    ::ll::UntypedStorage<8, 56> mUnke23a24;
+    ::ll::UntypedStorage<8, 80> mUnk3dedd3;
+    ::ll::UntypedStorage<8, 48> mUnkbcdda6;
+    ::ll::UntypedStorage<8, 16> mUnk54b795;
     // NOLINTEND
 
 public:
@@ -74,6 +77,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit MessageTracker(::gsl::not_null<::std::shared_ptr<::ISignalingServiceTelemetry>> telemetry);
+
     MCNAPI ::std::vector<::MessagePerformance> _clear();
 
     MCNAPI void _complete(
@@ -106,5 +111,19 @@ public:
         ::std::string const&          messageId,
         ::std::error_code             error
     );
+
+    MCNAPI ~MessageTracker();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::ISignalingServiceTelemetry>> telemetry);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -88,13 +88,16 @@ public:
     virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const& levelId, bool) const
         /*override*/;
 
+    virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) const
+        /*override*/;
+
     virtual bool isBetaRetailLevel(::std::string const&) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) const;
+
     // NOLINTEND
 
 public:
@@ -162,6 +165,8 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
     MCFOLD ::Core::PathBuffer<::std::string> const $getPathToLevelInfo(::std::string const& levelId, bool) const;
+
+    MCAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) const;
 
     MCFOLD bool $isBetaRetailLevel(::std::string const&) const;
 

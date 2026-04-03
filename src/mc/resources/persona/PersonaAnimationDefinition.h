@@ -6,8 +6,8 @@ struct PersonaAnimationDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7870ea;
-    ::ll::UntypedStorage<8, 32> mUnkc4c500;
+    ::ll::UntypedStorage<8, 32> mUnk580557;
+    ::ll::UntypedStorage<8, 32> mUnkb767c6;
     ::ll::UntypedStorage<8, 16> mUnk35e607;
     // NOLINTEND
 

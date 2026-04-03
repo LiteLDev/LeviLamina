@@ -93,16 +93,6 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static char const*& CHAINED_OPTION_0();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
-
-        MCAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
-
         MCAPI static char const*& SUBCOMMAND_ALIGN();
 
         MCAPI static char const*& SUBCOMMAND_ANCHORED();
@@ -122,28 +112,6 @@ public:
         MCAPI static char const*& SUBCOMMAND_IF();
 
         MCAPI static char const*& SUBCOMMAND_IN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_AS();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_AT();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_FACING();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_IN();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
-
-        MCAPI static char const*& SUBCOMMAND_OPTION_RUN();
 
         MCAPI static char const*& SUBCOMMAND_POSITIONED();
 

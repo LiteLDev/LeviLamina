@@ -21,12 +21,12 @@ class SliderControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkd9ccf7;
+    ::ll::UntypedStorage<8, 216> mUnkb0e775;
     ::ll::UntypedStorage<4, 4>   mUnkf5463a;
     ::ll::UntypedStorage<4, 4>   mUnk5faac6;
     ::ll::UntypedStorage<4, 8>   mUnka37abf;
     ::ll::UntypedStorage<4, 8>   mUnkc29b0a;
-    ::ll::UntypedStorage<8, 224> mUnk28c3fe;
+    ::ll::UntypedStorage<8, 224> mUnk6671e6;
     // NOLINTEND
 
 public:

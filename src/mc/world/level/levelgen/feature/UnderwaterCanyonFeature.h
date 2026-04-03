@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeRegistry;
 class BiomeSource;
 class BlockType;
 class BlockVolume;
@@ -40,7 +41,8 @@ public:
         float                    rad,
         float                    yRad,
         ::gsl::span<float const> widthRandomization,
-        ::WorldGenContext const&
+        ::WorldGenContext const&,
+        ::BiomeRegistry const& biomeRegistry
     ) const /*override*/;
     // NOLINTEND
 
@@ -66,7 +68,8 @@ public:
         float                    rad,
         float                    yRad,
         ::gsl::span<float const> widthRandomization,
-        ::WorldGenContext const&
+        ::WorldGenContext const&,
+        ::BiomeRegistry const& biomeRegistry
     ) const;
 
 

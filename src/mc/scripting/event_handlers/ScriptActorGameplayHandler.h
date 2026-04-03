@@ -14,6 +14,9 @@
 // auto generated forward declare list
 // clang-format off
 struct ActorAddEffectEvent;
+struct ActorBeforeAcquireItemEvent;
+struct ActorBeforeHealEvent;
+struct ActorBeforeHurtEvent;
 struct ActorRemovedEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -27,6 +30,15 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult>
     handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent) /*override*/;
 
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorBeforeHealEvent& actorHealEvent) /*override*/;
+
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorBeforeHurtEvent& actorHurtEvent) /*override*/;
+
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent) /*override*/;
+
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
     virtual ~ScriptActorGameplayHandler() /*override*/ = default;
@@ -35,11 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _handleActorAcquireItemEvent(
+        ::ActorBeforeAcquireItemEvent&                                                    actorAcquireItemEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    ) const;
+
     MCAPI bool _handleActorEffectAddedEvent(
         ::ActorAddEffectEvent&                                                            actorEffectAddedEvent,
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
+
+    MCAPI bool _handleActorHealEvent(
+        ::ActorBeforeHealEvent&                                                           actorBeforeHealEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    );
+
+    MCAPI bool _handleActorHurtEvent(
+        ::ActorBeforeHurtEvent&                                                           actorBeforeHurtEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    );
 
     MCAPI bool _handleActorRemoveEvent(
         ::ActorRemovedEvent const&                                                        actorRemovedEvent,
@@ -52,6 +82,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
+
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHealEvent& actorHealEvent);
+
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHurtEvent& actorHurtEvent);
+
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    $handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent);
 
     MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
 

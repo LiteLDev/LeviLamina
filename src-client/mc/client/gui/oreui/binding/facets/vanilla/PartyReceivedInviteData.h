@@ -11,7 +11,7 @@ struct PartyReceivedInviteData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::OreUI::SocialPlayer> mInviter;
+    ::ll::TypedStorage<8, 656, ::OreUI::SocialPlayer> mInviter;
     ::ll::TypedStorage<8, 32, ::std::string>          mPartyId;
     ::ll::TypedStorage<8, 32, ::std::string>          mConnectionString;
     // NOLINTEND

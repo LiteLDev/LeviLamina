@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/player/persona/PersonaError.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 #include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/actor/player/persona/Rarity.h"
@@ -22,15 +23,13 @@ MCAPI_C ::std::string getPieceRarityBarTexture(::persona::Rarity pieceRarity);
 
 MCAPI_C ::mce::Color getPieceRarityColor(::UIPropertyBag const& bag, ::persona::Rarity pieceRarity);
 
-MCAPI_C int getRandomJitter();
-
 MCAPI_C ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeStr);
 
 MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
-MCAPI_C ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
+MCAPI_C ::std::string const& stringFromPersonaError(::persona::PersonaError const& error);
 
-MCAPI_C ::std::string stringFromPieceRarityNotLocalized(::persona::Rarity const& rarity);
+MCAPI_C ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
 
 MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 
@@ -68,6 +67,10 @@ MCAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
 MCAPI_C ::mce::UUID const& NONE_PIECE_ID();
 
 MCAPI ::std::string const& NONE_PIECE_PATH();
+
+MCAPI_C ::std::string const& PIECE_SIDE_LEFT_STR();
+
+MCAPI_C ::std::string const& PIECE_SIDE_RIGHT_STR();
 
 MCAPI_C uint const& RANDOM_DEFAULT_APPEARANCE_INDEX();
 

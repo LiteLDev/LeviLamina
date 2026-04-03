@@ -4,38 +4,51 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-class IGameplayUserManagerConnector;
-class IServerPlayerSleepManagerConnector;
 class ITickTimeManagerProxy;
 class PacketSender;
+class WorldClockRegistry;
 // clang-format on
 
 class TickTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const>                                                  mIsClientSide;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ITickTimeManagerProxy>>> mTickTimeManagerProxy;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                 mPacketSender;
-    ::ll::TypedStorage<8, 8, int64>                                                       mLastTimePacketSent;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOnGameplayUserAdded;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWakeUpAllPlayersSubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PacketSender>>              mPacketSender;
     // NOLINTEND
 
 public:
-    // member functions
+    // virtual functions
     // NOLINTBEGIN
-    MCAPI void _onWakeUpAllPlayers();
+    virtual ~TickTimeManager();
 
-    MCAPI void _syncTime(int64 currentTick);
+    virtual void update();
 
-    MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const getWorldClockRegistry() const = 0;
 
-    MCAPI void
-    registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
+    virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> const getWorldClockRegistry() = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI void $update();
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

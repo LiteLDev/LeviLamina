@@ -57,8 +57,6 @@ public:
 
     MCAPI ::BlockPos south() const;
 
-    MCAPI_C ::std::string toCommandString() const;
-
     MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
 
     MCAPI ::BlockPos west() const;
@@ -76,8 +74,6 @@ public:
     MCAPI static ::BlockPos const& MAX();
 
     MCAPI static ::BlockPos const& MIN();
-
-    MCAPI static ::BlockPos const& ONE();
 
     MCAPI static ::BlockPos const& ZERO();
     // NOLINTEND

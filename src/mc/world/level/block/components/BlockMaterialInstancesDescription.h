@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
@@ -13,7 +14,6 @@
 class BlockComponentStorage;
 class CompoundTag;
 class Experiments;
-class HashedString;
 class SemVersion;
 struct BlockMaterialInstance;
 namespace Json { class Value; }
@@ -92,7 +92,8 @@ public:
         ::TintMethod         tintMethod,
         bool                 randomizeUVRotation,
         bool                 supportsTextureVariations,
-        bool                 alphaMaskedTint
+        bool                 alphaMaskedTint,
+        bool                 dithering
     );
 
     MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription&&);
@@ -133,7 +134,8 @@ public:
         ::TintMethod         tintMethod,
         bool                 randomizeUVRotation,
         bool                 supportsTextureVariations,
-        bool                 alphaMaskedTint
+        bool                 alphaMaskedTint,
+        bool                 dithering
     );
     // NOLINTEND
 

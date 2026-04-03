@@ -24,9 +24,9 @@ class CompoundTag;
 class DefinitionEvent;
 class Experiments;
 class IMinecraftEventing;
-class IPackLoadContext;
 class Level;
 class LinkedAssetValidator;
+class PackLoadContext;
 class PackLoadRequirement;
 class ResourcePackManager;
 struct BlockComponentGroupDescription;
@@ -51,7 +51,7 @@ public:
         ::ll::TypedStorage<8, 24, ::SemVersion>        mFormatVersion;
         ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
         ::ll::TypedStorage<8, 24, ::SemVersion>        mOriginalJsonVersion;
-        ::ll::TypedStorage<8, 176, ::BlockDescription> mDescription;
+        ::ll::TypedStorage<8, 192, ::BlockDescription> mDescription;
         ::ll::TypedStorage<1, 1, ::JsonBetaState>      mIsBeta;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
         ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
@@ -113,17 +113,17 @@ public:
     MCAPI bool _checkInvalidPermutationComponents(::BlockComponentGroupDescription const& componentGroupDescription);
 
     MCAPI bool _loadBlockDescription(
-        ::Json::Value const&      root,
-        ::BlockDescription&       desc,
-        ::JsonBetaState&          canUseBeta,
-        ::IPackLoadContext const& packLoadContext,
-        ::SemVersion const&       jsonVersion
+        ::Json::Value const&     root,
+        ::BlockDescription&      desc,
+        ::JsonBetaState&         canUseBeta,
+        ::PackLoadContext const& packLoadContext,
+        ::SemVersion const&      jsonVersion
     );
 
     MCAPI bool _loadComponents(
         ::Json::Value const& root,
         ::BlockDefinition&   definition,
-        ::IPackLoadContext&  packLoadContext,
+        ::PackLoadContext&   packLoadContext,
         ::JsonBetaState      canUseBeta
     );
 
@@ -131,14 +131,14 @@ public:
     _loadComponentsForLegacyCompabitility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
 
     MCAPI bool
-    _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::IPackLoadContext& packLoadContext);
+    _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::PackLoadContext& packLoadContext);
 
     MCAPI bool _parseComponents(
         ::Json::Value const&              blockRoot,
         ::BlockComponentGroupDescription& componentGroupDescription,
         ::std::string const&              blockIdentifier,
         ::SemVersion const&               originalJsonVersion,
-        ::IPackLoadContext&               packLoadContext,
+        ::PackLoadContext&                packLoadContext,
         ::JsonBetaState                   canUseBeta,
         bool                              isVanillaBlock
     );
@@ -146,13 +146,18 @@ public:
     MCAPI ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory
     _stringToCreativeItemCategory(::std::string const& category, ::std::string const& blockIdentifier);
 
+    MCAPI void
+    _upgradeComponentsForLegacyCompatibility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
+
+    MCAPI bool _validateAndAssignBlockId(::BlockDescription& desc, bool isFromBaseGamePack);
+
     MCAPI bool _validatePrereleaseRequirements(
         ::LogArea                                   logArea,
         ::std::string const&                        jsonType,
         ::std::string const&                        jsonIdentifier,
         ::std::optional<::SemVersion> const&        releaseVersion,
         ::std::vector<::PackLoadRequirement> const& requirements,
-        ::IPackLoadContext const&                   packLoadContext,
+        ::PackLoadContext const&                    packLoadContext,
         ::JsonBetaState                             canUseBeta
     ) const;
 
@@ -161,7 +166,7 @@ public:
     MCAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
 
     MCAPI ::std::unique_ptr<::BlockDefinition>
-    generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::IPackLoadContext& packLoadContext);
+    generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::PackLoadContext& packLoadContext);
 
     MCAPI ::std::vector<::std::pair<::std::string, ::CompoundTag>> generateServerBlockProperties() const;
 
@@ -177,7 +182,7 @@ public:
         ::std::string                            upgradedJsonData,
         ::Core::PathBuffer<::std::string> const& res,
         ::std::string const&                     resourcePacklocation,
-        ::IPackLoadContext&                      packLoadContext
+        ::PackLoadContext&                       packLoadContext
     );
 
     MCAPI void loadResources(
@@ -186,11 +191,23 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
+    MCAPI void registerBlockDefinition(::std::unique_ptr<::BlockDefinition> blockDef);
+
     MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
 
     MCAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
 
     MCAPI ~BlockDefinitionGroup();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool
+    _validatedMultiBlockBaseComponentConstraints(::BlockComponentGroupDescription const& descriptionGroup);
+
+    MCAPI static bool
+    _validatedMultiBlockPermComponentConstraints(::BlockComponentGroupDescription const& descriptionGroup);
     // NOLINTEND
 
 public:

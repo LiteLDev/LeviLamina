@@ -30,8 +30,8 @@ class ScriptJigsawService : public ::Scripting::WeakHandleFromThis<::Editor::Scr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk938ed4;
-    ::ll::UntypedStorage<8, 24> mUnkd0fe33;
+    ::ll::UntypedStorage<8, 24> mUnkef3cbc;
+    ::ll::UntypedStorage<8, 24> mUnkb17c45;
     ::ll::UntypedStorage<8, 16> mUnk46598d;
     ::ll::UntypedStorage<8, 16> mUnk429e86;
     ::ll::UntypedStorage<8, 16> mUnk1e3220;
@@ -59,7 +59,7 @@ public:
     );
 
     MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error, void>>
+        ::Scripting::Promise<::std::vector<::Editor::Services::EditorJigsawSection>, ::Scripting::Error>>
     generateJigsaw(
         ::std::string const&                               registryName,
         ::std::string const&                               startingPool,
@@ -87,7 +87,7 @@ public:
 
     MCNAPI void setJigsawBlockData(::Vec3& pos, ::Editor::Services::JigsawBlockData& jigsawData);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error, void>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::std::string>, ::Scripting::Error>>
     setRegistryData(
         ::std::string const&                                  registryName,
         ::std::vector<::Editor::Services::EditorRegistryFile> processorData,

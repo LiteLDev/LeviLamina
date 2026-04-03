@@ -6,7 +6,6 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
-#include "mc/world/actor/ai/goal/WorkDefinition.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
@@ -19,7 +18,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::POIType>                              mPOIType;
-    ::ll::TypedStorage<8, 152, ::WorkDefinition>                     mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                    mMinSoundDelay;
+    ::ll::TypedStorage<4, 4, int>                                    mMaxSoundDelay;
+    ::ll::TypedStorage<4, 4, int>                                    mGoalCooldown;
+    ::ll::TypedStorage<4, 4, int>                                    mActiveTime;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanWorkInRain;
+    ::ll::TypedStorage<4, 4, int>                                    mWorkInRainTolerance;
     ::ll::TypedStorage<4, 4, int>                                    mCooldownTick;
     ::ll::TypedStorage<4, 4, int>                                    mActiveTick;
     ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
@@ -52,7 +56,7 @@ public:
 
     virtual void useWorkstation();
 
-    virtual ~WorkGoal() /*override*/;
+    virtual ~WorkGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,12 +73,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

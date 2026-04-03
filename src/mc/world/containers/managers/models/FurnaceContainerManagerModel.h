@@ -8,34 +8,52 @@
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/containers/models/FilterResult.h"
+#include "mc/world/containers/models/TextSearchMode.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
+class ContainerModel;
 class ContainerScreenContext;
 class FurnaceBlockActor;
-class ItemInstance;
+class ItemDescriptor;
 class ItemStack;
 class Player;
+struct IngredientSearchInfo;
 // clang-format on
 
 class FurnaceContainerManagerModel : public ::ContainerManagerModel {
 public:
+    // FurnaceContainerManagerModel inner types define
+    using FilterFunction = ::std::function<::FilterResult(::ItemInstance const&, bool)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>               mBlockPos;
-    ::ll::TypedStorage<4, 4, int>                       mLastTickCount;
-    ::ll::TypedStorage<4, 4, int>                       mLastLitTime;
-    ::ll::TypedStorage<4, 4, int>                       mLastLitDuration;
-    ::ll::TypedStorage<4, 4, int>                       mLastStoredXP;
-    ::ll::TypedStorage<4, 4, int>                       mLastInputId;
-    ::ll::TypedStorage<4, 4, int>                       mLastInputAux;
-    ::ll::TypedStorage<8, 32, ::std::string>            mLastOutputName;
-    ::ll::TypedStorage<4, 4, int>                       mLastResultDisplayId;
-    ::ll::TypedStorage<1, 1, ::BlockActorType const>    mBlockActorType;
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientContainerName;
-    ::ll::TypedStorage<8, 48, ::HashedString const>     mRecipeTag;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                    mBlockPos;
+    ::ll::TypedStorage<4, 4, int>                            mLastTickCount;
+    ::ll::TypedStorage<4, 4, int>                            mLastLitTime;
+    ::ll::TypedStorage<4, 4, int>                            mLastLitDuration;
+    ::ll::TypedStorage<4, 4, int>                            mLastStoredXP;
+    ::ll::TypedStorage<4, 4, int>                            mLastInputId;
+    ::ll::TypedStorage<4, 4, int>                            mLastInputAux;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>               mLastCraftedItem;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mLastOutputName;
+    ::ll::TypedStorage<4, 4, int>                            mLastResultDisplayId;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const>         mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName const>      mIngredientContainerName;
+    ::ll::TypedStorage<8, 48, ::HashedString const>          mRecipeTag;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeBook;
+    ::ll::TypedStorage<1, 1, bool>                           mSmeltableFilterOn;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mSearchString;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mCaseFoldedSearchString;
+    ::ll::TypedStorage<4, 4, int>                            mNumFoodRecipes;
+    ::ll::TypedStorage<4, 4, int>                            mNumBlocksRecipes;
+    ::ll::TypedStorage<4, 4, int>                            mNumItemsRecipes;
     // NOLINTEND
 
 public:
@@ -60,6 +78,8 @@ public:
     virtual void broadcastChanges() /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+
+    virtual void _onDynamicContainerContentsChanged() /*override*/;
     // NOLINTEND
 
 public:
@@ -74,13 +94,33 @@ public:
         ::BlockPos const&                    blockPos
     );
 
+    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+
+    MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
+
     MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
+
+    MCAPI bool _itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
+
+    MCFOLD bool
+    _itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
+
+    MCAPI void _populateRecipeBook();
 
     MCAPI void _updateResultSlotInfo();
 
     MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 
     MCAPI_C bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
+
+    MCAPI ::IngredientSearchInfo searchIngredientInContainers(
+        ::ItemInstance const&                   itemInstance,
+        ::std::vector<::ContainerModel*> const& containers
+    ) const;
+
+    MCAPI void setIsFiltering(bool smeltableFilterOn);
+
+    MCAPI_C void setSearchString(::std::string const& searchString);
     // NOLINTEND
 
 public:
@@ -118,6 +158,8 @@ public:
     MCAPI void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+    MCAPI void $_onDynamicContainerContentsChanged();
 
 
     // NOLINTEND

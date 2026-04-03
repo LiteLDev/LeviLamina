@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/PackCategory.h"
+#include "mc/client/gui/screens/controllers/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 
 // auto generated forward declare list
@@ -21,7 +21,7 @@ class RepositoryPacks {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3b91c5;
+    ::ll::UntypedStorage<8, 24> mUnk8b45dc;
     // NOLINTEND
 
 public:

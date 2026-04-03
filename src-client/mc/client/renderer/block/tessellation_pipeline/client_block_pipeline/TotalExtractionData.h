@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/ArrayCache.h"
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/VectorCache.h"
+#include "mc/world/level/block/Block.h"
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 struct BrightnessPair;
 namespace ClientBlockPipeline { struct BitsetCache; }
 namespace ClientBlockPipeline { struct BlockLookupData; }
@@ -17,6 +17,7 @@ namespace ClientBlockPipeline { struct CompleteOpaqueFullBlock; }
 namespace ClientBlockPipeline { struct CompleteOpaqueFullBlockIds; }
 namespace ClientBlockPipeline { struct CustomGeometryBlock; }
 namespace ClientBlockPipeline { struct PotentiallyFaceCulledBlock; }
+namespace ClientBlockPipeline { struct TextureShiftNoiseCache; }
 // clang-format on
 
 namespace ClientBlockPipeline {
@@ -45,6 +46,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::ArrayCache<::BrightnessPair>>> lightCache;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::ArrayCache<float>>>            aoCache;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::ArrayCache<::Block const*>>> cullingBlocksCache;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::TextureShiftNoiseCache>> textureShiftNoiseCache;
     // NOLINTEND
 
 public:

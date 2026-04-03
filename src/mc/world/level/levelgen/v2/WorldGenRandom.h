@@ -21,7 +21,7 @@ struct WorldGenRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
+    ::ll::TypedStorage<8, 56, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
     // NOLINTEND
 
 public:
@@ -59,15 +59,17 @@ public:
 
     virtual ::Seed128Bit seed128() const /*override*/;
 
-    virtual ~WorldGenRandom() /*override*/;
+    virtual ~WorldGenRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldGenRandom(::SimpleRandom source);
+    MCAPI WorldGenRandom(::br::worldgen::WorldGenRandom const& other);
 
     MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
+
+    MCAPI ::br::worldgen::WorldGenRandom& operator=(::br::worldgen::WorldGenRandom const& other);
 
     MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
@@ -75,19 +77,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::br::worldgen::WorldGenRandom create(int64 seed);
+
     MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SimpleRandom source);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI void* $ctor(::br::worldgen::WorldGenRandom const& other);
     // NOLINTEND
 
 public:

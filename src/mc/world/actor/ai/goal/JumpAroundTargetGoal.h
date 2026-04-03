@@ -147,8 +147,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
-
     MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
 
     MCAPI bool _canJumpFromCurrentPosition() const;
@@ -156,12 +154,6 @@ public:
     MCAPI void _jump() const;
 
     MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

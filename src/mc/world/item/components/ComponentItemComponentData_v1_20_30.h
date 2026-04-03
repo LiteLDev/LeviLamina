@@ -63,14 +63,14 @@ public:
     ::ll::TypedStorage<8, 168, ::std::optional<::RenderOffsetsItemComponent>>             renderOffsetsItemComponent;
     ::ll::TypedStorage<8, 48, ::std::optional<::RepairableItemComponent>>                 repairableItemComponent;
     ::ll::TypedStorage<8, 48, ::std::optional<::ShooterItemComponentLegacyFactoryData>>   shooterItemComponent;
-    ::ll::TypedStorage<4, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>> throwableItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>> throwableItemComponent;
     ::ll::TypedStorage<8, 184, ::std::optional<::WeaponItemComponent>>                    weaponItemComponent;
-    ::ll::TypedStorage<4, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>  wearableItemComponent;
+    ::ll::TypedStorage<8, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>  wearableItemComponent;
     ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>>                     recordItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>>               maxStackSizeItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::CanDestroyInCreativeItemComponent>> canDestroyInCreativeItemComponent;
     ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>>       hoverTextColorItemComponent;
-    ::ll::TypedStorage<4, 24, ::std::optional<::UseModifiersItemComponentLegacyFactoryData>> useModifiersItemComponent;
+    ::ll::TypedStorage<8, 24, ::std::optional<::UseModifiersItemComponentLegacyFactoryData>> useModifiersItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::StackedByDataItemComponent>>                 stackedByDataItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::GlintItemComponent>>                         glintItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::HandEquippedItemComponent>>                  handEquippedItemComponent;

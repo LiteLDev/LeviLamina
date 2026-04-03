@@ -17,7 +17,7 @@ class AppExtensionsOwner : public ::AppExtensions::IAppExtensionsNonOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk773566;
+    ::ll::UntypedStorage<8, 8> mUnkc315e5;
     // NOLINTEND
 
 public:

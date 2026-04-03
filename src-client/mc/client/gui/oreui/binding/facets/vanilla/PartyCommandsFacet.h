@@ -22,13 +22,17 @@ class PartyCommandsFacet : public ::OreUI::FacetBase<::OreUI::PartyCommandsFacet
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::optional<::Bedrock::NonOwnerPointer<::Parties::PartySystem>>> mPartySystem;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                        mTaskGroup;
-    ::ll::TypedStorage<1, 1, bool>                                                                 mIsDirty;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mCreatePartyState;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mJoinPartyState;
-    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>                   mAcceptInviteState;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                       mTaskGroup;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsDirty;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mCreatePartyState;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mJoinPartyState;
+    ::ll::TypedStorage<4, 12, ::OreUI::CommandState<::OreUI::PartyCommandError>>  mAcceptInviteState;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PartyCommandsFacet();
 
 public:
     // virtual functions
@@ -41,6 +45,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PartyCommandsFacet(::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem);
+
     MCAPI void _runCommandAndUpdateState(
         ::Bedrock::Threading::Async<bool>                  task,
         ::OreUI::CommandState<::OreUI::PartyCommandError>& state
@@ -54,7 +60,7 @@ public:
 
     MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getCreatePartyState() const;
 
-    MCFOLD ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
+    MCAPI ::OreUI::CommandState<::OreUI::PartyCommandError> const& getJoinPartyState() const;
 
     MCAPI void ignoreInvite(::std::string const& partyId, ::std::string const& inviterXuid);
 
@@ -70,13 +76,19 @@ public:
 
     MCAPI void setPrivacy(::Parties::PartyPrivacy newPrivacy);
 
-    MCAPI void travelToPendingDestination();
+    MCAPI void travelToDestination();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem);
     // NOLINTEND
 
 public:

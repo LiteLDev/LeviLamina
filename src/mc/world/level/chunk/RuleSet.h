@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mInputPredicate;
     ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mLocPredicate;
-    ::ll::TypedStorage<4, 48, ::br::worldgen::processors::PosRules::Test>        mPosPredicate;
+    ::ll::TypedStorage<8, 48, ::br::worldgen::processors::PosRules::Test>        mPosPredicate;
     ::ll::TypedStorage<8, 8, ::Block const*>                                     mOutputState;
     ::ll::TypedStorage<8, 56, ::br::worldgen::processors::BlockEntity::Modifier> mBlockEntityModifier;
     // NOLINTEND

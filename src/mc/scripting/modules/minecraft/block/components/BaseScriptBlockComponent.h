@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace Scripting { struct ClassBinding; }
@@ -21,6 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockSource*> mBlockSource;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
     // NOLINTEND
 
@@ -28,6 +30,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BaseScriptBlockComponent() /*override*/;
+
+    virtual bool _isValid() const /*override*/;
     // NOLINTEND
 
 public:
@@ -46,6 +50,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI bool $_isValid() const;
+
+
     // NOLINTEND
 
 public:

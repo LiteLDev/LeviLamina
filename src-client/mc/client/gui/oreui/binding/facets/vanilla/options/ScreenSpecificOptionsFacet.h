@@ -42,9 +42,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScreenSpecificOptionsFacet(::IOptions& options);
 
+    MCAPI bool getDevOreUIGameplayUI() const;
+
     MCAPI bool getDevPlayScreenHideLanWorlds() const;
 
     MCAPI ::OreUI::PlayScreenWorldLayoutMode getPlayScreenWorldLayoutMode() const;
+
+    MCAPI void setDevOreUIGameplayUI(bool value);
 
     MCAPI void setDevPlayScreenHideLanWorlds(bool value);
 

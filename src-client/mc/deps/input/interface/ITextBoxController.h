@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IGamefaceTextInputProxy;
 struct TextBoxStateChange;
 // clang-format on
 
@@ -22,6 +23,8 @@ public:
     virtual void onKeyboardDismissed(int) = 0;
 
     virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) = 0;
+
+    virtual ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy() = 0;
     // NOLINTEND
 
 public:

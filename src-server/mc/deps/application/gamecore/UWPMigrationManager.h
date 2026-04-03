@@ -16,6 +16,8 @@ public:
     // UWPMigrationManager inner types define
     enum class Status : int {};
 
+    enum class MigrationState : int {};
+
     struct MoveOperation {
     public:
         // MoveOperation inner types define

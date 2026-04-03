@@ -24,18 +24,6 @@ public:
     FileOpenMode& operator=(FileOpenMode const&);
     FileOpenMode(FileOpenMode const&);
     FileOpenMode();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::string_view spec);
-    // NOLINTEND
 };
 
 } // namespace Core

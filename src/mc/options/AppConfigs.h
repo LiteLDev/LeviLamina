@@ -114,7 +114,15 @@ public:
 
     virtual bool isEduAIOn() const;
 
-    virtual bool isDedicatedServerOn() const;
+    virtual bool isEduDedicatedServerOn() const;
+
+    virtual void setIsEduDedicatedServerOn(bool);
+
+    virtual bool isTimeForEduDedicatedServerRefresh() const;
+
+    virtual void setEduDedicatedServerRefreshed();
+
+    virtual void setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds);
 
     virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
@@ -212,7 +220,15 @@ public:
 
     MCFOLD bool $isEduAIOn() const;
 
-    MCFOLD bool $isDedicatedServerOn() const;
+    MCFOLD bool $isEduDedicatedServerOn() const;
+
+    MCFOLD void $setIsEduDedicatedServerOn(bool);
+
+    MCFOLD bool $isTimeForEduDedicatedServerRefresh() const;
+
+    MCFOLD void $setEduDedicatedServerRefreshed();
+
+    MCFOLD void $setEduDedicatedServerRefreshAfterSeconds(::std::chrono::seconds);
 
     MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 

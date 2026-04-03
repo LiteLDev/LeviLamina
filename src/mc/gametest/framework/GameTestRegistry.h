@@ -13,11 +13,11 @@ class GameTestRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6c0fb8;
-    ::ll::UntypedStorage<8, 64> mUnkf7057e;
-    ::ll::UntypedStorage<8, 24> mUnkf818d8;
-    ::ll::UntypedStorage<8, 24> mUnkd71d3b;
-    ::ll::UntypedStorage<8, 24> mUnk69d09f;
+    ::ll::UntypedStorage<8, 64> mUnkfd6023;
+    ::ll::UntypedStorage<8, 64> mUnkb19192;
+    ::ll::UntypedStorage<8, 24> mUnk329014;
+    ::ll::UntypedStorage<8, 24> mUnk9b0e1e;
+    ::ll::UntypedStorage<8, 24> mUnkf4b42a;
     ::ll::UntypedStorage<1, 1>  mUnk67eda1;
     // NOLINTEND
 

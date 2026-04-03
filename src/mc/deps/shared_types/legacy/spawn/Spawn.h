@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/legacy/spawn/BiomeConditions.h"
-#include "mc/deps/shared_types/legacy/spawn/Herd.h"
-#include "mc/deps/shared_types/legacy/spawn/MobEventFilter.h"
+// auto generated forward declare list
+// clang-format off
+namespace SharedTypes::Legacy::Spawn { struct BiomeConditions; }
+namespace SharedTypes::Legacy::Spawn { struct Herd; }
+namespace SharedTypes::Legacy::Spawn { struct MobEventFilter; }
+// clang-format on
 
 namespace SharedTypes::Legacy::Spawn {
 // functions

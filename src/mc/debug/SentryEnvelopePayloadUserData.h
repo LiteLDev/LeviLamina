@@ -6,9 +6,9 @@ struct SentryEnvelopePayloadUserData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk8a781c;
-    ::ll::UntypedStorage<8, 40> mUnk914846;
-    ::ll::UntypedStorage<8, 40> mUnk359ccd;
+    ::ll::UntypedStorage<8, 40> mUnkdadd81;
+    ::ll::UntypedStorage<8, 40> mUnk5865d3;
+    ::ll::UntypedStorage<8, 40> mUnk64ef69;
     // NOLINTEND
 
 public:

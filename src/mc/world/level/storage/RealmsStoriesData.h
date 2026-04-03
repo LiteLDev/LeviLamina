@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/storage/RealmEventForPlayer.h"
 #include "mc/world/level/storage/RealmEventId.h"
 
 // auto generated forward declare list

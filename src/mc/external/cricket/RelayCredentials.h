@@ -8,8 +8,8 @@ struct RelayCredentials {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk59a224;
-    ::ll::UntypedStorage<8, 32> mUnk66c32c;
+    ::ll::UntypedStorage<8, 32> mUnkac119f;
+    ::ll::UntypedStorage<8, 32> mUnk4a3ddf;
     // NOLINTEND
 
 public:

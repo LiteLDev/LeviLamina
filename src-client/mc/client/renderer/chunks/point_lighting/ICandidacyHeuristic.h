@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $reject(::SubChunkPos const&) const;
+
     // NOLINTEND
 };
 

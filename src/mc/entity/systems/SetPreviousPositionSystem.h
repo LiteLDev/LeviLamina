@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct NeedSetPreviousPositionFlagComponent;
 struct StateVectorComponent;
 // clang-format on
@@ -24,7 +24,7 @@ public:
     MCNAPI static void _tickSetPreviousPositionSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::NeedSetPreviousPositionFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::NeedSetPreviousPositionFlagComponent>,
             ::StateVectorComponent> view
     );
     // NOLINTEND

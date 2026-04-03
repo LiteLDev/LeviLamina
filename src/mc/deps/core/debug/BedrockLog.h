@@ -3,9 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/diagnostics/LogAreaID.h"
+#include "mc/diagnostics/LogAreaID.h"
 #include "mc/platform/diagnostics/bedrock_log/LogCategory.h"
-#include "mc/platform/diagnostics/bedrock_log/LogChannel.h"
 #include "mc/platform/diagnostics/bedrock_log/LogRule.h"
 
 // auto generated forward declare list
@@ -73,13 +72,6 @@ MCAPI_S void updateLogFilter(
     ::std::vector<::std::string> const&     filters,
     ::std::string&                          result,
     bool                                    toggle
-);
-
-MCAPI_C void updateLogSetting(
-    ::BedrockLog::LogCategory _category,
-    ::BedrockLog::LogChannel  _channel,
-    ::std::string const&      setting,
-    bool                      newValue
 );
 // NOLINTEND
 

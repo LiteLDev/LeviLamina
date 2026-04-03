@@ -96,7 +96,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
     // NOLINTEND
 
 public:
@@ -246,8 +246,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 
 public:

@@ -20,5 +20,8 @@ enum class AllExperiments : int {
     SimplifiedSpawnRules                   = 14,
     VoxelShapes                            = 15,
     Poi                                    = 16,
-    Count                                  = 17,
+    BrainPrototype                         = 17,
+    FurnaceRecipeBook                      = 18,
+    CustomProjectiles                      = 19,
+    Count                                  = 20,
 };

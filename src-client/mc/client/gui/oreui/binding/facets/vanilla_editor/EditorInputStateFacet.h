@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Services { struct ClientPlayerInputServiceProvider; }
 // clang-format on

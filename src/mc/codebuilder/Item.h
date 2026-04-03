@@ -8,9 +8,9 @@ struct Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk841754;
+    ::ll::UntypedStorage<8, 32> mUnk952229;
     ::ll::UntypedStorage<8, 8>  mUnk28281b;
-    ::ll::UntypedStorage<8, 32> mUnk49d480;
+    ::ll::UntypedStorage<8, 32> mUnkd27194;
     // NOLINTEND
 
 public:

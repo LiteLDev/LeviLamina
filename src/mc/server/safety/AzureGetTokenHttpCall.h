@@ -20,9 +20,9 @@ class AzureGetTokenHttpCall {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf21e56;
-    ::ll::UntypedStorage<8, 32> mUnka51bf5;
-    ::ll::UntypedStorage<8, 32> mUnkac386b;
+    ::ll::UntypedStorage<8, 32> mUnkf4b0ce;
+    ::ll::UntypedStorage<8, 32> mUnkaca72c;
+    ::ll::UntypedStorage<8, 32> mUnk8b6eb9;
     ::ll::UntypedStorage<8, 32> mUnked5c9b;
     // NOLINTEND
 

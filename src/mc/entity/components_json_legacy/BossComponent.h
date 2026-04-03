@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/safety/RedactableString.h"
 #include "mc/world/actor/ai/util/BossBarColor.h"
 #include "mc/world/actor/ai/util/BossBarOverlay.h"
@@ -14,7 +15,6 @@ class Actor;
 class CompoundTag;
 class DataLoadHelper;
 class Player;
-namespace mce { class UUID; }
 // clang-format on
 
 struct BossComponent {

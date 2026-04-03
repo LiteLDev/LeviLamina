@@ -5,13 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/editor/selection/SelectionVolumeUpdate.h"
 #include "mc/editor/structure/StructureSource.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor { struct EditorStructureDataRemoved; }
 namespace Editor { struct EditorStructureDataUpdated; }

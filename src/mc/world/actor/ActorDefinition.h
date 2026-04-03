@@ -19,7 +19,6 @@
 #include "mc/entity/components_json_legacy/ManagedWanderingTraderDescription.h"
 #include "mc/entity/components_json_legacy/OpenDoorAnnotationDescription.h"
 #include "mc/entity/components_json_legacy/ProjectileDescription.h"
-#include "mc/entity/components_json_legacy/PushableDescription.h"
 #include "mc/entity/components_json_legacy/TeleportDescription.h"
 #include "mc/entity/components_json_legacy/TransformationDescription.h"
 #include "mc/entity/definitions/AmphibiousMoveControlDescription.h"
@@ -70,7 +69,9 @@ class ActorDefinitionEvent;
 class ActorEventResponseFactory;
 class ActorFactory;
 class CommonResourceDefinitionMap;
+class Experiments;
 class MinEngineVersion;
+class PackLoadContext;
 class SemVersion;
 struct ActorDefinitionAttribute;
 struct ActorDocumentDataParams;
@@ -81,16 +82,16 @@ class ActorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 968, ::ActorDefinitionDescriptor>                                mDescription;
+    ::ll::TypedStorage<8, 960, ::ActorDefinitionDescriptor>                                mDescription;
     ::ll::TypedStorage<8, 40, ::IdentifierDescription>                                     mIdentifier;
     ::ll::TypedStorage<8, 40, ::RuntimeIdentifierDescription>                              mRuntimeIdentifier;
-    ::ll::TypedStorage<1, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
-    ::ll::TypedStorage<1, 16, ::IsSummonableDescription>                                   mIsSummonable;
+    ::ll::TypedStorage<8, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
+    ::ll::TypedStorage<8, 16, ::IsSummonableDescription>                                   mIsSummonable;
     ::ll::TypedStorage<8, 72, ::AnimationsDescription>                                     mAnimationsDescription;
     ::ll::TypedStorage<8, 32, ::AnimationScriptsDescription>                               mAnimationScriptsDescription;
     ::ll::TypedStorage<8, 24, ::ActorPropertiesDescription>                                mActorPropertiesDescription;
     ::ll::TypedStorage<8, 32, ::ActorAliasDescription>                                     mActorAliasDescription;
-    ::ll::TypedStorage<4, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
+    ::ll::TypedStorage<8, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CommonResourceDefinitionMap>>            mCommonResourceDefinitionMap;
@@ -99,25 +100,25 @@ public:
     ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                               mDynamicPropertiesDefinition;
     ::ll::TypedStorage<8, 56, ::AttackDescription>                                         mAttack;
     ::ll::TypedStorage<8, 56, ::MobEffectChangeDescription>                                mMobEffects;
-    ::ll::TypedStorage<4, 16, ::AmphibiousMoveControlDescription>                          mAmphibiousMoveControl;
+    ::ll::TypedStorage<8, 16, ::AmphibiousMoveControlDescription>                          mAmphibiousMoveControl;
     ::ll::TypedStorage<8, 40, ::BehaviorTreeDescription>                                   mBehavior;
     ::ll::TypedStorage<8, 72, ::BreakBlocksDescription>                                    mBreakBlocks;
-    ::ll::TypedStorage<4, 16, ::BreakDoorAnnotationDescription>                            mBreakDoorAnnotation;
-    ::ll::TypedStorage<1, 8, ::BucketableDescription>                                      mBucketable;
-    ::ll::TypedStorage<4, 24, ::CommandBlockDescription>                                   mCommandBlock;
-    ::ll::TypedStorage<4, 24, ::ContainerDescription>                                      mContainer;
+    ::ll::TypedStorage<8, 16, ::BreakDoorAnnotationDescription>                            mBreakDoorAnnotation;
+    ::ll::TypedStorage<8, 8, ::BucketableDescription>                                      mBucketable;
+    ::ll::TypedStorage<8, 24, ::CommandBlockDescription>                                   mCommandBlock;
+    ::ll::TypedStorage<8, 24, ::ContainerDescription>                                      mContainer;
     ::ll::TypedStorage<8, 128, ::DwellerDescription>                                       mDweller;
-    ::ll::TypedStorage<4, 16, ::GenericMoveControlDescription>                             mGenericMoveControl;
-    ::ll::TypedStorage<4, 24, ::GlideMoveControlDescription>                               mGlideMoveControl;
-    ::ll::TypedStorage<1, 8, ::HideDescription>                                            mHide;
+    ::ll::TypedStorage<8, 16, ::GenericMoveControlDescription>                             mGenericMoveControl;
+    ::ll::TypedStorage<8, 24, ::GlideMoveControlDescription>                               mGlideMoveControl;
+    ::ll::TypedStorage<8, 8, ::HideDescription>                                            mHide;
     ::ll::TypedStorage<8, 40, ::IllagerBeastBlockedDescription>                            mIllagerBeastBlocked;
-    ::ll::TypedStorage<1, 8, ::ManagedWanderingTraderDescription>                          mManagedWanderingTrader;
-    ::ll::TypedStorage<4, 16, ::MoveControlBasicDescription>                               mMoveControl;
-    ::ll::TypedStorage<4, 16, ::MoveControlDolphinDescription>                             mDolphinSwimControl;
-    ::ll::TypedStorage<4, 16, ::MoveControlFlyDescription>                                 mFlyControl;
-    ::ll::TypedStorage<4, 16, ::MoveControlSkipDescription>                                mHopControl;
-    ::ll::TypedStorage<4, 16, ::MoveControlHoverDescription>                               mHoverControl;
-    ::ll::TypedStorage<4, 24, ::MoveControlSwayDescription>                                mSwimControl;
+    ::ll::TypedStorage<8, 8, ::ManagedWanderingTraderDescription>                          mManagedWanderingTrader;
+    ::ll::TypedStorage<8, 16, ::MoveControlBasicDescription>                               mMoveControl;
+    ::ll::TypedStorage<8, 16, ::MoveControlDolphinDescription>                             mDolphinSwimControl;
+    ::ll::TypedStorage<8, 16, ::MoveControlFlyDescription>                                 mFlyControl;
+    ::ll::TypedStorage<8, 16, ::MoveControlSkipDescription>                                mHopControl;
+    ::ll::TypedStorage<8, 16, ::MoveControlHoverDescription>                               mHoverControl;
+    ::ll::TypedStorage<8, 24, ::MoveControlSwayDescription>                                mSwimControl;
     ::ll::TypedStorage<8, 88, ::NavigationClimbDescription>                                mWallClimberNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationFloatDescription>                                mFloatNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationFlyDescription>                                  mFlyingNavigation;
@@ -125,23 +126,22 @@ public:
     ::ll::TypedStorage<8, 88, ::NavigationGenericDescription>                              mGenericNavigation;
     ::ll::TypedStorage<8, 120, ::NavigationSwimDescription>                                mWaterboundNavigation;
     ::ll::TypedStorage<8, 88, ::NavigationWalkDescription>                                 mNavigation;
-    ::ll::TypedStorage<1, 8, ::PersistentDescription>                                      mPersistent;
+    ::ll::TypedStorage<8, 8, ::PersistentDescription>                                      mPersistent;
     ::ll::TypedStorage<8, 48, ::PreferredPathDescription>                                  mPreferredPath;
     ::ll::TypedStorage<8, 360, ::ProjectileDescription>                                    mProjectile;
-    ::ll::TypedStorage<1, 16, ::PushableDescription>                                       mPushable;
-    ::ll::TypedStorage<4, 24, ::SlimeMoveControlDescription>                               mSlimeMoveControl;
-    ::ll::TypedStorage<4, 24, ::StrengthDescription>                                       mStrength;
+    ::ll::TypedStorage<8, 24, ::SlimeMoveControlDescription>                               mSlimeMoveControl;
+    ::ll::TypedStorage<8, 24, ::StrengthDescription>                                       mStrength;
     ::ll::TypedStorage<8, 136, ::TrailDescription>                                         mTrail;
-    ::ll::TypedStorage<4, 48, ::TeleportDescription>                                       mTeleport;
+    ::ll::TypedStorage<8, 48, ::TeleportDescription>                                       mTeleport;
     ::ll::TypedStorage<4, 12, ::SharedTypes::v1_21_100::TickWorldDefinition>               mTickWorld;
-    ::ll::TypedStorage<1, 8, ::TradeResupplyDescription>                                   mTradeResupply;
-    ::ll::TypedStorage<1, 8, ::TrustDescription>                                           mTrust;
+    ::ll::TypedStorage<8, 8, ::TradeResupplyDescription>                                   mTradeResupply;
+    ::ll::TypedStorage<8, 8, ::TrustDescription>                                           mTrust;
     ::ll::TypedStorage<8, 112, ::EconomyTradeableDescription>                              mEconomyTradeable;
     ::ll::TypedStorage<8, 320, ::TransformationDescription>                                mTransformation;
-    ::ll::TypedStorage<4, 16, ::DynamicJumpControlDescription>                             mDynamicJumpControl;
-    ::ll::TypedStorage<4, 16, ::JumpControlDescription>                                    mJumpControl;
-    ::ll::TypedStorage<1, 8, ::OpenDoorAnnotationDescription>                              mOpenDoorAnnotation;
-    ::ll::TypedStorage<1, 8, ::TripodCameraDescription>                                    mTripodCamera;
+    ::ll::TypedStorage<8, 48, ::DynamicJumpControlDescription>                             mDynamicJumpControl;
+    ::ll::TypedStorage<8, 48, ::JumpControlDescription>                                    mJumpControl;
+    ::ll::TypedStorage<8, 8, ::OpenDoorAnnotationDescription>                              mOpenDoorAnnotation;
+    ::ll::TypedStorage<8, 8, ::TripodCameraDescription>                                    mTripodCamera;
     // NOLINTEND
 
 public:
@@ -157,15 +157,16 @@ public:
         ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
+        ::Experiments const&         experiments,
         ::LogArea                    logArea
     );
 
     MCAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
 
-    MCAPI void parseEntityDescription(
+    MCAPI bool parseEntityDescription(
         ::cereal::DynamicValue const& description,
         ::SemVersion const&           formatVersion,
-        ::MinEngineVersion const&     minEngineVersion
+        ::PackLoadContext const&      packLoadContext
     );
 
     MCAPI void parseEvents(
@@ -173,6 +174,7 @@ public:
         ::MinEngineVersion const&     minEngineVersion,
         ::SemVersion const&           formatVersion,
         ::ActorEventResponseFactory*  responseFactory,
+        ::Experiments const&          experiments,
         ::JsonBetaState               useBetaFeatures
     );
 

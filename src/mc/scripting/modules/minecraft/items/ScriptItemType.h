@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string getLocalizationKey() const;
+
     MCAPI ::std::string getName() const;
     // NOLINTEND
 

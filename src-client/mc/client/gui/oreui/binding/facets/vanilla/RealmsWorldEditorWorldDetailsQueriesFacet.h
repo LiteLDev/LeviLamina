@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/realms/RealmsWorldEditorState.h"
+#include "mc/client/realms/RealmsWorldEditorStateStatus.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/util/SubscribedValue.h"
 
@@ -20,6 +22,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsWorldEditor>>    mRealmsWorldEditor;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsWorldEditorStateSubscriber;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorState>                   mState;
+    ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldEditorStateStatus>             mStatus;
     ::ll::TypedStorage<1, 1, bool>                                               mIsDirty;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmWorldChangeSubscription;
     ::ll::TypedStorage<8, 48, ::SubscribedValue<::std::string>>                  mWorldSeedSubVal;
@@ -29,6 +34,12 @@ public:
     ::ll::TypedStorage<8, 24, ::SubscribedValue<bool>>                           mStartWithMapSubVal;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<bool>>                           mStartWithBonusChestSubVal;
     ::ll::TypedStorage<8, 24, ::SubscribedValue<int>>                            mSimulationDistanceSubVal;
+    ::ll::TypedStorage<8, 32, ::std::string>                                     mRealmName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                     mRealmDescription;
+    ::ll::TypedStorage<1, 1, bool>                                               mRealmAreTexturesRequired;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsNameSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsDescriptionSubscriber;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mRealmsAreTexturesRequiredSubscriber;
     // NOLINTEND
 
 public:
@@ -52,15 +63,25 @@ public:
 
     MCAPI void _refreshRealmWorldSubscriptions();
 
+    MCFOLD bool areRealmTexturesRequired() const;
+
     MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
 
     MCFOLD int getGeneratorType() const;
+
+    MCAPI ::std::string const& getRealmsDescription() const;
+
+    MCFOLD ::std::string const& getRealmsName() const;
 
     MCAPI int getSimulationDistance() const;
 
     MCFOLD bool getStartWithBonusChest() const;
 
     MCFOLD bool getStartWithMap() const;
+
+    MCFOLD ::Realms::RealmsWorldEditorState getState() const;
+
+    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
 
     MCFOLD bool getUseFlatWorld() const;
 
@@ -88,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCAPI bool $update();
     // NOLINTEND
 
 public:

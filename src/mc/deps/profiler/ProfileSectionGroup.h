@@ -6,11 +6,20 @@ namespace Core::Profile {
 
 class ProfileSectionGroup {
 public:
+    // ProfileSectionGroup inner types declare
+    // clang-format off
+    struct ExplicitlyInvalid;
+    // clang-format on
+
+    // ProfileSectionGroup inner types define
+    struct ExplicitlyInvalid {};
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk2306f8;
     ::ll::UntypedStorage<1, 1> mUnkf8f57a;
-    ::ll::UntypedStorage<1, 1> mUnk1533fc;
+    ::ll::UntypedStorage<1, 2> mUnk1533fc;
     // NOLINTEND
 
 public:

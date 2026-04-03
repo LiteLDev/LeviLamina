@@ -13,7 +13,7 @@ class IDefinitionInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk32d71a;
+    ::ll::UntypedStorage<8, 32> mUnk3f4ee1;
     // NOLINTEND
 
 public:

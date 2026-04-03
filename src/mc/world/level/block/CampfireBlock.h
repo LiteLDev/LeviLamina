@@ -94,6 +94,8 @@ public:
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
@@ -109,10 +111,6 @@ public:
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-#ifdef LL_PLAT_C
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-#endif
 
 
     // NOLINTEND

@@ -64,8 +64,8 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRandomTickSpeedString;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRespawnRadiusString;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                   mWorldImagePath;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                     mEditedLevel;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                                mLevelData;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                     mEditedLevel;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                mLevelData;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                 mOriginalExperiments;
     ::ll::TypedStorage<4, 4, ::EduCloud::WorldSyncState const>                     mEditedLevelSyncState;
     ::ll::TypedStorage<1, 1, bool>                                                 mEditedLevelDeleted;
@@ -108,6 +108,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mCloudFileName;
     ::ll::TypedStorage<8, 32, ::std::string> mCloudLastChanged;
     ::ll::TypedStorage<1, 1, bool>           mCanEditGameModeInEdu;
+    ::ll::TypedStorage<1, 1, bool>           mUnhideServerSettings;
     // NOLINTEND
 
 public:
@@ -151,14 +152,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool createWorld);
+    MCAPI WorldSettingsScreenController(
+        ::std::shared_ptr<::MainMenuScreenModel> model,
+        bool                                     createWorld,
+        bool                                     unhideServerSettings
+    );
 
     MCAPI WorldSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
         ::std::function<void()>                  onOpenCallback,
-        ::std::string                            initialPackId
+        ::std::string                            initialPackId,
+        bool                                     unhideServerSettings
     );
 
     MCAPI bool _achievementsWillBeDisabledOnLoad();
@@ -292,14 +298,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool createWorld);
+    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool createWorld, bool unhideServerSettings);
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
         ::std::function<void()>                  onOpenCallback,
-        ::std::string                            initialPackId
+        ::std::string                            initialPackId,
+        bool                                     unhideServerSettings
     );
     // NOLINTEND
 

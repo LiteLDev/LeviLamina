@@ -34,6 +34,8 @@ public:
         // NOLINTBEGIN
         MCAPI Tag();
 
+        MCAPI explicit Tag(::CompoundTag&& tag);
+
         MCAPI ~Tag();
         // NOLINTEND
 
@@ -41,6 +43,8 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor();
+
+        MCAPI void* $ctor(::CompoundTag&& tag);
         // NOLINTEND
 
     public:

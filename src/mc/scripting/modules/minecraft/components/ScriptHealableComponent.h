@@ -11,7 +11,6 @@
 class HealableComponent;
 class HealableDefinition;
 struct FeedItem;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -36,14 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:

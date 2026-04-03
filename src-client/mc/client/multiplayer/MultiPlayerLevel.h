@@ -10,7 +10,6 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/PlayerSleepManager.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,6 +20,7 @@ class DisplayActorManager;
 class EntityContext;
 class EntitySystems;
 class Experiments;
+class ISubChunkLighter;
 class LevelChunk;
 class LevelSettings;
 class MapDataManager;
@@ -28,16 +28,21 @@ class NetworkIdentifier;
 class SerializedSkinRef;
 class SubChunkPacket;
 class SubChunkRequestManager;
+class TickTimeManager;
+class TickTimeManagerClient;
 class WeakEntityRef;
 struct ActorUniqueID;
 struct ArmorTrimIconGenerator;
 struct ArmorTrimUnloader;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 struct CameraRegistry;
+struct ClientSubChunkLighter;
 struct MultiPlayerLevelArguments;
 struct SubChunkManager;
 struct Tick;
 struct TrustedSkinHelper;
 struct VolumeEntityManagerClient;
+namespace GameModeExt { struct MessengerFactory; }
 // clang-format on
 
 class MultiPlayerLevel : public ::Level, public ::BeforeLevelForLevelHoldingOwnership {
@@ -54,6 +59,7 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::CameraRegistry>>>                 mCameraRegistry;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::EntitySystems>>>                  mCameraSystems;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VolumeEntityManagerClient>>                       mVolumeEntityManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::OwnerPtr<::TickTimeManagerClient>>>                mTickTimeManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::SubChunkManager>>>   mSubChunkManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                     mOnSubChunkLoaded;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::DisplayActorManager>>>
@@ -62,6 +68,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimIconGenerator>>                       mArmorTrimIconGenerator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ArmorTrimUnloader>>                            mArmorTrimUnloader;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::MapDataManager>>> mMapDataManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientSubChunkLighter>>                       mClientSubChunkLighter;
     // NOLINTEND
 
 public:
@@ -79,7 +86,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     ) /*override*/;
 
@@ -136,7 +143,15 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
+    virtual ::GameModeExt::MessengerFactory createMessengerFactory() const /*override*/;
+
     virtual void subChunkTickAndSendRequests() /*override*/;
+
+    virtual ::std::weak_ptr<::ISubChunkLighter> getSubChunkLighter() const /*override*/;
+
+    virtual ::TickTimeManager const& _getTickTimeManager() const /*override*/;
+
+    virtual ::TickTimeManager& _getTickTimeManager() /*override*/;
 
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
@@ -156,6 +171,8 @@ public:
         short          absoluteSubChunkIndex,
         bool           subChunkVisibilityChanged
     );
+
+    MCAPI void cameraTick();
     // NOLINTEND
 
 public:
@@ -179,7 +196,7 @@ public:
         ::Experiments const&   experiments,
         ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
             biomeIdToResolvedData
     );
 
@@ -236,7 +253,15 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
+    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
+
     MCAPI void $subChunkTickAndSendRequests();
+
+    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+
+    MCFOLD ::TickTimeManager const& $_getTickTimeManager() const;
+
+    MCFOLD ::TickTimeManager& $_getTickTimeManager();
 
     MCAPI ::MapDataManager& $_getMapDataManager();
 

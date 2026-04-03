@@ -61,21 +61,21 @@ public:
 
     MCAPI_C static ::mce::Color const& ORANGE();
 
-    MCAPI static ::mce::Color const& PINK();
+    MCAPI_C static ::mce::Color const& PINK();
 
     MCAPI static ::mce::Color const& PURPLE();
 
-    MCAPI static ::mce::Color const& REBECCA_PURPLE();
+    MCAPI_C static ::mce::Color const& REBECCA_PURPLE();
 
     MCAPI static ::mce::Color const& RED();
 
-    MCAPI static ::mce::Color const& SHADE_DOWN();
+    MCAPI_C static ::mce::Color const& SHADE_DOWN();
 
-    MCAPI static ::mce::Color const& SHADE_NORTH_SOUTH();
+    MCAPI_C static ::mce::Color const& SHADE_NORTH_SOUTH();
 
-    MCAPI static ::mce::Color const& SHADE_UP();
+    MCAPI_C static ::mce::Color const& SHADE_UP();
 
-    MCAPI static ::mce::Color const& SHADE_WEST_EAST();
+    MCAPI_C static ::mce::Color const& SHADE_WEST_EAST();
 
     MCAPI static ::mce::Color const& WHITE();
 
@@ -86,8 +86,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
-
-    MCFOLD_C void* $ctor(::mce::Color const& color, float a_);
 
     MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND

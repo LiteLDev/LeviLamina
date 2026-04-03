@@ -18,7 +18,7 @@ class RTCRemoteOutboundRtpStreamStats : public ::webrtc::RTCSentRtpStreamStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkf2bff5;
+    ::ll::UntypedStorage<8, 40> mUnk5b7a72;
     ::ll::UntypedStorage<8, 16> mUnkd6052a;
     ::ll::UntypedStorage<8, 16> mUnk713468;
     ::ll::UntypedStorage<8, 16> mUnkf2664f;

@@ -58,7 +58,7 @@ public:
     ::ll::TypedStorage<8, 32, ::World::WorldID>                              mCurrentWorldId;
     ::ll::TypedStorage<8, 8, ::World::WorldData*>                            mCurrentWorldData;
     ::ll::TypedStorage<8, 656, ::Realms::World>                              mRealmWorld;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                          mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                          mLevelDataWrapper;
     ::ll::TypedStorage<8, 8, ::Realms::RealmId>                              mPreviewRealmId;
     ::ll::TypedStorage<4, 8, ::std::optional<::OreUI::UploadToRealmsError>>  mUploadRealmWorldError;
     ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>   mUploadRealmWorldTask;

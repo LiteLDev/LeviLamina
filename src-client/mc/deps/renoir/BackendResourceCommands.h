@@ -31,7 +31,8 @@ enum class BackendResourceCommands : int {
     SetCBODebugName          = 23,
     SetSamplerDebugName      = 24,
     TransitionTextureState   = 25,
-    Count                    = 26,
+    CopyTextureToTexture     = 26,
+    Count                    = 27,
 };
 
 }

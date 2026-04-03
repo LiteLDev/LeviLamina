@@ -5,18 +5,21 @@
 // auto generated forward declare list
 // clang-format off
 namespace OreUI { class ITelemetry; }
-namespace OreUI { class OptionChange; }
+namespace Social::Events { class OptionChange; }
 // clang-format on
 
 namespace OreUI {
 
 class TelemetryBatcher {
 public:
+    // TelemetryBatcher inner types define
+    using OptionValue = ::std::variant<bool, int, float, ::std::string>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::OreUI::OptionChange>>>
-                                                   mTrackedOptions;
-    ::ll::TypedStorage<8, 8, ::OreUI::ITelemetry&> mTelemetry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::Events::OptionChange>> mTrackedOptions;
+    ::ll::TypedStorage<8, 8, ::OreUI::ITelemetry&>                                                 mTelemetry;
     // NOLINTEND
 
 public:
@@ -28,9 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendTrackedTelemetry(::std::string const& optionsGroupName);
+    MCAPI ::std::unordered_map<::std::string, ::Social::Events::OptionChange> getTrackedOptionChanges() const;
 
-    MCAPI void trackOptionChanged(::std::string const& optionName, int oldOption, int newOption);
+    MCAPI ::std::unordered_map<::std::string, int> getTrackedOptions() const;
+
+    MCAPI ~TelemetryBatcher();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

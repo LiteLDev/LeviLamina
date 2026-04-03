@@ -107,11 +107,16 @@ public:
         // NOLINTEND
     };
 
-    using CurrentLineCallback = ::std::function<bool(::std::string const&, ::std::string&, float, uint&)> const;
+    using CurrentLineCallback = ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const;
+
+    using StringCacheStoredKey = ::std::tuple<::std::string, ::mce::Color, float, float, bool, bool>;
+
+    using StringCacheLookupKey = ::std::tuple<::std::string_view, ::mce::Color, float, float, bool, bool>;
 
     using StringCache = ::std::map<
         ::std::tuple<::std::string, ::mce::Color, float, float, bool, bool>,
-        ::std::vector<::std::shared_ptr<::Font::TextObject>>>;
+        ::std::vector<::std::shared_ptr<::Font::TextObject>>,
+        ::std::less<void>>;
 
 public:
     // member variables
@@ -125,7 +130,8 @@ public:
         16,
         ::std::map<
             ::std::tuple<::std::string, ::mce::Color, float, float, bool, bool>,
-            ::std::vector<::std::shared_ptr<::Font::TextObject>>>>
+            ::std::vector<::std::shared_ptr<::Font::TextObject>>,
+            ::std::less<void>>>
                                                   mStringCache;
     ::ll::TypedStorage<4, 4, int>                 mObfuscatedIndex;
     ::ll::TypedStorage<4, 4, float>               mObfuscatedTextTime;
@@ -163,7 +169,7 @@ public:
 
     virtual void drawCached(
         ::ScreenContext&          screenContext,
-        ::std::string const&      str,
+        ::std::string_view        str,
         float                     x,
         float                     y,
         ::mce::Color const&       color,
@@ -189,7 +195,7 @@ public:
 
     virtual bool supportsChar(int const&) = 0;
 
-    virtual int getLineLength(::std::string const& str, float fontSize, bool showColorSymbol);
+    virtual int getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
 
     virtual float getWrapHeight() const = 0;
 
@@ -229,7 +235,7 @@ public:
 
     virtual void unloadTextures();
 
-    virtual void onLanguageChanged(::std::string const&);
+    virtual void onLanguageChanged(::std::string_view);
 
     virtual float buildChar(::std::vector<::Font::GlyphQuad>&, int, ::mce::Color const&, bool, float, float, bool) = 0;
 
@@ -247,7 +253,7 @@ public:
 
     virtual ::ResourceLocation _getFontSheetLocation(int, bool) const = 0;
 
-    virtual ::std::string _remapString(::std::string const& str) const;
+    virtual ::std::string _remapString(::std::string_view str) const;
     // NOLINTEND
 
 public:
@@ -256,118 +262,110 @@ public:
     MCAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI bool _chopString(
-        ::std::string&                                                            currentLine,
-        ::std::string&                                                            activeFormatting,
-        float&                                                                    totalHeight,
-        uint&                                                                     remainingLineCount,
-        float                                                                     maxWidth,
-        bool                                                                      showColorSymbol,
-        bool                                                                      centered,
-        float                                                                     fontSize,
-        ::std::function<bool(::std::string const&, ::std::string&, float, uint&)> currentLineCallback
+        ::std::string&                                                                 currentLine,
+        ::std::string&                                                                 activeFormatting,
+        float&                                                                         totalHeight,
+        uint&                                                                          remainingLineCount,
+        float                                                                          maxWidth,
+        bool                                                                           showColorSymbol,
+        bool                                                                           centered,
+        float                                                                          fontSize,
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> currentLineCallback
     );
 
     MCAPI void _drawTextSegment(
-        ::ScreenContext&     screenContext,
-        ::std::string const& str,
-        float                startX,
-        float                startY,
-        ::mce::Color const&  color,
-        bool                 centered,
-        bool                 shadow,
-        bool                 showColorSymbol,
-        ::mce::MaterialPtr*  optionalMat
+        ::ScreenContext&    screenContext,
+        ::std::string_view  str,
+        float               startX,
+        float               startY,
+        ::mce::Color const& color,
+        bool                centered,
+        bool                shadow,
+        bool                showColorSymbol,
+        ::mce::MaterialPtr* optionalMat
     );
 
     MCAPI int _drawWordWrap(
-        ::ScreenContext&     screenContext,
-        ::std::string const& str,
-        float                x,
-        float                y,
-        float                w,
-        ::mce::Color const&  color,
-        uint                 maxLine,
-        float                fontSize,
-        bool                 shadow,
-        bool                 centered,
-        bool                 showColorSymbol,
-        ::mce::MaterialPtr*  optionalMat
+        ::ScreenContext&    screenContext,
+        ::std::string_view  str,
+        float               x,
+        float               y,
+        float               w,
+        ::mce::Color const& color,
+        uint                maxLine,
+        float               fontSize,
+        bool                shadow,
+        bool                centered,
+        bool                showColorSymbol,
+        ::mce::MaterialPtr* optionalMat
     );
 
-    MCAPI int _getStringChopAmount(::std::string const& currentLine, bool showColorSymbol, float maxWidth);
+    MCAPI int _getStringChopAmount(::std::string_view currentLine, bool showColorSymbol, float maxWidth);
 
     MCAPI ::std::shared_ptr<::Font::TextObject> _makeTextObject(
-        ::Tessellator&       tessellator,
-        ::std::string const& str,
-        ::mce::Color const&  ccolor,
-        bool                 showColorSymbol,
-        bool                 ignoreColorFormatting,
-        int                  caretPosition,
-        bool                 shadow,
-        float                linePadding,
-        bool                 isOddGuiScale,
-        ::mce::Color const&  resetColorOverride,
-        bool                 uiMaterial,
-        float                outlineWidth,
-        float                yCaretOffset,
-        bool                 autoGenNormalsAndTangents
+        ::Tessellator&      tessellator,
+        ::std::string_view  str,
+        ::mce::Color const& ccolor,
+        bool                showColorSymbol,
+        bool                ignoreColorFormatting,
+        int                 caretPosition,
+        bool                shadow,
+        float               linePadding,
+        bool                isOddGuiScale,
+        ::mce::Color const& resetColorOverride,
+        bool                uiMaterial,
+        float               outlineWidth,
+        float               yCaretOffset,
+        bool                autoGenNormalsAndTangents
     );
 
     MCAPI int _processHeightWrap(
-        ::std::string const&                                                      str,
-        float                                                                     startX,
-        float                                                                     startY,
-        float                                                                     maxWidth,
-        uint                                                                      maxLine,
-        bool                                                                      showColorSymbol,
-        bool                                                                      centered,
-        float                                                                     fontSize,
-        ::std::function<bool(::std::string const&, ::std::string&, float, uint&)> currentLineCallback
+        ::std::string_view                                                             str,
+        float                                                                          startX,
+        float                                                                          startY,
+        float                                                                          maxWidth,
+        uint                                                                           maxLine,
+        bool                                                                           showColorSymbol,
+        bool                                                                           centered,
+        float                                                                          fontSize,
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> currentLineCallback
     );
 
-    MCAPI void calculateTextWidths(::std::string const& text, ::std::vector<int>& widths);
+    MCAPI void calculateTextWidths(::std::string_view text, ::std::vector<int>& widths);
 
     MCAPI void drawShadow(
-        ::ScreenContext&     screenContext,
-        ::std::string const& str,
-        float                x,
-        float                y,
-        ::mce::Color const&  color,
-        bool                 showColorSymbol,
-        ::mce::MaterialPtr*  optionalMat,
-        float                linePadding
+        ::ScreenContext&    screenContext,
+        ::std::string_view  str,
+        float               x,
+        float               y,
+        ::mce::Color const& color,
+        bool                showColorSymbol,
+        ::mce::MaterialPtr* optionalMat,
+        float               linePadding
     );
 
     MCAPI void drawTransformed(
-        ::ScreenContext&     screenContext,
-        ::std::string const& str,
-        float                x,
-        float                y,
-        ::mce::Color const&  color,
-        float                angle,
-        float                s,
-        bool                 centered,
-        float                maxWidth,
-        bool                 shadow
+        ::ScreenContext&    screenContext,
+        ::std::string_view  str,
+        float               x,
+        float               y,
+        ::mce::Color const& color,
+        float               angle,
+        float               s,
+        bool                centered,
+        float               maxWidth,
+        bool                shadow
     );
 
     MCAPI ::std::unordered_set<::ResourceLocation> const& getGlyphLocations() const;
 
     MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCAPI bool hasFormattingCodes(::std::string const& str) const;
-
-    MCAPI int processLinesInBox(
-        ::std::string const&                                                      str,
-        float                                                                     maxWidth,
-        uint                                                                      maxLines,
-        bool                                                                      showColorSymbol,
-        ::std::function<bool(::std::string const&, ::std::string&, float, uint&)> currentLineCallback
-    );
+    MCAPI bool hasFormattingCodes(::std::string_view str) const;
 
     MCAPI void resetFontData(bool uploadTextureImmediately);
 
-    MCAPI bool supportsString(::std::string const& str);
+    MCAPI bool supportsString(::std::string_view str);
 
     MCAPI void tickObfuscatedTextIndex(float deltaTime, float obfuscateSwitchTime);
     // NOLINTEND
@@ -375,25 +373,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool containsWideChar(::std::string const& str);
+    MCAPI static bool containsWideChar(::std::string_view str);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_FONT_HEIGHT();
-
-    MCAPI static int const& DEFAULT_WRAP_HEIGHT();
-
     MCAPI static ::Core::PathBuffer<::std::string> const& NOT_FOUND_PAGE();
-
-    MCAPI static int const& NULL_CHAR();
-
-    MCAPI static float const& OBFUSCATED_TIME_SWITCH();
-
-    MCAPI static int const& PRIVATE_USE_AREA_BEGIN();
-
-    MCAPI static int const& PRIVATE_USE_AREA_END();
 
     MCAPI static int const& UNICODE_REPLACEMENT_CHARACTER_CODE();
     // NOLINTEND
@@ -417,7 +403,7 @@ public:
 
     MCAPI void $drawCached(
         ::ScreenContext&          screenContext,
-        ::std::string const&      str,
+        ::std::string_view        str,
         float                     x,
         float                     y,
         ::mce::Color const&       color,
@@ -441,7 +427,7 @@ public:
         bool                                                       autoGenNormalsAndTangents
     );
 
-    MCAPI int $getLineLength(::std::string const& str, float fontSize, bool showColorSymbol);
+    MCAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
 
     MCAPI float $getScaleFactor(int) const;
 
@@ -471,11 +457,11 @@ public:
 
     MCFOLD void $unloadTextures();
 
-    MCFOLD void $onLanguageChanged(::std::string const&);
+    MCFOLD void $onLanguageChanged(::std::string_view);
 
     MCAPI int $_getReplacementCharacter();
 
-    MCFOLD ::std::string $_remapString(::std::string const& str) const;
+    MCAPI ::std::string $_remapString(::std::string_view str) const;
     // NOLINTEND
 
 public:

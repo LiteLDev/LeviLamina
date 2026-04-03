@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
@@ -57,7 +58,7 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -76,13 +77,13 @@ public:
         int                                wouldSurviveCheckCooldown
     );
 
+    MCAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+
     MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
     MCAPI void _calculateAABB();
 
     MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
-
-    MCAPI bool _canSurviveOnBlock(::BlockSource const& region, ::BlockPos const& blockPos, bool beingPlaced) const;
 
     MCAPI bool _chunksLoaded3x3(::ChunkPos const& center);
 
@@ -125,7 +126,7 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

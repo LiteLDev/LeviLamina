@@ -41,6 +41,8 @@ public:
 
     MCAPI ::DlcBatchModel& getDlcBatchModel(::std::string const& productId);
 
+    MCAPI ::DlcBatchModel& getDlcBatchModel(::std::vector<::std::string> const& productIds);
+
     MCAPI ~DlcBatchCacheModel();
     // NOLINTEND
 

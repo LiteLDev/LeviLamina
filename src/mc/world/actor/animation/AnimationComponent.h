@@ -6,6 +6,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/util/MolangVariableMap.h"
 #include "mc/world/actor/RenderParams.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
@@ -21,16 +22,15 @@ class ActorAnimationControllerPlayer;
 class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
 class ActorSkeletalAnimationPtr;
+class ApplyAnimationContext;
 class BoneOrientation;
 class CommonResourceDefinitionMap;
-class DataDrivenGeometry;
 class ExpressionNode;
 class Matrix;
 class ModelPartLocator;
 struct AnimationComponentArguments;
-class DataDrivenModel;
+class ActorRenderData;
 struct ClientAnimationComponent;
-struct RenderControllerToProcess;
 // clang-format on
 
 class AnimationComponent {
@@ -86,15 +86,8 @@ public:
     ::ll::TypedStorage<8, 8, ::AnimationComponentID>        mOwnerUUID;
     ::ll::TypedStorage<8, 8, int64>                         mLastUpdateFrame;
     ::ll::TypedStorage<8, 8, uint64>                        mLastReloadInitTimeStampClient;
-#ifdef LL_PLAT_C
-    ::ll::TypedStorage<8, 24, ::std::vector<::RenderControllerToProcess>> mRenderControllersToProcess;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SkeletalHierarchyIndex>>    mSkeletalHierarchiesToProcess;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Matrix>>                    mQueryableBoneOrientations;
-    ::ll::TypedStorage<1, 1, bool>                                        mAreRenderControllersConstant;
-#endif
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenModel const>> mLastModelInitializedWith;
-    ::ll::TypedStorage<1, 1, bool>                                      mApplyAnimations;
-    ::ll::TypedStorage<1, 1, bool>                                      mNeedToUpdateQueryableBoneOrientations;
+    ::ll::TypedStorage<1, 1, bool>                          mApplyAnimations;
+    ::ll::TypedStorage<1, 1, bool>                          mNeedToUpdateQueryableBoneOrientations;
     // NOLINTEND
 
 public:
@@ -107,6 +100,24 @@ public:
     virtual ~AnimationComponent();
 
     virtual ::ClientAnimationComponent* tryGetClient();
+
+    virtual void visitApplyContext(
+        ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
+    ) const;
+
+    virtual void initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+
+    virtual void ensureClientAnimationComponentIsInitialized();
+
+    virtual void setDirty();
+
+    virtual void updateQueryableGeometryBoneOrientations();
+
+    virtual ::Matrix const* getQueryableBoneOrientation(uint64) const;
+
+    virtual ::gsl::span<::SkeletalHierarchyIndex const> getSkeletalHierarchiesToProcess() const;
+
+    virtual float _getActorRenderDeltaTime(::ActorRenderData const&) const;
     // NOLINTEND
 
 public:
@@ -121,12 +132,7 @@ public:
 
     MCAPI_C ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
 
-    MCAPI void applyAnimations(bool setDefaultPose);
-
-    MCAPI_C bool attemptToSetParentBoneMapping(
-        ::AnimationComponent& parentAnimationComponent,
-        ::BoneOrientation&    childBoneOrientation
-    ) const;
+    MCAPI_C void applyAnimations(bool setDefaultPose);
 
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
         ::HashedString const&                                    friendlyName,
@@ -143,8 +149,6 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCAPI_C void ensureClientAnimationComponentIsInitialized();
-
     MCAPI_C ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
 
     MCAPI_C void forceNextUpdateToApplyAnimations();
@@ -152,23 +156,16 @@ public:
     MCAPI_C ::std::shared_ptr<::ActorAnimationControllerPlayer>
     getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
 
-    MCAPI_C ::std::vector<::BoneOrientation>& getBoneOrientations(::DataDrivenGeometry const& sourceGeo);
-
     MCAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
-    MCAPI_C ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
-
-    MCAPI_C ::Matrix const* getQueryableBoneOrientation(uint64 boneNameHash) const;
+    MCAPI_C ::std::weak_ptr<::CommonResourceDefinitionMap> getCommonResourceDefinitionMap();
 
     MCAPI_C float getRegisteredAnimationLength(::std::string const& friendlyName) const;
 
     MCAPI_C bool haveInitializedScriptsRun() const;
 
     MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
-
-    MCAPI_C void
-    initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
     MCAPI void initializeServerAnimationComponent(
         ::Actor&                                         actor,
@@ -184,20 +181,11 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCAPI void setDirty();
-
     MCAPI_C void setInitializedScriptsRun(bool);
 
-    MCAPI_C void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
+    MCAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
 
     MCAPI_C bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
-
-    MCAPI_C void updateQueryableGeometryBoneOrientations();
-
-    MCAPI_C void updateRenderControllersToProcess(
-        ::std::shared_ptr<::DataDrivenModel> itemModel,
-        ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
-    );
     // NOLINTEND
 
 public:
@@ -226,6 +214,24 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::ClientAnimationComponent* $tryGetClient();
+
+    MCAPI void $visitApplyContext(
+        ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
+    ) const;
+
+    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+
+    MCFOLD void $ensureClientAnimationComponentIsInitialized();
+
+    MCAPI void $setDirty();
+
+    MCFOLD void $updateQueryableGeometryBoneOrientations();
+
+    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64) const;
+
+    MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
+
+    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
 
 
     // NOLINTEND

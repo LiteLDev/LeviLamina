@@ -55,8 +55,6 @@ public:
 
     MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
 
-    MCAPI bool _mobMeetsPreconditions() const;
-
     MCAPI void _moveToTarget();
     // NOLINTEND
 

@@ -13,12 +13,12 @@ struct StreamParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb5c891;
-    ::ll::UntypedStorage<8, 24> mUnk7afffa;
-    ::ll::UntypedStorage<8, 24> mUnk9a92a5;
-    ::ll::UntypedStorage<8, 32> mUnk47ccd6;
-    ::ll::UntypedStorage<8, 24> mUnk284e47;
-    ::ll::UntypedStorage<8, 24> mUnk48385b;
+    ::ll::UntypedStorage<8, 32> mUnk4c9197;
+    ::ll::UntypedStorage<8, 24> mUnk2100e6;
+    ::ll::UntypedStorage<8, 24> mUnkaaf543;
+    ::ll::UntypedStorage<8, 32> mUnka31836;
+    ::ll::UntypedStorage<8, 24> mUnk5e096c;
+    ::ll::UntypedStorage<8, 24> mUnkdb29bf;
     // NOLINTEND
 
 public:

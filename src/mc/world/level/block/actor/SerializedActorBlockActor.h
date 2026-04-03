@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
@@ -57,14 +57,6 @@ public:
 
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    virtual void executeEvent(
-        ::BlockSource&,
-        ::BlockPos const& pos,
-        ::Block const&,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    ) /*override*/;
-
     virtual void getDebugText(
         ::std::vector<::std::string>& outputInfo,
         ::BlockPos const&             debugPos,
@@ -87,6 +79,9 @@ public:
         ::Vec3 const&   pos,
         ::Vec2 const&   rotation
     ) const;
+
+    MCAPI void
+    executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
     MCAPI void loadUserData(::CompoundTag const& tag);
 
@@ -123,14 +118,6 @@ public:
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $onChanged(::BlockSource& region);
-
-    MCAPI void $executeEvent(
-        ::BlockSource&,
-        ::BlockPos const& pos,
-        ::Block const&,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    );
 
     MCAPI void $getDebugText(
         ::std::vector<::std::string>& outputInfo,

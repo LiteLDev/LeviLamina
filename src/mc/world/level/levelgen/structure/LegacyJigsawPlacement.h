@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/util/Rotation.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockVolume;
 class BoundingBox;
-class ChunkPos;
 class Dimension;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;

@@ -24,7 +24,7 @@ class CherryTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                 mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                                 mTrunkBlockDescriptor;
     ::ll::TypedStorage<4, 4, int>                                                 mBaseHeight;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                                 mHeightIntervals;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeightedRandom::WeighedRandomItem>> mTreeTypeWeights;

@@ -17,7 +17,7 @@ class EntityComponentFactoryCerealBase : public ::EntityComponentFactoryBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk4f5b25;
+    ::ll::UntypedStorage<8, 64> mUnk8f50f9;
     ::ll::UntypedStorage<8, 24> mUnkd08b5d;
     // NOLINTEND
 

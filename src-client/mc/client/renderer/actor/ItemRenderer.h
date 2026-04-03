@@ -150,6 +150,17 @@ public:
         float                     scale
     );
 
+    MCAPI void _renderGuiGlowStickItem(
+        ::BaseActorRenderContext& renderContext,
+        ::ItemStack const&        item,
+        float                     x,
+        float                     y,
+        float                     lightMultiplier,
+        float                     scale,
+        float                     pickupPopPercentage,
+        float                     squeezeAmount
+    );
+
     MCAPI void _renderItemGroup(
         ::BaseActorRenderContext& renderContext,
         ::ItemActor&              itemEntity,

@@ -93,10 +93,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
-
-    MCAPI_C static int const& NO_SHIELD_PATTERN();
-
     MCAPI static ::std::string const& TIMESTAMP_TAG();
     // NOLINTEND
 

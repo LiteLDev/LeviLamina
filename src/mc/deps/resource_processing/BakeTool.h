@@ -13,8 +13,8 @@ class BakeTool {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72>  mUnke09763;
-    ::ll::UntypedStorage<8, 928> mUnkbaae44;
+    ::ll::UntypedStorage<8, 72>   mUnke09763;
+    ::ll::UntypedStorage<8, 1456> mUnk822e18;
     // NOLINTEND
 
 public:

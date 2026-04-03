@@ -21,15 +21,21 @@ struct SchemaDescription : public ::cereal::internal::SchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 416> mUnk9dbec0;
-    ::ll::UntypedStorage<8, 32>  mUnk5e1b13;
-    ::ll::UntypedStorage<8, 32>  mUnkd4aea8;
-    ::ll::UntypedStorage<8, 32>  mUnk702fe6;
-    ::ll::UntypedStorage<8, 24>  mUnkef7750;
+    ::ll::UntypedStorage<8, 456> mUnk9dbec0;
+    ::ll::UntypedStorage<8, 32>  mUnk887506;
+    ::ll::UntypedStorage<8, 32>  mUnk1fbc13;
+    ::ll::UntypedStorage<8, 32>  mUnkfd64a2;
+    ::ll::UntypedStorage<8, 24>  mUnke56e24;
+    ::ll::UntypedStorage<8, 24>  mUnkca1ec7;
     ::ll::UntypedStorage<8, 16>  mUnk109302;
     ::ll::UntypedStorage<8, 16>  mUnk1a97ca;
     ::ll::UntypedStorage<8, 16>  mUnkd3bebd;
-    ::ll::UntypedStorage<8, 24>  mUnk1a6731;
+    ::ll::UntypedStorage<8, 24>  mUnk31cfac;
+    ::ll::UntypedStorage<4, 8>   mUnkbfd93c;
+    ::ll::UntypedStorage<4, 8>   mUnke044de;
+    ::ll::UntypedStorage<1, 2>   mUnk493455;
+    ::ll::UntypedStorage<1, 2>   mUnkfcbed6;
+    ::ll::UntypedStorage<8, 40>  mUnk708860;
     // NOLINTEND
 
 public:

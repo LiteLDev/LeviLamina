@@ -8,7 +8,7 @@ struct QueueItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkd8f0ed;
+    ::ll::UntypedStorage<8, 32>  mUnkf17f98;
     ::ll::UntypedStorage<4, 4>   mUnk9fed68;
     ::ll::UntypedStorage<8, 168> mUnk919642;
     // NOLINTEND

@@ -16,7 +16,7 @@ class ScriptWidgetComponentSplineOptions : public ::Editor::ScriptModule::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk75885b;
+    ::ll::UntypedStorage<8, 24> mUnk2463bf;
     ::ll::UntypedStorage<4, 8>  mUnkbf8737;
     // NOLINTEND
 

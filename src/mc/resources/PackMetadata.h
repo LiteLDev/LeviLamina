@@ -6,7 +6,7 @@ class PackMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb401d7;
+    ::ll::UntypedStorage<8, 8> mUnkb81398;
     // NOLINTEND
 
 public:

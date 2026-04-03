@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/checked_resource_service/ServerResourcePointer.h"
+#include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 
 // auto generated forward declare list
 // clang-format off

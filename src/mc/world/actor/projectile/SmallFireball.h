@@ -8,13 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 // clang-format on
 
 class SmallFireball : public ::Fireball {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
     virtual ~SmallFireball() /*override*/ = default;
     // NOLINTEND
@@ -22,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, bool, bool);
 
 
     // NOLINTEND

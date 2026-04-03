@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActionEvent;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/actor/ActionEvent.h"
 
 class ActionQueue {
 public:

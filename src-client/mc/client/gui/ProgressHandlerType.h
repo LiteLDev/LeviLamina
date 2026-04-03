@@ -33,5 +33,6 @@ enum class ProgressHandlerType : int {
     CloudCommit           = 27,
     StorageMigration      = 28,
     SplitScreenAppearance = 29,
-    Generic               = 30,
+    PartyEligibility      = 30,
+    Generic               = 31,
 };

@@ -35,7 +35,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkb05a57;
     ::ll::UntypedStorage<8, 16> mUnk72a7d5;
     ::ll::UntypedStorage<8, 64> mUnkcec8f2;
-    ::ll::UntypedStorage<8, 24> mUnk196f66;
+    ::ll::UntypedStorage<8, 24> mUnkaadc4c;
     ::ll::UntypedStorage<8, 16> mUnk94bb7c;
     // NOLINTEND
 
@@ -81,6 +81,10 @@ public:
                                          ::NetherNet::ConnectError,
                                          ::NetherNet::CandidateAdd> const&) const> sendMessage,
         uint64                                                                     sessionId
+    );
+
+    MCNAPI void _completeAndClearConnection(
+        ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError> result
     );
 
     MCNAPI void _onIceConnectionChanged(::webrtc::PeerConnectionInterface::IceConnectionState newState);

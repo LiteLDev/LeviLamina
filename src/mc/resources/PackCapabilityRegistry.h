@@ -11,7 +11,7 @@ class PackCapabilityRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk11f2e7;
+    ::ll::UntypedStorage<8, 16> mUnk27dd51;
     // NOLINTEND
 
 public:

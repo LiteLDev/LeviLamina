@@ -26,8 +26,9 @@ MCAPI bool canAttach(
     ::Rotation                                             rhsRotation
 );
 
-MCAPI ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>
-createMetadataLoader(::cereal::ReflectionCtx const& ctx);
+MCAPI ::Puv::
+    Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile, ::SharedTypes::v1_21_80::JigsawStructureMetadataFile>
+    createMetadataLoader(::cereal::ReflectionCtx const& ctx);
 
 MCAPI ::BlockPos getPosition(
     ::SharedTypes::v1_21_80::JigsawBlockMetadata const& metadata,

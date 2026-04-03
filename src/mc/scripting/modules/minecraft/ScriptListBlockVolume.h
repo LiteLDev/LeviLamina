@@ -38,11 +38,11 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptListBlockVolume();
 
+    MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
+
     MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
-
-    MCAPI explicit ScriptListBlockVolume(::std::vector<::Vec3> const& locations);
+    MCAPI ScriptListBlockVolume(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
 
     MCAPI void add(::std::vector<::Vec3> const& locations);
 
@@ -60,11 +60,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
+
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
-
-    MCAPI void* $ctor(::std::vector<::Vec3> const& locations);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const& rhs);
     // NOLINTEND
 
 public:

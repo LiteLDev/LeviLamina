@@ -16,10 +16,10 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk9c0669;
     ::ll::UntypedStorage<4, 8>   mUnk4096b0;
     ::ll::UntypedStorage<8, 16>  mUnk1f81a5;
-    ::ll::UntypedStorage<8, 40>  mUnke86cc9;
+    ::ll::UntypedStorage<8, 40>  mUnkb46c97;
     ::ll::UntypedStorage<4, 12>  mUnk418029;
     ::ll::UntypedStorage<1, 1>   mUnkde5a68;
-    ::ll::UntypedStorage<8, 32>  mUnk32ca03;
+    ::ll::UntypedStorage<8, 32>  mUnk5e1050;
     ::ll::UntypedStorage<1, 1>   mUnkbfe0a3;
     ::ll::UntypedStorage<1, 1>   mUnke01a31;
     ::ll::UntypedStorage<8, 112> mUnk15a933;

@@ -9,14 +9,14 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Randomize;
+class IRandom;
 // clang-format on
 
 class ImitateMobSoundsComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
+    MCAPI static bool imitateNearbyMobs(::Actor& actor, ::IRandom& random);
     // NOLINTEND
 
 public:

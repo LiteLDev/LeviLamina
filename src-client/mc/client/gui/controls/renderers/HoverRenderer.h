@@ -44,14 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::glm::vec2 const& DEFAULT_OFFSET();
-
-    MCAPI static ::glm::vec2 const& GAMEPAD_OFFSET();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

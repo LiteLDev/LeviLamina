@@ -16,11 +16,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class IJsonRpcComponent;
 class IMinecraftEventing;
 class ISignalingServiceConfigProvider;
 class ISignalingServiceTelemetry;
 class MessageTracker;
 class Scheduler;
+class SignalingConsumerRefCount;
 class WorkerPool;
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class RetryPolicy; }
@@ -31,7 +33,6 @@ namespace NetherNet { struct ISignalingEventHandler; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct StunRelayServer; }
 namespace PlayerMessaging { struct NetworkID; }
-namespace PlayerMessaging { struct SigninID; }
 // clang-format on
 
 class SignalingService : public ::Bedrock::EnableNonOwnerReferences,
@@ -76,14 +77,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 128> mUnk306a7e;
         ::ll::UntypedStorage<8, 128> mUnkfff716;
-        ::ll::UntypedStorage<8, 48>  mUnk2f0b06;
+        ::ll::UntypedStorage<8, 32>  mUnk3e25c7;
         ::ll::UntypedStorage<8, 24>  mUnk57d1b0;
         ::ll::UntypedStorage<8, 16>  mUnkdf0ed3;
         ::ll::UntypedStorage<8, 16>  mUnk6cd7b9;
-        ::ll::UntypedStorage<8, 8>   mUnkc7230f;
+        ::ll::UntypedStorage<8, 8>   mUnk8dbb48;
         ::ll::UntypedStorage<8, 8>   mUnkffd797;
+        ::ll::UntypedStorage<8, 8>   mUnkfce3b0;
         ::ll::UntypedStorage<8, 8>   mUnkf492c0;
-        ::ll::UntypedStorage<8, 16>  mUnkcb5d0c;
+        ::ll::UntypedStorage<8, 48>  mUnk615ddf;
         ::ll::UntypedStorage<8, 88>  mUnk2cd884;
         // NOLINTEND
 
@@ -98,6 +100,8 @@ public:
         // NOLINTBEGIN
         virtual ~Connection() /*override*/;
 
+        virtual void onConnect() /*override*/;
+
         virtual void onMessage(::std::string_view incomingMessage) /*override*/;
 
         virtual bool shouldReconnect() const /*override*/;
@@ -107,8 +111,6 @@ public:
         virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders() /*override*/;
 
         virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy() /*override*/;
-
-        virtual void onConnect() /*override*/;
 
         virtual void onDisconnect(bool, uint closeStatus) /*override*/;
 
@@ -125,10 +127,11 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Connection(
-            ::PlayerMessaging::SigninID                                      id,
-            ::Bedrock::NotNullNonOwnerPtr<::ISignalingServiceConfigProvider> serviceConfigProvider,
-            ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>              eventing,
-            bool                                                             useJsonRpc
+            ::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> id,
+            ::Bedrock::NotNullNonOwnerPtr<::ISignalingServiceConfigProvider>     serviceConfigProvider,
+            ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>                  eventing,
+            bool                                                                 useJsonRpc,
+            ::std::chrono::seconds const&                                        pingInterval
         );
 
         MCNAPI void _parseError(::std::string const& message, ::std::string messageId);
@@ -153,16 +156,19 @@ public:
 
         MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
         sendTo(::NetherNet::NetworkID to, ::std::string const& message);
+
+        MCNAPI void update();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(
-            ::PlayerMessaging::SigninID                                      id,
-            ::Bedrock::NotNullNonOwnerPtr<::ISignalingServiceConfigProvider> serviceConfigProvider,
-            ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>              eventing,
-            bool                                                             useJsonRpc
+            ::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> id,
+            ::Bedrock::NotNullNonOwnerPtr<::ISignalingServiceConfigProvider>     serviceConfigProvider,
+            ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>                  eventing,
+            bool                                                                 useJsonRpc,
+            ::std::chrono::seconds const&                                        pingInterval
         );
         // NOLINTEND
 
@@ -175,6 +181,8 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
+        MCNAPI void $onConnect();
+
         MCNAPI void $onMessage(::std::string_view incomingMessage);
 
         MCNAPI bool $shouldReconnect() const;
@@ -184,8 +192,6 @@ public:
         MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> $getHeaders();
 
         MCNAPI ::Bedrock::Http::RetryPolicy $getReconnectPolicy();
-
-        MCNAPI void $onConnect();
 
         MCNAPI void $onDisconnect(bool, uint closeStatus);
 
@@ -215,7 +221,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk4edbb4;
         ::ll::UntypedStorage<8, 16> mUnkb6642a;
-        ::ll::UntypedStorage<8, 8>  mUnk2976c4;
+        ::ll::UntypedStorage<8, 8>  mUnk8246d8;
         ::ll::UntypedStorage<1, 1>  mUnk5f0073;
         // NOLINTEND
 
@@ -231,6 +237,7 @@ public:
         virtual ~Channel() /*override*/ = default;
 
         virtual void SendSignal(
+            ::NetherNet::NetworkID                              from,
             ::NetherNet::NetworkID                              to,
             ::std::string const&                                message,
             ::std::function<void(::NetherNet::ESessionError)>&& onComplete
@@ -241,19 +248,10 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void _SendJsonRpcSignal(
-            ::NetherNet::NetworkID                              networkIDTo,
-            ::std::string const&                                message,
-            ::std::function<void(::NetherNet::ESessionError)>&& onComplete
-        );
-        // NOLINTEND
-
-    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $SendSignal(
+            ::NetherNet::NetworkID                              from,
             ::NetherNet::NetworkID                              to,
             ::std::string const&                                message,
             ::std::function<void(::NetherNet::ESessionError)>&& onComplete
@@ -424,17 +422,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk189d42;
-    ::ll::UntypedStorage<8, 8>  mUnkd2fac6;
-    ::ll::UntypedStorage<8, 8>  mUnk964da2;
+    ::ll::UntypedStorage<8, 8>  mUnkfd8d3d;
+    ::ll::UntypedStorage<8, 8>  mUnke47dbd;
     ::ll::UntypedStorage<1, 1>  mUnk16095b;
     ::ll::UntypedStorage<8, 80> mUnk4c3a7e;
     ::ll::UntypedStorage<8, 64> mUnkb64515;
-    ::ll::UntypedStorage<8, 24> mUnk2308d5;
-    ::ll::UntypedStorage<8, 8>  mUnk2bff76;
+    ::ll::UntypedStorage<8, 8>  mUnka6149a;
     ::ll::UntypedStorage<8, 16> mUnk4684f9;
     ::ll::UntypedStorage<8, 16> mUnk66d5f0;
+    ::ll::UntypedStorage<8, 16> mUnk8726eb;
+    ::ll::UntypedStorage<8, 8>  mUnkb4662a;
     ::ll::UntypedStorage<8, 16> mUnk8ed84c;
     ::ll::UntypedStorage<8, 16> mUnk6ee143;
+    ::ll::UntypedStorage<8, 16> mUnkf22bbd;
     // NOLINTEND
 
 public:
@@ -453,27 +453,44 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI SignalingService(
-        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> eventing,
-        ::WorkerPool&                                       pool,
-        ::Scheduler&                                        scheduler
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
     );
 
-    MCNAPI ::std::shared_ptr<::SignalingService::Connection> _makeConnection(::PlayerMessaging::SigninID id);
+    MCNAPI SignalingService(
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
+        ::WorkerPool&                                         pool,
+        ::Scheduler&                                          scheduler,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
+    );
+
+    MCNAPI ::std::shared_ptr<::SignalingService::Connection>
+    _makeConnection(::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> id);
 
     MCNAPI ::Bedrock::Threading::Async<::std::vector<::NetherNet::StunRelayServer>> getRelayConfig() const;
 
+    MCNAPI ::std::shared_ptr<::SignalingConsumerRefCount> getSignalingConsumerRefCount();
+
     MCNAPI_C ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
 
-    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signIn(::PlayerMessaging::SigninID localId);
-
-    MCNAPI void update();
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code>
+    signIn(::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> localId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> eventing, ::WorkerPool& pool, ::Scheduler& scheduler);
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
+    );
+
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing>   eventing,
+        ::WorkerPool&                                         pool,
+        ::Scheduler&                                          scheduler,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> additionalJsonRpcComponents
+    );
     // NOLINTEND
 
 public:

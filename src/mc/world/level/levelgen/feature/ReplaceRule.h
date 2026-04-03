@@ -9,7 +9,7 @@ struct ReplaceRule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mBlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
     // NOLINTEND
 

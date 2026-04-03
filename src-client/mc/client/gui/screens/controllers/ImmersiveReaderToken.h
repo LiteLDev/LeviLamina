@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/certificates/WebToken.h"
 #include "mc/certificates/identity/edu/CredentialsObserver.h"
 #include "mc/certificates/identity/edu/GenericCredentialsEvent.h"
+#include "mc/deps/certificates/certificates/WebToken.h"
 
 // auto generated forward declare list
 // clang-format off

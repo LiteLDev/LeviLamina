@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -15,7 +16,6 @@ class BlockTessellator;
 class DataDrivenRenderer;
 class Font;
 class GeometryGroup;
-class HashedString;
 class ResourceLoadManager;
 class ResourcePackManager;
 class Tessellator;
@@ -97,14 +97,6 @@ public:
     );
 
     MCAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
-
-    MCAPI void render(
-        ::BaseActorRenderContext& entityRenderContext,
-        ::Actor&                  entity,
-        ::Vec3 const&             pos,
-        ::Vec2 const&             rot,
-        bool                      ignoreLighting
-    );
 
     MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,

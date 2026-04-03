@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::EventFilters {
@@ -32,6 +33,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptActorEventFilterData(::Actor const& actor);
 
+    MCAPI explicit ScriptActorEventFilterData(::ScriptModuleMinecraft::ScriptActorData const& data);
+
+    MCAPI ScriptActorEventFilterData(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
+
     MCAPI ~ScriptActorEventFilterData();
     // NOLINTEND
 
@@ -46,6 +51,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& actor);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& data);
+
+    MCAPI void* $ctor(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
     // NOLINTEND
 
 public:

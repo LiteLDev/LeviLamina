@@ -9,6 +9,6 @@ struct CameraAttachToEntityInstructionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::CameraInstructionOptions::AttachToEntityInstruction> mAttachToEntityInstruction;
+    ::ll::TypedStorage<8, 16, ::CameraInstructionOptions::AttachToEntityInstruction> mAttachToEntityInstruction;
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/image/ImageFormat.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
 
@@ -85,7 +86,8 @@ public:
         virtual bool loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
             ::std::string const&                    buffer,
-            ::ResourceLocationPair const&           resourceLocationPair
+            ::ResourceLocationPair const&           resourceLocationPair,
+            ::mce::ImageFormat const&               desiredImageFormat
         ) const;
 
         virtual bool loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
@@ -119,7 +121,8 @@ public:
         MCNAPI bool $loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
             ::std::string const&                    buffer,
-            ::ResourceLocationPair const&           resourceLocationPair
+            ::ResourceLocationPair const&           resourceLocationPair,
+            ::mce::ImageFormat const&               desiredImageFormat
         ) const;
 
         MCNAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;

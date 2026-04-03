@@ -86,9 +86,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                        mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                        mCustomSkinsDisabled;
     ::ll::TypedStorage<1, 1, bool>                                        mEmoteChatMuted;
+    ::ll::TypedStorage<1, 1, bool>                                        mAllowListActive;
     ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldWidth;
     ::ll::TypedStorage<4, 4, int>                                         mLimitedWorldDepth;
-    ::ll::TypedStorage<1, 2, ::PermissionsHandler>                        mDefaultPermissions;
+    ::ll::TypedStorage<8, 24, ::PermissionsHandler>                       mDefaultPermissions;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                 mDefaultSpawn;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>>            mNewWorldBehaviorPackIdentities;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>>            mNewWorldResourcePackIdentities;
@@ -102,10 +103,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                              mBiomeOverride;
     ::ll::TypedStorage<8, 64, ::EduSharedUriResource>                     mEduSharedUriResource;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                      mChatRestrictionLevel;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mServerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mWorldId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mScenarioId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mOwnerId;
     ::ll::TypedStorage<8, 328, ::std::optional<::EducationLevelSettings>> mEducationLevelSettings;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                       mOverrideForceExperimentalGameplayFlag;
     ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>>     mCloudSaveInfo;
@@ -153,15 +150,7 @@ public:
 
     MCAPI ::LevelSettings& setGameRules(::GameRules gameRules);
 
-    MCAPI ::LevelSettings& setOwnerId(::std::string ownerId);
-
-    MCAPI ::LevelSettings& setScenarioId(::std::string scenarioId);
-
-    MCAPI ::LevelSettings& setServerId(::std::string serverId);
-
     MCAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
-
-    MCAPI ::LevelSettings& setWorldId(::std::string worldId);
 
     MCAPI ~LevelSettings();
     // NOLINTEND

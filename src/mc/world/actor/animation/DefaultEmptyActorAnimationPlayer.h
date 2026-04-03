@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ApplyAnimationContext;
 class BoneOrientation;
 class HashedString;
 class RenderParams;
@@ -19,6 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
+        ::ApplyAnimationContext const&,
         ::RenderParams&,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
         float

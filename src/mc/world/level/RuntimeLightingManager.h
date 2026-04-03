@@ -61,7 +61,6 @@ public:
                                                                                                mLevelChunksToLight;
     ::ll::TypedStorage<8, 24, ::std::vector<::RuntimeLightingManager::RelightingChunkElement>> mListOfChunksToProcess;
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>>                                    mProcessedSubchunks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                                       mBrightnessChangedList;
     ::ll::TypedStorage<8, 8, ::Dimension&>                                                     mDimension;
     ::ll::TypedStorage<1, 1, bool>                                                             mWorkerScheduled;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                       mLightingTimeboxTime;

@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FoodItemComponentLegacyFactoryData& operator=(FoodItemComponentLegacyFactoryData const&);
-    FoodItemComponentLegacyFactoryData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~FoodItemComponentLegacyFactoryData() /*override*/ = default;
@@ -39,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponentLegacyFactoryData(::FoodItemComponentLegacyFactoryData const&);
+
     // NOLINTEND
 
 public:
@@ -55,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FoodItemComponentLegacyFactoryData const&);
+    MCAPI_S void* $ctor(::FoodItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

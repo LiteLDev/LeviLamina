@@ -18,7 +18,7 @@ class RemoveMobEffectResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4f6204;
+    ::ll::UntypedStorage<8, 32> mUnkdc7dd7;
     ::ll::UntypedStorage<2, 2>  mUnk32dc0f;
     // NOLINTEND
 

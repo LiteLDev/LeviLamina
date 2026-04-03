@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct FallDistanceComponent;
+struct InterpolateMovementNeededComponent;
 struct MovementInterpolatorComponent;
 struct PlayerPositionModeComponent;
 struct ServerPlayerComponent;
@@ -28,7 +28,7 @@ public:
     MCNAPI static void tickTeleportInterpolatorResetSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::ServerPlayerComponent>,
             ::Optional<::MovementInterpolatorComponent>,
             ::PlayerPositionModeComponent const,
             ::FallDistanceComponent,

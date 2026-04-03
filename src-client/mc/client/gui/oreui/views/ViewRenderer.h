@@ -15,7 +15,6 @@ class RectangleArea;
 class ScreenContext;
 namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class LayoutScheduler; }
-namespace OreUI { class MemoryTracker; }
 namespace cohtml { class ViewRenderer; }
 // clang-format on
 
@@ -35,7 +34,6 @@ public:
     ::ll::TypedStorage<8, 24, ::mce::ClientTexture>        mRenderDragonDSTexture;
     ::ll::TypedStorage<4, 64, ::mce::TextureDescription>   mTextureDescription;
     ::ll::TypedStorage<8, 8, ::cohtml::ViewRenderer*>      mViewRenderer;
-    ::ll::TypedStorage<8, 8, ::OreUI::MemoryTracker&>      mMemoryTracker;
     ::ll::TypedStorage<8, 8, ::OreUI::LayoutScheduler&>    mLayoutScheduler;
     // NOLINTEND
 
@@ -50,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCAPI ViewRenderer(
         ::cohtml::ViewRenderer*      viewRenderer,
-        ::OreUI::MemoryTracker&      memoryTracker,
         ::OreUI::LayoutScheduler&    layoutScheduler,
         ::OreUI::FramesToPaintQueue& framesToPaintQueue,
         ::OreUI::ViewId              viewId
@@ -59,6 +56,8 @@ public:
     MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
 
     MCAPI void _resolve(::ScreenContext& screenContext, ::std::optional<::RectangleArea> const& caretArea);
+
+    MCAPI void freeRenderingResources();
 
     MCAPI void render(::ScreenContext& screenContext, ::std::optional<::RectangleArea> const& caretArea);
 
@@ -72,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::cohtml::ViewRenderer*      viewRenderer,
-        ::OreUI::MemoryTracker&      memoryTracker,
         ::OreUI::LayoutScheduler&    layoutScheduler,
         ::OreUI::FramesToPaintQueue& framesToPaintQueue,
         ::OreUI::ViewId              viewId

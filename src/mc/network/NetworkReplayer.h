@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<int64>>                           mLatencyTimePointsMS;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>         mLastLatencyPacketSentAt;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>         mLastReplayPacketSentAt;
-    ::ll::TypedStorage<8, 2576, ::Random>                                     mRandom;
+    ::ll::TypedStorage<8, 2544, ::Random>                                     mRandom;
     // NOLINTEND
 
 public:

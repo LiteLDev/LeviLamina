@@ -12,6 +12,7 @@
 // clang-format off
 class CerealDocumentUpgrader;
 class DefinitionEvent;
+class SemVersionConstant;
 struct BlockPermutationDescription;
 namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
@@ -24,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 24, ::SemVersion>                                           mFormatVersion;
     ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                     mMinEngineVersion;
     ::ll::TypedStorage<8, 24, ::SemVersion>                                           mOriginalJsonVersion;
-    ::ll::TypedStorage<8, 176, ::BlockDescription>                                    mDescription;
+    ::ll::TypedStorage<8, 192, ::BlockDescription>                                    mDescription;
     ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription>                      mBaseComponents;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPermutationDescription>>           mPermutationDescriptions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
@@ -57,8 +58,15 @@ public:
         ::cereal::ReflectionCtx const& ctx,
         ::std::string&                 json,
         ::Core::Path const&            resourceName,
+        bool                           betaApis,
         ::std::optional<::SemVersion>  minVersion
     );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

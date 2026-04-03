@@ -10,6 +10,7 @@
 class Actor;
 class ActorInteraction;
 class HealableDefinition;
+class InteractionResult;
 class ItemStack;
 class Player;
 struct FeedItem;
@@ -21,7 +22,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _useFeedItem(::Actor& owner, ::Player& player, ::FeedItem const& feedItem);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 
 public:

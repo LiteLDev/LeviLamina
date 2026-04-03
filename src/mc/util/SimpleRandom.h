@@ -52,13 +52,7 @@ public:
 
     virtual ::Seed128Bit seed128() const /*override*/;
 
-    virtual ~SimpleRandom() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~SimpleRandom() /*override*/ = default;
     // NOLINTEND
 
 public:

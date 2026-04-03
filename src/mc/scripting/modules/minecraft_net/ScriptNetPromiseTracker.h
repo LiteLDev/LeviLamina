@@ -8,10 +8,14 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestBodyTooLargeError; }
+namespace ScriptModuleMinecraftNet { class ScriptHttpRequestNotAllowedError; }
+namespace ScriptModuleMinecraftNet { class ScriptMalformedHttpRequestError; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
 namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
 namespace Scripting { struct BaseError; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -28,7 +32,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk818803;
+        ::ll::UntypedStorage<8, 80> mUnk6081b8;
         ::ll::UntypedStorage<8, 32> mUnk6af6af;
         // NOLINTEND
 
@@ -81,8 +85,10 @@ public:
     MCNAPI uint track(
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
-            ::Scripting::BaseError,
-            void> const&                                                                          promise,
+            ::Scripting::Error,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestBodyTooLargeError,
+            ::ScriptModuleMinecraftNet::ScriptHttpRequestNotAllowedError,
+            ::ScriptModuleMinecraftNet::ScriptMalformedHttpRequestError> const&                   promise,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
     );
     // NOLINTEND

@@ -8,8 +8,8 @@ class ScopeDestroyedPath {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk40f478;
-    ::ll::UntypedStorage<8, 16> mUnk1a748a;
+    ::ll::UntypedStorage<8, 32> mUnk8207d4;
+    ::ll::UntypedStorage<8, 16> mUnk199715;
     // NOLINTEND
 
 public:

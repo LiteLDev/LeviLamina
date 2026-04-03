@@ -49,6 +49,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                mFeedUnreadCount;
     ::ll::TypedStorage<1, 1, bool>                                               mRefreshScreen;
     ::ll::TypedStorage<1, 1, bool>                                               mIsTrialModeEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                               mOverlaySocialDrawerOnce;
     // NOLINTEND
 
 public:
@@ -66,13 +67,15 @@ public:
 
     virtual void onInit() /*override*/;
 
+    virtual void onEntered() /*override*/;
+
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::std::string _getButtonADescription() /*override*/;
     // NOLINTEND
@@ -80,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PauseScreenController(::std::shared_ptr<::PauseScreenModel> model);
+    MCAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
 
     MCFOLD void _displayOpenExternalBrowserDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
@@ -123,13 +126,15 @@ public:
 
     MCAPI void _setScreenPauseIntent(bool intent);
 
+    MCAPI bool _showRealmsButtons() const;
+
     MCAPI void _updateProfileImage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model);
+    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
     // NOLINTEND
 
 public:
@@ -147,11 +152,15 @@ public:
 
     MCAPI void $onInit();
 
+    MCAPI void $onEntered();
+
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCFOLD ::std::string $_getButtonADescription();
     // NOLINTEND

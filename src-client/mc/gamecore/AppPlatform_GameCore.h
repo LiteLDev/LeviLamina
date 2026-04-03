@@ -8,17 +8,20 @@
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/platform/FullscreenMode.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/deps/input/TextboxTextUpdateReason.h"
 #include "mc/win/AppPlatformWindows.h"
 
 // auto generated forward declare list
 // clang-format off
+class ITextBoxController;
 class PropertyBag;
 class SecureStorage;
 class SecureStorageKey;
 struct ConnectivityHint_GameCore;
 struct XTaskQueueObject;
+namespace Bedrock { class CommonPlatform; }
+namespace Bedrock { class Platform_GameCore; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Core { class Path; }
@@ -31,13 +34,13 @@ public:
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>             mDataFolder;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>             mLoggingFolder;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>             mUserStorageRootPath;
-    ::ll::TypedStorage<1, 1, bool>                                           mSimulateTouchWithMouse;
     ::ll::TypedStorage<1, 1, bool>                                           mMouseCapture;
     ::ll::TypedStorage<8, 8, ::HWND__*>                                      mHWnd;
     ::ll::TypedStorage<4, 16, ::tagRECT>                                     mSavedWindowSize;
     ::ll::TypedStorage<4, 4, long>                                           mDefaultStyle;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mAppName;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectivityHint_GameCore>> mConnectivityHint;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Bedrock::Platform_GameCore*>> mPlatformGameCore;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                            mTaskQueue;
     ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                  mGameInviteToken;
     ::ll::TypedStorage<
@@ -57,9 +60,6 @@ public:
     virtual ~AppPlatform_GameCore() /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
-
-    virtual ::std::set<::Core::PathBuffer<::std::string>>
-    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
@@ -88,14 +88,11 @@ public:
 
     virtual void updateKeyboard();
 
-    virtual void initializeOnScreenKeyboard(
-        ::std::function<void(::std::string const&, int, ::TextboxTextUpdateReason)>,
-        ::std::function<void(int)>
-    );
+    virtual void initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
+
+    virtual void deinitializeOnScreenKeyboard();
 
     virtual bool supportsMSAA() const /*override*/;
-
-    virtual void toggleSimulateTouchWithMouse() /*override*/;
 
     virtual void _fireAppFocusGained() /*override*/;
 
@@ -128,6 +125,8 @@ public:
 
     virtual bool supportsFliteTTS() const /*override*/;
 
+    virtual bool getSimulateTouchWithMouse() const;
+
     virtual int getScreenWidth() const /*override*/;
 
     virtual int getScreenHeight() const /*override*/;
@@ -142,11 +141,17 @@ public:
 
     virtual ::std::string getApplicationId() const /*override*/;
 
-    virtual bool supportsClientUpdate() const /*override*/;
-
     virtual bool isMouseInsideClient() const;
 
     virtual bool canScroll() const;
+
+    virtual bool isRemoteSession() const;
+
+    virtual bool isMouseClickLockEnabled() const;
+
+    virtual bool isMouseSonarEnabled() const;
+
+    virtual uint getMouseClickLockTime() const;
 
     virtual uint64 getFreeMemory() const /*override*/;
 
@@ -188,17 +193,20 @@ public:
     virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view) = 0;
 
     virtual void _retrieveSavedWindowSize(::tagRECT&) = 0;
+
+    virtual ::Bedrock::CommonPlatform* getPlatformShim() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI AppPlatform_GameCore(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view   appName,
-        int                  screenWidth,
-        int                  screenHeight
+        ::HWND__*                                      hWnd,
+        ::std::string const&                           dataFolder,
+        ::std::string_view                             appName,
+        int                                            screenWidth,
+        int                                            screenHeight,
+        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
     // NOLINTEND
 
@@ -212,11 +220,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view   appName,
-        int                  screenWidth,
-        int                  screenHeight
+        ::HWND__*                                      hWnd,
+        ::std::string const&                           dataFolder,
+        ::std::string_view                             appName,
+        int                                            screenWidth,
+        int                                            screenHeight,
+        ::gsl::not_null<::Bedrock::Platform_GameCore*> platformGameCore
     );
     // NOLINTEND
 
@@ -230,9 +239,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
-
-    MCAPI ::std::set<::Core::PathBuffer<::std::string>>
-    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
@@ -261,14 +267,11 @@ public:
 
     MCFOLD void $updateKeyboard();
 
-    MCAPI void $initializeOnScreenKeyboard(
-        ::std::function<void(::std::string const&, int, ::TextboxTextUpdateReason)>,
-        ::std::function<void(int)>
-    );
+    MCAPI void $initializeOnScreenKeyboard(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController>);
+
+    MCFOLD void $deinitializeOnScreenKeyboard();
 
     MCFOLD bool $supportsMSAA() const;
-
-    MCAPI void $toggleSimulateTouchWithMouse();
 
     MCAPI void $_fireAppFocusGained();
 
@@ -300,6 +303,8 @@ public:
 
     MCFOLD bool $supportsFliteTTS() const;
 
+    MCFOLD bool $getSimulateTouchWithMouse() const;
+
     MCAPI int $getScreenWidth() const;
 
     MCAPI int $getScreenHeight() const;
@@ -314,11 +319,17 @@ public:
 
     MCAPI ::std::string $getApplicationId() const;
 
-    MCFOLD bool $supportsClientUpdate() const;
-
     MCFOLD bool $isMouseInsideClient() const;
 
     MCFOLD bool $canScroll() const;
+
+    MCFOLD bool $isRemoteSession() const;
+
+    MCFOLD bool $isMouseClickLockEnabled() const;
+
+    MCFOLD bool $isMouseSonarEnabled() const;
+
+    MCFOLD uint $getMouseClickLockTime() const;
 
     MCAPI uint64 $getFreeMemory() const;
 
@@ -356,6 +367,8 @@ public:
     MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
 
     MCAPI int $getPlatformDpi() const;
+
+    MCFOLD ::Bedrock::CommonPlatform* $getPlatformShim() const;
     // NOLINTEND
 
 public:

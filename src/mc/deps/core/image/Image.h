@@ -27,8 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    Image& operator=(Image const&);
-    Image(Image const&);
     Image();
 
 public:
@@ -37,8 +35,6 @@ public:
     MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);
 
     MCAPI ::mce::Image clone() const;
-
-    MCAPI ::mce::Image& operator=(::mce::Image&&);
 
     MCAPI void resizeImageBytesToFitImageDescription();
 
@@ -58,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

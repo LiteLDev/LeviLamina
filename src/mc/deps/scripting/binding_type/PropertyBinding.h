@@ -11,13 +11,15 @@ struct PropertyBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk490f19;
+    ::ll::UntypedStorage<8, 32> mUnk20fee6;
     ::ll::UntypedStorage<8, 16> mUnk8a8634;
     ::ll::UntypedStorage<8, 16> mUnkae65ab;
     ::ll::UntypedStorage<8, 16> mUnkb9812f;
     ::ll::UntypedStorage<8, 64> mUnk8a1fda;
     ::ll::UntypedStorage<8, 64> mUnkb93590;
     ::ll::UntypedStorage<8, 64> mUnk848c5a;
+    ::ll::UntypedStorage<1, 1>  mUnk8ffa41;
+    ::ll::UntypedStorage<1, 1>  mUnkfa8fc4;
     ::ll::UntypedStorage<8, 64> mUnkc5b748;
     // NOLINTEND
 

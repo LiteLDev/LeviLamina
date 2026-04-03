@@ -14,6 +14,7 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class Experiments;
+class HashedString;
 class ItemInstance;
 class ItemStack;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -21,6 +22,18 @@ namespace mce { class Color; }
 // clang-format on
 
 class DirtBlock : public ::BlockType {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockToTillInto;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    DirtBlock& operator=(DirtBlock const&);
+    DirtBlock(DirtBlock const&);
+    DirtBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -68,7 +81,7 @@ public:
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 

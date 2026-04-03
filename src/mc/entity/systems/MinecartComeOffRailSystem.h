@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct MoveRequestComponent;
 struct OnGroundFlagComponent;
 struct RailMovementComponent;
@@ -36,7 +36,7 @@ public:
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::SnapOnRailComponent>,
-            ::Include<::ActorMovementTickNeededComponent>,
+            ::Include<::InterpolateMovementNeededComponent>,
             ::RailMovementComponent const,
             ::StateVectorComponent,
             ::Optional<::OnGroundFlagComponent const>> view,

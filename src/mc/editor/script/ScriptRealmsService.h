@@ -29,9 +29,9 @@ class ScriptRealmsService : public ::Scripting::WeakHandleFromThis<::Editor::Scr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk10a30a;
-    ::ll::UntypedStorage<8, 24> mUnka75234;
-    ::ll::UntypedStorage<8, 24> mUnk377ca8;
+    ::ll::UntypedStorage<8, 24> mUnka5de68;
+    ::ll::UntypedStorage<8, 24> mUnk18b640;
+    ::ll::UntypedStorage<8, 24> mUnke58cc5;
     ::ll::UntypedStorage<8, 16> mUnkde271f;
     ::ll::UntypedStorage<8, 16> mUnke5e21d;
     ::ll::UntypedStorage<8, 16> mUnk6d20ef;
@@ -57,11 +57,11 @@ public:
         ::Scripting::WeakLifetimeScope const&            scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error, void>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error>>
     beginDownloadFromRealms(::std::string realmsWorldId, int slotId, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error, void>>
+        ::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error>>
     beginUploadToRealms(
         ::std::string                             realmsWorldId,
         int                                       slotId,
@@ -70,11 +70,11 @@ public:
     );
 
     MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error, void>>
+        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error>>
     getRealmWorldlist(::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error, void>>
+        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error>>
     getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Editor::ScriptModule::ScriptRealmsService& operator=(::Editor::ScriptModule::ScriptRealmsService&&);

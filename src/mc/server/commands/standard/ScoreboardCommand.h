@@ -189,8 +189,6 @@ public:
         ::CommandOutput&                                              output
     ) const;
 
-    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
     MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void removeObjective(::Scoreboard& scoreboard, ::std::string const& name, ::CommandOutput& output) const;

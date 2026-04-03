@@ -6,10 +6,10 @@ struct ServerLevelArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 304> mUnkc7f7aa;
+    ::ll::UntypedStorage<8, 312> mUnkc7f7aa;
     ::ll::UntypedStorage<8, 8>   mUnk614769;
     ::ll::UntypedStorage<8, 8>   mUnk3ac172;
-    ::ll::UntypedStorage<8, 8>   mUnk9f15c5;
+    ::ll::UntypedStorage<8, 8>   mUnk2bf638;
     // NOLINTEND
 
 public:

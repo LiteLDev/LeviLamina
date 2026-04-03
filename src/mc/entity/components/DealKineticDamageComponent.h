@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                     mTicks;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::ActorUniqueID,
             uint,

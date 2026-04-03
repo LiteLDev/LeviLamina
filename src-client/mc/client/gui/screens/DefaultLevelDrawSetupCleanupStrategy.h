@@ -35,6 +35,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setupScreen(::ScreenContext& screenContext);
+
+    MCFOLD ::EyeRenderingModeBit $getEyeRenderingMode() const;
     // NOLINTEND
 
 public:

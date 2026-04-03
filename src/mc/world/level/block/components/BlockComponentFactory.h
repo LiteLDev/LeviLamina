@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Experiments;
-class IPackLoadContext;
+class PackLoadContext;
 class PackLoadRequirement;
 struct BlockComponentDescription;
 struct BlockComponentGroupDescription;
@@ -99,11 +99,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
+    MCAPI explicit BlockComponentFactory(::PackLoadContext const* packLoadContext);
 
     MCAPI void _buildBlockComponentsSchema();
 
-    MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+    MCAPI void _registerLegacyDescriptions(::PackLoadContext const* packLoadContext);
 
     MCAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
@@ -114,6 +114,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
+    contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
@@ -123,7 +126,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IPackLoadContext const* packLoadContext);
+    MCAPI void* $ctor(::PackLoadContext const* packLoadContext);
     // NOLINTEND
 
 public:

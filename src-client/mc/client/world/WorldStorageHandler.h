@@ -206,7 +206,7 @@ public:
 
     MCAPI void $deleteWorld(::World::WorldID const& id);
 
-    MCAPI void $reloadWorld(::World::WorldID const& id);
+    MCFOLD void $reloadWorld(::World::WorldID const& id);
 
     MCAPI ::Bedrock::Threading::Async<void> $clearPlayerData(
         ::World::WorldID const&                                                    worldId,

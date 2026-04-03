@@ -14,7 +14,7 @@ class SubChunkInterlocker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl>               mSpinLock;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>               mSpinLock;
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>> mLocked3x3x3SubChunks;
     // NOLINTEND
 

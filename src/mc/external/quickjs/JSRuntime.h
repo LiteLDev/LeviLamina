@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnk16b26c;
-    ::ll::UntypedStorage<8, 32>  mUnk6e1058;
+    ::ll::UntypedStorage<8, 40>  mUnk6e1058;
     ::ll::UntypedStorage<8, 8>   mUnk65bb3c;
     ::ll::UntypedStorage<4, 4>   mUnke3663d;
     ::ll::UntypedStorage<4, 4>   mUnk4afa24;
@@ -27,6 +27,8 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk4d99d9;
     ::JSGCPhaseEnum              mUnk7079a5 : 8;
     ::ll::UntypedStorage<8, 8>   mUnkbe092c;
+    ::ll::UntypedStorage<8, 8>   mUnkdd6e49;
+    ::ll::UntypedStorage<8, 16>  mUnkb0640a;
     ::ll::UntypedStorage<8, 8>   mUnka8f6bc;
     ::ll::UntypedStorage<8, 8>   mUnk2eaf28;
     ::ll::UntypedStorage<8, 8>   mUnk62d1e3;
@@ -52,12 +54,11 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk63efa6;
     int                          mUnk308472 : 8;
     ::ll::UntypedStorage<8, 32>  mUnk6a5e1c;
+    ::ll::UntypedStorage<1, 1>   mUnk66fe18;
     ::ll::UntypedStorage<4, 4>   mUnk28a28f;
     ::ll::UntypedStorage<4, 4>   mUnk82485d;
     ::ll::UntypedStorage<4, 4>   mUnk8d8dce;
     ::ll::UntypedStorage<8, 8>   mUnk3139bb;
-    ::ll::UntypedStorage<8, 104> mUnkaac0d1;
-    ::ll::UntypedStorage<8, 56>  mUnk1db081;
     ::ll::UntypedStorage<8, 8>   mUnk3459c5;
     ::ll::UntypedStorage<8, 200> mUnk76ac17;
     ::ll::UntypedStorage<4, 4>   mUnk185ff3;

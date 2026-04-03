@@ -12,4 +12,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mValue;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD_C ::std::string toUiString() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::LevelSeed64 fromUnsigned32(uint value);
+    // NOLINTEND
 };

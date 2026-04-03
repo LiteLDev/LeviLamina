@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/input/WebApiButton.h"
+#include "mc/client/gui/oreui/input/GamepadButton.h"
 
 namespace OreUI {
 
@@ -18,7 +18,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::OreUI::WebApiButton, 4> const& TIMESTAMPED_BUTTONS();
+    MCAPI static ::std::array<::OreUI::GamepadButton, 4> const& TIMESTAMPED_BUTTONS();
     // NOLINTEND
 };
 

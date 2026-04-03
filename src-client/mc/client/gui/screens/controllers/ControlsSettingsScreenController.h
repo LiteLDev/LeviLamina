@@ -53,6 +53,7 @@ public:
     ::ll::TypedStorage<4, 4, ::InputBindingMode>                  mActiveBindingMode;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::string> const&> mDisabledInputMappings;
     ::ll::TypedStorage<1, 1, bool>                                mCustomizeControlsDisableHover;
+    ::ll::TypedStorage<8, 320, ::std::array<::std::string, 10>>   mCommandMacroCommands;
     // NOLINTEND
 
 public:
@@ -83,6 +84,11 @@ public:
 
     MCAPI ::ui::ViewRequest _bindRawInputEvent(::RawInputScreenEventData& rawInputData);
 
+    MCAPI bool _canSetCommandMacroCommandAtIndex(
+        int                                                     collectionIndex,
+        ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
+    ) const;
+
     MCAPI void _generateBindingInfo(
         ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
         ::RemappingLayout&                                              layout,
@@ -90,10 +96,8 @@ public:
     );
 
     MCAPI void _generateKeyboardBindingInfo(
-        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& normalBindings,
-        ::std::vector<::ControlsSettingsScreenController::BindingInfo>& chordsBindings,
-        ::RemappingLayout&                                              layout,
-        uint                                                            layoutStartIndex
+        ::ControlsSettingsScreenController::KeyboardLayoutInfo& keyboardInfo,
+        uint                                                    layoutStartIndex
     );
 
     MCAPI ::std::string _getBindingText(
@@ -101,6 +105,10 @@ public:
         int                                                             collectionIndex,
         ::RemappingLayout&                                              layout
     );
+
+    MCAPI ::InputBindingMode _getBindingTypeByCollectionName(::std::string const& collectionName) const;
+
+    MCAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
 
     MCAPI ::ui::ViewRequest _handleBindingButtonEvent(::UIPropertyBag* bag);
 
@@ -122,6 +130,8 @@ public:
     MCAPI void _registerEvents();
 
     MCAPI ::ui::ViewRequest _resetAllBindingsToDefault(::InputMode inputMode);
+
+    MCAPI void _setCommandMacroCommandAtIndex(int collectionIndex, ::std::string command);
 
     MCAPI void
     setUpCallbacksForBooleanInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& toggleName);

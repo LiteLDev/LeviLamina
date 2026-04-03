@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::DDUI::PathUtility { struct PathQueryError; }
@@ -11,11 +14,19 @@ namespace cereal { class DynamicValue; }
 namespace Bedrock::DDUI::PathUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI char const* getTypeString(::cereal::DynamicValue const& value);
+MCNAPI char const* getTypeString(::cereal::DynamicValue::Type const& type);
 
 MCNAPI ::nonstd::
     expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>
     parsePath(::std::string const& wholePath);
+
+MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
+    ::cereal::DynamicValue&       originalObject,
+    ::std::string const&          path,
+    ::cereal::DynamicValue const& newData,
+    ::std::string const&          dataStoreName,
+    ::std::string const&          propertyName
+);
 
 MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
     ::cereal::DynamicValue&                            originalObject,

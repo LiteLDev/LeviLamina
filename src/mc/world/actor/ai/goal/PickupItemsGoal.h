@@ -78,13 +78,11 @@ public:
 
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
-    MCAPI void _handlePickupItem(::Actor& itemEntity);
-
     MCAPI bool _hasRoomForCarriedItem() const;
 
     MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
 
-    MCAPI void _pickItemUp(::ItemActor* itemActor);
+    MCAPI void _pickItemUp(::ItemActor& itemActor);
     // NOLINTEND
 
 public:

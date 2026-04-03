@@ -145,6 +145,12 @@ public:
     onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
+
+    virtual ::EventResult onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
+
+    virtual ::EventResult onCloseDataDrivenScreen(::LocalPlayer&, uint);
+
+    virtual ::EventResult onCloseAllDataDrivenScreens(::LocalPlayer&);
     // NOLINTEND
 
 public:
@@ -253,6 +259,12 @@ public:
 
     MCFOLD ::EventResult
     $onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+
+    MCFOLD ::EventResult $onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
+
+    MCFOLD ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint);
+
+    MCFOLD ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
 
 #ifdef LL_PLAT_C
     MCFOLD ::EventResult $onEvent(::PlayerNotificationEvent const& event);

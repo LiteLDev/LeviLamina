@@ -13,6 +13,7 @@ class IFeature;
 class IWorldRegistriesProvider;
 class MinEngineVersion;
 class ResourcePackManager;
+namespace Json { class Value; }
 // clang-format on
 
 class FeatureRegistry {
@@ -72,16 +73,24 @@ public:
     // NOLINTBEGIN
     MCAPI FeatureRegistry();
 
-    MCAPI ::std::string const _featureNamespaceFromInput(::std::string const& filePath, ::std::string const& contents);
-
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
+
+    MCAPI_C bool _setupFeature(
+        ::IWorldRegistriesProvider&  worldRegistries,
+        bool                         isBasePack,
+        ::ResourcePackManager const& rpm,
+        ::std::string const&         featureName,
+        ::std::string const&         jsonDefinition,
+        ::MinEngineVersion const&    minEngineVersion,
+        bool                         serializeFeatures
+    );
 
     MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
         ::std::string const&         featureName,
-        ::std::string const&         jsonDefinition,
+        ::Json::Value const&         jsonDefinition,
         ::MinEngineVersion const&    minEngineVersion,
         bool                         serializeFeatures
     );
@@ -109,6 +118,13 @@ public:
     MCAPI_C void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
 
     MCAPI ~FeatureRegistry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string
+    _featureIdentifierFromInput(::std::string_view filePath, ::Json::Value const& jsonDefinition);
     // NOLINTEND
 
 public:

@@ -14,8 +14,8 @@ public:
     using BlockRulesLookupMap =
         ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>;
 
-    using BlockRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>;
+    using BlockRulesRegistryMap = ::std::vector<::std::unique_ptr<
+        ::std::vector<::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>>;
 
     using StructureProcessorList =
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
@@ -28,7 +28,8 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>>
+        ::std::vector<::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>>>
         mBlockRulesRegistry;
     ::ll::TypedStorage<
         8,
@@ -60,8 +61,9 @@ public:
     );
 
     MCAPI void registerBlockRules(
-        ::std::string                                                                   name,
-        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>&& ruleList
+        ::std::string                                                                                        name,
+        ::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>&& ruleList
     );
 
     MCAPI ~JigsawStructureBlockRulesRegistry();

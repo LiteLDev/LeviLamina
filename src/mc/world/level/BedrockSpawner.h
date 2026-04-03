@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Spawner.h"
 #include "mc/world/level/chunk/SpawnPlacements.h"
@@ -14,8 +15,8 @@ class ActorSpawnRuleGroup;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
-class HashedString;
 class IMinecraftEventing;
+class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
@@ -25,7 +26,6 @@ class Mob;
 class MobSpawnRules;
 class MobSpawnerData;
 class Random;
-class Randomize;
 class ResourcePackManager;
 class SpawnConditions;
 class SpawnGroupRegistry;
@@ -123,7 +123,7 @@ public:
         ::BlockSource&                                                      region,
         int                                                                 xo,
         int                                                                 zo,
-        ::Randomize&                                                        randomize,
+        ::IRandom&                                                          random,
         bool                                                                doMobSpawning,
         ::std::function<void(::BlockPos const&, ::SpawnConditions&)> const& spawnMobClusterCallback,
         ::std::function<bool(::BlockSource const&, ::BlockPos)> const&      isInsideAncientCity

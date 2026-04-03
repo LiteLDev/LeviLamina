@@ -14,7 +14,7 @@ namespace ActorEquipment {
 // NOLINTBEGIN
 MCFOLD ::SimpleContainer const& getArmorContainer(::EntityContext const& provider);
 
-MCAPI ::SimpleContainer& getArmorContainer(::EntityContext&);
+MCFOLD ::SimpleContainer& getArmorContainer(::EntityContext& provider);
 
 MCAPI ::SimpleContainer& getHandContainer(::EntityContext& provider);
 

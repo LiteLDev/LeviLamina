@@ -5,10 +5,9 @@
 namespace cereal {
 
 enum class ReflectMode : int {
-    Init        = 0,
-    Append      = 1,
-    Replace     = 2,
-    Placeholder = 3,
+    Init    = 0,
+    Append  = 1,
+    Replace = 2,
 };
 
 }

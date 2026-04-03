@@ -6,7 +6,7 @@ struct ParsedTextureSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk475495;
+    ::ll::UntypedStorage<8, 24> mUnk1e1e7d;
     ::ll::UntypedStorage<4, 20> mUnk4f3cc9;
     // NOLINTEND
 

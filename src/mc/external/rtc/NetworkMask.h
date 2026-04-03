@@ -8,7 +8,7 @@ class NetworkMask {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnkb7cae0;
+    ::ll::UntypedStorage<8, 32> mUnkb7cae0;
     ::ll::UntypedStorage<4, 4>  mUnk373f62;
     // NOLINTEND
 

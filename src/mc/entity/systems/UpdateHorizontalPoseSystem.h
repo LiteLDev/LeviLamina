@@ -12,7 +12,7 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct IsHorizontalPoseFlagComponent;
 struct PlayerComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
@@ -28,13 +28,13 @@ MCNAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::ActorDataFlagComponent const,
-        ::Include<::PlayerComponent, ::ActorMovementTickNeededComponent>> tickNeededView,
+        ::Include<::PlayerComponent, ::InterpolateMovementNeededComponent>> tickNeededView,
     ::ViewT<
         ::StrictEntityContext,
         ::ActorDataFlagComponent const,
         ::Include<::ShouldUpdateBoundingBoxRequestComponent>,
-        ::Exclude<::ActorMovementTickNeededComponent>> updateBBView,
-    ::EntityModifier<::IsHorizontalPoseFlagComponent>  modifier
+        ::Exclude<::InterpolateMovementNeededComponent>> updateBBView,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent>    modifier
 );
 
 MCNAPI void update(

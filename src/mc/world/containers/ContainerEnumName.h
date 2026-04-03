@@ -67,4 +67,7 @@ enum class ContainerEnumName : uchar {
     SmithingTableTemplateContainer      = 61,
     CrafterLevelEntityContainer         = 62,
     DynamicContainer                    = 63,
+    RecipeFoodContainer                 = 64,
+    RecipeBlocksContainer               = 65,
+    RecipeFurnaceItemsContainer         = 66,
 };

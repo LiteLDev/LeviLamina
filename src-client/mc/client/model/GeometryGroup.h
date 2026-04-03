@@ -11,13 +11,13 @@
 // auto generated forward declare list
 // clang-format off
 class GeometryInfo;
-class GeometryPtr;
 class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
 class SemVersion;
 struct GeometryInheritanceTree;
+struct GeometryPtr;
 struct ModelParent;
 struct TextureUVCoordinateSet;
 namespace Bedrock::Threading { class Mutex; }
@@ -64,12 +64,6 @@ public:
         ::std::function<void()> mainThreadCallback
     );
 
-    MCAPI void _loadModelsSync(
-        ::GeometryInheritanceTree& inheritance,
-        ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)>
-            loadModelFunction
-    );
-
     MCAPI void addGeometries(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::Json::Value&                                       geometryData,
@@ -79,8 +73,6 @@ public:
     );
 
     MCAPI ::GeometryPtr getGeometry(::HashedString const& geometryName);
-
-    MCAPI ::std::weak_ptr<::GeometryGroup> getWeakPtrToThis();
 
     MCAPI void loadGeometriesAsync(
         ::ResourcePackManager&                               resourcePackManager,

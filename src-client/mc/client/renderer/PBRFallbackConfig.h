@@ -64,12 +64,6 @@ public:
                 PBRData& operator=(PBRData const&);
                 PBRData(PBRData const&);
                 PBRData();
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
         public:
@@ -97,7 +91,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk2066b2;
+        ::ll::UntypedStorage<8, 32> mUnkf77385;
         ::ll::UntypedStorage<4, 64> mUnk1f910a;
         // NOLINTEND
 

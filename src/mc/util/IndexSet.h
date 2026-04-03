@@ -6,8 +6,8 @@ class IndexSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8a7aaf;
-    ::ll::UntypedStorage<8, 24> mUnk42b399;
+    ::ll::UntypedStorage<8, 24> mUnkf38d12;
+    ::ll::UntypedStorage<8, 24> mUnkf89f4f;
     // NOLINTEND
 
 public:

@@ -27,7 +27,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkd21fad;
-        ::ll::UntypedStorage<8, 8> mUnk8c2496;
+        ::ll::UntypedStorage<8, 8> mUnk46ba68;
         // NOLINTEND
 
     public:
@@ -40,7 +40,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnked7ac6;
+    ::ll::UntypedStorage<8, 24> mUnk51fbe4;
     // NOLINTEND
 
 public:
@@ -85,9 +85,11 @@ public:
     virtual ::Bedrock::Result<void>
     asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength) /*override*/;
 
-    virtual ::std::optional<bool> readValidityFlag() /*override*/;
+    virtual ::std::optional<bool> additionalDataAsBool() /*override*/;
 
-    virtual ::std::optional<uint> readControlValue() /*override*/;
+    virtual ::std::optional<uint> additionalDataAsUInt32() /*override*/;
+
+    virtual ::std::optional<::std::string> additionalDataAsString(uint64) /*override*/;
 
     virtual uint64 members() /*override*/;
 
@@ -158,9 +160,11 @@ public:
     MCNAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCNAPI ::std::optional<bool> $readValidityFlag();
+    MCNAPI ::std::optional<bool> $additionalDataAsBool();
 
-    MCNAPI ::std::optional<uint> $readControlValue();
+    MCNAPI ::std::optional<uint> $additionalDataAsUInt32();
+
+    MCNAPI ::std::optional<::std::string> $additionalDataAsString(uint64);
 
     MCNAPI uint64 $members();
 

@@ -43,7 +43,7 @@ public:
     ::ll::TypedStorage<4, 4, float>               mBranchDensity;
     ::ll::TypedStorage<4, 4, float>               mBranchAltitudeFactor;
     ::ll::TypedStorage<4, 4, float>               mFoliageAltitudeFactor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mTrunkBlockDescriptor;
     ::ll::TypedStorage<4, 4, float>               mWidthScale;
     // NOLINTEND
 

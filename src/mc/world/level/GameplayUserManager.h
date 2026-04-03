@@ -23,10 +23,10 @@ class GameplayUserManager : public ::IGameplayUserManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkc721ae;
-    ::ll::UntypedStorage<8, 24>  mUnk9fd09f;
-    ::ll::UntypedStorage<8, 24>  mUnk6fd064;
-    ::ll::UntypedStorage<8, 24>  mUnk3bf0f4;
+    ::ll::UntypedStorage<8, 24>  mUnk3df0ff;
+    ::ll::UntypedStorage<8, 24>  mUnk4d5f03;
+    ::ll::UntypedStorage<8, 24>  mUnk9260bc;
+    ::ll::UntypedStorage<8, 24>  mUnke51ffd;
     ::ll::UntypedStorage<8, 128> mUnk23e74c;
     ::ll::UntypedStorage<8, 128> mUnk43ee2f;
     ::ll::UntypedStorage<8, 128> mUnkc38a56;
@@ -36,7 +36,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk123f52;
     ::ll::UntypedStorage<8, 16>  mUnkb8339f;
     ::ll::UntypedStorage<8, 16>  mUnke29cfe;
-    ::ll::UntypedStorage<8, 8>   mUnkd3857d;
+    ::ll::UntypedStorage<8, 8>   mUnkc873b8;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 
     MCNAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
-    MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
+    MCNAPI_S void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
     MCNAPI int _getNewPlayerId() const;
 

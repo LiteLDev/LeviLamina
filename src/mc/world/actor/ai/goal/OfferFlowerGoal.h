@@ -5,62 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class OfferFlowerGoal : public ::Goal {
-public:
-    // OfferFlowerGoal inner types declare
-    // clang-format off
-    class OfferFlowerDefinition;
-    // clang-format on
-
-    // OfferFlowerGoal inner types define
-    class OfferFlowerDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>               mMaxOfferFlowerDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>               mChanceToStart;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-        ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-        ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~OfferFlowerDefinition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OfferFlowerGoal::OfferFlowerDefinition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_130/data_drivenui/document/AttribsComposition.h"
+#include "mc/deps/shared_types/v1_21_130/data_drivenui/document/CompositionLayout.h"
 #include "mc/deps/shared_types/v1_21_130/data_drivenui/document/DocumentDescription.h"
-#include "mc/deps/shared_types/v1_21_130/data_drivenui/document/Layout.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,14 +20,22 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_130::DataDrivenUI::DocumentDescription> mDescription;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_130::DataDrivenUI::AttribsComposition>   mAttribs;
-    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_130::DataDrivenUI::Layout>              mLayout;
+    ::ll::TypedStorage<8, 40, ::SharedTypes::v1_21_130::DataDrivenUI::AttribsComposition>  mAttribs;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_130::DataDrivenUI::CompositionLayout>   mLayout;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UIComposition(UIComposition const&);
+    UIComposition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition&
+    operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
 
+    MCAPI ~UIComposition();
     // NOLINTEND
 
 public:
@@ -47,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

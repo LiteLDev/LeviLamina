@@ -30,13 +30,13 @@ class EditorRealmsService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfece8a;
-    ::ll::UntypedStorage<8, 24> mUnkd35a23;
+    ::ll::UntypedStorage<8, 24> mUnk40f7a6;
+    ::ll::UntypedStorage<8, 24> mUnk3234ac;
     ::ll::UntypedStorage<4, 4>  mUnk671b06;
     ::ll::UntypedStorage<4, 4>  mUnk529e3a;
     ::ll::UntypedStorage<8, 16> mUnk82d02c;
-    ::ll::UntypedStorage<8, 48> mUnk12beb6;
-    ::ll::UntypedStorage<8, 48> mUnkf6dc65;
+    ::ll::UntypedStorage<8, 48> mUnke1e040;
+    ::ll::UntypedStorage<8, 48> mUnk24fe74;
     ::ll::UntypedStorage<8, 48> mUnkf4e06e;
     // NOLINTEND
 

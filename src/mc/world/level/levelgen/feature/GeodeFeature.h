@@ -25,11 +25,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mFiller;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mInnerLayer;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mAlternateInnerLayer;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mMiddleLayer;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mOuterLayer;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mFiller;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mInnerLayer;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mAlternateInnerLayer;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mMiddleLayer;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mOuterLayer;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mInnerPlacements;
     ::ll::TypedStorage<4, 4, int>                               mMinOuterWallDistance;
     ::ll::TypedStorage<4, 4, int>                               mMaxOuterWallDistance;

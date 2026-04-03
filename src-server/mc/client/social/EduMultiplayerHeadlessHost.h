@@ -13,16 +13,20 @@ class EduMultiplayerHeadlessHost : public ::Social::IEduMultiplayerHeadless {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk4fafae;
-    ::ll::UntypedStorage<8, 32>  mUnkcce7e7;
+    ::ll::UntypedStorage<8, 32>  mUnkffa3ae;
+    ::ll::UntypedStorage<8, 32>  mUnkb7163c;
     ::ll::UntypedStorage<4, 4>   mUnk180685;
     ::ll::UntypedStorage<8, 8>   mUnk875a0a;
     ::ll::UntypedStorage<1, 1>   mUnke34628;
     ::ll::UntypedStorage<8, 24>  mUnk7ac4d5;
+    ::ll::UntypedStorage<4, 4>   mUnk440e90;
+    ::ll::UntypedStorage<8, 8>   mUnkf4942f;
     ::ll::UntypedStorage<8, 64>  mUnkaa09a6;
+    ::ll::UntypedStorage<8, 64>  mUnke68cba;
     ::ll::UntypedStorage<8, 336> mUnk84517e;
-    ::ll::UntypedStorage<8, 56>  mUnk6ade59;
+    ::ll::UntypedStorage<8, 48>  mUnk76971b;
     ::ll::UntypedStorage<8, 16>  mUnkfac924;
+    ::ll::UntypedStorage<8, 16>  mUnk9c1186;
     // NOLINTEND
 
 public:

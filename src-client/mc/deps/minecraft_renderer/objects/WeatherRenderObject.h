@@ -92,7 +92,7 @@ public:
 
         MCFOLD void* $ctor(::WeatherRenderObject::RenderRuntimeSettings&&);
 
-        MCAPI void* $ctor(::WeatherRenderObject::RenderRuntimeSettings const&);
+        MCFOLD void* $ctor(::WeatherRenderObject::RenderRuntimeSettings const&);
         // NOLINTEND
     };
 

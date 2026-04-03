@@ -14,8 +14,8 @@ struct ScriptNetHeader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc1dc94;
-    ::ll::UntypedStorage<8, 72> mUnk516770;
+    ::ll::UntypedStorage<8, 32> mUnkcef7b0;
+    ::ll::UntypedStorage<8, 72> mUnkec2e98;
     // NOLINTEND
 
 public:

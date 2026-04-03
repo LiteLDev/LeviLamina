@@ -6,7 +6,6 @@
 #include "mc/common/Brightness.h"
 #include "mc/common/NewBlockID.h"
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/core/container/Cache.h"
 #include "mc/deps/core/container/EnumSet.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/string/HashedString.h"
@@ -29,6 +28,8 @@
 #include "mc/world/level/block/block_events/BlockEventManager.h"
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
+#include "mc/world/level/block/core/Cache.h"
+#include "mc/world/level/block/registry/IBlockArchetype.h"
 #include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
@@ -41,13 +42,14 @@ class BlockSource;
 class BlockState;
 class BlockStateGroup;
 class BlockStateInstance;
+class CompoundTag;
 class Container;
-class DefinitionEvent;
 class EntityContext;
 class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
+class IRandom;
 class IResourceDropsStrategy;
 class ItemActor;
 class ItemInstance;
@@ -55,8 +57,6 @@ class ItemStack;
 class Material;
 class MobSpawnerData;
 class Player;
-class Randomize;
-class RenderParams;
 class ScriptBlockCustomComponentsFinalizer;
 class SemVersion;
 class SpawnConditions;
@@ -82,6 +82,7 @@ public:
     // BlockType inner types declare
     // clang-format off
     struct AlteredStateCollection;
+    class Archetype;
     struct HorizontalDirectionBits;
     struct NameInfo;
     struct RearrangedStateCollection;
@@ -116,6 +117,38 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 
+        // NOLINTEND
+    };
+
+    class Archetype : public ::IBlockArchetype {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::std::string_view getName() /*override*/;
+
+        virtual void buildNetworkTag(::CompoundTag&) const /*override*/;
+
+        virtual void initializeFromNetwork(::CompoundTag const&) /*override*/;
+
+        virtual ~Archetype() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI ::std::string_view $getName();
+
+        MCFOLD void $buildNetworkTag(::CompoundTag&) const;
+
+        MCFOLD void $initializeFromNetwork(::CompoundTag const&);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -299,50 +332,49 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                 mDescriptionId;
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
-    ::ll::TypedStorage<8, 176, ::BlockType::NameInfo>        mNameInfo;
-    ::ll::TypedStorage<8, 8, ::BlockProperty>                mProperties;
-    ::ll::TypedStorage<1, 1, bool>                           mFancy;
-    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>             mRenderLayer;
-    ::ll::TypedStorage<1, 1, bool>                           mRenderLayerCanRenderAsOpaque;
-    ::ll::TypedStorage<1, 1, ::BlockActorType>               mBlockEntityType;
-    ::ll::TypedStorage<4, 4, float>                          mThickness;
-    ::ll::TypedStorage<1, 1, bool>                           mCanSlide;
-    ::ll::TypedStorage<1, 1, bool>                           mCanReactToNeighborsDuringInstatick;
-    ::ll::TypedStorage<4, 4, float>                          mGravity;
-    ::ll::TypedStorage<8, 8, ::Material const&>              mMaterial;
-    ::ll::TypedStorage<1, 1, bool>                           mFalling;
-    ::ll::TypedStorage<4, 4, float>                          mParticleQuantityScalar;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>         mCreativeCategory;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mCreativeGroup;
-    ::ll::TypedStorage<1, 1, bool>                           mIsHiddenInCommands;
-    ::ll::TypedStorage<1, 1, bool>                           mAllowsRunes;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeBrokenFromFalling;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeOriginalSurface;
-    ::ll::TypedStorage<1, 1, bool>                           mSolid;
-    ::ll::TypedStorage<1, 1, bool>                           mPushesOutItems;
-    ::ll::TypedStorage<1, 1, bool>                           mIgnoreBlockForInsideCubeRenderer;
-    ::ll::TypedStorage<1, 1, bool>                           mIsTrapdoor;
-    ::ll::TypedStorage<1, 1, bool>                           mIsDoor;
-    ::ll::TypedStorage<1, 1, bool>                           mIsOpaqueFullBlock;
-    ::ll::TypedStorage<4, 4, float>                          mTranslucency;
-    ::ll::TypedStorage<1, 1, bool>                           mShouldRandomTickExtraLayer;
-    ::ll::TypedStorage<1, 1, bool>                           mIsMobPiece;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeExtraBlock;
-    ::ll::TypedStorage<1, 1, bool>                           mCanPropagateBrightness;
-    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightBlock;
-    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightEmission;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                  mMapColor;
-    ::ll::TypedStorage<4, 4, float>                          mFriction;
-    ::ll::TypedStorage<4, 4, ::NoteBlockInstrument>          mNoteBlockInstrument;
-    ::ll::TypedStorage<1, 1, ::TintMethod>                   mTintMethod;
-    ::ll::TypedStorage<1, 1, bool>                           mReturnDefaultBlockOnUnidentifiedBlockState;
-    ::ll::TypedStorage<2, 2, ::NewBlockID>                   mID;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>             mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<1, 1, bool>                           mIsVanilla;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDescriptionId;
+    ::ll::TypedStorage<8, 80, ::BlockComponentStorage>                      mComponents;
+    ::ll::TypedStorage<8, 176, ::BlockType::NameInfo>                       mNameInfo;
+    ::ll::TypedStorage<8, 8, ::BlockProperty>                               mProperties;
+    ::ll::TypedStorage<1, 1, bool>                                          mFancy;
+    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                            mRenderLayer;
+    ::ll::TypedStorage<1, 1, bool>                                          mRenderLayerCanRenderAsOpaque;
+    ::ll::TypedStorage<1, 1, ::BlockActorType>                              mBlockEntityType;
+    ::ll::TypedStorage<4, 4, float>                                         mThickness;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanSlide;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanReactToNeighborsDuringInstatick;
+    ::ll::TypedStorage<4, 4, float>                                         mGravity;
+    ::ll::TypedStorage<8, 8, ::Material const&>                             mMaterial;
+    ::ll::TypedStorage<1, 1, bool>                                          mFalling;
+    ::ll::TypedStorage<4, 4, float>                                         mParticleQuantityScalar;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                        mCreativeCategory;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mCreativeGroup;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsHiddenInCommands;
+    ::ll::TypedStorage<1, 1, bool>                                          mAllowsRunes;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanBeBrokenFromFalling;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanBeOriginalSurface;
+    ::ll::TypedStorage<1, 1, bool>                                          mSolid;
+    ::ll::TypedStorage<1, 1, bool>                                          mPushesOutItems;
+    ::ll::TypedStorage<1, 1, bool>                                          mIgnoreBlockForInsideCubeRenderer;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsTrapdoor;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsDoor;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsOpaqueFullBlock;
+    ::ll::TypedStorage<4, 4, float>                                         mTranslucency;
+    ::ll::TypedStorage<1, 1, bool>                                          mShouldRandomTickExtraLayer;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsMobPiece;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanBeExtraBlock;
+    ::ll::TypedStorage<1, 1, bool>                                          mCanPropagateBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>                                  mLightBlock;
+    ::ll::TypedStorage<1, 1, ::Brightness>                                  mLightEmission;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                                 mMapColor;
+    ::ll::TypedStorage<4, 4, float>                                         mFriction;
+    ::ll::TypedStorage<4, 4, ::NoteBlockInstrument>                         mNoteBlockInstrument;
+    ::ll::TypedStorage<1, 1, ::TintMethod>                                  mTintMethod;
+    ::ll::TypedStorage<1, 1, bool>                                          mReturnDefaultBlockOnUnidentifiedBlockState;
+    ::ll::TypedStorage<2, 2, ::NewBlockID>                                  mID;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                            mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsVanilla;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                mTags;
     ::ll::TypedStorage<1, 1, bool>                                          mDataDrivenVanillaBlocksAndItemsEnabled;
     ::ll::TypedStorage<4, 24, ::AABB>                                       mVisualShape;
     ::ll::TypedStorage<4, 4, uint>                                          mBitsUsed;
@@ -359,7 +391,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IResourceDropsStrategy>>            mResourceDropsStrategy;
     ::ll::TypedStorage<4, 8, ::IntRange>                                             mExperienceDropRange;
     ::ll::TypedStorage<1, 1, bool>                                                   mRequiresCorrectToolForDrops;
-    ::ll::TypedStorage<8, 104, ::NetEaseBlockComponentStorage>                       mNetEaseComponentStorage;
+    ::ll::TypedStorage<8, 80, ::NetEaseBlockComponentStorage>                        mNetEaseComponentStorage;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockType::AlteredStateCollection>>>
                                                                                       mAlteredStateCollections;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
@@ -463,7 +495,7 @@ public:
 
     virtual ::Block const& getStrippedBlock(::Block const& srcBlock) const;
 
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
@@ -542,8 +574,6 @@ public:
     virtual void
     transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
     virtual bool detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
@@ -554,7 +584,7 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    virtual void updateEntityAfterFallOn(::BlockPos const&, ::UpdateEntityAfterFallOnInterface& entity) const;
 
     virtual bool isBounceBlock() const;
 
@@ -636,14 +666,6 @@ public:
     virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
-
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
 
     virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
@@ -744,12 +766,6 @@ public:
     // NOLINTBEGIN
     MCAPI BlockType(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void _executeEvent(
-        ::std::string const&                                                  name,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
-
     MCAPI ::BlockType& addBlockProperties(::BlockProperty addedProperties);
 
     MCAPI ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription);
@@ -772,8 +788,6 @@ public:
 
     MCAPI ::WeakPtr<::BlockType> createWeakPtr() const;
 
-    MCAPI void executeEvent(::std::string const& name, ::RenderParams& params) const;
-
     MCAPI void finalizeBlockComponentStorage();
 
     MCAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
@@ -790,11 +804,8 @@ public:
 
     MCAPI float getDestroySpeed() const;
 
-    MCAPI ::ResourceDrops getResourceDrops(
-        ::Block const&                block,
-        ::Randomize&                  randomize,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
+    MCAPI ::ResourceDrops
+    getResourceDrops(::Block const& block, ::IRandom& random, ::ResourceDropsContext const& resourceDropsContext) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
@@ -857,7 +868,7 @@ public:
         ::BlockSource&                region,
         ::BlockPos const&             pos,
         ::Block const&                block,
-        ::Randomize&                  randomize,
+        ::IRandom&                    random,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
 
@@ -894,8 +905,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
-
-    MCAPI static float const& SIZE_OFFSET();
     // NOLINTEND
 
 public:
@@ -920,6 +929,7 @@ public:
     MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
+#ifdef LL_PLAT_S
     MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -929,6 +939,7 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
+#endif
 
     MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
@@ -997,8 +1008,6 @@ public:
     MCFOLD bool $isStrippable(::Block const& srcBlock) const;
 
     MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
@@ -1077,8 +1086,6 @@ public:
     MCFOLD void
     $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
-    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCFOLD void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
     MCFOLD bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
@@ -1089,7 +1096,7 @@ public:
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI void $updateEntityAfterFallOn(::BlockPos const&, ::UpdateEntityAfterFallOnInterface& entity) const;
 
     MCFOLD bool $isBounceBlock() const;
 
@@ -1171,14 +1178,6 @@ public:
     MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
     MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
-
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
 
     MCAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 

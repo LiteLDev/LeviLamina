@@ -8,9 +8,9 @@ struct PayloadDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkb5d9f9;
-    ::ll::UntypedStorage<8, 40> mUnkd46627;
-    ::ll::UntypedStorage<8, 40> mUnk7425ea;
+    ::ll::UntypedStorage<8, 40> mUnka1561d;
+    ::ll::UntypedStorage<8, 40> mUnk37a10b;
+    ::ll::UntypedStorage<8, 40> mUnk85dfb6;
     // NOLINTEND
 
 public:

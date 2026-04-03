@@ -6,7 +6,7 @@ struct OnActorEnterVolumeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk191b48;
+    ::ll::UntypedStorage<8, 24> mUnk62c333;
     // NOLINTEND
 
 public:

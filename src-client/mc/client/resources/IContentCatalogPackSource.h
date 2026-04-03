@@ -18,13 +18,7 @@ public:
 
     virtual void setEnabled(bool) = 0;
 
-    virtual ~IContentCatalogPackSource() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~IContentCatalogPackSource() /*override*/ = default;
     // NOLINTEND
 
 public:

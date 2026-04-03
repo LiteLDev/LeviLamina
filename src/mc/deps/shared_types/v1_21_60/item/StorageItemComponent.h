@@ -21,15 +21,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StorageItemComponent(StorageItemComponent const&);
-    StorageItemComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_60::StorageItemComponent&
-    operator=(::SharedTypes::v1_21_60::StorageItemComponent const&);
+
     // NOLINTEND
 
 public:

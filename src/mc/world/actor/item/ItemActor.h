@@ -12,6 +12,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -82,9 +83,9 @@ public:
 
     virtual bool isFireImmune() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
@@ -151,9 +152,9 @@ public:
 
     MCAPI bool $isFireImmune() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

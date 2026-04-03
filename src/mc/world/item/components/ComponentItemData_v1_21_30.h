@@ -26,12 +26,11 @@ public:
 public:
     // prevent constructor by default
     ComponentItemData_v1_21_30(ComponentItemData_v1_21_30 const&);
+    ComponentItemData_v1_21_30();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_21_30();
-
     MCAPI ::ComponentItemData_v1_21_30& operator=(::ComponentItemData_v1_21_30 const&);
 
     MCAPI ~ComponentItemData_v1_21_30();
@@ -52,12 +51,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SemVersionConstant const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

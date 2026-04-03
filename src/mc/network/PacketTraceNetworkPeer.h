@@ -49,14 +49,24 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PacketTraceNetworkPeer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
+    virtual void sendPacket(
+        ::std::string const&       data,
+        ::NetworkPeer::Reliability reliability,
+        ::Compressibility          compressible
+    ) /*override*/;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus _receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) /*override*/;
 
     virtual ~PacketTraceNetworkPeer() /*override*/ = default;
     // NOLINTEND
@@ -64,12 +74,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit PacketTraceNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
+
+    MCAPI void _recordPacket(::std::string const& data, bool isOutgoing);
+
     MCAPI_C ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void
+    $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
+    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+
+    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    );
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

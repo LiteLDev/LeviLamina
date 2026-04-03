@@ -14,8 +14,9 @@ class AllowListFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk82b42f;
-    ::ll::UntypedStorage<8, 8>  mUnk1c38b3;
+    ::ll::UntypedStorage<8, 32> mUnk3edfdb;
+    ::ll::UntypedStorage<8, 8>  mUnk7c975f;
+    ::ll::UntypedStorage<1, 1>  mUnk8fdea0;
     // NOLINTEND
 
 public:
@@ -28,6 +29,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_S ::FileReadResult reload();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI_S static ::AllowListFile loadFromDefaultLocations();
     // NOLINTEND
 
 public:

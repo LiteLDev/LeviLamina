@@ -16,7 +16,6 @@ class ICommandOriginLoader;
 class IRequestAction;
 class ITickingAreaView;
 class JigsawStructureElementRegistry;
-class LevelChunk;
 struct DeserializedChunkLoadedRequest;
 struct Tick;
 // clang-format on
@@ -35,15 +34,11 @@ public:
 
 public:
     // prevent constructor by default
-    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&);
-    ChunkLoadedRequest(ChunkLoadedRequest const&);
     ChunkLoadedRequest();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);
-
     MCAPI ChunkLoadedRequest(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
@@ -53,8 +48,6 @@ public:
     MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
     MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
-
-    MCAPI bool areaContainsChunk(::LevelChunk const& chunk) const;
 
     MCAPI ::CompoundTag serialize(::ChunkRequestListType chunkRequestListType);
 
@@ -78,8 +71,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkLoadedRequest&&);
-
     MCAPI void* $ctor(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,

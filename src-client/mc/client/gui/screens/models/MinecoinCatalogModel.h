@@ -73,8 +73,6 @@ public:
 
     MCAPI void _handleOfferSearchResults(::std::weak_ptr<bool> weakExistence, ::MinecoinSearchResults const& results);
 
-    MCAPI void _monitorActiveModelImageTrackers();
-
     MCAPI void _onFetchKeyArtForActiveOfferModelFinished(
         ::std::weak_ptr<bool>   weakExistence,
         ::std::string const&    activeModelProductId,

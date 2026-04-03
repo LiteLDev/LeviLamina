@@ -138,9 +138,9 @@ public:
 
     MCAPI bool _tryReflect(::Actor& owner, ::Level& level);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void _tryReflectOnHurt(::Actor& owner, ::ActorDamageSource const& damageSource);
 
-    MCAPI float computeCollisionMargin(::BaseGameVersion const& baseGameVersion);
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 

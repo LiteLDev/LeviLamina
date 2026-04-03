@@ -27,7 +27,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkfe3976;
+        ::ll::UntypedStorage<8, 24> mUnke8c702;
         // NOLINTEND
 
     public:
@@ -39,11 +39,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void findInstancesOfTemplate(
-            ::mce::UUID const&                                                   templateId,
-            ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
-        );
-
         MCNAPI ~InstanceList();
         // NOLINTEND
 
@@ -76,6 +71,11 @@ public:
 
     MCNAPI ::std::pair<::ChunkPos, ::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
     findInstance(::mce::UUID const& instanceId);
+
+    MCNAPI void findInstancesOfTemplate(
+        ::mce::UUID const&                                                   templateId,
+        ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>& outInstances
+    );
 
     MCNAPI void
     forEachInstance(::std::function<bool(::ChunkPos const&, ::Editor::Prefabs::PrefabDBPrefabInstance&)> func);

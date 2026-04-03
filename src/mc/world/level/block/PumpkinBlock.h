@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/registry/IBlockArchetype.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,6 +12,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class CompoundTag;
 class Container;
 class Experiments;
 class ItemInstance;
@@ -19,6 +21,52 @@ namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
 class PumpkinBlock : public ::BlockType {
+public:
+    // PumpkinBlock inner types declare
+    // clang-format off
+    class Archetype;
+    // clang-format on
+
+    // PumpkinBlock inner types define
+    class Archetype : public ::IBlockArchetype {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mLit;
+        ::ll::TypedStorage<1, 1, bool> mCarved;
+        // NOLINTEND
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::std::string_view getName() /*override*/;
+
+        virtual void buildNetworkTag(::CompoundTag& tag) const /*override*/;
+
+        virtual void initializeFromNetwork(::CompoundTag const& tag) /*override*/;
+
+        virtual ~Archetype() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI ::std::string_view $getName();
+
+        MCAPI void $buildNetworkTag(::CompoundTag& tag) const;
+
+        MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
+
+
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN

@@ -140,8 +140,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _buildAttributeText() const;
-
     MCAPI ::ItemInstance getTierItem() const;
     // NOLINTEND
 
@@ -202,15 +200,13 @@ public:
 
     MCAPI bool $isTrimAllowed() const;
 
-    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
-
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCAPI int $getDamageChance(int unbreaking) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCFOLD void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -225,6 +221,10 @@ public:
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+#endif
 
 
     // NOLINTEND

@@ -16,26 +16,26 @@ class Candidate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd3f8fe;
+    ::ll::UntypedStorage<8, 32> mUnkf232ed;
     ::ll::UntypedStorage<4, 4>  mUnkf10b9c;
-    ::ll::UntypedStorage<8, 32> mUnkfc97b1;
-    ::ll::UntypedStorage<8, 32> mUnk566df7;
+    ::ll::UntypedStorage<8, 32> mUnkacb722;
+    ::ll::UntypedStorage<8, 32> mUnk260248;
     ::ll::UntypedStorage<8, 80> mUnkd7fc44;
     ::ll::UntypedStorage<4, 4>  mUnkc1520e;
-    ::ll::UntypedStorage<8, 32> mUnkc171e8;
-    ::ll::UntypedStorage<8, 32> mUnk4070ed;
+    ::ll::UntypedStorage<8, 32> mUnka7d764;
+    ::ll::UntypedStorage<8, 32> mUnk969c7f;
     ::ll::UntypedStorage<4, 4>  mUnk50e396;
-    ::ll::UntypedStorage<8, 32> mUnk7adf25;
+    ::ll::UntypedStorage<8, 32> mUnk998f44;
     ::ll::UntypedStorage<4, 4>  mUnk35170f;
     ::ll::UntypedStorage<4, 4>  mUnk630978;
     ::ll::UntypedStorage<4, 4>  mUnk235b48;
-    ::ll::UntypedStorage<8, 32> mUnk6bc578;
+    ::ll::UntypedStorage<8, 32> mUnk74c030;
     ::ll::UntypedStorage<8, 80> mUnk5da8f6;
-    ::ll::UntypedStorage<8, 32> mUnkec224f;
-    ::ll::UntypedStorage<8, 32> mUnk5445ab;
+    ::ll::UntypedStorage<8, 32> mUnk818a47;
+    ::ll::UntypedStorage<8, 32> mUnkfa76a4;
     ::ll::UntypedStorage<2, 2>  mUnke44a8d;
     ::ll::UntypedStorage<2, 2>  mUnk2c6d0a;
-    ::ll::UntypedStorage<8, 32> mUnke10b0a;
+    ::ll::UntypedStorage<8, 32> mUnkf25433;
     // NOLINTEND
 
 public:

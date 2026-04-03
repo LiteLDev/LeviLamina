@@ -27,7 +27,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<
-        4,
+        8,
         40,
         ::std::variant<
             ::br::worldgen::processors::PosRules::AlwaysTrue,

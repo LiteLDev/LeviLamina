@@ -16,18 +16,18 @@ class PlayerTelemetry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke4d354;
-    ::ll::UntypedStorage<8, 64> mUnk7e3e95;
-    ::ll::UntypedStorage<8, 64> mUnk2ce966;
-    ::ll::UntypedStorage<8, 64> mUnk336934;
-    ::ll::UntypedStorage<8, 64> mUnk59eb29;
-    ::ll::UntypedStorage<8, 64> mUnk1d8a92;
-    ::ll::UntypedStorage<8, 64> mUnk41d737;
-    ::ll::UntypedStorage<8, 64> mUnkc5742f;
-    ::ll::UntypedStorage<8, 64> mUnka12c39;
-    ::ll::UntypedStorage<8, 64> mUnk3523c6;
-    ::ll::UntypedStorage<8, 24> mUnk8db829;
-    ::ll::UntypedStorage<8, 64> mUnk344341;
+    ::ll::UntypedStorage<8, 24> mUnke716c1;
+    ::ll::UntypedStorage<8, 64> mUnk53b940;
+    ::ll::UntypedStorage<8, 64> mUnk6f8dfa;
+    ::ll::UntypedStorage<8, 64> mUnk6ece61;
+    ::ll::UntypedStorage<8, 64> mUnkd91fc1;
+    ::ll::UntypedStorage<8, 64> mUnk7bdf26;
+    ::ll::UntypedStorage<8, 64> mUnk953895;
+    ::ll::UntypedStorage<8, 64> mUnke031eb;
+    ::ll::UntypedStorage<8, 64> mUnkae0859;
+    ::ll::UntypedStorage<8, 64> mUnk743504;
+    ::ll::UntypedStorage<8, 24> mUnk9c704b;
+    ::ll::UntypedStorage<8, 64> mUnk1ff91e;
     ::ll::UntypedStorage<8, 16> mUnkfa52ad;
     ::ll::UntypedStorage<8, 8>  mUnk7ed562;
     ::ll::UntypedStorage<8, 8>  mUnk2c6cf6;
@@ -52,9 +52,12 @@ public:
 
     MCNAPI_C void MobInteracted(
         ::std::string                                   InteractedEntity,
+        bool                                            isBaby,
+        bool                                            isGrowthPaused,
         ::std::string                                   interactionType,
         int                                             interactedEntityVariant,
         uchar                                           interactedEntityColor,
+        ::std::string                                   playerMainHand,
         ::Social::Events::PlayerTelemetryLoadout const& loadout,
         ::std::map<::std::string, ::std::string> const& mobProps
     );

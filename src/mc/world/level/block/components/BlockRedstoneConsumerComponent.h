@@ -16,15 +16,20 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class BlockRedstoneConsumerComponent {
 public:
+    // BlockRedstoneConsumerComponent inner types define
+    using OnSetupRedstoneComponentCallback = void(::BlockSource&, ::BlockPos const&);
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, schar>                            mMinPower;
-    ::ll::TypedStorage<1, 1, bool>                             mPropagatePower;
-    ::ll::TypedStorage<1, 1, bool>                             mConsumePowerAnyDirection;
-    ::ll::TypedStorage<1, 1, bool>                             mAcceptSameDirection;
-    ::ll::TypedStorage<1, 1, bool>                             mAcceptHalfPulse;
-    ::ll::TypedStorage<1, 1, bool>                             mIgnoreFirstUpdate;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlaceEventSubscription;
+    ::ll::TypedStorage<1, 1, schar>                                       mMinPower;
+    ::ll::TypedStorage<1, 1, bool>                                        mPropagatePower;
+    ::ll::TypedStorage<1, 1, bool>                                        mConsumePowerAnyDirection;
+    ::ll::TypedStorage<1, 1, bool>                                        mAcceptSameDirection;
+    ::ll::TypedStorage<1, 1, bool>                                        mAcceptHalfPulse;
+    ::ll::TypedStorage<1, 1, bool>                                        mIgnoreFirstUpdate;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mOnPlaceEventSubscription;
+    ::ll::TypedStorage<8, 8, void (*)(::BlockSource&, ::BlockPos const&)> mOnSetupRedstoneComponentCallback;
     // NOLINTEND
 
 public:

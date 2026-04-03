@@ -26,30 +26,39 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
     ::ll::TypedStorage<
         8,
-        192,
+        256,
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents,
             ::BedrockLoadContext,
-            nullptr_t>>
+            nullptr_t,
+            ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents>>
         mProcessorListLoader;
     ::ll::TypedStorage<
         8,
-        192,
+        256,
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents,
             ::BedrockLoadContext,
-            nullptr_t>>
+            nullptr_t,
+            ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents>>
         mTemplatePoolLoader;
     ::ll::TypedStorage<
         8,
-        192,
-        ::Puv::
-            SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents, ::BedrockLoadContext, nullptr_t>>
+        256,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents,
+            ::BedrockLoadContext,
+            nullptr_t,
+            ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents>>
         mJigsawDefinitionLoader;
     ::ll::TypedStorage<
         8,
-        192,
-        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureSet::Contents, ::BedrockLoadContext, nullptr_t>>
+        256,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureSet::Contents,
+            ::BedrockLoadContext,
+            nullptr_t,
+            ::SharedTypes::v1_21_20::JigsawStructureSet::Contents>>
         mJigsawSetLoader;
     // NOLINTEND
 

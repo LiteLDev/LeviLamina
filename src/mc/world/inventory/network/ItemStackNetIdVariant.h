@@ -19,7 +19,7 @@ struct ItemStackNetIdVariant {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::std::variant<::ItemStackNetId, ::ItemStackRequestId, ::ItemStackLegacyRequestId>>
+    ::ll::TypedStorage<8, 24, ::std::variant<::ItemStackNetId, ::ItemStackRequestId, ::ItemStackLegacyRequestId>>
         mVariant;
     // NOLINTEND
 

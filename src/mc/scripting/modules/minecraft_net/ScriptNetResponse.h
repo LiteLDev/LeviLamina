@@ -13,8 +13,8 @@ struct ScriptNetResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd6b492;
-    ::ll::UntypedStorage<8, 32> mUnkcb6b89;
+    ::ll::UntypedStorage<8, 24> mUnkb89a85;
+    ::ll::UntypedStorage<8, 32> mUnk4a7c58;
     ::ll::UntypedStorage<4, 4>  mUnk225dc0;
     ::ll::UntypedStorage<8, 32> mUnkd38337;
     // NOLINTEND

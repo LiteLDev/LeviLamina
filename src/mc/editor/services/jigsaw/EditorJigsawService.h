@@ -42,9 +42,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk1fb459;
-        ::ll::UntypedStorage<8, 16> mUnk579187;
-        ::ll::UntypedStorage<8, 16> mUnkd32fc7;
+        ::ll::UntypedStorage<8, 32> mUnk475f66;
+        ::ll::UntypedStorage<8, 16> mUnka25480;
+        ::ll::UntypedStorage<8, 16> mUnk86b2c4;
         // NOLINTEND
 
     public:
@@ -79,14 +79,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk4fe173;
-    ::ll::UntypedStorage<8, 48>  mUnkfffe35;
+    ::ll::UntypedStorage<8, 48>  mUnkcc05fa;
+    ::ll::UntypedStorage<8, 48>  mUnk80d5a1;
     ::ll::UntypedStorage<8, 520> mUnkdb7f4c;
-    ::ll::UntypedStorage<8, 16>  mUnkfbc0d2;
+    ::ll::UntypedStorage<8, 16>  mUnk83e259;
     ::ll::UntypedStorage<8, 24>  mUnk2bc7d3;
     ::ll::UntypedStorage<8, 16>  mUnk16bb69;
-    ::ll::UntypedStorage<8, 32>  mUnkecbd5c;
-    ::ll::UntypedStorage<8, 16>  mUnkbab63e;
+    ::ll::UntypedStorage<8, 32>  mUnkfa092c;
+    ::ll::UntypedStorage<8, 16>  mUnk23a1c7;
     // NOLINTEND
 
 public:
@@ -124,6 +124,8 @@ public:
         ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
         bool shouldSaveFiles
     ) /*override*/;
+
+    virtual void deleteJigsawRegistry(::std::string const& registryName) /*override*/;
 
     virtual void generateJigsawPreview(
         ::std::string const&                               registryName,
@@ -221,6 +223,8 @@ public:
         ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
         bool shouldSaveFiles
     );
+
+    MCNAPI void $deleteJigsawRegistry(::std::string const& registryName);
 
     MCNAPI void $generateJigsawPreview(
         ::std::string const&                               registryName,

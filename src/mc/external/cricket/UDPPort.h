@@ -8,7 +8,6 @@
 #include "mc/external/cricket/ProtocolType.h"
 #include "mc/external/rtc/DiffServCodePoint.h"
 #include "mc/external/rtc/Socket.h"
-#include "mc/external/rtc/SocketAddress.h"
 #include "mc/external/webrtc/IceCandidateType.h"
 
 // auto generated forward declare list
@@ -21,6 +20,7 @@ namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class Network; }
 namespace rtc { class PacketSocketFactory; }
 namespace rtc { class ReceivedPacket; }
+namespace rtc { class SocketAddress; }
 namespace rtc { class Thread; }
 namespace rtc { struct PacketOptions; }
 namespace rtc { struct SentPacket; }
@@ -44,7 +44,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnka195d6;
         ::ll::UntypedStorage<8, 64> mUnk793108;
-        ::ll::UntypedStorage<8, 16> mUnkb399b3;
+        ::ll::UntypedStorage<8, 16> mUnk2d666b;
         // NOLINTEND
 
     public:
@@ -68,11 +68,11 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk8aeaa5;
     ::ll::UntypedStorage<8, 16> mUnkfd4ead;
     ::ll::UntypedStorage<8, 88> mUnka4b56d;
-    ::ll::UntypedStorage<8, 24> mUnkcaca4f;
+    ::ll::UntypedStorage<8, 24> mUnk85074a;
     ::ll::UntypedStorage<8, 16> mUnk25aa4a;
     ::ll::UntypedStorage<4, 4>  mUnk2b5421;
     ::ll::UntypedStorage<4, 4>  mUnkd369e5;
-    ::ll::UntypedStorage<8, 8>  mUnk97aa4e;
+    ::ll::UntypedStorage<8, 8>  mUnka713e4;
     ::ll::UntypedStorage<1, 1>  mUnk925be5;
     ::ll::UntypedStorage<4, 4>  mUnke81ffc;
     ::ll::UntypedStorage<4, 4>  mUnkcc71f3;

@@ -8,8 +8,8 @@ struct EditorRegistryFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5a5bbd;
-    ::ll::UntypedStorage<8, 32> mUnk3ab09d;
+    ::ll::UntypedStorage<8, 32> mUnkaab233;
+    ::ll::UntypedStorage<8, 32> mUnk522137;
     // NOLINTEND
 
 public:

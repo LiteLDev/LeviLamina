@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/util/IntRange.h"
+#include "mc/world/actor/ai/goal/MobDescriptor.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct MobDescriptor;
 struct Tick;
 // clang-format on
 

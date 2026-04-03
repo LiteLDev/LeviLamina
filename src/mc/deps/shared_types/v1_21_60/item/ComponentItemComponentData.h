@@ -46,7 +46,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -144,12 +143,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersion const& FIRST_VERSION();
     // NOLINTEND
 
 public:

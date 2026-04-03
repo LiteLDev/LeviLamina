@@ -13,6 +13,7 @@
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -68,7 +69,8 @@ public:
 
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
 public:
@@ -126,7 +128,7 @@ public:
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

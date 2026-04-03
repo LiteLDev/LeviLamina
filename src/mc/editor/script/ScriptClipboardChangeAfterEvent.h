@@ -13,7 +13,7 @@ struct ScriptClipboardChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf2b100;
+    ::ll::UntypedStorage<8, 32> mUnkfa6a30;
     ::ll::UntypedStorage<1, 1>  mUnk1d9702;
     // NOLINTEND
 

@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IScriptDedicatedServerUtils;
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -32,6 +33,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                    mMaxDiagnosticsCaptureFileSize;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                    mMaxEventsPerWindow;
     ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::seconds>> mRateLimitWindow;
+    ::ll::TypedStorage<8, 8, ::IScriptDedicatedServerUtils*>           mDedicatedServerUtils;
     // NOLINTEND
 
 public:

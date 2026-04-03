@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorHurtResult;
 // clang-format on
 
 class IronGolem : public ::Mob {
@@ -26,9 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    virtual ::ActorHurtResult
+    doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
@@ -42,7 +44,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+#ifdef LL_PLAT_S
+    MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+#endif
 
     MCFOLD void $die(::ActorDamageSource const& source);
 

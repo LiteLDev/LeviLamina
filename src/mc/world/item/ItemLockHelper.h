@@ -25,7 +25,7 @@ public:
     MCAPI_C static void
     appendItemLockPopupNoticeText(::std::string& formattedPopupNoticeText, ::ItemStackBase const& item);
 
-    MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
+    MCAPI_C static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
 
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
 

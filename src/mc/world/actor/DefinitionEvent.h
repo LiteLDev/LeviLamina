@@ -12,6 +12,7 @@
 // clang-format off
 class RenderParams;
 struct DefinitionModifier;
+namespace SharedTypes::v1_26_10::BlockDefinition { struct DeprecatedDefinitionEvent; }
 // clang-format on
 
 class DefinitionEvent {
@@ -38,6 +39,11 @@ public:
     MCAPI DefinitionEvent(::DefinitionEvent const&);
 
     MCAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
+
+    MCAPI ::DefinitionEvent&
+    fromSharedType(::SharedTypes::v1_26_10::BlockDefinition::DeprecatedDefinitionEvent const& definitionEvent);
+
+    MCAPI ::SharedTypes::v1_26_10::BlockDefinition::DeprecatedDefinitionEvent getSharedType() const;
 
     MCAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
 

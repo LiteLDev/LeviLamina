@@ -34,8 +34,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ModuleName();
-
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 

@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/v1_26_0/block/LiquidReaction.h"
+#include "mc/deps/shared_types/v1_26_0/block/LiquidType.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
-#include "mc/world/level/block/LiquidReaction.h"
-#include "mc/world/level/block/LiquidType.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
-#include "mc/world/level/block/components/RuleSet.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
-struct DetectionRule;
+namespace SharedTypes::v1_26_0 { struct DetectionRule; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,7 +20,7 @@ struct BlockLiquidDetectionDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::RuleSet> mDetectionRules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_26_0::DetectionRule>> mDetectionRules;
     // NOLINTEND
 
 public:
@@ -49,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockLiquidDetectionDescription(::std::vector<::DetectionRule> detectionRules);
+    MCAPI explicit BlockLiquidDetectionDescription(::std::vector<::SharedTypes::v1_26_0::DetectionRule> detectionRules);
     // NOLINTEND
 
 public:
@@ -63,15 +62,17 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
 
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::LiquidReaction> const& liquidReactionNameBiMap();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidReaction> const&
+    liquidReactionNameBiMap();
 
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::LiquidType> const& liquidTypeNameBiMap();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidType> const&
+    liquidTypeNameBiMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::DetectionRule> detectionRules);
+    MCAPI void* $ctor(::std::vector<::SharedTypes::v1_26_0::DetectionRule> detectionRules);
     // NOLINTEND
 
 public:

@@ -19,6 +19,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const&>         mBlock;
     ::ll::TypedStorage<1, 2, ::BrightnessPair const> mLight;
     ::ll::TypedStorage<1, 1, bool const>             mIsExternal;
+    ::ll::TypedStorage<4, 4, float const>            mTextureShiftNoise;
     // NOLINTEND
 
 public:

@@ -12,8 +12,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainer; }
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainerV010; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -49,15 +48,14 @@ public:
     getOrCreateContainer();
 
     MCAPI ::Scripting::Result_deprecated<::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer>>>
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainerV010>>>
     getOrCreateContainerV010();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCAPI static ::Scripting::ClassBinding bind();
 
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponent>>

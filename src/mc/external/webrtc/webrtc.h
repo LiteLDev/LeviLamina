@@ -6,7 +6,6 @@
 #include "mc/external/absl/AnyInvocable.h"
 #include "mc/external/cricket/MediaType.h"
 #include "mc/external/webrtc/AV1Profile.h"
-#include "mc/external/webrtc/FrameDependencyStructure.h"
 #include "mc/external/webrtc/IceCandidateType.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/Priority.h"
@@ -52,6 +51,7 @@ namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { class TransceiverList; }
 namespace webrtc { struct DataChannelInit; }
+namespace webrtc { struct FrameDependencyStructure; }
 namespace webrtc { struct H264ProfileLevelId; }
 namespace webrtc { struct RTPVideoHeader; }
 namespace webrtc { struct RtcpFeedback; }
@@ -301,17 +301,17 @@ MCNAPI ::webrtc::RtpCapabilities ToRtpCapabilities(
 
 MCNAPI ::webrtc::RtpCodecCapability ToRtpCodecCapability(::cricket::Codec const& cricket_codec);
 
-MCNAPI ::std::string_view ToString(::webrtc::RTCErrorDetailType error);
-
-MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType error);
-
 MCNAPI ::std::string ToString(::webrtc::DataRate value);
 
 MCNAPI ::std::string ToString(::webrtc::DataSize value);
 
 MCNAPI ::std::string ToString(::webrtc::TimeDelta value);
 
-MCNAPI ::std::string ToString(::webrtc::Timestamp);
+MCNAPI ::std::string ToString(::webrtc::Timestamp value);
+
+MCNAPI ::std::string_view ToString(::webrtc::RTCErrorDetailType error);
+
+MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType error);
 
 MCNAPI bool UnimplementedRtpParameterHasValue(::webrtc::RtpParameters const& parameters);
 

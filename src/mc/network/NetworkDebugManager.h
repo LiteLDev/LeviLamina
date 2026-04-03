@@ -4,8 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/network/NetworkStatistics.h"
 #include "mc/network/TrackerType.h"
+
+// auto generated forward declare list
+// clang-format off
+class NetworkStatistics;
+// clang-format on
 
 class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -38,7 +42,7 @@ public:
         ::ll::UntypedStorage<8, 80>  mUnk8f8fe3;
         ::ll::UntypedStorage<8, 152> mUnkc955b2;
         ::ll::UntypedStorage<8, 8>   mUnkad80c2;
-        ::ll::UntypedStorage<8, 24>  mUnkf5da89;
+        ::ll::UntypedStorage<8, 24>  mUnkf3431e;
         ::ll::UntypedStorage<4, 4>   mUnkb89ac4;
         // NOLINTEND
 
@@ -51,6 +55,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Tracker();
+
+        MCNAPI_C void update();
 
         MCNAPI ~Tracker();
         // NOLINTEND
@@ -74,7 +80,7 @@ public:
     ::ll::UntypedStorage<8, 1088> mUnk448985;
     ::ll::UntypedStorage<4, 4>    mUnkddd6be;
     ::ll::UntypedStorage<8, 16>   mUnk931b60;
-    ::ll::UntypedStorage<8, 8>    mUnkb1feb2;
+    ::ll::UntypedStorage<8, 8>    mUnk9694c4;
     // NOLINTEND
 
 public:
@@ -93,16 +99,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::NetworkStatistics* getNetworkStatistics(::TrackerType type);
-
-    MCNAPI_C void update();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI_C static int const& MAX_NUMBER_OF_SAMPLES();
-
-    MCNAPI static int const& UPDATE_INTERVAL_MILLISECONDS();
     // NOLINTEND
 
 public:

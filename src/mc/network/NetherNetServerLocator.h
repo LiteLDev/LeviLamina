@@ -34,8 +34,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkb518a7;
-        ::ll::UntypedStorage<8, 32> mUnk2d2ca2;
+        ::ll::UntypedStorage<8, 32> mUnke25e40;
+        ::ll::UntypedStorage<8, 32> mUnk7d9cc2;
         ::ll::UntypedStorage<4, 4>  mUnkab0aac;
         ::ll::UntypedStorage<4, 4>  mUnk3ed176;
         ::ll::UntypedStorage<4, 4>  mUnkc83c1f;
@@ -71,9 +71,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6f15a6;
+    ::ll::UntypedStorage<8, 24> mUnk8d94d4;
     ::ll::UntypedStorage<8, 24> mUnka0ecad;
-    ::ll::UntypedStorage<8, 32> mUnkcf0391;
+    ::ll::UntypedStorage<8, 32> mUnk86854a;
     ::ll::UntypedStorage<8, 16> mUnkeab7f7;
     ::ll::UntypedStorage<1, 1>  mUnkfee0d4;
     ::ll::UntypedStorage<1, 1>  mUnk646852;
@@ -93,18 +93,17 @@ public:
     virtual ~NetherNetServerLocator() /*override*/;
 
     virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           gameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     ) /*override*/;
 
-    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
+    virtual void stopAnnouncingServer() /*override*/;
 
     virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
@@ -122,6 +121,7 @@ public:
     // NOLINTBEGIN
     MCNAPI NetherNetServerLocator(
         ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&      appPlatform,
         ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
     );
 
@@ -150,6 +150,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&      appPlatform,
         ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
     );
     // NOLINTEND
@@ -164,18 +165,17 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           gameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     );
 
-    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer();
 
     MCNAPI void $startServerDiscovery(::PortPair ports);
 

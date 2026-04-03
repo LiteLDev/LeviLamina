@@ -10,8 +10,8 @@
 // clang-format off
 class StrictEntityContext;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
+struct InterpolateMovementNeededComponent;
 struct MobBodyRotationComponent;
 struct PassengerComponent;
 struct VehicleComponent;
@@ -21,7 +21,7 @@ namespace MobPassengerRotationSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void _tickMobView(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::PassengerComponent const&     passengerComponent,
     ::ActorRotationComponent&       mobRotation,
     ::MobBodyRotationComponent&     mobBodyRotation,

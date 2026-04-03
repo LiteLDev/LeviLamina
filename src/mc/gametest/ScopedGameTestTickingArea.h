@@ -11,10 +11,10 @@ class ScopedGameTestTickingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk327de1;
+    ::ll::UntypedStorage<8, 32> mUnkb32f30;
     ::ll::UntypedStorage<8, 8>  mUnk5eb88c;
     ::ll::UntypedStorage<4, 24> mUnkc921a0;
-    ::ll::UntypedStorage<8, 32> mUnkc0ba01;
+    ::ll::UntypedStorage<8, 32> mUnk4e4001;
     // NOLINTEND
 
 public:

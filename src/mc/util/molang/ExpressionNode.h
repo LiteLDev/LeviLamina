@@ -25,6 +25,7 @@ struct MolangQueryFunction;
 struct MolangScriptArg;
 namespace Json { class Value; }
 namespace Molang::details { class IComplexExpression; }
+namespace Molang::details { class SourceTree; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -194,6 +195,8 @@ public:
     MCAPI_C void* $ctor(::MaterialVariants const& materialVariants);
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
+
+    MCAPI_C void* $ctor(::Molang::details::SourceTree root);
 
     MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
 

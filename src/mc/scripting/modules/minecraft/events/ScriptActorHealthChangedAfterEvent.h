@@ -8,12 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEventIntermediateData; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptActorHealthChangedAfterEvent {
+public:
+    // ScriptActorHealthChangedAfterEvent inner types define
+    using QueueType = ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData;
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -23,21 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptActorHealthChangedAfterEvent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

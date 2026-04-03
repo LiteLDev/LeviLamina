@@ -19,7 +19,7 @@ class WidgetAddClipboardComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk27ccf6;
+    ::ll::UntypedStorage<8, 32> mUnka36b14;
     ::ll::UntypedStorage<1, 1>  mUnk13d350;
     ::ll::UntypedStorage<1, 1>  mUnk130de2;
     ::ll::UntypedStorage<4, 12> mUnk597bd9;

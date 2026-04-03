@@ -24,20 +24,24 @@ public:
     // NOLINTBEGIN
     virtual ~BrewingStandContainerManagerController() /*override*/ = default;
 
-    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void _calculateValidPotionBrewed(::ItemInstance const& itemInstance);
+
+    MCNAPI_C int getBrewProgress(int max);
+
+    MCNAPI_C int getFuelProgress(int max);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
 #endif
 
 

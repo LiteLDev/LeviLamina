@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockPos;
 class BodyControl;
 class CompoundTag;
@@ -50,7 +51,8 @@ public:
 
     virtual float getMaxHeadXRot() /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~Shulker() /*override*/ = default;
     // NOLINTEND
@@ -130,7 +132,7 @@ public:
 
     MCFOLD float $getMaxHeadXRot();
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

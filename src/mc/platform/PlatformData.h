@@ -8,9 +8,9 @@ struct PlatformData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbd469d;
-    ::ll::UntypedStorage<8, 32> mUnk4056c1;
-    ::ll::UntypedStorage<8, 32> mUnk3510d6;
+    ::ll::UntypedStorage<8, 32> mUnk1a0b52;
+    ::ll::UntypedStorage<8, 32> mUnk1ebd6c;
+    ::ll::UntypedStorage<8, 32> mUnkddb5e1;
     // NOLINTEND
 
 public:

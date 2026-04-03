@@ -18,7 +18,7 @@ class StreamCollection : public ::webrtc::StreamCollectionInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb9298e;
+    ::ll::UntypedStorage<8, 24> mUnk8374a1;
     // NOLINTEND
 
 public:

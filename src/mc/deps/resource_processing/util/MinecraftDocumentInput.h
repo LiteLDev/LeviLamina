@@ -27,7 +27,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk236c17;
+        ::ll::UntypedStorage<8, 32> mUnk8c2432;
         ::ll::UntypedStorage<8, 16> mUnk863df5;
         // NOLINTEND
 
@@ -57,8 +57,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkbde5d3;
     ::ll::UntypedStorage<8, 24>  mUnkfdcb9e;
-    ::ll::UntypedStorage<8, 32>  mUnkf8cada;
-    ::ll::UntypedStorage<8, 104> mUnkb30b31;
+    ::ll::UntypedStorage<8, 32>  mUnkf632a0;
+    ::ll::UntypedStorage<8, 104> mUnk556446;
     ::ll::UntypedStorage<8, 80>  mUnk5f5319;
     // NOLINTEND
 
@@ -85,8 +85,8 @@ public:
     // NOLINTBEGIN
     MCNAPI MinecraftDocumentInput(
         ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
-        ::SemVersion const&,
-        ::std::string
+        ::SemVersion const& minModernVersion,
+        ::std::string       data
     );
 
     MCNAPI
@@ -103,8 +103,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
+    MCNAPI void* $ctor(
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
+        ::SemVersion const& minModernVersion,
+        ::std::string       data
+    );
 
     MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
     // NOLINTEND

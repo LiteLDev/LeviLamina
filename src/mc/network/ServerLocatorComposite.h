@@ -12,6 +12,7 @@
 // clang-format off
 class AppPlatform;
 class AsynchronousIPResolver;
+class NetworkSessionOwner;
 struct PingedCompatibleServer;
 struct PortPair;
 // clang-format on
@@ -21,8 +22,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkff7b44;
-    ::ll::UntypedStorage<8, 8>  mUnk64eb8f;
-    ::ll::UntypedStorage<8, 8>  mUnk89c7fa;
+    ::ll::UntypedStorage<8, 8>  mUnk46d7e3;
+    ::ll::UntypedStorage<8, 8>  mUnk53642b;
     // NOLINTEND
 
 public:
@@ -37,18 +38,17 @@ public:
     virtual ~ServerLocatorComposite() /*override*/ = default;
 
     virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                worldGameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           worldGameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     ) /*override*/;
 
-    virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
+    virtual void stopAnnouncingServer() /*override*/;
 
     virtual void startServerDiscovery(::PortPair ports) /*override*/;
 
@@ -78,22 +78,36 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI_C void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                worldGameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           worldGameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
     );
 
-    MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+    MCNAPI void $stopAnnouncingServer();
 
     MCNAPI void $startServerDiscovery(::PortPair ports);
 

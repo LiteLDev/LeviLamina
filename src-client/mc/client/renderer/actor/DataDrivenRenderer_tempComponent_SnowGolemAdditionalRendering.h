@@ -37,8 +37,11 @@ public:
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
 
-    virtual void
-    render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&) /*override*/;
+    virtual void render(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) /*override*/;
 
     virtual ~DataDrivenRenderer_tempComponent_SnowGolemAdditionalRendering() /*override*/ = default;
     // NOLINTEND
@@ -48,7 +51,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams&);
+    MCNAPI void
+    $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
     // NOLINTEND
 
 public:

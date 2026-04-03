@@ -12,7 +12,6 @@
 #include "mc/client/game/ISplitScreenChangedPublisher.h"
 #include "mc/client/game/IWorldTransfer.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/common/IMinecraftApp.h"
 #include "mc/common/SubClientId.h"
@@ -25,7 +24,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/input/TextboxTextUpdateReason.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/events/NetworkType.h"
 #include "mc/platform/MultiplayerLockedContext.h"
 #include "mc/server/commands/test/TestAssetCommandType.h"
@@ -90,7 +89,6 @@ class TextToIconMapper;
 class TextureAtlas;
 class UIMeasureStrategy;
 class Vec3;
-class WebSocketCommManager;
 class WorldTemplateManager;
 struct ActorResourceDefinitionGroup;
 struct ActorUniqueID;
@@ -119,6 +117,7 @@ struct NewPlayerSystem;
 struct PackDownloadManager;
 struct PersonaRepository;
 struct PersonaService;
+struct PlayerJoinWorldContext;
 struct PlayerMessagingService;
 struct ProfanityContext;
 struct RealmsAPI;
@@ -231,10 +230,6 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> getSoundEngine() const = 0;
 
-    virtual void setTextboxText(::std::string const&, int const, ::TextboxTextUpdateReason) = 0;
-
-    virtual void onKeyboardDismissed(int const) = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> getTextBoxController() = 0;
 
     virtual void openPauseMenu() = 0;
@@ -260,7 +255,7 @@ public:
         ::std::string const&,
         ::std::string const&,
         ::NetworkType,
-        bool
+        ::PlayerJoinWorldContext
     ) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> getOfferRepository() const = 0;
@@ -423,6 +418,8 @@ public:
 
     virtual void navigateToPlayScreenFriendsTab() = 0;
 
+    virtual bool isInServer() const = 0;
+
     virtual bool isInRealm() const = 0;
 
     virtual bool isShowingLoadingScreen() const = 0;
@@ -437,9 +434,9 @@ public:
 
     virtual ::GameRenderer& getGameRenderer() const = 0;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> getTextureAtlas() const = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getTextureAtlas() = 0;
+
+    virtual ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> getItemTextureAtlas() = 0;
 
     virtual bool hasActorResourceDefinitionGroup() const = 0;
 
@@ -501,7 +498,7 @@ public:
 
     virtual void refocusMouse(bool) = 0;
 
-    virtual void setMouseType(::ui::MousePointerType) = 0;
+    virtual void setMouseType(::Bedrock::Input::PointerType) = 0;
 
     virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
 
@@ -535,7 +532,7 @@ public:
 
     virtual ::Social::SocialSystem& getSocialSystem() const = 0;
 
-    virtual ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> getPartySystem() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::Parties::PartySystem> getPartySystem() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> getUIProgressTips() const = 0;
 
@@ -599,8 +596,6 @@ public:
 
     virtual void joinRealmFromInvite(::Realms::World const&) = 0;
 
-    virtual void joinRealmFromConnectLink(::Realms::World const&) = 0;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServices> getRealmsServices() = 0;
 
     virtual ::std::weak_ptr<::ClubsService> getClubsService() = 0;
@@ -648,8 +643,6 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationControllerGroup> getActorAnimationControllerGroup() const = 0;
 
     virtual bool isMultiplayerServiceManagerReady() const = 0;
-
-    virtual ::Bedrock::NotNullNonOwnerPtr<::WebSocketCommManager> getWebSocketCommManager() = 0;
 
     virtual void doPrimaryClientReadyWork(::std::function<void()>) = 0;
 

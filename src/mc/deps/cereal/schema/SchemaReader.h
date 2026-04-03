@@ -78,9 +78,11 @@ public:
 
     virtual ::Bedrock::Result<void> asRawBytes(::std::function<::gsl::span<uchar>(uint64)>, uint64) = 0;
 
-    virtual ::std::optional<bool> readValidityFlag() = 0;
+    virtual ::std::optional<bool> additionalDataAsBool() = 0;
 
-    virtual ::std::optional<uint> readControlValue() = 0;
+    virtual ::std::optional<uint> additionalDataAsUInt32() = 0;
+
+    virtual ::std::optional<::std::string> additionalDataAsString(uint64) = 0;
 
     virtual uint64 members() = 0;
 

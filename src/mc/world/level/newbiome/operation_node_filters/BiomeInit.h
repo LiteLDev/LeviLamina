@@ -26,24 +26,15 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeInit();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeInit(
-        ::BiomeRegistry const& registry,
-        ::Biome const&         defaultOceanBiome,
-        ::Biome const&         fallbackBiome,
-        ::GeneratorType        generator
-    );
+
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCAPI_C void* $ctor(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,

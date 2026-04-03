@@ -92,6 +92,8 @@ public:
     // NOLINTBEGIN
     MCAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
 
+    MCAPI void _markAndSweep();
+
     MCAPI void _saveLastSlots(::Container* container);
     // NOLINTEND
 

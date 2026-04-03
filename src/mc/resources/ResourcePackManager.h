@@ -7,6 +7,7 @@
 #include "mc/deps/core/resource/ResourceLoader.h"
 #include "mc/deps/core/resource/ResourcePackStackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,13 +32,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkb96c8d;
-    ::ll::UntypedStorage<8, 8>  mUnk809618;
-    ::ll::UntypedStorage<8, 8>  mUnkd638dd;
-    ::ll::UntypedStorage<8, 8>  mUnk7a20a8;
-    ::ll::UntypedStorage<8, 8>  mUnk296ec8;
-    ::ll::UntypedStorage<8, 8>  mUnk9cce53;
-    ::ll::UntypedStorage<8, 8>  mUnk69ba5b;
-    ::ll::UntypedStorage<8, 32> mUnk67648f;
+    ::ll::UntypedStorage<8, 8>  mUnk5e01de;
+    ::ll::UntypedStorage<8, 8>  mUnkbc5636;
+    ::ll::UntypedStorage<8, 8>  mUnk179563;
+    ::ll::UntypedStorage<8, 8>  mUnkca2a01;
+    ::ll::UntypedStorage<8, 8>  mUnk828950;
+    ::ll::UntypedStorage<8, 8>  mUnkd627e1;
+    ::ll::UntypedStorage<8, 32> mUnk1a684d;
     ::ll::UntypedStorage<1, 1>  mUnk84ade0;
     ::ll::UntypedStorage<1, 1>  mUnkacc084;
     ::ll::UntypedStorage<1, 1>  mUnk384e00;
@@ -91,8 +92,7 @@ public:
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
-        /*override*/;
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string>
     getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
@@ -104,7 +104,7 @@ public:
 
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     virtual bool hasCapability(::std::string_view requiredCapability) const;
@@ -123,6 +123,11 @@ public:
 
     MCNAPI void _composeFullStack();
 
+    MCNAPI bool _doStackOperation(
+        ::ResourcePackStackType                                                          stackType,
+        ::brstd::move_only_function<bool(::std::unique_ptr<::ResourcePackStack>*) const> operation
+    );
+
     MCNAPI void _getResourcesOfGroup(
         ::PackInstance const&        packInstance,
         ::std::string const&         group,
@@ -132,8 +137,6 @@ public:
     MCNAPI void _updateLanguageSubpacks();
 
     MCNAPI_C ::ContentTierIncompatibleReason canSupportPacks();
-
-    MCNAPI_C void clearStack(::ResourcePackStackType stackType);
 
     MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -227,7 +230,7 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     MCNAPI ::Core::PathBuffer<::std::string>
     $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
@@ -239,7 +242,7 @@ public:
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;

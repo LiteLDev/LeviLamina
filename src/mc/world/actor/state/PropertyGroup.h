@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::PropertyMetadata>> mPropertyMetadata;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<uint64, uint64, ::std::less<uint64>, ::std::vector<uint64>, ::std::vector<int64>>>
                                                                             mPropertyIndexesByHash;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, uint64>>  mPropertyIndexesByString;
@@ -123,14 +123,6 @@ public:
 
     MCAPI_C static ::std::shared_ptr<::PropertyGroup const>
     loadPropertiesFromNetworkSync(::ListTag const& propertiesTag);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_ENUM_SIZE();
-
-    MCAPI static uint64 const& MAX_ENUM_VALUE_SIZE();
     // NOLINTEND
 
 public:

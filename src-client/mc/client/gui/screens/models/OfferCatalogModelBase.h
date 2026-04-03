@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, ::OfferCatalogStatus>                               mCatalogStatus;
     ::ll::TypedStorage<8, 24, ::std::vector<::PlatformOfferModel>>               mOfferModels;
     ::ll::TypedStorage<8, 24, ::std::vector<::PlatformOfferModel>>               mActiveOfferModels;
-    ::ll::TypedStorage<8, 320, ::PlatformOfferModel>                             mInvalidOfferModel;
+    ::ll::TypedStorage<8, 328, ::PlatformOfferModel>                             mInvalidOfferModel;
     // NOLINTEND
 
 public:

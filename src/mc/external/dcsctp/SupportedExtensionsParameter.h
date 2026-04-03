@@ -18,7 +18,7 @@ class SupportedExtensionsParameter : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk85c064;
+    ::ll::UntypedStorage<8, 24> mUnkbffe66;
     // NOLINTEND
 
 public:

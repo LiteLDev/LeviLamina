@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
@@ -30,7 +33,7 @@ public:
 
     virtual void translate(::BlockPos const&) = 0;
 
-    virtual void forEach(::std::function<bool(::BlockPos const&)>) const = 0;
+    virtual void forEach(::brstd::function_ref<bool(::BlockPos const&)>) const = 0;
 
     virtual ::std::set<::ChunkPos> getChunks() const = 0;
 

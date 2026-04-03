@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -63,13 +64,13 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
+
+    MCAPI static void applyStewEffect(::ItemStack const& inOutInstance, ::Actor& actor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-
     MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI void $appendFormattedHovertext(
@@ -80,6 +81,10 @@ public:
     ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+#endif
 
 
     // NOLINTEND

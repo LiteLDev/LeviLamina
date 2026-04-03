@@ -25,13 +25,5 @@ public:
     MCFOLD ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload&&);
 
     MCFOLD ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload const&);
-
-    MCAPI ~ClientCameraAimAssistPacketPayload();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

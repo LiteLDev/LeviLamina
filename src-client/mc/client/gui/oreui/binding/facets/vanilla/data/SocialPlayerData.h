@@ -24,6 +24,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>>        mActorUniqueID;
     ::ll::TypedStorage<8, 32, ::std::string>                           gamerTag;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>          playingOnServerId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>          playingOnRealmId;
     ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>         profileImage;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                  platformProfileImage;
     ::ll::TypedStorage<4, 4, ::OreUI::SocialPresence>                  presence;

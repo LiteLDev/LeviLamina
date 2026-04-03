@@ -44,5 +44,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool(::ItemStack const&, int, ::ItemStack const&)>>
         mMoveSelectedItemFromStorageItemToStorageItem;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int, ::ItemTransferAmount)>> mHandleDropItem;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int)>> mHoverContainerSlot;
     // NOLINTEND
 };

@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>          partyId;
-    ::ll::TypedStorage<8, 616, ::OreUI::SocialPlayer> partyFriend;
+    ::ll::TypedStorage<8, 656, ::OreUI::SocialPlayer> partyFriend;
     // NOLINTEND
 
 public:

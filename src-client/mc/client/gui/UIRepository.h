@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/gui/UITextureInfoPtr.h"
 #include "mc/client/gui/interface/IUIRepository.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 
 // auto generated forward declare list
 // clang-format off
 class ResourceLoader;
-class ResourceLocation;
 class UITextureInfo;
 // clang-format on
 

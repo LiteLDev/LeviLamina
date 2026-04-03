@@ -13,8 +13,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Block;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -58,6 +56,7 @@ public:
     ::ll::TypedStorage<1, 1, ::BlockActorType const>                        mType;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockActor::Property, 5>> mProperties;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>          mCustomName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mFilteredCustomName;
     ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData>                  mTerrainInterlockData;
     // NOLINTEND
 
@@ -102,8 +101,6 @@ public:
 
     virtual void triggerEvent(int, int);
 
-    virtual void executeEvent(::BlockSource&, ::BlockPos const&, ::Block const&, ::std::string const&, ::Actor&);
-
     virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     virtual float getShadowRadius(::BlockSource&) const;
@@ -123,6 +120,8 @@ public:
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
 
     virtual ::std::string getName() const;
+
+    virtual void setFilteredNameTag(::std::string const& filteredName);
 
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
@@ -167,6 +166,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
+
+    MCAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
 
     MCAPI_C ::Bedrock::Safety::RedactableString getDisplayName() const;
 
@@ -229,8 +230,6 @@ public:
 
     MCFOLD void $triggerEvent(int, int);
 
-    MCFOLD void $executeEvent(::BlockSource&, ::BlockPos const&, ::Block const&, ::std::string const&, ::Actor&);
-
     MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     MCFOLD float $getShadowRadius(::BlockSource&) const;
@@ -250,6 +249,8 @@ public:
     MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
     MCFOLD ::std::string $getName() const;
+
+    MCAPI void $setFilteredNameTag(::std::string const& filteredName);
 
     MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 

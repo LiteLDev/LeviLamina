@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/Mutex.h"
@@ -13,7 +14,6 @@
 // clang-format off
 class ActorAnimationControllerInfo;
 class ActorAnimationControllerPtr;
-class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;

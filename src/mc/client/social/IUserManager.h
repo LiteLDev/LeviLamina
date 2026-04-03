@@ -19,12 +19,12 @@ struct ControllerIDtoClientMap;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class SingleThreadedLock; }
 namespace Social { class MultiplayerServiceObserver; }
-namespace Social { class ProfileImageOptions; }
 namespace Social { class UserListObserver; }
 namespace mce { struct Image; }
 class IClientInstance;
 class IMinecraftGame;
 class Options;
+namespace Social { struct ProfileImageOptions; }
 namespace Social { struct User; }
 namespace Social { struct XboxLiveUser; }
 // clang-format on
@@ -178,8 +178,6 @@ public:
     virtual ::Social::MultiplayerServiceObserver& getMultiplayerServiceObserver() = 0;
 
     virtual ::Social::MultiplayerServiceIdentifier getPlatformMultiplayerServiceIdentifier() const = 0;
-
-    virtual bool willSyncUserDataStorage() const = 0;
     // NOLINTEND
 
 public:

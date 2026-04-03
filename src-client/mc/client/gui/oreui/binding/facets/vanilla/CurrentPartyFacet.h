@@ -10,12 +10,15 @@
 
 // auto generated forward declare list
 // clang-format off
+class IOptions;
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct SocialPlayer; }
 namespace Parties { struct IPartyProvider; }
 namespace Parties { struct Party; }
+namespace Parties { struct PartyTravelManager; }
 namespace Social { struct PlayerProfile; }
 namespace Social { struct ProfileSystem; }
+namespace World { class WorldPlayerListTracker; }
 // clang-format on
 
 namespace OreUI {
@@ -24,21 +27,31 @@ class CurrentPartyFacet : public ::OreUI::FacetBase<::OreUI::CurrentPartyFacet> 
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mMainMenuDestinationName;
     ::ll::TypedStorage<1, 1, bool>                                                          mIsDirty;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlayerProfile>> mMemberProfiles;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>               mMemberProfileSubscriptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                         mMembers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                         mPrevMembers;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlayerProfile>> mInviteeProfiles;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>             mInviteeProfileSubscriptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mInvitees;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::SocialPlayer>>                       mPrevInvitees;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                 mProfileSystem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mPartySubscription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>>                        mParty;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>>      mPartyProvider;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>>  mPartyTravelManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserAtDestinationSubscription;
+    ::ll::TypedStorage<8, 8, ::World::WorldPlayerListTracker&> mWorldPlayerListTracker;
+    ::ll::TypedStorage<8, 8, ::IOptions&>                      mOptions;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLanguageSubscription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CurrentPartyFacet& operator=(CurrentPartyFacet const&);
+    CurrentPartyFacet(CurrentPartyFacet const&);
     CurrentPartyFacet();
 
 public:
@@ -53,22 +66,33 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CurrentPartyFacet(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const&         resourceAllowList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                profileSystem
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>             partyProvider,
+        ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>         partyTravelManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::std::shared_ptr<::Social::ProfileSystem>                        profileSystem,
+        ::IOptions&                                                       options,
+        ::World::WorldPlayerListTracker&                                  worldPlayerListTracker
     );
+
+    MCAPI ::std::shared_ptr<::Parties::Party> _getParty() const;
 
     MCAPI void _updateInviteeProfiles();
 
     MCAPI void _updateInvitees();
 
+    MCAPI void _updateMainMenuName();
+
     MCAPI void _updateMemberProfiles();
 
     MCAPI void _updateMembers();
 
+    MCAPI ::std::string const& getDestinationName() const;
+
     MCAPI bool getIsInParty() const;
 
     MCAPI ::std::string const& getLeaderXuid() const;
+
+    MCAPI int const getMaxMemberCount() const;
 
     MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getMembers() const;
 
@@ -77,6 +101,10 @@ public:
     MCFOLD ::std::vector<::OreUI::SocialPlayer> const& getPendingInvitees() const;
 
     MCAPI ::Parties::PartyPrivacy getPrivacy() const;
+
+    MCAPI bool getRestrictInvitesToLeader() const;
+
+    MCAPI bool getShouldShowJoinDestination() const;
     // NOLINTEND
 
 public:
@@ -89,9 +117,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>> partyProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const&         resourceAllowList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                profileSystem
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>             partyProvider,
+        ::Bedrock::NonOwnerPointer<::Parties::PartyTravelManager>         partyTravelManager,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
+        ::std::shared_ptr<::Social::ProfileSystem>                        profileSystem,
+        ::IOptions&                                                       options,
+        ::World::WorldPlayerListTracker&                                  worldPlayerListTracker
     );
     // NOLINTEND
 
@@ -104,7 +135,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCAPI bool $update();
     // NOLINTEND
 
 public:

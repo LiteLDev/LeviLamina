@@ -64,7 +64,7 @@ public:
 
     MCFOLD bool isFinishedQueryingProductsAndPurchases() const;
 
-    MCAPI bool isRealmsCoreOfferAvailable() const;
+    MCFOLD bool isRealmsCoreOfferAvailable() const;
 
     MCAPI bool isRealmsPlusOfferAvailable() const;
 

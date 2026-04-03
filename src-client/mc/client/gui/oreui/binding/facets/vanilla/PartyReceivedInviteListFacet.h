@@ -12,10 +12,10 @@
 namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct PartyReceivedInviteData; }
 namespace Parties { struct IPartyProvider; }
-namespace Parties { struct Party; }
 namespace Parties { struct PartyReceivedInviteList; }
 namespace Social { struct PlayerProfile; }
 namespace Social { struct ProfileSystem; }
+namespace World { class WorldPlayerListTracker; }
 // clang-format on
 
 namespace OreUI {
@@ -24,21 +24,23 @@ class PartyReceivedInviteListFacet : public ::OreUI::FacetBase<::OreUI::PartyRec
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>> mProfileSystem;
-    ::ll::TypedStorage<8, 32, ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartyReceivedInviteList>>>
-                                                                                            mPartyReceivedInviteList;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>   mResourceAllowList;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlayerProfile>> mInviterProfiles;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PartyReceivedInviteData>>              mInvites;
-    ::ll::TypedStorage<1, 1, bool>                                                          mIsDirty;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mReceivedInviteUpdateSubscription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>>            mParty;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mPartySubscription;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mInviterProfileSubscriptions;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                     mProfileSystem;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartyReceivedInviteList>> mPartyReceivedInviteList;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>>     mResourceAllowList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Social::PlayerProfile>>   mInviterProfiles;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::PartyReceivedInviteData>>                mInvites;
+    ::ll::TypedStorage<8, 8, ::World::WorldPlayerListTracker&>                                mWorldPlayerListTracker;
+    ::ll::TypedStorage<1, 1, bool>                                                            mIsDirty;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mReceivedInviteUpdateSubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>> mPartyProvider;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mPartySubscription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>        mInviterProfileSubscriptions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PartyReceivedInviteListFacet& operator=(PartyReceivedInviteListFacet const&);
+    PartyReceivedInviteListFacet(PartyReceivedInviteListFacet const&);
     PartyReceivedInviteListFacet();
 
 public:
@@ -53,10 +55,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PartyReceivedInviteListFacet(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartyReceivedInviteList>> partyReceivedInviteList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                         profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                         resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>>          partyProvider
+        ::Bedrock::NonOwnerPointer<::Parties::PartyReceivedInviteList> partyReceivedInviteList,
+        ::std::shared_ptr<::Social::ProfileSystem>                     profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
+        ::World::WorldPlayerListTracker&                               worldPlayerListTracker,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>          partyProvider
     );
 
     MCAPI void _updateInvites();
@@ -76,10 +79,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartyReceivedInviteList>> partyReceivedInviteList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                         profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                         resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>>          partyProvider
+        ::Bedrock::NonOwnerPointer<::Parties::PartyReceivedInviteList> partyReceivedInviteList,
+        ::std::shared_ptr<::Social::ProfileSystem>                     profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
+        ::World::WorldPlayerListTracker&                               worldPlayerListTracker,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>          partyProvider
     );
     // NOLINTEND
 

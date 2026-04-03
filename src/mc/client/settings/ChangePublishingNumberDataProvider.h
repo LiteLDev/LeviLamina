@@ -2,5 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+namespace Settings {
+
 template <typename T0>
 class ChangePublishingNumberDataProvider {};
+
+} // namespace Settings

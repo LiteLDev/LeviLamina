@@ -11,6 +11,7 @@ namespace SharedTypes::v1_20_80 { struct ParticleEffectData; }
 namespace SharedTypes::v1_21_100 { struct CameraDocument; }
 namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
+namespace SharedTypes::v1_26_0 { struct CameraSplineFile; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -19,7 +20,7 @@ class LoaderRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnk6a1cdf;
+    ::ll::UntypedStorage<8, 128> mUnk6a1cdf;
     // NOLINTEND
 
 public:
@@ -33,13 +34,22 @@ public:
     // NOLINTBEGIN
     virtual ~LoaderRegistry() = default;
 
-    virtual ::Puv::Loader<::SharedTypes::v1_20_80::ParticleEffectData> const& getParticleLoader() const = 0;
+    virtual ::Puv::
+        Loader<::SharedTypes::v1_20_80::ParticleEffectData, ::SharedTypes::v1_20_80::ParticleEffectData> const&
+        getParticleLoader() const = 0;
 
-    virtual ::Puv::Loader<::SharedTypes::v1_21_100::CameraDocument> const& getCameraLoader() const = 0;
+    virtual ::Puv::Loader<::SharedTypes::v1_21_100::CameraDocument, ::SharedTypes::v1_21_100::CameraDocument> const&
+    getCameraLoader() const = 0;
 
-    virtual ::Puv::Loader<::SharedTypes::v1_21_110::VoxelShapeDocument> const& getVoxelShapeLoader() const = 0;
+    virtual ::Puv::
+        Loader<::SharedTypes::v1_21_110::VoxelShapeDocument, ::SharedTypes::v1_21_110::VoxelShapeDocument> const&
+        getVoxelShapeLoader() const = 0;
 
-    virtual ::Puv::Loader<::SharedTypes::v1_21_30::TradeTableData> const& getTradeTableLoader() const = 0;
+    virtual ::Puv::Loader<::SharedTypes::v1_21_30::TradeTableData, ::SharedTypes::v1_21_30::TradeTableData> const&
+    getTradeTableLoader() const = 0;
+
+    virtual ::Puv::Loader<::SharedTypes::v1_26_0::CameraSplineFile, ::SharedTypes::v1_26_0::CameraSplineFile> const&
+    getCameraSplineLoader() const = 0;
     // NOLINTEND
 
 public:

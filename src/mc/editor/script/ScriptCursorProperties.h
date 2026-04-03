@@ -15,8 +15,8 @@ class ScriptCursorProperties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnk21a870;
-    ::ll::UntypedStorage<4, 32> mUnka36c7d;
+    ::ll::UntypedStorage<8, 32> mUnk21a870;
+    ::ll::UntypedStorage<8, 32> mUnka36c7d;
     ::ll::UntypedStorage<4, 8>  mUnk5cb736;
     ::ll::UntypedStorage<4, 8>  mUnk8b2361;
     ::ll::UntypedStorage<1, 2>  mUnka9244a;

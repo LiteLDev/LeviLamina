@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/gameplay/data/gameplayui/ChestType.h"
 #include "mc/client/gui/gameplay/gameplayui/GameStateModel.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 
@@ -18,15 +19,20 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExpectedRoute;
-    ::ll::TypedStorage<1, 5, ::GameplayUI::GameStateModel>    mModel;
+    ::ll::TypedStorage<4, 16, ::GameplayUI::GameStateModel>   mModel;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void closeDataDrivenScreens();
+
     MCAPI void onGameServerConnectionChanged(bool isConnectedToGameServer);
 
-    MCAPI void onPlayerOpenContainer(::SharedTypes::Legacy::ContainerType container);
+    MCAPI void onPlayerOpenContainer(
+        ::SharedTypes::Legacy::ContainerType     container,
+        ::std::optional<::GameplayUI::ChestType> chestType
+    );
     // NOLINTEND
 
 public:

@@ -8,8 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorUniqueIDComponent;
+struct InterpolateMovementNeededComponent;
 struct SheepFlagComponent;
 struct SynchedActorDataComponent;
 struct TintColorComponent;
@@ -19,7 +19,7 @@ namespace SheepAnimationSystemsImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void tickJebification(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::SheepFlagComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::SheepFlagComponent>>,
     ::TintColorComponent&              tintColorComponent,
     ::SynchedActorDataComponent const& synchedActorDataComponent,
     ::ActorUniqueIDComponent&          actorUniqueIDComponent,

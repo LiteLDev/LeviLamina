@@ -14,7 +14,7 @@ struct ItemNameResultData : public ::ContainerScreenActionResultData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkec4356;
+    ::ll::UntypedStorage<8, 32> mUnkd28ec8;
     // NOLINTEND
 
 public:

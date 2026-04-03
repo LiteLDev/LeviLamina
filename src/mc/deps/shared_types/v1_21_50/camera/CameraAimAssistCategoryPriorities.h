@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
-#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,6 +19,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Reference<1>, int>> mEntities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::SharedTypes::Reference<0>, int>> mBlocks;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>>               mBlockTags;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>>               mEntityTypeFamilies;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mEntityDefault;
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                                    mBlockDefault;
     // NOLINTEND
@@ -44,8 +42,6 @@ public:
 
     MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
-
     MCAPI ~CameraAimAssistCategoryPriorities();
     // NOLINTEND
 
@@ -53,9 +49,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities>
-    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

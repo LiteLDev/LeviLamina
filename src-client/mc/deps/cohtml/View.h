@@ -22,7 +22,6 @@ namespace cohtml { struct PageCapture; }
 namespace cohtml { struct TouchEventData; }
 namespace renoir { class ICustomEffectRenderer; }
 namespace renoir { class ISubLayerCompositor; }
-namespace renoir { struct GPUMemoryInfo; }
 namespace renoir { struct Texture2D; }
 // clang-format on
 
@@ -86,13 +85,13 @@ public:
 
     virtual ::cohtml::DebugDump* DebugDumpStackingContextTree() = 0;
 
-    virtual void TouchEvent(::cohtml::TouchEventData const*, uint, bool*, void*) = 0;
+    virtual void TouchEvent(::cohtml::TouchEventData const*, uint, bool*, void*, char const*) = 0;
 
-    virtual void GestureEvent(::cohtml::GestureEventData const&, bool*, void*) = 0;
+    virtual void GestureEvent(::cohtml::GestureEventData const&, bool*, void*, char const*) = 0;
 
-    virtual void MouseEvent(::cohtml::MouseEventData const&, bool*, void*) = 0;
+    virtual void MouseEvent(::cohtml::MouseEventData const&, bool*, void*, char const*) = 0;
 
-    virtual void KeyEvent(::cohtml::KeyEventData const&, bool*, void*) = 0;
+    virtual void KeyEvent(::cohtml::KeyEventData const&, bool*, void*, char const*) = 0;
 
     virtual bool IMESetComposition(char const*, uint, uint) = 0;
 
@@ -107,10 +106,6 @@ public:
     virtual void SetUserAgent(char const*) = 0;
 
     virtual ::cohtml::ImagesList* GetUsedImagesList(::cohtml::ImagesListExtract::Options) const = 0;
-
-    virtual ::renoir::GPUMemoryInfo* GetGPUMemoryStats() const = 0;
-
-    virtual void ResetGPUMemoryTrackerPeaks() = 0;
 
     virtual void BeginCaptureDebugFrame(void*, void (*)(void*, ::cohtml::FrameCapture*), ::cohtml::CaptureMode) = 0;
 
@@ -154,6 +149,8 @@ public:
 
     virtual bool IsReadyForBindings() const = 0;
 
+    virtual char const* GetCurrentScriptStackTrace(int) = 0;
+
     virtual void ExecuteScript(char const*) = 0;
 
     virtual void AddInitialScript(char const*) = 0;
@@ -167,6 +164,10 @@ public:
     virtual void SetSceneCustomEffectRenderer(::renoir::ICustomEffectRenderer*, void*) = 0;
 
     virtual ::cohtml::Binder* GetBinder() = 0;
+
+    virtual bool SetCustomMediaFeature(char const*, char const*) = 0;
+
+    virtual void ResetCustomMediaFeatures() = 0;
 
     virtual void SynchronizeModels() = 0;
 

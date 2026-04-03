@@ -8,9 +8,9 @@ struct Block {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdd3fad;
+    ::ll::UntypedStorage<8, 32> mUnk305992;
     ::ll::UntypedStorage<8, 8>  mUnk668a41;
-    ::ll::UntypedStorage<8, 32> mUnkc71233;
+    ::ll::UntypedStorage<8, 32> mUnk242b73;
     // NOLINTEND
 
 public:

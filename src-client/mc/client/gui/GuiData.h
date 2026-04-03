@@ -7,12 +7,14 @@
 #include "mc/client/game/IConfigListener.h"
 #include "mc/client/gui/GuiMessage.h"
 #include "mc/client/gui/ScreenSizeData.h"
+#include "mc/client/gui/SoundDirection.h"
 #include "mc/client/gui/TitleMessage.h"
 #include "mc/client/gui/screens/MenuPointer.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core_graphics/math/Rect.h"
 #include "mc/deps/input/RectangleArea.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
@@ -118,6 +120,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                    mPopupNoticeDirty;
     ::ll::TypedStorage<1, 1, bool>                                                    mJukeboxPopupNoticeDirty;
     ::ll::TypedStorage<8, 24, ::std::vector<::GuiMessage>>                            mGuiMessages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GuiMessage>>                            mSubtitleMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                           mDevConsoleMessages;
     ::ll::TypedStorage<4, 4, int>                                                     mMaxDevConsoleMessages;
     ::ll::TypedStorage<8, 24, ::std::vector<::ContentLogMessage>>                     mContentLogMessages;
@@ -149,6 +152,8 @@ public:
     ::ll::TypedStorage<1, 1, ::CoordinateCaptureType>                                 mCoordinateCaptureType;
     ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
         mOnGuiScaleUpdatedPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mServerFormDataAvailable;
     // NOLINTEND
 
 public:
@@ -184,7 +189,16 @@ public:
 
     MCAPI void addContentLogMessage(::ContentLogMessage const& message);
 
-    MCAPI int calculateMaxGuiScaleIndex(::Vec2 const& screenSize) const;
+    MCAPI void addSubtitle(::std::string const& message, ::SoundDirection direction);
+
+    MCAPI float calculateGuiScale(
+        ::Vec2 const&                  totalScreenSize,
+        ::Vec2 const&                  safeZone,
+        float                          forcedGuiScale,
+        ::cg::math::Rect<float> const& clientViewportModifiers
+    );
+
+    MCAPI int calculateOptimalGuiScaleIndex(::Vec2 const& safezoneClientScreenSize) const;
 
     MCAPI void clearPlayerMessages();
 
@@ -295,15 +309,15 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getGuiScaleIndexForLargeScreen(::Vec2 const& screenSize);
+
+    MCAPI static int getGuiScaleIndexForSmallScreen(::Vec2 const& screenSize);
+
+    MCAPI static int getGuiScaleIndexForSplitscreenConsole(::Vec2 const& screenSize);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& BUTTONS_TRANSPARENCY();
-
-    MCAPI static float const& DropTicks();
-
     MCAPI static ::std::array<float, 8> const& GUI_SCALE_VALUES();
     // NOLINTEND
 

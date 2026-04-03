@@ -19,7 +19,8 @@ public:
     parseAndUpgradeBiomeJsonDocument(
         ::Core::Path const&      resourceName,
         ::std::string const&     jsonText,
-        ::cereal::ReflectionCtx& ctx
+        ::cereal::ReflectionCtx& ctx,
+        bool                     betaApis
     );
     // NOLINTEND
 };

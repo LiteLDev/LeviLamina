@@ -10,7 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 struct WitchFlagComponent;
 // clang-format on
@@ -25,7 +25,7 @@ public:
     MCNAPI static void _tickWitchPreAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::WitchFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::WitchFlagComponent>,
             ::ActorOwnerComponent> view
     );
 

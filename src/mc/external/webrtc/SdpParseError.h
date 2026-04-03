@@ -8,8 +8,8 @@ struct SdpParseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk38fc6c;
-    ::ll::UntypedStorage<8, 32> mUnkc2641a;
+    ::ll::UntypedStorage<8, 32> mUnk8a5d8f;
+    ::ll::UntypedStorage<8, 32> mUnk92a9dc;
     // NOLINTEND
 
 public:

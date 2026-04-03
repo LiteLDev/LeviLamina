@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemData_v1_20_60();
-
     MCAPI ~ComponentItemData_v1_20_60();
     // NOLINTEND
 
@@ -51,7 +49,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI_C void* $ctor(::ComponentItemData_v1_20_60 const&);
     // NOLINTEND
 
 public:

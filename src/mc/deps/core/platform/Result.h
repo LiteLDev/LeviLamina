@@ -18,11 +18,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Result(::Core::Result&&);
+
     MCAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
 
-    MCAPI Result(::Core::Result&& result);
-
-    MCAPI explicit Result(::Bedrock::Result<void>&&);
+    MCAPI explicit Result(::Bedrock::Result<void>&& result);
 
     MCAPI explicit Result(bool success);
 
@@ -32,11 +32,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::Core::Result&&);
+
     MCAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
 
-    MCFOLD void* $ctor(::Core::Result&& result);
-
-    MCAPI void* $ctor(::Bedrock::Result<void>&&);
+    MCFOLD void* $ctor(::Bedrock::Result<void>&& result);
 
     MCAPI void* $ctor(bool success);
     // NOLINTEND

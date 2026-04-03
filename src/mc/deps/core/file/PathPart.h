@@ -14,8 +14,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD char const* getUtf8CString() const;
-
     MCAPI ~PathPart();
     // NOLINTEND
 

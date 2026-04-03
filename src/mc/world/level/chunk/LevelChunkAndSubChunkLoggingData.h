@@ -5,14 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/threading/Mutex.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/SubChunkPos.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/SubChunk.h"
-
-// auto generated forward declare list
-// clang-format off
-class ChunkPos;
-// clang-format on
 
 struct LevelChunkAndSubChunkLoggingData : public ::Bedrock::EnableNonOwnerReferences {
 public:

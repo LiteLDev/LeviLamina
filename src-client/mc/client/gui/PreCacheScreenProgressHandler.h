@@ -53,6 +53,8 @@ public:
 
     MCFOLD void $onExit(::MinecraftScreenModel&);
 
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;

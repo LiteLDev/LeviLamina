@@ -84,8 +84,6 @@ public:
 
     MCAPI static ::Motif const& mCreebet();
 
-    MCAPI static ::Motif const&& mDefaultImage();
-
     MCAPI static ::Motif const& mDennis();
 
     MCAPI static ::Motif const& mDonkeyKong();

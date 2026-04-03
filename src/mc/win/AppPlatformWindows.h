@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppPlatform.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
@@ -12,7 +11,6 @@
 // clang-format off
 class PDFWriter;
 namespace Core { class Path; }
-namespace Social { struct MultiplayerService; }
 // clang-format on
 
 class AppPlatformWindows : public ::AppPlatform {
@@ -20,10 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>   mUnk387a7f;
-    ::ll::UntypedStorage<8, 32>  mUnk93a477;
-    ::ll::UntypedStorage<8, 32>  mUnk136df8;
-    ::ll::UntypedStorage<8, 32>  mUnk4a65eb;
-    ::ll::UntypedStorage<8, 32>  mUnkb28730;
+    ::ll::UntypedStorage<8, 32>  mUnk71bd4f;
+    ::ll::UntypedStorage<8, 32>  mUnke74ecd;
+    ::ll::UntypedStorage<8, 32>  mUnkf97c15;
+    ::ll::UntypedStorage<8, 32>  mUnk9bd5b3;
+    ::ll::UntypedStorage<8, 32>  mUnka8bdb8;
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
@@ -71,12 +70,6 @@ public:
 
     virtual ::std::shared_ptr<::PDFWriter> createPlatformPDFWriter() /*override*/;
 
-    virtual ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> getMultiplayerServiceListToRegister() const
-        /*override*/;
-
-    virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
-    getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const /*override*/;
-
     virtual bool isTablet() const /*override*/;
 
     virtual double getTimeSFromProcessStart() const /*override*/;
@@ -104,6 +97,8 @@ public:
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
+
+    virtual ::Core::PathBuffer<::std::string> _getSharedDataPath() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
 
@@ -175,6 +170,8 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
+    MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
+
     MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
 
 #ifdef LL_PLAT_C
@@ -189,11 +186,6 @@ public:
     MCFOLD bool $supportsPDFExport() const;
 
     MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
-
-    MCAPI ::std::vector<::std::shared_ptr<::Social::MultiplayerService>> $getMultiplayerServiceListToRegister() const;
-
-    MCAPI ::std::vector<::Social::MultiplayerServiceIdentifier>
-    $getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
 
     MCFOLD bool $isTablet() const;
 

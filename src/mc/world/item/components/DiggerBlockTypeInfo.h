@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct DiggerBlockTypeInfo {
 public:
     // member variables
@@ -31,12 +26,6 @@ public:
     MCAPI DiggerBlockTypeInfo(::DiggerBlockTypeInfo const&);
 
     MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

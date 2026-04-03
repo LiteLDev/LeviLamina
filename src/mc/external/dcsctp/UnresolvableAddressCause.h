@@ -18,7 +18,7 @@ class UnresolvableAddressCause : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc0069e;
+    ::ll::UntypedStorage<8, 24> mUnk874d2e;
     // NOLINTEND
 
 public:

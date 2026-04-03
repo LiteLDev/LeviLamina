@@ -26,7 +26,7 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<int>>                        mSelectedCollectionIndex;
     ::ll::TypedStorage<8, 40, ::SlotData>                                 mSlotData;
     ::ll::TypedStorage<4, 4, ::ActiveBundleData::BundleState>             mBundleState;
-    ::ll::TypedStorage<8, 88, ::std::optional<::BundleTooltipLayoutData>> mCachedBundleTooltipLayoutData;
+    ::ll::TypedStorage<8, 80, ::std::optional<::BundleTooltipLayoutData>> mCachedBundleTooltipLayoutData;
     // NOLINTEND
 
 public:

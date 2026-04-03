@@ -206,12 +206,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64>                         mChunkQueueSize;
-    ::ll::TypedStorage<8, 456, uint64[3][19]>                mTerrainChunkQueueSize;
+    ::ll::TypedStorage<8, 576, uint64[3][24]>                mTerrainChunkQueueSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::OccluderFace>> mChunkOccluders;
     ::ll::TypedStorage<8, 24, ::ActorRenderCandidates>       mActorRenderCandidates;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::gsl::not_null<::Actor*>,
             ::ShadowContext,
@@ -528,6 +528,11 @@ public:
 
     MCAPI void renderEditorCursor(::ScreenContext const& screenContext);
 
+    MCAPI void renderEndChaos(
+        ::ScreenContext&                             screenContext,
+        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
+    ) const;
+
     MCAPI void renderEntities(::BaseActorRenderContext& renderContext);
 
     MCAPI void renderGameplayMetadata(
@@ -551,6 +556,13 @@ public:
         ::ViewRenderObject const& renderObj
     );
 
+    MCAPI void renderSunAndMoon(
+        ::ScreenContext&                             screenContext,
+        ::ViewRenderData const&                      renderData,
+        ::SkyRenderObject const&                     skyData,
+        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
+    ) const;
+
     MCAPI void renderVolumetricFog(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
 
     MCAPI bool shouldCullThisFrame(uint64 lastNumRenderChunksVisibleFromCullingPoint);
@@ -566,22 +578,10 @@ public:
     MCAPI static void
     renderClouds(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, float levelRenderDistance);
 
-    MCAPI static void renderEndChaos(
-        ::ScreenContext&                             screenContext,
-        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
-    );
-
     MCAPI static void renderShadows(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj);
 
     MCAPI static void
     renderStars(::ScreenContext& screenContext, ::ViewRenderData const& renderData, ::SkyRenderObject const& skyData);
-
-    MCAPI static void renderSunAndMoon(
-        ::ScreenContext&                             screenContext,
-        ::ViewRenderData const&                      renderData,
-        ::SkyRenderObject const&                     skyData,
-        ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
-    );
 
     MCAPI static bool
     shouldRenderActor(::Actor const& actor, ::LevelRendererCamera::PlayerStateParams const& playerStateParams);

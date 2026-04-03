@@ -8,6 +8,7 @@
 #include "mc/world/level/chunk/ActorDigestFormat.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
+#include "mc/world/level/storage/DBChunkStorageKey.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
 // auto generated forward declare list
@@ -16,7 +17,6 @@ class BlendingData;
 class BlendingDataProvider;
 class ChunkKey;
 class ChunkViewSource;
-class DBChunkStorageKey;
 class DBStorage;
 class Experiments;
 class IDataInput;
@@ -26,6 +26,7 @@ class LevelStorageWriteBatch;
 class Scheduler;
 class TaskGroup;
 struct ActorUnloadedChunkTransferEntry;
+struct ChunkDeletionMetadata;
 struct LevelChunkFinalDeleter;
 struct PersistentBlendData;
 // clang-format on
@@ -112,6 +113,18 @@ public:
 
     virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood) /*override*/;
 
+    virtual void deleteAllChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    ) /*override*/;
+
+    virtual void deleteStoredChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    ) /*override*/;
+
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
     virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
@@ -174,6 +187,8 @@ public:
     MCAPI bool
     _checkSubChunksUseAbsoluteIndices(::DBChunkStorageKey key, ::LevelChunk const& lc, bool& flatworldsNeedFixup) const;
 
+    MCAPI void _deleteChunkEntityData(::DBChunkStorageKey const& key, ::LevelStorageWriteBatch& batch);
+
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
     MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
@@ -206,6 +221,8 @@ public:
 
     MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>>
     _tryGetBlendingDataForChunk(::ChunkPos const& checkPosition);
+
+    MCAPI ::std::optional<::DBChunkStorageKey> _tryGetChunkKeyFromString(::std::string_view key);
 
     MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
@@ -283,6 +300,18 @@ public:
     MCAPI bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
     MCAPI void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
+
+    MCAPI void $deleteAllChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
+
+    MCAPI void $deleteStoredChunkData(
+        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::function<void()>                    completionCallback,
+        ::std::shared_ptr<::ChunkDeletionMetadata> metadata
+    );
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 

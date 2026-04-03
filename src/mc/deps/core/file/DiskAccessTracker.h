@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/WriteOperation.h"
 
 // auto generated forward declare list
@@ -63,17 +62,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkce5dfc;
+    ::ll::UntypedStorage<8, 40> mUnk23c562;
     ::ll::UntypedStorage<8, 32> mUnke3c629;
     ::ll::UntypedStorage<8, 8>  mUnk4dcf2e;
     ::ll::UntypedStorage<8, 8>  mUnk8b0df6;
     ::ll::UntypedStorage<8, 8>  mUnkec4b4c;
-    ::ll::UntypedStorage<8, 16> mUnkb6ced1;
+    ::ll::UntypedStorage<8, 16> mUnk70b829;
     ::ll::UntypedStorage<8, 16> mUnk81e3dd;
     ::ll::UntypedStorage<8, 16> mUnk164044;
     ::ll::UntypedStorage<8, 56> mUnk893e32;
-    ::ll::UntypedStorage<8, 8>  mUnk3bd5a4;
-    ::ll::UntypedStorage<8, 8>  mUnk3d002f;
+    ::ll::UntypedStorage<8, 8>  mUnkdb336a;
+    ::ll::UntypedStorage<8, 8>  mUnk4b0c78;
     ::ll::UntypedStorage<8, 80> mUnka734d7;
     ::ll::UntypedStorage<8, 80> mUnk37a284;
     ::ll::UntypedStorage<1, 1>  mUnk51bb1c;

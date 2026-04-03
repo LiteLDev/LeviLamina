@@ -23,7 +23,8 @@ MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument parseBiomeLegacy(
     ::Puv::Logger&                                     logger,
     ::cereal::ReflectionCtx&                           ctx,
     ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
-    ::Core::Path const&                                resourceName
+    ::Core::Path const&                                resourceName,
+    bool                                               betaApis
 );
 // NOLINTEND
 

@@ -39,7 +39,7 @@ public:
     ::ll::TypedStorage<8, 40, ::OreUI::FacetPlayerAchievementData>                        mFacetPlayerAchievementData;
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::std::string,
             ::ManualAchievementTracking::TrackedSetting,

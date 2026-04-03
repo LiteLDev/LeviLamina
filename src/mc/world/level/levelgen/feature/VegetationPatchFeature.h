@@ -27,7 +27,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mReplaceableBlocks;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mGroundBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mGroundBlock;
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>            mVegetationFeature;
     ::ll::TypedStorage<4, 4, ::VegetationPatchFeature::Surface> mSurface;
     ::ll::TypedStorage<4, 8, ::IntRange>                        mDepth;

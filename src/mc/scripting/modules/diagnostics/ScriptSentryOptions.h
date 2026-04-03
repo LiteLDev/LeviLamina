@@ -13,7 +13,7 @@ struct ScriptSentryOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk321ec4;
+    ::ll::UntypedStorage<8, 72> mUnkae338d;
     ::ll::UntypedStorage<1, 2>  mUnkb02b12;
     ::ll::UntypedStorage<4, 8>  mUnkf42df6;
     ::ll::UntypedStorage<1, 2>  mUnke57931;

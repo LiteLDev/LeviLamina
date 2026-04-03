@@ -19,7 +19,7 @@ class RTCCertificate : public ::rtc::RefCountedNonVirtual<::rtc::RTCCertificate>
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk383a23;
+    ::ll::UntypedStorage<8, 8> mUnkdbc27c;
     // NOLINTEND
 
 public:

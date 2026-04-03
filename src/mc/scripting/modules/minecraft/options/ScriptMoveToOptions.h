@@ -31,16 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleGameTest::ScriptMoveToOptions> bindV1();
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool const& FACE_TARGET_DEFAULT();
-
-    MCAPI static float const& SPEED_DEFAULT();
-
-    MCAPI static float const& SPEED_MIN();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleGameTest

@@ -14,7 +14,7 @@ class JsonValueHierarchy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk70010e;
+    ::ll::UntypedStorage<8, 24> mUnk21f130;
     // NOLINTEND
 
 public:

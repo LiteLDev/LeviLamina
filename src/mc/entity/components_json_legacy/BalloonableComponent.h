@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class ItemStack;
 class Player;
 // clang-format on
@@ -18,6 +19,6 @@ public:
 
     MCAPI void detach(::Actor& owner, ::Actor& balloon);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
 };

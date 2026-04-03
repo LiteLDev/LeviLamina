@@ -245,8 +245,6 @@ public:
         ::ActorSoundIdentifier const&          actorSoundIdentifier,
         bool                                   isGlobal
     );
-
-    MCAPI_S void stopSoundEvent(::std::string const& name);
     // NOLINTEND
 
 public:

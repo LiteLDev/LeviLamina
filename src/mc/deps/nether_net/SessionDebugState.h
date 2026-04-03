@@ -8,12 +8,12 @@ struct SessionDebugState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc70948;
-    ::ll::UntypedStorage<8, 32> mUnk8f90dd;
-    ::ll::UntypedStorage<8, 24> mUnk2ea3a8;
-    ::ll::UntypedStorage<8, 24> mUnkab2eee;
-    ::ll::UntypedStorage<8, 32> mUnk27640f;
-    ::ll::UntypedStorage<8, 32> mUnkb5bd54;
+    ::ll::UntypedStorage<8, 32> mUnkb13ba0;
+    ::ll::UntypedStorage<8, 32> mUnkf28068;
+    ::ll::UntypedStorage<8, 24> mUnkaa0644;
+    ::ll::UntypedStorage<8, 24> mUnkff8f6b;
+    ::ll::UntypedStorage<8, 32> mUnk786e6d;
+    ::ll::UntypedStorage<8, 32> mUnkc77687;
     // NOLINTEND
 
 public:

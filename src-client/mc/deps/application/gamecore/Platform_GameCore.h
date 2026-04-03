@@ -6,6 +6,7 @@
 #include "mc/deps/application/CommonPlatform.h"
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/threading/XTaskQueueRegistrationToken.h"
+#include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/ResetCallbackObject.h"
 
@@ -13,9 +14,11 @@
 // clang-format off
 class ActivationUri;
 class AppPlatform_GameCore;
-class HIDControllerWin32;
+class HIDControllerGameCoreDesktop;
+class IMinecraftEventing;
 class IMinecraftGame;
 class PushNotificationMessage;
+class RegistryKey;
 struct GameControllerHandler_GameCore;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
@@ -31,10 +34,12 @@ public:
         Resizing    = 1,
     };
 
+    using PlatformHIDController = ::HIDControllerGameCoreDesktop;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::HIDControllerWin32>>             mHIDController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::HIDControllerGameCoreDesktop>>   mHIDController;
     ::ll::TypedStorage<1, 1, bool>                                                 mResetCalled;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                                  mTaskQueue;
     ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                        mGameProtocolToken;
@@ -44,8 +49,22 @@ public:
     ::ll::TypedStorage<1, 1, ::Bedrock::Platform_GameCore::ResizeMode>             mResizeMode;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mProtocolActivationURI;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mAppLocation;
-    ::ll::TypedStorage<1, 1, bool>                                                 mMouseInsideClient;
-    ::ll::TypedStorage<1, 1, bool>                                                 mInactiveScrollEnabled;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::queue<
+            ::brstd::move_only_function<void(::IMinecraftEventing*)>,
+            ::std::deque<::brstd::move_only_function<void(::IMinecraftEventing*)>>>>
+                                                   mEvents;
+    ::ll::TypedStorage<1, 1, bool>                 mMouseInsideClient;
+    ::ll::TypedStorage<1, 1, bool>                 mInactiveScrollEnabled;
+    ::ll::TypedStorage<1, 1, bool>                 mInvertScrollEnabled;
+    ::ll::TypedStorage<1, 1, bool>                 mRemoteSession;
+    ::ll::TypedStorage<1, 1, bool>                 mMouseClickLockEnabled;
+    ::ll::TypedStorage<1, 1, bool>                 mMouseSonarEnabled;
+    ::ll::TypedStorage<4, 4, uint>                 mMouseClickLockTime;
+    ::ll::TypedStorage<4, 4, float>                mKeyboardHeight;
+    ::ll::TypedStorage<8, 8, ::winrt::event_token> mThemeChangeRevoker;
     // NOLINTEND
 
 public:
@@ -112,22 +131,30 @@ public:
     MCAPI
     Platform_GameCore(::HWND__* hwnd, ::brstd::move_only_function<::std::unique_ptr<::IMinecraftGame>()> createGame);
 
+    MCAPI void _cleanup();
+
+    MCAPI ::Bedrock::Result<void> _onScreenKeyboardHeightHandler();
+
     MCAPI bool closeAppRequest();
 
     MCAPI void displayMigrationFailureScreen();
 
     MCAPI ::std::optional<::std::string> extractProtocolActivationURI();
 
-    MCAPI bool isMouseCaptured();
+    MCAPI void firePlatformEvents(::gsl::not_null<::IMinecraftEventing*> eventing);
 
     MCAPI void performCriticalChecksTerminateOnFailure();
 
-    MCAPI void setWindow(::HWND__* hwnd);
+    MCAPI void rapidShutdown();
+
+    MCAPI void setRemoteSession(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::RegistryKey getAppRegistryKey();
+
     MCAPI static void onProtocolActivation(void* context, char const* uri);
     // NOLINTEND
 
@@ -166,9 +193,9 @@ public:
 
     MCAPI void $issueFocusGained();
 
-    MCAPI void $issueInputPaneVisible();
+    MCFOLD void $issueInputPaneVisible();
 
-    MCAPI void $issueInputPaneHidden();
+    MCFOLD void $issueInputPaneHidden();
 
     MCFOLD void $issueSuspendWarning();
 

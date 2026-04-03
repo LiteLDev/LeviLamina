@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/world/ContainerID.h"
 
 struct UpdateTradePacketPayload {

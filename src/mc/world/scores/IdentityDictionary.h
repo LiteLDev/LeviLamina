@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/world/scores/PlayerScoreboardId.h"
+#include "mc/world/scores/ScoreboardId.h"
+
 // auto generated forward declare list
 // clang-format off
 class IdentityDefinition;
-struct ActorUniqueID;
-struct PlayerScoreboardId;
-struct ScoreboardId;
 // clang-format on
 
 class IdentityDictionary {

@@ -13,9 +13,9 @@ namespace OreUI { class IResourceAllowList; }
 namespace OreUI { struct JoinablePartyFriend; }
 namespace Parties { struct IPartyProvider; }
 namespace Parties { struct JoinablePartyList; }
-namespace Parties { struct Party; }
 namespace Social { struct PlayerProfile; }
 namespace Social { struct ProfileSystem; }
+namespace World { class WorldPlayerListTracker; }
 // clang-format on
 
 namespace OreUI {
@@ -24,21 +24,23 @@ class JoinablePartyListFacet : public ::OreUI::FacetBase<::OreUI::JoinablePartyL
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::JoinablePartyList>>>
-                                                                                          mJoinablePartyList;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::JoinablePartyList>>   mJoinablePartyList;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::ProfileSystem>>                 mProfileSystem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>>                        mParty;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>>      mPartyProvider;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mPartySubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mUpdateSubscription;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>             mPlayerProfileSubscriptions;
+    ::ll::TypedStorage<8, 8, ::World::WorldPlayerListTracker&>                            mWorldPlayerListTracker;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::Social::PlayerProfile>>         mPlayerProfiles;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::JoinablePartyFriend>>                mJoinablePartyFriendList;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    JoinablePartyListFacet& operator=(JoinablePartyListFacet const&);
+    JoinablePartyListFacet(JoinablePartyListFacet const&);
     JoinablePartyListFacet();
 
 public:
@@ -53,10 +55,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI JoinablePartyListFacet(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::JoinablePartyList>> joinablePartyList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                   profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                   resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>>    partyProvider
+        ::Bedrock::NonOwnerPointer<::Parties::JoinablePartyList>   joinablePartyList,
+        ::std::shared_ptr<::Social::ProfileSystem>                 profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider,
+        ::World::WorldPlayerListTracker&                           worldPlayerListTracker
     );
 
     MCAPI void _updateJoinableParties();
@@ -76,10 +79,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::JoinablePartyList>> joinablePartyList,
-        ::std::shared_ptr<::Social::ProfileSystem>                                   profileSystem,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                   resourceAllowList,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::IPartyProvider>>    partyProvider
+        ::Bedrock::NonOwnerPointer<::Parties::JoinablePartyList>   joinablePartyList,
+        ::std::shared_ptr<::Social::ProfileSystem>                 profileSystem,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
+        ::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>      partyProvider,
+        ::World::WorldPlayerListTracker&                           worldPlayerListTracker
     );
     // NOLINTEND
 

@@ -89,6 +89,8 @@ public:
 
     MCAPI void addEnderManAdditionalRendering(::BlockTessellator* blockTesselator);
 
+    MCAPI void addFoxAdditionalRendering();
+
     MCAPI void addGuardianAdditionalRendering();
 
     MCAPI void addHumanoidAdditionalRendering(::std::shared_ptr<::mce::TextureGroup> textureGroup);

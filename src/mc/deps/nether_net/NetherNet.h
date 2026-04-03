@@ -13,6 +13,7 @@ namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { struct GlobalConfiguration; }
+namespace NetherNet { struct NetworkID; }
 namespace rtc { class IPAddress; }
 // clang-format on
 
@@ -32,7 +33,16 @@ MCNAPI ::std::optional<::std::variant<
     ::NetherNet::ConnectResponse,
     ::NetherNet::ConnectError,
     ::NetherNet::CandidateAdd>>
-TryParseSignalingMessage(::std::string const& message);
+TryParseSignalingMessage(::std::string_view message);
+
+MCNAPI ::std::vector<::std::byte> makeDiscoveryMessagePacket(
+    ::NetherNet::NetworkID     senderId,
+    ::NetherNet::NetworkID     recipientId,
+    ::std::vector<::std::byte> data
+);
+
+MCNAPI ::std::vector<::std::byte>
+makeDiscoveryResponsePacket(::NetherNet::NetworkID senderId, ::std::vector<::std::byte> data);
 // NOLINTEND
 
 // static variables

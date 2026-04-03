@@ -11,7 +11,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class IRandom;
-class Randomize;
 namespace Util { class XXHash; }
 // clang-format on
 
@@ -21,9 +20,9 @@ public:
     // NOLINTBEGIN
     virtual ~IStructurePoolBlockPredicate() = default;
 
-    virtual bool test(::Block const&, ::Randomize&) const = 0;
+    virtual bool test(::Block const&, ::IRandom&) const = 0;
 
-    virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const = 0;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const = 0;
 
     virtual bool finalize(::BlockSource&, ::IRandom&);
 

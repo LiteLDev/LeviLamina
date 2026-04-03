@@ -98,15 +98,6 @@ public:
 
     MCAPI static void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos);
 
-    MCAPI static ::std::optional<::BlockPos> _findBlockVertically(
-        ::BlockSource&                                           region,
-        ::BlockPos const&                                        pos,
-        uchar                                                    searchDirection,
-        ::std::function<bool(::BlockSource&, ::BlockPos const&)> pathPredicate,
-        ::std::function<bool(::BlockSource&, ::BlockPos const&)> targetPredicate,
-        int                                                      maxSearchLength
-    );
-
     MCAPI static ::std::optional<::BlockPos>
     _findRootBlock(::BlockSource& region, ::BlockPos const& pos, int maxSearchLength);
 
@@ -132,12 +123,6 @@ public:
     MCAPI static void growStalactite(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalagmite(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MAX_HORIZONTAL_OFFSET();
     // NOLINTEND
 
 public:

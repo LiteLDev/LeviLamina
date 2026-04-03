@@ -6,7 +6,7 @@ struct ServicePacksConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk833714;
+    ::ll::UntypedStorage<8, 24> mUnke9f9d8;
     // NOLINTEND
 
 public:

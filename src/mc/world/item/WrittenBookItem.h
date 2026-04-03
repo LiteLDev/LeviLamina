@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual bool requiresInteract() const /*override*/;
 
@@ -43,6 +43,10 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const /*override*/;
+
+    virtual ::Bedrock::Safety::RedactableString getRedactedCustomName(::ItemStackBase const& stack) const /*override*/;
+
+    virtual bool hasCustomHoverName(::ItemStackBase const& stack) const /*override*/;
 
     virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
@@ -76,12 +80,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_PAGES();
-
-    MCAPI static int const& MAX_PAGE_LENGTH();
-
-    MCAPI static int const& MAX_TITLE_LENGTH();
-
     MCAPI static ::std::string_view const& TAG_AUTHOR();
 
     MCAPI static ::std::string_view const& TAG_FILTERED_AUTHOR();
@@ -100,8 +98,6 @@ public:
 
     MCAPI static ::std::string_view const& TAG_PAGE_TEXT();
 
-    MCAPI static ::std::string_view const& TAG_RESOLVED();
-
     MCAPI static ::std::string_view const& TAG_TITLE();
 
     MCAPI static ::std::string_view const& TAG_XUID();
@@ -110,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $requiresInteract() const;
 
@@ -124,6 +120,10 @@ public:
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
+
+    MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
+
+    MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
 
     MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 

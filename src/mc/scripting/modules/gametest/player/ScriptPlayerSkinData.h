@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::ScriptModuleGameTest::ScriptPlayerPersonaPiece>>>
                                                                                    personaPieces;
-    ::ll::TypedStorage<4, 32, ::std::optional<::ScriptModuleMinecraft::ScriptRGB>> skinColor;
+    ::ll::TypedStorage<8, 32, ::std::optional<::ScriptModuleMinecraft::ScriptRGB>> skinColor;
     ::ll::TypedStorage<1, 2, ::std::optional<::persona::ArmSize::Type>>            armSize;
     // NOLINTEND
 

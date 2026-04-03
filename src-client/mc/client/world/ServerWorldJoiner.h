@@ -103,10 +103,10 @@ public:
     );
 
     MCAPI void _joinNetworkWorld(
-        ::NetworkWorldInfo&                                               world,
-        ::World::ServerWorldJoiner::ServerType                            serverType,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::NetworkWorldInfo&                                                             world,
+        ::World::ServerWorldJoiner::ServerType                                          serverType,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
     MCAPI bool _validateInternetConnection(::Social::User& user) const;
@@ -114,9 +114,9 @@ public:
     MCAPI ::World::JoinServerWorldResult _validateUserInfo(::std::shared_ptr<::Social::User> user) const;
 
     MCAPI void joinExternalNetworkWorld(
-        ::std::string const&                                              id,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::std::string const&                                                            id,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
     MCAPI void joinFriendServerWorld(
@@ -131,9 +131,9 @@ public:
     );
 
     MCAPI void joinThirdPartyServerWorld(
-        ::std::string const&                                              id,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)> onJoinServerCompleted,
-        ::std::function<void(::World::JoinServerWorldResult)>             onErrorCallback
+        ::std::string const&                                                            id,
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
+        ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
     MCAPI ~ServerWorldJoiner();

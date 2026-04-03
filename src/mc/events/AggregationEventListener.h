@@ -22,13 +22,13 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk5906f0;
     ::ll::UntypedStorage<8, 8>   mUnk6d36a6;
     ::ll::UntypedStorage<1, 1>   mUnka30829;
-    ::ll::UntypedStorage<8, 32>  mUnk3b4146;
+    ::ll::UntypedStorage<8, 32>  mUnk11517d;
     ::ll::UntypedStorage<8, 80>  mUnk9aa06e;
     ::ll::UntypedStorage<8, 296> mUnk7e3094;
     ::ll::UntypedStorage<8, 80>  mUnk63885d;
-    ::ll::UntypedStorage<8, 64>  mUnk2b7477;
-    ::ll::UntypedStorage<8, 64>  mUnk6c4f66;
-    ::ll::UntypedStorage<8, 64>  mUnkc7e0b3;
+    ::ll::UntypedStorage<8, 64>  mUnk73b293;
+    ::ll::UntypedStorage<8, 64>  mUnke6df3f;
+    ::ll::UntypedStorage<8, 64>  mUnk99b689;
     ::ll::UntypedStorage<1, 1>   mUnk76b524;
     ::ll::UntypedStorage<4, 4>   mUnkd93415;
     ::ll::UntypedStorage<4, 4>   mUnk2079a4;

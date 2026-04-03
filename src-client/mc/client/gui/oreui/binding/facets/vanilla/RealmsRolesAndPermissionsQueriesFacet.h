@@ -22,11 +22,12 @@ class RealmsRolesAndPermissionsQueriesFacet
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                    mIsDirty;
-    ::ll::TypedStorage<4, 4, ::Realms::PlayerRole>                                    mSelectedUserRole;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Realms::PlayerRoleActions>>             mSelectedUserActions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Realms::PlayerRoleWithActionsList>>     mAllRolesAndActions;
-    ::ll::TypedStorage<4, 4, ::Realms::RolesAndPermissionsState>                      mState;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsDirty;
+    ::ll::TypedStorage<4, 4, ::Realms::PlayerRole>                        mSelectedUserRole;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Realms::PlayerRoleActions>> mSelectedUserActions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Realms::PlayerRoleWithActionsList>>
+                                                                 mCurrentUserRolesAndActionsForAllRealms;
+    ::ll::TypedStorage<4, 4, ::Realms::RolesAndPermissionsState> mState;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::RealmsRolesAndPermissions>> mRolesAndPermissions;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mStateChangedSubscription;
     // NOLINTEND
@@ -50,7 +51,7 @@ public:
         ::std::shared_ptr<::Realms::RealmsRolesAndPermissions> rolesAndPermissions
     );
 
-    MCFOLD ::std::vector<::Realms::PlayerRoleWithActionsList> const& getAllRolesAndActions() const;
+    MCFOLD ::std::vector<::Realms::PlayerRoleWithActionsList> const& getCurrentUserRolesAndActionsForAllRealms() const;
 
     MCFOLD ::std::vector<::Realms::PlayerRoleActions> const& getSelectedUserActions() const;
 
@@ -80,7 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCFOLD bool $update();
     // NOLINTEND
 
 public:

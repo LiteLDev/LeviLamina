@@ -22,8 +22,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkc0ba51;
-    ::ll::UntypedStorage<8, 8>  mUnk48bddd;
-    ::ll::UntypedStorage<8, 8>  mUnk39d08b;
+    ::ll::UntypedStorage<8, 8>  mUnkc713eb;
+    ::ll::UntypedStorage<8, 8>  mUnkc90c2a;
     // NOLINTEND
 
 public:
@@ -38,8 +38,6 @@ public:
     virtual ~RemoteConnectorComposite() /*override*/ = default;
 
     virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
-
-    virtual void setDisableTrickleIce(bool disableTrickleIce) /*override*/;
 
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -104,8 +102,6 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI void $setDisableLanSignaling(bool disableLanSignaling);
-
-    MCNAPI void $setDisableTrickleIce(bool disableTrickleIce);
 
     MCNAPI ::std::string $getLocalIp();
 

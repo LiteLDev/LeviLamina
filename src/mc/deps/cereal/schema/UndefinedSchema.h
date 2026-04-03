@@ -7,11 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal::internal { struct DescriptionConfig; }
 namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct SaveState; }
 // clang-format on
 
@@ -33,7 +34,7 @@ public:
         /*override*/;
 
     virtual ::cereal::SchemaDescription
-    makeDescription(::entt::meta_ctx const&, ::cereal::internal::DescriptionConfig) const /*override*/;
+    makeDescription(::cereal::internal::ReflectionContext const&, ::cereal::DescriptionConfig) const /*override*/;
 
     virtual ~UndefinedSchema() /*override*/ = default;
     // NOLINTEND
@@ -52,7 +53,7 @@ public:
     $doSave(::cereal::SchemaWriter&, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
 
     MCNAPI ::cereal::SchemaDescription
-    $makeDescription(::entt::meta_ctx const&, ::cereal::internal::DescriptionConfig) const;
+    $makeDescription(::cereal::internal::ReflectionContext const&, ::cereal::DescriptionConfig) const;
 
 
     // NOLINTEND

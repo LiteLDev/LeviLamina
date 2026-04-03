@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/item/CreativeItemCategory.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 class CreativeGroupInfo;
 class CreativeItemRegistry;
-class HashedString;
 class ItemInstance;
 // clang-format on
 

@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
@@ -72,9 +72,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 

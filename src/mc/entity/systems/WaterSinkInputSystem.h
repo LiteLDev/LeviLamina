@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct PlayerInputRequestComponent;
@@ -30,7 +30,7 @@ public:
     MCNAPI static void tickWaterSinkInputSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,
             ::MovementAbilitiesComponent const,
             ::MoveInputComponent const,
             ::StateVectorComponent> view

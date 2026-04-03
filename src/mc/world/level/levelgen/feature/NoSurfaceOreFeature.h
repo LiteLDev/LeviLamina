@@ -17,9 +17,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::IntRange>          mCount;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mPlaceBlock;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mReplaceBlock;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mAvoidsBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mPlaceBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mReplaceBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mAvoidsBlock;
     // NOLINTEND
 
 public:

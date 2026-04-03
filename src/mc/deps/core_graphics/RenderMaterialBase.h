@@ -109,7 +109,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
 
-    MCFOLD void $parseShader(::Json::Value const& root);
+    MCAPI void $parseShader(::Json::Value const& root);
 #endif
 
 

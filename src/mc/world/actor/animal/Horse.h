@@ -12,6 +12,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 class Player;
 class Vec2;
@@ -31,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~Horse() /*override*/ = default;
 
-    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
     virtual void setHorseEating(bool state);
 
@@ -67,7 +68,7 @@ public:
 
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
@@ -116,7 +117,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& damagesource);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCAPI void $setHorseEating(bool state);
 
@@ -152,7 +153,7 @@ public:
 
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 

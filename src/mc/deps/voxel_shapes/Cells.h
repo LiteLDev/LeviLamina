@@ -11,6 +11,7 @@
 // clang-format off
 namespace VoxelShapes { class AxesPermutation; }
 namespace VoxelShapes { class IndexMerger; }
+namespace VoxelShapes { struct SerializableCells; }
 // clang-format on
 
 namespace VoxelShapes {
@@ -49,12 +50,16 @@ public:
 
     MCNAPI ::VoxelShapes::Cells rotate(::VoxelShapes::AxesPermutation const& rotation) const;
 
+    MCNAPI ::VoxelShapes::SerializableCells toSerializable() const;
+
     MCNAPI ~Cells();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::VoxelShapes::Cells fromSerializable(::VoxelShapes::SerializableCells const& serializable);
+
     MCNAPI static ::VoxelShapes::Cells join(
         ::VoxelShapes::Cells const&       first,
         ::VoxelShapes::Cells const&       second,

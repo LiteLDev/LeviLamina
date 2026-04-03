@@ -92,6 +92,8 @@ public:
         ::ControlScreenAction&           controlScreenAction
     );
 
+    MCAPI void _createCustom(::UIControl& control, ::UIResolvedDef const& def);
+
     MCAPI ::std::shared_ptr<::UIControl> _createFromResolvedDef(
         ::UIControlFactoryContext const& context,
         ::UIResolvedDef const&           resolvedDef,
@@ -182,6 +184,8 @@ public:
     MCAPI void
     _populateTextToSpeechComponent(::UIResolvedDef const& def, ::UIControl& ownerControl, int controlPriorityDefault);
 
+    MCAPI void _populateTextToSpeechContainerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
+
     MCAPI void _populateToggleComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
 
     MCAPI void _populateToggleGroupManagerComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);
@@ -193,12 +197,6 @@ public:
 
     MCAPI ::ui::TileDirection const
     _resolveTileDirection(::UIResolvedDef const& ownerDef, ::UIControl&, ::std::string const& propertyName);
-
-    MCAPI ::std::shared_ptr<::UIControl> createControlTree(
-        ::UIControl const&        templateControl,
-        ::UIControl*              parent,
-        ::ui::ChildInsertPosition childInsertPosition
-    );
 
     MCAPI ~UIControlFactory();
     // NOLINTEND

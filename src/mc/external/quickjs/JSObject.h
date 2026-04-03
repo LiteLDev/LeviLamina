@@ -22,13 +22,13 @@ public:
             ::ll::UntypedStorage<2, 2> mUnk75f0aa;
         };
     };
+    ::ll::UntypedStorage<4, 4> mUnk8f0488;
     ::ll::UntypedStorage<8, 8> mUnka29aee;
     ::ll::UntypedStorage<8, 8> mUnk1e0882;
-    ::ll::UntypedStorage<8, 8> mUnk71bf10;
 #ifdef LL_PLAT_S
-    ::ll::UntypedStorage<8, 24> mUnk8e7a1f;
+    ::ll::UntypedStorage<8, 24> mUnk8c27ca;
 #else // LL_PLAT_C
-    ::ll::UntypedStorage<8, 24> mUnk16f70f;
+    ::ll::UntypedStorage<8, 24> mUnk6c80d5;
 #endif
     // NOLINTEND
 

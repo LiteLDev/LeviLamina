@@ -8,7 +8,7 @@ struct PendingWrite {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk581f22;
+    ::ll::UntypedStorage<8, 32> mUnk15782c;
     ::ll::UntypedStorage<1, 2>  mUnkaeb3eb;
     // NOLINTEND
 

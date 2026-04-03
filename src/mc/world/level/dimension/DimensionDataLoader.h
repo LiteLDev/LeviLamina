@@ -19,8 +19,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        192,
-        ::Puv::SlicedLoader<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument, nullptr_t, nullptr_t>>
+        256,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument,
+            nullptr_t,
+            nullptr_t,
+            ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>>
         mDimensionDefinitionLoader;
     // NOLINTEND
 

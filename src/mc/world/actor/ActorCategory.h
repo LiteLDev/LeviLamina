@@ -28,7 +28,7 @@ enum class ActorCategory : uint {
     WaterAnimal             = Animal | WaterSpawning,
     TamableAnimal           = Animal | Tamable,
     EvocationIllagerMonster = Monster | Humanoid | Villager,
-    UndeadMob               = Monster | Undead,
+    UndeadMonster           = Monster | Undead,
     ZombieMonster           = Monster | Zombie,
     MinecartRidable         = Ridable | Minecart,
     BoatRideable            = Ridable | Boat,

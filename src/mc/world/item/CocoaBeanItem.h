@@ -38,7 +38,7 @@ public:
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     virtual ~CocoaBeanItem() /*override*/ = default;
@@ -53,14 +53,10 @@ public:
 
     MCFOLD bool $isDye() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD ::ItemColor $getItemColor() const;
-#endif
-
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

@@ -8,9 +8,9 @@ struct WorldRecoveryTelemetryEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3ca16b;
-    ::ll::UntypedStorage<8, 32> mUnk2f4768;
-    ::ll::UntypedStorage<8, 32> mUnk5fb8ce;
+    ::ll::UntypedStorage<8, 32> mUnk931c78;
+    ::ll::UntypedStorage<8, 32> mUnk548801;
+    ::ll::UntypedStorage<8, 32> mUnk637363;
     ::ll::UntypedStorage<4, 4>  mUnk43932e;
     ::ll::UntypedStorage<4, 4>  mUnk9f41be;
     ::ll::UntypedStorage<4, 4>  mUnk5ab5e0;

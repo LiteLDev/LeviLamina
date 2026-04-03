@@ -12,17 +12,17 @@
 class StrictEntityContext;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct HorseFlagComponent;
 struct HorseLandedOnGroundFlagComponent;
 struct HorseStandCounterComponent;
+struct InterpolateMovementNeededComponent;
 // clang-format on
 
 namespace HorsePostTravelSystem {
 // functions
 // NOLINTBEGIN
 MCNAPI void _doPostTravelSystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::HorseFlagComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>>,
     ::StrictEntityContext const&                         context,
     ::HorseStandCounterComponent&                        horseStandCounter,
     ::ActorDataFlagComponent&                            actorDataFlag,

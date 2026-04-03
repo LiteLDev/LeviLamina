@@ -22,7 +22,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mBlock;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>               mBlock;
     ::ll::TypedStorage<4, 4, int>                               mSearchRange;
     ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnFloor;
     ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnCeiling;

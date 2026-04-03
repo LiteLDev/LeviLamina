@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/nbt/CompoundTag.h"
+#include "mc/deps/nbt/nbt/CompoundTag.h"
 
 class LevelChunkMetaData {
 public:
@@ -20,12 +20,6 @@ public:
     MCAPI void _recomputeHash() const;
 
     MCAPI ~LevelChunkMetaData();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& INVALID_META_DATA();
     // NOLINTEND
 
 public:

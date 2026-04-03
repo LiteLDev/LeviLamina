@@ -8,7 +8,7 @@ struct MoveReplaceBatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc06574;
+    ::ll::UntypedStorage<8, 24> mUnk747053;
     // NOLINTEND
 
 public:

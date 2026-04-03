@@ -10,6 +10,7 @@
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -26,7 +27,8 @@ public:
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~Pufferfish() /*override*/ = default;
     // NOLINTEND
@@ -58,7 +60,7 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

@@ -50,6 +50,7 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mInputMappingStack;
         ::ll::TypedStorage<8, 64, ::std::unordered_set<uint>>   mButtonsDown;
         ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>    mTriggeredChordsSources;
+        ::ll::TypedStorage<4, 4, int>                           mCurrentChordSource;
         ::ll::TypedStorage<1, 1, bool>                          mSuspendInput;
         ::ll::TypedStorage<1, 1, bool>                          mSuspendDirectionalInput;
         ::ll::TypedStorage<1, 1, bool>                          mDisableInput;
@@ -306,7 +307,16 @@ public:
         bool                                                     suspendable
     );
 
+    MCAPI void registerCaretLocationHandler(::std::function<void(int, ::FocusImpact, ::IClientInstance&)> handler);
+
+    MCAPI void registerClearPointerLocationWithIdHandler(
+        ::std::function<void(::ClearPointerLocationWithIdEventData const&, ::IClientInstance&)> handler
+    );
+
     MCAPI void registerClearPointerLocationsHandler(::std::function<void(::IClientInstance&)> handler);
+
+    MCAPI void
+    registerControlOptionHandler(::std::function<void(::ControlOptionEventData const&, ::IClientInstance&)> handler);
 
     MCAPI void registerDirectionHandler(
         ::DirectionId                                                          directionId,
@@ -315,11 +325,26 @@ public:
 
     MCAPI void registerInputModeHandler(::std::function<void(::InputMode, ::IClientInstance&)> handler);
 
+    MCAPI void registerNumberOfEnabledControlOptionsHandler(
+        ::std::function<void(::NumberOfEnabledControlOptionsEventData const&, ::IClientInstance&)> handler
+    );
+
     MCAPI void registerOverlappingControlsHandler(
         ::std::function<void(::OverlappingControlsEventData const&, ::IClientInstance&)> handler
     );
 
+    MCAPI void registerPointerLocationHandler(
+        ::std::function<void(::PointerLocationEventData const&, ::FocusImpact, ::IClientInstance&)> handler
+    );
+
+    MCAPI void registerPointerLocationWithIdHandler(
+        ::std::function<void(::PointerLocationWithIdEventData const&, ::IClientInstance&)> handler
+    );
+
     MCAPI void registerPotentialOverlappingControlsHandler(::std::function<void(::IClientInstance&)> handler);
+
+    MCAPI void
+    registerTextCharHandler(::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)> handler);
 
     MCAPI void registerTouchPadTouchHandler(
         ::std::function<void(::TouchPadTouchEventData const&, ::FocusImpact, ::IClientInstance&)> handler

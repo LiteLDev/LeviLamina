@@ -44,6 +44,8 @@ public:
 
     using RuntimeImageGenerators = ::std::vector<::std::weak_ptr<::RuntimeImageGeneratorInfo>>;
 
+    using SourceImagesSignature = void(::std::unordered_map<::ResourceLocation, ::cg::TextureSetImageContainer> const&);
+
 public:
     // member variables
     // NOLINTBEGIN

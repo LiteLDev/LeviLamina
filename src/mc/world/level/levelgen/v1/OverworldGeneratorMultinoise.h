@@ -177,6 +177,8 @@ public:
 
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const
         /*override*/;
+
+    virtual void _clearBlendingCache() /*override*/;
     // NOLINTEND
 
 public:
@@ -189,6 +191,17 @@ public:
         ::ChunkLocalNoiseCache const& chunkLocalNoiseCache,
         ::NoodleCavifier*             noodleCavifier,
         ::OreVeinifier*               oreVeinifier
+    ) const;
+
+    MCAPI ::OverworldGeneratorMultinoise::BlockGenerationResult const _updateNoiseAndGenerateBaseBlock(
+        float             noiseValue,
+        ::BlockPos const& worldPosition,
+        short,
+        ::Aquifer*            aquiferPtr,
+        bool                  shouldTickUpdate,
+        ::ChunkBlender const* chunkBlender,
+        ::Block const&        stone,
+        ::OreVeinifier*       oreVeinifier
     ) const;
     // NOLINTEND
 
@@ -281,6 +294,8 @@ public:
     ) const;
 
     MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+
+    MCAPI void $_clearBlendingCache();
 
 
     // NOLINTEND

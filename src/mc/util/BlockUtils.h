@@ -10,14 +10,11 @@
 class Actor;
 class Block;
 class BlockPos;
-class BlockType;
 // clang-format on
 
 namespace BlockUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool allowsNetherVegetation(::BlockType const& block);
-
 MCAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstructionType);
 
 MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);

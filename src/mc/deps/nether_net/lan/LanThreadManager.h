@@ -5,19 +5,17 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ILanDiscovery.h"
-#include "mc/deps/nether_net/NetworkID.h"
 #include "mc/deps/nether_net/lan/Controller.h"
-#include "mc/external/rtc/IPAddress.h"
 #include "mc/external/rtc/Thread.h"
 #include "mc/external/sigslot/has_slots.h"
 #include "mc/external/sigslot/single_threaded.h"
 
 // auto generated forward declare list
 // clang-format off
+struct ThreadConfiguration;
 namespace Bedrock::PubSub { class Subscription; }
-namespace NetherNet { struct DiscoveryResponsePacket; }
 namespace NetherNet { struct ILanEventHandler; }
-namespace NetherNet { struct ThreadInit; }
+namespace NetherNet { struct NetworkID; }
 namespace rtc { class AsyncPacketSocket; }
 namespace rtc { class ReceivedPacket; }
 namespace rtc { class SocketAddress; }
@@ -35,11 +33,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk15d021;
     ::ll::UntypedStorage<8, 16>  mUnk1df5ad;
-    ::ll::UntypedStorage<8, 8>   mUnk91c766;
+    ::ll::UntypedStorage<8, 8>   mUnk494678;
     ::ll::UntypedStorage<8, 128> mUnk1aa682;
-    ::ll::UntypedStorage<8, 8>   mUnk8c874b;
+    ::ll::UntypedStorage<8, 8>   mUnkcdd871;
     ::ll::UntypedStorage<8, 80>  mUnk604495;
-    ::ll::UntypedStorage<8, 8>   mUnk3774a6;
+    ::ll::UntypedStorage<8, 8>   mUnk8347b2;
     ::ll::UntypedStorage<8, 8>   mUnk449e9b;
     ::ll::UntypedStorage<2, 2>   mUnk94a6fe;
     ::ll::UntypedStorage<8, 8>   mUnkb98911;
@@ -66,15 +64,20 @@ public:
 
     virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID id) /*override*/;
 
+    virtual void AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port) /*override*/;
+
+    virtual void RemoveLanHost(::NetherNet::NetworkID remote) /*override*/;
+
     virtual void SendLanBroadcastResponse(
-        ::rtc::SocketAddress const&                 destination,
-        ::NetherNet::DiscoveryResponsePacket const& packet
+        ::rtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID      from,
+        ::std::vector<::std::byte>  data
     ) /*override*/;
 
     virtual void SendSignalingMessageTo(
-        ::NetherNet::NetworkID networkIdFrom,
-        ::NetherNet::NetworkID networkIdTo,
-        ::std::string const&   message
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
     ) /*override*/;
 
     virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) /*override*/;
@@ -96,11 +99,11 @@ public:
     MCNAPI void DestroyLanResources();
 
     MCNAPI void Initialize(
-        char const*                    threadName,
-        ::NetherNet::ThreadInit const& threadInit,
-        uint64                         applicationId,
-        ushort                         port,
-        ::std::chrono::milliseconds    interval
+        char const*                  threadName,
+        ::ThreadConfiguration const& threadConfiguration,
+        uint64                       applicationId,
+        ushort                       port,
+        ::std::chrono::milliseconds  interval
     );
 
     MCNAPI explicit LanThreadManager(::NetherNet::ContextProxy const& ctx);
@@ -115,7 +118,7 @@ public:
         ::std::unique_ptr<::rtc::AsyncPacketSocket>& socket,
         ::NetherNet::NetworkID                       networkIdFrom,
         ::NetherNet::NetworkID                       networkIdTo,
-        ::std::string const&                         message
+        ::std::vector<::std::byte>                   data
     );
 
     MCNAPI ::std::error_code SendToHelper(
@@ -151,15 +154,20 @@ public:
 
     MCNAPI void $DisableBroadcastDiscovery(::NetherNet::NetworkID id);
 
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port);
+
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+
     MCNAPI void $SendLanBroadcastResponse(
-        ::rtc::SocketAddress const&                 destination,
-        ::NetherNet::DiscoveryResponsePacket const& packet
+        ::rtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID      from,
+        ::std::vector<::std::byte>  data
     );
 
     MCNAPI void $SendSignalingMessageTo(
-        ::NetherNet::NetworkID networkIdFrom,
-        ::NetherNet::NetworkID networkIdTo,
-        ::std::string const&   message
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
     );
 
     MCNAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);

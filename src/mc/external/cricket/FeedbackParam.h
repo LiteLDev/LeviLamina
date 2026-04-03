@@ -8,8 +8,8 @@ class FeedbackParam {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1d6d90;
-    ::ll::UntypedStorage<8, 32> mUnkbc5d1b;
+    ::ll::UntypedStorage<8, 32> mUnk68d28b;
+    ::ll::UntypedStorage<8, 32> mUnk8d713e;
     // NOLINTEND
 
 public:

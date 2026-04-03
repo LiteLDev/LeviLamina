@@ -17,8 +17,8 @@ class Bye : public ::webrtc::rtcp::RtcpPacket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk859101;
-    ::ll::UntypedStorage<8, 32> mUnkf458da;
+    ::ll::UntypedStorage<8, 24> mUnka58b90;
+    ::ll::UntypedStorage<8, 32> mUnk4e29cc;
     // NOLINTEND
 
 public:

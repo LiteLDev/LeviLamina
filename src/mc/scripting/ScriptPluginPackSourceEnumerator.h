@@ -15,7 +15,7 @@ class ScriptPluginPackSourceEnumerator : public ::IScriptPluginSourceEnumerator 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5b034a;
+    ::ll::UntypedStorage<8, 24> mUnkfd5333;
     // NOLINTEND
 
 public:

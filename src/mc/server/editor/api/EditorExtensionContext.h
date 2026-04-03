@@ -13,6 +13,7 @@ namespace Editor::API { class EditorExtension; }
 namespace Editor::Services { class BrushShapeManagerServiceProvider; }
 namespace Editor::Services { class ClipboardServiceProvider; }
 namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
+namespace Editor::Services { class EditorMinimapServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
 namespace Editor::Services { class ServerStructureServiceProvider; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
@@ -44,6 +45,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk382c65;
     ::ll::UntypedStorage<8, 32> mUnk3c9355;
     ::ll::UntypedStorage<8, 32> mUnk1a5b9d;
+    ::ll::UntypedStorage<8, 32> mUnkf8c6bd;
     ::ll::UntypedStorage<1, 1>  mUnk907821;
     // NOLINTEND
 
@@ -71,6 +73,7 @@ public:
         ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
         ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
         ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
         ::Scripting::WeakLifetimeScope                                      scope,
         ::Editor::API::EditorExtension&                                     extension
     );
@@ -97,6 +100,7 @@ public:
         ::Editor::Services::EditorBlockPaletteServiceProvider*              blockPaletteService,
         ::Editor::Services::BrushShapeManagerServiceProvider*               brushShapeService,
         ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef,
+        ::std::weak_ptr<::Editor::Services::EditorMinimapServiceProvider>   minimapServiceWeakRef,
         ::Scripting::WeakLifetimeScope                                      scope,
         ::Editor::API::EditorExtension&                                     extension
     );

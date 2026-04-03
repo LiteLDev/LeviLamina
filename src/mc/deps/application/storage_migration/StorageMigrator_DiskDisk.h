@@ -18,9 +18,9 @@ class StorageMigrator_DiskDisk : public ::Bedrock::StorageMigration::StorageMigr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk853ea8;
-    ::ll::UntypedStorage<8, 32> mUnkc70e85;
-    ::ll::UntypedStorage<8, 32> mUnk9dd82d;
+    ::ll::UntypedStorage<8, 32> mUnk7bf352;
+    ::ll::UntypedStorage<8, 32> mUnkcc1471;
+    ::ll::UntypedStorage<8, 32> mUnk937225;
     // NOLINTEND
 
 public:

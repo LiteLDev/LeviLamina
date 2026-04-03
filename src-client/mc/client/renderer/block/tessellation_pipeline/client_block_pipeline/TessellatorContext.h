@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftGame;
 class LevelRenderer;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
@@ -19,7 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository>>
-        mSchematicsRepo;
+                                   mSchematicsRepo;
+    ::ll::TypedStorage<1, 1, bool> mTextureShiftsEnabled;
     // NOLINTEND
 
 public:
@@ -29,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit TessellatorContext(::IMinecraftGame const& game);
+
     MCAPI explicit TessellatorContext(::LevelRenderer const& levelRenderer);
 
     MCAPI ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> getMaterialRepository() const;
@@ -39,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::IMinecraftGame const& game);
+
     MCAPI void* $ctor(::LevelRenderer const& levelRenderer);
     // NOLINTEND
 

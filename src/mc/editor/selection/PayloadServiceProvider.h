@@ -10,6 +10,7 @@
 class EditorNetworkPacket;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Network { class INetworkPayload; }
+namespace Editor::Network { struct PayloadMetrics; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -25,22 +26,34 @@ public:
 
     virtual void onReceivePayload(::EditorNetworkPacket const&) = 0;
 
-    virtual void
+    virtual ::std::vector<::std::pair<::std::string, ::Editor::Network::PayloadMetrics>>
+    collectMetricsReport() const = 0;
+
+    virtual bool isCollectingMetrics() const = 0;
+
+    virtual ::Editor::Network::PayloadMetrics*
     _registerPayload(char const*, ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()>) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> _send(::Editor::Network::INetworkPayload&) = 0;
-
-    virtual ::Scripting::Result_deprecated<void> _sendToManager(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    _send(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    _sendToClientId(::mce::UUID const&, ::Editor::Network::INetworkPayload&) = 0;
+    _sendToManager(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    _sendToClientIds(::std::vector<::mce::UUID> const&, ::Editor::Network::INetworkPayload&) = 0;
+    _sendToClientId(::mce::UUID const&, ::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClients(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _sendToClientIds(
+        ::std::vector<::mce::UUID> const&,
+        ::Editor::Network::INetworkPayload&,
+        ::Editor::Network::PayloadMetrics*
+    ) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    _broadcastToClients(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    _broadcastToClientManagers(::Editor::Network::INetworkPayload&, ::Editor::Network::PayloadMetrics*) = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     _listenFor(char const*, ::std::function<void(::Editor::Network::INetworkPayload const&)>) = 0;

@@ -18,7 +18,7 @@ class AsyncSocketAdapter : public ::rtc::Socket, public ::sigslot::has_slots<::s
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk244603;
+    ::ll::UntypedStorage<8, 8> mUnk940927;
     // NOLINTEND
 
 public:

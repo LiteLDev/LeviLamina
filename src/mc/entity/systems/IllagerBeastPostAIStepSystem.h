@@ -9,8 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct IllagerBeastFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct StateVectorComponent;
 struct SubBBsComponent;
 // clang-format on
@@ -28,7 +28,7 @@ public:
     MCNAPI static void _tickIllagerBeastPostAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::IllagerBeastFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::IllagerBeastFlagComponent>,
             ::StateVectorComponent const,
             ::SubBBsComponent> view
     );

@@ -19,9 +19,9 @@ class MediaStream : public ::webrtc::Notifier<::webrtc::MediaStreamInterface> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk17151f;
-    ::ll::UntypedStorage<8, 24> mUnk248527;
-    ::ll::UntypedStorage<8, 24> mUnkc4c221;
+    ::ll::UntypedStorage<8, 32> mUnk3b334e;
+    ::ll::UntypedStorage<8, 24> mUnkf670bb;
+    ::ll::UntypedStorage<8, 24> mUnk6b8ef5;
     // NOLINTEND
 
 public:

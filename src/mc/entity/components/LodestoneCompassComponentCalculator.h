@@ -18,10 +18,4 @@ public:
     LodestoneCompassComponentCalculator& operator=(LodestoneCompassComponentCalculator const&);
     LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&);
     LodestoneCompassComponentCalculator();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float& COOLDOWN_TIME_SECONDS();
-    // NOLINTEND
 };

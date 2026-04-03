@@ -8,8 +8,8 @@ struct PluginDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk24f672;
-    ::ll::UntypedStorage<8, 32> mUnk6bb1f9;
+    ::ll::UntypedStorage<8, 32> mUnk152c4e;
+    ::ll::UntypedStorage<8, 32> mUnk1fd52c;
     // NOLINTEND
 
 public:

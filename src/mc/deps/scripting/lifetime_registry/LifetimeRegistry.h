@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/ObjectHandleValue.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IScriptRef; }
@@ -26,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 304> mUnkdff59e;
     ::ll::UntypedStorage<8, 16>  mUnk8cf060;
     ::ll::UntypedStorage<8, 16>  mUnkc52c09;
-    ::ll::UntypedStorage<8, 24>  mUnkff5fe4;
+    ::ll::UntypedStorage<8, 24>  mUnk90bb35;
     ::ll::UntypedStorage<8, 128> mUnk60fe14;
     // NOLINTEND
 

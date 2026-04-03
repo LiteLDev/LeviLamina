@@ -7,12 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientParticleInitializationComponent;
+class ClientParticleTerminationComponent;
 class EntityContext;
 class EntityRegistry;
 class ParticleSystemEngine;
 struct ActorComponent;
-struct ClientParticleInitializationComponent;
-struct ClientParticleTerminationComponent;
 struct ClientParticleTrackingComponent;
 // clang-format on
 

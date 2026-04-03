@@ -16,7 +16,6 @@ class Vec3;
 namespace Editor::Prefabs { class PrefabDBPrefabInstanceStructureRef; }
 namespace Editor::Prefabs { class PrefabDBTemplate; }
 namespace Editor::Prefabs::PrefabDBInstanceLoader::v1 { struct InstanceData; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Prefabs {
@@ -32,7 +31,7 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk27f2ed;
     ::ll::UntypedStorage<1, 1>  mUnk84103e;
     ::ll::UntypedStorage<1, 1>  mUnk5e54e3;
-    ::ll::UntypedStorage<8, 24> mUnk9a2025;
+    ::ll::UntypedStorage<8, 24> mUnk721c86;
     ::ll::UntypedStorage<4, 4>  mUnk116d29;
     ::ll::UntypedStorage<4, 4>  mUnk496546;
     ::ll::UntypedStorage<1, 1>  mUnk5b6077;
@@ -74,12 +73,6 @@ public:
     MCNAPI void updateFromTemplate(::WeakRef<::Editor::Prefabs::PrefabDBTemplate> templateRef);
 
     MCNAPI ~PrefabDBPrefabInstance();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

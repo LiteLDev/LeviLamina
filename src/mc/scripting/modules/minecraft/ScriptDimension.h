@@ -23,6 +23,7 @@ class VecXZ;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorIterator; }
 namespace ScriptModuleMinecraft { class ScriptActorType; }
+namespace ScriptModuleMinecraft { class ScriptBiomeFilter; }
 namespace ScriptModuleMinecraft { class ScriptBiomeType; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace ScriptModuleMinecraft { class ScriptBlockFilter; }
@@ -126,6 +127,18 @@ public:
         bool                                                                           initialPersistence,
         bool                                                                           allowActorDefinitionSpawnEvent,
         ::std::string const&                                                           spawnEvent
+    ) const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptUnloadedChunksError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError>
+    containsBiomes(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const& blockVolumeBase,
+        ::ScriptModuleMinecraft::ScriptBiomeFilter const&                                           biomeFilter,
+        bool                                                                                        isSuperset
     ) const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>
@@ -338,8 +351,7 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
-        ::ScriptModuleMinecraft::ScriptCommandError,
-        void>>
+        ::ScriptModuleMinecraft::ScriptCommandError>>
     runCommandAsync(
         ::Scripting::DependencyLocator&   locator,
         ::Scripting::ContextConfig const& contextConfig,

@@ -19,6 +19,7 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
+namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -66,14 +67,6 @@ public:
 
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
 
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
-
     virtual bool
     hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const
         /*override*/;
@@ -96,6 +89,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SweetBerryBushBlock(::std::string const& nameId, int id);
+
+    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
@@ -146,18 +141,10 @@ public:
 
     MCAPI bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
-
     MCAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;

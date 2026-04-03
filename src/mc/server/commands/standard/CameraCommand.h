@@ -38,16 +38,17 @@ public:
         Facing           = 7,
         AttachToEntity   = 8,
         DetachFromEntity = 9,
-        TargetEntity     = 10,
-        TargetOffset     = 11,
-        RemoveTarget     = 12,
-        ViewOffset       = 13,
-        EntityOffset     = 14,
-        Default          = 15,
-        Clear            = 16,
-        Fade             = 17,
-        Time             = 18,
-        Color            = 19,
+        PlaySpline       = 10,
+        TargetEntity     = 11,
+        TargetOffset     = 12,
+        RemoveTarget     = 13,
+        ViewOffset       = 14,
+        EntityOffset     = 15,
+        Default          = 16,
+        Clear            = 17,
+        Fade             = 18,
+        Time             = 19,
+        Color            = 20,
     };
 
 public:
@@ -96,6 +97,8 @@ public:
     ::ll::TypedStorage<4, 4, ::EasingType>                         mFovEasingType;
     ::ll::TypedStorage<4, 4, float>                                mFieldOfView;
     ::ll::TypedStorage<4, 4, float>                                mFovEasingTime;
+    ::ll::TypedStorage<1, 1, ::CameraCommand::CameraCommandOption> mSplineOption;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mSplineName;
     // NOLINTEND
 
 public:
@@ -140,88 +143,12 @@ public:
         ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presetList
     );
 
-    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const* experiments);
+    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ENUM_OPTION_ATTACH_TO_ENTITY();
-
-    MCAPI static char const*& ENUM_OPTION_CLEAR();
-
-    MCAPI static char const*& ENUM_OPTION_COLOR();
-
-    MCAPI static char const*& ENUM_OPTION_DEFAULT();
-
-    MCAPI static char const*& ENUM_OPTION_DETACH_FROM_ENTITY();
-
-    MCAPI static char const*& ENUM_OPTION_EASE();
-
-    MCAPI static char const*& ENUM_OPTION_ENTITY_OFFSET();
-
-    MCAPI static char const*& ENUM_OPTION_FACING();
-
-    MCAPI static char const*& ENUM_OPTION_FADE();
-
-    MCAPI static char const*& ENUM_OPTION_FOV();
-
-    MCAPI static char const*& ENUM_OPTION_FOV_CLEAR();
-
-    MCAPI static char const*& ENUM_OPTION_POS();
-
-    MCAPI static char const*& ENUM_OPTION_ROT();
-
-    MCAPI static char const*& ENUM_OPTION_SET();
-
-    MCAPI static char const*& ENUM_OPTION_TARGET();
-
-    MCAPI static char const*& ENUM_OPTION_TARGET_OFFSET();
-
-    MCAPI static char const*& ENUM_OPTION_TARGET_REMOVE();
-
-    MCAPI static char const*& ENUM_OPTION_TIME();
-
-    MCAPI static char const*& ENUM_OPTION_VIEW_OFFSET();
-
-    MCAPI static char const*& OPTION_ATTACH_TO_ENTITY();
-
-    MCAPI static char const*& OPTION_CLEAR();
-
-    MCAPI static char const*& OPTION_COLOR();
-
-    MCAPI static char const*& OPTION_DEFAULT();
-
-    MCAPI static char const*& OPTION_DETACH_FROM_ENTITY();
-
-    MCAPI static char const*& OPTION_EASE();
-
-    MCAPI static char const*& OPTION_ENTITY_OFFSET();
-
-    MCAPI static char const*& OPTION_FACING();
-
-    MCAPI static char const*& OPTION_FADE();
-
-    MCAPI static char const*& OPTION_FOV();
-
-    MCAPI static char const*& OPTION_FOV_CLEAR();
-
-    MCAPI static char const*& OPTION_POS();
-
-    MCAPI static char const*& OPTION_ROT();
-
-    MCAPI static char const*& OPTION_SET();
-
-    MCAPI static char const*& OPTION_TARGET();
-
-    MCAPI static char const*& OPTION_TARGET_OFFSET();
-
-    MCAPI static char const*& OPTION_TARGET_REMOVE();
-
-    MCAPI static char const*& OPTION_TIME();
-
-    MCAPI static char const*& OPTION_VIEW_OFFSET();
-
     MCAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
     // NOLINTEND
 

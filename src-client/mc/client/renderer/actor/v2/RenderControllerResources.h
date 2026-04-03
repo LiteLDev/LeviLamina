@@ -6,19 +6,19 @@ struct RenderControllerResources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5fc31b;
-    ::ll::UntypedStorage<8, 24> mUnk486984;
-    ::ll::UntypedStorage<8, 24> mUnkb400d4;
-    ::ll::UntypedStorage<8, 24> mUnkab7ea3;
-    ::ll::UntypedStorage<8, 24> mUnkd89f49;
-    ::ll::UntypedStorage<8, 24> mUnka6a667;
-    ::ll::UntypedStorage<8, 24> mUnk1ef3e2;
-    ::ll::UntypedStorage<8, 24> mUnk6ef917;
-    ::ll::UntypedStorage<8, 24> mUnka1d605;
-    ::ll::UntypedStorage<8, 24> mUnkd1a01b;
-    ::ll::UntypedStorage<8, 24> mUnk39b6bc;
-    ::ll::UntypedStorage<8, 24> mUnk830e03;
-    ::ll::UntypedStorage<8, 24> mUnkaa1897;
+    ::ll::UntypedStorage<8, 24> mUnkf342e5;
+    ::ll::UntypedStorage<8, 24> mUnk6686e7;
+    ::ll::UntypedStorage<8, 24> mUnk20dc79;
+    ::ll::UntypedStorage<8, 24> mUnkbb682b;
+    ::ll::UntypedStorage<8, 24> mUnkbf508d;
+    ::ll::UntypedStorage<8, 24> mUnkbde109;
+    ::ll::UntypedStorage<8, 24> mUnkac58ea;
+    ::ll::UntypedStorage<8, 24> mUnkb56c92;
+    ::ll::UntypedStorage<8, 24> mUnkd1b748;
+    ::ll::UntypedStorage<8, 24> mUnke6219a;
+    ::ll::UntypedStorage<8, 24> mUnk74b60b;
+    ::ll::UntypedStorage<8, 24> mUnkeed25f;
+    ::ll::UntypedStorage<8, 24> mUnkc5a813;
     // NOLINTEND
 
 public:

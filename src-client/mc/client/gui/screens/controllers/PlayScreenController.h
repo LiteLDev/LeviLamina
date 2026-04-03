@@ -76,7 +76,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                 mNavigatedToAddServer;
     ::ll::TypedStorage<8, 32, ::std::string>                                       mRealmsTrialRandomText;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DlcChecker>>                      mDlcChecker;
-    ::ll::TypedStorage<8, 1032, ::LocalWorldInfo>                                  mTempLocalWorldInfo;
+    ::ll::TypedStorage<8, 1040, ::LocalWorldInfo>                                  mTempLocalWorldInfo;
     ::ll::TypedStorage<8, 8, ::ui::ScreenTechStackSelector&>                       mScreenTechStackSelector;
     ::ll::TypedStorage<1, 1, bool>                                                 mNeedsOfflineAuthCode;
     ::ll::TypedStorage<1, 1, bool>                             mOwnershipVerificationAnimationVisibleState;
@@ -102,7 +102,7 @@ public:
 
     virtual void onLeave() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -155,8 +155,6 @@ public:
     MCAPI ::std::string _getRealmsUnavailableMessage() const;
 
     MCAPI int _getTotalServerCount() const;
-
-    MCAPI ::ui::ViewRequest _handleEditRealm(int index);
 
     MCAPI ::ui::ViewRequest _handleLeaveRealm(int index);
 
@@ -232,6 +230,8 @@ public:
     MCAPI void $onOpen();
 
     MCAPI void $onLeave();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI ::ui::DirtyFlag $tick();
 

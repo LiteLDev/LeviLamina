@@ -19,26 +19,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~SocialSettingsScreenController() /*override*/ = default;
-
-    virtual bool _doesScreenHaveExitBehavior() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SocialSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+
+    MCAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD bool $_doesScreenHaveExitBehavior() const;
     // NOLINTEND
 
 public:

@@ -11,6 +11,7 @@
 #include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveRenderType.h"
 #include "mc/world/scores/ObjectiveSortOrder.h"
+#include "mc/world/scores/ScoreboardId.h"
 #include "mc/world/scores/ScoreboardOperationResult.h"
 
 // auto generated forward declare list
@@ -27,7 +28,6 @@ struct ActorUniqueID;
 struct PlayerScore;
 struct PlayerScoreboardId;
 struct ScoreInfo;
-struct ScoreboardId;
 // clang-format on
 
 class Scoreboard {
@@ -177,8 +177,6 @@ public:
     MCAPI static ::std::string const& DISPLAY_SLOT_LIST();
 
     MCAPI static ::std::string const& DISPLAY_SLOT_SIDEBAR();
-
-    MCAPI static char const*& OBJECTIVES_ENUM();
     // NOLINTEND
 
 public:

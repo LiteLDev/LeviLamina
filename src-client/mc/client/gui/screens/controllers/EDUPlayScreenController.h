@@ -7,6 +7,7 @@
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/library/EduDeeplinkObserver.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,6 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                      mJoincode;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                       mTaskGroup;
+    ::ll::TypedStorage<1, 1, bool>                                                mWasDedicatedServerEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mPollingForDedicatedServerStatus;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PlayScreenModel>>               mPlayScreenModel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::JoincodeEntryScreenController>> mJoincodeScreenController;
     // NOLINTEND
@@ -30,6 +34,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~EDUPlayScreenController() /*override*/;
+
     virtual void onEntered() /*override*/;
 
     virtual void onOpen() /*override*/;
@@ -39,8 +45,6 @@ public:
     virtual ::ui::SceneType getSceneType() const /*override*/;
 
     virtual bool onJoincodeReceived(::std::string const& encodedJoincode) /*override*/;
-
-    virtual ~EDUPlayScreenController() /*override*/;
     // NOLINTEND
 
 public:

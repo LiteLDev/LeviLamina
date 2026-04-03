@@ -4,25 +4,28 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/ViewRequest.h"
+#include "mc/client/gui/screens/controllers/EduRefreshType.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/brstd/flat_map.h"
+#include "mc/social/EduResponseError.h"
 
 // auto generated forward declare list
 // clang-format off
 class DlcUIWrapper;
 class EDUAddServerScreenController;
-class EDUPasswordEntryScreenController;
+class EDUPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
 class UIPropertyBag;
 struct PackManagerContentSource;
+struct ScreenEvent;
 namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }
-namespace Social { struct EduResponseError; }
 // clang-format on
 
 class EDUServersScreenController : public ::SettingsScreenControllerBase {
@@ -34,21 +37,31 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mMatchedServersNeedsRefresh;
     ::ll::TypedStorage<8, 32, ::std::string>                          mSearchString;
     ::ll::TypedStorage<8, 32, ::std::string>                          mAddServerInfoString;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mMostRecentlyAddedServer;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>           mMatchedServers;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DlcUIWrapper>>       mDlcUIWrapper;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSource*>             mWorldContentSource;
     ::ll::TypedStorage<8, 8, ::IContentManager&>                      mContentManager;
     ::ll::TypedStorage<1, 1, bool>                                    mHasInitializedServerList;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsDoneLoadingServers;
+    ::ll::TypedStorage<1, 1, bool>                                    mErrorFromRefresh;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsDoneLoadingKnownServers;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsDoneLoadingUnknownServers;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsDoneFetchHandler;
+    ::ll::TypedStorage<1, 1, bool>                                    mNeedsRefocus;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastFullServerInfoRefresh;
     ::ll::TypedStorage<8, 40, ::std::queue<::Social::EduResponseError, ::std::deque<::Social::EduResponseError>>>
-                                                                                     mErrorQueue;
+        mFetchErrorQueue;
+    ::ll::TypedStorage<8, 40, ::std::queue<::Social::EduResponseError, ::std::deque<::Social::EduResponseError>>>
+                                                                                     mAddErrorQueue;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mBannerErrorString;
     ::ll::TypedStorage<1, 1, bool>                                                   mPopupOpen;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mAddServerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                         mJoinServerId;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUAddServerScreenController>>     mAddServerScreenController;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUPasswordEntryScreenController>> mPasswordEntryScreenController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUPasscodeEntryScreenController>> mPasscodeEntryScreenController;
     ::ll::TypedStorage<
         8,
-        136,
+        128,
         ::Bedrock::Threading::BasicLockbox<
             ::brstd::flat_map<
                 ::std::string,
@@ -79,6 +92,8 @@ public:
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
+    virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
+
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
 
@@ -89,7 +104,7 @@ public:
 
     MCAPI void _closeAddServerModal();
 
-    MCAPI void _closePasswordEntryModal();
+    MCAPI void _closePasscodeEntryModal();
 
     MCAPI void _closeSharePopup();
 
@@ -99,11 +114,9 @@ public:
 
     MCAPI uint64 _getTileIndex(::UIPropertyBag& bag) const;
 
-    MCAPI void _joinServer(::UIPropertyBag* bag);
-
     MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
 
-    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds);
+    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
 
     MCAPI void _refreshServerList();
 
@@ -119,17 +132,28 @@ public:
 
     MCAPI void _requestAddServer(::std::string const& serverId);
 
-    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& password);
+    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
+
+    MCAPI void _showAddErrorMessage(::Social::EduResponseError& error);
 
     MCAPI void _showAddServerModal();
 
-    MCAPI void _showErrorMessage(::Social::EduResponseError& error);
+    MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
 
-    MCAPI void _showPasswordEntryModal(::Social::EduDedicatedServerDetails const& details);
+    MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
 
     MCAPI void _showRemoveServerModal(::UIPropertyBag* bag);
 
     MCAPI void _showSharePopup(::std::string const& popupFactory, ::std::string const& popupName);
+
+    MCAPI void _updateServerList(
+        ::brstd::flat_map<
+            ::std::string,
+            ::Social::EduDedicatedServerDetails,
+            ::std::less<::std::string>,
+            ::std::vector<::std::string>,
+            ::std::vector<::Social::EduDedicatedServerDetails>> const& servers
+    );
     // NOLINTEND
 
 public:
@@ -152,6 +176,8 @@ public:
     MCAPI void $onTerminate();
 
     MCAPI ::ui::DirtyFlag $tick();
+
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND

@@ -3,36 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/binding/experimental/QueryBase.h"
-#include "mc/client/gui/oreui/binding/experimental/properties/Property.h"
+#include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace GameplayUI { struct GameplayUIContext; }
-namespace OreUI::Experimental { class ClientDependencies; }
-namespace OreUI::Experimental { class GameDependencies; }
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
-namespace OreUI::Experimental {
+namespace OreUI {
 
-class TradeOfferQuery : public ::OreUI::Experimental::QueryBase<::OreUI::Experimental::TradeOfferQuery> {
+class TradeOfferQuery : public ::OreUI::QueryBase<::OreUI::TradeOfferQuery> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<bool>>                         mIsOutOfUses;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mBuyAItemName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mBuyBItemName;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mSellItemName;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<int>>                          mBuyAItemAmount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<int>>                          mBuyBItemAmount;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<int>>                          mSellItemAmount;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mBuyAItemImage;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mBuyBItemImage;
-    ::ll::TypedStorage<8, 200, ::OreUI::Experimental::Property<::std::string>>                mSellItemImage;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<bool>>                         mHasSecondaryBuyItem;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<bool>>                         mPlayerHasItemsForTrade;
-    ::ll::TypedStorage<8, 176, ::OreUI::Experimental::Property<bool>>                         mIsSelectedTrade;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsOutOfUses;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyAItemName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyBItemName;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mSellItemName;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mBuyAItemAmount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mBuyBItemAmount;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<int>>                                        mSellItemAmount;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyAItemImage;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mBuyBItemImage;
+    ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string>>                              mSellItemImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mHasSecondaryBuyItem;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mPlayerHasItemsForTrade;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<bool>>                                       mIsSelectedTrade;
     ::ll::TypedStorage<4, 4, int>                                                             mTradeTier;
     ::ll::TypedStorage<4, 4, int>                                                             mTradeIndex;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
@@ -54,10 +54,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI TradeOfferQuery(
-        ::OreUI::Experimental::GameDependencies const&   game,
-        ::OreUI::Experimental::ClientDependencies const& client,
-        int                                              tradeTier,
-        int                                              tradeIndex
+        ::OreUI::GameDependencies const&   game,
+        ::OreUI::ClientDependencies const& client,
+        int                                tradeTier,
+        int                                tradeIndex
     );
     // NOLINTEND
 
@@ -71,10 +71,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::OreUI::Experimental::GameDependencies const&   game,
-        ::OreUI::Experimental::ClientDependencies const& client,
-        int                                              tradeTier,
-        int                                              tradeIndex
+        ::OreUI::GameDependencies const&   game,
+        ::OreUI::ClientDependencies const& client,
+        int                                tradeTier,
+        int                                tradeIndex
     );
     // NOLINTEND
 
@@ -93,10 +93,10 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForIQuery();
-
     MCNAPI static void** $vftableForPropertyObject();
+
+    MCNAPI static void** $vftableForIQuery();
     // NOLINTEND
 };
 
-} // namespace OreUI::Experimental
+} // namespace OreUI

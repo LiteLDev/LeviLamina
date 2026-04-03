@@ -6,7 +6,7 @@ class RoleCheckerCallback {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc2fc5b;
+    ::ll::UntypedStorage<8, 64> mUnkd29070;
     // NOLINTEND
 
 public:

@@ -102,5 +102,7 @@ enum class ParticleType : int {
     EyeblossomOpen        = 96,
     EyeblossomClose       = 97,
     GreenFlame            = 98,
-    Count                 = 99,
+    PauseMobGrowth        = 99,
+    ResetMobGrowth        = 100,
+    Count                 = 101,
 };

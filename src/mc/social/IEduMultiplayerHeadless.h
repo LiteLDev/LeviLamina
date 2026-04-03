@@ -14,6 +14,7 @@
 namespace Social { struct EduAddServerResponse; }
 namespace Social { struct EduDedicatedServerDetails; }
 namespace Social { struct EduFetchServersResponse; }
+namespace Social { struct EduFetchTenantSettingsResponse; }
 namespace Social { struct EduHeadlessConnectionHandshake; }
 namespace Social { struct EduJoinServerResponse; }
 // clang-format on
@@ -41,6 +42,8 @@ public:
     virtual ::std::string getHostToJoinerNonce(::std::string const& sessionToken) const;
 
     virtual ::Bedrock::Threading::Async<void> onNextFetchJoiners();
+
+    virtual ::Bedrock::Threading::Async<::Social::EduFetchTenantSettingsResponse> requestTenantSettings();
 
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> requestBroadcastedServers();
 
@@ -92,7 +95,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
+    MCNAPI_C static ::EducationServicesEnvironment& mCachedEnvironment();
     // NOLINTEND
 
 public:

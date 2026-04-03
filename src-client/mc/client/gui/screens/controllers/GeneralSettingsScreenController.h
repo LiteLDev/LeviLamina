@@ -47,11 +47,12 @@ public:
                                                                                         mCloudFolderUrlHandle;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mLanguages;
     ::ll::TypedStorage<8, 8, uint64>                                                    mCurrentlySelectedIndex;
-    ::ll::TypedStorage<1, 8, ::MultiplayerLockState>                                    mMultiplayerState;
+    ::ll::TypedStorage<8, 8, ::MultiplayerLockState>                                    mMultiplayerState;
     ::ll::TypedStorage<8, 8, ::IContentManager&>                                        mContentManager;
     ::ll::TypedStorage<8, 8, ::PackManagerContentSourceImpl*>                           mResourceContentSource;
     ::ll::TypedStorage<4, 36, ::tm>                                                     mLastRefreshTime;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mScreenAnimationsOptionSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>            mGraphicsQualityPresetOptionSubscription;
     ::ll::TypedStorage<8, 32, ::std::string>                              mOverrideMajorVersion;
     ::ll::TypedStorage<8, 32, ::std::string>                              mOverrideMinorVersion;
     ::ll::TypedStorage<8, 32, ::std::string>                              mOverridePatchVersion;
@@ -61,7 +62,6 @@ public:
     ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>                            mProfileImage;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mUserDisplayName;
     ::ll::TypedStorage<1, 1, bool>                                                      mDirty;
-    ::ll::TypedStorage<1, 1, bool>                                                      mShowTreatments;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageManagementScreenController>>
                                                                                   mStorageManagementScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SubscriptionsScreenController>> mSubscriptionsScreenController;

@@ -16,9 +16,9 @@ struct ErrorBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk883b12;
+    ::ll::UntypedStorage<8, 32> mUnk573a59;
     ::ll::UntypedStorage<8, 16> mUnkd85588;
-    ::ll::UntypedStorage<8, 24> mUnkea44c7;
+    ::ll::UntypedStorage<8, 24> mUnkd8aa0c;
     // NOLINTEND
 
 public:

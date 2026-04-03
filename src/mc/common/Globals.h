@@ -9,26 +9,30 @@
 #include "mc/client/gui/HowToPlayTopicIndex.h"
 #include "mc/client/gui/UIDefType.h"
 #include "mc/client/gui/screens/LayoutVariableType.h"
+#include "mc/client/renderer/AmbientLightImpl.h"
+#include "mc/client/renderer/AtmosphericScattering.h"
+#include "mc/client/renderer/ColorGraderConfig.h"
+#include "mc/client/renderer/KeyframedDirectionalLightImpl.h"
+#include "mc/client/renderer/LightingImpl.h"
+#include "mc/client/renderer/LocalLightConfig.h"
+#include "mc/client/renderer/OrbitalLights.h"
+#include "mc/client/renderer/PBRFallbackConfig.h"
+#include "mc/client/renderer/SkyIntensityImpl.h"
+#include "mc/client/renderer/SkyboxConfigSettingsV0.h"
+#include "mc/client/renderer/UpscalingConfiguration.h"
 #include "mc/client/renderer/actor/v2/Destination.h"
 #include "mc/client/renderer/game/ShadowRenderingParameters.h"
 #include "mc/client/renderer/game/TerrainVariation.h"
 #include "mc/client/resources/ContentCatalogQueryData.h"
 #include "mc/client/services/download/DlcCheckResult.h"
-#include "mc/client/social/DisconnectionErrorStringOverrides.h"
-#include "mc/client/store/DlcPerformanceTier.h"
 #include "mc/client/tutorial/GameTip.h"
 #include "mc/common/SubClientId.h"
-#include "mc/debug/SentryEnvelopePayloadDebugMetadataSourcemapImage.h"
-#include "mc/debug/SentryEnvelopePayloadStacktraceFrame.h"
 #include "mc/deps/core/NetworkConnectionType.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/file/file_system/FileType.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
-#include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/string/StaticOptimizedString.h"
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/utility/HardwareMemoryTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
 #include "mc/deps/json/ValueType.h"
@@ -38,7 +42,6 @@
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/deps/shared_types/v1_21_110/item/ItemCategory.h"
-#include "mc/entity/components/KineticDamageSettings.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/libsrtp/srtp_err_status_t.h"
@@ -48,30 +51,26 @@
 #include "mc/options/EducationServicesEnvironment.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/function_ref.h"
-#include "mc/scripting/diagnostics/ScriptStat.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/gltf/Accessor.h"
 #include "mc/util/gltf/Image.h"
 #include "mc/util/gltf/Material.h"
-#include "mc/util/molang/ExpressionNode.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/world/Direction.h"
-#include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorFilterGroup.h"
+#include "mc/world/actor/ActorHealCause.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ActorTypeNamespaceRules.h"
-#include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/world/attribute/AttributeBuffType.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/filters/FilterGroup.h"
 #include "mc/world/filters/FilterOperator.h"
 #include "mc/world/item/CreativeItemCategory.h"
-#include "mc/world/item/components/DiggerBlockTypeInfo.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/WorldVersion.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockSlot.h"
 #include "mc/world/level/block/TorchFacing.h"
-#include "mc/world/level/block/components/BlockMaterialInstance.h"
 #include "mc/world/level/chunk/ChunkState.h"
 #include "mc/world/level/chunk/LevelChunkTag.h"
 #include "mc/world/level/chunk/SubChunk.h"
@@ -87,24 +86,27 @@
 class AABB;
 class Actor;
 class ActorOwnerComponent;
-class BaseActorRenderContext;
 class Biome;
 class BiomeArea;
 class Block;
 class BlockPos;
 class BlockSource;
 class BlockState;
+class BlockStateCommandParam;
 class BlockType;
 class BoundingBox;
 class BribeableComponent;
 class CircuitComponentList;
 class CircuitSceneGraph;
 class CircuitTrackingInfo;
-class DataDrivenGeometry;
+class CommandOutput;
 class DateManager;
+class DefinitionTrigger;
 class Dimension;
+class ExpressionNode;
 class FeatureRegistry;
 class GatheringServerInfo;
+class HashedString;
 class HitResult;
 class I18n;
 class IAppPlatform;
@@ -123,36 +125,37 @@ class PackReport;
 class RecipeIngredient;
 class RedstoneTorchCapacitor;
 class ResponseVerifier;
+class ScriptStat;
 class SemVersionConstant;
 class StructurePoolElement;
 class SubChunkBrightnessStorage;
 class ThirdPartyInfo;
-class TraceState;
 class Vec3;
-class WindowState;
 class WorkerPool;
 struct AccessorTypeEnumHasher;
 struct ActorDefinitionIdentifier;
-struct ActorFactoryData;
 struct AllWorkerConfigurations;
-struct AssertHandlerContext;
 struct BlockLayer;
-struct DynDnsResult;
+struct BlockMaterialInstance;
+struct DiggerBlockTypeInfo;
 struct FlatWorldLayer;
 struct FlatWorldPreset;
 struct HCTraceImplArea;
-struct HC_CALL;
 struct ImageMimeTypeEnumHasher;
 struct KeyOrNameResult;
+struct KineticDamageSettings;
 struct MCRESULT;
 struct MaterialAlphaModeEnumHasher;
 struct PackIdVersion;
 struct ScatterParamsMolangVariableIndices;
+struct SentryEnvelopePayloadDebugMetadataSourcemapImage;
+struct SentryEnvelopePayloadStacktraceFrame;
 struct TextProcessingEventOriginEnumHasher;
-struct TypeMapping;
 struct WorkerConfiguration;
 struct WorldTemplateInfo;
+struct XAsyncBlock;
 struct srtp_auth_t;
+namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Services { class IDiscoveryService; }
@@ -179,6 +182,10 @@ namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct SinglePool
 namespace Social { class IUserManager; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
+class TraceState;
+struct HC_CALL;
+class BaseActorRenderContext;
+class DataDrivenGeometry;
 class DataDrivenModel;
 class DataDrivenRenderer;
 class ExprToken;
@@ -195,11 +202,13 @@ struct AnimationData;
 struct AttachablesPreprocessingContext;
 struct BakedDataDrivenRenderDataInfrequentAccess;
 struct BakedRenderControllerResults;
+struct CloudConfiguration;
 struct CommonLocTextPair;
 struct ContentCatalogQueryData;
 struct DataDrivenRendererDerivitiveData;
 struct DataDrivenRendererPreprocessingContext;
 struct DateRange;
+struct DisconnectionErrorStringOverrides;
 struct DurableSearchResults;
 struct ExtractedDataDataDrivenModel;
 struct ExtractedRenderController;
@@ -207,6 +216,7 @@ struct ExtractedSkeletonData;
 struct FinalRenderingData;
 struct FrameAllocationCount;
 struct GameplayRelatedRenderData;
+struct IWorldTransferHandler;
 struct ModificationOperation;
 struct PreviousTransformationInput;
 struct PreviousTransformationOutput;
@@ -219,7 +229,8 @@ struct ResourceOffset;
 struct SearchQuery;
 struct SharedUniformPhase;
 struct TrialManager;
-namespace Bedrock { class Platform_GameCore; }
+namespace LightingGroup { struct StaticDirectionalLight; }
+namespace MainGameCore { struct WinMain; }
 namespace ParticleSystem { class ParticleEffectComponentRegistry; }
 namespace Social { struct MultiplayerServiceManager; }
 namespace cohtml { class Binder; }
@@ -251,15 +262,13 @@ CreativeItemCategoryComprehensiveToRuntime(::SharedTypes::v1_21_110::ItemCategor
 
 MCAPI ::CreativeItemCategory CreativeItemCategoryFromString(::std::string const& str);
 
-MCFOLD void* DefaultMemAllocFunction(uint64 size, uint memoryType);
+MCAPI_S void* DefaultMemAllocFunction(uint64 size, uint memoryType);
 
-MCFOLD void DefaultMemFreeFunction(void* pointer, uint memoryType);
-
-MCFOLD void DefaultOutOfMemoryHandler(char const* file, long line);
+MCFOLD_S void DefaultMemFreeFunction(void* pointer, uint memoryType);
 
 MCAPI_C void DiscardData();
 
-MCAPI bool DoesMockCallMatch(::HC_CALL const* mockCall, ::HC_CALL const* originalCall);
+MCAPI_S bool DoesMockCallMatch(::HC_CALL const* mockCall, ::HC_CALL const* originalCall);
 
 MCAPI ::HashedString const& EntityCanonicalName(::ActorType entityType);
 
@@ -273,25 +282,19 @@ MCAPI ::std::string EntityTypeToString(::ActorType entityType, ::ActorTypeNamesp
 
 MCAPI void EntityTypeToStringAndNamespace(::ActorType entityType, ::std::string& nameOut, ::std::string& namespaceOut);
 
-MCAPI ::std::unordered_map<::std::string, ::ActorFactoryData>& GetActorDataRegistry();
-
 MCAPI double GetEngagementMetricsTimeSinceAppStart_DEPRECATED();
 
 MCAPI_S ::TraceState& GetTraceState();
 
-MCAPI_C long InitializeGameRuntimeDll(uint64 flags);
+MCAPI_C long InitializeGameRuntimeDll(uint64 flags, ::_INITIALIZE_OPTIONS* const options);
 
 MCAPI_C long LoadGameRuntimeDll();
 
 MCAPI_S ::std::optional<::LogLevel> LogLevelFromString(::std::string const& str);
 
-MCFOLD bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
-
-MCAPI bool MOCK_ASSERT_HANDLER_NO_THROW(::AssertHandlerContext const& context);
-
 MCAPI ::MaterialType MaterialTypeFromString(::std::string const& materialType);
 
-MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL* originalCall);
+MCAPI_S bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL* originalCall);
 
 MCAPI_S long Mock_Internal_ReadRequestBodyIntoMemory(
     ::HC_CALL*                                         originalCall,
@@ -338,6 +341,8 @@ MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string c
 
 MCAPI_C int64 WndProc(::HWND__* hwnd, uint uMsg, uint64 wParam, int64 lParam);
 
+MCAPI_C ::Bedrock::Result<::XUser*> XUserGetDefaultHandle_Blocking();
+
 MCAPI_C ::Bedrock::Threading::Async<::ContentCatalogQueryData::Done> _addCatalogItemsFromSearch(
     ::SearchQuery const&                         query,
     ::DurableSearchResults const&                response,
@@ -375,7 +380,7 @@ MCAPI_C ::ShadowRenderingParameters::ShadowMap _calculateCascade(
     ::glm::vec3 const&                                        playerPosition,
     float                                                     maxWorldTexelSnappingPosition,
     float                                                     zNear,
-    float                                                     maxShadowDistance,
+    float                                                     maxShadowFrustumRadius,
     ::mce::framebuilder::PerCascadeRenderingParameters const& renderingParameters
 );
 
@@ -463,6 +468,9 @@ MCAPI_C bool _searchBlockByFreeFormPick(
     ::HitResult& hitResult,
     ::HitResult& liquidHitResult
 );
+
+MCAPI_C ::glm::vec3
+_snapToTexel(::glm::vec3 const& position, ::glm::mat4x4 const& matrixW2L, ::glm::mat4x4 const& matrixL2W);
 
 MCAPI_C bool _stringLessThan(::std::string const& str1, ::std::string const& str2);
 
@@ -560,12 +568,6 @@ MCAPI void compoundBlockVolumeActionBindType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void compoundBlockVolumePositionRelativityBindType(::cereal::ReflectionCtx& ctx);
 
-MCAPI_C ::HardwareMemoryTier
-convertMinHardwareMemTierInt(int memTier, char const* context_str, ::std::string const& context_str_val);
-
-MCAPI_C ::DlcPerformanceTier
-convertMinPerformanceTierInt(int perfTier, char const* context_str, ::std::string const& context_str_val);
-
 MCAPI ::TorchFacing convertTorchDirection(::Facing::Name facing);
 
 MCAPI_C ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>
@@ -590,7 +592,11 @@ MCAPI ::Bedrock::NonOwnerPointer<::WorkerPool> createWorkerPool(
     ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>& destHandle
 );
 
+MCAPI_C ::std::unique_ptr<::IWorldTransferHandler> createWorldTransferHandler();
+
 MCAPI_C ::UIDefType defTypeFromString(::std::string const& str);
+
+MCAPI_C ::std::string discoveryEnvironmentToString(::DiscoveryEnvironment const& environment);
 
 MCAPI_C ::std::string dlcCheckerResultToString(::DlcCheckResult result);
 
@@ -600,10 +606,6 @@ MCAPI_C void emplaceMatchedBoneIndex(
     ::std::vector<::std::string> const&   regexArray,
     ::std::vector<::std::vector<uint64>>& indices
 );
-
-MCAPI ::ActorCategory entityCategoriesFromString(::std::string const& str);
-
-MCAPI ::ActorCategory entityCategoryFromString(::std::string const& str);
 
 MCAPI_C void executeOnPrimaryUserStorageArea(
     ::std::function<void(::std::shared_ptr<::Core::FileStorageArea>)> onSuccess,
@@ -658,11 +660,6 @@ MCAPI_C void findInvalidControls(
 MCAPI ::std::optional<::FlatWorldPresetID> flatWorldPresetIDFromString(::std::string const& str);
 
 MCAPI_C ::std::string_view flatWorldPresetIDToString(::FlatWorldPresetID id);
-
-MCAPI void forEachEntityType(
-    ::std::function<bool(::ActorType, ::std::string const&)> callback,
-    ::ActorTypeNamespaceRules                                namespaceRule
-);
 
 MCAPI_C int fputc(int c, ::Core::File& infile);
 
@@ -721,6 +718,8 @@ generatePreviousTransformationStreams(::PreviousTransformationInput const&& in, 
 MCAPI_C ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::DateRange>>> const
 getActiveDateRange(::std::vector<::DateRange> const& dateRangesToSearch, ::DateManager const& dateManager);
 
+MCAPI ::ActorHealCause getActorHealCause(::AttributeBuffType buffType);
+
 MCAPI_C ::std::string
 getAnchorPointFromDirectionAndAnchor(::GameTip::ArrowDirection direction, ::GameTip::ArrowAnchor anchor);
 
@@ -759,8 +758,6 @@ MCAPI_C void getFirstVisibleControlInternal(
 );
 
 MCAPI ::std::unordered_map<::FlatWorldPresetID, ::FlatWorldPreset> const& getFlatWorldPresets();
-
-MCAPI_C ::HowToPlayTopicIndex getHowToPlayTopicIndexFromName(::std::string_view topicString);
 
 MCAPI ::I18n& getI18n();
 
@@ -844,6 +841,8 @@ MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI_C ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
 
+MCAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
+
 MCAPI bool operator<(
     ::SemVersionBase<::std::string_view> const&               lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
@@ -863,20 +862,118 @@ MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI_C ::std::ostream& operator<<(::std::ostream& os, ::cg::TextureSetLayerType const& type);
 
+MCAPI_C bool operator==(
+    ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P0,
+    ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P0,
+    ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P1
+);
+
+MCFOLD_C bool operator==(
+    ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P0,
+    ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P1
+);
+
+MCFOLD_C bool operator==(
+    ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P0,
+    ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P1
+);
+
+MCFOLD_C bool operator==(::LightingGroup::OrbitalLights<1> const& __P0, ::LightingGroup::OrbitalLights<1> const& __P1);
+
+MCFOLD_C bool operator==(::LightingGroup::OrbitalLights<0> const& __P0, ::LightingGroup::OrbitalLights<0> const& __P1);
+
+MCFOLD_C bool operator==(
+    ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P0,
+    ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P0,
+    ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P1
+);
+
+MCAPI_C bool operator==(::CloudConfiguration const& __P0, ::CloudConfiguration const& __P1);
+
+MCAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P1
+);
+
+MCAPI_C bool operator==(::UpscalingConfiguration::Configs const& __P0, ::UpscalingConfiguration::Configs const& __P1);
+
 MCAPI bool operator==(::DiggerBlockTypeInfo const& __P0, ::DiggerBlockTypeInfo const& __P1);
+
+MCAPI_C bool operator==(
+    ::LightingGroup::LightingImpl<1, 21, 80>::LightingSettings::DirectionalLights const& __P0,
+    ::LightingGroup::LightingImpl<1, 21, 80>::LightingSettings::DirectionalLights const& __P1
+);
 
 MCAPI_C bool
 operator==(::DisconnectionErrorStringOverrides const& __P0, ::DisconnectionErrorStringOverrides const& __P1);
 
-MCAPI bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
+MCFOLD_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P1
+);
 
-MCAPI bool operator==(
+MCAPI_C bool operator==(
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P0,
+    ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
+        HorizonBlendKeyFrames const& __P1
+);
+
+MCFOLD bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
+
+MCAPI_C bool operator==(
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P0,
+    ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P1
+);
+
+MCFOLD_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings::PBRData const& __P1
+);
+
+MCAPI_C bool operator==(
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P0,
+    ::PBRFallbackConfig::PBRFallbackConfigSettings::PBRFallbackSettings const& __P1
+);
+
+MCFOLD bool operator==(
     ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P0,
     ::SentryEnvelopePayloadDebugMetadataSourcemapImage const& __P1
 );
 
 MCAPI bool
 operator==(::SentryEnvelopePayloadStacktraceFrame const& __P0, ::SentryEnvelopePayloadStacktraceFrame const& __P1);
+
+MCFOLD_C bool operator==(
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P0,
+    ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P1
+);
+
+MCAPI_C bool
+operator==(::LightingGroup::StaticDirectionalLight const& __P0, ::LightingGroup::StaticDirectionalLight const& __P1);
 
 MCAPI bool operator==(::ScriptStat const& __P0, ::ScriptStat const& __P1);
 
@@ -896,7 +993,7 @@ MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstanc
 
 MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 
-MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+MCFOLD bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI_C bool operator>=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
@@ -943,8 +1040,6 @@ MCAPI_C void renderAttachables(
 
 MCAPI_C ::mce::framebuilder::FrameBuilder* renderDragonFrameBuilder();
 
-MCAPI_C void renderFlames(::std::vector<::Actor*> const& onFireActors, ::BaseActorRenderContext& ctx);
-
 MCAPI_C void renderLeash(::std::vector<::Actor*> const& leashedActors, ::BaseActorRenderContext& ctx);
 
 MCAPI void renderMapChunk(
@@ -972,6 +1067,12 @@ MCAPI_C void separateEntityStreams(
     ::ProcessedDataDrivenRenderers const&     resources,
     ::FinalRenderingData&                     finalRenderData,
     ::AnimationData&                          animData
+);
+
+MCAPI bool setBlockStates(
+    ::Block const**                                block,
+    ::std::vector<::BlockStateCommandParam> const& blockStates,
+    ::CommandOutput&                               output
 );
 
 MCAPI_C ::ui::DirtyFlag setControlVariableValue(
@@ -1062,15 +1163,15 @@ MCAPI_C void updateLevelSettingsConsideringPlayerIntents(
     bool                                                  hasAllValidCrossPlatformSkin
 );
 
-MCAPI ::http_wstring utf16_from_utf8(::http_string const& utf8);
+MCAPI_S ::http_wstring utf16_from_utf8(::http_string const& utf8);
 
-MCAPI ::http_wstring utf16_from_utf8(char const* utf8);
+MCAPI_S ::http_wstring utf16_from_utf8(char const* utf8);
 
-MCAPI ::http_wstring utf16_from_utf8(char const* utf8, uint64 size);
+MCAPI_S ::http_wstring utf16_from_utf8(char const* utf8, uint64 size);
 
-MCAPI ::http_string utf8_from_utf16(::http_wstring const& utf16);
+MCAPI_S ::http_string utf8_from_utf16(::http_wstring const& utf16);
 
-MCAPI ::http_string utf8_from_utf16(wchar_t const* utf16, uint64 size);
+MCAPI_S ::http_string utf8_from_utf16(wchar_t const* utf16, uint64 size);
 
 MCAPI_C void visitTreeInternal(
     ::UIControl&                                   control,
@@ -1097,6 +1198,12 @@ MCAPI ::HashedString const& BLAST_FURNACE_TAG();
 
 MCAPI ::HashedString const& CAMPFIRE_TAG();
 
+MCAPI ::std::string_view const& CEREAL_DOCUMENTATION_TAG();
+
+MCAPI ::std::string_view const& CEREAL_HELP_PROPERTY();
+
+MCAPI ::std::string_view const& CEREAL_JSON_SCHEMA_PROPERTY();
+
 MCAPI_C ::std::chrono::seconds const& CLUBS_CACHE_DURATION_FAILED();
 
 MCAPI_C ::std::chrono::seconds const& CLUBS_CACHE_DURATION_SUCCEEDED();
@@ -1104,8 +1211,6 @@ MCAPI_C ::std::chrono::seconds const& CLUBS_CACHE_DURATION_SUCCEEDED();
 MCAPI ::std::unordered_map<::ContainerEnumName, ::std::string>& ContainerCollectionNameMap();
 
 MCAPI_C ::std::string const& DEFAULT_DRIVE_CONTENTS_PATH();
-
-MCAPI_C int const& DEFAULT_SEARCH_RESULTS_PER_REQUEST();
 
 MCAPI_C ::std::unordered_map<::std::string_view, ::EncyclopediaTopicIndex> const& EncyclopediaTopicIndexMap();
 
@@ -1117,8 +1222,6 @@ MCAPI ::HashedString const& FURNACE_TAG();
 
 MCAPI ::std::array<::std::pair<::HudElement, ::std::string>, 13> const& HUD_ELEMENTS_TO_STRINGS();
 
-MCAPI_C ::std::add_lvalue_reference_t<char const*[]> HeaderBannerType();
-
 MCAPI_C ::std::unordered_map<::std::string_view, ::HowToPlayTopicIndex> const& HowToPlayTopicIndexMap();
 
 MCAPI_C ::std::string const& ICON_OVERLAY_FACTORY();
@@ -1127,10 +1230,6 @@ MCAPI ::GatheringServerInfo const& INVALID_GATHERING_SERVER_INFO();
 
 MCAPI ::ThirdPartyInfo const& INVALID_THIRD_PARTY_INFO();
 
-MCAPI char const*& IPV4_LOOPBACK();
-
-MCAPI char const*& IPV6_LOOPBACK();
-
 MCAPI ::std::unordered_map<
     ::glTF::Image::ImageMimeType,
     ::std::string,
@@ -1138,21 +1237,13 @@ MCAPI ::std::unordered_map<
     ::std::equal_to<::glTF::Image::ImageMimeType>> const&
 ImageMimeTypeEnumMap();
 
-MCAPI ::MCRESULT const& MCRESULT_AllTargetsWillFail();
-
 MCAPI ::MCRESULT const& MCRESULT_ChatMuted();
-
-MCAPI ::MCRESULT const& MCRESULT_CommandExecIncomplete();
 
 MCAPI ::MCRESULT const& MCRESULT_CommandNotFound();
 
 MCAPI ::MCRESULT const& MCRESULT_CommandRequestInitiated();
 
-MCAPI ::MCRESULT const& MCRESULT_CommandStepDone();
-
 MCAPI ::MCRESULT const& MCRESULT_CommandStepFail();
-
-MCAPI ::MCRESULT const& MCRESULT_CommandVersionMismatch();
 
 MCAPI ::MCRESULT const& MCRESULT_CommandsDisabled();
 
@@ -1160,37 +1251,17 @@ MCAPI ::MCRESULT const& MCRESULT_EncryptionRequired();
 
 MCAPI ::MCRESULT const& MCRESULT_ExecutionFail();
 
-MCAPI ::MCRESULT const& MCRESULT_ExpectedRequestMsg();
-
-MCAPI ::MCRESULT const& MCRESULT_FailWithoutFailMsg();
-
 MCAPI ::MCRESULT const& MCRESULT_FailedToParseCommand();
-
-MCAPI ::MCRESULT const& MCRESULT_InvalidCommandCall();
 
 MCAPI ::MCRESULT const& MCRESULT_InvalidCommandContext();
 
 MCAPI ::MCRESULT const& MCRESULT_InvalidCommandOrigin();
 
-MCAPI ::MCRESULT const& MCRESULT_InvalidOverloadSyntax();
-
 MCAPI ::MCRESULT const& MCRESULT_MalformedRequest();
-
-MCAPI ::MCRESULT const& MCRESULT_MustSpecifyVersion();
-
-MCAPI ::MCRESULT const& MCRESULT_NewCommandVersionAvailable();
-
-MCAPI ::MCRESULT const& MCRESULT_NoChatPermissions();
-
-MCAPI ::MCRESULT const& MCRESULT_NoTargetsFound();
-
-MCAPI ::MCRESULT const& MCRESULT_NotEnoughPermissions();
 
 MCAPI ::MCRESULT const& MCRESULT_Success();
 
 MCAPI ::MCRESULT const& MCRESULT_TooManyPendingRequests();
-
-MCAPI ::MCRESULT const& MCRESULT_VersionMismatch();
 
 MCAPI ::SemVersionConstant const& MIN_ENGINE_VERSION_MINIMUM_V2();
 
@@ -1214,10 +1285,6 @@ MCAPI_C ::std::string const& SKIN_PACK_COLLECTION_NAME_DEP();
 MCAPI ::HashedString const& SMOKER_TAG();
 
 MCAPI ::HashedString const& SOUL_CAMPFIRE_TAG();
-
-MCAPI ::std::add_lvalue_reference_t<bool (*)(::AssertHandlerContext const&)> TEST_HANDLER();
-
-MCAPI ::std::add_lvalue_reference_t<bool (*)(::AssertHandlerContext const&)> TEST_HANDLER_NO_THROW();
 
 MCAPI ::std::unordered_map<
     ::TextProcessingEventOrigin,
@@ -1266,8 +1333,6 @@ MCAPI ::std::unordered_map<::std::string, ::DiscoveryEnvironment> const& discove
 
 MCAPI ::std::unordered_map<::DiscoveryEnvironment, ::std::string> const& discoveryEnvironments();
 
-MCAPI ::std::array<::std::pair<char const*, char const*>, 5> const& educationServicesEnvironmentStrings();
-
 MCAPI ::std::add_lvalue_reference_t<uint[]> englishCharacterFrequencies();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& exposureTechniqueLabels();
@@ -1290,13 +1355,15 @@ MCAPI_C double& gTotalRealWorldTime();
 
 MCAPI_C double& gTotalRealWorldTimeDelta();
 
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, uint)> g_memAllocFunc();
+MCAPI_C ::MainGameCore::WinMain*& gWinMainInstance();
 
-MCAPI ::std::add_lvalue_reference_t<void (*)(void*, uint)> g_memFreeFunc();
+MCAPI_S ::std::add_lvalue_reference_t<void* (*)(uint64, uint)> g_memAllocFunc();
 
-MCAPI ::HCTraceImplArea& g_traceHTTPCLIENT();
+MCAPI_S ::std::add_lvalue_reference_t<void (*)(void*, uint)> g_memFreeFunc();
 
-MCAPI ::HCTraceImplArea& g_traceWEBSOCKET();
+MCAPI_S ::HCTraceImplArea& g_traceHTTPCLIENT();
+
+MCAPI_S ::HCTraceImplArea& g_traceWEBSOCKET();
 
 MCAPI_C ::HCTraceImplArea& g_traceXAL();
 
@@ -1304,7 +1371,7 @@ MCAPI_C ::HCTraceImplArea& g_traceXAL_TELEMETRY();
 
 MCAPI_C ::HCTraceImplArea& g_traceXSAPI();
 
-MCAPI_C char const*& gamepad_disconnected_screen();
+MCAPI_C ::std::unordered_map<int, ::std::string> const& gameModeLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& graphicsApiLabels();
 
@@ -1312,15 +1379,11 @@ MCAPI_C ::std::unordered_map<int, ::std::string> const& graphicsModeLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& graphicsQualityPresetModeLabels();
 
-MCAPI_C char const*& hud_screen();
-
-MCAPI_C char const*& idle_route();
-
 MCAPI_C ::std::unordered_map<int, ::std::string> const& interactionModelLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& joystickVisibilityOptionLabels();
 
-MCAPI ::EducationServicesEnvironment& mCachedServicesEnvironment();
+MCAPI_C ::EducationServicesEnvironment& mCachedServicesEnvironment();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& nethernetLoggingVerbosityLabels();
 
@@ -1328,15 +1391,13 @@ MCAPI_C ::std::unordered_map<int, ::std::string> const& networkLoggingVerbosityL
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& newPlayerFlowV3ABCTestGroupLabels();
 
-MCAPI ::std::add_lvalue_reference_t<void (*)(char const*, long)> notifyOutOfMemory();
+MCAPI_C ::std::unordered_map<int, ::std::string> const& newPlayerPathTutorialModeABTestGroupLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& partyInviteReceivedFilterLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& partyInviteSendPrivilegesLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& partyPrivacyLabels();
-
-MCAPI_C char const*& pause_screen();
 
 MCAPI_C ::std::unordered_map<::std::string, int> const& permissionsNameValuePairs();
 
@@ -1348,23 +1409,15 @@ MCAPI_C ::std::unordered_map<int, ::std::string> const& pointLightLODingQualityL
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& pointLightShadowQualityLabels();
 
-MCAPI ::std::add_lvalue_reference_t<void (*)(void*, char const*, uint)> rakFree_Ex();
-
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, char const*, uint)> rakMalloc_Ex();
-
-MCAPI ::std::add_lvalue_reference_t<void* (*)(void*, uint64, char const*, uint)> rakRealloc_Ex();
-
 MCAPI_C ::std::unordered_map<int, ::std::string> const& realmsEnvironmentLabels();
+
+MCAPI_C ::std::unordered_map<int, ::std::string> const& realmsGameModeLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& realmsSkuLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& reflectionQualityLabels();
 
-MCAPI ::std::add_lvalue_reference_t<::DynDnsResult[]> resultTable();
-
-MCAPI_C ::std::shared_ptr<::Bedrock::Platform_GameCore>& sPlatform();
-
-MCAPI_C ::std::unique_ptr<::WindowState>& sWindowState();
+MCAPI_C ::std::variant<::XAsyncBlock, ::XUser*>& sDefaultUser();
 
 MCAPI_S bool& s_AsyncLibEnablePumpingWait();
 
@@ -1380,9 +1433,9 @@ MCAPI_C ::std::unordered_map<int, ::std::string> const& splitScreenLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& startupStatisticsLabels();
 
-MCAPI ::__m128i& stbir__s16_32768();
+MCAPI_C ::__m128i& stbir__s16_32768();
 
-MCAPI ::__m128i& stbir__s32_32768();
+MCAPI_C ::__m128i& stbir__s32_32768();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& storageLocationLabels();
 
@@ -1397,8 +1450,6 @@ MCAPI_C ::std::unordered_map<int, ::std::string> const& toastsDurationLabels();
 MCAPI_C ::std::unordered_map<int, ::std::string> const& tonemapTechniqueLabels();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& topButtonScaleOptionLabels();
-
-MCAPI ::std::add_lvalue_reference_t<::TypeMapping[]> typeMappings();
 
 MCAPI_C ::std::unordered_map<int, ::std::string> const& typefaceLabels();
 

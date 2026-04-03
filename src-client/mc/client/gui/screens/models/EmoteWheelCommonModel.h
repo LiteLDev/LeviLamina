@@ -56,7 +56,7 @@ public:
 
     MCAPI void _setHoverIndex(int hoverIndex);
 
-    MCFOLD void setOnEmoteSlotSelected(::std::function<void(int)> callback);
+    MCAPI void setOnEmoteSlotSelected(::std::function<void(int)> callback);
 
     MCAPI ~EmoteWheelCommonModel();
     // NOLINTEND

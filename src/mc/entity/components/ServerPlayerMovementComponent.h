@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/entity/components/MovementPackets.h"
 
 // auto generated forward declare list
 // clang-format off
 class InventoryPacket;
 struct IPlayerTickPolicy;
-struct MovementPackets;
 // clang-format on
 
 struct ServerPlayerMovementComponent {

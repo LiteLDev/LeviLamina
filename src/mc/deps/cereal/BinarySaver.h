@@ -23,7 +23,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~BinarySaver() /*override*/ = default;
+    virtual ~BinarySaver() /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

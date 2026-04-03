@@ -11,6 +11,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class EntityContext;
 class Player;
 struct ActorDefinitionIdentifier;
@@ -43,7 +44,8 @@ public:
 
     virtual void remove() /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual ~TripodCamera() /*override*/ = default;
     // NOLINTEND
@@ -56,8 +58,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI bool isActivated() const;
 
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
@@ -85,7 +85,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

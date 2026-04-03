@@ -26,7 +26,6 @@
 #include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
-#include "mc/deps/core/utility/ValidationStatus.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/input/InputMode.h"
@@ -58,6 +57,7 @@
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/server/safety/ChatFloodingAction.h"
+#include "mc/util/ValidationStatus.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/player/LoadingState.h"
 #include "mc/world/actor/player/persona/ProfileType.h"
@@ -96,7 +96,6 @@ class LevelSeed64;
 class LevelSettings;
 class MessagePerformance;
 class Mob;
-class MobEffectInstance;
 class NetworkIdentifier;
 class PackInstance;
 class PackManifest;
@@ -116,6 +115,7 @@ struct AsyncJoinDeny;
 struct ChunkRecyclerTelemetryOutput;
 struct DBStoragePerformanceTelemetryData;
 struct ExtraLicenseData;
+struct ImageTelemetryInfo;
 struct LevelStorageEventingContext;
 struct LowMemoryReport;
 struct MinecraftEventingDependencies;
@@ -125,7 +125,6 @@ struct ProfilerLiteTelemetry;
 struct SplitScreenUpdatedEventData;
 struct StackStats;
 struct WebviewDownloadInfo;
-struct glTFExportData;
 namespace Bedrock { class SessionInfo; }
 namespace Bedrock { struct CrashUploadStatus; }
 namespace Bedrock { struct DeviceIdContext; }
@@ -136,10 +135,8 @@ namespace Core { class Path; }
 namespace Core::Profile { struct FileCounters; }
 namespace Identity { struct EduDSTelemetryIdentifier; }
 namespace Json { class Value; }
-namespace PlayerMessaging { struct SigninID; }
 namespace PuvLoadData { struct TelemetryEventData; }
 namespace Social { class GameConnectionInfo; }
-namespace Social { class IUserManager; }
 namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlayerIDs; }
 namespace Social::Events { class AchievementEventing; }
@@ -148,15 +145,16 @@ namespace Social::Events { class EventManager; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class MobTelemetry; }
+namespace Social::Events { class OptionChange; }
 namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
 namespace Social::Events { class RealtimeRoute; }
 namespace Social::Events { class ScreenFlow; }
 namespace Social::Events { class TelemetryHeartbeat; }
 namespace Social::Events { struct InboxSummaryData; }
+namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace mce { class UUID; }
-namespace Legacy { struct WorldConversionReport; }
 // clang-format on
 
 class MinecraftEventing : public ::IMinecraftEventing,
@@ -247,7 +245,8 @@ public:
         HeartTransplanter               = 113,
         StayHydrated                    = 114,
         MobKabob                        = 115,
-        Count                           = 116,
+        AdventuringTime                 = 116,
+        Count                           = 117,
     };
 
     enum class BlockPlacementMethod : int {
@@ -349,7 +348,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk60033d;
+        ::ll::UntypedStorage<8, 8> mUnka099be;
         // NOLINTEND
 
     public:
@@ -364,7 +363,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TelemetryInfo>>                      mTelemetryInfo;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Social::Events::TelemetryHeartbeat>> mHeartbeat;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Social::IUserManager>>     mUserManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::AppPlatform>>              mAppPlatform;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mAssertTelemetrySubscription;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                      mSettingsDir;
@@ -408,10 +406,7 @@ public:
 
     virtual ::IPurchaseEventing& getPurchaseEventing() /*override*/;
 
-    virtual void init(
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&             appPlatform
-    ) /*override*/;
+    virtual void init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) /*override*/;
 
     virtual void initDeviceAndSessionIds() /*override*/;
 
@@ -536,29 +531,26 @@ public:
     ) /*override*/;
 
     virtual void fireEventPacketViolationDetected(
-        uint64                     readResult,
-        ::std::string              readResultContext,
-        ::PacketViolationResponse  violationResponse,
-        ::MinecraftPacketIds       violatingPacketId,
-        ::NetworkIdentifier const& netId,
-        uint                       numViolations,
-        ::SubClientId              clientSubId,
-        ::SubClientId              senderSubId,
-        uint                       packetStreamLength
+        uint64,
+        ::std::string,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        ::NetworkIdentifier const&,
+        uint,
+        ::SubClientId,
+        ::SubClientId,
+        uint
     ) /*override*/;
 
-    virtual void fireEventServerReceivedValidPacket(
-        ::NetworkIdentifier const& netId,
-        ::MinecraftPacketIds       packetId,
-        ::SubClientId              clientSubId
-    ) /*override*/;
+    virtual void
+    fireEventServerReceivedValidPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId) /*override*/;
 
     virtual void fireEventClientSentOrReceivedPacket(
-        ::NetworkIdentifier const& netId,
-        ::MinecraftPacketIds       packetId,
-        ::SubClientId              clientSubId,
-        ::std::string              correlationId,
-        bool                       isOutgoing
+        ::NetworkIdentifier const&,
+        ::MinecraftPacketIds,
+        ::SubClientId,
+        ::std::string,
+        bool
     ) /*override*/;
 
     virtual void fireEventJoinCanceled(::LoadingState currentState) /*override*/;
@@ -586,72 +578,76 @@ public:
     ) /*override*/;
 
     virtual void fireEventPlayerJoinWorld(
-        uint const&                                              userId,
-        ::SubClientId const                                      subId,
-        bool                                                     isJoiningLocalServer,
-        ::std::optional<bool>                                    isUsingTURN,
-        ::IConnectionEventing::PlayerJoinWorldAttemptState const JoinState,
-        int                                                      attemptId,
-        ::Connection::DisconnectFailReason                       failReason,
-        ::Json::Value const&                                     failDebugInfo,
-        ::TransportLayer                                         transportLayer,
-        ::NetworkType                                            networkTypeOverride,
-        ::Social::MultiplayerState                               multiplayerState,
-        bool                                                     isConnectedToApplicationLayer,
-        bool                                                     isFilteringProfanity,
-        ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
-        ::std::string const&                                     titleMessage,
-        ::std::string const&                                     errorMessage,
-        ::std::string const&                                     codeword,
-        bool                                                     isServerTransfer,
-        ::Social::GameConnectionInfo const&                      connectionInfo
+        uint const&,
+        ::SubClientId const,
+        bool,
+        ::std::optional<bool>,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const,
+        int,
+        ::Connection::DisconnectFailReason,
+        ::Json::Value const&,
+        ::TransportLayer,
+        ::NetworkType,
+        ::Social::MultiplayerState,
+        bool,
+        bool,
+        ::Social::MultiplayerServiceIdentifier,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        bool,
+        bool,
+        bool,
+        bool,
+        ::Social::GameConnectionInfo const&
     ) /*override*/;
 
     virtual void fireEventClientLastPackets(
-        uint const&          userId,
-        ::SubClientId const  subId,
-        int                  correlationId,
-        ::Json::Value const& lastSentPackets,
-        ::Json::Value const& lastReceivedPackets
+        uint const&,
+        ::SubClientId const,
+        int,
+        ::Json::Value const&,
+        ::Json::Value const&
     ) /*override*/;
 
     virtual void fireEventSignalServiceConnect(
-        ::SignalServiceConnectStage        stage,
-        bool                               bIsSigningInAsHost,
-        ::Json::Value const&               stageProperties,
-        ::PlayerMessaging::SigninID const& signinId,
-        ::std::string const&               correlationId,
-        bool                               isJsonRpc
+        ::SignalServiceConnectStage stage,
+        bool                        bIsSigningInAsHost,
+        ::Json::Value const&        stageProperties,
+        ::std::string const&        signinId,
+        ::std::string const&        correlationId,
+        bool                        isJsonRpc
     ) /*override*/;
 
     virtual void fireEventSignalMessagePerformance(
-        ::PlayerMessaging::SigninID const& signinId,
-        ::MessagePerformance const&        messagePerformanceEvent,
-        bool                               isJsonRpc
+        ::std::string const&        signinId,
+        ::MessagePerformance const& messagePerformanceEvent,
+        bool                        isJsonRpc
     ) /*override*/;
 
     virtual void fireEventOnClientDisconnect(
-        ::SubClientId                      subId,
-        bool                               isNetworked,
-        ::Connection::DisconnectFailReason reason,
-        ::std::string const&               titleMessage,
-        ::std::string const&               errorMessage,
-        ::std::string const&               codeword
+        ::SubClientId,
+        bool,
+        ::Connection::DisconnectFailReason,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
     ) /*override*/;
 
     virtual void fireEventOnServerDisconnect(
-        ::Connection::DisconnectFailReason reason,
-        ::std::string const&               disconnectedClientId,
-        ::SubClientId                      subId,
-        ::std::string const&               reasonContext,
-        uint64                             clientCount,
-        ::std::string const&               firstTimeStamp
+        ::Connection::DisconnectFailReason,
+        ::std::string const&,
+        ::SubClientId,
+        ::std::string const&,
+        uint64,
+        ::std::string const&
     ) /*override*/;
 
     virtual void fireEventOnServerAsyncJoinTaskVerdict(
-        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const& joinVerdict,
-        ::SubClientId const                                          subId,
-        uint                                                         verdictQueueLength
+        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const&,
+        ::SubClientId const,
+        uint
     ) /*override*/;
 
     virtual void fireEventHttpClientError(::std::string const& error) /*override*/;
@@ -763,11 +759,8 @@ public:
         ::std::string const& serverAddress
     ) /*override*/;
 
-    virtual void fireEventServerPlayerJoinedGame(
-        ::NetworkIdentifier const& id,
-        ::SubClientId              subId,
-        ::std::string const&       firstConnectionTime
-    ) /*override*/;
+    virtual void
+    fireEventServerPlayerJoinedGame(::NetworkIdentifier const&, ::SubClientId, ::std::string const&) /*override*/;
 
     virtual void fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client) /*override*/;
 
@@ -848,8 +841,6 @@ public:
         uint64               scratchSpace,
         uint64               premiumSpace
     ) /*override*/;
-
-    virtual void fireEventPushNotificationPermission(bool permission, ::std::string const& deviceId) /*override*/;
 
     virtual void fireEventPushNotificationReceived(::PushNotificationMessage const& msg) /*override*/;
 
@@ -1006,12 +997,7 @@ public:
     virtual void fireEventServerDrivenLayoutImagesLoaded(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
         ::std::string                                                                               pageID,
-        int                                                                                         imageCount,
-        uint64                                                                                      totalImagesSize,
-        int                                                                                         successCount,
-        int                                                                                         failCount,
-        int                                                                                         cachedCount,
-        ::std::vector<ushort>&                                                                      responseCodes
+        ::ImageTelemetryInfo const&                                                                 imageTelemetryInfo
     ) /*override*/;
 
     virtual void fireEventTreatmentsSet(
@@ -1038,12 +1024,9 @@ public:
     ) /*override*/;
 
     virtual void setServerIdsforClient(
-        ::std::string const& multiplayerCorrelationId,
-        ::std::string const& serverVersion,
-        ::std::string const& serverId,
-        ::std::string const& worldId,
-        ::std::string const& scenarioId,
-        ::std::string const& ownerId
+        ::std::string const&                         multiplayerCorrelationId,
+        ::std::string const&                         serverVersion,
+        ::Social::Events::ServerTelemetryData const& serverTelemetryData
     ) /*override*/;
 
     virtual void setConnectionGUID(::std::string const& connectionGUID) /*override*/;
@@ -1080,15 +1063,17 @@ public:
     virtual void fireEventSplitScreenUpdated(::SplitScreenUpdatedEventData const& data) /*override*/;
 
     virtual void fireEventPerformanceMetrics(
-        ::ProfilerLiteTelemetry const& profileTelemetry,
-        bool                           IsEcoFrameThrottled,
-        int                            fpsThrottle
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::ProfilerLiteTelemetry const&                                                              profileTelemetry,
+        bool                                                                                        IsEcoFrameThrottled,
+        int                                                                                         fpsThrottle
     ) /*override*/;
 
     virtual void fireEventPerformanceContext(
-        ::PerfContextTrackerReport const& perfContextReport,
-        bool                              IsEcoFrameThrottled,
-        int                               fpsThrottle
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::PerfContextTrackerReport const&                                                           perfContextReport,
+        bool                                                                                        IsEcoFrameThrottled,
+        int                                                                                         fpsThrottle
     ) /*override*/;
 
     virtual void fireEventScreenChanged(
@@ -1350,6 +1335,11 @@ public:
         ::std::unordered_map<::std::string, int> const& events
     ) const /*override*/;
 
+    virtual void fireEventOptionsChangedAlt(
+        ::std::string const&                                                       optionGroup,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
+    ) const /*override*/;
+
     virtual void fireEventModalShown(
         ::std::string const&                                      modalName,
         ::std::unordered_map<::std::string, ::std::string> const& details
@@ -1396,9 +1386,9 @@ public:
     virtual void fireEventRealmUrlGenerated(::std::string const& url, int64 const& worldId) /*override*/;
 
     virtual void fireEventStructureExport(
-        ::glTFExportData const&             exportData,
-        ::IMinecraftEventing::ExportOutcome outcome,
-        ::IMinecraftEventing::ExportStage   stage
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::IMinecraftEventing::ExportOutcome                                                         outcome,
+        ::IMinecraftEventing::ExportStage                                                           stage
     ) const /*override*/;
 
     virtual void fireEventContentShared(
@@ -1427,7 +1417,9 @@ public:
         ::std::string const& failurePoint
     ) /*override*/;
 
-    virtual void fireWorldConversionAttemptEvent(::Legacy::WorldConversionReport const& report) /*override*/;
+    virtual void fireWorldConversionAttemptEvent(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
+    ) /*override*/;
 
     virtual void fireWorldConversionInitiatedEvent(::std::string const& converterVersion) /*override*/;
 
@@ -1464,7 +1456,8 @@ public:
     virtual void fireEventOnAppSuspend(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
         ::IMinecraftEventing::SuspendTriggersDisconnect                                             triggersDisconnect,
-        bool                                                                                        forceDisableEvents
+        bool reconnectOnResumeEnabled,
+        bool forceDisableEvents
     ) /*override*/;
 
     virtual void fireEventOnAppResume(
@@ -1711,20 +1704,6 @@ public:
 
     virtual void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds) /*override*/;
 
-    virtual void fireEventPersonaStillLoading(
-        bool                                         isSignedIn,
-        bool                                         selectedSkinInitialized,
-        bool                                         isStillSyncingWithService,
-        bool                                         isRepoStillBuildingAppearances,
-        bool                                         isPendingSkinStillLoading,
-        bool                                         isRefreshingEntitlements,
-        bool                                         isUserUpdateInProgress,
-        bool                                         isSelectedSkinLoaded,
-        ::std::vector<::persona::ProfileType> const& failingPersonaProfiles,
-        int                                          unknownPersonasCount,
-        double                                       timeElapsed
-    ) /*override*/;
-
     virtual void fireEventPersonaCreationFailed(
         ::std::string const& errorName,
         ::std::string const& pieceId,
@@ -1820,7 +1799,7 @@ public:
     ) /*override*/;
 
     virtual void fireServerStarted(
-        ::LevelSettings const&                                    settings,
+        ::Social::Events::ServerTelemetryData const&              serverTelemetryData,
         ::std::unordered_map<::std::string, ::std::string> const& propertiesChanged
     ) /*override*/;
 
@@ -1903,6 +1882,8 @@ public:
         ::std::string_view                migrationErrors
     ) /*override*/;
 
+    virtual void fireEventOSKErrorEncountered(::std::string_view failureReason) /*override*/;
+
     virtual void fireNetworkChangedEvent(::std::string const& networkConnectionType) /*override*/;
 
     virtual void fireEventMessageServiceImpression(
@@ -1919,6 +1900,12 @@ public:
         ::std::string const& Surface,
         ::std::string const& Template,
         bool const           isControl
+    ) /*override*/;
+
+    virtual void fireEventPartyPlayFabError(
+        ::std::string const& functionName,
+        ::std::string const& errorMessage,
+        ::std::string const& partyId
     ) /*override*/;
 
     virtual void fireEventGoogleAccountHoldWarning(bool navigatedToSubscription) /*override*/;
@@ -2006,7 +1993,10 @@ public:
         ::std::vector<::std::string> const& associatedContentIDs
     ) /*override*/;
 
-    virtual void fireEventLowMemoryDetected(::LowMemoryReport const& report) /*override*/;
+    virtual void fireEventLowMemoryDetected(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::LowMemoryReport const&                                                                    report
+    ) /*override*/;
 
     virtual void fireEventReceivedApplicationExitInfo(
         ::std::string const& description,
@@ -2031,6 +2021,8 @@ public:
 
     virtual void
     fireEventPUVLoad(::std::string const& resourceCategory, ::PuvLoadData::TelemetryEventData&& loadData) /*override*/;
+
+    virtual void fireEventRemoteDesktop(bool isRemoteDesktop) /*override*/;
 
     virtual ::Social::Events::EventManager& getEventManager() const /*override*/;
 
@@ -2130,7 +2122,7 @@ public:
         ::MinecraftEventing::POIBlockInteractionType interactionType
     );
 
-    MCAPI static void fireEventCaravanChanged(::Mob& mob, int caravanSize);
+    MCAPI_C static void fireEventCaravanChanged(::Mob& mob, int caravanSize);
 
     MCAPI_C static void
     fireEventCartographyBlockUsed(::Player* player, ::std::string const& itemUsed, ::MapOutputType mapOutputType);
@@ -2220,12 +2212,6 @@ public:
     );
 
     MCAPI static void fireEventMobDied(::Mob& mob, int causeOfDeath);
-
-    MCAPI static void fireEventMobEffectChanged(
-        ::Mob&                          mob,
-        ::MobEffectInstance const&      effectInstance,
-        ::MinecraftEventing::ChangeType change
-    );
 
     MCAPI_C static void fireEventMobKilled(
         ::Player*            player,
@@ -2336,10 +2322,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::IPurchaseEventing& $getPurchaseEventing();
 
-    MCAPI void $init(
-        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const& userManager,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&             appPlatform
-    );
+    MCAPI void $init(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
 
     MCAPI void $initDeviceAndSessionIds();
 
@@ -2429,6 +2412,8 @@ public:
 
     MCAPI void $fireEventPlayerBounced(::Player* player, ::Block const& block, int bounceHeight);
 
+    MCAPI void $fireEventPlayerDamaged(::Player* player, ::SharedTypes::Legacy::ActorDamageCause damageCause);
+
     MCAPI void $fireEventSetValidForAchievements(::Player* player, bool currentlyValidForAchievements);
 
     MCAPI void $fireEventAchievementReceived(
@@ -2476,51 +2461,19 @@ public:
         ::Social::MultiplayerServiceIdentifier const friendWorldType
     );
 
-    MCAPI void $fireEventClientLastPackets(
-        uint const&          userId,
-        ::SubClientId const  subId,
-        int                  correlationId,
-        ::Json::Value const& lastSentPackets,
-        ::Json::Value const& lastReceivedPackets
-    );
-
     MCAPI void $fireEventSignalServiceConnect(
-        ::SignalServiceConnectStage        stage,
-        bool                               bIsSigningInAsHost,
-        ::Json::Value const&               stageProperties,
-        ::PlayerMessaging::SigninID const& signinId,
-        ::std::string const&               correlationId,
-        bool                               isJsonRpc
+        ::SignalServiceConnectStage stage,
+        bool                        bIsSigningInAsHost,
+        ::Json::Value const&        stageProperties,
+        ::std::string const&        signinId,
+        ::std::string const&        correlationId,
+        bool                        isJsonRpc
     );
 
     MCAPI void $fireEventSignalMessagePerformance(
-        ::PlayerMessaging::SigninID const& signinId,
-        ::MessagePerformance const&        messagePerformanceEvent,
-        bool                               isJsonRpc
-    );
-
-    MCAPI void $fireEventOnClientDisconnect(
-        ::SubClientId                      subId,
-        bool                               isNetworked,
-        ::Connection::DisconnectFailReason reason,
-        ::std::string const&               titleMessage,
-        ::std::string const&               errorMessage,
-        ::std::string const&               codeword
-    );
-
-    MCAPI void $fireEventOnServerDisconnect(
-        ::Connection::DisconnectFailReason reason,
-        ::std::string const&               disconnectedClientId,
-        ::SubClientId                      subId,
-        ::std::string const&               reasonContext,
-        uint64                             clientCount,
-        ::std::string const&               firstTimeStamp
-    );
-
-    MCAPI void $fireEventOnServerAsyncJoinTaskVerdict(
-        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const& joinVerdict,
-        ::SubClientId const                                          subId,
-        uint                                                         verdictQueueLength
+        ::std::string const&        signinId,
+        ::MessagePerformance const& messagePerformanceEvent,
+        bool                        isJsonRpc
     );
 
     MCAPI void $fireEventHttpClientError(::std::string const& error);
@@ -2629,12 +2582,6 @@ public:
         ::std::string const& serverAddress
     );
 
-    MCAPI void $fireEventServerPlayerJoinedGame(
-        ::NetworkIdentifier const& id,
-        ::SubClientId              subId,
-        ::std::string const&       firstConnectionTime
-    );
-
     MCAPI void $fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client);
 
     MCAPI void $fireEventScriptPluginRun(
@@ -2713,8 +2660,6 @@ public:
         uint64               scratchSpace,
         uint64               premiumSpace
     );
-
-    MCAPI void $fireEventPushNotificationPermission(bool permission, ::std::string const& deviceId);
 
     MCAPI void $fireEventPushNotificationReceived(::PushNotificationMessage const& msg);
 
@@ -2860,12 +2805,7 @@ public:
     MCAPI void $fireEventServerDrivenLayoutImagesLoaded(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
         ::std::string                                                                               pageID,
-        int                                                                                         imageCount,
-        uint64                                                                                      totalImagesSize,
-        int                                                                                         successCount,
-        int                                                                                         failCount,
-        int                                                                                         cachedCount,
-        ::std::vector<ushort>&                                                                      responseCodes
+        ::ImageTelemetryInfo const&                                                                 imageTelemetryInfo
     );
 
     MCAPI void
@@ -2888,12 +2828,9 @@ public:
     );
 
     MCAPI void $setServerIdsforClient(
-        ::std::string const& multiplayerCorrelationId,
-        ::std::string const& serverVersion,
-        ::std::string const& serverId,
-        ::std::string const& worldId,
-        ::std::string const& scenarioId,
-        ::std::string const& ownerId
+        ::std::string const&                         multiplayerCorrelationId,
+        ::std::string const&                         serverVersion,
+        ::Social::Events::ServerTelemetryData const& serverTelemetryData
     );
 
     MCAPI void $setConnectionGUID(::std::string const& connectionGUID);
@@ -2913,34 +2850,28 @@ public:
     MCAPI void
     $fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const;
 
-#ifdef LL_PLAT_S
     MCFOLD void $fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName);
-#else // LL_PLAT_C
-    MCAPI void $fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName);
-#endif
 
     MCFOLD void $fireEventGameRulesUpdated(int oldValue, int newValue, ::std::string const& gameRuleName);
 
-#ifdef LL_PLAT_S
     MCFOLD void $fireEventGameRulesUpdated(float oldValue, float newValue, ::std::string const& gameRuleName);
-#else // LL_PLAT_C
-    MCAPI void $fireEventGameRulesUpdated(float oldValue, float newValue, ::std::string const& gameRuleName);
-#endif
 
     MCAPI void $fireCurrentInputUpdated(uint userId, ::InputMode inputMode);
 
     MCAPI void $fireEventSplitScreenUpdated(::SplitScreenUpdatedEventData const& data);
 
     MCFOLD void $fireEventPerformanceMetrics(
-        ::ProfilerLiteTelemetry const& profileTelemetry,
-        bool                           IsEcoFrameThrottled,
-        int                            fpsThrottle
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::ProfilerLiteTelemetry const&                                                              profileTelemetry,
+        bool                                                                                        IsEcoFrameThrottled,
+        int                                                                                         fpsThrottle
     );
 
     MCFOLD void $fireEventPerformanceContext(
-        ::PerfContextTrackerReport const& perfContextReport,
-        bool                              IsEcoFrameThrottled,
-        int                               fpsThrottle
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::PerfContextTrackerReport const&                                                           perfContextReport,
+        bool                                                                                        IsEcoFrameThrottled,
+        int                                                                                         fpsThrottle
     );
 
     MCAPI void $fireEventScreenChanged(
@@ -3174,6 +3105,11 @@ public:
         ::std::unordered_map<::std::string, int> const& events
     ) const;
 
+    MCAPI void $fireEventOptionsChangedAlt(
+        ::std::string const&                                                       optionGroup,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
+    ) const;
+
     MCAPI void $fireEventModalShown(
         ::std::string const&                                      modalName,
         ::std::unordered_map<::std::string, ::std::string> const& details
@@ -3213,9 +3149,9 @@ public:
     MCAPI void $fireEventRealmUrlGenerated(::std::string const& url, int64 const& worldId);
 
     MCAPI void $fireEventStructureExport(
-        ::glTFExportData const&             exportData,
-        ::IMinecraftEventing::ExportOutcome outcome,
-        ::IMinecraftEventing::ExportStage   stage
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::IMinecraftEventing::ExportOutcome                                                         outcome,
+        ::IMinecraftEventing::ExportStage                                                           stage
     ) const;
 
     MCAPI void $fireEventContentShared(
@@ -3244,7 +3180,9 @@ public:
         ::std::string const& failurePoint
     );
 
-    MCFOLD void $fireWorldConversionAttemptEvent(::Legacy::WorldConversionReport const& report);
+    MCFOLD void $fireWorldConversionAttemptEvent(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
+    );
 
     MCFOLD void $fireWorldConversionInitiatedEvent(::std::string const& converterVersion);
 
@@ -3281,7 +3219,8 @@ public:
     MCAPI void $fireEventOnAppSuspend(
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
         ::IMinecraftEventing::SuspendTriggersDisconnect                                             triggersDisconnect,
-        bool                                                                                        forceDisableEvents
+        bool reconnectOnResumeEnabled,
+        bool forceDisableEvents
     );
 
     MCAPI void $fireEventOnAppResume(
@@ -3507,20 +3446,6 @@ public:
 
     MCAPI void $fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds);
 
-    MCAPI void $fireEventPersonaStillLoading(
-        bool                                         isSignedIn,
-        bool                                         selectedSkinInitialized,
-        bool                                         isStillSyncingWithService,
-        bool                                         isRepoStillBuildingAppearances,
-        bool                                         isPendingSkinStillLoading,
-        bool                                         isRefreshingEntitlements,
-        bool                                         isUserUpdateInProgress,
-        bool                                         isSelectedSkinLoaded,
-        ::std::vector<::persona::ProfileType> const& failingPersonaProfiles,
-        int                                          unknownPersonasCount,
-        double                                       timeElapsed
-    );
-
     MCAPI void $fireEventPersonaCreationFailed(
         ::std::string const& errorName,
         ::std::string const& pieceId,
@@ -3607,7 +3532,7 @@ public:
     MCAPI void $fireEventConnectedStorageError(char const* message, ::std::string const& levelId, int64 quotaRemaining);
 
     MCAPI void $fireServerStarted(
-        ::LevelSettings const&                                    settings,
+        ::Social::Events::ServerTelemetryData const&              serverTelemetryData,
         ::std::unordered_map<::std::string, ::std::string> const& propertiesChanged
     );
 
@@ -3684,6 +3609,8 @@ public:
         ::std::string_view                migrationErrors
     );
 
+    MCAPI void $fireEventOSKErrorEncountered(::std::string_view failureReason);
+
     MCAPI void $fireNetworkChangedEvent(::std::string const& networkConnectionType);
 
     MCAPI void $fireEventMessageServiceImpression(
@@ -3700,6 +3627,12 @@ public:
         ::std::string const& Surface,
         ::std::string const& Template,
         bool const           isControl
+    );
+
+    MCAPI void $fireEventPartyPlayFabError(
+        ::std::string const& functionName,
+        ::std::string const& errorMessage,
+        ::std::string const& partyId
     );
 
     MCAPI void $fireEventGoogleAccountHoldWarning(bool navigatedToSubscription);
@@ -3721,6 +3654,9 @@ public:
     MCAPI void $fireEventReceivedUniqueLauncherSessionId(::std::string const& launcherSessionId);
 
     MCAPI void $firePlayerUnexpectedFallDamage(float const fallDistance, bool isVehicle, float const divergenceAmount);
+
+    MCAPI void
+    $fireEventActorMovementCorrectionDivergence(::ActorType actorType, ::std::vector<float> const& divergences);
 
     MCAPI void $fireEventDedicatedServerDiscoveryResponse(int const status, int const retryAttempt);
 
@@ -3776,7 +3712,10 @@ public:
         ::std::vector<::std::string> const& associatedContentIDs
     );
 
-    MCAPI void $fireEventLowMemoryDetected(::LowMemoryReport const& report);
+    MCAPI void $fireEventLowMemoryDetected(
+        ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer,
+        ::LowMemoryReport const&                                                                    report
+    );
 
     MCAPI void $fireEventReceivedApplicationExitInfo(
         ::std::string const& description,
@@ -3793,83 +3732,32 @@ public:
 
     MCFOLD void $fireEventImmersiveReaderStatus(::Bedrock::Http::Status const status);
 
-    MCAPI void $fireEventPUVLoad(::std::string const& resourceCategory, ::PuvLoadData::TelemetryEventData&& loadData);
-
-    MCAPI ::Social::Events::EventManager& $getEventManager() const;
-
-    MCAPI uint $getPrimaryLocalUserId() const;
-
-    MCAPI bool $getShouldHaveAchievementsEnabled();
-
-    MCAPI void $setShouldHaveAchievementsEnabled(bool value);
-
-    MCAPI bool $getAchievementsAlwaysEnabled();
-
-#ifdef LL_PLAT_C
-    MCAPI void $fireEventPlayerDamaged(::Player* player, ::SharedTypes::Legacy::ActorDamageCause damageCause);
-
-    MCAPI void $fireEventPacketViolationDetected(
-        uint64                     readResult,
-        ::std::string              readResultContext,
-        ::PacketViolationResponse  violationResponse,
-        ::MinecraftPacketIds       violatingPacketId,
-        ::NetworkIdentifier const& netId,
-        uint                       numViolations,
-        ::SubClientId              clientSubId,
-        ::SubClientId              senderSubId,
-        uint                       packetStreamLength
-    );
-
-    MCAPI void $fireEventServerReceivedValidPacket(
-        ::NetworkIdentifier const& netId,
-        ::MinecraftPacketIds       packetId,
-        ::SubClientId              clientSubId
-    );
-
-    MCAPI void $fireEventClientSentOrReceivedPacket(
-        ::NetworkIdentifier const& netId,
-        ::MinecraftPacketIds       packetId,
-        ::SubClientId              clientSubId,
-        ::std::string              correlationId,
-        bool                       isOutgoing
-    );
-
-    MCAPI void $fireEventPlayerJoinWorld(
-        uint const&                                              userId,
-        ::SubClientId const                                      subId,
-        bool                                                     isJoiningLocalServer,
-        ::std::optional<bool>                                    isUsingTURN,
-        ::IConnectionEventing::PlayerJoinWorldAttemptState const JoinState,
-        int                                                      attemptId,
-        ::Connection::DisconnectFailReason                       failReason,
-        ::Json::Value const&                                     failDebugInfo,
-        ::TransportLayer                                         transportLayer,
-        ::NetworkType                                            networkTypeOverride,
-        ::Social::MultiplayerState                               multiplayerState,
-        bool                                                     isConnectedToApplicationLayer,
-        bool                                                     isFilteringProfanity,
-        ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
-        ::std::string const&                                     titleMessage,
-        ::std::string const&                                     errorMessage,
-        ::std::string const&                                     codeword,
-        bool                                                     isServerTransfer,
-        ::Social::GameConnectionInfo const&                      connectionInfo
-    );
-
-    MCAPI void $fireUserGeneratedUriLaunchFailed(
-        ::UserGeneratedUriSource              source,
-        ::Util::ResourceUri::ValidationStatus reasonCode,
-        ::std::string const&                  additionalData
-    ) const;
-
-    MCAPI void
-    $fireEventActorMovementCorrectionDivergence(::ActorType actorType, ::std::vector<float> const& divergences);
-
     MCAPI void $fireEventPacketSerializationMismatch(
         ::MinecraftPacketIds packetId,
         ::std::string_view   legacyStream,
         ::std::string_view   cerealStream
     );
+
+    MCAPI void $fireEventPUVLoad(::std::string const& resourceCategory, ::PuvLoadData::TelemetryEventData&& loadData);
+
+    MCAPI void $fireEventRemoteDesktop(bool isRemoteDesktop);
+
+    MCAPI ::Social::Events::EventManager& $getEventManager() const;
+
+    MCAPI uint $getPrimaryLocalUserId() const;
+
+    MCFOLD bool $getShouldHaveAchievementsEnabled();
+
+    MCFOLD void $setShouldHaveAchievementsEnabled(bool value);
+
+    MCFOLD bool $getAchievementsAlwaysEnabled();
+
+#ifdef LL_PLAT_C
+    MCAPI void $fireUserGeneratedUriLaunchFailed(
+        ::UserGeneratedUriSource              source,
+        ::Util::ResourceUri::ValidationStatus reasonCode,
+        ::std::string const&                  additionalData
+    ) const;
 #endif
 
 
@@ -3885,8 +3773,6 @@ public:
     MCAPI static void** $vftableForIScreenChangedEventing();
 
     MCAPI static void** $vftableForIUIEventTelemetry();
-
-    MCAPI static void** $vftableForIWebviewTelemetry();
 
     MCNAPI static void** $vftableForIExternalSessionTelemetry();
 

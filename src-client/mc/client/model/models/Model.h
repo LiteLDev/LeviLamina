@@ -5,17 +5,17 @@
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class BaseActorRenderContext;
 class ClientPBRTextureData;
 class DataDrivenGeometry;
 class ExpressionNode;
-class HashedString;
 class Mob;
 class ModelPart;
 class ModelPartLocator;
@@ -44,6 +44,7 @@ public:
                                                                                       mRenderControllers;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::DataDrivenGeometry>>> mGeometries;
     ::ll::TypedStorage<8, 8, uint64>                                                  mQueryableGeometryIndex;
+    ::ll::TypedStorage<4, 24, ::AABB>                                                 mAABB;
     ::ll::TypedStorage<8, 32, ::MaterialVariants>                                     mMaterialVariants;
     // NOLINTEND
 

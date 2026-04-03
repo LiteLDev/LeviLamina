@@ -29,8 +29,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LayoutVariables>>                    mAllVariables;
     ::ll::TypedStorage<8, 88, ::std::array<::std::unique_ptr<::LayoutVariable>, 11>> mControlVariables;
-    ::ll::TypedStorage<1, 1, ::ui::AnchorPoint>                                      mAnchorFrom;
-    ::ll::TypedStorage<1, 1, ::ui::AnchorPoint>                                      mAnchorTo;
     ::ll::TypedStorage<8, 56, ::ui::LayoutOffset>                                    mOffset;
     ::ll::TypedStorage<8, 56, ::ui::LayoutOffset>                                    mSize;
     ::ll::TypedStorage<8, 56, ::ui::LayoutOffset>                                    mMinSize;
@@ -39,6 +37,8 @@ public:
     ::ll::TypedStorage<4, 8, ::glm::vec2>                                            mGridDimensions;
     ::ll::TypedStorage<4, 8, ::glm::vec2>                                            mDragPosition;
     ::ll::TypedStorage<1, 1, ::ui::Draggable>                                        mDraggable;
+    ::ll::TypedStorage<1, 1, ::ui::AnchorPoint>                                      mAnchorFrom;
+    ::ll::TypedStorage<1, 1, ::ui::AnchorPoint>                                      mAnchorTo;
     ::ll::TypedStorage<1, 1, ::ui::PriorityRule>                                     mPriorityRule;
     ::ll::TypedStorage<4, 4, int>                                                    mPriority;
     bool                                                                             mIsBeingDragged            : 1;

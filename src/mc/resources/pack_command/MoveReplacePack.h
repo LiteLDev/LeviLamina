@@ -8,7 +8,7 @@ struct MoveReplacePack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb57048;
+    ::ll::UntypedStorage<8, 8> mUnk9af43c;
     // NOLINTEND
 
 public:

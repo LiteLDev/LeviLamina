@@ -52,8 +52,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _restorePreviousGravityFlag(::Mob& mob);
-
-    MCAPI void _storePreviousGravityFlag(::Mob& mob);
     // NOLINTEND
 
 public:

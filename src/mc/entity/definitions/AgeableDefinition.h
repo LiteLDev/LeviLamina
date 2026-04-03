@@ -18,25 +18,34 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnk207183;
     ::ll::UntypedStorage<8, 64>  mUnk1793dc;
-    ::ll::UntypedStorage<8, 24>  mUnk655e2d;
-    ::ll::UntypedStorage<8, 24>  mUnk6f2e03;
+    ::ll::UntypedStorage<8, 24>  mUnk238b7c;
+    ::ll::UntypedStorage<8, 24>  mUnk921531;
     ::ll::UntypedStorage<8, 104> mUnka52bbd;
+    ::ll::UntypedStorage<8, 24>  mUnk6f6d9a;
+    ::ll::UntypedStorage<8, 24>  mUnk16daff;
+    ::ll::UntypedStorage<8, 104> mUnk2ae021;
+    ::ll::UntypedStorage<8, 104> mUnk10292d;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AgeableDefinition& operator=(AgeableDefinition const&);
-    AgeableDefinition(AgeableDefinition const&);
     AgeableDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AgeableDefinition(::AgeableDefinition const&);
+
     MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
     MCAPI void addFeedItemByName(::std::string const& itemName);
+
+    MCAPI void addPauseGrowthItem(::ItemDescriptor const& itemDescriptor);
+
+    MCAPI void addResetGrowthItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI ~AgeableDefinition();
     // NOLINTEND
@@ -46,6 +55,12 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AgeableDefinition const&);
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ class CameraPresetLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnkabfafd;
+    ::ll::UntypedStorage<8, 256> mUnk65d26f;
     // NOLINTEND
 
 public:

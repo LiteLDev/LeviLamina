@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
+#include "mc/platform/brstd/basic_cstring_view.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,25 +30,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::string_view> mSrc;
+    ::ll::TypedStorage<8, 16, ::brstd::basic_cstring_view<char, ::std::char_traits<char>>> mSrc;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PathView& operator=(PathView const&);
-    PathView(PathView const&);
     PathView();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PathView(::Core::PathView&&);
-
-    MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
+    MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const& src);
 
     MCNAPI explicit PathView(::Core::Path const& src);
 
-    MCNAPI auto operator==(::Core::PathView const& rhs) const;
+    MCNAPI bool operator==(::Core::PathView const& rhs) const;
 
     MCNAPI ~PathView();
     // NOLINTEND
@@ -54,9 +52,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView&&);
+    MCNAPI_C void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
 
-    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
+    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& src);
 
     MCNAPI_C void* $ctor(::std::string const& src);
 

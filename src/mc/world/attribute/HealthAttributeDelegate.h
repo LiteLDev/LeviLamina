@@ -28,7 +28,7 @@ public:
 
     virtual bool willChange(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
 
-    virtual float change(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
+    virtual ::std::optional<float> change(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const /*override*/;
 
@@ -42,7 +42,7 @@ public:
 
     MCAPI bool $willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
 
-    MCAPI float $change(float oldValue, float newValue, ::AttributeBuff const& buff);
+    MCAPI ::std::optional<float> $change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
 

@@ -55,8 +55,6 @@ public:
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
 
-    MCAPI bool tick();
-
     MCAPI ~PositionTrackingDBServer();
     // NOLINTEND
 

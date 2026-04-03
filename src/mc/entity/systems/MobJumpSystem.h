@@ -17,10 +17,10 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorHeadInWaterFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct CanStandOnSnowFlagComponent;
 struct HasLightweightFamilyFlagComponent;
 struct ImmuneToLavaDragComponent;
+struct InterpolateMovementNeededComponent;
 struct JumpFromGroundRequestComponent;
 struct MobEffectsComponent;
 struct MobFlagComponent;
@@ -89,14 +89,14 @@ MCAPI bool shouldAscendLadder(
 MCAPI void tickDecrementNoJumpDelaySystem(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
         ::MobJumpComponent> view
 );
 
 MCAPI void tickResetNoJumpDelaySystem(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
         ::Exclude<::MobIsJumpingFlagComponent, ::PassengerComponent>,
         ::MobJumpComponent> view
 );

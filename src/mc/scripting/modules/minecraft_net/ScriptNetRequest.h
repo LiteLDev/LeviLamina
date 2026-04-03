@@ -20,9 +20,9 @@ struct ScriptNetRequest : public ::Scripting::WeakHandleFromThis<::ScriptModuleM
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc85689;
-    ::ll::UntypedStorage<8, 24> mUnkb5ef2f;
-    ::ll::UntypedStorage<8, 32> mUnkf73a25;
+    ::ll::UntypedStorage<8, 32> mUnk4b319b;
+    ::ll::UntypedStorage<8, 24> mUnk5227c1;
+    ::ll::UntypedStorage<8, 32> mUnk685dad;
     ::ll::UntypedStorage<4, 4>  mUnk807e94;
     ::ll::UntypedStorage<1, 2>  mUnke5dba2;
     // NOLINTEND

@@ -15,7 +15,6 @@
 // clang-format off
 class Actor;
 class AnimationComponent;
-class BaseActorRenderContext;
 class Block;
 class BlockSource;
 class IBlockWorldGenAPI;
@@ -23,6 +22,7 @@ class ILevel;
 class ItemStackBase;
 class MolangVariableMap;
 class ActorRenderData;
+class BaseActorRenderContext;
 class DataDrivenModel;
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on

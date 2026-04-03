@@ -8,7 +8,7 @@ struct ValidationFail {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk23ba94;
+    ::ll::UntypedStorage<8, 32> mUnkc3ca4a;
     // NOLINTEND
 
 public:

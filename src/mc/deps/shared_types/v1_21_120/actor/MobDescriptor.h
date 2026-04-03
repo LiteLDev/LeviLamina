@@ -16,7 +16,7 @@ struct MobDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData> mTargetFilter;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mTargetFilter;
     ::ll::TypedStorage<4, 4, float>                                      mMaxDistance;
     ::ll::TypedStorage<4, 4, float>                                      mMaxHeight;
     ::ll::TypedStorage<4, 4, float>                                      mMaxFlee;
@@ -33,15 +33,14 @@ public:
 public:
     // prevent constructor by default
     MobDescriptor(MobDescriptor const&);
+    MobDescriptor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobDescriptor();
-
     MCAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor&&);
 
-    MCFOLD ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
+    MCAPI ::SharedTypes::v1_21_120::MobDescriptor& operator=(::SharedTypes::v1_21_120::MobDescriptor const&);
 
     MCAPI ~MobDescriptor();
     // NOLINTEND
@@ -50,12 +49,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

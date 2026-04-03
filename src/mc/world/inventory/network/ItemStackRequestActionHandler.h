@@ -170,7 +170,7 @@ public:
                                                                                        mPlayerLegacyRequests;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                  mLastTime;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                              mCurrentRequestScreen;
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                                    mClientRequestId;
+    ::ll::TypedStorage<8, 16, ::ItemStackRequestId>                                    mClientRequestId;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>>         mResponseContainerInfos;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mFilteredStrings;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mStrings;

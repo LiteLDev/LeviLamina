@@ -43,8 +43,6 @@ public:
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
         ::Level&               level,
-        ::std::string const&   message,
-        ::std::string const&   reason,
         ::std::string const&   idOrName
     ) const;
 
@@ -57,13 +55,9 @@ public:
     MCAPI ::Player const* _loopPlayers(
         ::CommandOrigin const&,
         ::CommandOutput&,
-        ::Level& level,
-        ::std::string const&,
-        ::std::string const&,
+        ::Level&                               level,
         ::std::function<bool(::Player const*)> condition
     ) const;
-
-    MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND
 
 public:

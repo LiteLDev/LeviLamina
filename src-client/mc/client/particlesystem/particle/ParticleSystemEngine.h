@@ -20,6 +20,7 @@ class Matrix;
 class MolangVariableMap;
 class ParticleEffectGroup;
 class ParticleEffectInfo;
+namespace LightPropagation { struct LightVolumeManager; }
 namespace ParticleSystem { class ParticleEmitter; }
 // clang-format on
 
@@ -50,6 +51,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                             mLastTickTime;
     ::ll::TypedStorage<8, 8, ::ParticleEffectGroup&>                                              mParticleEffectGroup;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockSource>>                             mBlockSource;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LightPropagation::LightVolumeManager>>            mLightVolumeManager;
     ::ll::TypedStorage<8, 8, ::LightTexture&>                                                     mLightTexture;
     ::ll::TypedStorage<4, 4096, ::std::array<::std::array<::mce::Color, 16>, 16>>                 mLightTextureData;
     ::ll::TypedStorage<4, 4, int>                                                                 mFramesToInterpolate;
@@ -76,9 +78,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ParticleSystemEngine(
-        ::ParticleEffectGroup& particleEffectGroup,
-        ::BlockSource&         region,
-        ::LightTexture&        lightTexture
+        ::ParticleEffectGroup&                                  particleEffectGroup,
+        ::BlockSource&                                          region,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
+        ::LightTexture&                                         lightTexture
     );
 
     MCAPI void clear();
@@ -119,7 +122,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ParticleEffectGroup& particleEffectGroup, ::BlockSource& region, ::LightTexture& lightTexture);
+    MCAPI void* $ctor(
+        ::ParticleEffectGroup&                                  particleEffectGroup,
+        ::BlockSource&                                          region,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
+        ::LightTexture&                                         lightTexture
+    );
     // NOLINTEND
 
 public:

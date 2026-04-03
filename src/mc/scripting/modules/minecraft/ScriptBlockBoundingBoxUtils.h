@@ -29,10 +29,6 @@ public:
 
     MCAPI static ::Vec3 getSpan(::BoundingBox const& box);
 
-    MCAPI static bool intersects(::BoundingBox const& box, ::BoundingBox const& other);
-
-    MCAPI static bool isInside(::BoundingBox const& box, ::Vec3 const& pos);
-
     MCAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };

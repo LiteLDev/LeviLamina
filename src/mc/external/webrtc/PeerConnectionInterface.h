@@ -139,14 +139,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk3de981;
-        ::ll::UntypedStorage<8, 24> mUnkb05464;
-        ::ll::UntypedStorage<8, 32> mUnk6a3950;
-        ::ll::UntypedStorage<8, 32> mUnk7d5845;
+        ::ll::UntypedStorage<8, 32> mUnk576f01;
+        ::ll::UntypedStorage<8, 24> mUnk4e9af7;
+        ::ll::UntypedStorage<8, 32> mUnk4e1cbe;
+        ::ll::UntypedStorage<8, 32> mUnkb9cffb;
         ::ll::UntypedStorage<4, 4>  mUnk6919f5;
-        ::ll::UntypedStorage<8, 32> mUnkc54e59;
-        ::ll::UntypedStorage<8, 24> mUnkfb3c84;
-        ::ll::UntypedStorage<8, 24> mUnkc3909a;
+        ::ll::UntypedStorage<8, 32> mUnkc51c70;
+        ::ll::UntypedStorage<8, 24> mUnk5c91d5;
+        ::ll::UntypedStorage<8, 24> mUnk64816a;
         // NOLINTEND
 
     public:
@@ -199,11 +199,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk629c09;
+        ::ll::UntypedStorage<8, 24> mUnk273186;
         ::ll::UntypedStorage<4, 4>  mUnk4830f7;
         ::ll::UntypedStorage<4, 4>  mUnk717174;
         ::ll::UntypedStorage<4, 4>  mUnk66c75f;
-        ::ll::UntypedStorage<8, 24> mUnkd3ea1d;
+        ::ll::UntypedStorage<8, 24> mUnk40b438;
         ::ll::UntypedStorage<4, 4>  mUnkcdda20;
         ::ll::UntypedStorage<1, 1>  mUnkbaaa3c;
         ::ll::UntypedStorage<4, 4>  mUnkb9d49c;
@@ -238,15 +238,15 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnk632fd4;
         ::ll::UntypedStorage<1, 6>  mUnk891148;
         ::ll::UntypedStorage<1, 1>  mUnk3fa350;
-        ::ll::UntypedStorage<8, 32> mUnk72f178;
+        ::ll::UntypedStorage<8, 32> mUnk1cc9e9;
         ::ll::UntypedStorage<1, 1>  mUnk7e56fd;
         ::ll::UntypedStorage<4, 8>  mUnk37c2ca;
         ::ll::UntypedStorage<4, 8>  mUnkcaadd4;
         ::ll::UntypedStorage<4, 4>  mUnkd8f345;
-        ::ll::UntypedStorage<8, 24> mUnka79ac2;
+        ::ll::UntypedStorage<8, 24> mUnk797029;
         ::ll::UntypedStorage<4, 12> mUnk7726c8;
         ::ll::UntypedStorage<8, 16> mUnk556434;
-        ::ll::UntypedStorage<8, 24> mUnk727990;
+        ::ll::UntypedStorage<8, 24> mUnkffc237;
         // NOLINTEND
 
     public:

@@ -18,7 +18,7 @@ class DamageItemComponent : public ::NetworkedItemComponent<::DamageItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mDamage;
+    ::ll::TypedStorage<2, 2, short> mDamage;
     // NOLINTEND
 
 public:

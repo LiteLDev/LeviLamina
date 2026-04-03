@@ -8,6 +8,7 @@
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/scoreboard/ScriptDisplayObjectiveSlotId.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +17,6 @@ class Level;
 class Objective;
 class Scoreboard;
 class ScoreboardIdentityRef;
-struct ScoreboardId;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardListener; }

@@ -32,6 +32,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                            mPhotoItemsLimitPage;
     ::ll::TypedStorage<1, 1, bool>                                              mEdited;
     ::ll::TypedStorage<1, 1, bool>                                              mIsEdu;
+    ::ll::TypedStorage<1, 1, bool>                                              hasExportedFirstPhoto;
     // NOLINTEND
 
 public:

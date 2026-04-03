@@ -15,7 +15,6 @@ class Vec3;
 class WeakEntityRef;
 struct ActorUniqueID;
 struct ClientFrameUpdateContext;
-namespace Core::Profile { class CounterToken; }
 namespace ParticleSystem { struct ActorBindInfo; }
 // clang-format on
 
@@ -79,25 +78,19 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void initProfileTracking();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::Profile::CounterToken& mEmitterLifetimeCounterToken();
+    MCAPI static ::std::atomic<int64>& mEmitterLifetimeCounter();
 
-    MCAPI static ::Core::Profile::CounterToken& mEmitterRateCounterToken();
+    MCAPI static ::std::atomic<int64>& mEmitterRateCounter();
 
-    MCAPI static ::Core::Profile::CounterToken& mParticleAppearanceCounterToken();
+    MCAPI static ::std::atomic<int64>& mParticleAppearanceCounter();
 
-    MCAPI static ::Core::Profile::CounterToken& mParticleEmitterTickCountToken();
+    MCAPI static ::std::atomic<int64>& mParticleEmitterTickCount();
 
-    MCAPI static ::Core::Profile::CounterToken& mParticleLifetimeCounterToken();
+    MCAPI static ::std::atomic<int64>& mParticleLifetimeCounter();
 
-    MCAPI static ::Core::Profile::CounterToken& mParticleMotionCounterToken();
+    MCAPI static ::std::atomic<int64>& mParticleMotionCounter();
     // NOLINTEND
 
 public:

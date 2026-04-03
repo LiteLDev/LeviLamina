@@ -27,7 +27,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                                  mFactoryIsChild;
     ::ll::TypedStorage<4, 4, int>                                                                   mMaxSize;
     ::ll::TypedStorage<4, 4, ::ui::ChildInsertPosition>                                             mInsertPosition;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIPropertyBag>> mPropertyBagToPropagateToChildren;
     // NOLINTEND
 
 public:

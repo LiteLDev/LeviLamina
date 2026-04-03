@@ -2,15 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Randomize.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
 class ChunkPos;
 class DespawnDefinition;
+class IRandom;
 class Player;
 class Vec3;
 // clang-format on
@@ -28,7 +26,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~IWorldAccessor();
+        virtual ~IWorldAccessor() = default;
 
         virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const&, float) const = 0;
 
@@ -38,17 +36,11 @@ public:
 
         virtual bool hasUntickedNeighborChunk(::ChunkPos const&, int) const = 0;
 
-        virtual ::Randomize& getChanceRandomize() = 0;
+        virtual ::IRandom& getChanceRandom() = 0;
 
         virtual ::std::optional<int> getActorNoActionTime(::Actor const&) const = 0;
 
         virtual void resetActorNoActionTime(::Actor&) = 0;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -68,8 +60,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Actor&>     mActor;
-        ::ll::TypedStorage<8, 24, ::Randomize> mActorRandomize;
+        ::ll::TypedStorage<8, 8, ::Actor&> mActor;
         // NOLINTEND
 
     public:
@@ -89,7 +80,7 @@ public:
 
         virtual bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const /*override*/;
 
-        virtual ::Randomize& getChanceRandomize() /*override*/;
+        virtual ::IRandom& getChanceRandom() /*override*/;
 
         virtual ::std::optional<int> getActorNoActionTime(::Actor const& actor) const /*override*/;
 
@@ -101,7 +92,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -115,7 +106,7 @@ public:
 
         MCAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-        MCFOLD ::Randomize& $getChanceRandomize();
+        MCAPI ::IRandom& $getChanceRandom();
 
         MCAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 
@@ -134,12 +125,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _softRulesPrescribeDespawn(
-        ::Actor&                            actor,
-        ::DespawnDefinition const&          definition,
-        ::DespawnComponent::IWorldAccessor& worldAccessor
-    ) const;
-
     MCAPI bool _tryStandardDespawnRules(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,

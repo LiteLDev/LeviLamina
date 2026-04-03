@@ -2,8 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/prefabs/template/StructureRef.h"
+// auto generated forward declare list
+// clang-format off
+namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 { struct StructureRef; }
+// clang-format on
 
 namespace Editor::Prefabs::PrefabDBTemplateLoader::v1 {
 // functions

@@ -2,22 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace cereal::internal {
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/DescriptionExtra.h"
+
+namespace cereal {
 
 struct DescriptionConfig {
 public:
-    // DescriptionConfig inner types define
-    enum class Mode : int {
-        Brief    = 0,
-        Detailed = 1,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6299ff;
-    ::ll::UntypedStorage<1, 1> mUnk12fe3b;
-    ::ll::UntypedStorage<1, 1> mUnkc8d3a7;
+    ::ll::UntypedStorage<1, 1> mUnk49e27a;
+    ::ll::UntypedStorage<1, 1> mUnkbf0af1;
+    ::ll::UntypedStorage<1, 1> mUnk9e7e78;
+    ::ll::UntypedStorage<1, 1> mUnk4cedb0;
+    ::ll::UntypedStorage<1, 1> mUnk7dd408;
     // NOLINTEND
 
 public:
@@ -27,4 +25,4 @@ public:
     DescriptionConfig();
 };
 
-} // namespace cereal::internal
+} // namespace cereal

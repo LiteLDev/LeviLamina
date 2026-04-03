@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI_C void* $ctor();
 
-    MCAPI void* $ctor(::MerchantRecipe&&);
+    MCFOLD void* $ctor(::MerchantRecipe&&);
 
     MCFOLD void* $ctor(::MerchantRecipe const&);
 

@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IPackLoadContext;
+class PackLoadContext;
 // clang-format on
 
 class BlockEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ~BlockEventResponseFactory() /*override*/;
 
-    virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
+    virtual void initializeFactory(::PackLoadContext const& packLoadContext) /*override*/;
 
     virtual void initSchema() /*override*/;
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::IPackLoadContext const& packLoadContext);
+    MCAPI void $initializeFactory(::PackLoadContext const& packLoadContext);
 
     MCAPI void $initSchema();
 

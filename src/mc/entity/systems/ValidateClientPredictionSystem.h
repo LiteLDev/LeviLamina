@@ -14,9 +14,9 @@ struct AbilitiesComponent;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorUniqueIDComponent;
 struct AttributesComponent;
+struct InterpolateMovementNeededComponent;
 struct MovementAttributesComponent;
 struct SendPacketsComponent;
 struct ServerPlayerMovementSyncComponent;
@@ -29,7 +29,7 @@ namespace ValidateClientPredictionSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 
 MCNAPI void tick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::ReplayStateComponent>>,
     ::StrictEntityContext const&                                                  entity,
     ::ActorDataBoundingBoxComponent const&                                        actorBoundingBox,
     ::ActorDataFlagComponent const&                                               actorDataFlag,

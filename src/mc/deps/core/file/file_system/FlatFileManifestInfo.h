@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/FileType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -25,7 +24,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2488ef;
+    ::ll::UntypedStorage<8, 32> mUnk807445;
     ::ll::UntypedStorage<8, 8>  mUnkb6e6bf;
     ::ll::UntypedStorage<8, 8>  mUnka6c43a;
     ::ll::UntypedStorage<1, 1>  mUnk3b7215;
@@ -34,17 +33,14 @@ public:
 public:
     // prevent constructor by default
     FlatFileManifestInfo& operator=(FlatFileManifestInfo const&);
+    FlatFileManifestInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FlatFileManifestInfo();
-
     MCNAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
 
     MCNAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
-
-    MCNAPI void setAttributes(::Core::FileType fileType, bool isDeleted);
 
     MCNAPI void setPath(::Core::PathView path);
 
@@ -54,8 +50,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::Core::FlatFileManifestInfo const&);
     // NOLINTEND
 

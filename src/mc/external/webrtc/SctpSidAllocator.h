@@ -16,7 +16,7 @@ class SctpSidAllocator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke260d1;
+    ::ll::UntypedStorage<8, 32> mUnk18ea77;
     ::ll::UntypedStorage<1, 1>  mUnkeb1dce;
     // NOLINTEND
 

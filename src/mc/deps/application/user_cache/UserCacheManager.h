@@ -16,7 +16,7 @@ class UserCacheManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk10ca8c;
+    ::ll::UntypedStorage<8, 32> mUnk20203c;
     // NOLINTEND
 
 public:

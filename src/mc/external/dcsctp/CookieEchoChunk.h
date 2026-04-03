@@ -17,7 +17,7 @@ class CookieEchoChunk : public ::dcsctp::Chunk, public ::dcsctp::TLVTrait<::dcsc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke6cec0;
+    ::ll::UntypedStorage<8, 24> mUnk4a1871;
     // NOLINTEND
 
 public:

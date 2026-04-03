@@ -6,7 +6,7 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/ScriptTintMethod.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockDefinitionalComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
+class ScriptBlockMapColorComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // virtual functions
     // NOLINTBEGIN

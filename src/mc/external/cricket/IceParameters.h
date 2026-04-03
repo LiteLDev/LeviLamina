@@ -13,8 +13,8 @@ struct IceParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdd27da;
-    ::ll::UntypedStorage<8, 32> mUnkb9b22f;
+    ::ll::UntypedStorage<8, 32> mUnk6cfd82;
+    ::ll::UntypedStorage<8, 32> mUnkf3896a;
     ::ll::UntypedStorage<1, 1>  mUnk2eaab5;
     // NOLINTEND
 

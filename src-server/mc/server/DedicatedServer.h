@@ -11,6 +11,7 @@
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/PacketGroupDefinition.h"
+#include "mc/platform/brstd/future.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,13 +28,15 @@ class LevelDbEnv;
 class LevelSettings;
 class Minecraft;
 class PermissionsFile;
-class PropertiesSettings;
+class ProfilingConfigManager;
+class ScriptDedicatedServerUtils;
 class ServerInstanceEventCoordinator;
 class ServerTextSettings;
 class SignalingService;
 class SignalingServiceSignInJob;
 class TestConfig;
 struct ImguiProfiler;
+struct PropertiesSettings;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock::Http { class DispatcherInterface; }
@@ -77,18 +80,22 @@ public:
     ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit>                      mOnDestructioncloseAndResetAllLogs;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>>            mLevelDbEnv;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CodeBuilder::IManager>> mCodeBuilder;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>>      mCodeBuilderRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                       mImguiProfiler;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>              mImguiProfilerRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                        mFileArchiver;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>                   mSignalingService;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>> mCodeBuilderRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                  mImguiProfiler;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>         mImguiProfilerRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ProfilingConfigManager>>         mProfilingConfigManager;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ProfilingConfigManager>>
+                                                                      mProfilingConfigManagerServiceRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>       mFileArchiver;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>> mEditorBootstrapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>          mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>> mServerTextSettings;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>  mSignalingService;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEDUSystems>>                         mEduSystems;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptDedicatedServerUtils>>          mScriptDedicatedServerUtils;
     // NOLINTEND
 
 public:
@@ -122,6 +129,8 @@ public:
     // NOLINTBEGIN
     MCAPI DedicatedServer();
 
+    MCAPI ::std::string const& getSiftServerIdentifier(::PropertiesSettings const& properties);
+
     MCAPI void initializeAppConfigs();
 
     MCAPI void initializeCodeBuilder();
@@ -130,16 +139,17 @@ public:
 
     MCAPI void initializeLogging(::TestConfig& testConfig);
 
-    MCAPI ::std::future<bool> initializeMultiplayerKeys(::Minecraft& minecraft, ::PropertiesSettings const& properties);
+    MCAPI ::brstd::future<bool>
+    initializeMultiplayerKeys(::Minecraft& minecraft, ::PropertiesSettings const& properties);
 
     MCAPI void initializeServices(
         ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
-        ::PropertiesSettings&                               properties
+        ::PropertiesSettings const&                         properties
     );
 
     MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
         ::Core::FilePathManager&                                     filePathManager,
-        ::PropertiesSettings&                                        properties,
+        ::PropertiesSettings const&                                  properties,
         ::LevelSettings&                                             settings,
         ::AllowListFile&                                             userAllowList,
         ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
@@ -186,8 +196,6 @@ public:
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown();
-
-    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND
 
 public:

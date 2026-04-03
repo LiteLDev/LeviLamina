@@ -27,7 +27,7 @@ namespace ScriptModuleMinecraft { struct EmptyFilter; }
 namespace ScriptModuleMinecraft { struct ScriptActorCreateEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
@@ -248,8 +248,7 @@ public:
     ) /*override*/;
 
     virtual void onActorHitEntity(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
-            actorHitEntityEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHitBlock(
@@ -355,8 +354,7 @@ public:
     );
 
     MCAPI void $onActorHitEntity(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&
-            actorHitEntityEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onActorHitBlock(

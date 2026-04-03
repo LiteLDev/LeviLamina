@@ -12,8 +12,12 @@ namespace Editor::Structures::PUVLoader::CurrentVersion {
 // functions
 // NOLINTBEGIN
 MCNAPI void initializeLoader(
-    ::cereal::ReflectionCtx&                                                                           ctx,
-    ::Puv::SlicedLoader<::Editor::Structures::PUVLoader::v1::StructureMetadata, nullptr_t, nullptr_t>& loader
+    ::cereal::ReflectionCtx& ctx,
+    ::Puv::SlicedLoader<
+        ::Editor::Structures::PUVLoader::v1::StructureMetadata,
+        nullptr_t,
+        nullptr_t,
+        ::Editor::Structures::PUVLoader::v1::StructureMetadata>& loader
 );
 // NOLINTEND
 

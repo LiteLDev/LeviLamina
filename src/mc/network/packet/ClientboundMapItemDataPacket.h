@@ -57,7 +57,7 @@ public:
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
@@ -127,7 +127,7 @@ public:
 
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 

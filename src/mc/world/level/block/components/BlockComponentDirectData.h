@@ -6,9 +6,9 @@
 #include "mc/common/Brightness.h"
 #include "mc/deps/core/container/DenseEnumMap.h"
 #include "mc/deps/shared_types/legacy/Facing.h"
+#include "mc/deps/shared_types/v1_26_0/block/DetectionRule.h"
 #include "mc/deps/voxel_shapes/RegistryHandle.h"
 #include "mc/world/level/block/BurnOdds.h"
-#include "mc/world/level/block/DetectionRule.h"
 #include "mc/world/level/block/FlameOdds.h"
 #include "mc/world/level/block/LavaFlammable.h"
 
@@ -54,7 +54,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                 mExplosionResistance;
     ::ll::TypedStorage<4, 4, float>                                 mFriction;
     ::ll::TypedStorage<4, 4, float>                                 mDestroySpeed;
-    ::ll::TypedStorage<1, 4, ::DetectionRule>                       mWaterDetectionRule;
+    ::ll::TypedStorage<1, 5, ::SharedTypes::v1_26_0::DetectionRule> mWaterDetectionRule;
     ::ll::TypedStorage<2, 2, ::VoxelShapes::RegistryHandle>         mOcclusionShapeHandle;
     ::ll::TypedStorage<2, 12, ::Bedrock::DenseEnumMap<::SharedTypes::Facing, ::VoxelShapes::RegistryHandle, 6>>
                                                                           mOcclusionShapeHandlesByFace;

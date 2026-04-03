@@ -40,7 +40,7 @@ public:
 
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    virtual void hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const /*override*/;
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     virtual bool isValidRepairItem(
         ::ItemStackBase const&   source,
@@ -80,15 +80,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-
     MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
     MCAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCFOLD void $hurtActor(::ItemStack& instance, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     MCFOLD bool $isValidRepairItem(
         ::ItemStackBase const&   source,

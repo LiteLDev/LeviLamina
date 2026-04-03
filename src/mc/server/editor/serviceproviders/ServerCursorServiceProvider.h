@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ProjectRegion; }
 namespace Editor::Cursor { class ServerCursor; }
@@ -43,6 +44,21 @@ public:
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;
 
     virtual ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const = 0;
+
+    virtual ::Editor::Cursor::CursorState getDefaultProperties() const = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    pushCursorStateById(::Editor::Cursor::CursorState const&, ::HashedString const&) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> popCursorStateById(::HashedString const&) = 0;
+
+    virtual ::Scripting::Result_deprecated<void>
+    updateCursorStateById(::Editor::Cursor::CursorState const&, ::std::optional<::HashedString> const) = 0;
+
+    virtual ::Scripting::Result_deprecated<::Editor::Cursor::CursorState>
+    getCursorStateById(::std::optional<::HashedString> const&) = 0;
+
+    virtual ::std::optional<::HashedString> const& getActiveCursorStateId() const = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>

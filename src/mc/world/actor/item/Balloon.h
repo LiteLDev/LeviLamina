@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 struct VariantParameterList;
 // clang-format on
 
@@ -18,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual void remove() /*override*/;
 
@@ -30,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $remove();
 

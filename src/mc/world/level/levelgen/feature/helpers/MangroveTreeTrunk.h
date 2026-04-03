@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class IBlockWorldGenAPI;
 class ITreeCanopy;
@@ -31,8 +30,8 @@ public:
     ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchLength;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchSteps;
     ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mBranchChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     ::ll::TypedStorage<8, 24, ::std::vector<int>>                  mHeightIntervals;
     // NOLINTEND
 
@@ -52,25 +51,6 @@ public:
         ::TreeHelper::TreeParams const& treeParams,
         ::ITreeCanopy const*            canopy
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeBranch(
-        ::IBlockWorldGenAPI&       target,
-        ::std::vector<::BlockPos>* canopyAttachmentPositions,
-        ::Random&                  random,
-        int                        treeHeight,
-        ::RenderParams&,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::BlockPos&                     logPos,
-        int                             currentHeight,
-        uchar                           branchDir,
-        int                             branchPos,
-        int                             branchSteps,
-        ::Block const*                  trunkBlock
-    ) const;
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+    MCAPI ReflectionCtx();
     // NOLINTEND
 
 public:
@@ -30,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

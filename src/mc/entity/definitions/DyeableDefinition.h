@@ -6,7 +6,7 @@ struct DyeableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk72e6d8;
+    ::ll::UntypedStorage<8, 32> mUnk3078a5;
     // NOLINTEND
 
 public:

@@ -133,6 +133,8 @@ public:
 
     MCFOLD ::std::string $getTTSProgressMessage() const;
 
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 

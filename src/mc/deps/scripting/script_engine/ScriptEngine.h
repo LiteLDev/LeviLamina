@@ -22,10 +22,10 @@ class ScriptEngine {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk10a4ec;
+    ::ll::UntypedStorage<8, 8>  mUnk6e40b8;
     ::ll::UntypedStorage<8, 8>  mUnk46b9bc;
-    ::ll::UntypedStorage<8, 64> mUnk504baa;
-    ::ll::UntypedStorage<8, 24> mUnke53786;
+    ::ll::UntypedStorage<8, 64> mUnkda1d7a;
+    ::ll::UntypedStorage<8, 24> mUnk61ec6c;
     // NOLINTEND
 
 public:

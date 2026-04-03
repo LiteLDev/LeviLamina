@@ -42,18 +42,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void applyShortestPathBlend(
-        ::BoneOrientation const& blendOut,
-        ::BoneOrientation const& blendIn,
-        float                    blendInWeight,
-        float
-    );
-
     MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
 
-    MCAPI_C void setMatrix(::Matrix const& matrix);
+    MCAPI_C void setBoneBindingMethod(::BoneBindingMethod boneBindingMethod);
 
-    MCAPI_C void updateLocalPreTransformMatrix();
+    MCAPI ::DirectX::XMMATRIX updateLocalPreTransformMatrix();
 
     MCAPI ~BoneOrientation();
     // NOLINTEND

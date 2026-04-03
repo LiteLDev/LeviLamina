@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/player/AnimatedTextureDefinition.h"
+#include "mc/client/persona/AnimatedTextureDefinition.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 

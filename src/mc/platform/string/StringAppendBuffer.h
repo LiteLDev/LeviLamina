@@ -8,7 +8,7 @@ class StringAppendBuffer : public ::std::streambuf {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1dc6a9;
+    ::ll::UntypedStorage<8, 8> mUnkb33ce2;
     // NOLINTEND
 
 public:

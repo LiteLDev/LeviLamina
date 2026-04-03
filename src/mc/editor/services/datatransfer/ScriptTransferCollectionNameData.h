@@ -13,8 +13,8 @@ class ScriptTransferCollectionNameData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka5ad29;
-    ::ll::UntypedStorage<8, 32> mUnk2037f3;
+    ::ll::UntypedStorage<8, 32> mUnk4d5ab6;
+    ::ll::UntypedStorage<8, 32> mUnk29078a;
     // NOLINTEND
 
 public:

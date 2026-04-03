@@ -6,8 +6,8 @@ struct WorldTemplateMutableInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk86d67d;
-    ::ll::UntypedStorage<8, 16> mUnkd771c0;
+    ::ll::UntypedStorage<8, 24> mUnkc24b6f;
+    ::ll::UntypedStorage<8, 16> mUnkd8c596;
     // NOLINTEND
 
 public:

@@ -104,7 +104,7 @@ public:
 
     MCAPI bool $isHalfPulse() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 
     MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
 
 // auto generated forward declare list
@@ -19,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorDamageByBlockSource();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isBlockSource() const /*override*/;
@@ -28,7 +33,25 @@ public:
 
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
-    virtual ~ActorDamageByBlockSource() /*override*/ = default;
+    virtual ~ActorDamageByBlockSource() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorDamageByBlockSource(::Block const& block, ::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Block const& block, ::SharedTypes::Legacy::ActorDamageCause cause);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/FullContainerName.h"
 #include "mc/world/inventory/network/ContainerScreenContext.h"
 #include "mc/world/inventory/simulation/ContainerScreenRequestActionType.h"
 #include "mc/world/inventory/simulation/ContainerValidationCaller.h"
@@ -21,7 +22,6 @@ struct ContainerValidationLayer;
 struct ContainerValidationResult;
 struct ContainerValidationSlotData;
 struct ContainerValidationSlotInfo;
-struct FullContainerName;
 // clang-format on
 
 class ContainerScreenValidation {

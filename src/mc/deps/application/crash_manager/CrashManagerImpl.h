@@ -14,6 +14,7 @@ namespace Bedrock { class CrashFileProcessor; }
 namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { class SessionInfo; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
+namespace Bedrock { struct CrashManagerConfig; }
 // clang-format on
 
 namespace Bedrock {
@@ -31,7 +32,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnk1c896b;
+        ::ll::UntypedStorage<8, 32> mUnkb55d17;
         ::ll::UntypedStorage<8, 16> mUnkd95fbb;
         // NOLINTEND
 
@@ -59,7 +60,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnka0307c;
-        ::ll::UntypedStorage<8, 32> mUnk4e6014;
+        ::ll::UntypedStorage<8, 32> mUnkdf1862;
         ::ll::UntypedStorage<1, 1>  mUnkdad209;
         // NOLINTEND
 
@@ -85,20 +86,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka1db12;
-    ::ll::UntypedStorage<8, 32> mUnkfcddda;
-    ::ll::UntypedStorage<8, 32> mUnk37f93e;
-    ::ll::UntypedStorage<8, 32> mUnk982d5f;
+    ::ll::UntypedStorage<8, 32> mUnk1a7365;
+    ::ll::UntypedStorage<8, 32> mUnk4585f0;
+    ::ll::UntypedStorage<8, 32> mUnk6e472b;
+    ::ll::UntypedStorage<8, 32> mUnke1a459;
     ::ll::UntypedStorage<8, 16> mUnk28673f;
     ::ll::UntypedStorage<8, 80> mUnk3030e6;
     ::ll::UntypedStorage<8, 16> mUnk2e647e;
     ::ll::UntypedStorage<8, 16> mUnkc7a812;
-    ::ll::UntypedStorage<8, 24> mUnk6e6722;
-    ::ll::UntypedStorage<8, 16> mUnkb4372e;
-    ::ll::UntypedStorage<8, 16> mUnk5ec727;
+    ::ll::UntypedStorage<8, 24> mUnkd5ee85;
+    ::ll::UntypedStorage<8, 16> mUnk20226a;
+    ::ll::UntypedStorage<8, 16> mUnk426087;
     ::ll::UntypedStorage<8, 8>  mUnk936f0f;
     ::ll::UntypedStorage<1, 1>  mUnkb940bb;
+    ::ll::UntypedStorage<8, 16> mUnk265ed5;
     ::ll::UntypedStorage<1, 1>  mUnk6afa2c;
+    ::ll::UntypedStorage<1, 1>  mUnkbbb515;
     // NOLINTEND
 
 public:
@@ -116,7 +119,7 @@ public:
     virtual ~CrashManagerImpl() /*override*/;
 #endif
 
-    virtual void initialize(::std::string_view crashDirectoryName) /*override*/;
+    virtual void initialize(::Bedrock::CrashManagerConfig const& config) /*override*/;
 
     virtual void setCrashProcessorForFileType(
         ::std::string_view                               fileExtension,
@@ -202,7 +205,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $initialize(::std::string_view crashDirectoryName);
+    MCNAPI void $initialize(::Bedrock::CrashManagerConfig const& config);
 
     MCNAPI void $setCrashProcessorForFileType(
         ::std::string_view                               fileExtension,

@@ -139,5 +139,8 @@ enum class ActorDataIDs : uchar {
     EnterBedPosition                 = 133,
     SeatThirdPersonCameraRadius      = 134,
     SeatCameraRelaxDistanceSmoothing = 135,
-    Count                            = 136,
+    AimAssistPriorityPresetId        = 136,
+    AimAssistPriorityCategoryId      = 137,
+    AimAssistPriorityActorId         = 138,
+    Count                            = 139,
 };

@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 112, ::SharedTypes::v1_20_80::ParticleEffectDescription> mDescription;
-    ::ll::TypedStorage<8, 56, ::SharedTypes::v1_20_80::ParticleEffectComponents>   mComponents;
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_20_80::ParticleEffectComponents>   mComponents;
     ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::SharedTypes::v1_20_80::ParticleCurve>>>
         mCurves;
     ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::SharedTypes::v1_20_80::ParticleEventNode>>>

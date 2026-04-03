@@ -10,7 +10,9 @@ MCAPI ::std::string composeRoute(
     ::std::string const& titleMessage,
     ::std::string const& errorMessage,
     ::std::string const& codeword,
-    ::std::string const& errorDetails
+    ::std::string const& errorDetails,
+    ::std::string const& serverMessage,
+    ::std::string const& serverName
 );
 // NOLINTEND
 

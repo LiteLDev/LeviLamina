@@ -4,22 +4,23 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { struct DeviceIdContext; }
-namespace Core { class FileSystem; }
+namespace Bedrock { struct DeviceIdEnvironment; }
+namespace Bedrock { struct ImplCtor; }
 // clang-format on
 
 namespace Bedrock {
 
-class DeviceIdManager : public ::Bedrock::EnableNonOwnerReferences,
-                        public ::Bedrock::ImplBase<::Bedrock::DeviceIdManager> {
+class DeviceIdManager
+: public ::Bedrock::EnableNonOwnerReferences,
+  public ::Bedrock::ImplBase<::Bedrock::DeviceIdManager, ::Bedrock::ImplCtor(::Bedrock::DeviceIdEnvironment&&)> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initialize(::Bedrock::NonOwnerPointer<::Core::FileSystem>) = 0;
+    virtual void initialize() = 0;
 
     virtual void updateDeviceId(bool const) = 0;
 

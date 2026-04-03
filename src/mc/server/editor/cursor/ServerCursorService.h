@@ -13,6 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ProjectRegion; }
 namespace Editor::Cursor { class ServerCursor; }
@@ -35,8 +36,11 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk34ac53;
     ::ll::UntypedStorage<8, 16> mUnkb8f196;
     ::ll::UntypedStorage<8, 16> mUnkcf80cc;
-    ::ll::UntypedStorage<8, 24> mUnka7b08b;
+    ::ll::UntypedStorage<8, 24> mUnkcf6253;
     ::ll::UntypedStorage<4, 4>  mUnk10a236;
+    ::ll::UntypedStorage<4, 64> mUnk93bf4b;
+    ::ll::UntypedStorage<8, 24> mUnk8902d4;
+    ::ll::UntypedStorage<8, 56> mUnk2e87e7;
     ::ll::UntypedStorage<8, 48> mUnk6fe9e8;
     ::ll::UntypedStorage<8, 48> mUnk8dce3c;
     ::ll::UntypedStorage<8, 48> mUnk353ef0;
@@ -78,6 +82,23 @@ public:
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) /*override*/;
 
     virtual ::Scripting::Result_deprecated<int> getMaxViewBlockDistance() const /*override*/;
+
+    virtual ::Editor::Cursor::CursorState getDefaultProperties() const /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    pushCursorStateById(::Editor::Cursor::CursorState const& state, ::HashedString const& identifier) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> popCursorStateById(::HashedString const& identifier) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> updateCursorStateById(
+        ::Editor::Cursor::CursorState const&  state,
+        ::std::optional<::HashedString> const identifier
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<::Editor::Cursor::CursorState>
+    getCursorStateById(::std::optional<::HashedString> const& identifier) /*override*/;
+
+    virtual ::std::optional<::HashedString> const& getActiveCursorStateId() const /*override*/;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
@@ -136,6 +157,23 @@ public:
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 
     MCNAPI ::Scripting::Result_deprecated<int> $getMaxViewBlockDistance() const;
+
+    MCNAPI ::Editor::Cursor::CursorState $getDefaultProperties() const;
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $pushCursorStateById(::Editor::Cursor::CursorState const& state, ::HashedString const& identifier);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $popCursorStateById(::HashedString const& identifier);
+
+    MCNAPI ::Scripting::Result_deprecated<void> $updateCursorStateById(
+        ::Editor::Cursor::CursorState const&  state,
+        ::std::optional<::HashedString> const identifier
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<::Editor::Cursor::CursorState>
+    $getCursorStateById(::std::optional<::HashedString> const& identifier);
+
+    MCNAPI ::std::optional<::HashedString> const& $getActiveCursorStateId() const;
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback

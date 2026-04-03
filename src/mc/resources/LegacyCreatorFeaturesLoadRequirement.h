@@ -7,13 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class IPackLoadContext;
+class PackLoadContext;
 // clang-format on
 
 class LegacyCreatorFeaturesLoadRequirement {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
+    MCNAPI static bool satisfied(::PackLoadContext const& context, ::JsonBetaState);
     // NOLINTEND
 };

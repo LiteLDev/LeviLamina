@@ -10,6 +10,7 @@
 #include "mc/client/gui/screens/ControlCollectionChange.h"
 #include "mc/client/gui/screens/ControlCollectionFlag.h"
 #include "mc/client/gui/screens/GamepadCursorData.h"
+#include "mc/client/gui/screens/ScreenEvent.h"
 #include "mc/client/gui/screens/TextEditFocusedListener.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
@@ -45,7 +46,6 @@ class UIPropertyBag;
 class UIRenderContext;
 class VisualTree;
 struct ITTSEventManager;
-struct ScreenEvent;
 struct TouchPadTouchEventData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Json { class Value; }

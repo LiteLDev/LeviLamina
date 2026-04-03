@@ -12,7 +12,7 @@ class WebSocket_DEPRECATED : public ::Bedrock::Http::WebSocket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk63bb4e;
+    ::ll::UntypedStorage<8, 8> mUnk31c4dd;
     // NOLINTEND
 
 public:

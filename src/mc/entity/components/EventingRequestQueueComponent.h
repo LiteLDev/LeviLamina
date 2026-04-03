@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct EventingRequest;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/EventingRequest.h"
 
 struct EventingRequestQueueComponent {
 public:

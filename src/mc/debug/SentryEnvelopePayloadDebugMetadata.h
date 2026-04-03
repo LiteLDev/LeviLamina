@@ -6,7 +6,7 @@ struct SentryEnvelopePayloadDebugMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk70b3c8;
+    ::ll::UntypedStorage<8, 24> mUnk708b74;
     // NOLINTEND
 
 public:

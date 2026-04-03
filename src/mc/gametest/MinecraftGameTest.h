@@ -21,9 +21,9 @@ class MinecraftGameTest : public ::LevelListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkaec2e4;
-    ::ll::UntypedStorage<8, 8>  mUnkfa1348;
-    ::ll::UntypedStorage<8, 8>  mUnk5a5712;
+    ::ll::UntypedStorage<8, 8>  mUnk51b56b;
+    ::ll::UntypedStorage<8, 8>  mUnk25e6d5;
+    ::ll::UntypedStorage<8, 8>  mUnk2fcf77;
     ::ll::UntypedStorage<8, 16> mUnk46408e;
     // NOLINTEND
 

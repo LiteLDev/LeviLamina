@@ -68,7 +68,7 @@ public:
 
     MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
     MCAPI ::std::string $getName() const;
 

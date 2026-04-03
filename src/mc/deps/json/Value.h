@@ -188,7 +188,7 @@ public:
 
     MCFOLD ::Json::ValueConstIterator begin() const;
 
-    MCAPI ::Json::ValueIterator begin();
+    MCFOLD ::Json::ValueIterator begin();
 
     MCAPI void clear();
 
@@ -196,7 +196,7 @@ public:
 
     MCAPI bool empty() const;
 
-    MCAPI ::Json::ValueConstIterator end() const;
+    MCFOLD ::Json::ValueConstIterator end() const;
 
     MCFOLD ::Json::ValueIterator end();
 

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/resource/ResourceLocation.h"
-
 // auto generated forward declare list
 // clang-format off
+class ResourceLocation;
 namespace cg { class ImageBuffer; }
 namespace mce { class TextureGroup; }
 // clang-format on

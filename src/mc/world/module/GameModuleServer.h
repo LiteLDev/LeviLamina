@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/application/app_extensions/AppExtensionsNonOwner.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,6 +21,7 @@ class ResourcePackStack;
 class ServerInstance;
 class ServerNetworkHandler;
 class ServerScriptManager;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 // clang-format on
 
 class GameModuleServer : public ::AppExtensions::AppExtensionsNonOwner {
@@ -47,7 +47,7 @@ public:
         ::BaseGameVersion const&,
         ::ServerScriptManager const*,
         ::std::optional<::std::reference_wrapper<
-            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
     ) = 0;
 
     virtual void configureNewPlayer(::Player&) = 0;

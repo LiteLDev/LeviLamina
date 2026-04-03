@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             ::ActorUniqueID,
             ::std::optional<::Vec3>,

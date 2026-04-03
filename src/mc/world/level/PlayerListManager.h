@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/platform/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,6 @@ class PlayerListPacket;
 class PlayerLocationReceiver;
 class PlayerLocationSender;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace mce { class UUID; }
 // clang-format on
 
 class PlayerListManager {

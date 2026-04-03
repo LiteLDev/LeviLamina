@@ -17,10 +17,8 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class Randomize;
 class SaveContext;
 class Vec3;
-struct ResourceDropsContext;
 // clang-format on
 
 class PistonBlockActor : public ::BlockActor {
@@ -114,17 +112,6 @@ public:
     MCAPI ::Block const* getCorrectArmBlock() const;
 
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _spawnResourcesForBlockAndExtraBlock(
-        ::BlockSource&                region,
-        ::BlockPos const&             blockPos,
-        ::Randomize                   randomize,
-        ::ResourceDropsContext const& resourceDropsContext
-    );
     // NOLINTEND
 
 public:

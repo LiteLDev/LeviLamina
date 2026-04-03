@@ -12,6 +12,11 @@ enum class PrimitiveType : int {
     Disc        = 4,
     AxialSphere = 5,
     Arrow       = 6,
+    Cylinder    = 7,
+    Pyramid     = 8,
+    Ellipsoid   = 9,
+    Cuboid      = 10,
+    Cone        = 11,
 };
 
 }

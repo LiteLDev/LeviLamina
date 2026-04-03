@@ -10,6 +10,7 @@
 // clang-format off
 class PackSettings;
 class ResourcePack;
+namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -51,14 +52,14 @@ public:
         ::PackSettings*                                    packSettings
     );
 
-    MCAPI_C void
+    MCAPI void
     forEachIn(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
-
-    MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
 
     MCAPI_C bool hasResource(::Core::Path const& resourceName) const;
 
     MCAPI ::PackInstance& operator=(::PackInstance const&);
+
+    MCAPI_C ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
 
     MCAPI ~PackInstance();
     // NOLINTEND

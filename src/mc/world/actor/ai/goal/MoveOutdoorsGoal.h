@@ -62,7 +62,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 40, ::MoveOutdoorsGoal::MoveOutdoorsDefinition> mDefinition;
+    ::ll::TypedStorage<8, 40, ::MoveOutdoorsGoal::MoveOutdoorsDefinition> mDefinition;
     ::ll::TypedStorage<8, 8, ::Tick>                                      mNextTargetTick;
     // NOLINTEND
 

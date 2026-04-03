@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace OreUI { struct BufferSnapshot; }
 namespace mce { struct ShaderGroup; }
 // clang-format on
 
@@ -21,10 +20,6 @@ public:
     virtual void initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&) = 0;
 
     virtual void onAppPreSuspended() = 0;
-
-    virtual ::std::vector<::OreUI::BufferSnapshot> getVertexBufferSnapshots() = 0;
-
-    virtual ::std::vector<::OreUI::BufferSnapshot> getIndexBufferSnapshots() = 0;
 
     virtual ~IRenderingBackend() /*override*/;
     // NOLINTEND

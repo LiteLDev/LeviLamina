@@ -6,12 +6,13 @@
 #include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
+#include "mc/platform/brstd/future.h"
 
 // auto generated forward declare list
 // clang-format off
-struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;
 namespace Bedrock::Http { class HeaderCollection; }
+struct HC_WEBSOCKET_OBSERVER;
 // clang-format on
 
 namespace Bedrock::Http {
@@ -48,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::std::future<void> connectCompleted);
+    MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::brstd::future<void> connectCompleted);
 
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);

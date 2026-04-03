@@ -7,6 +7,7 @@
 #include "mc/deps/core/checked_resource_service/ClientResourcePointer.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 #include "mc/deps/minecraft_renderer/resources/ServerTexture.h"
@@ -15,7 +16,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseActorRenderContext;
-class HashedString;
 class IClientInstance;
 class ItemRegistryRef;
 class ItemStack;
@@ -23,7 +23,7 @@ class ScreenContext;
 class TaskGroup;
 namespace OreUI { struct AtlasIndex; }
 namespace cg { class ImageBuffer; }
-namespace dragon { class ResolvedImageResource; }
+namespace dragon { struct ResolvedImageResource; }
 namespace mce::framebuilder { struct RenderUIMeshDescription; }
 // clang-format on
 

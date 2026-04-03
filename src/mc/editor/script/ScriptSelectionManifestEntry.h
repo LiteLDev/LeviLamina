@@ -13,7 +13,7 @@ struct ScriptSelectionManifestEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd3eafb;
+    ::ll::UntypedStorage<8, 32> mUnk88c593;
     ::ll::UntypedStorage<8, 8>  mUnk4cab33;
     // NOLINTEND
 

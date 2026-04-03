@@ -15,7 +15,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class Level;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -49,11 +48,7 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~SkullBlock() /*override*/ = default;
     // NOLINTEND
@@ -89,11 +84,9 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
+#ifdef LL_PLAT_S
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+#endif
 
 
     // NOLINTEND

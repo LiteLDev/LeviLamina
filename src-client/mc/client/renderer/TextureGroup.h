@@ -7,6 +7,7 @@
 #include "mc/client/renderer/ImageBufferResourceManager.h"
 #include "mc/client/renderer/ImageCacheMode.h"
 #include "mc/client/renderer/TextureLoadMode.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/CountTracker.h"
 #include "mc/deps/core/threading/SharedAsync.h"
@@ -14,6 +15,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core_graphics/ImageBuffer.h"
 #include "mc/deps/core_graphics/TextureSetLayerType.h"
+#include "mc/deps/minecraft_renderer/renderer/IsMissingTexture.h"
 #include "mc/deps/minecraft_renderer/renderer/TextureGroupBase.h"
 #include "mc/resources/ResourceLoadType.h"
 #include "mc/util/texture_set_helpers/TextureSetDefinitionLoader.h"
@@ -23,7 +25,6 @@
 class BedrockTexture;
 class IAdvancedGraphicsOptions;
 class ResourceLoadManager;
-class ResourceLocation;
 class ResourceLocationPair;
 struct BedrockTextureData;
 namespace cg { class TextureSetDefinition; }
@@ -125,14 +126,13 @@ public:
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
 
-    MCAPI ::cg::ImageBuffer*
-    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer);
-
     MCAPI bool isLoaded(
         ::ResourceLocation const& resourceLocation,
         bool                      ignoreCreation,
         ::cg::TextureSetLayerType textureType
     ) const;
+
+    MCAPI ::IsMissingTexture isMissingTexture(::ResourceLocation const& resourceLocation) const;
 
     MCAPI ::nonstd::expected<void, ::std::error_condition>
     loadImageSyncAndInsertIntoCache(::ResourceLocation const& resourceLocation, bool splitAsArray);

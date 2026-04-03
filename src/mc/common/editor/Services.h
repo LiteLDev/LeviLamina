@@ -5,17 +5,22 @@
 // auto generated inclusion list
 #include "mc/client/input/vanilla/remapping/ActionEnum.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/editor/realms/EditorRealmsWorld.h"
-#include "mc/editor/services/persistence/PersistenceGroupItemMetadata.h"
-#include "mc/editor/services/persistence/PersistenceGroupMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
 namespace Editor::Network { class WidgetPrimComponentAxialSphere; }
 namespace Editor::Network { class WidgetPrimComponentBox; }
+namespace Editor::Network { class WidgetPrimComponentCone; }
+namespace Editor::Network { class WidgetPrimComponentCuboid; }
+namespace Editor::Network { class WidgetPrimComponentCylinder; }
 namespace Editor::Network { class WidgetPrimComponentDisc; }
+namespace Editor::Network { class WidgetPrimComponentEllipsoid; }
 namespace Editor::Network { class WidgetPrimComponentLine; }
+namespace Editor::Network { class WidgetPrimComponentPyramid; }
+namespace Editor::Services { struct EditorRealmsWorld; }
+namespace Editor::Services { struct PersistenceGroupItemMetadata; }
+namespace Editor::Services { struct PersistenceGroupMetadata; }
 class KeyboardRemappingLayout;
 namespace Scripting::RenderHelper { struct BasePrimitive; }
 // clang-format on
@@ -32,10 +37,25 @@ MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentBox const& data);
 
 MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+createPrimitive(::Editor::Network::WidgetPrimComponentCone const& data);
+
+MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+createPrimitive(::Editor::Network::WidgetPrimComponentCuboid const& data);
+
+MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+createPrimitive(::Editor::Network::WidgetPrimComponentCylinder const& data);
+
+MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentDisc const& data);
 
 MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+createPrimitive(::Editor::Network::WidgetPrimComponentEllipsoid const& data);
+
+MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentLine const& data);
+
+MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+createPrimitive(::Editor::Network::WidgetPrimComponentPyramid const& data);
 
 MCNAPI bool
 operator==(::Editor::Services::EditorRealmsWorld const& __P0, ::Editor::Services::EditorRealmsWorld const& __P1);

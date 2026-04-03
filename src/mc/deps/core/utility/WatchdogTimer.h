@@ -13,7 +13,7 @@ class WatchdogTimer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkca7973;
+    ::ll::UntypedStorage<8, 8>  mUnk9fc17e;
     ::ll::UntypedStorage<8, 40> mUnk29d8f5;
     ::ll::UntypedStorage<8, 8>  mUnk9981f4;
     ::ll::UntypedStorage<8, 64> mUnk52bf64;

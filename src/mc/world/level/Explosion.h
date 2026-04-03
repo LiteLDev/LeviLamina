@@ -16,7 +16,6 @@ class Block;
 class BlockSource;
 class IRandom;
 class ItemStack;
-class Randomize;
 struct ResourceDropsContext;
 // clang-format on
 
@@ -76,7 +75,7 @@ public:
         ::BlockSource&                                       region,
         ::BlockPos const&                                    blockPos,
         ::Block const&                                       block,
-        ::Randomize&                                         randomize,
+        ::IRandom&                                           random,
         ::ResourceDropsContext const&                        resourceDropsContext,
         ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
     );

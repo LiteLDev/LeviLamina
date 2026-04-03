@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/block/ActorChangeContext.h"
 #include "mc/world/level/block/EnvironmentChangeContext.h"
-#include "mc/world/level/block/ScriptOrCommandChangeContext.h"
+#include "mc/world/level/block/StatelessBlockChangeContext.h"
 
 class BlockChangeContext {
 public:
@@ -15,23 +15,13 @@ public:
         8,
         24,
         ::std::
-            variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::ScriptOrCommandChangeContext>>
+            variant<::std::monostate, ::EnvironmentChangeContext, ::ActorChangeContext, ::StatelessBlockChangeContext>>
         mContextSource;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockChangeContext();
-
-public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI explicit BlockChangeContext(bool isScriptOrCommandContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isScriptOrCommandContext);
+    MCAPI static ::BlockChangeContext structureChange();
     // NOLINTEND
 };

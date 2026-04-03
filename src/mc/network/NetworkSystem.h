@@ -163,20 +163,17 @@ public:
     virtual void onConnectionClosed(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
-        ::std::string const&                     reasonMessage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
         bool                                     skipDisconnectMessage,
         ::Json::Value const&                     sessionSummary
     ) /*override*/;
 
-    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
+    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, bool) /*override*/;
 
-    virtual void
-    onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
+    virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, bool) /*override*/;
 
-    virtual void onOutgoingConnectionFailed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage
-    ) /*override*/;
+    virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) /*override*/;
 
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -198,7 +195,7 @@ public:
     MCAPI_C void closeConnection(
         ::NetworkIdentifier const&         id,
         ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage
+        ::std::string const&               messageFromServer
     );
 
     MCAPI void disconnect();
@@ -258,13 +255,11 @@ public:
     MCAPI void $onConnectionClosed(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
-        ::std::string const&                     reasonMessage,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
         bool                                     skipDisconnectMessage,
         ::Json::Value const&                     sessionSummary
     );
-
-    MCAPI void
-    $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, ::std::string const& reasonMessage);
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,

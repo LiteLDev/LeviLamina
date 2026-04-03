@@ -18,7 +18,7 @@ class Tmmbr : public ::webrtc::rtcp::Rtpfb {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6a0968;
+    ::ll::UntypedStorage<8, 24> mUnk47b377;
     // NOLINTEND
 
 public:

@@ -13,13 +13,7 @@ public:
     // NOLINTBEGIN
     virtual float nextFloat() /*override*/;
 
-    virtual ~DoublesForFloatsRandom() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    virtual ~DoublesForFloatsRandom() /*override*/ = default;
     // NOLINTEND
 
 public:

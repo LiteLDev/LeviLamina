@@ -4,7 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class RenderParams;
 struct MolangEvalParams;
+struct MolangScriptArg;
 namespace Molang::details { class IInstruction; }
 // clang-format on
 
@@ -36,7 +38,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3eeb0e;
+    ::ll::UntypedStorage<8, 8> mUnkb55123;
     ::ll::UntypedStorage<4, 4> mUnkdf34c4;
     ::ll::UntypedStorage<1, 1> mUnkebc975;
     // NOLINTEND
@@ -51,6 +53,8 @@ public:
     // NOLINTBEGIN
     MCNAPI
     Program(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
+
+    MCNAPI_C ::MolangScriptArg const& execute(::RenderParams& renderParams, ::MolangEvalParams& state) const;
 
     MCNAPI ::Molang::details::Program& operator=(::Molang::details::Program const& rhs);
 

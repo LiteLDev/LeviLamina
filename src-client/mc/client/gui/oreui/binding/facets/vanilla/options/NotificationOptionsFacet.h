@@ -61,11 +61,15 @@ public:
 
     MCAPI bool getDoNotShowMultiplayerOnlineSafetyWarning() const;
 
+    MCAPI bool getDoNotShowNotFollowingPartyWarning() const;
+
     MCAPI bool getDoNotShowOldWorldsWarning() const;
 
     MCAPI bool getDoNotShowUsingExternalStorageWarning() const;
 
     MCAPI bool getdoNotShowManageFeedDeleteWarning() const;
+
+    MCAPI void setDisableHardcoreModeWarningOnce(bool newValue);
 
     MCAPI void setDoNotAddonStackingWarning(bool newValue);
 
@@ -90,6 +94,8 @@ public:
     MCAPI void setDoNotShowMultiplayerIpSafetyWarning(bool newValue);
 
     MCAPI void setDoNotShowMultiplayerOnlineSafetyWarning(bool newValue);
+
+    MCAPI void setDoNotShowNotFollowingPartyWarning(bool newValue);
 
     MCAPI void setDoNotShowOldWorldsWarning(bool newValue);
 

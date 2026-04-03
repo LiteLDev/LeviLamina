@@ -15,12 +15,11 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class CommandBlockActor;
-class Experiments;
 class ItemInstance;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class CommandBlock : public ::ActorBlock {
@@ -50,17 +49,10 @@ public:
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual bool hasComparatorSignal() const /*override*/;
 
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
-
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     virtual ~CommandBlock() /*override*/ = default;
     // NOLINTEND
@@ -80,9 +72,9 @@ public:
         bool                 fromTickQueue
     ) const;
 
-    MCAPI void execute(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void execute(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -121,15 +113,9 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCFOLD bool $hasComparatorSignal() const;
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

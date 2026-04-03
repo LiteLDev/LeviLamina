@@ -11,7 +11,7 @@ class WorldConversionCompleteModel : public ::MainMenuScreenModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1032, ::LocalWorldInfo> mWorldInfo;
+    ::ll::TypedStorage<8, 1040, ::LocalWorldInfo> mWorldInfo;
     // NOLINTEND
 
 public:

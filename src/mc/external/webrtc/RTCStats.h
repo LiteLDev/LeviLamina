@@ -13,7 +13,7 @@ class RTCStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk91f4ec;
+    ::ll::UntypedStorage<8, 32> mUnka62b15;
     ::ll::UntypedStorage<8, 8>  mUnk39fdb3;
     // NOLINTEND
 

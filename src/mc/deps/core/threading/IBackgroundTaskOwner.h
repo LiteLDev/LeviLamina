@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
-#include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/resources/TaskGroupState.h"
 
 // auto generated forward declare list
 // clang-format off

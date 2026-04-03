@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/diagnostics/LogAreaID.h"
+#include "mc/diagnostics/LogAreaID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,8 +21,8 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk3fa36f;
     ::ll::UntypedStorage<1, 1>   mUnk9c26d4;
     ::ll::UntypedStorage<1, 1>   mUnk9ff44e;
-    ::ll::UntypedStorage<8, 32>  mUnk1c80b4;
-    ::ll::UntypedStorage<8, 32>  mUnk377c22;
+    ::ll::UntypedStorage<8, 32>  mUnk13ee41;
+    ::ll::UntypedStorage<8, 32>  mUnkdd0f61;
     ::ll::UntypedStorage<8, 296> mUnk52b3f7;
     ::ll::UntypedStorage<1, 1>   mUnk98388d;
     ::ll::UntypedStorage<1, 1>   mUnkbd562e;

@@ -9,8 +9,8 @@ class ResourceGroup : public ::Bedrock::NonCopyable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk67338e;
-    ::ll::UntypedStorage<8, 24> mUnk696ad3;
+    ::ll::UntypedStorage<8, 24> mUnk9bbf33;
+    ::ll::UntypedStorage<8, 24> mUnkea78c4;
     // NOLINTEND
 
 public:

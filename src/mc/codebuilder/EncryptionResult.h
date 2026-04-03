@@ -8,9 +8,9 @@ struct EncryptionResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfc51c2;
-    ::ll::UntypedStorage<8, 32> mUnk8af72f;
-    ::ll::UntypedStorage<8, 32> mUnk338842;
+    ::ll::UntypedStorage<8, 32> mUnk25765c;
+    ::ll::UntypedStorage<8, 32> mUnkb6f67f;
+    ::ll::UntypedStorage<8, 32> mUnke45cf2;
     // NOLINTEND
 
 public:

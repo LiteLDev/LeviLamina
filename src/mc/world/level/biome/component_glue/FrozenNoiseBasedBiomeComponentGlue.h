@@ -9,17 +9,15 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
 struct FrozenNoiseBasedBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
+    virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) /*override*/;
 
-    virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const /*override*/;
+    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const&) const /*override*/;
 
     virtual ~FrozenNoiseBasedBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
@@ -27,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
+    MCFOLD bool $resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&);
 
-    MCAPI void $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const;
+    MCAPI void $applyToBiome(::Biome& biome, ::entt::meta_any const&) const;
 
 
     // NOLINTEND

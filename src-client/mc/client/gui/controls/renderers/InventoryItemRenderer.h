@@ -106,6 +106,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::UIItemRenderInfo getItemRenderInfo(::ItemStack const& item);
+
     MCAPI static ::ItemRenderChunkType getRenderTypeFromItem(::ItemStack const& item);
     // NOLINTEND
 
@@ -132,8 +134,6 @@ public:
 
     MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
-
-    MCAPI ::UIBatchType $getBatchType() const;
 
     MCFOLD int $getCustomId() const;
 

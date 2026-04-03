@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockDefinitionalComponent.h"
+#include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
+class ScriptBlockRedstoneProducerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
     // virtual functions
     // NOLINTBEGIN

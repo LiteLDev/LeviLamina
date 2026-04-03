@@ -7,11 +7,11 @@
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/events/ChunkLoadTelemetryData.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/AtomicTimeAccumulator.h"
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class ChunkSource;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
@@ -53,7 +53,6 @@ public:
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator>                         mServerLevelChunkSaveTime;
     ::ll::TypedStorage<4, 4, ::std::atomic<uint>>                              mServerLevelChunkChunksSavedCount;
     ::ll::TypedStorage<4, 76, ::ChunkLoadTelemetryData>                        mChunkLoadTelemetryData;
-    ::ll::TypedStorage<8, 8, ::std::atomic<uint64>>                            mBiomeFeaturePlaceCallsCount;
     ::ll::TypedStorage<1, 1, bool>                                             mShouldResetData;
     ::ll::TypedStorage<4, 4, uint>                                             mRenderChunkSharedCount;
     ::ll::TypedStorage<4, 4, uint>                                             mWeakRenderChunkSharedCount;

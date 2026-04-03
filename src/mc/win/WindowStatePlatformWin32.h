@@ -9,15 +9,10 @@ class WindowStatePlatformWin32 : public ::WindowStatePlatform {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool getWindowRect(::HWND__* window, ::tagRECT& result) const /*override*/;
-
-    virtual bool getClientRect(::HWND__* window, ::tagRECT& result) const /*override*/;
-
-    virtual bool getWindowShowCommand(::HWND__* window, int& result) const /*override*/;
-
     virtual bool getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const /*override*/;
 
-    virtual bool getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const /*override*/;
+    virtual ::tagRECT
+    _fitClientToScreen(::tagRECT const& client, ::tagRECT const& window, ::tagRECT const& screen) /*override*/;
 
     virtual ~WindowStatePlatformWin32() /*override*/ = default;
     // NOLINTEND
@@ -26,15 +21,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $getWindowRect(::HWND__* window, ::tagRECT& result) const;
-
-    MCNAPI bool $getClientRect(::HWND__* window, ::tagRECT& result) const;
-
-    MCNAPI bool $getWindowShowCommand(::HWND__* window, int& result) const;
-
     MCNAPI bool $getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const;
 
-    MCNAPI bool $getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const;
+    MCNAPI ::tagRECT $_fitClientToScreen(::tagRECT const& client, ::tagRECT const& window, ::tagRECT const& screen);
 #endif
 
 

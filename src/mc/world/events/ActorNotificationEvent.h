@@ -11,6 +11,9 @@ struct ActorAcquiredItemEvent;
 struct ActorAddEffectEvent;
 struct ActorAnimationChangedEvent;
 struct ActorAttackEvent;
+struct ActorBeforeAcquireItemEvent;
+struct ActorBeforeHealEvent;
+struct ActorBeforeHurtEvent;
 struct ActorCarriedItemChangedEvent;
 struct ActorDefinitionEndedEvent;
 struct ActorDefinitionStartedEvent;
@@ -19,6 +22,7 @@ struct ActorDiedEvent;
 struct ActorDroppedItemEvent;
 struct ActorEquippedArmorEvent;
 struct ActorGriefingBlockEvent;
+struct ActorHealEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
 struct ActorItemEventAfterDroppedItem;
@@ -45,6 +49,7 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorDiedEvent const,
                                     ::ActorDroppedItemEvent const,
                                     ::ActorEquippedArmorEvent const,
+                                    ::ActorHealEvent const,
                                     ::ActorHurtEvent const,
                                     ::ActorHealthChangedEvent const,
                                     ::ActorKilledEvent const,
@@ -61,7 +66,10 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorStopRidingEvent const,
                                     ::ActorItemEventBeforeDroppedItem const,
                                     ::ActorDefinitionStartedEvent const,
-                                    ::ActorAddEffectEvent const> {
+                                    ::ActorAddEffectEvent const,
+                                    ::ActorBeforeAcquireItemEvent const,
+                                    ::ActorBeforeHealEvent const,
+                                    ::ActorBeforeHurtEvent const> {
 public:
     // member functions
     // NOLINTBEGIN

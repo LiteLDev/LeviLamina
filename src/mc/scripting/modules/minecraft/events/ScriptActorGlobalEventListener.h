@@ -11,9 +11,14 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ActorAcquiredItemEvent;
 struct ActorAddEffectEvent;
+struct ActorAttackEvent;
 struct ActorDefinitionEndedEvent;
 struct ActorDiedEvent;
+struct ActorDroppedItemEvent;
+struct ActorHealEvent;
+struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
@@ -53,9 +58,19 @@ public:
 
     virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& eventData) /*override*/;
 
+    virtual ::EventResult onEvent(::ActorHealEvent const& eventData) /*override*/;
+
     virtual ::EventResult onEvent(::ActorHurtEvent const& eventData) /*override*/;
 
     virtual ::EventResult onEvent(::ActorDiedEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorAttackEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorHealthChangedEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorDroppedItemEvent const& eventData) /*override*/;
+
+    virtual ::EventResult onEvent(::ActorAcquiredItemEvent const& eventData) /*override*/;
 
     virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
     // NOLINTEND
@@ -67,9 +82,19 @@ public:
 
     MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& eventData);
 
+    MCAPI ::EventResult $onEvent(::ActorHealEvent const& eventData);
+
     MCAPI ::EventResult $onEvent(::ActorHurtEvent const& eventData);
 
     MCAPI ::EventResult $onEvent(::ActorDiedEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorAttackEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorDroppedItemEvent const& eventData);
+
+    MCAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& eventData);
 
 
     // NOLINTEND

@@ -247,7 +247,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                         mCreateInitialized;
     ::ll::TypedStorage<1, 1, bool>                                         mInitialized;
     ::ll::TypedStorage<1, 1, bool>                                         mUsesErrorInfo;
-    ::ll::TypedStorage<8, 1408, ::ScreenViewCommand>                       mScreenViewCommand;
+    ::ll::TypedStorage<8, 1472, ::ScreenViewCommand>                       mScreenViewCommand;
     ::ll::TypedStorage<1, 1, bool>                                         mIsScrollingLocked;
     ::ll::TypedStorage<
         8,

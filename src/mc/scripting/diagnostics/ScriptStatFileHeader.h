@@ -2,17 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 class ScriptStatFileHeader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf790ce;
-    ::ll::UntypedStorage<8, 32> mUnk489788;
+    ::ll::UntypedStorage<8, 32> mUnk225053;
+    ::ll::UntypedStorage<8, 32> mUnk33f255;
     // NOLINTEND
 
 public:
@@ -25,12 +20,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ScriptStatFileHeader();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

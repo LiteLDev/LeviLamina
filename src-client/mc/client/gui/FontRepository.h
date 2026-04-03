@@ -11,7 +11,6 @@
 // clang-format off
 class Font;
 class FontHandle;
-class ResourceLocation;
 namespace Core { class Path; }
 namespace mce { class TextureGroup; }
 // clang-format on
@@ -79,8 +78,6 @@ public:
 
     MCAPI uint64 getFontIdentifier(::std::string const& fontName);
 
-    MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
-
     MCAPI void loadDefaultFonts(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI void onLanguageChanged(::std::string const& languageCode);
@@ -98,12 +95,6 @@ public:
     MCAPI void setMinecraftUIFontStyle(::std::string const& languageCode);
 
     MCAPI void setUseFontOverrides(bool useOverrides);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64& INVALID_FONT();
     // NOLINTEND
 
 public:

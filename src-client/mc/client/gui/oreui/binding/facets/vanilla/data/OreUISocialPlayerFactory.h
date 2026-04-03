@@ -34,7 +34,8 @@ public:
     MCAPI static ::OreUI::SocialPlayer createSocialPlayerFromPlayerProfileData(
         ::Social::PlayerProfileData const&                         playerProfileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
-        ::std::shared_ptr<::Parties::Party> const&                 party
+        ::std::shared_ptr<::Parties::Party> const&                 party,
+        ::std::vector<::PlayerListEntry const*> const&             lobbyPlayers
     );
 
     MCAPI static ::OreUI::SocialPlayer createSocialPlayerFromWorldPlayerInfo(

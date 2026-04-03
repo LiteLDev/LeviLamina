@@ -8,13 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 // clang-format on
 
 class Pig : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
     virtual ~Pig() /*override*/ = default;
     // NOLINTEND
@@ -22,7 +23,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
 
     // NOLINTEND

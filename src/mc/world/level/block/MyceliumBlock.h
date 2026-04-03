@@ -9,7 +9,6 @@
 // clang-format off
 class Experiments;
 struct BlockAnimateTickData;
-struct Brightness;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
@@ -28,14 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
-
-    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
     // NOLINTEND
 
 public:

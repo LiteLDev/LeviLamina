@@ -13,9 +13,9 @@ struct EditorExtensionOptionalParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk513b35;
-    ::ll::UntypedStorage<8, 40> mUnkcfc7ef;
-    ::ll::UntypedStorage<8, 40> mUnk4d9404;
+    ::ll::UntypedStorage<8, 40> mUnk3816b3;
+    ::ll::UntypedStorage<8, 40> mUnk71e73b;
+    ::ll::UntypedStorage<8, 40> mUnk70a3e8;
     // NOLINTEND
 
 public:

@@ -40,7 +40,8 @@ public:
         ::ItemStack const&                  storageItem
     );
 
-    MCAPI void broadcastChanges(::PlayerContainerRefresher const& refresher);
+    MCAPI void
+    broadcastChanges(::PlayerContainerRefresher const& refresher, ::std::function<void()> contentsChangedCallback);
     // NOLINTEND
 
 public:

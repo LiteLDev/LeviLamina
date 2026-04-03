@@ -10,7 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 struct WaterAnimalFlagComponent;
 // clang-format on
@@ -25,7 +25,7 @@ public:
     MCNAPI static void _tickWaterAnimalPreAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::WaterAnimalFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::WaterAnimalFlagComponent>,
             ::ActorOwnerComponent> view
     );
 

@@ -53,14 +53,6 @@ public:
         ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
         // NOLINTEND
-
-    public:
-        // static variables
-        // NOLINTBEGIN
-        MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
-
-        MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
-        // NOLINTEND
     };
 
     struct SubChunkPosOffset {
@@ -134,7 +126,7 @@ public:
 
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -152,7 +144,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

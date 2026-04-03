@@ -35,9 +35,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void StartTraceEvent(::renoir::RenoirTraceEventName, uint, ::renoir::ITracer::Metadata const&) = 0;
+    virtual void StartTraceEvent(::renoir::RenoirTraceEventName, uint, ::renoir::ITracer::Metadata const&, uint) = 0;
 
-    virtual void EndTraceEvent(::renoir::RenoirTraceEventName, uint, ::renoir::ITracer::Metadata const&) = 0;
+    virtual void EndTraceEvent(::renoir::RenoirTraceEventName, uint, ::renoir::ITracer::Metadata const&, uint) = 0;
 
     virtual void UpdateCounter(::renoir::RenoirTraceEventName, uint64) = 0;
 

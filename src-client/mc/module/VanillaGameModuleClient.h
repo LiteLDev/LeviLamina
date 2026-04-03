@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorMigratedDefinitionFactory;
 class BaseGameVersion;
 class BiomeRegistry;
 class ClientInputMappingFactory;
@@ -30,16 +31,16 @@ class VanillaGameModuleClient : public ::GameModuleClient {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1c20a8;
-    ::ll::UntypedStorage<8, 8>  mUnk1f3474;
-    ::ll::UntypedStorage<8, 8>  mUnkaa80e6;
-    ::ll::UntypedStorage<8, 8>  mUnk71d498;
-    ::ll::UntypedStorage<8, 8>  mUnkf1e5c1;
-    ::ll::UntypedStorage<8, 8>  mUnkfb24ca;
-    ::ll::UntypedStorage<8, 8>  mUnkdd2cd8;
-    ::ll::UntypedStorage<8, 8>  mUnk65e1f5;
-    ::ll::UntypedStorage<8, 8>  mUnkbb03b2;
-    ::ll::UntypedStorage<8, 8>  mUnk46e405;
+    ::ll::UntypedStorage<8, 8>  mUnk5e0158;
+    ::ll::UntypedStorage<8, 8>  mUnkf1ce19;
+    ::ll::UntypedStorage<8, 8>  mUnk4ab956;
+    ::ll::UntypedStorage<8, 8>  mUnkdd8a64;
+    ::ll::UntypedStorage<8, 8>  mUnk6f8df0;
+    ::ll::UntypedStorage<8, 8>  mUnkadce9b;
+    ::ll::UntypedStorage<8, 8>  mUnk84fc3a;
+    ::ll::UntypedStorage<8, 8>  mUnkee2df3;
+    ::ll::UntypedStorage<8, 8>  mUnkcb9508;
+    ::ll::UntypedStorage<8, 16> mUnk33240b;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
     ::ll::UntypedStorage<8, 16> mUnk852403;
@@ -92,6 +93,8 @@ public:
 
     virtual ::std::unique_ptr<::ClientInputMappingFactory>
     createInputMappingFactory(::IClientInstance& client) /*override*/;
+
+    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const /*override*/;
     // NOLINTEND
 
 public:
@@ -163,6 +166,8 @@ public:
     MCAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
     MCFOLD ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
+
+    MCAPI void $registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const;
     // NOLINTEND
 
 public:

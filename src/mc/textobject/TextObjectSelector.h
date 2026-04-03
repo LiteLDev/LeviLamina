@@ -15,7 +15,7 @@ class TextObjectSelector : public ::ITextObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk193d71;
+    ::ll::UntypedStorage<8, 32> mUnk1bac3d;
     // NOLINTEND
 
 public:

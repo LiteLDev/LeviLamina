@@ -50,6 +50,7 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                     mDateString;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mTitle;
         ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mSubtitle;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mWorldName;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mSender;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mSenderXuid;
         ::ll::TypedStorage<8, 32, ::std::string>                                     mContent;

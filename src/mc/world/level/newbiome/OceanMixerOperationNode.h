@@ -32,10 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OceanMixerOperationNode();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void _fillArea(
@@ -54,20 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OceanMixerOperationNode(
-        uint                                                                     seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
-        ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,
-        ::BiomeRegistry const&                                                   registry,
-        ::Biome const&                                                           genericShallowOcean,
-        ::Biome const&                                                           genericDeepOcean
-    );
+
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCAPI_C void* $ctor(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
         ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,

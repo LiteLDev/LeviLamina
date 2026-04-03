@@ -12,7 +12,7 @@ class PlayerRespawnRandomizer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::XoroshiroRandom>                    mRandom;
+    ::ll::TypedStorage<8, 48, ::XoroshiroRandom>                    mRandom;
     ::ll::TypedStorage<4, 4, uint>                                  mSpawnRadius;
     ::ll::TypedStorage<4, 4, uint>                                  mSquaredRadius;
     ::ll::TypedStorage<4, 24, ::PlayerRespawnBlockRadiusRandomizer> mSecondaryRandomizer;

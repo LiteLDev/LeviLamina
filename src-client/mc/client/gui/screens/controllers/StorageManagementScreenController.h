@@ -23,7 +23,6 @@ class StorageManagementScreenControllerProxy;
 struct ContentItem;
 struct ImportResult;
 struct LegacyWorldInfo;
-namespace Json { class Value; }
 // clang-format on
 
 class StorageManagementScreenController : public ::MainMenuScreenController {
@@ -68,8 +67,6 @@ public:
     virtual ~StorageManagementScreenController() /*override*/ = default;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
-
-    virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
     // NOLINTEND
 
 public:
@@ -129,8 +126,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 
 public:

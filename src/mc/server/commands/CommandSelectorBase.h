@@ -92,8 +92,6 @@ public:
 
     MCAPI bool filter(::CommandOrigin const& origin, ::Actor& actor) const;
 
-    MCAPI ::std::string getName() const;
-
     MCAPI bool isExpansionAllowed(::CommandOrigin const& origin) const;
 
     MCAPI bool isInDimension(::CommandOrigin const& origin, ::Actor& entity) const;

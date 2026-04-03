@@ -18,7 +18,7 @@ class StateCookieParameter : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8c2f61;
+    ::ll::UntypedStorage<8, 24> mUnk788e6d;
     // NOLINTEND
 
 public:

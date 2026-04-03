@@ -19,7 +19,9 @@ enum class EventType : uchar {
     IsValidSpawn     = 11,
     BlockBreak       = 12,
     RedstoneUpdate   = 13,
-    Count            = 14,
+    Actor            = 14,
+    InternalActor    = 15,
+    Count            = 16,
 };
 
 }

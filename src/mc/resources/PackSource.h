@@ -40,8 +40,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk92b8ed;
-        ::ll::UntypedStorage<8, 24> mUnk99f27c;
+        ::ll::UntypedStorage<8, 24> mUnk673f56;
+        ::ll::UntypedStorage<8, 24> mUnk1dbbeb;
         ::ll::UntypedStorage<8, 64> mUnke8ed21;
         ::ll::UntypedStorage<8, 64> mUnka1631e;
         // NOLINTEND
@@ -154,8 +154,6 @@ public:
     MCAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
 
     MCAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
-
-    MCAPI_C void forEachPack(::std::function<void(::Pack&)> callback);
 
     MCAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,

@@ -210,7 +210,7 @@ MCNAPI ::JSValue ThrowJSTypeErrorWithContext(::JSContext*, ::Scripting::QuickJS:
 
 MCNAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
 
-MCNAPI ::Scripting::StrongObjectHandle getHandleFromObjectFactory(
+MCNAPI ::std::optional<::Scripting::StrongObjectHandle> getHandleFromObjectFactory(
     ::JSContext*                           ctx,
     ::Scripting::QuickJS::ContextUserData& contextData,
     ::Scripting::ObjectFactory const&      objectFactory

@@ -34,6 +34,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::variant<::cg::ImageBuffer, ::mce::TexturePtr> consumeImageBuffer(uint64 id);
 
+    MCAPI uint64 holdImageBuffer(::cg::ImageBuffer buffer);
+
     MCAPI uint64 holdTexturePtr(::mce::TexturePtr texture);
 
     MCAPI ~TemporaryTextureHolder();

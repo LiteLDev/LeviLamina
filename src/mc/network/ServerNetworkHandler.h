@@ -8,11 +8,13 @@
 #include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/events/event_data/ServerTelemetryData.h"
 #include "mc/network/IncomingPacketFilterResult.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetEventCallback.h"
@@ -30,6 +32,7 @@
 #include "mc/server/DenyList.h"
 #include "mc/server/ServerTextEvent.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
+#include "mc/server/config/server_configuration/ServerConfigurationJoinInfo.h"
 #include "mc/world/level/LevelListener.h"
 
 // auto generated forward declare list
@@ -95,6 +98,7 @@ class NetworkStackLatencyPacket;
 class NpcRequestPacket;
 class Packet;
 class PacketSender;
+class PartyChangedPacket;
 class PermissionsFile;
 class PermissionsHandler;
 class PhotoTransferPacket;
@@ -114,6 +118,7 @@ class RequestPermissionsPacket;
 class ResourcePackChunkRequestPacket;
 class ResourcePackClientResponsePacket;
 class ResourcePackFileUploadManager;
+class ResourcePacksReadyForValidationPacket;
 class RespawnPacket;
 class Scheduler;
 class ScriptMessagePacket;
@@ -123,6 +128,7 @@ class ServerConnectionAuthValidator;
 class ServerLocator;
 class ServerNetworkSystem;
 class ServerPlayer;
+class ServerboundDataDrivenScreenClosedPacket;
 class ServerboundDataStorePacket;
 class ServerboundDiagnosticsPacket;
 class ServerboundLoadingScreenPacket;
@@ -156,7 +162,7 @@ struct ChatEvent;
 struct IServerNetworkController;
 struct MessToken;
 struct NetworkIdentifierWithSubId;
-struct PackIdVersion;
+struct PackInfoData;
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Safety { class RedactableString; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
@@ -182,15 +188,14 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConnectionRequest>>                           mPrimaryRequest;
-        ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo>                                     mPrimaryPlayerInfo;
+        ::ll::TypedStorage<8, 312, ::PlayerAuthenticationInfo>                                     mPrimaryPlayerInfo;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                   mClientInfoPartyId;
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::SubClientId, ::PlayerAuthenticationInfo>> mSubClientPlayerInfo;
         // NOLINTEND
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::PlayerAuthenticationInfo getPrimaryPlayerInfo() const;
-
         MCAPI void removeSubClientPlayerInfo(::SubClientId subClientId);
         // NOLINTEND
     };
@@ -217,7 +222,6 @@ public:
     ::ll::TypedStorage<8, 8, ::PrivateKeyManager&>                                  mServerKeys;
     ::ll::TypedStorage<8, 8, ::ServerLocator&>                                      mServerLocator;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::PacketSender*>>                      mPacketSender;
-    ::ll::TypedStorage<1, 1, bool>                                                  mUseAllowList;
     ::ll::TypedStorage<8, 8, ::AllowList&>                                          mAllowList;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
     ::ll::TypedStorage<8, 104, ::DenyList>                                          mServerDenyList;
@@ -269,11 +273,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithoutCSCG;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>> mBiomeDefinitionListWithCSCG;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEDUSystems>>           mEduSystems;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mServerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mScenarioId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mWorldId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                       mOwnerId;
-    ::ll::TypedStorage<8, 256, ::ServerNetworkHandlerDependencies const>           mDependencies;
+    ::ll::TypedStorage<8, 368, ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo>>
+                                                                         mServerConfigurationJoinInfo;
+    ::ll::TypedStorage<8, 128, ::Social::Events::ServerTelemetryData>    mServerTelemetryData;
+    ::ll::TypedStorage<8, 256, ::ServerNetworkHandlerDependencies const> mDependencies;
     // NOLINTEND
 
 public:
@@ -338,7 +341,8 @@ public:
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
         ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     message,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     ) /*override*/;
@@ -411,6 +415,8 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LoginPacket> packet) /*override*/;
 
+    virtual void handle(::NetworkIdentifier const& source, ::PartyChangedPacket const& packet) /*override*/;
+
     virtual void handle(::NetworkIdentifier const& source, ::MapCreateLockedCopyPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet) /*override*/;
@@ -444,6 +450,8 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::ResourcePackChunkRequestPacket const& packet) /*override*/;
+
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePacksReadyForValidationPacket const&) /*override*/;
 
     virtual void handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet) /*override*/;
 
@@ -512,6 +520,9 @@ public:
 
     virtual void handle(::NetworkIdentifier const& source, ::ServerboundDataStorePacket const& packet) /*override*/;
 
+    virtual void
+    handle(::NetworkIdentifier const& source, ::ServerboundDataDrivenScreenClosedPacket const& packet) /*override*/;
+
     virtual void sendSubClientLoginMessageLocal(
         ::NetworkIdentifier const&          source,
         ::SubClientConnectionRequest const& connectionRequest,
@@ -544,35 +555,30 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ServerNetworkHandler(
-        ::GameCallbacks&                                            gameCallbacks,
-        ::Bedrock::NonOwnerPointer<::ILevel> const&                 level,
-        ::ServerNetworkSystem&                                      network,
-        ::PrivateKeyManager&                                        serverKeys,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
-        ::ServerLocator&                                            serverLocator,
-        ::PacketSender&                                             packetSender,
-        ::AllowList&                                                allowList,
-        ::PermissionsFile*                                          permissionsFile,
-        ::mce::UUID const&                                          hostPlayerId,
-        int                                                         maxChunkRadius,
-        int                                                         maxNumPlayers,
-        ::MinecraftCommands&                                        commandHandler,
-        ::IMinecraftApp&                                            app,
-        ::std::unordered_map<::PackIdVersion, ::std::string> const& packIdToContentKey,
-        ::Scheduler&                                                scheduler,
-        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>        textFilteringProcessor,
-        ::optional_ref<::MinecraftGameTest>                         gameTest,
-        ::ServiceReference<::AppConfigs>                            appConfigs,
-        ::NetworkServerConfig                                       networkServerConfig,
-        ::std::shared_ptr<::ScriptPackSettingsCache>                packSettingsCache,
-        ::ServerNetworkHandlerDependencies&&                        dependencies
-    );
-
-    MCAPI void SetServerIdentifiers(
-        ::std::string const& serverId,
-        ::std::string const& worldId,
-        ::std::string const& scenarioId,
-        ::std::string const& ownerId
+        ::GameCallbacks&                                                           gameCallbacks,
+        ::Bedrock::NonOwnerPointer<::ILevel> const&                                level,
+        ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo> const& serverJoinInfo,
+        ::Social::Events::ServerTelemetryData const&                               serveTelemetryData,
+        ::ServerNetworkSystem&                                                     network,
+        ::PrivateKeyManager&                                                       serverKeys,
+        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager>                minecraftServiceKeys,
+        ::ServerLocator&                                                           serverLocator,
+        ::PacketSender&                                                            packetSender,
+        ::AllowList&                                                               allowList,
+        ::PermissionsFile*                                                         permissionsFile,
+        ::std::string const&                                                       hostPublicKey,
+        int                                                                        maxChunkRadius,
+        int                                                                        maxNumPlayers,
+        ::MinecraftCommands&                                                       commandHandler,
+        ::IMinecraftApp&                                                           app,
+        ::std::unordered_map<::PackIdVersion, ::std::string> const&                packIdToContentKey,
+        ::Scheduler&                                                               scheduler,
+        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>                       textFilteringProcessor,
+        ::optional_ref<::MinecraftGameTest>                                        gameTest,
+        ::ServiceReference<::AppConfigs>                                           appConfigs,
+        ::NetworkServerConfig                                                      networkServerConfig,
+        ::std::shared_ptr<::ScriptPackSettingsCache>                               packSettingsCache,
+        ::ServerNetworkHandlerDependencies&&                                       dependencies
     );
 
     MCAPI void _buildSubChunkPacketData(
@@ -601,6 +607,8 @@ public:
 
     MCAPI int _getActiveAndInProgressPlayerCount(::mce::UUID excludePlayer) const;
 
+    MCAPI ::std::optional<::MessToken> _getJoinerMessToken(::std::string const& eduTokenChain);
+
     MCAPI ::std::optional<::MessToken> _getMessToken(::std::string const& eduTokenChain, bool isHostingPlayer);
 
     MCAPI ::ResourcePackFileUploadManager&
@@ -624,7 +632,9 @@ public:
 
     MCAPI void _handleSetDifficulty(::ServerPlayer const& player, ::SetDifficultyPacket const& packet) const;
 
-    MCAPI bool _isPrimaryPlayerInServer(::mce::UUID playerId) const;
+    MCAPI bool _isPrimaryOrSecondaryPlayerInServer(::mce::UUID const& playerId) const;
+
+    MCAPI bool _isPrimaryPlayerInServer(::mce::UUID const& playerId) const;
 
     MCAPI bool _isServerTextEnabled(::ServerTextEvent const& textEvent) const;
 
@@ -640,10 +650,7 @@ public:
         ::PlayerAuthenticationInfo const&         playerInfo
     );
 
-    MCAPI bool _playerHasPermissionToFly(
-        ::UserEntityIdentifierComponent const* userIdentifier,
-        ::ServerPlayer const*                  serverPlayer
-    ) const;
+    MCAPI bool _playerHasPermissionToFly(::ServerPlayer const* serverPlayer) const;
 
     MCAPI void _processServerAuthPlayerActions(
         ::ServerPlayer&             player,
@@ -714,8 +721,6 @@ public:
         ::ResourcePackClientResponsePacket const& packet
     );
 
-    MCAPI ::PlayerAuthenticationInfo fetchPlayerAuthenticationInfo(::NetworkIdentifier const& source);
-
     MCAPI void onReady_ClientGeneration(::Player& newPlayer, ::NetworkIdentifier const& source);
 
     MCAPI void persistPlayerPermissionsToDisk(
@@ -737,7 +742,7 @@ public:
 
     MCAPI void setNewPlayerPermissions(::ServerPlayer& newPlayer);
 
-    MCAPI bool trytLoadPlayer(
+    MCAPI bool tryToLoadPlayer(
         ::ServerPlayer&                   player,
         ::ConnectionRequest const&        connectionRequest,
         ::PlayerAuthenticationInfo const& playerInfo
@@ -749,6 +754,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI_C static void _populateCDNValues(
+        ::std::vector<::PackInfoData>&                            resourcePacksData,
+        ::std::vector<::std::pair<::std::string, ::std::string>>& cdnUrls,
+        ::std::string const&                                      deviceModel
+    );
+
     MCAPI static void _updateCommandBlock(
         ::BlockSource&                             region,
         ::CommandBlockUpdatePacket const&          packet,
@@ -762,28 +773,30 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::GameCallbacks&                                            gameCallbacks,
-        ::Bedrock::NonOwnerPointer<::ILevel> const&                 level,
-        ::ServerNetworkSystem&                                      network,
-        ::PrivateKeyManager&                                        serverKeys,
-        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager> minecraftServiceKeys,
-        ::ServerLocator&                                            serverLocator,
-        ::PacketSender&                                             packetSender,
-        ::AllowList&                                                allowList,
-        ::PermissionsFile*                                          permissionsFile,
-        ::mce::UUID const&                                          hostPlayerId,
-        int                                                         maxChunkRadius,
-        int                                                         maxNumPlayers,
-        ::MinecraftCommands&                                        commandHandler,
-        ::IMinecraftApp&                                            app,
-        ::std::unordered_map<::PackIdVersion, ::std::string> const& packIdToContentKey,
-        ::Scheduler&                                                scheduler,
-        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>        textFilteringProcessor,
-        ::optional_ref<::MinecraftGameTest>                         gameTest,
-        ::ServiceReference<::AppConfigs>                            appConfigs,
-        ::NetworkServerConfig                                       networkServerConfig,
-        ::std::shared_ptr<::ScriptPackSettingsCache>                packSettingsCache,
-        ::ServerNetworkHandlerDependencies&&                        dependencies
+        ::GameCallbacks&                                                           gameCallbacks,
+        ::Bedrock::NonOwnerPointer<::ILevel> const&                                level,
+        ::std::optional<::ServerConfiguration::ServerConfigurationJoinInfo> const& serverJoinInfo,
+        ::Social::Events::ServerTelemetryData const&                               serveTelemetryData,
+        ::ServerNetworkSystem&                                                     network,
+        ::PrivateKeyManager&                                                       serverKeys,
+        ::Bedrock::NotNullNonOwnerPtr<::MinecraftServiceKeyManager>                minecraftServiceKeys,
+        ::ServerLocator&                                                           serverLocator,
+        ::PacketSender&                                                            packetSender,
+        ::AllowList&                                                               allowList,
+        ::PermissionsFile*                                                         permissionsFile,
+        ::std::string const&                                                       hostPublicKey,
+        int                                                                        maxChunkRadius,
+        int                                                                        maxNumPlayers,
+        ::MinecraftCommands&                                                       commandHandler,
+        ::IMinecraftApp&                                                           app,
+        ::std::unordered_map<::PackIdVersion, ::std::string> const&                packIdToContentKey,
+        ::Scheduler&                                                               scheduler,
+        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>                       textFilteringProcessor,
+        ::optional_ref<::MinecraftGameTest>                                        gameTest,
+        ::ServiceReference<::AppConfigs>                                           appConfigs,
+        ::NetworkServerConfig                                                      networkServerConfig,
+        ::std::shared_ptr<::ScriptPackSettingsCache>                               packSettingsCache,
+        ::ServerNetworkHandlerDependencies&&                                       dependencies
     );
     // NOLINTEND
 
@@ -796,14 +809,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
         ::SubClientId              senderSubId,
         ::SubClientId
     );
-#endif
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -819,7 +830,6 @@ public:
 
     MCFOLD void $onPlayerReady(::Player& player);
 
-#ifdef LL_PLAT_S
     MCAPI void $handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
         ::std::error_code const&                              errorCode,
@@ -840,7 +850,6 @@ public:
         ::NetworkIdentifier const& netId,
         ::SubClientId              clientSubId
     );
-#endif
 
     MCAPI void $sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data);
 
@@ -850,7 +859,8 @@ public:
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
         ::Connection::DisconnectionStage const   disconnectStage,
-        ::std::string const&                     message,
+        ::std::string const&                     messageFromServer,
+        ::std::string const&                     messageBodyOverride,
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
     );
@@ -920,6 +930,8 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LoginPacket> packet);
 
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PartyChangedPacket const& packet);
+
     MCAPI void $handle(::NetworkIdentifier const& source, ::MapCreateLockedCopyPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet);
@@ -951,6 +963,8 @@ public:
     MCAPI void $handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackChunkRequestPacket const& packet);
+
+    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePacksReadyForValidationPacket const&);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
 
@@ -1014,6 +1028,8 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataStorePacket const& packet);
 
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerboundDataDrivenScreenClosedPacket const& packet);
+
     MCAPI void $sendSubClientLoginMessageLocal(
         ::NetworkIdentifier const&          source,
         ::SubClientConnectionRequest const& connectionRequest,
@@ -1039,9 +1055,7 @@ public:
         ::std::optional<::MessToken> const& hostMessToken
     );
 
-#ifdef LL_PLAT_S
     MCAPI ::ServerPlayer* $_getServerPlayer(::NetworkIdentifier const& source, ::SubClientId subId);
-#endif
 
 
     // NOLINTEND

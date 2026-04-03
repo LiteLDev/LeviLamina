@@ -6,14 +6,14 @@ struct DurationFieldKeys {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk63c315;
-    ::ll::UntypedStorage<8, 32> mUnk1444fb;
-    ::ll::UntypedStorage<8, 32> mUnk3d9f57;
-    ::ll::UntypedStorage<8, 32> mUnk2c09eb;
-    ::ll::UntypedStorage<8, 32> mUnk5cd112;
-    ::ll::UntypedStorage<8, 32> mUnk7c19b9;
-    ::ll::UntypedStorage<8, 32> mUnkf84be7;
-    ::ll::UntypedStorage<8, 32> mUnkfdbd2d;
+    ::ll::UntypedStorage<8, 32> mUnkf68457;
+    ::ll::UntypedStorage<8, 32> mUnkbcb79a;
+    ::ll::UntypedStorage<8, 32> mUnkd5cc90;
+    ::ll::UntypedStorage<8, 32> mUnk25b82e;
+    ::ll::UntypedStorage<8, 32> mUnk507db7;
+    ::ll::UntypedStorage<8, 32> mUnk62919f;
+    ::ll::UntypedStorage<8, 32> mUnk39e877;
+    ::ll::UntypedStorage<8, 32> mUnk7c5a2d;
     // NOLINTEND
 
 public:

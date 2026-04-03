@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
-#include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
 
 // auto generated forward declare list
@@ -134,14 +133,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BiomeComponentVersion getType() const /*override*/;
-
     virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    OverworldGenerationRulesBiomeJsonComponent(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&&);
+
     MCAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&&);
 
@@ -158,17 +158,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
-
     MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD ::BiomeComponentVersion $getType() const;
-
-
+    MCAPI void* $ctor(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&&);
     // NOLINTEND
 
 public:

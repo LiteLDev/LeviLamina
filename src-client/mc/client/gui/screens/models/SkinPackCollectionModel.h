@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/SkinPackCollectionStatus.h"
 #include "mc/client/gui/screens/models/SkinPackModel.h"
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/UUID.h"
 
@@ -49,7 +49,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::SkinPackCollector>>>  mCollectors;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SkinPackModel>>                     mVanillaSkinPack;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::SkinPackModel>>>      mSkinPacks;
-    ::ll::TypedStorage<8, 2632, ::SkinPackModel>                                      mInvalidSkinPackModel;
+    ::ll::TypedStorage<8, 2640, ::SkinPackModel>                                      mInvalidSkinPackModel;
     ::ll::TypedStorage<8, 112, ::SkinHandle>                                          mPreviewSkin;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::std::unique_ptr<::IDlcBatchModel>>> mTrackedImports;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SkinPackCollectionModel::SkinPackCollectionEntitlementChangeListener>>
@@ -81,8 +81,6 @@ public:
     MCAPI bool areRecentSkinsDownloading() const;
 
     MCAPI void checkPendingSkinPack();
-
-    MCAPI void equipPreviewSkin(bool withToast);
 
     MCAPI ::SkinHandle getRecentSkinHandleAtIndex(int index);
 

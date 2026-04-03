@@ -92,9 +92,7 @@ public:
         ::MERSTextureMode                         mersTextureMode,
         ::mce::TexturePtr                         normalTexturePtr,
         ::NormalTextureMode                       normalTextureMode,
-        ::std::optional<::MERSUniformData> const& uniformData,
-        bool                                      hasMERS,
-        bool                                      hasNormals
+        ::std::optional<::MERSUniformData> const& uniformData
     );
     // NOLINTEND
 

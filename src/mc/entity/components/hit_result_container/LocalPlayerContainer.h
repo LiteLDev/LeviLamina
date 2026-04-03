@@ -16,7 +16,7 @@ struct LocalPlayerContainer : public ::IHitResultContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk68999c;
+    ::ll::UntypedStorage<8, 24> mUnke48230;
     // NOLINTEND
 
 public:

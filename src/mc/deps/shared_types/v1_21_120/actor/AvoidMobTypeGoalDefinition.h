@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                                              mSprintSpeedModifier;
     ::ll::TypedStorage<4, 4, float>                                              mWalkSpeedModifier;
     ::ll::TypedStorage<1, 1, bool>                                               mRemoveTarget;
-    ::ll::TypedStorage<8, 368, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnEscapeTrigger;
+    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_120::ActorDefinitionTrigger> mOnEscapeTrigger;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>             mSoundEvent;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>                          mSoundIntervalRange;
     ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_120::EntityTypes>             mAvoidMobs;

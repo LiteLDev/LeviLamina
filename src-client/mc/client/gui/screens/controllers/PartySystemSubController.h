@@ -14,6 +14,8 @@
 class MinecraftScreenModel;
 class ToastManager;
 class ToastMessage;
+namespace Parties { struct PartyDestinationGathering; }
+namespace Parties { struct PartyDestinationRealm; }
 namespace Parties { struct PartyDestinationXblP2P; }
 namespace Parties { struct PartyEventAcceptInviteFailed; }
 namespace Parties { struct PartyEventCreateFailed; }
@@ -68,7 +70,11 @@ public:
         ::ToastManager&                                       toastManager
     );
 
-    MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P dest);
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationGathering destGathering);
+
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationRealm destRealm);
+
+    MCAPI void _onDestinationChange(::Parties::PartyDestinationXblP2P destXbl);
 
     MCAPI void _onEvent(::Parties::PartyEventCreateFailed const&);
 

@@ -8,12 +8,12 @@ struct GlobalBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk81398f;
-    ::ll::UntypedStorage<8, 24> mUnk29370d;
-    ::ll::UntypedStorage<8, 24> mUnk1ca62b;
-    ::ll::UntypedStorage<8, 24> mUnkf26a6b;
-    ::ll::UntypedStorage<8, 24> mUnk910e68;
-    ::ll::UntypedStorage<8, 24> mUnkcf818f;
+    ::ll::UntypedStorage<8, 24> mUnk6790fa;
+    ::ll::UntypedStorage<8, 24> mUnkc171fb;
+    ::ll::UntypedStorage<8, 24> mUnk6497e0;
+    ::ll::UntypedStorage<8, 24> mUnkf3c3d0;
+    ::ll::UntypedStorage<8, 24> mUnk3bb4a0;
+    ::ll::UntypedStorage<8, 24> mUnkf8d465;
     // NOLINTEND
 
 public:

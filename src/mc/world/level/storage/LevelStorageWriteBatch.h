@@ -99,6 +99,8 @@ public:
     // NOLINTBEGIN
     MCAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
 
+    MCAPI void addFlushCallback(::std::function<void()> callback);
+
     MCAPI void clear();
     // NOLINTEND
 

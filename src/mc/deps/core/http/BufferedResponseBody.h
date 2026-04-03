@@ -12,7 +12,7 @@ class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5fc0ed;
+    ::ll::UntypedStorage<8, 24> mUnkdaa3b5;
     ::ll::UntypedStorage<1, 1>  mUnkea5b17;
     // NOLINTEND
 

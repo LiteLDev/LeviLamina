@@ -35,6 +35,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                newsTitle;
     ::ll::TypedStorage<8, 32, ::std::string>                                newsDescription;
     ::ll::TypedStorage<1, 1, ::OreUI::NetworkWorldType>                     type;
+    ::ll::TypedStorage<1, 1, bool>                                          mIsSupportedForPartyTravel;
     // NOLINTEND
 
 public:

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace JsonRpc {
 
 class JsonRpcNullResult {
@@ -14,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk53a833;
-    ::ll::UntypedStorage<8, 32> mUnk23a12f;
+    ::ll::UntypedStorage<8, 32> mUnkf24f71;
     ::ll::UntypedStorage<1, 1>  mUnk6f97cf;
     // NOLINTEND
 
@@ -28,12 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~JsonRpcNullResult();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

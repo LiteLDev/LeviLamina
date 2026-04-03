@@ -92,7 +92,7 @@ public:
 
     virtual ::ChatOptions& getChatOptions() = 0;
 
-    virtual ::std::array<::std::unique_ptr<::Option>, 777> const& getAllRegisteredOptions() = 0;
+    virtual ::std::array<::std::unique_ptr<::Option>, 803> const& getAllRegisteredOptions() = 0;
 
     virtual void forEachOption(::std::function<void(::Option*)>) = 0;
 

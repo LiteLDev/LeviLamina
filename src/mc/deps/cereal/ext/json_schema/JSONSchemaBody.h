@@ -20,30 +20,35 @@ struct JSONSchemaBody : public ::cereal::ext::internal::JSONSchemaValidation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk1b79c8;
+    ::ll::UntypedStorage<8, 40> mUnkd6996f;
     ::ll::UntypedStorage<1, 2>  mUnk9bbde5;
     ::ll::UntypedStorage<8, 80> mUnk88eae3;
     ::ll::UntypedStorage<8, 80> mUnk16357b;
-    ::ll::UntypedStorage<8, 32> mUnk813aa7;
-    ::ll::UntypedStorage<8, 32> mUnk2db52f;
-    ::ll::UntypedStorage<8, 24> mUnk889be1;
-    ::ll::UntypedStorage<8, 24> mUnkafc4ae;
+    ::ll::UntypedStorage<8, 32> mUnkbfdd3d;
+    ::ll::UntypedStorage<8, 32> mUnk7709e1;
+    ::ll::UntypedStorage<8, 24> mUnk6e30f4;
+    ::ll::UntypedStorage<8, 24> mUnkbc36d1;
+    ::ll::UntypedStorage<8, 24> mUnk843de3;
     ::ll::UntypedStorage<8, 16> mUnk200d94;
     ::ll::UntypedStorage<8, 16> mUnkdb80fe;
     ::ll::UntypedStorage<8, 16> mUnk3b0c00;
-    ::ll::UntypedStorage<8, 32> mUnkdb5419;
-    ::ll::UntypedStorage<8, 40> mUnkeb7b38;
-    ::ll::UntypedStorage<8, 24> mUnk3c894b;
-    ::ll::UntypedStorage<8, 24> mUnk4c08b2;
+    ::ll::UntypedStorage<8, 32> mUnk3afd6b;
+    ::ll::UntypedStorage<8, 40> mUnk783f83;
+    ::ll::UntypedStorage<8, 24> mUnkbc586d;
+    ::ll::UntypedStorage<8, 24> mUnk2c73b5;
+    ::ll::UntypedStorage<8, 40> mUnkb8b0f1;
+    ::ll::UntypedStorage<8, 40> mUnkc88887;
+    ::ll::UntypedStorage<8, 72> mUnkf43729;
+    ::ll::UntypedStorage<1, 2>  mUnke60310;
+    ::ll::UntypedStorage<8, 40> mUnk5c52d2;
+    ::ll::UntypedStorage<8, 72> mUnk938bb8;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JSONSchemaBody();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI JSONSchemaBody();
+
     MCNAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCNAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
@@ -73,6 +78,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);

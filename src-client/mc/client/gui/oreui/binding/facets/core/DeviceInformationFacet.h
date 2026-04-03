@@ -6,7 +6,7 @@
 #include "mc/client/gui/oreui/binding/FacetBase.h"
 #include "mc/client/gui/oreui/binding/FacetTaskState.h"
 #include "mc/client/gui/oreui/binding/FacetTaskTracker.h"
-#include "mc/client/gui/oreui/binding/facets/core/InputMethod.h"
+#include "mc/client/gui/oreui/input/InputMethod.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
@@ -67,6 +67,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                    mGuiScale;
     ::ll::TypedStorage<4, 4, int>                                                    mGuiScaleModifier;
     ::ll::TypedStorage<4, 4, int>                                                    mGuiScaleBase;
+    ::ll::TypedStorage<4, 4, int>                                                    mDefaultNetworkMaxPlayers;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                mStorageUpdateTime;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IStorageInfoUpdater>>        mStorageInfoUpdater;
     ::ll::TypedStorage<4, 4, ::FileStorageDirectory>                                 mStorageType;
@@ -108,6 +109,8 @@ public:
     MCAPI void _fillStorageInfo();
 
     MCAPI void changeStorage();
+
+    MCAPI int defaultNetworkMaxPlayers() const;
 
     MCFOLD ::std::vector<::Social::MultiplayerServiceIdentifier> const& getActiveMultiplayerServiceIds() const;
 

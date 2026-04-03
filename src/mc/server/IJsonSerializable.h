@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~IJsonSerializable();
 
-    virtual void serialize(::Json::Value&) = 0;
+    virtual ::Json::Value serialize() const = 0;
 
-    virtual void deserialize(::Json::Value&) = 0;
+    virtual void deserialize(::Json::Value const&) = 0;
     // NOLINTEND
 
 public:

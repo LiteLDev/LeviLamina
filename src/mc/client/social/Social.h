@@ -20,18 +20,14 @@ namespace Social {
 // NOLINTBEGIN
 MCNAPI_C void CoherentBind(::cohtml::Binder* binder, ::Social::PlayerProfileState* state);
 
-MCNAPI_C ::std::string bedrockClientErrorToString(int errorCode);
+MCNAPI_C ::std::string identityErrorToUserFacingString(::std::error_code error);
 
 MCNAPI_C bool isSignInError(::std::error_code const& code);
-
-MCNAPI_C ::std::string playfabErrorToString(int errorCode);
 
 MCNAPI_C ::Social::MultiplayerServiceIdentifier serviceIdentifierFromString(::std::string_view idString);
 
 MCNAPI_C ::Bedrock::Threading::Async<::std::pair<::std::error_code, ::Social::XsapiHandle<::XUser*>>>
 signInCompleteHelper(::XUser* user, long hr);
-
-MCNAPI_C ::std::string xblErrorToString(int errorCode);
 // NOLINTEND
 
 // static variables

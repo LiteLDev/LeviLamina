@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
+class ScriptPackConfigurationManager;
 class ServerLevel;
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
@@ -21,6 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk7f2275;
+    ::ll::UntypedStorage<8, 24> mUnkc9f7d9;
     ::ll::UntypedStorage<8, 8>  mUnk4fb1f9;
     // NOLINTEND
 
@@ -33,14 +35,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptMinecraftNetModuleFactory() /*override*/ = default;
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptMinecraftNetModuleFactory(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
+    MCNAPI ScriptMinecraftNetModuleFactory(
+        ::Bedrock::NonOwnerPointer<::Scheduler>                      serverScheduler,
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
+        ::ServerLevel*                                               level
+    );
 
     MCNAPI void _addVersions();
 
@@ -55,15 +60,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const*& ModuleName();
-
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::Scheduler> serverScheduler, ::ServerLevel* level);
+    MCNAPI void* $ctor(
+        ::Bedrock::NonOwnerPointer<::Scheduler>                      serverScheduler,
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
+        ::ServerLevel*                                               level
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

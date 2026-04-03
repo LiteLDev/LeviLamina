@@ -45,9 +45,11 @@ public:
 
     virtual bool write(::gsl::span<uchar const>) = 0;
 
-    virtual void writeValidityFlag(bool) = 0;
+    virtual void writeAdditionalData(bool) = 0;
 
-    virtual void writeControlValue(uint) = 0;
+    virtual void writeAdditionalData(uint) = 0;
+
+    virtual void writeAdditionalData(::std::string_view const) = 0;
 
     virtual bool pushMember(::std::string_view const) = 0;
 

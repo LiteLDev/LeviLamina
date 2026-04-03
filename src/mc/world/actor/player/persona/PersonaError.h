@@ -10,7 +10,10 @@ enum class PersonaError : uint {
     InvalidPersona           = 3,
     LoadingAppearanceTimeOut = 4,
     DesyncedState            = 5,
-    Size                     = 6,
+    DownloadImportFailed     = 6,
+    DownloadImportCancelled  = 7,
+    MissingDownloader        = 8,
+    Size                     = 9,
 };
 
 }

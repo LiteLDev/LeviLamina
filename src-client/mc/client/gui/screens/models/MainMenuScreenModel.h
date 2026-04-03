@@ -15,6 +15,7 @@
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/IdentityType.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/util/DownloadError.h"
 #include "mc/util/UploadState.h"
 
@@ -58,6 +59,7 @@ struct SearchQuery;
 struct SkinPickerUpsellTreatmentQuery;
 struct StoreCatalogItem;
 struct StoreCatalogRepository;
+struct StoreDataDrivenScreenParams;
 struct TransactionContext;
 struct WorldFileDownloadManager;
 struct WorldFileUploadManager;
@@ -67,10 +69,12 @@ namespace Clubs { struct FeedItem; }
 namespace Core { class Path; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Realms { struct RealmId; }
+namespace Realms { struct RealmsWorldContext; }
 namespace Realms { struct World; }
 namespace Realms::Stories { struct FacetStateManager; }
 namespace Realms::Stories { struct RealmEvent; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
+namespace Social { struct EduDedicatedServerDetails; }
 namespace Social { struct User; }
 namespace mce { class UUID; }
 // clang-format on
@@ -199,6 +203,8 @@ public:
 
     MCAPI ::std::shared_ptr<::Realms::Stories::FacetStateManager> const getRealmsStoriesFacetStateManager() const;
 
+    MCAPI ::std::shared_ptr<::Realms::RealmsWorldContext> const getRealmsWorldContext() const;
+
     MCAPI ::SkinPackCollectionModel& getSkinPackCollection();
 
     MCAPI ::std::shared_ptr<::SkinPickerUpsellTreatmentQuery>
@@ -247,8 +253,6 @@ public:
 
     MCAPI void launchSunsettingUri();
 
-    MCAPI void launchUpdateUri();
-
     MCAPI void navigateToChooseRealmScreen(
         ::std::function<void(::Realms::World)> callback,
         ::SlotSelectedAction                   action,
@@ -272,6 +276,13 @@ public:
     );
 
     MCAPI void navigateToEDULibraryRoot();
+
+    MCAPI void navigateToEDUServerResolvingProgressHandler(
+        ::Social::EduDedicatedServerDetails const& details,
+        ::std::string const&                       passcode,
+        ::std::shared_ptr<::PlayScreenModel>       model,
+        ::brstd::move_only_function<void()>&       reopenPasscodeEntry
+    );
 
     MCAPI void navigateToEDUUploadProgressHandler(
         ::std::string const&                                        levelId,
@@ -323,6 +334,8 @@ public:
     navigateToPurchaseOfferScreen(::mce::UUID const& uuid, ::StoreNavigationOrigin origin, ::std::string const&, bool);
 
     MCAPI void navigateToRealmsCreateScreen(::RealmsCreateParams const& createParams);
+
+    MCAPI bool navigateToRealmsOffers(::StoreDataDrivenScreenParams const& params);
 
     MCAPI void navigateToRealmsPDPViewAllPacksScreen();
 
@@ -378,7 +391,7 @@ public:
 
     MCAPI void setStoreCatalogItemViewed(::IStoreCatalogItem const& item) const;
 
-    MCAPI void setStoreCatalogItemViewed(::std::string const& productId, bool addToRecentlyViewed) const;
+    MCAPI void setStoreCatalogItemViewed(::std::string const& productId) const;
 
     MCAPI void submitReviewFor(::std::string const& productId, int rating, ::std::function<void()> successCallback);
 

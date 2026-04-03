@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::entt::meta_any asAny();
+    MCNAPI void _addReference();
 
     MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 

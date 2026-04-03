@@ -6,7 +6,7 @@ class TickingTextures {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka21d9d;
+    ::ll::UntypedStorage<8, 24> mUnkc30a11;
     // NOLINTEND
 
 public:

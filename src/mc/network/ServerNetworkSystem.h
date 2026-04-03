@@ -68,7 +68,6 @@ public:
 
     MCAPI_C ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
-        bool                                                                         useJsonRpc,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 

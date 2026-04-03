@@ -30,7 +30,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
+        ::ll::TypedStorage<8, 176, ::BlockDescriptor> mBlockDescriptor;
         ::ll::TypedStorage<4, 4, float>               mWeight;
         // NOLINTEND
 
@@ -59,8 +59,8 @@ public:
     ::ll::TypedStorage<4, 8, ::IntRange>                                                   mCanopyRadius;
     ::ll::TypedStorage<4, 4, int>                                                          mLeafPlacementAttempts;
     ::ll::TypedStorage<8, 24, ::std::vector<::MangroveTreeCanopy::WeightedBlockReference>> mLeavesBlockDescriptors;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration>                         mCanopyDecoration;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                          mHangingBlockDescriptor;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration>                         mCanopyDecoration;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                                          mHangingBlockDescriptor;
     ::ll::TypedStorage<4, 12, ::ChanceInformation>                                         mHangingBlockPlacementChance;
     ::ll::TypedStorage<4, 4, int>                                                          mRequiredEmptyBlocks;
     ::ll::TypedStorage<4, 4, int>                                                          mExclusionRadiusXZ;
@@ -75,10 +75,12 @@ public:
     virtual ::std::optional<::BlockPos> placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&,
+        ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
+        ::std::vector<::BlockPos> const& attachmentPositions,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
     // NOLINTEND
 
@@ -88,10 +90,12 @@ public:
     MCAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&,
+        ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
         ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
+        ::std::vector<::BlockPos> const& attachmentPositions,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const;
 
 

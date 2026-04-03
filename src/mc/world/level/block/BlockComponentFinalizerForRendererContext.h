@@ -7,6 +7,7 @@
 class Experiments;
 class BlockCullingGroup;
 class GeometryGroup;
+class TextureShiftManager;
 struct AtlasItemManager;
 namespace ClientBlockPipeline { class MaterialRepository; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
@@ -22,6 +23,7 @@ public:
     ::ll::TypedStorage<8, 8, ::AtlasItemManager const&>                    mAtlasItemManager;
     ::ll::TypedStorage<8, 8, ::ClientBlockPipeline::MaterialRepository&>   mMaterialRepository;
     ::ll::TypedStorage<8, 8, ::Experiments const&>                         mExperiments;
+    ::ll::TypedStorage<8, 8, ::TextureShiftManager const&>                 mTextureShiftManager;
     // NOLINTEND
 
 public:

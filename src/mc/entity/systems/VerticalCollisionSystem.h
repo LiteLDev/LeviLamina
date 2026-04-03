@@ -18,6 +18,7 @@
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
+struct ApplyRestitutionComponent;
 struct BounceComponent;
 struct DimensionTypeComponent;
 struct LocalConstBlockSourceFactoryComponent;
@@ -38,7 +39,7 @@ class VerticalCollisionSystem
           ::MoveRequestComponent,
           ::AABBShapeComponent>,
       ::Write<::StateVectorComponent>,
-      ::AddRemove<::BounceComponent>,
+      ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
       ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
@@ -55,7 +56,7 @@ public:
                 ::MoveRequestComponent,
                 ::AABBShapeComponent>,
             ::Write<::StateVectorComponent>,
-            ::AddRemove<::BounceComponent>,
+            ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
@@ -71,7 +72,7 @@ public:
                 ::MoveRequestComponent,
                 ::AABBShapeComponent>,
             ::Write<::StateVectorComponent>,
-            ::AddRemove<::BounceComponent>,
+            ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext,
@@ -97,7 +98,7 @@ public:
                 ::MoveRequestComponent,
                 ::AABBShapeComponent>,
             ::Write<::StateVectorComponent>,
-            ::AddRemove<::BounceComponent>,
+            ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& executionContext
@@ -117,7 +118,7 @@ public:
                 ::MoveRequestComponent,
                 ::AABBShapeComponent>,
             ::Write<::StateVectorComponent>,
-            ::AddRemove<::BounceComponent>,
+            ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext
@@ -133,7 +134,7 @@ public:
                 ::MoveRequestComponent,
                 ::AABBShapeComponent>,
             ::Write<::StateVectorComponent>,
-            ::AddRemove<::BounceComponent>,
+            ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
             ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>& strictContext,

@@ -15,8 +15,8 @@ class TextObjectLocalizedTextWithParams : public ::ITextObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb39e21;
-    ::ll::UntypedStorage<8, 8>  mUnk313cc5;
+    ::ll::UntypedStorage<8, 32> mUnkff954d;
+    ::ll::UntypedStorage<8, 8>  mUnkc4d1c3;
     // NOLINTEND
 
 public:

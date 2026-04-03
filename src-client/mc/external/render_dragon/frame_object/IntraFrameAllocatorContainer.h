@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/checked_resource_service/ServerResourcePointer.h"
+#include "mc/external/render_dragon/resources/ServerResourcePointer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,8 +33,8 @@ public:
         ) const;
 
         MCNAPI bool operator()(
-            ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const&,
-            ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const&
+            ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const& lhs,
+            ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource> const& rhs
         ) const;
         // NOLINTEND
     };

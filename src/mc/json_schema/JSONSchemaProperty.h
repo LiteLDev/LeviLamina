@@ -15,7 +15,7 @@ struct JSONSchemaProperty {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8cda1d;
+    ::ll::UntypedStorage<8, 32> mUnk110567;
     ::ll::UntypedStorage<1, 1>  mUnk4e5112;
     ::ll::UntypedStorage<1, 1>  mUnk8eba3a;
     ::ll::UntypedStorage<8, 24> mUnkfb161b;

@@ -17,7 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-    ::ll::TypedStorage<4, 4, int>            mSignalLevel;
+    ::ll::TypedStorage<2, 2, short>          mSignalLevel;
+    ::ll::TypedStorage<2, 2, short>          mPreviousSignalLevel;
     ::ll::TypedStorage<1, 1, bool>           mIsFirstTime;
     // NOLINTEND
 

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/SkeletalHierarchyIndex.h"
 #include "mc/world/actor/animation/ActorAnimationControllerPtr.h"
 #include "mc/world/actor/animation/ActorAnimationPlayer.h"
@@ -12,9 +13,9 @@
 // clang-format off
 class ActorAnimationControllerStatePlayer;
 class AnimationComponent;
+class ApplyAnimationContext;
 class BoneOrientation;
 class ExpressionNode;
-class HashedString;
 class RenderParams;
 struct AnimationVisitor;
 // clang-format on
@@ -43,6 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
@@ -82,6 +84,7 @@ public:
     );
 
     MCAPI void applyStateAnimationToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
@@ -117,6 +120,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight

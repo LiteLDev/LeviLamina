@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/world/containers/controllers/ContainerController.h"
+#include "mc/world/containers/controllers/FurnaceContainerController.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class ItemStackBase;
 class Recipes;
 // clang-format on
 
-class FurnaceInputContainerController : public ::ContainerController {
+class FurnaceInputContainerController : public ::FurnaceContainerController {
 public:
     // member variables
     // NOLINTBEGIN

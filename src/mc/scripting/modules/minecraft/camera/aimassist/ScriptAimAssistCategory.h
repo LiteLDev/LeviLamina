@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 // clang-format on
 
@@ -35,13 +37,17 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockPriorities() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockTagPriorities() const;
+    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
+    getBlockTagPriorities() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getDefaultBlockPriority() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getDefaultEntityPriority() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getEntityPriorities() const;
+
+    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
+    getEntityTypeFamilyPriorities() const;
 
     MCFOLD ::ScriptModuleMinecraft::ScriptAimAssistCategory&
     operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);

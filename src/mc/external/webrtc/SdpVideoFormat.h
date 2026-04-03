@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/webrtc/ScalabilityMode.h"
-
 namespace webrtc {
 
 struct SdpVideoFormat {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8c2b3f;
-    ::ll::UntypedStorage<8, 16> mUnk1c642e;
+    ::ll::UntypedStorage<8, 32> mUnkb9506a;
+    ::ll::UntypedStorage<8, 16> mUnkbf0a0f;
     ::ll::UntypedStorage<8, 48> mUnkf2462f;
     // NOLINTEND
 

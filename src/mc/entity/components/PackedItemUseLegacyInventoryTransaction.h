@@ -16,7 +16,7 @@ struct PackedItemUseLegacyInventoryTransaction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId>                                            mID;
+    ::ll::TypedStorage<8, 16, ::ItemStackLegacyRequestId>                                            mID;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>> mSlots;
     ::ll::TypedStorage<8, 264, ::ItemUseInventoryTransaction>                                        mTransaction;
     // NOLINTEND

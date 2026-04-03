@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IPackLoadContext;
+class PackLoadContext;
 struct ActorSpawnRuleData;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_60::Spawn { struct Contents; }
@@ -20,8 +20,13 @@ class ActorSpawnRuleDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::Puv::Loader<::SharedTypes::v1_21_60::Spawn::Contents>>         mLoader;
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t>> mLoaderV0;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::Puv::Loader<::SharedTypes::v1_21_60::Spawn::Contents, ::SharedTypes::v1_21_60::Spawn::Contents>>
+        mLoader;
+    ::ll::TypedStorage<8, 256, ::Puv::SlicedLoader<::ActorSpawnRuleData, nullptr_t, nullptr_t, ::ActorSpawnRuleData>>
+        mLoaderV0;
     // NOLINTEND
 
 public:
@@ -33,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActorSpawnRuleDataLoader(
         ::cereal::ReflectionCtx const& ctx,
-        ::IPackLoadContext const&      packLoadContext,
+        ::PackLoadContext const&       packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
     );
 
@@ -47,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::cereal::ReflectionCtx const& ctx,
-        ::IPackLoadContext const&      packLoadContext,
+        ::PackLoadContext const&       packLoadContext,
         ::br::spawn::SpawnPlacements&  spawnPlacements
     );
     // NOLINTEND

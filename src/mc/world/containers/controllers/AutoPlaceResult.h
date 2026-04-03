@@ -6,7 +6,7 @@ struct AutoPlaceResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf5d262;
+    ::ll::UntypedStorage<8, 32> mUnk6ad71a;
     ::ll::UntypedStorage<4, 4>  mUnkcc0bf9;
     ::ll::UntypedStorage<1, 1>  mUnkec3cd5;
     // NOLINTEND

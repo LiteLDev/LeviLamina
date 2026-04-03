@@ -8,7 +8,7 @@ class QRCode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6df00f;
+    ::ll::UntypedStorage<8, 8> mUnk32ecba;
     // NOLINTEND
 
 public:

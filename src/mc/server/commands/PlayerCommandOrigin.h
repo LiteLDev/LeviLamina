@@ -66,7 +66,7 @@ public:
 
     virtual ::std::optional<::Vec3> getCursorHitPos() const /*override*/;
 
-    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     virtual bool isSelectorExpansionAllowed() const /*override*/;
 
@@ -102,7 +102,9 @@ public:
 
     MCAPI ::Actor* $getEntity() const;
 
+#ifdef LL_PLAT_S
     MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+#endif
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
@@ -110,9 +112,7 @@ public:
 
     MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
-#endif
+    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCFOLD bool $isSelectorExpansionAllowed() const;
 

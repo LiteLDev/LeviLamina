@@ -7,11 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal::internal { struct DescriptionConfig; }
 namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct SaveState; }
 // clang-format on
 
@@ -41,9 +42,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(
-        ::entt::meta_ctx const&               ctx,
-        ::entt::meta_type const&              type,
-        ::cereal::internal::DescriptionConfig config
+        ::cereal::internal::ReflectionContext const& ctx,
+        ::entt::meta_type const&                     type,
+        ::cereal::DescriptionConfig                  config
     ) const;
     // NOLINTEND
 
@@ -52,6 +53,13 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::entt::meta_data
     findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
+
+    MCNAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
+        ::entt::meta_type const& source,
+        ::entt::meta_type const& curr,
+        ::std::string_view       family,
+        bool                     serializeDeprecated
+    );
     // NOLINTEND
 
 public:

@@ -8,8 +8,8 @@ struct ProbabilityBlockPaletteItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkffdf22;
-    ::ll::UntypedStorage<8, 24> mUnk10dfdc;
+    ::ll::UntypedStorage<8, 40> mUnkf84bce;
+    ::ll::UntypedStorage<8, 24> mUnkd6eb56;
     // NOLINTEND
 
 public:

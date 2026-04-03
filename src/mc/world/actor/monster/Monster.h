@@ -10,6 +10,7 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
@@ -39,7 +40,8 @@ public:
 
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
@@ -85,7 +87,7 @@ public:
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

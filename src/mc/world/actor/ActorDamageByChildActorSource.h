@@ -84,9 +84,9 @@ public:
     MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCFOLD bool $getDamagingEntityIsCreative() const;
+    MCAPI bool $getDamagingEntityIsCreative() const;
 
-    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
+    MCAPI bool $getDamagingEntityIsWorldBuilder() const;
 
     MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 

@@ -17,8 +17,8 @@ class FlatFile : public ::Core::FileImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc183e8;
-    ::ll::UntypedStorage<8, 32> mUnkb8624e;
+    ::ll::UntypedStorage<8, 8>  mUnk45570e;
+    ::ll::UntypedStorage<8, 32> mUnkc03435;
     ::ll::UntypedStorage<8, 8>  mUnk4bee19;
     ::ll::UntypedStorage<8, 8>  mUnk7e387d;
     // NOLINTEND

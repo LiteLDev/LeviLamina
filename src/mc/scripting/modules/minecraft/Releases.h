@@ -13,6 +13,8 @@ namespace ScriptModuleMinecraft::Releases {
 // NOLINTBEGIN
 MCAPI ::std::add_lvalue_reference_t<::ScriptModuleMinecraft::Releases::VersionRelease const[]> ALL_RELEASES();
 
+MCAPI ::Scripting::Version const& LATEST_RELEASE();
+
 MCAPI ::Scripting::Version const& V010();
 
 MCAPI ::Scripting::Version const& V1_0_0();
@@ -64,6 +66,10 @@ MCAPI ::Scripting::Version const& V2_2_0();
 MCAPI ::Scripting::Version const& V2_3_0();
 
 MCAPI ::Scripting::Version const& V2_4_0();
+
+MCAPI ::Scripting::Version const& V2_5_0();
+
+MCAPI ::Scripting::Version const& V2_6_0();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Releases

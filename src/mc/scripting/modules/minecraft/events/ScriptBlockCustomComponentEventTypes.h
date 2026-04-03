@@ -15,9 +15,10 @@ enum class ScriptBlockCustomComponentEventTypes : ushort {
     OnPlayerBreak       = 7,
     OnPlace             = 8,
     OnBreak             = 9,
-    BeforeOnPlayerPlace = 10,
-    OnRedstoneUpdate    = 11,
-    Count               = 12,
+    OnActor             = 10,
+    BeforeOnPlayerPlace = 11,
+    OnRedstoneUpdate    = 12,
+    Count               = 13,
 };
 
 }

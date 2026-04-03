@@ -8,8 +8,8 @@ struct PersistenceQueryGroupOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk266c7e;
-    ::ll::UntypedStorage<8, 40> mUnk918c22;
+    ::ll::UntypedStorage<8, 40> mUnka07d03;
+    ::ll::UntypedStorage<8, 40> mUnk522891;
     ::ll::UntypedStorage<4, 8>  mUnk9a25f4;
     ::ll::UntypedStorage<4, 8>  mUnkdcf3ee;
     // NOLINTEND

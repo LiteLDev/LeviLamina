@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
+#include "mc/world/level/block/chunk_volume/VolumeOf.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +21,7 @@ MCAPI ::std::vector<bool> calculateBlendingNeeds(::BiomeChunkVolume::BiomeSample
 MCAPI ::std::vector<::Vec3> const
 calculateVoronoiOffsets(uint levelSeed, ::BlockPos bufferWorldOrigin, int bufferSizeXZ, int bufferSizeY);
 
-MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*> makeBiomeVolumeForChunk(
+MCAPI ::ChunkVolume::VolumeOf<::Biome> makeBiomeVolumeForChunk(
     ::BiomeChunkVolume::BiomeSamplesContainer const& biomeData,
     short                                            chunkHeight,
     ::BlockPos                                       chunkMin,

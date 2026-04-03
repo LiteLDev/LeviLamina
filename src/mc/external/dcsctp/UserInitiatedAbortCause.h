@@ -18,7 +18,7 @@ class UserInitiatedAbortCause : public ::dcsctp::Parameter,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4bcc41;
+    ::ll::UntypedStorage<8, 32> mUnkcbf4a2;
     // NOLINTEND
 
 public:

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,13 +19,21 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription>     mDescription;
-    ::ll::TypedStorage<8, 368, ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions>     mConditions;
+    ::ll::TypedStorage<8, 272, ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions>     mConditions;
     ::ll::TypedStorage<8, 664, ::std::optional<::SharedTypes::v1_21_10::ScatterParamsData>> mDistribution;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AutomaticFeatureRulesData& operator=(AutomaticFeatureRulesData const&);
+    AutomaticFeatureRulesData(AutomaticFeatureRulesData const&);
+    AutomaticFeatureRulesData();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AutomaticFeatureRulesData(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
+
     MCAPI ~AutomaticFeatureRulesData();
     // NOLINTEND
 
@@ -37,9 +44,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRulesData&&);
     // NOLINTEND
 
 public:

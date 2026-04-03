@@ -20,11 +20,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6ffd26;
+    ::ll::UntypedStorage<8, 32> mUnk2712c2;
     ::ll::UntypedStorage<1, 1>  mUnkf48bba;
-    ::ll::UntypedStorage<8, 32> mUnkbf1d05;
+    ::ll::UntypedStorage<8, 32> mUnk606277;
     ::ll::UntypedStorage<4, 8>  mUnk54fb0f;
-    ::ll::UntypedStorage<8, 32> mUnkbf9cb9;
+    ::ll::UntypedStorage<8, 32> mUnkca689c;
     // NOLINTEND
 
 public:
@@ -58,6 +58,8 @@ public:
     MCNAPI ::ScriptStat& operator=(::ScriptStat const&);
 
     MCNAPI void reserveSize(uint64 size);
+
+    MCNAPI void setChildren(::std::vector<::ScriptStat>&& children);
 
     MCNAPI void setValues(::std::vector<::std::variant<int64, ::std::string>>&& values);
 

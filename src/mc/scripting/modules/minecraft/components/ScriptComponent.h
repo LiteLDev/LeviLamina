@@ -17,41 +17,21 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope const> mScope;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string> const> mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~ScriptComponent();
 
-    virtual ::std::string const& getTypeId_V1() const;
-
-    virtual ::std::string const& getTypeId_V2() const;
-
     virtual bool _isValid() const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptComponent(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::std::optional<::std::string> id);
     // NOLINTEND
 
 public:
@@ -63,10 +43,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getTypeId_V1() const;
-
-    MCFOLD ::std::string const& $getTypeId_V2() const;
-
 
     // NOLINTEND
 

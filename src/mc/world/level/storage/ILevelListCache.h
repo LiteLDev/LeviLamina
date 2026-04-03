@@ -50,6 +50,8 @@ public:
 
     virtual bool hasLevelWithId(::std::string const&) = 0;
 
+    virtual ::std::string getLevelIdFromPath(::Core::Path const&, ::Core::Path const&) = 0;
+
     virtual bool checkIfLevelIsCorruptOrMissing(::std::string const&) = 0;
 
     virtual void addObserver(::LevelListCacheObserver&) = 0;

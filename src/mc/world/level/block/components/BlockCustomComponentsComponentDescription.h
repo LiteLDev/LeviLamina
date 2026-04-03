@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockCustomComponentsComponentDescription& operator=(BlockCustomComponentsComponentDescription const&);
-    BlockCustomComponentsComponentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::string const& getName() const /*override*/;
@@ -48,8 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockCustomComponentsComponentDescription(::BlockCustomComponentsComponentDescription const&);
-
     MCAPI void addCustomComponent(
         ::std::string_view     compName,
         ::cereal::DynamicValue compData,
@@ -68,12 +61,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockCustomComponentsComponentDescription const&);
     // NOLINTEND
 
 public:

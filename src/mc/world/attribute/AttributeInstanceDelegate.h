@@ -30,7 +30,7 @@ public:
 
     virtual bool willChange(float, float, ::AttributeBuff const&);
 
-    virtual float change(float, float newValue, ::AttributeBuff const&);
+    virtual ::std::optional<float> change(float, float newValue, ::AttributeBuff const&);
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 
     MCFOLD bool $willChange(float, float, ::AttributeBuff const&);
 
-    MCAPI float $change(float, float newValue, ::AttributeBuff const&);
+    MCAPI ::std::optional<float> $change(float, float newValue, ::AttributeBuff const&);
 
     MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
 

@@ -27,7 +27,12 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int)>>      focusCollectionItem;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, int, int)>> scrollToGridItemOffset;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::std::string const&, int, ::std::string const&, int, int)>>
-                                                                           scrollToGridItemOffsetCollectionIndex;
+        scrollToGridItemOffsetCollectionIndex;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<void(::std::string const&, ::std::string const&, ::std::string const&, int, int)>>
+                                                                           scrollToCollectionItem;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> resetScrollWithin;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::std::string const&, int)>>
                                                                            setFocusToFocusIdWhenVisible;

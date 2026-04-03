@@ -8,8 +8,8 @@ struct MediaChannelParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbcb723;
-    ::ll::UntypedStorage<8, 24> mUnk9c8bef;
+    ::ll::UntypedStorage<8, 24> mUnkb96711;
+    ::ll::UntypedStorage<8, 24> mUnk42e435;
     ::ll::UntypedStorage<1, 1>  mUnk54612f;
     ::ll::UntypedStorage<1, 2>  mUnk353a07;
     // NOLINTEND

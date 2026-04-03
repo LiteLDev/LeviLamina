@@ -27,11 +27,11 @@ class EduWebService : public ::WebServices::IEduWebService, public ::Bedrock::Th
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3d9fcd;
-    ::ll::UntypedStorage<8, 64> mUnk1bb14b;
+    ::ll::UntypedStorage<8, 8>  mUnkc8518d;
+    ::ll::UntypedStorage<8, 64> mUnk94a7fb;
     ::ll::UntypedStorage<8, 64> mUnk3498df;
-    ::ll::UntypedStorage<8, 32> mUnk11b994;
-    ::ll::UntypedStorage<8, 8>  mUnk3d0bad;
+    ::ll::UntypedStorage<8, 32> mUnkc05d61;
+    ::ll::UntypedStorage<8, 8>  mUnkc67318;
     // NOLINTEND
 
 public:

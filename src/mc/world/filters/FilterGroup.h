@@ -83,7 +83,11 @@ public:
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
+    MCAPI_S bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
+
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
+
+    MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND

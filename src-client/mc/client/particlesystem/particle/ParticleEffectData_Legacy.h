@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersionConstant;
 struct ConstDeserializeDataParams;
 namespace Json { class Value; }
 namespace ParticleSystem { class EmitterInitialComponentBase; }
@@ -117,12 +116,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::v1_20_80::ParticleEffectData
     upgrade(::ParticleSystem::ParticleEffectData_Legacy&& legacyData);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

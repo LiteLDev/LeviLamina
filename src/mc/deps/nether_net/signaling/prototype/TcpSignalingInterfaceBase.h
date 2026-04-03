@@ -37,7 +37,7 @@ public:
         ::ll::UntypedStorage<8, 48> mUnk5f7cc6;
         ::ll::UntypedStorage<8, 48> mUnk8a97b1;
         ::ll::UntypedStorage<8, 24> mUnkde7d1e;
-        ::ll::UntypedStorage<8, 8>  mUnk406305;
+        ::ll::UntypedStorage<8, 8>  mUnk784a2d;
         // NOLINTEND
 
     public:
@@ -56,7 +56,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkfde063;
+    ::ll::UntypedStorage<8, 24>  mUnkc308bd;
     ::ll::UntypedStorage<8, 128> mUnkccca98;
     // NOLINTEND
 
@@ -72,6 +72,7 @@ public:
     virtual ~TcpSignalingInterfaceBase() /*override*/ = default;
 
     virtual void SendSignal(
+        ::NetherNet::NetworkID,
         ::NetherNet::NetworkID,
         ::std::string const&,
         ::std::function<void(::NetherNet::ESessionError)>&&

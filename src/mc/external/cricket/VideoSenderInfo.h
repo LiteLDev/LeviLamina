@@ -11,8 +11,8 @@ struct VideoSenderInfo : public ::cricket::MediaSenderInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk22548d;
-    ::ll::UntypedStorage<8, 40> mUnk9b2e2c;
+    ::ll::UntypedStorage<8, 24> mUnk648292;
+    ::ll::UntypedStorage<8, 40> mUnk85e0d3;
     ::ll::UntypedStorage<4, 4>  mUnkea1849;
     ::ll::UntypedStorage<4, 4>  mUnkfdf173;
     ::ll::UntypedStorage<4, 4>  mUnk9c849f;
@@ -39,7 +39,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk861749;
     ::ll::UntypedStorage<4, 4>  mUnkc47afa;
     ::ll::UntypedStorage<4, 4>  mUnk5887a3;
-    ::ll::UntypedStorage<8, 40> mUnk74091c;
+    ::ll::UntypedStorage<8, 40> mUnk22fdb6;
     ::ll::UntypedStorage<1, 2>  mUnk5f9966;
     ::ll::UntypedStorage<1, 2>  mUnka9dd6e;
     // NOLINTEND

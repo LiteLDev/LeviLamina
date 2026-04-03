@@ -56,6 +56,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
+
+    MCAPI_S void setFilters(::ActorFilterGroup& filters);
     // NOLINTEND
 
 public:

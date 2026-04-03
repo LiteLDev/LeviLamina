@@ -80,7 +80,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkd12db4;
         ::ll::UntypedStorage<8, 8>  mUnk212caf;
         ::ll::UntypedStorage<8, 8>  mUnk42e420;
-        ::ll::UntypedStorage<8, 64> mUnk4fa1c3;
+        ::ll::UntypedStorage<8, 64> mUnk337f0d;
         // NOLINTEND
 
     public:
@@ -96,12 +96,6 @@ public:
         // NOLINTEND
 
     public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_S void* $ctor(::ServerInstance::CreateServerLevelOps&&);
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
@@ -114,7 +108,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk238da3;
         ::ll::UntypedStorage<8, 8> mUnkfc9e39;
-        ::ll::UntypedStorage<8, 8> mUnked7b20;
+        ::ll::UntypedStorage<8, 8> mUnkbcd9d1;
         ::ll::UntypedStorage<4, 4> mUnkc92d4a;
         ::ll::UntypedStorage<1, 1> mUnka2dec3;
         ::ll::UntypedStorage<8, 8> mUnk3aa863;
@@ -133,7 +127,6 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk18547d;
         ::ll::UntypedStorage<1, 1> mUnk926d13;
-        ::ll::UntypedStorage<1, 1> mUnkeaef64;
         ::ll::UntypedStorage<1, 1> mUnk905ba3;
         ::ll::UntypedStorage<1, 1> mUnk5f5870;
         ::ll::UntypedStorage<8, 8> mUnk148b7c;
@@ -241,8 +234,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
-    MCAPI_C void _finishLoadingLinkedAssets(::ResourcePackManager& rpm);
-
     MCAPI void _resetServerScriptManager();
 
     MCAPI void _shutdownStorage(::Bedrock::UniqueOwnerPointer<::LevelStorage>& storage);
@@ -252,6 +243,8 @@ public:
     MCAPI bool _useClientSideChunkGeneration(::LevelData* levelData) const;
 
     MCAPI void disconnectAllClients(::Connection::DisconnectFailReason reason);
+
+    MCAPI_C void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
@@ -279,9 +272,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::brstd::move_only_function<
+    MCAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);
+
+    MCAPI_S static bool forceOffClientChunkGeneration(::LevelData& levelData);
     // NOLINTEND
 
 public:
@@ -302,8 +297,6 @@ public:
     MCAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
 
     MCAPI static ::std::string const& POST_INIT_ERROR();
-
-    MCAPI static ::std::chrono::nanoseconds const& SERVER_MAX_DELAY_BEFORE_SLOWDOWN();
     // NOLINTEND
 
 public:

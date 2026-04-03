@@ -18,8 +18,8 @@ class Manager : public ::CodeBuilder::IManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk60b204;
-    ::ll::UntypedStorage<8, 8> mUnk89b328;
+    ::ll::UntypedStorage<8, 8> mUnk5e1ae7;
+    ::ll::UntypedStorage<8, 8> mUnk67ed09;
     // NOLINTEND
 
 public:

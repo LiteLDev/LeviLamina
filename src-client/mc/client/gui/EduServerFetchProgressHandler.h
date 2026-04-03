@@ -6,6 +6,7 @@
 #include "mc/client/gui/EmptyProgressHandler.h"
 #include "mc/client/gui/ProgressAnimation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/actor/player/LoadingState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +21,8 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::EDUServersScreenController>> mEduServersScreenController;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mEduServerFetchStartTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mMinimumDisplayInterval;
+    ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mTimeOutTime;
+    ::ll::TypedStorage<4, 4, ::LoadingState>                                            mLoadingState;
     // NOLINTEND
 
 public:
@@ -40,6 +43,8 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
+
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
 
     virtual ~EduServerFetchProgressHandler() /*override*/ = default;
     // NOLINTEND
@@ -63,7 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
@@ -72,6 +77,8 @@ public:
     MCAPI ::std::string $getName() const;
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
+
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
     // NOLINTEND
 
 public:

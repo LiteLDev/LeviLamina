@@ -25,6 +25,7 @@ public:
     ::ll::TypedStorage<4, 4, ::ui::DirtyFlag>                                    mDirty;
     ::ll::TypedStorage<1, 1, bool>                                               mCreatedScreen;
     ::ll::TypedStorage<1, 1, bool>                                               mSentResponse;
+    ::ll::TypedStorage<1, 1, bool>                                               mUnhideTab;
     ::ll::TypedStorage<8, 8, ::DynamicFormScreenController*>                     mDynamicFormScreenController;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ServerFormBindingInformation>> mBindingData;
     // NOLINTEND
@@ -40,7 +41,7 @@ public:
 
     virtual void onOpen() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification event) /*override*/;
 
     virtual void onTerminate() /*override*/;
     // NOLINTEND
@@ -52,7 +53,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::optional<uint>                    formId,
         ::std::string const&                     formData,
-        bool                                     isServerTab
+        bool                                     isServerTab,
+        bool                                     unhideTab
     );
 
     MCAPI void _createScreen(::std::string const& formJson);
@@ -71,7 +73,8 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::optional<uint>                    formId,
         ::std::string const&                     formData,
-        bool                                     isServerTab
+        bool                                     isServerTab,
+        bool                                     unhideTab
     );
     // NOLINTEND
 
@@ -85,6 +88,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $onOpen();
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification event);
 
     MCAPI void $onTerminate();
     // NOLINTEND

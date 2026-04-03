@@ -18,12 +18,14 @@ class ConsumerComponent : public ::BaseCircuitComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                         mSecondaryPowered;
-    ::ll::TypedStorage<1, 1, bool>                         mPropagatePower;
-    ::ll::TypedStorage<1, 1, bool>                         mPromotedToProducer;
-    ::ll::TypedStorage<1, 1, bool>                         mAcceptHalfPulse;
-    ::ll::TypedStorage<1, 1, bool>                         mAcceptSameDirection;
-    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ConsumerComponent*>> mMultiBlockPartConsumers;
+    ::ll::TypedStorage<1, 1, bool>                                 mSecondaryPowered;
+    ::ll::TypedStorage<1, 1, bool>                                 mPropagatePower;
+    ::ll::TypedStorage<1, 1, bool>                                 mPromotedToProducer;
+    ::ll::TypedStorage<1, 1, bool>                                 mAcceptHalfPulse;
+    ::ll::TypedStorage<1, 1, bool>                                 mAcceptSameDirection;
+    ::ll::TypedStorage<1, 1, bool>                                 mUpdatedByOtherConsumer;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const>         mCircuitComponentType;
     // NOLINTEND
 
 public:
@@ -44,6 +46,8 @@ public:
     virtual bool canConsumerPower() const /*override*/;
 
     virtual bool isSecondaryPowered() const /*override*/;
+
+    virtual bool needsUpdate() /*override*/;
 
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
@@ -80,7 +84,9 @@ public:
 
     MCFOLD bool $canConsumerPower() const;
 
-    MCAPI bool $isSecondaryPowered() const;
+    MCFOLD bool $isSecondaryPowered() const;
+
+    MCAPI bool $needsUpdate();
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 

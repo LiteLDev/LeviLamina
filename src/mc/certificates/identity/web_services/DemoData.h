@@ -8,7 +8,7 @@ struct DemoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8a79aa;
+    ::ll::UntypedStorage<8, 32> mUnk752b41;
     // NOLINTEND
 
 public:

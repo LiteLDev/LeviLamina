@@ -41,7 +41,11 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                               mIsLarge;
         ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
         ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::std::unique_ptr<::std::vector<
+                ::std::unique_ptr<::StructurePoolBlockRule, ::std::default_delete<::StructurePoolBlockRule>>>>>
             mPlaceArchySuspiciousBlocks;
         // NOLINTEND
 

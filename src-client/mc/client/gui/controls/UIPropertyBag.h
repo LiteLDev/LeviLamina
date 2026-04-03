@@ -91,13 +91,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI UIPropertyBag();
+
     MCAPI void _handlePropertyChangedNotifications(
         ::std::string_view             sourcePropertyName,
         ::Json::Value const&           newValue,
         ::UIPropertyBag::ContextObject context
     );
 
-    MCAPI void append(::UIPropertyBag const& propertyBag);
+    MCAPI void appendNoOverwrite(::UIPropertyBag const& propertyBag);
 
     MCAPI ::std::unique_ptr<::UIPropertyBag> clone() const;
 
@@ -118,6 +120,12 @@ public:
     MCAPI void set(::std::string_view key, ::glm::ivec2 gridSize);
 
     MCAPI void set(::std::string_view key, ::glm::vec2 uv);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

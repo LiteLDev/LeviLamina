@@ -37,17 +37,17 @@ class ScriptWidgetComponentVolumeOutline : public ::Editor::ScriptModule::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk139812;
-    ::ll::UntypedStorage<4, 24> mUnk95e828;
-    ::ll::UntypedStorage<4, 24> mUnke9a2bb;
-    ::ll::UntypedStorage<4, 24> mUnk60460d;
+    ::ll::UntypedStorage<8, 24> mUnk139812;
+    ::ll::UntypedStorage<8, 24> mUnk95e828;
+    ::ll::UntypedStorage<8, 24> mUnke9a2bb;
+    ::ll::UntypedStorage<8, 24> mUnk60460d;
     ::ll::UntypedStorage<1, 1>  mUnk2f03b2;
     ::ll::UntypedStorage<1, 1>  mUnkf0ef0f;
     ::ll::UntypedStorage<1, 1>  mUnk31ee18;
     ::ll::UntypedStorage<1, 1>  mUnk9a64c6;
     ::ll::UntypedStorage<4, 12> mUnk12f3ff;
     ::ll::UntypedStorage<4, 12> mUnk155b18;
-    ::ll::UntypedStorage<4, 32> mUnk64b844;
+    ::ll::UntypedStorage<8, 32> mUnk64b844;
     ::ll::UntypedStorage<8, 40> mUnkd6102c;
     ::ll::UntypedStorage<8, 16> mUnk18a8be;
     // NOLINTEND

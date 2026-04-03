@@ -52,7 +52,7 @@ public:
     ::ll::TypedStorage<8, 8, ::World::LocalWorldStarter&>                          mLocalWorldStarter;
     ::ll::TypedStorage<8, 8, ::World::IWorldCloudSyncer&>                          mWorldCloudSyncer;
     ::ll::TypedStorage<8, 8, ::World::IWorldResourcePackHandler&>                  mWorldResourcePackHandler;
-    ::ll::TypedStorage<8, 64, ::ui::ProgressScreenNavigation>                      mProgressScreenNavigation;
+    ::ll::TypedStorage<8, 104, ::ui::ProgressScreenNavigation>                     mProgressScreenNavigation;
     ::ll::TypedStorage<8, 8, ::ILevelListCache&>                                   mLevelListCache;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition>> mContentAcquisition;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager>>
@@ -119,9 +119,9 @@ public:
 
     MCFOLD ::std::string const& getMissingTemplateToStart() const;
 
-    MCAPI ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
+    MCFOLD ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
 
-    MCFOLD ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
+    MCAPI ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
 
     MCAPI void startLocalWorld(::std::string const& worldIdStr);
     // NOLINTEND

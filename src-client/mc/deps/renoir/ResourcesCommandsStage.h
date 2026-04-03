@@ -9,6 +9,7 @@ enum class ResourcesCommandsStage : int {
     PostExecuteRendering         = 1,
     DestoryAllRenderingResources = 2,
     CreateGlyphResources         = 3,
+    DestroyGlyphAtlases          = 4,
 };
 
 }

@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class LeashableComponent;
 class Player;
 struct ActorUniqueID;
@@ -19,7 +20,7 @@ struct LeashablePreset;
 namespace LeashableUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI bool attemptCutInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+MCNAPI ::InteractionResult attemptCutInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
 MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, float maxDistance);
 

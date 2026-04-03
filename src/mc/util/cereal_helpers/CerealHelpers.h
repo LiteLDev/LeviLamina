@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/cereal_helpers/Keyframes.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
@@ -12,6 +15,8 @@ namespace CerealHelpers { struct Member; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Json { class Value; }
+namespace SharedTypes { struct Color255RGB; }
+namespace SharedTypes { struct Color255RGBA; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
 namespace cereal { class StrictJsonLoader; }
@@ -43,8 +48,6 @@ MCNAPI_C ::Core::Result _endLoadFromJsonFile(
     ::CerealHelpers::FileReferenceLoader& fileReferenceLoader,
     ::Core::Path const&                   path
 );
-
-MCNAPI void bindBoundingBox(::cereal::ReflectionCtx& ctx);
 
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
@@ -108,10 +111,23 @@ MCNAPI bool checkVec3Schema(
 MCNAPI void initialize(::cereal::ReflectionCtx& ctx);
 
 MCNAPI ::std::vector<::std::string>
-parseFilterGroupData(::SharedTypes::v1_21_20::FilterGroupData& data, ::Json::Value const& json);
+legacyParseFilterGroupData(::SharedTypes::v1_21_20::FilterGroupData& data, ::Json::Value const& json);
 
 MCNAPI ::std::vector<::std::string>
-parseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json::Value const& json);
+legacyParseFilterTestData(::SharedTypes::v1_21_20::FilterTestData& data, ::Json::Value const& json);
+
+MCNAPI_C bool
+operator==(::CerealHelpers::Keyframes<float, float> const& __P0, ::CerealHelpers::Keyframes<float, float> const& __P1);
+
+MCNAPI_C bool operator==(
+    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGB> const& __P0,
+    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGB> const& __P1
+);
+
+MCNAPI_C bool operator==(
+    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGBA> const& __P0,
+    ::CerealHelpers::Keyframes<float, ::SharedTypes::Color255RGBA> const& __P1
+);
 // NOLINTEND
 
 // static variables

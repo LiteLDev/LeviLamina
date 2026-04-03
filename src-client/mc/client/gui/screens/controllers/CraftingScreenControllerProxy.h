@@ -10,7 +10,7 @@ class CraftingScreenControllerProxy : public ::ScreenControllerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1344, ::CraftingScreenControllerProxyCallbacks const> mCallbacks;
+    ::ll::TypedStorage<8, 1408, ::CraftingScreenControllerProxyCallbacks const> mCallbacks;
     // NOLINTEND
 
 public:

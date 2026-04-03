@@ -57,19 +57,13 @@ public:
 
     virtual ::Seed128Bit seed128() const /*override*/;
 
-    virtual ~XoroshiroRandom() /*override*/;
+    virtual ~XoroshiroRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI uint nextInt(uint bound);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

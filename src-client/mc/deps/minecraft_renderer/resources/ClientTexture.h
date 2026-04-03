@@ -37,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ClientTexture(::mce::ClientTexture const&);
+
     MCAPI explicit ClientTexture(
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
@@ -44,22 +46,20 @@ public:
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>>&& inner
     );
 
-    MCAPI ClientTexture(::mce::ClientTexture const&);
-
     MCFOLD ::mce::ClientTexture& operator=(::mce::ClientTexture&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor(::mce::ClientTexture const&);
+
     MCFOLD void* $ctor(
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>>&& inner
     );
-
-    MCAPI void* $ctor(::mce::ClientTexture const&);
     // NOLINTEND
 
 public:

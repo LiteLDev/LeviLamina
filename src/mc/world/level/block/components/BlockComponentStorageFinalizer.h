@@ -25,10 +25,4 @@ public:
 
     MCAPI void finalizeComponentData(::Block& block);
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _addMissingVoxelShapesComponent(::Block& block);
-    // NOLINTEND
 };

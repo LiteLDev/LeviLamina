@@ -10,7 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct PlayerComponent;
 struct PlayerPositionModeComponent;
 // clang-format on
@@ -20,7 +20,7 @@ public:
     // TeleportPositionModeEventSystem inner types define
     using ViewType = ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
         ::ActorOwnerComponent,
         ::PlayerPositionModeComponent const>;
 
@@ -30,7 +30,7 @@ public:
     MCNAPI static void tickTeleportPositionModeEventSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
             ::ActorOwnerComponent,
             ::PlayerPositionModeComponent const> view
     );

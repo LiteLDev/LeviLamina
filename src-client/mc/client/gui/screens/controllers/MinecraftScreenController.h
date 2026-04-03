@@ -12,7 +12,6 @@
 #include "mc/client/gui/screens/controllers/SafeZoneBuffer.h"
 #include "mc/client/gui/screens/controllers/ScreenExitBehavior.h"
 #include "mc/client/gui/screens/controllers/UpdateSliderProgressMode.h"
-#include "mc/client/player/PickCustomSkinResult.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/input/InputMode.h"
@@ -154,8 +153,6 @@ public:
     virtual ::std::string _getButtonYDescription();
 
     virtual ::std::string _getButtonKeyboardDescription();
-
-    virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback);
 
     virtual ::std::string _getScreenName() const;
 
@@ -442,8 +439,6 @@ public:
     MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>&
     defaultProgressSliderOptionLabeller();
 
-    MCAPI static ::UpdateSliderProgressMode const& defaultUpdateSliderProgressMode();
-
     MCAPI static ::OptionID& mSliderOptionID();
 
     MCAPI static ::std::string& mSliderOptionTitle();
@@ -523,8 +518,6 @@ public:
     MCAPI ::std::string $_getButtonYDescription();
 
     MCFOLD ::std::string $_getButtonKeyboardDescription();
-
-    MCAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)> callback);
 
     MCAPI ::std::string $_getScreenName() const;
 

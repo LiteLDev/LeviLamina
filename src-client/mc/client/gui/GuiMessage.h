@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/SoundDirection.h"
+
 class GuiMessage {
 public:
     // GuiMessage inner types define
@@ -22,6 +25,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mTTSRequired;
     ::ll::TypedStorage<4, 4, float>                           mDuration;
     ::ll::TypedStorage<1, 1, bool>                            mHasBeenSeen;
+    ::ll::TypedStorage<1, 1, bool>                            mHasEverBeenSeen;
+    ::ll::TypedStorage<4, 4, ::SoundDirection>                mDirection;
     // NOLINTEND
 
 public:

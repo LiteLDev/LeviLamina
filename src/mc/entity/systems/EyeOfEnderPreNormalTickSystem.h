@@ -10,8 +10,8 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct EyeOfEnderFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -25,7 +25,7 @@ public:
     MCNAPI static void _tickEyeOfEnderPreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::EyeOfEnderFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::EyeOfEnderFlagComponent>,
             ::ActorOwnerComponent> view
     );
 

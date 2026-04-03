@@ -17,7 +17,7 @@ struct LightBrightnessHeuristic : public ::PointLighting::ICandidacyHeuristic {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const& light) const /*override*/;
+    virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const&) const /*override*/;
 
     virtual ~LightBrightnessHeuristic() /*override*/ = default;
     // NOLINTEND
@@ -25,13 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const& light) const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

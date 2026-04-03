@@ -24,6 +24,7 @@ class AddItemActorPacket;
 class AddPaintingPacket;
 class AddPlayerPacket;
 class AnimatePacket;
+class AppPlatform;
 class Block;
 class BlockActorDataPacket;
 class BlockEventPacket;
@@ -116,7 +117,8 @@ public:
         8,
         64,
         ::brstd::move_only_function<::std::unique_ptr<::MultiPlayerLevel>(::ClientCreateLevelArguments&&) const>>
-        mCreateLevel;
+                                                                            mCreateLevel;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>> mAppPlatform;
     // NOLINTEND
 
 public:
@@ -132,8 +134,11 @@ public:
 
     virtual void onConnect(::NetworkIdentifier const& hostId) /*override*/;
 
-    virtual void
-    onUnableToConnect(::Connection::DisconnectFailReason discoReason, ::std::string const& message) /*override*/;
+    virtual void onUnableToConnect(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               messageFromServer,
+        ::std::string const&               messageBodyOverride
+    ) /*override*/;
 
     virtual bool getIsConnectedToApplicationLayer() const /*override*/;
 
@@ -307,9 +312,13 @@ public:
 
     MCAPI void $onConnect(::NetworkIdentifier const& hostId);
 
-    MCAPI void $onUnableToConnect(::Connection::DisconnectFailReason discoReason, ::std::string const& message);
+    MCAPI void $onUnableToConnect(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               messageFromServer,
+        ::std::string const&               messageBodyOverride
+    );
 
-    MCAPI bool $getIsConnectedToApplicationLayer() const;
+    MCFOLD bool $getIsConnectedToApplicationLayer() const;
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet);
 

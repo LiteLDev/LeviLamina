@@ -119,6 +119,8 @@ public:
 
     MCAPI void saveCurrentCharacterPersona();
 
+    MCAPI void savePersona(::persona::PersonaCharacterHandle const& characterHandle);
+
     MCAPI void updatePersonaWithNewAppearance(
         ::PersonaAppearance const&               newAppearance,
         ::persona::PersonaCharacterHandle const& handle,

@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int Rand(int, int);
+    MCNAPI int Rand(int low, int high);
 
     MCNAPI uint Rand(uint low, uint high);
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/debug/MemoryTracker.h"
 #include "mc/client/gui/oreui/resources/ResourceAllowList.h"
 #include "mc/client/gui/oreui/resources/TemporaryTextureHolder.h"
 #include "mc/client/gui/oreui/routing/RouterConfiguration.h"
@@ -67,7 +66,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::DebugData>>                  mDebugData;
-    ::ll::TypedStorage<1, 1, ::OreUI::MemoryTracker>                                 mMemoryTracker;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>           mShowDebugToast;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem>>     mFileSystem;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IFileAccess>>          mAppPackageFileAccess;
@@ -83,16 +81,23 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                   mAppWillRestart;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::OreUISystem::CallbackEntry>>    mRouteConfigurationChangeCallbacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>        mOptionSubscriptions;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mFlightingTogglesNewFriendsDrawer;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                       mFlightingTogglesTrialMode;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesFriendsDrawerOnMultipleScreens;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesAccessibilitySettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesGameSettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesLanguageSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesGeneralSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesAudioSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesAccountSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesVideoSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesKeyboardAndMouseSettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesMultiplayerScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesPreviewSettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesTouchSettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesNewSettingsInGame;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesNewSettingsOnThirdPartyServers;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesControllerScreen;
     // NOLINTEND
 
 public:
@@ -118,6 +123,8 @@ public:
     );
 
     MCAPI void _initializeLibrary(::Core::Path const& packagePath);
+
+    MCAPI void _registerToggleObservers();
 
     MCAPI ::std::unique_ptr<::OreUI::Router> createInGameRouter(
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,

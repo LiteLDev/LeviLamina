@@ -19,15 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RepairItemEntry(RepairItemEntry const&);
-    RepairItemEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RepairItemEntry& operator=(::RepairItemEntry const&);
-
     MCAPI ~RepairItemEntry();
     // NOLINTEND
 

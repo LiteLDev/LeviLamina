@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/binding_type/PropertyBinding.h"
-#include "mc/deps/scripting/quickjs/bindings/RegisteredClass.h"
-
 // auto generated forward declare list
 // clang-format off
 struct JSContext;
@@ -15,7 +11,9 @@ namespace Scripting { struct EqualPropertyBinding; }
 namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct HashPropertyBinding; }
 namespace Scripting { struct InterfaceBinding; }
+namespace Scripting { struct PropertyBinding; }
 namespace Scripting { struct TypeNameInfo; }
+namespace Scripting::QuickJS { class RegisteredClass; }
 namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
@@ -37,12 +35,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5c2545;
+    ::ll::UntypedStorage<8, 64> mUnkbd88e5;
     ::ll::UntypedStorage<8, 64> mUnkcb84ca;
     ::ll::UntypedStorage<8, 64> mUnk7668c8;
-    ::ll::UntypedStorage<8, 64> mUnk2841da;
-    ::ll::UntypedStorage<8, 64> mUnke46347;
-    ::ll::UntypedStorage<8, 64> mUnkc88dd4;
+    ::ll::UntypedStorage<8, 64> mUnk167758;
+    ::ll::UntypedStorage<8, 64> mUnk8a16c7;
+    ::ll::UntypedStorage<8, 64> mUnk85c83f;
     ::ll::UntypedStorage<8, 64> mUnkb30580;
     // NOLINTEND
 

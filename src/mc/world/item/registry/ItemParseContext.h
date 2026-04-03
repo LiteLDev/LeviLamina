@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/resources/JsonBetaState.h"
-#include "mc/world/item/registry/ItemVersion.h"
+#include "mc/world/item/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-class IPackLoadContext;
 class Item;
+class PackLoadContext;
 class SemVersion;
 namespace Json { class Value; }
 namespace PuvLoadData { struct LoadResultWithTiming; }
@@ -28,8 +27,7 @@ public:
             ::WeakPtr<::Item>&,
             ::Json::Value const&,
             ::SemVersion const&,
-            ::JsonBetaState,
-            ::IPackLoadContext&
+            ::PackLoadContext&
         )>>
                                                                    mItemInitCallback;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mParsedDefinitions;

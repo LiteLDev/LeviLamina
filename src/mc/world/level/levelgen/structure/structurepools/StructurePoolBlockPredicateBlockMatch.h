@@ -11,7 +11,7 @@
 class Block;
 class BlockPos;
 class HashedString;
-class Randomize;
+class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
 
@@ -25,9 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const& block, ::Randomize&) const /*override*/;
+    virtual bool test(::Block const& block, ::IRandom&) const /*override*/;
 
-    virtual bool test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const /*override*/;
+    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const /*override*/;
 
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
@@ -39,9 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::Randomize&) const;
+    MCAPI bool $test(::Block const& block, ::IRandom&) const;
 
-    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 
     MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/EditorNetworkPacketPayload.h"
+#include "mc/network/packet/EditorNetworkPacketVariantPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -16,23 +16,24 @@ class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class EditorNetworkPacket : public ::ll::PayloadPacket<::EditorNetworkPacketPayload> {
+class EditorNetworkPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    ::ll::TypedStorage<8, 72, ::EditorNetworkPacketVariantPayload> mPayload;
+    ::ll::TypedStorage<4, 4, ::SerializationMode>                  mSerializationMode;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EditorNetworkPacket& operator=(EditorNetworkPacket const&);
+    EditorNetworkPacket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
@@ -70,17 +71,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorNetworkPacket();
-
-    MCAPI EditorNetworkPacket(::EditorNetworkPacket const&);
+    MCAPI explicit EditorNetworkPacket(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::EditorNetworkPacket const&);
+    MCAPI void* $ctor(::EditorNetworkPacketVariantPayload payload);
     // NOLINTEND
 
 public:
@@ -94,7 +91,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 

@@ -15,6 +15,8 @@ struct ServerNetherNetConnector : public ::NetherNetConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~ServerNetherNetConnector() /*override*/ = default;
+
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual void disconnect() /*override*/;
@@ -24,8 +26,6 @@ public:
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
-
-    virtual ~ServerNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
 public:

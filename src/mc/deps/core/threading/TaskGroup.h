@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/SharedAsync.h"
-#include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/editor/services/playtest/SessionResult.h"
@@ -15,8 +15,10 @@
 #include "mc/platform/ErrorInfo.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/brstd/move_only_function.h"
+#include "mc/platform/brstd/promise.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/platform/threading/UniqueLock.h"
+#include "mc/resources/TaskGroupState.h"
 #include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 #include "mc/world/level/FileArchiver.h"
 
@@ -27,6 +29,7 @@ class Pack;
 class ResourcePack;
 class Scheduler;
 class TaskResult;
+class WatchdogTimer;
 class WorkerPool;
 class WorldPacksHistoryFile;
 struct AsyncJoinAllow;
@@ -46,6 +49,7 @@ namespace Json { class Value; }
 namespace JsonRpc { class JsonRpcError; }
 namespace JsonRpc { class TurnConfigResult; }
 namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
+namespace PackCommand { struct CommandExecutor; }
 namespace PackCommand { struct PackCommandResult; }
 namespace RepositoryLoading { struct PackModifications; }
 // clang-format on
@@ -54,12 +58,20 @@ class TaskGroup : public ::IBackgroundTaskOwner {
 public:
     // TaskGroup inner types declare
     // clang-format off
-    template<typename T0> class Thenable;
+    template<typename... T0> struct TaskTraitsBase;
+    template<typename... T0> struct TaskTraitsImpl;
+    template<typename T0> class ThenableBase;
     // clang-format on
 
     // TaskGroup inner types define
+    template <typename... T0>
+    struct TaskTraitsBase {};
+
+    template <typename... T0>
+    struct TaskTraitsImpl {};
+
     template <typename T0>
-    class Thenable {};
+    class ThenableBase {};
 
 public:
     // member variables
@@ -116,12 +128,14 @@ public:
     // NOLINTBEGIN
     MCAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
 
-    MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::std::promise<void>* workStarted);
+    MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
 
     MCAPI void _forAllTasks(
         ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,
         ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
     );
+
+    MCAPI ::gsl::not_null<::IBackgroundTaskOwner*> _getBackgroundTaskManager();
 
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
@@ -142,6 +156,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
+
+    MCAPI static ::Bedrock::Threading::Async<void> queueChild_DEPRECATED(
+        ::TaskStartInfo const&                        startInfo,
+        ::brstd::move_only_function<::TaskResult()>&& task,
+        ::std::function<void()>&&                     callback
+    );
     // NOLINTEND
 
 public:

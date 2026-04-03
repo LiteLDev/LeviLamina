@@ -1,0 +1,24 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/scripting/runtime/BaseError.h"
+
+namespace ScriptModuleMinecraft {
+
+struct ScriptActorInvalidComponentError : public ::Scripting::BaseError {
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~ScriptActorInvalidComponentError();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+};
+
+} // namespace ScriptModuleMinecraft

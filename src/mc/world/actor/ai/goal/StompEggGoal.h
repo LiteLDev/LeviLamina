@@ -18,6 +18,8 @@ public:
     // NOLINTBEGIN
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    virtual void setInterval(int const interval) /*override*/;
+
     virtual void _createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos) /*override*/;
 
     virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos) /*override*/;
@@ -33,6 +35,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCFOLD void $setInterval(int const interval);
 
     MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 

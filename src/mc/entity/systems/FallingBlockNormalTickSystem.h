@@ -11,8 +11,8 @@
 class ActorOwnerComponent;
 class ITickDelegate;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct FallingBlockFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -29,7 +29,7 @@ public:
     MCAPI static void _tickFallingBlockNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::FallingBlockFlagComponent>,
+            ::Include<::InterpolateMovementNeededComponent, ::FallingBlockFlagComponent>,
             ::ActorOwnerComponent> view
     );
 

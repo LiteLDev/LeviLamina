@@ -18,7 +18,6 @@ class EntityRegistry;
 class GameplayUserManager;
 class ILevelCrashDumpManager;
 class IPlayerDimensionTransferer;
-class PacketSender;
 class Player;
 class PlayerLimboActorManager;
 // clang-format on
@@ -71,8 +70,6 @@ public:
     MCAPI void handleChangeDimensionRequests();
 
     MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
-
-    MCFOLD void setPacketSender(::PacketSender& packetSender);
 
     MCAPI ~PlayerDimensionTransferManager();
     // NOLINTEND

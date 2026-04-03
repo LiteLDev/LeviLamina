@@ -147,11 +147,9 @@ public:
 
     MCFOLD void $onLevelDestruction(::std::string const&);
 
-#ifdef LL_PLAT_S
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
 
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
-#endif
 
     MCAPI void $takePicture(
         ::cg::ImageBuffer&,

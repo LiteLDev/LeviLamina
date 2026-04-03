@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/density/DensityDimensionality.h"
 #include "mc/world/level/levelgen/density/IDensityFunction.h"
 
 // auto generated forward declare list
@@ -23,6 +24,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<float(::Pos, ::std::vector<float> const&)> const> mAccessorFunc;
     ::ll::TypedStorage<8, 24, ::std::vector<::DensityFunctionPtr> const>                        mInputs;
+    ::ll::TypedStorage<1, 1, ::DensityDimensionality const>                                     mDimensionality;
     // NOLINTEND
 
 public:

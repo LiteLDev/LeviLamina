@@ -39,7 +39,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition>
-    loadImageResourceFromMemory(::std::string const& fileContents, bool tryStreamed);
+    loadImageResourceFromMemory(
+        ::ResourceLocation const& resourceLocation,
+        ::std::string const&      fileContents,
+        bool                      tryStreamed
+    );
 
     MCNAPI_C ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition>
     loadImageWithoutExtension(

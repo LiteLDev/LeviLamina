@@ -56,11 +56,11 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>       mEntitlementManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<8, 32, ::World::WorldID>                                           mCurrentWorldID;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                                       mLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataBindings;
-    ::ll::TypedStorage<8, 840, ::LevelSummary>                                            mDefaultLevelSummary;
+    ::ll::TypedStorage<8, 848, ::LevelSummary>                                            mDefaultLevelSummary;
     ::ll::TypedStorage<8, 160, ::OreUI::LevelSummaryBindings>                             mLevelSummaryBindings;
-    ::ll::TypedStorage<8, 1640, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
+    ::ll::TypedStorage<8, 1704, ::LevelDataWrapper>                                       mDefaultLevelDataWrapper;
     ::ll::TypedStorage<8, 328, ::OreUI::LevelDataBindings>                                mLevelDataSnapshot;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mWorldDirtySubscriber;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mWorldIconDirtySubscriber;

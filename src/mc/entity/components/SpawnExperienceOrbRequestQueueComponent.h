@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/entity/components/SpawnExperienceOrbRequest.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-struct SpawnExperienceOrbRequest;
 // clang-format on
 
 struct SpawnExperienceOrbRequestQueueComponent {
@@ -22,5 +22,11 @@ public:
             ::DimensionType,
             ::std::queue<::SpawnExperienceOrbRequest, ::std::deque<::SpawnExperienceOrbRequest>>>>
         mRequestQueues;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool tryAddRequest(::SpawnExperienceOrbRequest const& request, ::DimensionType const& dimensionType);
     // NOLINTEND
 };

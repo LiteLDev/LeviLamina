@@ -11,7 +11,6 @@
 // clang-format off
 class BlockSource;
 class Mob;
-class Random;
 // clang-format on
 
 class FloatWanderGoal : public ::Goal {
@@ -57,8 +56,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
-
-    MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
 
     MCAPI ::Vec3 const _getSuitableTargetPosition();
 

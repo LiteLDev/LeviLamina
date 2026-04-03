@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Randomize;
+class IRandom;
 struct ResourceDrops;
 struct ResourceDropsContext;
 // clang-format on
@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~IResourceDropsStrategy() = default;
 
-    virtual ::ResourceDrops getResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&) const = 0;
+    virtual ::ResourceDrops getResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const = 0;
     // NOLINTEND
 
 public:

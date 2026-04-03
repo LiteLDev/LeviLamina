@@ -28,7 +28,7 @@ class BaseOptions : public ::IOptions, public ::std::enable_shared_from_this<::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 6216, ::std::array<::std::unique_ptr<::Option>, 777>> mOptions;
+    ::ll::TypedStorage<8, 6424, ::std::array<::std::unique_ptr<::Option>, 803>> mOptions;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IOptions>>                      mPerMachineOptionsSource;
     ::ll::TypedStorage<1, 1, bool>                                              mIsDevOptionsDirty;
     // NOLINTEND
@@ -52,7 +52,7 @@ public:
 
     virtual ::std::optional<::Option const*> getIfValid(::OptionID optionId) const /*override*/;
 
-    virtual ::std::array<::std::unique_ptr<::Option>, 777> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 803> const& getAllRegisteredOptions() /*override*/;
 
     virtual void forEachOption(::std::function<void(::Option*)> callback) /*override*/;
 
@@ -62,7 +62,7 @@ public:
 
     virtual ::Option& _registerOption(::std::unique_ptr<::Option> option) /*override*/;
 
-    virtual void updateInputMode(::InputMode inputMode) /*override*/;
+    virtual void updateInputMode(::InputMode) /*override*/;
 
     virtual void setMainVolume(float volume) /*override*/;
 
@@ -86,11 +86,11 @@ public:
 
     virtual void setSensitivity(float sensitivity, ::InputMode inputMode) /*override*/;
 
-    virtual float getSensitivity(::InputMode inputMode) const /*override*/;
+    virtual float getSensitivity(::InputMode) const /*override*/;
 
     virtual void setSpyglassDamping(float value, ::InputMode inputMode) /*override*/;
 
-    virtual float getSpyglassDamping(::InputMode inputMode) const /*override*/;
+    virtual float getSpyglassDamping(::InputMode) const /*override*/;
 
     virtual void setDwellBeforeDrag(float value) /*override*/;
 
@@ -100,9 +100,9 @@ public:
 
     virtual float getStackSplittingTrigger() const /*override*/;
 
-    virtual float getGameSensitivity(::InputMode inputmode) const /*override*/;
+    virtual float getGameSensitivity(::InputMode) const /*override*/;
 
-    virtual bool getInvertYMouse(::InputMode inputMode) const /*override*/;
+    virtual bool getInvertYMouse(::InputMode) const /*override*/;
 
     virtual float getParticleViewDistance() const /*override*/;
 
@@ -140,11 +140,11 @@ public:
 
     virtual bool isHotbarOnlyTouch() const /*override*/;
 
-    virtual bool getDestroyVibration(::InputMode inputMode) const /*override*/;
+    virtual bool getDestroyVibration(::InputMode) const /*override*/;
 
-    virtual bool getSplitVibration(::InputMode inputMode) const /*override*/;
+    virtual bool getSplitVibration(::InputMode) const /*override*/;
 
-    virtual bool getAutoJump(::InputMode inputMode) const /*override*/;
+    virtual bool getAutoJump(::InputMode) const /*override*/;
 
     virtual void setFullscreen(bool fullscreen) /*override*/;
 
@@ -672,7 +672,7 @@ public:
 
     MCFOLD ::std::optional<::Option const*> $getIfValid(::OptionID optionId) const;
 
-    MCFOLD ::std::array<::std::unique_ptr<::Option>, 777> const& $getAllRegisteredOptions();
+    MCFOLD ::std::array<::std::unique_ptr<::Option>, 803> const& $getAllRegisteredOptions();
 
     MCFOLD void $forEachOption(::std::function<void(::Option*)> callback);
 
@@ -681,8 +681,6 @@ public:
     MCFOLD void $dumpOptionsToLogFile() const;
 
     MCAPI ::Option& $_registerOption(::std::unique_ptr<::Option> option);
-
-    MCAPI void $updateInputMode(::InputMode inputMode);
 
     MCAPI void $setMainVolume(float volume);
 
@@ -706,11 +704,7 @@ public:
 
     MCAPI void $setSensitivity(float sensitivity, ::InputMode inputMode);
 
-    MCAPI float $getSensitivity(::InputMode inputMode) const;
-
     MCAPI void $setSpyglassDamping(float value, ::InputMode inputMode);
-
-    MCAPI float $getSpyglassDamping(::InputMode inputMode) const;
 
     MCAPI void $setDwellBeforeDrag(float value);
 
@@ -719,10 +713,6 @@ public:
     MCAPI void $setStackSplittingTrigger(float value);
 
     MCAPI float $getStackSplittingTrigger() const;
-
-    MCAPI float $getGameSensitivity(::InputMode inputmode) const;
-
-    MCAPI bool $getInvertYMouse(::InputMode inputMode) const;
 
     MCAPI float $getParticleViewDistance() const;
 
@@ -759,12 +749,6 @@ public:
     MCAPI bool $isLeftHanded() const;
 
     MCAPI bool $isHotbarOnlyTouch() const;
-
-    MCAPI bool $getDestroyVibration(::InputMode inputMode) const;
-
-    MCAPI bool $getSplitVibration(::InputMode inputMode) const;
-
-    MCAPI bool $getAutoJump(::InputMode inputMode) const;
 
     MCAPI void $setFullscreen(bool fullscreen);
 
@@ -810,8 +794,6 @@ public:
 
     MCAPI void $setSplitscreenDirection(int splitScreenDirection);
 
-    MCAPI ::SplitScreenDirection $getSplitscreenDirection() const;
-
     MCAPI void $setHideScreens(bool hideScreens);
 
     MCAPI bool $getHideScreens() const;
@@ -821,8 +803,6 @@ public:
     MCAPI bool $getHideItemInHand() const;
 
     MCAPI bool $getScreenAnimations() const;
-
-    MCAPI ::UIProfile $getUIProfile() const;
 
     MCAPI void $setForceUseUnsortedPolys(bool renderUnsorted);
 
@@ -1106,6 +1086,8 @@ public:
 
     MCFOLD ::std::vector<::std::string> $getAutomationMultiplayerUserAccounts() const;
 
+    MCAPI ::DevConnectionQuality $getDevConnectionQuality() const;
+
     MCAPI int $getDevRenderAttachPos() const;
 
     MCAPI void $setMultiPlayerGame(bool multiPlayerGame);
@@ -1257,8 +1239,6 @@ public:
     MCAPI void $setUseFontOverrides(bool value);
 
     MCAPI bool $getUseFontOverrides() const;
-
-    MCAPI ::NewInteractionModel $getEffectiveTouchScheme() const;
     // NOLINTEND
 
 public:

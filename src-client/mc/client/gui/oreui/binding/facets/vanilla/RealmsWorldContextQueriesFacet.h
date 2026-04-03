@@ -24,10 +24,12 @@ public:
     ::ll::TypedStorage<4, 4, ::Realms::RealmsWorldContextState>                mState;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmName;
     ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                   mRealmOwnerId;
     ::ll::TypedStorage<4, 4, int>                                              mActiveSlotIndex;
     ::ll::TypedStorage<4, 4, int>                                              mMaxPlayers;
     ::ll::TypedStorage<1, 1, bool>                                             mClosed;
     ::ll::TypedStorage<1, 1, bool>                                             mExpired;
+    ::ll::TypedStorage<1, 1, bool>                                             mFull;
     // NOLINTEND
 
 public:
@@ -53,13 +55,17 @@ public:
 
     MCFOLD bool getIsClosed() const;
 
-    MCFOLD bool getIsExpired() const;
+    MCAPI bool getIsExpired() const;
 
-    MCFOLD int getMaxPlayers() const;
+    MCAPI bool getIsFull() const;
+
+    MCAPI int getMaxPlayers() const;
 
     MCFOLD ::std::string const& getRealmId() const;
 
     MCFOLD ::std::string const& getRealmName() const;
+
+    MCFOLD ::std::string const& getRealmOwnerId() const;
 
     MCFOLD ::Realms::RealmsWorldContextState getState() const;
     // NOLINTEND

@@ -11,14 +11,14 @@
 class StrictEntityContext;
 struct AbilitiesComponent;
 struct AbilitiesRequestComponent;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 // clang-format on
 
 namespace UpdateAbilitiesSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void tickProcessRequests(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                  entity,
     ::AbilitiesComponent&                         abilities,
     ::AbilitiesRequestComponent const&            abilitiesRequest,

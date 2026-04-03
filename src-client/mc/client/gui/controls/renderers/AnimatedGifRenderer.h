@@ -56,8 +56,6 @@ public:
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCFOLD ::UIBatchType $getBatchType() const;
-
     MCFOLD int $getCustomId() const;
     // NOLINTEND
 

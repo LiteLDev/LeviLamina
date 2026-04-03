@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::CommandOutputPacketPayload& operator=(::CommandOutputPacketPayload&&);
 
-    MCAPI ::CommandOutputPacketPayload& operator=(::CommandOutputPacketPayload const&);
+    MCFOLD ::CommandOutputPacketPayload& operator=(::CommandOutputPacketPayload const&);
 
     MCAPI ~CommandOutputPacketPayload();
     // NOLINTEND

@@ -15,9 +15,9 @@ class CompoundMeasurement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e2143;
-    ::ll::UntypedStorage<8, 32> mUnk200b82;
-    ::ll::UntypedStorage<8, 56> mUnkac5ca9;
+    ::ll::UntypedStorage<8, 32> mUnkaceeb0;
+    ::ll::UntypedStorage<8, 32> mUnk5e940f;
+    ::ll::UntypedStorage<8, 48> mUnk4585e8;
     ::ll::UntypedStorage<1, 1>  mUnk5f6365;
     ::ll::UntypedStorage<8, 8>  mUnkc6ce7b;
     ::ll::UntypedStorage<8, 8>  mUnkaeec3d;

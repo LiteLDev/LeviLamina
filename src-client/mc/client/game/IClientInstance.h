@@ -7,7 +7,6 @@
 #include "mc/client/game/ClientInstanceState.h"
 #include "mc/client/game/ControlOptionType.h"
 #include "mc/client/gui/GameEventNotification.h"
-#include "mc/client/gui/MousePointerType.h"
 #include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/StoreNavigationOrigin.h"
 #include "mc/client/gui/screens/controllers/InventoryTabIndex.h"
@@ -28,6 +27,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/PointerType.h"
 #include "mc/deps/input/enums/WYSIWYGState.h"
 #include "mc/deps/renderer/MatrixStack.h"
 #include "mc/events/NetworkType.h"
@@ -131,7 +131,6 @@ struct FrameUpdateContext;
 struct GuidedFlowManager;
 struct HudIconActorRenderer;
 struct IGameConnectionListener;
-struct ISettingsRegistry;
 struct ITTSEventManager;
 struct LatencyGraphDisplay;
 struct ListenerState;
@@ -141,6 +140,7 @@ struct MusicManager;
 struct PacksInfoData;
 struct PersonaRepository;
 struct PlayerAuthentication;
+struct PlayerJoinWorldContext;
 struct PlayerJoinWorldTelemetryInfo;
 struct PlayerReportHandler;
 struct ProfanityContext;
@@ -169,6 +169,7 @@ namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace PlayerCapabilities { struct IClientController; }
 namespace Realms { struct World; }
 namespace Scripting { class ScriptEngine; }
+namespace Settings { struct IRegistry; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { struct MultiplayerServiceManager; }
@@ -217,7 +218,7 @@ public:
         ::std::string const&,
         ::NetworkType,
         ::Social::MultiplayerServiceIdentifier,
-        bool
+        ::PlayerJoinWorldContext
     ) = 0;
 
     virtual void onCancelJoinGame() = 0;
@@ -332,8 +333,6 @@ public:
     virtual bool isSelectedSkinInitialized() const = 0;
 
     virtual ::SplitScreenInfo getSplitScreenInfo() const = 0;
-
-    virtual int getCurrentMaxGUIScaleIndex() const = 0;
 
     virtual bool getHandlingControllerDisconnect() = 0;
 
@@ -564,7 +563,7 @@ public:
 
     virtual ::std::shared_ptr<::Social::User> const& getUser() const = 0;
 
-    virtual ::std::shared_ptr<::ISettingsRegistry> getSettingsRegistry() = 0;
+    virtual ::std::shared_ptr<::Settings::IRegistry> getSettingsRegistry() = 0;
 
     virtual ::Option const& getShowLearningPromptsOption() const = 0;
 
@@ -836,7 +835,7 @@ public:
 
     virtual void refocusMouse(bool) = 0;
 
-    virtual void setMouseType(::ui::MousePointerType) = 0;
+    virtual void setMouseType(::Bedrock::Input::PointerType) = 0;
 
     virtual void resetBai(int) = 0;
 
@@ -876,11 +875,13 @@ public:
 
     virtual void connectToExperience(
         ::ExperienceConnectionData,
-        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>,
-        ::std::function<void(::World::JoinServerWorldResult)>
+        ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)>,
+        ::std::function<void(::World::JoinServerWorldResult)>,
+        ::PlayerJoinWorldContext
     ) = 0;
 
-    virtual void startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, bool) = 0;
+    virtual void
+    startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, ::PlayerJoinWorldContext) = 0;
 
     virtual bool isReadyToReconnect() const = 0;
 

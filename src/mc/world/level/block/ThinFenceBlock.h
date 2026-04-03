@@ -13,7 +13,6 @@ class AABB;
 class BaseGameVersion;
 class Block;
 class BlockPos;
-class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 // clang-format on
@@ -76,10 +75,6 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     virtual bool isThinFenceBlock() const /*override*/;
-
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
-        /*override*/;
 
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
@@ -149,9 +144,6 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $isThinFenceBlock() const;
-
-    MCFOLD bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

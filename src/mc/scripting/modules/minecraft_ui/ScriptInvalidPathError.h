@@ -14,8 +14,8 @@ struct ScriptInvalidPathError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke08066;
-    ::ll::UntypedStorage<8, 32> mUnkd66375;
+    ::ll::UntypedStorage<8, 32> mUnkef83ea;
+    ::ll::UntypedStorage<8, 32> mUnk58afb9;
     // NOLINTEND
 
 public:

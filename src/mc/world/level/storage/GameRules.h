@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/storage/GameRule.h"
@@ -14,7 +15,6 @@ class CompoundTag;
 class GameRule;
 class GameRulesChangedPacket;
 class GameRulesChangedPacketData;
-class HashedString;
 struct GameRuleId;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -167,16 +167,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static int const& DEFAULT_RANDOMTICKSPEED();
-
-    MCAPI static int const& MAX_FUNCTIONCOMMANDLIMIT();
-
-    MCAPI_C static uint const& MAX_PLAYER_SPAWN_RADIUS();
-
-    MCAPI_C static int const& MAX_RANDOMTICKSPEED();
-
-    MCAPI_C static uint const& MIN_PLAYER_SPAWN_RADIUS();
-
     MCAPI static ::std::string const& WORLD_POLICY_TAG_NAME();
     // NOLINTEND
 

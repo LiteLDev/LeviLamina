@@ -29,8 +29,7 @@ public:
         80,
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
-            ::ScriptModuleMinecraft::ScriptCommandError,
-            void>>
+            ::ScriptModuleMinecraft::ScriptCommandError>>
         mPromise;
     // NOLINTEND
 
@@ -55,8 +54,7 @@ public:
         ::Scripting::WeakLifetimeScope           scope,
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
-            ::ScriptModuleMinecraft::ScriptCommandError,
-            void> promise
+            ::ScriptModuleMinecraft::ScriptCommandError> promise
     );
     // NOLINTEND
 
@@ -69,8 +67,7 @@ public:
         ::Scripting::WeakLifetimeScope           scope,
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
-            ::ScriptModuleMinecraft::ScriptCommandError,
-            void> promise
+            ::ScriptModuleMinecraft::ScriptCommandError> promise
     );
     // NOLINTEND
 

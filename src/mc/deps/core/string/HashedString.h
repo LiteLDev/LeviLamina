@@ -24,6 +24,8 @@ public:
 
     MCAPI explicit HashedString(char const* str);
 
+    MCAPI explicit HashedString(::std::string_view str);
+
     MCAPI HashedString(uint64 hash, char const* str);
 
     MCFOLD char const* c_str() const;
@@ -34,7 +36,7 @@ public:
 
     MCFOLD ::HashedString& operator=(::HashedString&& rhs);
 
-    MCAPI ::HashedString& operator=(::HashedString const& rhs);
+    MCFOLD ::HashedString& operator=(::HashedString const& rhs);
 
     MCAPI ~HashedString();
     // NOLINTEND
@@ -66,7 +68,7 @@ public:
 
     MCAPI void* $ctor(char const* str);
 
-    MCAPI_C void* $ctor(::std::string_view str);
+    MCAPI void* $ctor(::std::string_view str);
 
     MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND

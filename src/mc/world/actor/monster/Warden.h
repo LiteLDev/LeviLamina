@@ -12,6 +12,7 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorHurtResult;
 // clang-format on
 
 class Warden : public ::Monster {
@@ -35,15 +36,17 @@ public:
 
     virtual void normalTick() /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     virtual bool checkSpawnRules(bool) /*override*/;
 
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    virtual ::ActorHurtResult
+    doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     virtual ~Warden() /*override*/ = default;
     // NOLINTEND
@@ -61,15 +64,15 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* target);
 
     MCFOLD bool $checkSpawnRules(bool);
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
 
     // NOLINTEND

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/game/MinecraftGameFeatures.h"
 #include "mc/client/game/WebviewInterfaceType.h"
+#include "mc/client/gui/SceneType.h"
 #include "mc/client/gui/SettingsTabIndex.h"
 #include "mc/client/gui/screens/controllers/RealmsPlusTabIndex.h"
 #include "mc/client/gui/screens/models/IMinecraftScreenModel.h"
@@ -13,15 +14,15 @@
 #include "mc/client/network/realms/FailureReason.h"
 #include "mc/client/network/realms/GenericStatus.h"
 #include "mc/client/network/realms/RealmsAPI.h"
-#include "mc/client/player/DefaultSkin.h"
-#include "mc/client/player/PickCustomSkinResult.h"
+#include "mc/client/persona/DefaultSkin.h"
+#include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/services/download/IDlcBatcher.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/client/store/StoreCatalogCategory.h"
 #include "mc/client/store/iap/PurchaseResult.h"
-#include "mc/codebuilder/CodeBuilderPerformance.h"
 #include "mc/common/SubClientId.h"
+#include "mc/deps/code_builder/CodeBuilderPerformance.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/threading/Async.h"
@@ -52,6 +53,7 @@ class IAdvancedGraphicsOptions;
 class IClientInstance;
 class IDlcBatchModel;
 class IMinecraftGame;
+class INetworkGameConnector;
 class IOptions;
 class ISceneStack;
 class IScreenCapabilities;
@@ -64,6 +66,7 @@ class PlatformMultiplayerRestrictions;
 class PlatformUpsellDialog;
 class ProgressHandler;
 class ResourceLocation;
+class ResourcePackManager;
 class SceneFactory;
 class SkinPackCollectionModel;
 class TaskGroup;
@@ -74,7 +77,6 @@ struct ContentLogMessage;
 struct DlcId;
 struct DownloadStateObject;
 struct EducationLevelSettings;
-struct EducationLocalLevelSettings;
 struct IEDUDiscoveryService;
 struct IGameConnectionListener;
 struct LevelSummary;
@@ -97,17 +99,16 @@ namespace Core { class Path; }
 namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Identity { struct SignOutResult; }
 namespace Json { class Value; }
-namespace Realms { struct Backup; }
 namespace Realms { struct InvitesService; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
+namespace Realms { struct WorldBackupList; }
 namespace Realms { struct WorldCache; }
 namespace SDL { struct SubscriptionInfo; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { struct FriendList; }
 namespace Social { struct MultiIdentitySigninResult; }
-namespace Social { struct PermissionCheckResult; }
 namespace Social { struct PlatformUserProfileData; }
 namespace Social { struct XboxLiveUserProfileData; }
 namespace StoreFilter { struct FilterCollectionInfo; }
@@ -168,9 +169,6 @@ public:
     // NOLINTBEGIN
     virtual ~MinecraftScreenModel() /*override*/;
 
-    virtual void
-    navigateToDisconnectScreen(::Connection::DisconnectFailReason reason, ::std::string const& displayMessageOverride);
-
     virtual bool tryNavigateToProfileScreen() /*override*/;
 
     virtual bool tryNavigateToSafeZoneScreenOnFirstSignin() /*override*/;
@@ -182,7 +180,15 @@ public:
 
     virtual bool leaveScreen(::std::string expectedScreenName, bool onlyThis) /*override*/;
 
-    virtual bool isInGame() const;
+    virtual void popScreensBackTo(::ui::SceneType const sceneType) /*override*/;
+
+    virtual bool isLeaveGameDone() const /*override*/;
+
+    virtual void requestLeaveGame(bool switchScreen, bool sync) /*override*/;
+
+    virtual void destroyGame() /*override*/;
+
+    virtual bool isInGame() const /*override*/;
 
     virtual bool isSelectedSkinInitialized() const;
 
@@ -202,7 +208,11 @@ public:
 
     virtual bool isAdhocEnabled() const;
 
+    virtual bool isUserReady() const /*override*/;
+
     virtual bool isDirty() const;
+
+    virtual ::ResourcePackManager& getResourcePackManager() const /*override*/;
 
     virtual ::SkinHandle const& getSelectedSkinHandle() const;
 
@@ -211,6 +221,8 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const getUserManager() const /*override*/;
 
     virtual ::std::string const& getLastPoppedScreenName() const;
+
+    virtual ::INetworkGameConnector& getNetworkGameConnector() /*override*/;
     // NOLINTEND
 
 public:
@@ -260,7 +272,9 @@ public:
 
     MCAPI bool canManageSubscriptionForStoreId(::std::string const& storeId) const;
 
-    MCAPI void cancelJoinGame(::LoadingState loadingState);
+    MCAPI bool canUserDoActionForCurrentRealm(::Realms::PlayerRoleActions action) const;
+
+    MCAPI bool canUserDoRealmRoleAction(::Realms::World const& realmWorld, ::Realms::PlayerRoleActions action) const;
 
     MCAPI void checkConnectionEvents();
 
@@ -324,8 +338,6 @@ public:
         ::std::string const&                          clubId,
         ::std::function<void(::Clubs::GenericStatus)> callback
     );
-
-    MCAPI void destroyGame();
 
     MCAPI void devConsoleExecuteCommand(::std::string const& command);
 
@@ -455,8 +467,6 @@ public:
 
     MCAPI ::ActorUniqueID getLocalPlayerEntityID() const;
 
-    MCAPI ::std::string getLocalizedStoreDisplayName(::std::string const& storeId);
-
     MCAPI ::std::string getMarketplacePassPrice(::std::string const& productSku, ::std::string const& caymanId) const;
 
     MCAPI uint getMaxPlatformInvitablePlayers() const;
@@ -492,9 +502,10 @@ public:
 
     MCAPI ::std::string getRandomSearchTermUsingCategory(::StoreCatalogCategory const& category) const;
 
-    MCAPI void getRealmWorldBackups(
-        ::Realms::RealmId                                                               worldId,
-        ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Backup>)> callback
+    MCAPI void getRealmWorldBackupList(
+        ::Realms::RealmId                                                         worldId,
+        int                                                                       slotIndex,
+        ::std::function<void(::Realms::GenericStatus, ::Realms::WorldBackupList)> callback
     );
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService> getRealmsInvitesService();
@@ -621,8 +632,6 @@ public:
 
     MCAPI bool isLeftHanded() const;
 
-    MCAPI ::Social::PermissionCheckResult isMultiplayerAllowed() const;
-
     MCAPI bool isNetworkAvailable() const;
 
     MCAPI bool isOnSceneStack(::std::string const& screenName);
@@ -645,8 +654,6 @@ public:
 
     MCAPI bool isRealmsEditWorldOreUIFeatureOn() const;
 
-    MCFOLD bool isRealmsEnabled() const;
-
     MCAPI bool isRealmsInitialized() const;
 
     MCAPI bool isResourceLoadingFinished() const;
@@ -654,6 +661,8 @@ public:
     MCAPI bool isRiding() const;
 
     MCAPI bool isServiceMultiplayerEnabled(::Social::MultiplayerServiceIdentifier serviceID) const;
+
+    MCAPI bool isServiceMultiplayerSupported(::Social::MultiplayerServiceIdentifier serviceID);
 
     MCAPI bool isServicesLocalizationReady() const;
 
@@ -702,7 +711,7 @@ public:
 
     MCAPI bool launchManageSubscriptions();
 
-    MCAPI bool launchStore();
+    MCAPI bool launchStoreForClientUpdates();
 
     MCAPI void launchUri(::std::string const& uri);
 
@@ -719,6 +728,8 @@ public:
     MCAPI void navigateToControlCustomizationScreen();
 
     MCAPI void navigateToDevConsole();
+
+    MCAPI void navigateToDisconnectScreen(::Connection::DisconnectFailReason reason);
 
     MCAPI void navigateToEduHomeScreen();
 
@@ -757,8 +768,6 @@ public:
 
     MCAPI void navigateToStoreHomeScreen(::std::string const& title);
 
-    MCAPI void navigateToTokenFAQScreen();
-
     MCAPI void navigateToTokenPopupScreen();
 
     MCAPI void navigateToUpdateWorldHeightScreen(::std::function<void(bool)> startWorldCallback);
@@ -774,8 +783,6 @@ public:
         ::std::function<void(::Realms::GenericStatus)> callback,
         ::std::function<void(int)>                     retryCallback
     );
-
-    MCAPI void pickCustomSkin(::std::function<void(::PickCustomSkinResult)> callback) const;
 
     MCAPI void prepareToNavigateToGamePlayScreen();
 
@@ -808,13 +815,6 @@ public:
 
     MCAPI void resetRealmsWorldContext();
 
-    MCAPI void restoreRealmWorldBackup(
-        ::Realms::RealmId                              worldId,
-        ::std::string                                  backupId,
-        ::std::function<void(int)>                     retryCallback,
-        ::std::function<void(::Realms::GenericStatus)> callback
-    );
-
     MCAPI void saveLevelData(::std::string const& levelId, ::LevelData const& data);
 
     MCAPI void scheduleCheckUserStorageAsync();
@@ -838,8 +838,6 @@ public:
     );
 
     MCAPI void setClubProfile(::Clubs::ClubModel const& model, ::std::function<void(::Clubs::GenericStatus)> callback);
-
-    MCAPI void setEducationLocalLevelSettings(::EducationLocalLevelSettings const& settings);
 
     MCAPI void setIsCheckoutInProgress(bool isCheckoutInProgress);
 
@@ -899,6 +897,8 @@ public:
 
     MCAPI void startExternalNetworkWorld(::std::string const& serverName, ::std::string const& ipAddress, int port);
 
+    MCAPI void startGatheringWorld(::Social::GameConnectionInfo const& connection);
+
     MCAPI void startLocalServerAsync(::LevelSummary const& levelSummary, ::LevelSettings const& levelSettings);
 
     MCAPI void
@@ -947,9 +947,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $navigateToDisconnectScreen(::Connection::DisconnectFailReason reason, ::std::string const& displayMessageOverride);
-
     MCAPI bool $tryNavigateToProfileScreen();
 
     MCAPI bool $tryNavigateToSafeZoneScreenOnFirstSignin();
@@ -958,6 +955,14 @@ public:
     $navigateToStoreDataDrivenScreen(::StoreDataDrivenScreenParams const& params, bool forceDisableProgressScreen);
 
     MCAPI bool $leaveScreen(::std::string expectedScreenName, bool onlyThis);
+
+    MCAPI void $popScreensBackTo(::ui::SceneType const sceneType);
+
+    MCAPI bool $isLeaveGameDone() const;
+
+    MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
+
+    MCAPI void $destroyGame();
 
     MCFOLD bool $isInGame() const;
 
@@ -979,7 +984,11 @@ public:
 
     MCAPI bool $isAdhocEnabled() const;
 
+    MCAPI bool $isUserReady() const;
+
     MCFOLD bool $isDirty() const;
+
+    MCAPI ::ResourcePackManager& $getResourcePackManager() const;
 
     MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
 
@@ -988,6 +997,8 @@ public:
     MCFOLD ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const $getUserManager() const;
 
     MCAPI ::std::string const& $getLastPoppedScreenName() const;
+
+    MCAPI ::INetworkGameConnector& $getNetworkGameConnector();
     // NOLINTEND
 
 public:

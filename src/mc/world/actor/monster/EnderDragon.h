@@ -17,6 +17,7 @@ class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class ActorHurtResult;
 class BlockPos;
 class EnderCrystal;
 class EntityContext;
@@ -88,7 +89,8 @@ public:
 
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
 public:
@@ -106,7 +108,7 @@ public:
 
     MCAPI float _getHeadYOffset(float a) const;
 
-    MCAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
+    MCAPI ::ActorHurtResult _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
     MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
@@ -128,18 +130,6 @@ public:
     MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
     MCAPI void postAiStep();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int& GROWL_INTERVAL_MAX();
-
-    MCAPI static int& GROWL_INTERVAL_MIN();
-
-    MCAPI static int& MAX_PATH_RADIUS();
-
-    MCAPI static float& SITTING_ALLOWED_DAMAGE_PERCENTAGE();
     // NOLINTEND
 
 public:
@@ -183,7 +173,7 @@ public:
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
 
     // NOLINTEND

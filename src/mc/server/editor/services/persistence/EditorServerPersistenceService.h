@@ -3,14 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/PersistenceGroupChangeAction.h"
+#include "mc/common/editor/PersistenceGroupItemChangeAction.h"
+#include "mc/common/editor/PersistenceGroupType.h"
+#include "mc/common/editor/PersistenceScope.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/persistence/EditorPersistenceService.h"
-#include "mc/editor/services/persistence/PersistentDataType.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class PersistenceQuerySharedGroupPayload; }
+namespace Editor::Services { class PersistenceGroup; }
+namespace Editor::Services { class PersistenceItem; }
+namespace Editor::Services { struct PersistenceGroupItemMetadata; }
+namespace Editor::Services { struct PersistenceGroupMetadata; }
 // clang-format on
 
 namespace Editor::Services {
@@ -19,8 +27,8 @@ class EditorServerPersistenceService : public ::Editor::Services::EditorPersiste
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke0f2d7;
-    ::ll::UntypedStorage<1, 1>  mUnkedb2c6;
+    ::ll::UntypedStorage<8, 64> mUnkf8a37e;
+    ::ll::UntypedStorage<8, 32> mUnk4a2014;
     // NOLINTEND
 
 public:
@@ -42,30 +50,59 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ::std::string const& getPlayerSaveId() const /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    ) /*override*/;
 
-    virtual void
-    _removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> createGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    ) /*override*/;
 
-    virtual void _tick(::Editor::ServiceProviderCollection& serviceProvider) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) /*override*/;
+
+    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const
+        /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _loadPersistDataFromLevel();
+    MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI void _removePersistDataFromLevel(::HashedString const& key);
+    MCNAPI_S void _dispatchGroupItemsToClient(
+        ::Editor::Services::PersistenceGroupItemMetadata     item,
+        ::Editor::Services::PersistenceGroupItemChangeAction action
+    );
 
-    MCNAPI void _saveDataOnLevel(::HashedString const& key, ::std::string value);
+    MCNAPI void _dispatchGroupToClients(
+        ::Editor::Services::PersistenceGroupChangeAction action,
+        ::Editor::Services::PersistenceGroupMetadata     groupMetadata
+    );
 
-    MCNAPI void _savePersistDataOnLevel();
-    // NOLINTEND
+    MCNAPI ::std::string _getGroupItemKey(::std::string groupVersionName, ::Editor::Services::PersistenceScope scope);
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& LEVEL_STORAGE_PERSISTDATA_KEY_SUFFIX();
+    MCNAPI void _handleGroupItemChange(
+        ::std::string                                          key,
+        ::Editor::Services::PersistenceScope                   scope,
+        ::Editor::Services::PersistenceGroupItemChangeAction   action,
+        ::StackRefResult<::Editor::Services::PersistenceItem>& item
+    );
+
+    MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const& payload);
     // NOLINTEND
 
 public:
@@ -79,11 +116,27 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::std::string const& $getPlayerSaveId() const;
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getOrCreateGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    );
 
-    MCNAPI void $_removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $createGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    );
 
-    MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProvider);
+    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
+
+    MCNAPI ::Core::PathBuffer<::std::string> $_getGroupRootPath(::Editor::Services::PersistenceScope scope) const;
 
 
     // NOLINTEND

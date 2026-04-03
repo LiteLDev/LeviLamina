@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 namespace Json { class Value; }
 // clang-format on
 
@@ -26,8 +25,6 @@ public:
     MCAPI explicit IntRange(int value);
 
     MCAPI IntRange(int min, int max);
-
-    MCAPI int getValue(::Random& random) const;
 
     MCAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
     // NOLINTEND

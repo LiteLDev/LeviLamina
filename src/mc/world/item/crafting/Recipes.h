@@ -5,7 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/SortItemInstanceIdAux.h"
 #include "mc/world/item/crafting/ExternalRecipeStore.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
@@ -16,7 +18,6 @@ class BaseGameVersion;
 class Block;
 class Experiments;
 class Item;
-class ItemInstance;
 class ItemStackBase;
 class Level;
 class MinEngineVersion;
@@ -371,24 +372,39 @@ public:
     MCAPI ::std::pair<::std::string, ::Json::Value> extractRecipeObjInfo(::Json::Value const& obj);
 
     MCAPI_C void
-    forEachRecipeFor(::HashedString const& tag, ::std::function<void(::Recipe const&)> const& callback) const;
+    forEachRecipeFor(::HashedString const& tag, ::brstd::function_ref<void(::Recipe const&)> callback) const;
 
     MCAPI_C void forEachRecipeFor(
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<void(::Recipe const&)> const& callback
+        ::std::vector<::std::string> const&          tags,
+        ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
     MCAPI_C void forEachRecipeFor(
-        ::ItemInstance const&                         result,
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<void(::Recipe const&)> const& callback
+        ::ItemInstance const&                        result,
+        ::HashedString const&                        tag,
+        ::brstd::function_ref<void(::Recipe const&)> callback
+    ) const;
+
+    MCAPI_C void forEachRecipeFor(
+        ::ItemInstance const&                        result,
+        ::std::vector<::std::string> const&          tags,
+        ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
     MCAPI_C void forEachRecipeUntil(
-        ::ItemInstance const&                         result,
-        ::std::vector<::std::string> const&           tags,
-        ::std::function<bool(::Recipe const&)> const& callback
+        ::ItemInstance const&                        result,
+        ::HashedString const&                        tag,
+        ::brstd::function_ref<bool(::Recipe const&)> callback
     ) const;
+
+    MCAPI_C void forEachRecipeUntil(
+        ::ItemInstance const&                        result,
+        ::std::vector<::std::string> const&          tags,
+        ::brstd::function_ref<bool(::Recipe const&)> callback
+    ) const;
+
+    MCAPI ::std::vector<::ItemInstance>
+    getFurnaceRecipeFor(::ItemStackBase const& output, ::HashedString const& tag) const;
 
     MCAPI ::ItemInstance getFurnaceRecipeResult(::ItemStackBase const& item, ::HashedString const& tag) const;
 

@@ -35,10 +35,10 @@ class ScriptMessageFormData
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk447c0d;
-    ::ll::UntypedStorage<8, 216> mUnk12b41c;
-    ::ll::UntypedStorage<8, 216> mUnka0e049;
-    ::ll::UntypedStorage<8, 216> mUnk9212b7;
+    ::ll::UntypedStorage<8, 216> mUnkb0e1b1;
+    ::ll::UntypedStorage<8, 216> mUnk861562;
+    ::ll::UntypedStorage<8, 216> mUnk2fb338;
+    ::ll::UntypedStorage<8, 216> mUnk316bac;
     // NOLINTEND
 
 public:
@@ -82,8 +82,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>,
-        ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-        void>>
+        ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>>
     show(
         ::Scripting::ContextConfig const&      config,
         ::Scripting::ScriptObjectFactory&      factory,
@@ -94,8 +93,7 @@ public:
     MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponseV2>,
-            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
-            void>,
+            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError>,
         ::Scripting::EngineError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptRawMessageError>

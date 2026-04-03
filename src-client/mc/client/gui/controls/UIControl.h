@@ -79,6 +79,7 @@ public:
     ::ll::TypedStorage<4, 8, ::Vec2>                                              mClipOffset;
     ::ll::TypedStorage<4, 4, uint>                                                mClipChangeEventId;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIPropertyBag>>                  mPropertyBag;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UIPropertyBag>>                  mPropertyBagToPropagateToChildren;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>>                       mParent;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::UIControl>>>      mChildren;
     ::ll::TypedStorage<8, 8, uint64>                                              mComponentsInUse;
@@ -155,7 +156,7 @@ public:
 
     MCAPI ::glm::vec2 const& getPosition() const;
 
-    MCAPI ::UIPropertyBag const& getPropertyBag() const;
+    MCFOLD ::UIPropertyBag const& getPropertyBag() const;
 
     MCFOLD ::UIPropertyBag& getPropertyBag();
 
@@ -171,6 +172,11 @@ public:
     MCAPI void popBackChild();
 
     MCAPI void popFrontChild();
+
+    MCAPI void processPropertyBags(
+        ::std::unique_ptr<::UIPropertyBag> propertyBag,
+        ::std::unique_ptr<::UIPropertyBag> propertyBagForChildren
+    );
 
     MCAPI void reloadFromControl(::UIControl const& control);
 

@@ -15,7 +15,7 @@ class EntityComponentFactoryJson : public ::EntityComponentFactoryBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk828a3e;
+    ::ll::UntypedStorage<8, 64> mUnk1114c2;
     // NOLINTEND
 
 public:

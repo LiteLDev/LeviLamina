@@ -61,6 +61,10 @@ public:
         bool                                     disableExitWhileInProgress
     );
 
+    MCAPI ::std::string const _getDownloadProgress() const;
+
+    MCAPI ::std::string const _getImportProgress() const;
+
     MCAPI ::std::string const _getLocalizedImportProgress() const;
 
     MCAPI ::std::string _getTitleLabel();

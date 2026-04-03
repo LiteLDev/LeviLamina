@@ -6,7 +6,7 @@ struct ClientGenerationRequestHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbb0ef8;
+    ::ll::UntypedStorage<8, 24> mUnkd8e231;
     ::ll::UntypedStorage<8, 8>  mUnkee5718;
     ::ll::UntypedStorage<4, 4>  mUnkf1db40;
     ::ll::UntypedStorage<4, 12> mUnk5915c9;

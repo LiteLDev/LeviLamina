@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockType;
+class HashedString;
 // clang-format on
 
 class VanillaBlockTypeComponentAdder {
@@ -19,4 +20,24 @@ public:
     VanillaBlockTypeComponentAdder& operator=(VanillaBlockTypeComponentAdder const&);
     VanillaBlockTypeComponentAdder(VanillaBlockTypeComponentAdder const&);
     VanillaBlockTypeComponentAdder();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit VanillaBlockTypeComponentAdder(::HashedString const& blockName);
+
+    MCAPI ~VanillaBlockTypeComponentAdder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& blockName);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

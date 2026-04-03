@@ -17,8 +17,8 @@ struct EditorJigsawRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9d4627;
-    ::ll::UntypedStorage<8, 16> mUnk559a9c;
+    ::ll::UntypedStorage<8, 8>  mUnk229b3b;
+    ::ll::UntypedStorage<8, 16> mUnk2ff257;
     // NOLINTEND
 
 public:

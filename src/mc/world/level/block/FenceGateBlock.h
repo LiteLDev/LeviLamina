@@ -21,6 +21,7 @@ class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class FenceGateBlock : public ::BlockType {
@@ -31,11 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
-
     virtual ::AABB getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -54,10 +50,6 @@ public:
 
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const /*override*/;
 
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
-        /*override*/;
-
     virtual bool isFenceGateBlock() const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -72,6 +64,8 @@ public:
     // NOLINTBEGIN
     MCAPI FenceGateBlock(::std::string const& nameId, int id, ::WoodType);
 
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void _setOpen(
         ::BlockSource&                  region,
         ::gsl::not_null<::Block const*> block,
@@ -80,11 +74,11 @@ public:
         bool                            shouldBeOpen
     ) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void resolveIsInWall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
@@ -94,6 +88,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::AABB const&
     _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue, bool isCollisionShape);
+
+    MCAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -105,10 +101,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
-
     MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -124,9 +116,6 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
-
-    MCFOLD bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCFOLD bool $isFenceGateBlock() const;
 

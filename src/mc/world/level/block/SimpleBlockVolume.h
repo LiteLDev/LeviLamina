@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
@@ -62,7 +63,7 @@ public:
 
     virtual void translate(::BlockPos const& delta) /*override*/;
 
-    virtual void forEach(::std::function<bool(::BlockPos const&)> callback) const /*override*/;
+    virtual void forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const /*override*/;
 
     virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
@@ -130,7 +131,7 @@ public:
 
     MCAPI void $translate(::BlockPos const& delta);
 
-    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCAPI void $forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
 
     MCAPI ::std::set<::ChunkPos> $getChunks() const;
 

@@ -87,15 +87,17 @@ public:
 
     MCAPI ::std::string _extractGameInviteHandle(::Json::Value const& propertyBag);
 
+    MCAPI ::std::string const _getKeyNameForCurrentInput() const;
+
     MCAPI void _handleInvite(bool parseJSON);
 
     MCAPI void _invitationTelemetry(::Json::Value const& data, ::ToastMessageType type);
 
     MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
 
-    MCAPI void _playDefaultToastSound() const;
+    MCAPI void _playButtonTTS() const;
 
-    MCAPI void _playMobileInviteTTS() const;
+    MCAPI void _playDefaultToastSound() const;
 
     MCAPI void _playRecipeUnlockingToastInSound() const;
 

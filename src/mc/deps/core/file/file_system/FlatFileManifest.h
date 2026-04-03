@@ -19,11 +19,11 @@ class FlatFileManifest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkac2d9c;
-    ::ll::UntypedStorage<8, 24> mUnkae11c7;
+    ::ll::UntypedStorage<8, 64> mUnk15f051;
+    ::ll::UntypedStorage<8, 24> mUnk4b8622;
     ::ll::UntypedStorage<8, 8>  mUnk77e960;
     ::ll::UntypedStorage<8, 8>  mUnk2f7b1d;
-    ::ll::UntypedStorage<8, 32> mUnk5f9a29;
+    ::ll::UntypedStorage<8, 32> mUnkcac0b2;
     // NOLINTEND
 
 public:

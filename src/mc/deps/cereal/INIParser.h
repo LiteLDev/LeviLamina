@@ -8,7 +8,7 @@ class INIParser {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk4c3de1;
+    ::ll::UntypedStorage<8, 64> mUnkb9a4c2;
     // NOLINTEND
 
 public:

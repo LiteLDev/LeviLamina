@@ -19,7 +19,6 @@ class ILevel;
 class IStructureWireframeQueue;
 class LevelChunk;
 class SaveContext;
-namespace mce { class Color; }
 // clang-format on
 
 class StructureBlockActor : public ::BlockActor {
@@ -69,18 +68,6 @@ public:
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCAPI_S void setStructureData(::StructureEditorData const& data);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI_C static float const& MAX_WIREFRAME_RENDER_DISTANCE();
-
-    MCAPI_C static ::mce::Color const& X_AXIS_COLOR();
-
-    MCAPI_C static ::mce::Color const& Y_AXIS_COLOR();
-
-    MCAPI_C static ::mce::Color const& Z_AXIS_COLOR();
     // NOLINTEND
 
 public:

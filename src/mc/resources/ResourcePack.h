@@ -69,6 +69,8 @@ public:
 
     MCAPI void generateAssetSet();
 
+    MCAPI_C ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
+
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
     MCAPI_C ::Json::Value getTexturesList(int subpackIndex) const;

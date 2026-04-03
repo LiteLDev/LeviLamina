@@ -265,7 +265,7 @@ public:
     ::ll::TypedStorage<8, 8, ::bgfx::Encoder*>                           m_encoder0;
     ::ll::TypedStorage<8, 8, ::bgfx::EncoderImpl*>                       m_encoder;
     ::ll::TypedStorage<8, 8, ::bx::HandleAlloc*>                         m_encoderHandle;
-    ::ll::TypedStorage<8, 206541568, ::bgfx::Frame[2]>                   m_frame;
+    ::ll::TypedStorage<64, 206541568, ::bgfx::Frame[2]>                  m_frame;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_render;
     ::ll::TypedStorage<8, 8, ::bgfx::Frame*>                             m_submit;
     ::ll::TypedStorage<8, 524280, uint64[65535]>                         m_tempKeys;
@@ -469,7 +469,7 @@ public:
 
     MCAPI void textureDecRef(::bgfx::TextureHandle _handle);
 
-    MCAPI void update(::bgfx::ShaderBufferHandle _handle, ::bgfx::Memory const* _mem);
+    MCAPI void update(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
 
     MCAPI void update(::bgfx::DynamicIndexBufferHandle _handle, uint _startIndex, ::bgfx::Memory const* _mem);
 

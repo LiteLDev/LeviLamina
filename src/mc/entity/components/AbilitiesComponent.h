@@ -9,6 +9,6 @@ struct AbilitiesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 1444, ::LayeredAbilities> mAbilities;
+    ::ll::TypedStorage<8, 1464, ::LayeredAbilities> mAbilities;
     // NOLINTEND
 };

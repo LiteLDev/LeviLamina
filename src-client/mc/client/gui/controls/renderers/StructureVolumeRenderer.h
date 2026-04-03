@@ -10,6 +10,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSourceListener.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/phys/AABB.h"
@@ -20,7 +21,6 @@ class Actor;
 class BaseActorRenderContext;
 class Block;
 class BlockActor;
-class BlockPos;
 class BlockSource;
 class IClientInstance;
 class MinecraftUIRenderContext;
@@ -63,7 +63,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mResort;
     ::ll::TypedStorage<8, 8, ::BlockSource*>                                    mUnsafeSourcePointer;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RenderChunkSorterSharedInfo>> mSharedSortInfo;
-    ::ll::TypedStorage<8, 368, ::RenderChunkSorter>                             mChunkSorter;
+    ::ll::TypedStorage<8, 448, ::RenderChunkSorter>                             mChunkSorter;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                               mAxesMaterial;
     // NOLINTEND
 
@@ -84,15 +84,15 @@ public:
     virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
 
     virtual void onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
+        ::BlockSource&    source,
+        ::BlockPos const& pos,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::ActorBlockSyncMessage const*,
+        ::BlockChangedEventTarget eventTarget,
+        ::Actor*
     ) /*override*/;
 
     virtual void onAppResumed() /*override*/;
@@ -206,6 +206,18 @@ public:
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
     MCAPI void $onSourceDestroyed(::BlockSource& source);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&    source,
+        ::BlockPos const& pos,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::ActorBlockSyncMessage const*,
+        ::BlockChangedEventTarget eventTarget,
+        ::Actor*
+    );
 
     MCAPI void $onAppResumed();
 

@@ -9,15 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { struct SupportedScriptComponentFactoriesEntry; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -43,10 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemComponents(
-        ::BaseGameVersion const&                                                   version,
-        ::std::string const&                                                       prerelease,
+    MCAPI explicit ScriptItemComponents(
         ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader
+    );
+
+    MCAPI ::std::unordered_map<
+        ::std::string_view,
+        ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
+    _getOrCreateNativeItemComponentFactories() const;
+
+    MCAPI void bind(
+        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
+        ::Scripting::Version const&                              scriptingVersion,
+        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
     );
 
     MCAPI ::std::vector<::std::string_view> getSupportedItemComponentIds(
@@ -61,34 +69,16 @@ public:
         ::Scripting::WeakLifetimeScope const&                                          scope,
         bool                                                                           includeCustom
     );
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::
-        unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>>
-        _getSupportedNativeItemComponents(
-            ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const&
-                                     supportedComponentTypeNames,
-            ::BaseGameVersion const& version,
-            ::std::string const&     prerelease
-        );
-
-    MCAPI static void bind(
-        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
-        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
-    );
+    MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory> const&
+    tryGetFactory(::std::string_view componentName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BaseGameVersion const&                                                   version,
-        ::std::string const&                                                       prerelease,
-        ::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader
-    );
+    MCFOLD void*
+    $ctor(::WeakRef<::ScriptModuleMinecraft::IScriptItemCustomComponentReader const> customComponentReader);
     // NOLINTEND
 };
 

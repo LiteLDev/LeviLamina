@@ -16,7 +16,7 @@ struct IntProvider : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::std::variant<::ConstantInt, ::UniformInt>> mProvider;
+    ::ll::TypedStorage<8, 24, ::std::variant<::ConstantInt, ::UniformInt>> mProvider;
     // NOLINTEND
 
 public:

@@ -89,6 +89,12 @@ public:
 
     MCAPI_C ::ItemStack const& getItemStack(int slot) const;
 
+    MCAPI_C ::ItemStackBase const& getItemStackBase(int slot) const;
+
+    MCAPI_C bool isExpandableItemFiltered(int slot) const;
+
+    MCAPI_C bool isItemInstanceBased() const;
+
     MCAPI_C ::ItemStack removeItem(int slot, int removeCount);
 
     MCAPI_C bool setItem(

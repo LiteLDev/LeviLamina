@@ -68,8 +68,13 @@ public:
 
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 
-    MCAPI static ::BlockPos
-    findValidSpawnAround(::BlockSource& region, ::BlockPos const& around, bool searchForEndStoneOnly, int searchRadius);
+    MCAPI static ::BlockPos findValidSpawnAround(
+        ::BlockSource&    region,
+        ::BlockPos const& around,
+        bool              searchForEndStoneOnly,
+        int               searchRadius,
+        bool              searchAboveBlock
+    );
     // NOLINTEND
 
 public:

@@ -43,8 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI_C void* $ctor();
 
-    MCAPI_C void* $ctor(::mce::TexturePtr const& rhs);
-
     MCAPI_C void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
 
     MCAPI_C void* $ctor(

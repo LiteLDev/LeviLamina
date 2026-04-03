@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/legacy/ActorUniqueID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,6 @@ class DimensionHeightRange;
 class IAddActorEntityProxy;
 class LevelStorage;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class PlayerLimboActorManager {

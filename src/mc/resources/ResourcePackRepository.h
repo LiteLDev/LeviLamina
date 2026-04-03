@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/controllers/PackCategory.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
-#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/threading/Async.h"
@@ -205,6 +205,8 @@ public:
 
     virtual ::Core::PathBuffer<::std::string> const getSkinPacksPath() const /*override*/;
 
+    virtual ::Core::PathBuffer<::std::string> const getCustomSkinDirectoryPath() const /*override*/;
+
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentResourcePacksPath() const /*override*/;
 
     virtual ::Core::PathBuffer<::std::string> const getDevelopmentBehaviorPacksPath() const /*override*/;
@@ -272,6 +274,13 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI_C static ::Core::PathBuffer<::std::string>
+    getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
@@ -331,7 +340,7 @@ public:
 
     MCAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
 
-    MCFOLD ::std::vector<::PackIdVersion> const& $getServicePacks() const;
+    MCAPI ::std::vector<::PackIdVersion> const& $getServicePacks() const;
 
     MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
@@ -362,6 +371,8 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
+
+    MCAPI ::Core::PathBuffer<::std::string> const $getCustomSkinDirectoryPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
 

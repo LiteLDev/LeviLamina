@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class Randomize;
+class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
 
@@ -25,9 +25,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool test(::Block const& block, ::Randomize& randomize) const /*override*/;
+    virtual bool test(::Block const& block, ::IRandom& random) const /*override*/;
 
-    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const /*override*/;
+    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const /*override*/;
 
     virtual ::StructurePoolBlockPredicateType getType() const /*override*/;
 
@@ -39,9 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::Randomize& randomize) const;
+    MCAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCFOLD bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::Randomize& randomize) const;
+    MCFOLD bool $test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const;
 
     MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 

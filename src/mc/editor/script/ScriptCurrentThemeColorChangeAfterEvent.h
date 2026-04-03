@@ -13,8 +13,8 @@ struct ScriptCurrentThemeColorChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke95fb6;
-    ::ll::UntypedStorage<4, 24> mUnkf7d0e7;
+    ::ll::UntypedStorage<8, 32> mUnk11968c;
+    ::ll::UntypedStorage<8, 24> mUnkf7d0e7;
     // NOLINTEND
 
 public:

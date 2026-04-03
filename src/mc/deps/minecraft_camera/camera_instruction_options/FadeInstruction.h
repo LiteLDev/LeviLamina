@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/Result.h"
-
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,13 +26,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mGreen;
         ::ll::TypedStorage<4, 4, float> mBlue;
         // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::ColorOption>
-        read(::ReadOnlyBinaryStream& stream);
-        // NOLINTEND
     };
 
     struct TimeOption {
@@ -46,13 +35,6 @@ public:
         ::ll::TypedStorage<4, 4, float> mFadeInTime;
         ::ll::TypedStorage<4, 4, float> mHoldTime;
         ::ll::TypedStorage<4, 4, float> mFadeOutTime;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction::TimeOption>
-        read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
 
@@ -73,8 +55,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::Bedrock::Result<::CameraInstructionOptions::FadeInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };
 

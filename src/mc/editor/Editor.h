@@ -3,15 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogContent.h"
-#include "mc/editor/blocks/EditorBlockPalette.h"
-#include "mc/editor/logging/LogMessage.h"
-#include "mc/editor/structure/EditorStructureDBMetadata.h"
-#include "mc/editor/structure/EditorStructureMetadataEditParams.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
+namespace Editor { class LogMessage; }
+namespace Editor { struct EditorBlockPalette; }
+namespace Editor { struct EditorStructureDBMetadata; }
+namespace Editor { struct EditorStructureMetadataEditParams; }
 namespace Editor { struct LocalizationEntry; }
+namespace Editor { struct LogContent; }
 namespace Editor { struct Cone; }
 namespace Editor { struct Cube; }
 namespace Editor { struct Cylinder; }
@@ -22,6 +24,10 @@ namespace Editor {
 // functions
 // NOLINTBEGIN
 MCNAPI ::std::unordered_set<uint64> _getFilteredBlockSet();
+
+MCNAPI_C ::Bedrock::Result<::CompoundTag> compoundTagFromString(::std::string_view data);
+
+MCNAPI ::Bedrock::Result<::std::string> compoundTagToString(::CompoundTag const& tag);
 
 MCNAPI_C ::std::string getLocalizedString(::std::variant<::std::string, ::Editor::LocalizationEntry> const& locale);
 

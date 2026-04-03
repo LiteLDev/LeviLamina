@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_20::JigsawStructureDefinition::Description>      mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                                                        mStartJigsawName;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData>                            mBiomeFilters;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData>                            mBiomeFilters;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureDefinition::GenerationStep>    mStep;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureDefinition::TerrainAdaptation> mTerrainAdaptation;
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<15>>                                         mStartPool;

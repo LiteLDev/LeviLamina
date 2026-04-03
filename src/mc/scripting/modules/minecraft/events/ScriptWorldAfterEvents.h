@@ -7,6 +7,7 @@
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldAfterEvents.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
@@ -24,10 +25,13 @@ namespace ScriptModuleMinecraft { class ScriptPlayerEventListener; }
 namespace ScriptModuleMinecraft { class ScriptServerNetworkEventListener; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemDropAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemPickupAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
@@ -155,6 +159,20 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptAfterEventList>> mEvents;
     ::ll::TypedStorage<
         8,
+        64,
+        ::std::unordered_map<
+            ::ActorUniqueID,
+            ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>>>
+        mActorItemDropEventDataMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::ActorUniqueID,
+            ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>>>
+        mActorItemPickupEventDataMap;
+    ::ll::TypedStorage<
+        8,
         8,
         ::std::unique_ptr<::ScriptModuleMinecraft::ScriptWorldAfterEvents::ScriptWorldAfterEventsDeferredEventListener>>
         mScriptDeferredEventListener;
@@ -196,7 +214,7 @@ public:
     ) /*override*/;
 
     virtual void onActorHitEntity(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHitBlock(
@@ -223,13 +241,16 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     ) /*override*/;
 
+    virtual void onActorHeal(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
     virtual void onActorHurt(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorHealthChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
-            actorHealthChangedEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onActorDie(
@@ -239,6 +260,14 @@ public:
     virtual void onActorRemoved(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&           removedActor,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>& eventData
+    ) /*override*/;
+
+    virtual void onActorItemDrop(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>& eventData
+    ) /*override*/;
+
+    virtual void onActorItemPickup(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     virtual void onItemUse(
@@ -399,6 +428,10 @@ public:
         ::Scripting::ContextConfig const&     config
     );
 
+    MCAPI void flushActorItemDropEvents();
+
+    MCAPI void flushActorItemPickupEvents();
+
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
@@ -413,12 +446,6 @@ public:
     MCAPI static ::ScriptModuleMinecraft::ScriptAfterEventMetadata<
         ::ScriptModuleMinecraft::ScriptWorldAfterEvents> const&
     getMetadata();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& bindingName();
     // NOLINTEND
 
 public:
@@ -465,7 +492,7 @@ public:
     );
 
     MCAPI void $onActorHitEntity(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onActorHitBlock(
@@ -493,11 +520,13 @@ public:
     );
 
     MCAPI void
+    $onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData);
+
+    MCAPI void
     $onActorHurt(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData);
 
     MCAPI void $onActorHealthChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
-            actorHealthChangedEvent
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>& eventData
     );
 
     MCAPI void
@@ -506,6 +535,14 @@ public:
     MCAPI void $onActorRemoved(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&           removedActor,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>& eventData
+    );
+
+    MCAPI void $onActorItemDrop(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>& eventData
+    );
+
+    MCAPI void $onActorItemPickup(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
     );
 
     MCAPI void

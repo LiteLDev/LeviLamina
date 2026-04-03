@@ -8,8 +8,8 @@ struct SsrcGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk166636;
-    ::ll::UntypedStorage<8, 24> mUnk8de361;
+    ::ll::UntypedStorage<8, 32> mUnk448ebc;
+    ::ll::UntypedStorage<8, 24> mUnk4b1597;
     // NOLINTEND
 
 public:

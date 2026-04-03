@@ -7,6 +7,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/level/BlockChangedEventTarget.h"
 #include "mc/world/level/LevelListener.h"
+#include "mc/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +21,6 @@ class Level;
 class LevelChunk;
 class LevelRenderer;
 class LevelRendererCamera;
-class SubChunkPos;
 struct ActorBlockSyncMessage;
 struct BlockActorBlockSyncMessage;
 struct IRenderChunkGarbage;
@@ -93,15 +93,15 @@ public:
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
 
     virtual void onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
+        ::BlockSource&,
+        ::BlockPos const&,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::ActorBlockSyncMessage const*,
+        ::BlockChangedEventTarget,
+        ::Actor*
     ) /*override*/;
     // NOLINTEND
 
@@ -113,8 +113,6 @@ public:
     MCAPI void _handleVisibilityUpdates();
 
     MCAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
-
-    MCAPI void _notifyListenersForImmediateRenderChunkChange(::SubChunkPos const& rcp);
 
     MCAPI void _notifyListenersForVisibilityChange(::RenderChunkShared& renderChunkShared);
 
@@ -163,18 +161,6 @@ public:
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
     MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
-
-    MCAPI void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
     // NOLINTEND
 
 public:

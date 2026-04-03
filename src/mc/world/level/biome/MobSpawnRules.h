@@ -91,18 +91,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& LOW_END_MAX_SPAWN_DISTANCE();
-
-    MCAPI static int const& MAX_DEFAULT_SPAWN_DISTANCE();
-
-    MCAPI static uint64 const& MAX_WORLD_AGE();
-
-    MCAPI static int const& MIN_DEFAULT_SPAWN_DISTANCE();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();

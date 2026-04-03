@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
-    virtual ::std::string getName() const /*override*/;
+    virtual ::std::string_view getName() const /*override*/;
 
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
@@ -44,7 +44,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const /*override*/;
 
-    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
@@ -90,11 +90,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
@@ -102,7 +102,7 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

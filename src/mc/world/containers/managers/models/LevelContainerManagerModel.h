@@ -42,6 +42,8 @@ public:
     virtual bool isValid(float pickRange) /*override*/;
 
     virtual ::ContainerScreenContext _postInit() /*override*/;
+
+    virtual void _onDynamicContainerContentsChanged() /*override*/;
     // NOLINTEND
 
 public:
@@ -72,6 +74,8 @@ public:
     MCAPI bool $isValid(float pickRange);
 
     MCAPI ::ContainerScreenContext $_postInit();
+
+    MCAPI void $_onDynamicContainerContentsChanged();
 
 
     // NOLINTEND

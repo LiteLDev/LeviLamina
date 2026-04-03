@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
+#include "mc/client/renderer/block/BlockTessellatorBlockInWorld.h"
 #include "mc/client/renderer/block/BlockTessellatorCache.h"
 #include "mc/client/renderer/block/block_geometry/Axis.h"
 #include "mc/client/renderer/block/block_tessellator_custom_extra_data/Map.h"
@@ -38,7 +39,6 @@ class Tessellator;
 class Vec2;
 class Vec3;
 struct AirAndSimpleBlockBits;
-struct BlockTessellatorBlockInWorld;
 namespace mce { class Mesh; }
 namespace mce { class TexturePtr; }
 namespace mce { struct Radian; }
@@ -70,6 +70,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                                mRenderingExtra;
     ::ll::TypedStorage<1, 1, bool>                                                mUseNormals;
+    ::ll::TypedStorage<1, 1, bool>                                                mTextureShiftEnabled;
     ::ll::TypedStorage<8, 8, ::BlockSource*>                                      mRegion;
     ::ll::TypedStorage<4, 8, ::mce::framebuilder::FrameLightingModelCapabilities> mLightingModelCapabilities;
     ::ll::TypedStorage<8, 88, ::TextureUVCoordinateSet>                           mFixedTexture;

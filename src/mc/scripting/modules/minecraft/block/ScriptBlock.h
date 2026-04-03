@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/shared_types/v1_26_0/block/LiquidType.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/level/block/LiquidType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
-namespace ScriptModuleMinecraft { class IScriptBlockCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptBlockComponents; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
@@ -64,14 +62,14 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    canBeDestroyedByLiquidSpread(::LiquidType liquidType) const;
+    canBeDestroyedByLiquidSpread(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    canContainLiquid(::LiquidType liquidType) const;
+    canContainLiquid(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
@@ -103,19 +101,19 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getComponent_V1(
-        ::ScriptModuleMinecraft::ScriptBlockComponents const& components,
-        ::std::string const&                                  componentName
-    );
+    getComponent_V1(::ScriptModuleMinecraft::ScriptBlockComponents const& components, ::std::string_view componentName);
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    getComponent_V2(
-        ::ScriptModuleMinecraft::ScriptBlockComponents const& components,
-        ::std::string const&                                  componentName
-    );
+    getComponent_V2(::ScriptModuleMinecraft::ScriptBlockComponents const& components, ::std::string_view componentName);
+
+    MCAPI ::Scripting::Result<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getComponents(::ScriptModuleMinecraft::ScriptBlockComponents const& components);
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> getDimension() const;
 
@@ -146,6 +144,12 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getMapColor() const;
+
+    MCAPI ::Scripting::Result<
+        ::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getMultiBlockParts() const;
 
     MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>,
@@ -198,6 +202,12 @@ public:
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    hasComponent(::ScriptModuleMinecraft::ScriptBlockComponents const& components, ::std::string_view componentName);
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     hasTag(::std::string const& tag) const;
 
     MCAPI bool hasTag_010(::std::string const& tag) const;
@@ -219,7 +229,7 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    isLiquidBlocking(::LiquidType liquidType) const;
+    isLiquidBlocking(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
@@ -232,14 +242,17 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    liquidCanFlowFromDirection(::LiquidType liquidType, ::ScriptModuleMinecraft::ScriptFacing flowDirection) const;
+    liquidCanFlowFromDirection(
+        ::SharedTypes::v1_26_0::LiquidType    liquidType,
+        ::ScriptModuleMinecraft::ScriptFacing flowDirection
+    ) const;
 
     MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::Error>
-    liquidSpreadCausesSpawn(::LiquidType liquidType) const;
+    liquidSpreadCausesSpawn(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
@@ -309,7 +322,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding
-    bind(::WeakRef<::ScriptModuleMinecraft::IScriptBlockCustomComponentReader const> blockCustomComponentReader);
+    bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockComponents> const& blockComponents);
 
     MCAPI static ::Scripting::Result<
         void,

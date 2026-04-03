@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase.h"
+#include "mc/client/realms/PostStatus.h"
 #include "mc/client/realms/stories/FetchStatus.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -23,6 +24,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::RealmsStories::FacetPlayerData>>  mPlayers;
     ::ll::TypedStorage<4, 4, ::Realms::Stories::FetchStatus>                           mFetchMembersPrevStatus;
     ::ll::TypedStorage<4, 4, ::Realms::Stories::FetchStatus>                           mFetchOnlineMembersPrevStatus;
+    ::ll::TypedStorage<4, 4, ::Realms::Stories::PostStatus>                            mManageMembersPrevState;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Realms::Stories::FacetStateManager>> mStoriesFacetStateManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList>> mResourceAllowList;
     ::ll::TypedStorage<1, 1, bool>                                                     mDirty;
@@ -51,6 +53,8 @@ public:
     MCAPI ::Realms::Stories::FetchStatus _getFetchMembersStatus() const;
 
     MCAPI ::Realms::Stories::FetchStatus _getFetchOnlineMembersStatus() const;
+
+    MCAPI ::Realms::Stories::PostStatus _getManageMembersState() const;
 
     MCAPI void _regenerateView();
     // NOLINTEND

@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class AnimationComponent;
+class ApplyAnimationContext;
 class BoneOrientation;
 class RenderParams;
 struct AnimationVisitor;
@@ -36,6 +37,7 @@ public:
     virtual ~ActorAnimationPlayer();
 
     virtual void applyToPose(
+        ::ApplyAnimationContext const&,
         ::RenderParams&,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
         float

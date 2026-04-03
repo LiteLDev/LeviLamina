@@ -20,8 +20,10 @@ struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct ActorWalkAnimationComponent;
 struct CurrentTickComponent;
+struct InterpolateMovementNeededComponent;
 struct MobBodyRotationComponent;
 struct StateVectorComponent;
+struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace InitialTickFilterSystem {
@@ -30,28 +32,31 @@ namespace InitialTickFilterSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 
 MCNAPI void tickingAreaFilterTickEntity(
-    ::StrictEntityContext const&                          context,
-    ::TickWorldComponent&                                 tickWorldComponent,
-    ::CurrentTickComponent const&                         currentTickComponent,
-    ::EntityModifier<::ActorMovementTickNeededComponent>& modifier
+    ::StrictEntityContext const&                                                                context,
+    ::TickWorldComponent&                                                                       tickWorldComponent,
+    ::CurrentTickComponent const&                                                               currentTickComponent,
+    ::EntityModifier<::ActorMovementTickNeededComponent, ::InterpolateMovementNeededComponent>& modifier
 );
 
 MCNAPI void tickingAreaFilterTickView(
     ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view,
-    ::EntityModifier<::ActorMovementTickNeededComponent>                                                modifier
+    ::ViewT<::StrictEntityContext, ::Include<::InterpolateMovementNeededComponent>, ::TickWorldComponent> view,
+    ::EntityModifier<::ActorMovementTickNeededComponent, ::InterpolateMovementNeededComponent>            modifier
 );
 
 MCNAPI void validChunkFilterTickEntity(
-    ::StrictEntityContext const&                               context,
-    ::StateVectorComponent&                                    stateVector,
-    ::Optional<::ActorRotationComponent> const&                actorRotation,
-    ::Optional<::MobBodyRotationComponent> const&              mobBodyRotation,
-    ::Optional<::ActorHeadRotationComponent> const&            actorHeadRotation,
-    ::Optional<::ActorWalkAnimationComponent> const&           actorWalkAnimation,
-    ::std::function<void(::StrictEntityContext const&)> const& modifierFunctor,
-    bool                                                       resetAnimation,
-    ::IConstBlockSource const&                                 region
+    ::StrictEntityContext const&                     context,
+    ::StateVectorComponent&                          stateVector,
+    ::Optional<::ActorRotationComponent> const&      actorRotation,
+    ::Optional<::MobBodyRotationComponent> const&    mobBodyRotation,
+    ::Optional<::ActorHeadRotationComponent> const&  actorHeadRotation,
+    ::Optional<::ActorWalkAnimationComponent> const& actorWalkAnimation,
+    ::EntityModifier<
+        ::ActorMovementTickNeededComponent,
+        ::InterpolateMovementNeededComponent,
+        ::VehicleInputIntentComponent>& modifier,
+    bool                                resetAnimation,
+    ::IConstBlockSource const&          region
 );
 // NOLINTEND
 

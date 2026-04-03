@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/network/connection/DisconnectionStage.h"
 
 struct DisconnectionScreenParams {
 public:
@@ -12,13 +11,13 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk9b233b;
     ::ll::UntypedStorage<4, 4>  mUnk14d4ea;
-    ::ll::UntypedStorage<8, 32> mUnkfd4668;
-    ::ll::UntypedStorage<8, 32> mUnkbb674d;
-    ::ll::UntypedStorage<8, 32> mUnkec38d1;
-    ::ll::UntypedStorage<8, 32> mUnk91b631;
-    ::ll::UntypedStorage<8, 32> mUnk4a4096;
-    ::ll::UntypedStorage<1, 1>  mUnkb1eea6;
-    ::ll::UntypedStorage<1, 1>  mUnk7aa759;
+    ::ll::UntypedStorage<8, 32> mUnk214c4a;
+    ::ll::UntypedStorage<8, 32> mUnkce2469;
+    ::ll::UntypedStorage<8, 32> mUnkc7b50b;
+    ::ll::UntypedStorage<8, 32> mUnk571c86;
+    ::ll::UntypedStorage<8, 32> mUnk93de36;
+    ::ll::UntypedStorage<8, 32> mUnke5cfd8;
+    ::ll::UntypedStorage<8, 16> mUnkce69d6;
     // NOLINTEND
 
 public:
@@ -36,17 +35,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
-        ::Connection::DisconnectFailReason disconnectFailReason,
-        ::std::string                      titleStringOverride,
-        ::std::string                      bodyStringOverride,
-        ::Connection::DisconnectionStage   disconnectStage,
-        ::std::string                      screenNameOverride,
-        ::std::string                      telemetryString,
-        bool                               leaveGame,
-        bool                               isSubClient,
-        ::std::string                      codewordOverride
-    );
+    MCNAPI_C void* $ctor(::Connection::DisconnectFailReason disconnectFailReason);
     // NOLINTEND
 
 public:

@@ -193,7 +193,7 @@ public:
     MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFacing, ::gametest::GameTestCompletedError>
     getTestDirection() const;
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::gametest::GameTestCompletedError>
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::gametest::GameTestCompletedError>
     idle(::Scripting::ScriptObjectFactory& factory, int tickDelay);
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError> killAllEntities();
@@ -332,7 +332,7 @@ public:
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
     triggerInternalBlockEvent(::Vec3 const& pos, ::std::string const& event, ::std::vector<float> const& parameters);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error, void>, ::gametest::GameTestCompletedError>
+    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::gametest::GameTestCompletedError>
     until(::Scripting::ScriptObjectFactory& factory, ::Scripting::Closure<void()> fn);
 
     MCAPI ::Scripting::Result<void, ::gametest::GameTestError, ::gametest::GameTestCompletedError>
@@ -351,8 +351,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::gametest::GameTestError> _callClosure(::Scripting::Closure<void()> const& closure);
-
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };

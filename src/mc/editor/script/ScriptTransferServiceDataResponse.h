@@ -13,9 +13,10 @@ class ScriptTransferServiceDataResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk15f058;
-    ::ll::UntypedStorage<8, 32> mUnk4032ed;
-    ::ll::UntypedStorage<8, 32> mUnkfade64;
+    ::ll::UntypedStorage<8, 32> mUnk9f10fa;
+    ::ll::UntypedStorage<8, 32> mUnk6d658b;
+    ::ll::UntypedStorage<8, 32> mUnk7f6b8d;
+    ::ll::UntypedStorage<1, 1>  mUnkfc9e30;
     // NOLINTEND
 
 public:

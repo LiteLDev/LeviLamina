@@ -17,8 +17,8 @@ class TextureAtlasTile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk135e6a;
-    ::ll::UntypedStorage<8, 24> mUnk25ee2c;
+    ::ll::UntypedStorage<8, 24> mUnk3c7861;
+    ::ll::UntypedStorage<8, 24> mUnk2d3f53;
     ::ll::UntypedStorage<4, 16> mUnk62d1eb;
     ::ll::UntypedStorage<1, 1>  mUnkd942a3;
     ::ll::UntypedStorage<4, 4>  mUnk7a10db;

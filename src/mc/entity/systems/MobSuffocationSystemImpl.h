@@ -23,9 +23,9 @@ class IConstBlockSource;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorInWallDetectionComponent;
-struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct GetAttachPositionViews;
+struct InterpolateMovementNeededComponent;
 struct MobFlagComponent;
 struct MobIsSuffocatingFlagComponent;
 struct OffsetsComponent;
@@ -40,7 +40,7 @@ struct VehicleComponent;
 
 class MobSuffocationSystemImpl
 : public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+      ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
       ::Read<
           ::StateVectorComponent,
           ::AABBShapeComponent,
@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(
         ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<
                 ::StateVectorComponent,
                 ::AABBShapeComponent,
@@ -127,7 +127,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $tick(
         ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
+            ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<
                 ::StateVectorComponent,
                 ::AABBShapeComponent,

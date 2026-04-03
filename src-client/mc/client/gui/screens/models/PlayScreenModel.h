@@ -93,7 +93,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                     mUnpairedWorldsFetched;
     ::ll::TypedStorage<8, 16, ::std::map<::Realms::RealmId, int>>                      mUnreadCounts;
     ::ll::TypedStorage<4, 4, int>                                                      mRealmWorldPartitionIndex;
-    ::ll::TypedStorage<4, 16, ::std::array<int, 4>>                                    mSeenUnreadPosts;
+    ::ll::TypedStorage<4, 20, ::std::array<int, 5>>                                    mSeenUnreadPosts;
     ::ll::TypedStorage<1, 1, bool>                                                     mLocalWorldsPopulated;
     ::ll::TypedStorage<1, 1, bool>                                                     mHasPendingInvites;
     ::ll::TypedStorage<4, 4, int>                                                      mPendingInviteCount;
@@ -178,8 +178,6 @@ public:
     MCAPI bool _isCrossPlatformGame(::Social::MultiplayerGameInfo const& gameInfo) const;
 
     MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
-
-    MCAPI void _pingServer(::ExternalServer& externalServer);
 
     MCAPI void _populateAdditionalRealmsWorldsInfo();
 
@@ -282,8 +280,6 @@ public:
     MCAPI bool supportsEduCloudWorlds() const;
 
     MCAPI void triggerMultiplayerGameRefresh(bool tryToReconnect);
-
-    MCAPI void updateNetworkWorldSorting();
 
     MCAPI void uploadLocalWorldFileAtIndex(
         ::std::string const&                                  realmID,

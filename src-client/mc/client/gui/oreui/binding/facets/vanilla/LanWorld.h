@@ -26,6 +26,7 @@ public:
     ::ll::TypedStorage<4, 4, int>            playerCount;
     ::ll::TypedStorage<4, 4, int>            capacity;
     ::ll::TypedStorage<8, 32, ::std::string> version;
+    ::ll::TypedStorage<1, 1, bool>           isEditorWorld;
     // NOLINTEND
 
 public:

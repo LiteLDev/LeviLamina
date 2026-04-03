@@ -8,20 +8,29 @@ struct GPUMemoryInfo {
 public:
     // GPUMemoryInfo inner types declare
     // clang-format off
+    struct MemoryInfo;
     struct ResourceInfo;
-    struct ResourceArray;
+    struct TextureResources;
+    struct TextureInfo;
     struct BufferResourceInfo;
-    struct BufferArray;
+    struct BufferResources;
+    struct BufferInfo;
     // clang-format on
 
     // GPUMemoryInfo inner types define
+    struct MemoryInfo {};
+
     struct ResourceInfo {};
 
-    struct ResourceArray {};
+    struct TextureResources {};
+
+    struct TextureInfo {};
 
     struct BufferResourceInfo {};
 
-    struct BufferArray {};
+    struct BufferResources {};
+
+    struct BufferInfo {};
 };
 
 } // namespace renoir

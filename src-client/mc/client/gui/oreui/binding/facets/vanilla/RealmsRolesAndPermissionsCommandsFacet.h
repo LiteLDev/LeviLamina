@@ -36,9 +36,11 @@ public:
 
     MCAPI void initRealmsUserRoleAndActions(::std::string const& playerXuid, ::Realms::PlayerRole role);
 
+    MCAPI void refreshAllRealmRolesAndActionsForCurrentUser();
+
     MCAPI void resetState();
 
-    MCAPI void saveRealmsUserRole(::std::string const& playerXuid);
+    MCAPI void saveRealmsUserRole(::std::string const& realmId, ::std::string const& playerXuid);
 
     MCAPI void setRealmsUserRole(::std::string const& playerXuid, ::Realms::PlayerRole role);
     // NOLINTEND

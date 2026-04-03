@@ -13,8 +13,8 @@ struct VerboseCameraList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc6a2a8;
-    ::ll::UntypedStorage<8, 24> mUnk254565;
+    ::ll::UntypedStorage<8, 32> mUnk2cd4dc;
+    ::ll::UntypedStorage<8, 24> mUnk342555;
     // NOLINTEND
 
 public:

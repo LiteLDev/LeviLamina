@@ -8,8 +8,8 @@ class RTCCertificatePEM {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk282eaa;
-    ::ll::UntypedStorage<8, 32> mUnkc6af7c;
+    ::ll::UntypedStorage<8, 32> mUnkfeceaf;
+    ::ll::UntypedStorage<8, 32> mUnkaebee7;
     // NOLINTEND
 
 public:

@@ -13,6 +13,7 @@ class ActorAnimationControllerPlayer;
 class ActorAnimationControllerState;
 class ActorSkeletalAnimationPtr;
 class AnimationComponent;
+class ApplyAnimationContext;
 class BoneOrientation;
 class ExpressionNode;
 class HashedString;
@@ -40,6 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual void applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight
@@ -101,6 +103,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $applyToPose(
+        ::ApplyAnimationContext const&                                                    applyContext,
         ::RenderParams&                                                                   renderParams,
         ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
         float                                                                             blendWeight

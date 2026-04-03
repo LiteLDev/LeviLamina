@@ -13,10 +13,10 @@ struct ScriptPrefabServiceCreateTemplateOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk8f3bc0;
-    ::ll::UntypedStorage<8, 40> mUnkf88d7f;
-    ::ll::UntypedStorage<8, 40> mUnk98ca90;
-    ::ll::UntypedStorage<8, 32> mUnk97bead;
+    ::ll::UntypedStorage<8, 40> mUnk802bef;
+    ::ll::UntypedStorage<8, 40> mUnkb38419;
+    ::ll::UntypedStorage<8, 40> mUnkb5aeae;
+    ::ll::UntypedStorage<8, 32> mUnk88421a;
     // NOLINTEND
 
 public:

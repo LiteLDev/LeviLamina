@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ParticleEventRequest;
-// clang-format on
+// auto generated inclusion list
+#include "mc/entity/components/ParticleEventRequest.h"
 
 struct ParticleEventRequestQueueComponent {
 public:

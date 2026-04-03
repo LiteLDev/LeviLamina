@@ -16,7 +16,7 @@ class JsepIceCandidate : public ::webrtc::IceCandidateInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk2fe8d8;
+    ::ll::UntypedStorage<8, 32>  mUnk2b8cfb;
     ::ll::UntypedStorage<4, 4>   mUnk7a9a2b;
     ::ll::UntypedStorage<8, 528> mUnkd293fd;
     // NOLINTEND

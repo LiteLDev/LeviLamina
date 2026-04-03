@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BiomeRegistry;
 class BiomeSource;
 class BlockType;
 class BlockVolume;
@@ -42,7 +43,8 @@ public:
         float                    rad,
         float                    yRad,
         ::gsl::span<float const> widthRandomization,
-        ::WorldGenContext const& context
+        ::WorldGenContext const& context,
+        ::BiomeRegistry const&   biomeRegistry
     ) const;
 
     virtual bool _isDiggable(::BlockType const& block) const;
@@ -59,7 +61,8 @@ public:
         ::Random&                                        random,
         int                                              x,
         int                                              z,
-        ::WorldGenContext const&                         context
+        ::WorldGenContext const&                         context,
+        ::BiomeRegistry const&                           biomeRegistry
     );
 
     MCAPI void _addTunnel(
@@ -76,7 +79,8 @@ public:
         int                                              step,
         int                                              dist,
         float                                            yScale,
-        ::WorldGenContext const&                         context
+        ::WorldGenContext const&                         context,
+        ::BiomeRegistry const&                           biomeRegistry
     ) const;
 
     MCAPI void apply(
@@ -86,7 +90,8 @@ public:
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
         ::Random&                                        random,
         uint                                             levelSeed,
-        ::WorldGenContext const&                         context
+        ::WorldGenContext const&                         context,
+        ::BiomeRegistry const&                           biomeRegistry
     );
     // NOLINTEND
 
@@ -110,7 +115,8 @@ public:
         float                    rad,
         float                    yRad,
         ::gsl::span<float const> widthRandomization,
-        ::WorldGenContext const& context
+        ::WorldGenContext const& context,
+        ::BiomeRegistry const&   biomeRegistry
     ) const;
 
     MCAPI bool $_isDiggable(::BlockType const& block) const;

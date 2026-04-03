@@ -25,6 +25,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                      mScale;
     ::ll::TypedStorage<4, 16, ::mce::Color>              mColor;
     ::ll::TypedStorage<1, 2, ::BrightnessPair>           mAmbientLighting;
+    ::ll::TypedStorage<4, 16, ::mce::Color>              mLightColor;
     ::ll::TypedStorage<4, 12, ::Vec3>                    mPositionPrev;
     ::ll::TypedStorage<4, 12, ::Vec3>                    mVelocityPrev;
     ::ll::TypedStorage<4, 12, ::Vec3>                    mDirectionPrev;

@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                 mCanopySize;
     ::ll::TypedStorage<1, 1, bool>                mSimplePattern;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mLeavesBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor> mLeavesBlockDescriptor;
     // NOLINTEND
 
 public:
@@ -30,12 +30,14 @@ public:
     virtual ~AcaciaTreeCanopy() /*override*/ = default;
 
     virtual ::std::optional<::BlockPos> placeCanopy(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::ITreeCanopy::BranchSize const& trunkSize,
         ::Random&,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const /*override*/;
     // NOLINTEND
 
@@ -43,12 +45,14 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $placeCanopy(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
+        ::IBlockWorldGenAPI&             target,
+        ::BlockPos const&                pos,
+        ::ITreeCanopy::BranchSize const& trunkSize,
         ::Random&,
         ::RenderParams&,
         ::TreeHelper::TreeParams const& treeParams,
-        ::std::vector<::BlockPos> const&
+        ::std::vector<::BlockPos> const&,
+        ::std::vector<::ITreeCanopy::BranchSize> const&
     ) const;
 
 

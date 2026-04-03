@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/ChunkBlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActor;
-class ChunkBlockPos;
 // clang-format on
 
 class LevelChunkBlockActorStorage {

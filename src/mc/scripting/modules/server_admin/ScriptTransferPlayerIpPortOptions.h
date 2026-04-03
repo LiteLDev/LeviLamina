@@ -13,7 +13,7 @@ struct ScriptTransferPlayerIpPortOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9570d4;
+    ::ll::UntypedStorage<8, 32> mUnk80deea;
     ::ll::UntypedStorage<2, 2>  mUnk13cef2;
     // NOLINTEND
 

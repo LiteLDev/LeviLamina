@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +12,6 @@ class CompoundTag;
 class ObjectiveCriteria;
 class Scoreboard;
 struct ScoreInfo;
-struct ScoreboardId;
 // clang-format on
 
 class Objective : public ::Bedrock::EnableNonOwnerReferences {

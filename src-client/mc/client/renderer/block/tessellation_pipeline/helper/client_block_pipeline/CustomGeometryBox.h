@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/BlockLookupId.h"
 #include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/CustomGeometryBoxMask.h"
+#include "mc/client/renderer/block/tessellation_pipeline/helper/client_block_pipeline/PackedPosition.h"
 #include "mc/deps/core/math/Matrix.h"
 #include "mc/world/Flip.h"
 
@@ -25,6 +26,7 @@ public:
     ::ll::TypedStorage<1, 1, ::Flip>                                                   mFlipRotation;
     ::ll::TypedStorage<4, 4, float>                                                    mPosRandom;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::IResolvedTint>> mResolvedTint;
+    ::ll::TypedStorage<1, 3, ::ClientBlockPipeline::PackedPosition>                    mPosition;
     // NOLINTEND
 
 public:

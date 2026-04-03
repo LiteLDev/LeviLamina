@@ -16,7 +16,7 @@ class PacketLimitAlgorithmDeserializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1cd1a1;
+    ::ll::UntypedStorage<8, 32> mUnk4d7529;
     // NOLINTEND
 
 public:

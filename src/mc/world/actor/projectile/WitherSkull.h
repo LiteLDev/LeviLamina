@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class ActorHurtResult;
 class Block;
 struct VariantParameterList;
 // clang-format on
@@ -32,7 +33,8 @@ public:
 
     virtual bool canDestroyBlock(::Block const& block) const /*override*/;
 
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual float getInertia() /*override*/;
 
@@ -42,9 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
-#endif
 
     MCFOLD bool $shouldBurn();
 
@@ -52,7 +52,7 @@ public:
 
     MCAPI bool $canDestroyBlock(::Block const& block) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI float $getInertia();
 

@@ -16,8 +16,8 @@ class LocalLocalizationDictionary : public ::ILocalizationDictionary, public ::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1e3516;
-    ::ll::UntypedStorage<8, 8> mUnkffd9bb;
+    ::ll::UntypedStorage<8, 8> mUnk41ef73;
+    ::ll::UntypedStorage<8, 8> mUnk488622;
     ::ll::UntypedStorage<1, 1> mUnkdac6be;
     // NOLINTEND
 

@@ -23,6 +23,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>            passThrough;
     ::ll::TypedStorage<4, 4, int>             touchStateRequirement;
     ::ll::TypedStorage<1, 1, bool>            extendButtonPressOutsideUntilReleased;
+    ::ll::TypedStorage<8, 32, ::std::string>  iconPath;
+    ::ll::TypedStorage<8, 32, ::std::string>  pressedIconPath;
     // NOLINTEND
 
 public:

@@ -3,39 +3,39 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/PersistenceGroupType.h"
+#include "mc/common/editor/PersistenceScope.h"
+#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPersistenceServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/editor/services/persistence/PersistentDataType.h"
+#include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Persistence { struct PersistentData; }
-namespace cereal { struct ReflectionCtx; }
+namespace Editor::Network { class PersistenceRequestGroupPayload; }
+namespace Editor::Network { class PersistenceResponseGroupPayload; }
+namespace Editor::Network { class SavePersistenceGroupPayload; }
+namespace Editor::Services { class PersistenceGroup; }
+namespace Editor::Services { struct PersistenceGroupManifest; }
 // clang-format on
 
 namespace Editor::Services {
 
 class EditorPersistenceService : public ::Editor::Services::IEditorService,
-                                 public ::Editor::Services::EditorPersistenceServiceProvider {
+                                 public ::Editor::Services::EditorPersistenceServiceProvider,
+                                 public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk95c2f0;
-    ::ll::UntypedStorage<8, 48> mUnk76e3f8;
+    ::ll::UntypedStorage<8, 8>  mUnkca506a;
     ::ll::UntypedStorage<8, 8>  mUnk5f20cb;
-    ::ll::UntypedStorage<8, 16> mUnkbccd2b;
-    ::ll::UntypedStorage<8, 16> mUnk3eb25a;
-    ::ll::UntypedStorage<8, 16> mUnkfb39fc;
-    ::ll::UntypedStorage<8, 16> mUnkd0e172;
-    ::ll::UntypedStorage<1, 1>  mUnkf68ffb;
-    ::ll::UntypedStorage<1, 1>  mUnkc98305;
-    ::ll::UntypedStorage<1, 1>  mUnka0de9e;
-    ::ll::UntypedStorage<4, 4>  mUnk6933a5;
-    ::ll::UntypedStorage<8, 8>  mUnkc95860;
+    ::ll::UntypedStorage<8, 24> mUnk2ba342;
+    ::ll::UntypedStorage<8, 24> mUnk612587;
+    ::ll::UntypedStorage<8, 64> mUnk97fa1e;
     // NOLINTEND
 
 public:
@@ -57,42 +57,40 @@ public:
 
     virtual ::std::string_view getServiceName() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
-        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
+    virtual ::Scripting::Result_deprecated<void> deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
     ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group) /*override*/;
+
+    virtual ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> fetchGroups(
+        ::std::optional<::std::string>                        groupNamespace,
+        ::std::optional<::std::string>                        namespacedName,
+        ::std::optional<::Editor::Services::PersistenceScope> scope,
+        ::std::optional<int>                                  version
+    ) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void> requestGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+            callback
+    ) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void>
-    updatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<void>
-    removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<::std::string>
-    getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
-
-    virtual ::Scripting::Result_deprecated<bool>
-    hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
-
-    virtual ::Scripting::Result_deprecated<::std::vector<::HashedString>>
-    getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const
-        /*override*/;
-
-    virtual ::std::string const& getPlayerSaveId() const /*override*/;
-
-    virtual void _removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
-
-    virtual void _tick(::Editor::ServiceProviderCollection& serviceProviderCollection);
-
-    virtual ::std::unique_ptr<::cereal::ReflectionCtx>& getCerealContext() /*override*/;
+    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope) const = 0;
     // NOLINTEND
 
 public:
@@ -100,7 +98,45 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorPersistenceService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void _updatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> _createCacheGroup(
+        ::std::string const&                     namespacedName,
+        ::Editor::Services::PersistenceScope     scope,
+        int                                      version,
+        ::Editor::Services::PersistenceGroupType groupType
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> _createGroup(
+        ::std::string const&                     namespacedName,
+        ::Editor::Services::PersistenceScope     scope,
+        ::std::optional<int>                     version,
+        ::Editor::Services::PersistenceGroupType groupType
+    );
+
+    MCNAPI ::StackRefResult<::Editor::Services::PersistenceGroup> _getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
+
+    MCNAPI int _getMaxVersion(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope);
+
+    MCNAPI ::Core::PathBuffer<::std::string> _getPath(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) const;
+
+    MCNAPI void _handleRequestGroupPayload(::Editor::Network::PersistenceRequestGroupPayload const& payload);
+
+    MCNAPI void _handleResponseGroupPayload(::Editor::Network::PersistenceResponseGroupPayload const& payload);
+
+    MCNAPI void _handleSaveGroupPayload(::Editor::Network::SavePersistenceGroupPayload const& payload);
+
+    MCNAPI void _loadGroupMetaData(::Editor::Services::PersistenceScope scope);
+
+    MCNAPI ::std::optional<::Editor::Services::PersistenceGroupManifest> _parseJsonToGroupManifest(::std::string value);
+
+    MCNAPI bool _saveGroupMetaData(::Editor::Services::PersistenceScope scope);
     // NOLINTEND
 
 public:
@@ -126,39 +162,38 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(
-        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
+    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
     );
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
+    $deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> $fetchGroups(
+        ::std::optional<::std::string>                        groupNamespace,
+        ::std::optional<::std::string>                        namespacedName,
+        ::std::optional<::Editor::Services::PersistenceScope> scope,
+        ::std::optional<int>                                  version
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result_deprecated<void> $requestGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version,
+        ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+            callback
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
-
-    MCNAPI ::Scripting::Result_deprecated<::std::string>
-    $getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
-
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    $hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
-
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HashedString>>
-    $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
-
-    MCNAPI ::std::string const& $getPlayerSaveId() const;
-
-    MCNAPI void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
-
-    MCNAPI void $_tick(::Editor::ServiceProviderCollection& serviceProviderCollection);
-
-    MCNAPI ::std::unique_ptr<::cereal::ReflectionCtx>& $getCerealContext();
+    $syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group);
 
 
     // NOLINTEND

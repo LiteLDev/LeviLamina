@@ -59,12 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& RESULT_SLOT();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);

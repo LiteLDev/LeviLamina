@@ -29,7 +29,7 @@ public:
 
     MCAPI explicit SocialPlayer(::OreUI::SocialPlayerData const& data);
 
-    MCFOLD ::std::string const& getActiveProfileImageUrl() const;
+    MCAPI ::std::string const& getActiveProfileImageUrl() const;
 
     MCAPI ~SocialPlayer();
     // NOLINTEND

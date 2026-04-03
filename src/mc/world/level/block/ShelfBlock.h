@@ -20,9 +20,9 @@ class IConstBlockSource;
 class Player;
 class ShelfBlockActor;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRedstoneUpdateEvent; }
 // clang-format on
 
 class ShelfBlock : public ::ActorBlock {
@@ -59,11 +59,6 @@ public:
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
-
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
     virtual bool hasComparatorSignal() const /*override*/;
@@ -139,6 +134,8 @@ public:
         ::BlockPos const&    neighbor
     ) const;
 
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+
     MCAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
@@ -172,8 +169,6 @@ public:
 
     MCAPI void _validatePoweredShelfCurrentStateFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -194,10 +189,6 @@ public:
     MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCFOLD bool $hasComparatorSignal() const;
 
@@ -224,7 +215,9 @@ public:
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
+#ifdef LL_PLAT_S
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+#endif
 
     MCAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,

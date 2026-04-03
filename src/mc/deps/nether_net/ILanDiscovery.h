@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
-namespace NetherNet { struct DiscoveryResponsePacket; }
 namespace NetherNet { struct ILanEventHandler; }
 namespace NetherNet { struct NetworkID; }
 namespace rtc { class SocketAddress; }
@@ -23,11 +22,16 @@ public:
 
     virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID) = 0;
 
+    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) = 0;
+
+    virtual void RemoveLanHost(::NetherNet::NetworkID) = 0;
+
     virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID) = 0;
 
-    virtual void SendLanBroadcastResponse(::rtc::SocketAddress const&, ::NetherNet::DiscoveryResponsePacket const&) = 0;
+    virtual void
+    SendLanBroadcastResponse(::rtc::SocketAddress const&, ::NetherNet::NetworkID, ::std::vector<::std::byte>) = 0;
 
-    virtual void SendSignalingMessageTo(::NetherNet::NetworkID, ::NetherNet::NetworkID, ::std::string const&) = 0;
+    virtual void SendSignalingMessageTo(::NetherNet::NetworkID, ::NetherNet::NetworkID, ::std::vector<::std::byte>) = 0;
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) = 0;
 

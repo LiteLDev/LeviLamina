@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/enums/FocusImpact.h"
+#include "mc/options/option_types/OptionID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,6 +41,8 @@ public:
 
     MCAPI static void handleChatButtonRelease(::IClientInstance& client);
 
+    MCAPI static void handleCommandMacroPress(::IClientInstance& client, ::OptionID commandOption);
+
     MCAPI static void handleConsoleButtonRelease(::IClientInstance& client);
 
     MCAPI static void handleCopyCurrentButtonPress(::IClientInstance& client);
@@ -64,6 +67,8 @@ public:
 
     MCAPI static void handleMobEffectsButtonPress(::IClientInstance& client);
 
+    MCAPI static void handleOpenSocialDrawer(::IClientInstance& client);
+
     MCAPI static void handlePauseButtonPress(::IClientInstance& client);
 
     MCAPI static bool handlePointerLocation(
@@ -81,10 +86,14 @@ public:
 
     MCAPI static void handleScreenshotButtonPress(::IClientInstance& client);
 
+    MCAPI static void handleSocialDrawerMobEffectsAndToastInteractButtonRelease(::IClientInstance& client);
+
     MCAPI static void handleToggleChatTextToSpeechButtonPress(::IClientInstance& client);
 
     MCAPI static void handleToggleControlTipsButtonPress(::IClientInstance& client);
 
     MCAPI static void handleTogglePerspectiveButtonPress(::IClientInstance& client);
+
+    MCAPI static void handleToggleUIProfile(::IClientInstance& client);
     // NOLINTEND
 };

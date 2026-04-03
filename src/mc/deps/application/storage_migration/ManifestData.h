@@ -8,9 +8,9 @@ struct ManifestData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdfea13;
-    ::ll::UntypedStorage<8, 16> mUnk2b6c28;
-    ::ll::UntypedStorage<8, 32> mUnk822995;
+    ::ll::UntypedStorage<8, 32> mUnk5622a4;
+    ::ll::UntypedStorage<8, 16> mUnkcd717f;
+    ::ll::UntypedStorage<8, 32> mUnkddaa74;
     // NOLINTEND
 
 public:

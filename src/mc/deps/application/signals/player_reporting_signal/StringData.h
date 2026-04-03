@@ -8,8 +8,8 @@ struct StringData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5bfd49;
-    ::ll::UntypedStorage<8, 32> mUnkaac53f;
+    ::ll::UntypedStorage<8, 32> mUnk614936;
+    ::ll::UntypedStorage<8, 32> mUnk5e4af7;
     // NOLINTEND
 
 public:

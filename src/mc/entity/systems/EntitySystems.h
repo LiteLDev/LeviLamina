@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/deps/ecs/systems/IEntitySystems.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/profiler/PredeclaredAnnotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,13 +58,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInteractionSystem>>  mPlayerInteractionSystem;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEntitySystemsCollection>> mSystems;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>>             mDispatcher;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
-    ::ll::TypedStorage<1, 1, bool>                                          mEnableTimingCapture;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>     mPreSystemInvoke;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>     mPostSystemInvoke;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInteractionSystem>>        mPlayerInteractionSystem;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEntitySystemsCollection>>       mSystems;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>>                   mDispatcher;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mName;
+    ::ll::TypedStorage<1, 1, bool>                                                mEnableTimingCapture;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPreSystemInvoke;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::TickingSystemId)>>           mPostSystemInvoke;
+    ::ll::TypedStorage<8, 8, ::Bedrock::Profiler::details::PredeclaredAnnotation> mTickingAnnotation;
     // NOLINTEND
 
 public:
@@ -92,7 +94,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
+    MCNAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
 
     MCNAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
     getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
@@ -119,7 +121,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
+    MCNAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
     // NOLINTEND
 
 public:

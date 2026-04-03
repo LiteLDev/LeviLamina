@@ -9,10 +9,10 @@
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/server/editor/serviceproviders/ServerPrefabPlayerServiceProvider.h"
-#include "mc/world/level/ChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class ChunkPos;
 class Dimension;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
@@ -43,8 +43,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk80c2d0;
     ::ll::UntypedStorage<8, 16> mUnkfb35e9;
     ::ll::UntypedStorage<8, 48> mUnk2fb2ca;
-    ::ll::UntypedStorage<8, 24> mUnk71b0f4;
-    ::ll::UntypedStorage<8, 24> mUnke4d582;
+    ::ll::UntypedStorage<8, 24> mUnk5c8e0f;
+    ::ll::UntypedStorage<8, 24> mUnk51fb9f;
     // NOLINTEND
 
 public:

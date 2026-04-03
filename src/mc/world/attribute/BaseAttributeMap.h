@@ -11,7 +11,6 @@ class Attribute;
 class AttributeInstance;
 class AttributeInstanceHandle;
 class AttributeInstanceRef;
-class HashedString;
 struct AttributeData;
 struct AttributeModificationContext;
 // clang-format on
@@ -27,7 +26,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        56,
+        48,
         ::brstd::flat_map<
             uint,
             ::AttributeInstance,
@@ -47,8 +46,6 @@ public:
     MCFOLD_C void _onAttributeModifiedDisabled(::AttributeInstance const&);
 
     MCAPI ::AttributeInstanceRef getMutableInstance(uint idValue);
-
-    MCAPI_S ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
 
     MCAPI ::std::vector<::AttributeInstanceHandle> getSyncableAttributes() const;
 

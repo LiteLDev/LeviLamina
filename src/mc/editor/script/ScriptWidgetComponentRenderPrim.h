@@ -17,8 +17,13 @@ namespace Editor::ScriptModule { class ScriptWidgetComponentErrorInvalidComponen
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimOptions; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_AxialSphere; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Box; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cone; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cuboid; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Cylinder; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Disc; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Ellipsoid; }
 namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Line; }
+namespace Editor::ScriptModule { class ScriptWidgetComponentRenderPrimType_Pyramid; }
 namespace Editor::ScriptModule { class ScriptWidgetErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { struct ClassBinding; }
@@ -31,7 +36,7 @@ class ScriptWidgetComponentRenderPrim : public ::Editor::ScriptModule::ScriptWid
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 80> mUnkf7b516;
+    ::ll::UntypedStorage<8, 104> mUnk1b5553;
     // NOLINTEND
 
 public:
@@ -42,7 +47,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ScriptWidgetComponentRenderPrim() /*override*/ = default;
+    virtual ~ScriptWidgetComponentRenderPrim() /*override*/;
 
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
     // NOLINTEND
@@ -62,7 +67,12 @@ public:
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere>    primitiveType,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cylinder,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Ellipsoid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cuboid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cone>           primitiveType,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options
     );
 
@@ -81,7 +91,12 @@ public:
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const& primitive
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cylinder,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Ellipsoid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cuboid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cone> const& primitive
     );
     // NOLINTEND
 
@@ -106,9 +121,20 @@ public:
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
             ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere>    primitiveType,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cylinder,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Pyramid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Ellipsoid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cuboid,
+            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Cone>           primitiveType,
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

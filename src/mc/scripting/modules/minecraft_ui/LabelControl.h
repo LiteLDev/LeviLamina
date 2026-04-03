@@ -21,7 +21,7 @@ class LabelControl : public ::ScriptModuleMinecraftServerUI::IControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkfe68e2;
+    ::ll::UntypedStorage<8, 216> mUnk5f6acb;
     // NOLINTEND
 
 public:

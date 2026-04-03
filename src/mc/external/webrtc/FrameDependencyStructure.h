@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/webrtc/RenderResolution.h"
-
 namespace webrtc {
 
 struct FrameDependencyStructure {
@@ -16,7 +13,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk227561;
     ::ll::UntypedStorage<8, 48> mUnk44b88a;
     ::ll::UntypedStorage<8, 40> mUnkf53829;
-    ::ll::UntypedStorage<8, 24> mUnk65aae2;
+    ::ll::UntypedStorage<8, 24> mUnk51f73e;
     // NOLINTEND
 
 public:

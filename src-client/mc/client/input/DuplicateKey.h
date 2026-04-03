@@ -6,7 +6,7 @@ struct DuplicateKey {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> index;
-    ::ll::TypedStorage<4, 4, int> key;
+    ::ll::TypedStorage<8, 8, uint64> index;
+    ::ll::TypedStorage<4, 4, int>    key;
     // NOLINTEND
 };

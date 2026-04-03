@@ -24,7 +24,7 @@ class AchievementEventing {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd1617b;
+    ::ll::UntypedStorage<8, 24> mUnk266bfd;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 
     MCNAPI_C void BossKilled(::Player const& player, int partySize, int64 bossUniqueId, int bossType);
 
-    MCNAPI void CaravanChanged(::Mob& mob, int caravanSize);
+    MCNAPI_C void CaravanChanged(::Mob& mob, int caravanSize);
 
     MCNAPI_C void CauldronUsed(::Player const& player, short contentsType, uint contentsColor, short fillLevel);
 
@@ -81,8 +81,6 @@ public:
 
     MCNAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
 
-    MCNAPI void JukeboxUsed(::Player const& player, ::ItemDescriptor const& disc);
-
     MCNAPI void MobEffectChanged(::Player const& player, ::MobEffectInstance const& effectInstance, int change);
 
     MCNAPI_C void MobInteracted(
@@ -101,10 +99,6 @@ public:
         ::std::string const& traderName,
         int                  traderTier
     );
-
-    MCNAPI_C void MultiplayerRoundEnd(::Player const& player, int exitStatus);
-
-    MCNAPI_C void MultiplayerRoundStart(::Player const& player);
 
     MCNAPI_C void PiglinBarter(::Player const& player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer);
 
@@ -135,12 +129,6 @@ public:
     );
 
     MCNAPI_C void waxedOrWaxedOf(::Player& player, int blockID);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::std::pair<short, short>>& mLegacyIdMap();
     // NOLINTEND
 
 public:

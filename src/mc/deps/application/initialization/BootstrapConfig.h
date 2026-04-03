@@ -46,15 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const*, ...);
+    MCNAPI ::Bedrock::BootstrapConfig::LoadResult _makeBootstrapError(char const*, ...);
 
-    MCNAPI_C ::Bedrock::BootstrapConfig::LoadResult initialize(char const* fileName);
+    MCNAPI ::Bedrock::BootstrapConfig::LoadResult initialize(char const* fileName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Bedrock::BootstrapConfig& getSharedInstance();
+    MCNAPI_S static ::Bedrock::BootstrapConfig& getSharedInstance();
     // NOLINTEND
 };
 

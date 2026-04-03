@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-namespace Parties { struct Party; }
 namespace Parties { struct PartySystem; }
 // clang-format on
 
@@ -18,13 +17,12 @@ class SocialButtonScreenController : public ::MinecraftScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mCurrentPartyUpdateSubscription;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mPartyProfileOptions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>  mButtonFactoryControlVector;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Parties::Party>> mParty;
-    ::ll::TypedStorage<1, 1, bool>                                 mIsPartySystemAvailable;
-    ::ll::TypedStorage<1, 1, bool>                                 mIsPlayersInWorldEnabled;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>        mCurrentSocialIcon;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mCurrentPartyUpdateSubscription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                       mPartyProfileOptions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>                 mButtonFactoryControlVector;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Parties::PartySystem>> mPartySystem;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsPlayersInWorldEnabled;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                       mCurrentSocialIcon;
     // NOLINTEND
 
 public:
@@ -41,8 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SocialButtonScreenController(
-        ::std::shared_ptr<::MinecraftScreenModel>                              model,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
 
     MCAPI void _onPartyChanged();
@@ -56,8 +54,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::std::shared_ptr<::MinecraftScreenModel>                              model,
-        ::std::optional<::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem>> partySystem
+        ::std::shared_ptr<::MinecraftScreenModel>          model,
+        ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
     // NOLINTEND
 

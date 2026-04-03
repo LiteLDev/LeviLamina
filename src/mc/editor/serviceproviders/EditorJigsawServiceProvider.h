@@ -56,6 +56,8 @@ public:
 
     virtual ::JigsawEditorData const getJigsawBlockData(::BlockPos&, ::WeakEntityRef) = 0;
 
+    virtual void deleteJigsawRegistry(::std::string const&) = 0;
+
     virtual void setJigsawBlockData(::BlockPos&, ::WeakEntityRef, ::JigsawEditorData) = 0;
 
     virtual ::Bedrock::PubSub::Subscription

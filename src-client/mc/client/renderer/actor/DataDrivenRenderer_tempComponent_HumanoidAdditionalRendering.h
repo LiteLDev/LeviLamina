@@ -30,8 +30,8 @@ class DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering : public ::Da
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7d5efc;
-    ::ll::UntypedStorage<8, 24> mUnk101f2d;
+    ::ll::UntypedStorage<8, 8>  mUnk3a0dad;
+    ::ll::UntypedStorage<8, 24> mUnk243299;
     ::ll::UntypedStorage<8, 32> mUnk3a6bc6;
     ::ll::UntypedStorage<1, 1>  mUnk1762fd;
     ::ll::UntypedStorage<1, 1>  mUnk72d582;
@@ -47,7 +47,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk8e909d;
     ::ll::UntypedStorage<8, 8>  mUnkfd1d20;
     ::ll::UntypedStorage<8, 8>  mUnk30eba1;
-    ::ll::UntypedStorage<8, 24> mUnk90bf01;
+    ::ll::UntypedStorage<8, 24> mUnkccd028;
     ::ll::UntypedStorage<8, 8>  mUnk453393;
     ::ll::UntypedStorage<8, 8>  mUnk48e03d;
     ::ll::UntypedStorage<8, 8>  mUnk136bf2;

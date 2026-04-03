@@ -6,7 +6,7 @@ struct SentryEnvelopePayloadStacktrace {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb3d80a;
+    ::ll::UntypedStorage<8, 24> mUnkbb47a3;
     // NOLINTEND
 
 public:

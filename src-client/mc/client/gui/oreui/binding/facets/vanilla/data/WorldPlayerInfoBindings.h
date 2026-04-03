@@ -66,7 +66,7 @@ public:
         ::BuildPlatform                          platform
     );
 
-    MCFOLD ::std::string const& getActiveProfileImage() const;
+    MCAPI ::std::string const& getActiveProfileImage() const;
 
     MCAPI ::OreUI::ConnectionType getConnectionType() const;
 

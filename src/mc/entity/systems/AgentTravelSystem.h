@@ -12,8 +12,8 @@
 class ActorOwnerComponent;
 class StrictEntityContext;
 struct AbilitiesComponent;
-struct ActorMovementTickNeededComponent;
 struct AgentFlagComponent;
+struct InterpolateMovementNeededComponent;
 struct MoveRequestComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
@@ -27,7 +27,7 @@ MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 MCNAPI void tickClient(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::AgentFlagComponent>,
         ::ActorOwnerComponent,
         ::AbilitiesComponent> view
 );
@@ -35,7 +35,7 @@ MCNAPI void tickClient(
 MCNAPI void tickServer(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::AgentFlagComponent>,
+        ::Include<::InterpolateMovementNeededComponent, ::AgentFlagComponent>,
         ::ActorOwnerComponent,
         ::AbilitiesComponent,
         ::StateVectorComponent>              view,

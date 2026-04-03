@@ -13,12 +13,10 @@
 class BlockPos;
 class BlockSource;
 class CauldronBlockActor;
-namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,10 +25,6 @@ class ScriptBlockFluidContainerComponent : public ::ScriptModuleMinecraft::BaseS
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::string const& getTypeId_V1() const /*override*/;
-
-    virtual ::std::string const& getTypeId_V2() const /*override*/;
-
     virtual bool _isValid() const /*override*/;
 
     virtual ~ScriptBlockFluidContainerComponent() /*override*/ = default;
@@ -64,32 +58,19 @@ public:
     MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
 
-    MCAPI static ::Scripting::ClassBinding
-    bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
-    MCAPI static ::Scripting::ClassBinding
-    bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
-
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
-    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& ComponentIdV1();
-
-    MCAPI static ::std::string const& ComponentIdV2();
+    tryCreate(
+        ::BlockSource&                        region,
+        ::BlockPos                            position,
+        ::Scripting::WeakLifetimeScope const& scope,
+        ::std::string const&                  typeId
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getTypeId_V1() const;
-
-    MCAPI ::std::string const& $getTypeId_V2() const;
-
     MCFOLD bool $_isValid() const;
 
 

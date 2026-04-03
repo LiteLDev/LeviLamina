@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&>                            mMob;
-    ::ll::TypedStorage<4, 28, ::AquaticChargeAttackSettings>    mSettings;
+    ::ll::TypedStorage<4, 36, ::AquaticChargeAttackSettings>    mSettings;
     ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>> mTargetId;
     ::ll::TypedStorage<1, 1, bool>                              mHasAttacked;
     ::ll::TypedStorage<1, 1, bool>                              mHasMissed;

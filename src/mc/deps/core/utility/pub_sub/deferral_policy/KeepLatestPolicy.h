@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class SpinLockImpl;
+namespace Bedrock::PubSub { class SubscriptionContext; }
 // clang-format on
 
 namespace Bedrock::PubSub::DeferralPolicy {

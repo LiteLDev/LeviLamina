@@ -54,7 +54,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnke1d17e;
     ::ll::UntypedStorage<1, 1>  mUnk66dd46;
     ::ll::UntypedStorage<4, 24> mUnk71f5d3;
-    ::ll::UntypedStorage<8, 24> mUnkef13db;
+    ::ll::UntypedStorage<8, 24> mUnkc93cd3;
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
+    MCNAPI_C static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
     // NOLINTEND
 
 public:

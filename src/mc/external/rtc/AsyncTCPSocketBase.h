@@ -19,7 +19,7 @@ class AsyncTCPSocketBase : public ::rtc::AsyncPacketSocket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk744ef4;
+    ::ll::UntypedStorage<8, 8>  mUnk40ec23;
     ::ll::UntypedStorage<8, 24> mUnke9e798;
     ::ll::UntypedStorage<8, 24> mUnkb68108;
     ::ll::UntypedStorage<8, 8>  mUnk169cb8;

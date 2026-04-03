@@ -97,8 +97,6 @@ public:
     // NOLINTBEGIN
     MCAPI AngerLevelComponent(::AngerLevelComponent&&);
 
-    MCAPI void _createOrModifyAngerLevel(::Actor const& nuisanceSource, ::std::function<int(int)> const& modifyingFn);
-
     MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> _getListeningSoundEvent(::Actor& actor) const;
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;

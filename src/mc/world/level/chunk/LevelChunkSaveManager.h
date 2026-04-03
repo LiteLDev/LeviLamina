@@ -68,6 +68,8 @@ public:
 
     MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
+    MCAPI void trySaveChunks();
+
     MCAPI ~LevelChunkSaveManager();
     // NOLINTEND
 

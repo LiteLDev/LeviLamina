@@ -51,7 +51,7 @@ MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(
     ::Player&                       player
 );
 
-MCNAPI void sendControlSchemeToClient(
+MCNAPI_C void sendControlSchemeToClient(
     ::ControlScheme::Scheme                scheme,
     ::PacketSender&                        sender,
     ::UserEntityIdentifierComponent const* userIdentifier

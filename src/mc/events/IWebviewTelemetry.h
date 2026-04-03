@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/WebviewObserver.h"
+#include "mc/deps/code_builder/platform/WebviewObserver.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,7 +32,31 @@ public:
 
     virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo) /*override*/;
 
+    virtual void onMessageRecieved(::std::string const&) /*override*/;
+
+    virtual void fireCodeBuilderLoadPerformance(
+        ::std::string const&        stage,
+        uint64                      tutorialSize,
+        uint64                      downloadSize,
+        ::std::chrono::milliseconds elapsedTimeMS
+    ) const /*override*/;
+
+    virtual void
+    fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const
+        /*override*/;
+
+#ifdef LL_PLAT_S
     virtual ~IWebviewTelemetry() /*override*/ = default;
+#else // LL_PLAT_C
+    virtual ~IWebviewTelemetry() /*override*/;
+#endif
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -44,6 +68,24 @@ public:
 
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
 
+    MCNAPI void $onMessageRecieved(::std::string const&);
 
+    MCNAPI void $fireCodeBuilderLoadPerformance(
+        ::std::string const&        stage,
+        uint64                      tutorialSize,
+        uint64                      downloadSize,
+        ::std::chrono::milliseconds elapsedTimeMS
+    ) const;
+
+    MCNAPI void
+    $fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
+
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

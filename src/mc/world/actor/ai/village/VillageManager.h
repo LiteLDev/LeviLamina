@@ -5,26 +5,25 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/UUID.h"
 #include "mc/world/actor/ai/village/IVillageManager.h"
 #include "mc/world/actor/ai/village/POIType.h"
 #include "mc/world/actor/ai/village/WanderingTraderScheduler.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
-class BlockType;
 class Dimension;
 class HashedString;
 class ILevelStorageManagerConnector;
 class LevelStorage;
 class POIInstance;
 class Village;
-struct EffectDuration;
 struct POIBlueprint;
-namespace mce { class UUID; }
 // clang-format on
 
 class VillageManager : public ::IVillageManager {
@@ -171,14 +170,6 @@ public:
     MCAPI void tick(::Tick const& tick);
 
     MCAPI ::std::shared_ptr<::POIInstance> tryCreatePOI(::BlockPos const& position, ::Block const& block);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_POI_TOLERANCE_DIST();
-
-    MCAPI static ::EffectDuration const& VILLAGE_HERO_EFFECT_DURATION();
     // NOLINTEND
 
 public:

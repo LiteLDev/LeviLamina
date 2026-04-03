@@ -21,10 +21,10 @@ class WidgetAddEntityComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb22c2c;
+    ::ll::UntypedStorage<8, 32> mUnk1989d9;
     ::ll::UntypedStorage<1, 1>  mUnka6ce39;
-    ::ll::UntypedStorage<8, 40> mUnk7e0373;
-    ::ll::UntypedStorage<8, 40> mUnk55487e;
+    ::ll::UntypedStorage<8, 40> mUnk3d2806;
+    ::ll::UntypedStorage<8, 40> mUnk7fbe4d;
     // NOLINTEND
 
 public:

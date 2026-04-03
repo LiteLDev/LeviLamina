@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class InteractionResult;
 class Player;
 // clang-format on
 
@@ -26,7 +27,7 @@ public:
 
     MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
     // NOLINTEND

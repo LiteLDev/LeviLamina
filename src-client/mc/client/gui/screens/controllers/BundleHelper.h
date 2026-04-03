@@ -24,7 +24,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ActiveBundleData> mActiveBundleData;
+    ::ll::TypedStorage<8, 144, ::ActiveBundleData> mActiveBundleData;
     // NOLINTEND
 
 public:

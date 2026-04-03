@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
 class SubscribedObjectives;
-struct ScoreboardId;
 // clang-format on
 
 class PlayerScoreboardEventListener : public ::ScoreboardEventListener {

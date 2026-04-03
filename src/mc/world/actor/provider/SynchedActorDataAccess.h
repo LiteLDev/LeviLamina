@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/ActorFlags.h"
-
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
@@ -25,8 +22,6 @@ MCAPI_C ::Vec3 getSeatOffset(::EntityContext const& entity);
 MCAPI void initializeActor(::EntityContext& entityContext);
 
 MCAPI void initializeHorse(::EntityContext& entityContext);
-
-MCAPI void setActorFlag(::EntityContext& entity, ::ActorFlags flag, bool value);
 
 MCAPI void setBoundingBoxScale(::EntityContext& entity, float scale);
 

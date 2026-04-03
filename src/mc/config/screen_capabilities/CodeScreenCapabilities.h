@@ -9,9 +9,9 @@ struct CodeScreenCapabilities : public ::TypedScreenCapabilities<::CodeScreenCap
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk767636;
-    ::ll::UntypedStorage<8, 32> mUnkf672b1;
-    ::ll::UntypedStorage<8, 32> mUnkb566c6;
+    ::ll::UntypedStorage<8, 32> mUnk1ffb5c;
+    ::ll::UntypedStorage<8, 32> mUnk7fe3db;
+    ::ll::UntypedStorage<8, 32> mUnkebf225;
     // NOLINTEND
 
 public:

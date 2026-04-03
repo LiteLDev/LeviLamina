@@ -86,13 +86,13 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk3dbac1;
     ::ll::UntypedStorage<8, 16> mUnk8a969d;
     ::ll::UntypedStorage<8, 8>  mUnk7832e5;
-    ::ll::UntypedStorage<8, 64> mUnk691ea8;
-    ::ll::UntypedStorage<8, 64> mUnk36a680;
+    ::ll::UntypedStorage<8, 64> mUnkd32604;
+    ::ll::UntypedStorage<8, 64> mUnk356a0f;
     ::ll::UntypedStorage<8, 8>  mUnkf95aee;
-    ::ll::UntypedStorage<8, 8>  mUnk7dfe40;
-    ::ll::UntypedStorage<8, 8>  mUnkd82ddc;
-    ::ll::UntypedStorage<8, 8>  mUnk9dc477;
-    ::ll::UntypedStorage<8, 32> mUnk9ecaf6;
+    ::ll::UntypedStorage<8, 8>  mUnke454b5;
+    ::ll::UntypedStorage<8, 8>  mUnk2e3cf8;
+    ::ll::UntypedStorage<8, 8>  mUnk2b701a;
+    ::ll::UntypedStorage<8, 32> mUnkebdbd6;
     // NOLINTEND
 
 public:

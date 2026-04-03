@@ -5,70 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class TakeFlowerGoal : public ::Goal {
-public:
-    // TakeFlowerGoal inner types declare
-    // clang-format off
-    class TakeFlowerDefinition;
-    // clang-format on
-
-    // TakeFlowerGoal inner types define
-    class TakeFlowerDefinition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mFilters;
-        ::ll::TypedStorage<4, 4, float>                      mSpeedModifier;
-        ::ll::TypedStorage<4, 4, float>                      mMinPickupFlowerWaitSeconds;
-        ::ll::TypedStorage<4, 4, float>                      mMaxPickupFlowerWaitSeconds;
-        ::ll::TypedStorage<4, 12, ::Vec3>                    mSearchArea;
-        ::ll::TypedStorage<4, 4, float>                      mMaxRotationX;
-        ::ll::TypedStorage<4, 4, float>                      mMaxHeadRotationY;
-        ::ll::TypedStorage<4, 4, float>                      mMinDistanceToTarget;
-        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnTakeFlower;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~TakeFlowerDefinition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TakeFlowerGoal::TakeFlowerDefinition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN

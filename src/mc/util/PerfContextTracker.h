@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/util/PerfContextEvent.h"
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
+class PerfContextTrackerReport;
 // clang-format on
 
 class PerfContextTracker {
@@ -151,7 +152,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80>  mUnk7bb973;
     ::ll::UntypedStorage<1, 1>   mUnkee6e42;
-    ::ll::UntypedStorage<8, 32>  mUnkc120fe;
+    ::ll::UntypedStorage<8, 32>  mUnk2b7e27;
     ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
     ::ll::UntypedStorage<8, 288> mUnk7e0308;
     ::ll::UntypedStorage<8, 200> mUnk8e863b;
@@ -182,18 +183,15 @@ public:
 
     MCNAPI_C void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
 
-    MCNAPI_C void _tryReport(::IMinecraftEventing& eventing, bool IsEcoFrameThrottled, int fpsThrottle);
-
     MCNAPI_C bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
 
     MCNAPI_C void tick(
-        ::std::string const&  currentContext,
-        uint                  clientCount,
-        uint                  renderDistance,
-        uint                  simDistance,
-        bool                  IsEcoFrameThrottled,
-        int                   fpsThrottle,
-        ::IMinecraftEventing& eventing
+        ::std::string const& currentContext,
+        uint                 clientCount,
+        uint                 renderDistance,
+        uint                 simDistance,
+        ::brstd::function_ref<void(::PerfContextTrackerReport const&) const, void(::PerfContextTrackerReport const&)>
+            reporter
     );
     // NOLINTEND
 

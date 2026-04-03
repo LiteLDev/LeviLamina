@@ -11,10 +11,13 @@ class Level;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorDieAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorHealthChangedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHitBlockAfterEventIntermediateData; }
-namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorHitEntityAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemDropAfterEventIntermediateData; }
+namespace ScriptModuleMinecraft { struct ScriptActorItemPickupAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
@@ -103,7 +106,7 @@ public:
     );
 
     virtual void
-    onActorHitEntity(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&);
+    onActorHitEntity(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>&);
 
     virtual void
     onActorHitBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData>&);
@@ -115,10 +118,12 @@ public:
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
     );
 
+    virtual void onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>&);
+
     virtual void onActorHurt(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>&);
 
     virtual void onActorHealthChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>&
     );
 
     virtual void onActorDie(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>&);
@@ -126,6 +131,12 @@ public:
     virtual void onPackSettingChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent>&
     );
+
+    virtual void
+    onActorItemDrop(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>&);
+
+    virtual void
+    onActorItemPickup(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>&);
 
     virtual void
     onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
@@ -260,8 +271,10 @@ public:
     MCFOLD void
     $onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
+    MCFOLD void $onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>&);
+
     MCFOLD void $onActorHealthChanged(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>&
     );
 
     MCFOLD void $onActorDie(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>&);
@@ -269,6 +282,12 @@ public:
     MCFOLD void $onPackSettingChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent>&
     );
+
+    MCFOLD void
+    $onActorItemDrop(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>&);
+
+    MCFOLD void
+    $onActorItemPickup(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>&);
 
     MCFOLD void
     $onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);

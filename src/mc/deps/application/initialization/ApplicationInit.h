@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/UniqueService.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class DeviceIdManager; }
+// clang-format on
+
 namespace Bedrock {
 
 class ApplicationInit {
@@ -44,7 +52,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnkd026dd;
-    ::ll::UntypedStorage<8, 8> mUnk6fe0b1;
+    ::ll::UntypedStorage<8, 8> mUnk9ce3e0;
     ::ll::UntypedStorage<1, 1> mUnkc6a30f;
     // NOLINTEND
 
@@ -58,6 +66,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI_C void run();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::UniqueService<::Bedrock::DeviceIdManager>
+    createAndInitDeviceIdManager(::std::unique_ptr<::Bedrock::DeviceIdManager> manager);
     // NOLINTEND
 
 public:

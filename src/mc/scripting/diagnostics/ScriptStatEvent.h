@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class ScriptStat;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ScriptStatEvent {
@@ -30,12 +29,6 @@ public:
     MCNAPI ::ScriptStatEvent& operator=(::ScriptStatEvent const&);
 
     MCNAPI ~ScriptStatEvent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

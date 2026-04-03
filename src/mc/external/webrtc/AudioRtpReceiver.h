@@ -34,12 +34,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 1>  mUnk14aa39;
     ::ll::UntypedStorage<8, 8>  mUnk82ccea;
-    ::ll::UntypedStorage<8, 32> mUnk88ab15;
+    ::ll::UntypedStorage<8, 32> mUnkd4a6b4;
     ::ll::UntypedStorage<8, 8>  mUnk40ee5a;
     ::ll::UntypedStorage<8, 8>  mUnke945c6;
     ::ll::UntypedStorage<8, 8>  mUnk4f90e9;
     ::ll::UntypedStorage<4, 8>  mUnk9e29a4;
-    ::ll::UntypedStorage<8, 24> mUnkc767e7;
+    ::ll::UntypedStorage<8, 24> mUnka13ce8;
     ::ll::UntypedStorage<1, 1>  mUnk5c7f82;
     ::ll::UntypedStorage<8, 8>  mUnk11ae2e;
     ::ll::UntypedStorage<8, 8>  mUnka0a6ee;

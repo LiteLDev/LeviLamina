@@ -174,12 +174,6 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
             struct ToneMapping {
@@ -225,12 +219,6 @@ public:
             // NOLINTEND
 
         public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
-
-        public:
             // constructor thunks
             // NOLINTBEGIN
             MCNAPI void* $ctor();
@@ -242,7 +230,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnk4e7c4c;
+        ::ll::UntypedStorage<8, 32>  mUnk20c2e5;
         ::ll::UntypedStorage<8, 232> mUnk285f2d;
         // NOLINTEND
 
@@ -333,12 +321,6 @@ public:
                 ColorGrading& operator=(ColorGrading const&);
                 ColorGrading(ColorGrading const&);
                 ColorGrading();
-
-            public:
-                // static functions
-                // NOLINTBEGIN
-                MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-                // NOLINTEND
             };
 
         public:
@@ -364,12 +346,6 @@ public:
             // NOLINTEND
 
         public:
-            // static functions
-            // NOLINTBEGIN
-            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
-
-        public:
             // constructor thunks
             // NOLINTBEGIN
             MCNAPI void* $ctor();
@@ -381,7 +357,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32>  mUnkcb5588;
+        ::ll::UntypedStorage<8, 32>  mUnk492f52;
         ::ll::UntypedStorage<8, 248> mUnka408d6;
         // NOLINTEND
 
@@ -458,8 +434,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::ColorGraderConfig::ColorGradingParametersSrcV1 const&
+    findColorGradingSettings(::HashedString const& identifier) const;
+
     MCNAPI ::dragon::framerenderer::modules::ColorGradingParameters
     getColorGradingParameters(::ColorGraderConfig::ColorGradingParametersSrcV1 const& settings) const;
+
+    MCNAPI void
+    setDefaultColorGradingSettings(::ColorGraderConfig::ColorGradingParametersSrcV1 const& inColorGradingSettings);
     // NOLINTEND
 
 public:
@@ -471,6 +453,11 @@ public:
     );
 
     MCNAPI static void bindColorGradingParameters(::cereal::ReflectionCtx& ctx);
+
+    MCNAPI static ::Scripting::Result_deprecated<void> registerConfigMappingChangeHandler(
+        ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,
+        ::LocalPlayer&                                         localPlayer
+    );
 
     MCNAPI static ::Scripting::Result_deprecated<void> registerEditorAccessors(
         ::Editor::Services::ClientDataTransferServiceProvider& dataTransferService,

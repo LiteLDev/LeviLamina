@@ -3,16 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
 #include "mc/world/level/biome/biomeproviders/BlendedMultiNoiseBiomeProvider.h"
 #include "mc/world/level/biome/source/BiomeSource.h"
 #include "mc/world/level/biome/source/BiomeSourceType.h"
+#include "mc/world/level/block/chunk_volume/VolumeOf.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
 class BiomeArea;
+class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
@@ -36,6 +37,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::ChunkVolume::VolumeOf<::Biome> getBiomeVolumeToFill(
+        short                         chunkHeight,
+        ::BlockPos                    chunkMin,
+        uint                          levelSeed,
+        ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
+    ) const /*override*/;
+
     virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const
         /*override*/;
 
@@ -62,9 +70,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
-
-    MCAPI ::ClientBlockPipeline::VolumeOf<::Biome const*>
-    getBiomeVolumeToFill(::LevelChunk const& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
     // NOLINTEND
 
 public:
@@ -82,6 +87,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
+        short                         chunkHeight,
+        ::BlockPos                    chunkMin,
+        uint                          levelSeed,
+        ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
+    ) const;
+
     MCAPI void $fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const;
 
     MCFOLD ::BiomeArea $getBiomeArea(::BoundingBox const& box, uint scale) const;

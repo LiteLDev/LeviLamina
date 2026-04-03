@@ -27,10 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ~ClientNetherNetConnector() /*override*/ = default;
+
+    virtual bool closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId) /*override*/;
+
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -41,18 +45,20 @@ public:
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
-
-    virtual ~ClientNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI bool $closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
+
     MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCNAPI bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCNAPI bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCNAPI void $disconnect();
 

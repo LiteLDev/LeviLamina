@@ -6,7 +6,7 @@ class GameEditionProperties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1e1a36;
+    ::ll::UntypedStorage<8, 32> mUnkf61746;
     // NOLINTEND
 
 public:
@@ -14,4 +14,16 @@ public:
     GameEditionProperties& operator=(GameEditionProperties const&);
     GameEditionProperties(GameEditionProperties const&);
     GameEditionProperties();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI_C void $dtor();
+    // NOLINTEND
 };

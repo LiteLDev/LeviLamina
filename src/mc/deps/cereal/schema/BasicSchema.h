@@ -9,12 +9,13 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
+namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
-namespace cereal::internal { struct DescriptionConfig; }
 namespace cereal::internal { struct LoadState; }
 namespace cereal::internal { struct OverrideState; }
+namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct SaveState; }
 // clang-format on
 
@@ -25,8 +26,11 @@ public:
     // BasicSchema inner types declare
     // clang-format off
     struct DynamicSetterArg;
+    struct GetterDescriptor;
     struct MemberDescriptor;
+    struct MemberFamily;
     struct SetterDescriptor;
+    struct TaggedVariantDescriptor;
     struct TypeDescriptor;
     // clang-format on
 
@@ -58,18 +62,33 @@ public:
         // NOLINTEND
     };
 
+    struct GetterDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk74679d;
+        ::ll::UntypedStorage<1, 1> mUnk7505fe;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        GetterDescriptor& operator=(GetterDescriptor const&);
+        GetterDescriptor(GetterDescriptor const&);
+        GetterDescriptor();
+    };
+
     struct MemberDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkf6e459;
-        ::ll::UntypedStorage<8, 8>  mUnkcc5bac;
-        ::ll::UntypedStorage<8, 32> mUnka15dd0;
-        ::ll::UntypedStorage<8, 32> mUnkc97556;
+        ::ll::UntypedStorage<8, 8>  mUnk81e2b5;
+        ::ll::UntypedStorage<8, 8>  mUnk937fa7;
+        ::ll::UntypedStorage<8, 32> mUnkf2d8ae;
+        ::ll::UntypedStorage<8, 32> mUnk5e01d3;
         ::ll::UntypedStorage<8, 8>  mUnkb0e062;
-        ::ll::UntypedStorage<8, 72> mUnk332289;
-        ::ll::UntypedStorage<8, 40> mUnk235705;
-        ::ll::UntypedStorage<8, 32> mUnke471ac;
+        ::ll::UntypedStorage<8, 72> mUnk99d9f1;
+        ::ll::UntypedStorage<8, 24> mUnk54613d;
+        ::ll::UntypedStorage<8, 32> mUnk748427;
         ::ll::UntypedStorage<1, 1>  mUnk9dbec8;
         ::ll::UntypedStorage<1, 1>  mUnkb484a6;
         ::ll::UntypedStorage<1, 1>  mUnk39c99d;
@@ -102,12 +121,28 @@ public:
         // NOLINTEND
     };
 
+    struct MemberFamily {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 40> mUnk3a19ad;
+        ::ll::UntypedStorage<4, 4>  mUnka1413a;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MemberFamily& operator=(MemberFamily const&);
+        MemberFamily(MemberFamily const&);
+        MemberFamily();
+    };
+
     struct SetterDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkc28d37;
-        ::ll::UntypedStorage<8, 8> mUnk7833a6;
+        ::ll::UntypedStorage<8, 8> mUnkbfd728;
+        ::ll::UntypedStorage<8, 8> mUnkd0b8e8;
+        ::ll::UntypedStorage<1, 1> mUnkf432c3;
         // NOLINTEND
 
     public:
@@ -117,15 +152,30 @@ public:
         SetterDescriptor();
     };
 
+    struct TaggedVariantDescriptor {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkdd8194;
+        ::ll::UntypedStorage<8, 32> mUnkd3ba52;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TaggedVariantDescriptor& operator=(TaggedVariantDescriptor const&);
+        TaggedVariantDescriptor(TaggedVariantDescriptor const&);
+        TaggedVariantDescriptor();
+    };
+
     struct TypeDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk25883b;
-        ::ll::UntypedStorage<8, 32> mUnka7498e;
-        ::ll::UntypedStorage<8, 72> mUnkfb7a42;
-        ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
-        ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
+        ::ll::UntypedStorage<8, 8>  mUnkdf496c;
+        ::ll::UntypedStorage<8, 32> mUnk21bf73;
+        ::ll::UntypedStorage<8, 72> mUnkbece46;
+        ::ll::UntypedStorage<8, 24> mUnkd6def4;
+        ::ll::UntypedStorage<8, 32> mUnk95d3f9;
         // NOLINTEND
 
     public:
@@ -166,7 +216,7 @@ public:
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const&) const;
 
     virtual ::cereal::SchemaDescription
-    makeDescription(::entt::meta_ctx const&, ::cereal::internal::DescriptionConfig) const = 0;
+    makeDescription(::cereal::internal::ReflectionContext const&, ::cereal::DescriptionConfig) const = 0;
     // NOLINTEND
 
 public:
@@ -178,6 +228,12 @@ public:
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::cereal::internal::BasicSchema const& lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
     // NOLINTEND
 
 public:

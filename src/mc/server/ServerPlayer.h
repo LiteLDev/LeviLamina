@@ -8,11 +8,11 @@
 #include "mc/deps/core/platform/PlatformType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/core/utility/CrashDumpLogStringID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/platform/diagnostics/CrashDumpLogStringID.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/HudVisibility.h"
@@ -21,6 +21,8 @@
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ActorSwingSource.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/actor/player/ServerLocatorBar.h"
+#include "mc/world/actor/player/VanillaWaypointManager.h"
 #include "mc/world/inventory/InventoryMenu.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/Tick.h"
@@ -53,7 +55,6 @@ class TextObjectRoot;
 class Vec3;
 struct INpcDialogueData;
 struct PlayerAuthenticationInfo;
-struct PlayerMovementSettings;
 struct SyncedClientOptionsComponent;
 struct VariantParameterList;
 namespace Bedrock::DDUI { class DataStoreSyncServer; }
@@ -110,6 +111,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                    mClientViewRadius;
     ::ll::TypedStorage<4, 4, uint>                                    mClientRequestedRadius;
     ::ll::TypedStorage<1, 1, bool>                                    mIsCompatibleWithClientSideChunkGen;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>         mPartyId;
     ::ll::TypedStorage<4, 4, int>                                     mRemainingStructureRefreshTicks;
     ::ll::TypedStorage<8, 48, ::HashedString>                         mCurrentStructureFeature;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ServerPlayer::NearbyActor>> mNearbyActors;
@@ -119,6 +121,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                                mHasQueuedViewMove;
     ::ll::TypedStorage<1, 1, bool>                                                                mIsPendingDisconnect;
     ::ll::TypedStorage<4, 52, ::std::array<::HudVisibility, 13>> mHudElementsVisibilityState;
+    ::ll::TypedStorage<8, 24, ::ServerLocatorBar>                mServerLocatorBar;
+    ::ll::TypedStorage<8, 24, ::VanillaWaypointManager>          mVanillaWaypointManager;
     // NOLINTEND
 
 public:
@@ -221,7 +225,7 @@ public:
 
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
@@ -238,7 +242,7 @@ public:
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
-    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const slot, ::ItemStack const& item) /*override*/;
+    virtual void setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item) /*override*/;
 
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
@@ -281,6 +285,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> getEditorPlayer() const /*override*/;
 
     virtual uchar getMaxChunkBuildRadius() const /*override*/;
+
+    virtual ::std::optional<::std::string> const getPartyId_UNTRUSTED() const /*override*/;
 
     virtual int _getSpawnChunkLimit() const;
 
@@ -329,8 +335,6 @@ public:
 
     MCAPI void _updateNearbyActors();
 
-    MCAPI void addActorToReplicationList(::gsl::not_null<::Actor*> actor, bool autonomous);
-
     MCAPI void createEditorPlayer(::Bedrock::NonOwnerPointer<::Editor::IEditorManager> editorManager);
 
     MCAPI void disconnect();
@@ -365,14 +369,8 @@ public:
     );
 
     MCAPI void setIsShowingCredits(bool value);
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void initializePlayerTickComponents(::EntityContext& entity, ::PlayerMovementSettings const& settings);
-
-    MCAPI static ::ServerPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    MCAPI void setPartyId(::std::optional<::std::string> partyId);
     // NOLINTEND
 
 public:
@@ -444,6 +442,8 @@ public:
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
+    MCAPI void $setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+
     MCAPI void $sendInventory(bool shouldSelectSlot);
 
     MCAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
@@ -494,7 +494,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 
@@ -510,6 +510,8 @@ public:
     MCAPI void $refreshContainer(::IContainerManager& menu);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
+
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item);
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
@@ -552,6 +554,8 @@ public:
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getEditorPlayer() const;
 
     MCAPI uchar $getMaxChunkBuildRadius() const;
+
+    MCAPI ::std::optional<::std::string> const $getPartyId_UNTRUSTED() const;
 
     MCAPI int $_getSpawnChunkLimit() const;
 

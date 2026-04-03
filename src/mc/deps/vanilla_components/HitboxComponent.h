@@ -34,6 +34,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+    MCFOLD_C void $dtor();
     // NOLINTEND
 };

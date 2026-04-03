@@ -20,9 +20,9 @@ class StreamFileDownloader : public ::IFileChunkDownloader,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnka211d4;
+    ::ll::UntypedStorage<8, 32>  mUnkebe6fb;
     ::ll::UntypedStorage<8, 8>   mUnkd71e6f;
-    ::ll::UntypedStorage<8, 64>  mUnkfb46b6;
+    ::ll::UntypedStorage<8, 64>  mUnk3f161f;
     ::ll::UntypedStorage<8, 64>  mUnk82ed74;
     ::ll::UntypedStorage<8, 8>   mUnk402616;
     ::ll::UntypedStorage<8, 8>   mUnk89347f;

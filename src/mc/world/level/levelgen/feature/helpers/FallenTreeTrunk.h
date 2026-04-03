@@ -27,9 +27,9 @@ public:
     ::ll::TypedStorage<4, 8, ::IntRange>                           mLogLength;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mHeightModifier;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mStumpHeight;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mTrunkBlockDescriptor;
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>               mLogDecorationFeature;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     // NOLINTEND
 
 public:

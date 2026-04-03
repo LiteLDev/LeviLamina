@@ -13,6 +13,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockDescriptor;
+class BlockPos;
+class IRandom;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -99,6 +101,12 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual ~TakeBlockGoal() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::BlockPos getRandomPos(::IRandom& random) const;
     // NOLINTEND
 
 public:

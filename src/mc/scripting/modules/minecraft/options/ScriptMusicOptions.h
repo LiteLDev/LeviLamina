@@ -33,20 +33,6 @@ public:
 
     MCAPI static ::Scripting::InterfaceBinding bindV1();
     // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& FADE_DEFAULT();
-
-    MCAPI static float const& FADE_MIN();
-
-    MCAPI static bool const& LOOP_DEFAULT();
-
-    MCAPI static float const& VOLUME_DEFAULT();
-
-    MCAPI static float const& VOLUME_MIN();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

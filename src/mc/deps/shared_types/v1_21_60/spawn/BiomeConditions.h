@@ -20,31 +20,24 @@ public:
     ::ll::TypedStorage<4, 4, int>                                                         mWeight;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::Spawn::Herd>>        mHerds;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_60::Spawn::PermuteType>> mPermuteType;
-    ::ll::TypedStorage<8, 328, ::SharedTypes::v1_21_20::FilterGroupData>                  mBiomeFilter;
+    ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData>                  mBiomeFilter;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mMobEvent;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     BiomeConditions(BiomeConditions const&);
+    BiomeConditions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditions();
-
     MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions& operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions&&);
 
     MCAPI ::SharedTypes::v1_21_60::Spawn::BiomeConditions&
     operator=(::SharedTypes::v1_21_60::Spawn::BiomeConditions const&);
 
     MCAPI ~BiomeConditions();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -55,6 +55,10 @@ public:
 
     virtual void DisableBroadcastDiscovery() /*override*/;
 
+    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) /*override*/;
+
+    virtual void RemoveLanHost(::NetherNet::NetworkID) /*override*/;
+
     virtual void EnableLANSignaling() /*override*/;
 
     virtual void DisableLANSignaling() /*override*/;

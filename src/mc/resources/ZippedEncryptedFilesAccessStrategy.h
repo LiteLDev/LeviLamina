@@ -12,6 +12,7 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
+class IPackIOProvider;
 class PackAccessStrategy;
 class ResourceLocation;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
@@ -22,8 +23,9 @@ class ZippedEncryptedFilesAccessStrategy : public ::EncryptedFileAccessStrategy 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4c959c;
-    ::ll::UntypedStorage<8, 8>  mUnkbe582d;
+    ::ll::UntypedStorage<8, 32> mUnk8b98ee;
+    ::ll::UntypedStorage<8, 8>  mUnk925bbe;
+    ::ll::UntypedStorage<8, 8>  mUnk75a4be;
     // NOLINTEND
 
 public:
@@ -70,6 +72,7 @@ public:
         ::ResourceLocation const&                                         archiveLocation,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IPackIOProvider const&                                          io,
         ::Core::Path const&                                               subPath,
         ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
     );
@@ -82,6 +85,7 @@ public:
         ::ResourceLocation const&                                         archiveLocation,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IPackIOProvider const&                                          io,
         ::Core::Path const&                                               subPath,
         ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
     );

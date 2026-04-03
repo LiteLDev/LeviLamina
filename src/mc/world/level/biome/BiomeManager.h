@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
-#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
 class AutomaticFeatureRules;
 class BiomeComponentFactory;
 class BiomeRegistry;
-class HashedString;
 class IWorldRegistriesProvider;
 class LevelSeed64;
 class LevelStorage;
@@ -21,6 +20,7 @@ class LinkedAssetValidator;
 class ResourcePackManager;
 class SurfaceBuilderRegistry;
 struct BiomeDecorationFeature;
+struct BiomeJsonDocumentGlueResolvedBiomeData;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
@@ -61,7 +61,7 @@ public:
         ::LevelSeed64                                      levelSeed,
         ::LevelStorage&                                    levelStorage,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>&
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
             biomeIdToResolvedData
     );
 
@@ -71,7 +71,7 @@ public:
         ::LevelSeed64                                      levelSeed,
         ::LevelStorage&                                    levelStorage,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
-        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>&
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>&
             biomeIdToResolvedData
     );
 

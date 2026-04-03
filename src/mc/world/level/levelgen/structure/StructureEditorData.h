@@ -47,7 +47,7 @@ public:
 
     MCAPI_C void setStructureName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI void setStructureSize(::BlockPos const& size);
+    MCAPI_C void setStructureSize(::BlockPos const& size);
 
     MCAPI_C void validateSize(::BlockPos const& structurePosition, short minHeight, short maxHeight);
 
@@ -60,16 +60,6 @@ public:
     MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 
     MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
-
-    MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
-
-    MCAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
-
-    MCAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
-
-    MCAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
-
-    MCAPI static char const& NAMESPACE_DELIMITER();
 
     MCAPI static ::std::string const& NAME_PREFIX();
     // NOLINTEND

@@ -19,25 +19,31 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk744b9a;
     ::ll::UntypedStorage<8, 64> mUnkc8f11d;
     ::ll::UntypedStorage<8, 64> mUnkfc0133;
+    ::ll::UntypedStorage<8, 64> mUnk8ec1d7;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     PriorityCategory& operator=(PriorityCategory const&);
-    PriorityCategory(PriorityCategory const&);
-    PriorityCategory();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PriorityCategory();
+
+    MCNAPI PriorityCategory(::CameraAimAssist::PriorityCategory const&);
+
     MCNAPI PriorityCategory(
         ::HashedString const&                            id,
         int                                              defaultBlockPriority,
         ::std::unordered_map<::HashedString, int> const& blockPriority,
         int                                              defaultEntityPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority,
-        ::std::unordered_map<::HashedString, int> const& blockTagPriority
+        ::std::unordered_map<::HashedString, int> const& blockTagPriority,
+        ::std::unordered_map<::HashedString, int> const& entityTypeFamilyPriority
     );
+
+    MCNAPI ::CameraAimAssist::PriorityCategory& operator=(::CameraAimAssist::PriorityCategory&&);
 
     MCNAPI ~PriorityCategory();
     // NOLINTEND
@@ -51,9 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::CameraAimAssist::PriorityCategory const&);
+    MCNAPI void* $ctor(::CameraAimAssist::PriorityCategory const&);
 
     MCNAPI void* $ctor(
         ::HashedString const&                            id,
@@ -61,7 +67,8 @@ public:
         ::std::unordered_map<::HashedString, int> const& blockPriority,
         int                                              defaultEntityPriority,
         ::std::unordered_map<::HashedString, int> const& entityPriority,
-        ::std::unordered_map<::HashedString, int> const& blockTagPriority
+        ::std::unordered_map<::HashedString, int> const& blockTagPriority,
+        ::std::unordered_map<::HashedString, int> const& entityTypeFamilyPriority
     );
     // NOLINTEND
 

@@ -47,9 +47,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkb7fbaa;
     ::ll::UntypedStorage<8, 8>  mUnke6a8bd;
     ::ll::UntypedStorage<8, 16> mUnkee141c;
-    ::ll::UntypedStorage<8, 64> mUnkb4afa9;
+    ::ll::UntypedStorage<8, 64> mUnk4fd50a;
     ::ll::UntypedStorage<8, 16> mUnk3611ec;
-    ::ll::UntypedStorage<8, 24> mUnk963488;
+    ::ll::UntypedStorage<8, 24> mUnkd7db42;
     // NOLINTEND
 
 public:
@@ -122,8 +122,7 @@ public:
 
     MCNAPI bool isValid() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>>
-    requestBlockOperationArea(
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> requestBlockOperationArea(
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> blockList,
         ::Scripting::Closure<
             void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> const&)>
@@ -131,19 +130,19 @@ public:
         ::Scripting::ScriptObjectFactory& factory
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>> requestExpandToContain(
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> requestExpandToContain(
         ::Scripting::NumberRange const&   xExtents,
         ::Scripting::NumberRange const&   zExtents,
         ::Scripting::ScriptObjectFactory& factory
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>> requestExtentsUpdate(
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> requestExtentsUpdate(
         ::Scripting::NumberRange const&   xExtents,
         ::Scripting::NumberRange const&   zExtents,
         ::Scripting::ScriptObjectFactory& factory
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>>
     requestMove(::Vec3 const& center, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Scripting::Result_deprecated<void> setBlockType(
@@ -167,10 +166,10 @@ public:
         ::std::optional<float>                                                         initialRotation
     );
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>>
     waitUntilAreaAvailable(::BoundingBox const& bounds, ::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error, void>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>>
     waitUntilAvailable(::Scripting::ScriptObjectFactory& factory);
     // NOLINTEND
 

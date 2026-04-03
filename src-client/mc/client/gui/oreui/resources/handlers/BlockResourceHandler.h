@@ -14,12 +14,11 @@
 // auto generated forward declare list
 // clang-format off
 class IClientInstance;
-namespace OreUI { class IResourceResponse; }
+namespace OreUI { class ResourceResponse; }
+namespace OreUI { class ResourceStreamResponse; }
 namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { class UIBlockThumbnailAtlasManager; }
 namespace OreUI { struct ResourceRequest; }
-namespace cohtml { class IAsyncResourceResponse; }
-namespace cohtml { class IAsyncResourceStreamResponse; }
 // clang-format on
 
 namespace OreUI {
@@ -27,12 +26,12 @@ namespace OreUI {
 class BlockResourceHandler : public ::OreUI::IResourceHandler {
 public:
     // BlockResourceHandler inner types define
-    using ReqResponsePair = ::std::pair<::OreUI::ResourceRequest, ::cohtml::IAsyncResourceResponse*>;
+    using ReqResponsePair = ::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::cohtml::IAsyncResourceResponse*>>>
+    ::ll::TypedStorage<8, 616, ::MPMCQueue<::std::pair<::OreUI::ResourceRequest, ::OreUI::ResourceResponse>>>
                                                                                 mBlockRequestsQueue;
     ::ll::TypedStorage<1, 1, bool>                                              mBlockRequestsQueuePending;
     ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                  mTextureHolder;
@@ -58,10 +57,10 @@ public:
     virtual void update() /*override*/;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response) /*override*/;
+    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) /*override*/;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::cohtml::IAsyncResourceStreamResponse*) /*override*/;
+    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&) /*override*/;
 
     virtual void onViewCreate(::IClientInstance& primaryClient) /*override*/;
 
@@ -73,8 +72,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::cohtml::IAsyncResourceResponse::UserImageData _generateUserImage(::OreUI::ResourceRequest const& request);
 
-    MCAPI void
-    _handleImageRequestAsync(::OreUI::ResourceRequest const& request, ::cohtml::IAsyncResourceResponse* response);
+    MCAPI void _handleImageRequestAsync(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
 
     MCAPI void _rejectResourceRequests();
     // NOLINTEND
@@ -85,10 +83,10 @@ public:
     MCAPI void $update();
 
     MCAPI ::OreUI::IResourceHandler::Status
-    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::IResourceResponse& response);
+    $onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response);
 
     MCFOLD ::OreUI::IResourceHandler::Status
-    $onResourceStreamRequest(::OreUI::ResourceRequest const&, ::cohtml::IAsyncResourceStreamResponse*);
+    $onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&);
 
     MCAPI void $onViewCreate(::IClientInstance& primaryClient);
 

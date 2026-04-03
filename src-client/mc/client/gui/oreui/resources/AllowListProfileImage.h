@@ -26,6 +26,8 @@ public:
     // NOLINTBEGIN
     MCAPI AllowListProfileImage();
 
+    MCAPI AllowListProfileImage(::OreUI::AllowListProfileImage&&);
+
     MCAPI AllowListProfileImage(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
 
     MCAPI void invalidate();
@@ -41,6 +43,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::OreUI::AllowListProfileImage&&);
 
     MCAPI void* $ctor(::std::string id, ::Social::ProfileImageOptions const& imageOptions);
     // NOLINTEND

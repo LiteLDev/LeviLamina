@@ -27,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleCurve& operator=(ParticleCurve const&);
     ParticleCurve();
 
 public:
@@ -36,6 +35,10 @@ public:
     MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
+
+    MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
+
+    MCAPI ~ParticleCurve();
     // NOLINTEND
 
 public:
@@ -49,13 +52,15 @@ public:
     // NOLINTBEGIN
     MCAPI_C void* $ctor();
 
+    MCAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
+
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

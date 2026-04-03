@@ -15,14 +15,12 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
-class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
 class Player;
 class Vec3;
-namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class FenceBlock : public ::BlockType {
@@ -68,10 +66,6 @@ public:
 
     virtual bool isFenceBlock() const /*override*/;
 
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
-        /*override*/;
-
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
@@ -86,8 +80,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
-
     virtual ~FenceBlock() /*override*/ = default;
     // NOLINTEND
 
@@ -100,8 +92,6 @@ public:
         ::BlockPos const&          pos,
         ::Vec3 const&              entityPos
     ) const;
-
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -157,14 +147,11 @@ public:
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
     MCFOLD bool $isFenceBlock() const;
-
-    MCFOLD bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -181,8 +168,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 #endif
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND

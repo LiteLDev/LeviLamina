@@ -27,7 +27,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnk56eb22;
-        ::ll::UntypedStorage<8, 8>  mUnk6e8504;
+        ::ll::UntypedStorage<8, 8>  mUnkd67789;
         // NOLINTEND
 
     public:
@@ -55,7 +55,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk4a01cf;
+        ::ll::UntypedStorage<8, 24> mUnk96dd77;
         ::ll::UntypedStorage<8, 8>  mUnk37f7a2;
         // NOLINTEND
 
@@ -70,7 +70,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4e6c3d;
-    ::ll::UntypedStorage<8, 24> mUnk7f35b0;
+    ::ll::UntypedStorage<8, 24> mUnk616396;
     ::ll::UntypedStorage<8, 80> mUnk72fcd7;
     // NOLINTEND
 
@@ -83,8 +83,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void forEachStorageArea(::std::function<void(::Core::FileStorageArea&)>&& visitorFunction);
-
     MCNAPI ::Bedrock::Result<::std::shared_ptr<::Core::FileStorageArea>> getStorageArea(::Core::PathView path) const;
 
     MCNAPI void insertStorageArea(::Core::FileStorageArea& storageArea);

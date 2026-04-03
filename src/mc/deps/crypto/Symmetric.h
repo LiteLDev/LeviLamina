@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/crypto/OperationMode.h"
+#include "mc/deps/crypto/symmetric/OperationMode.h"
 #include "mc/deps/crypto/symmetric/system/ISystemInterface.h"
 #include "mc/deps/crypto/symmetric/system/System.h"
 
@@ -13,7 +13,7 @@ class Symmetric : public ::Crypto::Symmetric::ISystemInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk78fd21;
+    ::ll::UntypedStorage<8, 8> mUnk4a8b4c;
     // NOLINTEND
 
 public:

@@ -10,7 +10,7 @@
 // clang-format off
 class ActorOwnerComponent;
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
+struct InterpolateMovementNeededComponent;
 struct SimulatedPlayerFlagComponent;
 struct TickingSystemWithInfo;
 // clang-format on

@@ -26,12 +26,12 @@ public:
     ::ll::TypedStorage<4, 4, int>                                  mMaxRootLength;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mYOffset;
     ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mAboveRootBlockChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mAboveRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMuddyRootBlockDescriptor;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMudBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mRootBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mAboveRootBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mMuddyRootBlockDescriptor;
+    ::ll::TypedStorage<8, 176, ::BlockDescriptor>                  mMudBlockDescriptor;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>    mRootsMayGrowThrough;
-    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
+    ::ll::TypedStorage<8, 224, ::TreeHelper::AttachableDecoration> mDecoration;
     // NOLINTEND
 
 public:

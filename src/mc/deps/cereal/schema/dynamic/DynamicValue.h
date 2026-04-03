@@ -25,7 +25,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk3bb901;
+    ::ll::UntypedStorage<8, 72> mUnk82a702;
     // NOLINTEND
 
 public:
@@ -38,6 +38,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI DynamicValue(::cereal::DynamicValue&&);
+
+    MCNAPI ::std::vector<::cereal::DynamicValue> const& asArray() const;
+
+    MCNAPI ::std::vector<::cereal::DynamicValue>& asArray();
+
+    MCNAPI bool const& asBool() const;
+
+    MCNAPI int64 const& asInteger() const;
+
+    MCNAPI double const& asNumber() const;
+
+    MCNAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> const& asObject() const;
+
+    MCNAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
+
+    MCNAPI ::std::string const& asString() const;
 
     MCNAPI uint64 hash() const;
 

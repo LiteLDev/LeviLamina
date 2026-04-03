@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/external/absl/InlinedVector.h"
 #include "mc/external/webrtc/RtpPacketMediaType.h"
-#include "mc/external/webrtc/TimeDelta.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace webrtc { class DataSize; }
 namespace webrtc { class RtpPacketToSend; }
+namespace webrtc { class TimeDelta; }
 namespace webrtc { class Timestamp; }
 namespace webrtc { struct PacketQueueTTL; }
 // clang-format on
@@ -30,7 +30,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk23e2c0;
+        ::ll::UntypedStorage<8, 8> mUnk3c7bfe;
         ::ll::UntypedStorage<8, 8> mUnk92bd57;
         ::ll::UntypedStorage<8, 8> mUnk885886;
         // NOLINTEND
@@ -58,7 +58,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 200> mUnk68987d;
+        ::ll::UntypedStorage<8, 200> mUnk471ff8;
         ::ll::UntypedStorage<8, 8>   mUnk27b62d;
         ::ll::UntypedStorage<4, 4>   mUnk43db29;
         // NOLINTEND
@@ -89,10 +89,10 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk1d9a31;
     ::ll::UntypedStorage<1, 1>   mUnkd68fd2;
     ::ll::UntypedStorage<8, 8>   mUnk711dff;
-    ::ll::UntypedStorage<8, 64>  mUnk9457a3;
-    ::ll::UntypedStorage<8, 200> mUnk9c7a05;
+    ::ll::UntypedStorage<8, 64>  mUnk30bbbf;
+    ::ll::UntypedStorage<8, 200> mUnkb25208;
     ::ll::UntypedStorage<4, 4>   mUnk9b20c7;
-    ::ll::UntypedStorage<8, 16>  mUnk17d552;
+    ::ll::UntypedStorage<8, 16>  mUnk578494;
     // NOLINTEND
 
 public:

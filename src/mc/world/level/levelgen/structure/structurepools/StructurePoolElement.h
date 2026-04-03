@@ -356,11 +356,11 @@ public:
 
     MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI void $setProjection(::Projection projection);
+    MCFOLD void $setProjection(::Projection projection);
 
-    MCAPI ::Projection $getProjection() const;
+    MCFOLD ::Projection $getProjection() const;
 
-    MCAPI ::PostProcessSettings $getPostProcessSettings() const;
+    MCFOLD ::PostProcessSettings $getPostProcessSettings() const;
 
     MCAPI bool $place(
         ::BlockSource&                                                                  region,

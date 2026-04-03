@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/UUID.h"
 #include "mc/server/IJsonSerializable.h"
 
 // auto generated forward declare list
 // clang-format off
 class AllowListEntry;
 namespace Json { class Value; }
-namespace mce { class UUID; }
 // clang-format on
 
 class AllowList : public ::IJsonSerializable {
@@ -26,6 +26,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string> mName;
         ::ll::TypedStorage<8, 32, ::std::string> mXuid;
+        ::ll::TypedStorage<8, 16, ::mce::UUID>   mUuid;
         // NOLINTEND
 
     public:
@@ -35,13 +36,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
+        MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid, ::mce::UUID const& uuid);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string name, ::std::string xuid);
+        MCAPI void* $ctor(::std::string name, ::std::string xuid, ::mce::UUID const& uuid);
         // NOLINTEND
     };
 
@@ -55,9 +56,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void serialize(::Json::Value& root) /*override*/;
+    virtual ::Json::Value serialize() const /*override*/;
 
-    virtual void deserialize(::Json::Value& root) /*override*/;
+    virtual void deserialize(::Json::Value const& root) /*override*/;
 
 #ifdef LL_PLAT_S
     virtual ~AllowList() /*override*/ = default;
@@ -70,7 +71,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI_S bool addByName(::std::string const& name);
+
     MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
+
+    MCAPI_S bool removeByName(::std::string const& name);
 
     MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
     // NOLINTEND
@@ -90,9 +95,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $serialize(::Json::Value& root);
+    MCAPI ::Json::Value $serialize() const;
 
-    MCAPI void $deserialize(::Json::Value& root);
+    MCAPI void $deserialize(::Json::Value const& root);
 
 
     // NOLINTEND

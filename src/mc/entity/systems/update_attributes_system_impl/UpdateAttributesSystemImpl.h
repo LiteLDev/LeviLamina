@@ -9,9 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActorMovementTickNeededComponent;
 struct AttributeRequestComponent;
 struct AttributesComponent;
+struct InterpolateMovementNeededComponent;
 struct MovementAttributesComponent;
 // clang-format on
 
@@ -19,7 +19,7 @@ namespace UpdateAttributesSystemImpl {
 // functions
 // NOLINTBEGIN
 MCNAPI void tickProcessRequests(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                  entity,
     ::AttributesComponent&                        attributes,
     ::AttributeRequestComponent const&            request,
@@ -27,7 +27,7 @@ MCNAPI void tickProcessRequests(
 );
 
 MCNAPI void tickUpdateAttributesSystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::AttributesComponent const&   attributes,
     ::MovementAttributesComponent& movementAttributes
 );

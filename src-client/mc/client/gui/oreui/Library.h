@@ -14,7 +14,6 @@ namespace Core { class Path; }
 namespace OreUI { class IRenderingBackend; }
 namespace OreUI { class InternationalizationManager; }
 namespace OreUI { class LayoutScheduler; }
-namespace OreUI { class MemoryTracker; }
 namespace OreUI { class ResourceHandlerBroker; }
 namespace OreUI { class TemporaryTextureHolder; }
 namespace OreUI { class ViewsCoordinator; }
@@ -51,11 +50,11 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::Profile::IPerformanceHandler>> mPerformanceHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cohtml::ITimeZoneProvider>>            mTimeZoneProvider;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::LayoutScheduler>>               mLayoutScheduler;
-    ::ll::TypedStorage<8, 8, ::OreUI::MemoryTracker&>                                   mMemoryTracker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewsCoordinator>>              mViews;
     ::ll::TypedStorage<8, 8, ::OreUI::TemporaryTextureHolder&>                          mTemporaryTextureHolder;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager const&>                              mPackManager;
     ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                       mDebugData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                             mRegisteredFonts;
     ::ll::TypedStorage<1, 1, bool>                                                      mDoCompleteUninitialization;
     ::ll::TypedStorage<1, 1, bool>                                                      mSuspended;
     ::ll::TypedStorage<1, 1, bool>                                                      mICUDataInitialized;
@@ -79,7 +78,6 @@ public:
         ::Core::Path const&                               packagePath,
         ::std::unique_ptr<::OreUI::ResourceHandlerBroker> resourceHandler,
         ::std::unique_ptr<::cohtml::Logging::ILogHandler> logHandler,
-        ::OreUI::MemoryTracker&                           memoryTracker,
         ::OreUI::TemporaryTextureHolder&                  temporaryTextureHolder,
         ::ResourcePackManager const&                      packManager,
         ::OreUI::DebugData&                               debugData
@@ -95,6 +93,8 @@ public:
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup,
         ::mce::RenderContext&                          renderContext
     );
+
+    MCAPI void initializeViewsCoordinator();
 
     MCAPI ~Library();
     // NOLINTEND
@@ -115,7 +115,6 @@ public:
         ::Core::Path const&                               packagePath,
         ::std::unique_ptr<::OreUI::ResourceHandlerBroker> resourceHandler,
         ::std::unique_ptr<::cohtml::Logging::ILogHandler> logHandler,
-        ::OreUI::MemoryTracker&                           memoryTracker,
         ::OreUI::TemporaryTextureHolder&                  temporaryTextureHolder,
         ::ResourcePackManager const&                      packManager,
         ::OreUI::DebugData&                               debugData

@@ -21,8 +21,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                        mIsDstSerialized;
     ::ll::TypedStorage<1, 1, bool>                        mIsAmountSerialized;
     ::ll::TypedStorage<1, 1, uchar>                       mAmount;
-    ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mSrc;
-    ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mDst;
+    ::ll::TypedStorage<8, 40, ::ItemStackRequestSlotInfo> mSrc;
+    ::ll::TypedStorage<8, 40, ::ItemStackRequestSlotInfo> mDst;
     // NOLINTEND
 
 public:

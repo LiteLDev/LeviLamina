@@ -13,8 +13,8 @@ public:
     using ActorRulesLookupMap =
         ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>;
 
-    using ActorRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
+    using ActorRulesRegistryMap = ::std::vector<::std::unique_ptr<
+        ::std::vector<::std::unique_ptr<::StructurePoolActorRule, ::std::default_delete<::StructurePoolActorRule>>>>>;
 
 public:
     // member variables
@@ -22,7 +22,8 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>>
+        ::std::vector<::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolActorRule, ::std::default_delete<::StructurePoolActorRule>>>>>>
         mActorRulesRegistry;
     ::ll::TypedStorage<
         8,
@@ -37,8 +38,9 @@ public:
     MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
 
     MCAPI void registerActorRules(
-        ::std::string                                                                   name,
-        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>&& ruleList
+        ::std::string                                                                                        name,
+        ::std::unique_ptr<::std::vector<
+            ::std::unique_ptr<::StructurePoolActorRule, ::std::default_delete<::StructurePoolActorRule>>>>&& ruleList
     );
 
     MCAPI ~JigsawStructureActorRulesRegistry();

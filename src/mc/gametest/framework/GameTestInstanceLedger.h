@@ -17,7 +17,7 @@ class GameTestInstanceLedger : public ::gametest::IGameTestListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke7bb35;
+    ::ll::UntypedStorage<8, 24> mUnk2c9656;
     ::ll::UntypedStorage<8, 8>  mUnk275e5b;
     // NOLINTEND
 

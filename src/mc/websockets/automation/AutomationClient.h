@@ -35,9 +35,9 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkda283b;
     ::ll::UntypedStorage<4, 4>  mUnk94c7c4;
     ::ll::UntypedStorage<1, 1>  mUnk60f2b9;
-    ::ll::UntypedStorage<8, 24> mUnkcee0c9;
+    ::ll::UntypedStorage<8, 24> mUnka70ea8;
     ::ll::UntypedStorage<8, 16> mUnk731e86;
-    ::ll::UntypedStorage<8, 64> mUnk66f7fc;
+    ::ll::UntypedStorage<8, 64> mUnk95cff7;
     ::ll::UntypedStorage<8, 80> mUnk53c64c;
     ::ll::UntypedStorage<8, 16> mUnk3a88e5;
     // NOLINTEND

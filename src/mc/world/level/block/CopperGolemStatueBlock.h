@@ -9,13 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
 class Experiments;
 class ItemInstance;
+namespace BlockEvents { class ActorInternalEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
@@ -24,14 +24,6 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isInteractiveBlock() const /*override*/;
-
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
 
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
@@ -48,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
@@ -61,14 +55,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 

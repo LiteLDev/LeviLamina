@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/player/SkinHandle.h"
+#include "mc/client/persona/SkinHandle.h"
 
 struct CharacterSelectorData {
 public:

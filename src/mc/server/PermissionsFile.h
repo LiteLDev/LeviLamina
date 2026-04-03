@@ -18,8 +18,8 @@ class PermissionsFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb52563;
-    ::ll::UntypedStorage<8, 64> mUnk8a7a23;
+    ::ll::UntypedStorage<8, 32> mUnk795f1e;
+    ::ll::UntypedStorage<8, 64> mUnk60e0b4;
     // NOLINTEND
 
 public:

@@ -33,6 +33,7 @@ class WeakEntityRef;
 struct ActorUniqueID;
 struct BrightnessPair;
 struct ClientFrameUpdateContext;
+namespace LightPropagation { struct LightVolumeManager; }
 namespace ParticleSystem { class ParticleEffect; }
 namespace ParticleSystem { class ParticleEmitter; }
 namespace ParticleSystem { class ParticleEvent; }
@@ -124,10 +125,11 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                 mMaterial;
     ::ll::TypedStorage<8, 112, ::PBRTexturePtrs>                  mTexture;
     ::ll::TypedStorage<4, 20, ::std::optional<::MERSUniformData>> mMERSUniforms;
-    ::ll::TypedStorage<8, 8, ::std::array<::std::array<::mce::Color, 16>, 16> const&> mLightTextureData;
-    ::ll::TypedStorage<4, 4, ::ParticleRenderData::FaceCameraMode>                    mFaceCameraMode;
-    ::ll::TypedStorage<8, 8, ::BlockSource&>                                          mBlockSource;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockType const*>>               mBlocksToCheckAgainst;
+    ::ll::TypedStorage<8, 8, ::std::array<::std::array<::mce::Color, 16>, 16> const&>  mLightTextureData;
+    ::ll::TypedStorage<4, 4, ::ParticleRenderData::FaceCameraMode>                     mFaceCameraMode;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                                           mBlockSource;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockType const*>>                mBlocksToCheckAgainst;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::
         TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::ParticleSystem::ParticleEmitterActual::AABBCacheElement>>
                                                      mAABBCache;
@@ -248,10 +250,9 @@ public:
 
     virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const& blockPosition) const /*override*/;
 
-    virtual ::BrightnessPair getMaxBrightnessPairAroundBlock(
-        ::BlockPos const&                                           blockPosition,
-        ::std::optional<::std::pair<::BlockPos, ::BlockPos>> const& bounds
-    ) const /*override*/;
+    virtual ::std::pair<::BrightnessPair, ::BlockPos>
+    getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const
+        /*override*/;
 
     virtual bool getVisibilityAtBlock(::BlockPos const& blockPosition) const /*override*/;
 
@@ -294,6 +295,7 @@ public:
         ::HashedString const&                                   effectName,
         ::std::array<::std::array<::mce::Color, 16>, 16> const& lightTextureData,
         ::BlockSource&                                          region,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
         ::Matrix const&                                         transform,
         ::MolangVariableMap                                     molangVariableMap,
         int                                                     framesToInterpolate
@@ -337,6 +339,11 @@ public:
 
     MCAPI void _extractParticleRenderingData(::ParticleRenderData& particleRenderData, float a);
 
+    MCAPI ::mce::Color _getLightColorForParticle(
+        ::ParticleSystem::CommonParticle const&                         particle,
+        ::std::shared_ptr<::LightPropagation::LightVolumeManager const> lightVolumeManager
+    ) const;
+
     MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> _lockEffect();
 
     MCAPI bool _prepareEmitterRenderParams();
@@ -374,6 +381,7 @@ public:
         ::HashedString const&                                   effectName,
         ::std::array<::std::array<::mce::Color, 16>, 16> const& lightTextureData,
         ::BlockSource&                                          region,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
         ::Matrix const&                                         transform,
         ::MolangVariableMap                                     molangVariableMap,
         int                                                     framesToInterpolate
@@ -418,7 +426,7 @@ public:
 
     MCAPI bool $hasExpired() const;
 
-    MCAPI ::AABB const& $getAABB() const;
+    MCFOLD ::AABB const& $getAABB() const;
 
     MCFOLD ::HashedString const& $getEffectName() const;
 
@@ -456,7 +464,7 @@ public:
 
     MCAPI void $setMaxNumParticles(uint64 num);
 
-    MCFOLD uint64 $getMaxNumParticles() const;
+    MCAPI uint64 $getMaxNumParticles() const;
 
     MCFOLD uint64 $getNumParticles() const;
 
@@ -478,10 +486,8 @@ public:
 
     MCAPI ::BrightnessPair $getBrightnessPairAtBlock(::BlockPos const& blockPosition) const;
 
-    MCAPI ::BrightnessPair $getMaxBrightnessPairAroundBlock(
-        ::BlockPos const&                                           blockPosition,
-        ::std::optional<::std::pair<::BlockPos, ::BlockPos>> const& bounds
-    ) const;
+    MCAPI ::std::pair<::BrightnessPair, ::BlockPos>
+    $getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const;
 
     MCAPI bool $getVisibilityAtBlock(::BlockPos const& blockPosition) const;
 

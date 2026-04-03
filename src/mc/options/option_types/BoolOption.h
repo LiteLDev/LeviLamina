@@ -21,24 +21,13 @@ public:
 
     virtual void load(::std::string const& valueString) /*override*/;
 
-#ifdef LL_PLAT_S
     virtual ~BoolOption() /*override*/ = default;
-#else // LL_PLAT_C
-    virtual ~BoolOption() /*override*/;
-#endif
-
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void set(bool v, bool saveOptionChange);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

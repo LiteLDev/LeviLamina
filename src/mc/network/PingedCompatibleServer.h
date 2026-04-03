@@ -6,14 +6,14 @@ struct PingedCompatibleServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk2ea269;
-    ::ll::UntypedStorage<8, 32>  mUnkb8a0f9;
+    ::ll::UntypedStorage<8, 32>  mUnk8523a7;
+    ::ll::UntypedStorage<8, 32>  mUnk3d7aec;
     ::ll::UntypedStorage<4, 4>   mUnke564b6;
     ::ll::UntypedStorage<4, 4>   mUnk130f1b;
-    ::ll::UntypedStorage<8, 32>  mUnk3ec1fb;
+    ::ll::UntypedStorage<8, 32>  mUnk4e7dc2;
     ::ll::UntypedStorage<4, 4>   mUnk3ea2c9;
     ::ll::UntypedStorage<4, 4>   mUnkd9f37a;
-    ::ll::UntypedStorage<8, 32>  mUnk499929;
+    ::ll::UntypedStorage<8, 32>  mUnk6c3bb8;
     ::ll::UntypedStorage<8, 136> mUnke52a42;
     ::ll::UntypedStorage<4, 4>   mUnkbc1dd6;
     ::ll::UntypedStorage<4, 4>   mUnk3ce443;

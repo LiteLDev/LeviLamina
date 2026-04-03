@@ -115,8 +115,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
-
-    MCFOLD void $onLowMemory(::LowMemorySeverity);
 #endif
 
 

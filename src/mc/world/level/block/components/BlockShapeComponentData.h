@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
+class Matrix;
 // clang-format on
 
 struct BlockShapeComponentData {
@@ -20,6 +21,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~BlockShapeComponentData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void transformAABBs(::BlockShapeComponentData& data, ::Matrix const& transform);
     // NOLINTEND
 
 public:

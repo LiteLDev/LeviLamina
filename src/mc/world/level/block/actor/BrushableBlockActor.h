@@ -71,9 +71,9 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -111,8 +111,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
-
-    MCAPI static ::BrushableBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -134,9 +132,9 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $stopOpen(::Actor& actor);
 

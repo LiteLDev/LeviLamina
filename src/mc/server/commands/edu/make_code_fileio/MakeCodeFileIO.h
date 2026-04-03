@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
+#include "mc/server/commands/edu/make_code_fileio/MakeCodeFileResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +27,8 @@ MCAPI_C void openFilePicker(
 );
 
 MCAPI ::MakeCodeFileIO::MakeCodeFileIOReadResult readFile(::std::string const& filePath);
+
+MCAPI ::MakeCodeFileIO::MakeCodeFileResult writeFile(::std::string const& filePath, ::std::string const& input);
 // NOLINTEND
 
 } // namespace MakeCodeFileIO

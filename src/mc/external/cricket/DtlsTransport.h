@@ -36,15 +36,15 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk84c612;
     ::ll::UntypedStorage<4, 4>  mUnk3f8dce;
     ::ll::UntypedStorage<8, 8>  mUnkc921e6;
-    ::ll::UntypedStorage<8, 8>  mUnk745fa2;
+    ::ll::UntypedStorage<8, 8>  mUnke0e055;
     ::ll::UntypedStorage<8, 8>  mUnke36806;
-    ::ll::UntypedStorage<8, 24> mUnk17b8a7;
+    ::ll::UntypedStorage<8, 24> mUnk37b218;
     ::ll::UntypedStorage<1, 1>  mUnkda6491;
     ::ll::UntypedStorage<8, 8>  mUnk498d3c;
     ::ll::UntypedStorage<4, 8>  mUnkb91ba1;
     ::ll::UntypedStorage<4, 4>  mUnk6540de;
     ::ll::UntypedStorage<8, 24> mUnk9d4972;
-    ::ll::UntypedStorage<8, 32> mUnk7e7427;
+    ::ll::UntypedStorage<8, 32> mUnkb7bb41;
     ::ll::UntypedStorage<8, 24> mUnkd71b90;
     ::ll::UntypedStorage<1, 1>  mUnk1ef94d;
     ::ll::UntypedStorage<1, 1>  mUnka04d79;
@@ -98,7 +98,7 @@ public:
 
     virtual bool SetDtlsRole(::rtc::SSLRole role) /*override*/;
 
-    virtual bool GetSslCipherSuite(int* cipher) /*override*/;
+    virtual bool GetSslCipherSuite(int* cipher_suite) /*override*/;
 
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain() const /*override*/;
 
@@ -212,7 +212,7 @@ public:
 
     MCNAPI bool $SetDtlsRole(::rtc::SSLRole role);
 
-    MCNAPI bool $GetSslCipherSuite(int* cipher);
+    MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> $GetRemoteSSLCertChain() const;
 

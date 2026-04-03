@@ -61,7 +61,7 @@ public:
     ::ll::TypedStorage<4, 88080384, ::bgfx::RenderBind[65536]>                               m_renderItemBind;
     ::ll::TypedStorage<8, 524288, ::bgfx::RangedBindings* [65536]>                           m_rangedRenderItemBind;
     ::ll::TypedStorage<4, 4100, uint[1025]>                                                  m_blitKeys;
-    ::ll::TypedStorage<2, 65600, ::bgfx::BlitItem[1025]>                                     m_blitItem;
+    ::ll::TypedStorage<64, 65600, ::bgfx::BlitItem[1025]>                                    m_blitItem;
     ::ll::TypedStorage<8, 4718624, ::bgfx::FrameCache>                                       m_frameCache;
     ::ll::TypedStorage<8, 8, ::bgfx::UniformBuffer**>                                        m_uniformBuffer;
     ::ll::TypedStorage<4, 4, uint>                                                           m_numRenderItems;

@@ -12,7 +12,6 @@ class Block;
 class BlockPos;
 class BlockVolume;
 class HeightmapWrapper;
-class Pos;
 class Random;
 struct SurfaceMaterialAdjustmentEvaluated;
 struct SurfaceMaterialBlocks;
@@ -38,8 +37,6 @@ MCAPI void _buildSurface(
 );
 
 MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameters);
-
-MCAPI short findGroundHeight(::BlockVolume const& blocks, ::Pos p, ::HeightmapWrapper const& preWorldGenHeightmap);
 
 MCAPI bool isSteepTerrain(
     ::BlockVolume const&                       blocks,
