@@ -21,7 +21,7 @@ void registerCommands() {
     if (!serverRegisterListener) {
         serverRegisterListener = bus.emplaceListener<ll::event::command::ServerCommandRegisterEvent>(
             [](ll::event::command::ServerCommandRegisterEvent&) {
-                auto& registrar = CommandRegistrar::getInstance(false);
+                auto& registrar = CommandRegistrar::getServerInstance();
                 registrar.clear();
                 registerVersionCommand(false);
                 registerCrashCommand(false);
@@ -34,7 +34,7 @@ void registerCommands() {
     if (!clientRegisterListener) {
         clientRegisterListener = bus.emplaceListener<ll::event::command::ClientCommandRegisterEvent>(
             [](ll::event::command::ClientCommandRegisterEvent&) {
-                auto& registrar = CommandRegistrar::getInstance(true);
+                auto& registrar = CommandRegistrar::getClientInstance();
                 registrar.clear();
                 registerVersionCommand(true);
                 registerCrashCommand(true);
@@ -46,7 +46,7 @@ void registerCommands() {
     if (!serverStoppingListener) {
         serverStoppingListener =
             bus.emplaceListener<ll::event::server::ServerStoppingEvent>([](ll::event::server::ServerStoppingEvent&) {
-                CommandRegistrar::getInstance(false).clear();
+                CommandRegistrar::getServerInstance().clear();
             });
     }
 }

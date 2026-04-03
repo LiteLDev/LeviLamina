@@ -18,7 +18,7 @@ void registerCommands() {
     if (!serverRegisterListener) {
         serverRegisterListener = bus.emplaceListener<ll::event::command::ServerCommandRegisterEvent>(
             [](ll::event::command::ServerCommandRegisterEvent&) {
-                auto& registrar = CommandRegistrar::getInstance(false);
+                auto& registrar = CommandRegistrar::getServerInstance();
                 registrar.clear();
                 registerTpdimCommand(false);
                 registerVersionCommand(false);
