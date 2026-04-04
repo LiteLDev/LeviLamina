@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
 
-    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
 
     virtual ~ScriptBoxShape() /*override*/;
     // NOLINTEND
@@ -48,7 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $populatePacketData(::ShapeDataPayload& packet) const;
 
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& packet);
+    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
 
 
     // NOLINTEND

@@ -166,7 +166,7 @@ public:
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
     virtual void
-    hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots) /*override*/;
+    hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
 
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots) /*override*/;
 
@@ -436,7 +436,7 @@ public:
 
     MCAPI bool $swing(::ActorSwingSource swingSource);
 
-    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
+    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
     MCAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 

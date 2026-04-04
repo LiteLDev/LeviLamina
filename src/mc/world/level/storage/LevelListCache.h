@@ -72,7 +72,7 @@ public:
         ::LevelData const&   levelData
     ) /*override*/;
 
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) /*override*/;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
 
     virtual void createBackupCopyOfWorld(
         ::std::string const& levelId,
@@ -203,7 +203,7 @@ public:
         ::LevelData const&   levelData
     );
 
-    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& data);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
 
     MCNAPI void $createBackupCopyOfWorld(
         ::std::string const& levelId,

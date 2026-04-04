@@ -35,7 +35,7 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     virtual ~FaceDirectionalBlock() /*override*/ = default;
     // NOLINTEND
@@ -55,7 +55,7 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
 
     // NOLINTEND

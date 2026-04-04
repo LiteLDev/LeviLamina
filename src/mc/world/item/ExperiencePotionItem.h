@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -44,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

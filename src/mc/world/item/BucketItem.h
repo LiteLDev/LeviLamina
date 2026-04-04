@@ -38,7 +38,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
@@ -46,7 +46,7 @@ public:
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
@@ -124,7 +124,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
@@ -132,7 +132,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 

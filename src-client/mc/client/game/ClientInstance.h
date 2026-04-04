@@ -470,7 +470,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInitFinished) /*override*/;
+    virtual bool update(bool isInWorld) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -1253,8 +1253,7 @@ public:
 
     virtual void setClientInstanceState(::ClientInstanceState const& newstate) /*override*/;
 
-    virtual void
-    setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator) /*override*/;
+    virtual void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator) /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> getUIEventCoordinator() /*override*/;
 
@@ -1533,7 +1532,7 @@ public:
 
     MCAPI void $preFrameTick();
 
-    MCAPI bool $update(bool isInitFinished);
+    MCAPI bool $update(bool isInWorld);
 
     MCFOLD void $endFrame();
 
@@ -2309,7 +2308,7 @@ public:
 
     MCAPI void $setClientInstanceState(::ClientInstanceState const& newstate);
 
-    MCAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& uiEventCoordinator);
+    MCAPI void $setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&& coordinator);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> $getUIEventCoordinator();
 

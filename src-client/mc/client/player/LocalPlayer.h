@@ -325,7 +325,7 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& pos) /*override*/;
+    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos) /*override*/;
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
@@ -389,7 +389,7 @@ public:
 
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
@@ -615,7 +615,7 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& pos);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedBlockPos);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
@@ -674,7 +674,7 @@ public:
 
     MCFOLD bool $isActorRelevant(::Actor const& actor);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $checkMovementStats(::Vec3 const& d);
 

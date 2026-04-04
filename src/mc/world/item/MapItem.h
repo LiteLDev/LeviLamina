@@ -54,7 +54,7 @@ public:
 
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
@@ -141,7 +141,7 @@ public:
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
 
