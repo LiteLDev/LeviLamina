@@ -130,21 +130,6 @@ void checkOtherBdsInstance() {
     }
 }
 
-void checkProtocolVersion() {
-    auto currentProtocol = getNetworkProtocolVersion();
-    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        getLogger().warn(
-            "Protocol version not match, target version: {0}, current version: {1}"_tr(
-                TARGET_BDS_PROTOCOL_VERSION,
-                currentProtocol
-            )
-        );
-        getLogger().warn(
-            "This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
-        );
-    }
-}
-
 BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     switch (CEvent) {
     case CTRL_C_EVENT:
@@ -194,8 +179,6 @@ void leviLaminaMain() {
     if (config.language != "system") {
         i18n::defaultLocaleCode() = config.language;
     }
-
-    checkProtocolVersion();
 
     if (config.targeted.checkRunningBDS) {
         checkOtherBdsInstance();
