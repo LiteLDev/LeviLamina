@@ -44,57 +44,62 @@ public:
     virtual ::std::unique_ptr<::WorldTemplateSource> createWorldTemplateSource() const = 0;
 
     virtual ::std::unique_ptr<::InvalidResourceSource>
-    createInvalidResourceSource(::InvalidPacksFilterGroup const&) const = 0;
+    createInvalidResourceSource(::InvalidPacksFilterGroup const& filter) const = 0;
 
     virtual ::std::unique_ptr<::ContentSource> createWorldPackManagerContentSource(
-        ::std::string const&,
-        ::Core::PathBuffer<::std::string>,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&,
-        ::std::weak_ptr<::CachedHostPackIdProvider>
+        ::std::string const&                            worldID,
+        ::Core::PathBuffer<::std::string>               worldPath,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data,
+        ::std::weak_ptr<::CachedHostPackIdProvider>     provider
     ) const = 0;
 
     virtual ::std::unique_ptr<::ContentSource> createRealmPackManagerContentSource(
-        int64,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&
+        int64                                           realmID,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
     ) const = 0;
 
     virtual ::std::unique_ptr<::ContentSource> createRealmsWorldPackManagerContentSource(
-        ::Realms::RealmId,
-        ::std::vector<::Realms::Content>&&,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&
+        ::Realms::RealmId                               realmId,
+        ::std::vector<::Realms::Content>&&              serviceAppliedContent,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
     ) const = 0;
 
     virtual ::std::unique_ptr<::ContentSource> createPackManagerContentSource(
-        ::ContentType,
-        ::ContentFlags,
-        ::std::vector<::PackManagerContentSourceData>&&
+        ::ContentType                                   type,
+        ::ContentFlags                                  flags,
+        ::std::vector<::PackManagerContentSourceData>&& data
     ) const = 0;
 
-    virtual ::PackSource* getInPackagePackSource(::PackType) const = 0;
+    virtual ::PackSource* getInPackagePackSource(::PackType type) const = 0;
 
-    virtual ::PackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::PackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType type) const = 0;
 
-    virtual ::PackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin) const = 0;
+    virtual ::PackSource&
+    createDirectoryPackSource(::Core::Path const& path, ::PackType type, ::PackOrigin origin) const = 0;
 
-    virtual ::PackSource& createWorldTemplatePackSource(::mce::UUID const&, ::PackType, ::PackOrigin) const = 0;
+    virtual ::PackSource&
+    createWorldTemplatePackSource(::mce::UUID const& id, ::PackType type, ::PackOrigin origin) const = 0;
 
-    virtual ::IContentCatalogPackSource&
-    createContentCatalogPackSource(::std::weak_ptr<::ContentManagerUtils::ISourcesAsyncReloader>&&, bool) const = 0;
+    virtual ::IContentCatalogPackSource& createContentCatalogPackSource(
+        ::std::weak_ptr<::ContentManagerUtils::ISourcesAsyncReloader>&& weakSourcesAsyncReloader,
+        bool                                                            enabled
+    ) const = 0;
 
-    virtual ::PackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::PackSource& createWorldHistoryPackSource(::Core::Path const& path, ::PackType type) const = 0;
 
     virtual ::RealmsUnknownPackSources& getRealmsUnknownPackSources() const = 0;
 
     virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
-        int64,
-        ::PackType,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&&
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
     ) const = 0;
 
-    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) const = 0;
+    virtual ::std::unique_ptr<::CompositePackSource>
+    createCompositePackSource(::std::vector<::PackSource*> sources) const = 0;
 
     virtual bool allowsResourcePackDevelopment() const = 0;
 

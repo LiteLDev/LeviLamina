@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
+class ItemStack;
 class Recipes;
 class ServerPlayer;
 class StrictEntityContext;
@@ -30,8 +31,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnka30b41;
-        ::ll::UntypedStorage<8, 8>  mUnk864952;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack const*>> allItemSlots;
+        ::ll::TypedStorage<8, 8, ::std::unordered_set<int> const&>   changedItemSlotIndices;
         // NOLINTEND
 
     public:
@@ -44,16 +45,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _handleCriterionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCNAPI static void
+    MCAPI static void
     _handleInitialUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCNAPI static void
+    MCAPI static void
     _handleInstructionUnlocks(::ServerPlayer* serverPlayer, ::UnlockedRecipesServerComponent& unlockedComp);
 
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ServerPlayerComponent>,
@@ -61,7 +62,7 @@ public:
             ::ActorOwnerComponent> view
     );
 
-    MCNAPI static ::std::vector<::std::string> _unlockRecipes(
+    MCAPI static ::std::vector<::std::string> _unlockRecipes(
         ::UnlockedRecipesServerComponent&                                     unlockedComp,
         ::Recipes const&                                                      recipes,
         bool                                                                  playerIsInWater,
@@ -69,13 +70,13 @@ public:
         ::std::optional<::RecipeUnlockingSystem::InventoryChangedData> const& inventoryChanged
     );
 
-    MCNAPI static void _useContext(
+    MCAPI static void _useContext(
         ::UnlockedRecipesServerComponent&              unlockedComp,
         ::Recipes const&                               recipes,
         ::RecipeUnlockingRequirement::UnlockingContext context,
         ::std::vector<::std::string>&                  unlockedRecipeIds
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

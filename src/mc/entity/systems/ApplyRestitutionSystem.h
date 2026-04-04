@@ -17,11 +17,11 @@ struct StateVectorComponent;
 namespace ApplyRestitutionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode);
+MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode);
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::ApplyRestitutionComponent const, ::StateVectorComponent> view);
+MCAPI void tick(::ViewT<::StrictEntityContext, ::ApplyRestitutionComponent const, ::StateVectorComponent> view);
 
-MCNAPI void
+MCAPI void
 tickSystem(::ApplyRestitutionComponent const& applyRestitutionComponent, ::StateVectorComponent& stateVectorComponent);
 // NOLINTEND
 

@@ -22,7 +22,12 @@ public:
 
     virtual ::NetworkIdentifier getLocalNetworkId() const = 0;
 
-    virtual void onCommandExecuted(::MCRESULT, ::CommandOriginType, ::std::string const&, ::std::string const&) = 0;
+    virtual void onCommandExecuted(
+        ::MCRESULT           result,
+        ::CommandOriginType  originType,
+        ::std::string const& commandName,
+        ::std::string const& commandString
+    ) = 0;
     // NOLINTEND
 
 public:

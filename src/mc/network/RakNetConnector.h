@@ -47,7 +47,11 @@ public:
 
         virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) = 0;
 
-        virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>) = 0;
+        virtual void onWebsocketRequest(
+            ::std::string const&    serverAddress,
+            ::std::string const&    payload,
+            ::std::function<void()> errorCallback
+        ) = 0;
         // NOLINTEND
 
     public:
@@ -237,7 +241,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -328,8 +332,10 @@ public:
     // NOLINTBEGIN
     MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCAPI bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCAPI void $disconnect();
 

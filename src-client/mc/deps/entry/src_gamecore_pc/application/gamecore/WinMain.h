@@ -31,11 +31,11 @@ public:
 
     virtual void _prepareForWindowCreation() = 0;
 
-    virtual ::tagWNDCLASSEXW _createWindowClass(::HINSTANCE__*) = 0;
+    virtual ::tagWNDCLASSEXW _createWindowClass(::HINSTANCE__* hInstance) = 0;
 
-    virtual ::tagRECT _getInitialClientAreaAndShowCommand(int&) = 0;
+    virtual ::tagRECT _getInitialClientAreaAndShowCommand(int& showCommand) = 0;
 
-    virtual void _postWindowCreationSetup(::HWND__*) = 0;
+    virtual void _postWindowCreationSetup(::HWND__* hwnd) = 0;
 
     virtual ::gsl::not_null<::Bedrock::ApplicationInitHandler*> _getAppInitHandler() = 0;
     // NOLINTEND

@@ -141,7 +141,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doUnderWaterSensing(
+    MCAPI static void doUnderWaterSensing(
         ::StrictEntityContext const&                                                          entity,
         ::StateVectorComponent const&                                                         stateVectorComponent,
         ::UpdateWaterStateRequestComponent const&                                             request,
@@ -155,7 +155,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::HorseFlagComponent,
@@ -185,7 +185,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::HorseFlagComponent,

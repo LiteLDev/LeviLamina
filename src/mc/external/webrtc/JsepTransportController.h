@@ -55,10 +55,10 @@ public:
         virtual ~Observer();
 
         virtual bool OnTransportChanged(
-            ::std::string const&,
-            ::webrtc::RtpTransportInternal*,
-            ::webrtc::scoped_refptr<::webrtc::DtlsTransport>,
-            ::webrtc::DataChannelTransportInterface*
+            ::std::string const&                             mid,
+            ::webrtc::RtpTransportInternal*                  rtp_transport,
+            ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport,
+            ::webrtc::DataChannelTransportInterface*         data_channel_transport
         ) = 0;
         // NOLINTEND
 

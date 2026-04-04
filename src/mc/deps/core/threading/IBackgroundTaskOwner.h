@@ -21,23 +21,23 @@ public:
     virtual ~IBackgroundTaskOwner() = default;
 
     virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
-        ::TaskStartInfo const&,
-        ::brstd::move_only_function<::TaskResult()>&&,
-        ::std::function<void()>&&
+        ::TaskStartInfo const&                        startInfo,
+        ::brstd::move_only_function<::TaskResult()>&& task,
+        ::std::function<void()>&&                     callback
     ) = 0;
 
     virtual ::Bedrock::Threading::Async<void>
-    queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) = 0;
+    queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task) = 0;
 
-    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase>) = 0;
+    virtual void taskRegister(::std::shared_ptr<::BackgroundTaskBase> task) = 0;
 
-    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool) = 0;
+    virtual void requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate) = 0;
 
     virtual ::TaskGroupState getState() const = 0;
 
     virtual void processCoroutines() = 0;
 
-    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*>) = 0;
+    virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) = 0;
     // NOLINTEND
 
 public:

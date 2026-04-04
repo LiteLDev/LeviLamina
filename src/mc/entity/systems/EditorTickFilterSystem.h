@@ -19,13 +19,13 @@ struct EditorTickFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _addPauseTickNeeded(
+    MCAPI static void _addPauseTickNeeded(
         ::StrictEntityContext& entity,
         ::ActorTickNeededComponent&,
         ::EntityModifier<::EditorActorPauseTickNeededComponent>& modifier
     );
 
-    MCNAPI static void _tickAddPauseTickNeeded(
+    MCAPI static void _tickAddPauseTickNeeded(
         ::ViewT<::StrictEntityContext, ::Include<::EditorActorPausedComponent>, ::ActorTickNeededComponent> view,
         ::EntityModifier<::EditorActorPauseTickNeededComponent>                                             modifier
     );

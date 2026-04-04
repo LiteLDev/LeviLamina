@@ -14,9 +14,10 @@ public:
     // NOLINTBEGIN
     virtual ~IImageCache() = default;
 
-    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const&) = 0;
+    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) = 0;
 
-    virtual ::cg::ImageBuffer* insertImageIntoCache(::ResourceLocation const&, ::cg::ImageBuffer&&) = 0;
+    virtual ::cg::ImageBuffer*
+    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) = 0;
     // NOLINTEND
 
 public:

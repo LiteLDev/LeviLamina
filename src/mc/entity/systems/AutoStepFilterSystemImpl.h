@@ -20,7 +20,7 @@ struct OnGroundFlagComponent;
 namespace AutoStepFilterSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doAutoStepFilterSystem(
+MCAPI void doAutoStepFilterSystem(
     ::StrictEntityContext const&                                                       context,
     ::MoveRequestComponent const&                                                      moveRequestComponent,
     ::MaxAutoStepComponent const&                                                      maxAutoStepComponent,

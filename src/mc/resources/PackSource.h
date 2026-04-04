@@ -132,7 +132,7 @@ public:
 
     virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
-    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) = 0;
+    virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) = 0;
     // NOLINTEND
 
 public:

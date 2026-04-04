@@ -19,9 +19,17 @@ struct TickingSystemWithInfo;
 
 class PersonaEmoteInputSystem {
 public:
+    // PersonaEmoteInputSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ShouldStopEmotingRequestComponent>,
+        ::EventingDispatcherComponent const,
+        ::EmotePlayedTelemetryDataComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _personaEmoteInputSystem(
+    MCAPI static void _personaEmoteInputSystem(
         ::StrictEntityContext const&                                    entity,
         ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
         ::EmotePlayedTelemetryDataComponent const&                      emotePlayedTelemetryDataComponent,
@@ -29,7 +37,7 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
-    MCNAPI static void _tickPersonaEmoteInputSystem(
+    MCAPI static void _tickPersonaEmoteInputSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ShouldStopEmotingRequestComponent>,
@@ -39,6 +47,6 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

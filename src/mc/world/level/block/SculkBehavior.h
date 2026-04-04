@@ -16,7 +16,7 @@ class SculkBehavior {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual int updateDecayDelay(int const) const = 0;
+    virtual int updateDecayDelay(int const currentValue) const = 0;
 
     virtual int updateFacingData(int const, ::Block const&) const = 0;
 
@@ -37,7 +37,7 @@ public:
         bool const
     ) const = 0;
 
-    virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const = 0;
+    virtual void onDischarged(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos) const = 0;
     // NOLINTEND
 
 public:

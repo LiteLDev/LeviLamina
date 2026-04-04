@@ -30,6 +30,35 @@ struct VehicleComponent;
 
 class MinecartMoveAlongRailSystem {
 public:
+    // MinecartMoveAlongRailSystem inner types define
+    using MoveView = ::ViewT<
+        ::StrictEntityContext,
+        ::RailMovementComponent const,
+        ::SnapOnRailComponent,
+        ::StateVectorComponent,
+        ::Optional<::VehicleComponent const>>;
+
+    using PlayerView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PlayerComponent>,
+        ::ActorRotationComponent const,
+        ::LocalMoveVelocityComponent const>;
+
+    using PostMoveView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::RailMovementComponent>,
+        ::SnapOnRailComponent const,
+        ::StateVectorComponent>;
+
+    using PreMoveView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::RailMovementComponent>,
+        ::OffsetsComponent const,
+        ::StateVectorComponent const,
+        ::FallDistanceComponent,
+        ::SnapOnRailComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _calculateAllPassengersRailMovementInput(

@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+// clang-format on
+
 namespace SneakMovementSystem {
 
 struct IsIntersecting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk572494;
+    ::ll::TypedStorage<8, 8, ::AABB const&> mAABB;
     // NOLINTEND
 
 public:

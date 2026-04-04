@@ -27,7 +27,7 @@ class RtpSenderInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool SetTrack(::webrtc::MediaStreamTrackInterface*) = 0;
+    virtual bool SetTrack(::webrtc::MediaStreamTrackInterface* a1) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track() const = 0;
 
@@ -41,26 +41,27 @@ public:
 
     virtual ::std::vector<::std::string> stream_ids() const = 0;
 
-    virtual void SetStreams(::std::vector<::std::string> const&) = 0;
+    virtual void SetStreams(::std::vector<::std::string> const& a1) = 0;
 
     virtual ::std::vector<::webrtc::RtpEncodingParameters> init_send_encodings() const = 0;
 
     virtual ::webrtc::RtpParameters GetParameters() const = 0;
 
-    virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& parameters) = 0;
+    virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& a1) = 0;
 
-    virtual void SetParametersAsync(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
+    virtual void
+    SetParametersAsync(::webrtc::RtpParameters const& a1, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> a2);
 
     virtual ::webrtc::scoped_refptr<::webrtc::DtmfSenderInterface> GetDtmfSender() const = 0;
 
-    virtual void SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface>) = 0;
+    virtual void SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> a1) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> GetFrameEncryptor() const = 0;
 
     virtual void
-        SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1) = 0;
 
-    virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface>) = 0;
+    virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> a1) = 0;
 
     virtual ~RtpSenderInterface() /*override*/ = default;
     // NOLINTEND

@@ -23,7 +23,7 @@ struct SoundEventRequestQueueComponent;
 namespace PlayCamelStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(
+MCAPI void tick(
     ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>>,
     ::StrictEntityContext const&                                       entity,
     ::ActorDataFlagComponent const&                                    actorFlags,

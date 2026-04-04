@@ -31,7 +31,7 @@ public:
     virtual ~ILocalizationDictionary();
 #endif
 
-    virtual ::std::string getLocString(::std::string const&) const = 0;
+    virtual ::std::string getLocString(::std::string const& locKey) const = 0;
 
     virtual bool isLocalizationReady() const = 0;
 

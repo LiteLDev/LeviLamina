@@ -11,13 +11,13 @@ class IAllocator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void* Allocate(uint, ::cohtml::MemTags::MemTagsType) = 0;
+    virtual void* Allocate(uint size, ::cohtml::MemTags::MemTagsType tag) = 0;
 
-    virtual void* Reallocate(void*, uint, ::cohtml::MemTags::MemTagsType) = 0;
+    virtual void* Reallocate(void* oldPtr, uint size, ::cohtml::MemTags::MemTagsType tag) = 0;
 
     virtual void Deallocate(void*, ::cohtml::MemTags::MemTagsType) = 0;
 
-    virtual void* AlignedAllocate(uint, uint, ::cohtml::MemTags::MemTagsType) = 0;
+    virtual void* AlignedAllocate(uint size, uint alignment, ::cohtml::MemTags::MemTagsType tag) = 0;
 
     virtual void AlignedDeallocate(void*, ::cohtml::MemTags::MemTagsType) = 0;
 

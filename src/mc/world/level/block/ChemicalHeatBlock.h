@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     virtual int getExtraRenderLayers() const /*override*/;
 
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getExtraRenderLayers() const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

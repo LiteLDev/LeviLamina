@@ -29,11 +29,11 @@ struct WitherBossFlagComponent;
 namespace BlockMovementSlowdownMultiplierSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void adjustFallDistance(
+MCAPI void adjustFallDistance(
     ::ViewT<::StrictEntityContext, ::BlockMovementSlowdownAppliedComponent const, ::FallDistanceComponent> view
 );
 
-MCNAPI void applySlowdownOnMove(
+MCAPI void applySlowdownOnMove(
     ::ViewT<
         ::StrictEntityContext,
         ::BlockMovementSlowdownMultiplierComponent,
@@ -41,7 +41,7 @@ MCNAPI void applySlowdownOnMove(
         ::StateVectorComponent> view
 );
 
-MCNAPI void immunePlayer(
+MCAPI void immunePlayer(
     ::ViewT<
         ::StrictEntityContext,
         ::BlockMovementSlowdownMultiplierComponent,
@@ -50,7 +50,7 @@ MCNAPI void immunePlayer(
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
 );
 
-MCNAPI void immuneSpider(
+MCAPI void immuneSpider(
     ::ViewT<
         ::StrictEntityContext,
         ::BlockMovementSlowdownMultiplierComponent,
@@ -61,7 +61,7 @@ MCNAPI void immuneSpider(
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent>                  modifier
 );
 
-MCNAPI void immuneWitherBoss(
+MCAPI void immuneWitherBoss(
     ::ViewT<
         ::StrictEntityContext,
         ::BlockMovementSlowdownMultiplierComponent,
@@ -69,7 +69,7 @@ MCNAPI void immuneWitherBoss(
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent>                          modifier
 );
 
-MCNAPI void weavingMob(
+MCAPI void weavingMob(
     ::ViewT<
         ::StrictEntityContext,
         ::BlockMovementSlowdownMultiplierComponent,

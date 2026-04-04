@@ -21,13 +21,13 @@ public:
     // NOLINTBEGIN
     virtual ~EditorProjectRegionServiceProvider() = default;
 
-    virtual ::WeakRef<::Editor::ProjectRegion> createRegion(::Editor::ProjectRegionConfig const&) = 0;
+    virtual ::WeakRef<::Editor::ProjectRegion> createRegion(::Editor::ProjectRegionConfig const& config) = 0;
 
     virtual ::std::vector<::WeakRef<::Editor::ProjectRegion>> getAllRegions() const = 0;
 
-    virtual ::Scripting::Result_deprecated<void> destroyRegion(::mce::UUID const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> destroyRegion(::mce::UUID const& id) = 0;
 
-    virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const&) const = 0;
+    virtual ::WeakRef<::Editor::ProjectRegion> getRegion(::mce::UUID const& id) const = 0;
     // NOLINTEND
 
 public:

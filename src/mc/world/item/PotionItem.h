@@ -44,8 +44,8 @@ public:
 
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual void appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -58,7 +58,8 @@ public:
 
     virtual bool uniqueAuxValues() const /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
@@ -104,7 +105,8 @@ public:
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -117,7 +119,8 @@ public:
 
     MCFOLD bool $uniqueAuxValues() const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 

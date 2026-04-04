@@ -48,7 +48,7 @@ public:
 
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    virtual bool placeHangingEntity(::BlockSource&, int);
+    virtual bool placeHangingEntity(::BlockSource& region, int direction);
 
     virtual bool wouldSurvive(::BlockSource& region);
 
@@ -116,7 +116,7 @@ public:
 
     MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCFOLD bool $placeHangingEntity(::BlockSource&, int);
+    MCFOLD bool $placeHangingEntity(::BlockSource& region, int direction);
 
     MCAPI bool $wouldSurvive(::BlockSource& region);
 

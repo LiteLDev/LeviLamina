@@ -52,7 +52,7 @@ public:
     virtual ~RenderMaterialBase();
 #endif
 
-    virtual void parseRuntimeStates(::Json::Value const&) = 0;
+    virtual void parseRuntimeStates(::Json::Value const& root) = 0;
 
     virtual void appendShaderPathForGfxAPI() = 0;
 

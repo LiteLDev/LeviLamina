@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual ~IPendingOperation() = default;
 
-    virtual ::std::unique_ptr<::Editor::Transactions::IOperation> _commit(::Editor::ServiceProviderCollection&) = 0;
+    virtual ::std::unique_ptr<::Editor::Transactions::IOperation>
+    _commit(::Editor::ServiceProviderCollection& services) = 0;
 
     virtual ::Scripting::Result_deprecated<bool> _discard(::Editor::ServiceProviderCollection&) = 0;
     // NOLINTEND

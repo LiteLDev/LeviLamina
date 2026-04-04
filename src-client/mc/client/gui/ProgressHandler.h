@@ -26,25 +26,25 @@ public:
     // NOLINTBEGIN
     virtual ~ProgressHandler() = default;
 
-    virtual void onStart(::MinecraftScreenModel&) = 0;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
     virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&);
 
-    virtual void tick(::MinecraftScreenModel&) = 0;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
-    virtual void onCancel(::MinecraftScreenModel&) = 0;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
-    virtual void onRetry(::MinecraftScreenModel&);
+    virtual void onRetry(::MinecraftScreenModel& minecraftScreenModel);
 
-    virtual void onExit(::MinecraftScreenModel&) = 0;
+    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const = 0;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const = 0;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const = 0;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const = 0;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     virtual ::std::string getName() const = 0;
 
@@ -58,11 +58,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onRetry(::MinecraftScreenModel&);
+    MCFOLD void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     MCAPI ::std::string $getTTSProgressMessage() const;
 

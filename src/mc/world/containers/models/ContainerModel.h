@@ -104,9 +104,9 @@ public:
 
     virtual void switchItemExpando(int itemId);
 
-    virtual bool isSlotDisabled(int) const;
+    virtual bool isSlotDisabled(int slot) const;
 
-    virtual void refreshContainer(bool);
+    virtual void refreshContainer(bool fullRefresh);
 
     virtual ::Container* _getContainer() const;
 
@@ -211,9 +211,9 @@ public:
 
     MCFOLD void $switchItemExpando(int itemId);
 
-    MCFOLD bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int slot) const;
 
-    MCFOLD void $refreshContainer(bool);
+    MCFOLD void $refreshContainer(bool fullRefresh);
 
     MCFOLD ::Container* $_getContainer() const;
 

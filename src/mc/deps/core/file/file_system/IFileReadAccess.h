@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~IFileReadAccess() = default;
 
-    virtual uint64 fread(void*, uint64, uint64, void*) const = 0;
+    virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const = 0;
     // NOLINTEND
 
 public:

@@ -68,7 +68,7 @@ public:
     // NOLINTBEGIN
     virtual ~Particle();
 
-    virtual void init(::Vec3 const&, ::Vec3 const&, int, ::ParticleEngine&) = 0;
+    virtual void init(::Vec3 const& pos, ::Vec3 const& dir, int scale, ::ParticleEngine& engine) = 0;
 
     virtual void addTagData(::CompoundTag const& tag);
 

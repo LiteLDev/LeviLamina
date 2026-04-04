@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickAmbientSoundComponent(
+    MCAPI static void _tickAmbientSoundComponent(
         ::ActorOwnerComponent&         actorOwnerComponent,
         ::AmbientSoundServerComponent& ambientSoundServerComponent
     );
@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

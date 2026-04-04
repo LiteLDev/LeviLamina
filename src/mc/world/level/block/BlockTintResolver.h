@@ -14,14 +14,16 @@ class BlockTintResolver {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::mce::Color resolve(::BlockSource&, ::BlockPos const&, ::Block const&, ::mce::Color const& preColor) const;
+    virtual ::mce::Color
+    resolve(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::mce::Color const& preColor) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::mce::Color $resolve(::BlockSource&, ::BlockPos const&, ::Block const&, ::mce::Color const& preColor) const;
+    MCAPI ::mce::Color
+    $resolve(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::mce::Color const& preColor) const;
 #endif
 
 

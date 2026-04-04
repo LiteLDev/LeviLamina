@@ -29,16 +29,17 @@ public:
     virtual ~CerealSchemaUpgrade();
 
     virtual bool previousSchema(
-        ::rapidjson::
-            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const = 0;
 
     virtual void upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>&,
-        ::SemVersion const&
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentOriginalVersion
     ) const;
     // NOLINTEND
 
@@ -85,8 +86,8 @@ public:
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>&,
-        ::SemVersion const&
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentOriginalVersion
     ) const;
 
 

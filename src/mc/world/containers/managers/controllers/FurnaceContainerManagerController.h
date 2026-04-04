@@ -49,7 +49,7 @@ public:
 
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const& slot) const /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot) /*override*/;
     // NOLINTEND
 
 public:
@@ -125,7 +125,7 @@ public:
 
     MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& itemInstance, ::SlotData const& srcSlot);
 #endif
 
 

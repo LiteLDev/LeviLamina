@@ -113,15 +113,16 @@ public:
     // NOLINTBEGIN
     virtual ~Recipe();
 
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const = 0;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const = 0;
 
     virtual int getCraftingSize() const = 0;
 
-    virtual ::RecipeIngredient const& getIngredient(int, int) const = 0;
+    virtual ::RecipeIngredient const& getIngredient(int x, int y) const = 0;
 
     virtual bool isShapeless() const = 0;
 
-    virtual bool matches(::CraftingContainer const&, ::CraftingContext const&) const = 0;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const = 0;
 
     virtual int size() const = 0;
 

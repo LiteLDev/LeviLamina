@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPackIOProvider() = default;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem) const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> getFileAccess(::ResourceFileSystem system) const = 0;
 
     virtual ::std::function<::std::string(::Core::Path const&)> getAssetReader() const = 0;
 

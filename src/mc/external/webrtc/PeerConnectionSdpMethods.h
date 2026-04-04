@@ -43,13 +43,13 @@ public:
 
     virtual ::std::string session_id() const = 0;
 
-    virtual bool NeedsIceRestart(::std::string const&) const = 0;
+    virtual bool NeedsIceRestart(::std::string const& content_name) const = 0;
 
     virtual ::std::optional<::std::string> sctp_mid() const = 0;
 
     virtual ::webrtc::PeerConnectionInterface::RTCConfiguration const* configuration() const = 0;
 
-    virtual void ReportSdpBundleUsage(::webrtc::SessionDescriptionInterface const&) = 0;
+    virtual void ReportSdpBundleUsage(::webrtc::SessionDescriptionInterface const& remote_description) = 0;
 
     virtual ::webrtc::PeerConnectionMessageHandler* message_handler() = 0;
 
@@ -79,37 +79,37 @@ public:
 
     virtual ::webrtc::PeerConnectionInterface::IceConnectionState ice_connection_state_internal() = 0;
 
-    virtual void SetIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState) = 0;
+    virtual void SetIceConnectionState(::webrtc::PeerConnectionInterface::IceConnectionState new_state) = 0;
 
-    virtual void NoteUsageEvent(::webrtc::UsageEvent) = 0;
+    virtual void NoteUsageEvent(::webrtc::UsageEvent event) = 0;
 
     virtual bool IsClosed() const = 0;
 
     virtual bool IsUnifiedPlan() const = 0;
 
     virtual bool ValidateBundleSettings(
-        ::cricket::SessionDescription const*,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
+        ::cricket::SessionDescription const*                             desc,
+        ::std::map<::std::string, ::cricket::ContentGroup const*> const& bundle_groups_by_mid
     ) = 0;
 
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
-        ::cricket::MediaType,
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::webrtc::RtpTransceiverInit const&,
-        bool
+        ::cricket::MediaType                                         media_type,
+        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,
+        ::webrtc::RtpTransceiverInit const&                          init,
+        bool                                                         update_negotiation_needed
     ) = 0;
 
-    virtual void StartSctpTransport(int, int, int) = 0;
+    virtual void StartSctpTransport(int local_port, int remote_port, int max_message_size) = 0;
 
-    virtual void AddRemoteCandidate(::std::string const&, ::cricket::Candidate const&) = 0;
+    virtual void AddRemoteCandidate(::std::string const& mid, ::cricket::Candidate const& candidate) = 0;
 
     virtual ::webrtc::Call* call_ptr() = 0;
 
     virtual bool SrtpRequired() const = 0;
 
-    virtual bool CreateDataChannelTransport(::std::string_view) = 0;
+    virtual bool CreateDataChannelTransport(::std::string_view mid) = 0;
 
-    virtual void DestroyDataChannelTransport(::webrtc::RTCError) = 0;
+    virtual void DestroyDataChannelTransport(::webrtc::RTCError error) = 0;
 
     virtual ::webrtc::FieldTrialsView const& trials() const = 0;
 

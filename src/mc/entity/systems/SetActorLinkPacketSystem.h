@@ -11,6 +11,6 @@ struct SetActorLinkPacketSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createPassengerSystem();
+    MCAPI static ::TickingSystemWithInfo createPassengerSystem();
     // NOLINTEND
 };

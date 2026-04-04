@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     virtual ~BaseContainerMenu() /*override*/;
 
-    virtual void removeSlot(int, int) = 0;
+    virtual void removeSlot(int slot, int count) = 0;
 
     virtual bool isSlotDirty(int slot);
 
@@ -66,7 +66,7 @@ public:
 
     virtual void setSlot(int, ::ItemStack const&, bool) = 0;
 
-    virtual ::ItemStack const& getSlot(int) const = 0;
+    virtual ::ItemStack const& getSlot(int slot) const = 0;
 
     virtual void setData(int id, int value) /*override*/;
 

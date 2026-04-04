@@ -58,11 +58,11 @@ public:
     // NOLINTBEGIN
     virtual ~LootItemFunction();
 
-    virtual void apply(::ItemStack&, ::Random&, ::LootTableContext&) = 0;
+    virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) = 0;
 
     virtual int apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    virtual void apply(::ItemInstance&, ::Random&, ::LootTableContext&) = 0;
+    virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) = 0;
 
     virtual int apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 

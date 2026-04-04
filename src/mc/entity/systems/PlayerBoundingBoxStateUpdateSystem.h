@@ -81,6 +81,41 @@ class PlayerBoundingBoxStateUpdateSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // PlayerBoundingBoxStateUpdateSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::CanStandOnSnowFlagComponent,
+            ::HasLightweightFamilyFlagComponent,
+            ::HorseFlagComponent,
+            ::MobFlagComponent,
+            ::ParrotFlagComponent,
+            ::VehicleComponent,
+            ::CamelFlagComponent,
+            ::PlayerComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::MovementAbilitiesComponent,
+            ::ActorTypeComponent,
+            ::FallDistanceComponent,
+            ::PassengerComponent,
+            ::ActorGameTypeComponent,
+            ::ActorDataFlagComponent,
+            ::VehicleComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::RenderRotationComponent,
+            ::StandAnimationComponent,
+            ::OffsetsComponent,
+            ::VanillaOffsetComponent,
+            ::PassengerRenderingRidingOffsetComponent,
+            ::DimensionTypeComponent>,
+        ::Write<::PlayerInputRequestComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -124,9 +159,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tickPlayerBoundingBoxStateUpdateSystem(
+    MCAPI static void tickPlayerBoundingBoxStateUpdateSystem(
         ::StrictEntityContext const&   context,
         ::AABBShapeComponent const&    aabb,
         ::PlayerInputRequestComponent& request,
@@ -171,7 +206,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,

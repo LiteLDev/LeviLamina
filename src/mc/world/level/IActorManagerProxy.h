@@ -17,17 +17,17 @@ public:
     // NOLINTBEGIN
     virtual ~IActorManagerProxy() = default;
 
-    virtual void initializeActor(::Actor&) = 0;
+    virtual void initializeActor(::Actor& actor) = 0;
 
-    virtual ::Bedrock::Result<void, ::ActorValidationError> validate(::Actor const&) = 0;
+    virtual ::Bedrock::Result<void, ::ActorValidationError> validate(::Actor const& actor) = 0;
 
-    virtual void addActor(::Actor&) = 0;
+    virtual void addActor(::Actor& actor) = 0;
 
-    virtual void removeActor(::Actor&) = 0;
+    virtual void removeActor(::Actor& actor) = 0;
 
-    virtual void removeActorInLevelChunk(::Actor const&) = 0;
+    virtual void removeActorInLevelChunk(::Actor const& actor) = 0;
 
-    virtual void deleteActorFromWorldInLevelChunk(::Actor const&) = 0;
+    virtual void deleteActorFromWorldInLevelChunk(::Actor const& actor) = 0;
     // NOLINTEND
 
 public:

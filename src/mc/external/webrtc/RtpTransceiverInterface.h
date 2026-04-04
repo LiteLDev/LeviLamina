@@ -39,7 +39,7 @@ public:
 
     virtual void SetDirection(::webrtc::RtpTransceiverDirection new_direction);
 
-    virtual ::webrtc::RTCError SetDirectionWithError(::webrtc::RtpTransceiverDirection);
+    virtual ::webrtc::RTCError SetDirectionWithError(::webrtc::RtpTransceiverDirection new_direction);
 
     virtual ::std::optional<::webrtc::RtpTransceiverDirection> current_direction() const = 0;
 
@@ -51,7 +51,8 @@ public:
 
     virtual void Stop();
 
-    virtual ::webrtc::RTCError SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability>) = 0;
+    virtual ::webrtc::RTCError
+    SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) = 0;
 
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const = 0;
 
@@ -59,8 +60,9 @@ public:
 
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const = 0;
 
-    virtual ::webrtc::RTCError
-        SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const>) = 0;
+    virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
+        ::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
+    ) = 0;
 
     virtual ~RtpTransceiverInterface() /*override*/;
     // NOLINTEND

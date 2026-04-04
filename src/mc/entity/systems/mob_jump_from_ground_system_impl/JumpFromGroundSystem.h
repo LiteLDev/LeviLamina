@@ -96,6 +96,48 @@ struct JumpFromGroundSystem : public ::IStrictTickingSystem<::StrictExecutionCon
                                   ::GlobalWrite<>,
                                   ::EntityFactoryT<>>> {
 public:
+    // JumpFromGroundSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::CanStandOnSnowFlagComponent,
+            ::HasLightweightFamilyFlagComponent,
+            ::HorseFlagComponent,
+            ::MobFlagComponent,
+            ::ParrotFlagComponent,
+            ::VehicleComponent,
+            ::CamelFlagComponent,
+            ::PlayerComponent,
+            ::LocalPlayerJumpRequestComponent,
+            ::LavaSlimeJumpRequestComponent,
+            ::SquidJumpRequestComponent,
+            ::OtherJumpRequestComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::MovementAbilitiesComponent,
+            ::ActorTypeComponent,
+            ::FallDistanceComponent,
+            ::PassengerComponent,
+            ::ActorGameTypeComponent,
+            ::ActorDataFlagComponent,
+            ::VehicleComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::RenderRotationComponent,
+            ::StandAnimationComponent,
+            ::OffsetsComponent,
+            ::VanillaOffsetComponent,
+            ::PassengerRenderingRidingOffsetComponent,
+            ::MobEffectsComponent,
+            ::SynchedActorDataComponent,
+            ::JumpControlComponent,
+            ::DimensionTypeComponent>,
+        ::Write<::MobJumpComponent, ::StateVectorComponent, ::PlayerActionComponent>,
+        ::AddRemove<::TriggerJumpRequestComponent>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -189,7 +231,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static auto createViews(
+    MCAPI static auto createViews(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -235,7 +277,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -277,7 +319,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,

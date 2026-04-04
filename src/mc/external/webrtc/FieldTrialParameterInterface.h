@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     virtual ~FieldTrialParameterInterface();
 
-    virtual bool Parse(::std::optional<::std::string>) = 0;
+    virtual bool Parse(::std::optional<::std::string> str_value) = 0;
 
     virtual void ParseDone();
     // NOLINTEND

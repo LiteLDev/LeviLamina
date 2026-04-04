@@ -23,7 +23,7 @@ public:
 
     virtual ::std::string server_url() const;
 
-    virtual bool ToString(::std::string*) const = 0;
+    virtual bool ToString(::std::string* out) const = 0;
     // NOLINTEND
 
 public:

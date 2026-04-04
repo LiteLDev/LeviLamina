@@ -134,9 +134,9 @@ public:
     virtual ~Option();
 #endif
 
-    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) = 0;
+    virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector) = 0;
 
-    virtual void load(::std::string const&) = 0;
+    virtual void load(::std::string const& valueString) = 0;
 
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap);
 

@@ -119,24 +119,27 @@ public:
     virtual ::Bedrock::PubSub::Subscription
     listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
 
-    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const&);
+    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& props);
 
-    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
+    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& props);
 
-    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
+    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& props);
 
-    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
+    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
 
-    virtual void
-    _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
-
-    virtual void
-    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+    virtual void _handleThemeSettingsCurrentThemeChangedPayload(
+        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
+    );
 
     virtual void
-    _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
+    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
 
-    virtual void _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
+    virtual void _handleThemeSettingsThemeColorUpdatedPayload(
+        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
+    );
+
+    virtual void
+    _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
     // NOLINTEND
 
 public:
@@ -207,24 +210,27 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
-    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const&);
+    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& props);
 
-    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
+    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& props);
 
-    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
+    MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& props);
 
-    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
+    MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
 
-    MCNAPI void
-    $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
-
-    MCNAPI void
-    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
+        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
+    );
 
     MCNAPI void
-    $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
+    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
 
-    MCNAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
+    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
+        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
+    );
+
+    MCNAPI void
+    $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
 
 
     // NOLINTEND

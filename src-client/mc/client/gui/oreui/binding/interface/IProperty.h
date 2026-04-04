@@ -25,11 +25,11 @@ public:
 
     virtual char const* const name() const = 0;
 
-    virtual void bind(::cohtml::Binder*, void*) = 0;
+    virtual void bind(::cohtml::Binder* binder, void* object) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const&) = 0;
+    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const& observer) = 0;
 
-    virtual void updateParent(::OreUI::Detail::IPropertyObject*) = 0;
+    virtual void updateParent(::OreUI::Detail::IPropertyObject* parent) = 0;
     // NOLINTEND
 
 public:

@@ -29,9 +29,9 @@ struct TickingSystemWithInfo;
 namespace CollidableMobNotifierSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tickNotifier(
+MCAPI void tickNotifier(
     ::StrictEntityContext const&,
     ::AABBShapeComponent const&     aabbShapeComponent,
     ::DimensionTypeComponent const& dimensionComponent,
@@ -42,7 +42,7 @@ MCNAPI void tickNotifier(
     ::LocalSpatialEntityFetcher&                                           spatialEntityFetcher
 );
 
-MCNAPI void tickSystem(
+MCAPI void tickSystem(
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factory,
     ::ViewT<
         ::StrictEntityContext,

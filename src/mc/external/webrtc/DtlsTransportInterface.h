@@ -23,7 +23,7 @@ public:
 
     virtual ::webrtc::DtlsTransportInformation Information() = 0;
 
-    virtual void RegisterObserver(::webrtc::DtlsTransportObserverInterface*) = 0;
+    virtual void RegisterObserver(::webrtc::DtlsTransportObserverInterface* observer) = 0;
 
     virtual void UnregisterObserver() = 0;
 

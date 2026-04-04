@@ -13,23 +13,23 @@ public:
     // NOLINTBEGIN
     virtual ~BindingFactory();
 
-    virtual ::std::function<bool()> getBooleanBinding(uint) const = 0;
+    virtual ::std::function<bool()> getBooleanBinding(uint name) const = 0;
 
-    virtual ::std::function<float()> getFloatBinding(uint) const = 0;
+    virtual ::std::function<float()> getFloatBinding(uint name) const = 0;
 
-    virtual ::std::function<::std::string()> getStringBinding(uint) const = 0;
+    virtual ::std::function<::std::string()> getStringBinding(uint name) const = 0;
 
-    virtual ::std::function<::glm::vec2()> getPointBinding(uint) const = 0;
+    virtual ::std::function<::glm::vec2()> getPointBinding(uint name) const = 0;
 
-    virtual ::std::function<::RectangleArea()> getAreaBinding(uint) const = 0;
+    virtual ::std::function<::RectangleArea()> getAreaBinding(uint name) const = 0;
 
-    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint) const = 0;
+    virtual ::std::function<void(::RectangleArea)> getDynamicAreaBinding(uint name) const = 0;
 
-    virtual ::std::function<void(float)> getFloatSetter(uint) const = 0;
+    virtual ::std::function<void(float)> getFloatSetter(uint name) const = 0;
 
-    virtual void setCustomAreaBinding(::std::string const&, ::RectangleArea) = 0;
+    virtual void setCustomAreaBinding(::std::string const& name, ::RectangleArea area) = 0;
 
-    virtual void removeCustomAreaBinding(::std::string const&) = 0;
+    virtual void removeCustomAreaBinding(::std::string const& name) = 0;
 
     virtual ::std::vector<uint> getCustomAreaBindingNames() const = 0;
     // NOLINTEND

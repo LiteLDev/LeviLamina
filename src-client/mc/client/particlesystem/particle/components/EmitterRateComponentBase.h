@@ -22,9 +22,9 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual uint64 getNumberOfParticlesToEmit(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::RenderParams&,
-        ::std::chrono::nanoseconds const&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::RenderParams&                                   renderParams,
+        ::std::chrono::nanoseconds const&                 dt
     ) = 0;
 
     virtual uint64 getNumberOfManualParticlesAllowed(

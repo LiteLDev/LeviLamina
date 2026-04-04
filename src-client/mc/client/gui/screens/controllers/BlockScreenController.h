@@ -33,7 +33,7 @@ public:
 
     virtual void setAssociatedBlockPos(::BlockPos const& pos) /*override*/;
 
-    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID) /*override*/;
+    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID) /*override*/;
 
     virtual bool _isStillValid() const /*override*/;
     // NOLINTEND
@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
+    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
     MCAPI bool $_isStillValid() const;
     // NOLINTEND

@@ -112,17 +112,20 @@ public:
     virtual uint64 generateManifestWithCallback(
         ::std::function<
             void(::Scripting::Result_deprecated<::Editor::Services::SelectionServiceProvider::ManifestState> const&)>
+            callback
     ) = 0;
 
     virtual ::Editor::Services::SelectionServiceProvider::ManifestState const& getCurrentManifest() const = 0;
 
-    virtual void
-    deselectBlocksAsync(::std::string const&, ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>) = 0;
+    virtual void deselectBlocksAsync(
+        ::std::string const&                                                 blockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
+    ) = 0;
 
     virtual void replaceBlocksAsync(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)>
+        ::std::string const&                                                 fromBlockIdentifier,
+        ::std::string const&                                                 toBlockIdentifier,
+        ::std::function<void(::Scripting::Result_deprecated<uint64> const&)> callback
     ) = 0;
     // NOLINTEND
 

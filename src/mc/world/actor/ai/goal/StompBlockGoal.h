@@ -36,7 +36,7 @@ public:
 
     virtual void tick() /*override*/;
 
-    virtual void appendDebugInfo(::std::string&) const /*override*/;
+    virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
@@ -44,9 +44,9 @@ public:
 
     virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
-    virtual void _createBreakProgressParticles(::Level&, ::BlockSource&, ::BlockPos);
+    virtual void _createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    virtual void _createDestroyParticles(::Level&, ::BlockSource&, ::BlockPos);
+    virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
     virtual void _playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos);
 

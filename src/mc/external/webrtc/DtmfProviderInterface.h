@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual bool CanInsertDtmf() = 0;
 
-    virtual bool InsertDtmf(int, int) = 0;
+    virtual bool InsertDtmf(int code, int duration) = 0;
 
     virtual ~DtmfProviderInterface();
     // NOLINTEND

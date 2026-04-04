@@ -28,7 +28,11 @@ public:
         ::RenderParams&           renderParams
     );
 
-    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) = 0;
+    virtual void render(
+        ::BaseActorRenderContext& renderContext,
+        ::ActorRenderData&        actorRenderData,
+        ::RenderParams&           renderParams
+    ) = 0;
 
     virtual void renderEffects(
         ::BaseActorRenderContext& renderContext,

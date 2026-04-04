@@ -15,9 +15,9 @@ public:
 
     virtual ::std::string_view getSaveRoot() const = 0;
 
-    virtual ::Bedrock::Result<void> createDirectory(char const*) = 0;
+    virtual ::Bedrock::Result<void> createDirectory(char const* path) = 0;
 
-    virtual ::Bedrock::Result<void> writeFile(char const*, char const*, uint64) = 0;
+    virtual ::Bedrock::Result<void> writeFile(char const* path, char const* buffer, uint64 bufferSize) = 0;
     // NOLINTEND
 
 public:

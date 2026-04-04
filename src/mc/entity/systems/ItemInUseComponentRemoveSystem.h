@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace ItemInUseComponentRemoveSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createRemoveItemInUseSystem();
+MCAPI ::TickingSystemWithInfo createRemoveItemInUseSystem();
 
-MCNAPI ::TickingSystemWithInfo createStartOrStopUsingItemSystem();
+MCAPI ::TickingSystemWithInfo createStartOrStopUsingItemSystem();
 // NOLINTEND
 
 } // namespace ItemInUseComponentRemoveSystem

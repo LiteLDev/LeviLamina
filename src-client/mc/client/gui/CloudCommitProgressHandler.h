@@ -30,19 +30,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onRetry(::MinecraftScreenModel&) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onExit(::MinecraftScreenModel&) /*override*/;
+    virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual float getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 

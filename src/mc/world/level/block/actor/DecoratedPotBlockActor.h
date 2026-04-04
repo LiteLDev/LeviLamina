@@ -64,9 +64,9 @@ public:
 
     virtual int getMaxStackSize() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int, ::ItemStack const& item) /*override*/;
 
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
@@ -137,9 +137,9 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCFOLD ::ItemStack const& $getItem(int index) const;
+    MCFOLD ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int, ::ItemStack const& item);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

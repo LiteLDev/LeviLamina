@@ -43,18 +43,35 @@ public:
         ::MolangVariableMap const&
     );
 
-    virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    virtual void addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
 
-    virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    virtual void addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
 
-    virtual void
-    addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+    virtual void addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
 
     virtual void addBiomeTintedParticleEffect(
-        ::HashedString const&,
-        ::BlockPos const&,
-        ::Block const&,
-        ::std::optional<::mce::Color>
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
     );
 
     virtual void playMusic(::std::string const&, ::Vec3 const&, float, float);
@@ -63,33 +80,38 @@ public:
 
     virtual void onEntityAdded(::Actor&);
 
-    virtual void onEntityRemoved(::Actor&);
+    virtual void onEntityRemoved(::Actor& entity);
 
-    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&);
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
     virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
-    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
+    virtual void onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
 
-    virtual void onChunkUnloaded(::LevelChunk&);
+    virtual void onChunkUnloaded(::LevelChunk& lc);
 
-    virtual void onLevelDestruction(::std::string const&);
+    virtual void onLevelDestruction(::std::string const& levelId);
 
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
 
     virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
 
     virtual void takePicture(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     );
 
     virtual void playerListChanged();
 
-    virtual void onLevelDataCommandsChanged(bool);
+    virtual void onLevelDataCommandsChanged(bool commandsEnabeld);
 
     virtual void onLevelDataWorldTemplateOptionsUnlocked();
     // NOLINTEND
@@ -115,18 +137,35 @@ public:
         ::MolangVariableMap const&
     );
 
-    MCFOLD void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    MCFOLD void $addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
 
-    MCFOLD void $addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    MCFOLD void $addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             particleCount,
+        float             velocityScalar,
+        float             emitterRadius
+    );
 
-    MCFOLD void
-    $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
+    MCFOLD void $addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    );
 
     MCFOLD void $addBiomeTintedParticleEffect(
-        ::HashedString const&,
-        ::BlockPos const&,
-        ::Block const&,
-        ::std::optional<::mce::Color>
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
     );
 
     MCFOLD void $playMusic(::std::string const&, ::Vec3 const&, float, float);
@@ -135,33 +174,38 @@ public:
 
     MCFOLD void $onEntityAdded(::Actor&);
 
-    MCFOLD void $onEntityRemoved(::Actor&);
+    MCFOLD void $onEntityRemoved(::Actor& entity);
 
-    MCFOLD void $onChunkLoaded(::ChunkSource&, ::LevelChunk&);
+    MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
     MCFOLD void $onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
-    MCFOLD void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
+    MCFOLD void $onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    );
 
-    MCFOLD void $onChunkUnloaded(::LevelChunk&);
+    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
 
-    MCFOLD void $onLevelDestruction(::std::string const&);
+    MCFOLD void $onLevelDestruction(::std::string const& levelId);
 
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
 
     MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
 
     MCAPI void $takePicture(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     );
 
     MCFOLD void $playerListChanged();
 
-    MCFOLD void $onLevelDataCommandsChanged(bool);
+    MCFOLD void $onLevelDataCommandsChanged(bool commandsEnabeld);
 
     MCFOLD void $onLevelDataWorldTemplateOptionsUnlocked();
 

@@ -19,8 +19,8 @@ public:
     virtual ~IVersionedContentItemCollection() = default;
 
     virtual void appendLatest(
-        ::ContentItemCollectionVersion&,
-        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>&
+        ::ContentItemCollectionVersion&                                         version,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>& output
     ) const = 0;
 
     virtual ::ContentItemCollectionVersion getVersion() const = 0;

@@ -14,11 +14,12 @@ public:
     // NOLINTBEGIN
     virtual ~IMessageProducer() = default;
 
-    virtual void enqueueMessage(::brstd::move_only_function<void()>, ::ServerInstanceMessenger::MessageAction) = 0;
+    virtual void
+    enqueueMessage(::brstd::move_only_function<void()> message, ::ServerInstanceMessenger::MessageAction action) = 0;
 
     virtual void enqueueAndAwaitExecution(
-        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)>,
-        ::ServerInstanceMessenger::MessageAction
+        ::brstd::move_only_function<void(::brstd::move_only_function<void() const>)> message,
+        ::ServerInstanceMessenger::MessageAction                                     action
     ) = 0;
     // NOLINTEND
 

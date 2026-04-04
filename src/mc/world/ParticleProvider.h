@@ -88,7 +88,7 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleProvider() = default;
 
-    virtual void addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
+    virtual void addSprintParticleEffect(::Actor const& mob, ::IConstBlockSource const& region, ::IRandom& random);
     // NOLINTEND
 
 public:
@@ -106,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $addSprintParticleEffect(::Actor const&, ::IConstBlockSource const&, ::IRandom&);
+    MCFOLD void $addSprintParticleEffect(::Actor const& mob, ::IConstBlockSource const& region, ::IRandom& random);
 
 
     // NOLINTEND

@@ -43,6 +43,22 @@ struct AccumulateSystem : public ::IStrictTickingSystem<::StrictExecutionContext
                               ::GlobalWrite<>,
                               ::EntityFactoryT<>>> {
 public:
+    // AccumulateSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Read<
+            ::ActorDataFlagComponent,
+            ::ActorDataHorseFlagComponent,
+            ::ActorDataJumpDurationComponent,
+            ::ActorDataBoundingBoxComponent,
+            ::ActorDataSeatOffsetComponent>,
+        ::Write<::ReplayStateTrackerComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -67,7 +83,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickEntity(
+    MCAPI static void tickEntity(
         ::StrictEntityContext const&   entity,
         ::ReplayStateTrackerComponent& tracker,
         ::ViewT<
@@ -83,7 +99,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
             ::Read<

@@ -53,7 +53,7 @@ public:
 
     virtual ::EventResult onPlayerSaved(::Player& player);
 
-    virtual ::EventResult onPlayerInput(::EntityContext&);
+    virtual ::EventResult onPlayerInput(::EntityContext& entity);
 
     virtual ::EventResult onPlayerAuthInputReceived(::Player&);
 
@@ -61,7 +61,7 @@ public:
 
     virtual ::EventResult onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
-    virtual ::EventResult onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+    virtual ::EventResult onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
 
     virtual ::EventResult onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
@@ -141,8 +141,11 @@ public:
 
     virtual ::EventResult onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    virtual ::EventResult
-    onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+    virtual ::EventResult onPlayerKineticDamageDealt(
+        ::Player&                           player,
+        ::ActorUniqueID const&              target,
+        ::DealKineticDamageComponent const& dealKinematicDamageComponent
+    );
 
     virtual ::EventResult onEvent(::PlayerNotificationEvent const& event);
 
@@ -169,7 +172,7 @@ public:
 
     MCFOLD ::EventResult $onPlayerSaved(::Player& player);
 
-    MCFOLD ::EventResult $onPlayerInput(::EntityContext&);
+    MCFOLD ::EventResult $onPlayerInput(::EntityContext& entity);
 
     MCFOLD ::EventResult $onPlayerAuthInputReceived(::Player&);
 
@@ -177,7 +180,7 @@ public:
 
     MCFOLD ::EventResult $onPlayerTurn(::Player& player, ::Vec2& turnDelta);
 
-    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player&, ::Vec2 const&);
+    MCFOLD ::EventResult $onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
 
     MCFOLD ::EventResult $onStartDestroyBlock(::Player& player, ::BlockPos const& pos, uchar& face);
 
@@ -257,8 +260,11 @@ public:
 
     MCFOLD ::EventResult $onPlayerWaxOnWaxOff(::Player& player, int const blockID);
 
-    MCFOLD ::EventResult
-    $onPlayerKineticDamageDealt(::Player&, ::ActorUniqueID const&, ::DealKineticDamageComponent const&);
+    MCFOLD ::EventResult $onPlayerKineticDamageDealt(
+        ::Player&                           player,
+        ::ActorUniqueID const&              target,
+        ::DealKineticDamageComponent const& dealKinematicDamageComponent
+    );
 
     MCFOLD ::EventResult $onShowDataDrivenScreen(::LocalPlayer&, ::std::string const&, uint, ::std::optional<uint>);
 

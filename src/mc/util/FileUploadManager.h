@@ -85,8 +85,12 @@ public:
 
     virtual float getUploadProgress() const;
 
-    virtual void
-    archiveAndUploadFileToRealmStorage(::std::string const&, ::Core::Path const&, int const, ::std::string const&) = 0;
+    virtual void archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    ) = 0;
 
     virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND

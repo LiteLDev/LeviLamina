@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IDlcBatcher();
 
-    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::DlcId> const&) = 0;
+    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::DlcId> const& dlcIds) = 0;
 
-    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::std::string> const&) = 0;
+    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::std::string> const& productIds) = 0;
 
-    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::PackIdVersion> const&) = 0;
+    virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::PackIdVersion> const& packIds) = 0;
     // NOLINTEND
 
 public:

@@ -157,7 +157,7 @@ public:
 
     virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void handleCaretLocation(int, ::FocusImpact) /*override*/;
+    virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) /*override*/;
 
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
@@ -350,7 +350,7 @@ public:
 
     MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
 
-    MCFOLD void $handleCaretLocation(int, ::FocusImpact);
+    MCFOLD void $handleCaretLocation(int caretLocation, ::FocusImpact focusImpact);
 
     MCAPI void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 

@@ -27,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickTeleportPositionModeEventSystem(
+    MCAPI static void tickTeleportPositionModeEventSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,

@@ -45,7 +45,7 @@ public:
     virtual ~Structure();
 
     virtual ::std::optional<::br::worldgen::GenerationStub>
-    findValidGenerationPoint(::br::worldgen::GenerationContext&) const = 0;
+    findValidGenerationPoint(::br::worldgen::GenerationContext& context) const = 0;
     // NOLINTEND
 
 public:

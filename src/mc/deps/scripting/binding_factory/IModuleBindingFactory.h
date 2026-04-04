@@ -23,14 +23,17 @@ public:
 
     virtual ::mce::UUID getUUID() const = 0;
 
-    virtual bool hasAlias(::std::string const&) const = 0;
+    virtual bool hasAlias(::std::string const& alias) const = 0;
 
     virtual ::std::vector<::Scripting::Version> getSupportedVersions() const = 0;
 
-    virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version) const = 0;
+    virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version version) const = 0;
 
-    virtual ::std::optional<::Scripting::ModuleBinding>
-    createModuleBinding(::Scripting::Version, ::std::optional<::Scripting::ContextConfig> const&, bool) = 0;
+    virtual ::std::optional<::Scripting::ModuleBinding> createModuleBinding(
+        ::Scripting::Version                               version,
+        ::std::optional<::Scripting::ContextConfig> const& config,
+        bool                                               requireDynamicImport
+    ) = 0;
     // NOLINTEND
 
 public:

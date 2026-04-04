@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace PlayerInputFilterSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo create(bool isClientSide);
+MCAPI ::TickingSystemWithInfo create(bool isClientSide);
 // NOLINTEND
 
 } // namespace PlayerInputFilterSystem

@@ -21,9 +21,9 @@ public:
     virtual ~I18nObserver() /*override*/;
 #endif
 
-    virtual void onLanguageChanged(::std::string const&, bool) = 0;
+    virtual void onLanguageChanged(::std::string const& code, bool languageSystemInitializing) = 0;
 
-    virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const&) = 0;
+    virtual void onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest) = 0;
 
     virtual void onLanguagesLoaded() = 0;
     // NOLINTEND

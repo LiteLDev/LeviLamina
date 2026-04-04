@@ -20,7 +20,7 @@ struct VehicleInputSwitchRequestSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tick(
+    MCAPI_C static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent>,
@@ -28,6 +28,6 @@ public:
             ::VanillaClientGameplayComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

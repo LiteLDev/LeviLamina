@@ -19,13 +19,15 @@ public:
     // NOLINTBEGIN
     virtual ~NetworkLinkRtcpObserver() = default;
 
-    virtual void OnTransportFeedback(::webrtc::Timestamp, ::webrtc::rtcp::TransportFeedback const&);
+    virtual void
+    OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
 
-    virtual void OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp, ::webrtc::DataRate);
+    virtual void OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate);
 
-    virtual void OnReport(::webrtc::Timestamp, ::rtc::ArrayView<::webrtc::ReportBlockData const>);
+    virtual void
+    OnReport(::webrtc::Timestamp receive_time, ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
 
-    virtual void OnRttUpdate(::webrtc::Timestamp, ::webrtc::TimeDelta);
+    virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
     // NOLINTEND
 
 public:

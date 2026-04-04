@@ -15,9 +15,9 @@ public:
     // NOLINTBEGIN
     virtual ~RtpPacketSender() = default;
 
-    virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>) = 0;
+    virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> packets) = 0;
 
-    virtual void RemovePacketsForSsrc(uint);
+    virtual void RemovePacketsForSsrc(uint ssrc);
     // NOLINTEND
 
 public:

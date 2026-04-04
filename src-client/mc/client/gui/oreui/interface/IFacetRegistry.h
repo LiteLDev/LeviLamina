@@ -33,25 +33,28 @@ public:
     // NOLINTBEGIN
     virtual ~IFacetRegistry() /*override*/ = default;
 
-    virtual void registerFacet(::std::string const&, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const&) = 0;
+    virtual void registerFacet(
+        ::std::string const&                                         name,
+        ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor
+    ) = 0;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error> activateFacet(
-        ::OreUI::FacetBinder&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const&
+        ::OreUI::FacetBinder&                                                                   binder,
+        ::std::string const&                                                                    name,
+        ::std::string const&                                                                    id,
+        ::std::unordered_map<::std::string, ::std::variant<double, bool, ::std::string>> const& payload
     ) = 0;
 
     virtual ::std::optional<::OreUI::IFacetRegistry::Error>
-    deactivateFacet(::OreUI::FacetBinder&, ::std::string const&) = 0;
+    deactivateFacet(::OreUI::FacetBinder& binder, ::std::string const& id) = 0;
 
     virtual void clearAllFacets() = 0;
 
     virtual void suspendAllFacets() = 0;
 
-    virtual void bind(::OreUI::FacetBinder&) = 0;
+    virtual void bind(::OreUI::FacetBinder& binder) = 0;
 
-    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder&) = 0;
+    virtual ::std::vector<::std::string> const& update(::OreUI::FacetBinder& binder) = 0;
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ struct StateVectorComponent;
 namespace UpdateMovingFlagSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doTickMovingFlagSystem(
+MCAPI void doTickMovingFlagSystem(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                                                    context,
     ::StateVectorComponent const&                                                   stateVectorComponent,

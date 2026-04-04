@@ -22,9 +22,19 @@ struct StateVectorComponent;
 
 class MinecartComeOffRailSystem {
 public:
+    // MinecartComeOffRailSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SnapOnRailComponent>,
+        ::Include<::InterpolateMovementNeededComponent>,
+        ::RailMovementComponent const,
+        ::StateVectorComponent,
+        ::Optional<::OnGroundFlagComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _minecartComeOffRailSystem(
+    MCAPI static void _minecartComeOffRailSystem(
         ::StrictEntityContext&                    context,
         ::RailMovementComponent const&            railMovementComponent,
         ::StateVectorComponent&                   stateVectorComponent,
@@ -32,7 +42,7 @@ public:
         ::EntityModifier<::MoveRequestComponent>  mod
     );
 
-    MCNAPI static void _tickMinecartComeOffRailSystem(
+    MCAPI static void _tickMinecartComeOffRailSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Exclude<::SnapOnRailComponent>,

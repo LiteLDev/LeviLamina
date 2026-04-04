@@ -20,23 +20,23 @@ public:
     // NOLINTBEGIN
     virtual ~IStructurePoolBlockPredicate() = default;
 
-    virtual bool test(::Block const&, ::IRandom&) const = 0;
+    virtual bool test(::Block const& block, ::IRandom& random) const = 0;
 
-    virtual bool test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const = 0;
+    virtual bool test(::BlockPos const& worldPos, ::BlockPos const& refPos, ::IRandom& random) const = 0;
 
-    virtual bool finalize(::BlockSource&, ::IRandom&);
+    virtual bool finalize(::BlockSource& region, ::IRandom& random);
 
     virtual ::std::string validate() const;
 
     virtual ::StructurePoolBlockPredicateType getType() const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $finalize(::BlockSource&, ::IRandom&);
+    MCFOLD bool $finalize(::BlockSource& region, ::IRandom& random);
 
     MCFOLD ::std::string $validate() const;
 

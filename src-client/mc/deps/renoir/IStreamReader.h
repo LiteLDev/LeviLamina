@@ -12,7 +12,7 @@ public:
 
     virtual uint GetSize() = 0;
 
-    virtual uint Read(uint, uchar*, uint) = 0;
+    virtual uint Read(uint offset, uchar* buffer, uint count) = 0;
 
     virtual void Close() = 0;
     // NOLINTEND

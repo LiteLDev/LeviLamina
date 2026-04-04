@@ -20,15 +20,15 @@ public:
     // NOLINTBEGIN
     virtual ~ServerPrefabPlayerServiceProvider() = default;
 
-    virtual void shouldCaptureMouseClicks(bool const) = 0;
+    virtual void shouldCaptureMouseClicks(bool const active) = 0;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToPlayerInstanceInteractions(
-        ::std::function<void(::Editor::Prefabs::PrefabDBInstanceInteractionEvent const&)>
+        ::std::function<void(::Editor::Prefabs::PrefabDBInstanceInteractionEvent const&)> callback
     ) = 0;
 
-    virtual void selectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>, bool) = 0;
+    virtual void selectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef, bool append) = 0;
 
-    virtual void deselectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>) = 0;
+    virtual void deselectInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance> instanceRef) = 0;
 
     virtual void clearSelectedInstances() = 0;
     // NOLINTEND

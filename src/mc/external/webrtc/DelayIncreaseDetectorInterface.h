@@ -13,7 +13,14 @@ public:
     // NOLINTBEGIN
     virtual ~DelayIncreaseDetectorInterface();
 
-    virtual void Update(double, double, int64, int64, uint64, bool) = 0;
+    virtual void Update(
+        double recv_delta_ms,
+        double send_delta_ms,
+        int64  send_time_ms,
+        int64  arrival_time_ms,
+        uint64 packet_size,
+        bool   calculated_deltas
+    ) = 0;
 
     virtual ::webrtc::BandwidthUsage State() const = 0;
     // NOLINTEND

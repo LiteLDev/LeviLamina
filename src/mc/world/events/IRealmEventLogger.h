@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~IRealmEventLogger() = default;
 
-    virtual void logEvent(::std::string const&) = 0;
+    virtual void logEvent(::std::string const& message) = 0;
     // NOLINTEND
 
 public:

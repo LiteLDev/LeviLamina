@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerData() = default;
 
-    virtual bool isAbilityEnabled(::AbilitiesIndex) const = 0;
+    virtual bool isAbilityEnabled(::AbilitiesIndex ability) const = 0;
 
     virtual bool isTeacher() const = 0;
 

@@ -73,7 +73,7 @@ public:
 
     virtual int getSelectedPaletteItemIndex() const /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const& pickedBlock) = 0;
 
     virtual ::Scripting::Result_deprecated<::BlockType const*> getSelectedBlockType() const /*override*/;
 
@@ -96,18 +96,19 @@ public:
     ) /*override*/;
 
     virtual void _handleBlockPaletteActivePaletteChangedPayload(
-        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const&
+        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload
     ) = 0;
 
-    virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&) = 0;
+    virtual void
+    _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload) = 0;
 
     virtual void _handleBlockPaletteSelectedIndexChangedPayload(
-        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const&
+        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload
     ) = 0;
 
-    virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const&) = 0;
+    virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload) = 0;
 
-    virtual void _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const&) = 0;
+    virtual void _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload) = 0;
     // NOLINTEND
 
 public:

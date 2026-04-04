@@ -18,16 +18,16 @@ public:
 
     virtual void cleanup() = 0;
 
-    virtual void initialize(::IClientInstance&) = 0;
+    virtual void initialize(::IClientInstance& clientInstance) = 0;
 
-    virtual void setScreenshotScale(::glm::vec2 const&) = 0;
+    virtual void setScreenshotScale(::glm::vec2 const& screenshotCameraScale) = 0;
 
     virtual void beginCapturePaperDollImage(
-        uint,
-        uint,
-        ::IClientInstance&,
-        ::SerializedSkinRef const&,
-        ::std::vector<::mce::PaperDollOffscreenUtils::PaperdollCaptureFrame> const&
+        uint                                                                        screenshotWidth,
+        uint                                                                        screenshotHeight,
+        ::IClientInstance&                                                          clientInstance,
+        ::SerializedSkinRef const&                                                  serializedSkin,
+        ::std::vector<::mce::PaperDollOffscreenUtils::PaperdollCaptureFrame> const& frames
     ) = 0;
 
     virtual bool isCaptureReady() const = 0;
@@ -36,7 +36,7 @@ public:
 
     virtual float getGuiScale() const = 0;
 
-    virtual void setGuiScale(float) = 0;
+    virtual void setGuiScale(float scale) = 0;
     // NOLINTEND
 
 public:

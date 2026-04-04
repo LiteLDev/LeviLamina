@@ -42,12 +42,15 @@ public:
     // NOLINTBEGIN
     virtual ~IInternationalizationManager() = default;
 
-    virtual ::cohtml::i18n::IBreakIterator* CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary);
+    virtual ::cohtml::i18n::IBreakIterator* CreateBreakIterator(::cohtml::i18n::BreakIteratorBoundary type);
 
-    virtual ::cohtml::i18n::TextDirection ComputeBaseDirection(char const*, uint) const;
+    virtual ::cohtml::i18n::TextDirection ComputeBaseDirection(char const* utfBuffer, uint size) const;
 
-    virtual ::cohtml::i18n::TextDirection
-    ComputeTextDirection(char const*, uint, ::cohtml::IInternationalizationManager::TextDirectionResult*) const;
+    virtual ::cohtml::i18n::TextDirection ComputeTextDirection(
+        char const*                                                  utfBuffer,
+        uint                                                         size,
+        ::cohtml::IInternationalizationManager::TextDirectionResult* result
+    ) const;
     // NOLINTEND
 
 public:

@@ -20,9 +20,9 @@ public:
     virtual ~IECSModulesCollection() = default;
 
     virtual void init(
-        ::WeakRef<::EntityRegistry>,
-        ::VanillaSystemsRegistration::RegistrationOptions&,
-        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>
+        ::WeakRef<::EntityRegistry>                        registry,
+        ::VanillaSystemsRegistration::RegistrationOptions& options,
+        ::Bedrock::NonOwnerPointer<::IMinecraftEventing>   eventing
     ) = 0;
     // NOLINTEND
 

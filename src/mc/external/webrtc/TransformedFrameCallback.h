@@ -16,7 +16,7 @@ class TransformedFrameCallback : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnTransformedFrame(::std::unique_ptr<::webrtc::TransformableFrameInterface>) = 0;
+    virtual void OnTransformedFrame(::std::unique_ptr<::webrtc::TransformableFrameInterface> frame) = 0;
 
     virtual void StartShortCircuiting();
 

@@ -20,7 +20,7 @@ struct PlayerInputRequestComponent;
 namespace ItemUseSlowdownSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doItemUseSlowdownSystem(
+MCAPI void doItemUseSlowdownSystem(
     ::entt::type_list<
         ::Include<::InterpolateMovementNeededComponent, ::PlayerInputRequestComponent>,
         ::Exclude<::PassengerComponent>>,

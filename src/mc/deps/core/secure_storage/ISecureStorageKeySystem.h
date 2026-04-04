@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~ISecureStorageKeySystem();
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) = 0;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) = 0;
 
-    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) = 0;
+    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) = 0;
     // NOLINTEND
 
 public:

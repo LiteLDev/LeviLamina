@@ -21,16 +21,25 @@ struct VillageManagerComponent;
 
 class LegacyRaidTriggerSystem {
 public:
+    // LegacyRaidTriggerSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorTickedComponent const, ::RaidTriggerComponent const>,
+        ::DimensionTypeComponent const,
+        ::StateVectorComponent const,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doRaidTriggerSystem(
+    MCAPI static void _doRaidTriggerSystem(
         ::DimensionTypeComponent const&  dimensionTypeComponent,
         ::StateVectorComponent const&    stateVectorComponent,
         ::ActorOwnerComponent&           actorOwnerComponent,
         ::VillageManagerComponent const& villageManagerComponent
     );
 
-    MCNAPI static void _tickRaidTriggerSystem(
+    MCAPI static void _tickRaidTriggerSystem(
         ::OptionalGlobal<::VillageManagerComponent const> villageManagerComponent,
         ::ViewT<
             ::StrictEntityContext,
@@ -40,6 +49,6 @@ public:
             ::ActorOwnerComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

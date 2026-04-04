@@ -29,13 +29,14 @@ public:
 
     virtual void UpdateState() = 0;
 
-    virtual void ForgetLearnedStateForConnections(::rtc::ArrayView<::cricket::Connection const* const>) = 0;
+    virtual void ForgetLearnedStateForConnections(::rtc::ArrayView<::cricket::Connection const* const> connections) = 0;
 
-    virtual void SendPingRequest(::cricket::Connection const*) = 0;
+    virtual void SendPingRequest(::cricket::Connection const* connection) = 0;
 
-    virtual void SwitchSelectedConnection(::cricket::Connection const*, ::cricket::IceSwitchReason) = 0;
+    virtual void
+    SwitchSelectedConnection(::cricket::Connection const* new_connection, ::cricket::IceSwitchReason reason) = 0;
 
-    virtual bool PruneConnections(::rtc::ArrayView<::cricket::Connection const* const>) = 0;
+    virtual bool PruneConnections(::rtc::ArrayView<::cricket::Connection const* const> connections) = 0;
     // NOLINTEND
 
 public:

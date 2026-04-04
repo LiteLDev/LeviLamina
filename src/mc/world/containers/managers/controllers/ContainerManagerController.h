@@ -69,7 +69,7 @@ public:
     virtual ~ContainerManagerController();
 #endif
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     virtual void registerContainerCallbacks();
 
@@ -147,7 +147,8 @@ public:
         ::ItemStackRequestScope&
     );
 
-    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
 
     virtual void _onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
@@ -366,7 +367,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController>);
+    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCAPI void $registerContainerCallbacks();
 
@@ -444,7 +445,8 @@ public:
         ::ItemStackRequestScope&
     );
 
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
+    MCAPI ::CreateContainerItemScope
+    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
 
     MCAPI void $_onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
 

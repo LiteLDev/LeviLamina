@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~UriListener();
 
-    virtual void onUri(::ActivationUri const&) = 0;
+    virtual void onUri(::ActivationUri const& uri) = 0;
 
     virtual void tick() = 0;
 

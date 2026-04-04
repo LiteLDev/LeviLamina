@@ -30,49 +30,54 @@ public:
 
     virtual ::std::string const& getName() const = 0;
 
-    virtual ::Bedrock::Result<bool> getLevelData(::std::string const&, ::LevelData&) const = 0;
+    virtual ::Bedrock::Result<bool> getLevelData(::std::string const& levelId, ::LevelData& levelDataOut) const = 0;
 
     virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) = 0;
 
-    virtual void getLevelList(::std::vector<::Core::PathBuffer<::std::string>>&) = 0;
+    virtual void getLevelList(::std::vector<::Core::PathBuffer<::std::string>>& paths) = 0;
 
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
-        ::Scheduler&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&,
-        ::std::chrono::nanoseconds const&,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>,
-        ::std::unique_ptr<::LevelStorageEventing>
+        ::Scheduler&                                                      scheduler,
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     ) = 0;
 
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) = 0;
 
-    virtual void deleteLevel(::std::string const&) = 0;
+    virtual void deleteLevel(::std::string const& levelId) = 0;
 
-    virtual bool renameLevel(::std::string const&, ::std::string const&) = 0;
+    virtual bool renameLevel(::std::string const& levelId, ::std::string const& newLevelName) = 0;
 
-    virtual void renameLevel(::LevelData&, ::Core::Path const&, ::std::string const&) = 0;
+    virtual void
+    renameLevel(::LevelData& levelData, ::Core::Path const& fullPath, ::std::string const& newLevelName) = 0;
 
-    virtual bool createBackupCopyOfWorld(::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual bool createBackupCopyOfWorld(
+        ::std::string const& levelId,
+        ::std::string const& newLeveId,
+        ::std::string const& newName
+    ) = 0;
 
-    virtual bool isLevelMarkedForSync(::Core::Path const&) const = 0;
+    virtual bool isLevelMarkedForSync(::Core::Path const& levelPath) const = 0;
 
-    virtual bool isLevelPartiallyCopied(::Core::Path const&) const = 0;
+    virtual bool isLevelPartiallyCopied(::Core::Path const& levelPath) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> getLevelDatFoundPath(::Core::Path const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> getLevelDatFoundPath(::Core::Path const& levelPath) const = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getBasePath() const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const&, bool) const = 0;
 
-    virtual ::std::string getLevelIdFromPath(::Core::Path const&, ::Core::Path const&) const = 0;
+    virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) const = 0;
 
     virtual bool isBetaRetailLevel(::std::string const&) const = 0;
     // NOLINTEND

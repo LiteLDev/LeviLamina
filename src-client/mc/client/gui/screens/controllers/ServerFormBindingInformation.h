@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void createBindingData(::Json::Value const& contentData) /*override*/;
+    virtual void createBindingData(::Json::Value const& formData) /*override*/;
 
     virtual ~ServerFormBindingInformation() /*override*/ = default;
     // NOLINTEND
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createBindingData(::Json::Value const& contentData);
+    MCAPI void $createBindingData(::Json::Value const& formData);
     // NOLINTEND
 
 public:

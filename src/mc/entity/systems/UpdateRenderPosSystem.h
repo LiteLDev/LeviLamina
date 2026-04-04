@@ -19,13 +19,13 @@ class UpdateRenderPosSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doUpdateRenderPosSystem(
+    MCAPI static void _doUpdateRenderPosSystem(
         ::StrictEntityContext const&,
         ::StateVectorComponent const& stateVectorComponent,
         ::RenderPositionComponent&    renderPositionComponent
     );
 
-    MCNAPI static void _tickUpdateRenderPosSystem(
+    MCAPI static void _tickUpdateRenderPosSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent>,
@@ -33,6 +33,6 @@ public:
             ::RenderPositionComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

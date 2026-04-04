@@ -35,7 +35,7 @@ public:
 
     virtual bool _parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
 
-    virtual void _preMergeTransform(::Json::Value&);
+    virtual void _preMergeTransform(::Json::Value& value);
 
     virtual void _preMergePacketTransform(int const);
 
@@ -67,7 +67,7 @@ public:
 
     MCNAPI bool $_parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
 
-    MCNAPI void $_preMergeTransform(::Json::Value&);
+    MCNAPI void $_preMergeTransform(::Json::Value& value);
 
     MCNAPI void $_preMergePacketTransform(int const);
 #endif

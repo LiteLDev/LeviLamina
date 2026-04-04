@@ -80,151 +80,179 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Core::Result
-    openFile(::Core::PathView, ::Core::File&, ::Core::FileOpenMode, ::Core::FileBufferingMode) = 0;
+    virtual ::Core::Result openFile(
+        ::Core::PathView          filePath,
+        ::Core::File&             fileOut,
+        ::Core::FileOpenMode      openMode,
+        ::Core::FileBufferingMode bufferingMode
+    ) = 0;
 
-    virtual bool fileExists(::Core::PathView) = 0;
+    virtual bool fileExists(::Core::PathView filePath) = 0;
 
-    virtual ::Core::Result deleteFile(::Core::PathView) = 0;
+    virtual ::Core::Result deleteFile(::Core::PathView filePath) = 0;
 
-    virtual ::Core::Result deleteFilePriority(::Core::PathView) = 0;
+    virtual ::Core::Result deleteFilePriority(::Core::PathView filePath) = 0;
 
-    virtual ::Core::Result getFileSize(::Core::PathView, uint64*) = 0;
+    virtual ::Core::Result getFileSize(::Core::PathView filePath, uint64* pFileSize) = 0;
 
-    virtual ::Core::Result renameFile(::Core::PathView, ::Core::PathView) = 0;
+    virtual ::Core::Result renameFile(::Core::PathView sourceName, ::Core::PathView targetName) = 0;
 
-    virtual ::Core::Result createEmptyFile(::Core::PathView) = 0;
+    virtual ::Core::Result createEmptyFile(::Core::PathView filePath) = 0;
 
-    virtual ::Core::Result copyFile(::Core::PathView, ::Core::PathView) = 0;
+    virtual ::Core::Result copyFile(::Core::PathView sourceFileName, ::Core::PathView targetFileName) = 0;
 
-    virtual ::Core::Result copyFileWithLimit(::Core::PathView, ::Core::PathView) = 0;
+    virtual ::Core::Result copyFileWithLimit(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) = 0;
 
-    virtual ::Core::Result readFileData(::Core::PathView, ::std::vector<uchar>&) = 0;
+    virtual ::Core::Result readFileData(::Core::PathView filePath, ::std::vector<uchar>& data) = 0;
 
-    virtual ::Bedrock::Result<::std::string> readFile(::Core::PathView) = 0;
+    virtual ::Bedrock::Result<::std::string> readFile(::Core::PathView filePath) = 0;
 
-    virtual ::Bedrock::Result<void> writeFile(::Core::PathView, ::std::string_view) = 0;
+    virtual ::Bedrock::Result<void> writeFile(::Core::PathView filePath, ::std::string_view data) = 0;
 
-    virtual ::Core::Result createOneDirectory(::Core::PathView) = 0;
+    virtual ::Core::Result createOneDirectory(::Core::PathView directoryPath) = 0;
 
-    virtual ::Core::Result createOneDirectoryIfNotExisting(::Core::PathView) = 0;
+    virtual ::Core::Result createOneDirectoryIfNotExisting(::Core::PathView dirName) = 0;
 
-    virtual ::Core::Result createDirectoryRecursively(::Core::PathView) = 0;
+    virtual ::Core::Result createDirectoryRecursively(::Core::PathView dirName) = 0;
 
-    virtual bool directoryExists(::Core::PathView) = 0;
+    virtual bool directoryExists(::Core::PathView dirName) = 0;
 
-    virtual ::Core::Result deleteEmptyDirectory(::Core::PathView) = 0;
+    virtual ::Core::Result deleteEmptyDirectory(::Core::PathView dirPath) = 0;
 
-    virtual ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView) = 0;
+    virtual ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView dirName) = 0;
 
-    virtual ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView) = 0;
+    virtual ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView directoryName) = 0;
 
-    virtual ::Core::Result renameDirectory(::Core::PathView, ::Core::PathView) = 0;
+    virtual ::Core::Result renameDirectory(::Core::PathView oldDirectoryName, ::Core::PathView newDirectoryName) = 0;
 
     virtual ::Core::Result iterateOverDirectory(
-        ::Core::PathView,
-        ::Core::DirectoryIterationFlags,
-        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+        ::Core::PathView                                                             dirName,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> callbackFunction
     ) = 0;
 
-    virtual ::Core::Result getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result
+    getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::PathView path) = 0;
+
+    virtual ::Core::Result getDirectoryFilesAndSizes(
+        ::std::vector<::Core::FileSystem::BasicFileData>& filesOut,
+        ::Core::PathView                                  directoryPath
+    ) = 0;
+
+    virtual ::Core::Result getDirectoryFilesRecursively(
+        ::std::vector<::Core::PathBuffer<::std::string>>& files,
+        ::Core::PathView                                  directoryPath
+    ) = 0;
+
+    virtual ::Core::Result getDirectoryFilesSizeRecursively(uint64& totalSize, ::Core::PathView directoryPath) = 0;
+
+    virtual ::Core::Result getDirectoryFilesAllocatedSizeRecursively(
+        uint64&          totalSize,
+        uint64&          totalAllocatedSize,
+        ::Core::PathView directoryPath
+    ) = 0;
+
+    virtual ::Core::Result copyDirectoryAndContentsRecursively(::Core::PathView from, ::Core::PathView to) = 0;
+
+    virtual ::Core::Result copyDirectoryAndContentsRecursivelyWithLimit(::Core::PathView from, ::Core::PathView to) = 0;
+
+    virtual bool isDirectoryPartiallyCopied(::Core::PathView directory) = 0;
+
+    virtual bool fileOrDirectoryExists(::Core::PathView fileOrDirectoryName) = 0;
+
+    virtual ::Core::Result getFileOrDirectorySize(::Core::PathView path, uint64* pFileSizeOut) = 0;
+
+    virtual ::Core::Result addIgnoredThrottlePath(::Core::PathView path) = 0;
+
+    virtual ::Core::Result removeIgnoredThrottlePath(::Core::PathView path) = 0;
+
+    virtual ::Core::Result isValidPath(::Core::PathView path) = 0;
+
+    virtual ::Core::Result getLastModificationTime(::Core::PathView filePath, int64* pLastModificationTime) = 0;
 
     virtual ::Core::Result
-    getDirectoryFilesAndSizes(::std::vector<::Core::FileSystem::BasicFileData>&, ::Core::PathView) = 0;
+    copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath) = 0;
 
     virtual ::Core::Result
-    getDirectoryFilesRecursively(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
+    createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) = 0;
 
-    virtual ::Core::Result getDirectoryFilesSizeRecursively(uint64&, ::Core::PathView) = 0;
-
-    virtual ::Core::Result getDirectoryFilesAllocatedSizeRecursively(uint64&, uint64&, ::Core::PathView) = 0;
-
-    virtual ::Core::Result copyDirectoryAndContentsRecursively(::Core::PathView, ::Core::PathView) = 0;
-
-    virtual ::Core::Result copyDirectoryAndContentsRecursivelyWithLimit(::Core::PathView, ::Core::PathView) = 0;
-
-    virtual bool isDirectoryPartiallyCopied(::Core::PathView) = 0;
-
-    virtual bool fileOrDirectoryExists(::Core::PathView) = 0;
-
-    virtual ::Core::Result getFileOrDirectorySize(::Core::PathView, uint64*) = 0;
-
-    virtual ::Core::Result addIgnoredThrottlePath(::Core::PathView) = 0;
-
-    virtual ::Core::Result removeIgnoredThrottlePath(::Core::PathView) = 0;
-
-    virtual ::Core::Result isValidPath(::Core::PathView) = 0;
-
-    virtual ::Core::Result getLastModificationTime(::Core::PathView, int64*) = 0;
-
-    virtual ::Core::Result copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) = 0;
-
-    virtual ::Core::Result createFlatFile(::Core::PathView, ::Core::PathView) = 0;
-
-    virtual bool isDirectoryPathAFlatFile(::Core::PathView) = 0;
+    virtual bool isDirectoryPathAFlatFile(::Core::PathView directoryPath) = 0;
 
     virtual ::Core::Result copyFlatFile(
-        ::Core::PathView,
-        ::Core::PathView,
-        ::std::vector<::Core::ExcludedPath> const&,
-        ::std::vector<::Core::ExcludedPath> const&
+        ::Core::PathView                           flatFileParentDirectory,
+        ::Core::PathView                           targetDirectory,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
     ) = 0;
 
-    virtual ::Core::Result createDirectoryForFile(::Core::PathView) = 0;
-
-    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForFile(::Core::PathView) = 0;
+    virtual ::Core::Result createDirectoryForFile(::Core::PathView filePath) = 0;
 
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
-        getUniqueFilePathForDirectory(::Core::PathView) = 0;
+    getUniqueFilePathForFile(::Core::PathView filePath) = 0;
 
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
-        createUniquePathFromSeed(::Core::PathView, ::std::function<::std::string(int)>) = 0;
+    getUniqueFilePathForDirectory(::Core::PathView directoryPath) = 0;
 
-    virtual ::std::vector<::Core::PathBuffer<::std::string>> splitPathIntoFullPathSegments(::Core::PathView) = 0;
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    createUniquePathFromSeed(::Core::PathView basePath, ::std::function<::std::string(int)> seedGenerator) = 0;
 
-    virtual ::Core::Result readFileDataExt(::Core::PathView, uint64, uint64, ::std::vector<uchar>&, uint64&) = 0;
+    virtual ::std::vector<::Core::PathBuffer<::std::string>> splitPathIntoFullPathSegments(::Core::PathView path) = 0;
 
-    virtual ::Core::Result
-    cleanPath_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result readFileDataExt(
+        ::Core::PathView      filePath,
+        uint64                filePosition,
+        uint64                bufferSize,
+        ::std::vector<uchar>& buffer,
+        uint64&               bytesRead
+    ) = 0;
 
-    virtual ::Core::Result
-    cleanPathSeparators_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result cleanPath_deprecated(
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
+        ::Core::PathView                                          pathIn
+    ) = 0;
 
-    virtual bool checkStorageCorrupt(::Core::PathView) = 0;
+    virtual ::Core::Result cleanPathSeparators_deprecated(
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& pathBufferOut,
+        ::Core::PathView                                          pathIn
+    ) = 0;
 
-    virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetFileInitialSize(::Core::PathView, uint64) = 0;
+    virtual bool checkStorageCorrupt(::Core::PathView path) = 0;
+
+    virtual ::std::unique_ptr<::Core::FileSizePresetToken>
+    presetFileInitialSize(::Core::PathView path, uint64 initialSize) = 0;
 
     virtual ::Core::Result _getDirectoriesAndFileSizesRecursively(
-        ::Core::PathView,
-        ::std::vector<::Core::PathBuffer<::std::string>>&,
-        ::std::vector<::Core::FileSystem::BasicFileData>&
+        ::Core::PathView                                  directoryPath,
+        ::std::vector<::Core::PathBuffer<::std::string>>& directoriesOut,
+        ::std::vector<::Core::FileSystem::BasicFileData>& filesOut
     ) = 0;
 
     virtual ::Core::Result _copyDirectoryStructure(
-        ::Core::PathView,
-        ::Core::PathView,
-        ::std::vector<::Core::PathBuffer<::std::string>> const&,
-        ::Core::FileSystemImpl*
+        ::Core::PathView                                        from,
+        ::Core::PathView                                        to,
+        ::std::vector<::Core::PathBuffer<::std::string>> const& directories,
+        ::Core::FileSystemImpl*                                 transaction
     ) = 0;
 
     virtual ::Core::Result _copyFilesWithLimit(
-        ::Core::PathView,
-        ::Core::PathView,
-        ::std::vector<::Core::FileSystem::BasicFileData>&,
-        uint64&,
-        uint64 const,
+        ::Core::PathView                                  from,
+        ::Core::PathView                                  to,
+        ::std::vector<::Core::FileSystem::BasicFileData>& files,
+        uint64&                                           currentFileBytesWritten,
+        uint64 const                                      transactionLimit,
         ::std::function<
             ::Core::Result(::Core::PathView, ::Core::PathView, ::Core::FileSystem::FileTransferProgress&)> const&
+            fileTransferFunction
     ) = 0;
 
     virtual ::Core::Result _copyFlatFile(
-        ::Core::PathView,
-        ::Core::PathView,
-        ::std::vector<::Core::ExcludedPath> const&,
-        ::std::vector<::Core::ExcludedPath> const&
+        ::Core::PathView                           flatFileParentDirectory,
+        ::Core::PathView                           targetDirectory,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
     ) = 0;
 
-    virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView) = 0;
+    virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView path) = 0;
 
     virtual ~FileSystem() /*override*/;
     // NOLINTEND

@@ -24,13 +24,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::DespawnComponent& despawnComponent);
+    MCAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::DespawnComponent& despawnComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

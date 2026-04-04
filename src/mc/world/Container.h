@@ -90,7 +90,11 @@ public:
 
     virtual void init();
 
-    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) = 0;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) = 0;
 
     virtual void addContentChangeListener(::ContainerContentChangeListener* listener);
 
@@ -100,7 +104,7 @@ public:
 
     virtual bool hasRemovedSubscribers() const;
 
-    virtual ::ItemStack const& getItem(int index) const = 0;
+    virtual ::ItemStack const& getItem(int slot) const = 0;
 
     virtual bool hasRoomForItem(::ItemStack const& item) const;
 
@@ -110,7 +114,7 @@ public:
 
     virtual bool addItemToFirstEmptySlot(::ItemStack const& item);
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) = 0;
+    virtual void setItem(int slot, ::ItemStack const& item) = 0;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -130,7 +134,7 @@ public:
 
     virtual int getMaxStackSize() const = 0;
 
-    virtual void startOpen(::Actor&) = 0;
+    virtual void startOpen(::Actor& actor) = 0;
 
     virtual void stopOpen(::Actor& actor);
 
@@ -150,9 +154,9 @@ public:
 
     virtual int reverseFindFirstSlotForItem(::ItemStack const& item) const;
 
-    virtual bool canPushInItem(int, int, ::ItemStack const&) const;
+    virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    virtual bool canPullOutItem(int, int, ::ItemStack const&) const;
+    virtual bool canPullOutItem(int slot, int face, ::ItemStack const& item) const;
 
     virtual void setContainerChanged(int slot);
 
@@ -175,7 +179,7 @@ public:
 
     virtual bool isEmpty() const;
 
-    virtual bool isSlotDisabled(int) const;
+    virtual bool isSlotDisabled(int slot) const;
     // NOLINTEND
 
 public:
@@ -291,9 +295,9 @@ public:
 
     MCAPI int $reverseFindFirstSlotForItem(::ItemStack const& item) const;
 
-    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int slot, int face, ::ItemStack const& item) const;
 
     MCAPI void $setContainerChanged(int slot);
 
@@ -316,7 +320,7 @@ public:
 
     MCAPI bool $isEmpty() const;
 
-    MCFOLD bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int slot) const;
 
 
     // NOLINTEND

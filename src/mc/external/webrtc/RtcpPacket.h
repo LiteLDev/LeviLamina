@@ -27,7 +27,12 @@ public:
 
     virtual uint64 BlockLength() const = 0;
 
-    virtual bool Create(uchar*, uint64*, uint64, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const = 0;
+    virtual bool Create(
+        uchar*                                                   packet,
+        uint64*                                                  index,
+        uint64                                                   max_length,
+        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
+    ) const = 0;
     // NOLINTEND
 
 public:

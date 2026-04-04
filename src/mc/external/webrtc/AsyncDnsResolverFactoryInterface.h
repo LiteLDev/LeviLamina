@@ -20,10 +20,10 @@ public:
     virtual ~AsyncDnsResolverFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const&, ::absl::AnyInvocable<void()>) = 0;
+    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) = 0;
+    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) = 0;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() = 0;
     // NOLINTEND

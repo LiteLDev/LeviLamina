@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace UpdateWingFlapValueSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace UpdateWingFlapValueSystem

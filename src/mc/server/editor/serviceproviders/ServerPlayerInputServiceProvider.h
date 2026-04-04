@@ -22,26 +22,34 @@ public:
     virtual ~ServerPlayerInputServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<void> registerKeyBinding(
-        ::HashedString const&,
-        ::HashedString const&,
-        ::Editor::Input::KeyBinding const&,
-        ::Editor::Input::BindingInfo const&
+        ::HashedString const&               contextId,
+        ::HashedString const&               eventId,
+        ::Editor::Input::KeyBinding const&  binding,
+        ::Editor::Input::BindingInfo const& info
     ) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> unregisterKeyBinding(::HashedString const&, ::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> registerMouseBinding(
+        ::HashedString const&                contextId,
+        ::HashedString const&                eventId,
+        ::Editor::Input::MouseBinding const& binding
+    ) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    registerMouseBinding(::HashedString const&, ::HashedString const&, ::Editor::Input::MouseBinding const&) = 0;
+    unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId) = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    unregisterMouseBinding(::HashedString const&, ::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> updateKeyBindingProcessingState(
+        ::HashedString const& contextId,
+        ::HashedString const& bindingId,
+        ::std::optional<int>  state
+    ) = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    updateKeyBindingProcessingState(::HashedString const&, ::HashedString const&, ::std::optional<int>) = 0;
+    virtual ::std::optional<int>
+    getKeyBindingProcessingState(::HashedString const& contextId, ::HashedString const& bindingId) const = 0;
 
-    virtual ::std::optional<int> getKeyBindingProcessingState(::HashedString const&, ::HashedString const&) const = 0;
-
-    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool isFocused) = 0;
+    virtual ::Scripting::Result_deprecated<void> setViewportFocus(bool focused) = 0;
     // NOLINTEND
 
 public:

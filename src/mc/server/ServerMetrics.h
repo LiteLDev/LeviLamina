@@ -17,9 +17,9 @@ public:
     virtual ~ServerMetrics() = default;
 #endif
 
-    virtual void sendPeriodicMetrics(::ServerInstance&) = 0;
+    virtual void sendPeriodicMetrics(::ServerInstance& serverInstance) = 0;
 
-    virtual void sendServerTickTime(::std::chrono::nanoseconds const&) = 0;
+    virtual void sendServerTickTime(::std::chrono::nanoseconds const& timepoint) = 0;
 
     virtual void sendChunkLoadTelemetryData() = 0;
     // NOLINTEND

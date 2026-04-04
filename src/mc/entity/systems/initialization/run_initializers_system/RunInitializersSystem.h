@@ -12,9 +12,9 @@ struct TickingSystemWithInfo;
 namespace RunInitializersSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo create(::EntitySystems& systems);
+MCAPI ::TickingSystemWithInfo create(::EntitySystems& systems);
 
-MCNAPI void gatherCombinedDependencies(::EntitySystems& systems, ::SystemInfo& resultInfo);
+MCAPI void gatherCombinedDependencies(::EntitySystems& systems, ::SystemInfo& resultInfo);
 // NOLINTEND
 
 } // namespace RunInitializersSystem

@@ -41,7 +41,7 @@ public:
     // NOLINTBEGIN
     virtual ~FilteredContainerModel() /*override*/ = default;
 
-    virtual void containerContentChanged(int) /*override*/;
+    virtual void containerContentChanged(int slot) /*override*/;
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerContentChanged(int);
+    MCFOLD void $containerContentChanged(int slot);
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 

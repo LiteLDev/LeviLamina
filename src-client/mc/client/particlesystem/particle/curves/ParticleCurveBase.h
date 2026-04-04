@@ -27,13 +27,15 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleCurveBase() = default;
 
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase&, ::HashedString const&) = 0;
+    virtual void
+    initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase& data, ::HashedString const& curveName) = 0;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase&) = 0;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase& data) = 0;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&, ::HashedString const&) = 0;
+    virtual void
+    parseJson(::ConstDeserializeDataParams const& deserializeDataParams, ::HashedString const& molangVariableName) = 0;
 
-    virtual void evaluateCurve(::RenderParams&) = 0;
+    virtual void evaluateCurve(::RenderParams& renderParams) = 0;
 
     virtual ::ParticleSystem::ParticleCurveType getCurveType() const;
     // NOLINTEND

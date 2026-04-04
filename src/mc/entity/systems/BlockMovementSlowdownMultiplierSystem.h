@@ -21,37 +21,37 @@ struct TickingSystemWithInfo;
 namespace BlockMovementSlowdownMultiplierSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
+MCAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
 
-MCNAPI ::TickingSystemWithInfo createCleanupSystem();
+MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCNAPI ::TickingSystemWithInfo createWeavingMobSystem();
+MCAPI ::TickingSystemWithInfo createWeavingMobSystem();
 
-MCNAPI void tickAdjustFallDistance(
+MCAPI void tickAdjustFallDistance(
     ::BlockMovementSlowdownAppliedComponent const& applied,
     ::FallDistanceComponent&                       fallDistanceComponent
 );
 
-MCNAPI void tickApplySlowdownOnMove(
+MCAPI void tickApplySlowdownOnMove(
     ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
     ::MoveRequestComponent&                     moveRequestComponent,
     ::StateVectorComponent&                     stateComponent
 );
 
-MCNAPI void tickImmunePlayer(
+MCAPI void tickImmunePlayer(
     ::StrictEntityContext const&                              entity,
     ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
     ::MovementAbilitiesComponent const&                       abilitiesComponent,
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
 );
 
-MCNAPI void tickImmuneSlowdown(
+MCAPI void tickImmuneSlowdown(
     ::StrictEntityContext const&                              entity,
     ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
 );
 
-MCNAPI void tickWeavingSlowdownOverride(
+MCAPI void tickWeavingSlowdownOverride(
     ::StrictEntityContext const&,
     ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
     ::MobEffectsComponent const&                mobEffectsComponent

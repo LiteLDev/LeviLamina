@@ -87,7 +87,7 @@ public:
 
     virtual ::Container* _tryGetContainer() const = 0;
 
-    virtual ::ItemContext _getItemContext(int) const = 0;
+    virtual ::ItemContext _getItemContext(int slot) const = 0;
     // NOLINTEND
 
 public:

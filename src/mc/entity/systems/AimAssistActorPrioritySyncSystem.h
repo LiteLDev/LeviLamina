@@ -26,7 +26,7 @@ struct TickingSystemWithInfo;
 namespace AimAssistActorPrioritySyncSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickMobPriority(
+MCAPI void _tickMobPriority(
     ::ActorOwnerComponent&                    mobOwner,
     ::SynchedActorDataComponent&              synchedActorData,
     ::CameraAimAssistRegistryComponent const& aimAssistRegistry,
@@ -34,7 +34,7 @@ MCNAPI void _tickMobPriority(
     ::CameraAimAssistActorPriorityServerComponent& aimAssistActorPriority
 );
 
-MCNAPI void _tickUpdateMap(
+MCAPI void _tickUpdateMap(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ServerPlayerComponent>,
@@ -47,7 +47,7 @@ MCNAPI void _tickUpdateMap(
     ::OptionalGlobal<::CameraAimAssistActorPriorityServerComponent> actorPriorityComponent
 );
 
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace AimAssistActorPrioritySyncSystem

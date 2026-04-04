@@ -17,7 +17,7 @@ struct StateVectorComponent;
 namespace VerticalFlySpeedControlSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doFlySpeedControlSystem(
+MCAPI void doFlySpeedControlSystem(
     ::StrictEntityContext const&,
     ::MoveInputComponent const&          moveInputComponent,
     ::PlayerInputRequestComponent const& playerInputRequestComponent,

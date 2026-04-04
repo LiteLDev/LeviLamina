@@ -24,21 +24,22 @@ public:
 
     virtual bool isServer() const = 0;
 
-    virtual void _registerType(uint, ::Editor::Services::ReplicationTypeInfo) = 0;
+    virtual void _registerType(uint typeHash, ::Editor::Services::ReplicationTypeInfo typeInfo) = 0;
 
-    virtual ::WeakRef<::Editor::IReplicatedObjectBase> _create(::HashedString const&, uint) = 0;
+    virtual ::WeakRef<::Editor::IReplicatedObjectBase> _create(::HashedString const& id, uint typeHash) = 0;
 
-    virtual ::WeakRef<::Editor::IReplicatedObjectBase> _getObjectById(::HashedString const&, uint) const = 0;
+    virtual ::WeakRef<::Editor::IReplicatedObjectBase>
+    _getObjectById(::HashedString const& id, uint typeHash) const = 0;
 
-    virtual void _remove(::HashedString const&, uint) = 0;
+    virtual void _remove(::HashedString const& id, uint typeHash) = 0;
 
     virtual ::cereal::ReflectionCtx& _getReflectionContext() const = 0;
 
-    virtual ::Editor::ReplicationPolicy _getReplicationPolicyForTypeHash(uint) const = 0;
+    virtual ::Editor::ReplicationPolicy _getReplicationPolicyForTypeHash(uint typeHash) const = 0;
 
-    virtual bool _canSyncOrModifyType(uint) const = 0;
+    virtual bool _canSyncOrModifyType(uint typeHash) const = 0;
 
-    virtual bool _canApplyPayload(uint) const = 0;
+    virtual bool _canApplyPayload(uint typeHash) const = 0;
     // NOLINTEND
 
 public:

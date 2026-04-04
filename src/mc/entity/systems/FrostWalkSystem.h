@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace FrostWalkSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace FrostWalkSystem

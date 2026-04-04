@@ -17,9 +17,9 @@ public:
 
     virtual uint64 count() const = 0;
 
-    virtual bool HasCandidate(::webrtc::IceCandidateInterface const*) const = 0;
+    virtual bool HasCandidate(::webrtc::IceCandidateInterface const* candidate) const = 0;
 
-    virtual ::webrtc::IceCandidateInterface const* at(uint64) const = 0;
+    virtual ::webrtc::IceCandidateInterface const* at(uint64 index) const = 0;
     // NOLINTEND
 
 public:

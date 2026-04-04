@@ -35,15 +35,15 @@ public:
 
     virtual ::std::string type() const = 0;
 
-    virtual bool AddCandidate(::webrtc::IceCandidateInterface const*) = 0;
+    virtual bool AddCandidate(::webrtc::IceCandidateInterface const* candidate) = 0;
 
     virtual uint64 RemoveCandidates(::std::vector<::cricket::Candidate> const& candidates);
 
     virtual uint64 number_of_mediasections() const = 0;
 
-    virtual ::webrtc::IceCandidateCollection const* candidates(uint64) const = 0;
+    virtual ::webrtc::IceCandidateCollection const* candidates(uint64 mediasection_index) const = 0;
 
-    virtual bool ToString(::std::string*) const = 0;
+    virtual bool ToString(::std::string* out) const = 0;
     // NOLINTEND
 
 public:

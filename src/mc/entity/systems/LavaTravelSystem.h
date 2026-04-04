@@ -19,7 +19,7 @@ class LavaTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickLavaTravelSystem(
+    MCAPI static void tickLavaTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::LavaTravelFlagComponent>,

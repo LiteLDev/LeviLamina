@@ -23,7 +23,11 @@ public:
     // NOLINTBEGIN
     virtual ~GameEventListener() = default;
 
-    virtual void handleGameEvent(::GameEvent const&, ::GameEventContext const&, ::BlockSource&) = 0;
+    virtual void handleGameEvent(
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::BlockSource&            region
+    ) = 0;
 
     virtual ::GameEvents::PositionSource const& getPositionSource() const = 0;
 

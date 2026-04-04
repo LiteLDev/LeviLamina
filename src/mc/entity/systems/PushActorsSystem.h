@@ -21,7 +21,7 @@ struct PushActorsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickPushActors(
+    MCAPI static void _tickPushActors(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent, ::PushActorsRequestComponent>,
@@ -29,8 +29,8 @@ public:
         ::EntityModifier<::PushActorsRequestComponent> mod
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
+    MCAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };

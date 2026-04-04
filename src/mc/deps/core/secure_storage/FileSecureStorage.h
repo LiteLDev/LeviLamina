@@ -26,9 +26,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual bool getData(::std::string&, ::Core::Path);
+        virtual bool getData(::std::string& output, ::Core::Path path);
 
-        virtual void setData(::std::string const&, ::Core::Path);
+        virtual void setData(::std::string const& data, ::Core::Path path);
 
         virtual ~StorageSystem() = default;
         // NOLINTEND

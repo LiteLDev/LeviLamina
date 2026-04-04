@@ -27,23 +27,13 @@ public:
 
     virtual bool IsPacketAvailable(::NetherNet::NetworkID, uint64, uint*) /*override*/;
 
-    virtual bool ReadPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 connectionId,
-        void*                  pubDest,
-        uint                   cbDest,
-        uint*                  pcbMessageSize
-    ) /*override*/;
+    virtual bool ReadPacket(::NetherNet::NetworkID, uint64, void*, uint, uint*) /*override*/;
 
     virtual bool OpenSessionWithUser(::NetherNet::NetworkID) /*override*/;
 
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID, uint64) /*override*/;
 
-    virtual bool GetSessionState(
-        ::NetherNet::NetworkID     peerId,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    ) /*override*/;
+    virtual bool GetSessionState(::NetherNet::NetworkID, uint64, ::NetherNet::SessionState*) /*override*/;
 
     virtual void SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const&) /*override*/;
 

@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ComponentStorageConstraint(::cereal::ComponentStorageConstraint const&);
 
-    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCNAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::initializer_list<::std::string> keys);
 

@@ -79,13 +79,13 @@ public:
     // NOLINTBEGIN
     virtual ~IceControllerInterface() = default;
 
-    virtual void SetIceConfig(::cricket::IceConfig const&) = 0;
+    virtual void SetIceConfig(::cricket::IceConfig const& config) = 0;
 
-    virtual void SetSelectedConnection(::cricket::Connection const*) = 0;
+    virtual void SetSelectedConnection(::cricket::Connection const* selected_connection) = 0;
 
-    virtual void AddConnection(::cricket::Connection const*) = 0;
+    virtual void AddConnection(::cricket::Connection const* connection) = 0;
 
-    virtual void OnConnectionDestroyed(::cricket::Connection const*) = 0;
+    virtual void OnConnectionDestroyed(::cricket::Connection const* connection) = 0;
 
     virtual ::rtc::ArrayView<::cricket::Connection const* const> GetConnections() const;
 
@@ -93,19 +93,23 @@ public:
 
     virtual bool HasPingableConnection() const = 0;
 
-    virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64) = 0;
+    virtual ::cricket::IceControllerInterface::PingResult SelectConnectionToPing(int64 last_ping_sent_ms) = 0;
 
-    virtual bool
-    GetUseCandidateAttr(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
+    virtual bool GetUseCandidateAttr(
+        ::cricket::Connection const* conn,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const = 0;
 
     virtual ::cricket::Connection const* FindNextPingableConnection() = 0;
 
-    virtual void MarkConnectionPinged(::cricket::Connection const*) = 0;
+    virtual void MarkConnectionPinged(::cricket::Connection const* conn) = 0;
 
     virtual ::cricket::IceControllerInterface::SwitchResult
-    ShouldSwitchConnection(::cricket::IceSwitchReason, ::cricket::Connection const*) = 0;
+    ShouldSwitchConnection(::cricket::IceSwitchReason reason, ::cricket::Connection const* new_connection) = 0;
 
-    virtual ::cricket::IceControllerInterface::SwitchResult SortAndSwitchConnection(::cricket::IceSwitchReason) = 0;
+    virtual ::cricket::IceControllerInterface::SwitchResult
+    SortAndSwitchConnection(::cricket::IceSwitchReason reason) = 0;
 
     virtual ::std::vector<::cricket::Connection const*> PruneConnections() = 0;
     // NOLINTEND

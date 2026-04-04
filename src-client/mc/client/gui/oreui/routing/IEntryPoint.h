@@ -23,9 +23,9 @@ public:
     virtual bool shouldAddToConfiguration() const = 0;
 
     virtual void addToMatcher(
-        ::OreUI::RouteMatcher&,
-        ::SceneFactory&,
-        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&
+        ::OreUI::RouteMatcher&                              routeMatcher,
+        ::SceneFactory&                                     sceneFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const = 0;
     // NOLINTEND
 

@@ -19,13 +19,13 @@ class UpdateAISystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
             ::ActorOwnerComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

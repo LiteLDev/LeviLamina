@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace ActorUpdatePreviousPositionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo create();
+MCAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
 } // namespace ActorUpdatePreviousPositionSystem

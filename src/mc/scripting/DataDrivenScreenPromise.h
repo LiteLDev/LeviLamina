@@ -22,9 +22,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void resolve(::DataDrivenScreenClosedReason) = 0;
+    virtual void resolve(::DataDrivenScreenClosedReason resolution) = 0;
 
-    virtual void reject(::DataDrivenScreenRejectReason) = 0;
+    virtual void reject(::DataDrivenScreenRejectReason rejection) = 0;
     // NOLINTEND
 
 public:

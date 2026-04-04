@@ -20,13 +20,13 @@ public:
     virtual ~INeighborAwareChunkUpgrader() = default;
 
     virtual ::NeighborAwareBlockUpdateType
-    getUpdateType(::Block const&, ::NeighborAwareBlockUpgradeVersionType) const = 0;
+    getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const = 0;
 
     virtual void doLevelChunkNeighborAwareUpgrade(
-        ::NeighborAwareBlockUpdateType,
-        ::BlockSource&,
-        ::Block const&,
-        ::BlockPos const&
+        ::NeighborAwareBlockUpdateType updateType,
+        ::BlockSource&                 region,
+        ::Block const&                 block,
+        ::BlockPos const&              blockPos
     ) const = 0;
     // NOLINTEND
 

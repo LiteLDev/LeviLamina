@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace SneakingSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace SneakingSystem

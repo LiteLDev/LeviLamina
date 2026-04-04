@@ -23,43 +23,44 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerDimensionTransferProxy() = default;
 
-    virtual void playerDimensionChangedEvent(::Player&, ::DimensionType, ::DimensionType) = 0;
+    virtual void
+    playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId) = 0;
 
-    virtual ::Actor* getAgent(::Player&) = 0;
+    virtual ::Actor* getAgent(::Player& player) = 0;
 
-    virtual void resetAgent(::Player&) = 0;
+    virtual void resetAgent(::Player& player) = 0;
 
-    virtual void stopUsingItem(::Player&) = 0;
+    virtual void stopUsingItem(::Player& player) = 0;
 
-    virtual bool hasRespawnPosition(::Player const&) const = 0;
+    virtual bool hasRespawnPosition(::Player const& player) const = 0;
 
-    virtual ::BlockPos const& getSpawnPosition(::Player const&) const = 0;
+    virtual ::BlockPos const& getSpawnPosition(::Player const& player) const = 0;
 
-    virtual bool isRespawningFromTheEnd(::Player const&) const = 0;
+    virtual bool isRespawningFromTheEnd(::Player const& player) const = 0;
 
-    virtual void fireWillChangeDimension(::Player&) = 0;
+    virtual void fireWillChangeDimension(::Player& player) = 0;
 
-    virtual void moveTo(::Player&, ::Vec3 const&) = 0;
+    virtual void moveTo(::Player& player, ::Vec3 const& position) = 0;
 
-    virtual void setPreviousPosition(::Player&) = 0;
+    virtual void setPreviousPosition(::Player& player) = 0;
 
-    virtual void resetInterpolation(::Player&) = 0;
+    virtual void resetInterpolation(::Player& player) = 0;
 
-    virtual void prepareRegion(::Player&, ::Dimension const&) = 0;
+    virtual void prepareRegion(::Player& player, ::Dimension const& dimension) = 0;
 
     virtual ::MovePlayerPacket
-    createMovePlayerPacket(::Player const&, ::PlayerPositionModeComponent::PositionMode) const = 0;
+    createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const = 0;
 
-    virtual void setAgent(::Player&, ::Actor&) = 0;
+    virtual void setAgent(::Player& player, ::Actor& agent) = 0;
 
-    virtual ::Vec3 calculateAgentSpawnPosition(::Player const&) const = 0;
+    virtual ::Vec3 calculateAgentSpawnPosition(::Player const& player) const = 0;
 
-    virtual bool isRespawnReady(::Player const&) const = 0;
+    virtual bool isRespawnReady(::Player const& player) const = 0;
 
     virtual ::std::pair<bool, ::std::optional<::SubChunkPos>>
-    hasSubChunksAt(::Player const&, ::BlockPos const&, ::BlockPos const&) const = 0;
+    hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const = 0;
 
-    virtual void transferTickingArea(::Actor&, ::Dimension&) = 0;
+    virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) = 0;
     // NOLINTEND
 
 public:

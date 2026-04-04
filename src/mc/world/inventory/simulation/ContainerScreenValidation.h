@@ -52,10 +52,11 @@ public:
     // NOLINTBEGIN
     virtual ~ContainerScreenValidation();
 
-    virtual ::ContainerValidationResult tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
+    virtual ::ContainerValidationResult
+    tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
     virtual ::ContainerValidationCraftResult
-    getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
+    getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
     virtual ::ContainerValidationResult tryActivate();
     // NOLINTEND
@@ -152,10 +153,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
+    MCAPI ::ContainerValidationResult
+    $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
     MCAPI ::ContainerValidationCraftResult
-    $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
+    $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
     MCFOLD ::ContainerValidationResult $tryActivate();
 

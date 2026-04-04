@@ -48,9 +48,9 @@ public:
     // NOLINTBEGIN
     virtual ~BlockState();
 
-    virtual void toNBT(::CompoundTag&, int) const = 0;
+    virtual void toNBT(::CompoundTag& tag, int val) const = 0;
 
-    virtual bool fromNBT(::CompoundTag const&, int&) const = 0;
+    virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const = 0;
     // NOLINTEND
 
 public:

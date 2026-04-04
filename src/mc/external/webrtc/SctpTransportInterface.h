@@ -23,7 +23,7 @@ public:
 
     virtual ::webrtc::SctpTransportInformation Information() const = 0;
 
-    virtual void RegisterObserver(::webrtc::SctpTransportObserverInterface*) = 0;
+    virtual void RegisterObserver(::webrtc::SctpTransportObserverInterface* observer) = 0;
 
     virtual void UnregisterObserver() = 0;
 

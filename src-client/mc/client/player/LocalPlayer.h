@@ -269,7 +269,7 @@ public:
 
     virtual void aiStep() /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -325,7 +325,7 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& bedBlockPos) /*override*/;
+    virtual ::BedSleepingResult startSleepInBed(::BlockPos const& pos) /*override*/;
 
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
@@ -335,9 +335,9 @@ public:
 
     virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
-    virtual void setSneaking(bool value) /*override*/;
+    virtual void setSneaking(bool _isSneaking) /*override*/;
 
-    virtual void setSprinting(bool shouldSprint) /*override*/;
+    virtual void setSprinting(bool _isSprinting) /*override*/;
 
     virtual void playEmote(::std::string const& pieceId, bool const playChatMessage) /*override*/;
 
@@ -389,7 +389,7 @@ public:
 
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
@@ -561,7 +561,7 @@ public:
 
     MCAPI void $aiStep();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -615,7 +615,7 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedBlockPos);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& pos);
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
@@ -625,9 +625,9 @@ public:
 
     MCAPI bool $swing(::ActorSwingSource swingSource);
 
-    MCAPI void $setSneaking(bool value);
+    MCAPI void $setSneaking(bool _isSneaking);
 
-    MCAPI void $setSprinting(bool shouldSprint);
+    MCAPI void $setSprinting(bool _isSprinting);
 
     MCAPI void $playEmote(::std::string const& pieceId, bool const playChatMessage);
 
@@ -674,7 +674,7 @@ public:
 
     MCFOLD bool $isActorRelevant(::Actor const& actor);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $checkMovementStats(::Vec3 const& d);
 

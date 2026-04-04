@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~SocketFactory() = default;
 
-    virtual ::rtc::Socket* CreateSocket(int, int) = 0;
+    virtual ::rtc::Socket* CreateSocket(int family, int type) = 0;
     // NOLINTEND
 
 public:

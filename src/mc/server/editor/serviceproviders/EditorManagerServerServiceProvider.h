@@ -17,10 +17,10 @@ public:
     virtual ~EditorManagerServerServiceProvider() = default;
 
     virtual ::Bedrock::PubSub::Subscription
-        registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)>) = 0;
+    registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)>) = 0;
+    registerLevelTickSubscriber(::std::function<void(::Editor::EditorManagerServer&)> func) = 0;
     // NOLINTEND
 
 public:

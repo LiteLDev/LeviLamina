@@ -23,7 +23,7 @@ public:
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    virtual void setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
+    virtual void setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
-    MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob&, ::Vec3 const& position, float speed);
+    MCAPI void $setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
 
 
     // NOLINTEND

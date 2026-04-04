@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~IHitResultContainer() = default;
 
-    virtual void addHitResult(::HitResult, ::HitResult) = 0;
+    virtual void addHitResult(::HitResult solidHit, ::HitResult liquidHit) = 0;
 
     virtual void clear() = 0;
 

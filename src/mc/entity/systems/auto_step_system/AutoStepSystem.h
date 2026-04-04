@@ -20,7 +20,7 @@ struct SubBBsComponent;
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doAutoStepSystemImpl(
+MCAPI void doAutoStepSystemImpl(
     ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
     ::StrictEntityContext const&                entity,
     ::MaxAutoStepComponent const&               maxAutoStepComponent,

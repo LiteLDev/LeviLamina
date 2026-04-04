@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~IRepositoryFactory() = default;
 
-    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const&) const = 0;
+    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const = 0;
 
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const = 0;
     // NOLINTEND

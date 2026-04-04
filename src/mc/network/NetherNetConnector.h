@@ -170,7 +170,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -254,8 +254,10 @@ public:
 
     MCFOLD bool $host(::ConnectionDefinition const& definition);
 
-    MCFOLD bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCFOLD bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCFOLD void $tick();
 

@@ -15,7 +15,7 @@ public:
 
     virtual int nextInt() = 0;
 
-    virtual int nextInt(int) = 0;
+    virtual int nextInt(int n) = 0;
 
     virtual int64 nextLong() = 0;
 
@@ -27,7 +27,7 @@ public:
 
     virtual double nextGaussianDouble() = 0;
 
-    virtual void consumeCount(uint) = 0;
+    virtual void consumeCount(uint count) = 0;
 
     virtual ::std::unique_ptr<::IRandom> fork() = 0;
 

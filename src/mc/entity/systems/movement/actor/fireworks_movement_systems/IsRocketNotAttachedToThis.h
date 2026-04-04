@@ -2,14 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/ViewT.h"
+
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+struct ActorUniqueID;
+struct SynchedActorDataComponent;
+// clang-format on
+
 namespace FireworksMovementSystems {
 
 struct IsRocketNotAttachedToThis {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5fb435;
-    ::ll::UntypedStorage<8, 8> mUnk32076d;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID const&>                                                   mThis;
+    ::ll::TypedStorage<8, 8, ::ViewT<::StrictEntityContext, ::SynchedActorDataComponent const> const&> mView;
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~DeferredCommandBase() = default;
 
-    virtual void execute(::MinecraftCommands&) = 0;
+    virtual void execute(::MinecraftCommands& commands) = 0;
     // NOLINTEND
 
 public:

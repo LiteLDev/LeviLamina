@@ -48,7 +48,7 @@ public:
 
     virtual bool parse(::Json::Value const& jsonVal);
 
-    virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const = 0;
+    virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const = 0;
 
     virtual bool _setupContext(::FilterTest const& test, ::FilterContext& context) const;
     // NOLINTEND

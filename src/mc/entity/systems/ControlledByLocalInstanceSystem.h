@@ -26,21 +26,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnke15f90;
-        ::ll::UntypedStorage<4, 4> mUnk8e37f5;
+        ::ll::TypedStorage<1, 1, bool>                                               mIsClientSide;
+        ::ll::TypedStorage<4, 4, ::ControlledByLocalInstanceSystem::Config::ApplyTo> mApplyTo;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo
+    MCAPI static ::TickingSystemWithInfo
     createCalculateControlledByLocalInstanceSystem(::ControlledByLocalInstanceSystem::Config const& config);
     // NOLINTEND
 };

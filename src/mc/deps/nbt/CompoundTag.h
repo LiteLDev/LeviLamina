@@ -48,7 +48,7 @@ public:
 
     virtual ::std::string toString() const /*override*/;
 
-    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
 
@@ -164,7 +164,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

@@ -41,31 +41,32 @@ public:
     // NOLINTBEGIN
     virtual ~RtpTransportInternal() /*override*/;
 
-    virtual void SetRtcpMuxEnabled(bool) = 0;
+    virtual void SetRtcpMuxEnabled(bool enable) = 0;
 
     virtual ::std::string const& transport_name() const = 0;
 
-    virtual int SetRtpOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetRtpOption(::rtc::Socket::Option opt, int value) = 0;
 
-    virtual int SetRtcpOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetRtcpOption(::rtc::Socket::Option opt, int value) = 0;
 
     virtual bool rtcp_mux_enabled() const = 0;
 
     virtual bool IsReadyToSend() const = 0;
 
-    virtual bool IsWritable(bool) const = 0;
+    virtual bool IsWritable(bool rtcp) const = 0;
 
-    virtual bool SendRtpPacket(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&, int) = 0;
+    virtual bool SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) = 0;
 
-    virtual bool SendRtcpPacket(::rtc::CopyOnWriteBuffer*, ::rtc::PacketOptions const&, int) = 0;
+    virtual bool SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) = 0;
 
-    virtual void UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const&) = 0;
+    virtual void UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions) = 0;
 
     virtual bool IsSrtpActive() const = 0;
 
-    virtual bool RegisterRtpDemuxerSink(::webrtc::RtpDemuxerCriteria const&, ::webrtc::RtpPacketSinkInterface*) = 0;
+    virtual bool
+    RegisterRtpDemuxerSink(::webrtc::RtpDemuxerCriteria const& criteria, ::webrtc::RtpPacketSinkInterface* sink) = 0;
 
-    virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface*) = 0;
+    virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) = 0;
     // NOLINTEND
 
 public:

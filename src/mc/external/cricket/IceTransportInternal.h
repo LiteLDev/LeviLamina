@@ -60,33 +60,33 @@ public:
 
     virtual ::cricket::IceRole GetIceRole() const = 0;
 
-    virtual void SetIceRole(::cricket::IceRole) = 0;
+    virtual void SetIceRole(::cricket::IceRole ice_role) = 0;
 
-    virtual void SetIceTiebreaker(uint64) = 0;
+    virtual void SetIceTiebreaker(uint64 tiebreaker) = 0;
 
     virtual void SetIceCredentials(::std::string_view ice_ufrag, ::std::string_view ice_pwd);
 
     virtual void SetRemoteIceCredentials(::std::string_view ice_ufrag, ::std::string_view ice_pwd);
 
-    virtual void SetIceParameters(::cricket::IceParameters const&) = 0;
+    virtual void SetIceParameters(::cricket::IceParameters const& ice_params) = 0;
 
-    virtual void SetRemoteIceParameters(::cricket::IceParameters const&) = 0;
+    virtual void SetRemoteIceParameters(::cricket::IceParameters const& ice_params) = 0;
 
-    virtual void SetRemoteIceMode(::cricket::IceMode) = 0;
+    virtual void SetRemoteIceMode(::cricket::IceMode mode) = 0;
 
     virtual void SetIceConfig(::cricket::IceConfig const& config) = 0;
 
     virtual void MaybeStartGathering() = 0;
 
-    virtual void AddRemoteCandidate(::cricket::Candidate const&) = 0;
+    virtual void AddRemoteCandidate(::cricket::Candidate const& candidate) = 0;
 
-    virtual void RemoveRemoteCandidate(::cricket::Candidate const&) = 0;
+    virtual void RemoveRemoteCandidate(::cricket::Candidate const& cand_to_remove) = 0;
 
     virtual void RemoveAllRemoteCandidates() = 0;
 
     virtual ::cricket::IceGatheringState gathering_state() const = 0;
 
-    virtual bool GetStats(::cricket::IceTransportStats*) = 0;
+    virtual bool GetStats(::cricket::IceTransportStats* ice_transport_stats) = 0;
 
     virtual ::std::optional<int> GetRttEstimate() = 0;
 

@@ -64,7 +64,7 @@ public:
 
     virtual int getContainerSize() const /*override*/;
 
-    virtual void startOpen(::Actor&) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
@@ -138,7 +138,7 @@ public:
 
     MCFOLD int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Actor&);
+    MCFOLD void $startOpen(::Actor& actor);
 
     MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,

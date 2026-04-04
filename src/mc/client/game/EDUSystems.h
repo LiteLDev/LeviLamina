@@ -74,7 +74,7 @@ public:
 #else // LL_PLAT_C
     virtual ::Social::IEduMultiplayerHeadless& getMultiplayerHeadless() const /*override*/;
 
-    virtual void onNotify(::EDUConfigData const& config) /*override*/;
+    virtual void onNotify(::EDUConfigData const& state) /*override*/;
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state) /*override*/;
 #endif
@@ -124,7 +124,7 @@ public:
 
     MCNAPI ::Social::IEduMultiplayerHeadless& $getMultiplayerHeadless() const;
 
-    MCNAPI void $onNotify(::EDUConfigData const& config);
+    MCNAPI void $onNotify(::EDUConfigData const& state);
 
     MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
 #endif

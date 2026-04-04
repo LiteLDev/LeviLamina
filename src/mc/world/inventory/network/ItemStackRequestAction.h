@@ -33,9 +33,9 @@ public:
 
     virtual void postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
-    virtual void _write(::BinaryStream&) const = 0;
+    virtual void _write(::BinaryStream& stream) const = 0;
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) = 0;
     // NOLINTEND
 
 public:

@@ -25,16 +25,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::InstantDespawnComponent& instantDespawnComponent);
 
-    MCNAPI static ::TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
+    MCAPI static ::TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

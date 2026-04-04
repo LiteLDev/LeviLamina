@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~Writer();
 
-    virtual ::std::string write(::Json::Value const&) = 0;
+    virtual ::std::string write(::Json::Value const& root) = 0;
     // NOLINTEND
 
 public:

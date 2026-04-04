@@ -33,13 +33,13 @@ public:
     virtual void update() = 0;
 
     virtual void initRealmsFileDownloader(
-        ::std::string const&,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
+        ::std::string const&                      downloadId,
+        int const                                 slotIndex,
+        ::std::string const&                      downloadUrl,
+        ::FileInfo const&                         file,
+        uint64                                    fromByteOffset,
+        ::std::string const&                      downloadVersion,
+        ::std::function<void(::DownloaderResult)> callback
     ) = 0;
 
     virtual void initFileDownloader(
@@ -53,8 +53,8 @@ public:
     ) = 0;
 
     virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
-        ::std::function<void(::DownloaderState)>
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)> dataCallback,
+        ::std::function<void(::DownloaderState)>                                                         endCallback
     ) = 0;
 
     virtual bool canCancelDownload() const = 0;

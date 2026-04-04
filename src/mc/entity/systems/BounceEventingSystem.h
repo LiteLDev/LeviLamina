@@ -23,7 +23,7 @@ class BounceEventingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doBounceEventingSystem(
+    MCAPI static void _doBounceEventingSystem(
         ::StrictEntityContext const&,
         ::StateVectorComponent const&                                   stateVectorComponent,
         ::ActorUniqueIDComponent const&                                 actorUniqueIDComponent,
@@ -32,7 +32,7 @@ public:
         ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
     );
 
-    MCNAPI static void _tickBounceEventingSystem(
+    MCAPI static void _tickBounceEventingSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
@@ -43,6 +43,6 @@ public:
         ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

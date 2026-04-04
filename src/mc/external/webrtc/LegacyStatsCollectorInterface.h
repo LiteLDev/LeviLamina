@@ -17,11 +17,12 @@ public:
     // NOLINTBEGIN
     virtual ~LegacyStatsCollectorInterface();
 
-    virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface*, uint) = 0;
+    virtual void AddLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) = 0;
 
-    virtual void RemoveLocalAudioTrack(::webrtc::AudioTrackInterface*, uint) = 0;
+    virtual void RemoveLocalAudioTrack(::webrtc::AudioTrackInterface* audio_track, uint ssrc) = 0;
 
-    virtual void GetStats(::webrtc::MediaStreamTrackInterface*, ::std::vector<::webrtc::StatsReport const*>*) = 0;
+    virtual void
+    GetStats(::webrtc::MediaStreamTrackInterface* track, ::std::vector<::webrtc::StatsReport const*>* reports) = 0;
     // NOLINTEND
 
 public:

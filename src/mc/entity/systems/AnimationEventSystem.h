@@ -14,7 +14,7 @@ class AnimationEventSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
 
     virtual ~AnimationEventSystem() /*override*/ = default;
     // NOLINTEND

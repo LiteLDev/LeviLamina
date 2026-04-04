@@ -18,9 +18,9 @@ public:
     virtual ~IRepositoryLoader() = default;
 
     virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
-    buildTaskData(::RepositoryLoading::BuildTaskDataOptions const&) = 0;
+    buildTaskData(::RepositoryLoading::BuildTaskDataOptions const& ops) = 0;
 
-    virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&&) = 0;
+    virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData) = 0;
 
     virtual ::std::shared_ptr<::RepositoryPacks const> getPacks() const = 0;
     // NOLINTEND

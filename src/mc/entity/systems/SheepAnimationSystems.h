@@ -10,12 +10,12 @@ class EntitySystems;
 namespace SheepAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& JEB_NAME();
+MCAPI ::std::string const& JEB_NAME();
 // NOLINTEND
 
 } // namespace SheepAnimationSystems

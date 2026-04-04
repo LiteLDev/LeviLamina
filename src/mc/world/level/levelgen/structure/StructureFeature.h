@@ -68,20 +68,20 @@ public:
     );
 
     virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        uint,
-        ::IPreliminarySurfaceProvider const&,
-        ::Dimension const&
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        uint                                 levelSeed,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
+        ::Dimension const&                   dimension
     ) = 0;
 
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&,
-        ::BiomeSource const&,
-        ::Random&,
-        ::ChunkPos const&,
-        ::IPreliminarySurfaceProvider const&
+        ::Dimension&                         generator,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    lc,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) = 0;
 
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);

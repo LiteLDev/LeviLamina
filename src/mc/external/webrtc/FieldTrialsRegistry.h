@@ -27,7 +27,7 @@ public:
 
     virtual ::std::string Lookup(::std::string_view key) const /*override*/;
 
-    virtual ::std::string GetValue(::std::string_view) const = 0;
+    virtual ::std::string GetValue(::std::string_view key) const = 0;
     // NOLINTEND
 
 public:

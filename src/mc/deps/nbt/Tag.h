@@ -38,9 +38,9 @@ public:
 
     virtual void deleteChildren();
 
-    virtual void write(::IDataOutput&) const = 0;
+    virtual void write(::IDataOutput& dos) const = 0;
 
-    virtual ::Bedrock::Result<void> load(::IDataInput&) = 0;
+    virtual ::Bedrock::Result<void> load(::IDataInput& dis) = 0;
 
     virtual ::std::string toString() const = 0;
 

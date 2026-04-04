@@ -69,7 +69,7 @@ public:
 
     virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const /*override*/;
 
-    virtual bool _allowReadBlock(::BlockPos const&, ::Block const& block) const;
+    virtual bool _allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     virtual bool _allowReadActor(::Actor const& actor) const;
 
@@ -242,7 +242,7 @@ public:
 
     MCAPI void $fillEmpty(::BlockPos const& size);
 
-    MCAPI bool $_allowReadBlock(::BlockPos const&, ::Block const& block) const;
+    MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     MCAPI bool $_allowReadActor(::Actor const& actor) const;
 

@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     virtual ~ICandidacyHeuristic() = default;
 
-    virtual bool reject(::SubChunkPos const&) const;
+    virtual bool reject(::SubChunkPos const& subChunkPos) const;
 
     virtual float computeScore(::BlockPos const&, ::PointLighting::ManagedPointLight const&) const = 0;
     // NOLINTEND

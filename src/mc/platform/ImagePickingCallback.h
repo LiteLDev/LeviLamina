@@ -12,7 +12,7 @@ public:
     virtual ~ImagePickingCallback();
 #endif
 
-    virtual void onImagePickingSuccess(::std::string const&) = 0;
+    virtual void onImagePickingSuccess(::std::string const& temporaryFilePath) = 0;
 
     virtual void onImagePickingCanceled() = 0;
     // NOLINTEND

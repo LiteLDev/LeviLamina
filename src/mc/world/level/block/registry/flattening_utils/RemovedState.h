@@ -22,9 +22,9 @@ public:
     // NOLINTBEGIN
     virtual ~RemovedState() = default;
 
-    virtual void addValue(::CompoundTag const&) = 0;
+    virtual void addValue(::CompoundTag const& tag) = 0;
 
-    virtual void match(::CompoundTagUpdaterNodeBuilder&, uint64) const = 0;
+    virtual void match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const = 0;
 
     virtual uint64 valueCount() const = 0;
     // NOLINTEND

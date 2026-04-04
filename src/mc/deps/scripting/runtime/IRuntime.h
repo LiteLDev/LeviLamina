@@ -45,68 +45,76 @@ public:
     virtual void moveToThread();
 
     virtual ::std::optional<::Scripting::ScriptContext> createContext(
-        ::Scripting::ModuleBindingBundle&&,
-        ::Scripting::IDependencyLoader*,
-        ::Scripting::IPrinter*,
-        ::Scripting::ContextConfig const&
+        ::Scripting::ModuleBindingBundle&& bindings,
+        ::Scripting::IDependencyLoader*    loader,
+        ::Scripting::IPrinter*             printer,
+        ::Scripting::ContextConfig const&  config
     ) = 0;
 
-    virtual void destroyContext(::Scripting::ContextId) = 0;
+    virtual void destroyContext(::Scripting::ContextId contextId) = 0;
 
     virtual ::Scripting::ResultAny
-    run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>) = 0;
+    run(::Scripting::ContextId                  contextId,
+        ::Scripting::IPayload*                  payload,
+        ::std::optional<::Scripting::Privilege> privilege) = 0;
 
     virtual ::Scripting::ResultAny call(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
-        ::entt::meta_any*,
-        uint,
-        ::entt::meta_type const&,
-        ::std::optional<::Scripting::Privilege>
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
+        ::entt::meta_any*                                        args,
+        uint                                                     argc,
+        ::entt::meta_type const&                                 expectedReturnType,
+        ::std::optional<::Scripting::Privilege>                  privilege
     ) = 0;
 
-    virtual ::Scripting::ResultAny
-    resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
+    virtual ::Scripting::ResultAny resolve(
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
+    ) = 0;
 
-    virtual ::Scripting::ResultAny
-    reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
+    virtual ::Scripting::ResultAny reject(
+        ::Scripting::ContextId                                   contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
+        ::entt::meta_any&                                        arg
+    ) = 0;
 
     virtual ::Scripting::FutureStatus
         getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
 
     virtual ::Scripting::ResultAny getFutureResult(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
-        ::entt::meta_type const&
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
+        ::entt::meta_type const&                                expectedResultType
     ) const = 0;
 
     virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        executeCoroutines(::std::optional<::Scripting::Privilege>) = 0;
+    executeCoroutines(::std::optional<::Scripting::Privilege> privilege) = 0;
 
     virtual bool hasPendingJobs() = 0;
 
     virtual ::Scripting::IDebuggerController*
-    enableDebugger(::Scripting::IDebuggerTransport&, ::Scripting::IBreakpointValidator&) = 0;
+    enableDebugger(::Scripting::IDebuggerTransport& transport, ::Scripting::IBreakpointValidator& validator) = 0;
 
     virtual void disableDebugger() = 0;
 
     virtual void startProfiler() = 0;
 
     virtual void stopProfiler(
-        ::std::function<void(::std::string_view)>,
-        ::std::optional<::std::reference_wrapper<::std::string const>>
+        ::std::function<void(::std::string_view)>                      captureCb,
+        ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
     ) = 0;
 
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const = 0;
 
-    virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings) = 0;
+    virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings settings) = 0;
 
     virtual void disableWatchdog() = 0;
 
     virtual ::Scripting::IWatchdog* getWatchdog() const = 0;
 
     virtual ::std::optional<::Scripting::TypeNameInfo>
-    getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const = 0;
+    getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const = 0;
     // NOLINTEND
 
 public:

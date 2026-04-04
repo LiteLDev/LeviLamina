@@ -28,15 +28,15 @@ public:
     virtual ~ContainerScreenValidatorBase();
 
     virtual ::std::shared_ptr<::ContainerValidationCommitObject>
-    postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
+    postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const& item);
 
     virtual bool isCraftingImplemented();
 
     virtual ::ContainerValidationCraftResult getCraftResult(
-        ::ContainerScreenContext const&,
-        ::ContainerScreenValidation&,
-        ::std::unique_ptr<::ContainerValidationCraftInputs>,
-        uchar const
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
     );
     // NOLINTEND
 
@@ -50,15 +50,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::shared_ptr<::ContainerValidationCommitObject>
-    $postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
+    $postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const& item);
 
     MCFOLD bool $isCraftingImplemented();
 
     MCAPI ::ContainerValidationCraftResult $getCraftResult(
-        ::ContainerScreenContext const&,
-        ::ContainerScreenValidation&,
-        ::std::unique_ptr<::ContainerValidationCraftInputs>,
-        uchar const
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
     );
 
 

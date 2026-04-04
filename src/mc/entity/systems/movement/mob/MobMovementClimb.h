@@ -24,7 +24,7 @@ struct TickingSystemWithInfo;
 namespace MobMovementClimb {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canAutoClimbNow(
+MCAPI bool canAutoClimbNow(
     ::ActorDataFlagComponent const& synchedActorData,
     ::AABBShapeComponent const&     aabbShape,
     ::StateVectorComponent const&   stateVector,
@@ -32,15 +32,15 @@ MCNAPI bool canAutoClimbNow(
     ::IConstBlockSource const&      region
 );
 
-MCNAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI ::Block const& getBlockAtFeet(
+MCAPI ::Block const& getBlockAtFeet(
     ::AABBShapeComponent const&   aabbShape,
     ::StateVectorComponent const& stateVector,
     ::IConstBlockSource const&    constBlockSource
 );
 
-MCNAPI void tickAutoClimbingMob(
+MCAPI void tickAutoClimbingMob(
     ::StrictEntityContext const&                          entity,
     ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
     ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
@@ -51,7 +51,7 @@ MCNAPI void tickAutoClimbingMob(
     ::IConstBlockSource const&                            region
 );
 
-MCNAPI void tickAutoClimbingMobInLava(
+MCAPI void tickAutoClimbingMobInLava(
     ::StrictEntityContext const&                          entity,
     ::NavigationComponent const&                          navigation,
     ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,

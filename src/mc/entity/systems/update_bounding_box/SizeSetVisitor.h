@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/systems/update_bounding_box/SetSizeArgs.h"
+
 namespace UpdateBoundingBox {
 
 struct SizeSetVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8a678a;
+    ::ll::TypedStorage<8, 64, ::UpdateBoundingBox::SetSizeArgs> mArguments;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SizeSetVisitor& operator=(SizeSetVisitor const&);
-    SizeSetVisitor(SizeSetVisitor const&);
-    SizeSetVisitor();
 };
 
 } // namespace UpdateBoundingBox

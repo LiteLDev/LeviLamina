@@ -21,7 +21,7 @@ struct InterpolateMovementNeededComponent;
 namespace HorsePostTravelSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doPostTravelSystem(
+MCAPI void _doPostTravelSystem(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>>,
     ::StrictEntityContext const&                         context,
     ::HorseStandCounterComponent&                        horseStandCounter,

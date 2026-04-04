@@ -16,31 +16,41 @@ public:
     // NOLINTBEGIN
     virtual ~ISystemInterface() = default;
 
-    virtual bool generateKeyPair(::std::string&, ::std::string&) = 0;
-
-    virtual bool constructPublicKey(::std::string const&, ::std::string const&, ::std::string&) = 0;
-
-    virtual ::std::string encryptData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Asymmetric::Padding,
-        ::Crypto::Asymmetric::PubKeyFormat,
-        bool
-    ) = 0;
-
-    virtual ::std::string decryptData(::std::string const&, ::std::string const&, ::Crypto::Asymmetric::Padding) = 0;
-
-    virtual ::std::string signData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Hash::HashType,
-        ::Crypto::Asymmetric::PrivateKeySigningFormat
-    ) = 0;
+    virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) = 0;
 
     virtual bool
-    verifyData(::std::string const&, ::std::string const&, ::std::string const&, ::Crypto::Hash::HashType) = 0;
+    constructPublicKey(::std::string const& modulus, ::std::string const& exponent, ::std::string& keyOut) = 0;
 
-    virtual ::std::string computeSharedSecret(::std::string const&, ::std::string const&) = 0;
+    virtual ::std::string encryptData(
+        ::std::string const&               publicKey,
+        ::std::string const&               data,
+        ::Crypto::Asymmetric::Padding      paddingType,
+        ::Crypto::Asymmetric::PubKeyFormat keyFormat,
+        bool                               useSHA256
+    ) = 0;
+
+    virtual ::std::string decryptData(
+        ::std::string const&          privateKey,
+        ::std::string const&          data,
+        ::Crypto::Asymmetric::Padding paddingType
+    ) = 0;
+
+    virtual ::std::string signData(
+        ::std::string const&                          privateKey,
+        ::std::string const&                          data,
+        ::Crypto::Hash::HashType                      hash,
+        ::Crypto::Asymmetric::PrivateKeySigningFormat format
+    ) = 0;
+
+    virtual bool verifyData(
+        ::std::string const&     publicKey,
+        ::std::string const&     signature,
+        ::std::string const&     data,
+        ::Crypto::Hash::HashType hash
+    ) = 0;
+
+    virtual ::std::string
+    computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey) = 0;
     // NOLINTEND
 
 public:

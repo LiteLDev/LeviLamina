@@ -26,7 +26,7 @@ public:
 
     virtual ::std::unique_ptr<::Molang::details::IComplexExpression> clone() const = 0;
 
-    virtual ::MolangScriptArg const& evalGeneric(::RenderParams&) const = 0;
+    virtual ::MolangScriptArg const& evalGeneric(::RenderParams& renderParams) const = 0;
 
     virtual bool isInitialized() const = 0;
 
@@ -36,7 +36,8 @@ public:
 
     virtual ::MolangVersion getMolangVersion() const = 0;
 
-    virtual void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) = 0;
+    virtual void
+    replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap) = 0;
 
     virtual void validateArrayVariables() const = 0;
 

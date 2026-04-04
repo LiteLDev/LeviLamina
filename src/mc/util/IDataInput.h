@@ -27,7 +27,7 @@ public:
 
     virtual ::Bedrock::Result<int64> readLongLongResult() = 0;
 
-    virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
+    virtual ::Bedrock::Result<void> readBytesResult(void* data, uint64 bytes) = 0;
 
     virtual uint64 numBytesLeft() const = 0;
     // NOLINTEND

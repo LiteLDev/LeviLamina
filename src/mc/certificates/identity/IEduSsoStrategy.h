@@ -25,38 +25,38 @@ public:
     // NOLINTBEGIN
     virtual ~IEduSsoStrategy() = default;
 
-    virtual ::Json::Value clientConfig(::Json::Value const&) const = 0;
+    virtual ::Json::Value clientConfig(::Json::Value const& loginResponse) const = 0;
 
     virtual ::Identity::_TokenRefreshState::Enum refreshToken(
-        ::Identity::IEduAuth&,
-        ::AccessTokenInfo const&,
-        int64,
-        ::Identity::EduResourceType,
-        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>,
-        ::std::function<void()>
+        ::Identity::IEduAuth&                                                                  auth,
+        ::AccessTokenInfo const&                                                               info,
+        int64                                                                                  currentTime,
+        ::Identity::EduResourceType                                                            eduIdentityResource,
+        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)> callback,
+        ::std::function<void()>                                                                refreshingToken
     ) = 0;
 
-    virtual void onRefreshedToken(bool, ::Identity::EduResourceType) = 0;
+    virtual void onRefreshedToken(bool failed, ::Identity::EduResourceType eduIdentityResource) = 0;
 
     virtual ::Identity::SsoPromptMode signIn(
-        ::Identity::IEduAuth&,
-        int64,
-        ::std::function<void()>,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+        ::Identity::IEduAuth&   auth,
+        int64                   currentTime,
+        ::std::function<void()> showingDialogBoxCallback,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
     ) = 0;
 
-    virtual void signInSuccess(::std::string const&) = 0;
+    virtual void signInSuccess(::std::string const& userHint) = 0;
 
     virtual void demoSignInSuccess() = 0;
 
-    virtual void resetAuthentication(::Identity::IEduAuth&, bool) = 0;
+    virtual void resetAuthentication(::Identity::IEduAuth& auth, bool resetUIState) = 0;
 
     virtual bool isDemoConversion() const = 0;
 
     virtual void signInGraph(
-        ::Identity::IEduAuth&,
-        ::std::string const&,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
+        ::Identity::IEduAuth&                                                                                   auth,
+        ::std::string const&                                                                                    userId,
+        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)> callback
     ) = 0;
     // NOLINTEND
 

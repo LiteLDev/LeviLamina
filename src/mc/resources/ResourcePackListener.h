@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ResourcePackListener();
 
-    virtual void onActiveResourcePacksChanged(::ResourcePackManager&) = 0;
+    virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) = 0;
 
     virtual bool onFullPackStackInvalid();
 
@@ -23,7 +23,7 @@ public:
 
     virtual void onResourceManagerDestroyed(::ResourcePackManager&);
 
-    virtual void onJsonResourcesChanged(::ResourcePackManager&);
+    virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 
     MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
 
-    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
+    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
 
 
     // NOLINTEND

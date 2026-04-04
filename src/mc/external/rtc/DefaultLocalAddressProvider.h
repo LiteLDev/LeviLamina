@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~DefaultLocalAddressProvider() = default;
 
-    virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const = 0;
+    virtual bool GetDefaultLocalAddress(int family, ::rtc::IPAddress* addr) const = 0;
     // NOLINTEND
 
 public:

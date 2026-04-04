@@ -20,18 +20,26 @@ public:
     // NOLINTBEGIN
     virtual ~ServerLocator() /*override*/;
 
-    virtual void
-    startAnnouncingServer(::std::string const&, ::std::string const&, ::GameType, int, int, bool, bool, bool) = 0;
+    virtual void startAnnouncingServer(
+        ::std::string const& playerName,
+        ::std::string const& worldName,
+        ::GameType           gameType,
+        int                  numPlayers,
+        int                  maxNumPlayers,
+        bool                 isJoinableThroughServerScreen,
+        bool                 isEditorWorld,
+        bool                 isHardcore
+    ) = 0;
 
     virtual void stopAnnouncingServer() = 0;
 
-    virtual void startServerDiscovery(::PortPair) = 0;
+    virtual void startServerDiscovery(::PortPair ports) = 0;
 
     virtual void stopServerDiscovery() = 0;
 
-    virtual void addCustomServer(::AsynchronousIPResolver const&, int) = 0;
+    virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) = 0;
 
-    virtual void addCustomServer(::std::string const&, int) = 0;
+    virtual void addCustomServer(::std::string const& address, int port) = 0;
 
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const = 0;
 
@@ -39,10 +47,13 @@ public:
 
     virtual void update() = 0;
 
-    virtual float getPingTimeForGUID(::std::string const&) = 0;
+    virtual float getPingTimeForGUID(::std::string const& guid) = 0;
 
-    virtual void
-    checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) = 0;
+    virtual void checkCanConnectToCustomServerAsync(
+        ::std::string                                         hostIpAddress,
+        int                                                   port,
+        ::std::function<void(::ServerConnectivityTestResult)> callback
+    ) = 0;
 
     virtual void _onDisable() /*override*/;
 

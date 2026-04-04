@@ -31,9 +31,9 @@ public:
     );
 
     virtual void updateParticleAppearance(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle&,
-        ::RenderParams&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams
     );
 
     virtual void

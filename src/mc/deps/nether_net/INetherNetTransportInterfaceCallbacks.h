@@ -23,15 +23,21 @@ public:
 
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) = 0;
 
-    virtual void OnSessionOpen(::NetherNet::NetworkID, uint64) = 0;
+    virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) = 0;
 
-    virtual void OnSessionClose(::NetherNet::NetworkID, uint64, ::NetherNet::ESessionError, ::Json::Value) = 0;
+    virtual void OnSessionClose(
+        ::NetherNet::NetworkID     networkID,
+        uint64                     sessionId,
+        ::NetherNet::ESessionError sessionError,
+        ::Json::Value              summary
+    ) = 0;
 
     virtual void OnSpopViolation() = 0;
 
-    virtual void OnBroadcastResponseReceived(::NetherNet::NetworkID, void const*, int) = 0;
+    virtual void
+    OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) = 0;
 
-    virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void*, int*) = 0;
+    virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) = 0;
     // NOLINTEND
 
 public:

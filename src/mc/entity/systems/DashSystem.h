@@ -20,7 +20,7 @@ class DashSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickDashSystem(
+    MCAPI static void _tickDashSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorTickedComponent>,
@@ -29,6 +29,6 @@ public:
         ::EntityModifier<::DashCooldownTimerComponent> modifier
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -22,29 +22,33 @@ public:
     virtual ~EditorStructureDBManagerServiceProvider() = default;
 
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const&,
-        ::std::string const&,
-        ::std::optional<::std::string> const&,
-        ::std::optional<::std::string> const&
+        ::Editor::EditorStructureTemplate const& templateData,
+        ::std::string const&                     id,
+        ::std::optional<::std::string> const&    fullName,
+        ::std::optional<::std::string> const&    displayName
     ) = 0;
 
-    virtual bool replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&, bool) = 0;
+    virtual bool replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate,
+        bool                                     isHost
+    ) = 0;
 
-    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const&) const = 0;
+    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) const = 0;
 
     virtual ::std::vector<::HashedString> const getEditorStructureGuids() const = 0;
 
     virtual ::std::vector<::Editor::EditorStructureDBMetadata> const
-    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const&) const = 0;
+    queryEditorStructureDBMetadata(::Editor::EditorStructureMetadataQueryParams const& params) const = 0;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    deleteEditorStructureDBMetadataByGuid(::mce::UUID const&, bool) = 0;
+    deleteEditorStructureDBMetadataByGuid(::mce::UUID const& guid, bool isHost) = 0;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const&, bool) = 0;
+    editEditorStructureDBMetadata(::Editor::EditorStructureMetadataEditParams const& params, bool isHost) = 0;
 
     virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
-    getEditorStructureMetadataByGuid(::mce::UUID const&) const = 0;
+    getEditorStructureMetadataByGuid(::mce::UUID const& guid) const = 0;
 
     virtual void processLevelStructures() = 0;
     // NOLINTEND

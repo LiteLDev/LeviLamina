@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual void onUserAdded(::std::shared_ptr<::Social::User> const& user);
 
-    virtual void onUserRemoved(::std::shared_ptr<::Social::User> const&);
+    virtual void onUserRemoved(::std::shared_ptr<::Social::User> const& user);
 
     virtual void onUserStorageAreaChanged(
         ::std::shared_ptr<::Social::User> const&    user,

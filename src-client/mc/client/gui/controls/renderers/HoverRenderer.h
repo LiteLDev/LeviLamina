@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&) = 0;
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) = 0;
 
     virtual ~HoverRenderer() /*override*/;
     // NOLINTEND

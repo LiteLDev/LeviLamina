@@ -23,7 +23,7 @@ class ResetMoveDirectionJumpPendingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickResetMoveDirectionJumpPendingSystem(
+    MCAPI static void tickResetMoveDirectionJumpPendingSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::OnGroundFlagComponent>,

@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~ICommandOriginLoader() = default;
 
-    virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const&) = 0;
+    virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag) = 0;
     // NOLINTEND
 
 public:

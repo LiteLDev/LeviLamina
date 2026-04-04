@@ -33,33 +33,33 @@ public:
     // NOLINTBEGIN
     virtual ~Property() = default;
 
-    virtual void* Bind(::cohtml::Binder*, void*) const = 0;
+    virtual void* Bind(::cohtml::Binder* binder, void* object) const = 0;
 
-    virtual void* BindValue(::cohtml::Binder*, void*) const = 0;
+    virtual void* BindValue(::cohtml::Binder* binder, void* object) const = 0;
 
-    virtual void* Read(::cohtml::Binder*, void*) const = 0;
+    virtual void* Read(::cohtml::Binder* binder, void* object) const = 0;
 
-    virtual void* ReadValue(::cohtml::Binder*, void*) const = 0;
+    virtual void* ReadValue(::cohtml::Binder* binder, void* object) const = 0;
 
     virtual ::cohtml::Property* Clone() const = 0;
 
-    virtual bool ToBoolean(void*, bool*) const = 0;
+    virtual bool ToBoolean(void* object, bool* boolean) const = 0;
 
-    virtual bool ToNumber(void*, float*) const = 0;
+    virtual bool ToNumber(void* object, float* number) const = 0;
 
-    virtual bool ToString(void*, char*, uint64*) const = 0;
+    virtual bool ToString(void* object, char* buffer, uint64* length) const = 0;
 
-    virtual bool ToColor(void*, ::renoir::Color*) const = 0;
+    virtual bool ToColor(void* object, ::renoir::Color* color) const = 0;
 
-    virtual bool ToTransformMatrix2D(void*, float*) const = 0;
+    virtual bool ToTransformMatrix2D(void* object, float* matrix) const = 0;
 
-    virtual bool ToArray(::cohtml::Binder*, void*, ::cohtml::ArrayInfo*) const = 0;
+    virtual bool ToArray(::cohtml::Binder* binder, void* object, ::cohtml::ArrayInfo* arrayInfo) const = 0;
 
-    virtual bool ToPair(::cohtml::Binder*, void*, ::cohtml::PairInfo*) const = 0;
+    virtual bool ToPair(::cohtml::Binder* binder, void* object, ::cohtml::PairInfo* pairInfo) const = 0;
 
-    virtual bool ToMap(::cohtml::Binder*, void*, ::cohtml::MapInfo*) const = 0;
+    virtual bool ToMap(::cohtml::Binder* binder, void* object, ::cohtml::MapInfo* mapInfo) const = 0;
 
-    virtual bool ToObject(::cohtml::Binder*, void*, ::cohtml::ObjectInfo*) const = 0;
+    virtual bool ToObject(::cohtml::Binder* binder, void* object, ::cohtml::ObjectInfo* objInfo) const = 0;
     // NOLINTEND
 
 public:

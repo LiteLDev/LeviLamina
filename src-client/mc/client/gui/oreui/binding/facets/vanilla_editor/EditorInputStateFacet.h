@@ -85,7 +85,7 @@ public:
         ::std::optional<int> const& processingState
     );
 
-    MCAPI void _handleViewportFocusChange(bool isFocused);
+    MCAPI void _handleViewportFocusChange(bool);
 
     MCFOLD ::std::unordered_map<
         ::HashedString,

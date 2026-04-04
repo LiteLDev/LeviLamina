@@ -18,7 +18,7 @@ public:
 
     virtual int MoveToCandidateAfter(int);
 
-    virtual int MoveToCandidateBefore(int) = 0;
+    virtual int MoveToCandidateBefore(int index) = 0;
 
     virtual int MoveToNext();
 
@@ -30,7 +30,7 @@ public:
 
     virtual void SetText(char const*, uint);
 
-    virtual void SetTextRef(char const*) = 0;
+    virtual void SetTextRef(char const* utfBuffer) = 0;
     // NOLINTEND
 
 public:

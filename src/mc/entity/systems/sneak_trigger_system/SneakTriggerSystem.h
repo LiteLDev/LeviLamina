@@ -31,14 +31,14 @@ namespace SneakTriggerSystem { struct PlayerStatusTransitions; }
 namespace SneakTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createActionSystem();
+MCAPI ::TickingSystemWithInfo createActionSystem();
 
-MCNAPI ::TickingSystemWithInfo createIntentSystem();
+MCAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCNAPI ::SneakTriggerSystem::PlayerStatusTransitions
+MCAPI ::SneakTriggerSystem::PlayerStatusTransitions
 determineStatus(::SneakTriggerSystem::DetermineStatusArgs const& args);
 
-MCNAPI void doActionTick(
+MCAPI void doActionTick(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                                 entity,
     ::PlayerActionComponent const&                               actions,
@@ -47,7 +47,7 @@ MCNAPI void doActionTick(
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& modifier
 );
 
-MCNAPI void doIntentTick(
+MCAPI void doIntentTick(
     ::StrictEntityContext const&,
     ::MoveInputComponent const&                        moveInput,
     ::ActorGameTypeComponent const&                    actorGameType,

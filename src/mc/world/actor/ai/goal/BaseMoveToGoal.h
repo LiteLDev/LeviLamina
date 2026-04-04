@@ -56,7 +56,7 @@ public:
 
     virtual bool hasReachedTarget() const;
 
-    virtual bool isValidTarget(::BlockSource&, ::BlockPos const&) = 0;
+    virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) = 0;
 
     virtual int _nextStartTick();
 

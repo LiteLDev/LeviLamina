@@ -30,71 +30,85 @@ public:
     // NOLINTBEGIN
     virtual ~ILevelListCache() /*override*/;
 
-    virtual void addLevel(::std::string const&, ::LevelData&&) = 0;
+    virtual void addLevel(::std::string const& levelId, ::LevelData&& levelData) = 0;
 
-    virtual void deleteLevel(::std::string const&) = 0;
+    virtual void deleteLevel(::std::string const& levelId) = 0;
 
-    virtual void refreshLevel(::std::string const&) = 0;
+    virtual void refreshLevel(::std::string const& levelId) = 0;
 
-    virtual void deleteLevelFiles(::std::string const&) = 0;
+    virtual void deleteLevelFiles(::std::string const& levelId) = 0;
 
-    virtual void postDeleteLevel(::std::string const&) = 0;
+    virtual void postDeleteLevel(::std::string const& levelId) = 0;
 
-    virtual void renameLevel(::std::string const&, ::std::string const&) = 0;
+    virtual void renameLevel(::std::string const& levelId, ::std::string const& newLevelName) = 0;
 
-    virtual void renameAndSaveLevelData(::std::string const&, ::std::string const&, ::LevelData const&) = 0;
+    virtual void renameAndSaveLevelData(
+        ::std::string const& levelId,
+        ::std::string const& newLevelName,
+        ::LevelData const&   levelData
+    ) = 0;
 
-    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& data) = 0;
+    virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) = 0;
 
-    virtual void createBackupCopyOfWorld(::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual void createBackupCopyOfWorld(
+        ::std::string const& levelId,
+        ::std::string const& newLevelId,
+        ::std::string const& newName
+    ) = 0;
 
-    virtual bool hasLevelWithId(::std::string const&) = 0;
+    virtual bool hasLevelWithId(::std::string const& levelId) = 0;
 
-    virtual ::std::string getLevelIdFromPath(::Core::Path const&, ::Core::Path const&) = 0;
+    virtual ::std::string getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath) = 0;
 
-    virtual bool checkIfLevelIsCorruptOrMissing(::std::string const&) = 0;
+    virtual bool checkIfLevelIsCorruptOrMissing(::std::string const& levelId) = 0;
 
-    virtual void addObserver(::LevelListCacheObserver&) = 0;
+    virtual void addObserver(::LevelListCacheObserver& observer) = 0;
 
-    virtual void removeObserver(::LevelListCacheObserver&) = 0;
+    virtual void removeObserver(::LevelListCacheObserver& observer) = 0;
 
     virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
-        ::Scheduler&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&,
-        ::std::chrono::nanoseconds const&,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>,
-        ::std::unique_ptr<::LevelStorageEventing>
+        ::Scheduler&                                                      scheduler,
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     ) = 0;
 
     virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     ) = 0;
 
-    virtual ::LevelSummary* getLevelSummary(::std::string const&) = 0;
+    virtual ::LevelSummary* getLevelSummary(::std::string const& levelId) = 0;
 
-    virtual ::LevelSummary const* getLevelSummaryByName(::std::string const&) = 0;
+    virtual ::LevelSummary const* getLevelSummaryByName(::std::string const& levelName) = 0;
 
-    virtual ::LevelSummary* getOrCreateLevelSummary(::Core::Path const&) = 0;
+    virtual ::LevelSummary* getOrCreateLevelSummary(::Core::Path const& directory) = 0;
 
-    virtual ::LevelData* getLevelData(::std::string const& levelID) = 0;
+    virtual ::LevelData* getLevelData(::std::string const& levelId) = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::LevelData> getLevelDataNonOwnerPointer(::std::string const&) = 0;
+    virtual ::Bedrock::NonOwnerPointer<::LevelData> getLevelDataNonOwnerPointer(::std::string const& levelId) = 0;
 
-    virtual ::LevelSummary* getShallowLevelSummary(::std::string const&) = 0;
+    virtual ::LevelSummary* getShallowLevelSummary(::std::string const& levelId) = 0;
 
-    virtual void getLevelList(::std::vector<::LevelSummary>&, bool, bool, bool, bool) = 0;
+    virtual void getLevelList(
+        ::std::vector<::LevelSummary>& dest,
+        bool                           includeShallowSummaries,
+        bool                           includePartiallyCopiedLevels,
+        bool                           includeBetaRetailLevels,
+        bool                           includeInvalidLevelDataLevels
+    ) = 0;
 
-    virtual bool hasCachedLevels(bool) const = 0;
+    virtual bool hasCachedLevels(bool includeShallowSummaries) const = 0;
 
-    virtual void updateLevelCache(::std::string const&) = 0;
+    virtual void updateLevelCache(::std::string const& levelId) = 0;
 
     virtual ::std::unique_ptr<::LevelStorageObserver> createLevelStorageObserver() = 0;
 
-    virtual void onSave(::std::string const&) = 0;
+    virtual void onSave(::std::string const& levelId) = 0;
 
     virtual void onStorageChanged() = 0;
 

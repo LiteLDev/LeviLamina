@@ -44,9 +44,10 @@ public:
     virtual ~BaseGameTestBatchRunner();
 
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
-    _createGameTestInstance(::gametest::BaseGameTestFunction&) = 0;
+    _createGameTestInstance(::gametest::BaseGameTestFunction& function) = 0;
 
-    virtual void _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance>, ::gametest::GameTestTicker&) = 0;
+    virtual void
+    _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) = 0;
     // NOLINTEND
 
 public:

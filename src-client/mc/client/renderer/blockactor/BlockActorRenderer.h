@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~BlockActorRenderer() /*override*/;
 
-    virtual void render(::BaseActorRenderContext&, ::BlockActorRenderData&) = 0;
+    virtual void render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData) = 0;
 
     virtual void renderAlpha(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
 

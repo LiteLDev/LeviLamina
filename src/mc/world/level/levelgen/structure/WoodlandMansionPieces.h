@@ -41,19 +41,19 @@ public:
         // NOLINTBEGIN
         virtual ~FloorRoomCollection() = default;
 
-        virtual ::std::string get1x1(::Random&) = 0;
+        virtual ::std::string get1x1(::Random& random) = 0;
 
-        virtual ::std::string get1x1Secret(::Random&) = 0;
+        virtual ::std::string get1x1Secret(::Random& random) = 0;
 
-        virtual ::std::string get1x2SideEntrance(::Random&, bool) = 0;
+        virtual ::std::string get1x2SideEntrance(::Random& random, bool isStairsRoom) = 0;
 
-        virtual ::std::string get1x2FrontEntrance(::Random&, bool) = 0;
+        virtual ::std::string get1x2FrontEntrance(::Random& random, bool isStairsRoom) = 0;
 
-        virtual ::std::string get1x2Secret(::Random&) = 0;
+        virtual ::std::string get1x2Secret(::Random& random) = 0;
 
-        virtual ::std::string get2x2(::Random&) = 0;
+        virtual ::std::string get2x2(::Random& random) = 0;
 
-        virtual ::std::string get2x2Secret(::Random&) = 0;
+        virtual ::std::string get2x2Secret(::Random& random) = 0;
         // NOLINTEND
 
     public:

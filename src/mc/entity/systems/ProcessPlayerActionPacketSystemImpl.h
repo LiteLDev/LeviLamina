@@ -19,14 +19,14 @@ struct ServerPlayerCurrentMovementComponent;
 namespace ProcessPlayerActionPacketSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doProcessPlayerActionPacket(
+MCAPI void doProcessPlayerActionPacket(
     ::PlayerComponent const&                      playerComponent,
     ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
     ::UserEntityIdentifierComponent const&        userIdentifierComponent,
     ::ActorOwnerComponent&                        actorOwnerComponent
 );
 
-MCNAPI void tickSystem(
+MCAPI void tickSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,

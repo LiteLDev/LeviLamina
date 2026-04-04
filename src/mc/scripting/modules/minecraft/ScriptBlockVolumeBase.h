@@ -36,7 +36,7 @@ public:
     virtual ~ScriptBlockVolumeBase() /*override*/ = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
-        getBlockLocationIterator(::Scripting::WeakLifetimeScope) = 0;
+    getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) = 0;
 
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() = 0;
     // NOLINTEND

@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource) /*override*/;
+    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     virtual ~Breeze() /*override*/ = default;
     // NOLINTEND
@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource);
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
 
     // NOLINTEND

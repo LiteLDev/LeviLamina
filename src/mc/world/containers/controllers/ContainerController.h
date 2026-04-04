@@ -34,13 +34,13 @@ public:
     virtual ~ContainerController();
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int) const;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const;
 
     virtual bool canRemove(int slot, int removeCount) const;
 
     virtual bool isItemAllowed(::ItemStackBase const& item) const;
 
-    virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    virtual bool isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
 
     virtual int getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
@@ -116,13 +116,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getRecipeItem(int) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
 
     MCFOLD bool $canRemove(int slot, int removeCount) const;
 
     MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
 
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    MCAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
 
     MCFOLD int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 

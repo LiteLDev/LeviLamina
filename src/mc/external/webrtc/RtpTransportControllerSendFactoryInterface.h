@@ -17,7 +17,7 @@ public:
     virtual ~RtpTransportControllerSendFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
-    Create(::webrtc::RtpTransportConfig const&) = 0;
+    Create(::webrtc::RtpTransportConfig const& config) = 0;
     // NOLINTEND
 
 public:

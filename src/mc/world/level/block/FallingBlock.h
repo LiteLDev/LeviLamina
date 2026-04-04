@@ -26,9 +26,9 @@ public:
 
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    virtual ::mce::Color getDustColor(::Block const&) const = 0;
+    virtual ::mce::Color getDustColor(::Block const& block) const = 0;
 
-    virtual ::std::string getDustParticleName(::Block const&) const = 0;
+    virtual ::std::string getDustParticleName(::Block const& block) const = 0;
 
     virtual bool falling() const;
 
@@ -39,7 +39,7 @@ public:
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~FallingBlock() /*override*/;
     // NOLINTEND
@@ -80,7 +80,7 @@ public:
     MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

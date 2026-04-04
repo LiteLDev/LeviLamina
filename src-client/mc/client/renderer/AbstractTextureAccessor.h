@@ -19,17 +19,26 @@ public:
     // NOLINTBEGIN
     virtual ~AbstractTextureAccessor() = default;
 
-    virtual ::cg::ImageBuffer* insertImageIntoCache(::ResourceLocation const&, ::cg::ImageBuffer&&) = 0;
+    virtual ::cg::ImageBuffer*
+    insertImageIntoCache(::ResourceLocation const& resourceLocation, ::cg::ImageBuffer&& imageBuffer) = 0;
 
-    virtual ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const&, bool const) = 0;
+    virtual ::cg::ImageBuffer*
+    getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool const forceReload) = 0;
 
-    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const&) const = 0;
+    virtual ::cg::ImageBuffer* getCachedImage(::ResourceLocation const& resourceLocation) const = 0;
 
-    virtual void setTextureMetadata(::ResourceLocation const&, ::mce::TextureDescription const&) = 0;
+    virtual void setTextureMetadata(
+        ::ResourceLocation const&        resourceLocation,
+        ::mce::TextureDescription const& textureDescription
+    ) = 0;
 
-    virtual ::BedrockTextureData const* getBedrockTextureData(::ResourceLocation const&) const = 0;
+    virtual ::BedrockTextureData const* getBedrockTextureData(::ResourceLocation const& resourceLocation) const = 0;
 
-    virtual bool isLoaded(::ResourceLocation const&, bool, ::cg::TextureSetLayerType const) const = 0;
+    virtual bool isLoaded(
+        ::ResourceLocation const&       resourceLocation,
+        bool                            ignoreCreation,
+        ::cg::TextureSetLayerType const textureType
+    ) const = 0;
 
     virtual ::cg::ImageBuffer const& getMissingImageBuffer() const = 0;
     // NOLINTEND

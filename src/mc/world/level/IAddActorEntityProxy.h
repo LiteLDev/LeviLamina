@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~IAddActorEntityProxy() = default;
 
-    virtual void initializeActor(::Actor&) = 0;
+    virtual void initializeActor(::Actor& actor) = 0;
 
-    virtual void reloadActor(::Actor&) = 0;
+    virtual void reloadActor(::Actor& actor) = 0;
     // NOLINTEND
 
 public:

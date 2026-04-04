@@ -23,11 +23,11 @@ public:
     virtual bool canStartLocalServer() const = 0;
 
     virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
-        ::std::string const&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::LevelSettings const&,
-        ::StartIntent
+        ::std::string const&     levelId,
+        ::std::string const&     levelName,
+        ::ContentIdentity const& premiumTemplateContentIdentity,
+        ::LevelSettings const&   settings,
+        ::StartIntent            startIntent
     ) = 0;
 
     virtual bool isHostingLocalDedicatedServer() const = 0;

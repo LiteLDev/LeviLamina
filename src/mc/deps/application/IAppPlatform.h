@@ -40,7 +40,7 @@ public:
 
     virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&& callback) = 0;
 
-    virtual bool isNetworkEnabled(bool) const = 0;
+    virtual bool isNetworkEnabled(bool onlyWifiAllowed) const = 0;
 
     virtual bool isNetworkAvailable() const = 0;
 

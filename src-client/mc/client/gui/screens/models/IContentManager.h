@@ -46,35 +46,41 @@ public:
     // NOLINTBEGIN
     virtual ~IContentManager() = default;
 
-    virtual ::ContentSource* loadContent(::ContentType, ::ContentFlags) = 0;
+    virtual ::ContentSource* loadContent(::ContentType contentType, ::ContentFlags flags) = 0;
 
-    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const&) = 0;
+    virtual ::ContentSource* loadContent(::InvalidPacksFilterGroup const& invalidFilter) = 0;
 
-    virtual ::ContentSource* loadContentForLevel(::std::string const&, ::mce::UUID const&) = 0;
+    virtual ::ContentSource*
+    loadContentForLevel(::std::string const& levelId, ::mce::UUID const& premiumTemplateId) = 0;
 
-    virtual ::ContentSource* loadContentForRealm(int64 const) = 0;
+    virtual ::ContentSource* loadContentForRealm(int64 const realmId) = 0;
 
     virtual ::std::unique_ptr<::ContentSource>
-    loadContentForRealmsWorld(::Realms::RealmId, ::std::vector<::Realms::Content> const&) = 0;
+    loadContentForRealmsWorld(::Realms::RealmId realmId, ::std::vector<::Realms::Content> const& servicePackData) = 0;
 
-    virtual void addPackSourceFromPremiumTemplate(::RealmPackManagerContentSource*, ::mce::UUID const&, ::PackType) = 0;
+    virtual void addPackSourceFromPremiumTemplate(
+        ::RealmPackManagerContentSource* source,
+        ::mce::UUID const&               premiumTemplateId,
+        ::PackType                       packType
+    ) = 0;
 
-    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource*) = 0;
+    virtual void addRealmsUnknownPackSources(::RealmPackManagerContentSource* contentSource) = 0;
 
-    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack>) = 0;
+    virtual void addPacksToRealmsUnknownPackSource(::std::unique_ptr<::Pack> pack) = 0;
 
-    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider>) = 0;
+    virtual void addCachedHostPackIdProvider(::std::weak_ptr<::CachedHostPackIdProvider> provider) = 0;
 
     virtual void clearRealmsUnknownPackSource() = 0;
 
-    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const&) = 0;
+    virtual void removeUnneededItemFromRealmsUnknownContentSource(::mce::UUID const& id) = 0;
 
-    virtual ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>> getGlobalResourcePackCollection(bool) = 0;
+    virtual ::gsl::not_null<::std::shared_ptr<::ContentItemCollection>>
+    getGlobalResourcePackCollection(bool isEditorMode) = 0;
 
     virtual ::std::unique_ptr<::IContentManagerContext>
-        createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)>) = 0;
+    createContext(::std::function<bool(::std::shared_ptr<::ContentItem const> const&)> contextPredicate) = 0;
 
-    virtual void removeContext(::IContentManagerContext&) = 0;
+    virtual void removeContext(::IContentManagerContext& context) = 0;
 
     virtual ::std::vector<::std::unique_ptr<::ContentSource>> const& getSources() const = 0;
 
@@ -84,9 +90,9 @@ public:
 
     virtual void enableCatalogPackSource() = 0;
 
-    virtual void generateItems(::ContentSource*) = 0;
+    virtual void generateItems(::ContentSource* source) = 0;
 
-    virtual ::Bedrock::Threading::Async<void> reloadSources(bool) = 0;
+    virtual ::Bedrock::Threading::Async<void> reloadSources(bool saveSources) = 0;
 
     virtual void reloadItems() = 0;
 
@@ -94,35 +100,36 @@ public:
 
     virtual void populateDependencies() const = 0;
 
-    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const&) = 0;
+    virtual void deleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) = 0;
 
-    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) = 0;
+    virtual void deleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) = 0;
 
-    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const&) = 0;
+    virtual void deleteContentFiles(::std::shared_ptr<::ContentItem const> const& contentItem) = 0;
 
-    virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const&) = 0;
+    virtual void deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) = 0;
 
-    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const&) = 0;
+    virtual void postDeleteContent(::std::shared_ptr<::ContentItem const> const& contentItem) = 0;
 
-    virtual void postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const&) = 0;
+    virtual void postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& contentItems) = 0;
 
     virtual uint64 generateContentId() = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourcePath(::std::string const& levelId) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorPath(::std::string const& levelId) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getWorldResourceFolder(::std::string const& levelId) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getWorldBehaviorFolder(::std::string const& levelId) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const&) const = 0;
+    virtual ::Core::PathBuffer<::std::string> const getWorldPath(::std::string const& levelId) const = 0;
 
-    virtual ::Core::PathBuffer<::std::string> const& getPremiumWorldTemplateFolder(::ContentIdentity const&) = 0;
+    virtual ::Core::PathBuffer<::std::string> const&
+    getPremiumWorldTemplateFolder(::ContentIdentity const& templateId) = 0;
 
     virtual ::ContentManagerProxy* getProxy() = 0;
 
-    virtual void beginAsyncInit(::TaskGroup&) = 0;
+    virtual void beginAsyncInit(::TaskGroup& taskGroup) = 0;
 
     virtual bool isInitialized() const = 0;
 
@@ -130,13 +137,14 @@ public:
 
     virtual void refreshContentCatalogPackSource() = 0;
 
-    virtual ::Bedrock::PubSub::Subscription refreshContentCatalogPackSource(::std::function<void()>&&) = 0;
+    virtual ::Bedrock::PubSub::Subscription refreshContentCatalogPackSource(::std::function<void()>&& callback) = 0;
 
-    virtual void onRealmsReset(::Realms::RealmId const) = 0;
+    virtual void onRealmsReset(::Realms::RealmId const realmsId) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> getFilePathManager() = 0;
 
-    virtual ::Bedrock::PubSub::Subscription subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&&) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+    subscribeToSourcesReloadedAsyncCompleted(::std::function<void()>&& onSourcesReloadedAsyncCallback) = 0;
     // NOLINTEND
 
 public:

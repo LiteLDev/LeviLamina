@@ -185,8 +185,12 @@ public:
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
-    virtual ::gsl::span<::gsl::not_null<::Actor*>>
-    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    ) /*override*/;
 
     virtual void
     fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const

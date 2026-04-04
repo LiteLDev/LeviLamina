@@ -25,7 +25,7 @@ public:
 
     virtual void writeLongLong(int64 v) /*override*/;
 
-    virtual void writeBytes(void const*, uint64) = 0;
+    virtual void writeBytes(void const* data, uint64 bytes) = 0;
 
     virtual ~BytesDataOutput() /*override*/ = default;
     // NOLINTEND

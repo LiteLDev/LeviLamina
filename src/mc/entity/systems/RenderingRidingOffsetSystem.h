@@ -26,7 +26,7 @@ class RenderingRidingOffsetSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tickEntity(
+    MCAPI_C static void _tickEntity(
         ::StrictEntityContext const&,
         ::VehicleComponent const&                                   vehicleComponent,
         ::ActorOwnerComponent&                                      actorOwnerComponent,
@@ -35,7 +35,7 @@ public:
         ::EntityModifier<::PassengerRenderingRidingOffsetComponent> modifier
     );
 
-    MCNAPI_C static void _tickSystem(
+    MCAPI_C static void _tickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent>,
@@ -46,10 +46,10 @@ public:
         ::EntityModifier<::PassengerRenderingRidingOffsetComponent> modifier
     );
 
-    MCNAPI_C static ::TickingSystemWithInfo createSystem();
+    MCAPI_C static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI_C static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
+    MCAPI_C static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
 
-    MCNAPI_C static void onActorStartRiding(::Actor& actor, ::Actor& vehicle);
+    MCAPI_C static void onActorStartRiding(::Actor& actor, ::Actor& vehicle);
     // NOLINTEND
 };

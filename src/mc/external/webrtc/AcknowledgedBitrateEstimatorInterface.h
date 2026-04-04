@@ -18,15 +18,15 @@ public:
     // NOLINTBEGIN
     virtual ~AcknowledgedBitrateEstimatorInterface();
 
-    virtual void IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const&) = 0;
+    virtual void IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) = 0;
 
     virtual ::std::optional<::webrtc::DataRate> bitrate() const = 0;
 
     virtual ::std::optional<::webrtc::DataRate> PeekRate() const = 0;
 
-    virtual void SetAlr(bool) = 0;
+    virtual void SetAlr(bool in_alr) = 0;
 
-    virtual void SetAlrEndedTime(::webrtc::Timestamp) = 0;
+    virtual void SetAlrEndedTime(::webrtc::Timestamp alr_ended_time) = 0;
     // NOLINTEND
 
 public:

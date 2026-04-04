@@ -59,7 +59,7 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
+        ::ActorUniqueID
     );
 
     MCAPI void _registerBindings();
@@ -76,7 +76,7 @@ public:
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
+        ::ActorUniqueID
     );
     // NOLINTEND
 

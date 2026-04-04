@@ -19,13 +19,13 @@ public:
     // NOLINTBEGIN
     virtual uint64 count() = 0;
 
-    virtual ::webrtc::MediaStreamInterface* at(uint64) = 0;
+    virtual ::webrtc::MediaStreamInterface* at(uint64 index) = 0;
 
-    virtual ::webrtc::MediaStreamInterface* find(::std::string const&) = 0;
+    virtual ::webrtc::MediaStreamInterface* find(::std::string const& id) = 0;
 
-    virtual ::webrtc::MediaStreamTrackInterface* FindAudioTrack(::std::string const&) = 0;
+    virtual ::webrtc::MediaStreamTrackInterface* FindAudioTrack(::std::string const& id) = 0;
 
-    virtual ::webrtc::MediaStreamTrackInterface* FindVideoTrack(::std::string const&) = 0;
+    virtual ::webrtc::MediaStreamTrackInterface* FindVideoTrack(::std::string const& id) = 0;
 
     virtual ~StreamCollectionInterface() /*override*/ = default;
     // NOLINTEND

@@ -50,13 +50,13 @@ public:
     // NOLINTBEGIN
     virtual ~FecHeaderWriter();
 
-    virtual uint64 MinPacketMaskSize(uchar const*, uint64) const = 0;
+    virtual uint64 MinPacketMaskSize(uchar const* packet_mask, uint64 packet_mask_size) const = 0;
 
-    virtual uint64 FecHeaderSize(uint64) const = 0;
+    virtual uint64 FecHeaderSize(uint64 packet_mask_size) const = 0;
 
     virtual void FinalizeFecHeader(
-        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const>,
-        ::webrtc::ForwardErrorCorrection::Packet&
+        ::rtc::ArrayView<::webrtc::FecHeaderWriter::ProtectedStream const> protected_streams,
+        ::webrtc::ForwardErrorCorrection::Packet&                          fec_packet
     ) const = 0;
     // NOLINTEND
 

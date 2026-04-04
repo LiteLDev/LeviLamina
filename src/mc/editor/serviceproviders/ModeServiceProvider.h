@@ -21,10 +21,10 @@ public:
 
     virtual ::Editor::Mode getMode() const = 0;
 
-    virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode) = 0;
+    virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode newMode) = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)>) = 0;
+    listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) = 0;
     // NOLINTEND
 
 public:

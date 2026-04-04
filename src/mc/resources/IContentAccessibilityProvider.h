@@ -20,7 +20,7 @@ public:
     virtual ~IContentAccessibilityProvider() /*override*/;
 #endif
 
-    virtual bool canAccess(::ContentIdentity const&) const = 0;
+    virtual bool canAccess(::ContentIdentity const& contentIdentity) const = 0;
     // NOLINTEND
 
 public:

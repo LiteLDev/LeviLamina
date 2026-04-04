@@ -28,8 +28,26 @@ struct WasInWaterFlagComponent;
 
 struct TriggerJumpSystem {
 public:
+    // TriggerJumpSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MobTravelComponent>,
+        ::ActorDataFlagComponent const,
+        ::ActorDataControllingSeatIndexComponent const,
+        ::VehicleComponent const,
+        ::AABBShapeComponent const,
+        ::StateVectorComponent const,
+        ::JumpPendingScaleComponent const,
+        ::MovementAttributesComponent const,
+        ::Optional<::OnGroundFlagComponent const>,
+        ::Optional<::DashActionComponent const>,
+        ::Optional<::MobIsJumpingFlagComponent const>,
+        ::Optional<::WasInLavaFlagComponent const>,
+        ::Optional<::WasInWaterFlagComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createCleanupSystem();
+    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
     // NOLINTEND
 };

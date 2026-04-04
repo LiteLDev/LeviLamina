@@ -20,7 +20,7 @@ class DriedGhastBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& position) const /*override*/;
 
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& position) const;
 
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 

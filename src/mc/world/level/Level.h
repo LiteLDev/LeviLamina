@@ -528,9 +528,9 @@ public:
 
     virtual void addUser(::OwnerPtr<::EntityContext> userEntity) /*override*/;
 
-    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) /*override*/;
+    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) /*override*/;
 
-    virtual void removeDisplayEntity(::WeakEntityRef) /*override*/;
+    virtual void removeDisplayEntity(::WeakEntityRef entity) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
@@ -1405,7 +1405,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) /*override*/;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) /*override*/;
 
     virtual void digestServerBlockProperties(::StartGamePacket const& packet) /*override*/;
 
@@ -1648,9 +1648,9 @@ public:
 
     MCAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
 
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
+    MCAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCFOLD void $removeDisplayEntity(::WeakEntityRef);
+    MCFOLD void $removeDisplayEntity(::WeakEntityRef entity);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
 
@@ -2495,7 +2495,7 @@ public:
 
     MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
-    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId);
+    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
     MCAPI void $digestServerBlockProperties(::StartGamePacket const& packet);
 

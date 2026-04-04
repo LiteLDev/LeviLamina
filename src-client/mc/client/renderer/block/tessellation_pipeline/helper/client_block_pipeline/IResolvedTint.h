@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~IResolvedTint() = default;
 
-    virtual ::mce::Color const& get(int, uchar) const = 0;
+    virtual ::mce::Color const& get(int materialInstanceId, uchar facing) const = 0;
     // NOLINTEND
 
 public:

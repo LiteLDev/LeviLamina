@@ -46,9 +46,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup&) const = 0;
+    virtual void
+    appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const = 0;
 
-    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const&) const = 0;
+    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const = 0;
 
     virtual ~PoolAliasBinding() = default;
     // NOLINTEND

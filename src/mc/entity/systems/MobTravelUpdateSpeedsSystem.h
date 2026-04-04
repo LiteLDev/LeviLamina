@@ -25,7 +25,7 @@ class MobTravelUpdateSpeedsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickMobTravelUpdateSpeedsSystem(
+    MCAPI static void tickMobTravelUpdateSpeedsSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::MobTravelComponent>,

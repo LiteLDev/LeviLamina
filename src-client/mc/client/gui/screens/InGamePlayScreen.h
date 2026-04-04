@@ -81,7 +81,7 @@ public:
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) /*override*/;
 
-    virtual void postRenderUpdate(::ScreenContext&) /*override*/;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
     virtual void onFocusGained() /*override*/;
 
@@ -97,7 +97,7 @@ public:
 
     virtual bool shouldStealMouse() const /*override*/;
 
-    virtual void handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact) /*override*/;
+    virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) /*override*/;
 
     virtual void handlePointerPressed(bool pressed) /*override*/;
 
@@ -196,7 +196,7 @@ public:
 
     MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
+    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
 
     MCFOLD void $onFocusGained();
 
@@ -212,7 +212,7 @@ public:
 
     MCAPI bool $shouldStealMouse() const;
 
-    MCAPI void $handleDirection(::DirectionId directionId, float dx, float dy, ::FocusImpact);
+    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
     MCAPI void $handlePointerPressed(bool pressed);
 

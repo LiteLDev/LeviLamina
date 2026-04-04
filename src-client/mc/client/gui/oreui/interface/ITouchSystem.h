@@ -17,11 +17,11 @@ public:
     // NOLINTBEGIN
     virtual ~ITouchSystem() = default;
 
-    virtual void sendTouchEvents(::std::vector<::OreUI::TouchEventData> const&) = 0;
+    virtual void sendTouchEvents(::std::vector<::OreUI::TouchEventData> const& events) = 0;
 
-    virtual void sendGestureEvent(::OreUI::GestureEventData const&) = 0;
+    virtual void sendGestureEvent(::OreUI::GestureEventData const& event) = 0;
 
-    virtual void sendMouseMoveEvent(::Vec2 const&) = 0;
+    virtual void sendMouseMoveEvent(::Vec2 const& pos) = 0;
     // NOLINTEND
 
 public:

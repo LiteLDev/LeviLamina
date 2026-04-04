@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~IConfigListener();
 
-    virtual void onConfigChanged(::Config const&) = 0;
+    virtual void onConfigChanged(::Config const& c) = 0;
     // NOLINTEND
 
 public:

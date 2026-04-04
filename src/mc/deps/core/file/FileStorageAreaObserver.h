@@ -21,9 +21,9 @@ public:
 
     virtual void _onEndWrites() = 0;
 
-    virtual void _onWriteFile(::Core::PathView) = 0;
+    virtual void _onWriteFile(::Core::PathView filePath) = 0;
 
-    virtual void _onDeleteFile(::Core::PathView) = 0;
+    virtual void _onDeleteFile(::Core::PathView filePath) = 0;
 
 #ifdef LL_PLAT_S
     virtual ~FileStorageAreaObserver() /*override*/ = default;

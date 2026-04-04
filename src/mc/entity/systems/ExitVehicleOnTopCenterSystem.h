@@ -31,11 +31,11 @@ struct VehicleComponent;
 namespace ExitVehicleOnTopCenterSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createMakeNonPlayerPassengerExitSystem();
+MCAPI ::TickingSystemWithInfo createMakeNonPlayerPassengerExitSystem();
 
-MCNAPI ::TickingSystemWithInfo createMakePlayerPassengerExitSystem();
+MCAPI ::TickingSystemWithInfo createMakePlayerPassengerExitSystem();
 
-MCNAPI void makeNonPlayerPassengerExit(
+MCAPI void makeNonPlayerPassengerExit(
     ::StrictEntityContext const& entity,
     ::PassengerComponent const&  passengerComponent,
     ::OffsetsComponent const&    offsetsComponent,
@@ -47,7 +47,7 @@ MCNAPI void makeNonPlayerPassengerExit(
     ::EntityModifier<::ActorSetPositionRequestComponent>& modifier
 );
 
-MCNAPI void makePlayerPassengerExit(
+MCAPI void makePlayerPassengerExit(
     ::StrictEntityContext const& entity,
     ::PassengerComponent const&  passengerComponent,
     ::ViewT<
@@ -58,7 +58,7 @@ MCNAPI void makePlayerPassengerExit(
     ::EntityModifier<::TeleportToRequestComponent>& modifier
 );
 
-MCNAPI void tickNonPlayerPassengerSystem(
+MCAPI void tickNonPlayerPassengerSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent>,
@@ -77,7 +77,7 @@ MCNAPI void tickNonPlayerPassengerSystem(
     ::EntityModifier<::ActorSetPositionRequestComponent> modifier
 );
 
-MCNAPI void tickPlayerPassengerSystem(
+MCAPI void tickPlayerPassengerSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent, ::PlayerComponent>,

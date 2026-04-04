@@ -24,7 +24,7 @@ struct NormalTickFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickGenericSystem(
+    MCAPI static void tickGenericSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::PlayerComponent>,
@@ -32,7 +32,7 @@ public:
         ::EntityModifier<::SkipNormalTickComponent>      mod
     );
 
-    MCNAPI static void tickLocalPlayerSystem(
+    MCAPI static void tickLocalPlayerSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,

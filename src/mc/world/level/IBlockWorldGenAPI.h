@@ -32,48 +32,49 @@ public:
 
     virtual ::LevelChunk* getChunk(::ChunkPos const& pos);
 
-    virtual ::Block const* tryGetLiquidBlock(::BlockPos const&) const = 0;
+    virtual ::Block const* tryGetLiquidBlock(::BlockPos const& pos) const = 0;
 
-    virtual ::Block const& getBlock(::BlockPos const&) const = 0;
+    virtual ::Block const& getBlock(::BlockPos const& pos) const = 0;
 
-    virtual ::Block const& getBlockNoBoundsCheck(::BlockPos const&) const = 0;
+    virtual ::Block const& getBlockNoBoundsCheck(::BlockPos const& pos) const = 0;
 
-    virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
+    virtual ::Block const& getExtraBlock(::BlockPos const& pos) const = 0;
 
     virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
-    fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) = 0;
+    fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate) = 0;
 
-    virtual bool hasBiomeTag(uint64, ::BlockPos const&) const = 0;
+    virtual bool hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const = 0;
 
-    virtual bool setBlock(::BlockPos const&, ::Block const&, int) = 0;
+    virtual bool setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags) = 0;
 
-    virtual bool setBlockSimple(::BlockPos const&, ::Block const&) = 0;
+    virtual bool setBlockSimple(::BlockPos const& pos, ::Block const& block) = 0;
 
     virtual bool apply() const = 0;
 
-    virtual bool placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&) = 0;
+    virtual bool
+    placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings) = 0;
 
-    virtual bool mayPlace(::BlockPos const&, ::Block const&) const = 0;
+    virtual bool mayPlace(::BlockPos const& pos, ::Block const& block) const = 0;
 
-    virtual bool canSurvive(::BlockPos const&, ::Block const&) const = 0;
+    virtual bool canSurvive(::BlockPos const& pos, ::Block const& block) const = 0;
 
-    virtual bool canBeBuiltOver(::BlockPos const&, ::Block const&) const = 0;
+    virtual bool canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const = 0;
 
     virtual short getMaxHeight() const = 0;
 
     virtual short getMinHeight() const = 0;
 
-    virtual bool shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const = 0;
+    virtual bool shimPlaceForOldFeatures(::Feature const& feature, ::BlockPos const& pos, ::Random& random) const = 0;
 
-    virtual short getHeightmap(int, int) = 0;
+    virtual short getHeightmap(int x, int z) = 0;
 
     virtual bool isLegacyLevel() = 0;
 
-    virtual ::Biome const* getBiome(::BlockPos const&) const = 0;
+    virtual ::Biome const* getBiome(::BlockPos const& pos) const = 0;
 
-    virtual bool isInBounds(::Pos const&) const = 0;
+    virtual bool isInBounds(::Pos const& pos) const = 0;
 
-    virtual short getLocalWaterLevel(::BlockPos const&) const = 0;
+    virtual short getLocalWaterLevel(::BlockPos const& pos) const = 0;
 
     virtual ::LevelData const& getLevelData() const = 0;
 

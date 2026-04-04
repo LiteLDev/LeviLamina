@@ -43,13 +43,13 @@ public:
     // NOLINTBEGIN
     virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
 
-    virtual void createInputMappingTemplates(::IOptions&) = 0;
+    virtual void createInputMappingTemplates(::IOptions& options) = 0;
 
     virtual ::TouchInputMapping _createScreenTouchMapping() const;
 
     virtual ::std::vector<::DeviceButtonMapping> _createScreenDeviceButtonMapping() const;
 
-    virtual void _updateKeyboardAndMouseControls(::IOptions&) = 0;
+    virtual void _updateKeyboardAndMouseControls(::IOptions& options) = 0;
 
     virtual void _updateGameControllerControls() = 0;
 

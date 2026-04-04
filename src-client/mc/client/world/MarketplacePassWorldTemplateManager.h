@@ -78,7 +78,7 @@ public:
 
     MCAPI void isTemplateOwnedThroughPassOnly(::std::string const& templateId, ::std::function<void(bool)> callback);
 
-    MCAPI void update(double timestampMs);
+    MCAPI void update(double);
     // NOLINTEND
 
 public:

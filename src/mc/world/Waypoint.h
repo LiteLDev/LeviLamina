@@ -44,7 +44,7 @@ public:
 
     virtual ::std::optional<::ActorUniqueID> tryGetActorID() const;
 
-    virtual void update(::Player const&);
+    virtual void update(::Player const& viewingPlayer);
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 
     MCNAPI ::std::optional<::ActorUniqueID> $tryGetActorID() const;
 
-    MCNAPI void $update(::Player const&);
+    MCNAPI void $update(::Player const& viewingPlayer);
 
 
     // NOLINTEND

@@ -400,9 +400,9 @@ public:
 
     virtual void onLeave();
 
-    virtual void leaveScreen(::std::string const&);
+    virtual void leaveScreen(::std::string const& expectedScreenName);
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification);
 
     virtual bool bind(
         ::std::string const& collectionName,
@@ -427,9 +427,9 @@ public:
 
     virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
 
-    virtual void setSuspendInput(bool);
+    virtual void setSuspendInput(bool suspendInput);
 
-    virtual void setSuspendDirectionalInput(bool);
+    virtual void setSuspendDirectionalInput(bool suspendDirectionalInput);
 
     virtual void setViewCommand(::ScreenViewCommand const& callback);
 
@@ -439,7 +439,7 @@ public:
 
     virtual ::std::string getTelemetryOverride() const;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     virtual ::ui::SceneType getSceneType() const;
 
@@ -770,7 +770,7 @@ public:
 
     MCAPI void $onLeave();
 
-    MCFOLD void $leaveScreen(::std::string const&);
+    MCFOLD void $leaveScreen(::std::string const& expectedScreenName);
 
     MCAPI bool $bind(
         ::std::string const& collectionName,
@@ -795,9 +795,9 @@ public:
 
     MCFOLD void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
 
-    MCFOLD void $setSuspendInput(bool);
+    MCFOLD void $setSuspendInput(bool suspendInput);
 
-    MCFOLD void $setSuspendDirectionalInput(bool);
+    MCFOLD void $setSuspendDirectionalInput(bool suspendDirectionalInput);
 
     MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
 
@@ -807,7 +807,7 @@ public:
 
     MCFOLD ::std::string $getTelemetryOverride() const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     MCFOLD ::ui::SceneType $getSceneType() const;
 

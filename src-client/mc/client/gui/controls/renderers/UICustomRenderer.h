@@ -30,15 +30,15 @@ public:
     // NOLINTBEGIN
     virtual ~UICustomRenderer() = default;
 
-    virtual void preRenderSetup(::UIRenderContext&);
+    virtual void preRenderSetup(::UIRenderContext& renderContext);
 
     virtual ::std::shared_ptr<::UICustomRenderer> clone() const = 0;
 
-    virtual bool update(::IClientInstance&, ::UIControl&, ::UIScene const&);
+    virtual bool update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    virtual void frameUpdate(::UIFrameUpdateContext&, ::UIControl&) = 0;
+    virtual void frameUpdate(::UIFrameUpdateContext& frameUpdateContext, ::UIControl& owner) = 0;
 
-    virtual void render(::UIRenderContext&, ::IClientInstance&, ::UIControl&, int) = 0;
+    virtual void render(::UIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass) = 0;
 
     virtual ::UIBatchType getBatchType() const;
 
@@ -46,15 +46,15 @@ public:
 
     virtual int getNumRenderPasses() const;
 
-    virtual ::ResourceLocation getResourceLocation(int, int) const;
+    virtual ::ResourceLocation getResourceLocation(int textureSlot, int pass) const;
 
     virtual ::UIMaterialType getUIMaterialType(int) const;
 
-    virtual bool getRequiresPreRenderSetup(int) const;
+    virtual bool getRequiresPreRenderSetup(int pass) const;
 
-    virtual void onVisibilityChanged(bool);
+    virtual void onVisibilityChanged(bool visible);
 
-    virtual void collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>&);
+    virtual void collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
 
     virtual ::UIItemRenderInfo getItemRenderInfo() const;
     // NOLINTEND
@@ -62,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $preRenderSetup(::UIRenderContext&);
+    MCFOLD void $preRenderSetup(::UIRenderContext& renderContext);
 
-    MCFOLD bool $update(::IClientInstance&, ::UIControl&, ::UIScene const&);
+    MCFOLD bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
     MCFOLD ::UIBatchType $getBatchType() const;
 
@@ -72,13 +72,13 @@ public:
 
     MCFOLD int $getNumRenderPasses() const;
 
-    MCAPI ::ResourceLocation $getResourceLocation(int, int) const;
+    MCAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
 
-    MCFOLD bool $getRequiresPreRenderSetup(int) const;
+    MCFOLD bool $getRequiresPreRenderSetup(int pass) const;
 
-    MCFOLD void $onVisibilityChanged(bool);
+    MCFOLD void $onVisibilityChanged(bool visible);
 
-    MCFOLD void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>&);
+    MCFOLD void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
 
     MCFOLD ::UIItemRenderInfo $getItemRenderInfo() const;
     // NOLINTEND

@@ -38,36 +38,37 @@ public:
     // NOLINTBEGIN
     virtual ~LevelStorage();
 
-    virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver>) = 0;
+    virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer) = 0;
 
     virtual bool loadedSuccessfully() const;
 
-    virtual ::std::unique_ptr<::CompoundTag> getCompoundTag(::std::string const&, ::DBHelpers::Category) = 0;
+    virtual ::std::unique_ptr<::CompoundTag>
+    getCompoundTag(::std::string const& key, ::DBHelpers::Category category) = 0;
 
-    virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
+    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const = 0;
 
     virtual void forEachKeyWithPrefix(
-        ::std::string_view,
-        ::DBHelpers::Category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const&
+        ::std::string_view                                                   prefix,
+        ::DBHelpers::Category                                                category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const = 0;
 
-    virtual bool loadLevelData(::LevelData&) = 0;
+    virtual bool loadLevelData(::LevelData& data) = 0;
 
     virtual ::std::unique_ptr<::ChunkSource> createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
 
-    virtual void saveLevelData(::LevelData const&) = 0;
+    virtual void saveLevelData(::LevelData const& levelData) = 0;
 
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const = 0;
 
     virtual ::Bedrock::Threading::Async<void>
-    saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) = 0;
+    saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category) = 0;
 
-    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) = 0;
+    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const& batch) = 0;
 
-    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) = 0;
+    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const& key, ::DBHelpers::Category category) = 0;
 
-    virtual void getStatistics(::std::string&, ::LevelStorage::StatsType) const = 0;
+    virtual void getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const = 0;
 
     virtual bool clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
 
@@ -85,7 +86,8 @@ public:
 
     virtual ::Core::LevelStorageResult getState() const = 0;
 
-    virtual ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::std::string const&, bool) = 0;
+    virtual ::std::vector<::SnapshotFilenameAndLength>
+    createSnapshot(::std::string const& filePrefix, bool flushWriteCache) = 0;
 
     virtual void releaseSnapshot() = 0;
 
@@ -95,15 +97,15 @@ public:
 
     virtual void resumeStorage() = 0;
 
-    virtual void setFlushAllowed(bool) = 0;
+    virtual void setFlushAllowed(bool flushAllowed) = 0;
 
     virtual void flushToPermanentStorage() = 0;
 
     virtual void freeCaches();
 
-    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)>) = 0;
+    virtual void setCompactionCallback(::std::function<void(::CompactionStatus)> callback) = 0;
 
-    virtual void setCriticalSyncSaveCallback(::std::function<void()>) = 0;
+    virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) = 0;
 
     virtual void corruptLevel();
     // NOLINTEND

@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IFileManipulator() = default;
 
-    virtual bool EnumerateFolder(char const*) = 0;
+    virtual bool EnumerateFolder(char const* path) = 0;
 
     virtual char const* NextFile() = 0;
 
-    virtual ::renoir::IStreamReader* OpenFile(char const*) = 0;
+    virtual ::renoir::IStreamReader* OpenFile(char const* path) = 0;
     // NOLINTEND
 
 public:

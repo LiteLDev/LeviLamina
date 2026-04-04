@@ -34,7 +34,7 @@ public:
 
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
@@ -54,7 +54,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 

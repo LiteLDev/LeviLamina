@@ -19,13 +19,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AirBlockItem(::std::string const& name, int id);
+    MCAPI AirBlockItem(::std::string const& name, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCAPI void* $ctor(::std::string const& name, int);
     // NOLINTEND
 
 public:

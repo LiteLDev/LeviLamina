@@ -40,7 +40,7 @@ public:
         ::Random&                                           random
     );
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) = 0;
 
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
@@ -53,7 +53,8 @@ public:
     virtual void
     placeBlock(::BlockSource& region, ::Block const& block, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    virtual bool canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
+    virtual bool
+    canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
 
     virtual void generateBox(
         ::BlockSource&       region,
@@ -156,7 +157,8 @@ public:
     MCAPI void
     $placeBlock(::BlockSource& region, ::Block const& block, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCFOLD bool $canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
+    MCFOLD bool
+    $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
 
     MCAPI void $generateBox(
         ::BlockSource&       region,

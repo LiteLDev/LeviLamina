@@ -29,9 +29,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
+    MCAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::ActorOwnerComponent,

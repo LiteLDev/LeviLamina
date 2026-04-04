@@ -38,7 +38,7 @@ public:
         // NOLINTBEGIN
         virtual ~StreamProducer() = default;
 
-        virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64) = 0;
+        virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp now, uint64 max_size) = 0;
 
         virtual uint64 bytes_to_send_in_next_message() const = 0;
         // NOLINTEND

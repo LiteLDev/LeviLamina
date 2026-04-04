@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual float getShadowRadius() const /*override*/;
 
-    virtual bool checkSpawnRules(bool) /*override*/;
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual ~Creaking() /*override*/ = default;
     // NOLINTEND
@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCFOLD float $getShadowRadius() const;
 
-    MCFOLD bool $checkSpawnRules(bool);
+    MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
 
     // NOLINTEND

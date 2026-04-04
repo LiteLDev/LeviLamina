@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~IRandomSeeded() = default;
 
-    virtual void setSeed(int64) = 0;
+    virtual void setSeed(int64 seed) = 0;
 
-    virtual void setSeed(::Seed128Bit) = 0;
+    virtual void setSeed(::Seed128Bit seed) = 0;
 
     virtual int64 seed64() const = 0;
 

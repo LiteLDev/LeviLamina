@@ -37,22 +37,26 @@ public:
     // NOLINTBEGIN
     virtual ~SSLStreamAdapter() /*override*/;
 
-    virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
+    virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity> identity) = 0;
 
     virtual ::rtc::SSLIdentity* GetIdentityForTesting() const = 0;
 
-    virtual void SetServerRole(::rtc::SSLRole) = 0;
+    virtual void SetServerRole(::rtc::SSLRole role) = 0;
 
-    virtual void SetMode(::rtc::SSLMode) = 0;
+    virtual void SetMode(::rtc::SSLMode mode) = 0;
 
-    virtual void SetMaxProtocolVersion(::rtc::SSLProtocolVersion) = 0;
+    virtual void SetMaxProtocolVersion(::rtc::SSLProtocolVersion version) = 0;
 
-    virtual void SetInitialRetransmissionTimeout(int) = 0;
+    virtual void SetInitialRetransmissionTimeout(int timeout_ms) = 0;
 
     virtual int StartSSL() = 0;
 
-    virtual bool
-    SetPeerCertificateDigest(::std::string_view, uchar const*, uint64, ::rtc::SSLPeerCertificateDigestError*) = 0;
+    virtual bool SetPeerCertificateDigest(
+        ::std::string_view                    digest_alg,
+        uchar const*                          digest_val,
+        uint64                                digest_len,
+        ::rtc::SSLPeerCertificateDigestError* error
+    ) = 0;
 
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetPeerSSLCertChain() const = 0;
 
@@ -60,7 +64,7 @@ public:
 
     virtual ::rtc::SSLProtocolVersion GetSslVersion() const = 0;
 
-    virtual bool GetSslVersionBytes(int*) const = 0;
+    virtual bool GetSslVersionBytes(int* version) const = 0;
 
     virtual bool ExportKeyingMaterial(
         ::std::string_view label,

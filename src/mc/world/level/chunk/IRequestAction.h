@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     virtual ~IRequestAction();
 
-    virtual void execute(::ServerLevel&, ::Dimension&) = 0;
+    virtual void execute(::ServerLevel& level, ::Dimension& dimension) = 0;
 
     virtual void serialize(::CompoundTag& tag);
 

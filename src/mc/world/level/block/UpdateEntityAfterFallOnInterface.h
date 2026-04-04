@@ -20,7 +20,8 @@ public:
 
     virtual bool isSneaking() const = 0;
 
-    virtual void applyRestitution(::BlockPos const&, ::Block const&, float) = 0;
+    virtual void
+    applyRestitution(::BlockPos const& bounceStartPos, ::Block const& block, float coefficientOfRestitution) = 0;
 
     virtual ::Vec3 getPosition() const = 0;
 

@@ -21,9 +21,9 @@ class JumpInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createJumpInputSystem();
+    MCAPI static ::TickingSystemWithInfo createJumpInputSystem();
 
-    MCNAPI static void tickJumpInputSystem(
+    MCAPI static void tickJumpInputSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::PlayerInputRequestComponent>,

@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~ICommandDispatcher() = default;
 
-    virtual int performCommand(::CommandOrigin const&, ::Command&) = 0;
+    virtual int performCommand(::CommandOrigin const& origin, ::Command& command) = 0;
     // NOLINTEND
 
 public:

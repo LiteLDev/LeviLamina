@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ResourcePackMergeStrategy() = default;
 
-    virtual void mergeFiles(::std::vector<::LoadedResourceData> const&) = 0;
+    virtual void mergeFiles(::std::vector<::LoadedResourceData> const& fileStack) = 0;
     // NOLINTEND
 
 public:

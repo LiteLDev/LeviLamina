@@ -16,9 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~AbstractScreenSetupCleanupStrategy() = default;
 
-    virtual void setupScreen(::ScreenContext&);
+    virtual void setupScreen(::ScreenContext& screenContext);
 
-    virtual void cleanupScreen(::ScreenContext&);
+    virtual void cleanupScreen(::ScreenContext& screenContext);
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const = 0;
     // NOLINTEND
@@ -26,6 +26,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $cleanupScreen(::ScreenContext&);
+    MCFOLD void $cleanupScreen(::ScreenContext& screenContext);
     // NOLINTEND
 };

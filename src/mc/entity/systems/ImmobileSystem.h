@@ -23,9 +23,9 @@ class ImmobileSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doImmobileSystem(
+    MCAPI static void doImmobileSystem(
         ::StrictEntityContext const&                  context,
         ::LocalMoveVelocityComponent&                 localMoveVelocityComponent,
         ::MobRotationComponent&                       mobRotationComponent,
@@ -33,7 +33,7 @@ public:
         ::EntityModifier<::MobIsJumpingFlagComponent> mod
     );
 
-    MCNAPI static void tickImmobileSystem(
+    MCAPI static void tickImmobileSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::MobIsImmobileFlagComponent>,

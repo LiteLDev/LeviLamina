@@ -11,8 +11,8 @@ struct ActorPostNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystemClient();
+    MCAPI static ::TickingSystemWithInfo createSystemClient();
 
-    MCNAPI static ::TickingSystemWithInfo createSystemServer();
+    MCAPI static ::TickingSystemWithInfo createSystemServer();
     // NOLINTEND
 };

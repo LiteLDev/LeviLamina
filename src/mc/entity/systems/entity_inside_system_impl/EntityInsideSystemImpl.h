@@ -31,7 +31,7 @@ struct WaterlilyBlockFlag;
 namespace EntityInsideSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void blockProcess(
+MCAPI void blockProcess(
     ::StrictEntityContext const& entity,
     ::EntityModifier<
         ::BlockMovementSlowdownAppliedComponent,

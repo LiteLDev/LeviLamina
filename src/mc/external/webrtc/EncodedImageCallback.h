@@ -51,8 +51,10 @@ public:
     // NOLINTBEGIN
     virtual ~EncodedImageCallback() = default;
 
-    virtual ::webrtc::EncodedImageCallback::Result
-    OnEncodedImage(::webrtc::EncodedImage const&, ::webrtc::CodecSpecificInfo const*) = 0;
+    virtual ::webrtc::EncodedImageCallback::Result OnEncodedImage(
+        ::webrtc::EncodedImage const&      encoded_image,
+        ::webrtc::CodecSpecificInfo const* codec_specific_info
+    ) = 0;
 
     virtual void OnDroppedFrame(::webrtc::EncodedImageCallback::DropReason reason);
     // NOLINTEND

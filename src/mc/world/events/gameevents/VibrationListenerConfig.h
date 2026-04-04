@@ -22,9 +22,10 @@ public:
 
     virtual bool isValidVibration(::GameEvent const& gameEvent);
 
-    virtual bool shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&) = 0;
+    virtual bool
+    shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext) = 0;
 
-    virtual void onSerializableDataChanged(::BlockSource&);
+    virtual void onSerializableDataChanged(::BlockSource& region);
 
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
@@ -34,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCFOLD void $onSerializableDataChanged(::BlockSource&);
+    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
     MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
 

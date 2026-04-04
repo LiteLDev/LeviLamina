@@ -53,11 +53,11 @@ public:
 
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    virtual void startOpen(::Actor&) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
@@ -119,11 +119,11 @@ public:
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD void $startOpen(::Actor&);
+    MCFOLD void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
 

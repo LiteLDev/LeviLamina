@@ -96,7 +96,7 @@ public:
 
     virtual ::std::vector<::std::weak_ptr<::IGameController>> _getGameControllers() = 0;
 
-    virtual ::GameControllerInputMapping const& getGameControllerMapping(::InputMapping const&) = 0;
+    virtual ::GameControllerInputMapping const& getGameControllerMapping(::InputMapping const& inputMapping) = 0;
 
     virtual ~GameControllerMapper() /*override*/;
     // NOLINTEND

@@ -27,17 +27,18 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const getUserManager() const = 0;
 
-    virtual void navigateToStoreDataDrivenScreen(::StoreDataDrivenScreenParams const&, bool) = 0;
+    virtual void
+    navigateToStoreDataDrivenScreen(::StoreDataDrivenScreenParams const& params, bool forceDisableProgressScreen) = 0;
 
     virtual bool tryNavigateToProfileScreen() = 0;
 
     virtual bool tryNavigateToSafeZoneScreenOnFirstSignin() = 0;
 
-    virtual bool leaveScreen(::std::string, bool) = 0;
+    virtual bool leaveScreen(::std::string expectedScreenName, bool onlyThis) = 0;
 
     virtual bool isInGame() const = 0;
 
-    virtual void requestLeaveGame(bool, bool) = 0;
+    virtual void requestLeaveGame(bool switchScreen, bool sync) = 0;
 
     virtual bool isLeaveGameDone() const = 0;
 
@@ -47,7 +48,7 @@ public:
 
     virtual ::ResourcePackManager& getResourcePackManager() const = 0;
 
-    virtual void popScreensBackTo(::ui::SceneType const) = 0;
+    virtual void popScreensBackTo(::ui::SceneType const sceneType) = 0;
 
     virtual ::INetworkGameConnector& getNetworkGameConnector() = 0;
     // NOLINTEND

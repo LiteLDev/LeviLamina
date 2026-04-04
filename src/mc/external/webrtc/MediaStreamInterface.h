@@ -25,9 +25,9 @@ public:
 
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>> GetVideoTracks() = 0;
 
-    virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> FindAudioTrack(::std::string const&) = 0;
+    virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> FindAudioTrack(::std::string const& a1) = 0;
 
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> FindVideoTrack(::std::string const&) = 0;
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> FindVideoTrack(::std::string const& a1) = 0;
 
     virtual bool AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> track);
 

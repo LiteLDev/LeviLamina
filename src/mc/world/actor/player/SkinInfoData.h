@@ -29,7 +29,8 @@ public:
     virtual ~SkinInfoData();
 #endif
 
-    virtual void updateSkin(::SerializedSkinRef const&, ::mce::Image const*, ::mce::Image const*) = 0;
+    virtual void
+    updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData) = 0;
 
     virtual bool hasValidTexture() = 0;
     // NOLINTEND

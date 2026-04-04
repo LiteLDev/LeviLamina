@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     virtual ~TestType() = default;
 
-    virtual bool test(::Block const&, ::IRandom&) const = 0;
+    virtual bool test(::Block const& block, ::IRandom& random) const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:

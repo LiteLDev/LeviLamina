@@ -19,9 +19,10 @@ public:
     // NOLINTBEGIN
     virtual ~IEventListener();
 
-    virtual void recordEvent(::Social::Events::Event const&, ::Bedrock::NonOwnerPointer<::AppPlatform> const&) = 0;
+    virtual void
+    recordEvent(::Social::Events::Event const& event, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform) = 0;
 
-    virtual void sendEvents(bool) = 0;
+    virtual void sendEvents(bool forceSend) = 0;
 
     virtual int getEventTagsFilter() const = 0;
 

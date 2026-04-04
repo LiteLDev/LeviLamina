@@ -18,11 +18,11 @@ struct TickingSystemWithInfo;
 namespace StopRidingLocalPlayerCameraForceCutSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void doTick(::ActorOwnerComponent& actorOwnerComponent);
+MCAPI void doTick(::ActorOwnerComponent& actorOwnerComponent);
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,

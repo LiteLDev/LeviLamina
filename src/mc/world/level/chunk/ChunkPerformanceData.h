@@ -110,7 +110,7 @@ public:
     // NOLINTBEGIN
     virtual ~ChunkPerformanceData() /*override*/ = default;
 
-    virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+    virtual void visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
 
     virtual void resetAll();
     // NOLINTEND
@@ -134,7 +134,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
 
     MCAPI void $resetAll();
 

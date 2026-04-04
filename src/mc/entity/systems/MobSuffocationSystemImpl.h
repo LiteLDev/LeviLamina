@@ -83,12 +83,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _hasPlayerPassenger(
+    MCAPI static bool _hasPlayerPassenger(
         ::Optional<::VehicleComponent const> optionalVehicleComponent,
         ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers
     );
 
-    MCNAPI static bool _isShulkerInWall(
+    MCAPI static bool _isShulkerInWall(
         ::StateVectorComponent const&      stateVectorComponent,
         ::AABBShapeComponent const&        aabbShapeComponent,
         ::SynchedActorDataComponent const& synchedActorDataComponent,
@@ -96,7 +96,7 @@ public:
         ::IConstBlockSource const&         region
     );
 
-    MCNAPI static void _tickCheckSuffocation(
+    MCAPI static void _tickCheckSuffocation(
         ::StrictEntityContext const&           entity,
         ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
         ::StateVectorComponent const&          stateVectorComponent,
@@ -110,7 +110,7 @@ public:
         ::IConstBlockSource const&                                                                region
     );
 
-    MCNAPI static bool isInWall(
+    MCAPI static bool isInWall(
         ::StrictEntityContext const&           entity,
         ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
         ::StateVectorComponent const&          stateVectorComponent,
@@ -125,7 +125,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::MobFlagComponent, ::InterpolateMovementNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<

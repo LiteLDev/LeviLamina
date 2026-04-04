@@ -67,7 +67,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex ability) const;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -89,7 +89,7 @@ public:
 
     virtual ::mce::UUID const& getUUID() const;
 
-    virtual void handleCommandOutputCallback(int, ::std::string&&) const;
+    virtual void handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
     virtual void updateValues();
 
@@ -149,7 +149,7 @@ public:
     MCAPI bool $hasTellPerms() const;
 
 #ifdef LL_PLAT_S
-    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 #endif
 
     MCAPI bool $isWorldBuilder() const;
@@ -170,7 +170,7 @@ public:
 
     MCFOLD ::mce::UUID const& $getUUID() const;
 
-    MCFOLD void $handleCommandOutputCallback(int, ::std::string&&) const;
+    MCFOLD void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
     MCFOLD void $updateValues();
 

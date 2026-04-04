@@ -23,7 +23,7 @@ public:
             ::PlayerAuthenticationInfo const&,
             ::SubClientId,
             ::std::shared_ptr<::AsyncVerdictPromise>
-        )>
+        )> joinCallback
     ) = 0;
 
     virtual bool isPaused() = 0;

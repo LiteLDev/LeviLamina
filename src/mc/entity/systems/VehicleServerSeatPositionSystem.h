@@ -24,9 +24,27 @@ struct VehicleComponent;
 
 class VehicleServerSeatPositionSystem {
 public:
+    // VehicleServerSeatPositionSystem inner types define
+    using PassengerView = ::ViewT<
+        ::StrictEntityContext,
+        ::PassengerComponent const,
+        ::PositionPassengerRequestComponent const,
+        ::OffsetsComponent const,
+        ::ActorDataFlagComponent,
+        ::ActorDataSeatOffsetComponent,
+        ::ActorDataDirtyFlagsComponent,
+        ::SynchedActorDataComponent>;
+
+    using VehicleView = ::ViewT<
+        ::StrictEntityContext,
+        ::VehicleComponent const,
+        ::ActorDataBoundingBoxComponent const,
+        ::RideableComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static float _getRidingHeight(
+    MCAPI static float _getRidingHeight(
         ::StrictEntityContext const&                                             context,
         ::OffsetsComponent const&                                                offsetsComponent,
         ::ActorDataFlagComponent const&                                          actorDataFlagComponent,
@@ -34,7 +52,7 @@ public:
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
-    MCNAPI static void _setSeatDescriptionToActorDataSystem(
+    MCAPI static void _setSeatDescriptionToActorDataSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::PassengerComponent const,
@@ -53,7 +71,7 @@ public:
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
-    MCNAPI_S static void _setSeatDescriptionToActorDataSystemSingleEntity(
+    MCAPI_S static void _setSeatDescriptionToActorDataSystemSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<
             ::StrictEntityContext,

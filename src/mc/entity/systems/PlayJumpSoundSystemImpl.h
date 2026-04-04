@@ -50,14 +50,8 @@ struct PlayJumpSoundSystemImpl : public ::IStrictTickingSystem<::StrictExecution
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk653c2e;
+    ::ll::TypedStorage<4, 4, ::PlayJumpSoundSystem::SoundType const> mJumpType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayJumpSoundSystemImpl& operator=(PlayJumpSoundSystemImpl const&);
-    PlayJumpSoundSystemImpl(PlayJumpSoundSystemImpl const&);
-    PlayJumpSoundSystemImpl();
 
 public:
     // virtual functions
@@ -105,7 +99,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doPlayJumpSoundSystem(
+    MCAPI static void doPlayJumpSoundSystem(
         ::StrictEntityContext const&                                      entity,
         ::ActorDataFlagComponent const&                                   actorFlags,
         ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
@@ -123,7 +117,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
             ::Read<
@@ -141,7 +135,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
             ::Read<

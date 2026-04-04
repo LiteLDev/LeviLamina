@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~IInPackagePacks() = default;
 
-    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const = 0;
+    virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType packType) const = 0;
     // NOLINTEND
 
 public:

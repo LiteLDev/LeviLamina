@@ -24,7 +24,7 @@ namespace BlockCollisionsSystem { struct BlockCollisionResolutionVectorComponent
 namespace BlockCollisionsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _processBlockCollisionMoveRequestsSystem(
+MCAPI void _processBlockCollisionMoveRequestsSystem(
     ::OptionalGlobal<::BlockCollisionEvaluationQueueComponent>    queue,
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> fetcherFactoryComponent,
     ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent>     blockSourceFactoryComponent,
@@ -36,7 +36,7 @@ MCNAPI void _processBlockCollisionMoveRequestsSystem(
     ::EntityModifier<::BlockCollisionsSystem::BlockCollisionResolutionVectorComponent> modifier
 );
 
-MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace BlockCollisionsSystem

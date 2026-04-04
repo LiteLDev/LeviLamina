@@ -47,15 +47,15 @@ public:
 
     virtual ::std::optional<bool> needs_denoising() const = 0;
 
-    virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats*) = 0;
+    virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats* a1) = 0;
 
     virtual bool SupportsEncodedOutput() const = 0;
 
     virtual void GenerateKeyFrame() = 0;
 
-    virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>*) = 0;
+    virtual void AddEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
 
-    virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>*) = 0;
+    virtual void RemoveEncodedSink(::rtc::VideoSinkInterface<::webrtc::RecordableEncodedFrame>* a1) = 0;
 
     virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
 

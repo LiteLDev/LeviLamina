@@ -20,14 +20,14 @@ class ShulkerPostAiStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doShulkerPostAiStepSystem(
+    MCAPI static void _doShulkerPostAiStepSystem(
         ::StrictEntityContext const&,
         ::ActorRotationComponent&   actorRotationComponent,
         ::MobBodyRotationComponent& mobBodyRotationComponent,
         ::StateVectorComponent&     stateVectorComponent
     );
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::ShulkerFlagComponent>,

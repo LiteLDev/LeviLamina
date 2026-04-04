@@ -25,52 +25,56 @@ public:
     virtual ~IZipUtility() = default;
 
     virtual ::Bedrock::Result<void>
-    zip(::Core::Path const&,
-        ::Core::Path const&,
-        ::Core::ZipUtils::ZipProgress&,
-        bool,
-        ::Core::ZipUtils::ZipSettings const&) const = 0;
+    zip(::Core::Path const&                  inputPath,
+        ::Core::Path const&                  zipOutputPath,
+        ::Core::ZipUtils::ZipProgress&       progress,
+        bool                                 useLowMemMode,
+        ::Core::ZipUtils::ZipSettings const& zipSettings) const = 0;
 
     virtual ::Bedrock::Result<void>
-    zip(::std::vector<::Core::PathBuffer<::std::string>> const&,
-        ::Core::PathView,
-        ::Core::ZipUtils::ZipProgress&,
-        bool,
-        ::std::function<::std::string(::Core::PathView)>,
-        ::Core::ZipUtils::ZipSettings const&) const = 0;
+    zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
+        ::Core::PathView                                        zipOutputPath,
+        ::Core::ZipUtils::ZipProgress&                          progress,
+        bool                                                    useLowMemMode,
+        ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
+        ::Core::ZipUtils::ZipSettings const&                    zipSettings) const = 0;
 
     virtual ::Bedrock::Result<void> zipFromZip(
-        ::Core::PathView,
-        ::Core::PathView,
-        ::Core::PathView,
-        ::Core::ZipUtils::ZipProgress&,
-        bool,
-        ::Core::ZipUtils::ZipSettings const&
+        ::Core::PathView                     zipInputPath,
+        ::Core::PathView                     zipInputSubPath,
+        ::Core::PathView                     zipOutputPath,
+        ::Core::ZipUtils::ZipProgress&       progress,
+        bool                                 useLowMemMode,
+        ::Core::ZipUtils::ZipSettings const& zipSettings
     ) const = 0;
 
     virtual ::Bedrock::Result<void> unzipInTransaction(
-        ::Core::Path const&,
-        ::Core::Path const&,
-        ::Core::ZipUtils::ZipProgress&,
-        bool,
-        ::Core::ZipUtils::UnzipSettings const&
+        ::Core::Path const&                    zipInputPath,
+        ::Core::Path const&                    outputFolderPath,
+        ::Core::ZipUtils::ZipProgress&         progress,
+        bool                                   useLowMemMode,
+        ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const = 0;
 
     virtual ::Bedrock::Result<void> unzipToFlatFile(
-        ::Core::Path const&,
-        ::Core::Path const&,
-        ::Core::ZipUtils::ZipProgress&,
-        ::Core::FileBufferingMode,
-        ::Core::ZipUtils::UnzipSettings const&
+        ::Core::Path const&                    zipInputPath,
+        ::Core::Path const&                    outputFolderPath,
+        ::Core::ZipUtils::ZipProgress&         progress,
+        ::Core::FileBufferingMode              bufferMode,
+        ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const = 0;
 
     virtual bool getFilenames(
-        ::Core::Path const&,
-        ::std::vector<::Core::PathBuffer<::std::string>>&,
-        ::Core::ZipUtils::UnzipSettings const&
+        ::Core::Path const&                               zipPath,
+        ::std::vector<::Core::PathBuffer<::std::string>>& result,
+        ::Core::ZipUtils::UnzipSettings const&            unzipSettings
     ) const = 0;
 
-    virtual bool exists(::Core::Path const&, ::Core::Path const&, ::Core::ZipUtils::UnzipSettings const&) const = 0;
+    virtual bool exists(
+        ::Core::Path const&                    zipPath,
+        ::Core::Path const&                    filePath,
+        ::Core::ZipUtils::UnzipSettings const& unzipSettings
+    ) const = 0;
     // NOLINTEND
 
 public:

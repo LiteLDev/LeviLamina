@@ -21,18 +21,18 @@ struct FlagRemotePlayersForTickingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tick(
+    MCAPI_C static void _tick(
         ::StrictEntityContext const&                 entity,
         ::BlockSourceComponent const&                blockSourceComponent,
         ::EntityModifier<::ActorTickNeededComponent> modifier
     );
 
-    MCNAPI_C static void _view(
+    MCAPI_C static void _view(
         ::ViewT<::StrictEntityContext, ::Include<::ActorComponent, ::RemotePlayerComponent>, ::BlockSourceComponent>
                                                      view,
         ::EntityModifier<::ActorTickNeededComponent> modifier
     );
 
-    MCNAPI_C static ::TickingSystemWithInfo createSystem();
+    MCAPI_C static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

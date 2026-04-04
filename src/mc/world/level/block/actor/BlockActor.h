@@ -69,17 +69,17 @@ public:
     // NOLINTBEGIN
     virtual ~BlockActor();
 
-    virtual void load(::ILevel&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    virtual bool save(::CompoundTag& tag, ::SaveContext const&) const;
+    virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    virtual void saveBlockData(::CompoundTag&, ::BlockSource&) const;
+    virtual void saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    virtual void loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
+    virtual void loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
 
-    virtual void onCustomTagLoadDone(::BlockSource&);
+    virtual void onCustomTagLoadDone(::BlockSource& region);
 
     virtual bool isPermanentlyRendered() const;
 
@@ -87,29 +87,29 @@ public:
 
     virtual void tick(::BlockSource& region);
 
-    virtual void onChanged(::BlockSource&);
+    virtual void onChanged(::BlockSource& region);
 
-    virtual void onPlace(::BlockSource&);
+    virtual void onPlace(::BlockSource& region);
 
     virtual void onMove();
 
-    virtual void onRemoved(::BlockSource&);
+    virtual void onRemoved(::BlockSource& region);
 
-    virtual bool isPreserved(::BlockSource&) const;
+    virtual bool isPreserved(::BlockSource& region) const;
 
-    virtual bool shouldPreserve(::BlockSource&);
+    virtual bool shouldPreserve(::BlockSource& region);
 
-    virtual void triggerEvent(int, int);
+    virtual void triggerEvent(int b0, int b1);
 
-    virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
+    virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    virtual float getShadowRadius(::BlockSource&) const;
+    virtual float getShadowRadius(::BlockSource& region) const;
 
     virtual bool hasAlphaLayer() const;
 
-    virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
+    virtual ::BlockActor* getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
-    virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
+    virtual ::AABB getCollisionShape(::IConstBlockSource const& region) const;
 
     virtual void getDebugText(
         ::std::vector<::std::string>& outputInfo,
@@ -125,11 +125,11 @@ public:
 
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    virtual ::std::string getImmersiveReaderText(::BlockSource&);
+    virtual ::std::string getImmersiveReaderText(::BlockSource& region);
 
-    virtual ::PistonBlockActor* getOwningPiston(::BlockSource&);
+    virtual ::PistonBlockActor* getOwningPiston(::BlockSource& region);
 
-    virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const;
+    virtual ::PistonBlockActor const* getOwningPiston(::BlockSource& region) const;
 
     virtual ::Container* getContainer();
 
@@ -137,29 +137,29 @@ public:
 
     virtual void eraseLootTable();
 
-    virtual void onChunkLoaded(::LevelChunk&);
+    virtual void onChunkLoaded(::LevelChunk& lc);
 
-    virtual void onChunkUnloaded(::LevelChunk&);
+    virtual void onChunkUnloaded(::LevelChunk& lc);
 
     virtual void onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const;
+    virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const;
 
-    virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const&) const;
+    virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    virtual bool validateData(::CompoundTag const&) const;
+    virtual bool validateData(::CompoundTag const& tag) const;
 
-    virtual void fixupOnLoad(::LevelChunk&);
+    virtual void fixupOnLoad(::LevelChunk& lc);
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region);
 
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    virtual bool _playerCanUpdate(::Player const&) const;
+    virtual bool _playerCanUpdate(::Player const& player) const;
     // NOLINTEND
 
 public:
@@ -198,17 +198,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD void $saveBlockData(::CompoundTag&, ::BlockSource&) const;
+    MCFOLD void $saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    MCFOLD void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
+    MCFOLD void $loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $onCustomTagLoadDone(::BlockSource&);
+    MCFOLD void $onCustomTagLoadDone(::BlockSource& region);
 
     MCFOLD bool $isPermanentlyRendered() const;
 
@@ -216,29 +216,29 @@ public:
 
     MCFOLD void $tick(::BlockSource& region);
 
-    MCFOLD void $onChanged(::BlockSource&);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCFOLD void $onPlace(::BlockSource&);
+    MCFOLD void $onPlace(::BlockSource& region);
 
     MCFOLD void $onMove();
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource& region);
 
-    MCFOLD bool $isPreserved(::BlockSource&) const;
+    MCFOLD bool $isPreserved(::BlockSource& region) const;
 
-    MCFOLD bool $shouldPreserve(::BlockSource&);
+    MCFOLD bool $shouldPreserve(::BlockSource& region);
 
-    MCFOLD void $triggerEvent(int, int);
+    MCFOLD void $triggerEvent(int b0, int b1);
 
-    MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
+    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    MCFOLD float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource& region) const;
 
     MCFOLD bool $hasAlphaLayer() const;
 
-    MCFOLD ::BlockActor* $getCrackEntity(::BlockSource&, ::BlockPos const&);
+    MCFOLD ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI ::AABB $getCollisionShape(::IConstBlockSource const&) const;
+    MCAPI ::AABB $getCollisionShape(::IConstBlockSource const& region) const;
 
     MCAPI void $getDebugText(
         ::std::vector<::std::string>& outputInfo,
@@ -254,11 +254,11 @@ public:
 
     MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    MCFOLD ::std::string $getImmersiveReaderText(::BlockSource&);
+    MCFOLD ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
+    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
 
-    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
+    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
 
     MCFOLD ::Container* $getContainer();
 
@@ -266,29 +266,29 @@ public:
 
     MCFOLD void $eraseLootTable();
 
-    MCFOLD void $onChunkLoaded(::LevelChunk&);
+    MCFOLD void $onChunkLoaded(::LevelChunk& lc);
 
-    MCFOLD void $onChunkUnloaded(::LevelChunk&);
+    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
 
     MCFOLD void $onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCFOLD ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const&) const;
+    MCFOLD ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCFOLD void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCFOLD void $setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCFOLD void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCFOLD bool $validateData(::CompoundTag const&) const;
+    MCFOLD bool $validateData(::CompoundTag const& tag) const;
 
-    MCFOLD void $fixupOnLoad(::LevelChunk&);
+    MCFOLD void $fixupOnLoad(::LevelChunk& lc);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const&, ::BlockSource&);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCFOLD bool $_playerCanUpdate(::Player const&) const;
+    MCFOLD bool $_playerCanUpdate(::Player const& player) const;
 
 
     // NOLINTEND

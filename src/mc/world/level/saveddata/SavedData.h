@@ -20,9 +20,9 @@ public:
     // NOLINTBEGIN
     virtual ~SavedData();
 
-    virtual void deserialize(::CompoundTag const&) = 0;
+    virtual void deserialize(::CompoundTag const& tag) = 0;
 
-    virtual void serialize(::CompoundTag&) const = 0;
+    virtual void serialize(::CompoundTag& tag) const = 0;
     // NOLINTEND
 
 public:

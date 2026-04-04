@@ -170,7 +170,7 @@ public:
 
     virtual void RemoveTrackFromStats();
 
-    virtual ::webrtc::RTCError GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
+    virtual ::webrtc::RTCError GenerateKeyFrame(::std::vector<::std::string> const& rids) = 0;
 
     virtual ~RtpSenderBase() /*override*/;
     // NOLINTEND

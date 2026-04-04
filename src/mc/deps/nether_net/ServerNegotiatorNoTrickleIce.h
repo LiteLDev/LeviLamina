@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void _onSetLocalDescription(::webrtc::RTCError) /*override*/;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
 
     virtual void _onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate) /*override*/;
 
@@ -84,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError);
+    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError result);
 
     MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidateInterface const* iceCandidate);
 

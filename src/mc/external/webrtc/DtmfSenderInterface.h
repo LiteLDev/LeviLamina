@@ -16,7 +16,7 @@ class DtmfSenderInterface : public ::webrtc::RefCountInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void RegisterObserver(::webrtc::DtmfSenderObserverInterface*) = 0;
+    virtual void RegisterObserver(::webrtc::DtmfSenderObserverInterface* observer) = 0;
 
     virtual void UnregisterObserver() = 0;
 
@@ -24,7 +24,7 @@ public:
 
     virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
 
-    virtual bool InsertDtmf(::std::string const&, int, int, int);
+    virtual bool InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap, int comma_delay);
 
     virtual ::std::string tones() const = 0;
 

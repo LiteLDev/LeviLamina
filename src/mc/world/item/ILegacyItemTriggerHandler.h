@@ -17,10 +17,10 @@ public:
     virtual ~ILegacyItemTriggerHandler() = default;
 
     virtual bool executeTrigger(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const&,
-        ::ItemStackBase&,
-        ::DefinitionTrigger const&,
-        ::RenderParams&
+        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
+        ::ItemStackBase&                                              item,
+        ::DefinitionTrigger const&                                    trigger,
+        ::RenderParams&                                               params
     ) const = 0;
     // NOLINTEND
 

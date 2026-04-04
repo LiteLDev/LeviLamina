@@ -242,19 +242,19 @@ public:
         virtual ~IWorldConverter() = default;
 
         virtual void enqueueConvertImportingWorldTasks(
-            ::std::shared_ptr<::FileArchiver::Result>&,
-            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
-            ::Bedrock::Threading::Async<void>&
+            ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
+            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
+            ::Bedrock::Threading::Async<void>&                              prevTaskHandle
         ) = 0;
 
-        virtual bool shouldCopyWorldForConversion(::std::string const&) const = 0;
+        virtual bool shouldCopyWorldForConversion(::std::string const& levelId) const = 0;
 
         virtual void enqueueConvertExportingWorldTasks(
-            ::std::shared_ptr<::FileArchiver::ExportData>&,
-            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
-            ::Bedrock::Threading::Async<void>&,
-            ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>>,
-            ::std::optional<::FileArchiver::WorldConverterExportSettings> const
+            ::std::shared_ptr<::FileArchiver::ExportData>&                             exportData,
+            ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>            progress,
+            ::Bedrock::Threading::Async<void>&                                         prevTaskHandle,
+            ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
+            ::std::optional<::FileArchiver::WorldConverterExportSettings> const        exportSetting
         ) = 0;
         // NOLINTEND
 

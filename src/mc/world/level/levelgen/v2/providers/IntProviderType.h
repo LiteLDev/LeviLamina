@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~IntProviderType() = default;
 
-    virtual int sample(::IRandom&) const = 0;
+    virtual int sample(::IRandom& random) const = 0;
 
     virtual int maxValue() const = 0;
 

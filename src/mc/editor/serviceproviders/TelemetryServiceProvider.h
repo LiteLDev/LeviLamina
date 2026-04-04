@@ -10,21 +10,25 @@ public:
     // NOLINTBEGIN
     virtual ~TelemetryServiceProvider() = default;
 
-    virtual void fireEditorEventToolActivated(::std::string const&) = 0;
+    virtual void fireEditorEventToolActivated(::std::string const& toolName) = 0;
 
-    virtual void fireUndoEvent(::std::string const&) = 0;
+    virtual void fireUndoEvent(::std::string const& transactionName) = 0;
 
-    virtual void fireRedoEvent(::std::string const&) = 0;
+    virtual void fireRedoEvent(::std::string const& transactionName) = 0;
 
-    virtual void fireEditorKeybindUpdate(::std::string const&, int const, int const) = 0;
+    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) = 0;
 
-    virtual void fireEditorScriptEvent(::std::string const&, ::std::string const&, ::std::string const&) = 0;
+    virtual void fireEditorScriptEvent(
+        ::std::string const& source,
+        ::std::string const& eventName,
+        ::std::string const& metadata
+    ) = 0;
 
     virtual void fireTutorialEvent(
-        ::std::string_view,
-        ::std::optional<::std::string> const&,
-        ::std::string const&,
-        ::std::optional<::std::string> const&
+        ::std::string_view                    type,
+        ::std::optional<::std::string> const& state,
+        ::std::string const&                  currentStage,
+        ::std::optional<::std::string> const& previousStage
     ) = 0;
     // NOLINTEND
 

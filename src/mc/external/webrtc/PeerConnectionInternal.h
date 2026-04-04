@@ -45,19 +45,22 @@ public:
     virtual ::std::vector<::cricket::CandidateStats> GetPooledCandidateStats() const = 0;
 
     virtual ::std::map<::std::string, ::cricket::TransportStats>
-    GetTransportStatsByNames(::std::set<::std::string> const&) = 0;
+    GetTransportStatsByNames(::std::set<::std::string> const& transport_names) = 0;
 
     virtual ::webrtc::Call::Stats GetCallStats() = 0;
 
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetAudioDeviceStats() = 0;
 
-    virtual bool GetLocalCertificate(::std::string const&, ::webrtc::scoped_refptr<::rtc::RTCCertificate>*) = 0;
+    virtual bool GetLocalCertificate(
+        ::std::string const&                            transport_name,
+        ::webrtc::scoped_refptr<::rtc::RTCCertificate>* certificate
+    ) = 0;
 
-    virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const&) = 0;
+    virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain(::std::string const& transport_name) = 0;
 
-    virtual bool IceRestartPending(::std::string const&) const = 0;
+    virtual bool IceRestartPending(::std::string const& content_name) const = 0;
 
-    virtual bool GetSslRole(::std::string const&, ::rtc::SSLRole*) = 0;
+    virtual bool GetSslRole(::std::string const& content_name, ::rtc::SSLRole* role) = 0;
 
     virtual void NoteDataAddedEvent();
 

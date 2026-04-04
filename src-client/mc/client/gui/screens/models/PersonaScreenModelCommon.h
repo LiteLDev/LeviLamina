@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     virtual ~PersonaScreenModelCommon();
 
-    virtual void update(::ui::DirtyFlag&);
+    virtual void update(::ui::DirtyFlag& dirtyFlags);
 
     virtual void updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND
@@ -151,7 +151,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(::ui::DirtyFlag&);
+    MCAPI void $update(::ui::DirtyFlag& dirtyFlags);
 
     MCAPI void $updateSkin(::persona::PersonaCharacterHandle const& characterHandle, ::SkinHandle handle);
     // NOLINTEND

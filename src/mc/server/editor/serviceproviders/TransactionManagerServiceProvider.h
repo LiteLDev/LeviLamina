@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual ~TransactionManagerServiceProvider() = default;
 
-    virtual void addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext>) = 0;
+    virtual void addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext> transactionContext) = 0;
 
     virtual void clearTransactions() = 0;
 
@@ -34,14 +34,14 @@ public:
 
     virtual uint64 redoSize() const = 0;
 
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::BlockPos> const&) = 0;
+    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeList(::std::vector<::BlockPos> const& locations) = 0;
 
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::BlockPos const&, ::BlockPos const&) = 0;
+    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeArea(::BlockPos const& from, ::BlockPos const& to) = 0;
 
-    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const&) = 0;
+    virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const& volume) = 0;
 
     virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
+    addEntityOperation(::Actor* entity, ::Editor::Transactions::EntityOperation::OperationType const type) = 0;
 
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() = 0;
 
@@ -54,10 +54,10 @@ public:
     virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() = 0;
 
     virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>
+        ::std::string const&                                                        payload,
+        ::std::string const&                                                        operationName,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
     ) = 0;
 
     virtual uint64 pendingOperationsSize() const = 0;

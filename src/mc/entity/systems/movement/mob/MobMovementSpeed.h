@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace MobMovementSpeed {
 // functions
 // NOLINTBEGIN
-MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 // NOLINTEND
 
 } // namespace MobMovementSpeed

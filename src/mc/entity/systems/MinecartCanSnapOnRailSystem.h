@@ -19,9 +19,16 @@ struct StateVectorComponent;
 
 struct MinecartCanSnapOnRailSystem {
 public:
+    // MinecartCanSnapOnRailSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::RailMovementComponent>,
+        ::StateVectorComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _checkCanSnapOnRail(
+    MCAPI static void _checkCanSnapOnRail(
         ::StrictEntityContext const&            context,
         ::StateVectorComponent const&           stateVectorComponent,
         ::EntityModifier<::SnapOnRailComponent> mod,

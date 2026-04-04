@@ -27,15 +27,15 @@ public:
     virtual ~ISchematicsMapper() = default;
 
     virtual void execute(
-        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&,
-        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>&,
-        ::ClientBlockPipeline::BlockVolumeArea const&,
-        ::ClientBlockPipeline::BitsetCache const&,
-        ::ClientBlockPipeline::ArrayCache<::Block const*> const*,
-        ::ClientBlockPipeline::CustomGeometryBlock const&,
-        ::ClientBlockPipeline::BlockLookupData const&,
-        ::BlockPos const&,
-        ::Matrix const&
+        ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
+        ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
+        ::ClientBlockPipeline::BlockVolumeArea const&             area,
+        ::ClientBlockPipeline::BitsetCache const&                 opaqueFullBlockCache,
+        ::ClientBlockPipeline::ArrayCache<::Block const*> const*  cullingBlocksCache,
+        ::ClientBlockPipeline::CustomGeometryBlock const&         customBlock,
+        ::ClientBlockPipeline::BlockLookupData const&             blockData,
+        ::BlockPos const&                                         relativePos,
+        ::Matrix const&                                           blockPosTransform
     ) const = 0;
     // NOLINTEND
 

@@ -29,15 +29,15 @@ public:
     // NOLINTBEGIN
     virtual ~IWatchdog() = default;
 
-    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)>) = 0;
+    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) = 0;
 
-    virtual void setWatchdogInterruptPollCounter(uint) = 0;
+    virtual void setWatchdogInterruptPollCounter(uint counter) = 0;
 
-    virtual void beginTiming(::Scripting::ContextId) = 0;
+    virtual void beginTiming(::Scripting::ContextId contextId) = 0;
 
-    virtual void endTiming(::Scripting::ContextId) = 0;
+    virtual void endTiming(::Scripting::ContextId contextId) = 0;
 
-    virtual void pushPhase(::std::string const&, ::std::chrono::microseconds) = 0;
+    virtual void pushPhase(::std::string const& namedPhase, ::std::chrono::microseconds frameBaseLine) = 0;
 
     virtual void popPhase() = 0;
 

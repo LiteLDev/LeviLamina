@@ -17,7 +17,8 @@ public:
     // NOLINTBEGIN
     virtual ~NetworkControllerFactoryInterface() = default;
 
-    virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface> Create(::webrtc::NetworkControllerConfig) = 0;
+    virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface>
+    Create(::webrtc::NetworkControllerConfig config) = 0;
 
     virtual ::webrtc::TimeDelta GetProcessInterval() const = 0;
     // NOLINTEND

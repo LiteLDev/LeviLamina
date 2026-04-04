@@ -19,15 +19,24 @@ struct WitherBossPreAIStepResultComponent;
 
 class WitherBossPreAIStepSystem {
 public:
+    // WitherBossPreAIStepSystem inner types define
+    using ModType = ::EntityModifier<::WitherBossPreAIStepResultComponent>;
+
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::WitherBossFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doWitherBossPreAIStepSystem(
+    MCAPI static void _doWitherBossPreAIStepSystem(
         ::StrictEntityContext&                                 context,
         ::ActorOwnerComponent&                                 actorOwnerComponent,
         ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
-    MCNAPI static void _tickWitherBossPreAIStepSystem(
+    MCAPI static void _tickWitherBossPreAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::WitherBossFlagComponent>,
@@ -35,6 +44,6 @@ public:
         ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

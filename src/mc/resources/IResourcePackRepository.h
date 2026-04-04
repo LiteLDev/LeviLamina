@@ -37,27 +37,31 @@ public:
     // NOLINTBEGIN
     virtual ~IResourcePackRepository() /*override*/;
 
-    virtual void
-    getResourcePacksByPackId(::std::vector<::PackInstanceId> const&, ::std::vector<::PackInstance>&) const = 0;
+    virtual void getResourcePacksByPackId(
+        ::std::vector<::PackInstanceId> const& packInstanceIds,
+        ::std::vector<::PackInstance>&         result
+    ) const = 0;
 
-    virtual ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const&) const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const& idAndVersion) const = 0;
 
-    virtual ::ResourcePack* getResourcePackOfDifferentVersionForPackId(::PackIdVersion const&) const = 0;
+    virtual ::ResourcePack* getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const = 0;
 
-    virtual ::ResourcePack* getResourcePackForPackIdInPath(::PackIdVersion const&, ::Core::Path const&) const = 0;
+    virtual ::ResourcePack*
+    getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const = 0;
 
-    virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const&) const = 0;
+    virtual ::ResourcePack* getResourcePackByUUID(::mce::UUID const& id) const = 0;
 
-    virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const&) const = 0;
+    virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const = 0;
 
-    virtual ::std::shared_ptr<::ResourcePack> getResourcePackSatisfiesPackId(::PackIdVersion const&, bool) const = 0;
+    virtual ::std::shared_ptr<::ResourcePack>
+    getResourcePackSatisfiesPackId(::PackIdVersion const& idAndVersion, bool requireOwnership) const = 0;
 
-    virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const&) const = 0;
+    virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const = 0;
 
     virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
-    getResourcePackInPath(::Core::Path const&) const = 0;
+    getResourcePackInPath(::Core::Path const& path) const = 0;
 
-    virtual bool isResourcePackLoaded(::PackIdVersion const&, ::PackOrigin const&) = 0;
+    virtual bool isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location) = 0;
 
     virtual ::PackSourceReport const* getPackLoadingReport() const = 0;
 
@@ -65,25 +69,32 @@ public:
 
     virtual ::std::shared_ptr<::ResourcePack> getVanillaPack() const = 0;
 
-    virtual bool setServicePacks(::std::vector<::PackIdVersion>) = 0;
+    virtual bool setServicePacks(::std::vector<::PackIdVersion> servicePackIds) = 0;
 
-    virtual bool hasServicePacks(::std::vector<::PackIdVersion> const&) const = 0;
+    virtual bool hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const = 0;
 
     virtual ::std::vector<::PackIdVersion> const& getServicePacks() const = 0;
 
-    virtual void addServicePacksToStack(::ResourcePackStack&) const = 0;
+    virtual void addServicePacksToStack(::ResourcePackStack& stack) const = 0;
 
-    virtual void addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const*) = 0;
+    virtual void
+    addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys) = 0;
 
-    virtual void addWorldResourcePacks(::Core::Path const&) = 0;
+    virtual void addWorldResourcePacks(::Core::Path const& levelPath) = 0;
 
-    virtual void addPremiumWorldTemplateResourcePacks(::Core::Path const&, ::ContentIdentity const&) = 0;
+    virtual void addPremiumWorldTemplateResourcePacks(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    ) = 0;
 
-    virtual void addWorldPackSource(::Core::Path const&) = 0;
+    virtual void addWorldPackSource(::Core::Path const& levelPath) = 0;
 
-    virtual void addPremiumWorldTemplatePackSource(::Core::Path const&, ::ContentIdentity const&) = 0;
+    virtual void addPremiumWorldTemplatePackSource(
+        ::Core::Path const&      worldTemplatePath,
+        ::ContentIdentity const& premiumWorldIdentity
+    ) = 0;
 
-    virtual void addTempWorldTemplateResourcePacks(::mce::UUID const&) = 0;
+    virtual void addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID) = 0;
 
     virtual void removePacksLoadedFromCache() = 0;
 
@@ -119,26 +130,26 @@ public:
 
     virtual ::PackSourceFactory& getPackSourceFactory() = 0;
 
-    virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin) const = 0;
+    virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const = 0;
 
-    virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType) const = 0;
+    virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const = 0;
 
     virtual ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
-        getPacksByCategory(::PackCategory) const = 0;
+    getPacksByCategory(::PackCategory category) const = 0;
 
-    virtual void forEachPack(::std::function<void(::ResourcePack const&)> const&) const = 0;
+    virtual void forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const = 0;
 
-    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType) const = 0;
+    virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const = 0;
 
-    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const&) const = 0;
+    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const = 0;
 
-    virtual void deletePack(::ResourceLocation const&) = 0;
+    virtual void deletePack(::ResourceLocation const& packLocation) = 0;
 
-    virtual void deletePackFiles(::ResourceLocation const&) = 0;
+    virtual void deletePackFiles(::ResourceLocation const& packLocation) = 0;
 
-    virtual void postDeletePack(::ResourceLocation const&) = 0;
+    virtual void postDeletePack(::ResourceLocation const& packLocation) = 0;
 
-    virtual void untrackInvalidPack(::ResourceLocation const&) = 0;
+    virtual void untrackInvalidPack(::ResourceLocation const& packLocation) = 0;
 
     virtual bool isInitialized() const = 0;
 

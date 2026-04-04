@@ -11,6 +11,6 @@ struct InsideHoneyBlockSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createEventsSystem();
+    MCAPI static ::TickingSystemWithInfo createEventsSystem();
     // NOLINTEND
 };

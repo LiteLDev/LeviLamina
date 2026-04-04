@@ -40,7 +40,7 @@ public:
 
     virtual uint64 _getMaxCurveNodesAllowed() = 0;
 
-    virtual float _evaluateCurve(float, ::RenderParams&) = 0;
+    virtual float _evaluateCurve(float t, ::RenderParams& renderParams) = 0;
     // NOLINTEND
 
 public:

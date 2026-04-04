@@ -30,9 +30,9 @@ struct JumpEndSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent>,

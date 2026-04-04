@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     virtual ~DeviceStorageInformationQuery() /*override*/ = default;
 
-    virtual void update(double timestampMs) /*override*/;
+    virtual void update(double) /*override*/;
 
     virtual void onLowDiskSpace(bool bSet) /*override*/;
 

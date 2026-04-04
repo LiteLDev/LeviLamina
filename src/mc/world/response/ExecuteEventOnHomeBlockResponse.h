@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
+                                               root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
@@ -48,7 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
+                                               root,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
 

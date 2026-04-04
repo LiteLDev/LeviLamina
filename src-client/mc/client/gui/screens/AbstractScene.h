@@ -42,11 +42,11 @@ public:
     // NOLINTBEGIN
     virtual ~AbstractScene();
 
-    virtual void init(::ScreenSizeData const&) = 0;
+    virtual void init(::ScreenSizeData const& screenSizeData) = 0;
 
-    virtual void setSize(::ScreenSizeData const&) = 0;
+    virtual void setSize(::ScreenSizeData const& screenSizeData) = 0;
 
-    virtual void onSetKeyboardHeight(float) = 0;
+    virtual void onSetKeyboardHeight(float keyboardHeight) = 0;
 
     virtual void onInternetUpdate() = 0;
 
@@ -68,41 +68,42 @@ public:
 
     virtual void preFrameTick() = 0;
 
-    virtual void tick(int, int) = 0;
+    virtual void tick(int nTick, int maxTick) = 0;
 
-    virtual void applyInput(float) = 0;
+    virtual void applyInput(float a) = 0;
 
-    virtual void frameUpdate(::MinecraftUIFrameUpdateContext&) = 0;
+    virtual void frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext) = 0;
 
-    virtual void preRenderUpdate(::ScreenContext&) = 0;
+    virtual void preRenderUpdate(::ScreenContext& screenContext) = 0;
 
-    virtual void prepareFrame(::ScreenContext&) = 0;
+    virtual void prepareFrame(::ScreenContext& screenContext) = 0;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) = 0;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
 
-    virtual void postRenderUpdate(::ScreenContext&) = 0;
+    virtual void postRenderUpdate(::ScreenContext& screenContext) = 0;
 
     virtual void handleInputModeChanged(::InputMode) = 0;
 
-    virtual void handleButtonPress(uint, ::FocusImpact) = 0;
+    virtual void handleButtonPress(uint buttonId, ::FocusImpact focusImpact) = 0;
 
-    virtual void handleButtonRelease(uint, ::FocusImpact) = 0;
+    virtual void handleButtonRelease(uint buttonId, ::FocusImpact focusImpact) = 0;
 
-    virtual void handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool) = 0;
+    virtual void handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) = 0;
 
-    virtual bool handlePointerLocation(::PointerLocationEventData const&, ::FocusImpact) = 0;
+    virtual bool
+    handlePointerLocation(::PointerLocationEventData const& pointerLocationData, ::FocusImpact focusImpact) = 0;
 
-    virtual void handlePointerPressed(bool) = 0;
+    virtual void handlePointerPressed(bool pressed) = 0;
 
-    virtual void handleDirection(::DirectionId, float, float, ::FocusImpact) = 0;
+    virtual void handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact) = 0;
 
-    virtual void handleTextChar(::std::string const&, ::FocusImpact) = 0;
+    virtual void handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact) = 0;
 
-    virtual void handleCaretLocation(int, ::FocusImpact) = 0;
+    virtual void handleCaretLocation(int caretLocation, ::FocusImpact focusImpact) = 0;
 
-    virtual void handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact) = 0;
+    virtual void handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) = 0;
 
-    virtual void setTextboxText(::std::string const&, ::TextboxTextUpdateReason) = 0;
+    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) = 0;
 
     virtual void onKeyboardDismissed() = 0;
 
@@ -146,7 +147,7 @@ public:
 
     virtual void reload() = 0;
 
-    virtual ::RectangleArea getAreaOfControlByName(::std::string const&) const = 0;
+    virtual ::RectangleArea getAreaOfControlByName(::std::string const& controlName) const = 0;
 
     virtual ::EyeRenderingModeBit getEyeRenderingMode() const = 0;
 
@@ -154,9 +155,9 @@ public:
 
     virtual ::std::string getScreenName() const = 0;
 
-    virtual bool equalsScreenName(::std::string_view) const = 0;
+    virtual bool equalsScreenName(::std::string_view comparison) const = 0;
 
-    virtual bool containsScreenNameSubstring(::std::string_view) const = 0;
+    virtual bool containsScreenNameSubstring(::std::string_view substring) const = 0;
 
     virtual ::std::string getRawScreenName() const = 0;
 
@@ -164,21 +165,21 @@ public:
 
     virtual ::std::string getScreenTelemetryName() const = 0;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const = 0;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const = 0;
 
     virtual int getScreenVersion() const = 0;
 
-    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&) = 0;
+    virtual void processBufferedTextCharEvents(::std::vector<::TextCharEventData> const& bufferedEvents) = 0;
 
     virtual bool getShouldSendEvents() = 0;
 
-    virtual void setShouldSendEvents(bool) = 0;
+    virtual void setShouldSendEvents(bool sendEvents) = 0;
 
     virtual bool getWantsTextOnly() = 0;
 
-    virtual void setWantsTextOnly(bool) = 0;
+    virtual void setWantsTextOnly(bool textOnly) = 0;
 
-    virtual void onDelete(::CachedScenes&, ::TaskGroup&) = 0;
+    virtual void onDelete(::CachedScenes& cache, ::TaskGroup& taskGroup) = 0;
 
     virtual bool isGamepadCursorEnabled() const = 0;
 
@@ -196,9 +197,10 @@ public:
 
     virtual bool canBeTransitioned() const = 0;
 
-    virtual void onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>) = 0;
+    virtual void
+    onScreenExit(bool isPopping, bool doScreenTransitions, ::std::shared_ptr<::AbstractScene> pushedScene) = 0;
 
-    virtual void onScreenEntrance(bool, bool) = 0;
+    virtual void onScreenEntrance(bool isRevisiting, bool doScreenTransitions) = 0;
 
     virtual bool isEntering() const = 0;
 
@@ -214,9 +216,10 @@ public:
 
     virtual bool hasFinishedLoading() const = 0;
 
-    virtual void sendScreenEvent(::std::string const&, ::std::string const&) = 0;
+    virtual void sendScreenEvent(::std::string const& eventName, ::std::string const& eventData) = 0;
 
-    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) = 0;
+    virtual void
+    setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const = 0;
     // NOLINTEND

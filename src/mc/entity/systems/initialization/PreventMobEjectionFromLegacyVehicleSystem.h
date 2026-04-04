@@ -21,7 +21,7 @@ class PreventMobEjectionFromLegacyVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _preventEjectionIfNeeded(
+    MCAPI static void _preventEjectionIfNeeded(
         ::StrictEntityContext&                                               strictEntityContext,
         ::PassengerComponent const&                                          passengerComponent,
         ::AABBShapeComponent const&                                          aabbShapeComponent,
@@ -29,7 +29,7 @@ public:
         ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>& modifier
     );
 
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::EntityNeedsInitializeFlagComponent>,

@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 namespace BlockCollisionsSystem {
 
 struct BlockCollisionResolutionVectorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk9c36e9;
+    ::ll::TypedStorage<4, 12, ::Vec3> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCollisionResolutionVectorComponent& operator=(BlockCollisionResolutionVectorComponent const&);
-    BlockCollisionResolutionVectorComponent(BlockCollisionResolutionVectorComponent const&);
-    BlockCollisionResolutionVectorComponent();
 };
 
 } // namespace BlockCollisionsSystem

@@ -31,7 +31,7 @@ public:
     virtual ~CraftingContainerController() /*override*/;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int) const = 0;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 

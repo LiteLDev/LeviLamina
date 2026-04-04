@@ -23,7 +23,7 @@ class RemovePassengersTooLargeForVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _removePassengersTooLargeForVehicle(
+    MCAPI static void _removePassengersTooLargeForVehicle(
         ::StrictEntityContext&                                           strictEntityContext,
         ::PassengerComponent const&                                      passengerComponent,
         ::AABBShapeComponent const&                                      aabbShapeComponent,
@@ -31,7 +31,7 @@ public:
         ::EntityModifier<::StopRidingRequestComponent>&                  modifier
     );
 
-    MCNAPI static void _tickRemovePassengersTooLargeForVehicle(
+    MCAPI static void _tickRemovePassengersTooLargeForVehicle(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent>,

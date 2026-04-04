@@ -10,7 +10,7 @@ public:
 
     virtual bool requireClose() const = 0;
 
-    virtual void startListenTimeout(::std::chrono::seconds) = 0;
+    virtual void startListenTimeout(::std::chrono::seconds duration) = 0;
 
     virtual bool listenTimeoutExpired() const = 0;
     // NOLINTEND

@@ -100,9 +100,9 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::std::optional<int> getState(::BlockType const&, int) const = 0;
+        virtual ::std::optional<int> getState(::BlockType const& blockType, int blockData) const = 0;
 
-        virtual ::Block const* setState(::BlockType const&, int, int) const = 0;
+        virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const = 0;
 
         virtual ~AlteredStateCollection() = default;
         // NOLINTEND
@@ -428,10 +428,10 @@ public:
     ) const;
 
     virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     virtual bool getCollisionShapeForCamera(
@@ -458,17 +458,21 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-    virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::AABB& bufferAABB
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
     ) const;
 
-    virtual ::AABB const& getVisualShape(::Block const&, ::AABB&) const;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
+
+    virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     virtual ::AABB const& getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
@@ -479,7 +483,7 @@ public:
 
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const;
 
-    virtual void onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -495,7 +499,7 @@ public:
 
     virtual ::Block const& getStrippedBlock(::Block const& srcBlock) const;
 
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
@@ -541,7 +545,7 @@ public:
 
     virtual bool isConsumerComponent() const;
 
-    virtual bool canBeOriginalSurface(bool) const;
+    virtual bool canBeOriginalSurface(bool aboveSeaLevel) const;
 
     virtual bool isSilentWhenJumpingOff() const;
 
@@ -584,15 +588,15 @@ public:
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual void updateEntityAfterFallOn(::BlockPos const&, ::UpdateEntityAfterFallOnInterface& entity) const;
+    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
     virtual bool isBounceBlock() const;
 
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    virtual bool isFilteredOut(::BlockRenderLayer) const;
+    virtual bool isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 
-    virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
+    virtual bool canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const;
 
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const;
 
@@ -635,7 +639,7 @@ public:
 
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const;
+    virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
     virtual void
     spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
@@ -690,7 +694,7 @@ public:
 
     virtual bool causesFreezeEffect() const;
 
-    virtual ::std::string buildDescriptionId(::Block const&) const;
+    virtual ::std::string buildDescriptionId(::Block const& block) const;
 
     virtual bool isAuxValueRelevantForPicking() const;
 
@@ -704,7 +708,7 @@ public:
 
     virtual int getVariant(::Block const& block) const;
 
-    virtual bool canSpawnOn(::Actor*) const;
+    virtual bool canSpawnOn(::Actor* actor) const;
 
     virtual ::Block const& getRenderBlock() const;
 
@@ -712,23 +716,23 @@ public:
 
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const;
 
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    virtual void animateTick(::BlockAnimateTickData const&) const;
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const;
 
     virtual ::BlockType& init();
 
-    virtual ::Brightness getLightEmission(::Block const&) const;
+    virtual ::Brightness getLightEmission(::Block const& block) const;
 
-    virtual ::Block const* tryLegacyUpgrade(ushort) const;
+    virtual ::Block const* tryLegacyUpgrade(ushort extraData) const;
 
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    virtual ::Block const* tryGetInfested(::Block const&) const;
+    virtual ::Block const* tryGetInfested(::Block const& block) const;
 
-    virtual ::Block const* tryGetUninfested(::Block const&) const;
+    virtual ::Block const* tryGetUninfested(::Block const& block) const;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&);
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments);
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -750,15 +754,15 @@ public:
 
     virtual ::HashedString const& getCullingLayer() const;
 
-    virtual ::Brightness getLight(::Block const&) const;
+    virtual ::Brightness getLight(::Block const& block) const;
 
-    virtual ::Brightness getEmissiveBrightness(::Block const&) const;
+    virtual ::Brightness getEmissiveBrightness(::Block const& block) const;
 
-    virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    virtual void _onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
-    virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
+    virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
     // NOLINTEND
 
 public:
@@ -942,10 +946,10 @@ public:
 #endif
 
     MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::IConstBlockSource const&                         region,
+        ::BlockPos const&                                  pos,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     MCAPI bool $getCollisionShapeForCamera(
@@ -972,17 +976,21 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-    MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::AABB& bufferAABB
+    MCAPI ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
     ) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferAABB
+    ) const;
+
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
@@ -993,7 +1001,7 @@ public:
 
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
-    MCFOLD void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
+    MCFOLD void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
     MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -1053,7 +1061,7 @@ public:
 
     MCFOLD bool $isConsumerComponent() const;
 
-    MCAPI bool $canBeOriginalSurface(bool) const;
+    MCAPI bool $canBeOriginalSurface(bool aboveSeaLevel) const;
 
     MCFOLD bool $isSilentWhenJumpingOff() const;
 
@@ -1096,15 +1104,15 @@ public:
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const&, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
     MCFOLD bool $isBounceBlock() const;
 
     MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    MCFOLD bool $isFilteredOut(::BlockRenderLayer) const;
+    MCFOLD bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
+    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const;
 
     MCFOLD bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
 
@@ -1147,7 +1155,7 @@ public:
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
     MCFOLD void
     $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
@@ -1202,7 +1210,7 @@ public:
 
     MCFOLD bool $causesFreezeEffect() const;
 
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const& block) const;
 
     MCFOLD bool $isAuxValueRelevantForPicking() const;
 
@@ -1216,7 +1224,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCFOLD bool $canSpawnOn(::Actor* actor) const;
 
     MCFOLD ::Block const& $getRenderBlock() const;
 
@@ -1224,23 +1232,23 @@ public:
 
     MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
+    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD void $animateTick(::BlockAnimateTickData const&) const;
+    MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD ::BlockType& $init();
 
-    MCAPI ::Brightness $getLightEmission(::Block const&) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCFOLD ::Block const* $tryLegacyUpgrade(ushort) const;
+    MCFOLD ::Block const* $tryLegacyUpgrade(ushort extraData) const;
 
     MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    MCFOLD ::Block const* $tryGetInfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetInfested(::Block const& block) const;
 
-    MCFOLD ::Block const* $tryGetUninfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
 
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -1262,15 +1270,15 @@ public:
 
     MCAPI ::HashedString const& $getCullingLayer() const;
 
-    MCAPI ::Brightness $getLight(::Block const&) const;
+    MCAPI ::Brightness $getLight(::Block const& block) const;
 
-    MCFOLD ::Brightness $getEmissiveBrightness(::Block const&) const;
+    MCFOLD ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
-    MCFOLD ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD void $_onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    MCFOLD void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
-    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
+    MCFOLD void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
 
     // NOLINTEND

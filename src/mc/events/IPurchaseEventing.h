@@ -27,60 +27,69 @@ public:
     // NOLINTBEGIN
     virtual ~IPurchaseEventing() = default;
 
-    virtual void fireEventIAPPurchaseAttempt(::std::string const&, ::std::string const&, ::Offer&, ::PurchasePath) = 0;
-
-    virtual void fireEventIAPPurchaseResolved(
-        ::std::string const&,
-        ::std::string const&,
-        ::Offer&,
-        ::StoreEventData::PurchaseResult,
-        ::PurchasePath
+    virtual void fireEventIAPPurchaseAttempt(
+        ::std::string const& correlationId,
+        ::std::string const& storeId,
+        ::Offer&             offer,
+        ::PurchasePath       path
     ) = 0;
 
-    virtual void
-    fireEventIAPRedeemAttempt(::std::string const&, ::std::string const&, ::std::string const&, ::PurchasePath) = 0;
+    virtual void fireEventIAPPurchaseResolved(
+        ::std::string const&             correlationId,
+        ::std::string const&             storeId,
+        ::Offer&                         offer,
+        ::StoreEventData::PurchaseResult purchaseRes,
+        ::PurchasePath                   path
+    ) = 0;
+
+    virtual void fireEventIAPRedeemAttempt(
+        ::std::string const& correlationId,
+        ::std::string const& storeId,
+        ::std::string const& productId,
+        ::PurchasePath       path
+    ) = 0;
 
     virtual void fireEventIAPRedeemResolved(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::StoreEventData::PurchaseResult,
-        ::PurchasePath
+        ::std::string const&             correlationId,
+        ::std::string const&             storeId,
+        ::std::string const&             productId,
+        ::StoreEventData::PurchaseResult purchaseRes,
+        ::PurchasePath                   path
     ) = 0;
 
     virtual void fireEventPurchaseAttempt(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::StoreEventData::StoreType,
-        ::PurchasePath,
-        ::std::optional<uint64>
+        ::std::string const&        correlationId,
+        ::std::string const&        productId,
+        ::std::string const&        price,
+        ::StoreEventData::StoreType storeType,
+        ::PurchasePath              path,
+        ::std::optional<uint64>     durationPurchasedSec
     ) = 0;
 
     virtual void fireEventPurchaseResolved(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::StoreEventData::StoreType,
-        ::StoreEventData::PurchaseResult,
-        ::PurchasePath,
-        ::std::optional<uint64>
+        ::std::string const&             correlationId,
+        ::std::string const&             productId,
+        ::std::string const&             price,
+        ::StoreEventData::StoreType      storeType,
+        ::StoreEventData::PurchaseResult purchaseRes,
+        ::PurchasePath                   path,
+        ::std::optional<uint64>          durationPurchasedSec
     ) = 0;
 
-    virtual void fireEventUnfulfilledPurchaseFound(::PlatformOfferPurchaseDetails&) = 0;
+    virtual void fireEventUnfulfilledPurchaseFound(::PlatformOfferPurchaseDetails& unfulfilledPurchase) = 0;
 
     virtual void fireEventRealmsPurchase(
-        ::std::string const&,
-        ::RealmsPurchaseFlow,
-        ::RealmsPurchaseIntent,
-        ::RealmsOfferPeriod,
-        ::RealmsOfferTier,
-        bool,
-        ::ProductSku const&,
-        ::RealmsPurchaseStage,
-        ::RealmsPurchaseStatus,
-        ::RealmsPurchaseTelemetryFailureReason,
-        ::std::vector<::Offer*> const&
+        ::std::string const&                   correlationId,
+        ::RealmsPurchaseFlow                   purchaseFlow,
+        ::RealmsPurchaseIntent                 intent,
+        ::RealmsOfferPeriod                    offerPeriod,
+        ::RealmsOfferTier                      offerTier,
+        bool                                   isTrial,
+        ::ProductSku const&                    productSku,
+        ::RealmsPurchaseStage                  purchaseStage,
+        ::RealmsPurchaseStatus                 purchaseStatus,
+        ::RealmsPurchaseTelemetryFailureReason failureReason,
+        ::std::vector<::Offer*> const&         unavailableOffers
     ) = 0;
     // NOLINTEND
 

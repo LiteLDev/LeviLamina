@@ -62,7 +62,7 @@ public:
 
         virtual bool sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        virtual bool sameItem(::ItemDescriptor::ItemEntry const&, bool) const = 0;
+        virtual bool sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const = 0;
 
         virtual ::std::string getFullName() const;
 
@@ -78,7 +78,7 @@ public:
 
         virtual void serialize(::Json::Value& val) const;
 
-        virtual void serialize(::BinaryStream&) const = 0;
+        virtual void serialize(::BinaryStream& stream) const = 0;
 
         virtual ::ItemDescriptor::InternalType getType() const = 0;
 

@@ -77,7 +77,7 @@ public:
 
     virtual bool isImmobile() const /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual ::Vec3 getHeadLookVector(float a) const /*override*/;
 
@@ -161,7 +161,7 @@ public:
 
     MCFOLD bool $isImmobile() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI ::Vec3 $getHeadLookVector(float a) const;
 

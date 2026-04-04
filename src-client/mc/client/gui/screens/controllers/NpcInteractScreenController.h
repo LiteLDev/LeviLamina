@@ -80,7 +80,7 @@ public:
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
-    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data) /*override*/;
+    virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData) /*override*/;
 
     virtual ::EventResult onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions) /*override*/;
 
@@ -146,7 +146,7 @@ public:
 
     MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> data);
+    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
 
     MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool performClosingActions);
 

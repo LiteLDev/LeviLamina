@@ -32,7 +32,7 @@ public:
 
     virtual bool collectOptionalArguments();
 
-    virtual void execute(::CommandOrigin const&, ::CommandOutput&) const = 0;
+    virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const = 0;
     // NOLINTEND
 
 public:

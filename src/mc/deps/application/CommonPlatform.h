@@ -80,7 +80,7 @@ public:
 
     virtual void issueDPIChange(float dpi);
 
-    virtual void issueOrientationChange(::DisplayOrientation const&);
+    virtual void issueOrientationChange(::DisplayOrientation const& orientation);
 
     virtual void feedButtonPress(int const& button);
 
@@ -101,19 +101,19 @@ public:
 
     virtual bool _preAppCreation(::Bedrock::ActivationArguments const&) = 0;
 
-    virtual bool _postAppCreation(::Bedrock::ActivationArguments const&) = 0;
+    virtual bool _postAppCreation(::Bedrock::ActivationArguments const& actArgs) = 0;
 
-    virtual void _processActivationArguments(::Bedrock::ActivationArguments const&) = 0;
+    virtual void _processActivationArguments(::Bedrock::ActivationArguments const& args) = 0;
 
-    virtual bool _update(bool) = 0;
+    virtual bool _update(bool canRender) = 0;
 
     virtual bool _isShuttingDown() = 0;
 
     virtual bool _isShutdown() = 0;
 
-    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const&) = 0;
+    virtual void pushNotificationReceived_Shim(::PushNotificationMessage const& msg) = 0;
 
-    virtual void notifyUriListeners_Shim(::ActivationUri const&) = 0;
+    virtual void notifyUriListeners_Shim(::ActivationUri const& uri) = 0;
 
     virtual ::std::string getDeviceId_Shim() const = 0;
     // NOLINTEND
@@ -166,7 +166,7 @@ public:
 
     MCFOLD void $issueDPIChange(float dpi);
 
-    MCFOLD void $issueOrientationChange(::DisplayOrientation const&);
+    MCFOLD void $issueOrientationChange(::DisplayOrientation const& orientation);
 
     MCAPI void $feedButtonPress(int const& button);
 

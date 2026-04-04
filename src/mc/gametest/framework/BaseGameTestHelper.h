@@ -51,168 +51,206 @@ public:
     // NOLINTBEGIN
     virtual ~BaseGameTestHelper() /*override*/ = default;
 
-    virtual void succeedWhenEntityPresent(::ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
-
-    virtual void succeedWhenEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) = 0;
-
-    virtual void
-    succeedWhenEntityData(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
-
-    virtual void succeedWhenEntityHasComponent(
-        ::ActorDefinitionIdentifier const&,
-        ::std::string const&,
-        ::BlockPos const&,
-        bool
+    virtual void succeedWhenEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        int                                x,
+        int                                y,
+        int                                z,
+        bool                               isPresent
     ) = 0;
 
-    virtual void succeedWhenBlockPresent(::Block const&, int, int, int, bool) = 0;
+    virtual void succeedWhenEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        bool                               isPresent
+    ) = 0;
 
-    virtual void succeedWhenBlockPresent(::Block const&, ::BlockPos const&, bool) = 0;
+    virtual void succeedWhenEntityData(
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    ) = 0;
 
-    virtual void succeedWhenBlockPresent(::BlockType const&, ::BlockPos const&, bool) = 0;
+    virtual void succeedWhenEntityHasComponent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    ) = 0;
+
+    virtual void succeedWhenBlockPresent(::Block const& block, int x, int y, int z, bool isPresent) = 0;
+
+    virtual void succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent) = 0;
+
+    virtual void succeedWhenBlockPresent(::BlockType const& block, ::BlockPos const& position, bool isPresent) = 0;
 
     virtual void setNight() = 0;
 
-    virtual void setDayTime(int) = 0;
+    virtual void setDayTime(int time) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> setBlock(int, int, int, ::Block const&, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    setBlock(int x, int y, int z, ::Block const& block, int updateFlags) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> setBlock(::BlockPos const&, ::Block const&, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    setBlock(::BlockPos const& pos, ::Block const& block, int updateFlags) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> destroyBlock(::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError> destroyBlock(::BlockPos const& pos, bool dropResources) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> pressButton(int, int, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError> pressButton(int x, int y, int z) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> pressButton(::BlockPos const&) = 0;
+    virtual ::std::optional<::gametest::GameTestError> pressButton(::BlockPos const& buttonPos) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> pullLever(int, int, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError> pullLever(int x, int y, int z) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> pullLever(::BlockPos const&) = 0;
+    virtual ::std::optional<::gametest::GameTestError> pullLever(::BlockPos const& leverPos) = 0;
 
     virtual ::std::optional<::gametest::GameTestError> killAllEntities() = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Actor*>
-    spawn(::ActorDefinitionIdentifier const&, int, int, int) = 0;
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Actor*>
-    spawn(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Actor*>
-    spawn(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::Actor*> spawnItem(::ItemStack const&, ::Vec3 const&) = 0;
+    spawn(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Actor*>
-    spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::BlockPos const&) = 0;
+    spawnItem(::ItemStack const& itemType, ::Vec3 const& pos) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Actor*>
-    spawnWithoutBehaviors(::ActorDefinitionIdentifier const&, ::Vec3 const&) = 0;
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> walkTo(::Mob&, ::BlockPos const&, float) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> walkTo(::Mob&, ::Vec3 const&, float) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> setTntFuse(::Actor&, int) = 0;
+    virtual ::std::variant<::gametest::GameTestError, ::Actor*>
+    spawnWithoutBehaviors(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos) = 0;
 
     virtual ::std::optional<::gametest::GameTestError>
-    assertEntityPresent(::ActorDefinitionIdentifier const&, bool) = 0;
+    walkTo(::Mob& mob, ::BlockPos const& pos, float speedModifier) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> walkTo(::Mob& mob, ::Vec3 const& pos, float speedModifier) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> setTntFuse(::Actor& actor, int fuseLength) = 0;
 
     virtual ::std::optional<::gametest::GameTestError>
-    assertEntityPresent(::ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
+    assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, bool isPresent) = 0;
 
     virtual ::std::optional<::gametest::GameTestError>
-    assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, bool) = 0;
+    assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, int x, int y, int z, bool isPresent) = 0;
 
     virtual ::std::optional<::gametest::GameTestError>
-    assertEntityPresent(::ActorDefinitionIdentifier const&, ::BlockPos const&, float const, bool) = 0;
+    assertEntityPresent(::ActorDefinitionIdentifier const& actorIdentifier, ::BlockPos const& pos, bool isPresent) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError>
-    assertEntityInstancePresent(::Actor const*, ::BlockPos const&, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertEntityInstancePresent(::Actor const*, bool) const = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertEntityTouching(::ActorDefinitionIdentifier const&, ::Vec3 const&, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertEntityState(::BlockPos const&, ::ActorDefinitionIdentifier const&, ::std::function<bool(::Actor&)>) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertBlockPresent(::BlockType const&, int, int, int, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertBlockPresent(::BlockType const&, ::BlockPos const&, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertBlockState(::BlockPos const&, ::std::function<bool(::Block const&)>) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertItemEntityPresent(::Item const&, int, int, int, float, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertItemEntityPresent(::Item const&, ::BlockPos const&, float, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertItemEntityCountIs(::Item const&, ::BlockPos const&, float, int) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertContainerEmpty(::BlockPos const&) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertContainerContains(::ItemStack const&, ::BlockPos const&) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError>
-    assertEntityHasComponent(::ActorDefinitionIdentifier const&, ::std::string const&, ::BlockPos const&, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
-        ::ActorDefinitionIdentifier const&,
-        ::SharedTypes::Legacy::ArmorSlot,
-        ::std::string const&,
-        int,
-        ::BlockPos const&,
-        bool
+    virtual ::std::optional<::gametest::GameTestError> assertEntityPresent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::BlockPos const&                  pos,
+        float const                        distance,
+        bool                               isPresent
     ) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> print(::std::string const&) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertRedstonePower(::BlockPos const&, int) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> assertIsWaterlogged(::BlockPos const&, bool) = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> pulseRedstone(::BlockPos const&, int) = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
-    getFenceConnectivity(::BlockPos const&) = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::BlockPos> worldPosition(::BlockPos const&) const = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::Vec3> worldPosition(::Vec3 const&) const = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::BlockPos> relativePosition(::BlockPos const&) const = 0;
-
-    virtual ::std::variant<::gametest::GameTestError, ::Vec3> relativePosition(::Vec3 const&) const = 0;
-
-    virtual ::std::optional<::gametest::GameTestError> setFluidContainer(::BlockPos const&, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityInstancePresent(::Actor const* actor, ::BlockPos const& pos, bool expectedPresent) = 0;
 
     virtual ::std::optional<::gametest::GameTestError>
-    triggerInternalBlockEvent(::BlockPos const&, ::std::string const&, ::std::vector<float> const&) = 0;
+    assertEntityInstancePresent(::Actor const* actor, bool expectedPresent) const = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> assertCanReachLocation(::Mob&, ::BlockPos const&, bool) = 0;
+    virtual ::std::optional<::gametest::GameTestError>
+    assertEntityTouching(::ActorDefinitionIdentifier const& actorIdentifier, ::Vec3 const& pos, bool isTouching) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> assertEntityState(
+        ::BlockPos const&                  pos,
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::function<bool(::Actor&)>    dataPredicate
+    ) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockPresent(::BlockType const& blockType, int x, int y, int z, bool isPresent) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockPresent(::BlockType const& blockType, ::BlockPos const& pos, bool isPresent) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertBlockState(::BlockPos const& blockPos, ::std::function<bool(::Block const&)> predicate) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityPresent(::Item const& item, int x, int y, int z, float searchDistance, bool isPresent) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityPresent(::Item const& item, ::BlockPos const& pos, float searchDistance, bool isPresent) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertItemEntityCountIs(::Item const& itemType, ::BlockPos const& pos, float searchDistance, int expectedCount) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> assertContainerEmpty(::BlockPos const& pos) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertContainerContains(::ItemStack const& item, ::BlockPos const& pos) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> assertEntityHasComponent(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::std::string const&               componentName,
+        ::BlockPos const&                  pos,
+        bool                               hasComponent
+    ) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
+        ::ActorDefinitionIdentifier const& actorIdentifier,
+        ::SharedTypes::Legacy::ArmorSlot   armorSlot,
+        ::std::string const&               armorName,
+        int                                dataValue,
+        ::BlockPos const&                  pos,
+        bool                               hasArmor
+    ) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> print(::std::string const& text) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertRedstonePower(::BlockPos const& pos, int expectedPower) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertIsWaterlogged(::BlockPos const& pos, bool expectedWaterlogged) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> pulseRedstone(::BlockPos const& pos, int duration) = 0;
+
+    virtual ::std::variant<::gametest::GameTestError, ::ScriptModuleGameTest::ScriptGameTestConnectivity>
+    getFenceConnectivity(::BlockPos const& relativePos) = 0;
+
+    virtual ::std::variant<::gametest::GameTestError, ::BlockPos>
+    worldPosition(::BlockPos const& relativePos) const = 0;
+
+    virtual ::std::variant<::gametest::GameTestError, ::Vec3> worldPosition(::Vec3 const& relativePos) const = 0;
+
+    virtual ::std::variant<::gametest::GameTestError, ::BlockPos>
+    relativePosition(::BlockPos const& worldPos) const = 0;
+
+    virtual ::std::variant<::gametest::GameTestError, ::Vec3> relativePosition(::Vec3 const& worldPos) const = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> setFluidContainer(::BlockPos const& pos, int _fluidType) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError> triggerInternalBlockEvent(
+        ::BlockPos const&           pos,
+        ::std::string const&        event,
+        ::std::vector<float> const& parameters
+    ) = 0;
+
+    virtual ::std::optional<::gametest::GameTestError>
+    assertCanReachLocation(::Mob& mob, ::BlockPos const& pos, bool expectedReach) = 0;
 
     virtual ::std::optional<::gametest::GameTestError> spreadFromFaceTowardDirection(
-        ::BlockPos const&,
-        ::ScriptModuleMinecraft::ScriptFacing,
-        ::ScriptModuleMinecraft::ScriptFacing
+        ::BlockPos const&                     pos,
+        ::ScriptModuleMinecraft::ScriptFacing fromFace,
+        ::ScriptModuleMinecraft::ScriptFacing direction
     ) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
-    spawnSimulatedPlayer(::std::string const&, ::BlockPos const&, ::GameType) = 0;
+    spawnSimulatedPlayer(::std::string const& name, ::BlockPos const& pos, ::GameType gameMode) = 0;
 
-    virtual void removeSimulatedPlayer(::SimulatedPlayer&) = 0;
+    virtual void removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer) = 0;
 
     virtual ::std::variant<::gametest::GameTestError, ::Dimension*> getDimension() = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> getBlockSource(::BlockSource*&) = 0;
+    virtual ::std::optional<::gametest::GameTestError> getBlockSource(::BlockSource*& blockSourceResult) = 0;
 
-    virtual ::std::optional<::gametest::GameTestError> onPlayerJump(::Mob&, int) = 0;
+    virtual ::std::optional<::gametest::GameTestError> onPlayerJump(::Mob& mob, int jumpAmount) = 0;
     // NOLINTEND
 
 public:

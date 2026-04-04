@@ -26,11 +26,17 @@ public:
 
     virtual bool canAlwaysEat() const = 0;
 
-    virtual ::Item const* eatItem(::ItemStack&, ::Actor&, ::Level&) = 0;
+    virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) = 0;
 
-    virtual void use(bool& result, ::ItemStack& item, ::Player& player) = 0;
+    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) = 0;
 
-    virtual ::Item const* useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) = 0;
+    virtual ::Item const* useTimeDepleted(
+        ::ItemUseMethod&   itemUseMethod,
+        ::ItemStack const& initialInstance,
+        ::ItemStack&       instance,
+        ::Player&          player,
+        ::Level&           level
+    ) = 0;
     // NOLINTEND
 
 public:

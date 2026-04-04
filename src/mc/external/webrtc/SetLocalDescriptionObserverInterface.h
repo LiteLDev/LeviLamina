@@ -16,7 +16,7 @@ class SetLocalDescriptionObserverInterface : public ::webrtc::RefCountInterface 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError) = 0;
+    virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) = 0;
 
     virtual ~SetLocalDescriptionObserverInterface() /*override*/;
     // NOLINTEND

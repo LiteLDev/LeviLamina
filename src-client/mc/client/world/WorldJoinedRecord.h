@@ -30,9 +30,9 @@ public:
 
     virtual ::World::WorldJoinedRecordType getWorldJoinedRecordType() const = 0;
 
-    virtual bool operator==(::World::WorldJoinedRecord const&) const = 0;
+    virtual bool operator==(::World::WorldJoinedRecord const& other) const = 0;
 
-    virtual void serializeExtended(::Json::Value&) const = 0;
+    virtual void serializeExtended(::Json::Value& outJsonValue) const = 0;
     // NOLINTEND
 
 public:

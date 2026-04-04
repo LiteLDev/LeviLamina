@@ -101,7 +101,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doMovementSoundRequestSystem(
+    MCAPI static void doMovementSoundRequestSystem(
         ::StrictEntityContext const&                                      entity,
         ::ActorDataFlagComponent const&                                   actorFlags,
         ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
@@ -117,7 +117,7 @@ public:
         ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> requestQueueView
     );
 
-    MCNAPI static void prepareForStepSound(
+    MCAPI static void prepareForStepSound(
         ::StrictEntityContext const&                          entity,
         ::MovementSoundComponent const&                       movementSoundComponent,
         ::Optional<::CurrentlyStandingOnBlockComponent const> currentlyStandingOnBlockComponent,
@@ -128,7 +128,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
             ::Read<
@@ -148,7 +148,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
             ::Read<

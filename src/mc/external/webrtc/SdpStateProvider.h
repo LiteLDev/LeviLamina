@@ -33,11 +33,11 @@ public:
 
     virtual ::webrtc::SessionDescriptionInterface const* pending_remote_description() const = 0;
 
-    virtual bool NeedsIceRestart(::std::string const&) const = 0;
+    virtual bool NeedsIceRestart(::std::string const& content_name) const = 0;
 
-    virtual bool IceRestartPending(::std::string const&) const = 0;
+    virtual bool IceRestartPending(::std::string const& content_name) const = 0;
 
-    virtual ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const&) const = 0;
+    virtual ::std::optional<::rtc::SSLRole> GetDtlsRole(::std::string const& mid) const = 0;
     // NOLINTEND
 
 public:

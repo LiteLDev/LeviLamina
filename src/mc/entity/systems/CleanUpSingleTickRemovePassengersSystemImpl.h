@@ -17,7 +17,7 @@ struct StopRidingRequestComponent;
 namespace CleanUpSingleTickRemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void _cleanup(
+MCAPI void _cleanup(
     ::entt::type_list<::Include<::StopRidingRequestComponent>>,
     ::StrictEntityContext const&                                passenger,
     ::PassengerComponent const&                                 passengerComponent,

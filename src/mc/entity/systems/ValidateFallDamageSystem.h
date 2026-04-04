@@ -23,9 +23,9 @@ struct VehicleInputIntentComponent;
 namespace ValidateFallDamageSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void doValidateFallDamage(
+MCAPI void doValidateFallDamage(
     ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
     ::Optional<::ServerPlayerCurrentMovementComponent const> const& serverPlayerCurrentMovementComponent,
     ::Optional<::FallDamageResultComponent const> const&            playerFallDamageResultComponent,
@@ -34,7 +34,7 @@ MCNAPI void doValidateFallDamage(
     ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView
 );
 
-MCNAPI void singleTick(
+MCAPI void singleTick(
     ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
@@ -48,7 +48,7 @@ MCNAPI void singleTick(
     ::ViewT<::StrictEntityContext, ::FallDamageResultComponent const> fallDamageView
 );
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ServerPlayerComponent>,

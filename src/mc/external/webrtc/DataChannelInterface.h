@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void RegisterObserver(::webrtc::DataChannelObserver*) = 0;
+    virtual void RegisterObserver(::webrtc::DataChannelObserver* observer) = 0;
 
     virtual void UnregisterObserver() = 0;
 
@@ -73,9 +73,9 @@ public:
 
     virtual void Close() = 0;
 
-    virtual bool Send(::webrtc::DataBuffer const&);
+    virtual bool Send(::webrtc::DataBuffer const& buffer);
 
-    virtual void SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
+    virtual void SendAsync(::webrtc::DataBuffer buffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&> on_complete);
 
     virtual ~DataChannelInterface() /*override*/;
     // NOLINTEND

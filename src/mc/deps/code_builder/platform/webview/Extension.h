@@ -15,17 +15,22 @@ public:
     // NOLINTBEGIN
     virtual ~Extension() = default;
 
-    virtual void setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)>) = 0;
+    virtual void
+    setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)> messageSender) = 0;
 
-    virtual bool shouldProcessMessage(::std::string const&, ::std::string const&) = 0;
+    virtual bool shouldProcessMessage(::std::string const& functionNamespace, ::std::string const& func) = 0;
 
-    virtual bool onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) = 0;
+    virtual bool onMessageReceived(
+        ::std::string const&           functionNamespace,
+        ::std::string const&           func,
+        ::std::optional<::Json::Value> arguments
+    ) = 0;
 
     virtual bool isShutdownInProgress();
 
     virtual void onShutdown();
 
-    virtual void onLoadingBegin(::std::function<void(::std::string)>);
+    virtual void onLoadingBegin(::std::function<void(::std::string)> handler);
     // NOLINTEND
 
 public:

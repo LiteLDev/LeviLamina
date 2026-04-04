@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ~IActorEventCoordinatorDependencies() = default;
 
-    virtual void sendActorUseItemEvent(::EntityContext&, ::ItemStack&, ::ItemUseMethod) = 0;
+    virtual void sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) = 0;
     // NOLINTEND
 
 public:

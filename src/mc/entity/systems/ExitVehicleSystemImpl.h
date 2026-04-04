@@ -18,11 +18,11 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/util/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class BaseGameVersion;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class StrictEntityContext;
@@ -101,17 +101,49 @@ struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionCo
                                    ::GlobalWrite<>,
                                    ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk391aec;
-    ::ll::UntypedStorage<1, 1>  mUnk380d8c;
-    // NOLINTEND
+    // ExitVehicleSystemImpl inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::CanStandOnSnowFlagComponent,
+            ::HasLightweightFamilyFlagComponent,
+            ::HorseFlagComponent,
+            ::MobFlagComponent,
+            ::ParrotFlagComponent,
+            ::VehicleComponent,
+            ::CamelFlagComponent,
+            ::PlayerComponent,
+            ::StopRidingRequestComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::MovementAbilitiesComponent,
+            ::ActorTypeComponent,
+            ::FallDistanceComponent,
+            ::PassengerComponent,
+            ::ActorGameTypeComponent,
+            ::ActorDataFlagComponent,
+            ::VehicleComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::RenderRotationComponent,
+            ::StandAnimationComponent,
+            ::OffsetsComponent,
+            ::VanillaOffsetComponent,
+            ::PassengerRenderingRidingOffsetComponent,
+            ::DimensionTypeComponent,
+            ::EjectedByActivatorRailFlagComponent,
+            ::PostTickPositionDeltaComponent>,
+        ::Write<::AABBShapeComponent, ::ActorRotationComponent, ::StateVectorComponent>,
+        ::AddRemove<::ActorSetPositionRequestComponent>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    ExitVehicleSystemImpl& operator=(ExitVehicleSystemImpl const&);
-    ExitVehicleSystemImpl(ExitVehicleSystemImpl const&);
-    ExitVehicleSystemImpl();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion const> mVersion;
+    ::ll::TypedStorage<1, 1, bool const>               mIsClient;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -199,7 +231,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickExitVehicle(
+    MCAPI static void _tickExitVehicle(
         ::StrictEntityContext const&                            entity,
         ::PassengerComponent const&                             passenger,
         ::AABBShapeComponent const&                             aabb,
@@ -259,7 +291,7 @@ public:
         ::IConstBlockSource const& region
     );
 
-    MCNAPI static auto createViews(
+    MCAPI static auto createViews(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -297,7 +329,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI static auto getExitStrategy(
+    MCAPI static auto getExitStrategy(
         ::BaseGameVersion const&                                       version,
         ::Optional<::EjectedByActivatorRailFlagComponent const> const& ejectedByActivatorRail,
         ::Optional<::ExitFromPassengerFlagComponent const> const&      exitFromPassenger
@@ -307,7 +339,7 @@ public:
             ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
         );
 
-    MCNAPI static bool tryPlaceAt(
+    MCAPI static bool tryPlaceAt(
         ::Vec3 const&                                      groundPos,
         ::AABB const&                                      aabbEntity,
         ::IConstBlockSource const&                         region,
@@ -318,7 +350,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -357,7 +389,7 @@ public:
         ::StrictEntityContext&   entityContext
     );
 
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,

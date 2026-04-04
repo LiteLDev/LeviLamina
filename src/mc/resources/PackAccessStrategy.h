@@ -46,15 +46,21 @@ public:
 
     virtual bool isTrusted() const = 0;
 
-    virtual bool hasAsset(::Core::Path const&, bool, bool) const = 0;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const = 0;
 
-    virtual bool hasFolder(::Core::Path const&) const = 0;
+    virtual bool hasFolder(::Core::Path const& packRelativePath) const = 0;
 
-    virtual bool getAsset(::Core::Path const&, ::std::string&, bool) const = 0;
+    virtual bool
+    getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const = 0;
 
-    virtual void forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const = 0;
+    virtual void forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const = 0;
 
-    virtual void forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
+    virtual void
+    forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
 
@@ -62,7 +68,7 @@ public:
 
     virtual bool supportsSignatureVerification() const;
 
-    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const&) const = 0;
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const = 0;
 
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
 
@@ -76,9 +82,11 @@ public:
 
     virtual bool isAssetExtractionViable() const;
 
-    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const;
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::Path const& packRelativePath) const;
 
-    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const&) const;
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    _preloadSubFolders(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -125,7 +133,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
+    MCNAPI void
+    $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
@@ -141,9 +150,11 @@ public:
 
     MCNAPI bool $isAssetExtractionViable() const;
 
-    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    $_loadArchive(::Core::Path const& packRelativePath) const;
 
-    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> $_preloadSubFolders(::Core::Path const&) const;
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    $_preloadSubFolders(::Core::Path const& packRelativePath) const;
 
 
     // NOLINTEND

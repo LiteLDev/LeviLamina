@@ -66,7 +66,8 @@ public:
     // NOLINTBEGIN
     virtual ~NetworkPeer();
 
-    virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
+    virtual void
+    sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible) = 0;
 
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
@@ -78,8 +79,10 @@ public:
 
     virtual bool isEncrypted() const;
 
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
+    virtual ::NetworkPeer::DataStatus _receivePacket(
+        ::std::string&                                                    outData,
+        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+    ) = 0;
     // NOLINTEND
 
 public:

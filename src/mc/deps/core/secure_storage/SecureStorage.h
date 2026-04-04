@@ -20,13 +20,13 @@ public:
     // NOLINTBEGIN
     virtual ~SecureStorage();
 
-    virtual bool add(::std::string const&, ::std::string const&) = 0;
+    virtual bool add(::std::string const& key, ::std::string const& value) = 0;
 
-    virtual bool addOrUpdate(::std::string const&, ::std::string const&) = 0;
+    virtual bool addOrUpdate(::std::string const& key, ::std::string const& value) = 0;
 
-    virtual bool remove(::std::string const&) = 0;
+    virtual bool remove(::std::string const& key) = 0;
 
-    virtual bool get(::std::string const&, ::std::string&) = 0;
+    virtual bool get(::std::string const& key, ::std::string& outValue) = 0;
     // NOLINTEND
 
 public:

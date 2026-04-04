@@ -20,9 +20,9 @@ public:
 
     virtual ::std::string_view getName() = 0;
 
-    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _undo(::Editor::ServiceProviderCollection& services) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& services) = 0;
     // NOLINTEND
 
 public:

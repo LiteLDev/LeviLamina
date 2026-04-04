@@ -15,21 +15,25 @@ public:
     // NOLINTBEGIN
     virtual ~ISystemInterface() = default;
 
-    virtual ::std::string serialize(::Crypto::Certificate::Encoding) const = 0;
+    virtual ::std::string serialize(::Crypto::Certificate::Encoding encoding) const = 0;
 
-    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding) const = 0;
+    virtual ::std::string extractPublicKey(::Crypto::Certificate::Encoding encoding) const = 0;
 
-    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding) const = 0;
+    virtual ::std::string extractPrivateKey(::Crypto::Certificate::Encoding encoding) const = 0;
 
     virtual ::std::string getIssuer() const = 0;
 
     virtual bool hasValidCertChain() const = 0;
 
-    virtual ::std::string
-        generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
+    virtual ::std::string generateCertificateThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const = 0;
 
-    virtual ::std::string
-        generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
+    virtual ::std::string generatePublicKeyThumbprint(
+        ::Crypto::Hash::HashType                hashFunction,
+        ::Crypto::Certificate::ThumbprintFormat formatting
+    ) const = 0;
     // NOLINTEND
 
 public:

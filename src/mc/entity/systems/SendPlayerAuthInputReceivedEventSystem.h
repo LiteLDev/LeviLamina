@@ -20,15 +20,15 @@ class SendPlayerAuthInputReceivedEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doSendPlayerAuthInputReceivedEvent(
+    MCAPI static void _doSendPlayerAuthInputReceivedEvent(
         ::StrictEntityContext&,
         ::PlayerComponent const& playerComponent,
         ::ActorOwnerComponent&   actorOwnerComponent
     );
 
-    MCNAPI static ::TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
 
-    MCNAPI static void tickSystem(
+    MCAPI static void tickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerCurrentMovementComponent>,

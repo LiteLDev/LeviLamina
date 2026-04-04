@@ -119,11 +119,11 @@ public:
 
     virtual void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    virtual void onEffectExpired(::Actor&) const;
+    virtual void onEffectExpired(::Actor& target) const;
 
-    virtual void onActorDied(::Actor&, int) const;
+    virtual void onActorDied(::Actor& target, int amplifier) const;
 
-    virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
+    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
 
     virtual void
     applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
@@ -305,11 +305,11 @@ public:
 
     MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    MCFOLD void $onEffectExpired(::Actor&) const;
+    MCFOLD void $onEffectExpired(::Actor& target) const;
 
-    MCFOLD void $onActorDied(::Actor&, int) const;
+    MCFOLD void $onActorDied(::Actor& target, int amplifier) const;
 
-    MCFOLD void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
+    MCFOLD void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
 
     MCAPI void
     $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;

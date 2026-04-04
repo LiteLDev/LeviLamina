@@ -22,11 +22,11 @@ public:
     // NOLINTBEGIN
     virtual ~ServerNetworkEventListener();
 
-    virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const&);
+    virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 
-    virtual ::EventResult onMessage(::MessageEvent const&);
+    virtual ::EventResult onMessage(::MessageEvent const& messageEvent);
 
-    virtual ::EventResult onDiagnostics(::DiagnosticsEvent const&);
+    virtual ::EventResult onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
     // NOLINTEND
 
 public:
@@ -38,11 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 
-    MCFOLD ::EventResult $onMessage(::MessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::MessageEvent const& messageEvent);
 
-    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
+    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
 
     // NOLINTEND

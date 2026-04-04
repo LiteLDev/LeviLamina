@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~IBrazeEventListener() = default;
 
-    virtual void updateId(::std::string const&) = 0;
+    virtual void updateId(::std::string const& strID) = 0;
     // NOLINTEND
 
 public:

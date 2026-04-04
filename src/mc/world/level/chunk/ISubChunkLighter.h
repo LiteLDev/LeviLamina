@@ -17,8 +17,12 @@ class ISubChunkLighter : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::vector<::BlockPos>
-    relightSubChunk(::BlockSource&, ::LevelChunk const&, uint64, ::std::vector<::SubChunkLightUpdate> const&) const = 0;
+    virtual ::std::vector<::BlockPos> relightSubChunk(
+        ::BlockSource&                              source,
+        ::LevelChunk const&                         levelChunk,
+        uint64                                      centerSubChunkIndex,
+        ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
+    ) const = 0;
 
     virtual ~ISubChunkLighter() /*override*/ = default;
     // NOLINTEND

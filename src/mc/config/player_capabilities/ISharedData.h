@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISharedData() = default;
 
-    virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId) const = 0;
+    virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId rule) const = 0;
 
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const = 0;
     // NOLINTEND

@@ -47,13 +47,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
+    virtual void packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size) /*override*/;
 
-    virtual void packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size) /*override*/;
+    virtual void packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size) /*override*/;
 
-    virtual void dataSentTo(::NetworkIdentifier const&, ::std::string_view) /*override*/;
+    virtual void dataSentTo(::NetworkIdentifier const& target, ::std::string_view data) /*override*/;
 
-    virtual void dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&) /*override*/;
+    virtual void dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data) /*override*/;
 
     virtual void reset();
 
@@ -69,13 +69,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $packetSentTo(::NetworkIdentifier const&, ::Packet const&, uint size);
+    MCNAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
 
-    MCNAPI void $packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size);
+    MCNAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
 
-    MCNAPI void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
+    MCNAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
 
-    MCNAPI void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
+    MCNAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
 
     MCNAPI void $reset();
 

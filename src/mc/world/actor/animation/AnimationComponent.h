@@ -105,7 +105,8 @@ public:
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
-    virtual void initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+    virtual void
+    initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
     virtual void ensureClientAnimationComponentIsInitialized();
 
@@ -113,11 +114,11 @@ public:
 
     virtual void updateQueryableGeometryBoneOrientations();
 
-    virtual ::Matrix const* getQueryableBoneOrientation(uint64) const;
+    virtual ::Matrix const* getQueryableBoneOrientation(uint64 boneNameHash) const;
 
     virtual ::gsl::span<::SkeletalHierarchyIndex const> getSkeletalHierarchiesToProcess() const;
 
-    virtual float _getActorRenderDeltaTime(::ActorRenderData const&) const;
+    virtual float _getActorRenderDeltaTime(::ActorRenderData const& data) const;
     // NOLINTEND
 
 public:
@@ -219,7 +220,8 @@ public:
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
-    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+    MCFOLD void
+    $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
     MCFOLD void $ensureClientAnimationComponentIsInitialized();
 
@@ -227,11 +229,11 @@ public:
 
     MCFOLD void $updateQueryableGeometryBoneOrientations();
 
-    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64) const;
+    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
 
     MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
-    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
+    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
 
 
     // NOLINTEND

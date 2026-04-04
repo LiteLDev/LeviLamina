@@ -26,14 +26,14 @@ struct SynchedActorDataComponent;
 namespace VehicleClientPositionPassenger {
 // functions
 // NOLINTBEGIN
-MCNAPI void setPositionRequestSystem(
+MCAPI void setPositionRequestSystem(
     ::ViewT<::StrictEntityContext, ::ActorDataSeatOffsetComponent const>                             passengerView,
     ::ViewT<::StrictEntityContext, ::RenderPositionComponent const, ::RenderRotationComponent const> vehicleView,
     ::OptionalGlobal<::PassengersToPositionComponent>    passengersToPositionComponent,
     ::EntityModifier<::ActorSetPositionRequestComponent> modifier
 );
 
-MCNAPI void setRotationLockSystem(
+MCAPI void setRotationLockSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,

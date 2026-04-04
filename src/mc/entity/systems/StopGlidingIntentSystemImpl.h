@@ -28,7 +28,7 @@ struct WasInWaterFlagComponent;
 namespace StopGlidingIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doStopGlidingIntent(
+MCAPI void doStopGlidingIntent(
     ::StrictEntityContext const&,
     ::Optional<::ArmorFlyEnabledFlagComponent const>      hasArmorFlyEnabled,
     ::Optional<::OnGroundFlagComponent const>             isOnGround,

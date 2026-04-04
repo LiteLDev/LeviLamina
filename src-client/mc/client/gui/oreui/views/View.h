@@ -88,7 +88,7 @@ public:
 
     virtual void removeScene(::OreUI::IScene const& scene) /*override*/;
 
-    virtual void update(double timestampMs) /*override*/;
+    virtual void update(double time) /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
 
@@ -223,7 +223,7 @@ public:
 
     MCAPI void $removeScene(::OreUI::IScene const& scene);
 
-    MCAPI void $update(double timestampMs);
+    MCAPI void $update(double time);
 
     MCAPI void $render(::ScreenContext& screenContext);
 

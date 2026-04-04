@@ -25,9 +25,9 @@ public:
     // NOLINTBEGIN
     virtual ~PrimaryUserAppearanceProgressHandler() /*override*/ = default;
 
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void tick(::MinecraftScreenModel&) /*override*/;
+    virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
@@ -41,9 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel&);
+    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 

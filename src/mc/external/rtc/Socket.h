@@ -97,35 +97,35 @@ public:
 
     virtual ::rtc::SocketAddress GetRemoteAddress() const = 0;
 
-    virtual int Bind(::rtc::SocketAddress const&) = 0;
+    virtual int Bind(::rtc::SocketAddress const& addr) = 0;
 
-    virtual int Connect(::rtc::SocketAddress const&) = 0;
+    virtual int Connect(::rtc::SocketAddress const& addr) = 0;
 
-    virtual int Send(void const*, uint64) = 0;
+    virtual int Send(void const* pv, uint64 cb) = 0;
 
-    virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&) = 0;
+    virtual int SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr) = 0;
 
-    virtual int Recv(void*, uint64, int64*) = 0;
+    virtual int Recv(void* pv, uint64 cb, int64* timestamp) = 0;
 
     virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
 
     virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
 
-    virtual int Listen(int) = 0;
+    virtual int Listen(int backlog) = 0;
 
-    virtual ::rtc::Socket* Accept(::rtc::SocketAddress*) = 0;
+    virtual ::rtc::Socket* Accept(::rtc::SocketAddress* paddr) = 0;
 
     virtual int Close() = 0;
 
     virtual int GetError() const = 0;
 
-    virtual void SetError(int) = 0;
+    virtual void SetError(int error) = 0;
 
     virtual ::rtc::Socket::ConnState GetState() const = 0;
 
     virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
-    virtual int SetOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetOption(::rtc::Socket::Option opt, int value) = 0;
     // NOLINTEND
 
 public:

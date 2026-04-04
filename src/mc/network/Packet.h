@@ -46,14 +46,14 @@ public:
     virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     virtual void writeWithSerializationMode(
-        ::BinaryStream&                bitStream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::std::optional<::SerializationMode>
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
     ) const;
 
     virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    virtual void write(::BinaryStream&) const = 0;
+    virtual void write(::BinaryStream& stream) const = 0;
 
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
@@ -66,14 +66,14 @@ public:
 
     virtual ::SerializationMode getSerializationMode() const;
 
-    virtual void setSerializationMode(::SerializationMode);
+    virtual void setSerializationMode(::SerializationMode mode);
 
     virtual ::std::string toString() const;
 
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) = 0;
     // NOLINTEND
 
 public:
@@ -100,9 +100,9 @@ public:
     MCAPI ::Bedrock::Result<void> $checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     MCAPI void $writeWithSerializationMode(
-        ::BinaryStream&                bitStream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::std::optional<::SerializationMode>
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
     ) const;
 
     MCAPI void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
@@ -118,7 +118,7 @@ public:
 
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
-    MCFOLD void $setSerializationMode(::SerializationMode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCFOLD ::std::string $toString() const;
 

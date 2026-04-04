@@ -40,9 +40,9 @@ struct TickingSystemWithInfo;
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
+MCAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
 
-MCNAPI void flagNearbyMobsForServerMovementCatchup(
+MCAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,
     ::ServerCatchupMovementTrackerComponent const& tracker,
@@ -59,7 +59,7 @@ MCNAPI void flagNearbyMobsForServerMovementCatchup(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCNAPI void flagNearbyMobsForServerMovementCatchupSystem(
+MCAPI void flagNearbyMobsForServerMovementCatchupSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -76,7 +76,7 @@ MCNAPI void flagNearbyMobsForServerMovementCatchupSystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
-MCNAPI void flagNearbyMobsFromSolidEntity(
+MCAPI void flagNearbyMobsFromSolidEntity(
     ::StrictEntityContext const& solidMob,
     ::IsSolidMobComponent const& solid,
     ::AABBShapeComponent const&  shape,
@@ -92,7 +92,7 @@ MCNAPI void flagNearbyMobsFromSolidEntity(
     ::std::vector<::StrictEntityContext>&                     buffer
 );
 
-MCNAPI void flagNearbyMobsFromSolidSystem(
+MCAPI void flagNearbyMobsFromSolidSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorComponent>,
@@ -110,7 +110,7 @@ MCNAPI void flagNearbyMobsFromSolidSystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                       modifier
 );
 
-MCNAPI void flagSolidMobsFromNearbyEntity(
+MCAPI void flagSolidMobsFromNearbyEntity(
     ::StrictEntityContext const&                                                                   entity,
     ::AABBShapeComponent const&                                                                    shape,
     ::Optional<::MobFlagComponent const>                                                           isMob,
@@ -121,7 +121,7 @@ MCNAPI void flagSolidMobsFromNearbyEntity(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCNAPI void flagSolidMobsFromNearbySystem(
+MCAPI void flagSolidMobsFromNearbySystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ShouldBeSimulatedComponent, ::ActorMovementTickNeededComponent>,
@@ -134,15 +134,15 @@ MCNAPI void flagSolidMobsFromNearbySystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
-MCNAPI ::std::optional<::Vec3> getLatestPosition(
+MCAPI ::std::optional<::Vec3> getLatestPosition(
     ::StrictEntityContext const&                                                 e,
     ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&    pmcs,
     ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const& interpolators
 );
 
-MCNAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
 
-MCNAPI void storeNearbyMobsOnMoveRequest(
+MCAPI void storeNearbyMobsOnMoveRequest(
     ::IsSolidMobNearbyComponent const& nearby,
     ::DepenetrationComponent&          depenetration,
     ::MoveRequestComponent&            request

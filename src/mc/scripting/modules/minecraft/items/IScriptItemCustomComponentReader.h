@@ -22,14 +22,14 @@ public:
     virtual ~IScriptItemCustomComponentReader() = default;
 
     virtual ::std::vector<::std::string_view> getValidComponentsForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle
     ) const = 0;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     tryGetCustomComponentParametersForItem(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
-        ::std::string_view,
-        ::Scripting::WeakLifetimeScope const&
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemHandle,
+        ::std::string_view                                                           componentName,
+        ::Scripting::WeakLifetimeScope const&                                        scope
     ) const = 0;
     // NOLINTEND
 

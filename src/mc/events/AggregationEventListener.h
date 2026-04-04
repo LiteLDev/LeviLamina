@@ -54,7 +54,7 @@ public:
 
     virtual void sendEvents(bool forceSend) /*override*/;
 
-    virtual void sendEvent(::Social::Events::Event const&) = 0;
+    virtual void sendEvent(::Social::Events::Event const& event) = 0;
 
     virtual void stopDebugEventLogging() /*override*/;
 

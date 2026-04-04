@@ -27,15 +27,15 @@ public:
     // NOLINTBEGIN
     virtual ~DeferredSubscriptionHub() = default;
 
-    virtual uint64 runDeferredEvents(uint64) = 0;
+    virtual uint64 runDeferredEvents(uint64 maxToRun) = 0;
 
-    virtual uint64 runDeferredEventsForDuration(::std::chrono::milliseconds) = 0;
+    virtual uint64 runDeferredEventsForDuration(::std::chrono::milliseconds msec) = 0;
 
     virtual void flushPendingEvents() = 0;
 
     virtual void clear() = 0;
 
-    virtual uint64 erase(::Bedrock::PubSub::RawSubscription&) = 0;
+    virtual uint64 erase(::Bedrock::PubSub::RawSubscription& subscription) = 0;
 
     virtual uint64 size() const = 0;
 
@@ -43,9 +43,10 @@ public:
 
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const = 0;
 
-    virtual void _join(::Bedrock::PubSub::DeferredSubscription&&) = 0;
+    virtual void _join(::Bedrock::PubSub::DeferredSubscription&& subscription) = 0;
 
-    virtual void _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) = 0;
+    virtual void
+    _enqueue(::std::function<void()> fn, ::Bedrock::PubSub::ConnectPosition at, ::std::optional<int> group) = 0;
     // NOLINTEND
 
 public:

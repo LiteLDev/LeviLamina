@@ -20,7 +20,7 @@ public:
     virtual ~IceTransportFactory() = default;
 
     virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>
-    CreateIceTransport(::std::string const&, int, ::webrtc::IceTransportInit) = 0;
+    CreateIceTransport(::std::string const& transport_name, int component, ::webrtc::IceTransportInit init) = 0;
     // NOLINTEND
 
 public:

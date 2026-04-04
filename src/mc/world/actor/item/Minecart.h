@@ -48,7 +48,7 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual void destroy(::ActorDamageSource const&, bool dropMinecartComponents);
+    virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
     virtual ::MinecartType getType() = 0;
 
@@ -70,9 +70,10 @@ public:
 
     virtual void kill() /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    virtual void applyNaturalSlowdown(::BlockSource&);
+    virtual void applyNaturalSlowdown(::BlockSource& region);
 
     virtual void _lazyInitDisplayBlock();
     // NOLINTEND
@@ -124,7 +125,7 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $destroy(::ActorDamageSource const&, bool dropMinecartComponents);
+    MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
     MCFOLD ::Block const* $getDefaultDisplayBlock() const;
 
@@ -144,9 +145,9 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $applyNaturalSlowdown(::BlockSource&);
+    MCAPI void $applyNaturalSlowdown(::BlockSource& region);
 
     MCAPI void $_lazyInitDisplayBlock();
 

@@ -45,7 +45,7 @@ public:
         ::RenderParams&                                         renderParams
     ) /*override*/;
 
-    virtual void applyPreNormalizationModifiers(::Vec3&, ::RenderParams&);
+    virtual void applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
 
     virtual ~EmitterShapeSphereComponent() /*override*/;
     // NOLINTEND
@@ -72,7 +72,7 @@ public:
         ::RenderParams&                                         renderParams
     );
 
-    MCFOLD void $applyPreNormalizationModifiers(::Vec3&, ::RenderParams&);
+    MCFOLD void $applyPreNormalizationModifiers(::Vec3& direction, ::RenderParams& renderParams);
     // NOLINTEND
 
 public:

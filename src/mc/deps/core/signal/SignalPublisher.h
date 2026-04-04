@@ -16,10 +16,10 @@ public:
     // NOLINTBEGIN
     virtual ~SignalPublisher() = default;
 
-    virtual void send(void const*) = 0;
+    virtual void send(void const* data) = 0;
 
     virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
-    getConnectOp(::std::function<void(void const*)>&&) = 0;
+    getConnectOp(::std::function<void(void const*)>&& handler) = 0;
     // NOLINTEND
 
 public:

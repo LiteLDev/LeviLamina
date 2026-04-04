@@ -16,9 +16,10 @@ public:
     // NOLINTBEGIN
     virtual ~FileSizePresetManager();
 
-    virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetInitialSizeForFile(::Core::PathView, uint64) = 0;
+    virtual ::std::unique_ptr<::Core::FileSizePresetToken>
+    presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) = 0;
 
-    virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView) = 0;
+    virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) = 0;
     // NOLINTEND
 
 public:

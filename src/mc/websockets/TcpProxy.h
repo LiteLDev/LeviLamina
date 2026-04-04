@@ -14,19 +14,19 @@ public:
     // NOLINTBEGIN
     virtual ~TcpProxy();
 
-    virtual bool start(ushort, ushort, ushort) = 0;
+    virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) = 0;
 
-    virtual ::RakNet::SystemAddress connect(::std::string const&, ushort) = 0;
+    virtual ::RakNet::SystemAddress connect(::std::string const& host, ushort port) = 0;
 
-    virtual void send(char const*, uint, ::RakNet::SystemAddress) = 0;
+    virtual void send(char const* data, uint length, ::RakNet::SystemAddress address) = 0;
 
-    virtual void close(::RakNet::SystemAddress) = 0;
+    virtual void close(::RakNet::SystemAddress address) = 0;
 
     virtual bool packetsAvailable() = 0;
 
     virtual ::RakNet::Packet* nextPacket() = 0;
 
-    virtual void deallocatePacket(::RakNet::Packet*) = 0;
+    virtual void deallocatePacket(::RakNet::Packet* packet) = 0;
 
     virtual ::RakNet::SystemAddress nextCompletedConnectionAttempt() = 0;
 

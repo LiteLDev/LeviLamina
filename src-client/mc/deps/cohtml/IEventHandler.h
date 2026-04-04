@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IEventHandler();
 
-    virtual void Invoke(::cohtml::ArgumentsBinder*) = 0;
+    virtual void Invoke(::cohtml::ArgumentsBinder* binder) = 0;
 
     virtual void const* GetTarget() = 0;
 
-    virtual void SetTarget(void*) = 0;
+    virtual void SetTarget(void* target) = 0;
     // NOLINTEND
 
 public:

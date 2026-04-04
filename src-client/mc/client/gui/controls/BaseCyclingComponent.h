@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     virtual ~BaseCyclingComponent() /*override*/ = default;
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const = 0;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const = 0;
 
     virtual void reset() /*override*/;
 

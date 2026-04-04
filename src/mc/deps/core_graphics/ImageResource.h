@@ -48,11 +48,11 @@ public:
 
     virtual uint getSize() const = 0;
 
-    virtual ::cg::ImageBuffer const* getImage(uint) const = 0;
+    virtual ::cg::ImageBuffer const* getImage(uint mipLevel) const = 0;
 
-    virtual void addImage(::cg::ImageBuffer) = 0;
+    virtual void addImage(::cg::ImageBuffer imageToAdd) = 0;
 
-    virtual void addImage(::std::shared_ptr<::cg::ImageResource>) = 0;
+    virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) = 0;
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() = 0;

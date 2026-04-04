@@ -28,7 +28,8 @@ public:
     virtual ~IAppPlatformImpl() = default;
 
 #ifdef LL_PLAT_C
-    virtual ::Bedrock::NonOwnerPointer<::SuspendHandler> getSuspendHandler(bool, ::AppPlatform&) = 0;
+    virtual ::Bedrock::NonOwnerPointer<::SuspendHandler>
+    getSuspendHandler(bool updateCachedValue, ::AppPlatform& appPlatform) = 0;
 
     virtual ::BatteryMonitorInterface const& getBatteryMonitorInterface() const = 0;
 
@@ -37,15 +38,15 @@ public:
 #endif
     virtual ::IPlatformScreenshots& getPlatformScreenshots() = 0;
 
-    virtual void setServiceLocators(::AppPlatform&) = 0;
+    virtual void setServiceLocators(::AppPlatform& platform) = 0;
 
     virtual void resetServiceLocators() = 0;
 
-    virtual void setDiskAccessEventing(::Core::DiskAccessTracker&) = 0;
+    virtual void setDiskAccessEventing(::Core::DiskAccessTracker& diskAccessTracker) = 0;
 
     virtual bool isRealmsEnabled() const = 0;
 
-    virtual ::Bedrock::PubSub::Subscription initializeLoadProfiler(::Core::LoadTimeProfiler&) = 0;
+    virtual ::Bedrock::PubSub::Subscription initializeLoadProfiler(::Core::LoadTimeProfiler& profiler) = 0;
 
     virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const&) = 0;
 
@@ -55,17 +56,17 @@ public:
 
     virtual bool keyboardInputHandledByImGui() = 0;
 
-    virtual void updateImGuiMousePosition(float, float) = 0;
+    virtual void updateImGuiMousePosition(float x, float y) = 0;
 
-    virtual void updateImGuiMouseButton(uchar, bool) = 0;
+    virtual void updateImGuiMouseButton(uchar button, bool isDown) = 0;
 
-    virtual void updateImGuiMouseScrollBar(float) = 0;
+    virtual void updateImGuiMouseScrollBar(float value) = 0;
 
-    virtual void imGuiAddInputChar(ushort) = 0;
+    virtual void imGuiAddInputChar(ushort c) = 0;
 
-    virtual bool updateImGuiKeyboard(uchar, bool) = 0;
+    virtual bool updateImGuiKeyboard(uchar param, bool isDown) = 0;
 
-    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules) const = 0;
+    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules uiScalingRules) const = 0;
     // NOLINTEND
 
 public:

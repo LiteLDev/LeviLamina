@@ -184,9 +184,9 @@ public:
 
     virtual void logoffAllSubclients() = 0;
 
-    virtual void buildTreatmentPackStack(bool) const = 0;
+    virtual void buildTreatmentPackStack(bool fireEvents) const = 0;
 
-    virtual void queueSubclientRemoval(::SubClientId) = 0;
+    virtual void queueSubclientRemoval(::SubClientId subid) = 0;
 
     virtual ::std::shared_ptr<::mce::TextureGroup> getTextureGroup() const = 0;
 
@@ -198,13 +198,13 @@ public:
 
     virtual bool canActivateKeyboard() = 0;
 
-    virtual void releaseClientSubId(::SubClientId) = 0;
+    virtual void releaseClientSubId(::SubClientId subid) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> getContentTierManager() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const = 0;
 
-    virtual void setDisableInputForAllOtherClients(int, bool) = 0;
+    virtual void setDisableInputForAllOtherClients(int id, bool disableStatus) = 0;
 
     virtual ::DeferredTasksManager<::DeferredTaskCategory>& getDeferredTasks() = 0;
 
@@ -234,11 +234,11 @@ public:
 
     virtual void openPauseMenu() = 0;
 
-    virtual void setIsInGame(bool) = 0;
+    virtual void setIsInGame(bool isInGame) = 0;
 
     virtual void createClientItemRegistry() = 0;
 
-    virtual bool hasNetworkPrivileges(bool) = 0;
+    virtual bool hasNetworkPrivileges(bool onlyWifiAllowed) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const>
     getThirdPartyServerRepository() const = 0;
@@ -250,12 +250,12 @@ public:
     virtual ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> const& getClientInstanceMap() const = 0;
 
     virtual void joinMultiplayerWithAddress(
-        ::Social::GameConnectionInfo,
-        bool,
-        ::std::string const&,
-        ::std::string const&,
-        ::NetworkType,
-        ::PlayerJoinWorldContext
+        ::Social::GameConnectionInfo gameConnection,
+        bool                         joiningLocalServer,
+        ::std::string const&         serverName,
+        ::std::string const&         worldName,
+        ::NetworkType                networkTypeOverride,
+        ::PlayerJoinWorldContext     context
     ) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> getOfferRepository() const = 0;
@@ -273,20 +273,25 @@ public:
     virtual bool isResuming() const = 0;
 
     virtual void setTestExecuteCommandCallback(
-        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const&
+        ::std::function<void(::TestCommandType, ::std::vector<::std::string> const&, int)> const& callback
     ) = 0;
 
     virtual void setTestAssetCommandCallback(
-        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const&
+        ::std::function<void(::TestAssetCommandType, ::std::vector<::std::string> const&)> const& callback
     ) = 0;
 
-    virtual void runTestExecuteCommandCallback(::TestCommandType, ::std::vector<::std::string> const&, int) const = 0;
+    virtual void runTestExecuteCommandCallback(
+        ::TestCommandType                   type,
+        ::std::vector<::std::string> const& tags,
+        int                                 repeatCount
+    ) const = 0;
 
-    virtual void runTestAssetCommandCallback(::TestAssetCommandType, ::std::vector<::std::string> const&) const = 0;
+    virtual void
+    runTestAssetCommandCallback(::TestAssetCommandType type, ::std::vector<::std::string> const& tags) const = 0;
 
     virtual uint64 getClientInstanceCount() const = 0;
 
-    virtual void setProfilerIsOn(bool) = 0;
+    virtual void setProfilerIsOn(bool val) = 0;
 
     virtual ::LocalPlayer* getPrimaryLocalPlayer() = 0;
 
@@ -317,12 +322,12 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> getNewPlayerSystem() const = 0;
 
     virtual void createAndUploadWorldToRealm(
-        ::std::string const&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::LevelSettings const&,
-        ::Realms::World,
-        ::std::function<void(::Realms::World)>
+        ::std::string const&                   levelId,
+        ::std::string const&                   levelName,
+        ::ContentIdentity const&               premiumTemplateContentIdentity,
+        ::LevelSettings const&                 settings,
+        ::Realms::World                        world,
+        ::std::function<void(::Realms::World)> callback
     ) = 0;
 
     virtual ::ILevelListCache& getLevelListCache() = 0;
@@ -341,13 +346,13 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getSmoothFontHandle() const = 0;
 
-    virtual void onClientLevelExit(::IClientInstance&, uint) = 0;
+    virtual void onClientLevelExit(::IClientInstance& exitClient, uint exitCode) = 0;
 
-    virtual bool isLocalPlayer(::ActorUniqueID const&) const = 0;
+    virtual bool isLocalPlayer(::ActorUniqueID const& id) const = 0;
 
     virtual ::IMinecraftEventing& getEventing() const = 0;
 
-    virtual void reloadAnimationAndGeometryData(bool) = 0;
+    virtual void reloadAnimationAndGeometryData(bool sync) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> getGeometryGroup() const = 0;
 
@@ -390,15 +395,15 @@ public:
 
     virtual bool isPrimaryLevelMultiplayer() const = 0;
 
-    virtual ::std::string getMultiplayerDisabledTextTitle(::MultiplayerLockedContext) const = 0;
+    virtual ::std::string getMultiplayerDisabledTextTitle(::MultiplayerLockedContext context) const = 0;
 
-    virtual ::std::string getMultiplayerDisabledTextBody(::MultiplayerLockedContext) const = 0;
+    virtual ::std::string getMultiplayerDisabledTextBody(::MultiplayerLockedContext context) const = 0;
 
-    virtual void setRenderingSize(int, int) = 0;
+    virtual void setRenderingSize(int w, int h) = 0;
 
     virtual void recalculateScene() = 0;
 
-    virtual void setUISizeAndScale(int, int, float) = 0;
+    virtual void setUISizeAndScale(int w, int h, float forcedGuiScale) = 0;
 
     virtual bool isReadyToRender() const = 0;
 
@@ -406,9 +411,14 @@ public:
 
     virtual void setLeaveGameInProgressAsReadyToContinue() = 0;
 
-    virtual void onClientCreatedLevel(::IClientInstance&) = 0;
+    virtual void onClientCreatedLevel(::IClientInstance& client) = 0;
 
-    virtual uint64 generateClientId(bool, bool&, uint64, ::std::shared_ptr<::Social::User>) = 0;
+    virtual uint64 generateClientId(
+        bool                              forceReset,
+        bool&                             generatedNewId,
+        uint64                            clientIdModifier,
+        ::std::shared_ptr<::Social::User> user
+    ) = 0;
 
     virtual ::std::weak_ptr<::RealmsAPI> getRealms() = 0;
 
@@ -451,7 +461,8 @@ public:
 
     virtual int getMaxPlayerCount() const = 0;
 
-    virtual ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>> requestScreenshot(::ScreenshotOptions&) = 0;
+    virtual ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
+    requestScreenshot(::ScreenshotOptions& screenshotOptions) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> getOreUIResourceAllowList() = 0;
 
@@ -459,7 +470,7 @@ public:
 
     virtual ::PixelCalc const& getDpadScale() const = 0;
 
-    virtual void setKeyboardForcedHeight(float, bool) = 0;
+    virtual void setKeyboardForcedHeight(float height, bool isShowSignal) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> getMainSceneStack() const = 0;
 
@@ -496,29 +507,29 @@ public:
 
     virtual void releaseMouse() = 0;
 
-    virtual void refocusMouse(bool) = 0;
+    virtual void refocusMouse(bool lostMouse) = 0;
 
-    virtual void setMouseType(::Bedrock::Input::PointerType) = 0;
+    virtual void setMouseType(::Bedrock::Input::PointerType type) = 0;
 
-    virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
+    virtual void play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) = 0;
 
-    virtual void playUI(::std::string const&, float, float) = 0;
+    virtual void playUI(::std::string const& name, float volume, float pitch) = 0;
 
     virtual void fadeOutMusic() = 0;
 
-    virtual void onPlayerLoaded(::IClientInstance&, ::Player&) = 0;
+    virtual void onPlayerLoaded(::IClientInstance& client, ::Player& player) = 0;
 
     virtual bool checkForPiracy() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> getCubemapBackgroundResources() = 0;
 
-    virtual void setAppWillTerminate(bool) = 0;
+    virtual void setAppWillTerminate(bool willTerminate) = 0;
 
     virtual ::ServerInstance* getServerInstance() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ServerInstance> getServerInstanceNonOwnPtr() = 0;
 
-    virtual void setLaunchedFromLegacyVersion(bool) = 0;
+    virtual void setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion) = 0;
 
     virtual ::UIMeasureStrategy& getUIMeasureStrategy() = 0;
 
@@ -556,13 +567,14 @@ public:
 
     virtual bool isSplitscreenJoinEnabled() const = 0;
 
-    virtual bool canAddSplitscreenSubClient(int) const = 0;
+    virtual bool canAddSplitscreenSubClient(int controllerId) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelLoader> getLevelLoader() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> getContentManager() = 0;
 
-    virtual ::std::shared_ptr<::IClientInstance> tryGetClientInstanceFromPlayerUUID(::mce::UUID const&) const = 0;
+    virtual ::std::shared_ptr<::IClientInstance>
+    tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> getAccessibilityProvider() const = 0;
 
@@ -570,9 +582,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition> getContentAcquisition() const = 0;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) = 0;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) = 0;
 
-    virtual void setRealmsLoadingLink(bool) = 0;
+    virtual void setRealmsLoadingLink(bool state) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IApp> getApp() = 0;
 
@@ -586,7 +598,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> getTextToIconMapper() = 0;
 
-    virtual void onPrimaryUserReconnect(::Social::UserPlatformConnectionResult, bool) = 0;
+    virtual void onPrimaryUserReconnect(::Social::UserPlatformConnectionResult status, bool isUserInitiated) = 0;
 
     virtual void setSmoothFontStyle() = 0;
 
@@ -594,7 +606,7 @@ public:
 
     virtual void copyInternalSettingsFolderToExternalLocation() const = 0;
 
-    virtual void joinRealmFromInvite(::Realms::World const&) = 0;
+    virtual void joinRealmFromInvite(::Realms::World const& world) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServices> getRealmsServices() = 0;
 
@@ -618,7 +630,7 @@ public:
 
     virtual bool isPrimaryUserSigninInProgress() const = 0;
 
-    virtual void setupCommandParser(::IClientInstance&) = 0;
+    virtual void setupCommandParser(::IClientInstance& client) = 0;
 
     virtual void stopSound(::std::string const& name) = 0;
 
@@ -630,9 +642,9 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() = 0;
 
-    virtual void addSubClientInstanceAndAssociateToUser(int) = 0;
+    virtual void addSubClientInstanceAndAssociateToUser(int controllerId) = 0;
 
-    virtual void forEachClientInstance(::std::function<void(::IClientInstance&)>) = 0;
+    virtual void forEachClientInstance(::std::function<void(::IClientInstance&)> callback) = 0;
 
     virtual bool isInitialized() const = 0;
 
@@ -644,9 +656,9 @@ public:
 
     virtual bool isMultiplayerServiceManagerReady() const = 0;
 
-    virtual void doPrimaryClientReadyWork(::std::function<void()>) = 0;
+    virtual void doPrimaryClientReadyWork(::std::function<void()> workFn) = 0;
 
-    virtual void doUserManagerReadyWork(::std::function<void()>) = 0;
+    virtual void doUserManagerReadyWork(::std::function<void()> workFn) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ScreenshotRecorder> getScreenshotRecorder() = 0;
 
@@ -662,9 +674,10 @@ public:
 
     virtual ::std::shared_ptr<::Options const> getPrimaryUserOptions() const = 0;
 
-    virtual void tryShowXblFirstLaunchScreen(bool) = 0;
+    virtual void tryShowXblFirstLaunchScreen(bool isUserConnectedToPlatform) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription registerSplitScreenChangedListener(::std::function<void(uchar)>) const = 0;
+    virtual ::Bedrock::PubSub::Subscription
+    registerSplitScreenChangedListener(::std::function<void(uchar)> callback) const = 0;
 
     virtual uchar getSplitScreenCount() const = 0;
 
@@ -674,26 +687,32 @@ public:
 
     virtual bool isMusicEnabled() const = 0;
 
-    virtual void queueCustomMusic(::std::string const&, float, float, ::MusicRepeatMode) = 0;
+    virtual void queueCustomMusic(
+        ::std::string const& eventName,
+        float                volume,
+        float                fadeoutSeconds,
+        ::MusicRepeatMode    playMode
+    ) = 0;
 
-    virtual void playCustomMusic(::std::string const&, float, float, ::MusicRepeatMode) = 0;
+    virtual void
+    playCustomMusic(::std::string const& eventName, float volume, float fadeoutSeconds, ::MusicRepeatMode playMode) = 0;
 
-    virtual void stopCustomMusic(float) = 0;
+    virtual void stopCustomMusic(float fadeoutSeconds) = 0;
 
-    virtual void setMusicCommandVolumeMultiplier(float) = 0;
+    virtual void setMusicCommandVolumeMultiplier(float volumeMultiplier) = 0;
 
-    virtual float calculateScreenSizeToResolutionScalar(int const, int const) const = 0;
+    virtual float calculateScreenSizeToResolutionScalar(int const width, int const height) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const>
     GetGlobalResourcesCrashRecovery() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> getLevelDbEnv() = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::ChunkSource> getClientGenChunkSource(::DimensionType const&) = 0;
+    virtual ::Bedrock::NonOwnerPointer<::ChunkSource> getClientGenChunkSource(::DimensionType const& dimensionType) = 0;
 
     virtual bool isEditorModeEnabled() const = 0;
 
-    virtual void setResetCallbackObject(::ResetCallbackObject*) = 0;
+    virtual void setResetCallbackObject(::ResetCallbackObject* obj) = 0;
 
     virtual void resetThreadCallbacks() = 0;
 

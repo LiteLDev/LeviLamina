@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace SetMoveSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createClientSystem();
+MCAPI ::TickingSystemWithInfo createClientSystem();
 
-MCNAPI ::TickingSystemWithInfo createCommonSystem();
+MCAPI ::TickingSystemWithInfo createCommonSystem();
 // NOLINTEND
 
 } // namespace SetMoveSystem

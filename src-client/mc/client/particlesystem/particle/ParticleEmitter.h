@@ -26,23 +26,29 @@ public:
     // NOLINTBEGIN
     virtual ~ParticleEmitter() = default;
 
-    virtual void setActorBindInfo(::Dimension*, ::ActorUniqueID, ::HashedString const&, ::Vec3 const&) = 0;
+    virtual void setActorBindInfo(
+        ::Dimension*          dimension,
+        ::ActorUniqueID       actorId,
+        ::HashedString const& locator,
+        ::Vec3 const&         offset
+    ) = 0;
 
-    virtual void setActorBindInfo(::WeakEntityRef, ::HashedString const&, ::Vec3 const&) = 0;
+    virtual void setActorBindInfo(::WeakEntityRef actorRef, ::HashedString const& locator, ::Vec3 const& offset) = 0;
 
-    virtual void setActorBindInfo(::Actor*, ::HashedString const&, ::Vec3 const&) = 0;
+    virtual void setActorBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset) = 0;
 
-    virtual void setEnableUpdate(bool) = 0;
+    virtual void setEnableUpdate(bool enable) = 0;
 
-    virtual void setEnableRender(bool) = 0;
+    virtual void setEnableRender(bool enable) = 0;
 
-    virtual void runInitializationScript(::ExpressionNode const&) = 0;
+    virtual void runInitializationScript(::ExpressionNode const& initializationScript) = 0;
 
-    virtual void onBlockChanged(::BlockPos const&) = 0;
+    virtual void onBlockChanged(::BlockPos const& blockPosition) = 0;
 
     virtual void expire() = 0;
 
-    virtual void emitParticleManually(::Vec3 const&, ::Vec3 const&, float const) = 0;
+    virtual void
+    emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult) = 0;
 
     virtual bool isValid() const = 0;
 
@@ -66,13 +72,13 @@ public:
 
     virtual uint64 getTotalParticleCount() const = 0;
 
-    virtual void tick(::std::chrono::nanoseconds const&, float const) = 0;
+    virtual void tick(::std::chrono::nanoseconds const& dtIn, float const a) = 0;
 
-    virtual void frameUpdate(::ClientFrameUpdateContext&) = 0;
+    virtual void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext) = 0;
 
-    virtual void extractForRendering(::ParticleRenderData&, float) = 0;
+    virtual void extractForRendering(::ParticleRenderData& particleRenderData, float a) = 0;
 
-    virtual void setManualParticleEmission(bool) = 0;
+    virtual void setManualParticleEmission(bool manualParticleEmission) = 0;
 
     virtual ::ParticleSystem::ActorBindInfo getActorBindInfo() const = 0;
     // NOLINTEND

@@ -10,9 +10,9 @@ class EntitySystems;
 namespace DealKineticDamageSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void registerClientSystems(::EntitySystems& systemRegistry);
+MCAPI_C void registerClientSystems(::EntitySystems& systemRegistry);
 
-MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
+MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace DealKineticDamageSystem

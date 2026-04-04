@@ -21,7 +21,7 @@ struct VehicleInputIntentComponent;
 namespace BlockPosNotificationSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickNotifierFilter(
+MCAPI void tickNotifierFilter(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::OnGroundFlagComponent>>,
     ::StrictEntityContext const&                                                                strictEntityContext,
     ::BlockPosTrackerComponent const&                                                           tracker,

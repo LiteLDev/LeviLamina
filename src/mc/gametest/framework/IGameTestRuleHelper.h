@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~IGameTestRuleHelper() = default;
 
-    virtual void addRuleToClear(int) = 0;
+    virtual void addRuleToClear(int ruleID) = 0;
 
     virtual void clearRules() = 0;
 

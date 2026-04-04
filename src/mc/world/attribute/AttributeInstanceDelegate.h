@@ -24,13 +24,13 @@ public:
     // NOLINTBEGIN
     virtual ~AttributeInstanceDelegate() = default;
 
-    virtual void tick(::AttributeInstance&, ::AttributeModificationContext&);
+    virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    virtual void notify(int64, ::AttributeModificationContext&);
+    virtual void notify(int64 type, ::AttributeModificationContext& context);
 
-    virtual bool willChange(float, float, ::AttributeBuff const&);
+    virtual bool willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
 
-    virtual ::std::optional<float> change(float, float newValue, ::AttributeBuff const&);
+    virtual ::std::optional<float> change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const;
     // NOLINTEND
@@ -38,13 +38,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::AttributeInstance&, ::AttributeModificationContext&);
+    MCFOLD void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    MCFOLD void $notify(int64, ::AttributeModificationContext&);
+    MCFOLD void $notify(int64 type, ::AttributeModificationContext& context);
 
-    MCFOLD bool $willChange(float, float, ::AttributeBuff const&);
+    MCFOLD bool $willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
 
-    MCAPI ::std::optional<float> $change(float, float newValue, ::AttributeBuff const&);
+    MCAPI ::std::optional<float> $change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
     MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
 

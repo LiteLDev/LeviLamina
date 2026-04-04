@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~RtpPacketSinkInterface() = default;
 
-    virtual void OnRtpPacket(::webrtc::RtpPacketReceived const&) = 0;
+    virtual void OnRtpPacket(::webrtc::RtpPacketReceived const& parsed_packet) = 0;
     // NOLINTEND
 
 public:

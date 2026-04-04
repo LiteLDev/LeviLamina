@@ -20,17 +20,17 @@ public:
     // NOLINTBEGIN
     virtual ~EditorPlayerPlaytestServiceProvider() = default;
 
-    virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef) = 0;
+    virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef playerRef) = 0;
 
     virtual void beginPlaytestSession(
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::std::function<void(::Editor::Playtest::SessionResult const&)>
+        ::WeakEntityRef                                                 playerRef,
+        ::Editor::GameOptions const&                                    options,
+        ::std::function<void(::Editor::Playtest::SessionResult const&)> callback
     ) = 0;
 
     virtual void _handlePlayersSessionTransferResponse(
-        ::WeakEntityRef,
-        ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const&
+        ::WeakEntityRef                                                       playerRef,
+        ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
     ) = 0;
     // NOLINTEND
 

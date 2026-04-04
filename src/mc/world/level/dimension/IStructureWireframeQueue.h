@@ -13,11 +13,11 @@ public:
     // NOLINTBEGIN
     virtual ~IStructureWireframeQueue() = default;
 
-    virtual void queue(::BlockPos const&, ::BlockPos const&, ::BlockPos const&) = 0;
+    virtual void queue(::BlockPos const& key, ::BlockPos const& pos, ::BlockPos const& boundingBox) = 0;
 
-    virtual void dequeue(::BlockPos const&) = 0;
+    virtual void dequeue(::BlockPos const& key) = 0;
 
-    virtual bool isQueued(::BlockPos const&) const = 0;
+    virtual bool isQueued(::BlockPos const& key) const = 0;
     // NOLINTEND
 
 public:

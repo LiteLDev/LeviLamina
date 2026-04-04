@@ -16,11 +16,18 @@ public:
     // NOLINTBEGIN
     virtual ~ITextInputHandler() = default;
 
-    virtual void OnSelectionChanged(::cohtml::IInputProxy*, ::cohtml::TextInput::Selection);
+    virtual void OnSelectionChanged(::cohtml::IInputProxy* proxy, ::cohtml::TextInput::Selection selection);
 
-    virtual void OnTextChanged(::cohtml::IInputProxy*, char const*, uint, char const*, uint, uint);
+    virtual void OnTextChanged(
+        ::cohtml::IInputProxy* proxy,
+        char const*            addedChars,
+        uint                   addedCount,
+        char const*            removedChars,
+        uint                   removedCount,
+        uint                   index
+    );
 
-    virtual void OnFocus(::cohtml::IInputProxy*);
+    virtual void OnFocus(::cohtml::IInputProxy* proxy);
 
     virtual void OnBlur(::cohtml::IInputProxy*);
     // NOLINTEND

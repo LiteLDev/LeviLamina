@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     virtual ~WorldClockRegistry() = default;
 
-    virtual void tick(::PacketSender&) = 0;
+    virtual void tick(::PacketSender& packetSender) = 0;
     // NOLINTEND
 
 public:

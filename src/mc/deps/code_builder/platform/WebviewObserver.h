@@ -22,24 +22,29 @@ public:
 
     virtual void onLoadingEnd();
 
-    virtual void onError(::WebviewError const&);
+    virtual void onError(::WebviewError const& error);
 
     virtual void onWebviewChanged();
 
-    virtual void onDownloadBegin(::WebviewDownloadInfo const&);
+    virtual void onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
 
     virtual void onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    virtual void onDownloadComplete(::WebviewDownloadInfo const&);
+    virtual void onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
-    virtual void onDownloadCanceled(::WebviewDownloadInfo const&);
+    virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
 
-    virtual void onMessageRecieved(::std::string const&);
+    virtual void onMessageRecieved(::std::string const& message);
+
+    virtual void fireCodeBuilderLoadPerformance(
+        ::std::string const&        stage,
+        uint64                      tutorialSize,
+        uint64                      downloadSize,
+        ::std::chrono::milliseconds elapsedTimeMS
+    ) const;
 
     virtual void
-    fireCodeBuilderLoadPerformance(::std::string const&, uint64, uint64, ::std::chrono::milliseconds) const;
-
-    virtual void fireCodeBuilderRunPerformance(::std::string const&, ::std::chrono::milliseconds) const;
+    fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
     // NOLINTEND
 
 public:
@@ -55,25 +60,30 @@ public:
 
     MCNAPI void $onLoadingEnd();
 
-    MCNAPI void $onError(::WebviewError const&);
+    MCNAPI void $onError(::WebviewError const& error);
 
     MCNAPI void $onWebviewChanged();
 
-    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadBegin(::WebviewDownloadInfo const& downloadInfo);
 
     MCNAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
-    MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const&);
+    MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
+
+    MCNAPI void $fireCodeBuilderLoadPerformance(
+        ::std::string const&        stage,
+        uint64                      tutorialSize,
+        uint64                      downloadSize,
+        ::std::chrono::milliseconds elapsedTimeMS
+    ) const;
 
     MCNAPI void
-    $fireCodeBuilderLoadPerformance(::std::string const&, uint64, uint64, ::std::chrono::milliseconds) const;
-
-    MCNAPI void $fireCodeBuilderRunPerformance(::std::string const&, ::std::chrono::milliseconds) const;
+    $fireCodeBuilderRunPerformance(::std::string const& stage, ::std::chrono::milliseconds elapsedTimeMS) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI void $onMessageRecieved(::std::string const&);
+    MCNAPI void $onMessageRecieved(::std::string const& message);
 #endif
 
 

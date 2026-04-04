@@ -22,9 +22,9 @@ public:
     virtual ~IScriptActorComponentFactory() = default;
 
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
-    createComponent(::WeakEntityRef, ::Scripting::WeakLifetimeScope const&, ::std::string const&) = 0;
+    createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id) = 0;
 
-    virtual bool hasComponent(::WeakEntityRef) const = 0;
+    virtual bool hasComponent(::WeakEntityRef entity) const = 0;
 
     virtual ::std::vector<::Scripting::ClassBinding> bind() const = 0;
     // NOLINTEND

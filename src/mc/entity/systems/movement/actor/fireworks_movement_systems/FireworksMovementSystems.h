@@ -29,7 +29,7 @@ struct SynchedActorDataComponent;
 namespace FireworksMovementSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void fireworksRocketMoveClient(
+MCAPI void fireworksRocketMoveClient(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
@@ -42,7 +42,7 @@ MCNAPI void fireworksRocketMoveClient(
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
 );
 
-MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
+MCAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
     ::StrictEntityContext const&       rocket,
     ::SynchedActorDataComponent const& rocketData,
     ::StateVectorComponent&            rocketStateVector,
@@ -52,7 +52,7 @@ MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntit
     ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
 );
 
-MCNAPI void fireworksRocketMoveServer(
+MCAPI void fireworksRocketMoveServer(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
@@ -66,7 +66,7 @@ MCNAPI void fireworksRocketMoveServer(
     ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
 );
 
-MCNAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace FireworksMovementSystems

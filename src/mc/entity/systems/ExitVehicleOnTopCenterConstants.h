@@ -10,7 +10,7 @@ class Vec3;
 namespace ExitVehicleOnTopCenterConstants {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Vec3 const& EXIT_OFFSET();
+MCAPI ::Vec3 const& EXIT_OFFSET();
 // NOLINTEND
 
 } // namespace ExitVehicleOnTopCenterConstants

@@ -15,7 +15,7 @@ public:
 
     virtual ::Json::Value serialize() const = 0;
 
-    virtual void deserialize(::Json::Value const&) = 0;
+    virtual void deserialize(::Json::Value const& root) = 0;
     // NOLINTEND
 
 public:

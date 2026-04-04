@@ -48,11 +48,11 @@ public:
 #endif
 
     virtual void initFileUploader(
-        ::std::string const&,
-        ::FileInfo const&,
-        int,
-        ::Json::Value const&,
-        ::std::function<void(bool)>
+        ::std::string const&        uploadId,
+        ::FileInfo const&           file,
+        int                         chunkSize,
+        ::Json::Value const&        uploadOptions,
+        ::std::function<void(bool)> callback
     ) = 0;
 
     virtual void getServerMissingChunks(
@@ -76,13 +76,13 @@ public:
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
-    virtual bool canCancelUpload(::FileInfo const&) const = 0;
+    virtual bool canCancelUpload(::FileInfo const& file) const = 0;
 
-    virtual void cancelUpload(::FileInfo const&) = 0;
+    virtual void cancelUpload(::FileInfo const& file) = 0;
 
     virtual ::UploadError getInitErrorCode() const = 0;
 
-    virtual float getUploadProgress(::FileInfo const&) const = 0;
+    virtual float getUploadProgress(::FileInfo const& file) const = 0;
 
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const;
     // NOLINTEND

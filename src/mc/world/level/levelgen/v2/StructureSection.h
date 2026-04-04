@@ -31,21 +31,23 @@ public:
     // NOLINTBEGIN
     virtual ~StructureSection() = default;
 
-    virtual void appendJunctions(::BoundingBox const&, ::std::vector<::br::worldgen::JigsawJunction>&) = 0;
+    virtual void
+    appendJunctions(::BoundingBox const& box, ::std::vector<::br::worldgen::JigsawJunction>& junctions) = 0;
 
-    virtual void appendRigid(::br::worldgen::TerrainAdjustment::Type, ::std::vector<::br::worldgen::Rigid>&) = 0;
+    virtual void
+    appendRigid(::br::worldgen::TerrainAdjustment::Type type, ::std::vector<::br::worldgen::Rigid>& rigids) = 0;
 
-    virtual bool postProcess(::BlockSource&, ::Random&, ::BoundingBox const&) const = 0;
+    virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) const = 0;
 
     virtual bool postProcess(
-        ::BlockSource&,
-        ::IRandom&,
-        ::BlockPos,
-        ::BoundingBox const&,
-        ::br::worldgen::JigsawReplacement
+        ::BlockSource&                    region,
+        ::IRandom&                        random,
+        ::BlockPos                        structurePos,
+        ::BoundingBox const&              chunkBB,
+        ::br::worldgen::JigsawReplacement replacement
     ) const = 0;
 
-    virtual void placeEntities(::BlockSource&, ::BoundingBox const&) const = 0;
+    virtual void placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const = 0;
     // NOLINTEND
 
 public:

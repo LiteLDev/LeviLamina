@@ -12,9 +12,9 @@ public:
 
     virtual void reset() = 0;
 
-    virtual void update(void const*, uint) = 0;
+    virtual void update(void const* data, uint size) = 0;
 
-    virtual void final(uchar*) = 0;
+    virtual void final(uchar* result) = 0;
 
     virtual uint64 resultSize() const = 0;
     // NOLINTEND

@@ -20,9 +20,9 @@ struct TickingSystemWithInfo;
 namespace MobCounterSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void getMobCount(
+MCAPI void getMobCount(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorTickedComponent, ::MobFlagComponent>,

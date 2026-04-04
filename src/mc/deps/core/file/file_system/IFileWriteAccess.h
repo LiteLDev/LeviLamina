@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~IFileWriteAccess() = default;
 
-    virtual uint64 fwrite(void const*, uint64, uint64, void*) = 0;
+    virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) = 0;
     // NOLINTEND
 
 public:

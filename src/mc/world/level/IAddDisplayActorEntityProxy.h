@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~IAddDisplayActorEntityProxy() = default;
 
-    virtual void initializeActor(::Actor&) const = 0;
+    virtual void initializeActor(::Actor& actor) const = 0;
 
-    virtual void registerDisplayEntityToDimension(::Actor const&) const = 0;
+    virtual void registerDisplayEntityToDimension(::Actor const& actor) const = 0;
     // NOLINTEND
 
 public:

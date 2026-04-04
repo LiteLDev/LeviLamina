@@ -12,7 +12,7 @@ public:
 
     virtual uint GetRequestedEvents() = 0;
 
-    virtual void OnEvent(uint, int) = 0;
+    virtual void OnEvent(uint ff, int err) = 0;
 
     virtual void* GetWSAEvent() = 0;
 

@@ -53,13 +53,13 @@ public:
     // NOLINTBEGIN
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual void onCancel(::MinecraftScreenModel&) /*override*/;
+    virtual void onCancel(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onExit(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
 
@@ -67,7 +67,7 @@ public:
 
     virtual ::std::string getTTSProgressMessage() const /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::ProgressAnimation showLoadingBar() const /*override*/;
 
@@ -119,13 +119,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel&);
+    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCFOLD ::std::string $getTitleText() const;
 
@@ -133,7 +133,7 @@ public:
 
     MCFOLD ::std::string $getTTSProgressMessage() const;
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCFOLD ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND

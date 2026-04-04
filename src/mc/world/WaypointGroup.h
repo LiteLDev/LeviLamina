@@ -38,9 +38,9 @@ public:
     // NOLINTBEGIN
     virtual ~WaypointGroup() = default;
 
-    virtual bool has(::WaypointGroup::WaypointHandle const&) const = 0;
+    virtual bool has(::WaypointGroup::WaypointHandle const& handle) const = 0;
 
-    virtual bool remove(::WaypointGroup::WaypointHandle const&) = 0;
+    virtual bool remove(::WaypointGroup::WaypointHandle const& handle) = 0;
     // NOLINTEND
 
 public:

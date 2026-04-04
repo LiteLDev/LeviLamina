@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual ~Timeout() = default;
 
-    virtual void Start(::dcsctp::DurationMs, ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64>) = 0;
+    virtual void
+    Start(::dcsctp::DurationMs duration_ms, ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) = 0;
 
     virtual void Stop() = 0;
 

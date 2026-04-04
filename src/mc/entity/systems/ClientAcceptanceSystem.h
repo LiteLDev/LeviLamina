@@ -25,7 +25,7 @@ struct VehicleInputIntentComponent;
 namespace ClientAcceptanceSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void adjustMotion(
+MCAPI void adjustMotion(
     ::Vec3 const&                                 amount,
     ::ServerPlayerCurrentMovementComponent const& input,
     ::MoveRequestComponent&                       moveRequest,
@@ -33,9 +33,9 @@ MCNAPI void adjustMotion(
     ::ClientAcceptanceConfig const&               config
 );
 
-MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
+MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
 
-MCNAPI void tickClientAcceptance(
+MCAPI void tickClientAcceptance(
     ::ServerPlayerCurrentMovementComponent const& currentMove,
     ::StateVectorComponent const&                 stateVector,
     ::MoveRequestComponent&                       moveRequest,
@@ -43,7 +43,7 @@ MCNAPI void tickClientAcceptance(
     ::AABBShapeComponent&                         shape
 );
 
-MCNAPI void tickPlayerOrVehicle(
+MCAPI void tickPlayerOrVehicle(
     ::StrictEntityContext const&                  player,
     ::ServerPlayerCurrentMovementComponent const& input,
     ::ClientAcceptanceThresholdsComponent&        acceptance,

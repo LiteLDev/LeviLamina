@@ -18,13 +18,13 @@ public:
     // NOLINTBEGIN
     virtual ~IFileAccess() /*override*/;
 
-    virtual void* fopen(::Core::PathView, ::std::string const&) = 0;
+    virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) = 0;
 
-    virtual int fclose(void*) = 0;
+    virtual int fclose(void* file) = 0;
 
-    virtual int fseek(void*, int64, int) = 0;
+    virtual int fseek(void* file, int64 offset, int origin) = 0;
 
-    virtual int64 ftell(void*) = 0;
+    virtual int64 ftell(void* file) = 0;
 
     virtual ::IFileReadAccess const* getReadInterface() const = 0;
 

@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual ~IDlcBatchModel() /*override*/;
 
-    virtual void searchForProductIds(::std::function<void()>) = 0;
+    virtual void searchForProductIds(::std::function<void()> searchCompleteCallback) = 0;
 
     virtual void beginExclusiveDownload() = 0;
 
@@ -40,7 +40,7 @@ public:
 
     virtual void cancelPendingImport() = 0;
 
-    virtual bool containsProductId(::std::string const&) const = 0;
+    virtual bool containsProductId(::std::string const& productId) const = 0;
 
     virtual void pauseDownload() = 0;
 
@@ -96,7 +96,7 @@ public:
 
     virtual ::IStoreCatalogRepository& storeCatalog() const = 0;
 
-    virtual void setSilent(bool) = 0;
+    virtual void setSilent(bool newSilent) = 0;
 
     virtual bool isSilent() const = 0;
     // NOLINTEND

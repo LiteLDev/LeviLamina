@@ -34,28 +34,29 @@ public:
 
     virtual char const* const name() const = 0;
 
-    virtual void addCallable(::OreUI::Detail::ICallable*) = 0;
+    virtual void addCallable(::OreUI::Detail::ICallable* callable) = 0;
 
-    virtual void removeCallable(::OreUI::Detail::ICallable*) = 0;
+    virtual void removeCallable(::OreUI::Detail::ICallable* callable) = 0;
 
     virtual void setState(
-        ::OreUI::Detail::IdType const&,
-        ::OreUI::InvocationState const,
-        ::OreUI::InvocationResult const,
-        uchar const,
-        ::std::optional<int> const
+        ::OreUI::Detail::IdType const&  id,
+        ::OreUI::InvocationState const  state,
+        ::OreUI::InvocationResult const result,
+        uchar const                     progress,
+        ::std::optional<int> const      error
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription onChange(
         ::std::function<void(
             ::OreUI::Detail::IdType const&,
             ::OreUI::Detail::IInvocationStateTracker::InvocationInformation const&
-        )> const&
+        )> const& observer
     ) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription onRemove(::std::function<void(::OreUI::Detail::IdType const&)> const&) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+    onRemove(::std::function<void(::OreUI::Detail::IdType const&)> const& observer) = 0;
 
-    virtual void expose(::cohtml::Binder*, void*) = 0;
+    virtual void expose(::cohtml::Binder* binder, void* object) = 0;
     // NOLINTEND
 
 public:

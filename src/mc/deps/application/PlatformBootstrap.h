@@ -88,17 +88,25 @@ public:
 
     virtual ::std::string_view getSaveDataRoot() = 0;
 
-    virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadAssetFile(char*, uint64, char const*, char*, uint64) = 0;
+    virtual ::Bedrock::PlatformBootstrap::LoadResult
+    rawLoadAssetFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize) = 0;
 
-    virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadDataFile(char*, uint64, char const*, char*, uint64) = 0;
+    virtual ::Bedrock::PlatformBootstrap::LoadResult
+    rawLoadDataFile(char* buffer, uint64 bufferSize, char const* path, char* errorBuffer, uint64 errorBufferSize) = 0;
 
     virtual ::Bedrock::PlatformBootstrap::SaveResult
     rawSaveDataFile(char const*, uint64, char const*, bool, char*, uint64) = 0;
 
-    virtual ::Bedrock::PlatformBootstrap::LoadResult
-    rawLoadFromCustomRoot(char*, uint64, char const*, char*, uint64) = 0;
+    virtual ::Bedrock::PlatformBootstrap::LoadResult rawLoadFromCustomRoot(
+        char*       buffer,
+        uint64      bufferSize,
+        char const* fullPath,
+        char*       errorBuffer,
+        uint64      errorBufferSize
+    ) = 0;
 
-    virtual ::Bedrock::PlatformBootstrap::CreateDirectoryResult rawCreateDirectory(char const*, char*, uint64) = 0;
+    virtual ::Bedrock::PlatformBootstrap::CreateDirectoryResult
+    rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize) = 0;
     // NOLINTEND
 
 public:

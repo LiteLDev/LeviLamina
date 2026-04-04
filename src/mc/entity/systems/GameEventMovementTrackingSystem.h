@@ -27,13 +27,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickGameEventMovementTrackingComponent(
+    MCAPI static void _tickGameEventMovementTrackingComponent(
         ::ActorOwnerComponent&                    actorOwnerComponent,
         ::GameEventMovementTrackingComponent&     gameEventMovementTrackingComponent,
         ::Optional<::RailMovementComponent const> railMovementComponent
     );
 
-    MCNAPI static void _trackMovement(
+    MCAPI static void _trackMovement(
         ::Actor&                                  actor,
         ::GameEventMovementTrackingComponent&     component,
         ::Optional<::RailMovementComponent const> railMovementComponent
@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

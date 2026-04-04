@@ -67,7 +67,7 @@ public:
         // NOLINTBEGIN
         virtual ~MoveOperation();
 
-        virtual ::Core::Result migrate(bool) const = 0;
+        virtual ::Core::Result migrate(bool forceCritical) const = 0;
 
         virtual void cleanup() const = 0;
         // NOLINTEND

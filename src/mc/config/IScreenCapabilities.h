@@ -11,7 +11,7 @@ public:
     // NOLINTBEGIN
     virtual ~IScreenCapabilities() = default;
 
-    virtual bool isOfType(::Bedrock::typeid_t<::IScreenCapabilities>) const = 0;
+    virtual bool isOfType(::Bedrock::typeid_t<::IScreenCapabilities> type) const = 0;
     // NOLINTEND
 
 public:

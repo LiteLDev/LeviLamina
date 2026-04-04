@@ -22,7 +22,7 @@ class GlideInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doGlideInputSystem(
+    MCAPI static void doGlideInputSystem(
         ::MovementAbilitiesComponent const& abilitiesComponent,
         ::MoveInputComponent const&         moveInputComponent,
         ::ActorDataFlagComponent const&     synchedActorDataComponent,
@@ -30,7 +30,7 @@ public:
         ::StateVectorComponent&             stateVectorComponent
     );
 
-    MCNAPI static void tickGlideInputSystem(
+    MCAPI static void tickGlideInputSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,

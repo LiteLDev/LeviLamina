@@ -20,15 +20,15 @@ class ResetJumpRidingScaleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doResetJumpRidingScaleSystem(
+    MCAPI static void _doResetJumpRidingScaleSystem(
         ::StrictEntityContext const&,
         ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,

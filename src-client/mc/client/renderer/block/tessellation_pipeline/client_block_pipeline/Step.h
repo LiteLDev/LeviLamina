@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~Step() = default;
 
-    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const&) const = 0;
+    virtual ::ClientBlockPipeline::StepResult run(::ClientBlockPipeline::Inputs const& inputs) const = 0;
     // NOLINTEND
 
 public:

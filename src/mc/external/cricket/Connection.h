@@ -224,7 +224,7 @@ public:
 
     virtual uint64 priority() const;
 
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
+    virtual int Send(void const* data, uint64 size, ::rtc::PacketOptions const& options) = 0;
 
     virtual int GetError() = 0;
 

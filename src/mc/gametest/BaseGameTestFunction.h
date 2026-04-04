@@ -42,7 +42,7 @@ public:
     virtual ~BaseGameTestFunction();
 
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionContext>
-    createContext(::gametest::BaseGameTestHelper&) const = 0;
+    createContext(::gametest::BaseGameTestHelper& helper) const = 0;
 
     virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const = 0;

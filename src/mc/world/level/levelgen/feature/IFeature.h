@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     virtual ~IFeature();
 
-    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const = 0;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
 
     virtual bool isValidPlacement(::std::string const& pass);
 

@@ -14,11 +14,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::ListTag>
-    serializeContainerContent(::FullContainerName const&, ::SaveContext const&) = 0;
+    serializeContainerContent(::FullContainerName const& name, ::SaveContext const& saveContext) = 0;
 
-    virtual ::std::optional<int> getDynamicContainerWeight(::FullContainerName const&) = 0;
+    virtual ::std::optional<int> getDynamicContainerWeight(::FullContainerName const& name) = 0;
 
-    virtual bool hasContainer(::FullContainerName const&) const = 0;
+    virtual bool hasContainer(::FullContainerName const& name) const = 0;
 
     virtual ~IDynamicContainerSerialization();
     // NOLINTEND

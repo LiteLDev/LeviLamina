@@ -23,9 +23,24 @@ struct VehicleComponent;
 
 class HorsePreTravelSystem {
 public:
+    // HorsePreTravelSystem inner types define
+    using MainViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>,
+        ::Optional<::VehicleComponent>,
+        ::ActorDataFlagComponent const,
+        ::AirSpeedComponent>;
+
+    using MobViewType = ::ViewT<::StrictEntityContext, ::MobFlagComponent const>;
+
+    using ModType = ::EntityModifier<::HorseWasOnGroundPreTravelComponent>;
+
+    using OnGroundViewType = ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickHorsePreTravelSystem(
+    MCAPI static void tickHorsePreTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::HorseFlagComponent>,

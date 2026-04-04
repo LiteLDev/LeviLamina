@@ -23,19 +23,19 @@ public:
     // NOLINTBEGIN
     virtual ~IQuery() = default;
 
-    virtual void update(double timestampMs) = 0;
+    virtual void update(double time) = 0;
 
     virtual bool isValid() const = 0;
 
     virtual char const* name() const = 0;
 
-    virtual void triggerCreated(::OreUI::Detail::IdType const&, ::OreUI::Detail::Binder const&) const = 0;
+    virtual void triggerCreated(::OreUI::Detail::IdType const& id, ::OreUI::Detail::Binder const& binder) const = 0;
 
-    virtual void triggerUpdated(::OreUI::Detail::IdType const&, ::OreUI::Detail::Binder const&) const = 0;
+    virtual void triggerUpdated(::OreUI::Detail::IdType const& id, ::OreUI::Detail::Binder const& binder) const = 0;
 
-    virtual void destroy(::OreUI::Detail::Binder const&) = 0;
+    virtual void destroy(::OreUI::Detail::Binder const& binder) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const&) = 0;
+    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const& observer) = 0;
     // NOLINTEND
 
 public:

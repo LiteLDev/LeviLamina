@@ -21,7 +21,7 @@ struct VehicleComponent;
 namespace RemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void removePassengersSystem(
+MCAPI void removePassengersSystem(
     ::StrictEntityContext const& vehicleEntity,
     ::RemovePassengersComponent& removePassengersComponent,
     ::VehicleComponent&          vehicleComponent,
@@ -31,7 +31,7 @@ MCNAPI void removePassengersSystem(
         ::PassengersChangedFlagComponent> modifier
 );
 
-MCNAPI void singleTickPassengerRemovePassengerSystem(
+MCAPI void singleTickPassengerRemovePassengerSystem(
     ::StrictEntityContext const&                                                                        passenger,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
     ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent>               vehicleView,
@@ -41,7 +41,7 @@ MCNAPI void singleTickPassengerRemovePassengerSystem(
         ::PassengersChangedFlagComponent> modifier
 );
 
-MCNAPI void singleTickRemovePassenger(
+MCAPI void singleTickRemovePassenger(
     ::StrictEntityContext const&                                                          passengerEntity,
     ::PassengerComponent const&                                                           passengerComponent,
     ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView,
@@ -51,7 +51,7 @@ MCNAPI void singleTickRemovePassenger(
         ::PassengersChangedFlagComponent> modifier
 );
 
-MCNAPI void tickRemovePassengersSystem(
+MCAPI void tickRemovePassengersSystem(
     ::ViewT<::StrictEntityContext, ::RemovePassengersComponent, ::VehicleComponent> view,
     ::EntityModifier<
         ::VehicleComponent,

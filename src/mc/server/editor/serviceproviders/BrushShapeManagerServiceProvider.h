@@ -31,63 +31,66 @@ public:
 
     virtual void switchBrushPaintMode(::Editor::Brush::BrushPaintMode mode) = 0;
 
-    virtual void setBrushShape(::std::vector<::Vec3> const&) = 0;
+    virtual void setBrushShape(::std::vector<::Vec3> const& shapeOffsets) = 0;
 
-    virtual void setBrushShape(::Editor::RelativeVolumeListBlockVolume const&) = 0;
+    virtual void setBrushShape(::Editor::RelativeVolumeListBlockVolume const& volume) = 0;
 
-    virtual void setBrushMask(::Editor::BlockMask::BlockMaskList const&) = 0;
+    virtual void setBrushMask(::Editor::BlockMask::BlockMaskList const& mask) = 0;
 
-    virtual void beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)>) = 0;
+    virtual void beginPainting(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) = 0;
 
-    virtual void endPainting(bool const) = 0;
+    virtual void endPainting(bool const cancelled) = 0;
 
-    virtual void singlePaint(::std::function<void(::Editor::Brush::BrushPaintCompletionState)>) = 0;
+    virtual void singlePaint(::std::function<void(::Editor::Brush::BrushPaintCompletionState)> fnCallback) = 0;
 
     virtual void deactivateBrushTool() = 0;
 
-    virtual void setBrushShapeOffset(::Vec3 const&) = 0;
+    virtual void setBrushShapeOffset(::Vec3 const& offset) = 0;
 
     virtual ::Vec3 getBrushShapeOffset() const = 0;
 
-    virtual void setTerrainStrength(int const) = 0;
+    virtual void setTerrainStrength(int const terrainStrength) = 0;
 
-    virtual void setFlattenMode(::Editor::Brush::BrushFlattenMode) = 0;
+    virtual void setFlattenMode(::Editor::Brush::BrushFlattenMode flattenMode) = 0;
 
-    virtual void setFlattenSmoothing(int const) = 0;
+    virtual void setFlattenSmoothing(int const flattenSmoothing) = 0;
 
-    virtual void setFloorBlockOverride(bool const) = 0;
+    virtual void setFloorBlockOverride(bool const floorBlockOverride) = 0;
 
-    virtual void setElevationMode(::Editor::Brush::BrushElevationMode) = 0;
+    virtual void setElevationMode(::Editor::Brush::BrushElevationMode elevationMode) = 0;
 
-    virtual void setElevationFalloff(int const) = 0;
+    virtual void setElevationFalloff(int const elevationFalloff) = 0;
 
-    virtual void setElevationSampleLayers(int const) = 0;
+    virtual void setElevationSampleLayers(int const elevationSampleLayers) = 0;
 
-    virtual void setElevationBrushRadius(int const) = 0;
+    virtual void setElevationBrushRadius(int const elevationBrushRadius) = 0;
 
-    virtual void setBrushShapeVisible(bool const) = 0;
+    virtual void setBrushShapeVisible(bool const visible) = 0;
 
     virtual bool isBusy() = 0;
 
-    virtual void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode) = 0;
+    virtual void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) = 0;
 
     virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const = 0;
 
-    virtual void setInverseEraseMode(bool const) = 0;
+    virtual void setInverseEraseMode(bool const inverseErase) = 0;
 
     virtual bool getInverseEraseMode() const = 0;
 
-    virtual void setItemPlacement(::HashedString const&) = 0;
+    virtual void setItemPlacement(::HashedString const& itemName) = 0;
 
     virtual ::HashedString const& getItemPlacement() const = 0;
 
     virtual bool const isItemPlacementActive() const = 0;
 
-    virtual void pushBlockStateOverride(::HashedString const&, ::std::variant<int, ::std::string, bool> const&) = 0;
+    virtual void pushBlockStateOverride(
+        ::HashedString const&                           stateName,
+        ::std::variant<int, ::std::string, bool> const& stateValue
+    ) = 0;
 
     virtual void clearBlockStateOverrides() = 0;
 
-    virtual void setBlockFacePlacementBasedOnCamera(bool const) = 0;
+    virtual void setBlockFacePlacementBasedOnCamera(bool const enable) = 0;
     // NOLINTEND
 
 public:

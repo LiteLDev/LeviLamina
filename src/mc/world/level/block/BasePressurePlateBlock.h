@@ -60,17 +60,17 @@ public:
 
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    virtual int getSignalStrength(::BlockSource&, ::BlockPos const&) const = 0;
+    virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const = 0;
 
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual int getSignalForData(int) const = 0;
+    virtual int getSignalForData(int data) const = 0;
 
-    virtual int getRedstoneSignal(int) const = 0;
+    virtual int getRedstoneSignal(int signal) const = 0;
 
     virtual ::AABB const getSensitiveAABB(::BlockPos const& pos) const;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~BasePressurePlateBlock() /*override*/ = default;
     // NOLINTEND

@@ -18,7 +18,7 @@ public:
 
     virtual ::webrtc::Timestamp CurrentTime() = 0;
 
-    virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp) = 0;
+    virtual ::webrtc::NtpTime ConvertTimestampToNtpTime(::webrtc::Timestamp timestamp) = 0;
     // NOLINTEND
 
 public:

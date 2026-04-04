@@ -19,11 +19,11 @@ public:
 
     virtual bool hasDemoSignedInEver() const = 0;
 
-    virtual void hasDemoSignedInEver(bool) const = 0;
+    virtual void hasDemoSignedInEver(bool value) const = 0;
 
     virtual bool hasSignedInEver() const = 0;
 
-    virtual void hasSignedInEver(bool) const = 0;
+    virtual void hasSignedInEver(bool value) const = 0;
 
     virtual int64 maxSignInExpiration() const = 0;
 
@@ -31,17 +31,17 @@ public:
 
     virtual bool rememberMe() const = 0;
 
-    virtual void rememberMe(bool) const = 0;
+    virtual void rememberMe(bool value) const = 0;
 
     virtual bool signedIn() const = 0;
 
-    virtual void signedIn(bool) const = 0;
+    virtual void signedIn(bool value) const = 0;
 
     virtual int64 tokenRefreshThreshold() const = 0;
 
     virtual ::std::string userHint() const = 0;
 
-    virtual void userHint(::std::string const&) const = 0;
+    virtual void userHint(::std::string const& hint) const = 0;
     // NOLINTEND
 
 public:

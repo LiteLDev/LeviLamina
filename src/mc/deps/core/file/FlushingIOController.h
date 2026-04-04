@@ -23,7 +23,7 @@ public:
         // NOLINTBEGIN
         virtual ~Flusher();
 
-        virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
+        virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) = 0;
         // NOLINTEND
 
     public:

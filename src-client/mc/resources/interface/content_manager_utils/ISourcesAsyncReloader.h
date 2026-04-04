@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISourcesAsyncReloader() = default;
 
-    virtual ::Bedrock::Threading::Async<void> reloadSourcesAsync(bool) = 0;
+    virtual ::Bedrock::Threading::Async<void> reloadSourcesAsync(bool saveSources) = 0;
     // NOLINTEND
 
 public:

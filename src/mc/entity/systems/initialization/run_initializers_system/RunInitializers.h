@@ -9,6 +9,7 @@
 // clang-format off
 class EntityContext;
 class EntityRegistry;
+class EntitySystems;
 class StrictEntityContext;
 // clang-format on
 
@@ -18,7 +19,7 @@ struct RunInitializers : public ::ITickingSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkcefeb9;
+    ::ll::TypedStorage<8, 8, ::EntitySystems&> mSystems;
     // NOLINTEND
 
 public:
@@ -42,11 +43,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCNAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
-    MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
 
 
     // NOLINTEND

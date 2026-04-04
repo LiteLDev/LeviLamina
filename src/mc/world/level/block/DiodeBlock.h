@@ -35,7 +35,7 @@ public:
 
     virtual bool isSignalSource() const /*override*/;
 
-    virtual bool isLocked(::BlockSource&, ::BlockPos const&) const;
+    virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
     virtual bool isSameDiode(::Block const& block) const;
 
@@ -49,7 +49,7 @@ public:
 
     virtual int getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    virtual bool isAlternateInput(::Block const&) const;
+    virtual bool isAlternateInput(::Block const& block) const;
 
     virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -57,11 +57,11 @@ public:
 
     virtual int getTurnOffDelay(::Block const& block) const;
 
-    virtual int getTurnOnDelay(::Block const&) const = 0;
+    virtual int getTurnOnDelay(::Block const& block) const = 0;
 
-    virtual ::Block const* getOnBlock(::Block const*) const = 0;
+    virtual ::Block const* getOnBlock(::Block const* block) const = 0;
 
-    virtual ::Block const* getOffBlock(::Block const*) const = 0;
+    virtual ::Block const* getOffBlock(::Block const* block) const = 0;
 
     virtual ~DiodeBlock() /*override*/ = default;
     // NOLINTEND

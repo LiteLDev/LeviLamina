@@ -38,7 +38,7 @@ public:
 
     virtual ::std::unique_ptr<::ListTag> saveToTag(::SaveContext const& saveContext) const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
@@ -87,7 +87,7 @@ public:
 
     MCAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
 
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,

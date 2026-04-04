@@ -16,13 +16,13 @@ public:
 
     virtual int getLightningTime() const = 0;
 
-    virtual void setRainLevel(float) = 0;
+    virtual void setRainLevel(float rainLevel) = 0;
 
-    virtual void setLightningLevel(float) = 0;
+    virtual void setLightningLevel(float lightningLevel) = 0;
 
-    virtual void setRainTime(int) = 0;
+    virtual void setRainTime(int rainTime) = 0;
 
-    virtual void setLightningTime(int) = 0;
+    virtual void setLightningTime(int lightningTime) = 0;
     // NOLINTEND
 
 public:

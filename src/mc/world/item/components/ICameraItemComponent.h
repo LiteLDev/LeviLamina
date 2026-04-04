@@ -30,15 +30,16 @@ public:
 
     virtual float slideAwayDuration() const = 0;
 
-    virtual bool canPlace(::ItemStack const&, ::Actor&, ::BlockPos const&, uchar) const = 0;
+    virtual bool
+    canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const = 0;
 
-    virtual void takePictureNow(::Player&, ::Actor*, ::Actor*) = 0;
+    virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) = 0;
 
-    virtual void registerCallbacks(::CameraCallbacks*) = 0;
+    virtual void registerCallbacks(::CameraCallbacks* callbacks) = 0;
 
-    virtual void use(::ItemStack&, ::Player&) = 0;
+    virtual void use(::ItemStack& instance, ::Player& player) = 0;
 
-    virtual void releaseUsing(::ItemStack&, ::Player&, int) = 0;
+    virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) = 0;
 
     virtual bool useOn(::ItemStack&, ::Actor&, ::BlockPos const&, uchar, ::Vec3 const&) = 0;
     // NOLINTEND

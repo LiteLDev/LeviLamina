@@ -14,14 +14,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual int ProtectionRequest(
-        ::webrtc::FecProtectionParams const*,
-        ::webrtc::FecProtectionParams const*,
-        uint*,
-        uint*,
-        uint*
+        ::webrtc::FecProtectionParams const* delta_params,
+        ::webrtc::FecProtectionParams const* key_params,
+        uint*                                sent_video_rate_bps,
+        uint*                                sent_nack_rate_bps,
+        uint*                                sent_fec_rate_bps
     ) = 0;
 
-    virtual void SetRetransmissionMode(int) = 0;
+    virtual void SetRetransmissionMode(int retransmission_mode) = 0;
 
     virtual ~VCMProtectionCallback();
     // NOLINTEND

@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -106,7 +106,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $setOwner(::ActorUniqueID const ownerID);
 
     MCAPI void $normalTick();
 

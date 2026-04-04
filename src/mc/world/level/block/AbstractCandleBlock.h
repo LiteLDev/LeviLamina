@@ -40,14 +40,17 @@ public:
 
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    virtual int _getNumCandles(::Block const&) const;
+    virtual int _getNumCandles(::Block const& block) const;
 
-    virtual void
-    _iterateCandles(::Block const&, ::BlockPos const&, ::brstd::function_ref<void(::Vec3 const&, int)>) const;
+    virtual void _iterateCandles(
+        ::Block const&                                  block,
+        ::BlockPos const&                               pos,
+        ::brstd::function_ref<void(::Vec3 const&, int)> callback
+    ) const;
 
-    virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
     virtual ~AbstractCandleBlock() /*override*/ = default;
     // NOLINTEND

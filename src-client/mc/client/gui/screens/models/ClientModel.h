@@ -24,7 +24,7 @@ public:
 
     virtual bool hasCommandsEnabled() const = 0;
 
-    virtual ::std::string getFormattedHoverText(::ItemStackBase const&, bool const) = 0;
+    virtual ::std::string getFormattedHoverText(::ItemStackBase const& item, bool const showCategory) = 0;
 
     virtual bool achievementsWillBeDisabledOnLoad() = 0;
 
@@ -36,7 +36,7 @@ public:
 
     virtual int getGameType() = 0;
 
-    virtual void setGameType(::GameType) = 0;
+    virtual void setGameType(::GameType gameType) = 0;
 
     virtual int getGenerator() = 0;
 
@@ -44,13 +44,13 @@ public:
 
     virtual bool isAlwaysDay() = 0;
 
-    virtual bool isGameRule(::GameRuleId) = 0;
+    virtual bool isGameRule(::GameRuleId gameRule) = 0;
 
     virtual bool isImmutableWorld() = 0;
 
     virtual ::std::unique_ptr<::PlayerCommandOrigin> makePlayerCommandOrigin() = 0;
 
-    virtual void setCommandsEnabled(bool) = 0;
+    virtual void setCommandsEnabled(bool val) = 0;
 
     virtual void disableAchievements() = 0;
 
@@ -72,7 +72,7 @@ public:
 
     virtual ::Option const& getGuiScaleOption() const = 0;
 
-    virtual void setGuiScaleOffset(int) = 0;
+    virtual void setGuiScaleOffset(int guiScale) = 0;
 
     virtual ::FontHandle getFontHandle() const = 0;
 

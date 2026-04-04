@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ~RTCStatsCollectorCallback() /*override*/ = default;
 
-    virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const&) = 0;
+    virtual void OnStatsDelivered(::webrtc::scoped_refptr<::webrtc::RTCStatsReport const> const& report) = 0;
     // NOLINTEND
 
 public:

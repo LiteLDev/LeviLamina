@@ -58,13 +58,13 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void SetTmmbn(::std::vector<::webrtc::rtcp::TmmbItem>) = 0;
+        virtual void SetTmmbn(::std::vector<::webrtc::rtcp::TmmbItem> bounding_set) = 0;
 
         virtual void OnRequestSendReport() = 0;
 
-        virtual void OnReceivedNack(::std::vector<ushort> const&) = 0;
+        virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) = 0;
 
-        virtual void OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const>) = 0;
+        virtual void OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) = 0;
 
         virtual ~ModuleRtpRtcp() = default;
         // NOLINTEND

@@ -20,13 +20,13 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptingEventListener() = default;
 
-    virtual ::EventResult onEvent(::ScriptingNotificationEvent const&);
+    virtual ::EventResult onEvent(::ScriptingNotificationEvent const& event);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const& event);
 
 
     // NOLINTEND

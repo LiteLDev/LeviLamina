@@ -10,8 +10,12 @@ struct TickingSystemWithInfo;
 
 struct PlayerTickSystem {
 public:
+    // PlayerTickSystem inner types define
+    using TickCallback = ::std::function<void(::ServerPlayerMovementComponent const&)>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create(bool isCatchup);
+    MCAPI static ::TickingSystemWithInfo create(bool isCatchup);
     // NOLINTEND
 };

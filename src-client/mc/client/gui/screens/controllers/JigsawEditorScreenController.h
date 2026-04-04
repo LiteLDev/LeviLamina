@@ -41,9 +41,9 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawEditorScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
+        ::Player&,
+        ::BlockPos const& pos,
+        ::ActorUniqueID   uniqueId
     );
 
     MCFOLD ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
@@ -60,9 +60,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
+        ::Player&,
+        ::BlockPos const& pos,
+        ::ActorUniqueID   uniqueId
     );
     // NOLINTEND
 

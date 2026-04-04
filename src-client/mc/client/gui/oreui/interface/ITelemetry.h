@@ -19,33 +19,44 @@ public:
     virtual ~ITelemetry() = default;
 
     virtual void fireEvent(
-        ::std::string const&,
-        ::std::vector<::Social::Events::Property> const&,
-        ::std::vector<::Social::Events::Measurement> const&,
-        bool
+        ::std::string const&                                eventName,
+        ::std::vector<::Social::Events::Property> const&    properties,
+        ::std::vector<::Social::Events::Measurement> const& measurements,
+        bool                                                shouldAggregate
     ) = 0;
 
     virtual void fireEventOreUIScreenLoadFailed() = 0;
 
     virtual void fireEventOreUIJsException() = 0;
 
-    virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const&) = 0;
+    virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const& dataTracker) = 0;
 
-    virtual void
-    fireEventButtonPressed(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
-
-    virtual void fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) = 0;
-
-    virtual void fireEventOptionsChangedAlt(
-        ::std::string const&,
-        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const&
+    virtual void fireEventButtonPressed(
+        ::std::string const&                                      buttonName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
     ) = 0;
 
-    virtual void
-    fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) = 0;
+    virtual void fireEventOptionsChanged(
+        ::std::string const&                            optionsGroup,
+        ::std::unordered_map<::std::string, int> const& events
+    ) = 0;
 
-    virtual void
-    fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool) = 0;
+    virtual void fireEventOptionsChangedAlt(
+        ::std::string const&                                                       optionsGroup,
+        ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
+    ) = 0;
+
+    virtual void fireEventModalShown(
+        ::std::string const&                                      modalName,
+        ::std::unordered_map<::std::string, ::std::string> const& details
+    ) = 0;
+
+    virtual void fireEventRealmsStoriesOptIn(
+        ::std::string const& correlationId,
+        ::std::string const& action,
+        ::std::string const& realmId,
+        bool                 isOwner
+    ) = 0;
     // NOLINTEND
 
 public:

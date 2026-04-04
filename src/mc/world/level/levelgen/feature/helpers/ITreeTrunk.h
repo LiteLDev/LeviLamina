@@ -19,16 +19,16 @@ public:
     virtual ~ITreeTrunk() = default;
 
     virtual ::std::optional<::BlockPos> placeTrunk(
-        ::IBlockWorldGenAPI&,
-        ::BlockPos const&,
-        ::Random&,
-        int,
-        ::RenderParams&,
-        ::TreeHelper::TreeParams const&,
-        ::ITreeCanopy const*
+        ::IBlockWorldGenAPI&            target,
+        ::BlockPos const&               pos,
+        ::Random&                       random,
+        int                             treeHeight,
+        ::RenderParams&                 renderParams,
+        ::TreeHelper::TreeParams const& treeParams,
+        ::ITreeCanopy const*            canopy
     ) const = 0;
 
-    virtual int getTreeHeight(::Random&) const = 0;
+    virtual int getTreeHeight(::Random& random) const = 0;
     // NOLINTEND
 
 public:

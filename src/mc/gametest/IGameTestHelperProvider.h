@@ -17,7 +17,7 @@ public:
     virtual ~IGameTestHelperProvider() = default;
 
     virtual ::std::unique_ptr<::gametest::BaseGameTestHelper>
-    createGameTestHelper(::gametest::BaseGameTestInstance&) = 0;
+    createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) = 0;
 
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() = 0;
     // NOLINTEND

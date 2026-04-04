@@ -15,7 +15,7 @@ public:
 
     virtual bool isStatPublisherEnabled() const = 0;
 
-    virtual void publishStats(uint64, ::std::vector<::ScriptStat> const&) = 0;
+    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) = 0;
     // NOLINTEND
 
 public:

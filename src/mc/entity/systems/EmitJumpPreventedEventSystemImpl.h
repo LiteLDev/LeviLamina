@@ -17,13 +17,13 @@ struct TriggerJumpRequestComponent;
 namespace EmitJumpPreventedEventSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doEmitJumpPreventedEventSystem(
+MCAPI void doEmitJumpPreventedEventSystem(
     ::StrictEntityContext&,
     ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
     ::ActorOwnerComponent&               actorOwnerComponent
 );
 
-MCNAPI void tickEmitJumpPreventedEventSystem(
+MCAPI void tickEmitJumpPreventedEventSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MobFlagComponent>,

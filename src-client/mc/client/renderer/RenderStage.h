@@ -36,13 +36,13 @@ public:
 
     virtual void postRenderUpdate(::ScreenContext& screenContext);
 
-    virtual void preRender(::ScreenContext&) = 0;
+    virtual void preRender(::ScreenContext& screenContext) = 0;
 
     virtual void prepareFrame(::ScreenContext& screenContext);
 
     virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    virtual void postRender(::ScreenContext&);
+    virtual void postRender(::ScreenContext& screenContext);
 
     virtual bool shouldSkip() const;
 

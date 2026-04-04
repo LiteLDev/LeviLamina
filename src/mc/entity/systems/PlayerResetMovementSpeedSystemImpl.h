@@ -18,12 +18,12 @@ struct PlayerComponent;
 namespace PlayerResetMovementSpeedSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doPlayerResetMovementSpeedSystem(
+MCAPI void _doPlayerResetMovementSpeedSystem(
     ::MovementAttributesComponent const& attributesComponent,
     ::MovementSpeedComponent&            movementSpeedComponent
 );
 
-MCNAPI void _tickPlayerResetMovementSpeedSystem(
+MCAPI void _tickPlayerResetMovementSpeedSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,

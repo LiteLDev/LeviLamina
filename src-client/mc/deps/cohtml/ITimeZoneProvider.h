@@ -10,11 +10,11 @@ public:
     // NOLINTBEGIN
     virtual ~ITimeZoneProvider() = default;
 
-    virtual void GetLocalTimezoneName(double, char*, uint64) = 0;
+    virtual void GetLocalTimezoneName(double timeMsUtc, char* buffer, uint64 maxBufferSize) = 0;
 
-    virtual double GetDaylightSavingsOffset(double) = 0;
+    virtual double GetDaylightSavingsOffset(double timeMsUtc) = 0;
 
-    virtual double GetLocalTimeOffset(double, bool) = 0;
+    virtual double GetLocalTimeOffset(double timeMs, bool isTimeUtc) = 0;
     // NOLINTEND
 
 public:

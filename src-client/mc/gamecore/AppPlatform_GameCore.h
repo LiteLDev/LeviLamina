@@ -135,7 +135,7 @@ public:
 
     virtual void setWindowSize(int width, int height) /*override*/;
 
-    virtual void screenToClient(int&, int&) const;
+    virtual void screenToClient(int& x, int& y) const;
 
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
@@ -182,17 +182,17 @@ public:
 
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
-    virtual ::SecureStorageKey getSecureStorageKey(::std::string const&) /*override*/;
+    virtual ::SecureStorageKey getSecureStorageKey(::std::string const& key) /*override*/;
 
-    virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
+    virtual void setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value) /*override*/;
 
     virtual bool compareAppReceiptToLocalReceipt(::std::string const& otherReceipt) /*override*/;
 
     virtual int getPlatformDpi() const /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view) = 0;
+    virtual ::Core::PathBuffer<::std::string> _getUserFolderFromXUID(::std::string_view xuid) = 0;
 
-    virtual void _retrieveSavedWindowSize(::tagRECT&) = 0;
+    virtual void _retrieveSavedWindowSize(::tagRECT& size) = 0;
 
     virtual ::Bedrock::CommonPlatform* getPlatformShim() const /*override*/;
     // NOLINTEND
@@ -313,7 +313,7 @@ public:
 
     MCAPI void $setWindowSize(int width, int height);
 
-    MCFOLD void $screenToClient(int&, int&) const;
+    MCFOLD void $screenToClient(int& x, int& y) const;
 
     MCFOLD bool $hasBuyButtonWhenInvalidLicense();
 
@@ -360,9 +360,9 @@ public:
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
-    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
+    MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);
 
-    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+    MCFOLD void $setSecureStorageKey(::std::string const& key, ::SecureStorageKey const& value);
 
     MCFOLD bool $compareAppReceiptToLocalReceipt(::std::string const& otherReceipt);
 

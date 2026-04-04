@@ -25,7 +25,7 @@ public:
 
     virtual bool enabled() const = 0;
 
-    virtual bool set_enabled(bool) = 0;
+    virtual bool set_enabled(bool a1) = 0;
 
     virtual ::webrtc::MediaStreamTrackInterface::TrackState state() const = 0;
 

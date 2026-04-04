@@ -29,11 +29,11 @@ public:
 
     virtual int getCapacity() const = 0;
 
-    virtual bool isInside(::BlockPos const&) const = 0;
+    virtual bool isInside(::BlockPos const& pos) const = 0;
 
-    virtual void translate(::BlockPos const&) = 0;
+    virtual void translate(::BlockPos const& delta) = 0;
 
-    virtual void forEach(::brstd::function_ref<bool(::BlockPos const&)>) const = 0;
+    virtual void forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const = 0;
 
     virtual ::std::set<::ChunkPos> getChunks() const = 0;
 

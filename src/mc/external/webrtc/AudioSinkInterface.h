@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     virtual ~AudioSinkInterface();
 
-    virtual void OnData(::webrtc::AudioSinkInterface::Data const&) = 0;
+    virtual void OnData(::webrtc::AudioSinkInterface::Data const& audio) = 0;
     // NOLINTEND
 
 public:

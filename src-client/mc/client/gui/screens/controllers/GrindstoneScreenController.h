@@ -53,9 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI GrindstoneScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
+        ::Player&,
+        ::BlockPos const& pos,
+        ::ActorUniqueID
     );
 
     MCAPI void _registerStateMachine();
@@ -64,12 +64,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::ClientInstanceScreenModel> model,
-        ::Player&                                      player,
-        ::BlockPos const&                              pos,
-        ::ActorUniqueID                                uniqueId
-    );
+    MCAPI void*
+    $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player&, ::BlockPos const& pos, ::ActorUniqueID);
     // NOLINTEND
 
 public:

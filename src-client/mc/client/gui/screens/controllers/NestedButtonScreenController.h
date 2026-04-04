@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NestedButtonScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCAPI explicit NestedButtonScreenController(::std::shared_ptr<::MinecraftScreenModel>);
 
     MCAPI void setUpCallbacksForNestedButtonInCollection(
         ::std::string const&                         nestedBaseButtonId,
@@ -61,7 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel>);
     // NOLINTEND
 
 public:

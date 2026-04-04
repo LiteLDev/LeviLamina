@@ -37,7 +37,7 @@ public:
 
     virtual void tick();
 
-    virtual void appendDebugInfo(::std::string&) const = 0;
+    virtual void appendDebugInfo(::std::string& str) const = 0;
 
     virtual bool isTargetGoal() const;
 

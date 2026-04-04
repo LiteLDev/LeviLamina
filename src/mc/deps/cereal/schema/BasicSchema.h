@@ -202,21 +202,25 @@ public:
     // NOLINTBEGIN
     virtual ~BasicSchema() = default;
 
-    virtual bool isGreedy(::entt::meta_ctx const&) const;
+    virtual bool isGreedy(::entt::meta_ctx const& ctx) const;
 
-    virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const&) const;
+    virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
     virtual void doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
-        ::cereal::internal::LoadState const&
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
     ) const;
 
-    virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const&) const;
+    virtual void doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
 
     virtual ::cereal::SchemaDescription
-    makeDescription(::cereal::internal::ReflectionContext const&, ::cereal::DescriptionConfig) const = 0;
+    makeDescription(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const = 0;
     // NOLINTEND
 
 public:
@@ -239,9 +243,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isGreedy(::entt::meta_ctx const&) const;
+    MCNAPI bool $isGreedy(::entt::meta_ctx const& ctx) const;
 
-    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const&) const;
+    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
 
     // NOLINTEND

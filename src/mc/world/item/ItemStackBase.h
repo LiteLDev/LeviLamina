@@ -85,11 +85,11 @@ public:
     // NOLINTBEGIN
     virtual ~ItemStackBase();
 
-    virtual void reinit(::Item const&, int, int);
+    virtual void reinit(::Item const& item, int count, int auxValue);
 
-    virtual void reinit(::Block const&, int);
+    virtual void reinit(::Block const& block, int count);
 
-    virtual void reinit(::std::string_view const, int, int);
+    virtual void reinit(::std::string_view const name, int count, int auxValue);
 
     virtual void setNull(::std::optional<::std::string> reason);
 
@@ -400,11 +400,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reinit(::Item const&, int, int);
+    MCFOLD void $reinit(::Item const& item, int count, int auxValue);
 
-    MCFOLD void $reinit(::Block const&, int);
+    MCFOLD void $reinit(::Block const& block, int count);
 
-    MCFOLD void $reinit(::std::string_view const, int, int);
+    MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
 
     MCAPI void $setNull(::std::optional<::std::string> reason);
 

@@ -22,10 +22,14 @@ public:
     // NOLINTBEGIN
     virtual ~EditorProjectRegionManagerServiceProvider() = default;
 
-    virtual ::Scripting::Result_deprecated<void>
-    regenerateRegion(::DimensionType, ::std::vector<::Bounds> const&, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void> regenerateRegion(
+        ::DimensionType                dimensionType,
+        ::std::vector<::Bounds> const& boundsList,
+        bool                           regenerateWorldWithExcludedBounds
+    ) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> pruneRegion(::DimensionType, ::std::vector<::Bounds> const&) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    pruneRegion(::DimensionType dimensionType, ::std::vector<::Bounds> const& boundsList) = 0;
 
     virtual bool isProcessingChunks() const = 0;
 
@@ -33,6 +37,7 @@ public:
 
     virtual ::Bedrock::PubSub::Subscription registerChunkProcessingChangeListener(
         ::std::function<void(::Scripting::Result_deprecated<::Editor::ProjectRegionManagerChunkProcessingState> const&)>
+            callback
     ) = 0;
     // NOLINTEND
 

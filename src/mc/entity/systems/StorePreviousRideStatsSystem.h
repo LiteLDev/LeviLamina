@@ -19,15 +19,23 @@ struct VanillaClientGameplayComponent;
 
 class StorePreviousRideStatsSystem {
 public:
+    // StorePreviousRideStatsSystem inner types define
+    using PassengerView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
+        ::StateVectorComponent const,
+        ::VanillaClientGameplayComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _storePreviousRideStats(
+    MCAPI static void _storePreviousRideStats(
         ::StrictEntityContext const&,
         ::StateVectorComponent const&     stateVectorComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
     );
 
-    MCNAPI static void _tickStorePreviousRideStatsSystem(
+    MCAPI static void _tickStorePreviousRideStatsSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
@@ -35,6 +43,6 @@ public:
             ::VanillaClientGameplayComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

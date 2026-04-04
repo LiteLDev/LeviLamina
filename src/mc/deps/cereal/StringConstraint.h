@@ -39,7 +39,7 @@ public:
 
     MCNAPI StringConstraint(::cereal::StringConstraint const&);
 
-    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCNAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
 

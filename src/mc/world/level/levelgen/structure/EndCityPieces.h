@@ -134,13 +134,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         virtual bool generate(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>,
-            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&,
-            int,
-            ::EndCityPieces::EndCityPiece*,
-            ::BlockPos const&,
-            ::std::vector<::std::unique_ptr<::StructurePiece>>&,
-            ::Random&
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                          structureManager,
+            ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const& generators,
+            int                                                                        genDepth,
+            ::EndCityPieces::EndCityPiece*                                             parent,
+            ::BlockPos const&                                                          offset,
+            ::std::vector<::std::unique_ptr<::StructurePiece>>&                        pieces,
+            ::Random&                                                                  random
         ) = 0;
 
         virtual ~SectionGenerator() = default;

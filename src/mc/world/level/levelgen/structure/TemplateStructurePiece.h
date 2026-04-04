@@ -32,8 +32,13 @@ public:
 
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
-    virtual void
-    _handleDataMarker(::std::string const&, ::BlockPos const&, ::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
+    virtual void _handleDataMarker(
+        ::std::string const& markerId,
+        ::BlockPos const&    position,
+        ::BlockSource&       region,
+        ::Random&            random,
+        ::BoundingBox const& chunkBB
+    ) = 0;
 
     virtual ~TemplateStructurePiece() /*override*/;
     // NOLINTEND

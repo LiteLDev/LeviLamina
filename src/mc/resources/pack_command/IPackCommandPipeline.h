@@ -22,12 +22,12 @@ public:
     // NOLINTBEGIN
     virtual ~IPackCommandPipeline() /*override*/ = default;
 
-    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) = 0;
+    virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) = 0;
 
     virtual ::PackCommand::PackCommandHandle
-    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) = 0;
+    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands) = 0;
 
-    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) = 0;
+    virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) = 0;
 
     virtual ::TaskGroup& getTaskGroup() = 0;
     // NOLINTEND

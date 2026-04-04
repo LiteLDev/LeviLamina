@@ -19,7 +19,7 @@ public:
 
     virtual ::DataItemType getType() const = 0;
 
-    virtual bool isDataEqual(::DataItem const&) const = 0;
+    virtual bool isDataEqual(::DataItem const& rhs) const = 0;
 
     virtual ::std::unique_ptr<::DataItem> clone() const = 0;
     // NOLINTEND

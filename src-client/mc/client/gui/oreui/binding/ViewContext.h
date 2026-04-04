@@ -33,7 +33,7 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const timestampMs) /*override*/;
+    virtual void update(double const time) /*override*/;
 
     virtual ::std::vector<::OreUI::Debug::QueryInformation> getQueryInformation() const /*override*/;
 
@@ -51,7 +51,7 @@ public:
 
     MCFOLD void $onBindingsReleased();
 
-    MCAPI void $update(double const timestampMs);
+    MCAPI void $update(double const time);
 
     MCAPI ::std::vector<::OreUI::Debug::QueryInformation> $getQueryInformation() const;
 

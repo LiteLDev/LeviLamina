@@ -26,12 +26,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tickAmbientSoundComponent(
+    MCAPI_C static void _tickAmbientSoundComponent(
         ::ActorOwnerComponent&   actorOwnerComponent,
         ::AmbientSoundComponent& ambientSoundComponent
     );
 
-    MCNAPI_C static void
+    MCAPI_C static void
     tickAmbientSoundComponent(::Actor& actor, ::AmbientSoundComponent& ambientSoundComponent, ::IRandom& random);
     // NOLINTEND
 
@@ -39,7 +39,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

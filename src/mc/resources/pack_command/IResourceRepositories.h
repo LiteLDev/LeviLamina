@@ -16,9 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~IResourceRepositories() = default;
 
-    virtual void fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>&) = 0;
+    virtual void fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs) = 0;
 
-    virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const&) = 0;
+    virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs) = 0;
     // NOLINTEND
 
 public:

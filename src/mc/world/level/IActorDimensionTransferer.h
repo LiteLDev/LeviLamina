@@ -20,18 +20,18 @@ public:
     // NOLINTBEGIN
     virtual ~IActorDimensionTransferer() = default;
 
-    virtual void setupActorForTransfer(::Actor&) = 0;
+    virtual void setupActorForTransfer(::Actor& actor) = 0;
 
     virtual ::Vec3 findTargetPositionAndSetPosition(
-        ::Actor&,
-        ::DimensionType,
-        ::DimensionType,
-        ::IDimension const&,
-        ::PortalForcer const&,
-        ::std::optional<::Vec3> const&
+        ::Actor&                       actor,
+        ::DimensionType                toId,
+        ::DimensionType                fromId,
+        ::IDimension const&            toDimension,
+        ::PortalForcer const&          portalForcer,
+        ::std::optional<::Vec3> const& actorPosition
     ) = 0;
 
-    virtual void transferActor(::Actor&, ::Dimension&, ::Vec3 const&) = 0;
+    virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) = 0;
     // NOLINTEND
 
 public:

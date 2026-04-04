@@ -30,13 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const = 0;
+    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const = 0;
 
-    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea) const = 0;
+    virtual ::cereal::internal::ConstraintDescription doDescription(::cereal::ContextArea config) const = 0;
 
     virtual ~Constraint() = default;
 
-    virtual ::cereal::Constraint const* subConstraint(uint64) const;
+    virtual ::cereal::Constraint const* subConstraint(uint64 index) const;
 
     virtual ::entt::type_info const& info() const = 0;
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::Constraint const* $subConstraint(uint64) const;
+    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

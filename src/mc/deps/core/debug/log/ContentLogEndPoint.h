@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~ContentLogEndPoint() /*override*/;
 
-    virtual void log(::LogArea const, ::LogLevel const, char const*) = 0;
+    virtual void log(::LogArea const area, ::LogLevel const level, char const* message) = 0;
 
     virtual void log(char const* message) /*override*/;
 

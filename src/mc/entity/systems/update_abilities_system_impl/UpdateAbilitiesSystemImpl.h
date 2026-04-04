@@ -17,7 +17,7 @@ struct InterpolateMovementNeededComponent;
 namespace UpdateAbilitiesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickProcessRequests(
+MCAPI void tickProcessRequests(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                  entity,
     ::AbilitiesComponent&                         abilities,

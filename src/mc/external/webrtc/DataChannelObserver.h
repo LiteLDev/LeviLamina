@@ -15,9 +15,9 @@ public:
     // NOLINTBEGIN
     virtual void OnStateChange() = 0;
 
-    virtual void OnMessage(::webrtc::DataBuffer const&) = 0;
+    virtual void OnMessage(::webrtc::DataBuffer const& buffer) = 0;
 
-    virtual void OnBufferedAmountChange(uint64);
+    virtual void OnBufferedAmountChange(uint64 sent_data_size);
 
     virtual bool IsOkToCallOnTheNetworkThread();
 

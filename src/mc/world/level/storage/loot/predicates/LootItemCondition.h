@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     virtual ~LootItemCondition() = default;
 
-    virtual bool applies(::Random&, ::LootTableContext&) = 0;
+    virtual bool applies(::Random& random, ::LootTableContext& context) = 0;
 
     virtual ::LootItemCondition::ConditionType getConditionType() const = 0;
     // NOLINTEND

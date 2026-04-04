@@ -20,11 +20,11 @@ public:
     // NOLINTBEGIN
     virtual ~CustomBiomeManagerProvider() = default;
 
-    virtual ::WeakRef<::ICustomBiomeSource> buildCustomSource(::CustomBiomeSourceConfig const&) = 0;
+    virtual ::WeakRef<::ICustomBiomeSource> buildCustomSource(::CustomBiomeSourceConfig const& config) = 0;
 
-    virtual bool destroyCustomSource(::mce::UUID) = 0;
+    virtual bool destroyCustomSource(::mce::UUID id) = 0;
 
-    virtual ::WeakRef<::ICustomBiomeSource> getCustomSource(::mce::UUID const&) = 0;
+    virtual ::WeakRef<::ICustomBiomeSource> getCustomSource(::mce::UUID const& id) = 0;
     // NOLINTEND
 
 public:

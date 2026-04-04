@@ -19,7 +19,7 @@ struct StateVectorComponent;
 namespace ServerPlayerTeleportProtectionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickTeleportProtection(
+MCAPI void tickTeleportProtection(
     ::StrictEntityContext const&                                 context,
     ::StateVectorComponent const&                                stateVector,
     ::ServerPlayerMovementComponent&                             serverPlayerMovement,

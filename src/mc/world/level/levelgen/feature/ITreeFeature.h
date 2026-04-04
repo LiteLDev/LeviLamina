@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~ITreeFeature() /*override*/ = default;
 
-    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const = 0;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const = 0;
     // NOLINTEND
 
 public:

@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~Chunk() = default;
 
-    virtual void SerializeTo(::std::vector<uchar>&) const = 0;
+    virtual void SerializeTo(::std::vector<uchar>& out) const = 0;
 
     virtual ::std::string ToString() const = 0;
     // NOLINTEND

@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual ~BehaviorNode();
 
-    virtual ::BehaviorStatus tick(::Actor&) = 0;
+    virtual ::BehaviorStatus tick(::Actor& owner) = 0;
 
     virtual void initializeFromDefinition(::Actor& owner);
     // NOLINTEND

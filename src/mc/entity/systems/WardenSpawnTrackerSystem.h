@@ -27,9 +27,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
 
     // NOLINTEND

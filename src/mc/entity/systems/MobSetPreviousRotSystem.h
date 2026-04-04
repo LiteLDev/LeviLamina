@@ -21,16 +21,16 @@ class MobSetPreviousRotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setPreviousRotation(
+    MCAPI static void _setPreviousRotation(
         ::StrictEntityContext&,
         ::ActorHeadRotationComponent& actorHeadRotation,
         ::ActorRotationComponent&     actorRotation,
         ::MobBodyRotationComponent&   mobBodyRotation
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,

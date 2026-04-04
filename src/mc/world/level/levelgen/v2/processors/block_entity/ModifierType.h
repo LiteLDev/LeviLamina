@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     virtual ~ModifierType() = default;
 
-    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom&, ::CompoundTag const*) const = 0;
+    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:
