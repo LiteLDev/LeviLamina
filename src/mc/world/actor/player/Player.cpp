@@ -95,8 +95,7 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     abilities.setAbility(index, value);
     auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).mValue->mBoolVal;
     auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).mValue->mBoolVal;
-    //TODO:
-    // SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Canfly, mayfly || noclip);
+    setStatusFlag(ActorFlags::Canfly, mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
         abilities.setAbility(AbilitiesIndex::Flying, value);
     }
