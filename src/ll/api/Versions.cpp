@@ -16,5 +16,11 @@ data::Version getGameVersion() {
 
 int getNetworkProtocolVersion() { return TARGET_BDS_PROTOCOL_VERSION; }
 
-bool isClient() { return true; }
+bool isClient() {
+#ifdef LL_PLAT_C
+    return true;
+#else
+    return false;
+#endif
+}
 } // namespace ll
