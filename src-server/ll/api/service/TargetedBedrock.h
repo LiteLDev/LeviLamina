@@ -4,7 +4,7 @@
 
 #include "mc/deps/core/utility/optional_ref.h"
 
-class PropertiesSettings;
+struct PropertiesSettings;
 
 namespace ll::service::inline bedrock {
 
