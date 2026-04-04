@@ -113,8 +113,7 @@ bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause ca
     if (attacker) {
         return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
     }
-    ActorDamageSource src;
-    src.mCause = cause;
+    ActorDamageSource src(cause, {});
     return _hurt(src, damage, true, false);
 }
 
