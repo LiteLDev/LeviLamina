@@ -70,10 +70,7 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(SharedTypes::Legacy::
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
 bool Actor::isSimulatedPlayer() const {
-
-    // TODO
-    return false;
-    // return isPlayer() && static_cast<Player const*>(this)->isSimulated();
+    return getEntityTypeId() == ActorType::Player && static_cast<Player const*>(this)->isSimulated();
 }
 
 bool Actor::isOnGround() const {

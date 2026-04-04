@@ -4,7 +4,7 @@
 #include "mc/world/actor/player/Player.h"
 
 std::string CommandOrigin::getLocaleCode() const {
-    if (auto* player = static_cast<Player*>(getEntity()); player && player->isPlayer()) {
+    if (auto* player = static_cast<Player*>(getEntity()); player && player->getEntityTypeId() == ActorType::Player) {
         return player->getLocaleCode();
     }
     return getI18n().getCurrentLanguage()->mCode.get();

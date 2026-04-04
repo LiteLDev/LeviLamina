@@ -210,7 +210,7 @@ bool MyMod::enable() {
                         .getOrCreateCommand("suicide", "Commits suicide.", CommandPermissionLevel::Any);
     command.overload().execute([this](CommandOrigin const& origin, CommandOutput& output) {
         auto* entity = origin.getEntity();
-        if (entity == nullptr || !entity->isType(ActorType::Player)) {
+        if (entity == nullptr || entity->getEntityTypeId() != ActorType::Player) {
             output.error("Only players can commit suicide");
             return;
         }
@@ -302,7 +302,7 @@ void registerModManageCommand() {
 
 ```cpp
 auto* entity = origin.getEntity();
-if (entity == nullptr || !entity->isPlayer()) {
+if (entity == nullptr || entity->getEntityTypeId != ActorType::Player) {
     output.error("Only players can commit suicide");
     return;
 }

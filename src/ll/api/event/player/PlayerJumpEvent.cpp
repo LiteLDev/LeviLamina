@@ -41,7 +41,8 @@ LL_STATIC_HOOK(
     BoatMovementComponent const*         boat
 ) {
     origin(userIdentifier, actor, packet, replay, actorRotation, serverPlayerMovement, stateVector, boat);
-    if (packet.mInputData->test(static_cast<size_t>(PlayerAuthInputPacket::InputData::Jumping)) && actor.isPlayer()) {
+    if (packet.mInputData->test(static_cast<size_t>(PlayerAuthInputPacket::InputData::Jumping))
+        && actor.getEntityTypeId() == ActorType::Player) {
         auto&      player  = static_cast<Player&>(actor);
         auto&      pos     = player.getPosition();
         auto&      posPrev = player.mBuiltInComponents->mStateVectorComponent->mPosPrev.get();

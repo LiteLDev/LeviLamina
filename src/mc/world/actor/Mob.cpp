@@ -7,7 +7,7 @@ void Mob::refreshInventory() {
 
 Mob* Mob::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     auto mob = static_cast<Mob*>(Actor::tryGetFromEntity(entity, includeRemoved));
-    if (mob->isType(ActorType::Mob) || mob->hasCategory(ActorCategory::Mob)) {
+    if (mob->getEntityTypeId() == ActorType::Mob || mob->hasCategory(ActorCategory::Mob)) {
         return mob;
     }
     return nullptr;
