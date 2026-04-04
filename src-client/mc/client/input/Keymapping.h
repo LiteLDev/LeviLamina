@@ -18,7 +18,8 @@ public:
     LLNDAPI bool isRemappable() const;
     LLNDAPI bool isSharedKey() const;
 
-    Keymapping(std::string const& action, std::vector<int> const& defaultKeys) : mAction(action), mKeys(defaultKeys) {}
+    LLNDAPI Keymapping(std::string const& action, std::vector<int> const& defaultKeys);
+    LLNDAPI Keymapping(std::string const& action, std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
 
 public:
     // prevent constructor by default

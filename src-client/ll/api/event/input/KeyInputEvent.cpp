@@ -32,7 +32,8 @@ LL_TYPE_INSTANCE_HOOK(
     HIDController,
     &HIDController::$onKeyDown,
     void,
-    int keyCode
+    int                                                 keyCode,
+    Bedrock::Input::KeyboardEventProcessor::InputOrigin a2
 ) {
     auto code = keyCode;
     auto ev   = KeyInputEvent(*this, code, KeyInputEvent::Action::Down);
@@ -40,7 +41,7 @@ LL_TYPE_INSTANCE_HOOK(
     if (ev.isCancelled()) {
         return;
     }
-    origin(code);
+    origin(code, a2);
 }
 
 LL_TYPE_INSTANCE_HOOK(

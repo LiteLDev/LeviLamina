@@ -36,9 +36,10 @@
 namespace ll::service::inline bedrock {
 
 
-// ServerInstance
 static std::atomic<ServerInstance*> serverInstance;
+static std::atomic<ClientInstance*> clientInstance;
 
+// ServerInstance
 LL_TYPE_INSTANCE_HOOK(
     ServerInstanceConstructor,
     HookPriority::High,
@@ -56,24 +57,34 @@ LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstan
     origin();
 }
 
+// ClientInstance
+LL_TYPE_INSTANCE_HOOK(
+    ClientInstanceConstructor,
+    HookPriority::High,
+    ClientInstance,
+    &ClientInstance::$ctor,
+    void*,
+    ClientInstanceArguments&& args
+) {
+    auto res       = origin(std::move(args));
+    clientInstance = this;
+    return res;
+}
+LL_TYPE_INSTANCE_HOOK(ClientInstanceDestructor, HookPriority::High, ClientInstance, &ClientInstance::$dtor, void) {
+    clientInstance = nullptr;
+    origin();
+}
 
 optional_ref<AppPlatform> getAppPlatform() { return ServiceLocator<AppPlatform>::get().get().get(); }
 
 optional_ref<ServerInstance> getServerInstance() { return serverInstance.load(); }
 
-optional_ref<ClientInstance> getClientInstance() {
-    if (auto plat = sPlatform()) {
-        if (auto game = plat->mMinecraftGame_Shim.get()) {
-            return reinterpret_cast<ClientInstance*>(game->getPrimaryClientInstance().get().get());
-        }
-    }
-    return nullptr;
-}
+optional_ref<ClientInstance> getClientInstance() { return clientInstance.load(); }
 
 optional_ref<Minecraft> getMinecraft(bool isClientSide) {
     if (isClientSide) {
         if (auto ins = getClientInstance()) {
-            return ins->mUnk599652.as<std::unique_ptr<Minecraft>>().get();
+            return *ins->getServerData();
         }
     } else {
         if (auto ins = getServerInstance()) {
@@ -137,7 +148,11 @@ optional_ref<CommandRegistry> getCommandRegistry(bool isClientSide) {
     return nullptr;
 }
 
-using HookReg = memory::HookRegistrar<ServerInstanceConstructor, ServerInstanceDestructor>;
+using HookReg = memory::HookRegistrar<
+    ServerInstanceConstructor,
+    ServerInstanceDestructor,
+    ClientInstanceConstructor,
+    ClientInstanceDestructor>;
 
 static HookReg hookRegister;
 

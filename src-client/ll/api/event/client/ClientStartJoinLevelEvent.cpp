@@ -2,7 +2,9 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/client/events/PlayerJoinWorldContext.h"
 #include "mc/deps/nbt/CompoundTag.h"
+
 
 namespace ll::event::inline client {
 
@@ -14,7 +16,11 @@ void ClientStartJoinLevelEvent::serialize(CompoundTag& nbt) const {
     nbt["worldName"]                = worldName();
     nbt["networkTypeOverride"]      = magic_enum::enum_name(networkTypeOverride());
     nbt["service"]                  = magic_enum::enum_name(service());
+    nbt["partyId"]                  = partyId();
+    nbt["isPartyLeader"]            = isPartyLeader();
+    nbt["isPartyDestination"]       = isPartyDestination();
     nbt["isServerTransfer"]         = isServerTransfer();
+    nbt["isReconnect"]              = isReconnect();
 }
 
 bool               ClientStartJoinLevelEvent::isJoiningLocalServer() const { return mJoiningLocalServer; }
@@ -23,7 +29,12 @@ std::string const& ClientStartJoinLevelEvent::serverName() const { return mServe
 std::string const& ClientStartJoinLevelEvent::worldName() const { return mWorldName; }
 NetworkType        ClientStartJoinLevelEvent::networkTypeOverride() const { return mNetworkTypeOverride; }
 Social::MultiplayerServiceIdentifier ClientStartJoinLevelEvent::service() const { return mService; }
-bool                                 ClientStartJoinLevelEvent::isServerTransfer() const { return mIsServerTransfer; }
+PlayerJoinWorldContext const& ClientStartJoinLevelEvent::context() const { return mContext; }
+std::string const&            ClientStartJoinLevelEvent::partyId() const { return mContext.partyId; }
+bool                          ClientStartJoinLevelEvent::isPartyLeader() const { return mContext.isPartyLeader; }
+bool ClientStartJoinLevelEvent::isPartyDestination() const { return mContext.isPartyDestination; }
+bool ClientStartJoinLevelEvent::isServerTransfer() const { return mContext.isServerTransfer; }
+bool ClientStartJoinLevelEvent::isReconnect() const { return mContext.isReconnect; }
 
 LL_TYPE_INSTANCE_HOOK(
     ClientStartJoinGameHook,
@@ -37,7 +48,7 @@ LL_TYPE_INSTANCE_HOOK(
     std::string const&                   worldName,
     NetworkType                          networkTypeOverride,
     Social::MultiplayerServiceIdentifier service,
-    bool                                 isServerTransfer
+    PlayerJoinWorldContext               context
 ) {
     EventBus::getInstance().publish(ClientStartJoinLevelEvent(
         *this,
@@ -47,7 +58,7 @@ LL_TYPE_INSTANCE_HOOK(
         worldName,
         networkTypeOverride,
         service,
-        isServerTransfer
+        context
     ));
     origin(
         isJoiningLocalServer,
@@ -56,7 +67,7 @@ LL_TYPE_INSTANCE_HOOK(
         worldName,
         networkTypeOverride,
         service,
-        isServerTransfer
+        context
     );
 }
 

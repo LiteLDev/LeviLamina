@@ -198,8 +198,7 @@ void KeyRegistry::registerKeyboardInputs(
 void KeyRegistry::processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping) {
     std::lock_guard lock{impl->mutex};
     for (const auto& pending : impl->pendingKeyMappings) {
-        Keymapping map("key." + pending.name, pending.keyCodes);
-        map.mAllowRemap = pending.allowRemap;
+        Keymapping map("key." + pending.name, pending.keyCodes, pending.allowRemap, false);
         newDefaultMapping.emplace_back(map);
     }
 }

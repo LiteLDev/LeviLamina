@@ -1,5 +1,22 @@
 #include "mc/client/input/Keymapping.h"
 
+Keymapping::Keymapping(std::string const& action, std::vector<int> const& defaultKeys)
+: mAction(action),
+  mKeys(defaultKeys),
+  mAllowRemap(true),
+  mIsSharedKey(false) {}
+
+Keymapping::Keymapping(
+    std::string const&      action,
+    std::vector<int> const& defaultKeys,
+    bool                    allowRemap,
+    bool                    sharedKey
+)
+: mAction(action),
+  mKeys(defaultKeys),
+  mAllowRemap(allowRemap),
+  mIsSharedKey(sharedKey) {}
+
 bool Keymapping::isAssigned() const {
     auto& keys = *mKeys;
     return !keys.empty() && keys[0] != 0;

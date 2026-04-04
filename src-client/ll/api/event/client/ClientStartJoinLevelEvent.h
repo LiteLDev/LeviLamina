@@ -1,5 +1,7 @@
 #include "ll/api/event/client/ClientEvent.h"
 
+struct PlayerJoinWorldContext;
+
 namespace ll::event::inline client {
 
 class ClientStartJoinLevelEvent final : public ll::event::client::ClientEvent {
@@ -9,7 +11,7 @@ class ClientStartJoinLevelEvent final : public ll::event::client::ClientEvent {
     std::string const&                   mWorldName;
     NetworkType                          mNetworkTypeOverride;
     Social::MultiplayerServiceIdentifier mService;
-    bool                                 mIsServerTransfer;
+    PlayerJoinWorldContext const&        mContext;
 
 public:
     constexpr ClientStartJoinLevelEvent(
@@ -20,7 +22,7 @@ public:
         std::string const&                   worldName,
         NetworkType                          networkTypeOverride,
         Social::MultiplayerServiceIdentifier service,
-        bool                                 isServerTransfer
+        PlayerJoinWorldContext const&        context
     )
     : ClientEvent(client),
       mJoiningLocalServer(isJoiningLocalServer),
@@ -29,7 +31,7 @@ public:
       mWorldName(worldName),
       mNetworkTypeOverride(networkTypeOverride),
       mService(service),
-      mIsServerTransfer(isServerTransfer) {}
+      mContext(context) {}
 
     LLAPI void serialize(CompoundTag&) const override;
 
@@ -39,7 +41,12 @@ public:
     LLNDAPI std::string const& worldName() const;
     LLNDAPI NetworkType        networkTypeOverride() const;
     LLNDAPI Social::MultiplayerServiceIdentifier service() const;
+    LLNDAPI PlayerJoinWorldContext const&        context() const;
+    LLNDAPI std::string const&                   partyId() const;
+    LLNDAPI bool                                 isPartyLeader() const;
+    LLNDAPI bool                                 isPartyDestination() const;
     LLNDAPI bool                                 isServerTransfer() const;
+    LLNDAPI bool                                 isReconnect() const;
 };
 
 } // namespace ll::event::inline client
