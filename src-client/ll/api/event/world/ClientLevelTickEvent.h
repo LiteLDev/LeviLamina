@@ -4,8 +4,8 @@
 
 namespace ll::event::inline world {
 
-class LevelTickEvent final : public LevelEvent {
+class ClientLevelTickEvent final : public LevelEvent {
 public:
-    constexpr LevelTickEvent(Level& level) : LevelEvent(level) {}
+    constexpr ClientLevelTickEvent(Level& level) : LevelEvent(level) {}
 };
 } // namespace ll::event::inline world

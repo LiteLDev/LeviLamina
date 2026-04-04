@@ -14,7 +14,7 @@
 
 namespace ll::thread {
 
-class TickSyncSleepBase {
+class ClientTickSyncSleepBase {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
@@ -27,17 +27,17 @@ protected:
     virtual void check() = 0;
 
 public:
-    TickSyncSleepBase(TickSyncSleepBase&&)                 = delete;
-    TickSyncSleepBase(TickSyncSleepBase const&)            = delete;
-    TickSyncSleepBase& operator=(TickSyncSleepBase&&)      = delete;
-    TickSyncSleepBase& operator=(TickSyncSleepBase const&) = delete;
+    ClientTickSyncSleepBase(ClientTickSyncSleepBase&&)                 = delete;
+    ClientTickSyncSleepBase(ClientTickSyncSleepBase const&)            = delete;
+    ClientTickSyncSleepBase& operator=(ClientTickSyncSleepBase&&)      = delete;
+    ClientTickSyncSleepBase& operator=(ClientTickSyncSleepBase const&) = delete;
 
-    LLAPI TickSyncSleepBase();
-    LLAPI virtual ~TickSyncSleepBase();
+    LLAPI ClientTickSyncSleepBase();
+    LLAPI virtual ~ClientTickSyncSleepBase();
 };
 
 template <class Clock>
-class TickSyncSleep : public TickSyncSleepBase {
+class ClientTickSyncSleep : public ClientTickSyncSleepBase {
     void check() override {
         if (!timepoint) return;
         if (Clock::now() >= *timepoint) {
@@ -50,8 +50,8 @@ public:
 
     std::optional<typename Clock::time_point> timepoint;
 
-    TickSyncSleep()          = default;
-    virtual ~TickSyncSleep() = default;
+    ClientTickSyncSleep()          = default;
+    virtual ~ClientTickSyncSleep() = default;
 
     void sleepFor(Clock::duration duration) {
         std::unique_lock l{lock()};

@@ -1,4 +1,4 @@
-#include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/api/thread/ClientThreadExecutor.h"
 
 #include <functional>
 #include <memory>
@@ -6,7 +6,8 @@
 
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/ServerLevelTickEvent.h"
+#include "ll/api/event/world/ClientLevelTickEvent.h"
+#include "ll/api/event/world/ClientLevelTickEvent.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -14,7 +15,7 @@
 
 namespace ll::thread {
 
-struct ServerThreadExecutor::Impl {
+struct ClientThreadExecutor::Impl {
     struct ScheduledWork {
         uint64                                     time;
         std::shared_ptr<data::CancellableCallback> callback;
@@ -59,10 +60,10 @@ struct ServerThreadExecutor::Impl {
     std::shared_ptr<SharedImpl> shared;
     event::ListenerPtr          worker;
 };
-ServerThreadExecutor::ServerThreadExecutor(std::string name, Duration maxOnceDuration, size_t checkPack)
+ClientThreadExecutor::ClientThreadExecutor(std::string name, Duration maxOnceDuration, size_t checkPack)
 : Executor(std::move(name)),
   impl(std::make_unique<Impl>(std::make_shared<Impl::SharedImpl>())) {
-    impl->worker = event::EventBus::getInstance().emplaceListener<event::ServerLevelTickEvent>(
+    impl->worker = event::EventBus::getInstance().emplaceListener<event::ClientLevelTickEvent>(
         [name = getName(), maxOnceDuration, checkPack, weak = std::weak_ptr{impl->shared}](auto&&) {
             auto impl = weak.lock();
             if (!impl) {
@@ -85,13 +86,13 @@ ServerThreadExecutor::ServerThreadExecutor(std::string name, Duration maxOnceDur
         event::EventPriority::Low
     );
 }
-ServerThreadExecutor::~ServerThreadExecutor() {
-    event::EventBus::getInstance().removeListener<event::ServerLevelTickEvent>(impl->worker);
+ClientThreadExecutor::~ClientThreadExecutor() {
+    event::EventBus::getInstance().removeListener<event::ClientLevelTickEvent>(impl->worker);
 }
-void ServerThreadExecutor::execute(std::function<void()> f) const { impl->shared->works.enqueue(std::move(f)); }
+void ClientThreadExecutor::execute(std::function<void()> f) const { impl->shared->works.enqueue(std::move(f)); }
 
 std::shared_ptr<data::CancellableCallback>
-ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const {
+ClientThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const {
     auto tick = std::chrono::ceil<chrono::ticks>(dur).count();
     if (tick <= 0) {
         execute(std::move(f));
@@ -103,8 +104,8 @@ ServerThreadExecutor::executeAfter(std::function<void()> f, Duration dur) const 
     }
 }
 
-ServerThreadExecutor const& ServerThreadExecutor::getDefault() {
-    static ServerThreadExecutor ins("ll_default_server_thread", std::chrono::milliseconds{30}, 16);
+ClientThreadExecutor const& ClientThreadExecutor::getDefault() {
+    static ClientThreadExecutor ins("ll_default_client_thread", std::chrono::milliseconds{30}, 16);
     return ins;
 }
 } // namespace ll::thread

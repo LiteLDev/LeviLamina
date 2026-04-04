@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/LevelTickEvent.h"
+#include "ll/api/event/world/ServerLevelTickEvent.h"
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/world/level/Tick.h"
@@ -14,7 +14,7 @@ namespace ll::chrono {
 static std::atomic_llong servertime{0};
 
 ServerClock::time_point ServerClock::now() noexcept {
-    static auto counter = event::EventBus::getInstance().emplaceListener<event::LevelTickEvent>(
+    static auto counter = event::EventBus::getInstance().emplaceListener<event::ServerLevelTickEvent>(
         [](auto&) { servertime++; },
         event::EventPriority::High
     );
