@@ -14,7 +14,8 @@ struct KeyHandle::Impl {
     std::vector<int>         keyCodes;
     bool                     allowRemap;
     std::weak_ptr<mod::Mod>  mod;
-    std::vector<std::string> inputMappingStack{"screen", "gamePlayNormal"};
+    std::vector<std::string> inputMappingStack;
+    bool                     inputMappingStackConfigured{false};
     bool                     valid;
 
     std::vector<std::pair<KeyHandle::ButtonDownHandler, bool>> buttonDownHandlers;
@@ -125,9 +126,16 @@ void KeyHandle::triggerButtonUpHandlers(::FocusImpact focusImpact, ::IClientInst
     }
 }
 
-void KeyHandle::setInputMappingStack(std::vector<std::string> stacks) { impl->inputMappingStack = std::move(stacks); }
+void KeyHandle::setInputMappingStack(std::vector<std::string> stacks) {
+    impl->inputMappingStack           = std::move(stacks);
+    impl->inputMappingStackConfigured = true;
+}
 
 bool KeyHandle::containsInputMappingStack(std::string_view stack) const {
+    if (!impl->inputMappingStackConfigured) {
+        return true;
+    }
+
     return std::find(impl->inputMappingStack.begin(), impl->inputMappingStack.end(), stack)
         != impl->inputMappingStack.end();
 }
