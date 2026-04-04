@@ -13,6 +13,7 @@
 #include "mc/deps/ecs/strict/StrictEntityContext.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
+#include "mc/deps/vanilla_components/OnGroundFlagComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
@@ -27,6 +28,7 @@
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/actor/BuiltInActorComponents.h"
 #include "mc/world/actor/animation/AnimationComponent.h"
 #include "mc/world/actor/provider/ActorCollision.h"
@@ -36,7 +38,6 @@
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
-#include "mc/world/actor/ActorHurtResult.h"
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
@@ -73,13 +74,11 @@ bool Actor::isSimulatedPlayer() const {
     // TODO
     return false;
     // return isPlayer() && static_cast<Player const*>(this)->isSimulated();
- }
+}
 
-bool Actor::isOnGround() const { 
-    //TODO
-    return false;
-    // return ActorCollision::isOnGround(getEntityContext());
- }
+bool Actor::isOnGround() const {
+    return getEntityContext().mEnTTRegistry.template all_of<OnGroundFlagComponent>(getEntityContext().mEntity.mRawId);
+}
 
 void Actor::setOnFire(int time, bool isEffect) {
     if (isEffect) {
