@@ -165,7 +165,7 @@ public:
 
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     virtual ::ActorHurtResult
     attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
@@ -252,7 +252,7 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
@@ -500,7 +500,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* target);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 
@@ -567,7 +567,7 @@ public:
 
     MCAPI bool $canFreeze() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

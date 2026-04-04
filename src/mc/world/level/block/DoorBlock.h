@@ -118,7 +118,8 @@ public:
 
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
+    virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& fillBlock) const
+        /*override*/;
 
     virtual bool isDoorBlock() const /*override*/;
 
@@ -229,7 +230,7 @@ public:
 
     MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& fillBlock) const;
 
     MCFOLD bool $isDoorBlock() const;
 

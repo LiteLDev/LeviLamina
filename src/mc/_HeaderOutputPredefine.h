@@ -183,6 +183,8 @@ struct XUser;
 struct tagPOINT;
 struct _INITIALIZE_OPTIONS;
 struct HC_CALL;
+struct tagWNDCLASSEXW;
+struct HINSTANCE__;
 namespace winrt
 {
     struct event_token;

@@ -70,7 +70,7 @@ public:
 
     virtual int Recv(void* buffer, uint64 length, int64* timestamp) /*override*/;
 
-    virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp) /*override*/;
+    virtual int RecvFrom(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp) /*override*/;
 
     virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer) /*override*/;
 
@@ -146,7 +146,7 @@ public:
 
     MCNAPI int $Recv(void* buffer, uint64 length, int64* timestamp);
 
-    MCNAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
+    MCNAPI int $RecvFrom(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp);
 
     MCNAPI int $RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
 

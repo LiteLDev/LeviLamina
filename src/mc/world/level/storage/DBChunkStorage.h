@@ -115,7 +115,7 @@ public:
     virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood) /*override*/;
 
     virtual void deleteAllChunkData(
-        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::unordered_set<::ChunkPos>           excludedChunks,
         ::std::function<void()>                    completionCallback,
         ::std::shared_ptr<::ChunkDeletionMetadata> metadata
     ) /*override*/;
@@ -128,7 +128,7 @@ public:
 
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
-    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
 
     virtual void writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
@@ -303,7 +303,7 @@ public:
     MCAPI void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
     MCAPI void $deleteAllChunkData(
-        ::std::unordered_set<::ChunkPos>           chunksToDelete,
+        ::std::unordered_set<::ChunkPos>           excludedChunks,
         ::std::function<void()>                    completionCallback,
         ::std::shared_ptr<::ChunkDeletionMetadata> metadata
     );
@@ -316,7 +316,7 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
 
     MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,

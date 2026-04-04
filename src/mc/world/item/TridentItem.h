@@ -39,7 +39,7 @@ public:
 
     virtual int getEnchantValue() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual bool isThrowable() const /*override*/;
 
@@ -78,7 +78,7 @@ public:
 
     MCFOLD int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

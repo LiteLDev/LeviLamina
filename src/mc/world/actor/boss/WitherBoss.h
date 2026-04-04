@@ -116,7 +116,7 @@ public:
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
@@ -217,7 +217,7 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

@@ -98,7 +98,7 @@ public:
 
     virtual bool SetDtlsRole(::rtc::SSLRole role) /*override*/;
 
-    virtual bool GetSslCipherSuite(int* cipher_suite) /*override*/;
+    virtual bool GetSslCipherSuite(int* cipher) /*override*/;
 
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain() const /*override*/;
 
@@ -212,7 +212,7 @@ public:
 
     MCNAPI bool $SetDtlsRole(::rtc::SSLRole role);
 
-    MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
+    MCNAPI bool $GetSslCipherSuite(int* cipher);
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> $GetRemoteSSLCertChain() const;
 

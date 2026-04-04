@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     virtual ::std::string
@@ -60,7 +60,7 @@ public:
 
     virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const /*override*/;
 
-    virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
+    virtual void fixupCommon(::ItemStackBase& item) const /*override*/;
 
     virtual ~BannerItem() /*override*/ = default;
     // NOLINTEND
@@ -76,7 +76,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
@@ -96,7 +96,7 @@ public:
 
     MCAPI bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
 
-    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+    MCAPI void $fixupCommon(::ItemStackBase& item) const;
 
 
     // NOLINTEND
