@@ -16,10 +16,6 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
-#ifndef LL_NO_UNIQUE_ADDRESS
-#define LL_NO_UNIQUE_ADDRESS [[no_unique_address]]
-#endif
-
 #if defined(LL_PLAT_S)
 #define MCAPI_C  [[deprecated("Client API not available on SERVER")]] MCAPI
 #define MCAPI_S  MCAPI
