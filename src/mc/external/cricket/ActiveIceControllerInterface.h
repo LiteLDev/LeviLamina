@@ -21,26 +21,29 @@ public:
     // NOLINTBEGIN
     virtual ~ActiveIceControllerInterface() = default;
 
-    virtual void SetIceConfig(::cricket::IceConfig const&) = 0;
+    virtual void SetIceConfig(::cricket::IceConfig const& config) = 0;
 
-    virtual void OnConnectionAdded(::cricket::Connection const*) = 0;
+    virtual void OnConnectionAdded(::cricket::Connection const* connection) = 0;
 
-    virtual void OnConnectionSwitched(::cricket::Connection const*) = 0;
+    virtual void OnConnectionSwitched(::cricket::Connection const* connection) = 0;
 
-    virtual void OnConnectionDestroyed(::cricket::Connection const*) = 0;
+    virtual void OnConnectionDestroyed(::cricket::Connection const* connection) = 0;
 
-    virtual void OnConnectionPinged(::cricket::Connection const*) = 0;
+    virtual void OnConnectionPinged(::cricket::Connection const* connection) = 0;
 
-    virtual void OnConnectionUpdated(::cricket::Connection const*) = 0;
+    virtual void OnConnectionUpdated(::cricket::Connection const* connection) = 0;
 
-    virtual bool
-    GetUseCandidateAttribute(::cricket::Connection const*, ::cricket::NominationMode, ::cricket::IceMode) const = 0;
+    virtual bool GetUseCandidateAttribute(
+        ::cricket::Connection const* connection,
+        ::cricket::NominationMode    mode,
+        ::cricket::IceMode           remote_ice_mode
+    ) const = 0;
 
-    virtual void OnSortAndSwitchRequest(::cricket::IceSwitchReason) = 0;
+    virtual void OnSortAndSwitchRequest(::cricket::IceSwitchReason reason) = 0;
 
-    virtual void OnImmediateSortAndSwitchRequest(::cricket::IceSwitchReason) = 0;
+    virtual void OnImmediateSortAndSwitchRequest(::cricket::IceSwitchReason reason) = 0;
 
-    virtual bool OnImmediateSwitchRequest(::cricket::IceSwitchReason, ::cricket::Connection const*) = 0;
+    virtual bool OnImmediateSwitchRequest(::cricket::IceSwitchReason reason, ::cricket::Connection const* selected) = 0;
 
     virtual ::cricket::Connection const* FindNextPingableConnection() = 0;
     // NOLINTEND

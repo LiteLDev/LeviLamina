@@ -12,7 +12,7 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-MCAPI_S ::Vec3 getEyeOffset(::EntityContext const& entity);
+MCAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
 
 MCAPI void initializePlayer(::EntityContext& entity);
 

@@ -44,7 +44,7 @@ struct WasInWaterFlagComponent;
 namespace SpinAttackSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _fetchEntitiesForSpinAttack(
+MCAPI void _fetchEntitiesForSpinAttack(
     ::StrictEntityContext const&                                  entity,
     ::AABBShapeComponent const&                                   aabb,
     ::ActorDataFlagComponent const&                               actorData,
@@ -54,13 +54,13 @@ MCNAPI void _fetchEntitiesForSpinAttack(
     ::EntityModifier<::SpinAttackResultsComponent>                modifier
 );
 
-MCNAPI void _removeSpinAttack(
+MCAPI void _removeSpinAttack(
     ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::RiptideTridentSpinAttackComponent>>
                                                                                         filter,
     ::EntityModifier<::RiptideTridentSpinAttackComponent, ::SpinAttackResultsComponent> modifier
 );
 
-MCNAPI void _tickDamageNearbyMobs(
+MCAPI void _tickDamageNearbyMobs(
     ::entt::type_list<::Include<::PlayerComponent>>,
     ::ActorEquipmentComponent const&                      actorEquipment,
     ::SpinAttackResultsComponent const&                   spinAttackResult,
@@ -68,7 +68,7 @@ MCNAPI void _tickDamageNearbyMobs(
     ::ViewT<::StrictEntityContext, ::ActorOwnerComponent> actorView
 );
 
-MCNAPI void _tickPostDamageNearbyMobs(
+MCAPI void _tickPostDamageNearbyMobs(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                                entity,
     ::ActorDataFlagComponent&                                   actorData,
@@ -83,7 +83,7 @@ MCNAPI void _tickPostDamageNearbyMobs(
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 
-MCNAPI void _tickSpinAttackAction(
+MCAPI void _tickSpinAttackAction(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                      entity,
     ::ActorRotationComponent const&                   actorRotation,
@@ -106,7 +106,7 @@ MCNAPI void _tickSpinAttackAction(
     ::EntityModifier<::RiptideTridentSpinAttackComponent, ::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 
-MCNAPI void _tickSpinAttackNearbyMobs(
+MCAPI void _tickSpinAttackNearbyMobs(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::DamageNearbyMobsComponent>,
@@ -118,7 +118,7 @@ MCNAPI void _tickSpinAttackNearbyMobs(
     ::EntityModifier<::SpinAttackResultsComponent>                modifier
 );
 
-MCNAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace SpinAttackSystem

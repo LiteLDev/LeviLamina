@@ -38,7 +38,7 @@ public:
 
     virtual void setTarget(::Actor* target) /*override*/;
 
-    virtual bool checkSpawnRules(bool) /*override*/;
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     virtual bool checkSpawnObstruction() const /*override*/;
 
@@ -66,7 +66,7 @@ public:
 
     MCAPI void $setTarget(::Actor* target);
 
-    MCFOLD bool $checkSpawnRules(bool);
+    MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
     MCAPI bool $checkSpawnObstruction() const;
 

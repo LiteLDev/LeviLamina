@@ -25,32 +25,61 @@ public:
     ::ll::TypedStorage<4, 20, ::cg::ImageDescription> mImageDescription;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ImageBuffer();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void allocateStorage(::cg::ImageDescription const& imageDesc);
+#ifdef LL_PLAT_C
+    MCAPI explicit ImageBuffer(::cg::ImageDescription const& imageDesc);
 
-    MCAPI_C uchar const* get(uint arrayIndex) const;
+    MCAPI ImageBuffer(::cg::ImageBuffer&& other);
+
+    MCAPI explicit ImageBuffer(::mce::Image&& rhs);
+
+    MCAPI explicit ImageBuffer(::mce::Image const& rhs);
+
+    MCAPI ImageBuffer(::cg::ImageBuffer const& rhs);
+
+    MCAPI void allocateStorage(::cg::ImageDescription const& imageDesc);
+
+    MCAPI uchar const* get(uint arrayIndex) const;
+
+    MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
+
+    MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);
+
+    MCAPI ~ImageBuffer();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDesc);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::cg::ImageDescription const& imageDesc);
 
-    MCAPI_C void* $ctor(::cg::ImageBuffer&& other);
+    MCAPI void* $ctor(::cg::ImageBuffer&& other);
 
-    MCAPI_C void* $ctor(::mce::Image&& rhs);
+    MCAPI void* $ctor(::mce::Image&& rhs);
 
-    MCAPI_C void* $ctor(::mce::Image const& rhs);
+    MCAPI void* $ctor(::mce::Image const& rhs);
 
-    MCAPI_C void* $ctor(::cg::ImageBuffer const& rhs);
+    MCAPI void* $ctor(::cg::ImageBuffer const& rhs);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

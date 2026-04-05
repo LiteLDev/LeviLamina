@@ -112,7 +112,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _fillPersonaJson(
+#ifdef LL_PLAT_C
+    MCAPI static void _fillPersonaJson(
         ::Json::Value&             root,
         ::std::string const&       skinId,
         ::mce::Image const&        skinImageData,
@@ -121,7 +122,7 @@ public:
         ::SerializedSkinRef const& serializedSkin
     );
 
-    MCAPI_C static ::ConnectionRequest create(
+    MCAPI static ::ConnectionRequest create(
         ::PrivateKeyManager const&            userSigner,
         ::PlayerAuthenticationType            authenticationType,
         ::LegacyMultiplayerToken const&       legacyMultiplayerToken,
@@ -152,6 +153,7 @@ public:
         bool                                  compatibleWithClientSideChunkGen,
         ::SyncedClientOptionsComponent const& options
     );
+#endif
 
     MCAPI static ::ConnectionRequest fromString(::std::string const& str);
     // NOLINTEND

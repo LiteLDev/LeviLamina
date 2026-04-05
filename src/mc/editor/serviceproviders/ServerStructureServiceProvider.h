@@ -23,27 +23,30 @@ public:
     // NOLINTBEGIN
     virtual ~ServerStructureServiceProvider() /*override*/;
 
-    virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const&) = 0;
+    virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) = 0;
 
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const&,
-        ::mce::UUID const&,
-        ::std::string const&
+        ::Editor::EditorStructureTemplate const& editorStructure,
+        ::mce::UUID const&                       guid,
+        ::std::string const&                     structureName
     ) = 0;
 
     virtual ::std::vector<::Editor::EditorStructureDBMetadata>
-    queryDB(::Editor::EditorStructureMetadataQueryParams const&, bool const) = 0;
+    queryDB(::Editor::EditorStructureMetadataQueryParams const& params, bool const reprocessLevelStructures) = 0;
 
     virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editStructureMetadata(::Editor::EditorStructureMetadataEditParams&) = 0;
+    editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params) = 0;
 
-    virtual bool replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&) = 0;
+    virtual bool replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate
+    ) = 0;
 
-    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const&) = 0;
+    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) = 0;
 
-    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const getMetadataByGuid(::mce::UUID const&) = 0;
+    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const getMetadataByGuid(::mce::UUID const& guid) = 0;
 
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const deleteEditorStructure(::mce::UUID const&) = 0;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const deleteEditorStructure(::mce::UUID const& guid) = 0;
     // NOLINTEND
 
 public:

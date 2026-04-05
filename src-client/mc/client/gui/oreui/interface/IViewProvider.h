@@ -20,9 +20,9 @@ public:
     // NOLINTBEGIN
     virtual ~IViewProvider() /*override*/ = default;
 
-    virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId) const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const = 0;
 
-    virtual void discard(::OreUI::ViewId) = 0;
+    virtual void discard(::OreUI::ViewId viewId) = 0;
     // NOLINTEND
 
 public:

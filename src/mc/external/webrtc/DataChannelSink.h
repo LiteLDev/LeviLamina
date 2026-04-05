@@ -19,17 +19,18 @@ public:
     // NOLINTBEGIN
     virtual ~DataChannelSink() = default;
 
-    virtual void OnDataReceived(int, ::webrtc::DataMessageType, ::rtc::CopyOnWriteBuffer const&) = 0;
+    virtual void
+    OnDataReceived(int channel_id, ::webrtc::DataMessageType type, ::rtc::CopyOnWriteBuffer const& buffer) = 0;
 
-    virtual void OnChannelClosing(int) = 0;
+    virtual void OnChannelClosing(int channel_id) = 0;
 
-    virtual void OnChannelClosed(int) = 0;
+    virtual void OnChannelClosed(int channel_id) = 0;
 
     virtual void OnReadyToSend() = 0;
 
-    virtual void OnTransportClosed(::webrtc::RTCError);
+    virtual void OnTransportClosed(::webrtc::RTCError error);
 
-    virtual void OnBufferedAmountLow(int) = 0;
+    virtual void OnBufferedAmountLow(int channel_id) = 0;
     // NOLINTEND
 
 public:

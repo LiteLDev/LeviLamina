@@ -32,6 +32,13 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance>                                            mResultItemPreview;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ElementConstructorContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -64,28 +71,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ItemInstance _getElementItem(::ElementType type) const;
+#ifdef LL_PLAT_C
+    MCNAPI explicit ElementConstructorContainerManagerController(
+        ::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C bool _handleOutputSwap(::SlotData const& src, ::SlotData const& dest, ::ItemTransferAmount amount);
+    MCNAPI ::ItemInstance _getElementItem(::ElementType type) const;
 
-    MCNAPI_C bool
-    _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
+    MCNAPI bool _handleOutputSwap(::SlotData const& src, ::SlotData const& dest, ::ItemTransferAmount amount);
 
-    MCNAPI_C bool _updateOutputPreview(::ItemStack const& stack);
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
 
-    MCNAPI_C void _updateParticleInputsFromOutputSlot();
+    MCNAPI bool _updateOutputPreview(::ItemStack const& stack);
 
-    MCNAPI_C bool isStillValid(float pickRange);
+    MCNAPI void _updateParticleInputsFromOutputSlot();
 
-    MCNAPI_C bool outputInteractWouldCausePlace(::SlotData const& src);
+    MCNAPI bool isStillValid(float pickRange);
 
-    MCNAPI_C void updateOutput(int protons, int electrons, int neutrons);
+    MCNAPI bool outputInteractWouldCausePlace(::SlotData const& src);
+
+    MCNAPI void updateOutput(int protons, int electrons, int neutrons);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::ElementConstructorContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

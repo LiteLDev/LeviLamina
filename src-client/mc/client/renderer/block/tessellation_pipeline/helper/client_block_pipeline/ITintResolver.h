@@ -23,7 +23,12 @@ public:
     // NOLINTBEGIN
     virtual ~ITintResolver();
 
-    virtual ::mce::Color _get(::Block const&, ::BlockPos const&, ::TintMethod, ::BiomeTintCache*) = 0;
+    virtual ::mce::Color _get(
+        ::Block const&    block,
+        ::BlockPos const& blockPos,
+        ::TintMethod      tintMethod,
+        ::BiomeTintCache* biomeTintCache
+    ) = 0;
     // NOLINTEND
 
 public:

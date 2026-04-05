@@ -52,8 +52,9 @@ public:
 
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
-    virtual void
-    replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&) /*override*/;
+    virtual void replaceArrayVariables(
+        ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
+    ) /*override*/;
 
     virtual void validateArrayVariables() const /*override*/;
 
@@ -117,7 +118,8 @@ public:
 
     MCNAPI ::MolangVersion $getMolangVersion() const;
 
-    MCNAPI void $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&);
+    MCNAPI void
+    $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
 
     MCNAPI void $validateArrayVariables() const;
 

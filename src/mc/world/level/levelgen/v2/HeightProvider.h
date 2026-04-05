@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~HeightProvider() = default;
 
-    virtual int sample(::IRandom&, ::br::worldgen::WorldGenContext const&) const = 0;
+    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const = 0;
     // NOLINTEND
 
 public:

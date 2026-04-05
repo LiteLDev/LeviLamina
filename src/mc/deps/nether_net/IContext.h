@@ -35,9 +35,9 @@ public:
 
     virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const = 0;
 
-    virtual void _logMessage(::NetherNet::LogSeverity, char const*, char*) const = 0;
+    virtual void _logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const = 0;
 
-    virtual void setLoggingLevel(::NetherNet::LogSeverity) = 0;
+    virtual void setLoggingLevel(::NetherNet::LogSeverity min) = 0;
     // NOLINTEND
 
 public:

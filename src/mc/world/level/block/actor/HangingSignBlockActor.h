@@ -14,7 +14,7 @@ class HangingSignBlockActor : public ::SignBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual float getShadowRadius(::BlockSource&) const /*override*/;
+    virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
     virtual ~HangingSignBlockActor() /*override*/ = default;
     // NOLINTEND
@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource& region) const;
 
 
     // NOLINTEND

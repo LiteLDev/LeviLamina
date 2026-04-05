@@ -17,17 +17,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(
-        ::FullContainerName const&,
-        ::ItemStack const&,
-        ::StorageItemComponent*,
-        ::StorageWeightLimitItemComponent*
+        ::FullContainerName const&         id,
+        ::ItemStack const&                 storageItem,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     ) = 0;
 
     virtual uint generateNewID() = 0;
 
-    virtual void tryLoadSavedStorageItem(::ListTag const&, ::FullContainerName const&) = 0;
+    virtual void tryLoadSavedStorageItem(::ListTag const& contentData, ::FullContainerName const& name) = 0;
 
-    virtual void setExpired(::std::vector<::FullContainerName> const&) = 0;
+    virtual void setExpired(::std::vector<::FullContainerName> const& removedContainers) = 0;
 
     virtual uint64 getSize() = 0;
 

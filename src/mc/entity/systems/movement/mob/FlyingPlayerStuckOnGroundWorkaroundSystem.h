@@ -10,7 +10,7 @@ class EntitySystems;
 namespace FlyingPlayerStuckOnGroundWorkaroundSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerSystem(::EntitySystems& systemRegistry);
+MCAPI void registerSystem(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace FlyingPlayerStuckOnGroundWorkaroundSystem

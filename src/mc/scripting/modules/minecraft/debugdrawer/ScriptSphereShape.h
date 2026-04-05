@@ -23,9 +23,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
+    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
 
-    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
 
     virtual ~ScriptSphereShape() /*override*/;
     // NOLINTEND
@@ -45,9 +45,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $populatePacketData(::ShapeDataPayload& packet) const;
+    MCFOLD void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
 
-    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& packet);
+    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& existing);
 
 
     // NOLINTEND

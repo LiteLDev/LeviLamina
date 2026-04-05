@@ -204,7 +204,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C void mark();
+#ifdef LL_PLAT_C
+        MCAPI void mark();
+#endif
         // NOLINTEND
 
     public:

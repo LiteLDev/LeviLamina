@@ -26,20 +26,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit Footprint(::astc_codec::FootprintType footprint);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::astc_codec::base::Optional<::astc_codec::Footprint>
+#ifdef LL_PLAT_C
+    MCNAPI static ::astc_codec::base::Optional<::astc_codec::Footprint>
     FromFootprintType(::astc_codec::FootprintType type);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::astc_codec::FootprintType footprint);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::astc_codec::FootprintType footprint);
+#endif
     // NOLINTEND
 };
 

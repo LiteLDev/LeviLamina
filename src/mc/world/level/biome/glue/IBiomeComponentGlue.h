@@ -16,9 +16,10 @@ public:
     // NOLINTBEGIN
     virtual ~IBiomeComponentGlue() = default;
 
-    virtual bool resolveAndValidate(::entt::meta_any const&, ::BiomeRegistry const&) = 0;
+    virtual bool
+    resolveAndValidate(::entt::meta_any const& biomeJsonComponent, ::BiomeRegistry const& biomeRegistry) = 0;
 
-    virtual void applyToBiome(::Biome&, ::entt::meta_any const&) const = 0;
+    virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& biomeJsonComponent) const = 0;
     // NOLINTEND
 
 public:

@@ -54,7 +54,7 @@ public:
 
     virtual void sendEvents(bool forceSend) /*override*/;
 
-    virtual void sendEvent(::Social::Events::Event const&) = 0;
+    virtual void sendEvent(::Social::Events::Event const& event) = 0;
 
     virtual void stopDebugEventLogging() /*override*/;
 
@@ -69,6 +69,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
+
+#ifdef LL_PLAT_C
+    MCNAPI AggregationEventListener(
+        uint                regBatchSize,
+        uint                regSendInterval,
+        uint                throttledSendInterval,
+        ::Core::Path const& logFileName
+    );
+#endif
 
     MCNAPI void _handleAggregation(
         ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
@@ -94,8 +103,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Core::Path const& logFileName);
 
-    MCNAPI_C void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(uint regBatchSize, uint regSendInterval, uint throttledSendInterval, ::Core::Path const& logFileName);
+#endif
     // NOLINTEND
 
 public:

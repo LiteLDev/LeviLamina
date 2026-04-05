@@ -51,21 +51,29 @@ public:
 
     virtual ::std::string const& mid() const = 0;
 
-    virtual void Enable(bool) = 0;
+    virtual void Enable(bool enable) = 0;
 
-    virtual void SetFirstPacketReceivedCallback(::std::function<void()>) = 0;
+    virtual void SetFirstPacketReceivedCallback(::std::function<void()> callback) = 0;
 
-    virtual bool SetLocalContent(::cricket::MediaContentDescription const*, ::webrtc::SdpType, ::std::string&) = 0;
+    virtual bool SetLocalContent(
+        ::cricket::MediaContentDescription const* content,
+        ::webrtc::SdpType                         type,
+        ::std::string&                            error_desc
+    ) = 0;
 
-    virtual bool SetRemoteContent(::cricket::MediaContentDescription const*, ::webrtc::SdpType, ::std::string&) = 0;
+    virtual bool SetRemoteContent(
+        ::cricket::MediaContentDescription const* content,
+        ::webrtc::SdpType                         type,
+        ::std::string&                            error_desc
+    ) = 0;
 
-    virtual bool SetPayloadTypeDemuxingEnabled(bool) = 0;
+    virtual bool SetPayloadTypeDemuxingEnabled(bool enabled) = 0;
 
     virtual ::std::vector<::cricket::StreamParams> const& local_streams() const = 0;
 
     virtual ::std::vector<::cricket::StreamParams> const& remote_streams() const = 0;
 
-    virtual bool SetRtpTransport(::webrtc::RtpTransportInternal*) = 0;
+    virtual bool SetRtpTransport(::webrtc::RtpTransportInternal* rtp_transport) = 0;
     // NOLINTEND
 
 public:

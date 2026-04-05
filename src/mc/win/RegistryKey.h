@@ -19,7 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S bool readValue(char const* key, ::std::string& result) const;
+#ifdef LL_PLAT_S
+    MCNAPI bool readValue(char const* key, ::std::string& result) const;
+#endif
 
     MCNAPI ~RegistryKey();
     // NOLINTEND

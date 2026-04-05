@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SettingsUiDebugQuery(::OreUI::ClientDependencies const& client);
+    MCAPI explicit SettingsUiDebugQuery(::OreUI::ClientDependencies const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCAPI void* $ctor(::OreUI::ClientDependencies const&);
     // NOLINTEND
 
 public:

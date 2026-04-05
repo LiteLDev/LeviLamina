@@ -32,7 +32,9 @@ public:
 
     MCNAPI void clear();
 
-    MCNAPI_S ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
+#ifdef LL_PLAT_S
+    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> end() const;
+#endif
 
     MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<1> find(::std::string_view keyStr) const;
 

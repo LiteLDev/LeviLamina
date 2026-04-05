@@ -47,7 +47,7 @@ public:
 
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~LiquidBlockBase() /*override*/ = default;
     // NOLINTEND
@@ -73,7 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
-    MCAPI_C static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
+#ifdef LL_PLAT_C
+    MCAPI static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
+#endif
     // NOLINTEND
 
 public:
@@ -96,7 +98,7 @@ public:
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

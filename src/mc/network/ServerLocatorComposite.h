@@ -80,16 +80,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ServerLocatorComposite(
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform
     );
+#endif
     // NOLINTEND
 
 public:

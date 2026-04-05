@@ -21,7 +21,7 @@ struct VehicleInputIntentComponent;
 namespace DesiredMoveDirectionFreeCameraControlledSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doControllingPassengerTick(
+MCAPI void doControllingPassengerTick(
     ::MobTravelComponent&                  mobTravelComponent,
     ::FreeCameraControlledComponent const& airControlledComponent,
     ::VehicleInputIntentComponent&         vehicleInputIntentComponent,

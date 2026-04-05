@@ -29,23 +29,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Core::Result _getFileDataFileSystem(::Core::Path const& path, ::std::string& outFileData);
+#ifdef LL_PLAT_C
+    MCNAPI ::Core::Result _getFileDataFileSystem(::Core::Path const& path, ::std::string& outFileData);
 
-    MCNAPI_C ::Core::Result _getFileDataResourcePack(::Core::Path const& path, ::std::string& outFileData);
+    MCNAPI ::Core::Result _getFileDataResourcePack(::Core::Path const& path, ::std::string& outFileData);
 
-    MCNAPI_C ::std::vector<::std::string> getErrors();
+    MCNAPI ::std::vector<::std::string> getErrors();
 
-    MCNAPI_C ::Core::Result getFileData(::Core::Path const& path, ::std::string& outFileData);
+    MCNAPI ::Core::Result getFileData(::Core::Path const& path, ::std::string& outFileData);
 
-    MCNAPI_C ::Core::Path getPath(::Core::Path const& relativePath);
+    MCNAPI ::Core::Path getPath(::Core::Path const& relativePath);
 
-    MCNAPI_C bool isAllowedToUsePath(::Core::Path const& path);
+    MCNAPI bool isAllowedToUsePath(::Core::Path const& path);
+
+    MCNAPI ~FileReferenceLoader();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

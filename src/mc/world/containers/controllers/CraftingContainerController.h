@@ -22,6 +22,13 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mGhostItems;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftingContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,7 +38,7 @@ public:
     virtual ~CraftingContainerController() /*override*/;
 #endif
 
-    virtual ::ItemInstance const& getRecipeItem(int) const = 0;
+    virtual ::ItemInstance const& getRecipeItem(int slot) const = 0;
 
     virtual void onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
@@ -47,13 +54,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI CraftingContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+#endif
     // NOLINTEND
 
 public:

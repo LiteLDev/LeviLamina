@@ -13,6 +13,15 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ShapedChemistryRecipe : public ::ShapedRecipe {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ShapedChemistryRecipe& operator=(ShapedChemistryRecipe const&);
+    ShapedChemistryRecipe(ShapedChemistryRecipe const&);
+    ShapedChemistryRecipe();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,7 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ShapedChemistryRecipe(::ShapedChemistryRecipe&&);
+#endif
     // NOLINTEND
 
 public:
@@ -44,7 +55,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::ShapedChemistryRecipe&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ShapedChemistryRecipe&&);
+#endif
     // NOLINTEND
 
 public:

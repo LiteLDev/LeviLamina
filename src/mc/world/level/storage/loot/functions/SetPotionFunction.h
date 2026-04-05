@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
+    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const&) const;
     // NOLINTEND
 
 public:

@@ -31,42 +31,64 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk2504bf;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EDUConfigData& operator=(EDUConfigData const&);
     EDUConfigData(EDUConfigData const&);
     EDUConfigData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EDUConfigData& operator=(EDUConfigData const&);
+    EDUConfigData();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI EDUConfigData(::EDUConfigData&&);
 
+    MCNAPI EDUConfigData(::EDUConfigData const&);
+
+    MCNAPI explicit EDUConfigData(::Json::Value const& config);
+
+    MCNAPI ~EDUConfigData();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::DemoConfig>
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<::DemoConfig>
     _parseDemoConfig(::Json::Value const& config, ::EduConfigPreset eduPreset);
 
-    MCNAPI_C static ::EduConfigPreset _parseEduPreset(::Json::Value const& config);
+    MCNAPI static ::EduConfigPreset _parseEduPreset(::Json::Value const& config);
 
-    MCNAPI_C static ::std::optional<::ServicePacksConfig> parseServicePacks(::Json::Value const& config);
+    MCNAPI static ::std::optional<::ServicePacksConfig> parseServicePacks(::Json::Value const& config);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::EDUConfigData&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::EDUConfigData&&);
 
-    MCNAPI_C void* $ctor(::EDUConfigData const&);
+    MCNAPI void* $ctor(::EDUConfigData const&);
 
-    MCNAPI_C void* $ctor(::Json::Value const& config);
+    MCNAPI void* $ctor(::Json::Value const& config);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

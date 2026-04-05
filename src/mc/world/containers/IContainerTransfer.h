@@ -16,7 +16,7 @@ public:
 
     virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() = 0;
 
-    virtual void postTransfer(::ContainerTransferScope*, ::ContainerScreenActionResult const&) = 0;
+    virtual void postTransfer(::ContainerTransferScope* transferScope, ::ContainerScreenActionResult const& result) = 0;
     // NOLINTEND
 
 public:

@@ -55,6 +55,13 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ClientNetworkSystem();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -72,30 +79,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool
+#ifdef LL_PLAT_C
+    MCNAPI ClientNetworkSystem(
+        ::Scheduler&                                         receiveThread,
+        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
+        ::NetworkSystemToggles const&                        networkToggles,
+        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
+        ::Bedrock::NonOwnerPointer<::AppPlatform>            appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
+        ::std::unique_ptr<::IPacketSerializationController>  packetController
+    );
+
+    MCNAPI bool
     connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
 
-    MCNAPI_C ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
+    MCNAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 
-    MCNAPI_C ::NetherNet::NetworkID getConnectorNetherNetId() const;
+    MCNAPI ::NetherNet::NetworkID getConnectorNetherNetId() const;
 
-    MCNAPI_C ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+    MCNAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 
-    MCNAPI_C void getPingTimeForConnection(
+    MCNAPI void getPingTimeForConnection(
         ::Social::GameConnectionInfo const& connection,
         ::std::function<void(uint)>         pingTimeCallback
     );
 
-    MCNAPI_C void registerForPrimaryUserOptionChanges(::ClientNetworkSystemOptions const& primaryUserOptions);
+    MCNAPI void registerForPrimaryUserOptionChanges(::ClientNetworkSystemOptions const& primaryUserOptions);
 
-    MCNAPI_C void setupNetworkSummary(
+    MCNAPI void setupNetworkSummary(
         ::std::function<bool()> isInGame,
         ::std::function<bool()> isSignedIntoSignalingService,
         ::std::function<bool()> isHostingLocalDedicatedServer
     );
+#endif
 
     MCNAPI ::std::optional<::NetworkIdentifier> tryGetLocalNetworkId() const;
 
@@ -105,7 +124,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::NetworkSystem::Dependencies _createConstructionDependencies(
+#ifdef LL_PLAT_C
+    MCNAPI static ::NetworkSystem::Dependencies _createConstructionDependencies(
         ::ClientNetworkSystem*                               pThis,
         ::Scheduler&                                         recieveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
@@ -115,12 +135,14 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
         ::std::unique_ptr<::IPacketSerializationController>  packetController
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
@@ -129,6 +151,7 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
         ::std::unique_ptr<::IPacketSerializationController>  packetController
     );
+#endif
     // NOLINTEND
 
 public:

@@ -98,9 +98,11 @@ public:
 
     MCAPI ::GameRule& _setDefaultValue(int i);
 
-    MCAPI_C bool getBool() const;
+#ifdef LL_PLAT_C
+    MCAPI bool getBool() const;
 
-    MCAPI_C int getInt() const;
+    MCAPI int getInt() const;
+#endif
 
     MCAPI ::std::string getLowercaseName() const;
 

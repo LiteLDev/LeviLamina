@@ -32,7 +32,7 @@ public:
     virtual bool
     sendTryDestroyBlock(::BlockPos const&, int, ::std::function<bool(::std::optional<::ItemStack>&)> const&) = 0;
 
-    virtual void sendDestroyBlock(::Block const&, ::BlockPos const&, int) = 0;
+    virtual void sendDestroyBlock(::Block const& oldBlock, ::BlockPos const& pos, int variantData) = 0;
 
     virtual void sendChangeContinueDestroyBlock(::BlockPos const&, int) = 0;
 
@@ -40,9 +40,9 @@ public:
 
     virtual void sendStopDestroyBlock(::BlockPos const&, float) = 0;
 
-    virtual void sendStartItemUseOn(::BlockPos const&, ::BlockPos const&, int) = 0;
+    virtual void sendStartItemUseOn(::BlockPos const& pos, ::BlockPos const& buildPos, int face) = 0;
 
-    virtual void sendStopItemUseOn(::BlockPos const&) = 0;
+    virtual void sendStopItemUseOn(::BlockPos const& pos) = 0;
 
     virtual void tryRotateTowardsAimAssist() = 0;
     // NOLINTEND

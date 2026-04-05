@@ -21,21 +21,21 @@ public:
     // NOLINTBEGIN
     virtual void Stop() = 0;
 
-    virtual void SetMediaChannel(::cricket::MediaReceiveChannelInterface*) = 0;
+    virtual void SetMediaChannel(::cricket::MediaReceiveChannelInterface* media_channel) = 0;
 
-    virtual void SetupMediaChannel(uint) = 0;
+    virtual void SetupMediaChannel(uint ssrc) = 0;
 
     virtual void SetupUnsignaledMediaChannel() = 0;
 
-    virtual void set_transport(::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface>) = 0;
+    virtual void set_transport(::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport) = 0;
 
     virtual ::std::optional<uint> ssrc() const = 0;
 
     virtual void NotifyFirstPacketReceived() = 0;
 
-    virtual void set_stream_ids(::std::vector<::std::string>) = 0;
+    virtual void set_stream_ids(::std::vector<::std::string> stream_ids) = 0;
 
-    virtual void SetStreams(::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&) = 0;
+    virtual void SetStreams(::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams) = 0;
 
     virtual int AttachmentId() const = 0;
 

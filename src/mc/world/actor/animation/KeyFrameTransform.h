@@ -34,7 +34,9 @@ public:
 
     MCAPI void set(::ExpressionNode const& expression);
 
-    MCAPI_S void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+#ifdef LL_PLAT_S
+    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+#endif
 
     MCAPI void set(::ExpressionNode const& expression, int axisIndex);
 

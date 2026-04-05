@@ -38,13 +38,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~Objects();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -65,7 +69,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void run();
+#ifdef LL_PLAT_C
+    MCNAPI void run();
+
+    MCNAPI ~ApplicationInit();
+#endif
     // NOLINTEND
 
 public:
@@ -78,7 +86,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

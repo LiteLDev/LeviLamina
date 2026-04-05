@@ -23,8 +23,20 @@ struct TickingSystemWithInfo;
 
 class LadderResetFallDamageSystem {
 public:
+    // LadderResetFallDamageSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::MobFlagComponent>,
+        ::AABBShapeComponent const,
+        ::StateVectorComponent const,
+        ::ActorDataFlagComponent const,
+        ::FallDistanceComponent,
+        ::Optional<::CanStandOnSnowFlagComponent const>,
+        ::Optional<::HasLightweightFamilyFlagComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
+    MCAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
     // NOLINTEND
 };

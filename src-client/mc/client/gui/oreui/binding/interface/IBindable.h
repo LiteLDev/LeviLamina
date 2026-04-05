@@ -16,7 +16,7 @@ public:
 
     virtual void onBindingsReleased() = 0;
 
-    virtual void update(double const timestampMs) = 0;
+    virtual void update(double const time) = 0;
     // NOLINTEND
 
 public:

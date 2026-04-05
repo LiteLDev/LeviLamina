@@ -102,19 +102,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::mce::Color const& BIRCH_FOLIAGE_TINT();
+    MCAPI static ::mce::Color const& BIRCH_FOLIAGE_TINT();
 
-    MCAPI_C static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
+    MCAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
 
-    MCAPI_C static ::mce::Color const& DEFAULT_GRASS_TINT();
+    MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
-    MCAPI_C static ::mce::Color const& DEFAULT_WATER_COLOR();
+    MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
-    MCAPI_C static ::mce::Color const& DEFAULT_WATER_TINT();
+    MCAPI static ::mce::Color const& DEFAULT_WATER_TINT();
 
-    MCAPI_C static ::mce::Color const& DRY_FOLIAGE_TINT();
+    MCAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
 
-    MCAPI_C static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
+    MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
     // NOLINTEND
 
 public:

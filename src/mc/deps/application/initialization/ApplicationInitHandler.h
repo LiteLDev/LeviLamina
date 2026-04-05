@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     virtual ~ApplicationInitHandler() = default;
 
-    virtual void onFatalInitializationError(char const*) = 0;
+    virtual void onFatalInitializationError(char const* message) = 0;
 
     virtual void onMemoryHeapInit() = 0;
 

@@ -62,7 +62,9 @@ public:
 
     MCAPI void restockAllRecipes(::Actor& owner);
 
-    MCAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
+#ifdef LL_PLAT_C
+    MCAPI void setDataFromPacket(::UpdateTradePacket const& packet);
+#endif
 
     MCAPI void updateTradeTier(::Actor& owner);
 

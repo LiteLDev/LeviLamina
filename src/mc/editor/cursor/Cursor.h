@@ -25,12 +25,20 @@ public:
     ::ll::UntypedStorage<4, 28> mUnkfac3b4;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
     Cursor();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Cursor& operator=(Cursor const&);
+    Cursor(Cursor const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,13 +58,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI Cursor();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

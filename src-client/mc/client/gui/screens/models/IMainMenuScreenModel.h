@@ -18,18 +18,23 @@ public:
     // NOLINTBEGIN
     virtual ~IMainMenuScreenModel() = default;
 
-    virtual void
-    navigateToDlcProgressScreen(::std::vector<::DlcId> const&, ::std::function<void(bool, bool)>, bool, bool, bool) = 0;
+    virtual void navigateToDlcProgressScreen(
+        ::std::vector<::DlcId> const&     dlcIds,
+        ::std::function<void(bool, bool)> callback,
+        bool                              showCloseButton,
+        bool                              processingUpdates,
+        bool                              requireCancelToExit
+    ) = 0;
 
     virtual bool isNetworkEnabled(::NetworkFilter) const = 0;
 
     virtual bool doesPlatformSupportRealms() const = 0;
 
-    virtual bool isPackIdInRealmsPlus(::std::string const&) const = 0;
+    virtual bool isPackIdInRealmsPlus(::std::string const& packId) const = 0;
 
     virtual void repopulateWorldTemplates() = 0;
 
-    virtual ::WorldTemplateInfo const* findWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const = 0;
+    virtual ::WorldTemplateInfo const* findWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const = 0;
     // NOLINTEND
 
 public:

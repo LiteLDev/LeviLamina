@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>             mIsRecipeCraftable;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftingOutputContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,19 +40,23 @@ public:
 
     virtual void clearSelectedRecipe() /*override*/;
 
-    virtual bool _canRemove(int modelSlot, int removeCount) const /*override*/;
+    virtual bool _canRemove(int slot, int removeCount) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit CraftingOutputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:
@@ -60,7 +71,7 @@ public:
 
     MCNAPI void $clearSelectedRecipe();
 
-    MCNAPI bool $_canRemove(int modelSlot, int removeCount) const;
+    MCNAPI bool $_canRemove(int slot, int removeCount) const;
 #endif
 
 

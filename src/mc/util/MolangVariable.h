@@ -40,7 +40,9 @@ public:
     MCAPI static ::MolangVariableIndex
     _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
-    MCAPI_C static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
+#ifdef LL_PLAT_C
+    MCAPI static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
+#endif
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 

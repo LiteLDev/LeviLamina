@@ -25,22 +25,38 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CopyableDataList& operator=(CopyableDataList const&);
+        CopyableDataList();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI CopyableDataList(::SynchedActorData::CopyableDataList const& other);
 
+        MCAPI ~CopyableDataList();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI_C void* $ctor(::SynchedActorData::CopyableDataList const& other);
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::SynchedActorData::CopyableDataList const& other);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -79,15 +95,17 @@ public:
     // NOLINTBEGIN
     MCAPI ::SynchedActorData _clone() const;
 
-    MCAPI_C bool assignValue(::DataItem const& newItem);
+#ifdef LL_PLAT_C
+    MCAPI bool assignValue(::DataItem const& newItem);
 
-    MCAPI_C void assignValues(
+    MCAPI void assignValues(
         ::std::vector<::std::unique_ptr<::DataItem>> const& items,
         ::Actor&                                            actor,
         ::std::optional<uint64>                             targetFrame
     );
 
-    MCAPI_C int getInt(ushort id) const;
+    MCAPI int getInt(ushort id) const;
+#endif
 
     MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 

@@ -30,12 +30,20 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk79feed;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DateManager& operator=(DateManager const&);
     DateManager(DateManager const&);
     DateManager();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DateManager& operator=(DateManager const&);
+    DateManager(DateManager const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,17 +55,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _sendScheduledCallbacks();
+#ifdef LL_PLAT_C
+    MCNAPI DateManager();
 
-    MCNAPI_C ::tm getDateTime(::DateManager::TimeZoneType returnType) const;
+    MCNAPI void _sendScheduledCallbacks();
 
-    MCNAPI_C bool isBetweenDates(::std::string const& start, ::std::string const& end) const;
+    MCNAPI ::tm getDateTime(::DateManager::TimeZoneType returnType) const;
 
-    MCNAPI_C bool isInPast(::std::string const& strTime) const;
+    MCNAPI bool isBetweenDates(::std::string const& start, ::std::string const& end) const;
 
-    MCNAPI_C void registerScheduledCallback(::ScheduledCallback callback) const;
+    MCNAPI bool isInPast(::std::string const& strTime) const;
 
-    MCNAPI_C ::std::string toString(::DateManager::TimeZoneType outputType, ::std::string const& format) const;
+    MCNAPI void registerScheduledCallback(::ScheduledCallback callback) const;
+
+    MCNAPI ::std::string toString(::DateManager::TimeZoneType outputType, ::std::string const& format) const;
+#endif
     // NOLINTEND
 
 public:
@@ -79,24 +91,32 @@ public:
         int*                         resultTimeZoneMinutes
     );
 
-    MCNAPI_C static int64 toEpochTime(::std::string const& strTime);
+#ifdef LL_PLAT_C
+    MCNAPI static int64 toEpochTime(::std::string const& strTime);
+#endif
 
     MCNAPI static int64 toEpochTime(::tm const* dateTime, ::DateManager::TimeZoneType inputType);
 
     MCNAPI static ::std::string
     toString(::tm const& time, ::std::string const& format, ::std::optional<::std::locale> const& locale);
 
-    MCNAPI_C static ::std::string toString_Date(::tm const& time);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string toString_Date(::tm const& time);
+#endif
 
     MCNAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
 
-    MCNAPI_C static ::std::string toString_DateTime(int64 const& time, ::DateManager::TimeZoneType outputType);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string toString_DateTime(int64 const& time, ::DateManager::TimeZoneType outputType);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

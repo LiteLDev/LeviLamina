@@ -30,6 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ::ProfilerLiteTelemetry& operator=(::ProfilerLiteTelemetry&&);
+#endif
+
     MCNAPI ~ProfilerLiteTelemetry();
     // NOLINTEND
 

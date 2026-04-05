@@ -21,16 +21,26 @@ struct TickingSystemWithInfo;
 
 class SlimePreNormalTickSystem {
 public:
+    // SlimePreNormalTickSystem inner types define
+    using ModType = ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent>;
+
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::SlimeFlagComponent>,
+        ::ActorOwnerComponent,
+        ::Optional<::OnGroundFlagComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doSlimePreNormalTickSystem(
+    MCAPI static void _doSlimePreNormalTickSystem(
         ::StrictEntityContext&                                     context,
         ::ActorOwnerComponent&                                     actorOwnerComponent,
         ::Optional<::OnGroundFlagComponent const>                  onGround,
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
 
-    MCNAPI static void _tickSlimePreNormalTickSystem(
+    MCAPI static void _tickSlimePreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::SlimeFlagComponent>,
@@ -39,6 +49,6 @@ public:
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

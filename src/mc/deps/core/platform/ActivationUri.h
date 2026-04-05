@@ -19,22 +19,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ~ActivationUri();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::unordered_map<::std::string, ::std::string>
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::unordered_map<::std::string, ::std::string>
     extractArgumentsFromFilename(::std::string_view filename, ::std::optional<::std::string> originalPath);
 
-    MCNAPI_C static ::std::unordered_map<::std::string, ::std::string>
-    extractArgumentsFromUri(::std::string const& uri);
+    MCNAPI static ::std::unordered_map<::std::string, ::std::string> extractArgumentsFromUri(::std::string const& uri);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

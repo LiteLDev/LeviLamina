@@ -25,7 +25,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual void OnSetVolume(double) = 0;
+        virtual void OnSetVolume(double volume) = 0;
 
         virtual ~AudioObserver();
         // NOLINTEND

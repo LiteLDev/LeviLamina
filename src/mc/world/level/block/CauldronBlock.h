@@ -151,13 +151,17 @@ public:
     // NOLINTBEGIN
     MCAPI static bool canReceiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType);
 
-    MCAPI_C static void spawnBubbleParticles(::Level& level, ::Vec3 const& pos, ::Random&, int, int count);
+#ifdef LL_PLAT_C
+    MCAPI static void spawnBubbleParticles(::Level& level, ::Vec3 const& pos, ::Random&, int, int count);
 
-    MCAPI_C static void spawnLavaParticles(::Level& level, ::Vec3 const& pos, ::Random&, int count);
+    MCAPI static void spawnLavaParticles(::Level& level, ::Vec3 const& pos, ::Random&, int count);
+#endif
 
     MCAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random&, int color, int count);
 
-    MCAPI_C static void spawnSplashParticles(::Level& level, ::Vec3 const& pos, ::Random&, int color, int count);
+#ifdef LL_PLAT_C
+    MCAPI static void spawnSplashParticles(::Level& level, ::Vec3 const& pos, ::Random&, int color, int count);
+#endif
     // NOLINTEND
 
 public:

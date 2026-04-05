@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~IClientBlockData() = default;
 
-    virtual void visit(::brstd::function_ref<void(::ClientBlockData const&)>) const;
+    virtual void visit(::brstd::function_ref<void(::ClientBlockData const&)> visitor) const;
     // NOLINTEND
 
 public:

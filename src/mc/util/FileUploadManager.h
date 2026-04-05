@@ -85,8 +85,12 @@ public:
 
     virtual float getUploadProgress() const;
 
-    virtual void
-    archiveAndUploadFileToRealmStorage(::std::string const&, ::Core::Path const&, int const, ::std::string const&) = 0;
+    virtual void archiveAndUploadFileToRealmStorage(
+        ::std::string const& uploadId,
+        ::Core::Path const&  path,
+        int const            slotIndex,
+        ::std::string const& realmsGuid
+    ) = 0;
 
     virtual void uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
     // NOLINTEND
@@ -95,6 +99,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+
+#ifdef LL_PLAT_C
+    MCNAPI FileUploadManager(
+        ::TaskGroup&                                         taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
+        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
+    );
+#endif
 
     MCNAPI void _generateMultiPartHelper();
 
@@ -106,7 +118,9 @@ public:
 
     MCNAPI void addCallbackQueue(::std::function<void()> callback);
 
-    MCNAPI_C void setFailed(::UploadError reason);
+#ifdef LL_PLAT_C
+    MCNAPI void setFailed(::UploadError reason);
+#endif
 
     MCNAPI void uploadFile(
         ::std::string const& uploadId,
@@ -127,11 +141,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::TaskGroup&                                         taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
     );
+#endif
     // NOLINTEND
 
 public:

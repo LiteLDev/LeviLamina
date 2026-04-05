@@ -25,12 +25,20 @@ public:
     ::ll::UntypedStorage<8, 136> mUnkd613a3;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    PersistentWebSocket& operator=(PersistentWebSocket const&);
+    PersistentWebSocket(PersistentWebSocket const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     PersistentWebSocket& operator=(PersistentWebSocket const&);
     PersistentWebSocket(PersistentWebSocket const&);
     PersistentWebSocket();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,6 +62,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI PersistentWebSocket();
+#endif
+
     MCNAPI void _connectWithRetry(
         ::std::string const&                     uri,
         ::Bedrock::Http::HeaderCollection const& headers,
@@ -82,7 +94,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

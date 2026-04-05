@@ -58,26 +58,26 @@ public:
 
     virtual ::rtc::Network const* Network() const = 0;
 
-    virtual void SetIceRole(::cricket::IceRole) = 0;
+    virtual void SetIceRole(::cricket::IceRole role) = 0;
 
     virtual ::cricket::IceRole GetIceRole() const = 0;
 
-    virtual void SetIceTiebreaker(uint64) = 0;
+    virtual void SetIceTiebreaker(uint64 tiebreaker) = 0;
 
     virtual uint64 IceTiebreaker() const = 0;
 
     virtual bool SharedSocket() const = 0;
 
-    virtual bool SupportsProtocol(::std::string_view) const = 0;
+    virtual bool SupportsProtocol(::std::string_view protocol) const = 0;
 
     virtual void PrepareAddress() = 0;
 
-    virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const&) = 0;
+    virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const& remote_addr) = 0;
 
     virtual ::cricket::Connection*
-    CreateConnection(::cricket::Candidate const&, ::cricket::PortInterface::CandidateOrigin) = 0;
+    CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin) = 0;
 
-    virtual int SetOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetOption(::rtc::Socket::Option opt, int value) = 0;
 
     virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
@@ -87,22 +87,32 @@ public:
 
     virtual ::std::vector<::cricket::Candidate> const& Candidates() const = 0;
 
-    virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&, bool) = 0;
+    virtual int SendTo(
+        void const*                 data,
+        uint64                      size,
+        ::rtc::SocketAddress const& addr,
+        ::rtc::PacketOptions const& options,
+        bool                        payload
+    ) = 0;
 
-    virtual void
-    SendBindingErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, int, ::std::string_view) = 0;
+    virtual void SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    ) = 0;
 
-    virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)>) = 0;
+    virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)> callback) = 0;
 
     virtual void EnablePortPackets() = 0;
 
     virtual ::std::string ToString() const = 0;
 
-    virtual void GetStunStats(::std::optional<::cricket::StunStats>*) = 0;
+    virtual void GetStunStats(::std::optional<::cricket::StunStats>* stats) = 0;
 
-    virtual void DestroyConnection(::cricket::Connection*) = 0;
+    virtual void DestroyConnection(::cricket::Connection* conn) = 0;
 
-    virtual void DestroyConnectionAsync(::cricket::Connection*) = 0;
+    virtual void DestroyConnectionAsync(::cricket::Connection* conn) = 0;
 
     virtual ::webrtc::TaskQueueBase* thread() = 0;
 
@@ -120,25 +130,33 @@ public:
 
     virtual ::std::string const& content_name() const = 0;
 
-    virtual void AddPrflxCandidate(::cricket::Candidate const&) = 0;
+    virtual void AddPrflxCandidate(::cricket::Candidate const& local) = 0;
 
     virtual void UpdateNetworkCost() = 0;
 
     virtual ::rtc::DiffServCodePoint StunDscpValue() const = 0;
 
     virtual bool GetStunMessage(
-        char const*,
-        uint64,
-        ::rtc::SocketAddress const&,
-        ::std::unique_ptr<::cricket::IceMessage>*,
-        ::std::string*
+        char const*                               data,
+        uint64                                    size,
+        ::rtc::SocketAddress const&               addr,
+        ::std::unique_ptr<::cricket::IceMessage>* out_msg,
+        ::std::string*                            out_username
     ) = 0;
 
-    virtual bool ParseStunUsername(::cricket::StunMessage const*, ::std::string*, ::std::string*) const = 0;
+    virtual bool ParseStunUsername(
+        ::cricket::StunMessage const* stun_msg,
+        ::std::string*                local_ufrag,
+        ::std::string*                remote_ufrag
+    ) const = 0;
 
-    virtual ::std::string CreateStunUsername(::std::string_view) const = 0;
+    virtual ::std::string CreateStunUsername(::std::string_view remote_username) const = 0;
 
-    virtual bool MaybeIceRoleConflict(::rtc::SocketAddress const&, ::cricket::IceMessage*, ::std::string_view) = 0;
+    virtual bool MaybeIceRoleConflict(
+        ::rtc::SocketAddress const& addr,
+        ::cricket::IceMessage*      stun_msg,
+        ::std::string_view          remote_ufrag
+    ) = 0;
 
     virtual short network_cost() const = 0;
     // NOLINTEND

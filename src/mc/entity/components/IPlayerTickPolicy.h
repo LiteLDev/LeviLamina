@@ -16,9 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerTickPolicy() = default;
 
-    virtual uint64 getMaxTickCount(uint64, bool) const = 0;
+    virtual uint64 getMaxTickCount(uint64 creditTicks, bool hasQueuedInput) const = 0;
 
-    virtual ::IPlayerTickPolicy::TickAction shouldTickPlayer(uint64, uint64) const = 0;
+    virtual ::IPlayerTickPolicy::TickAction shouldTickPlayer(uint64 creditTicks, uint64 unprocessedTicksSize) const = 0;
 
     virtual bool isStrictMovement() const = 0;
 

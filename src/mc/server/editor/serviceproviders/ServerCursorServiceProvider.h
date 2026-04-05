@@ -39,7 +39,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> setCursorState(::Editor::Cursor::CursorState&& state) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) = 0;
+    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties) = 0;
 
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) = 0;
 
@@ -48,24 +48,27 @@ public:
     virtual ::Editor::Cursor::CursorState getDefaultProperties() const = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    pushCursorStateById(::Editor::Cursor::CursorState const&, ::HashedString const&) = 0;
+    pushCursorStateById(::Editor::Cursor::CursorState const& state, ::HashedString const& identifier) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> popCursorStateById(::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> popCursorStateById(::HashedString const& identifier) = 0;
 
-    virtual ::Scripting::Result_deprecated<void>
-    updateCursorStateById(::Editor::Cursor::CursorState const&, ::std::optional<::HashedString> const) = 0;
+    virtual ::Scripting::Result_deprecated<void> updateCursorStateById(
+        ::Editor::Cursor::CursorState const&  state,
+        ::std::optional<::HashedString> const identifier
+    ) = 0;
 
     virtual ::Scripting::Result_deprecated<::Editor::Cursor::CursorState>
-    getCursorStateById(::std::optional<::HashedString> const&) = 0;
+    getCursorStateById(::std::optional<::HashedString> const& identifier) = 0;
 
     virtual ::std::optional<::HashedString> const& getActiveCursorStateId() const = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
-        ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>
+        ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(
         ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
+            callback
     ) = 0;
 
     virtual ::WeakRef<::Editor::ProjectRegion> getRegion() const = 0;

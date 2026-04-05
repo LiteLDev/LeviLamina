@@ -6,6 +6,13 @@
 #include "mc/deps/core/memory/MemoryStreamBuffer.h"
 
 struct MemoryStream : public ::MemoryStreamBuffer, public virtual ::std::ios, public ::std::istream {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MemoryStream();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -15,13 +22,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI MemoryStream(char const* base, uint64 size);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(char const* base, uint64 size);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(char const* base, uint64 size);
+#endif
     // NOLINTEND
 
 public:

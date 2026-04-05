@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/ITextInputHandler.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/RectangleArea.h"
 #include "mc/deps/input/TextBoxSelection.h"
+#include "mc/external/gameface/cohtml/ITextInputHandler.h"
 
 // auto generated forward declare list
 // clang-format off

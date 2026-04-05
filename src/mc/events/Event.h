@@ -83,9 +83,11 @@ public:
     MCNAPI ::std::optional<::std::reference_wrapper<::Social::Events::Property const>>
     getProperty(::std::string const& propertyName) const;
 
-    MCNAPI_C ::Json::Value measurementsAsJsonValue() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value measurementsAsJsonValue() const;
 
-    MCNAPI_C ::Json::Value propertiesAsJsonValue() const;
+    MCNAPI ::Json::Value propertiesAsJsonValue() const;
+#endif
 
     MCNAPI void updateCompoundMeasurements(::Social::Events::Event const& event);
 

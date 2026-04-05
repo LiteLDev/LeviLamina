@@ -69,7 +69,7 @@ public:
     onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const& uniqueID, bool) /*override*/;
 
     virtual ::EventResult
-    onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName) /*override*/;
+    onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& dstContainerName) /*override*/;
 
     virtual ::EventResult onShowDataDrivenScreen(
         ::LocalPlayer&,
@@ -118,7 +118,7 @@ public:
     $onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const& uniqueID, bool);
 
     MCAPI ::EventResult
-    $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& containerName);
+    $onPreviewItemPopulatedInContainer(::ItemStackBase const& item, ::std::string const& dstContainerName);
 
     MCAPI ::EventResult $onShowDataDrivenScreen(
         ::LocalPlayer&,

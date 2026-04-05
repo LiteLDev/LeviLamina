@@ -40,9 +40,9 @@ public:
 
     virtual void SetOwner(::cricket::StunMessage* owner);
 
-    virtual bool Read(::rtc::ByteBufferReader*) = 0;
+    virtual bool Read(::rtc::ByteBufferReader* buf) = 0;
 
-    virtual bool Write(::rtc::ByteBufferWriter*) const = 0;
+    virtual bool Write(::rtc::ByteBufferWriter* buf) const = 0;
     // NOLINTEND
 
 public:

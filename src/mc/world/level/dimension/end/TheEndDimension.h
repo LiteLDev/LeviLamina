@@ -96,7 +96,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit TheEndDimension(::DerivedDimensionArguments&& args);
 
-    MCAPI_C void _handleSoundEffects() const;
+#ifdef LL_PLAT_C
+    MCAPI void _handleSoundEffects() const;
+#endif
     // NOLINTEND
 
 public:

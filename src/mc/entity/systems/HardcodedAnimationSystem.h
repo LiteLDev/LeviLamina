@@ -29,12 +29,12 @@ struct StateVectorComponent;
 namespace HardcodedAnimationSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void
+MCAPI void
 addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::ActorWalkAnimationComponent& walk);
 
-MCNAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
+MCAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
 
-MCNAPI void doHardcodedAnimation(
+MCAPI void doHardcodedAnimation(
     ::StrictEntityContext const&,
     ::MobAnimationComponent&                      mobAnim,
     ::MobBodyRotationComponent const&             bodyRot,
@@ -48,7 +48,7 @@ MCNAPI void doHardcodedAnimation(
     ::Optional<::MobIsJumpingFlagComponent const> isJumping
 );
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent>,

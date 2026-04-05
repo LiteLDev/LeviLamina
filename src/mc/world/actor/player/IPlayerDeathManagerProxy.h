@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerDeathManagerProxy() = default;
 
-    virtual ::Actor* fetchActor(::ActorUniqueID) const = 0;
+    virtual ::Actor* fetchActor(::ActorUniqueID actorUniqueID) const = 0;
 
     virtual bool shouldShowDeathMessages() const = 0;
 

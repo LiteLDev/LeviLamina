@@ -43,13 +43,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit SuspendHandler(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
+#endif
     // NOLINTEND
 
 public:

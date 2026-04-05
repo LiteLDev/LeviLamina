@@ -28,15 +28,15 @@ public:
 
     virtual ::OreUI::Detail::IdType id() const = 0;
 
-    virtual void bind(::cohtml::Binder*, void*) = 0;
+    virtual void bind(::cohtml::Binder* binder, void* object) = 0;
 
     virtual void success() = 0;
 
-    virtual void fail(int) = 0;
+    virtual void fail(int error) = 0;
 
     virtual void fail() = 0;
 
-    virtual void progress(uchar) = 0;
+    virtual void progress(uchar progress) = 0;
     // NOLINTEND
 
 public:

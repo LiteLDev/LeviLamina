@@ -14,6 +14,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addTime(::std::chrono::nanoseconds const& time);
+#ifdef LL_PLAT_C
+    MCAPI void addTime(::std::chrono::nanoseconds const& time);
+#endif
     // NOLINTEND
 };

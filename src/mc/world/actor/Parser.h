@@ -92,8 +92,10 @@ public:
         char const*                                            defaultValue
     );
 
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     parse(::Json::Value const& val, ::mce::Color& variable, char const* jsonName, ::mce::Color const& defaultValue);
+#endif
 
     MCAPI static void
     parse(::Json::Value const& val, ::HashedString& variable, char const* jsonName, char const* defaultValue);

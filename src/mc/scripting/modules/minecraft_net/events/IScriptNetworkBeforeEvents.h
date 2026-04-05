@@ -23,11 +23,11 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
-    onBeforePacketReceive(::IncomingPacketEvent const&) = 0;
+    onBeforePacketReceive(::IncomingPacketEvent const& packetEvent) = 0;
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
-    onBeforePacketSend(::OutgoingPacketEvent const&) = 0;
+    onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) = 0;
     // NOLINTEND
 
 public:

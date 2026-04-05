@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void SetSink(::cricket::AudioSource::Sink*) = 0;
+    virtual void SetSink(::cricket::AudioSource::Sink* sink) = 0;
 
     virtual ~AudioSource() = default;
     // NOLINTEND

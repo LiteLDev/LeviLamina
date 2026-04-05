@@ -53,7 +53,7 @@ public:
 
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
@@ -82,11 +82,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
+#endif
 
     MCAPI static bool itemAllowed(::ItemStackBase const& item);
 
-    MCAPI_C static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+#ifdef LL_PLAT_C
+    MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+#endif
     // NOLINTEND
 
 public:
@@ -110,7 +114,7 @@ public:
 
     MCAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 

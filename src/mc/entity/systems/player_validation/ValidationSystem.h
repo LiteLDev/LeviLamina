@@ -32,16 +32,21 @@ struct ValidationSystem : public ::IStrictTickingSystem<::StrictExecutionContext
                               ::GlobalWrite<>,
                               ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkde376f;
-    // NOLINTEND
+    // ValidationSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::PlayerComponent>,
+        ::Read<::StateVectorComponent>,
+        ::Write<::ActorOwnerComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    ValidationSystem& operator=(ValidationSystem const&);
-    ValidationSystem(ValidationSystem const&);
-    ValidationSystem();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 32, ::std::string const> mMessage;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -63,13 +68,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
+    MCAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent>,
             ::Read<::StateVectorComponent>,

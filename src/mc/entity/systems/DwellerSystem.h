@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
-    virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
+    virtual void registerEvents(::entt::dispatcher& eventDispatcher) /*override*/;
 
     virtual ~DwellerSystem() /*override*/ = default;
     // NOLINTEND
@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCNAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCAPI void $registerEvents(::entt::dispatcher& eventDispatcher);
 
 
     // NOLINTEND

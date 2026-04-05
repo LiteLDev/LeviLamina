@@ -18,7 +18,7 @@ struct MovementAttributesComponent;
 namespace UpdateAttributesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickProcessRequests(
+MCAPI void tickProcessRequests(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::StrictEntityContext const&                  entity,
     ::AttributesComponent&                        attributes,
@@ -26,7 +26,7 @@ MCNAPI void tickProcessRequests(
     ::EntityModifier<::AttributeRequestComponent> modifier
 );
 
-MCNAPI void tickUpdateAttributesSystem(
+MCAPI void tickUpdateAttributesSystem(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::AttributesComponent const&   attributes,
     ::MovementAttributesComponent& movementAttributes

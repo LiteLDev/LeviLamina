@@ -32,41 +32,41 @@ namespace UpdateBoundingBox { struct SystemParams; }
 namespace UpdateBoundingBox {
 // functions
 // NOLINTBEGIN
-MCNAPI void baseSetSize(::Vec2 const& size, ::UpdateBoundingBox::SetSizeArgs& args);
+MCAPI void baseSetSize(::Vec2 const& size, ::UpdateBoundingBox::SetSizeArgs& args);
 
-MCNAPI void onAABBRelativeSizeChanged(
+MCAPI void onAABBRelativeSizeChanged(
     ::AABBRelativeSizeUpdateComponent const& relative,
     ::AABBShapeComponent const&              aabb,
     ::OffsetsComponent&                      offsets
 );
 
-MCNAPI void onAbsoluteSizeChanged(::AbsoluteSizeUpdateComponent const& absolute, ::OffsetsComponent& offsets);
+MCAPI void onAbsoluteSizeChanged(::AbsoluteSizeUpdateComponent const& absolute, ::OffsetsComponent& offsets);
 
-MCNAPI void onCustomSizeChanged(
+MCAPI void onCustomSizeChanged(
     ::CustomSizeUpdateComponent const& custom,
     ::AABBShapeComponent const&        aabb,
     ::OffsetsComponent&                offsets
 );
 
-MCNAPI void onMinecartSizeChanged(
+MCAPI void onMinecartSizeChanged(
     ::StateVectorComponent const& stateVector,
     ::AABBShapeComponent&         aabb,
     ::OffsetsComponent&           offsets
 );
 
-MCNAPI void onShulkerSizeChanged(
+MCAPI void onShulkerSizeChanged(
     ::SynchedActorDataComponent const& data,
     ::AABBShapeComponent const&        aabb,
     ::OffsetsComponent&                offsets
 );
 
-MCNAPI void singleTickImpl(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
+MCAPI void singleTickImpl(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
-MCNAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
+MCAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
-MCNAPI void tickImpl(::UpdateBoundingBox::SystemParams& args);
+MCAPI void tickImpl(::UpdateBoundingBox::SystemParams& args);
 
-MCNAPI void transformPlayerSizeRequest(
+MCAPI void transformPlayerSizeRequest(
     ::ShouldUpdateBoundingBoxRequestComponent&        request,
     ::CollisionBoxComponent const&                    collisionBox,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontal,
@@ -74,7 +74,7 @@ MCNAPI void transformPlayerSizeRequest(
     float                                             sneakHeight
 );
 
-MCNAPI void visitCommonSetSize(
+MCAPI void visitCommonSetSize(
     ::StrictEntityContext const&                                entity,
     ::ShouldUpdateBoundingBoxRequestComponent const&            request,
     ::StateVectorComponent const&                               stateVector,

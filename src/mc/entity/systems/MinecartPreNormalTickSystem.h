@@ -19,15 +19,24 @@ struct TickingSystemWithInfo;
 
 class MinecartPreNormalTickSystem {
 public:
+    // MinecartPreNormalTickSystem inner types define
+    using ModType = ::EntityModifier<::MinecartPreNormalTickBlockPosComponent>;
+
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::MinecartFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doMinecartPreNormalTickSystem(
+    MCAPI static void _doMinecartPreNormalTickSystem(
         ::StrictEntityContext&                                     context,
         ::ActorOwnerComponent&                                     actorOwnerComponent,
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    MCNAPI static void _tickMinecartPreNormalTickSystem(
+    MCAPI static void _tickMinecartPreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::MinecartFlagComponent>,
@@ -35,6 +44,6 @@ public:
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

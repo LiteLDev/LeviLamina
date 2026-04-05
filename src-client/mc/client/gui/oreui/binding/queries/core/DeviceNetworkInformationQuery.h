@@ -48,7 +48,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double const timestampMs) /*override*/;
+    virtual void update(double const) /*override*/;
 
     virtual ~DeviceNetworkInformationQuery() /*override*/ = default;
     // NOLINTEND

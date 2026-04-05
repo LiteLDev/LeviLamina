@@ -89,7 +89,9 @@ public:
 
     MCNAPI void enableAdjacencyMap();
 
-    MCNAPI_C void forEachRelativeBlockPosition(::std::function<bool(::BlockPos const&)> callback) const;
+#ifdef LL_PLAT_C
+    MCNAPI void forEachRelativeBlockPosition(::std::function<bool(::BlockPos const&)> callback) const;
+#endif
 
     MCNAPI ::std::vector<::BlockPos> getBlockPositionList(bool relative) const;
 
@@ -97,7 +99,9 @@ public:
 
     MCNAPI bool hasAdjacent(::BlockPos const& pos, ::BlockPos const& offset) const;
 
-    MCNAPI_C void moveTo(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCNAPI void moveTo(::BlockPos const& pos);
+#endif
 
     MCNAPI ::Editor::RelativeVolumeListBlockVolume& operator=(::Vec3 const& location);
 

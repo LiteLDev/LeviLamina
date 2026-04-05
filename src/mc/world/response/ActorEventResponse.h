@@ -21,7 +21,7 @@ public:
 
     virtual ::std::string const& getName() const;
 
-    virtual void executeAction(::RenderParams&) const = 0;
+    virtual void executeAction(::RenderParams& params) const = 0;
 
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&

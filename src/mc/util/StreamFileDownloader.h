@@ -32,12 +32,20 @@ public:
     ::ll::UntypedStorage<8, 336> mUnk6e3666;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     StreamFileDownloader& operator=(StreamFileDownloader const&);
     StreamFileDownloader(StreamFileDownloader const&);
     StreamFileDownloader();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StreamFileDownloader& operator=(StreamFileDownloader const&);
+    StreamFileDownloader(StreamFileDownloader const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -90,21 +98,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _checkErrorAndRequeue(uint64 bytesWritten, bool hasError);
+#ifdef LL_PLAT_C
+    MCNAPI StreamFileDownloader();
 
-    MCNAPI_C void _downloadFile();
+    MCNAPI void _checkErrorAndRequeue(uint64 bytesWritten, bool hasError);
 
-    MCNAPI_C ::Bedrock::Threading::Async<::Bedrock::Http::Response>
-    _downloadNextChunk(::Bedrock::Http::Request request);
+    MCNAPI void _downloadFile();
 
-    MCNAPI_C ::Bedrock::Threading::Async<::std::tuple<uint64, bool>>
-    _processResponse(::Bedrock::Http::Response response);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _downloadNextChunk(::Bedrock::Http::Request request);
+
+    MCNAPI ::Bedrock::Threading::Async<::std::tuple<uint64, bool>> _processResponse(::Bedrock::Http::Response response);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

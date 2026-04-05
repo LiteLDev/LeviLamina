@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuriedTreasureStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCAPI BuriedTreasureStart(::Dimension&, ::Random&, int x, int z);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void* $ctor(::Dimension&, ::Random&, int x, int z);
     // NOLINTEND
 
 public:

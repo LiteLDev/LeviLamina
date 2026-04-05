@@ -19,38 +19,64 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk8deeb9;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     JsonValueHierarchyNode& operator=(JsonValueHierarchyNode const&);
     JsonValueHierarchyNode(JsonValueHierarchyNode const&);
     JsonValueHierarchyNode();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    JsonValueHierarchyNode& operator=(JsonValueHierarchyNode const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI JsonValueHierarchyNode();
 
-    // NOLINTEND
+    MCNAPI JsonValueHierarchyNode(::JsonValueHierarchyNode&&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+    MCNAPI JsonValueHierarchyNode(::JsonValueHierarchyNode const&);
 
-    MCNAPI_C void* $ctor(::JsonValueHierarchyNode&&);
-
-    MCNAPI_C void* $ctor(::JsonValueHierarchyNode const&);
-
-    MCNAPI_C void* $ctor(
+    MCNAPI JsonValueHierarchyNode(
         ::Json::Value&            value,
         ::SemVersion const&       formatVersion,
         ::MinEngineVersion const& minEngineVersion,
         ::std::string const&      sourceFileName
     );
+
+    MCNAPI ~JsonValueHierarchyNode();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::JsonValueHierarchyNode&&);
+
+    MCNAPI void* $ctor(::JsonValueHierarchyNode const&);
+
+    MCNAPI void* $ctor(
+        ::Json::Value&            value,
+        ::SemVersion const&       formatVersion,
+        ::MinEngineVersion const& minEngineVersion,
+        ::std::string const&      sourceFileName
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

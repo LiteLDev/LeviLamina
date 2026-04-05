@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~IRequestBody();
 
-    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) = 0;
+    virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar> destination) = 0;
 
     virtual uint64 getSize() = 0;
 

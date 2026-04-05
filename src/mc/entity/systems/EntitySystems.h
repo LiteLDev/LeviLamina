@@ -94,57 +94,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
+    MCAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
 
-    MCNAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
+    MCAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
     getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
 
-    MCNAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
+    MCAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCNAPI_C void registerEvents(::EntityRegistry& registry);
+#ifdef LL_PLAT_C
+    MCAPI void registerEvents(::EntityRegistry& registry);
+#endif
 
-    MCNAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
+    MCAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCNAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
+    MCAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCNAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
+    MCAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCNAPI_C ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
+#ifdef LL_PLAT_C
+    MCAPI ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
     setSystemInvokeCallbacks(
         ::std::function<void(::TickingSystemId)>&& preInvoke,
         ::std::function<void(::TickingSystemId)>&& postInvoke
     );
 
-    MCNAPI_C void tick(::EntityRegistry& registry);
+    MCAPI void tick(::EntityRegistry& registry);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
+    MCAPI void* $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tickMovementCatchup(::EntityRegistry& registry);
+    MCAPI void $tickMovementCatchup(::EntityRegistry& registry);
 
-    MCNAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
+    MCAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
 
-    MCNAPI void $registerTickingSystem(
+    MCAPI void $registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
         ::std::unique_ptr<::ITickingSystem>                      system,
         ::SystemInfo const&                                      info,
         ::EntitySystemTickingMode                                tickingMode
     );
 
-    MCNAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+    MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
 
 
     // NOLINTEND

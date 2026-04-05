@@ -124,7 +124,9 @@ public:
 
     MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
-    MCFOLD_C void forEachBiome(::brstd::function_ref<void(::Biome const&)> callback) const;
+#ifdef LL_PLAT_C
+    MCFOLD void forEachBiome(::brstd::function_ref<void(::Biome const&)> callback) const;
+#endif
 
     MCFOLD void forEachNonConstBiome(::brstd::function_ref<void(::Biome&)> callback);
 
@@ -155,7 +157,9 @@ public:
 
     MCAPI void loadBiomeTable(::LevelStorage const& levelStorage);
 
-    MCAPI_C ::Biome const* lookupByHash(::HashedString const& hash) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Biome const* lookupByHash(::HashedString const& hash) const;
+#endif
 
     MCAPI ::Biome* lookupByHash(::HashedString const& hash);
 

@@ -62,7 +62,7 @@ public:
 
     virtual void onBindingsReleased() /*override*/;
 
-    virtual void update(double const timestampMs) /*override*/;
+    virtual void update(double const time) /*override*/;
 
     virtual ~CommandRegistry() /*override*/ = default;
     // NOLINTEND
@@ -87,7 +87,7 @@ public:
 
     MCFOLD void $onBindingsReleased();
 
-    MCFOLD void $update(double const timestampMs);
+    MCFOLD void $update(double const time);
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

@@ -11,13 +11,13 @@ struct TickingSystemWithInfo;
 namespace LeashableSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
+MCAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
-MCNAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
+MCAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
-MCNAPI_C void registerClientSystems(::EntitySystems& systemRegistry);
+MCAPI void registerClientSystems(::EntitySystems& systemRegistry);
 
-MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
+MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace LeashableSystem

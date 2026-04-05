@@ -35,7 +35,7 @@ public:
 
     virtual bool _parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
 
-    virtual void _preMergeTransform(::Json::Value&);
+    virtual void _preMergeTransform(::Json::Value& value);
 
     virtual void _preMergePacketTransform(int const);
 
@@ -50,7 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
+#ifdef LL_PLAT_C
+    MCNAPI void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
+#endif
     // NOLINTEND
 
 public:
@@ -67,7 +69,7 @@ public:
 
     MCNAPI bool $_parseJson(::Json::Reader& reader, ::std::string const& fileName, ::Json::Value& root) const;
 
-    MCNAPI void $_preMergeTransform(::Json::Value&);
+    MCNAPI void $_preMergeTransform(::Json::Value& value);
 
     MCNAPI void $_preMergePacketTransform(int const);
 #endif

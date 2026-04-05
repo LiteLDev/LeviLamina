@@ -62,7 +62,9 @@ public:
 
     MCNAPI void _connect(::std::string const& address);
 
-    MCNAPI_S void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+#ifdef LL_PLAT_S
+    MCNAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+#endif
     // NOLINTEND
 
 public:

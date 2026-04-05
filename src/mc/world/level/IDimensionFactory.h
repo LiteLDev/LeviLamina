@@ -16,9 +16,9 @@ public:
     // NOLINTBEGIN
     virtual ~IDimensionFactory() = default;
 
-    virtual ::OwnerPtr<::Dimension> create(::std::string const&) const = 0;
+    virtual ::OwnerPtr<::Dimension> create(::std::string const& dimensionName) const = 0;
 
-    virtual void initializeDimension(::Dimension&) const = 0;
+    virtual void initializeDimension(::Dimension& dimension) const = 0;
     // NOLINTEND
 
 public:

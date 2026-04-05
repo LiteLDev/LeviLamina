@@ -20,13 +20,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI ~ClientAssertion();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

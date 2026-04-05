@@ -29,12 +29,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _enqueue(
+#ifdef LL_PLAT_C
+    MCNAPI static void _enqueue(
         ::Bedrock::PubSub::DeferredSubscriptionHub& hub,
         ::std::function<void()>                     fn,
         ::Bedrock::PubSub::ConnectPosition          at,
         ::std::optional<int>                        group
     );
+#endif
     // NOLINTEND
 };
 

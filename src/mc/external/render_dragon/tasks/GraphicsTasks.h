@@ -55,13 +55,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~InitBgfx();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -85,13 +89,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~InitBegin();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -112,13 +120,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ::dragon::tasks::GraphicsTasks::InitPending& operator=(::dragon::tasks::GraphicsTasks::InitPending&&);
 
+        MCNAPI ~InitPending();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -128,24 +142,42 @@ public:
                                      ::dragon::tasks::GraphicsTasks::InitPending,
                                      ::dragon::tasks::GraphicsTasks::InitFinalize,
                                      ::dragon::tasks::GraphicsTasks::InitEnd> {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        InitializationState& operator=(InitializationState const&);
+        InitializationState();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI InitializationState(::dragon::tasks::GraphicsTasks::InitializationState&&);
 
+        MCNAPI InitializationState(::dragon::tasks::GraphicsTasks::InitializationState const&);
+
+        MCNAPI ~InitializationState();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState&&);
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState&&);
 
-        MCNAPI_C void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState const&);
+        MCNAPI void* $ctor(::dragon::tasks::GraphicsTasks::InitializationState const&);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -184,51 +216,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _executeSynchronousRenderOperation(::std::function<void()> const& callback);
+#ifdef LL_PLAT_C
+    MCNAPI GraphicsTasks(
+        ::WorkerPool&                                       rendererPool,
+        ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools,
+        ::Scheduler&                                        clientScheduler
+    );
 
-    MCNAPI_C void _forCounter(
+    MCNAPI bool _executeSynchronousRenderOperation(::std::function<void()> const& callback);
+
+    MCNAPI void _forCounter(
         uint64                               count,
         ::std::function<void(uint64)> const& workerCallback,
         ::std::function<void(uint)> const&   resolveCallback
     );
 
-    MCNAPI_C bool _queueMainFrameRenderTask(::std::function<void()> const& callback);
+    MCNAPI bool _queueMainFrameRenderTask(::std::function<void()> const& callback);
 
-    MCNAPI_C void _waitUntilCompleted(::std::shared_ptr<::Core::DeferredTask> task);
+    MCNAPI void _waitUntilCompleted(::std::shared_ptr<::Core::DeferredTask> task);
 
-    MCNAPI_C ::dragon::tasks::GraphicsTasks::InitializationState
+    MCNAPI ::dragon::tasks::GraphicsTasks::InitializationState
     continueInit(::dragon::tasks::GraphicsTasks::InitializationState state);
 
-    MCNAPI_C void deinit();
+    MCNAPI void deinit();
 
-    MCNAPI_C void frame(
+    MCNAPI void frame(
         ::std::function<void()> const&                                                 frameContentCallback,
         ::std::function<::std::chrono::nanoseconds(::std::chrono::nanoseconds)> const& computeSleepDuration
     );
 
-    MCNAPI_C bool previousFrameComplete();
+    MCNAPI bool previousFrameComplete();
 
-    MCNAPI_C void queueRenderingTask(::std::function<void()> const& task, ::dragon::tasks::RenderQueue renderQueue);
+    MCNAPI void queueRenderingTask(::std::function<void()> const& task, ::dragon::tasks::RenderQueue renderQueue);
 
-    MCNAPI_C void queueResourcesTask(::std::function<void()> const& task);
+    MCNAPI void queueResourcesTask(::std::function<void()> const& task);
 
-    MCNAPI_C void waitForPreviousFrame();
+    MCNAPI void waitForPreviousFrame();
+
+    MCNAPI ~GraphicsTasks();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::WorkerPool&                                       rendererPool,
         ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools,
         ::Scheduler&                                        clientScheduler
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

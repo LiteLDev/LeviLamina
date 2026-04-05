@@ -30,9 +30,13 @@ public:
     // NOLINTBEGIN
     virtual ~ResourceLoader() /*override*/;
 
-    virtual bool load(::ResourceLocation const&, ::std::string&) const = 0;
+    virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const = 0;
 
-    virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const = 0;
+    virtual bool load(
+        ::ResourceLocation const&        resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensionList
+    ) const = 0;
 
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocation,
@@ -42,10 +46,10 @@ public:
 
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const = 0;
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const = 0;
 
 #ifdef LL_PLAT_C
-    virtual ::mce::Image loadTexture(::ResourceLocation const&) const = 0;
+    virtual ::mce::Image loadTexture(::ResourceLocation const& resourceLocation) const = 0;
 
 #endif
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;

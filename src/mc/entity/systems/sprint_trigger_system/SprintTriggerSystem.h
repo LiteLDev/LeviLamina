@@ -36,13 +36,13 @@ struct WasInWaterFlagComponent;
 namespace SprintTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createActionSystem();
+MCAPI ::TickingSystemWithInfo createActionSystem();
 
-MCNAPI ::TickingSystemWithInfo createIntentSystem();
+MCAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCNAPI ::TickingSystemWithInfo createSetRequestSystem();
+MCAPI ::TickingSystemWithInfo createSetRequestSystem();
 
-MCNAPI void doIntentTick(
+MCAPI void doIntentTick(
     ::Optional<::ItemUseSlowdownModifierComponent const> slowedByItemInUse,
     ::Optional<::MobIsJumpingFlagComponent const>        isJumping,
     ::Optional<::OnGroundFlagComponent const> const&     onGround,
@@ -58,7 +58,7 @@ MCNAPI void doIntentTick(
     ::PlayerActionComponent&                             playerAction
 );
 
-MCNAPI void doSetRequestTick(
+MCAPI void doSetRequestTick(
     ::StrictEntityContext const&                  entity,
     ::Optional<::PassengerComponent const> const& passenger,
     ::MovementAttributesComponent const&          attributes,
@@ -70,7 +70,7 @@ MCNAPI void doSetRequestTick(
         ::Optional<::CanVehicleSprintFlagComponent>> const& vehicleView
 );
 
-MCNAPI void setSprinting(
+MCAPI void setSprinting(
     ::StrictEntityContext const&                   entityContext,
     ::EntityModifier<::AttributeRequestComponent>& modifier,
     ::ActorDataFlagComponent&                      actorData,

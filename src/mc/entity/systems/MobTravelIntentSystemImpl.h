@@ -18,7 +18,7 @@ struct MobTravelComponent;
 namespace MobTravelIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickSystem(
+MCAPI void tickSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -27,7 +27,7 @@ MCNAPI void tickSystem(
         ::MobTravelComponent> view
 );
 
-MCNAPI void updatedMoveVelocity(
+MCAPI void updatedMoveVelocity(
     ::StrictEntityContext const&,
     ::LocalMoveVelocityComponent& localMoveVelocityComponent,
     ::MobRotationComponent&       mobRotationComponent,

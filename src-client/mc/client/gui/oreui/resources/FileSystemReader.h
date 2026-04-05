@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/IFileSystemReader.h"
-#include "mc/deps/cohtml/ISyncStreamReader.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/external/gameface/cohtml/IFileSystemReader.h"
+#include "mc/external/gameface/cohtml/ISyncStreamReader.h"
 
 // auto generated forward declare list
 // clang-format off

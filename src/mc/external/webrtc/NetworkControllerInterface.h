@@ -27,29 +27,29 @@ public:
     // NOLINTBEGIN
     virtual ~NetworkControllerInterface() = default;
 
-    virtual ::webrtc::NetworkControlUpdate OnNetworkAvailability(::webrtc::NetworkAvailability) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnNetworkAvailability(::webrtc::NetworkAvailability msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnNetworkRouteChange(::webrtc::NetworkRouteChange) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnNetworkRouteChange(::webrtc::NetworkRouteChange msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnProcessInterval(::webrtc::ProcessInterval) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnProcessInterval(::webrtc::ProcessInterval msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnRemoteBitrateReport(::webrtc::RemoteBitrateReport) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnRemoteBitrateReport(::webrtc::RemoteBitrateReport msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnRoundTripTimeUpdate(::webrtc::RoundTripTimeUpdate) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnRoundTripTimeUpdate(::webrtc::RoundTripTimeUpdate msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnSentPacket(::webrtc::SentPacket) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnSentPacket(::webrtc::SentPacket sent_packet) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnReceivedPacket(::webrtc::ReceivedPacket received_packet) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnStreamsConfig(::webrtc::StreamsConfig) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnStreamsConfig(::webrtc::StreamsConfig msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnTargetRateConstraints(::webrtc::TargetRateConstraints) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnTargetRateConstraints(::webrtc::TargetRateConstraints constraints) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnTransportLossReport(::webrtc::TransportLossReport) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnTransportLossReport(::webrtc::TransportLossReport msg) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnTransportPacketsFeedback(::webrtc::TransportPacketsFeedback report) = 0;
 
-    virtual ::webrtc::NetworkControlUpdate OnNetworkStateEstimate(::webrtc::NetworkStateEstimate) = 0;
+    virtual ::webrtc::NetworkControlUpdate OnNetworkStateEstimate(::webrtc::NetworkStateEstimate msg) = 0;
     // NOLINTEND
 
 public:

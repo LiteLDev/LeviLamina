@@ -27,9 +27,11 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit NetworkID(::std::string const& str);
 
-    MCNAPI_C ::Json::Value toJson() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value toJson() const;
 
-    MCNAPI_C ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
+#endif
     // NOLINTEND
 
 public:

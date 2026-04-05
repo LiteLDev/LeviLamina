@@ -121,7 +121,9 @@ public:
     MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
-    MCAPI_C void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
+#ifdef LL_PLAT_C
+    MCAPI void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
+#endif
 
     MCAPI ::ActorComponentFactory& getComponentFactory() const;
 
@@ -136,7 +138,9 @@ public:
 
     MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
 
-    MCFOLD_C void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
+#ifdef LL_PLAT_C
+    MCFOLD void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
+#endif
     // NOLINTEND
 
 public:

@@ -14,13 +14,13 @@ namespace SynchedActorDataAccess {
 LLAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
 // functions
 // NOLINTBEGIN
-MCAPI_C float getBoundingBoxScale(::EntityContext const& entity);
+MCAPI float getBoundingBoxScale(::EntityContext const& entity);
 
 MCAPI int getControllingSeatIndex(::EntityContext const& entity);
 
 MCAPI int getJumpDuration(::EntityContext const& entity);
 
-MCAPI_C ::Vec3 getSeatOffset(::EntityContext const& entity);
+MCAPI ::Vec3 getSeatOffset(::EntityContext const& entity);
 
 MCAPI void initializeActor(::EntityContext& entityContext);
 

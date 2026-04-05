@@ -21,6 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::StackRefResult<::EcsEventDispatcher> get();
+#ifdef LL_PLAT_C
+    MCNAPI ::StackRefResult<::EcsEventDispatcher> get();
+#endif
     // NOLINTEND
 };

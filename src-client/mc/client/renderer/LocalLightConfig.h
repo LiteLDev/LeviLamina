@@ -172,7 +172,7 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P0,
     ::LocalLightConfig::LocalLightConfigSettingsV0::BlockLightingData const& __P1
 );

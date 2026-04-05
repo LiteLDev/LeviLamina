@@ -22,7 +22,7 @@ struct SendPacketsComponent;
 namespace DolphinBoostSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _addDolphinBoostEffectServer(
+MCAPI void _addDolphinBoostEffectServer(
     ::entt::type_list<::Include<::IsNearDolphinsFlagComponent, ::ScanForDolphinFlagComponent>>,
     ::StrictEntityContext const&             context,
     ::RuntimeIDComponent const&              runtimeID,
@@ -31,7 +31,7 @@ MCNAPI void _addDolphinBoostEffectServer(
     ::EntityModifier<::SendPacketsComponent> mod
 );
 
-MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace DolphinBoostSystem

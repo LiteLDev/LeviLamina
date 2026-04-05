@@ -17,15 +17,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI TextureDescription();
 
+    MCAPI explicit TextureDescription(::cg::ImageDescription const& imageDescription);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::cg::ImageDescription const& imageDescription);
+    MCAPI void* $ctor(::cg::ImageDescription const& imageDescription);
+#endif
     // NOLINTEND
 };
 

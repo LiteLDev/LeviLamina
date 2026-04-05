@@ -41,7 +41,7 @@ public:
     // NOLINTBEGIN
     virtual ~FilteredContainerModel() /*override*/ = default;
 
-    virtual void containerContentChanged(int) /*override*/;
+    virtual void containerContentChanged(int slot) /*override*/;
 
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
@@ -75,7 +75,9 @@ public:
 
     MCAPI void _refreshContainer(bool fullRefresh);
 
-    MCAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
+#ifdef LL_PLAT_C
+    MCAPI void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
+#endif
     // NOLINTEND
 
 public:
@@ -95,7 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerContentChanged(int);
+    MCFOLD void $containerContentChanged(int slot);
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 

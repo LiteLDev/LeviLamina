@@ -18,6 +18,13 @@ struct FullContainerName;
 // clang-format on
 
 class ContainerScreenSimulationCrafting : public ::ContainerScreenSimulation {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerScreenSimulationCrafting();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,18 +38,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI ContainerScreenSimulationCrafting(
         ::ContainerScreenContext const&,
         ::ContainerValidationCaller,
         ::std::unique_ptr<::IContainerTransfer>&&,
         ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::ContainerScreenContext const&,
+        ::ContainerValidationCaller,
+        ::std::unique_ptr<::IContainerTransfer>&&,
+        ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>>
+    );
+#endif
     // NOLINTEND
 
 public:

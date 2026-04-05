@@ -69,7 +69,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::StrictEntityContext const&,
         ::DeathTickingComponent const&                                       deathTicking,
         ::ActorOwnerComponent&                                               actorOwner,
@@ -85,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
             ::Read<::DeathTickingComponent>,

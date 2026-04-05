@@ -24,7 +24,7 @@ MCAPI void addUpdate(
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-MCAPI_C void
+MCAPI void
 assignPreFlatteningDestructionParticlesTexture(::Block const& block, ::std::string& texture, ushort& auxValue);
 
 MCAPI ::std::vector<::WeakPtr<::BlockType const>>

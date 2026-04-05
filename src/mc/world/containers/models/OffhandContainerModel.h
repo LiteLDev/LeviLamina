@@ -52,13 +52,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI OffhandContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player);
+#endif
     // NOLINTEND
 
 public:

@@ -23,15 +23,15 @@ struct VehicleComponent;
 namespace QueueOnRiderExitEntityEventSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void queueRequest(
+MCAPI void queueRequest(
     ::PassengerComponent const&                                                              passengerComponent,
     ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView,
     ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
 );
 
-MCNAPI void singleTick(
+MCAPI void singleTick(
     ::StrictEntityContext const& passenger,
     ::ViewT<
         ::StrictEntityContext,
@@ -42,7 +42,7 @@ MCNAPI void singleTick(
     ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
 );
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::StopRidingRequestComponent>,

@@ -18,9 +18,10 @@ public:
     // NOLINTBEGIN
     virtual ~IVillageManager() /*override*/;
 
-    virtual ::std::weak_ptr<::Village> fetchClosestVillage(::BlockPos const&, int, uint) const = 0;
+    virtual ::std::weak_ptr<::Village>
+    fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const = 0;
 
-    virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const&) const = 0;
+    virtual ::std::weak_ptr<::Village> getVillageByID(::mce::UUID const& villageID) const = 0;
     // NOLINTEND
 
 public:

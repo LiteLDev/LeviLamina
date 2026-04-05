@@ -51,12 +51,14 @@ public:
 
     MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
 
-    MCAPI_C ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
+#ifdef LL_PLAT_C
+    MCAPI ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
 
-    MCAPI_C void initializeFromCreativeContentPacket(
+    MCAPI void initializeFromCreativeContentPacket(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
     );
+#endif
 
     MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 

@@ -95,9 +95,9 @@ public:
 
     virtual ::std::string getName() const /*override*/;
 
-    virtual ::ItemStack const& getItem(int index) const /*override*/;
+    virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
@@ -115,7 +115,7 @@ public:
 
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    virtual bool saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
+    virtual bool saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const /*override*/;
 
     virtual void tick(::BlockSource& region) /*override*/;
 
@@ -147,7 +147,7 @@ public:
 
     virtual void setContainerChanged(int slot) /*override*/;
 
-    virtual bool canPushInItem(int, int, ::ItemStack const&) const /*override*/;
+    virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
@@ -224,8 +224,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::ChestBlockActor>
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::ChestBlockActor>
     createChestBlockEntity(::std::optional<::ChestType> const& chestType, ::BlockPos const& pos);
+#endif
     // NOLINTEND
 
 public:
@@ -254,9 +256,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::ItemStack const& $getItem(int index) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -274,7 +276,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $saveItemInstanceData(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
     MCAPI void $tick(::BlockSource& region);
 
@@ -306,7 +308,7 @@ public:
 
     MCAPI void $setContainerChanged(int slot);
 
-    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 

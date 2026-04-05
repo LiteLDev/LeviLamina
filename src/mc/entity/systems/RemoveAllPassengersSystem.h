@@ -22,9 +22,9 @@ struct VehicleComponent;
 namespace RemoveAllPassengersSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
+MCAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
 
-MCNAPI void removeAllPassengers(
+MCAPI void removeAllPassengers(
     ::VehicleComponent const& vehicleComponent,
     bool                      actorIsBeingDestroyed,
     bool                      exitFromPassenger,
@@ -34,7 +34,7 @@ MCNAPI void removeAllPassengers(
         ::StopRidingRequestComponent>& modifier
 );
 
-MCNAPI void removeAllPassengersRequestProcess(
+MCAPI void removeAllPassengersRequestProcess(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::RemoveAllPassengersRequestComponent>,
@@ -47,7 +47,7 @@ MCNAPI void removeAllPassengersRequestProcess(
     ::EntityModifier<::RemoveAllPassengersRequestComponent> requestModifier
 );
 
-MCNAPI void tickRemoveAllPassengers(
+MCAPI void tickRemoveAllPassengers(
     ::StrictEntityContext&,
     ::VehicleComponent const&                        vehicleComponent,
     ::Optional<::ActorIsBeingDestroyedFlagComponent> actorIsBeingDestroyed,

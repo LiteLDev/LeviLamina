@@ -146,15 +146,21 @@ public:
 
     MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
-    MCAPI_S ::optional_ref<::MinecraftGameTest> getGameTest();
+#ifdef LL_PLAT_S
+    MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
+#endif
 
     MCAPI ::Level* getLevel() const;
 
-    MCAPI_C ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
+#endif
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI_C ::ServerNetworkSystem& getServerNetworkSystem();
+#ifdef LL_PLAT_C
+    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
+#endif
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 
@@ -176,15 +182,17 @@ public:
 
     MCAPI void init();
 
-    MCAPI_C void initCommands();
+#ifdef LL_PLAT_C
+    MCAPI void initCommands();
 
-    MCAPI_C ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
+    MCAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
 
-    MCAPI_C bool requestInGamePause(bool status);
+    MCAPI bool requestInGamePause(bool status);
 
-    MCAPI_C void resetGameSession();
+    MCAPI void resetGameSession();
 
-    MCAPI_C void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
+    MCAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
+#endif
 
     MCAPI void startLeaveGame(bool stopNetwork);
 

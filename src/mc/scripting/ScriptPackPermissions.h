@@ -20,10 +20,21 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::CommandPermissionLevel>> mCommandsPermissionLevel;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptPackPermissions& operator=(ScriptPackPermissions const&);
+    ScriptPackPermissions(ScriptPackPermissions const&);
+    ScriptPackPermissions();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI ::ScriptPackPermissions& operator=(::ScriptPackPermissions&&);
+#endif
     // NOLINTEND
 
 public:

@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/IResourceHandler.h"
 #include "mc/client/gui/oreui/resources/AtlasIndex.h"
-#include "mc/deps/cohtml/IAsyncResourceResponse.h"
 #include "mc/deps/core/threading/MPMCQueue.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
+#include "mc/external/gameface/cohtml/IAsyncResourceResponse.h"
 #include "mc/platform/threading/Mutex.h"
 
 // auto generated forward declare list

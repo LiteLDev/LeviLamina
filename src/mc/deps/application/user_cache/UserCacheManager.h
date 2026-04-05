@@ -28,12 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _getDirectoryContents(
+#ifdef LL_PLAT_C
+    MCNAPI void _getDirectoryContents(
         ::std::vector<::Bedrock::DirectoryEntry>& folders,
         ::Core::PathBuffer<::std::string> const&  filePath
     ) const;
 
-    MCNAPI_C void _getDirectorySizeAndDeleteDirectoryContents(::Core::PathBuffer<::std::string> const& path) const;
+    MCNAPI void _getDirectorySizeAndDeleteDirectoryContents(::Core::PathBuffer<::std::string> const& path) const;
+#endif
     // NOLINTEND
 };
 

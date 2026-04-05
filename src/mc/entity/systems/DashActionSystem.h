@@ -32,7 +32,7 @@ struct VehicleComponent;
 namespace DashActionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickApplyDashModifierSystem(
+MCAPI void _tickApplyDashModifierSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::DashJumpFlagComponent>,
@@ -50,9 +50,9 @@ MCNAPI void _tickApplyDashModifierSystem(
     ::EntityModifier<::DashCooldownTimerComponent>                                               mod
 );
 
-MCNAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
+MCAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
 
-MCNAPI void doDash(
+MCAPI void doDash(
     ::StrictEntityContext const&                                                                 context,
     ::JumpPreventionResult const&                                                                jumpPreventionResult,
     ::MovementAttributesComponent const&                                                         attributes,
@@ -68,7 +68,7 @@ MCNAPI void doDash(
     ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView
 );
 
-MCNAPI void tickApplyDashModifierSystem(
+MCAPI void tickApplyDashModifierSystem(
     ::StrictEntityContext const&                    context,
     ::TriggerJumpRequestComponent const&            triggerJumpRequestComponent,
     ::DashActionComponent const&                    dashComponent,

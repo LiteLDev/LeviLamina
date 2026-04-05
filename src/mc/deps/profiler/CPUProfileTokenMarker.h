@@ -24,21 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI CPUProfileTokenMarker(char const* group, char const* label, uint color);
+#endif
+
     MCNAPI ::Core::Profile::CPUProfileTokenMarker& operator=(::Core::Profile::CPUProfileTokenMarker&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> CLONE_WARNING();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> CLONE_WARNING();
 
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> EMPTY_WARNING();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> EMPTY_WARNING();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(char const* group, char const* label, uint color);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(char const* group, char const* label, uint color);
+#endif
     // NOLINTEND
 };
 

@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     virtual void update();
 
-    virtual void onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin) /*override*/;
+    virtual void onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin) /*override*/;
 
     virtual void onKeyUp(int keyCode) /*override*/;
 
@@ -74,7 +74,8 @@ public:
 
     virtual void onTextEditComponentLostFocus();
 
-    virtual void onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode);
+    virtual void
+    onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode inputMode);
 
     virtual void onHideKeyboard();
 
@@ -122,7 +123,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $update();
 
-    MCAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin);
+    MCAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
 
     MCAPI void $onKeyUp(int keyCode);
 
@@ -142,7 +143,8 @@ public:
 
     MCAPI void $onTextEditComponentLostFocus();
 
-    MCAPI void $onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode);
+    MCAPI void
+    $onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode inputMode);
 
     MCAPI void $onHideKeyboard();
 

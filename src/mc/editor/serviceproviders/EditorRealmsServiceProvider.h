@@ -32,31 +32,32 @@ public:
 
     virtual void loadRealmsWorldList() = 0;
 
-    virtual void loadRealmsWorldSlots(::std::string const&) = 0;
+    virtual void loadRealmsWorldSlots(::std::string const& worldId) = 0;
 
-    virtual void downloadRealmWorld(::std::string const&, int const) = 0;
+    virtual void downloadRealmWorld(::std::string const& worldId, int const slotId) = 0;
 
-    virtual void beginLoadRealmWorldList(::WeakEntityRef) = 0;
+    virtual void beginLoadRealmWorldList(::WeakEntityRef playerRef) = 0;
 
-    virtual void beginLoadRealmSlots(::std::string const&, ::WeakEntityRef) = 0;
+    virtual void beginLoadRealmSlots(::std::string const& worldId, ::WeakEntityRef playerRef) = 0;
 
-    virtual void beginDownloadWorld(::std::string const&, int, ::WeakEntityRef) = 0;
+    virtual void beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription
-        listenForRealmsWorldListLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)>) = 0;
-
-    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldSlotsLoaded(
-        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorldSlot>)>
+    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldListLoaded(
+        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)> callback
     ) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldDownload(::std::function<void(bool)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldSlotsLoaded(
+        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorldSlot>)> callback
+    ) = 0;
+
+    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldDownload(::std::function<void(bool)> callback) = 0;
 
     virtual void beginUploadToRealms(
-        ::std::string,
-        int,
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+        ::std::string                                                             realmsWorldId,
+        int                                                                       slotId,
+        ::WeakEntityRef                                                           playerRef,
+        ::Editor::GameOptions const&                                              gameOptions,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback
     ) = 0;
 
     virtual bool const canUploadWorld() const = 0;

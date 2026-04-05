@@ -17,12 +17,15 @@ public:
     // NOLINTBEGIN
     virtual ~ISceneFactory() = default;
 
-    virtual ::std::shared_ptr<::AbstractScene> createTabbedUpsellScreen(::TabbedUpsellScreenDefaultTab) = 0;
+    virtual ::std::shared_ptr<::AbstractScene> createTabbedUpsellScreen(::TabbedUpsellScreenDefaultTab tab) = 0;
 
-    virtual ::std::shared_ptr<::AbstractScene> createStartMenuScreen(bool) = 0;
+    virtual ::std::shared_ptr<::AbstractScene> createStartMenuScreen(bool shouldSendEvent) = 0;
 
-    virtual ::std::shared_ptr<::AbstractScene>
-    createStoreDataDrivenScreen(::StoreDataDrivenScreenParams const&, bool const, ::std::function<void()>) = 0;
+    virtual ::std::shared_ptr<::AbstractScene> createStoreDataDrivenScreen(
+        ::StoreDataDrivenScreenParams const& params,
+        bool const                           forceDisableProgressScreen,
+        ::std::function<void()>              initializedCallback
+    ) = 0;
     // NOLINTEND
 
 public:

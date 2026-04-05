@@ -18,12 +18,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit PartyChangedPacketPayload(::std::string partyId);
+#endif
+
     MCFOLD ::PartyChangedPacketPayload& operator=(::PartyChangedPacketPayload&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::string partyId);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string partyId);
+#endif
     // NOLINTEND
 };

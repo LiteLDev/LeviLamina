@@ -23,6 +23,13 @@ public:
     ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ResourcePacksInfoPacket();
+
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,19 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_S void* $ctor(
+#ifdef LL_PLAT_S
+    MCAPI ResourcePacksInfoPacket(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
         bool                           hasAddonPacks,
         ::PackIdVersion const&         worldTemplateIdVersion,
         bool                           forceDisableVibrantVisuals
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(
+        bool                           resourcePackRequired,
+        ::std::vector<::PackInfoData>& resourcePacks,
+        bool                           hasAddonPacks,
+        ::PackIdVersion const&         worldTemplateIdVersion,
+        bool                           forceDisableVibrantVisuals
+    );
+#endif
     // NOLINTEND
 
 public:

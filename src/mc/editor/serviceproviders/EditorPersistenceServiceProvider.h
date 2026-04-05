@@ -22,44 +22,51 @@ public:
     virtual ~EditorPersistenceServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(
-        ::std::string const&,
-        ::Editor::Services::PersistenceScope,
-        ::std::optional<int>,
-        ::std::optional<::Editor::Services::PersistenceGroupType>
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> createGroup(
-        ::std::string const&,
-        ::Editor::Services::PersistenceScope,
-        ::std::optional<int>,
-        ::std::optional<::Editor::Services::PersistenceGroupType>
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
     ) = 0;
 
-    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>
-    getGroup(::std::string const&, ::Editor::Services::PersistenceScope, ::std::optional<int>) = 0;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) = 0;
+
+    virtual ::Scripting::Result_deprecated<void> deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    deleteGroup(::std::string const&, ::Editor::Services::PersistenceScope, ::std::optional<int>) = 0;
-
-    virtual ::Scripting::Result_deprecated<void>
-    deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const) = 0;
+    deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group) = 0;
 
     virtual ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> fetchGroups(
-        ::std::optional<::std::string>,
-        ::std::optional<::std::string>,
-        ::std::optional<::Editor::Services::PersistenceScope>,
-        ::std::optional<int>
+        ::std::optional<::std::string>                        groupNamespace,
+        ::std::optional<::std::string>                        namespacedName,
+        ::std::optional<::Editor::Services::PersistenceScope> scope,
+        ::std::optional<int>                                  version
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<void> requestGroup(
-        ::std::string const&,
-        ::Editor::Services::PersistenceScope,
-        ::std::optional<int>,
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version,
         ::std::function<void(::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>>)>
+            callback
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-        syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup>) = 0;
+    syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) = 0;
     // NOLINTEND
 
 public:

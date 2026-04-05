@@ -222,27 +222,28 @@ public:
     virtual ~ILevel() /*override*/;
 
     virtual bool initialize(
-        ::std::string const&,
-        ::LevelSettings const&,
-        ::Experiments const&,
-        ::std::string const*,
+        ::std::string const&   levelName,
+        ::LevelSettings const& levelSettings,
+        ::Experiments const&   experiments,
+        ::std::string const*   levelId,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
+            biomeIdToResolvedData
     ) = 0;
 
     virtual void startLeaveGame() = 0;
 
     virtual bool isLeaveGameDone() = 0;
 
-    virtual ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType) = 0;
+    virtual ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType) = 0;
 
-    virtual ::WeakRef<::Dimension> getDimension(::DimensionType) const = 0;
+    virtual ::WeakRef<::Dimension> getDimension(::DimensionType id) const = 0;
 
-    virtual ::DimensionType getLastOrDefaultSpawnDimensionId(::DimensionType) const = 0;
+    virtual ::DimensionType getLastOrDefaultSpawnDimensionId(::DimensionType lastDimensionId) const = 0;
 
-    virtual void forEachDimension(::std::function<bool(::Dimension&)>) = 0;
+    virtual void forEachDimension(::std::function<bool(::Dimension&)> callback) = 0;
 
-    virtual void forEachDimension(::std::function<bool(::Dimension const&)>) const = 0;
+    virtual void forEachDimension(::std::function<bool(::Dimension const&)> callback) const = 0;
 
     virtual ::DimensionManager& getDimensionManager() = 0;
 
@@ -254,11 +255,11 @@ public:
 
     virtual ::PortalForcer& getPortalForcer() = 0;
 
-    virtual void requestPlayerChangeDimension(::Player&, ::ChangeDimensionRequest&&) = 0;
+    virtual void requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> getPlayerDimensionTransferManager() = 0;
 
-    virtual void entityChangeDimension(::Actor&, ::DimensionType, ::std::optional<::Vec3>) = 0;
+    virtual void entityChangeDimension(::Actor& entity, ::DimensionType toId, ::std::optional<::Vec3> entityPos) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> getActorDimensionTransferManager() = 0;
 
@@ -282,11 +283,11 @@ public:
 
     virtual ::CameraPresets& getCameraPresets() = 0;
 
-    virtual ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(int) const = 0;
+    virtual ::SharedTypes::v1_21_90::CameraPreset const* getCameraPreset(int presetIndex) const = 0;
 
     virtual bool getDisablePlayerInteractions() const = 0;
 
-    virtual void setDisablePlayerInteractions(bool const) = 0;
+    virtual void setDisablePlayerInteractions(bool const disable) = 0;
 
     virtual ::AutomationBehaviorTreeGroup& getAutomationBehaviorTreeGroup() const = 0;
 
@@ -298,37 +299,42 @@ public:
 
     virtual ::DimensionConversionData getDimensionConversionData() const = 0;
 
-    virtual float getSpecialMultiplier(::DimensionType) const = 0;
+    virtual float getSpecialMultiplier(::DimensionType dimensionType) const = 0;
 
     virtual bool hasCommandsEnabled() const = 0;
 
     virtual bool useMsaGamertagsOnly() const = 0;
 
-    virtual void setMsaGamertagsOnly(bool) = 0;
+    virtual void setMsaGamertagsOnly(bool msaGamertagsOnly) = 0;
 
-    virtual ::Actor* addEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual ::Actor* addGlobalEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* addGlobalEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual ::Actor* addAutonomousEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* addAutonomousEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual void addUser(::OwnerPtr<::EntityContext>) = 0;
+    virtual void addUser(::OwnerPtr<::EntityContext> userEntity) = 0;
 
-    virtual ::Actor* addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual ::Actor* putEntity(::BlockSource&, ::ActorUniqueID, ::ActorRuntimeID, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* putEntity(
+        ::BlockSource&              region,
+        ::ActorUniqueID             id,
+        ::ActorRuntimeID            runtimeId,
+        ::OwnerPtr<::EntityContext> entity
+    ) = 0;
 
-    virtual ::Actor* putEntity(::BlockSource&, ::ActorUniqueID, ::OwnerPtr<::EntityContext>) = 0;
+    virtual ::Actor* putEntity(::BlockSource& region, ::ActorUniqueID id, ::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual void removeDisplayEntity(::WeakEntityRef) = 0;
+    virtual void removeDisplayEntity(::WeakEntityRef entity) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() = 0;
 
-    virtual void suspendPlayer(::Player&) = 0;
+    virtual void suspendPlayer(::Player& player) = 0;
 
-    virtual void resumePlayer(::Player&) = 0;
+    virtual void resumePlayer(::Player& player) = 0;
 
-    virtual bool isPlayerSuspended(::Player&) const = 0;
+    virtual bool isPlayerSuspended(::Player& player) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> getGameplayUserManager() = 0;
 
@@ -336,39 +342,39 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> getPlayerLocationReceiver() = 0;
 
-    virtual ::OwnerPtr<::EntityContext> removeActorAndTakeEntity(::WeakEntityRef) = 0;
+    virtual ::OwnerPtr<::EntityContext> removeActorAndTakeEntity(::WeakEntityRef entityRef) = 0;
 
-    virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef) = 0;
+    virtual ::OwnerPtr<::EntityContext> removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef) = 0;
 
-    virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef, ::LevelChunk&) = 0;
+    virtual ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc) = 0;
 
-    virtual ::StrictEntityContext fetchStrictEntity(::ActorUniqueID, bool) const = 0;
+    virtual ::StrictEntityContext fetchStrictEntity(::ActorUniqueID actorId, bool getRemoved) const = 0;
 
-    virtual ::Actor* fetchEntity(::ActorUniqueID, bool) const = 0;
+    virtual ::Actor* fetchEntity(::ActorUniqueID actorId, bool getRemoved) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> getActorFetcher() const = 0;
 
-    virtual ::Actor* getRuntimeEntity(::ActorRuntimeID, bool) const = 0;
+    virtual ::Actor* getRuntimeEntity(::ActorRuntimeID actorId, bool getRemoved) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager> getActorRuntimeIDManager() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager const> getActorRuntimeIDManager() const = 0;
 
-    virtual ::Mob* getMob(::ActorUniqueID) const = 0;
+    virtual ::Mob* getMob(::ActorUniqueID mobId) const = 0;
 
-    virtual ::Player* getPlayer(::std::string const&) const = 0;
+    virtual ::Player* getPlayer(::std::string const& name) const = 0;
 
-    virtual ::Player* getPlayer(::mce::UUID const&) const = 0;
+    virtual ::Player* getPlayer(::mce::UUID const& uuid) const = 0;
 
-    virtual ::Player* getPlayer(::ActorUniqueID) const = 0;
+    virtual ::Player* getPlayer(::ActorUniqueID entityID) const = 0;
 
-    virtual ::Player* getPlayerByXuid(::std::string const&) const = 0;
+    virtual ::Player* getPlayerByXuid(::std::string const& xuid) const = 0;
 
-    virtual ::Player* getPlatformPlayer(::std::string const&) const = 0;
+    virtual ::Player* getPlatformPlayer(::std::string const& platformOnlineId) const = 0;
 
-    virtual ::Player* getPlayerFromServerId(::std::string const&) const = 0;
+    virtual ::Player* getPlayerFromServerId(::std::string const& serverId) const = 0;
 
-    virtual ::Player* getRuntimePlayer(::ActorRuntimeID) const = 0;
+    virtual ::Player* getRuntimePlayer(::ActorRuntimeID runtimeId) const = 0;
 
     virtual int getNumRemotePlayers() const = 0;
 
@@ -376,7 +382,7 @@ public:
 
     virtual ::IMinecraftEventing& getEventing() = 0;
 
-    virtual ::mce::Color getPlayerColor(::Player const&) const = 0;
+    virtual ::mce::Color getPlayerColor(::Player const& player) const = 0;
 
     virtual ::Tick const& getCurrentTick() const = 0;
 
@@ -445,9 +451,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> getWorldClockRegistry() = 0;
 
-    virtual void addListener(::LevelListener&) = 0;
+    virtual void addListener(::LevelListener& listener) = 0;
 
-    virtual void removeListener(::LevelListener&) = 0;
+    virtual void removeListener(::LevelListener& listener) = 0;
 
     virtual void tickEntities() = 0;
 
@@ -457,37 +463,48 @@ public:
 
     virtual ::StackRefResult<::PauseManager const> getPauseManager() const = 0;
 
-    virtual void onPlayerDeath(::Player&, ::ActorDamageSource const&) = 0;
+    virtual void onPlayerDeath(::Player& player, ::ActorDamageSource const& source) = 0;
 
     virtual void tick() = 0;
 
-    virtual bool explode(::BlockSource&, ::Actor*, ::Vec3 const&, float, bool, bool, float, bool) = 0;
+    virtual bool explode(
+        ::BlockSource& region,
+        ::Actor*       source,
+        ::Vec3 const&  pos,
+        float          explosionRadius,
+        bool           fire,
+        bool           breaksBlocks,
+        float          maxResistance,
+        bool           allowUnderwater
+    ) = 0;
 
-    virtual bool explode(::Explosion&) = 0;
+    virtual bool explode(::Explosion& explosion) = 0;
 
-    virtual void spawnParticleEffect(::std::string const&, ::Vec3 const&, ::Dimension*) = 0;
+    virtual void
+    spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::Dimension* dimension) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> getServerParticleManager() = 0;
 
-    virtual void denyEffect(::BlockSource&, ::Vec3 const&) = 0;
+    virtual void denyEffect(::BlockSource& region, ::Vec3 const& pos) = 0;
 
-    virtual void potionSplash(::Vec3 const&, ::mce::Color const&, bool) = 0;
+    virtual void potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect) = 0;
 
-    virtual bool extinguishFire(::BlockSource&, ::BlockPos const&, uchar, ::Actor*) = 0;
+    virtual bool extinguishFire(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source) = 0;
 
-    virtual ::std::unique_ptr<::Path> findPath(::Actor&, int, int, int, ::NavigationComponent&) = 0;
+    virtual ::std::unique_ptr<::Path>
+    findPath(::Actor& from, int xBest, int yBest, int zBest, ::NavigationComponent& navigation) = 0;
 
-    virtual ::std::unique_ptr<::Path> findPath(::Actor&, ::Actor const&, ::NavigationComponent&) = 0;
+    virtual ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, ::NavigationComponent& navigation) = 0;
 
     virtual void updateSleepingPlayerList() = 0;
 
-    virtual void setSleepStatus(::PlayerSleepStatus const&) = 0;
+    virtual void setSleepStatus(::PlayerSleepStatus const& status) = 0;
 
     virtual ::PlayerSleepStatus getSleepStatus() const = 0;
 
     virtual int getTime() const = 0;
 
-    virtual void setTime(int) = 0;
+    virtual void setTime(int time) = 0;
 
     virtual uint getSeed() = 0;
 
@@ -495,67 +512,67 @@ public:
 
     virtual ::BlockPos const& getSharedSpawnPos() const = 0;
 
-    virtual void setDefaultSpawn(::BlockPos const&) = 0;
+    virtual void setDefaultSpawn(::BlockPos const& spawnPos) = 0;
 
     virtual ::BlockPos const& getDefaultSpawn() const = 0;
 
-    virtual void setDefaultGameType(::GameType) = 0;
+    virtual void setDefaultGameType(::GameType gameType) = 0;
 
     virtual ::GameType getDefaultGameType() const = 0;
 
-    virtual void setDifficulty(::SharedTypes::Legacy::Difficulty) = 0;
+    virtual void setDifficulty(::SharedTypes::Legacy::Difficulty difficulty) = 0;
 
     virtual ::GameModeExt::MessengerFactory createMessengerFactory() const = 0;
 
-    virtual void setMultiplayerGameIntent(bool) = 0;
+    virtual void setMultiplayerGameIntent(bool multiplayerGame) = 0;
 
     virtual bool getMultiplayerGameIntent() const = 0;
 
-    virtual void setMultiplayerGame(bool) = 0;
+    virtual void setMultiplayerGame(bool multiplayerGame) = 0;
 
     virtual bool isMultiplayerGame() const = 0;
 
-    virtual void setLANBroadcastIntent(bool) = 0;
+    virtual void setLANBroadcastIntent(bool broadcast) = 0;
 
     virtual bool getLANBroadcastIntent() const = 0;
 
-    virtual void setLANBroadcast(bool) = 0;
+    virtual void setLANBroadcast(bool broadcast) = 0;
 
     virtual bool getLANBroadcast() const = 0;
 
-    virtual void setXBLBroadcastIntent(::Social::GamePublishSetting) = 0;
+    virtual void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode) = 0;
 
     virtual ::Social::GamePublishSetting getXBLBroadcastIntent() const = 0;
 
     virtual bool hasXBLBroadcastIntent() const = 0;
 
-    virtual void setXBLBroadcastMode(::Social::GamePublishSetting) = 0;
+    virtual void setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode) = 0;
 
     virtual ::Social::GamePublishSetting getXBLBroadcastMode() const = 0;
 
     virtual bool hasXBLBroadcast() const = 0;
 
-    virtual void setPlatformBroadcastIntent(::Social::GamePublishSetting) = 0;
+    virtual void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode) = 0;
 
     virtual ::Social::GamePublishSetting getPlatformBroadcastIntent() const = 0;
 
     virtual bool hasPlatformBroadcastIntent() const = 0;
 
-    virtual void setPlatformBroadcastMode(::Social::GamePublishSetting) = 0;
+    virtual void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode) = 0;
 
     virtual ::Social::GamePublishSetting getPlatformBroadcastMode() const = 0;
 
     virtual bool hasPlatformBroadcast() const = 0;
 
-    virtual void setHasLockedBehaviorPack(bool) = 0;
+    virtual void setHasLockedBehaviorPack(bool hasLocked) = 0;
 
-    virtual void setHasLockedResourcePack(bool) = 0;
+    virtual void setHasLockedResourcePack(bool hasLocked) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> getServerPlayerSleepManager() = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const = 0;
 
-    virtual void setCommandsEnabled(bool) = 0;
+    virtual void setCommandsEnabled(bool commandsEnabled) = 0;
 
     virtual void setWorldTemplateOptionsUnlocked() = 0;
 
@@ -591,9 +608,10 @@ public:
 
     virtual ::TickingAreasManager& getTickingAreasMgr() = 0;
 
-    virtual void addTickingAreaList(::DimensionType, ::std::shared_ptr<::TickingAreaList> const&) = 0;
+    virtual void
+    addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas) = 0;
 
-    virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int) = 0;
+    virtual void sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data) = 0;
 
     virtual void playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
@@ -603,26 +621,31 @@ public:
         bool                                   isGlobal
     ) = 0;
 
-    virtual void playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, float const, float const) = 0;
+    virtual void playSound(
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        float const                            volume,
+        float const                            pitch
+    ) = 0;
 
-    virtual void playSound(::std::string const&, ::Vec3 const&, float, float) = 0;
+    virtual void playSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) = 0;
 
     virtual void playSound(
-        ::IConstBlockSource const&,
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        int,
-        ::ActorSoundIdentifier const&,
-        bool
+        ::IConstBlockSource const&             region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
     ) = 0;
 
     virtual void playSound(
-        ::DimensionType,
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        int,
-        ::ActorSoundIdentifier const&,
-        bool
+        ::DimensionType                        dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
     ) = 0;
 
     virtual ::PlayerEventCoordinator& getRemotePlayerEventCoordinator() = 0;
@@ -645,155 +668,198 @@ public:
 
     virtual ::LevelEventCoordinator& getLevelEventCoordinator() = 0;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) = 0;
 
-    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) = 0;
+    virtual void handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> getLevelEventManager() = 0;
 
-    virtual void handleStopSoundEvent(::std::string const&) = 0;
+    virtual void handleStopSoundEvent(::std::string const& name) = 0;
 
     virtual void handleStopAllSounds() = 0;
 
     virtual void handleStopMusicEvent() = 0;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent,
-        ::Vec3 const&,
-        int,
-        ::UserEntityIdentifierComponent const*
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifier
     ) = 0;
 
     virtual void broadcastLevelEvent(
-        ::SharedTypes::Legacy::LevelEvent,
-        ::CompoundTag const&,
-        ::UserEntityIdentifierComponent const*
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifier
     ) = 0;
-
-    virtual void broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
 
     virtual void
-    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) = 0;
+    broadcastLocalEvent(::BlockSource& region, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) = 0;
 
-    virtual void broadcastSoundEvent(
-        ::BlockSource&,
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        ::Block const&,
-        ::ActorSoundIdentifier const&,
-        bool
+    virtual void broadcastLocalEvent(
+        ::BlockSource&                    region,
+        ::SharedTypes::Legacy::LevelEvent type,
+        ::Vec3 const&                     pos,
+        ::Block const&                    block
     ) = 0;
 
     virtual void broadcastSoundEvent(
-        ::BlockSource&,
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        int,
-        ::ActorSoundIdentifier const&,
-        bool
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        ::Block const&                         block,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
     ) = 0;
 
     virtual void broadcastSoundEvent(
-        ::Dimension&,
-        ::SharedTypes::Legacy::LevelSoundEvent,
-        ::Vec3 const&,
-        int,
-        ::ActorSoundIdentifier const&,
-        bool
+        ::BlockSource&                         region,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
     ) = 0;
 
-    virtual void broadcastActorEvent(::Actor&, ::ActorEvent, int) const = 0;
+    virtual void broadcastSoundEvent(
+        ::Dimension&                           dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::ActorSoundIdentifier const&          actorSoundIdentifier,
+        bool                                   isGlobal
+    ) = 0;
+
+    virtual void broadcastActorEvent(::Actor& actor, ::ActorEvent eventId, int data) const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> getActorEventBroadcaster() const = 0;
 
-    virtual void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource>) = 0;
+    virtual void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource) = 0;
 
-    virtual void onChunkReload(::Bounds const&) = 0;
+    virtual void onChunkReload(::Bounds const& bound) = 0;
 
-    virtual void onChunkReloaded(::ChunkSource&, ::LevelChunk&) = 0;
+    virtual void onChunkReloaded(::ChunkSource& source, ::LevelChunk& lc) = 0;
 
     virtual int getActivePlayerCount() const = 0;
 
     virtual int getActiveUsersCount() const = 0;
 
-    virtual void forEachPlayer(::std::function<bool(::Player&)>) = 0;
+    virtual void forEachPlayer(::std::function<bool(::Player&)> callback) = 0;
 
-    virtual void forEachPlayer(::std::function<bool(::Player const&)>) const = 0;
+    virtual void forEachPlayer(::std::function<bool(::Player const&)> callback) const = 0;
 
-    virtual void forEachUser(::std::function<bool(::EntityContext&)>) = 0;
+    virtual void forEachUser(::std::function<bool(::EntityContext&)> callback) = 0;
 
-    virtual void forEachUser(::std::function<bool(::EntityContext const&)>) const = 0;
+    virtual void forEachUser(::std::function<bool(::EntityContext const&)> callback) const = 0;
 
-    virtual ::Player* findPlayer(::std::function<bool(::Player const&)>) const = 0;
+    virtual ::Player* findPlayer(::std::function<bool(::Player const&)> pred) const = 0;
 
-    virtual ::Player* findPlayer(::std::function<bool(::WeakEntityRef const&)>) const = 0;
+    virtual ::Player* findPlayer(::std::function<bool(::WeakEntityRef const&)> pred) const = 0;
 
     virtual int getUserCount() const = 0;
 
-    virtual int countUsersWithMatchingNetworkId(::NetworkIdentifier const&) const = 0;
+    virtual int countUsersWithMatchingNetworkId(::NetworkIdentifier const& networkId) const = 0;
 
     virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getUsers() const = 0;
 
     virtual ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const = 0;
 
-    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) = 0;
+    virtual void onSubChunkLoaded(
+        ::ChunkSource& source,
+        ::LevelChunk&  lc,
+        short          absoluteSubChunkIndex,
+        bool           subChunkVisibilityChanged
+    ) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() = 0;
 
-    virtual void onChunkLoaded(::ChunkSource&, ::LevelChunk&) = 0;
+    virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) = 0;
 
-    virtual void onChunkDiscarded(::LevelChunk&) = 0;
+    virtual void onChunkDiscarded(::LevelChunk& lc) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> getLevelChunkEventManager() = 0;
 
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() = 0;
 
-    virtual void queueEntityDestruction(::OwnerPtr<::EntityContext>) = 0;
+    virtual void queueEntityDestruction(::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual ::OwnerPtr<::EntityContext> removeEntity(::Actor&) = 0;
+    virtual ::OwnerPtr<::EntityContext> removeEntity(::Actor& actor) = 0;
 
-    virtual ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef) = 0;
+    virtual ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef) = 0;
 
-    virtual void forceRemoveEntity(::Actor&) = 0;
+    virtual void forceRemoveEntity(::Actor& actor) = 0;
 
-    virtual void forceRemoveEntityfromWorld(::Actor&) = 0;
+    virtual void forceRemoveEntityfromWorld(::Actor& actor) = 0;
 
     virtual void forceFlushRemovedPlayers() = 0;
 
     virtual void loadFunctionManager() = 0;
 
-    virtual void levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext>) = 0;
+    virtual void levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext> entity) = 0;
 
-    virtual void registerTemporaryPointer(::_TickPtr&) = 0;
+    virtual void registerTemporaryPointer(::_TickPtr& ptr) = 0;
 
-    virtual void unregisterTemporaryPointer(::_TickPtr&) = 0;
+    virtual void unregisterTemporaryPointer(::_TickPtr& ptr) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> getTempEPtrManager() = 0;
 
-    virtual bool destroyBlock(::BlockSource&, ::BlockPos const&, bool, ::BlockChangeContext const&) = 0;
+    virtual bool destroyBlock(
+        ::BlockSource&              region,
+        ::BlockPos const&           pos,
+        bool                        dropResources,
+        ::BlockChangeContext const& changeSourceContext
+    ) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> getLevelBlockDestroyer() = 0;
 
-    virtual void upgradeStorageVersion(::StorageVersion) = 0;
+    virtual void upgradeStorageVersion(::StorageVersion v) = 0;
 
     virtual void suspendAndSave() = 0;
 
-    virtual ::Particle* addParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int, ::CompoundTag const*, bool) = 0;
+    virtual ::Particle* addParticle(
+        ::ParticleType       id,
+        ::Vec3 const&        pos,
+        ::Vec3 const&        dir,
+        int                  data,
+        ::CompoundTag const* tag,
+        bool                 isGlobal
+    ) = 0;
 
-    virtual void addParticleEffect(::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&) = 0;
+    virtual void addParticleEffect(
+        ::HashedString const&      effect,
+        ::Vec3 const&              emitterPosition,
+        ::MolangVariableMap const& molangVariables
+    ) = 0;
 
-    virtual void addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) = 0;
+    virtual void addTerrainParticleEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
+    ) = 0;
 
-    virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) = 0;
+    virtual void addTerrainSlideEffect(
+        ::BlockPos const& pos,
+        ::Block const&    block,
+        ::Vec3 const&     emitterPosition,
+        float             intensity,
+        float             velocityScalar,
+        float             emitterRadius
+    ) = 0;
 
-    virtual void
-    addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&) = 0;
+    virtual void addBreakingItemParticleEffect(
+        ::Vec3 const&                     pos,
+        ::BreakingItemParticleData const& data,
+        ::ResolvedItemIconInfo const&     textureInfo
+    ) = 0;
 
     virtual void addBiomeTintedParticleEffect(
-        ::HashedString const&,
-        ::BlockPos const&,
-        ::Block const&,
-        ::std::optional<::mce::Color>
+        ::HashedString const&         effect,
+        ::BlockPos const&             pos,
+        ::Block const&                block,
+        ::std::optional<::mce::Color> overrideColor
     ) = 0;
 
     virtual ::ActorUniqueID getNewUniqueID() = 0;
@@ -804,38 +870,48 @@ public:
 
     virtual ::std::vector<::ChunkPos> const& getClientTickingOffsets() const = 0;
 
-    virtual ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const&) const = 0;
+    virtual ::std::vector<::ChunkPos>
+    getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> getChunkTickOffsetManager() const = 0;
 
     virtual bool isExporting() const = 0;
 
-    virtual void setIsExporting(bool) = 0;
+    virtual void setIsExporting(bool IsExporting) = 0;
 
     virtual ::SavedDataStorage& getSavedData() = 0;
 
-    virtual ::MapItemSavedData* getMapSavedData(::ActorUniqueID const) = 0;
+    virtual ::MapItemSavedData* getMapSavedData(::ActorUniqueID const uuid) = 0;
 
-    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const&) = 0;
+    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const& instance) = 0;
 
-    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const*) = 0;
+    virtual ::MapItemSavedData* getMapSavedData(::CompoundTag const* instance) = 0;
 
-    virtual void requestMapInfo(::ActorUniqueID const, bool) = 0;
+    virtual void requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate) = 0;
 
-    virtual ::ActorUniqueID expandMapByID(::ActorUniqueID const, bool) = 0;
+    virtual ::ActorUniqueID expandMapByID(::ActorUniqueID const uuid, bool wasInit) = 0;
 
-    virtual bool copyAndLockMap(::ActorUniqueID const, ::ActorUniqueID const) = 0;
+    virtual bool copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid) = 0;
 
-    virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const&, ::BlockPos const&, ::DimensionType, int) = 0;
+    virtual ::MapItemSavedData& createMapSavedData(
+        ::ActorUniqueID const& uuid,
+        ::BlockPos const&      origin,
+        ::DimensionType        dimension,
+        int                    returnScaleLevel
+    ) = 0;
 
-    virtual ::MapItemSavedData&
-    createMapSavedData(::std::vector<::ActorUniqueID> const&, ::BlockPos const&, ::DimensionType, int) = 0;
+    virtual ::MapItemSavedData& createMapSavedData(
+        ::std::vector<::ActorUniqueID> const& mapIds,
+        ::BlockPos const&                     origin,
+        ::DimensionType                       dimension,
+        int                                   returnScaleLevel
+    ) = 0;
 
     virtual ::Core::PathBuffer<::std::string> getScreenshotsFolder() const = 0;
 
     virtual ::std::string getLevelId() const = 0;
 
-    virtual void setLevelId(::std::string) = 0;
+    virtual void setLevelId(::std::string LevelId) = 0;
 
     virtual ::TaskGroup& getSyncTasksGroup() = 0;
 
@@ -848,13 +924,13 @@ public:
     virtual ::TradeTables* getTradeTables();
 
     virtual void decrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) = 0;
 
     virtual void incrementTagCache(
-        ::std::string const&,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+        ::std::string const&                                                      tag,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     ) = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
@@ -886,10 +962,14 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const = 0;
 
-    virtual void
-    runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) = 0;
+    virtual void runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    ) = 0;
 
-    virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) = 0;
+    virtual void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem) = 0;
 
     virtual ::PlayerCapabilities::ISharedController const& getCapabilities() const = 0;
 
@@ -897,14 +977,18 @@ public:
 
     virtual ::PlayerMovementSettings const& getPlayerMovementSettings() const = 0;
 
-    virtual void setPlayerMovementSettings(::PlayerMovementSettings const&) = 0;
+    virtual void setPlayerMovementSettings(::PlayerMovementSettings const& settings) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> getPlayerMovementSettingsManager() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     getPlayerMovementSettingsManager() const = 0;
 
-    virtual bool canUseSkin(::SerializedSkinRef const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const = 0;
+    virtual bool canUseSkin(
+        ::SerializedSkinRef const& skin,
+        ::NetworkIdentifier const& networkIdentifier,
+        ::ActorUniqueID const&     playerId
+    ) const = 0;
 
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const = 0;
 
@@ -916,7 +1000,7 @@ public:
 
     virtual ::std::weak_ptr<::ISubChunkLighter> getSubChunkLighter() const = 0;
 
-    virtual void loadBlockDefinitionGroup(::Experiments const&) = 0;
+    virtual void loadBlockDefinitionGroup(::Experiments const& experiments) = 0;
 
     virtual void initializeBlockDefinitionGroup() = 0;
 
@@ -928,9 +1012,9 @@ public:
 
     virtual ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const = 0;
 
-    virtual ::std::string const& getPlayerXUID(::mce::UUID const&) const = 0;
+    virtual ::std::string const& getPlayerXUID(::mce::UUID const& uuid) const = 0;
 
-    virtual ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const&) const = 0;
+    virtual ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const& uuid) const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> getPlayerListManager() = 0;
 
@@ -940,7 +1024,7 @@ public:
 
     virtual ::std::vector<::Actor*> getRuntimeActorList() const = 0;
 
-    virtual void notifySubChunkRequestManager(::SubChunkPacket const&) = 0;
+    virtual void notifySubChunkRequestManager(::SubChunkPacket const& packet) = 0;
 
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() = 0;
 
@@ -948,7 +1032,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback() const = 0;
 
-    virtual void setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback>) = 0;
+    virtual void setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback> val) = 0;
 
     virtual ::gsl::not_null<::StackRefResult<::ILevelRandom>> getILevelRandom() = 0;
 
@@ -966,7 +1050,7 @@ public:
 
     virtual ::std::string const& getImmersiveReaderString() const = 0;
 
-    virtual void setImmersiveReaderString(::std::string) = 0;
+    virtual void setImmersiveReaderString(::std::string newString) = 0;
 
     virtual ::AdventureSettings& getAdventureSettings() = 0;
 
@@ -991,18 +1075,18 @@ public:
     virtual bool getTearingDown() const = 0;
 
     virtual void takePicture(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+        ::cg::ImageBuffer&                                              outImage,
+        ::Actor*                                                        camera,
+        ::Actor*                                                        target,
+        ::ScreenshotOptions&                                            screenshotOptions,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     ) = 0;
 
     virtual ::LevelSoundManager& getLevelSoundManager() = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> getSoundPlayer() const = 0;
 
-    virtual void setSimPaused(bool paused) = 0;
+    virtual void setSimPaused(bool value) = 0;
 
     virtual bool getSimPaused() const = 0;
 
@@ -1010,7 +1094,7 @@ public:
 
     virtual ::LootTables& getLootTables() = 0;
 
-    virtual void updateWeather(float, int, float, int) = 0;
+    virtual void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime) = 0;
 
     virtual int getNetherScale() const = 0;
 
@@ -1020,11 +1104,11 @@ public:
 
     virtual ::Scoreboard* tryGetScoreboard() = 0;
 
-    virtual ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const&) = 0;
+    virtual ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId) = 0;
 
-    virtual void setPlayerAbilities(::ActorUniqueID const&, ::LayeredAbilities const&) = 0;
+    virtual void setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities) = 0;
 
-    virtual void sendAllPlayerAbilities(::Player const&) = 0;
+    virtual void sendAllPlayerAbilities(::Player const& playerReference) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> getPlayerAbilitiesManager() = 0;
 
@@ -1056,7 +1140,7 @@ public:
 
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const = 0;
 
-    virtual void clearAllGenerationRequests(::NetworkIdentifier const&, ::SubClientId) = 0;
+    virtual void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() = 0;
 
@@ -1086,7 +1170,7 @@ public:
 
     virtual void subChunkTickAndSendRequests() = 0;
 
-    virtual void digestServerBlockProperties(::StartGamePacket const&) = 0;
+    virtual void digestServerBlockProperties(::StartGamePacket const& packet) = 0;
 
     virtual ::PlayerDeathManager* _getPlayerDeathManager() = 0;
 
@@ -1104,7 +1188,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
+#ifdef LL_PLAT_C
+    MCAPI void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
+#endif
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     virtual void SetMessageQueue(::rtc::Thread* queue);
 
-    virtual bool Wait(::webrtc::TimeDelta, bool) = 0;
+    virtual bool Wait(::webrtc::TimeDelta max_wait_duration, bool process_io) = 0;
 
     virtual void WakeUp() = 0;
 

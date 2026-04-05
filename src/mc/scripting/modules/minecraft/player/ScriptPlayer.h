@@ -288,7 +288,9 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     stopSound(::std::string const& soundID);
 
-    MCAPI_C ::Player* tryGetPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Player* tryGetPlayer() const;
+#endif
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~TestScreenController() /*override*/ = default;
 
-    virtual ::ui::ViewRequest handleEvent(::ScreenEvent&) /*override*/;
+    virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) /*override*/;
 
     virtual bool bind(
         ::std::string const& bindingName,

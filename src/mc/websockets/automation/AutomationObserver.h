@@ -16,9 +16,9 @@ class AutomationObserver : public ::Core::Observer<::Automation::AutomationObser
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onConnected(::std::string const&) = 0;
+    virtual void onConnected(::std::string const& uri) = 0;
 
-    virtual void onConnectionFailed(::std::string const&) = 0;
+    virtual void onConnectionFailed(::std::string const& uri) = 0;
 
     virtual void onConnectionClosed() = 0;
 

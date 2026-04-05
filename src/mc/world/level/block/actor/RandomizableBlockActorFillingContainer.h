@@ -21,13 +21,13 @@ public:
 
     virtual void setContainerChanged(int slot) /*override*/;
 
-    virtual void startOpen(::Actor&) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot) /*override*/;
 
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    virtual void onRemoved(::BlockSource&) /*override*/;
+    virtual void onRemoved(::BlockSource& region) /*override*/;
 
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
     // NOLINTEND
@@ -45,7 +45,7 @@ public:
 
     MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource& region);
 
 
     // NOLINTEND

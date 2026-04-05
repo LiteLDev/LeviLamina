@@ -118,36 +118,38 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void reset();
+#ifdef LL_PLAT_C
+    MCAPI static void reset();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static int& _caretLocationIndex();
+    MCAPI static int& _caretLocationIndex();
 
-    MCAPI_C static int& _gameControllerId();
+    MCAPI static int& _gameControllerId();
 
-    MCAPI_C static int& _index();
+    MCAPI static int& _index();
 
-    MCAPI_C static ::std::vector<int>& _inputCaretLocation();
+    MCAPI static ::std::vector<int>& _inputCaretLocation();
 
-    MCAPI_C static ::std::vector<::TextInput>& _inputText();
+    MCAPI static ::std::vector<::TextInput>& _inputText();
 
-    MCAPI_C static ::std::vector<::KeyboardAction>& _inputs();
+    MCAPI static ::std::vector<::KeyboardAction>& _inputs();
 
-    MCAPI_C static ::std::array<::std::string_view, 256>& _keyNames();
+    MCAPI static ::std::array<::std::string_view, 256>& _keyNames();
 
-    MCAPI_C static ::std::vector<::TextInput>& _nativeTextInputs();
+    MCAPI static ::std::vector<::TextInput>& _nativeTextInputs();
 
-    MCAPI_C static int& _nativeTextInputsIndex();
+    MCAPI static int& _nativeTextInputsIndex();
 
-    MCAPI_C static ::std::array<::std::string_view, 256>& _shortKeyNames();
+    MCAPI static ::std::array<::std::string_view, 256>& _shortKeyNames();
 
-    MCAPI_C static ::std::add_lvalue_reference_t<int[]> _states();
+    MCAPI static ::std::add_lvalue_reference_t<int[]> _states();
 
-    MCAPI_C static int& _textIndex();
+    MCAPI static int& _textIndex();
 
-    MCAPI_C static ::std::array<::std::string_view, 256>& _ttsKeyNames();
+    MCAPI static ::std::array<::std::string_view, 256>& _ttsKeyNames();
     // NOLINTEND
 };

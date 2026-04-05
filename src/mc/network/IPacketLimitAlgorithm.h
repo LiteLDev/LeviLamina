@@ -13,7 +13,7 @@ public:
 
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const = 0;
 
-    virtual uint checkPacket(::MinecraftPacketIds) = 0;
+    virtual uint checkPacket(::MinecraftPacketIds packet) = 0;
     // NOLINTEND
 
 public:

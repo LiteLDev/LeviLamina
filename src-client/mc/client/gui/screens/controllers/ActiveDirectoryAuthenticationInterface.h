@@ -34,17 +34,18 @@ public:
 
     virtual bool shouldShowTrialPurchaseLink() const = 0;
 
-    virtual ::AuthenticationUIState initializeActiveDirectorySignIn(bool) = 0;
+    virtual ::AuthenticationUIState initializeActiveDirectorySignIn(bool displaySignIn) = 0;
 
     virtual void setActiveDirectoryAuthenticationOfferPurchase() = 0;
 
-    virtual bool purchaseEduLicense(::std::unique_ptr<::TransactionContext>) = 0;
+    virtual bool purchaseEduLicense(::std::unique_ptr<::TransactionContext> context) = 0;
 
-    virtual bool getUnfulfilledEduPurchase(::EduPurchaseDetails&) const = 0;
+    virtual bool getUnfulfilledEduPurchase(::EduPurchaseDetails& details) const = 0;
 
-    virtual bool fulfillPriorEduPurchase(::std::weak_ptr<::Purchase>, ::std::unique_ptr<::TransactionContext>) = 0;
+    virtual bool
+    fulfillPriorEduPurchase(::std::weak_ptr<::Purchase> purchase, ::std::unique_ptr<::TransactionContext> context) = 0;
 
-    virtual ::AuthenticationUIState doSignIn(::AuthenticationUIState) = 0;
+    virtual ::AuthenticationUIState doSignIn(::AuthenticationUIState currentState) = 0;
     // NOLINTEND
 
 public:

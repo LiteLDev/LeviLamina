@@ -17,7 +17,7 @@ struct InterpolateMovementNeededComponent;
 namespace InsideGenericBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void insideGenericBlockSystem(
+MCAPI void insideGenericBlockSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent>,
@@ -25,7 +25,7 @@ MCNAPI void insideGenericBlockSystem(
         ::ActorOwnerComponent> view
 );
 
-MCNAPI void tickInsideGenericBlock(
+MCAPI void tickInsideGenericBlock(
     ::InsideGenericBlockComponent& insideGenericBlockComponent,
     ::ActorOwnerComponent&         actorOwnerComponent
 );

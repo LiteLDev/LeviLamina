@@ -12,11 +12,11 @@ class CameraCallbacks {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void onTakePictureNow(::Player&, ::Actor*, ::Actor*) = 0;
+    virtual void onTakePictureNow(::Player& player, ::Actor* camera, ::Actor* target) = 0;
 
-    virtual void onStartTakingPicture(::Player&) = 0;
+    virtual void onStartTakingPicture(::Player& player) = 0;
 
-    virtual void onEndTakingPicture(::Player&, ::Actor*, ::Actor*) = 0;
+    virtual void onEndTakingPicture(::Player& player, ::Actor* camera, ::Actor* target) = 0;
 
 #ifdef LL_PLAT_S
     virtual ~CameraCallbacks() = default;

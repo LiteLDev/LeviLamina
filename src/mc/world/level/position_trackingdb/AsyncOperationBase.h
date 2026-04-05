@@ -42,8 +42,10 @@ public:
 
     virtual bool isComplete() const /*override*/;
 
-    virtual bool
-    _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
+    virtual bool _init(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    );
 
     virtual bool
     _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);

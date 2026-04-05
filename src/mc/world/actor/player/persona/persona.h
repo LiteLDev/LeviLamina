@@ -19,23 +19,23 @@ class UIPropertyBag;
 namespace persona {
 // functions
 // NOLINTBEGIN
-MCAPI_C ::std::string getPieceRarityBarTexture(::persona::Rarity pieceRarity);
+MCAPI ::std::string getPieceRarityBarTexture(::persona::Rarity pieceRarity);
 
-MCAPI_C ::mce::Color getPieceRarityColor(::UIPropertyBag const& bag, ::persona::Rarity pieceRarity);
+MCAPI ::mce::Color getPieceRarityColor(::UIPropertyBag const& bag, ::persona::Rarity pieceRarity);
 
-MCAPI_C ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeStr);
+MCAPI ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeStr);
 
 MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
-MCAPI_C ::std::string const& stringFromPersonaError(::persona::PersonaError const& error);
+MCAPI ::std::string const& stringFromPersonaError(::persona::PersonaError const& error);
 
-MCAPI_C ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
+MCAPI ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
 
 MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 
-MCAPI_C ::std::string_view stringViewFromProfileType(::persona::ProfileType profileType);
+MCAPI ::std::string_view stringViewFromProfileType(::persona::ProfileType profileType);
 
-MCAPI_C ::std::string ttsStringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
+MCAPI ::std::string ttsStringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 // NOLINTEND
 
 // static variables
@@ -64,15 +64,15 @@ MCAPI ::std::string const& ANIMATED_FACE_NAME();
 
 MCAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
 
-MCAPI_C ::mce::UUID const& NONE_PIECE_ID();
+MCAPI ::mce::UUID const& NONE_PIECE_ID();
 
 MCAPI ::std::string const& NONE_PIECE_PATH();
 
-MCAPI_C ::std::string const& PIECE_SIDE_LEFT_STR();
+MCAPI ::std::string const& PIECE_SIDE_LEFT_STR();
 
-MCAPI_C ::std::string const& PIECE_SIDE_RIGHT_STR();
+MCAPI ::std::string const& PIECE_SIDE_RIGHT_STR();
 
-MCAPI_C uint const& RANDOM_DEFAULT_APPEARANCE_INDEX();
+MCAPI uint const& RANDOM_DEFAULT_APPEARANCE_INDEX();
 
 MCAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
 // NOLINTEND

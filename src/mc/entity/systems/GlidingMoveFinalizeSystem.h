@@ -16,14 +16,14 @@ struct TickingSystemWithInfo;
 namespace GlidingMoveFinalizeSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickCollisionDamageHurt(
+MCAPI void _tickCollisionDamageHurt(
     ::StrictEntityContext const&                        entity,
     ::ActorOwnerComponent&                              actorOwnerComponent,
     ::GlidingCollisionDamageComponent const&            glidingCollisionDamageComponent,
     ::EntityModifier<::GlidingCollisionDamageComponent> modifier
 );
 
-MCNAPI ::TickingSystemWithInfo createCollisionDamageCalculateSystem();
+MCAPI ::TickingSystemWithInfo createCollisionDamageCalculateSystem();
 // NOLINTEND
 
 } // namespace GlidingMoveFinalizeSystem

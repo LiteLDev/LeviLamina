@@ -20,15 +20,15 @@ struct RotateAndSetVelocitySystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doTick(
+    MCAPI static void doTick(
         ::MoveInputComponent const& input,
         ::PlayerInputModeComponent const&,
         ::LocalMoveVelocityComponent& localVelocity
     );
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::PlayerInputRequestComponent>,

@@ -17,6 +17,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ICameraAPI& get();
+#ifdef LL_PLAT_C
+    MCNAPI ::ICameraAPI& get();
+#endif
     // NOLINTEND
 };

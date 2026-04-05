@@ -17,10 +17,10 @@ public:
     virtual ::HandlerResult handleEvent(::PlayerGameplayEvent<void> const&) = 0;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const&) = 0;
+    handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) = 0;
 
     virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>&) = 0;
+    handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) = 0;
 
     virtual ~PlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND

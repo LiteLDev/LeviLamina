@@ -42,13 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _sendBeaconPaymentPacket(::BeaconBlockActor& beacon);
+#ifdef LL_PLAT_C
+    MCAPI void _sendBeaconPaymentPacket(::BeaconBlockActor& beacon);
 
-    MCAPI_C void confirmTransaction(bool isPaymentConfirmed);
+    MCAPI void confirmTransaction(bool isPaymentConfirmed);
 
-    MCAPI_C ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
+    MCAPI ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
 
-    MCAPI_C void selectEffect(int iSlot, bool bSecondaryEffect);
+    MCAPI void selectEffect(int iSlot, bool bSecondaryEffect);
+#endif
     // NOLINTEND
 
 public:

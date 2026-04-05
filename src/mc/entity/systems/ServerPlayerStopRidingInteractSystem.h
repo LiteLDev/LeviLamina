@@ -22,15 +22,15 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerStopRidingInteractSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void makePassengerStopRiding(
+MCAPI void makePassengerStopRiding(
     ::ActorOwnerComponent&           actorOwnerComponent,
     ::ServerPlayerMovementComponent* serverPlayerMovementComponent,
     ::ActorRuntimeID const&          vehicleID
 );
 
-MCNAPI void tickServerPlayerStopRidingPacket(
+MCAPI void tickServerPlayerStopRidingPacket(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                      entity,
     ::ServerPlayerInteractComponent const&            stopRidingRequest,

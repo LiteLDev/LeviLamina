@@ -12,9 +12,12 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/components/LocalConstBlockSource.h"
+#include "mc/entity/components/LocalSpatialEntityFetcher.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
@@ -103,26 +106,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 280> mUnkc11b11;
-        ::ll::UntypedStorage<8, 280> mUnk3c19d0;
+        ::ll::TypedStorage<8, 280, ::LocalSpatialEntityFetcher> mFetcher;
+        ::ll::TypedStorage<8, 280, ::LocalConstBlockSource>     mBlockSource;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SpatialQueries& operator=(SpatialQueries const&);
-        SpatialQueries(SpatialQueries const&);
-        SpatialQueries();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~SpatialQueries();
+        MCAPI ~SpatialQueries();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -130,30 +127,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkd29fef;
-        ::ll::UntypedStorage<8, 8> mUnkb8d19a;
+        ::ll::TypedStorage<8, 8, ::LocalConstBlockSourceFactoryComponent*>     mBlockSourceFactory;
+        ::ll::TypedStorage<8, 8, ::LocalSpatialEntityFetcherFactoryComponent*> mFetcherFactory;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SpatialQueryFactories& operator=(SpatialQueryFactories const&);
-        SpatialQueryFactories(SpatialQueryFactories const&);
-        SpatialQueryFactories();
     };
+
+    using CollisionShapeVec = ::std::vector<::BlockSourceVisitor::CollisionShape>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk84b40b;
-    ::ll::UntypedStorage<8, 24> mUnkd83ac4;
-    ::ll::UntypedStorage<8, 24> mUnke77826;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>> mScratchTempCollisionShapes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockSourceVisitor::CollisionShape>> mScratchTempCollisionShapes2;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>                               mScratchTempShapes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    System& operator=(System const&);
-    System(System const&);
-    System();
 
 public:
     // virtual functions
@@ -249,7 +236,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::MoveCollisionSystem::System::SpatialQueryFactories> createSpatialQueryFactories(
+    MCAPI static ::std::optional<::MoveCollisionSystem::System::SpatialQueryFactories> createSpatialQueryFactories(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -295,13 +282,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -343,7 +330,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,

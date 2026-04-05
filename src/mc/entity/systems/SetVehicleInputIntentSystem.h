@@ -24,7 +24,7 @@ struct VehicleInputIntentComponent;
 namespace SetVehicleInputIntentSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doSetVehicleInputIntent(
+MCAPI void doSetVehicleInputIntent(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                                                               context,
     ::VehicleComponent const&                                                                  vehicle,

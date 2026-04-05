@@ -87,13 +87,19 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCAPI_S ::HashedString const& getName() const;
+#ifdef LL_PLAT_S
+    MCAPI ::HashedString const& getName() const;
+#endif
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const& other);
 
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
+
+#ifdef LL_PLAT_C
+    MCAPI ::MolangScriptArg& operator=(::MolangOffsetPlaceholder&& value);
+#endif
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;
 

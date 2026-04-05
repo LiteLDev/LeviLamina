@@ -29,9 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _runNextTask();
+#ifdef LL_PLAT_C
+    MCAPI void _runNextTask();
 
-    MCAPI_C void queueForMainThreadFIFO(::std::function<void()>&& task);
+    MCAPI void queueForMainThreadFIFO(::std::function<void()>&& task);
+#endif
     // NOLINTEND
 
 public:

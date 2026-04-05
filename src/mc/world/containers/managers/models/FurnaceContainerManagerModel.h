@@ -109,9 +109,11 @@ public:
 
     MCAPI void _updateResultSlotInfo();
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+#ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
 
-    MCAPI_C bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
+    MCAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
+#endif
 
     MCAPI ::IngredientSearchInfo searchIngredientInContainers(
         ::ItemInstance const&                   itemInstance,
@@ -120,7 +122,9 @@ public:
 
     MCAPI void setIsFiltering(bool smeltableFilterOn);
 
-    MCAPI_C void setSearchString(::std::string const& searchString);
+#ifdef LL_PLAT_C
+    MCAPI void setSearchString(::std::string const& searchString);
+#endif
     // NOLINTEND
 
 public:

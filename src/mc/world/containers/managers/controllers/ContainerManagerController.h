@@ -60,6 +60,13 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mDynamicContainerNotifier;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -69,7 +76,7 @@ public:
     virtual ~ContainerManagerController();
 #endif
 
-    virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
+    virtual void postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     virtual void registerContainerCallbacks();
 
@@ -147,7 +154,8 @@ public:
         ::ItemStackRequestScope&
     );
 
-    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
 
     virtual void _onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
 
@@ -163,14 +171,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
+#ifdef LL_PLAT_C
+    MCAPI explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
 
-    MCAPI_C void _addOutputsAsDestinations(
+    MCAPI void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
+
+    MCAPI void _addOutputsAsDestinations(
         ::ContainerScreenActionResult const& result,
         ::std::vector<::AutoPlaceResult>&    destinations
     ) const;
 
-    MCAPI_C int _appendAutoPlaceOutputs(
+    MCAPI int _appendAutoPlaceOutputs(
         ::ItemTransferRequest&                request,
         ::ItemStackBase const&                itemToPlace,
         int                                   requestAmount,
@@ -178,20 +189,20 @@ public:
         int                                   placementGroup
     );
 
-    MCAPI_C void _autoPlaceOrDrop(
+    MCAPI void _autoPlaceOrDrop(
         ::SlotData const&                     srcSlot,
         ::ItemTransferAmount                  amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder
     );
 
-    MCAPI_C int _buildAutoPlaceRequest(
+    MCAPI int _buildAutoPlaceRequest(
         ::SlotData const&                     srcSlot,
         ::ItemTransferAmount                  requestTakeAmount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::ItemTransferRequest&                request
     );
 
-    MCAPI_C int _bulkAutoPlaceOutput(
+    MCAPI int _bulkAutoPlaceOutput(
         int                                   craftableCount,
         int                                   amount,
         ::ItemInstance                        outputItem,
@@ -200,44 +211,44 @@ public:
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCAPI_C ::AutoPlaceRequest const _canAutoPlace(
+    MCAPI ::AutoPlaceRequest const _canAutoPlace(
         ::SlotData const&                     srcSlot,
         ::ItemTransferAmount                  requestTakeAmount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder
     );
 
-    MCAPI_C bool _canCraftIntoStorageItem(::ItemInstance const& itemToCraft, ::ItemStack const& storageItem);
+    MCAPI bool _canCraftIntoStorageItem(::ItemInstance const& itemToCraft, ::ItemStack const& storageItem);
 
-    MCAPI_C void _clearCreativeHotbar();
+    MCAPI void _clearCreativeHotbar();
 
-    MCAPI_C void _closeContainers(::ContainerManagerModel& containerModel);
+    MCAPI void _closeContainers(::ContainerManagerModel& containerModel);
 
-    MCAPI_C ::ContainerValidationSlotData _getContainerValidationSlotData(::SlotData const& slotData) const;
+    MCAPI ::ContainerValidationSlotData _getContainerValidationSlotData(::SlotData const& slotData) const;
 
-    MCAPI_C ::ItemStack const& _getItem(::SlotData const& slot, bool canBeEmpty) const;
+    MCAPI ::ItemStack const& _getItem(::SlotData const& slot, bool canBeEmpty) const;
 
-    MCAPI_C ::ItemStack const& _getItem0(::ContainerEnumName collectionEnumName) const;
+    MCAPI ::ItemStack const& _getItem0(::ContainerEnumName collectionEnumName) const;
 
-    MCAPI_C ::std::tuple<::ItemStack const&, ::std::shared_ptr<::ContainerController>>
+    MCAPI ::std::tuple<::ItemStack const&, ::std::shared_ptr<::ContainerController>>
     _getItemAndContainerController(::SlotData const& slot, bool canBeEmpty) const;
 
-    MCAPI_C ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
+    MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> _getPredictiveContainers();
 
-    MCAPI_C ::ContainerScreenContext _getScreenContext() const;
+    MCAPI ::ContainerScreenContext _getScreenContext() const;
 
-    MCAPI_C ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;
+    MCAPI ::SlotData _getSlotData(::ContainerValidationSlotData const& containerValidationSlotData) const;
 
-    MCAPI_C bool _handleAutoPlace(::ItemTransferRequest const& request);
+    MCAPI bool _handleAutoPlace(::ItemTransferRequest const& request);
 
-    MCAPI_C void _handleSplitMultiple(
+    MCAPI void _handleSplitMultiple(
         ::SelectedSlotInfo const& selected,
         ::ItemInstance const&     itemTemplate,
         ::SlotData const&         dstSlot
     );
 
-    MCAPI_C bool _isContainerSimulationEnabled() const;
+    MCAPI bool _isContainerSimulationEnabled() const;
 
-    MCAPI_C void _onItemTransferring(
+    MCAPI void _onItemTransferring(
         ::ItemStack const& stack,
         ::SlotData const&  srcSlot,
         ::ContainerModel*  srcModel,
@@ -245,27 +256,27 @@ public:
         ::ContainerModel*  dstModel
     );
 
-    MCAPI_C void _onTransfer(::ContainerScreenActionResult const& result);
+    MCAPI void _onTransfer(::ContainerScreenActionResult const& result);
 
-    MCAPI_C void _playCraftingSound(
+    MCAPI void _playCraftingSound(
         ::std::weak_ptr<::ContainerManagerModel> const& containerManagerModel,
         ::SharedTypes::Legacy::LevelSoundEvent          soundEvent
     );
 
-    MCAPI_C void _registerSetThisDirtyCallback(::std::shared_ptr<::ContainerModel> containerModel);
+    MCAPI void _registerSetThisDirtyCallback(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCAPI_C ::ContainerCategory
+    MCAPI ::ContainerCategory
     _resolveToRealSourceSlot(::ContainerModel* srcModel, ::SlotData const& srcSlot, ::SlotData& realSrcSlot) const;
 
-    MCAPI_C void _returnToPlayerOrDrop(::SlotData const& srcSlot, ::ItemTransferAmount amount);
+    MCAPI void _returnToPlayerOrDrop(::SlotData const& srcSlot, ::ItemTransferAmount amount);
 
-    MCAPI_C void _shiftLeftStorageItemContents(
+    MCAPI void _shiftLeftStorageItemContents(
         ::std::string const&              collectionName,
         int                               selectedItemIdx,
         ::std::vector<::ItemStack> const& items
     );
 
-    MCAPI_C bool _transfer(
+    MCAPI bool _transfer(
         ::ItemTransferType   transferType,
         ::SlotData const&    dstSlot,
         ::SlotData const&    srcSlot,
@@ -274,86 +285,89 @@ public:
         bool                 allowVisualOnlySameItemSwap
     );
 
-    MCAPI_C bool _transferAll(::ItemTransferType transferType, ::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCAPI bool _transferAll(::ItemTransferType transferType, ::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCAPI_C bool
+    MCAPI bool
     _transferSpecial(::SlotData const& srcSlot, ::ItemTransferAmount transferAmount, ::ItemSpecialLocation location);
 
-    MCAPI_C ::ItemStackRequestScope _tryBeginItemStackRequest(::ContainerManagerModel const* managerModel);
+    MCAPI ::ItemStackRequestScope _tryBeginItemStackRequest(::ContainerManagerModel const* managerModel);
 
-    MCAPI_C void
+    MCAPI void
     _updateItemStackRequest(::ContainerScreenActionResult const& result, ::ItemStackRequestScope& requestScope);
 
-    MCAPI_C bool
+    MCAPI bool
     _updatePreviewItem(::ItemInstance& previewItem, ::ItemInstance const& newItem, ::std::string const& collectionName);
 
-    MCAPI_C ::std::string getBlockName(::BlockPos const& blockPos) const;
+    MCAPI ::std::string getBlockName(::BlockPos const& blockPos) const;
 
-    MCAPI_C ::std::shared_ptr<::ContainerController> getContainerController(::std::string const& containerName) const;
+    MCAPI ::std::shared_ptr<::ContainerController> getContainerController(::std::string const& containerName) const;
 
-    MCAPI_C ::std::weak_ptr<::ContainerModel> getContainerModel(::std::string const& containerName) const;
+    MCAPI ::std::weak_ptr<::ContainerModel> getContainerModel(::std::string const& containerName) const;
 
-    MCAPI_C int getContainerSize(::std::string const& collectionName) const;
+    MCAPI int getContainerSize(::std::string const& collectionName) const;
 
-    MCAPI_C void getCurrentContainerStateList(::std::vector<::ItemStateData>& inventoryState);
+    MCAPI void getCurrentContainerStateList(::std::vector<::ItemStateData>& inventoryState);
 
-    MCAPI_C ::std::shared_ptr<::ContainerModel> getDynamicContainerModel(::FullContainerName const& name);
+    MCAPI ::std::shared_ptr<::ContainerModel> getDynamicContainerModel(::FullContainerName const& name);
 
-    MCAPI_C ::std::string getEntityName(::ActorUniqueID const& entityUniqueID) const;
+    MCAPI ::std::string getEntityName(::ActorUniqueID const& entityUniqueID) const;
 
-    MCAPI_C ::std::string getExpandoGroupName(::std::string const& collectionName, int collectionIndex) const;
+    MCAPI ::std::string getExpandoGroupName(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI_C ::ContainerExpandStatus getExpandoStatus(::std::string const& containerName, int collectionIndex) const;
+    MCAPI ::ContainerExpandStatus getExpandoStatus(::std::string const& containerName, int collectionIndex) const;
 
-    MCAPI_C ::ItemStack const& getItemStack(::std::string const& collectionName, int collectionIndex) const;
+    MCAPI ::ItemStack const& getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI_C bool handleMoveItemFromSlotIntoStorageItem(
+    MCAPI bool handleMoveItemFromSlotIntoStorageItem(
         ::SlotData const&      srcSlot,
         ::ItemStack const&     dstStorageItem,
         ::std::optional<uchar> requestedAmount
     );
 
-    MCAPI_C bool handleMoveSelectedItemFromStorageItem(
+    MCAPI bool handleMoveSelectedItemFromStorageItem(
         ::ItemStack const& srcStorageItem,
         int                selectedItemIdx,
         ::SlotData const&  dstSlot
     );
 
-    MCAPI_C bool handleMoveSelectedItemFromStorageItemToStorageItem(
+    MCAPI bool handleMoveSelectedItemFromStorageItemToStorageItem(
         ::ItemStack const& srcStorageItem,
         int                selectedItemIdx,
         ::ItemStack const& dstStorageItem
     );
 
-    MCAPI_C bool handleMoveTopItemFromStorageItem(::ItemStack const& srcStorageItem, ::SlotData const& dstSlot);
+    MCAPI bool handleMoveTopItemFromStorageItem(::ItemStack const& srcStorageItem, ::SlotData const& dstSlot);
 
-    MCAPI_C bool hasContainerController(::std::string const& containerName) const;
+    MCAPI bool hasContainerController(::std::string const& containerName) const;
 
-    MCAPI_C bool isExpandoItem(::std::string const& collectionName, int collectionIndex);
+    MCAPI bool isExpandoItem(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI_C bool isItemFiltered(::std::vector<::std::string> containerNames, ::ItemStackBase const& item) const;
+    MCAPI bool isItemFiltered(::std::vector<::std::string> containerNames, ::ItemStackBase const& item) const;
 
-    MCAPI_C bool isValid(float pickRange);
+    MCAPI bool isValid(float pickRange);
 
-    MCAPI_C bool playerHasRoomForItem(::ItemInstance const& item) const;
+    MCAPI bool playerHasRoomForItem(::ItemInstance const& item) const;
 
-    MCAPI_C void resetSplitStack();
+    MCAPI void resetSplitStack();
 
-    MCAPI_C void sortStorageContainer(::std::string const& storageName);
+    MCAPI void sortStorageContainer(::std::string const& storageName);
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::std::string_view const& TRANSFER_NO_DESTINATION();
+    MCAPI static ::std::string_view const& TRANSFER_NO_DESTINATION();
 
-    MCAPI_C static ::std::string_view const& TRANSFER_NO_ORIGIN();
+    MCAPI static ::std::string_view const& TRANSFER_NO_ORIGIN();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:
@@ -366,7 +380,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController>);
+    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCAPI void $registerContainerCallbacks();
 
@@ -444,7 +458,8 @@ public:
         ::ItemStackRequestScope&
     );
 
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
+    MCAPI ::CreateContainerItemScope
+    $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& amount);
 
     MCAPI void $_onItemTransferredFrom(::ItemInstance const& stack, ::SlotData const& srcSlot);
 

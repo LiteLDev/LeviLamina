@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPropertyGetter() = default;
 
-    virtual ::entt::meta_any get(::entt::meta_handle) = 0;
+    virtual ::entt::meta_any get(::entt::meta_handle instance) = 0;
 
     virtual ::entt::meta_type type() const = 0;
 

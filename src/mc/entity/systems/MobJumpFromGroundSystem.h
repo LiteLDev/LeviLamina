@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace MobJumpFromGroundSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
+MCAPI ::TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
 
-MCNAPI ::TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
+MCAPI ::TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
 // NOLINTEND
 
 } // namespace MobJumpFromGroundSystem

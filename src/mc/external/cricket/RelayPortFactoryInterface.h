@@ -18,9 +18,10 @@ public:
     virtual ~RelayPortFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::cricket::Port>
-    Create(::cricket::CreateRelayPortArgs const&, ::std::shared_ptr<::rtc::AsyncPacketSocket>) = 0;
+    Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> udp_socket) = 0;
 
-    virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const&, int, int) = 0;
+    virtual ::std::unique_ptr<::cricket::Port>
+    Create(::cricket::CreateRelayPortArgs const& args, int min_port, int max_port) = 0;
     // NOLINTEND
 
 public:

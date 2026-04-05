@@ -19,7 +19,7 @@ MCAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstr
 
 MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 
-MCAPI_C float getParticleCountFromIntensity(float intensity);
+MCAPI float getParticleCountFromIntensity(float intensity);
 
 MCAPI bool isFullFlowingLiquid(::Block const& block);
 

@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI SemVersionConstraint(::SharedTypes::SemVersionConstraint&&);
 
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCAPI void validateValue(::SemVersion const& vers, ::cereal::SerializerContext& context) const;
     // NOLINTEND

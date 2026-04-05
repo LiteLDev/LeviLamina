@@ -48,6 +48,13 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                               mContainerPopulationTotalItemCount;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftingContainerManagerModel();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -77,45 +84,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
-        ::ContainerEnumName                                          containerEnumName,
-        ::CreativeItemGroupCategory* const                           category,
-        bool                                                         doExpando,
-        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
-    );
-
-    MCAPI_C ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
-        ::ContainerEnumName                                          containerEnumName,
-        ::std::vector<::ItemInstance> const&                         itemInstanceVector,
-        bool                                                         doExpando,
-        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
-    );
-
-    MCAPI_C ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
-
-    MCAPI_C ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
-
-    MCAPI_C bool _foundInStartOfAnyWord(::std::string const& itemName) const;
-
-    MCAPI_C bool _hasUnlockedRecipes(::ItemInstance const& item) const;
-
-    MCAPI_C bool _populateContainers(uint64& count);
-
-    MCFOLD_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
-
-    MCAPI_C ::std::vector<::std::string> const getCraftingTags() const;
-
-    MCAPI_C bool hasIngredientSetChanged(::ItemStack const& inHand);
-
-    MCAPI_C void setIsFiltering(bool craftableFilterOn);
-
-    MCAPI_C void setSearchString(::std::string const& searchString);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI CraftingContainerManagerModel(
         ::ContainerID        containerId,
         ::Player&            player,
         bool                 workbench,
@@ -124,6 +94,57 @@ public:
         ::BlockPos const&    pos,
         ::std::string const& inventorySearch
     );
+
+    MCAPI ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
+        ::ContainerEnumName                                          containerEnumName,
+        ::CreativeItemGroupCategory* const                           category,
+        bool                                                         doExpando,
+        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
+    );
+
+    MCAPI ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
+        ::ContainerEnumName                                          containerEnumName,
+        ::std::vector<::ItemInstance> const&                         itemInstanceVector,
+        bool                                                         doExpando,
+        ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
+    );
+
+    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+
+    MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
+
+    MCAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
+
+    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
+
+    MCAPI bool _populateContainers(uint64& count);
+
+    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+
+    MCAPI ::std::vector<::std::string> const getCraftingTags() const;
+
+    MCAPI bool hasIngredientSetChanged(::ItemStack const& inHand);
+
+    MCAPI void setIsFiltering(bool craftableFilterOn);
+
+    MCAPI void setSearchString(::std::string const& searchString);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::ContainerID        containerId,
+        ::Player&            player,
+        bool                 workbench,
+        bool                 pocket,
+        bool                 craftableFilterOn,
+        ::BlockPos const&    pos,
+        ::std::string const& inventorySearch
+    );
+#endif
     // NOLINTEND
 
 public:

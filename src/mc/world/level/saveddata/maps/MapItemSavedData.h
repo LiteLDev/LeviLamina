@@ -149,10 +149,12 @@ public:
 
     MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
 
-    MCAPI_C bool _replaceExistingDecoration(
+#ifdef LL_PLAT_C
+    MCAPI bool _replaceExistingDecoration(
         ::MapItemTrackedActor::UniqueId const&    id,
         ::std::shared_ptr<::MapDecoration> const& newDecoration
     );
+#endif
 
     MCAPI bool
     _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
@@ -182,10 +184,12 @@ public:
 
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
 
-    MCAPI_C void replaceDecorations(
+#ifdef LL_PLAT_C
+    MCAPI void replaceDecorations(
         ::std::vector<::std::shared_ptr<::MapDecoration>>     decorations,
         ::std::vector<::MapItemTrackedActor::UniqueId> const& uniqueIds
     );
+#endif
 
     MCAPI void save(::LevelStorage& storage);
 

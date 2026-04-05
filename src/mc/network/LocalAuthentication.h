@@ -27,13 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void
+#ifdef LL_PLAT_C
+    MCNAPI void
     regenerateSelfSigned(::PlayerAuthenticationInfo authInfo, bool isSignedIn, uint64 clientRandomId, bool isPrimary);
+
+    MCNAPI ~LocalAuthentication();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

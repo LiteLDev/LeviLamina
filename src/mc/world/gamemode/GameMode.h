@@ -149,11 +149,11 @@ public:
 
     virtual void releaseUsingItem();
 
-    virtual void setTrialMode(bool);
+    virtual void setTrialMode(bool isEnabled);
 
     virtual bool isInTrialMode();
 
-    virtual void registerUpsellScreenCallback(::std::function<void(bool)>);
+    virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND
 
 public:
@@ -269,11 +269,11 @@ public:
 
     MCAPI void $releaseUsingItem();
 
-    MCFOLD void $setTrialMode(bool);
+    MCFOLD void $setTrialMode(bool isEnabled);
 
     MCFOLD bool $isInTrialMode();
 
-    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)>);
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 #ifdef LL_PLAT_C
     MCAPI float $getPickRange(::InputMode const& currentInputMode);

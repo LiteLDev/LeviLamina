@@ -33,41 +33,26 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk80ef59;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ActiveDirectoryPopup& operator=(ActiveDirectoryPopup const&);
     ActiveDirectoryPopup(ActiveDirectoryPopup const&);
     ActiveDirectoryPopup();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string getTTSMessageBody() const;
-    // NOLINTEND
+#ifdef LL_PLAT_C
+    MCNAPI ActiveDirectoryPopup();
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::ActiveDirectoryPopup
-    get(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> identity,
-        ::ActiveDirectoryExperience                                    experience);
+    MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup&&);
 
-    MCNAPI_C static ::ActiveDirectoryPopup
-    get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
+    MCNAPI ActiveDirectoryPopup(::ActiveDirectoryPopup const&);
 
-    MCNAPI_C static ::ActiveDirectoryPopup getVerificationInProgressPopup(::std::string const& verificationUri);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
-
-    MCNAPI_C void* $ctor(::ActiveDirectoryPopup&&);
-
-    MCNAPI_C void* $ctor(::ActiveDirectoryPopup const&);
-
-    MCNAPI_C void* $ctor(
+    MCNAPI ActiveDirectoryPopup(
         ::std::string&&             id,
         ::std::string&&             title,
         ::std::string&&             popupText,
@@ -77,11 +62,58 @@ public:
         ::ActiveDirectoryAction     postPopupAction,
         ::ActiveDirectoryExperience experienceType
     );
+
+    MCNAPI ::std::string getTTSMessageBody() const;
+
+    MCNAPI ::ActiveDirectoryPopup& operator=(::ActiveDirectoryPopup const&);
+
+    MCNAPI ~ActiveDirectoryPopup();
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::ActiveDirectoryPopup
+    get(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity const> identity,
+        ::ActiveDirectoryExperience                                    experience);
+
+    MCNAPI static ::ActiveDirectoryPopup
+    get(::edu::Role, int trialsRemaining, ::ActiveDirectoryExperience experience, ::std::string const& email);
+
+    MCNAPI static ::ActiveDirectoryPopup getVerificationInProgressPopup(::std::string const& verificationUri);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::ActiveDirectoryPopup&&);
+
+    MCNAPI void* $ctor(::ActiveDirectoryPopup const&);
+
+    MCNAPI void* $ctor(
+        ::std::string&&             id,
+        ::std::string&&             title,
+        ::std::string&&             popupText,
+        ::std::string&&             hyperlinkIntroText,
+        ::std::string&&             hyperlinkLabelText,
+        ::std::string&&             hyperlinkUri,
+        ::ActiveDirectoryAction     postPopupAction,
+        ::ActiveDirectoryExperience experienceType
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

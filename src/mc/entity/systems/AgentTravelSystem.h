@@ -22,9 +22,9 @@ struct TickingSystemWithInfo;
 namespace AgentTravelSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-MCNAPI void tickClient(
+MCAPI void tickClient(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent, ::AgentFlagComponent>,
@@ -32,7 +32,7 @@ MCNAPI void tickClient(
         ::AbilitiesComponent> view
 );
 
-MCNAPI void tickServer(
+MCAPI void tickServer(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent, ::AgentFlagComponent>,

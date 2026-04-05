@@ -12,9 +12,9 @@ class IScriptDebugger {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool connect(::std::string const&, ushort) = 0;
+    virtual bool connect(::std::string const& host, ushort port) = 0;
 
-    virtual bool listen(ushort) = 0;
+    virtual bool listen(ushort port) = 0;
 
     virtual void stop() = 0;
 
@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
 
-    MCNAPI_C static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
+    MCNAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
     // NOLINTEND
 
 public:

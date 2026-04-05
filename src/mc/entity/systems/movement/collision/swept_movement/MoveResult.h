@@ -2,22 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/phys/AABB.h"
+
 namespace SweptMovement {
 
 struct MoveResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb86c17;
-    ::ll::UntypedStorage<4, 4>  mUnk9ecc5b;
-    ::ll::UntypedStorage<4, 24> mUnkbb5c5e;
+    ::ll::TypedStorage<4, 12, ::Vec3> mAccumulatedMove;
+    ::ll::TypedStorage<4, 4, float>   mTotalPenetration;
+    ::ll::TypedStorage<4, 24, ::AABB> mResultShape;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveResult& operator=(MoveResult const&);
-    MoveResult(MoveResult const&);
-    MoveResult();
 };
 
 } // namespace SweptMovement

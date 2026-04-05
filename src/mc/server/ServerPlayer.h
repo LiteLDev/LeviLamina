@@ -157,7 +157,7 @@ public:
 
     virtual void moveView() /*override*/;
 
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
 
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
@@ -190,7 +190,7 @@ public:
     ) /*override*/;
 
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -428,7 +428,7 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
@@ -459,7 +459,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
+        ::ResolvedTextObject const& textObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );

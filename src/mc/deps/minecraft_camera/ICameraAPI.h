@@ -66,14 +66,19 @@ public:
     virtual ::std::optional<::Vec3>
     tryGetActorRelativeLocation(::WeakRef<::EntityContext> const, ::SharedTypes::Legacy::ActorLocation) const = 0;
 
-    virtual ::std::optional<::Vec3> tryGetActorInterpolatedPosition(::WeakRef<::EntityContext>, float) const = 0;
+    virtual ::std::optional<::Vec3>
+    tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> actorRef, float interpolationFactor) const = 0;
 
-    virtual ::std::optional<::Vec2> tryGetActorRotation(::WeakRef<::EntityContext const> const) const = 0;
+    virtual ::std::optional<::Vec2> tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const = 0;
 
-    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext>) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext> actorRef) const = 0;
 
-    virtual ::std::optional<::ICameraAPI::ShakeParameters>
-    tryGetShakeParameters(::WeakRef<::EntityContext>, float, float, float) const = 0;
+    virtual ::std::optional<::ICameraAPI::ShakeParameters> tryGetShakeParameters(
+        ::WeakRef<::EntityContext> actorRef,
+        float                      noiseMultiplier,
+        float                      frequency,
+        float                      amplitude
+    ) const = 0;
 
     virtual ::std::optional<float> tryGetFOV() const = 0;
 
@@ -83,7 +88,7 @@ public:
 
     virtual ::WeakRef<::EntityContext> getDefaultCameraTarget() const = 0;
 
-    virtual ::WeakRef<::EntityContext> getWeakEntity(int64) const = 0;
+    virtual ::WeakRef<::EntityContext> getWeakEntity(int64 actorId) const = 0;
 
     virtual ::WeakRef<::EntityRegistry> getRegistryWeakEntity_DONOTUSE() const = 0;
 
@@ -91,11 +96,11 @@ public:
 
     virtual ::glm::vec2 getViewportSize() const = 0;
 
-    virtual ::std::optional<::Vec3> clip(::glm::vec3 const&, ::glm::vec3 const&) = 0;
+    virtual ::std::optional<::Vec3> clip(::glm::vec3 const& A, ::glm::vec3 const& B) = 0;
 
-    virtual bool isInWall(::Vec3 const&) const = 0;
+    virtual bool isInWall(::Vec3 const& pos) const = 0;
 
-    virtual bool isAlive(::WeakRef<::EntityContext> const) const = 0;
+    virtual bool isAlive(::WeakRef<::EntityContext> const actorRef) const = 0;
     // NOLINTEND
 
 public:

@@ -47,19 +47,140 @@ struct CBLISystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                         ::GlobalWrite<>,
                         ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk34b53b;
-    ::ll::UntypedStorage<8, 8> mUnkabd3ce;
-    ::ll::UntypedStorage<8, 8> mUnk2692f8;
-    ::ll::UntypedStorage<8, 8> mUnk7ebf3b;
-    // NOLINTEND
+    // CBLISystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::ActorMovementTickNeededComponent,
+            ::BoatFlagComponent,
+            ::HorseFlagComponent,
+            ::PlayerComponent,
+            ::RecalculateControlledByLocalInstanceRequestComponent>,
+        ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+        ::Write<>,
+        ::AddRemove<::ControlledByLocalInstanceComponent>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+    using SingleTickCallback = void (*)(
+        ::StrictEntityContext&,
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&,
+        void (*)(::StrictEntityContext const&, ::EntityModifier<::ControlledByLocalInstanceComponent>),
+        void (*)(
+            ::StrictEntityContext const&,
+            ::std::optional<::StrictEntityContext> const&,
+            ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+            ::EntityModifier<::ControlledByLocalInstanceComponent>
+        )
+    );
+
+    using TickCallback = void (*)(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>&,
+        void (*)(::StrictEntityContext const&, ::EntityModifier<::ControlledByLocalInstanceComponent>),
+        void (*)(
+            ::StrictEntityContext const&,
+            ::std::optional<::StrictEntityContext> const&,
+            ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+            ::EntityModifier<::ControlledByLocalInstanceComponent>
+        )
+    );
 
 public:
-    // prevent constructor by default
-    CBLISystem& operator=(CBLISystem const&);
-    CBLISystem(CBLISystem const&);
-    CBLISystem();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        8,
+        void (*const)(
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::ActorMovementTickNeededComponent,
+                    ::BoatFlagComponent,
+                    ::HorseFlagComponent,
+                    ::PlayerComponent,
+                    ::RecalculateControlledByLocalInstanceRequestComponent>,
+                ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                ::Write<>,
+                ::AddRemove<::ControlledByLocalInstanceComponent>,
+                ::GlobalRead<>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>&,
+            void (*)(::StrictEntityContext const&, ::EntityModifier<::ControlledByLocalInstanceComponent>),
+            void (*)(
+                ::StrictEntityContext const&,
+                ::std::optional<::StrictEntityContext> const&,
+                ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+                ::EntityModifier<::ControlledByLocalInstanceComponent>
+            )
+        )>
+        mTick;
+    ::ll::TypedStorage<
+        8,
+        8,
+        void (*const)(
+            ::StrictEntityContext&,
+            ::StrictExecutionContext<
+                ::Filter<
+                    ::ActorMovementTickNeededComponent,
+                    ::BoatFlagComponent,
+                    ::HorseFlagComponent,
+                    ::PlayerComponent,
+                    ::RecalculateControlledByLocalInstanceRequestComponent>,
+                ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                ::Write<>,
+                ::AddRemove<::ControlledByLocalInstanceComponent>,
+                ::GlobalRead<>,
+                ::GlobalWrite<>,
+                ::EntityFactoryT<>>&,
+            void (*)(::StrictEntityContext const&, ::EntityModifier<::ControlledByLocalInstanceComponent>),
+            void (*)(
+                ::StrictEntityContext const&,
+                ::std::optional<::StrictEntityContext> const&,
+                ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+                ::EntityModifier<::ControlledByLocalInstanceComponent>
+            )
+        )>
+        mSingleTick;
+    ::ll::TypedStorage<
+        8,
+        8,
+        void (*const)(::StrictEntityContext const&, ::EntityModifier<::ControlledByLocalInstanceComponent>)>
+        mSetCBLI;
+    ::ll::TypedStorage<
+        8,
+        8,
+        void (*const)(
+            ::StrictEntityContext const&,
+            ::std::optional<::StrictEntityContext> const&,
+            ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::Optional<::LocalPlayerComponent>> const&,
+            ::EntityModifier<::ControlledByLocalInstanceComponent>
+        )>
+        mSetVehicleCBLI;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -103,7 +224,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorMovementTickNeededComponent,
@@ -119,7 +240,7 @@ public:
             ::EntityFactoryT<>>& strictContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorMovementTickNeededComponent,

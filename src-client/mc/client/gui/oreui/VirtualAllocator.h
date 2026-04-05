@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/IVirtualAllocator.h"
+#include "mc/external/gameface/cohtml/IVirtualAllocator.h"
 
 namespace OreUI {
 

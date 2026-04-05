@@ -53,7 +53,9 @@ public:
         bool                                                                             createIfNotFound
     );
 
-    MCAPI_C bool tick(::Level& level);
+#ifdef LL_PLAT_C
+    MCAPI bool tick(::Level& level);
+#endif
     // NOLINTEND
 
 public:

@@ -16,22 +16,37 @@ public:
     ::ll::TypedStorage<4, 16, ::cg::CompressedImageDescription> mImageDescription;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CompressedImageBuffer();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
 
+    MCAPI ~CompressedImageBuffer();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

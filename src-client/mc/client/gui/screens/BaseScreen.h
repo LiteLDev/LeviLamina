@@ -89,7 +89,7 @@ public:
 
     virtual void prepareFrame(::ScreenContext& screenContext) /*override*/;
 
-    virtual void render(::ScreenContext&, ::FrameRenderObject const&) = 0;
+    virtual void render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj) = 0;
 
     virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
@@ -118,7 +118,7 @@ public:
     virtual void
     handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact) /*override*/;
 
-    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason) /*override*/;
+    virtual void setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason) /*override*/;
 
     virtual void onKeyboardDismissed() /*override*/;
 
@@ -174,7 +174,8 @@ public:
 
     virtual ::std::string getScreenTelemetryName() const /*override*/;
 
-    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const /*override*/;
+    virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const
+        /*override*/;
 
     virtual int getScreenVersion() const /*override*/;
 
@@ -227,7 +228,9 @@ public:
 
     virtual void sendScreenEvent(::std::string const&, ::std::string const&) /*override*/;
 
-    virtual void setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&) /*override*/;
+    virtual void setScreenState(
+        ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters
+    ) /*override*/;
 
     virtual ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> getDebugDataProvider() const
         /*override*/;
@@ -318,7 +321,7 @@ public:
 
     MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 
-    MCFOLD void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason);
+    MCFOLD void $setTextboxText(::std::string const& text, ::TextboxTextUpdateReason reason);
 
     MCFOLD void $onKeyboardDismissed();
 
@@ -374,7 +377,7 @@ public:
 
     MCFOLD ::std::string $getScreenTelemetryName() const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
     MCFOLD int $getScreenVersion() const;
 
@@ -426,7 +429,8 @@ public:
 
     MCFOLD void $sendScreenEvent(::std::string const&, ::std::string const&);
 
-    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
+    MCFOLD void
+    $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& routeQueryParameters);
 
     MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
     // NOLINTEND

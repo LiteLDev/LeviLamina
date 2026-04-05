@@ -10,19 +10,19 @@ public:
     // NOLINTBEGIN
     virtual ~IPlatformAllocator() = default;
 
-    virtual void* allocate(uint) = 0;
+    virtual void* allocate(uint size) = 0;
 
-    virtual void* reallocate(void*, uint) = 0;
+    virtual void* reallocate(void* ptr, uint size) = 0;
 
-    virtual void deallocate(void*) = 0;
+    virtual void deallocate(void* ptr) = 0;
 
-    virtual void* alignedAllocate(uint, uint) = 0;
+    virtual void* alignedAllocate(uint size, uint alignment) = 0;
 
-    virtual void alignedDeallocate(void*) = 0;
+    virtual void alignedDeallocate(void* ptr) = 0;
 
-    virtual void* virtualAllocate(void*, uint, int, int) = 0;
+    virtual void* virtualAllocate(void* hint, uint size, int protection, int flags) = 0;
 
-    virtual bool virtualFree(void*, uint, int) = 0;
+    virtual bool virtualFree(void* ptr, uint size, int flags) = 0;
     // NOLINTEND
 
 public:

@@ -13,9 +13,9 @@ class UpdateBoundingBoxSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClientSide);
 
-    MCNAPI static void
+    MCAPI static void
     synchronousUpdateSize(::EntityContext& entity, ::BaseGameVersion const& version, bool isClientSide);
     // NOLINTEND
 };

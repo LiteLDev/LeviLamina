@@ -16,13 +16,13 @@ public:
     // NOLINTBEGIN
     virtual ~IContentKeyProvider() /*override*/ = default;
 
-    virtual ::std::string getContentKey(::ContentIdentity const&) const = 0;
+    virtual ::std::string getContentKey(::ContentIdentity const& contentIdentity) const = 0;
 
-    virtual ::std::string getAlternateContentKey(::ContentIdentity const&) const;
+    virtual ::std::string getAlternateContentKey(::ContentIdentity const& contentIdentity) const;
 
     virtual bool requireEncryptedReads() const;
 
-    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&) = 0;
+    virtual void setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const& keys) = 0;
 
     virtual void clearTempContentKeys() = 0;
     // NOLINTEND
@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
+    MCNAPI ::std::string $getAlternateContentKey(::ContentIdentity const& contentIdentity) const;
 
     MCNAPI bool $requireEncryptedReads() const;
 

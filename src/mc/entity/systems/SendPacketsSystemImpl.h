@@ -18,13 +18,13 @@ struct SendPacketsComponent;
 namespace SendPacketsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendPacketsSystem(
+MCAPI void sendPacketsSystem(
     ::ActorOwnerComponent const&                      actorOwnerComponent,
     ::Optional<::UserEntityIdentifierComponent const> userEntityIdentifierComponent,
     ::SendPacketsComponent&                           sendPacketsComponent
 );
 
-MCNAPI void singleTick(
+MCAPI void singleTick(
     ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
@@ -34,7 +34,7 @@ MCNAPI void singleTick(
     ::EntityModifier<::SendPacketsComponent> modifier
 );
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::ActorOwnerComponent const,

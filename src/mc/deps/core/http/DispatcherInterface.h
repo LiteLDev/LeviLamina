@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     virtual ~DispatcherInterface() /*override*/ = default;
 
-    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&&) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::Bedrock::Http::Request&& request) = 0;
     // NOLINTEND
 
 public:

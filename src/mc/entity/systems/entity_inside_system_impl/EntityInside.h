@@ -82,16 +82,43 @@ struct EntityInside
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkead05d;
-    // NOLINTEND
+    // EntityInside inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::InterpolateMovementNeededComponent,
+            ::BoatFlagComponent,
+            ::FreezeImmuneFlagComponent,
+            ::IsDeadFlagComponent,
+            ::PlayerComponent,
+            ::WasInWaterFlagComponent>,
+        ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorGameTypeComponent, ::DimensionTypeComponent>,
+        ::Write<
+            ::BlockMovementSlowdownMultiplierComponent,
+            ::FallDistanceComponent,
+            ::InsideBlockComponent,
+            ::StateVectorComponent>,
+        ::AddRemove<
+            ::BlockMovementSlowdownAppliedComponent,
+            ::FreezingComponent,
+            ::IgnoresEntityInsideFlagComponent,
+            ::InsideBubbleColumnBlockComponent,
+            ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
+            ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
+            ::InsideGenericBlockComponent,
+            ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
+            ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+            ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
+            ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
+            ::InsideWebBlockComponent>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    EntityInside& operator=(EntityInside const&);
-    EntityInside(EntityInside const&);
-    EntityInside();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -177,7 +204,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static auto createContextObjects(
+    MCAPI static auto createContextObjects(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -214,7 +241,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCNAPI static auto createServerSideContextObjects(
+    MCAPI static auto createServerSideContextObjects(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -255,7 +282,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -292,7 +319,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,

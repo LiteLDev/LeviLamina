@@ -23,7 +23,7 @@ struct VehicleComponent;
 namespace MobTravelUpdateSpeedsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doUpdateMovementSpeed(
+MCAPI void doUpdateMovementSpeed(
     ::StrictEntityContext const&                                   context,
     ::ActorDataFlagComponent const&                                actorDataFlagComponent,
     ::ActorDataControllingSeatIndexComponent const&                controllingSeatIndexComponent,

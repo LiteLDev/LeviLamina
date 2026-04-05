@@ -25,17 +25,18 @@ public:
 
     virtual void zeroAllTimes() = 0;
 
-    virtual void reserveEntity(::EntityId) = 0;
+    virtual void reserveEntity(::EntityId entity) = 0;
 
-    virtual void reserveSystems(uint64) = 0;
+    virtual void reserveSystems(uint64 numSystems) = 0;
 
     virtual void addTime(
-        ::EntityId,
-        ::TickingSystemId,
-        ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>
+        ::EntityId                                                           entity,
+        ::TickingSystemId                                                    system,
+        ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>> dur
     ) = 0;
 
-    virtual void addNonSystemTime(::EntityId, ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>) = 0;
+    virtual void
+    addNonSystemTime(::EntityId entity, ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>> dur) = 0;
 
     virtual ::brstd::flat_map<
         ::EntityId,

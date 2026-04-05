@@ -2,15 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct TimeMarkerData;
+// clang-format on
+
 struct WorldClockData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkff71a0;
-    ::ll::UntypedStorage<8, 32> mUnk28aabb;
-    ::ll::UntypedStorage<4, 4>  mUnk15269b;
-    ::ll::UntypedStorage<1, 1>  mUnkfd8fcb;
-    ::ll::UntypedStorage<8, 24> mUnk9d68eb;
+    ::ll::TypedStorage<8, 8, uint64>                           mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mName;
+    ::ll::TypedStorage<4, 4, int>                              mTime;
+    ::ll::TypedStorage<1, 1, bool>                             mIsPaused;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TimeMarkerData>> mTimeMarkers;
     // NOLINTEND
 
 public:
@@ -21,10 +26,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WorldClockData& operator=(::WorldClockData&&);
+    MCAPI ::WorldClockData& operator=(::WorldClockData&&);
 
-    MCNAPI ::WorldClockData& operator=(::WorldClockData const&);
+    MCAPI ::WorldClockData& operator=(::WorldClockData const&);
 
-    MCNAPI bool operator==(::WorldClockData const&) const;
+    MCAPI bool operator==(::WorldClockData const&) const;
     // NOLINTEND
 };

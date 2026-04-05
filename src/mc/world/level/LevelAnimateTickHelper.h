@@ -67,18 +67,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _tickBlockAnimationsTimeLimitedJavaParity(
+#ifdef LL_PLAT_C
+    MCNAPI void _tickBlockAnimationsTimeLimitedJavaParity(
         ::BlockSource&                                                         region,
         ::Random&                                                              random,
         ::Vec3 const&                                                          centerPosition,
         ::LevelAnimateTickHelper::TimeLimitedJavaParityOffsetCenterData const& offsetCenterData
     );
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _animateTickRandomBlockInRadius(
+#ifdef LL_PLAT_C
+    MCNAPI static void _animateTickRandomBlockInRadius(
         ::BlockSource& region,
         ::Random&      random,
         ::Vec3 const&  centerPosition,
@@ -86,12 +89,13 @@ public:
         bool           doAnimateTickBedrockLegacy
     );
 
-    MCNAPI_C static ::LevelAnimateTickHelper::TimeLimitedJavaParityOffsetCenterData
+    MCNAPI static ::LevelAnimateTickHelper::TimeLimitedJavaParityOffsetCenterData
     _computeTimeLimitedJavaParityAnimateTickCenter(
         ::Vec3 const& centerPosition,
         ::Vec3 const& prevPosition,
         ::Vec3 const& viewDirection
     );
+#endif
     // NOLINTEND
 
 public:

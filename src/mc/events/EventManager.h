@@ -67,7 +67,9 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-    MCNAPI_C ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
+#endif
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
 
@@ -87,7 +89,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string getPlatformCategory(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string getPlatformCategory(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
+#endif
     // NOLINTEND
 
 public:

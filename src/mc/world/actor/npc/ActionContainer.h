@@ -31,7 +31,9 @@ public:
 
     MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
-    MCAPI_C void remove(uint64 index);
+#ifdef LL_PLAT_C
+    MCAPI void remove(uint64 index);
+#endif
 
     MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
 

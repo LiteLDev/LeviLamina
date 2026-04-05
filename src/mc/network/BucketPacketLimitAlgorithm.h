@@ -47,19 +47,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
+#ifdef LL_PLAT_S
+    MCNAPI static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(float drainRatePerSec, uint maxBucketSize);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
+#endif
     // NOLINTEND
 
 public:

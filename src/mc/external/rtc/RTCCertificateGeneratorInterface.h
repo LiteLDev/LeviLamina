@@ -21,9 +21,9 @@ public:
     virtual ~RTCCertificateGeneratorInterface() = default;
 
     virtual void GenerateCertificateAsync(
-        ::rtc::KeyParams const&,
-        ::std::optional<uint64> const&,
-        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>
+        ::rtc::KeyParams const&                                                       key_params,
+        ::std::optional<uint64> const&                                                expires_ms,
+        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&> callback
     ) = 0;
     // NOLINTEND
 

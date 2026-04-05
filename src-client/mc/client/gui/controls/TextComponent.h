@@ -80,7 +80,7 @@ public:
 
     virtual void render(::UIRenderContext& context);
 
-    virtual void updateUI(::UIMeasureStrategy const& context) /*override*/;
+    virtual void updateUI(::UIMeasureStrategy const& uiMeasureStrategy) /*override*/;
 
     virtual ::std::string const& getTextToSpeechComponentValue() const /*override*/;
     // NOLINTEND
@@ -130,7 +130,7 @@ public:
 
     MCAPI void $render(::UIRenderContext& context);
 
-    MCAPI void $updateUI(::UIMeasureStrategy const& context);
+    MCAPI void $updateUI(::UIMeasureStrategy const& uiMeasureStrategy);
 
     MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND

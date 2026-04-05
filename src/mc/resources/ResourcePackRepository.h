@@ -279,8 +279,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Core::PathBuffer<::std::string>
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::PathBuffer<::std::string>
     getDevelopmentBehaviorPacksPath(::Core::FilePathManager const& paths);
+#endif
     // NOLINTEND
 
 public:

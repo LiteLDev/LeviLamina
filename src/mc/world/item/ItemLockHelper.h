@@ -19,13 +19,15 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     appendItemLockHoverText(::Bedrock::Safety::RedactableString& formattedHoverText, ::ItemStackBase const& item);
 
-    MCAPI_C static void
+    MCAPI static void
     appendItemLockPopupNoticeText(::std::string& formattedPopupNoticeText, ::ItemStackBase const& item);
 
-    MCAPI_C static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
+    MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
+#endif
 
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
 

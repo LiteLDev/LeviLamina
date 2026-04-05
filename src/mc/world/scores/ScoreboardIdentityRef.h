@@ -32,7 +32,9 @@ public:
     MCAPI ::ScoreboardOperationResult
     modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
-    MCAPI_S bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
+#ifdef LL_PLAT_S
+    MCAPI bool removeFromObjective(::Scoreboard& scoreboard, ::Objective& objective);
+#endif
     // NOLINTEND
 
 public:

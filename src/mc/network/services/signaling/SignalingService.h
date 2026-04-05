@@ -471,7 +471,9 @@ public:
 
     MCNAPI ::std::shared_ptr<::SignalingConsumerRefCount> getSignalingConsumerRefCount();
 
-    MCNAPI_C ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
+#endif
 
     MCNAPI ::Bedrock::Threading::Async<::std::error_code>
     signIn(::std::variant<::NetherNet::NetworkID, ::PlayerMessaging::NetworkID> localId);

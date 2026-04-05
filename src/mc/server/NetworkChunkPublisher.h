@@ -92,18 +92,22 @@ public:
 
     MCAPI void destroyRegion();
 
-    MCAPI_C void handleGenerationRequests();
+#ifdef LL_PLAT_C
+    MCAPI void handleGenerationRequests();
+#endif
 
     MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
     MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
 
-    MCAPI_C void queueChunkGenerationRequests(
+#ifdef LL_PLAT_C
+    MCAPI void queueChunkGenerationRequests(
         ::ChunkPos                       moveCenter,
         int                              chunkRadius,
         ::Vec3 const&                    direction,
         ::std::vector<::ChunkPos> const& serverChunks
     );
+#endif
 
     MCAPI void sendQueuedChunks();
     // NOLINTEND

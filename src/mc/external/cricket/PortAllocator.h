@@ -64,7 +64,7 @@ public:
 
     virtual void set_restrict_ice_credentials_change(bool value);
 
-    virtual void SetNetworkIgnoreMask(int) = 0;
+    virtual void SetNetworkIgnoreMask(int network_ignore_mask) = 0;
 
     virtual void SetVpnPreference(::webrtc::VpnPreference preference);
 
@@ -72,8 +72,12 @@ public:
 
     virtual void GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>* candidate_stats_list);
 
-    virtual ::cricket::PortAllocatorSession*
-    CreateSessionInternal(::std::string_view, int, ::std::string_view, ::std::string_view) = 0;
+    virtual ::cricket::PortAllocatorSession* CreateSessionInternal(
+        ::std::string_view content_name,
+        int                component,
+        ::std::string_view ice_ufrag,
+        ::std::string_view ice_pwd
+    ) = 0;
 
     virtual bool MdnsObfuscationEnabled() const;
     // NOLINTEND

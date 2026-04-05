@@ -25,13 +25,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void UninstallHooks();
+#ifdef LL_PLAT_C
+    MCNAPI void UninstallHooks();
+
+    MCNAPI ~EntitySystemProfiler();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

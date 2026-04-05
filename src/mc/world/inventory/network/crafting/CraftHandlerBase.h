@@ -45,13 +45,17 @@ public:
     // NOLINTBEGIN
     virtual ~CraftHandlerBase() = default;
 
-    virtual ::ItemStackNetResult handleConsumedItem(::FullContainerName const&, uchar const, ::ItemStack const&);
+    virtual ::ItemStackNetResult handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
 
-    virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType);
+    virtual ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
 
     virtual void endRequestBatch();
 
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) = 0;
+    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) = 0;
 
     virtual void _postCraftRequest(bool const wasSuccess);
 

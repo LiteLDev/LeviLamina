@@ -55,7 +55,7 @@ public:
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const = 0;
 
     virtual void
-    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&) /*override*/;
+    _handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
 
     virtual void _onOwnerPositionUpdate() /*override*/;
     // NOLINTEND
@@ -114,7 +114,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const&);
+    MCNAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
     MCNAPI void $_onOwnerPositionUpdate();
 

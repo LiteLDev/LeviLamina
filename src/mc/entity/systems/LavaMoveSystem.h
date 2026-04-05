@@ -22,4 +22,19 @@ struct MobTravelComponent;
 struct StateVectorComponent;
 // clang-format on
 
-class LavaMoveSystem {};
+class LavaMoveSystem {
+public:
+    // LavaMoveSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::LavaTravelFlagComponent>,
+        ::Optional<::NavigationComponent const>,
+        ::AABBShapeComponent const,
+        ::ActorRotationComponent const,
+        ::ActorDataFlagComponent const,
+        ::FallDistanceComponent,
+        ::MobTravelComponent,
+        ::StateVectorComponent,
+        ::Optional<::CanStandOnSnowFlagComponent const>,
+        ::Optional<::HasLightweightFamilyFlagComponent const>>;
+};

@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual ~ThirdPartyServerItemProgressHandler() /*override*/ = default;
 
-    virtual ::std::string getProgressMessage(::MinecraftScreenModel&) const /*override*/;
+    virtual ::std::string getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getName() const /*override*/;
     // NOLINTEND

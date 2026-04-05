@@ -5,7 +5,7 @@
 namespace ComponentComparer {
 // functions
 // NOLINTBEGIN
-MCAPI_C ::std::string getDiffMessage(char const* valueName, ::std::string const& lhs, ::std::string const& rhs);
+MCAPI ::std::string getDiffMessage(char const* valueName, ::std::string const& lhs, ::std::string const& rhs);
 // NOLINTEND
 
 // static variables

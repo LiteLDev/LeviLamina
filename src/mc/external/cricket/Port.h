@@ -128,7 +128,7 @@ public:
 
     virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
-    virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
+    virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const& addr) const;
 
     virtual void SendBindingErrorResponse(
         ::cricket::StunMessage*     message,
@@ -159,7 +159,7 @@ public:
         ::std::string_view          remote_ufrag
     ) /*override*/;
 
-    virtual void OnSentPacket(::rtc::AsyncPacketSocket*, ::rtc::SentPacket const&) = 0;
+    virtual void OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet) = 0;
 
     virtual void AddPrflxCandidate(::cricket::Candidate const& local) /*override*/;
 
@@ -337,7 +337,7 @@ public:
 
     MCNAPI bool $HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
-    MCNAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
+    MCNAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const& addr) const;
 
     MCNAPI void $SendBindingErrorResponse(
         ::cricket::StunMessage*     message,

@@ -15,9 +15,9 @@ public:
 
     virtual ::std::string_view getName() = 0;
 
-    virtual void buildNetworkTag(::CompoundTag&) const = 0;
+    virtual void buildNetworkTag(::CompoundTag& tag) const = 0;
 
-    virtual void initializeFromNetwork(::CompoundTag const&) = 0;
+    virtual void initializeFromNetwork(::CompoundTag const& tag) = 0;
     // NOLINTEND
 
 public:

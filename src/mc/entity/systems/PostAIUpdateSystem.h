@@ -26,16 +26,16 @@ class PostAIUpdateSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doPostAiUpdate(
+    MCAPI static void doPostAiUpdate(
         ::StrictEntityContext&                       entity,
         ::Optional<::OnGroundFlagComponent const>    onGround,
         ::NoActionTimeComponent&                     noActionTime,
         ::EntityModifier<::WasOnGroundFlagComponent> mod
     );
 
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,

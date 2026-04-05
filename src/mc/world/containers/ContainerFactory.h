@@ -13,10 +13,12 @@ class ContainerFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::shared_ptr<::ContainerController>
+#ifdef LL_PLAT_C
+    MCAPI static ::std::shared_ptr<::ContainerController>
     createController(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCAPI_C static ::FullContainerName getContainerEnumName(::std::string const& collectionName);
+    MCAPI static ::FullContainerName getContainerEnumName(::std::string const& collectionName);
+#endif
     // NOLINTEND
 
 public:

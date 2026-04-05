@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual void refreshCatalogItems(::IPackManifestFactory&) = 0;
 
-    virtual void setEnabled(bool) = 0;
+    virtual void setEnabled(bool enabled) = 0;
 
     virtual ~IContentCatalogPackSource() /*override*/ = default;
     // NOLINTEND

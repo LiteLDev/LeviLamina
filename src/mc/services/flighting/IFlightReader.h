@@ -92,7 +92,7 @@ public:
 
     virtual bool getExperienceManifestRefreshOnTokenEnabled() const = 0;
 
-    virtual bool getDisableTrickleIce(int) const = 0;
+    virtual bool getDisableTrickleIce(int networkType) const = 0;
 
     virtual ::std::string getProfilingOrchestratorConfig() const = 0;
 
@@ -106,38 +106,44 @@ public:
 
     virtual bool getDisableSwitchAdHoc() const = 0;
 
-    virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const = 0;
+    virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const& visitor) const = 0;
 
-    virtual void
-    registerPartiesEnabledObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
-
-    virtual void
-    registerPartiesChatEnabledObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
-
-    virtual void registerProfilingOrchestratorConfigChangedObserver(
-        ::Bedrock::PubSub::Subscription&,
-        ::std::function<void(::std::string_view)>&&
+    virtual void registerPartiesEnabledObserver(
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::std::function<void(bool)>      observer
     ) const = 0;
 
-    virtual void
-    registerEnableMemoryTrackerObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
+    virtual void registerPartiesChatEnabledObserver(
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::std::function<void(bool)>      observer
+    ) const = 0;
+
+    virtual void registerProfilingOrchestratorConfigChangedObserver(
+        ::Bedrock::PubSub::Subscription&            subscription,
+        ::std::function<void(::std::string_view)>&& observer
+    ) const = 0;
+
+    virtual void registerEnableMemoryTrackerObserver(
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::std::function<void(bool)>      observer
+    ) const = 0;
 
     virtual void registerFriendsDrawerOnMultipleScreensObserver(
-        ::Bedrock::PubSub::Subscription&,
-        ::std::function<void(bool)>
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::std::function<void(bool)>      observer
     ) const = 0;
 
     virtual void registerPartiesTravelToRealmsEnabledObserver(
-        ::Bedrock::PubSub::Subscription&,
-        ::std::function<void(bool)>
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::std::function<void(bool)>      observer
     ) const = 0;
 
-    virtual bool isEnabled(::FlightingTreatmentId) const = 0;
+    virtual bool isEnabled(::FlightingTreatmentId id) const = 0;
 
     virtual void registerOptionObserverCallback(
-        ::Bedrock::PubSub::Subscription&,
-        ::FlightingTreatmentId,
-        ::std::function<void(bool)>
+        ::Bedrock::PubSub::Subscription& subscription,
+        ::FlightingTreatmentId           id,
+        ::std::function<void(bool)>      observer
     ) const = 0;
     // NOLINTEND
 

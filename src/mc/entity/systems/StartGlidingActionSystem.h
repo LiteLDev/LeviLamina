@@ -11,6 +11,6 @@ struct StartGlidingActionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
     // NOLINTEND
 };

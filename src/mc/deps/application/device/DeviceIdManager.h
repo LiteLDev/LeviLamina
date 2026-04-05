@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     virtual void initialize() = 0;
 
-    virtual void updateDeviceId(bool const) = 0;
+    virtual void updateDeviceId(bool const isAnonymous) = 0;
 
     virtual ::std::string const& getDeviceId() const = 0;
 

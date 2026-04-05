@@ -64,6 +64,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ResourceLoadTaskGroup(
+            ::std::string_view                                    groupName,
+            ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
+            ::ResourceLoadType                                    loadType,
+            ::std::vector<::ResourceLoadType>                     dependencies,
+            ::Scheduler&                                          scheduler,
+            ::WorkerPool&                                         workerPool
+        );
+#endif
+
         MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,
@@ -74,7 +85,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(
             ::std::string_view                                    groupName,
             ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
             ::ResourceLoadType                                    loadType,
@@ -82,6 +94,7 @@ public:
             ::Scheduler&                                          scheduler,
             ::WorkerPool&                                         workerPool
         );
+#endif
         // NOLINTEND
     };
 
@@ -116,18 +129,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _cancel();
+#ifdef LL_PLAT_C
+    MCNAPI void _cancel();
 
-    MCNAPI_C void _initializeResourceLoadTaskGroups();
+    MCNAPI void _initializeResourceLoadTaskGroups();
+#endif
 
     MCNAPI void
     _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
 
-    MCNAPI_C bool isComplete() const;
+#ifdef LL_PLAT_C
+    MCNAPI bool isComplete() const;
 
-    MCNAPI_C bool isComplete(::ResourceLoadType resourceLoadType) const;
+    MCNAPI bool isComplete(::ResourceLoadType resourceLoadType) const;
 
-    MCNAPI_C void printRunningTasks();
+    MCNAPI void printRunningTasks();
+#endif
 
     MCNAPI ::Bedrock::Threading::Async<void> queue(
         ::ResourceLoadType                          resourceLoadType,
@@ -136,30 +153,34 @@ public:
         uint                                        taskPriority
     );
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> queueAsync(
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Threading::Async<void> queueAsync(
         ::ResourceLoadType                          resourceLoadType,
         ::brstd::move_only_function<::TaskResult()> callback,
         uint                                        taskPriority
     );
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> queueSync(
+    MCNAPI ::Bedrock::Threading::Async<void> queueSync(
         ::ResourceLoadType                          resourceLoadType,
         ::brstd::move_only_function<::TaskResult()> callback,
         uint                                        taskPriority
     );
 
-    MCNAPI_C void registerResourceLoadTaskGroup(
+    MCNAPI void registerResourceLoadTaskGroup(
         ::std::string_view                                    groupName,
         ::Bedrock::Profiler::details::PredeclaredAnnotation&& annotation,
         ::ResourceLoadType                                    resourceLoadType,
         ::std::vector<::ResourceLoadType>                     dependencies
     );
+#endif
 
     MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
 
-    MCNAPI_C void sync(::ResourceLoadType resourceLoadType);
+#ifdef LL_PLAT_C
+    MCNAPI void sync(::ResourceLoadType resourceLoadType);
 
-    MCNAPI_C void update();
+    MCNAPI void update();
+#endif
     // NOLINTEND
 
 public:

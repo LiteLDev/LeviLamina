@@ -77,24 +77,24 @@ public:
     virtual ::Editor::Services::RealmsServiceStatus const getServiceStatus() const /*override*/;
 
     virtual void beginUploadToRealms(
-        ::std::string,
-        int,
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+        ::std::string                                                             realmsWorldId,
+        int                                                                       slotId,
+        ::WeakEntityRef                                                           playerRef,
+        ::Editor::GameOptions const&                                              gameOptions,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback
     ) /*override*/;
 
-    virtual void beginLoadRealmWorldList(::WeakEntityRef) /*override*/;
+    virtual void beginLoadRealmWorldList(::WeakEntityRef playerRef) /*override*/;
 
-    virtual void beginLoadRealmSlots(::std::string const&, ::WeakEntityRef) /*override*/;
+    virtual void beginLoadRealmSlots(::std::string const& worldId, ::WeakEntityRef playerRef) /*override*/;
 
-    virtual void beginDownloadWorld(::std::string const&, int, ::WeakEntityRef) /*override*/;
+    virtual void beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef) /*override*/;
 
     virtual void loadRealmsWorldList() /*override*/;
 
-    virtual void loadRealmsWorldSlots(::std::string const&) /*override*/;
+    virtual void loadRealmsWorldSlots(::std::string const& worldId) /*override*/;
 
-    virtual void downloadRealmWorld(::std::string const&, int const) /*override*/;
+    virtual void downloadRealmWorld(::std::string const& worldId, int const slotId) /*override*/;
 
     virtual bool const canUploadWorld() const /*override*/;
 
@@ -151,24 +151,24 @@ public:
     MCNAPI ::Editor::Services::RealmsServiceStatus const $getServiceStatus() const;
 
     MCNAPI void $beginUploadToRealms(
-        ::std::string,
-        int,
-        ::WeakEntityRef,
-        ::Editor::GameOptions const&,
-        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+        ::std::string                                                             realmsWorldId,
+        int                                                                       slotId,
+        ::WeakEntityRef                                                           playerRef,
+        ::Editor::GameOptions const&                                              gameOptions,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback
     );
 
-    MCNAPI void $beginLoadRealmWorldList(::WeakEntityRef);
+    MCNAPI void $beginLoadRealmWorldList(::WeakEntityRef playerRef);
 
-    MCNAPI void $beginLoadRealmSlots(::std::string const&, ::WeakEntityRef);
+    MCNAPI void $beginLoadRealmSlots(::std::string const& worldId, ::WeakEntityRef playerRef);
 
-    MCNAPI void $beginDownloadWorld(::std::string const&, int, ::WeakEntityRef);
+    MCNAPI void $beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef);
 
     MCNAPI void $loadRealmsWorldList();
 
-    MCNAPI void $loadRealmsWorldSlots(::std::string const&);
+    MCNAPI void $loadRealmsWorldSlots(::std::string const& worldId);
 
-    MCNAPI void $downloadRealmWorld(::std::string const&, int const);
+    MCNAPI void $downloadRealmWorld(::std::string const& worldId, int const slotId);
 
     MCNAPI bool const $canUploadWorld() const;
 

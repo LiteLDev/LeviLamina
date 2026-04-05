@@ -23,6 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI BindingInfo(
+        ::std::string                  label,
+        bool                           canRebind,
+        ::std::optional<::std::string> tooltip,
+        ::std::optional<::std::string> actionId
+    );
+#endif
+
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
 
     MCNAPI ~BindingInfo();
@@ -31,12 +40,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::string                  label,
         bool                           canRebind,
         ::std::optional<::std::string> tooltip,
         ::std::optional<::std::string> actionId
     );
+#endif
     // NOLINTEND
 
 public:

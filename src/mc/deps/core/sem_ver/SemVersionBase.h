@@ -1,8 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-
 #include "mc/deps/core/sem_ver/SemVersionAnyVersionType.h"
+
+// auto generated inclusion list
 #include "mc/deps/core/string/StaticOptimizedString.h"
 
 template <typename T>

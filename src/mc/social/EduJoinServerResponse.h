@@ -14,30 +14,48 @@ public:
     ::ll::UntypedStorage<8, 152> mUnk9150cd;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EduJoinServerResponse& operator=(EduJoinServerResponse const&);
     EduJoinServerResponse(EduJoinServerResponse const&);
     EduJoinServerResponse();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EduJoinServerResponse& operator=(EduJoinServerResponse const&);
+    EduJoinServerResponse();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI EduJoinServerResponse(::Social::EduJoinServerResponse&&);
 
+    MCNAPI EduJoinServerResponse(::Social::EduJoinServerResponse const&);
+
+    MCNAPI ~EduJoinServerResponse();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Social::EduJoinServerResponse&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Social::EduJoinServerResponse&&);
 
-    MCNAPI_C void* $ctor(::Social::EduJoinServerResponse const&);
+    MCNAPI void* $ctor(::Social::EduJoinServerResponse const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

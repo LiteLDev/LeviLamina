@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace SendPacketsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSendPacketsSystem();
+MCAPI ::TickingSystemWithInfo createSendPacketsSystem();
 // NOLINTEND
 
 } // namespace SendPacketsSystem

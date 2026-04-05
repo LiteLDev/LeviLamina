@@ -22,9 +22,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void checkRole(
+#ifdef LL_PLAT_C
+    MCNAPI void checkRole(
         ::std::string const&                                                           jsonCredentials,
         ::std::function<void(::edu::Role, ::std::string const&, ::std::string const&)> callback
     );
+#endif
     // NOLINTEND
 };

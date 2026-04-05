@@ -31,7 +31,7 @@ MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const&
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath(::AppPlatform const& platform);
 
-MCNAPI_C ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumSkinPackPath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath(::AppPlatform const& platform);
 

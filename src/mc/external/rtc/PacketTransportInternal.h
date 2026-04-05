@@ -45,9 +45,9 @@ public:
 
     virtual bool receiving() const = 0;
 
-    virtual int SendPacket(char const*, uint64, ::rtc::PacketOptions const&, int) = 0;
+    virtual int SendPacket(char const* data, uint64 size, ::rtc::PacketOptions const& options, int flags) = 0;
 
-    virtual int SetOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetOption(::rtc::Socket::Option opt, int value) = 0;
 
     virtual bool GetOption(::rtc::Socket::Option opt, int* value);
 

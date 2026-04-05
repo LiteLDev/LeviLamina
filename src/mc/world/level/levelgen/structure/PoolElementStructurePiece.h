@@ -56,15 +56,16 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     virtual int generateHeightAtPosition(
-        ::BlockPos const&,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
+        ::BlockPos const&                                                          pos,
+        ::Dimension&                                                               dim,
+        ::BlockVolume&                                                             box,
+        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const = 0;
 
-    virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const = 0;
+    virtual ::Block const*
+    getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const = 0;
 
-    virtual ::Block const& getBeardStabilizeBlock(::Block const&) const = 0;
+    virtual ::Block const& getBeardStabilizeBlock(::Block const& foundationBlock) const = 0;
 
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 

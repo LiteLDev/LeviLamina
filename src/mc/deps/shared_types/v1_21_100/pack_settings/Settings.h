@@ -27,12 +27,18 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
     operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ~Settings();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

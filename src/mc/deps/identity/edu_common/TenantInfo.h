@@ -40,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void updateEntraToken(::Identity::AuthToken const& token, ::TenantInfo::TokenState state);
+#ifdef LL_PLAT_C
+    MCNAPI void updateEntraToken(::Identity::AuthToken const& token, ::TenantInfo::TokenState state);
+#endif
     // NOLINTEND
 };

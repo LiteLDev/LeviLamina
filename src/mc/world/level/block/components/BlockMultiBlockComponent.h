@@ -36,7 +36,9 @@ public:
         ::brstd::function_ref<bool(::BlockPart const&)> callback
     ) const;
 
-    MCAPI_C ::AABB getOutlineShape(::Block const& part, ::BlockPos const& partWorldPos) const;
+#ifdef LL_PLAT_C
+    MCAPI ::AABB getOutlineShape(::Block const& part, ::BlockPos const& partWorldPos) const;
+#endif
 
     MCAPI void onEvent(::BlockEvents::BlockBreakEvent& event) const;
     // NOLINTEND

@@ -34,6 +34,13 @@ public:
     ::ll::TypedStorage<8, 136, ::ItemResultPreview>                                mResultPreview;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StonecutterContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -67,7 +74,7 @@ public:
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
 
     virtual void _updateItemStackRequest(
         ::ContainerScreenRequestActionType,
@@ -79,30 +86,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::pair<::ItemInstance, ::RecipeNetId> _buildResultItem();
+#ifdef LL_PLAT_C
+    MCNAPI explicit StonecutterContainerManagerController(
+        ::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C bool
+    MCNAPI ::std::pair<::ItemInstance, ::RecipeNetId> _buildResultItem();
+
+    MCNAPI bool
     _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope, uchar craftCount);
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C void _updateResultItem();
+    MCNAPI void _updateResultItem();
 
-    MCNAPI_C int getItemIdAuxForStonePattern(int collectionIndex) const;
+    MCNAPI int getItemIdAuxForStonePattern(int collectionIndex) const;
 
-    MCNAPI_C ::ItemInstance getItemInstanceForStonePattern(int collectionIndex) const;
+    MCNAPI ::ItemInstance getItemInstanceForStonePattern(int collectionIndex) const;
 
-    MCNAPI_C int getNumberOfStonePatterns() const;
+    MCNAPI int getNumberOfStonePatterns() const;
 
-    MCNAPI_C int getStackCountForStonePattern(int collectionIndex) const;
+    MCNAPI int getStackCountForStonePattern(int collectionIndex) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::StonecutterContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:
@@ -137,7 +152,7 @@ public:
     MCNAPI ::CreateContainerItemScope
     $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
 
     MCNAPI void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,

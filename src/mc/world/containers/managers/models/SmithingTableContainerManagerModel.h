@@ -53,13 +53,15 @@ public:
     // NOLINTBEGIN
     MCAPI SmithingTableContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
+#ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
-    MCAPI_C ::std::pair<::ItemInstance, ::RecipeNetId> getResultForItems(
+    MCAPI ::std::pair<::ItemInstance, ::RecipeNetId> getResultForItems(
         ::ItemStack const& templateStack,
         ::ItemStack const& inputStack,
         ::ItemStack const& materialStack
     );
+#endif
     // NOLINTEND
 
 public:

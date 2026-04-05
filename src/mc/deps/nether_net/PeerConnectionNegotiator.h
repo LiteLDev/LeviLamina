@@ -176,19 +176,19 @@ public:
     // NOLINTBEGIN
     virtual ~PeerConnectionNegotiator() /*override*/;
 
-    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds) const;
+    virtual ::NetherNet::ESessionError checkTimeout(::std::chrono::seconds timeout) const;
 
-    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const&);
+    virtual void onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
 
-    virtual void onRemoteError(::NetherNet::ConnectError const&);
+    virtual void onRemoteError(::NetherNet::ConnectError const& error);
 
-    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const&) = 0;
+    virtual void onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate) = 0;
 
-    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const&) = 0;
+    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& offerOrError) = 0;
 
-    virtual void _onSetLocalDescription(::webrtc::RTCError) = 0;
+    virtual void _onSetLocalDescription(::webrtc::RTCError result) = 0;
 
-    virtual void _onSetRemoteDescription(::webrtc::RTCError) = 0;
+    virtual void _onSetRemoteDescription(::webrtc::RTCError result) = 0;
     // NOLINTEND
 
 public:
@@ -232,11 +232,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds) const;
+    MCNAPI ::NetherNet::ESessionError $checkTimeout(::std::chrono::seconds timeout) const;
 
-    MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const&);
+    MCNAPI void $onRemoteAnswer(::NetherNet::ConnectResponse const& answer);
 
-    MCNAPI void $onRemoteError(::NetherNet::ConnectError const&);
+    MCNAPI void $onRemoteError(::NetherNet::ConnectError const& error);
 
 
     // NOLINTEND

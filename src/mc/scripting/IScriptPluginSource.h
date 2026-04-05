@@ -15,11 +15,11 @@ public:
 
     virtual ::PackManifest const& getManifest() = 0;
 
-    virtual ::std::vector<::std::string> enumerateScripts(::std::string const&) = 0;
+    virtual ::std::vector<::std::string> enumerateScripts(::std::string const& extension) = 0;
 
-    virtual ::std::optional<::std::string> loadScript(::std::string const&) = 0;
+    virtual ::std::optional<::std::string> loadScript(::std::string const& path) = 0;
 
-    virtual ::std::string removeRootFromPath(::std::string const&) = 0;
+    virtual ::std::string removeRootFromPath(::std::string const& path) = 0;
     // NOLINTEND
 
 public:

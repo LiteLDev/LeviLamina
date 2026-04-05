@@ -54,7 +54,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::Bedrock::BootstrapConfig& getSharedInstance();
+#ifdef LL_PLAT_S
+    MCNAPI static ::Bedrock::BootstrapConfig& getSharedInstance();
+#endif
     // NOLINTEND
 };
 

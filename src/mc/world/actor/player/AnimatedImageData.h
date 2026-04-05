@@ -42,6 +42,10 @@ public:
     MCAPI bool operator==(::AnimatedImageData const&) const;
 
     MCAPI void setSkinImage(::SkinImage const& image);
+
+#ifdef LL_PLAT_C
+    MCAPI ~AnimatedImageData();
+#endif
     // NOLINTEND
 
 public:
@@ -58,6 +62,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

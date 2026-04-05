@@ -22,22 +22,38 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk98f1e1;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         VolumeDescription& operator=(VolumeDescription const&);
         VolumeDescription(VolumeDescription const&);
         VolumeDescription();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        VolumeDescription(VolumeDescription const&);
+        VolumeDescription();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription&&);
 
+        MCNAPI ::VolumeDefinition::VolumeDescription& operator=(::VolumeDefinition::VolumeDescription const&);
+
+        MCNAPI ~VolumeDescription();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -58,13 +74,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ~VolumeDefinition();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
@@ -76,6 +96,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

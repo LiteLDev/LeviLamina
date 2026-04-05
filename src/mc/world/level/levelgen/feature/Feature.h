@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     virtual ~Feature() /*override*/;
 
-    virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const = 0;
+    virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const = 0;
 
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND

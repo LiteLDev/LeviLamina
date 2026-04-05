@@ -17,9 +17,9 @@ struct StateVectorComponent;
 namespace AgentTravelSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doClientAgentTravel(::ActorOwnerComponent& actorOwnerComponent, ::AbilitiesComponent& abilitiesComponent);
+MCAPI void doClientAgentTravel(::ActorOwnerComponent& actorOwnerComponent, ::AbilitiesComponent& abilitiesComponent);
 
-MCNAPI void doServerAgentTravel(
+MCAPI void doServerAgentTravel(
     ::StrictEntityContext const&             entity,
     ::ActorOwnerComponent&                   actorOwnerComponent,
     ::AbilitiesComponent&                    abilitiesComponent,

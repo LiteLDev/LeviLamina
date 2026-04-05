@@ -11,6 +11,6 @@ struct ServerPlayerBroadcastMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

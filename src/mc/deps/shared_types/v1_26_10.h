@@ -12,7 +12,7 @@ namespace SharedTypes::v1_26_10 { struct LayEggGoalDefinition; }
 namespace SharedTypes::v1_26_10 {
 // functions
 // NOLINTBEGIN
-MCAPI_C bool
+MCAPI bool
 operator==(::SharedTypes::v1_26_10::ActorDocument const& __P0, ::SharedTypes::v1_26_10::ActorDocument const& __P1);
 
 MCAPI void

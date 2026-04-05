@@ -36,17 +36,17 @@ public:
     ) const;
 
     virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
-        ::IBlockSource&,
-        ::BlockPos,
-        ::BlockPos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&
+        ::IBlockSource&                                          region,
+        ::BlockPos                                               pos,
+        ::BlockPos                                               structurePos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
     virtual ::br::worldgen::StructureProcessorType type() const;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:
@@ -83,17 +83,17 @@ public:
     ) const;
 
     MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
-        ::IBlockSource&,
-        ::BlockPos,
-        ::BlockPos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const&,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&
+        ::IBlockSource&                                          region,
+        ::BlockPos                                               pos,
+        ::BlockPos                                               structurePos,
+        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
+        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
+        ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
     MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash&) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

@@ -16,7 +16,7 @@ class ConduitBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
 
     virtual ~ConduitBlock() /*override*/ = default;
     // NOLINTEND
@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
 
     // NOLINTEND

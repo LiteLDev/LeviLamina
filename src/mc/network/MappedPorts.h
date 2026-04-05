@@ -10,21 +10,33 @@ public:
     ::ll::UntypedStorage<2, 2> mUnkf404a5;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    MappedPorts& operator=(MappedPorts const&);
+    MappedPorts(MappedPorts const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     MappedPorts& operator=(MappedPorts const&);
     MappedPorts(MappedPorts const&);
     MappedPorts();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI MappedPorts();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor();
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 };

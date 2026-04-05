@@ -213,17 +213,18 @@ public:
 
     virtual void tickRedstone();
 
-    virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const&) = 0;
+    virtual ::std::unique_ptr<::WorldGenerator>
+    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) = 0;
 
-    virtual void upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&) = 0;
+    virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) = 0;
 
-    virtual void fixWallChunk(::ChunkSource&, ::LevelChunk&) = 0;
+    virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) = 0;
 
     virtual void initializeWithLevelStorageManagerConnector(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector
     ) /*override*/;
 
-    virtual bool levelChunkNeedsUpgrade(::LevelChunk const&) const = 0;
+    virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const = 0;
 
     virtual bool isNaturalDimension() const /*override*/;
 
@@ -245,8 +246,9 @@ public:
 
     virtual float getTimeOfDay(int time, float a) const;
 
-    virtual void
-    setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
+    virtual void setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    );
 
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const;
 
@@ -316,10 +318,12 @@ public:
 
     virtual ::std::unique_ptr<::ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
 
-    virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) = 0;
+    virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) = 0;
 
-    virtual ::std::unique_ptr<::ChunkSource>
-        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) = 0;
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
+        ::std::unique_ptr<::ChunkSource> storageSource,
+        ::StorageVersion                 levelVersion
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -372,15 +376,19 @@ public:
 
     MCAPI float getMoonBrightness() const;
 
-    MCAPI_C int getMoonPhase() const;
+#ifdef LL_PLAT_C
+    MCAPI int getMoonPhase() const;
+#endif
 
     MCAPI ::Brightness getOldSkyDarken(float a);
 
-    MCAPI_C float getSkyDarken(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI float getSkyDarken(float a) const;
 
-    MCAPI_C float getSunAngle(float a) const;
+    MCAPI float getSunAngle(float a) const;
 
-    MCAPI_C float getTimeOfDay(float a) const;
+    MCAPI float getTimeOfDay(float a) const;
+#endif
 
     MCAPI bool isBrightOutside() const;
 
@@ -388,7 +396,9 @@ public:
 
     MCAPI bool operator==(::Dimension const& rhs) const;
 
-    MCAPI_C void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
+#ifdef LL_PLAT_C
+    MCAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
+#endif
 
     MCAPI void removeActorByID(::ActorUniqueID const& id);
 
@@ -462,8 +472,9 @@ public:
 
     MCAPI float $getTimeOfDay(int time, float a) const;
 
-    MCFOLD void
-    $setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const&);
+    MCFOLD void $setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    );
 
     MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 

@@ -16,16 +16,31 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::detail::FileWatcherHandleInternal>> mFileWatcherHandleInternal;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    FileWatcherHandle& operator=(FileWatcherHandle const&);
+    FileWatcherHandle(FileWatcherHandle const&);
+    FileWatcherHandle();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD ::mce::FileWatcherHandle& operator=(::mce::FileWatcherHandle&&);
 
+    MCAPI ~FileWatcherHandle();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

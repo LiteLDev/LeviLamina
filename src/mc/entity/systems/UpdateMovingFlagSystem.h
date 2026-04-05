@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace UpdateMovingFlagSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace UpdateMovingFlagSystem

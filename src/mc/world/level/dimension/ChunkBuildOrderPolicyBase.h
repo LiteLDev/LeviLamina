@@ -14,15 +14,23 @@ public:
     // NOLINTBEGIN
     virtual ~ChunkBuildOrderPolicyBase();
 
-    virtual int getChunkRebuildPriority(::ChunkPos const&) const = 0;
+    virtual int getChunkRebuildPriority(::ChunkPos const& cp) const = 0;
 
     virtual uint registerForUpdates();
 
-    virtual void unregisterForUpdates(uint) = 0;
+    virtual void unregisterForUpdates(uint handle) = 0;
 
-    virtual void setPlayerInfluence(uint, ::ChunkPos const&, ::Vec3 const&) = 0;
+    virtual void
+    setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection) = 0;
 
-    virtual void setTickingAreaInfluence(uint, ::ChunkPos const&, int, int, bool, bool) = 0;
+    virtual void setTickingAreaInfluence(
+        uint              handle,
+        ::ChunkPos const& tickingAreaPosition,
+        int               sizeX,
+        int               sizeZ,
+        bool              isCircle,
+        bool              preload
+    ) = 0;
 
     virtual void updateInfluences() = 0;
     // NOLINTEND

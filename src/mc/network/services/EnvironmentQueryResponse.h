@@ -27,12 +27,18 @@ public:
     // NOLINTBEGIN
     MCNAPI EnvironmentQueryResponse(::Bedrock::Services::EnvironmentQueryResponse const&);
 
-    MCNAPI_C ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string GetPropertyValue(::std::string const& serviceName, ::std::string const& propertyKey) const;
+#endif
 
     MCNAPI ::std::map<::std::string, ::std::string> const*
     GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
 
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
+
+#ifdef LL_PLAT_C
+    MCNAPI ~EnvironmentQueryResponse();
+#endif
     // NOLINTEND
 
 public:
@@ -44,7 +50,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

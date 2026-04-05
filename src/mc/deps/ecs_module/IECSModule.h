@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     virtual ~IECSModule() = default;
 
-    virtual void initRegistry(::EntityRegistry&) = 0;
+    virtual void initRegistry(::EntityRegistry& registry) = 0;
 
-    virtual void registerSystems(::IEntitySystems&, ::ECSModule::ModuleInitArgs const&) = 0;
+    virtual void registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args) = 0;
     // NOLINTEND
 
 public:

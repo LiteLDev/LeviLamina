@@ -19,45 +19,45 @@ public:
     // NOLINTBEGIN
     virtual bool write(::cereal::NullType) = 0;
 
-    virtual bool write(bool) = 0;
+    virtual bool write(bool value) = 0;
 
-    virtual bool write(schar) = 0;
+    virtual bool write(schar value) = 0;
 
-    virtual bool write(uchar) = 0;
+    virtual bool write(uchar value) = 0;
 
-    virtual bool write(short) = 0;
+    virtual bool write(short value) = 0;
 
-    virtual bool write(ushort) = 0;
+    virtual bool write(ushort value) = 0;
 
-    virtual bool write(int) = 0;
+    virtual bool write(int value) = 0;
 
-    virtual bool write(uint) = 0;
+    virtual bool write(uint value) = 0;
 
-    virtual bool write(int64) = 0;
+    virtual bool write(int64 value) = 0;
 
-    virtual bool write(uint64) = 0;
+    virtual bool write(uint64 value) = 0;
 
-    virtual bool write(float) = 0;
+    virtual bool write(float value) = 0;
 
-    virtual bool write(double) = 0;
+    virtual bool write(double value) = 0;
 
-    virtual bool write(::std::string_view const) = 0;
+    virtual bool write(::std::string_view const value) = 0;
 
-    virtual bool write(::gsl::span<uchar const>) = 0;
+    virtual bool write(::gsl::span<uchar const> view) = 0;
 
-    virtual void writeAdditionalData(bool) = 0;
+    virtual void writeAdditionalData(bool value) = 0;
 
-    virtual void writeAdditionalData(uint) = 0;
+    virtual void writeAdditionalData(uint value) = 0;
 
-    virtual void writeAdditionalData(::std::string_view const) = 0;
+    virtual void writeAdditionalData(::std::string_view const value) = 0;
 
-    virtual bool pushMember(::std::string_view const) = 0;
+    virtual bool pushMember(::std::string_view const memberName) = 0;
 
     virtual void popMember() = 0;
 
     virtual ::cereal::SchemaRWType openObject() = 0;
 
-    virtual ::cereal::SchemaRWType openArray(bool, uint64) = 0;
+    virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) = 0;
 
     virtual void close() = 0;
 

@@ -27,7 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void set(::std::string const& value, bool saveOptionChange);
+#ifdef LL_PLAT_C
+    MCAPI void set(::std::string const& value, bool saveOptionChange);
+#endif
     // NOLINTEND
 
 public:

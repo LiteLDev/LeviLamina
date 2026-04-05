@@ -26,20 +26,21 @@ public:
     virtual ~ReassemblyStreams() = default;
 
     virtual int
-        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data) = 0;
+    Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data) = 0;
 
     virtual uint64 HandleForwardTsn(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
-        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
+        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
     ) = 0;
 
-    virtual void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual void
+    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) = 0;
 
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const = 0;
 
-    virtual void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&) = 0;
+    virtual void AddHandoverState(::dcsctp::DcSctpSocketHandoverState& state) = 0;
 
-    virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&) = 0;
+    virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) = 0;
     // NOLINTEND
 
 public:

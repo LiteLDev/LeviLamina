@@ -20,15 +20,15 @@ public:
     virtual ~IStructureTemplateManager() /*override*/;
 
     virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
-    getOrCreateJigsawStructureMetadata(::StructurePoolElement const&) = 0;
+    getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement) = 0;
 
-    virtual ::StructureTemplate& getOrCreate(::std::string const&) = 0;
+    virtual ::StructureTemplate& getOrCreate(::std::string const& structureName) = 0;
 
-    virtual ::StructureTemplate* getStructure(::std::string const&) const = 0;
+    virtual ::StructureTemplate* getStructure(::std::string const& structureName) const = 0;
 
-    virtual ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const&) = 0;
+    virtual ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName) = 0;
 
-    virtual bool readStructure(::StructureTemplate&) = 0;
+    virtual bool readStructure(::StructureTemplate& structureTemplate) = 0;
     // NOLINTEND
 
 public:

@@ -30,13 +30,13 @@ public:
     // NOLINTBEGIN
     virtual ~DcSctpSocketInterface() = default;
 
-    virtual void ReceivePacket(::rtc::ArrayView<uchar const>) = 0;
+    virtual void ReceivePacket(::rtc::ArrayView<uchar const> data) = 0;
 
-    virtual void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64>) = 0;
+    virtual void HandleTimeout(::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id) = 0;
 
     virtual void Connect() = 0;
 
-    virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const&) = 0;
+    virtual void RestoreFromState(::dcsctp::DcSctpSocketHandoverState const& state) = 0;
 
     virtual void Shutdown() = 0;
 
@@ -46,29 +46,31 @@ public:
 
     virtual ::dcsctp::DcSctpOptions const& options() const = 0;
 
-    virtual void SetMaxMessageSize(uint64) = 0;
+    virtual void SetMaxMessageSize(uint64 max_message_size) = 0;
 
     virtual void SetStreamPriority(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
-        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
+        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>       stream_id,
+        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority
     ) = 0;
 
     virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
-        GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
+    GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const = 0;
 
-    virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage, ::dcsctp::SendOptions const&) = 0;
+    virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) = 0;
 
     virtual ::std::vector<::dcsctp::SendStatus>
-    SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage>, ::dcsctp::SendOptions const&) = 0;
+    SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options) = 0;
 
     virtual ::dcsctp::ResetStreamsStatus
-        ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams) = 0;
 
-    virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
+    virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const = 0;
 
-    virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
+    virtual uint64
+    buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const = 0;
 
-    virtual void SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, uint64) = 0;
+    virtual void
+    SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, uint64 bytes) = 0;
 
     virtual ::std::optional<::dcsctp::Metrics> GetMetrics() const = 0;
 

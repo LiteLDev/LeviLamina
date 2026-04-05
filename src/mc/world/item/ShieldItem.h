@@ -87,7 +87,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static int const getBaseColor(::CompoundTag const* data);
+#ifdef LL_PLAT_C
+    MCAPI static int const getBaseColor(::CompoundTag const* data);
+#endif
     // NOLINTEND
 
 public:

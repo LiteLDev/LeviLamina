@@ -14,9 +14,9 @@ class LootSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
 
-    virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
+    virtual void registerEvents(::entt::dispatcher& eventDispatcher) /*override*/;
 
     virtual ~LootSystem() /*override*/ = default;
     // NOLINTEND
@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCFOLD void $tick(::EntityRegistry&);
 
-    MCNAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCAPI void $registerEvents(::entt::dispatcher& eventDispatcher);
 
 
     // NOLINTEND

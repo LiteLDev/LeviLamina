@@ -36,22 +36,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ScreenshotOptions();
 
+    MCAPI ScreenshotOptions(::ScreenshotOptions&&);
+
+    MCAPI ScreenshotOptions(::ScreenshotOptions const&);
+
+    MCAPI ::ScreenshotOptions& operator=(::ScreenshotOptions&&);
+
+    MCAPI ::ScreenshotOptions& operator=(::ScreenshotOptions const&);
+
+    MCAPI ~ScreenshotOptions();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::ScreenshotOptions&&);
+    MCAPI void* $ctor(::ScreenshotOptions&&);
 
-    MCAPI_C void* $ctor(::ScreenshotOptions const&);
+    MCAPI void* $ctor(::ScreenshotOptions const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -11,7 +11,7 @@ class WardenSpawnTrackerComponent;
 namespace WardenSpawnTrackerSystemInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickWardenSpawnTrackerComponent(
+MCAPI void tickWardenSpawnTrackerComponent(
     ::ActorOwnerComponent&         actorOwnerComponent,
     ::WardenSpawnTrackerComponent& wardenSpawnTrackerComponent
 );

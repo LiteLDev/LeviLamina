@@ -42,7 +42,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
@@ -64,7 +64,8 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
+        /*override*/;
 
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
@@ -95,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
@@ -116,7 +117,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

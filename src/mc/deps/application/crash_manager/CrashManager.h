@@ -20,19 +20,27 @@ class CrashManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedroc
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initialize(::Bedrock::CrashManagerConfig const&) = 0;
+    virtual void initialize(::Bedrock::CrashManagerConfig const& config) = 0;
 
-    virtual void setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>) = 0;
+    virtual void setCrashProcessorForFileType(
+        ::std::string_view                               fileExtension,
+        ::std::shared_ptr<::Bedrock::CrashFileProcessor> processor
+    ) = 0;
 
-    virtual void setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*>) = 0;
+    virtual void setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> processor) = 0;
 
-    virtual void processCrashes(::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&, bool) = 0;
+    virtual void processCrashes(
+        ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> workerPool,
+        ::Scheduler&                                            scheduler,
+        bool                                                    isNetworkAvailable
+    ) = 0;
 
     virtual void notifyCrashed() = 0;
 
-    virtual void notifySystemError(uint, ::std::string const&) = 0;
+    virtual void notifySystemError(uint errorCode, ::std::string const& errorMessage) = 0;
 
-    virtual void recordCrashedSession(::std::string_view, ::std::string_view, int64) = 0;
+    virtual void
+    recordCrashedSession(::std::string_view sessionId, ::std::string_view serializedSession, int64 crashTime) = 0;
 
     virtual void stopProcessingCrashes() = 0;
 
@@ -53,7 +61,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
     // NOLINTEND
 
 public:

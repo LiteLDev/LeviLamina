@@ -57,18 +57,33 @@ public:
         mRenderer;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
     BlockGeometryComponent();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BlockGeometryComponent(BlockGeometryComponent const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI BlockGeometryComponent();
+#endif
+
     MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
 
     MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent const&);
+#endif
 
     MCAPI ~BlockGeometryComponent();
     // NOLINTEND
@@ -76,7 +91,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
     // NOLINTEND

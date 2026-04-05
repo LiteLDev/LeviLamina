@@ -18,7 +18,7 @@ struct ShouldAwardWhoNeedsRocketsAchievementFlagComponent;
 namespace AwardWhoNeedsRocketsAchievementSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendEvent(
+MCAPI void sendEvent(
     ::entt::type_list<::Include<::PlayerComponent, ::ShouldAwardWhoNeedsRocketsAchievementFlagComponent>>,
     ::StrictEntityContext const&                                           entity,
     ::ActorOwnerComponent&                                                 actorOwner,

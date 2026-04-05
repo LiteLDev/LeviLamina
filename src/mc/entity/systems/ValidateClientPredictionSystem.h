@@ -26,9 +26,9 @@ struct TickingSystemWithInfo;
 namespace ValidateClientPredictionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tick(
+MCAPI void tick(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::ReplayStateComponent>>,
     ::StrictEntityContext const&                                                  entity,
     ::ActorDataBoundingBoxComponent const&                                        actorBoundingBox,

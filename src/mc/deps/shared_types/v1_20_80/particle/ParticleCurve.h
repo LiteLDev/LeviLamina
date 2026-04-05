@@ -25,13 +25,22 @@ public:
     ::ll::TypedStorage<8, 120, ::std::optional<::SharedTypes::v1_20_80::ParticleCurveBezierChain>> mBezierChain;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ParticleCurve();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ParticleCurve();
+
+    MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve&&);
+#endif
+
     MCAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
@@ -50,9 +59,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve&&);
+#endif
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurve const&);
     // NOLINTEND

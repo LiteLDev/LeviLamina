@@ -16,12 +16,12 @@ struct SpawnExperienceOrbRequestQueueComponent;
 namespace SpawnExperienceOrbSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(
+MCAPI void tick(
     ::OptionalGlobal<::SpawnExperienceOrbRequestQueueComponent> spawnExperienceOrbRequestQueueComponent,
     ::ViewT<::StrictEntityContext, ::LevelComponent>            view
 );
 
-MCNAPI void
+MCAPI void
 trySpawnExperienceOrbs(::LevelComponent& levelComponent, ::SpawnExperienceOrbRequestQueueComponent& requestComponent);
 // NOLINTEND
 

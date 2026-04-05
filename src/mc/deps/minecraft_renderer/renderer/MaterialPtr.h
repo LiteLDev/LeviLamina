@@ -24,25 +24,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::HashedString const& getHashedName() const;
+#ifdef LL_PLAT_C
+    MCAPI MaterialPtr();
 
-    MCAPI_C bool isNull() const;
+    MCAPI MaterialPtr(::mce::MaterialPtr const&);
+
+    MCAPI MaterialPtr(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
+
+    MCAPI ::HashedString const& getHashedName() const;
+
+    MCAPI bool isNull() const;
+
+    MCAPI ::mce::RenderMaterial const* operator->() const;
+
+    MCFOLD ::mce::MaterialPtr& operator=(::mce::MaterialPtr const&);
+
+    MCAPI ~MaterialPtr();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor();
 
-    MCFOLD_C void* $ctor(::mce::MaterialPtr const&);
+    MCFOLD void* $ctor(::mce::MaterialPtr const&);
 
-    MCAPI_C void* $ctor(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
+    MCAPI void* $ctor(::mce::RenderMaterialGroupBase& group, ::HashedString const& name);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

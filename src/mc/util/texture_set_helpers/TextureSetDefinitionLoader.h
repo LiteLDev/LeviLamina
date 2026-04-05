@@ -141,26 +141,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _addImageToLayer(
+#ifdef LL_PLAT_C
+    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _addImageToLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::cg::TextureSetLayerType                                              layerType,
         ::ResourceLocationPair const&                                          resourceLocationPair,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI_C static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
+    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetLayerDefinition const>   layer,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI_C static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
+    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::cg::TextureSetLayerType                                              layerType,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI_C static bool _loadImageLayers(
+    MCNAPI static bool _loadImageLayers(
         ::ResourceLocation const&                                        resourceLocation,
         ::std::shared_ptr<::cg::TextureSetDefinition>                    textureSetDefinition,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const& loadMode,
@@ -168,7 +169,7 @@ public:
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCNAPI_C static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocation const&                                              resourceLocation,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -177,7 +178,7 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCNAPI_C static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocationPair const&                                          resourceLocationPair,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -186,12 +187,13 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCNAPI_C static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
         ::ResourceLocationPair const& resourceLocationPair,
         ::cg::ImageBuffer const*      optionalImageBuffer,
         bool                          isMissingTexture,
         bool                          needsDecompression
     );
+#endif
     // NOLINTEND
 };
 

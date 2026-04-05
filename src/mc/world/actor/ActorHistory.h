@@ -34,13 +34,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCAPI ~Snapshot();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -60,7 +64,9 @@ public:
     // NOLINTBEGIN
     MCAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
-    MCAPI_C void addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
+#ifdef LL_PLAT_C
+    MCAPI void addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
+#endif
 
     MCAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
     // NOLINTEND
@@ -68,10 +74,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::ActorHistory::Snapshot createSnapshot(
+#ifdef LL_PLAT_C
+    MCAPI static ::ActorHistory::Snapshot createSnapshot(
         ::EntityContext const&                     entity,
         ::EntityRegistry&                          registry,
         ::std::unique_ptr<::IReplayableActorInput> input
     );
+#endif
     // NOLINTEND
 };

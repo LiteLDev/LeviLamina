@@ -45,11 +45,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::PageContent getPage() const;
 
-    MCAPI_C void setToAddPage(int bookSlot, int pageIndex, ::PageContent const& page);
+#ifdef LL_PLAT_C
+    MCAPI void setToAddPage(int bookSlot, int pageIndex, ::PageContent const& page);
 
-    MCAPI_C void setToFinalize(int bookSlot, ::std::string title, ::std::string author, ::std::string xuid);
+    MCAPI void setToFinalize(int bookSlot, ::std::string title, ::std::string author, ::std::string xuid);
 
-    MCAPI_C void setToReplacePage(int bookSlot, int pageIndex, ::PageContent const& page);
+    MCAPI void setToReplacePage(int bookSlot, int pageIndex, ::PageContent const& page);
+#endif
 
     MCAPI ~BookEditPacketPayload();
     // NOLINTEND

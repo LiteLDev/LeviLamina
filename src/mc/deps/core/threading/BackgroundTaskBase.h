@@ -80,7 +80,7 @@ public:
 
     virtual bool isReady() const = 0;
 
-    virtual ::TaskRunResult run(::ITaskExecutionContext const*, bool) = 0;
+    virtual ::TaskRunResult run(::ITaskExecutionContext const* executionContext, bool isAsyncContext) = 0;
     // NOLINTEND
 
 public:

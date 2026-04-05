@@ -67,55 +67,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _hasMaterial(::std::string const& materialName);
+#ifdef LL_PLAT_C
+    MCNAPI bool _hasMaterial(::std::string const& materialName);
 
-    MCNAPI_C void _serialize(::Json::Value& root);
+    MCNAPI void _serialize(::Json::Value& root);
 
-    MCNAPI_C void _serializeBinaryData(::Json::Value& glTF);
+    MCNAPI void _serializeBinaryData(::Json::Value& glTF);
 
-    MCNAPI_C void _serializeSampler(::Json::Value& root, ::glTF::Sampler const& sampler);
+    MCNAPI void _serializeSampler(::Json::Value& root, ::glTF::Sampler const& sampler);
 
-    MCNAPI_C int addAccessor(::glTF::Accessor& accessor);
+    MCNAPI int addAccessor(::glTF::Accessor& accessor);
 
-    MCNAPI_C uint64 addBinaryBuffer(::Core::Path const& filePath, uchar const* data, uint64 size);
+    MCNAPI uint64 addBinaryBuffer(::Core::Path const& filePath, uchar const* data, uint64 size);
 
-    MCNAPI_C int addBuffer(::glTF::Buffer& buffer);
+    MCNAPI int addBuffer(::glTF::Buffer& buffer);
 
-    MCNAPI_C int addBufferView(::glTF::BufferView& bufferView);
+    MCNAPI int addBufferView(::glTF::BufferView& bufferView);
 
-    MCNAPI_C int addImage(::glTF::Image& image);
+    MCNAPI int addImage(::glTF::Image& image);
 
-    MCNAPI_C int addMaterial(::glTF::Material& material);
+    MCNAPI int addMaterial(::glTF::Material& material);
 
-    MCNAPI_C int addMesh(::glTF::Mesh& mesh);
+    MCNAPI int addMesh(::glTF::Mesh& mesh);
 
-    MCNAPI_C int addNode(::glTF::Node& node);
+    MCNAPI int addNode(::glTF::Node& node);
 
-    MCNAPI_C int addSampler(::glTF::Sampler& sampler);
+    MCNAPI int addSampler(::glTF::Sampler& sampler);
 
-    MCNAPI_C int addScene(::glTF::Scene& scene);
+    MCNAPI int addScene(::glTF::Scene& scene);
 
-    MCNAPI_C int addTexture(::glTF::Texture& texture);
+    MCNAPI int addTexture(::glTF::Texture& texture);
 
-    MCNAPI_C void serialize();
+    MCNAPI glTFExporter(::Core::Path const& folderPath, ::std::string const& modelName);
+
+    MCNAPI void serialize();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string_view const& BINARY_EXTENSION();
+    MCNAPI static ::std::string_view const& BINARY_EXTENSION();
 
-    MCNAPI_C static ::std::string_view const& GLB_BUFFER_URI();
+    MCNAPI static ::std::string_view const& GLB_BUFFER_URI();
 
-    MCNAPI_C static ::std::string_view const& GLB_EXTENSION();
+    MCNAPI static ::std::string_view const& GLB_EXTENSION();
 
-    MCNAPI_C static ::std::string_view const& GLTF_EXTENSION();
+    MCNAPI static ::std::string_view const& GLTF_EXTENSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::Path const& folderPath, ::std::string const& modelName);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::Path const& folderPath, ::std::string const& modelName);
+#endif
     // NOLINTEND
 
 public:

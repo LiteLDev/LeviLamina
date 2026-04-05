@@ -44,6 +44,22 @@ struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                            ::GlobalWrite<>,
                            ::EntityFactoryT<>>> {
 public:
+    // PublishSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Read<
+            ::ActorDataFlagComponent,
+            ::ActorDataHorseFlagComponent,
+            ::ActorDataJumpDurationComponent,
+            ::ActorDataBoundingBoxComponent,
+            ::ActorDataSeatOffsetComponent>,
+        ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -68,7 +84,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void tickEntity(
+#ifdef LL_PLAT_C
+    MCAPI static void tickEntity(
         ::StrictEntityContext const&   entity,
         ::ReplayStateComponent&        replay,
         ::ReplayStateTrackerComponent& tracker,
@@ -80,13 +97,14 @@ public:
             ::Optional<::ActorDataBoundingBoxComponent const>,
             ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked
     );
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
             ::Read<

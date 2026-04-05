@@ -48,7 +48,7 @@ public:
 
     virtual bool parse(::Json::Value const& jsonVal);
 
-    virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const = 0;
+    virtual ::std::shared_ptr<::FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const = 0;
 
     virtual bool _setupContext(::FilterTest const& test, ::FilterContext& context) const;
     // NOLINTEND
@@ -83,7 +83,9 @@ public:
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI_S bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
+#ifdef LL_PLAT_S
+    MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
+#endif
 
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 

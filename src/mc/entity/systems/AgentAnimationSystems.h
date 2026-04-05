@@ -16,13 +16,13 @@ namespace AgentComponents { struct AnimationComplete; }
 namespace AgentAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void animationTick(
+MCAPI void animationTick(
     ::StrictEntityContext&                                  entity,
     ::AgentComponents::Animating&                           anim,
     ::EntityModifier<::AgentComponents::AnimationComplete>& modifier
 );
 
-MCNAPI void runAnimTickView(::EntityRegistry& registry);
+MCAPI void runAnimTickView(::EntityRegistry& registry);
 // NOLINTEND
 
 } // namespace AgentAnimationSystems

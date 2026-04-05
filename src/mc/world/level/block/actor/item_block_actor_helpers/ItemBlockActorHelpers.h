@@ -29,7 +29,7 @@ MCAPI void tickSpriteCalculators(
 
 MCAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSource& region);
 
-MCAPI_C ::Actor*
+MCAPI ::Actor*
 tryGetOrCreateDisplayEntity(::WeakEntityRef& displayEntityRef, ::BlockSource& region, ::BlockPos const& pos);
 
 MCAPI void updateMapItem(::ItemStackBase const& item, ::BlockSource& region, ::BlockPos const& pos);

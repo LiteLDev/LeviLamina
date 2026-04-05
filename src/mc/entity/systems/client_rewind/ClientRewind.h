@@ -28,14 +28,14 @@ struct ReplayStateValidFrameSupportComponent;
 namespace ClientRewind {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void _advanceRewindFrameSystem(
+MCAPI void _advanceRewindFrameSystem(
     ::Optional<::MoveInputComponent const>                    moveInputComponent,
     ::Optional<::ReplayStateValidFrameSupportComponent const> validFrameSupportComponent,
     ::ActorOwnerComponent&                                    actorOwnerComponent,
     ::ReplayStateComponent&                                   replayStateComponent
 );
 
-MCNAPI_C void _tickAdvanceRewindFrameSystem(
+MCAPI void _tickAdvanceRewindFrameSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -45,7 +45,7 @@ MCNAPI_C void _tickAdvanceRewindFrameSystem(
         ::ReplayStateComponent> view
 );
 
-MCNAPI void tickAccumulate(
+MCAPI void tickAccumulate(
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
         ::ActorDataFlagComponent const&,
@@ -55,14 +55,14 @@ MCNAPI void tickAccumulate(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCNAPI_C void tickCorrectionInterpolation(
+MCAPI void tickCorrectionInterpolation(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                     entity,
     ::DynamicRenderOffsetComponent&                  offset,
     ::EntityModifier<::DynamicRenderOffsetComponent> modifier
 );
 
-MCNAPI_C void tickPublish(
+MCAPI void tickPublish(
     ::ReplayStateComponent&        replay,
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
@@ -73,8 +73,7 @@ MCNAPI_C void tickPublish(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCNAPI_C void
-tickRewindHistory(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::ReplayStateComponent> const& view);
+MCAPI void tickRewindHistory(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::ReplayStateComponent> const& view);
 // NOLINTEND
 
 } // namespace ClientRewind

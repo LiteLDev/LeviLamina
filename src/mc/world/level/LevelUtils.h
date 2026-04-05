@@ -16,7 +16,7 @@ namespace Core { class Result; }
 namespace LevelUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::Core::Result createNewLevelDirectory(::Core::Path const& pathToLevel);
+MCNAPI ::Core::Result createNewLevelDirectory(::Core::Path const& pathToLevel);
 
 MCNAPI bool extinguishFire(
     ::IBlockSource&      region,

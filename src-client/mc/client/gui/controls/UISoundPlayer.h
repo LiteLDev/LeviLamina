@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~UISoundPlayer() = default;
 
-    virtual void play(::std::string const&, float, float) const;
+    virtual void play(::std::string const& name, float volume, float pitch) const;
     // NOLINTEND
 
 public:

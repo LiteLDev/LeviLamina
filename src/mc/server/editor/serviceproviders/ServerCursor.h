@@ -45,13 +45,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI explicit ServerCursor(::Editor::Network::PayloadServiceProvider& payloadService);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Editor::Network::PayloadServiceProvider& payloadService);
+#endif
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
 
     virtual ::ui::DirtyFlag tick() = 0;
 
-    virtual ::ui::ViewRequest handleEvent(::ScreenEvent&) = 0;
+    virtual ::ui::ViewRequest handleEvent(::ScreenEvent& screenEvent) = 0;
 
     virtual ::std::optional<::std::string> getRoute() const = 0;
 

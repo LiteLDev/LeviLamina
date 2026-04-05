@@ -41,20 +41,20 @@ public:
     virtual ~IUserManager() /*override*/;
 #endif
 
-    virtual ::Bedrock::Threading::Async<void> createPrimaryUserAsync(::std::shared_ptr<::Options>) = 0;
+    virtual ::Bedrock::Threading::Async<void> createPrimaryUserAsync(::std::shared_ptr<::Options> options) = 0;
 
     virtual void initPrimaryIdentity() = 0;
 
     virtual ::std::shared_ptr<::Social::User> getPrimaryUser() const = 0;
 
-    virtual bool isSecondaryUserCreationAllowed(int) const = 0;
+    virtual bool isSecondaryUserCreationAllowed(int id) const = 0;
 
-    virtual void setSecondaryUserCreationAllowed(int) = 0;
+    virtual void setSecondaryUserCreationAllowed(int id) = 0;
 
     virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(
-        int,
-        ::std::shared_ptr<::Options>,
-        ::std::function<void(::Social::UserPlatformConnectionResult)>
+        int                                                           id,
+        ::std::shared_ptr<::Options>                                  options,
+        ::std::function<void(::Social::UserPlatformConnectionResult)> callback
     ) = 0;
 
     virtual bool controllerChanged(int&, int&) = 0;
@@ -63,9 +63,9 @@ public:
 
     virtual void getAsyncUserSelection(::std::function<void(int)>, int) = 0;
 
-    virtual void getAsyncUserSelectionForNewPrimaryUser(int, bool) = 0;
+    virtual void getAsyncUserSelectionForNewPrimaryUser(int id, bool restrictToControllerIdChange) = 0;
 
-    virtual void forceCloudSaveOnWorld(::std::string const&) = 0;
+    virtual void forceCloudSaveOnWorld(::std::string const& levelId) = 0;
 
     virtual ::Core::Subject<::Social::UserListObserver, ::Core::SingleThreadedLock>& getUserListSubject() = 0;
 
@@ -117,63 +117,68 @@ public:
 
     virtual void onAppFocusLost() = 0;
 
-    virtual void removeUser(int, bool) = 0;
+    virtual void removeUser(int id, bool restartIfPrimary) = 0;
 
-    virtual void removeClient(::std::shared_ptr<::IClientInstance> const&) = 0;
+    virtual void removeClient(::std::shared_ptr<::IClientInstance> const& ci) = 0;
 
-    virtual ::std::shared_ptr<::Social::User> setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) = 0;
+    virtual ::std::shared_ptr<::Social::User>
+    setUserClient(int id, ::std::shared_ptr<::IClientInstance> const& clientPtr) = 0;
 
-    virtual bool userHasClient(int) = 0;
+    virtual bool userHasClient(int id) = 0;
 
     virtual ::std::string_view getPlayFabTitleId() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() = 0;
 
-    virtual int getClientCID(::IClientInstance const&) const = 0;
+    virtual int getClientCID(::IClientInstance const& client) const = 0;
 
-    virtual void registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) = 0;
+    virtual void
+    registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener) = 0;
 
-    virtual void registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) = 0;
+    virtual void
+    registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const& listener) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription
-        registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
+    ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
-        ::Social::IdentityType,
-        ::std::function<void(uint, ::Social::IdentityType)>
+        ::Social::IdentityType                              idType,
+        ::std::function<void(uint, ::Social::IdentityType)> listener
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
-        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)> listener
     ) = 0;
 
-    virtual bool needGamepadDisconnectScreen(int) = 0;
+    virtual bool needGamepadDisconnectScreen(int controllerId) = 0;
 
-    virtual void tick(::IMinecraftGame&) = 0;
+    virtual void tick(::IMinecraftGame& minecraftGame) = 0;
 
-    virtual void updateMapping(bool, bool) = 0;
+    virtual void updateMapping(bool onScreenAcceptingAllControllerInput, bool inGame) = 0;
 
-    virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const&) const = 0;
+    virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const& client) const = 0;
 
-    virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const&) = 0;
+    virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const& liveUser) = 0;
 
-    virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int) const = 0;
+    virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int id) const = 0;
 
-    virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint) = 0;
+    virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint id) = 0;
 
-    virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint) const = 0;
+    virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint id) const = 0;
 
-    virtual ::GameUserType getUserTypeFromUserId(uint) const = 0;
+    virtual ::GameUserType getUserTypeFromUserId(uint id) const = 0;
 
     virtual bool isChatAllowedWhenBlockedByPlatform() const = 0;
 
     virtual ::std::vector<::std::shared_ptr<::Social::User>> const& getUsers() const = 0;
 
-    virtual bool isUserSignedIn(uint) = 0;
+    virtual bool isUserSignedIn(uint id) = 0;
 
     virtual bool isPrimaryUserInitialSignInInProgress() const = 0;
 
-    virtual void registerLevelLocationObserver(::ILevelListCache&) = 0;
+    virtual void registerLevelLocationObserver(::ILevelListCache& levelListCache) = 0;
 
     virtual ::Social::MultiplayerServiceObserver& getMultiplayerServiceObserver() = 0;
 

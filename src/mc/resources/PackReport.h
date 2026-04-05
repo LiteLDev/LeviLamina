@@ -38,7 +38,9 @@ public:
 
     MCNAPI PackReport(::PackReport const&);
 
-    MCNAPI_C void merge(::PackReport&& other);
+#ifdef LL_PLAT_C
+    MCNAPI void merge(::PackReport&& other);
+#endif
 
     MCNAPI ::PackReport& operator=(::PackReport&&);
 

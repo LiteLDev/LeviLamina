@@ -133,7 +133,9 @@ public:
     MCNAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
 
-    MCNAPI_S bool isSubscribedtoEvent(::std::string const& eventName);
+#ifdef LL_PLAT_S
+    MCNAPI bool isSubscribedtoEvent(::std::string const& eventName);
+#endif
 
     MCNAPI void receive(::std::string const& payload);
     // NOLINTEND

@@ -57,6 +57,13 @@ public:
             mZeroedOutItems;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        PredictiveContainer();
+
+#endif
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -66,19 +73,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+        MCNAPI PredictiveContainer(
             ::Container&                                     backingContainer,
             ::SparseContainerBackingSetType                  backingSetType,
             bool                                             isItemStackNetManagerEnabled,
             ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
             ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
         );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(
+            ::Container&                                     backingContainer,
+            ::SparseContainerBackingSetType                  backingSetType,
+            bool                                             isItemStackNetManagerEnabled,
+            ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+            ::std::unique_ptr<::IPlayerContainerSetter>      playerContainerSetter
+        );
+#endif
         // NOLINTEND
 
     public:
@@ -99,13 +116,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~OpenSessionContainerData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -138,24 +159,45 @@ public:
             mHudContainerMap;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        ClientScreenData& operator=(ClientScreenData const&);
+        ClientScreenData(ClientScreenData const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ClientScreenData();
 
+        MCNAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
+
+        MCNAPI ::ItemStackNetManagerClient::ClientScreenData&
+        operator=(::ItemStackNetManagerClient::ClientScreenData&&);
+
+        MCNAPI ~ClientScreenData();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor();
 
-        MCNAPI_C void* $ctor(::ItemStackNetManagerClient::ClientScreenData&&);
+        MCNAPI void* $ctor(::ItemStackNetManagerClient::ClientScreenData&&);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -217,54 +259,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _beginRequest(::ItemStackRequestScreen screen);
+#ifdef LL_PLAT_C
+    MCNAPI void _beginRequest(::ItemStackRequestScreen screen);
 
-    MCNAPI_C void _clearPredictiveContainerRequest(
+    MCNAPI void _clearPredictiveContainerRequest(
         ::ItemStackRequestId const&                       requestId,
         ::ItemStackNetManagerClient::PredictiveContainer& predictiveContainer,
         bool                                              shouldBeEmpty
     );
 
-    MCNAPI_C void _endRequest();
+    MCNAPI void _endRequest();
 
-    MCNAPI_C ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
+    MCNAPI ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
 
-    MCNAPI_C ::std::unordered_map<::ContainerEnumName, ::std::unordered_set<uchar>>
+    MCNAPI ::std::unordered_map<::ContainerEnumName, ::std::unordered_set<uchar>>
     _getLegacyTransactionSetItemSlots() const;
 
-    MCNAPI_C ::ItemStackNetManagerClient::PredictiveContainer* _getPredictiveContainer(::Container* sparseContainer);
+    MCNAPI ::ItemStackNetManagerClient::PredictiveContainer* _getPredictiveContainer(::Container* sparseContainer);
 
-    MCNAPI_C void _initPlayerContainers();
+    MCNAPI void _initPlayerContainers();
 
-    MCNAPI_C void _processResponseSlot(
+    MCNAPI void _processResponseSlot(
         ::ItemStackRequestId const&                       requestId,
         ::ItemStackNetManagerClient::PredictiveContainer& predictiveContainer,
         ::ItemStackResponseSlotInfo const&                responseInfo
     );
 
-    MCNAPI_C ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
+    MCNAPI ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
 
-    MCNAPI_C void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
+    MCNAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
 
-    MCNAPI_C void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction);
+    MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction);
 
-    MCNAPI_C void cacheHistoricPrediction(
+    MCNAPI void cacheHistoricPrediction(
         ::Container*                container,
         ::ItemStackRequestId const& requestId,
         int                         slot,
         ::ItemStack&&               item
     );
 
-    MCNAPI_C void
+    MCNAPI void
     cacheZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot, ::ItemStack&& item);
 
-    MCNAPI_C void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
+    MCNAPI void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
 
-    MCNAPI_C ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
+    MCNAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
 
-    MCNAPI_C void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
+    MCNAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
 
-    MCNAPI_C void trySendBatch();
+    MCNAPI void trySendBatch();
+#endif
     // NOLINTEND
 
 public:

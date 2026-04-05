@@ -51,6 +51,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI CameraInstruction(::CameraInstruction&&);
+#endif
+
     MCNAPI CameraInstruction(::CameraInstruction const&);
 
     MCNAPI ::CameraInstruction& operator=(::CameraInstruction&&);
@@ -71,7 +75,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::CameraInstruction&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::CameraInstruction&&);
+#endif
 
     MCNAPI void* $ctor(::CameraInstruction const&);
     // NOLINTEND

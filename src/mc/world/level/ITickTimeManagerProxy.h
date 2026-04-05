@@ -15,7 +15,7 @@ public:
 
     virtual bool shouldUpdateWorldTime() const = 0;
 
-    virtual void setWorldTickTime(int) = 0;
+    virtual void setWorldTickTime(int time) = 0;
 
     virtual int getWorldTickTime() const = 0;
 

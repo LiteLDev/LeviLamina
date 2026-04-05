@@ -24,11 +24,18 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk938d66;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CraftableCompounds& operator=(CraftableCompounds const&);
     CraftableCompounds(CraftableCompounds const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftableCompounds& operator=(CraftableCompounds const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,6 +53,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI CraftableCompounds();
+
+#ifdef LL_PLAT_C
+    MCNAPI CraftableCompounds(::CraftableCompounds const&);
+#endif
 
     MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 
@@ -68,7 +79,9 @@ public:
 
     MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
 
-    MCNAPI_C ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
+#ifdef LL_PLAT_C
+    MCNAPI ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
+#endif
 
     MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
@@ -80,7 +93,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::CraftableCompounds const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::CraftableCompounds const&);
+#endif
     // NOLINTEND
 
 public:

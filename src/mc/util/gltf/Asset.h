@@ -41,22 +41,38 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk61b709;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Asset& operator=(Asset const&);
     Asset(Asset const&);
     Asset();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Asset(Asset const&);
+    Asset();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Json::Value serialize() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::glTF::Asset& operator=(::glTF::Asset const&);
+
+    MCNAPI ::Json::Value serialize() const;
+
+    MCNAPI ~Asset();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

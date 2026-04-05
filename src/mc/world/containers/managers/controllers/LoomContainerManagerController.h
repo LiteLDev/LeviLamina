@@ -32,6 +32,13 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                mResultPatternNameId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    LoomContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -65,32 +72,38 @@ public:
     virtual ::CreateContainerItemScope
     _makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount) /*override*/;
 
-    virtual void _onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot) /*override*/;
+    virtual void _onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ItemInstance _buildResultItem();
+#ifdef LL_PLAT_C
+    MCNAPI explicit LoomContainerManagerController(::std::weak_ptr<::LoomContainerManagerModel> containerManagerModel);
 
-    MCNAPI_C void
+    MCNAPI ::ItemInstance _buildResultItem();
+
+    MCNAPI void
     _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope, uchar numCrafts);
 
-    MCNAPI_C void _filterPatterns();
+    MCNAPI void _filterPatterns();
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _networkUpdateResultItem();
+    MCNAPI void _networkUpdateResultItem();
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C void pullInPatternItemForPattern();
+    MCNAPI void pullInPatternItemForPattern();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::LoomContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::LoomContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:
@@ -127,7 +140,7 @@ public:
     MCNAPI ::CreateContainerItemScope
     $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const& takeAmount);
 
-    MCNAPI void $_onItemAcquired(::ItemInstance const& stack, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
 #endif
 
 

@@ -26,7 +26,7 @@ struct TickingSystemWithInfo;
 namespace DefaultMoveSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void doDefaultMoveSystems(
+MCAPI void doDefaultMoveSystems(
     ::StrictEntityContext const&,
     ::Optional<::OnGroundFlagComponent const>             onGroundFlagComponent,
     ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
@@ -41,7 +41,7 @@ MCNAPI void doDefaultMoveSystems(
     ::IConstBlockSource const&                            region
 );
 
-MCNAPI void doFlyingPlayerMoveSystems(
+MCAPI void doFlyingPlayerMoveSystems(
     ::StrictEntityContext const&,
     ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
     ::AABBShapeComponent const&               aabbShapeComponent,
@@ -51,9 +51,9 @@ MCNAPI void doFlyingPlayerMoveSystems(
     ::IConstBlockSource const&                region
 );
 
-MCNAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
+MCAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
 
-MCNAPI void horizontalMovement(
+MCAPI void horizontalMovement(
     ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
     ::AABBShapeComponent const&               aabbShapeComponent,
     ::ActorRotationComponent const&           actorRotationComponent,
@@ -62,7 +62,7 @@ MCNAPI void horizontalMovement(
     ::IConstBlockSource const&                region
 );
 
-MCNAPI void verticalMovement(
+MCAPI void verticalMovement(
     ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
     ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
     ::Optional<::MoveInputComponent const>                moveInputComponent,

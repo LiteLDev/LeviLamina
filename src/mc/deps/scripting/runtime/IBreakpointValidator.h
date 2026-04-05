@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~IBreakpointValidator() = default;
 
-    virtual bool validatePath(::std::string_view const) = 0;
+    virtual bool validatePath(::std::string_view const sourcePath) = 0;
     // NOLINTEND
 
 public:

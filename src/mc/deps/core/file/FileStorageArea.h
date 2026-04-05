@@ -91,7 +91,7 @@ public:
     // NOLINTBEGIN
     virtual ~FileStorageArea();
 
-    virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) = 0;
+    virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType accessType) = 0;
 
     virtual ::std::unique_ptr<::Core::FileSystemImpl>
     createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
@@ -100,9 +100,9 @@ public:
 
     virtual uint64 getTotalSize() const = 0;
 
-    virtual ::Core::Result getUsedSize(uint64&) = 0;
+    virtual ::Core::Result getUsedSize(uint64& outUsedSize) = 0;
 
-    virtual void setUsedSizeOverride(uint64);
+    virtual void setUsedSizeOverride(uint64 fileSize);
 
     virtual void clearUsedSizeOverride();
 
@@ -122,7 +122,7 @@ public:
 
     virtual void resetCanAttemptExtendSize();
 
-    virtual ::Core::Result getExtendSizeThreshold(uint64&) const;
+    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
     virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
@@ -162,7 +162,7 @@ public:
 
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
-    virtual bool shouldRecordFileError(::Core::PathView, ::std::error_code) const;
+    virtual bool shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
 
     virtual ::Core::Result _commit();
 
@@ -190,7 +190,9 @@ public:
 
     MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI_C void addStateListener(::Core::StorageAreaStateListener* l);
+#ifdef LL_PLAT_C
+    MCAPI void addStateListener(::Core::StorageAreaStateListener* l);
+#endif
 
     MCAPI bool canWrite() const;
 
@@ -205,8 +207,10 @@ public:
     MCAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
-    MCAPI_C static ::Core::Result
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
+#endif
     // NOLINTEND
 
 public:
@@ -242,7 +246,7 @@ public:
     MCFOLD ::std::unique_ptr<::Core::FileSystemImpl>
     $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
-    MCFOLD void $setUsedSizeOverride(uint64);
+    MCFOLD void $setUsedSizeOverride(uint64 fileSize);
 
     MCFOLD void $clearUsedSizeOverride();
 
@@ -262,7 +266,7 @@ public:
 
     MCAPI void $resetCanAttemptExtendSize();
 
-    MCAPI ::Core::Result $getExtendSizeThreshold(uint64&) const;
+    MCAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
     MCAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
@@ -302,7 +306,7 @@ public:
 
     MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCFOLD bool $shouldRecordFileError(::Core::PathView, ::std::error_code) const;
+    MCFOLD bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
 
     MCFOLD ::Core::Result $_commit();
 

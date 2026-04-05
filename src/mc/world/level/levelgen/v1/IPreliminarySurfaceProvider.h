@@ -11,7 +11,7 @@ public:
     // NOLINTBEGIN
     virtual ~IPreliminarySurfaceProvider();
 
-    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const = 0;
+    virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const = 0;
     // NOLINTEND
 
 public:

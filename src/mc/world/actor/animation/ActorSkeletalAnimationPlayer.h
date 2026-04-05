@@ -88,9 +88,11 @@ public:
         float                                                                             blendWeight
     );
 
-    MCAPI_C void _fireSoundEvents(::RenderParams& renderParams);
+#ifdef LL_PLAT_C
+    MCAPI void _fireSoundEvents(::RenderParams& renderParams);
 
-    MCAPI_C void _rebuildBoneAnimationPlayers();
+    MCAPI void _rebuildBoneAnimationPlayers();
+#endif
 
     MCAPI void _setDefaultPose(
         ::RenderParams&                                                                   renderParams,

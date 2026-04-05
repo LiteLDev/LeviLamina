@@ -21,13 +21,13 @@ namespace VanillaSystems { struct ActorAdapterComponent; }
 namespace HangingActorMoveSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doActorMoveSystem(
+MCAPI void doActorMoveSystem(
     ::StrictEntityContext const&             entity,
     ::MoveRequestComponent&                  moveRequestComponent,
     ::VanillaSystems::ActorAdapterComponent* adapter
 );
 
-MCNAPI void singleTickActorMoveSystem(
+MCAPI void singleTickActorMoveSystem(
     ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
@@ -37,7 +37,7 @@ MCNAPI void singleTickActorMoveSystem(
     ::OptionalGlobal<::VanillaSystems::ActorAdapterComponent> adapterComponent
 );
 
-MCNAPI void tickActorMoveSystem(
+MCAPI void tickActorMoveSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::HangingActorFlagComponent, ::ActorComponent>,

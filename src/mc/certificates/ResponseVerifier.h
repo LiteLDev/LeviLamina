@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~ResponseVerifier() = default;
 
-    virtual void setRequest(::Json::Value&) = 0;
+    virtual void setRequest(::Json::Value& request) = 0;
 
-    virtual ::std::optional<::Json::Value> verify(::Json::Value&&) = 0;
+    virtual ::std::optional<::Json::Value> verify(::Json::Value&& response) = 0;
     // NOLINTEND
 
 public:

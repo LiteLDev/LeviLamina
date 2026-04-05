@@ -48,12 +48,12 @@ public:
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse> requestBroadcastedServers();
 
     virtual ::Bedrock::Threading::Async<::Social::EduFetchServersResponse>
-    requestServerInfo(::std::vector<::std::string> const&);
+    requestServerInfo(::std::vector<::std::string> const& currentServerIds);
 
-    virtual ::Bedrock::Threading::Async<::Social::EduAddServerResponse> requestAddServer(::std::string const&);
+    virtual ::Bedrock::Threading::Async<::Social::EduAddServerResponse> requestAddServer(::std::string const& serverId);
 
     virtual ::Bedrock::Threading::Async<::Social::EduJoinServerResponse>
-    requestJoinServer(::std::string const&, ::std::string const&);
+    requestJoinServer(::std::string const& serverId, ::std::string const& passcode);
 
     virtual void saveCachedServersToDisk(
         ::brstd::flat_map<
@@ -61,7 +61,7 @@ public:
             ::Social::EduDedicatedServerDetails,
             ::std::less<::std::string>,
             ::std::vector<::std::string>,
-            ::std::vector<::Social::EduDedicatedServerDetails>> const&
+            ::std::vector<::Social::EduDedicatedServerDetails>> const& servers
     );
 
     virtual ::brstd::flat_map<
@@ -89,13 +89,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string const& getServicesEndpoint();
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string const& getServicesEndpoint();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::EducationServicesEnvironment& mCachedEnvironment();
+    MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
     // NOLINTEND
 
 public:

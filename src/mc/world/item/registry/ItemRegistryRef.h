@@ -117,10 +117,12 @@ public:
 
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
-    MCAPI_C void initCreativeItemsClient(
+#ifdef LL_PLAT_C
+    MCAPI void initCreativeItemsClient(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
     ) const;
+#endif
 
     MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const&                      blockDefinitionGroup,

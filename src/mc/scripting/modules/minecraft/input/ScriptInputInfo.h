@@ -31,7 +31,9 @@ public:
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isHotbarOnlyTouch() const;
 
-    MCAPI_C void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+#ifdef LL_PLAT_C
+    MCAPI void updatePlayerData(::ScriptModuleMinecraft::ScriptActorData const& playerData);
+#endif
     // NOLINTEND
 
 public:

@@ -88,7 +88,9 @@ public:
         )> closure
     );
 
-    MCNAPI_S void tick();
+#ifdef LL_PLAT_S
+    MCNAPI void tick();
+#endif
 
     MCNAPI bool unsubscribe(
         ::Scripting::Closure<::Scripting::Future<void()>(

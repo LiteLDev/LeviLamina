@@ -40,7 +40,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double const timestampMs) /*override*/;
+    virtual void update(double const) /*override*/;
 
     virtual ~InputQuery() /*override*/ = default;
     // NOLINTEND
@@ -60,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double const timestampMs);
+    MCAPI void $update(double const);
     // NOLINTEND
 
 public:

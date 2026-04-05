@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<1, 1, bool> mRandomly;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionDrop();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,13 +40,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionDrop(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(uchar amount, bool randomly, ::ItemStackRequestSlotInfo const& src);
+#endif
     // NOLINTEND
 
 public:

@@ -6,10 +6,10 @@ struct TimeMarkerData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk35bc1b;
-    ::ll::UntypedStorage<8, 32> mUnka3ee86;
-    ::ll::UntypedStorage<4, 4>  mUnk3deeed;
-    ::ll::UntypedStorage<4, 8>  mUnk40b1a1;
+    ::ll::TypedStorage<8, 8, uint64>               mId;
+    ::ll::TypedStorage<8, 32, ::std::string>       mName;
+    ::ll::TypedStorage<4, 4, int>                  mTime;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mPeriod;
     // NOLINTEND
 
 public:
@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TimeMarkerData& operator=(::TimeMarkerData&&);
+    MCAPI ::TimeMarkerData& operator=(::TimeMarkerData&&);
 
-    MCNAPI ::TimeMarkerData& operator=(::TimeMarkerData const&);
+    MCAPI ::TimeMarkerData& operator=(::TimeMarkerData const&);
 
-    MCNAPI bool operator==(::TimeMarkerData const&) const;
+    MCAPI bool operator==(::TimeMarkerData const&) const;
     // NOLINTEND
 };

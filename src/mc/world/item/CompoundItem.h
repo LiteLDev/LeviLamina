@@ -26,7 +26,7 @@ public:
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
@@ -45,7 +45,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string _getName(::CompoundType type);
 
-    MCAPI_C static ::std::string getCompoundFormula(::ItemInstance const& instance);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
+#endif
 
     MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 
@@ -72,7 +74,7 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;

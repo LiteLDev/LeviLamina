@@ -20,7 +20,8 @@ public:
     // NOLINTBEGIN
     virtual ~IResultHandler() = default;
 
-    virtual void call(::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&&, ::cereal::ReflectionCtx&) = 0;
+    virtual void
+    call(::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& value, ::cereal::ReflectionCtx& cerealContext) = 0;
     // NOLINTEND
 
 public:

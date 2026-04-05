@@ -37,13 +37,20 @@ public:
     ::ll::TypedStorage<4, 4, ::RecipeNetId>    mRecipeNetId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MerchantRecipe();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI MerchantRecipe();
+#endif
+
     MCAPI MerchantRecipe(::MerchantRecipe&&);
 
     MCAPI MerchantRecipe(::MerchantRecipe const&);
@@ -79,7 +86,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
 
     MCFOLD void* $ctor(::MerchantRecipe&&);
 

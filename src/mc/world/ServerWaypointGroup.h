@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/WaypointGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
 class ServerWaypoint;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ServerWaypointGroup : public ::WaypointGroup {
@@ -30,29 +32,34 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnke4eff1;
-        ::ll::UntypedStorage<4, 4> mUnk23c1d6;
+        ::ll::TypedStorage<1, 1, ::ServerWaypointGroup::Action> mAction;
+        ::ll::TypedStorage<4, 4, uint>                          mUpdateFlags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WaypointChangeRecord& operator=(WaypointChangeRecord const&);
-        WaypointChangeRecord(WaypointChangeRecord const&);
-        WaypointChangeRecord();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnkae8ad6;
-    ::ll::UntypedStorage<8, 16>  mUnkcf9453;
-    ::ll::UntypedStorage<8, 128> mUnkd6f47c;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::WaypointGroup::WaypointHandle,
+            ::std::unique_ptr<::ServerWaypoint>,
+            ::WaypointGroup::WaypointHandle::Hasher,
+            ::std::equal_to<::WaypointGroup::WaypointHandle>>>
+        mWaypoints;
+    ::ll::TypedStorage<8, 16, ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord>>
+        mChangeRecords;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::std::vector<::WaypointGroup::WaypointHandle> const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnInvalidActorRemovedEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerWaypointGroup& operator=(ServerWaypointGroup const&);
-    ServerWaypointGroup(ServerWaypointGroup const&);
 
 public:
     // virtual functions
@@ -67,27 +74,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerWaypointGroup();
+    MCAPI ServerWaypointGroup();
 
-    MCNAPI ::WaypointGroup::WaypointHandle add(::std::unique_ptr<::ServerWaypoint> waypoint);
+    MCAPI ::WaypointGroup::WaypointHandle add(::std::unique_ptr<::ServerWaypoint> waypoint);
 
-    MCNAPI ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord> consumeChanges();
+    MCAPI ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord> consumeChanges();
 
-    MCNAPI void update(::Player const& viewingPlayer);
+    MCAPI void update(::Player const& viewingPlayer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $has(::WaypointGroup::WaypointHandle const& handle) const;
+    MCAPI bool $has(::WaypointGroup::WaypointHandle const& handle) const;
 
-    MCNAPI bool $remove(::WaypointGroup::WaypointHandle const& handle);
+    MCAPI bool $remove(::WaypointGroup::WaypointHandle const& handle);
 
 
     // NOLINTEND

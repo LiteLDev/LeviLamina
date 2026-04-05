@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/IAllocator.h"
-#include "mc/deps/cohtml/MemTagsType.h"
+#include "mc/external/gameface/cohtml/IAllocator.h"
+#include "mc/external/gameface/cohtml/MemTagsType.h"
 
 // auto generated forward declare list
 // clang-format off

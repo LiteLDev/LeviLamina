@@ -15,6 +15,13 @@ namespace mce { struct Image; }
 // clang-format on
 
 class AppResourceLoader : public ::ResourceLoader {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AppResourceLoader();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,7 +36,7 @@ public:
     virtual bool load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
@@ -37,7 +44,7 @@ public:
 
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
 #ifdef LL_PLAT_C
@@ -50,13 +57,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit AppResourceLoader(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#endif
     // NOLINTEND
 
 public:
@@ -74,14 +85,14 @@ public:
     MCNAPI bool $load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI ::mce::Image $loadTexture(::ResourceLocation const& resourceLocation) const;

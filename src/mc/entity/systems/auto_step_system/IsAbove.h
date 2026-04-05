@@ -8,14 +8,8 @@ struct IsAbove {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf55b2e;
+    ::ll::TypedStorage<4, 4, float> mMaxHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IsAbove& operator=(IsAbove const&);
-    IsAbove(IsAbove const&);
-    IsAbove();
 };
 
 } // namespace AutoStepSystem

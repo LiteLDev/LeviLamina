@@ -168,7 +168,8 @@ public:
 
     virtual ::std::shared_ptr<::AbstractScene> createStartMenuScreen(bool shouldSendEvent) /*override*/;
 
-    virtual ::Json::Value createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const>) const = 0;
+    virtual ::Json::Value
+    createGlobalVars(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository) const = 0;
     // NOLINTEND
 
 public:

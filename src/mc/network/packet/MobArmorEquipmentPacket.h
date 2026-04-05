@@ -49,7 +49,9 @@ public:
 
     MCAPI explicit MobArmorEquipmentPacket(::Actor const& e);
 
-    MCAPI_C void fillIn(::Actor& e) const;
+#ifdef LL_PLAT_C
+    MCAPI void fillIn(::Actor& e) const;
+#endif
     // NOLINTEND
 
 public:

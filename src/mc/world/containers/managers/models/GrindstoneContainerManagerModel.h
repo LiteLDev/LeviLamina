@@ -51,7 +51,9 @@ public:
     // NOLINTBEGIN
     MCAPI GrindstoneContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#endif
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
-    virtual void setInitialState(::ParticleSystem::CommonParticle&, ::RenderParams&) = 0;
+    virtual void setInitialState(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams) = 0;
 
     virtual void update(::RenderParams& renderParams);
 

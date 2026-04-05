@@ -36,7 +36,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCNAPI_S void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
+#ifdef LL_PLAT_S
+    MCNAPI void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
+#endif
     // NOLINTEND
 
 public:

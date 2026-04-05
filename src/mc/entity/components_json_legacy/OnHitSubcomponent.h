@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~OnHitSubcomponent() = default;
 
-    virtual void readfromJSON(::Json::Value&) = 0;
+    virtual void readfromJSON(::Json::Value& component) = 0;
 
-    virtual void writetoJSON(::Json::Value&) const = 0;
+    virtual void writetoJSON(::Json::Value& component) const = 0;
 
-    virtual void doOnHitEffect(::Actor&, ::ProjectileComponent&) = 0;
+    virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) = 0;
 
     virtual char const* getName() const;
     // NOLINTEND

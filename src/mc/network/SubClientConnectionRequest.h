@@ -100,7 +100,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::SubClientConnectionRequest create(
+#ifdef LL_PLAT_C
+    MCNAPI static ::SubClientConnectionRequest create(
         ::SubClientAuthInfo const&            authInfo,
         ::std::string const&                  deviceId,
         ::std::string const&                  selfSignedId,
@@ -119,6 +120,7 @@ public:
         bool                                  compatibleWithClientSideChunkGen,
         ::SyncedClientOptionsComponent const& options
     );
+#endif
 
     MCNAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
     // NOLINTEND

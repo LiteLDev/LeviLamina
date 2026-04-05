@@ -56,7 +56,7 @@ public:
 
     virtual ::Vec3 const& getWorldVelocity() const = 0;
 
-    virtual void setMaxNumParticles(uint64) = 0;
+    virtual void setMaxNumParticles(uint64 num) = 0;
 
     virtual uint64 getMaxNumParticles() const = 0;
 
@@ -64,53 +64,57 @@ public:
 
     virtual uint64 getNumParticlesEmitted() const = 0;
 
-    virtual void setActorFrameOfReference(bool, bool, bool) = 0;
+    virtual void setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity) = 0;
 
     virtual void setEmitRate(float emitRate);
 
     virtual float getEmitRate() const;
 
-    virtual void setEmissionDuration(float) = 0;
+    virtual void setEmissionDuration(float activeTime) = 0;
 
     virtual float& getEmissionAccumulator();
 
-    virtual void setSleepDuration(float) = 0;
+    virtual void setSleepDuration(float sleepTime) = 0;
 
-    virtual void setFacing(::HashedString const&) = 0;
+    virtual void setFacing(::HashedString const& facing) = 0;
 
     virtual bool blockListInitialized() = 0;
 
-    virtual void initializeBlockList(::buffer_span<::std::string>) = 0;
+    virtual void initializeBlockList(::buffer_span<::std::string> blockList) = 0;
 
-    virtual bool blockAtPositionIsInList(::BlockPos const&) = 0;
+    virtual bool blockAtPositionIsInList(::BlockPos const& blockPos) = 0;
 
-    virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const&) const = 0;
+    virtual ::BrightnessPair getBrightnessPairAtBlock(::BlockPos const& blockPosition) const = 0;
 
     virtual ::std::pair<::BrightnessPair, ::BlockPos>
-    getBrightestNeighbor(::BlockPos const&, ::ParticleSystem::CommonParticle const&) const = 0;
+    getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const = 0;
 
-    virtual bool getVisibilityAtBlock(::BlockPos const&) const = 0;
+    virtual bool getVisibilityAtBlock(::BlockPos const& blockPosition) const = 0;
 
-    virtual ::mce::Color getGameplayLightForParticle(::ParticleSystem::CommonParticle const&) const = 0;
+    virtual ::mce::Color getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const = 0;
 
-    virtual ::BrightnessPair getBrightnessPairForParticle(::ParticleSystem::CommonParticle const&) const = 0;
+    virtual ::BrightnessPair getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const = 0;
 
-    virtual ::std::vector<::AABB> const& getCollisionShapesForBlockPosition(::BlockPos const&) = 0;
+    virtual ::std::vector<::AABB> const& getCollisionShapesForBlockPosition(::BlockPos const& blockPosition) = 0;
 
     virtual ::std::vector<::AABB>& getCollisionAabbList() = 0;
 
     virtual ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>&
     getCollisionSweepList() = 0;
 
-    virtual void fireEvent(::HashedString const&, ::Vec3 const&, ::Vec3 const&) = 0;
+    virtual void fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity) = 0;
 
-    virtual void fireEvent(::HashedString const&, ::Matrix const&, ::Vec3 const&) = 0;
+    virtual void fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity) = 0;
 
     virtual bool getUseActorPosition() const = 0;
 
     virtual bool getUseActorRotation() const = 0;
 
-    virtual void getParticleWorldPositionAndVelocity(::ParticleSystem::CommonParticle&, ::Vec3&, ::Vec3&) = 0;
+    virtual void getParticleWorldPositionAndVelocity(
+        ::ParticleSystem::CommonParticle& particle,
+        ::Vec3&                           particleWorldPosition,
+        ::Vec3&                           particleWorldVelocity
+    ) = 0;
 
     virtual bool getAreParticlesFromActorButWorldRelative() const = 0;
 

@@ -28,19 +28,19 @@ public:
         // NOLINTBEGIN
         virtual ~IWorldAccessor() = default;
 
-        virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const&, float) const = 0;
+        virtual ::Player* fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const = 0;
 
         virtual uint getChunkTickRange() const = 0;
 
-        virtual bool areChunksFullyLoaded(::BlockPos const&, int) const = 0;
+        virtual bool areChunksFullyLoaded(::BlockPos const& min, int r) const = 0;
 
-        virtual bool hasUntickedNeighborChunk(::ChunkPos const&, int) const = 0;
+        virtual bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const = 0;
 
         virtual ::IRandom& getChanceRandom() = 0;
 
-        virtual ::std::optional<int> getActorNoActionTime(::Actor const&) const = 0;
+        virtual ::std::optional<int> getActorNoActionTime(::Actor const& actor) const = 0;
 
-        virtual void resetActorNoActionTime(::Actor&) = 0;
+        virtual void resetActorNoActionTime(::Actor& actor) = 0;
         // NOLINTEND
 
     public:

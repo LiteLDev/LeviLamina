@@ -44,7 +44,7 @@ public:
 
     virtual bool isHandEquipped() const /*override*/;
 
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
@@ -87,7 +87,7 @@ public:
 
     MCFOLD bool $isHandEquipped() const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 

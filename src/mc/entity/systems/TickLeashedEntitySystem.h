@@ -21,14 +21,14 @@ struct CurrentTickComponent;
 namespace TickLeashedEntitySystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickEntity(
+MCAPI void tickEntity(
     ::LeashableComponent&             leashableComponent,
     ::ActorOwnerComponent&            actorOwnerComponent,
     ::Optional<::NavigationComponent> navigationComponent,
     ::CurrentTickComponent const&     currentTick
 );
 
-MCNAPI void tickView(
+MCAPI void tickView(
     ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
     ::ViewT<
         ::StrictEntityContext,

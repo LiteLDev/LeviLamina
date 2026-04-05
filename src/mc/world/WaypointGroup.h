@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/UUID.h"
+
 class WaypointGroup {
 public:
     // WaypointGroup inner types declare
@@ -23,14 +26,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkacbd9c;
+        ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WaypointHandle& operator=(WaypointHandle const&);
-        WaypointHandle(WaypointHandle const&);
-        WaypointHandle();
     };
 
 public:
@@ -38,9 +35,9 @@ public:
     // NOLINTBEGIN
     virtual ~WaypointGroup() = default;
 
-    virtual bool has(::WaypointGroup::WaypointHandle const&) const = 0;
+    virtual bool has(::WaypointGroup::WaypointHandle const& handle) const = 0;
 
-    virtual bool remove(::WaypointGroup::WaypointHandle const&) = 0;
+    virtual bool remove(::WaypointGroup::WaypointHandle const& handle) = 0;
     // NOLINTEND
 
 public:

@@ -28,10 +28,13 @@ public:
     ::ll::TypedStorage<8, 104, ::StructureSettings>                mSettings;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     StructureEditorData& operator=(StructureEditorData const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -43,13 +46,19 @@ public:
 
     MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
+#ifdef LL_PLAT_C
+    MCAPI ::StructureEditorData& operator=(::StructureEditorData const&);
+#endif
+
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI_C void setStructureName(::Bedrock::Safety::RedactableString const& name);
+#ifdef LL_PLAT_C
+    MCAPI void setStructureName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI_C void setStructureSize(::BlockPos const& size);
+    MCAPI void setStructureSize(::BlockPos const& size);
 
-    MCAPI_C void validateSize(::BlockPos const& structurePosition, short minHeight, short maxHeight);
+    MCAPI void validateSize(::BlockPos const& structurePosition, short minHeight, short maxHeight);
+#endif
 
     MCAPI ~StructureEditorData();
     // NOLINTEND

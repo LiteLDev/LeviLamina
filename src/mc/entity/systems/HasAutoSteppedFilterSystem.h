@@ -10,7 +10,7 @@ class EntitySystems;
 namespace HasAutoSteppedFilterSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerSystems(::EntitySystems& entitySystems);
+MCAPI void registerSystems(::EntitySystems& entitySystems);
 // NOLINTEND
 
 } // namespace HasAutoSteppedFilterSystem

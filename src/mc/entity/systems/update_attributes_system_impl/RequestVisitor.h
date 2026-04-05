@@ -5,13 +5,18 @@
 // auto generated inclusion list
 #include "mc/entity/components/AttributeRequestComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+struct AttributesComponent;
+// clang-format on
+
 namespace UpdateAttributesSystemImpl {
 
 struct RequestVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf37e17;
+    ::ll::TypedStorage<8, 8, ::AttributesComponent&> mAttributes;
     // NOLINTEND
 
 public:
@@ -23,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
+    MCAPI void operator()(::AttributeRequestComponent::AddBuffModifier const& request) const;
     // NOLINTEND
 };
 

@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCAPI void validateValue(
         ::std::vector<::SharedTypes::v1_26_0::ReplaceBiomesBiomeJsonComponent::BiomeReplacement> const&

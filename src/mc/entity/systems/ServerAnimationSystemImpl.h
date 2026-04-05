@@ -21,13 +21,13 @@ struct SimulatedPlayerFlagComponent;
 namespace ServerAnimationSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickAnimationSystem(::ActorOwnerComponent& actorOwnerComponent);
+MCAPI void tickAnimationSystem(::ActorOwnerComponent& actorOwnerComponent);
 
-MCNAPI void tickServerInputDependentActorsAnimationSystem(
+MCAPI void tickServerInputDependentActorsAnimationSystem(
     ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::ActorOwnerComponent> view
 );
 
-MCNAPI void tickServerInputIndependentAnimationSystem(
+MCAPI void tickServerInputIndependentAnimationSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ServerPlayerComponent, ::IsDeadFlagComponent, ::ActorTickedComponent>,

@@ -347,12 +347,12 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P0,
     ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::
         HorizonBlendKeyFrames const& __P0,
     ::AtmosphericScattering::AtmosphericScatteringConfigSettings::AtmosphericScatteringSettings::

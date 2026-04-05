@@ -17,11 +17,18 @@ struct TickingSystemWithInfo;
 
 class SimulatedPlayerPreAIStepSystem {
 public:
+    // SimulatedPlayerPreAIStepSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::SimulatedPlayerFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _doSimulatedPlayerPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

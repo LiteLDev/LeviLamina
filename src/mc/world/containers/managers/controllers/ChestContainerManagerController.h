@@ -19,6 +19,13 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestContainerManagerModel>> mChestContainerManagerModel;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ChestContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,15 +39,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _calculateFullCobblestoneAchievement();
+#ifdef LL_PLAT_C
+    MCNAPI explicit ChestContainerManagerController(
+        ::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _calculateFullCobblestoneAchievement();
+
+    MCNAPI void _setupCallbacks();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::ChestContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

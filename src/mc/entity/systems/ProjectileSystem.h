@@ -24,13 +24,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickProjectileComponent(::Actor* actor, ::ProjectileComponent& projectileComponent);
+    MCAPI static void _tickProjectileComponent(::Actor* actor, ::ProjectileComponent& projectileComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

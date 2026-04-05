@@ -238,9 +238,11 @@ public:
 
     MCAPI void clearItemAndCreativeItemRegistry();
 
-    MCAPI_C void digestServerItemComponents(::std::vector<::ItemData> const& items);
+#ifdef LL_PLAT_C
+    MCAPI void digestServerItemComponents(::std::vector<::ItemData> const& items);
 
-    MCAPI_C void findAllAttachableDefinitions();
+    MCAPI void findAllAttachableDefinitions();
+#endif
 
     MCAPI void finishedRegistration();
 
@@ -253,17 +255,19 @@ public:
 
     MCAPI ::HashedString getNameFromLegacyID(short id);
 
-    MCAPI_C void initClient(
+#ifdef LL_PLAT_C
+    MCAPI void initClient(
         ::std::vector<::ItemData> const& serverItemData,
         ::Experiments const&             experiments,
         ::BaseGameVersion const&         baseGameVersion
     );
 
-    MCAPI_C void initClientData(
+    MCAPI void initClientData(
         ::ResourcePackManager& resourcePackManager,
         ::Experiments const&   experiments,
         ::ItemIconInfoFactory  iconFactory
     );
+#endif
 
     MCAPI void initCreativeItemsServer(
         ::BlockDefinitionGroup const&                      blockDefinitionGroup,
@@ -298,7 +302,9 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
-    MCAPI_C void matchServerItemIds(::std::vector<::ItemData> const& serverItemData);
+#ifdef LL_PLAT_C
+    MCAPI void matchServerItemIds(::std::vector<::ItemData> const& serverItemData);
+#endif
 
     MCAPI void onLevelInit(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
@@ -326,7 +332,9 @@ public:
 
     MCAPI void setCheckForItemWorldCompatibility(bool value);
 
-    MCAPI_C void setItemId(::HashedString const& itemName, short itemId, bool isComponentBased);
+#ifdef LL_PLAT_C
+    MCAPI void setItemId(::HashedString const& itemName, short itemId, bool isComponentBased);
+#endif
 
     MCAPI void unregisterItem(::HashedString const& itemName);
 

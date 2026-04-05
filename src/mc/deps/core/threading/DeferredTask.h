@@ -32,7 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool tryExecute();
+#ifdef LL_PLAT_C
+    MCNAPI bool tryExecute();
+#endif
     // NOLINTEND
 };
 

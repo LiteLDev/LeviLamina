@@ -17,18 +17,25 @@ struct TickingSystemWithInfo;
 
 class EyeOfEnderPreNormalTickSystem {
 public:
+    // EyeOfEnderPreNormalTickSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::EyeOfEnderFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCNAPI static void _tickEyeOfEnderPreNormalTickSystem(
+    MCAPI static void _tickEyeOfEnderPreNormalTickSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::EyeOfEnderFlagComponent>,
             ::ActorOwnerComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -15,6 +15,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string generateStorageKey(int64 actorId);
+    MCAPI static ::std::string generateStorageKey(int64 actorId);
     // NOLINTEND
 };

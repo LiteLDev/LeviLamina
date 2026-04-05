@@ -17,15 +17,16 @@ public:
     // NOLINTBEGIN
     virtual ~IPlayerTickProxy() = default;
 
-    virtual void preReplicationTick(::ServerPlayer&, ::Tick const&, ::EntityContext&) = 0;
+    virtual void
+    preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity) = 0;
 
-    virtual void playerTick(::Player&, ::Tick const&) = 0;
+    virtual void playerTick(::Player& player, ::Tick const& currentTick) = 0;
 
-    virtual void clearDimensionPlayerReplicationList(::Dimension&) = 0;
+    virtual void clearDimensionPlayerReplicationList(::Dimension& dimension) = 0;
 
-    virtual void processDimensionPlayerReplication(::Dimension&) = 0;
+    virtual void processDimensionPlayerReplication(::Dimension& dimension) = 0;
 
-    virtual void postReplicationtick(::ServerPlayer&, ::Tick const&) = 0;
+    virtual void postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick) = 0;
     // NOLINTEND
 
 public:

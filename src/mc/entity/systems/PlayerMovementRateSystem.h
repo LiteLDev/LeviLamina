@@ -16,9 +16,9 @@ struct ServerPlayerMovementComponent;
 namespace PlayerMovementRateSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickEntity(::ServerPlayerMovementComponent& serverPlayerMovement, uint64 numberOfTick);
+MCAPI void tickEntity(::ServerPlayerMovementComponent& serverPlayerMovement, uint64 numberOfTick);
 
-MCNAPI void tickSystem(
+MCAPI void tickSystem(
     ::ViewT<::StrictEntityContext, ::ServerPlayerMovementComponent> view,
     ::OptionalGlobal<::OverflowTickComponent>                       overflowTick
 );

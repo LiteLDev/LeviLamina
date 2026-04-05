@@ -46,6 +46,21 @@ struct MonsterAiStepSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // MonsterAiStepSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::ActorMovementTickNeededComponent,
+            ::BlazeFlagComponent,
+            ::LavaSlimeFlagComponent,
+            ::MonsterFlagComponent>,
+        ::Read<::AABBShapeComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::StateVectorComponent>,
+        ::Write<::NoActionTimeComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -69,9 +84,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void tickMonsterAiStep(
+    MCAPI static void tickMonsterAiStep(
         ::StrictEntityContext const&                                        entity,
         ::AABBShapeComponent const&                                         aabbShapeComponent,
         ::OffsetsComponent const&                                           offsetsComponent,
@@ -86,7 +101,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorMovementTickNeededComponent,

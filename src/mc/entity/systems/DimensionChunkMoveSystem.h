@@ -11,6 +11,6 @@ class DimensionChunkMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createDimensionChunkMoveSystem();
+    MCAPI static ::TickingSystemWithInfo createDimensionChunkMoveSystem();
     // NOLINTEND
 };

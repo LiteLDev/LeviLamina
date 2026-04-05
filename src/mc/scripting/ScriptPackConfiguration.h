@@ -32,6 +32,10 @@ public:
 
     MCNAPI ScriptPackConfiguration(::ScriptPackConfiguration const&);
 
+#ifdef LL_PLAT_S
+    MCNAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
+#endif
+
     MCNAPI ~ScriptPackConfiguration();
     // NOLINTEND
 

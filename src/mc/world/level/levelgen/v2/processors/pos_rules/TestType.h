@@ -17,9 +17,10 @@ public:
     // NOLINTBEGIN
     virtual ~TestType() = default;
 
-    virtual bool test(::BlockPos, ::BlockPos, ::BlockPos, ::IRandom&) const = 0;
+    virtual bool
+    test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:

@@ -55,8 +55,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::optional<::std::string>
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::std::string>
     getDiff(::PermissionsHandler const& lhs, ::PermissionsHandler const& rhs);
+#endif
 
     MCAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(::std::string const& s);
 

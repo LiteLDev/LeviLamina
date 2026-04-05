@@ -10,7 +10,7 @@ class EntitySystems;
 namespace TickAttributesSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace TickAttributesSystem

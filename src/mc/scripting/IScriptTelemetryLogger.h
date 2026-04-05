@@ -13,13 +13,13 @@ public:
     // NOLINTBEGIN
     virtual ~IScriptTelemetryLogger() = default;
 
-    virtual void onPluginDiscovery(::ScriptPluginManagerResult const&);
+    virtual void onPluginDiscovery(::ScriptPluginManagerResult const& pluginManagerResult);
 
-    virtual void onPluginRun(::ScriptPluginManagerResult const&);
+    virtual void onPluginRun(::ScriptPluginManagerResult const& pluginManagerResult);
 
-    virtual void onDebuggerListen(bool);
+    virtual void onDebuggerListen(bool autoAttach);
 
-    virtual void onDebuggerConnect(bool, int);
+    virtual void onDebuggerConnect(bool autoAttach, int retries);
     // NOLINTEND
 
 public:

@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~ISharedController() = default;
 
-    virtual bool canChat(::PlayerCapabilities::IPlayerData const&) const = 0;
+    virtual bool canChat(::PlayerCapabilities::IPlayerData const& player) const = 0;
 
-    virtual bool canTell(::PlayerCapabilities::IPlayerData const&) const = 0;
+    virtual bool canTell(::PlayerCapabilities::IPlayerData const& player) const = 0;
 
-    virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const&) const = 0;
+    virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const = 0;
     // NOLINTEND
 
 public:

@@ -39,11 +39,11 @@ public:
     // NOLINTBEGIN
     virtual ~EffectComponentBase() = default;
 
-    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent&) = 0;
+    virtual void initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data) = 0;
 
-    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent&) = 0;
+    virtual void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data) = 0;
 
-    virtual void parseJson(::ConstDeserializeDataParams const&) = 0;
+    virtual void parseJson(::ConstDeserializeDataParams const& deserializeDataParams) = 0;
 
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const;
 

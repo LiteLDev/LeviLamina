@@ -33,10 +33,12 @@ public:
 
     virtual ::webrtc::DataRate CurrentFecRate() const = 0;
 
-    virtual void
-    SetProtectionParameters(::webrtc::FecProtectionParams const&, ::webrtc::FecProtectionParams const&) = 0;
+    virtual void SetProtectionParameters(
+        ::webrtc::FecProtectionParams const& delta_params,
+        ::webrtc::FecProtectionParams const& key_params
+    ) = 0;
 
-    virtual void AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const&) = 0;
+    virtual void AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const& packet) = 0;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GetFecPackets() = 0;
 

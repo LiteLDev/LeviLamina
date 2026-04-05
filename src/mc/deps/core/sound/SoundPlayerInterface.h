@@ -28,31 +28,31 @@ public:
     virtual ~SoundPlayerInterface() /*override*/;
 #endif
 
-    virtual uint64 play(::std::string const&, ::Vec3 const&, float, float) = 0;
+    virtual uint64 play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch) = 0;
 
-    virtual uint64 playUI(::std::string const&, float, float) = 0;
+    virtual uint64 playUI(::std::string const& name, float volume, float pitch) = 0;
 
-    virtual void playMusic(::std::string const&, float, uint&) = 0;
+    virtual void playMusic(::std::string const& eventName, float volume, uint& playlistIndex) = 0;
 
-    virtual void playMusic(::std::string const&, float) = 0;
+    virtual void playMusic(::std::string const& eventName, float volume) = 0;
 
     virtual bool isLoadingMusic() const = 0;
 
-    virtual bool isPlayingMusicEvent(::std::string const&) const = 0;
+    virtual bool isPlayingMusicEvent(::std::string const& eventName) const = 0;
 
-    virtual bool isPlayingMusic(::Core::PathView) const = 0;
+    virtual bool isPlayingMusic(::Core::PathView soundName) const = 0;
 
-    virtual void fadeToStopMusic(float) = 0;
+    virtual void fadeToStopMusic(float fadeSeconds) = 0;
 
-    virtual void setMusicCommandVolumeMultiplier(float) = 0;
+    virtual void setMusicCommandVolumeMultiplier(float volumeMultiplier) = 0;
 
-    virtual void fadeOut(uint64, float) = 0;
+    virtual void fadeOut(uint64 handle, float duration) = 0;
 
     virtual void stopMusic() = 0;
 
-    virtual void stop(::std::string const&) = 0;
+    virtual void stop(::std::string const& name) = 0;
 
-    virtual void stop(uint64) = 0;
+    virtual void stop(uint64 handle) = 0;
 
     virtual void stopAllSounds() = 0;
 
@@ -60,29 +60,37 @@ public:
 
     virtual void resumeAllPreviouslyPlayingSounds() = 0;
 
-    virtual void pauseMusic(bool) = 0;
+    virtual void pauseMusic(bool state) = 0;
 
     virtual ::Core::PathBuffer<::std::string> const getCurrentlyPlayingMusicName() = 0;
 
-    virtual bool getItem(::std::string const&, ::Core::PathView, ::SoundItem&) const = 0;
+    virtual bool getItem(::std::string const& eventName, ::Core::PathView soundName, ::SoundItem& soundItem) const = 0;
 
-    virtual uint64 registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float) = 0;
+    virtual uint64 registerLoop(
+        ::std::string const&                        name,
+        ::std::function<void(::LoopingSoundState&)> getSoundState,
+        float                                       fadeInDuration,
+        float                                       fadeOutDuration
+    ) = 0;
 
-    virtual void unregisterLoop(uint64, bool) = 0;
+    virtual void unregisterLoop(uint64 handle, bool hard) = 0;
 
-    virtual ::std::optional<::std::string> getSubtitle(::std::string const&) const = 0;
+    virtual ::std::optional<::std::string> getSubtitle(::std::string const& name) const = 0;
 
-    virtual bool isPlayingSound(uint64) const = 0;
+    virtual bool isPlayingSound(uint64 handle) const = 0;
 
-    virtual bool isPlayingSound(::Core::Path const&) const = 0;
+    virtual bool isPlayingSound(::Core::Path const& soundName) const = 0;
 
-    virtual uint64 playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&) = 0;
+    virtual uint64 playAttached(
+        ::std::string const&                                eventName,
+        ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
+    ) = 0;
 
     virtual void stopAllDelayedSoundActions() = 0;
 
-    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const = 0;
+    virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64 handle) const = 0;
 
-    virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const = 0;
+    virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64 handle) const = 0;
     // NOLINTEND
 
 public:

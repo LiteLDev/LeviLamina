@@ -29,11 +29,11 @@ public:
 
     virtual ::dcsctp::DcSctpSocketCallbacks& callbacks() const = 0;
 
-    virtual void ObserveRTT(::webrtc::TimeDelta) = 0;
+    virtual void ObserveRTT(::webrtc::TimeDelta rtt) = 0;
 
     virtual ::webrtc::TimeDelta current_rto() const = 0;
 
-    virtual bool IncrementTxErrorCounter(::std::string_view) = 0;
+    virtual bool IncrementTxErrorCounter(::std::string_view reason) = 0;
 
     virtual void ClearTxErrorCounter() = 0;
 
@@ -41,7 +41,7 @@ public:
 
     virtual ::dcsctp::SctpPacket::Builder PacketBuilder() const = 0;
 
-    virtual void Send(::dcsctp::SctpPacket::Builder&) = 0;
+    virtual void Send(::dcsctp::SctpPacket::Builder& builder) = 0;
     // NOLINTEND
 
 public:

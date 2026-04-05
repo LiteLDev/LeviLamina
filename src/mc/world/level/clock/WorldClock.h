@@ -3,11 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list
 // clang-format off
 class TimeMarker;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class WorldClock {
@@ -20,47 +26,84 @@ public:
         Count            = 3,
     };
 
+    using OnPauseSignature = void(::std::string const&);
+
+    using OnRestartSignature = void(::std::string const&, int&);
+
+    using OnResumeSignature = void(::std::string const&);
+
+    using OnTimeMarkerSignature = void(::std::string const&, ::Bedrock::NonOwnerPointer<::TimeMarker const> const);
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk940626;
-    ::ll::UntypedStorage<4, 4>   mUnka502bb;
-    ::ll::UntypedStorage<1, 1>   mUnk154888;
-    ::ll::UntypedStorage<8, 48>  mUnk7fbf4a;
-    ::ll::UntypedStorage<8, 24>  mUnkf8a9cb;
-    ::ll::UntypedStorage<8, 24>  mUnkbac390;
-    ::ll::UntypedStorage<1, 1>   mUnk5a63b2;
-    ::ll::UntypedStorage<8, 128> mUnk566c5b;
-    ::ll::UntypedStorage<8, 128> mUnk925da0;
-    ::ll::UntypedStorage<8, 128> mUnk894417;
-    ::ll::UntypedStorage<8, 128> mUnk37ac31;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<4, 4, int>             mTime;
+    ::ll::TypedStorage<1, 1, bool>            mIsPaused;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::brstd::flat_map<
+            uint64,
+            ::Bedrock::UniqueOwnerPointer<::TimeMarker>,
+            ::std::less<uint64>,
+            ::std::vector<uint64>,
+            ::std::vector<::Bedrock::UniqueOwnerPointer<::TimeMarker>>>>
+                                                                              mTimeMarkers;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToAdd;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToRemove;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::WorldClock::DirtyFlags, 3>> mDirtyFlags;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::std::string const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnPause;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::std::string const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnResume;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::std::string const&, int&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnRestart;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::std::string const&, ::Bedrock::NonOwnerPointer<::TimeMarker const>),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mOnTimeMarker;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldClock();
+    MCAPI WorldClock();
 
-    MCNAPI WorldClock(::WorldClock const& rhs);
+    MCAPI WorldClock(::WorldClock const& rhs);
 
-    MCNAPI ::WorldClock& operator=(::WorldClock const& rhs);
+    MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
 
-    MCNAPI void setTime(int time);
+    MCAPI void setTime(int time);
 
-    MCNAPI ~WorldClock();
+    MCAPI ~WorldClock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::WorldClock const& rhs);
+    MCAPI void* $ctor(::WorldClock const& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

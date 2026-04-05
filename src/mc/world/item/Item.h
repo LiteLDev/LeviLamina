@@ -125,7 +125,7 @@ public:
     virtual ~Item();
 
     virtual ::PuvLoadData::LoadResultWithTiming
-    initServer(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext& packLoadContext);
+    initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
 
     virtual void tearDown();
 
@@ -133,13 +133,13 @@ public:
 
     virtual ::std::string const& getDescriptionId() const;
 
-    virtual int getMaxUseDuration(::ItemStack const*) const;
+    virtual int getMaxUseDuration(::ItemStack const* instance) const;
 
     virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
 
     virtual bool isMusicDisk() const;
 
-    virtual void executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
+    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 
     virtual bool isComponentBased() const;
 
@@ -171,7 +171,7 @@ public:
 
     virtual bool isBodyArmor() const;
 
-    virtual ::ItemComponent* getComponent(::HashedString const&) const;
+    virtual ::ItemComponent* getComponent(::HashedString const& id) const;
 
     virtual ::IFoodItemComponent* getFood() const;
 
@@ -183,15 +183,15 @@ public:
 
     virtual void initializeFromNetwork(::CompoundTag const& tag);
 
-    virtual ::std::vector<::std::string> validateFromNetwork(::CompoundTag const&);
+    virtual ::std::vector<::std::string> validateFromNetwork(::CompoundTag const& tag);
 
     virtual ::BlockShape getBlockShape() const;
 
     virtual bool canBeDepleted() const;
 
-    virtual bool canDestroySpecial(::Block const&) const;
+    virtual bool canDestroySpecial(::Block const& block) const;
 
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     virtual bool isStackedByData() const;
 
@@ -199,7 +199,7 @@ public:
 
     virtual int getAttackDamage() const;
 
-    virtual float getAttackDamageBonus(::Actor const&) const;
+    virtual float getAttackDamageBonus(::Actor const& attacker) const;
 
     virtual bool isHandEquipped() const;
 
@@ -217,15 +217,15 @@ public:
 
     virtual bool showsDurabilityInCreative() const;
 
-    virtual bool isWearableThroughLootTable(::CompoundTag const*) const;
+    virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const;
 
     virtual bool canDestroyInCreative() const;
 
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     virtual bool isLiquidClipItem() const;
 
-    virtual bool shouldInteractionWithBlockBypassLiquid(::Block const&) const;
+    virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
     virtual bool requiresInteract() const;
 
@@ -238,7 +238,11 @@ public:
         bool                                 showCategory
     ) const;
 
-    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
     virtual int getEnchantSlot() const;
 
@@ -262,7 +266,7 @@ public:
 
     virtual bool isComplex() const;
 
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     virtual int getDamageChance(int unbreaking) const;
 
@@ -274,19 +278,19 @@ public:
 
     virtual ::ItemTintStrategy getTintStrategy() const;
 
-    virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
+    virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
-    virtual bool hasCustomColor(::ItemStackBase const&) const;
+    virtual bool hasCustomColor(::ItemStackBase const& instance) const;
 
-    virtual bool hasCustomColor(::CompoundTag const*) const;
+    virtual bool hasCustomColor(::CompoundTag const* userData) const;
 
-    virtual void clearColor(::ItemStackBase&) const;
+    virtual void clearColor(::ItemStackBase& instance) const;
 
-    virtual void setColor(::ItemStackBase&, ::mce::Color const&) const;
+    virtual void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const;
 
-    virtual int buildIdAux(short auxValue, ::CompoundTag const*) const;
+    virtual int buildIdAux(short auxValue, ::CompoundTag const* userData) const;
 
     virtual bool canUseOnSimTick() const;
 
@@ -294,35 +298,41 @@ public:
 
     virtual bool canUseAsAttack() const;
 
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const&) const;
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
 
-    virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
+    virtual ::Actor* createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      aimDirection
+    ) const;
 
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    virtual float getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
+    virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    virtual void hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
+    virtual void hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    virtual void hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
+    virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
     virtual ::std::string buildDescriptionName(::ItemStackBase const& stack) const;
 
     virtual ::Bedrock::Safety::RedactableString const buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     virtual ::Bedrock::Safety::RedactableString getRedactedCustomName(::ItemStackBase const& stack) const;
 
     virtual bool hasCustomHoverName(::ItemStackBase const& stack) const;
 
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     virtual void
     readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
@@ -331,9 +341,9 @@ public:
 
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const;
 
-    virtual bool inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const;
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    virtual void refreshedInContainer(::ItemStackBase const&, ::Level&) const;
+    virtual void refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const;
 
     virtual ::HashedString const& getCooldownCategory() const;
 
@@ -343,19 +353,19 @@ public:
 
     virtual void fixupCommon(::ItemStackBase& stack) const;
 
-    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
+    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
 
     virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&,
+        ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const,
-        bool const slotChanged
+        bool const         isMainHand,
+        bool const         slotChanged
     ) const;
 
     virtual bool validFishInteraction(int) const;
 
-    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
+    virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
@@ -363,35 +373,37 @@ public:
 
     virtual bool useInterruptedByAttacking() const;
 
-    virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
+    virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
     virtual ::PuvLoadData::LoadResultWithTiming
     initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
 
     virtual ::Item& setIconInfo(::std::string const& name, int index);
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     virtual ::std::string getInteractText(::Player const& player) const;
 
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    virtual int
+    getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
     virtual bool isEmissive(int auxValue) const;
 
-    virtual ::Brightness getLightEmission(int) const;
+    virtual ::Brightness getLightEmission(int data) const;
 
     virtual bool canBeCharged() const;
 
-    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
     virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
+    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     virtual bool _shouldAutoCalculatePlacePos() const;
 
@@ -509,7 +521,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::PuvLoadData::LoadResultWithTiming
-    $initServer(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext& packLoadContext);
+    $initServer(::Json::Value const& data, ::SemVersion const& documentVersion, ::PackLoadContext& packLoadContext);
 
     MCFOLD void $tearDown();
 
@@ -517,13 +529,13 @@ public:
 
     MCAPI ::std::string const& $getDescriptionId() const;
 
-    MCAPI int $getMaxUseDuration(::ItemStack const*) const;
+    MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
     MCFOLD ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
 
     MCFOLD bool $isMusicDisk() const;
 
-    MCFOLD void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
+    MCFOLD void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 
     MCFOLD bool $isComponentBased() const;
 
@@ -553,7 +565,7 @@ public:
 
     MCFOLD bool $isBodyArmor() const;
 
-    MCFOLD ::ItemComponent* $getComponent(::HashedString const&) const;
+    MCFOLD ::ItemComponent* $getComponent(::HashedString const& id) const;
 
     MCAPI ::IFoodItemComponent* $getFood() const;
 
@@ -565,15 +577,15 @@ public:
 
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCFOLD ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const&);
+    MCFOLD ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
     MCFOLD ::BlockShape $getBlockShape() const;
 
     MCAPI bool $canBeDepleted() const;
 
-    MCFOLD bool $canDestroySpecial(::Block const&) const;
+    MCFOLD bool $canDestroySpecial(::Block const& block) const;
 
-    MCFOLD int $getLevelDataForAuxValue(int) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI bool $isStackedByData() const;
 
@@ -581,7 +593,7 @@ public:
 
     MCFOLD int $getAttackDamage() const;
 
-    MCFOLD float $getAttackDamageBonus(::Actor const&) const;
+    MCFOLD float $getAttackDamageBonus(::Actor const& attacker) const;
 
     MCAPI bool $isHandEquipped() const;
 
@@ -599,15 +611,15 @@ public:
 
     MCFOLD bool $showsDurabilityInCreative() const;
 
-    MCFOLD bool $isWearableThroughLootTable(::CompoundTag const*) const;
+    MCFOLD bool $isWearableThroughLootTable(::CompoundTag const* userData) const;
 
     MCFOLD bool $canDestroyInCreative() const;
 
-    MCFOLD bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int auxValue) const;
 
     MCFOLD bool $isLiquidClipItem() const;
 
-    MCFOLD bool $shouldInteractionWithBlockBypassLiquid(::Block const&) const;
+    MCFOLD bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
     MCFOLD bool $requiresInteract() const;
 
@@ -620,7 +632,11 @@ public:
         bool                                 showCategory
     ) const;
 
-    MCFOLD bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    MCFOLD bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
     MCFOLD int $getEnchantSlot() const;
 
@@ -644,7 +660,7 @@ public:
 
     MCFOLD bool $isComplex() const;
 
-    MCFOLD bool $isValidAuxValue(int) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI int $getDamageChance(int unbreaking) const;
 
@@ -656,19 +672,19 @@ public:
 
     MCFOLD ::ItemTintStrategy $getTintStrategy() const;
 
-    MCFOLD ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
+    MCFOLD ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
-    MCFOLD bool $hasCustomColor(::ItemStackBase const&) const;
+    MCFOLD bool $hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCFOLD bool $hasCustomColor(::CompoundTag const*) const;
+    MCFOLD bool $hasCustomColor(::CompoundTag const* userData) const;
 
-    MCFOLD void $clearColor(::ItemStackBase&) const;
+    MCFOLD void $clearColor(::ItemStackBase& instance) const;
 
-    MCFOLD void $setColor(::ItemStackBase&, ::mce::Color const&) const;
+    MCFOLD void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
     MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
-    MCAPI int $buildIdAux(short auxValue, ::CompoundTag const*) const;
+    MCAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
 
     MCFOLD bool $canUseOnSimTick() const;
 
@@ -676,35 +692,41 @@ public:
 
     MCFOLD bool $canUseAsAttack() const;
 
-    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const&) const;
+    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection) const;
 
-    MCFOLD ::Actor* $createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
+    MCFOLD ::Actor* $createProjectileActor(
+        ::BlockSource&     region,
+        ::ItemStack const& stack,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      aimDirection
+    ) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCFOLD float $getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
+    MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD void $hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
+    MCFOLD void $hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD void $hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
+    MCFOLD void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
     MCAPI ::std::string $buildDescriptionName(::ItemStackBase const& stack) const;
 
     MCAPI ::Bedrock::Safety::RedactableString const $buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
-    MCFOLD ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCFOLD ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI ::Bedrock::Safety::RedactableString $getRedactedCustomName(::ItemStackBase const& stack) const;
 
     MCAPI bool $hasCustomHoverName(::ItemStackBase const& stack) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     MCAPI void
     $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
@@ -713,9 +735,9 @@ public:
 
     MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCFOLD bool $inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const;
+    MCFOLD bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCFOLD void $refreshedInContainer(::ItemStackBase const&, ::Level&) const;
+    MCFOLD void $refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const;
 
     MCAPI ::HashedString const& $getCooldownCategory() const;
 
@@ -725,53 +747,55 @@ public:
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
-    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
+    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&,
+        ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const,
-        bool const slotChanged
+        bool const         isMainHand,
+        bool const         slotChanged
     ) const;
 
     MCFOLD bool $validFishInteraction(int) const;
 
-    MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
+    MCFOLD void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
     MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $useInterruptedByAttacking() const;
 
-    MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
+    MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
     MCAPI ::PuvLoadData::LoadResultWithTiming
     $initClient(::Json::Value const& data, ::SemVersion const&, ::PackLoadContext&, ::ItemIconInfoFactory iconFactory);
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    MCFOLD int
+    $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
     MCAPI bool $isEmissive(int auxValue) const;
 
-    MCFOLD ::Brightness $getLightEmission(int) const;
+    MCFOLD ::Brightness $getLightEmission(int data) const;
 
     MCFOLD bool $canBeCharged() const;
 
-    MCFOLD void $playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    MCFOLD void $playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const;
 
-    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const&) const;
+    MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
+    MCFOLD bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCFOLD bool $_shouldAutoCalculatePlacePos() const;
 

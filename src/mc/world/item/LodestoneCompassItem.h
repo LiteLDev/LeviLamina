@@ -31,8 +31,7 @@ public:
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const /*override*/;
 
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    _useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     virtual ~LodestoneCompassItem() /*override*/ = default;
     // NOLINTEND
@@ -45,7 +44,8 @@ public:
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& calcId
     );
 
-    MCAPI_C static int getCompassFrame(
+#ifdef LL_PLAT_C
+    MCAPI static int getCompassFrame(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>& calcId,
         ::ItemStack const&                                                         item,
         ::Level const&                                                             level,
@@ -53,7 +53,8 @@ public:
         ::DimensionType const&                                                     itemDimension
     );
 
-    MCAPI_C static ::PositionTrackingId getPositionTrackingId(::ItemStackBase const& item);
+    MCAPI static ::PositionTrackingId getPositionTrackingId(::ItemStackBase const& item);
+#endif
 
     MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
@@ -64,7 +65,7 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& item, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
 
     // NOLINTEND

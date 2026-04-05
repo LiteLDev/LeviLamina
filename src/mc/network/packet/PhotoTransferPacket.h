@@ -72,6 +72,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PhotoTransferPacket();
+
+#ifdef LL_PLAT_C
+    MCAPI explicit PhotoTransferPacket(::PhotoTransferPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
@@ -79,7 +83,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::PhotoTransferPacketPayload payload);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PhotoTransferPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

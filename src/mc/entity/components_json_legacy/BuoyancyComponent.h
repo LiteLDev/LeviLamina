@@ -44,11 +44,17 @@ public:
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
     MCAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
+
+#ifdef LL_PLAT_C
+    MCAPI ~BuoyancyComponent();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -20,13 +20,21 @@ public:
     // NOLINTBEGIN
     virtual ~PrefabDBServiceProvider() = default;
 
-    virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const&) const = 0;
+    virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const& templateId) const = 0;
 
-    virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> getTemplate(::mce::UUID const&) = 0;
+    virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate> getTemplate(::mce::UUID const& templateId) = 0;
 
-    virtual void bake(::WeakEntityRef, ::std::function<void(bool)>, ::std::function<void(::std::string_view)>) = 0;
+    virtual void bake(
+        ::WeakEntityRef                           weakPlayerRef,
+        ::std::function<void(bool)>               completionCallback,
+        ::std::function<void(::std::string_view)> logger
+    ) = 0;
 
-    virtual void unbake(::WeakEntityRef, ::std::function<void(bool)>, ::std::function<void(::std::string_view)>) = 0;
+    virtual void unbake(
+        ::WeakEntityRef                           weakPlayerRef,
+        ::std::function<void(bool)>               completionCallback,
+        ::std::function<void(::std::string_view)> logger
+    ) = 0;
     // NOLINTEND
 
 public:

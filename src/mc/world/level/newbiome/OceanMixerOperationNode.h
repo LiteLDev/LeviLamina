@@ -31,6 +31,13 @@ public:
     ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mDeepOceanBiomes;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    OceanMixerOperationNode();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,13 +57,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI OceanMixerOperationNode(
         uint                                                                     seedMixup,
         ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
         ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,
@@ -64,6 +66,22 @@ public:
         ::Biome const&                                                           genericShallowOcean,
         ::Biome const&                                                           genericDeepOcean
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        uint                                                                     seedMixup,
+        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>&             biomeLayer,
+        ::std::shared_ptr<::OperationNode<::BiomeTemperatureCategory, ::Pos2d>>& oceanLayer,
+        ::BiomeRegistry const&                                                   registry,
+        ::Biome const&                                                           genericShallowOcean,
+        ::Biome const&                                                           genericDeepOcean
+    );
+#endif
     // NOLINTEND
 
 public:

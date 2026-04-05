@@ -11,8 +11,8 @@ struct UpdateAttributesSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createProcessRequestSystem();
+    MCAPI static ::TickingSystemWithInfo createProcessRequestSystem();
 
-    MCNAPI static ::TickingSystemWithInfo createUpdateSystem();
+    MCAPI static ::TickingSystemWithInfo createUpdateSystem();
     // NOLINTEND
 };

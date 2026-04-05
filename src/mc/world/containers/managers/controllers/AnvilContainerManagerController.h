@@ -43,6 +43,13 @@ public:
     ::ll::TypedStorage<8, 40, ::SlotData const>                              mCreatedItemOutputSlot;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AnvilContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -94,31 +101,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _consumeMaterials();
+#ifdef LL_PLAT_C
+    MCNAPI explicit AnvilContainerManagerController(
+        ::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C bool _consumeOneFromAnvilInputSlot();
+    MCNAPI void _consumeMaterials();
 
-    MCNAPI_C void _createCraftItem(::ItemInstance& stack, ::ItemStackRequestScope const& requestScope);
+    MCNAPI bool _consumeOneFromAnvilInputSlot();
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI void _createCraftItem(::ItemInstance& stack, ::ItemStackRequestScope const& requestScope);
 
-    MCNAPI_C bool _isTooExpensive();
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _onItemGrabbed();
+    MCNAPI bool _isTooExpensive();
 
-    MCNAPI_C bool _playerHasEnoughXP();
+    MCNAPI void _onItemGrabbed();
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI bool _playerHasEnoughXP();
 
-    MCNAPI_C ::std::string getCostText();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C bool shouldDrawRed();
+    MCNAPI ::std::string getCostText();
+
+    MCNAPI bool shouldDrawRed();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::AnvilContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

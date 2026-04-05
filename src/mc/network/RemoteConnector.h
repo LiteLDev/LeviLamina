@@ -23,7 +23,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) = 0;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) = 0;
 
@@ -35,13 +35,13 @@ public:
 
     virtual bool isServer() const = 0;
 
-    virtual void closeNetworkConnection(::NetworkIdentifier const&) = 0;
+    virtual void closeNetworkConnection(::NetworkIdentifier const& id) = 0;
 
     virtual ::NetworkIdentifier getNetworkIdentifier() const = 0;
 
-    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) = 0;
+    virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) = 0;
 
-    virtual void setDisableLanSignaling(bool) = 0;
+    virtual void setDisableLanSignaling(bool disableLanSignaling) = 0;
 
     virtual ~RemoteConnector() /*override*/;
     // NOLINTEND

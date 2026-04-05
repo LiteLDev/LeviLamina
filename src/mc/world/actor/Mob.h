@@ -98,8 +98,15 @@ public:
 
     virtual ~Mob() /*override*/;
 
-    virtual void
-    knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
+    virtual void knockback(
+        ::Actor* source,
+        int      dmg,
+        float    xd,
+        float    zd,
+        float    horizontalPower,
+        float    verticalPower,
+        float    heightCap
+    );
 
     virtual void kill() /*override*/;
 
@@ -133,7 +140,7 @@ public:
 
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    virtual void damageCarriedItemOnAttack(::Actor& target, float);
+    virtual void damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
     virtual ::ActorHurtResult doFireHurt(int amount) /*override*/;
 
@@ -141,11 +148,11 @@ public:
 
     virtual void pushActors();
 
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     virtual bool checkSpawnObstruction() const;
 
-    virtual void addPassenger(::Actor& passenger) /*override*/;
+    virtual void addPassenger(::Actor& newPassenger) /*override*/;
 
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
@@ -157,7 +164,7 @@ public:
 
     virtual float getItemUseIntervalProgress() const;
 
-    virtual bool swing(::ActorSwingSource) /*override*/;
+    virtual bool swing(::ActorSwingSource swingSource) /*override*/;
 
     virtual float getMaxHeadXRot();
 
@@ -170,7 +177,7 @@ public:
     virtual ::ActorHurtResult
     attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual bool isAlliedTo(::Mob*);
+    virtual bool isAlliedTo(::Mob* other);
 
     virtual ::ActorHurtResult doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
@@ -184,7 +191,7 @@ public:
 
     virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    virtual void sendArmorDamage(::std::bitset<5> const);
+    virtual void sendArmorDamage(::std::bitset<5> const damagedSlots);
 
     virtual void sendArmor(::std::bitset<5> const armorSlots);
 
@@ -206,7 +213,7 @@ public:
 
     virtual void clearVanishEnchantedItemsOnDeath();
 
-    virtual void sendInventory(bool);
+    virtual void sendInventory(bool shouldSelectSlot);
 
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
@@ -240,7 +247,7 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    virtual float _getWalkTargetValue(::BlockPos const&);
+    virtual float _getWalkTargetValue(::BlockPos const& pos);
 
     virtual bool canExistWhenDisallowMob() const;
 
@@ -262,13 +269,14 @@ public:
 
     virtual void outOfWorld() /*override*/;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool knock, bool) /*override*/;
+    virtual ::ActorHurtResult
+    _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     virtual void newServerAiStep();
 
     virtual void _doInitialMove() /*override*/;
 
-    virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
+    virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
     // NOLINTEND
 
 public:
@@ -319,7 +327,9 @@ public:
 
     MCAPI void frostWalk();
 
-    MCAPI_C ::std::vector<int> getAllArmorID() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<int> getAllArmorID() const;
+#endif
 
     MCAPI float getArmorCoverPercentage() const;
 
@@ -361,13 +371,17 @@ public:
 
     MCAPI float getYBodyRotation() const;
 
-    MCAPI_C ::InterpolationPair getYBodyRotationsNewOld() const;
+#ifdef LL_PLAT_C
+    MCAPI ::InterpolationPair getYBodyRotationsNewOld() const;
+#endif
 
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
     MCAPI bool isAbleToMove() const;
 
-    MCAPI_C bool isGliding() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isGliding() const;
+#endif
 
     MCAPI void knockback(::Actor* source, int damage, float xd, float zd, float horizontalPower, float verticalPower);
 
@@ -433,8 +447,15 @@ public:
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void
-    $knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
+    MCAPI void $knockback(
+        ::Actor* source,
+        int      dmg,
+        float    xd,
+        float    zd,
+        float    horizontalPower,
+        float    verticalPower,
+        float    heightCap
+    );
 
     MCAPI void $kill();
 
@@ -468,7 +489,7 @@ public:
 
     MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $damageCarriedItemOnAttack(::Actor& target, float);
+    MCAPI void $damageCarriedItemOnAttack(::Actor& target, float damageDealtToTarget);
 
     MCAPI ::ActorHurtResult $doFireHurt(int amount);
 
@@ -476,11 +497,11 @@ public:
 
     MCAPI void $pushActors();
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& passenger);
+    MCAPI void $addPassenger(::Actor& newPassenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
@@ -492,7 +513,7 @@ public:
 
     MCFOLD float $getItemUseIntervalProgress() const;
 
-    MCAPI bool $swing(::ActorSwingSource);
+    MCAPI bool $swing(::ActorSwingSource swingSource);
 
     MCAPI float $getMaxHeadXRot();
 
@@ -502,7 +523,7 @@ public:
 
     MCAPI void $setTarget(::Actor* target);
 
-    MCFOLD bool $isAlliedTo(::Mob*);
+    MCFOLD bool $isAlliedTo(::Mob* other);
 
     MCAPI bool $inCaravan() const;
 
@@ -510,7 +531,7 @@ public:
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
-    MCFOLD void $sendArmorDamage(::std::bitset<5> const);
+    MCFOLD void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
@@ -526,7 +547,7 @@ public:
 
     MCAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCAPI void $sendInventory(bool);
+    MCAPI void $sendInventory(bool shouldSelectSlot);
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
@@ -555,7 +576,7 @@ public:
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCFOLD float $_getWalkTargetValue(::BlockPos const&);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $canExistWhenDisallowMob() const;
 
@@ -577,13 +598,13 @@ public:
 
     MCAPI void $outOfWorld();
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCFOLD void $newServerAiStep();
 
     MCAPI void $_doInitialMove();
 
-    MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
+    MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
 
 #ifdef LL_PLAT_C
     MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);

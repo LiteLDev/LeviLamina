@@ -44,6 +44,22 @@ class VerticalCollisionSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
+    // VerticalCollisionSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
+        ::Read<
+            ::DimensionTypeComponent,
+            ::StateVectorComponent,
+            ::ActorDataFlagComponent,
+            ::MoveRequestComponent,
+            ::AABBShapeComponent>,
+        ::Write<::StateVectorComponent>,
+        ::AddRemove<::BounceComponent, ::ApplyRestitutionComponent>,
+        ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -85,7 +101,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickVerticalCollisionSystem(
+    MCAPI static void tickVerticalCollisionSystem(
         ::StrictEntityContext const&  context,
         ::AABBShapeComponent const&   aabb,
         ::MoveRequestComponent const& request,
@@ -108,7 +124,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
             ::Read<
@@ -124,7 +140,7 @@ public:
             ::EntityFactoryT<>>& strictContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::MinecartFlagComponent, ::PlayerComponent, ::VerticalCollisionFlagComponent>,
             ::Read<

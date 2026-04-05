@@ -68,7 +68,7 @@ public:
 
         virtual ::gsl::not_null<::Bedrock::DataStore*> getOwningDataStore() = 0;
 
-        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view) const = 0;
+        virtual ::Bedrock::JSONObject::Node const* getValueForKey(::std::string_view key) const = 0;
         // NOLINTEND
 
     public:
@@ -91,10 +91,10 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view) = 0;
+        virtual ::Bedrock::JSONObject::Node* getValueForKey(::std::string_view key) = 0;
 
         virtual ::Bedrock::JSONObject::Node*
-        setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
+        setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
 
         virtual ~Editor() /*override*/ = default;
         // NOLINTEND
@@ -139,7 +139,9 @@ public:
 
         MCNAPI void load();
 
-        MCNAPI_C void save();
+#ifdef LL_PLAT_C
+        MCNAPI void save();
+#endif
 
         MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
 

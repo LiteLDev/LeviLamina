@@ -23,6 +23,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HitboxComponent(::HitboxComponent const& rhs);
+
+#ifdef LL_PLAT_C
+    MCAPI ::HitboxComponent& operator=(::HitboxComponent&&);
+
+    MCAPI ~HitboxComponent();
+#endif
     // NOLINTEND
 
 public:
@@ -34,6 +40,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

@@ -8,15 +8,9 @@ struct PlayerTickResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk758b71;
-    ::ll::UntypedStorage<1, 1> mUnk3753b7;
+    ::ll::TypedStorage<8, 8, int64> mTicksToDequeue;
+    ::ll::TypedStorage<1, 1, bool>  mProcessTop;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerTickResult& operator=(PlayerTickResult const&);
-    PlayerTickResult(PlayerTickResult const&);
-    PlayerTickResult();
 };
 
 } // namespace PlayerTickSystemImpl

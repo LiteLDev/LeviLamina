@@ -27,77 +27,107 @@ public:
     // NOLINTBEGIN
     virtual ~IMessenger() /*override*/;
 
-    virtual void onAgentAction(::AgentActionType, ::std::string const&, ::Json::Value const&) const = 0;
+    virtual void
+    onAgentAction(::AgentActionType actionType, ::std::string const& requestId, ::Json::Value const& result) const = 0;
 
-    virtual void blockBroken(::Player const*, ::Block const&, int, int, ushort) const = 0;
+    virtual void
+    blockBroken(::Player const* player, ::Block const& block, int method, int variantData, ushort auxType) const = 0;
 
-    virtual void blockPlaced(::Player const*, ::Block const&, bool, ushort) const = 0;
+    virtual void blockPlaced(::Player const* player, ::Block const& block, bool underWater, ushort auxType) const = 0;
 
-    virtual void blockPlacedByCommand(::Block const&, ushort, int) const = 0;
+    virtual void blockPlacedByCommand(::Block const& block, ushort auxType, int numberOfBlocksPlaced) const = 0;
 
-    virtual void cameraUsed(bool) const = 0;
+    virtual void cameraUsed(bool isSelfie) const = 0;
 
-    virtual void codeBuilderRuntimeAction(::std::string const&) const = 0;
+    virtual void codeBuilderRuntimeAction(::std::string const& action) const = 0;
 
-    virtual void codeBuilderScoreChanged(::std::string const&, int const) const = 0;
+    virtual void codeBuilderScoreChanged(::std::string const& objective, int const score) const = 0;
 
-    virtual void chunkChanged(::LevelChunk&) const = 0;
+    virtual void chunkChanged(::LevelChunk& chunk) const = 0;
 
-    virtual void chunkLoaded(::LevelChunk&) const = 0;
+    virtual void chunkLoaded(::LevelChunk& chunk) const = 0;
 
-    virtual void chunkUnloaded(::LevelChunk&) const = 0;
+    virtual void chunkUnloaded(::LevelChunk& chunk) const = 0;
 
-    virtual void endOfDay(::Player const*) const = 0;
+    virtual void endOfDay(::Player const* player) const = 0;
 
-    virtual void entitySpawned(::Player const*, int, uint) const = 0;
+    virtual void entitySpawned(::Player const* player, int mobType, uint spawnMethod) const = 0;
 
     virtual void itemAcquired(::Player const*, ::ItemDescriptor const&, int, uint, int) const = 0;
 
+    virtual void itemCrafted(
+        ::Player const*       player,
+        bool                  craftingTable,
+        ::ItemInstance const& item,
+        bool                  recipeBook,
+        bool                  hadSearchString,
+        bool                  craftedAutomatically,
+        int                   startingTabId,
+        int                   endingTabId,
+        int                   numTabsChanged,
+        bool                  filterOn,
+        bool                  recipeBookShown
+    ) const = 0;
+
+    virtual void itemDropped(::Player const* player, ::ItemDescriptor const& item) const = 0;
+
+    virtual void itemEquipped(::Player const* player, ::ItemInstance const& item, int slot) const = 0;
+
+    virtual void itemInteracted(::Player const* player, ::ItemInstance const& item, int method) const = 0;
+
     virtual void
-    itemCrafted(::Player const*, bool, ::ItemInstance const&, bool, bool, bool, int, int, int, bool, bool) const = 0;
+    itemSmelted(::Player const* player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem) const = 0;
 
-    virtual void itemDropped(::Player const*, ::ItemDescriptor const&) const = 0;
+    virtual void itemUsed(::Player const* player, ::ItemDescriptor const& item, int useMethod) const = 0;
 
-    virtual void itemEquipped(::Player const*, ::ItemInstance const&, int) const = 0;
-
-    virtual void itemInteracted(::Player const*, ::ItemInstance const&, int) const = 0;
-
-    virtual void itemSmelted(::Player const*, ::ItemDescriptor const&, ::ItemDescriptor const&) const = 0;
-
-    virtual void itemUsed(::Player const*, ::ItemDescriptor const&, int) const = 0;
-
-    virtual void mobInteracted(::Player const*, int, int, int, uchar) const = 0;
+    virtual void mobInteracted(
+        ::Player const* player,
+        int             legacyInteractedEntityType,
+        int             interactionType,
+        int             interactedEntityVariant,
+        uchar           interactedEntityColor
+    ) const = 0;
 
     virtual void mobKilled(::Player const*, ::Actor*, ::Mob&, uint, ::std::string const&, int) const = 0;
 
-    virtual void piglinBarter(::Player const*, ::std::string const&, bool) const = 0;
-
-    virtual void playerBounced(::Player const*, ::Block const&, int, int) const = 0;
-
-    virtual void playerDied(::Player const*, int, int, int, bool) const = 0;
-
-    virtual void playerJoined(::Player const*) const = 0;
-
-    virtual void playerLeave(::Player const*) const = 0;
-
     virtual void
-    playerMessage(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) const = 0;
+    piglinBarter(::Player const* player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer) const = 0;
 
-    virtual void playerTeleported(::Player const*, float, int, int) const = 0;
+    virtual void playerBounced(::Player const* player, ::Block const& block, int bounceHeight, int auxType) const = 0;
 
-    virtual void playerTransform(::Player const*) const = 0;
+    virtual void playerDied(::Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const = 0;
 
-    virtual void playerTravelled(::Player const*, float, int, int) const = 0;
+    virtual void playerJoined(::Player const* player) const = 0;
 
-    virtual void targetBlockHit(::Player const*, int const) const = 0;
+    virtual void playerLeave(::Player const* player) const = 0;
+
+    virtual void playerMessage(
+        ::std::string const& fromName,
+        ::std::string const& toName,
+        ::std::string const& message,
+        ::std::string const& messageType
+    ) const = 0;
+
+    virtual void playerTeleported(::Player const* player, float metersTravelled, int cause, int sourceType) const = 0;
+
+    virtual void playerTransform(::Player const* player) const = 0;
+
+    virtual void playerTravelled(
+        ::Player const* player,
+        float           metersTravelledSinceLastEvent,
+        int             travelMethodType,
+        int             newBiome
+    ) const = 0;
+
+    virtual void targetBlockHit(::Player const* player, int const redstoneLevel) const = 0;
 
     virtual void tradeCompleted(
-        ::Player const*,
-        ::Actor*,
-        ::ItemDescriptor const&,
-        ::ItemDescriptor const&,
-        ::ItemInstance const&,
-        int
+        ::Player const*         player,
+        ::Actor*                trader,
+        ::ItemDescriptor const& itemA,
+        ::ItemDescriptor const& itemB,
+        ::ItemInstance const&   tradedFor,
+        int                     traderEmeraldCount
     ) const = 0;
     // NOLINTEND
 

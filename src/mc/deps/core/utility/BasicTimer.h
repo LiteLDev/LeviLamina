@@ -11,18 +11,31 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<double()>> mGetCurrentTimeCallback;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     BasicTimer();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BasicTimer& operator=(BasicTimer const&);
+    BasicTimer(BasicTimer const&);
+    BasicTimer();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
-    MCAPI_C bool hasExpired() const;
+#ifdef LL_PLAT_C
+    MCAPI bool hasExpired() const;
 
-    MCAPI_C void resetTime();
+    MCAPI ::BasicTimer& operator=(::BasicTimer&&);
+
+    MCAPI void resetTime();
+#endif
 
     MCAPI ~BasicTimer();
     // NOLINTEND

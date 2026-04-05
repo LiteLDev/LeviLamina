@@ -39,11 +39,11 @@ public:
 
     virtual ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
 
-    virtual void onMessage(::std::string_view);
+    virtual void onMessage(::std::string_view incomingMessage);
 
     virtual void onBinaryMessage(::gsl::span<uchar const>);
 
-    virtual void onClose(uint);
+    virtual void onClose(uint status);
     // NOLINTEND
 
 public:
@@ -77,11 +77,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<::std::error_code> $send(::std::string const& message) const;
 
-    MCNAPI void $onMessage(::std::string_view);
+    MCNAPI void $onMessage(::std::string_view incomingMessage);
 
     MCNAPI void $onBinaryMessage(::gsl::span<uchar const>);
 
-    MCNAPI void $onClose(uint);
+    MCNAPI void $onClose(uint status);
 
 
     // NOLINTEND

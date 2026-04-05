@@ -26,12 +26,20 @@ public:
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     AppPlatformWindows& operator=(AppPlatformWindows const&);
     AppPlatformWindows(AppPlatformWindows const&);
     AppPlatformWindows();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AppPlatformWindows& operator=(AppPlatformWindows const&);
+    AppPlatformWindows(AppPlatformWindows const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -108,6 +116,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI AppPlatformWindows();
+#endif
+
     MCAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
@@ -120,7 +132,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

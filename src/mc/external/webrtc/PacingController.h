@@ -54,17 +54,21 @@ public:
         // NOLINTBEGIN
         virtual ~PacketSender() = default;
 
-        virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&) = 0;
+        virtual void SendPacket(
+            ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
+            ::webrtc::PacedPacketInfo const&             cluster_info
+        ) = 0;
 
         virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFec() = 0;
 
-        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(::webrtc::DataSize) = 0;
+        virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
+        GeneratePadding(::webrtc::DataSize size) = 0;
 
         virtual void OnBatchComplete();
 
-        virtual void OnAbortedRetransmissions(uint, ::rtc::ArrayView<ushort const>);
+        virtual void OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers);
 
-        virtual ::std::optional<uint> GetRtxSsrcForMedia(uint) const;
+        virtual ::std::optional<uint> GetRtxSsrcForMedia(uint ssrc) const;
         // NOLINTEND
 
     public:

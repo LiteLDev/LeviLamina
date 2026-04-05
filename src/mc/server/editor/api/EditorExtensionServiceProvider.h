@@ -29,40 +29,43 @@ public:
 
     virtual ::Scripting::Result_deprecated<::Bedrock::NonOwnerPointer<::Editor::API::EditorExtension>>
     registerExtension(
-        ::std::string const&,
-        ::Scripting::WeakLifetimeScope,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>,
-        ::std::optional<::Editor::API::EditorExtensionOptionalParameters>,
-        ::Editor::API::ServerScriptPackType
+        ::std::string const&           extensionName,
+        ::Scripting::WeakLifetimeScope scope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+            activationClosure,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
+                                                                          shutdownClosure,
+        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
+        ::Editor::API::ServerScriptPackType                               packType
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>>
-    getExtension(::std::string const&) = 0;
+    getExtension(::std::string const& extensionName) = 0;
 
-    virtual bool hasExtension(::std::string const&) = 0;
+    virtual bool hasExtension(::std::string const& extensionName) = 0;
 
     virtual void
-        forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
+    forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) = 0;
 
     virtual void forEachExtensionOrdered(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) = 0;
 
     virtual void forEachExtensionReverse(
-        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerForScriptSystemRebuildEvent(
-        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)>
+        ::std::function<::Scripting::Result_deprecated<void>(::std::optional<::Scripting::ContextId>)> handler
     ) = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()>) = 0;
+    registerForScriptSystemTeardownEvent(::std::function<::Scripting::Result_deprecated<void>()> handler) = 0;
 
     virtual ::Scripting::Result_deprecated<void> destroyRegisteredExtensions() = 0;
 
-    virtual ::Scripting::Result_deprecated<void> createExtensionContexts(::Scripting::ContextId, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    createExtensionContexts(::Scripting::ContextId contextId, bool finalEvent) = 0;
     // NOLINTEND
 
 public:

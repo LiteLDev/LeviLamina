@@ -32,20 +32,20 @@ public:
     virtual ~PacketSocketFactory() = default;
 
     virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
-    CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
+    CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) = 0;
 
     virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    CreateGlobalUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
+    CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) = 0;
 
     virtual ::std::unique_ptr<::rtc::AsyncListenSocket>
-    CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int) = 0;
+    CreateServerTcpSocket(::rtc::SocketAddress const& local_address, ushort min_port, ushort max_port, int opts) = 0;
 
     virtual ::std::unique_ptr<::rtc::AsyncPacketSocket> CreateClientTcpSocket(
-        ::rtc::SocketAddress const&,
-        ::rtc::SocketAddress const&,
-        ::rtc::ProxyInfo const&,
-        ::std::string const&,
-        ::rtc::PacketSocketTcpOptions const&
+        ::rtc::SocketAddress const&          local_address,
+        ::rtc::SocketAddress const&          remote_address,
+        ::rtc::ProxyInfo const&              proxy_info,
+        ::std::string const&                 user_agent,
+        ::rtc::PacketSocketTcpOptions const& tcp_options
     ) = 0;
 
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() = 0;

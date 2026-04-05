@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ~ParserBase() = default;
 
-    virtual ::Puv::LoadResultAny doParse(::Puv::Input const&, ::cereal::ContextArea) const = 0;
+    virtual ::Puv::LoadResultAny doParse(::Puv::Input const& input, ::cereal::ContextArea contextArea) const = 0;
     // NOLINTEND
 
 public:

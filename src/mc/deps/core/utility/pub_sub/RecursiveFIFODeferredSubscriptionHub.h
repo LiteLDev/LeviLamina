@@ -27,8 +27,11 @@ public:
     // NOLINTBEGIN
     virtual ::Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const /*override*/;
 
-    virtual void
-        _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
+    virtual void _enqueue(
+        ::std::function<void()>            fn,
+        ::Bedrock::PubSub::ConnectPosition at,
+        ::std::optional<int>               group
+    ) /*override*/;
 
     virtual void
     _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry) /*override*/;

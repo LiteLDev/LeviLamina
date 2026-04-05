@@ -284,11 +284,11 @@ public:
 
     virtual void outOfWorld();
 
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    virtual void reloadHardcodedClient(::ActorInitializationMethod);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method);
 
-    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const&);
+    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     virtual void reloadComponents(::ActorInitializationMethod, ::VariantParameterList const&);
 
@@ -298,7 +298,7 @@ public:
 
     virtual ~Actor();
 
-    virtual void resetUserPos(::ActorResetRule);
+    virtual void resetUserPos(::ActorResetRule resetRule);
 
     virtual ::ActorType getOwnerEntityType();
 
@@ -308,9 +308,9 @@ public:
 
     virtual float getInterpolatedBodyRot(float a = 0.0f) const;
 
-    virtual float getInterpolatedHeadRot(float = 0.0f) const;
+    virtual float getInterpolatedHeadRot(float a = 0.0f) const;
 
-    virtual float getInterpolatedBodyYaw(float = 0.0f) const;
+    virtual float getInterpolatedBodyYaw(float a = 0.0f) const;
 
     virtual float getYawSpeedInDegreesPerSecond() const;
 
@@ -322,7 +322,8 @@ public:
 
     virtual bool canDisableShield();
 
-    virtual void teleportTo(::Vec3 const& pos, bool shouldStopRiding, int, int, bool keepVelocity);
+    virtual void
+    teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     virtual void lerpMotion(::Vec3 const& delta);
 
@@ -356,7 +357,7 @@ public:
 
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    virtual void playerTouch(::Player&);
+    virtual void playerTouch(::Player& player);
 
     virtual bool isImmobile() const;
 
@@ -364,13 +365,13 @@ public:
 
     virtual bool isSleeping() const;
 
-    virtual void setSleeping(bool);
+    virtual void setSleeping(bool val);
 
     virtual void setSneaking(bool value);
 
     virtual bool isBlocking() const;
 
-    virtual bool isDamageBlocked(::ActorDamageSource const&) const;
+    virtual bool isDamageBlocked(::ActorDamageSource const& source) const;
 
     virtual bool isAlive() const;
 
@@ -382,9 +383,9 @@ public:
 
     virtual void setTarget(::Actor* entity);
 
-    virtual bool isValidTarget(::Actor*) const;
+    virtual bool isValidTarget(::Actor* attacker) const;
 
-    virtual ::ActorHurtResult attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
+    virtual ::ActorHurtResult attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     virtual void performRangedAttack(::Actor& target, float);
 
@@ -424,13 +425,13 @@ public:
 
     virtual void setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    virtual int getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+    virtual int getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    virtual float getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
 
-    virtual void setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot, ::ItemStack const&);
+    virtual void setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     virtual void setCarriedItem(::ItemStack const& item);
 
@@ -458,17 +459,17 @@ public:
 
     virtual void changeDimension(::DimensionType toId);
 
-    virtual void changeDimension(::ChangeDimensionPacket const&);
+    virtual void changeDimension(::ChangeDimensionPacket const& packet);
 
     virtual ::ActorUniqueID getControllingPlayer() const;
 
-    virtual float causeFallDamageToActor(float, float, ::ActorDamageSource);
+    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
     virtual void onSynchedDataUpdate(int dataId);
 
     virtual bool canAddPassenger(::Actor& passenger) const;
 
-    virtual bool canPickupItem(::ItemStack const&) const;
+    virtual bool canPickupItem(::ItemStack const& item) const;
 
     virtual bool canBePulledIntoVehicle() const;
 
@@ -482,7 +483,7 @@ public:
 
     virtual void stopSwimming();
 
-    virtual void buildDebugInfo(::std::string&) const;
+    virtual void buildDebugInfo(::std::string& out) const;
 
     virtual ::CommandPermissionLevel getCommandPermissionLevel() const;
 
@@ -500,7 +501,7 @@ public:
 
     virtual void openContainerComponent(::Player& player);
 
-    virtual bool swing(::ActorSwingSource);
+    virtual bool swing(::ActorSwingSource swingSource);
 
     virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
@@ -514,11 +515,12 @@ public:
 
     virtual bool drop(::ItemStack const& item, bool const randomly);
 
-    virtual ::InteractionResult getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
+    virtual ::InteractionResult
+    getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    virtual bool canDestroyBlock(::Block const&) const;
+    virtual bool canDestroyBlock(::Block const& block) const;
 
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int aux);
 
     virtual void renderDebugServerState(::IOptionsReader const& options);
 
@@ -533,7 +535,7 @@ public:
         ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity
     );
 
-    virtual void onPush(::Actor&);
+    virtual void onPush(::Actor& source);
 
     virtual ::std::optional<::BlockPos> getLastDeathPos() const;
 
@@ -551,7 +553,7 @@ public:
 
     virtual bool _shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
-    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    virtual ::ActorHurtResult _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -624,7 +626,9 @@ public:
 
     MCAPI bool canBeginOrContinueClimbingLadder() const;
 
-    MCAPI_S bool canCurrentlySwim() const;
+#ifdef LL_PLAT_S
+    MCAPI bool canCurrentlySwim() const;
+#endif
 
     MCAPI bool canFly() const;
 
@@ -664,9 +668,11 @@ public:
 
     MCAPI ::ActorDefinitionIdentifier const& getActorIdentifier() const;
 
-    MCAPI_C ::Matrix getActorToWorldTransform(float frameAlpha, bool useActorRotation, ::Vec3 const& offset) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Matrix getActorToWorldTransform(float frameAlpha, bool useActorRotation, ::Vec3 const& offset) const;
 
-    MCFOLD_C ::std::vector<::MobEffectInstance> const& getAllEffects() const;
+    MCFOLD ::std::vector<::MobEffectInstance> const& getAllEffects() const;
+#endif
 
     MCAPI ::ItemStack const& getArmor(::SharedTypes::Legacy::ArmorSlot slot) const;
 
@@ -718,7 +724,9 @@ public:
 
     MCAPI ::Vec3 getInterpolatedRidingPosition(float a = 0.0f) const;
 
-    MCAPI_C ::Vec2 getInterpolatedRotation(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Vec2 getInterpolatedRotation(float a) const;
+#endif
 
     MCAPI bool getIsExperienceDropEnabled() const;
 
@@ -738,7 +746,9 @@ public:
 
     MCAPI int getMaxHealth() const;
 
-    MCAPI_C int64 getMetadataId() const;
+#ifdef LL_PLAT_C
+    MCAPI int64 getMetadataId() const;
+#endif
 
     MCAPI ::std::string const& getNameTag() const;
 
@@ -790,7 +800,9 @@ public:
 
     MCFOLD ::Vec3 getViewVector(float a = 0.0f) const;
 
-    MCAPI_C ::Vec2 getViewVector2(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Vec2 getViewVector2(float a) const;
+#endif
 
     MCAPI ::WeakRef<::EntityContext> const getWeakEntity() const;
 
@@ -804,7 +816,9 @@ public:
 
     MCAPI bool hasFamily(::HashedString const& family) const;
 
-    MCAPI_C bool hasPassenger() const;
+#ifdef LL_PLAT_C
+    MCAPI bool hasPassenger() const;
+#endif
 
     MCAPI bool hasPlayerPassenger() const;
 
@@ -824,8 +838,9 @@ public:
 
     MCAPI void initParams(::RenderParams& params);
 
-    MCAPI_C bool
-    isActorLocationInMaterial(::SharedTypes::Legacy::ActorLocation actorLocation, ::MaterialType type) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isActorLocationInMaterial(::SharedTypes::Legacy::ActorLocation actorLocation, ::MaterialType type) const;
+#endif
 
     MCAPI bool isAdventure() const;
 
@@ -859,7 +874,9 @@ public:
 
     MCAPI bool isInThunderstorm() const;
 
-    MCAPI_C bool isInWater() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isInWater() const;
+#endif
 
     MCAPI bool isInWaterOrRain() const;
 
@@ -867,15 +884,21 @@ public:
 
     MCAPI bool isLeashed() const;
 
-    MCAPI_C bool isLocalPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isLocalPlayer() const;
+#endif
 
     MCAPI bool isOverWater() const;
 
     MCAPI bool isPassenger(::Actor const& passenger) const;
 
-    MCAPI_C bool isPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isPlayer() const;
+#endif
 
-    MCAPI_S bool isRemotePlayer() const;
+#ifdef LL_PLAT_S
+    MCAPI bool isRemotePlayer() const;
+#endif
 
     MCAPI bool isRiding() const;
 
@@ -901,7 +924,9 @@ public:
 
     MCAPI bool isTrading() const;
 
-    MCAPI_C bool isType(::ActorType type) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isType(::ActorType type) const;
+#endif
 
     MCAPI bool isUnderLiquid(::MaterialType type) const;
 
@@ -928,7 +953,9 @@ public:
 
     MCAPI void onEffectUpdated(::MobEffectInstance& effect);
 
-    MCAPI_C void onSynchedFlagUpdate(::std::bitset<127> const& changedFlags);
+#ifdef LL_PLAT_C
+    MCAPI void onSynchedFlagUpdate(::std::bitset<127> const& changedFlags);
+#endif
 
     MCAPI void pickUpItem(::ItemActor& itemActor, int count);
 
@@ -944,7 +971,9 @@ public:
     MCAPI void
     playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
 
-    MCAPI_C void positionAllPassengers();
+#ifdef LL_PLAT_C
+    MCAPI void positionAllPassengers();
+#endif
 
     MCAPI void positionPassenger(::Actor& passenger);
 
@@ -1024,7 +1053,9 @@ public:
 
     MCAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI_C void setRuntimeID(::ActorRuntimeID id);
+#ifdef LL_PLAT_C
+    MCAPI void setRuntimeID(::ActorRuntimeID id);
+#endif
 
     MCAPI void setSaddle(bool saddled);
 
@@ -1040,7 +1071,9 @@ public:
 
     MCAPI void setTradingPlayer(::Player* player);
 
-    MCAPI_C void setUniqueID(::ActorUniqueID id);
+#ifdef LL_PLAT_C
+    MCAPI void setUniqueID(::ActorUniqueID id);
+#endif
 
     MCFOLD void setVariant(int value);
 
@@ -1148,11 +1181,11 @@ public:
 
     MCAPI void $outOfWorld();
 
-    MCFOLD void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod);
+    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const&);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadComponents(::ActorInitializationMethod, ::VariantParameterList const&);
 
@@ -1160,7 +1193,7 @@ public:
 
     MCAPI void $_doInitialMove();
 
-    MCFOLD void $resetUserPos(::ActorResetRule);
+    MCFOLD void $resetUserPos(::ActorResetRule resetRule);
 
     MCAPI ::ActorType $getOwnerEntityType();
 
@@ -1170,9 +1203,9 @@ public:
 
     MCAPI float $getInterpolatedBodyRot(float a) const;
 
-    MCFOLD float $getInterpolatedHeadRot(float) const;
+    MCFOLD float $getInterpolatedHeadRot(float a) const;
 
-    MCFOLD float $getInterpolatedBodyYaw(float) const;
+    MCFOLD float $getInterpolatedBodyYaw(float a) const;
 
     MCAPI float $getYawSpeedInDegreesPerSecond() const;
 
@@ -1184,7 +1217,8 @@ public:
 
     MCAPI bool $canDisableShield();
 
-    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int, int, bool keepVelocity);
+    MCAPI void
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 
@@ -1216,7 +1250,7 @@ public:
 
     MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCFOLD void $playerTouch(::Player&);
+    MCFOLD void $playerTouch(::Player& player);
 
     MCFOLD bool $isImmobile() const;
 
@@ -1224,13 +1258,13 @@ public:
 
     MCFOLD bool $isSleeping() const;
 
-    MCFOLD void $setSleeping(bool);
+    MCFOLD void $setSleeping(bool val);
 
     MCAPI void $setSneaking(bool value);
 
     MCFOLD bool $isBlocking() const;
 
-    MCFOLD bool $isDamageBlocked(::ActorDamageSource const&) const;
+    MCFOLD bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
     MCFOLD bool $isAlive() const;
 
@@ -1242,9 +1276,9 @@ public:
 
     MCAPI void $setTarget(::Actor* entity);
 
-    MCFOLD bool $isValidTarget(::Actor*) const;
+    MCFOLD bool $isValidTarget(::Actor* attacker) const;
 
-    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const&);
+    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCAPI void $performRangedAttack(::Actor& target, float);
 
@@ -1284,13 +1318,13 @@ public:
 
     MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    MCFOLD ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+    MCFOLD ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    MCFOLD int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot) const;
+    MCFOLD int $getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
-    MCFOLD float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot, int) const;
+    MCFOLD float $getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot slot, int channelRGBA) const;
 
-    MCFOLD void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot, ::ItemStack const&);
+    MCFOLD void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     MCAPI void $setCarriedItem(::ItemStack const& item);
 
@@ -1318,17 +1352,17 @@ public:
 
     MCAPI void $changeDimension(::DimensionType toId);
 
-    MCFOLD void $changeDimension(::ChangeDimensionPacket const&);
+    MCFOLD void $changeDimension(::ChangeDimensionPacket const& packet);
 
     MCFOLD ::ActorUniqueID $getControllingPlayer() const;
 
-    MCFOLD float $causeFallDamageToActor(float, float, ::ActorDamageSource);
+    MCFOLD float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
     MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
-    MCFOLD bool $canPickupItem(::ItemStack const&) const;
+    MCFOLD bool $canPickupItem(::ItemStack const& item) const;
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 
@@ -1342,7 +1376,7 @@ public:
 
     MCAPI void $stopSwimming();
 
-    MCFOLD void $buildDebugInfo(::std::string&) const;
+    MCFOLD void $buildDebugInfo(::std::string& out) const;
 
     MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
@@ -1360,7 +1394,7 @@ public:
 
     MCAPI void $openContainerComponent(::Player& player);
 
-    MCFOLD bool $swing(::ActorSwingSource);
+    MCFOLD bool $swing(::ActorSwingSource swingSource);
 
     MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
@@ -1374,11 +1408,12 @@ public:
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCAPI ::InteractionResult $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const&);
+    MCAPI ::InteractionResult
+    $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCFOLD bool $canDestroyBlock(::Block const&) const;
+    MCFOLD bool $canDestroyBlock(::Block const& block) const;
 
-    MCFOLD void $setAuxValue(int);
+    MCFOLD void $setAuxValue(int aux);
 
     MCFOLD void $renderDebugServerState(::IOptionsReader const& options);
 
@@ -1393,7 +1428,7 @@ public:
         ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity
     );
 
-    MCFOLD void $onPush(::Actor&);
+    MCFOLD void $onPush(::Actor& source);
 
     MCFOLD ::std::optional<::BlockPos> $getLastDeathPos() const;
 
@@ -1411,7 +1446,7 @@ public:
 
     MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

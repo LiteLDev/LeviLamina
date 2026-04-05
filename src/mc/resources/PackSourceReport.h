@@ -28,9 +28,13 @@ public:
 
     MCNAPI PackSourceReport(::PackSourceReport const&);
 
-    MCNAPI_C ::PackReport const* getReport(::PackIdVersion const& packId) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::PackReport const* getReport(::PackIdVersion const& packId) const;
+#endif
 
-    MCNAPI_S bool hasErrors() const;
+#ifdef LL_PLAT_S
+    MCNAPI bool hasErrors() const;
+#endif
 
     MCNAPI ::PackSourceReport& operator=(::PackSourceReport&&);
 

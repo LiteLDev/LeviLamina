@@ -54,7 +54,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DirectoryPackSource(::DirectoryPackSourceOptions options);
 
-    MCAPI_C void addPack(::std::shared_ptr<::Pack>&& pack);
+#ifdef LL_PLAT_C
+    MCAPI void addPack(::std::shared_ptr<::Pack>&& pack);
+#endif
 
     MCAPI void deleteAllPacksAndReset();
     // NOLINTEND

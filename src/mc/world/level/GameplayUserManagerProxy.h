@@ -14,7 +14,8 @@ public:
     // NOLINTBEGIN
     virtual ~GameplayUserManagerProxy() = default;
 
-    virtual ::std::optional<::std::string> validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
+    virtual ::std::optional<::std::string>
+    validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
     virtual bool shouldGeneratePlayerIndex() const;
 
@@ -24,7 +25,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
+    MCNAPI ::std::optional<::std::string>
+    $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
     MCNAPI bool $shouldGeneratePlayerIndex() const;
 

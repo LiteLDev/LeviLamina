@@ -24,9 +24,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
 
-    MCAPI_C static ::persona::ArmSize::Type getTypeFromString(::std::string_view armSizeStr);
+    MCAPI static ::persona::ArmSize::Type getTypeFromString(::std::string_view armSizeStr);
+#endif
     // NOLINTEND
 
 public:

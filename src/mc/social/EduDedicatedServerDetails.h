@@ -30,24 +30,42 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk717b27;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EduDedicatedServerDetails& operator=(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails(EduDedicatedServerDetails const&);
     EduDedicatedServerDetails();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EduDedicatedServerDetails(EduDedicatedServerDetails const&);
+    EduDedicatedServerDetails();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::Result<void> fromJsonValue(::Json::Value const& details);
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Result<void> fromJsonValue(::Json::Value const& details);
 
-    MCNAPI_C ::Json::Value toJsonValue() const;
+    MCNAPI ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails&&);
+
+    MCNAPI ::Social::EduDedicatedServerDetails& operator=(::Social::EduDedicatedServerDetails const&);
+
+    MCNAPI ::Json::Value toJsonValue() const;
+
+    MCNAPI ~EduDedicatedServerDetails();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

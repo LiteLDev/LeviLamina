@@ -84,7 +84,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
+    MCNAPI static ::Editor::Prefabs::PrefabStructurePositionCalculator::TemplateStructureInfo& EMPTY_STRUCTURE_INFO();
     // NOLINTEND
 
 public:

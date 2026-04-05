@@ -34,6 +34,13 @@ public:
     ::ll::TypedStorage<8, 8, ::MerchantRecipe*>                              mResultPreviewRecipe;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TradeContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -70,37 +77,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _consumeIngredients(uchar numCrafts);
+#ifdef LL_PLAT_C
+    MCNAPI explicit TradeContainerManagerController(::std::weak_ptr<::TradeContainerManagerModel> pModel);
 
-    MCNAPI_C void
+    MCNAPI void _consumeIngredients(uchar numCrafts);
+
+    MCNAPI void
     _consumeMaterials(::ItemStack const& containerItem, int amount, ::ContainerEnumName inputContainerEnumName);
 
-    MCNAPI_C void _createResult(bool shouldPlayAudio);
+    MCNAPI void _createResult(bool shouldPlayAudio);
 
-    MCNAPI_C void
+    MCNAPI void
     _createTradeItem(::ItemInstance& itemInstance, ::ItemStackRequestScope const& requestScope, uchar numCrafts);
 
-    MCNAPI_C ::MerchantRecipe* _getActiveRecipe();
+    MCNAPI ::MerchantRecipe* _getActiveRecipe();
 
-    MCNAPI_C bool _handleTransferTrade(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _handleTransferTrade(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _moveItemsBackToInventory();
+    MCNAPI void _moveItemsBackToInventory();
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C int getAvailableRecipeListSize();
+    MCNAPI int getAvailableRecipeListSize();
 
-    MCNAPI_C ::std::string getDisplayName();
+    MCNAPI ::std::string getDisplayName();
 
-    MCNAPI_C ::MerchantRecipe* getRecipe(int CurrentIndex);
+    MCNAPI ::MerchantRecipe* getRecipe(int CurrentIndex);
 
-    MCNAPI_C void setRecipeIndex(int index);
+    MCNAPI void setRecipeIndex(int index);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::TradeContainerManagerModel> pModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::TradeContainerManagerModel> pModel);
+#endif
     // NOLINTEND
 
 public:

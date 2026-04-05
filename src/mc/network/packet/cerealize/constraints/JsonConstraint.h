@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCAPI void validateValue(::std::string const& value, ::cereal::SerializerContext& context) const;
     // NOLINTEND

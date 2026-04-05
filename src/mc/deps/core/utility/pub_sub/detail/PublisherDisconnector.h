@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~PublisherDisconnector() = default;
 
-    virtual void _disconnect(::Bedrock::PubSub::Detail::SubscriptionBodyBase&) = 0;
+    virtual void _disconnect(::Bedrock::PubSub::Detail::SubscriptionBodyBase& body) = 0;
     // NOLINTEND
 
 public:

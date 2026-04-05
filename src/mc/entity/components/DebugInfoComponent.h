@@ -60,12 +60,20 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mMobUniqueId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    DebugInfoComponent& operator=(DebugInfoComponent const&);
+    DebugInfoComponent();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
     DebugInfoComponent(DebugInfoComponent const&);
     DebugInfoComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -79,6 +87,10 @@ public:
     // NOLINTBEGIN
     MCAPI DebugInfoComponent(::DebugInfoComponent&&);
 
+#ifdef LL_PLAT_S
+    MCAPI DebugInfoComponent(::DebugInfoComponent const&);
+#endif
+
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND
 
@@ -87,7 +99,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::DebugInfoComponent&&);
 
-    MCAPI_S void* $ctor(::DebugInfoComponent const&);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::DebugInfoComponent const&);
+#endif
     // NOLINTEND
 
 public:

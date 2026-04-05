@@ -105,13 +105,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~NewOutgoingConnectionEvent();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -170,7 +174,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -226,7 +230,9 @@ public:
 
     MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
 
-    MCAPI_C void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+#ifdef LL_PLAT_C
+    MCAPI void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+#endif
     // NOLINTEND
 
 public:
@@ -254,8 +260,10 @@ public:
 
     MCFOLD bool $host(::ConnectionDefinition const& definition);
 
-    MCFOLD bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCFOLD bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCFOLD void $tick();
 

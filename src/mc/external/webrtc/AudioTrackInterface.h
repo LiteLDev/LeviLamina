@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     virtual ::webrtc::AudioSourceInterface* GetSource() const = 0;
 
-    virtual void AddSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
+    virtual void AddSink(::webrtc::AudioTrackSinkInterface* a1) = 0;
 
-    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* sink) = 0;
+    virtual void RemoveSink(::webrtc::AudioTrackSinkInterface* a1) = 0;
 
     virtual bool GetSignalLevel(int* level);
 

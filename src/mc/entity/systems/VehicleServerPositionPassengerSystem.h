@@ -30,9 +30,34 @@ struct VehicleComponent;
 
 class VehicleServerPositionPassengerSystem {
 public:
+    // VehicleServerPositionPassengerSystem inner types define
+    using PositionPassengerView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PassengerComponent, ::PositionPassengerRequestComponent>,
+        ::ActorDataSeatOffsetComponent const>;
+
+    using RotateMobPassengerView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::PassengerComponent, ::MobFlagComponent>,
+        ::ActorHeadRotationComponent const,
+        ::PositionPassengerRequestComponent const,
+        ::SynchedActorDataComponent const,
+        ::ActorRotationComponent,
+        ::MobBodyRotationComponent,
+        ::PassengerYRotLimitComponent,
+        ::Optional<::PlayerComponent const>>;
+
+    using VehicleView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent>,
+        ::ActorRotationComponent const,
+        ::StateVectorComponent const,
+        ::Optional<::ActorSetPositionRequestComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _vehicleServerPositionPassengerSystemSingleEntity(
+    MCAPI static void _vehicleServerPositionPassengerSystemSingleEntity(
         ::StrictEntityContext const&,
         ::ViewT<
             ::StrictEntityContext,

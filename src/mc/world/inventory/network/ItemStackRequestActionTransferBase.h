@@ -25,6 +25,13 @@ public:
     ::ll::TypedStorage<8, 40, ::ItemStackRequestSlotInfo> mDst;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStackRequestActionTransferBase();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,13 +45,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI ItemStackRequestActionTransferBase(
         ::ItemStackRequestActionType      actionType,
         uchar                             amount,
         ::ItemStackRequestSlotInfo const& src,
@@ -52,6 +54,22 @@ public:
         bool                              isDstSerialized,
         bool                              isAmountSerialized
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::ItemStackRequestActionType      actionType,
+        uchar                             amount,
+        ::ItemStackRequestSlotInfo const& src,
+        ::ItemStackRequestSlotInfo const& dst,
+        bool                              isDstSerialized,
+        bool                              isAmountSerialized
+    );
+#endif
     // NOLINTEND
 
 public:

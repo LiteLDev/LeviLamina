@@ -30,6 +30,13 @@ public:
         FailedWithError            = 2,
     };
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SparseContainerClient();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,9 +46,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI SparseContainerClient(
+        ::Container&                                     backingContainer,
+        ::SparseContainerBackingSetType                  backingSetType,
+        bool                                             isItemStackNetManagerEnabled,
+        ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
+        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
+    );
+#endif
+
     MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
 
-    MCNAPI_C void _pushHistoricPredictionItem(
+#ifdef LL_PLAT_C
+    MCNAPI void _pushHistoricPredictionItem(
         int                                        slot,
         int                                        amount,
         ::ItemStackNetId const&                    itemStackNetId,
@@ -50,12 +68,12 @@ public:
         ::ItemStack&&                              item
     );
 
-    MCNAPI_C ::ItemStack const&
+    MCNAPI ::ItemStack const&
     _setCreatedItem(::ItemStackRequestId const& currentRequestId, int slot, ::ItemStack const& item);
 
-    MCNAPI_C void clearAllPredictions(::ItemStackRequestId const& requestId, bool shouldBeEmpty, ::Player& player);
+    MCNAPI void clearAllPredictions(::ItemStackRequestId const& requestId, bool shouldBeEmpty, ::Player& player);
 
-    MCNAPI_C ::SparseContainerClient::PushSlotPredictionResult tryPushSlotPrediction(
+    MCNAPI ::SparseContainerClient::PushSlotPredictionResult tryPushSlotPrediction(
         ::ItemStackRequestId const&                requestId,
         int                                        requestedSlot,
         int                                        backingSlot,
@@ -65,6 +83,7 @@ public:
         ::ItemStack*                               zeroedOutItem,
         short                                      durabilityCorrection
     );
+#endif
     // NOLINTEND
 
 public:
@@ -77,13 +96,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Container&                                     backingContainer,
         ::SparseContainerBackingSetType                  backingSetType,
         bool                                             isItemStackNetManagerEnabled,
         ::std::unique_ptr<::ISparseContainerSetListener> netManagerSetter,
         ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
     );
+#endif
     // NOLINTEND
 
 public:

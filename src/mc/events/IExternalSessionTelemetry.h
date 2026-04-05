@@ -8,9 +8,9 @@ public:
     // NOLINTBEGIN
     virtual ~IExternalSessionTelemetry() = default;
 
-    virtual void fireEventReceivedUniqueWebSessionId(::std::string const&) = 0;
+    virtual void fireEventReceivedUniqueWebSessionId(::std::string const& webSessionId) = 0;
 
-    virtual void fireEventReceivedUniqueLauncherSessionId(::std::string const&) = 0;
+    virtual void fireEventReceivedUniqueLauncherSessionId(::std::string const& launcherSessionId) = 0;
     // NOLINTEND
 
 public:

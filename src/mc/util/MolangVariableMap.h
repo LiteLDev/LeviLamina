@@ -30,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mHasPublicVariables;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     MolangVariableMap(MolangVariableMap const& rhs) {
         mMapFromVariableIndexToVariableArrayOffset = rhs.mMapFromVariableIndexToVariableArrayOffset;
@@ -44,10 +45,18 @@ public:
         setMolangVariable(variableName.getHash(), variableName.c_str(), value);
     }
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariableMap();
+
+#ifdef LL_PLAT_C
+    MCAPI MolangVariableMap(::MolangVariableMap&&);
+
+    MCAPI MolangVariableMap(::MolangVariableMap const& rhs);
+#endif
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
@@ -71,7 +80,9 @@ public:
 
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
-    MCAPI_C void updatePublicVariables();
+#ifdef LL_PLAT_C
+    MCAPI void updatePublicVariables();
+#endif
 
     MCAPI ~MolangVariableMap();
     // NOLINTEND
@@ -81,9 +92,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::MolangVariableMap&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::MolangVariableMap&&);
 
-    MCAPI_C void* $ctor(::MolangVariableMap const& rhs);
+    MCAPI void* $ctor(::MolangVariableMap const& rhs);
+#endif
     // NOLINTEND
 
 public:

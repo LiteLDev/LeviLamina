@@ -16,12 +16,19 @@ struct StateVectorComponent;
 
 class SetPreviousPositionSystem {
 public:
+    // SetPreviousPositionSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::NeedSetPreviousPositionFlagComponent>,
+        ::StateVectorComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _doSetPreviousPositionSystem(::StrictEntityContext const&, ::StateVectorComponent& stateVectorComponent);
 
-    MCNAPI static void _tickSetPreviousPositionSystem(
+    MCAPI static void _tickSetPreviousPositionSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::NeedSetPreviousPositionFlagComponent>,

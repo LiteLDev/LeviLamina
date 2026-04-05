@@ -50,7 +50,9 @@ public:
     // NOLINTBEGIN
     MCAPI MaterialReducerContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI_C ::ItemStack const& getInput();
+#ifdef LL_PLAT_C
+    MCAPI ::ItemStack const& getInput();
+#endif
     // NOLINTEND
 
 public:

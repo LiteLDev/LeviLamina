@@ -40,6 +40,13 @@ public:
     ::ll::TypedStorage<8, 136, ::ItemResultPreview>                                mResultPreview;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CartographyContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -95,23 +102,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ItemInstance _buildResultItem();
+#ifdef LL_PLAT_C
+    MCNAPI explicit CartographyContainerManagerController(
+        ::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _clearName();
+    MCNAPI ::ItemInstance _buildResultItem();
 
-    MCNAPI_C bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
+    MCNAPI void _clearName();
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
 
-    MCNAPI_C void _setName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setName(::Bedrock::Safety::RedactableString const& name);
+
+    MCNAPI void _setupCallbacks();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

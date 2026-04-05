@@ -29,14 +29,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickServer(
+    MCAPI static void _tickServer(
         ::EntityContext&                       entity,
         ::ActorOwnerComponent&                 actorOwnerComponent,
         ::OnFireComponent&                     onFireComponent,
         ::Optional<::AbilitiesComponent const> abilities
     );
 
-    MCNAPI static void _tickServerImpl(
+    MCAPI static void _tickServerImpl(
         bool                                       isFireImmune,
         ::EntityContext&                           entity,
         ::Actor&                                   actor,
@@ -48,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     virtual ~FieldTrialsView() = default;
 
-    virtual ::std::string Lookup(::std::string_view) const = 0;
+    virtual ::std::string Lookup(::std::string_view key) const = 0;
     // NOLINTEND
 
 public:

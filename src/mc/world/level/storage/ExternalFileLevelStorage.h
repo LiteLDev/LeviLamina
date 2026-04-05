@@ -40,7 +40,7 @@ MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::strin
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-MCNAPI_C ::Bedrock::Result<bool>
+MCNAPI ::Bedrock::Result<bool>
 readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
 
 MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(
@@ -72,7 +72,7 @@ MCNAPI void saveLevelDisplayDataToCache(
     ::gsl::not_null<::TaskGroup*> taskGroup
 );
 
-MCNAPI_C void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
+MCNAPI void syncLevelInfoCache(::std::unordered_set<::Core::PathBuffer<::std::string>> const& levelRootPaths);
 
 MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND

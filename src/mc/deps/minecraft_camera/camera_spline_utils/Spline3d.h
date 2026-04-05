@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~Spline3d() = default;
 
-    virtual ::glm::vec3 eval(float) const = 0;
+    virtual ::glm::vec3 eval(float t) const = 0;
 
     virtual ::CameraSplineUtils::SplineType getType() const = 0;
     // NOLINTEND

@@ -106,8 +106,13 @@ public:
 
     virtual ::std::optional<::XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const = 0;
 
-    virtual ::std::unique_ptr<::Aquifer>
-    tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
+    virtual ::std::unique_ptr<::Aquifer> tryMakeAquifer(
+        ::ChunkPos const&          chunkPos,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        short                      minHeight,
+        short                      levelGenHeight,
+        short                      seaLevel
+    ) const;
 
     virtual void decorateWorldGenLoadChunk(
         ::Biome const&       biome,
@@ -117,20 +122,20 @@ public:
         ::ChunkPos const&    pos
     ) const /*override*/;
 
-    virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos) const;
+    virtual ::ChunkLocalNoiseCache createNoiseCache(::ChunkPos chunkPos) const;
 
     virtual ::PerlinSimplexNoise const& getSurfaceNoise() = 0;
 
     virtual ::std::unique_ptr<::PerlinSimplexNoise> const& getMaterialAdjNoise() const = 0;
 
     virtual void _prepareHeights(
-        ::BlockVolume&,
-        ::ChunkPos const&,
-        ::ChunkLocalNoiseCache const&,
-        ::Aquifer*,
-        ::std::function<void(::BlockPos const&, ::Block const&, int)>&&,
-        bool,
-        ::std::vector<short>*
+        ::BlockVolume&                                                  box,
+        ::ChunkPos const&                                               chunkPos,
+        ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
+        ::Aquifer*                                                      aquiferPtr,
+        ::std::function<void(::BlockPos const&, ::Block const&, int)>&& tickUpdateFn,
+        bool                                                            factorInBeardsAndShavers,
+        ::std::vector<short>*                                           ZXheights
     ) = 0;
     // NOLINTEND
 
@@ -189,8 +194,13 @@ public:
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::std::unique_ptr<::Aquifer>
-    $tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
+    MCFOLD ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
+        ::ChunkPos const&          chunkPos,
+        ::SurfaceLevelCache const& surfaceLevelCache,
+        short                      minHeight,
+        short                      levelGenHeight,
+        short                      seaLevel
+    ) const;
 
     MCFOLD void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
@@ -200,7 +210,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos) const;
+    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
 
     // NOLINTEND

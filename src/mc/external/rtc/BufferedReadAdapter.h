@@ -37,7 +37,7 @@ public:
 
     virtual int Recv(void* pv, uint64 cb, int64* timestamp) /*override*/;
 
-    virtual void ProcessInput(char*, uint64*) = 0;
+    virtual void ProcessInput(char* data, uint64* len) = 0;
 
     virtual void OnReadEvent(::rtc::Socket* socket) /*override*/;
     // NOLINTEND

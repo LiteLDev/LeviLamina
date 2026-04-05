@@ -24,9 +24,23 @@ struct TriggerJumpRequestComponent;
 
 struct ApplyJumpModifierSystem {
 public:
+    // ApplyJumpModifierSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::OnGroundFlagComponent, ::PowerJumpFlagComponent>,
+        ::Exclude<::MobIsJumpingFlagComponent>,
+        ::TriggerJumpRequestComponent const,
+        ::ActorRotationComponent const,
+        ::MovementAttributesComponent const,
+        ::MobEffectsComponent const,
+        ::MobTravelComponent const,
+        ::JumpPendingScaleComponent,
+        ::StateVectorComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickApplyJumpModifierSystem(
+    MCAPI static void _tickApplyJumpModifierSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::OnGroundFlagComponent, ::PowerJumpFlagComponent>,
@@ -40,7 +54,7 @@ public:
             ::StateVectorComponent> view
     );
 
-    MCNAPI static void tickApplyJumpModifierSystem(
+    MCAPI static void tickApplyJumpModifierSystem(
         ::StrictEntityContext const&,
         ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
         ::ActorRotationComponent const&      actorRotationComponent,

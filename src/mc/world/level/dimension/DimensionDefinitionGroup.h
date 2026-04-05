@@ -40,11 +40,18 @@ public:
         mDimensionDefinitions;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
     DimensionDefinitionGroup();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DimensionDefinitionGroup();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -57,6 +64,10 @@ public:
         ::ResourcePackManager* const   rpm,
         ::IMinecraftEventing&          eventing
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup const&);
+#endif
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
     tryAddDimensionDefinitionByString(

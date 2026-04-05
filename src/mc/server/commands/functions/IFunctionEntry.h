@@ -17,7 +17,8 @@ public:
     // NOLINTBEGIN
     virtual ~IFunctionEntry() = default;
 
-    virtual void execute(::FunctionManager&, ::CommandOrigin const&, ::FunctionQueueOrder) = 0;
+    virtual void
+    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) = 0;
     // NOLINTEND
 
 public:

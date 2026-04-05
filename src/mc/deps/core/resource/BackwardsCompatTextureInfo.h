@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void load(::Json::Value const& value);
+#ifdef LL_PLAT_C
+    MCNAPI void load(::Json::Value const& value);
+#endif
     // NOLINTEND
 };

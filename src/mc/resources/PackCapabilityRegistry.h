@@ -23,13 +23,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
+#endif
+
     MCNAPI ~PackCapabilityRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
+#endif
     // NOLINTEND
 
 public:

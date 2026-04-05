@@ -21,11 +21,21 @@ struct TickingSystemWithInfo;
 
 class TeleportInterpolatorResetSystem {
 public:
+    // TeleportInterpolatorResetSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::ServerPlayerComponent>,
+        ::Optional<::MovementInterpolatorComponent>,
+        ::PlayerPositionModeComponent const,
+        ::FallDistanceComponent,
+        ::StateVectorComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
+    MCAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
 
-    MCNAPI static void tickTeleportInterpolatorResetSystem(
+    MCAPI static void tickTeleportInterpolatorResetSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::ServerPlayerComponent>,

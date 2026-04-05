@@ -57,11 +57,13 @@ public:
         // NOLINTBEGIN
         virtual ~CrashHandler() = default;
 
-        virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const = 0;
+        virtual ::std::shared_ptr<::Bedrock::SessionInfo>
+        findCrashedSessionInfo(::std::string_view sessionId) const = 0;
 
-        virtual void notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&) = 0;
+        virtual void
+        notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const& status) = 0;
 
-        virtual void notifyDoneWithSession(::std::string_view) = 0;
+        virtual void notifyDoneWithSession(::std::string_view sessionId) = 0;
         // NOLINTEND
 
     public:

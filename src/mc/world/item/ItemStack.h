@@ -55,11 +55,17 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
+#ifdef LL_PLAT_C
+    MCAPI explicit ItemStack(::ItemInstance const& rhs);
+#endif
+
     MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI_C void clientInitNetId(::ItemStackNetId const& serverNetId);
+#ifdef LL_PLAT_C
+    MCAPI void clientInitNetId(::ItemStackNetId const& serverNetId);
+#endif
 
     MCAPI int getMaxUseDuration() const;
 
@@ -110,7 +116,9 @@ public:
 
     MCAPI void* $ctor(::ItemStack const& rhs);
 
-    MCAPI_C void* $ctor(::ItemInstance const& rhs);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ItemInstance const& rhs);
+#endif
 
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 

@@ -37,9 +37,9 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncTCPSocketBase() /*override*/;
 
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) = 0;
 
-    virtual uint64 ProcessInput(::rtc::ArrayView<uchar const>) = 0;
+    virtual uint64 ProcessInput(::rtc::ArrayView<uchar const> data) = 0;
 
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
 

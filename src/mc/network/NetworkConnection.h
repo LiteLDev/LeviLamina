@@ -111,7 +111,9 @@ public:
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCAPI_C void setChannelPaused(uint channel, bool paused);
+#ifdef LL_PLAT_C
+    MCAPI void setChannelPaused(uint channel, bool paused);
+#endif
 
     MCAPI ~NetworkConnection();
     // NOLINTEND

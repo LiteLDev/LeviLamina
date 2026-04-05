@@ -38,15 +38,15 @@ public:
 
     virtual ::webrtc::Timestamp Now();
 
-    virtual uint GetRandomInt(uint, uint) = 0;
+    virtual uint GetRandomInt(uint low, uint high) = 0;
 
     virtual void NotifyOutgoingMessageBufferEmpty();
 
-    virtual void OnMessageReceived(::dcsctp::DcSctpMessage) = 0;
+    virtual void OnMessageReceived(::dcsctp::DcSctpMessage message) = 0;
 
-    virtual void OnError(::dcsctp::ErrorKind, ::std::string_view) = 0;
+    virtual void OnError(::dcsctp::ErrorKind error, ::std::string_view message) = 0;
 
-    virtual void OnAborted(::dcsctp::ErrorKind, ::std::string_view) = 0;
+    virtual void OnAborted(::dcsctp::ErrorKind error, ::std::string_view message) = 0;
 
     virtual void OnConnected() = 0;
 
@@ -55,15 +55,17 @@ public:
     virtual void OnConnectionRestarted() = 0;
 
     virtual void OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>,
-        ::std::string_view
+        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
+        ::std::string_view                                                           reason
     ) = 0;
 
-    virtual void
-        OnStreamsResetPerformed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual void OnStreamsResetPerformed(
+        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
+    ) = 0;
 
-    virtual void
-        OnIncomingStreamsReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual void OnIncomingStreamsReset(
+        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
+    ) = 0;
 
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
 

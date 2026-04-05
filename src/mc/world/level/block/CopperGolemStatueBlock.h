@@ -32,7 +32,7 @@ public:
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~CopperGolemStatueBlock() /*override*/ = default;
     // NOLINTEND
@@ -48,7 +48,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::std::array<::std::string_view, 4> const& POSES();
+    MCAPI static ::std::array<::std::string_view, 4> const& POSES();
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

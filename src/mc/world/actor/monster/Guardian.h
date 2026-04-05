@@ -57,9 +57,9 @@ public:
 
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    virtual bool checkSpawnRules(bool) /*override*/;
+    virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     virtual float getMaxHeadXRot() /*override*/;
 
@@ -116,9 +116,9 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCFOLD float $getMaxHeadXRot();
 

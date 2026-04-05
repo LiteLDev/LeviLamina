@@ -45,7 +45,7 @@ public:
     // NOLINTBEGIN
     virtual ~MapDataManager();
 
-    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    virtual void registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const& uuid);
 
@@ -109,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 

@@ -51,7 +51,9 @@ public:
     MCAPI void
     _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
-    MCAPI_C bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
+#ifdef LL_PLAT_C
+    MCAPI bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
+#endif
 
     MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
 

@@ -42,6 +42,10 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureDuplicatePayload(::Editor::Network::StructureDuplicatePayload const&);
 
+#ifdef LL_PLAT_C
+    MCNAPI StructureDuplicatePayload(::HashedString const& newId, ::HashedString const& fromId);
+#endif
+
     MCNAPI ::Editor::Network::StructureDuplicatePayload& operator=(::Editor::Network::StructureDuplicatePayload const&);
     // NOLINTEND
 
@@ -56,7 +60,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::StructureDuplicatePayload const&);
 
-    MCNAPI_C void* $ctor(::HashedString const& newId, ::HashedString const& fromId);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::HashedString const& newId, ::HashedString const& fromId);
+#endif
     // NOLINTEND
 
 public:

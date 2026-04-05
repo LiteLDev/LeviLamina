@@ -61,7 +61,9 @@ public:
 
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI_C void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
+#ifdef LL_PLAT_C
+    MCAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
+#endif
 
     MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 

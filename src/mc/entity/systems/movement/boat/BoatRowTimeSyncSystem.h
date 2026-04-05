@@ -21,7 +21,7 @@ struct TickingSystemWithInfo;
 namespace BoatRowTimeSyncSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(
+MCAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent>,
@@ -30,7 +30,7 @@ MCNAPI void _tickBoatRowTimeWriteToBoatPaddleComponentSystem(
         ::SynchedActorDataComponent const> view
 );
 
-MCNAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(
+MCAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -38,7 +38,7 @@ MCNAPI void _tickBoatRowTimeWriteToSynchedActorDataComponentSystem(
         ::SynchedActorDataComponent> view
 );
 
-MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace BoatRowTimeSyncSystem

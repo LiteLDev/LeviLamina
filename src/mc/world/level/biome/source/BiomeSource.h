@@ -26,35 +26,46 @@ public:
     // NOLINTBEGIN
     virtual ~BiomeSource() = default;
 
-    virtual ::ChunkVolume::VolumeOf<::Biome>
-    getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const;
+    virtual ::ChunkVolume::VolumeOf<::Biome> getBiomeVolumeToFill(
+        short                         chunkHeight,
+        ::BlockPos                    chunkMin,
+        uint                          levelSeed,
+        ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
+    ) const;
 
-    virtual ::std::optional<::OperationGraphResult<::Biome const*> const> getBiomeAreaToFill(::LevelChunk const&) const;
+    virtual ::std::optional<::OperationGraphResult<::Biome const*> const>
+    getBiomeAreaToFill(::LevelChunk const& levelChunk) const;
 
-    virtual void fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const*) const = 0;
+    virtual void fillBiomes(::LevelChunk& levelChunk, ::ChunkLocalNoiseCache const* chunkLocalNoiseCache) const = 0;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const = 0;
+    virtual ::BiomeArea getBiomeArea(::BoundingBox const& box, uint scale) const = 0;
 
-    virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint, ::GetBiomeOptions const&) const = 0;
+    virtual ::BiomeArea
+    getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const = 0;
 
-    virtual bool containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const>) const = 0;
+    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const = 0;
 
-    virtual bool hasBiomeById(::BiomeIdType) const = 0;
+    virtual bool hasBiomeById(::BiomeIdType id) const = 0;
 
-    virtual bool hasBiomeByNameHash(::BiomeHashType) const = 0;
+    virtual bool hasBiomeByNameHash(::BiomeHashType hash) const = 0;
 
     virtual ::BiomeSourceType const getType() const = 0;
 
-    virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const = 0;
+    virtual ::Biome const* _getBiome(::GetBiomeOptions const& getBiomeOptions) const = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ChunkVolume::VolumeOf<::Biome>
-    $getBiomeVolumeToFill(short, ::BlockPos, uint, ::ChunkLocalNoiseCache const*) const;
+    MCAPI ::ChunkVolume::VolumeOf<::Biome> $getBiomeVolumeToFill(
+        short                         chunkHeight,
+        ::BlockPos                    chunkMin,
+        uint                          levelSeed,
+        ::ChunkLocalNoiseCache const* chunkLocalNoiseCache
+    ) const;
 
-    MCFOLD ::std::optional<::OperationGraphResult<::Biome const*> const> $getBiomeAreaToFill(::LevelChunk const&) const;
+    MCFOLD ::std::optional<::OperationGraphResult<::Biome const*> const>
+    $getBiomeAreaToFill(::LevelChunk const& levelChunk) const;
 
 
     // NOLINTEND

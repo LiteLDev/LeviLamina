@@ -19,8 +19,12 @@ public:
     // NOLINTBEGIN
     virtual ~TextureGroupBase();
 
-    virtual ::mce::TexturePtr
-    getTexture(::ResourceLocation const&, bool, ::std::optional<uint>, ::cg::TextureSetLayerType const) = 0;
+    virtual ::mce::TexturePtr getTexture(
+        ::ResourceLocation const&       resourceLocation,
+        bool                            forceReload,
+        ::std::optional<uint>           optLoadOrder,
+        ::cg::TextureSetLayerType const textureType
+    ) = 0;
     // NOLINTEND
 
 public:

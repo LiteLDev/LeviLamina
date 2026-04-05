@@ -17,18 +17,24 @@ struct WitchFlagComponent;
 
 class WitchPreAIStepSystem {
 public:
+    // WitchPreAIStepSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::WitchFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+    MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
-    MCNAPI static void _tickWitchPreAIStepSystem(
+    MCAPI static void _tickWitchPreAIStepSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::WitchFlagComponent>,
             ::ActorOwnerComponent> view
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

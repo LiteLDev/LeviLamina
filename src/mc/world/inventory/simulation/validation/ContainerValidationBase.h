@@ -31,7 +31,8 @@ public:
 
     virtual int getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& item) const;
+    virtual int
+    getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
 
     virtual bool
     isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
@@ -64,7 +65,8 @@ public:
 
     MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& item) const;
+    MCAPI int
+    $getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
 
     MCFOLD bool
     $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;

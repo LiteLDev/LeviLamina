@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/ISyncStreamReader.h"
+#include "mc/external/gameface/cohtml/ISyncStreamReader.h"
 
 namespace OreUI {
 

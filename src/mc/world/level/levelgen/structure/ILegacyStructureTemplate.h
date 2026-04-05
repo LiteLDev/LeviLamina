@@ -15,9 +15,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::unordered_map<::BlockPos, ::std::string>
-    getMarkers(::BlockPos const&, ::LegacyStructureSettings&) const = 0;
+    getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const = 0;
 
-    virtual void placeInWorld(::BlockSource&, ::BlockPos const&, ::LegacyStructureSettings&, ::Random&) const = 0;
+    virtual void placeInWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          pos,
+        ::LegacyStructureSettings& settings,
+        ::Random&                  random
+    ) const = 0;
     // NOLINTEND
 
 public:

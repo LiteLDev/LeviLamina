@@ -13,7 +13,7 @@ public:
 
     virtual uint Release() = 0;
 
-    virtual HRESULT QueryApi(::ApiId, void**) = 0;
+    virtual HRESULT QueryApi(::ApiId id, void** ptr) = 0;
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
 
     virtual void load();
 
-    virtual void generateItems(::std::vector<::std::shared_ptr<::ContentItem>>&);
+    virtual void generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
     virtual void save();
 
@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $load();
 
-    MCFOLD void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>&);
+    MCFOLD void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
     MCFOLD void $save();
 

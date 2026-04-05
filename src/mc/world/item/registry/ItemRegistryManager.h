@@ -35,6 +35,10 @@ public:
         // NOLINTBEGIN
         MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
+#ifdef LL_PLAT_C
+        MCAPI explicit ScopedItemRegistry(::ItemRegistryRef registryRef);
+#endif
+
         MCAPI void construct(::ItemRegistryRef registryRef);
 
         MCAPI ~ScopedItemRegistry();
@@ -45,7 +49,9 @@ public:
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI_C void* $ctor(::ItemRegistryRef registryRef);
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::ItemRegistryRef registryRef);
+#endif
         // NOLINTEND
 
     public:

@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~DayCycleEventSystem() /*override*/ = default;
 
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
     // NOLINTEND
 
 public:

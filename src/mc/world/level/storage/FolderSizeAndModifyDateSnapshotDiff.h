@@ -28,13 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI FolderSizeAndModifyDateSnapshotDiff(
+        ::FolderSizeAndModifyDateSnapshot const& older,
+        ::FolderSizeAndModifyDateSnapshot const& newer
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void*
-    $ctor(::FolderSizeAndModifyDateSnapshot const& older, ::FolderSizeAndModifyDateSnapshot const& newer);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::FolderSizeAndModifyDateSnapshot const& older, ::FolderSizeAndModifyDateSnapshot const& newer);
+#endif
     // NOLINTEND
 };

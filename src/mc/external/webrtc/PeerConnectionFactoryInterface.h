@@ -68,12 +68,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const&) = 0;
+    virtual void SetOptions(::webrtc::PeerConnectionFactoryInterface::Options const& options) = 0;
 
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>>
     CreatePeerConnectionOrError(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& configuration,
+        ::webrtc::PeerConnectionDependencies                       dependencies
     );
 
     virtual ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> CreatePeerConnection(
@@ -88,25 +88,26 @@ public:
         ::webrtc::PeerConnectionObserver*                          observer
     );
 
-    virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType) const;
+    virtual ::webrtc::RtpCapabilities GetRtpSenderCapabilities(::cricket::MediaType kind) const;
 
-    virtual ::webrtc::RtpCapabilities GetRtpReceiverCapabilities(::cricket::MediaType) const;
+    virtual ::webrtc::RtpCapabilities GetRtpReceiverCapabilities(::cricket::MediaType kind) const;
 
-    virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> CreateLocalMediaStream(::std::string const&) = 0;
+    virtual ::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>
+    CreateLocalMediaStream(::std::string const& stream_id) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface>
-    CreateAudioSource(::cricket::AudioOptions const&) = 0;
+    CreateAudioSource(::cricket::AudioOptions const& options) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-        CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface>, ::std::string_view) = 0;
+    CreateVideoTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackSourceInterface> source, ::std::string_view id) = 0;
 
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
 
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
-    CreateAudioTrack(::std::string const&, ::webrtc::AudioSourceInterface*) = 0;
+    CreateAudioTrack(::std::string const& id, ::webrtc::AudioSourceInterface* source) = 0;
 
-    virtual bool StartAecDump(::_iobuf*, int64);
+    virtual bool StartAecDump(::_iobuf* file, int64 max_size_bytes);
 
     virtual void StopAecDump() = 0;
 

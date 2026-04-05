@@ -45,13 +45,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~CrashProcessorInfo();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -73,13 +77,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~CrashedSessionInfo();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -104,12 +112,20 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkbbb515;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CrashManagerImpl& operator=(CrashManagerImpl const&);
     CrashManagerImpl(CrashManagerImpl const&);
     CrashManagerImpl();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CrashManagerImpl& operator=(CrashManagerImpl const&);
+    CrashManagerImpl(CrashManagerImpl const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -157,42 +173,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _doNetworkUnavailableCleanup();
+#ifdef LL_PLAT_C
+    MCNAPI CrashManagerImpl();
 
-    MCNAPI_C ::std::shared_ptr<::Bedrock::SessionInfo> _findCrashedSessionInfo(::std::string_view sessionId) const;
+    MCNAPI void _doNetworkUnavailableCleanup();
 
-    MCNAPI_C void _finishSendingTelemetry();
+    MCNAPI ::std::shared_ptr<::Bedrock::SessionInfo> _findCrashedSessionInfo(::std::string_view sessionId) const;
 
-    MCNAPI_C void _notifyDoneWithSession(::std::string_view sessionId);
+    MCNAPI void _finishSendingTelemetry();
 
-    MCNAPI_C void _preProcessSessions();
+    MCNAPI void _notifyDoneWithSession(::std::string_view sessionId);
 
-    MCNAPI_C void _processCrashesAsync(
+    MCNAPI void _preProcessSessions();
+
+    MCNAPI void _processCrashesAsync(
         ::std::vector<::Core::PathBuffer<::std::string>> const&         paths,
         ::Bedrock::CrashFileProcessor*                                  processor,
         ::std::shared_ptr<::gsl::final_action<::std::function<void()>>> doneTask
     );
 
-    MCNAPI_C void _processCrashesSync(
+    MCNAPI void _processCrashesSync(
         ::std::vector<::Core::PathBuffer<::std::string>> const&         paths,
         ::Bedrock::CrashFileProcessor*                                  processor,
         ::std::shared_ptr<::gsl::final_action<::std::function<void()>>> doneTask
     );
 
-    MCNAPI_C ::Bedrock::Threading::Async<bool>
+    MCNAPI ::Bedrock::Threading::Async<bool>
     _processOneCrash(::Core::PathBuffer<::std::string> const& filePath, ::Bedrock::CrashFileProcessor* processor);
 
-    MCNAPI_C void _queueTask(::std::string_view name, ::std::function<void()>&& task);
+    MCNAPI void _queueTask(::std::string_view name, ::std::function<void()>&& task);
 
-    MCNAPI_C void _resetProcessingState();
+    MCNAPI void _resetProcessingState();
 
-    MCNAPI_C void _scanCrashFiles();
+    MCNAPI void _scanCrashFiles();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

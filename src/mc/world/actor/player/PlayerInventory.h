@@ -45,7 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
+#ifdef LL_PLAT_C
+    MCAPI bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
+#endif
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 

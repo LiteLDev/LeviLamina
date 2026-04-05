@@ -30,15 +30,21 @@ public:
     // NOLINTBEGIN
     virtual ~InputDeviceMapper() = 0;
 
-    virtual void setMapping(::InputEventQueue&, ::BindingFactory const&, ::InputMapping const&, int) = 0;
+    virtual void setMapping(
+        ::InputEventQueue&      eventQueue,
+        ::BindingFactory const& bindingFactory,
+        ::InputMapping const&   inputMapping,
+        int                     controllerId
+    ) = 0;
 
-    virtual void clearMapping(int) = 0;
+    virtual void clearMapping(int controllerId) = 0;
 
     virtual void clearInputDeviceQueue();
 
     virtual void clearInputDeviceQueueForFrame();
 
-    virtual bool tick(::InputEventQueue&, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&) = 0;
+    virtual bool
+    tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map) = 0;
 
     virtual ::InputMode getInputMode() const = 0;
 

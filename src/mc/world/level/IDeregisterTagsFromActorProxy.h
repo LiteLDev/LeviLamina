@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~IDeregisterTagsFromActorProxy() = default;
 
-    virtual void deregisterTagsFromActor(::Actor&) = 0;
+    virtual void deregisterTagsFromActor(::Actor& actor) = 0;
     // NOLINTEND
 
 public:

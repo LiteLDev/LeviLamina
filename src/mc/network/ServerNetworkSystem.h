@@ -66,10 +66,12 @@ public:
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
     );
 
-    MCAPI_C ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
+#endif
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
 

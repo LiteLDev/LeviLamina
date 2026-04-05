@@ -148,7 +148,9 @@ public:
         uchar                placementDirection
     );
 
-    MCAPI_C static ::std::vector<uchar> getFacingListFromMask(uchar faceDirectionBits);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::vector<uchar> getFacingListFromMask(uchar faceDirectionBits);
+#endif
 
     MCAPI static bool hasFace(::Block const& block, uchar faceDirection);
     // NOLINTEND

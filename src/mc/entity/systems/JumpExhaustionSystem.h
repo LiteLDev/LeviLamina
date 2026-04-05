@@ -25,7 +25,7 @@ struct TriggerJumpRequestComponent;
 namespace JumpExhaustionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doJumpExhaustion(
+MCAPI void _doJumpExhaustion(
     ::StrictEntityContext const&                   entity,
     ::ActorDataFlagComponent const&                actorDataFlagComponent,
     ::ActorGameTypeComponent const&                actorGameTypeComponent,
@@ -34,7 +34,7 @@ MCNAPI void _doJumpExhaustion(
     ::GameType const&                              defaultGameType
 );
 
-MCNAPI void _tickJumpExhaustion(
+MCAPI void _tickJumpExhaustion(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::TriggerJumpRequestComponent, ::PlayerComponent>,
@@ -45,7 +45,7 @@ MCNAPI void _tickJumpExhaustion(
     ::OptionalGlobal<::ExternalDataComponent>     externalData
 );
 
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace JumpExhaustionSystem

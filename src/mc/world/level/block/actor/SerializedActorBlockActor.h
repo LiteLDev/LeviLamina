@@ -95,7 +95,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
+#ifdef LL_PLAT_C
+    MCAPI static void savePoseToItemForInventoryRendering(::ItemStackBase& item, int pose);
+#endif
     // NOLINTEND
 
 public:

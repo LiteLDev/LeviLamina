@@ -89,7 +89,7 @@ public:
 
     virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const /*override*/;
 
-    virtual bool _allowReadBlock(::BlockPos const&, ::Block const& block) const;
+    virtual bool _allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     virtual bool _allowReadActor(::Actor const& actor) const;
 
@@ -207,12 +207,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Block const& _mapToRotation(::Block const& curr, ::Rotation rotation);
 
-    MCAPI_C static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
         ::Dimension&                                            targetDimension,
         ::StructureSettings const&                              settings,
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
     );
+#endif
 
     MCAPI static ::Block const* tryGetBlockAtPos(
         ::BlockPos const&                                       pos,
@@ -263,7 +265,7 @@ public:
 
     MCAPI void $fillEmpty(::BlockPos const& size);
 
-    MCAPI bool $_allowReadBlock(::BlockPos const&, ::Block const& block) const;
+    MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     MCAPI bool $_allowReadActor(::Actor const& actor) const;
 

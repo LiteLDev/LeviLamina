@@ -79,11 +79,13 @@ public:
         ::VoxelShapes::JoinOperation     operation
     );
 
-    MCNAPI_C static bool joinIsNotEmpty(
+#ifdef LL_PLAT_C
+    MCNAPI static bool joinIsNotEmpty(
         ::VoxelShapes::VoxelShape const& first,
         ::VoxelShapes::VoxelShape const& second,
         ::VoxelShapes::JoinOperation     operation
     );
+#endif
 
     MCNAPI static ::VoxelShapes::VoxelShape joinUnoptimized(
         ::VoxelShapes::VoxelShape const& first,

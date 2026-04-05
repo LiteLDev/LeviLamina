@@ -67,25 +67,25 @@ public:
 
     virtual ::Core::Result _close() = 0;
 
-    virtual ::Core::Result _read(void*, uint64, uint64*) = 0;
+    virtual ::Core::Result _read(void* buf, uint64 numBytes, uint64* pNumBytesRead) = 0;
 
-    virtual ::Core::Result _readExactly(void*, uint64) = 0;
+    virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) = 0;
 
-    virtual ::Core::Result _skip(uint64) = 0;
+    virtual ::Core::Result _skip(uint64 numBytes) = 0;
 
-    virtual ::Core::Result _readAtPosition(uint64, void*, uint64, uint64*) = 0;
+    virtual ::Core::Result _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) = 0;
 
-    virtual ::Core::Result _getPosition(uint64*) = 0;
+    virtual ::Core::Result _getPosition(uint64* pSizeOut) = 0;
 
-    virtual ::Core::Result _setPosition(uint64) = 0;
+    virtual ::Core::Result _setPosition(uint64 position) = 0;
 
-    virtual ::Core::Result _write(void const*, uint64) = 0;
+    virtual ::Core::Result _write(void const* buf, uint64 numBytes) = 0;
 
     virtual ::Core::Result _flush() = 0;
 
-    virtual ::Core::Result _getSize(uint64*) = 0;
+    virtual ::Core::Result _getSize(uint64* pSizeOut) = 0;
 
-    virtual ::Core::Result _getRemainingSize(uint64*) = 0;
+    virtual ::Core::Result _getRemainingSize(uint64* pSizeOut) = 0;
     // NOLINTEND
 
 public:

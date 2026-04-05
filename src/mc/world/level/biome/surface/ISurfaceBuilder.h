@@ -54,13 +54,13 @@ public:
     // NOLINTBEGIN
     virtual ~ISurfaceBuilder() = default;
 
-    virtual void initBuilder(uint) = 0;
+    virtual void initBuilder(uint levelSeed) = 0;
 
-    virtual void initBiomeSurface(::Biome&) const = 0;
+    virtual void initBiomeSurface(::Biome& biome) const = 0;
 
-    virtual bool isBestBuilder(::Biome const&) const = 0;
+    virtual bool isBestBuilder(::Biome const& biome) const = 0;
 
-    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const&) const = 0;
+    virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const = 0;
     // NOLINTEND
 
 public:

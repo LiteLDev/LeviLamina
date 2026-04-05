@@ -24,19 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ExcludedPath(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
 
+    MCNAPI ~ExcludedPath();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

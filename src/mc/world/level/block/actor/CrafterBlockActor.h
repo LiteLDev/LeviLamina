@@ -40,13 +40,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+        MCAPI ~LruCache();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_S void $dtor();
+#ifdef LL_PLAT_S
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -73,9 +77,9 @@ public:
 
     virtual void tick(::BlockSource& region) /*override*/;
 
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
+    virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     virtual ~CrafterBlockActor() /*override*/ = default;
     // NOLINTEND
@@ -110,9 +114,9 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND
@@ -120,8 +124,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

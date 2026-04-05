@@ -49,6 +49,10 @@ public:
     MCAPI void addBreedItemByName(::std::string const& itemName);
 
     MCAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
+
+#ifdef LL_PLAT_S
+    MCAPI ~BreedableDefinition();
+#endif
     // NOLINTEND
 
 public:
@@ -62,6 +66,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_S void $dtor();
+#ifdef LL_PLAT_S
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

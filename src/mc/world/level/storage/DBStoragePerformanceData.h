@@ -49,28 +49,50 @@ public:
         ::ll::UntypedStorage<8, 80> mUnkd17500;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         AtomicAccumulator& operator=(AtomicAccumulator const&);
         AtomicAccumulator(AtomicAccumulator const&);
         AtomicAccumulator();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        AtomicAccumulator& operator=(AtomicAccumulator const&);
+        AtomicAccumulator(AtomicAccumulator const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_S void reset();
+#ifdef LL_PLAT_C
+        MCNAPI AtomicAccumulator();
+#endif
+
+#ifdef LL_PLAT_S
+        MCNAPI void reset();
+#endif
+
+#ifdef LL_PLAT_C
+        MCNAPI ~AtomicAccumulator();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -81,28 +103,44 @@ public:
         ::ll::UntypedStorage<8, 640> mUnk7892b7;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         DBStorageAccumulator& operator=(DBStorageAccumulator const&);
         DBStorageAccumulator(DBStorageAccumulator const&);
         DBStorageAccumulator();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        DBStorageAccumulator& operator=(DBStorageAccumulator const&);
+        DBStorageAccumulator(DBStorageAccumulator const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI DBStorageAccumulator();
 
+        MCNAPI ~DBStorageAccumulator();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 

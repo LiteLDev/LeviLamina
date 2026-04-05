@@ -188,11 +188,13 @@ public:
 
     MCAPI void _initLevelDataPropertyPublishers();
 
-    MCAPI_C void _resetDefaultAdvancedSettingsData(bool isTrial);
+#ifdef LL_PLAT_C
+    MCAPI void _resetDefaultAdvancedSettingsData(bool isTrial);
 
-    MCAPI_C void _resetDefaultGeneralSettingsData();
+    MCAPI void _resetDefaultGeneralSettingsData();
 
-    MCAPI_C void _resetDefaultScriptingCodingSettingsData();
+    MCAPI void _resetDefaultScriptingCodingSettingsData();
+#endif
 
     MCAPI void _setValue(::HashedString const& key, ::LevelDataValue&& value);
 
@@ -200,11 +202,15 @@ public:
 
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
 
-    MCAPI_C void applyPolicyBasedSettings(bool hasBehaviourPack);
+#ifdef LL_PLAT_C
+    MCAPI void applyPolicyBasedSettings(bool hasBehaviourPack);
+#endif
 
     MCAPI ::std::optional<::SemVersion> checkServerAuthOptOutVersion() const;
 
-    MCAPI_C void clearCloudSaveInfo();
+#ifdef LL_PLAT_C
+    MCAPI void clearCloudSaveInfo();
+#endif
 
     MCAPI bool cloudSaveForWorldIsEnabled() const;
 
@@ -214,7 +220,9 @@ public:
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI_C ::CloudSaveLevelInfo& getCloudSaveInfo();
+#ifdef LL_PLAT_C
+    MCAPI ::CloudSaveLevelInfo& getCloudSaveInfo();
+#endif
 
     MCAPI ::CompoundTag const& getEduSharedUriResource() const;
 
@@ -232,24 +240,30 @@ public:
 
     MCAPI bool isAlwaysDay() const;
 
-    MCAPI_C bool isEditionCompatible() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isEditionCompatible() const;
+#endif
 
     MCAPI ::LevelData& operator=(::LevelData&&);
 
-    MCAPI_C ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
 
-    MCAPI_C ::Bedrock::PubSub::Subscription
+    MCAPI ::Bedrock::PubSub::Subscription
     registerLevelDataPropertyListener(::LevelDataProperty property, ::std::function<void()> callback) const;
+#endif
 
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI_C void resetDefaultCheatSettingsData();
+#ifdef LL_PLAT_C
+    MCAPI void resetDefaultCheatSettingsData();
 
-    MCAPI_C void resetSettingsForRandomSeed();
+    MCAPI void resetSettingsForRandomSeed();
 
-    MCAPI_C void resetToDefaultSettings();
+    MCAPI void resetToDefaultSettings();
 
-    MCAPI_C void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+    MCAPI void setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+#endif
 
     MCAPI void setBiomeOverride(::std::string const& biomeName);
 
@@ -265,7 +279,9 @@ public:
 
     MCAPI void setEducationOid(::std::string const& educationOid);
 
-    MCAPI_C void setExperienceWorldId(::std::string const& experienceWorldId);
+#ifdef LL_PLAT_C
+    MCAPI void setExperienceWorldId(::std::string const& experienceWorldId);
+#endif
 
     MCAPI void setFlatWorldOptions(::Json::Value const& options);
 
@@ -283,23 +299,31 @@ public:
 
     MCAPI void setSeed(::LevelSeed64 seed);
 
-    MCAPI_C void setServerChunkTickRange(uint newRange);
+#ifdef LL_PLAT_C
+    MCAPI void setServerChunkTickRange(uint newRange);
+#endif
 
     MCAPI void setSpawnPos(::BlockPos const& spawn);
 
-    MCAPI_C void setSpawnSettings(::SpawnSettings const& settings);
+#ifdef LL_PLAT_C
+    MCAPI void setSpawnSettings(::SpawnSettings const& settings);
+#endif
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
     MCAPI void setTime(int time);
 
-    MCAPI_C void setWorldTemplateIdentity(::PackIdVersion const& packIdVersion);
+#ifdef LL_PLAT_C
+    MCAPI void setWorldTemplateIdentity(::PackIdVersion const& packIdVersion);
 
-    MCAPI_C void setWorldTemplateOptionLocked(bool isLocked);
+    MCAPI void setWorldTemplateOptionLocked(bool isLocked);
+#endif
 
     MCAPI void setWorldVersion(::WorldVersion version);
 
-    MCAPI_C bool shouldAchievementsBeDisabled(bool isTrialMode, bool hasBehaviourPack) const;
+#ifdef LL_PLAT_C
+    MCAPI bool shouldAchievementsBeDisabled(bool isTrialMode, bool hasBehaviourPack) const;
+#endif
 
     MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 

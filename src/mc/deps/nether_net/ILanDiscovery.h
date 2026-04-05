@@ -16,24 +16,31 @@ class ILanDiscovery {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID) = 0;
+    virtual bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id) = 0;
 
-    virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID) = 0;
+    virtual void DisableBroadcastDiscovery(::NetherNet::NetworkID id) = 0;
 
-    virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID) = 0;
+    virtual void EnableBroadcastDiscovery(::NetherNet::NetworkID id) = 0;
 
-    virtual void AddLanHost(::NetherNet::NetworkID, ::std::string const&, int) = 0;
+    virtual void AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port) = 0;
 
-    virtual void RemoveLanHost(::NetherNet::NetworkID) = 0;
+    virtual void RemoveLanHost(::NetherNet::NetworkID remote) = 0;
 
-    virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID) = 0;
+    virtual bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId) = 0;
 
-    virtual void
-    SendLanBroadcastResponse(::rtc::SocketAddress const&, ::NetherNet::NetworkID, ::std::vector<::std::byte>) = 0;
+    virtual void SendLanBroadcastResponse(
+        ::rtc::SocketAddress const& destination,
+        ::NetherNet::NetworkID      from,
+        ::std::vector<::std::byte>  data
+    ) = 0;
 
-    virtual void SendSignalingMessageTo(::NetherNet::NetworkID, ::NetherNet::NetworkID, ::std::vector<::std::byte>) = 0;
+    virtual void SendSignalingMessageTo(
+        ::NetherNet::NetworkID     networkIdFrom,
+        ::NetherNet::NetworkID     networkIdTo,
+        ::std::vector<::std::byte> data
+    ) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) = 0;
+    virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) = 0;
 
     virtual void Suspend() = 0;
 

@@ -14,11 +14,11 @@ public:
     // NOLINTBEGIN
     virtual ~IRealmsTelemetry() = default;
 
-    virtual void AddGeneralCall(::std::string const&, ::Bedrock::Http::Status) = 0;
+    virtual void AddGeneralCall(::std::string const& callName, ::Bedrock::Http::Status returnCode) = 0;
 
-    virtual void AddRealmCall(::std::string const&, int64, ::Bedrock::Http::Status) = 0;
+    virtual void AddRealmCall(::std::string const& callName, int64 realmId, ::Bedrock::Http::Status returnCode) = 0;
 
-    virtual void PopulateEvent(::Social::Events::Event&) const = 0;
+    virtual void PopulateEvent(::Social::Events::Event& event) const = 0;
 
     virtual bool ShouldSendEvent() const = 0;
     // NOLINTEND

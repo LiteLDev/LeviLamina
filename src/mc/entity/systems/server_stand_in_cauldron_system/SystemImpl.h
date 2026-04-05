@@ -62,13 +62,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _checkInsideCauldron(::ActorOwnerComponent& actorOwner);
+    MCAPI static void _checkInsideCauldron(::ActorOwnerComponent& actorOwner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::UpdateWaterStateRequestComponent>,
             ::Read<::ActorOwnerComponent>,
@@ -79,7 +79,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::UpdateWaterStateRequestComponent>,
             ::Read<::ActorOwnerComponent>,

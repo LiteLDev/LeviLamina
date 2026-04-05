@@ -23,37 +23,37 @@ public:
     // NOLINTBEGIN
     virtual ~DataLoadHelper() = default;
 
-    virtual ::Vec3 loadPosition(::Vec3 const&) = 0;
+    virtual ::Vec3 loadPosition(::Vec3 const& position) = 0;
 
-    virtual ::BlockPos loadBlockPosition(::BlockPos const&) = 0;
+    virtual ::BlockPos loadBlockPosition(::BlockPos const& blockPos) = 0;
 
-    virtual ::BlockPos loadBlockPositionOffset(::BlockPos const&) = 0;
+    virtual ::BlockPos loadBlockPositionOffset(::BlockPos const& blockPosOffset) = 0;
 
-    virtual float loadRotationDegreesX(float) = 0;
+    virtual float loadRotationDegreesX(float x) = 0;
 
-    virtual float loadRotationDegreesY(float) = 0;
+    virtual float loadRotationDegreesY(float y) = 0;
 
-    virtual float loadRotationRadiansX(float) = 0;
+    virtual float loadRotationRadiansX(float x) = 0;
 
-    virtual float loadRotationRadiansY(float) = 0;
+    virtual float loadRotationRadiansY(float y) = 0;
 
-    virtual uchar loadFacingID(uchar) = 0;
+    virtual uchar loadFacingID(uchar facing) = 0;
 
-    virtual ::Vec3 loadDirection(::Vec3 const&) = 0;
+    virtual ::Vec3 loadDirection(::Vec3 const& direction) = 0;
 
-    virtual ::Direction::Type loadDirection(::Direction::Type) = 0;
+    virtual ::Direction::Type loadDirection(::Direction::Type direction) = 0;
 
-    virtual ::Rotation loadRotation(::Rotation) = 0;
+    virtual ::Rotation loadRotation(::Rotation rotation) = 0;
 
-    virtual ::Mirror loadMirror(::Mirror) = 0;
+    virtual ::Mirror loadMirror(::Mirror mirror) = 0;
 
-    virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID) = 0;
+    virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) = 0;
 
-    virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID) = 0;
+    virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) = 0;
 
     virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
-        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&,
-        ::std::string const&
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
     ) = 0;
 
     virtual ::DataLoadHelperType getType() const = 0;

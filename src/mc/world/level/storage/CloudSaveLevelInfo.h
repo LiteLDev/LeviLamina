@@ -31,11 +31,26 @@ public:
 
     MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
+#ifdef LL_PLAT_C
+    MCAPI CloudSaveLevelInfo(
+        ::std::string driveItemId,
+        ::std::string cTag,
+        ::std::string userId,
+        ::std::string filename,
+        ::std::string lastUpdated,
+        bool          needsUpload
+    );
+#endif
+
     MCAPI bool const hasInfo() const;
 
     MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
     MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+
+#ifdef LL_PLAT_C
+    MCAPI bool operator==(::CloudSaveLevelInfo const& other) const;
+#endif
 
     MCAPI void serialize(::CompoundTag& tag) const;
 
@@ -49,7 +64,8 @@ public:
 
     MCAPI void* $ctor(::CompoundTag const& tag);
 
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
         ::std::string driveItemId,
         ::std::string cTag,
         ::std::string userId,
@@ -57,6 +73,7 @@ public:
         ::std::string lastUpdated,
         bool          needsUpload
     );
+#endif
     // NOLINTEND
 
 public:

@@ -433,15 +433,15 @@ MCNAPI bool parseItemColor(::ItemColor& outColor, ::Json::Value const& root);
 
 MCNAPI bool parseRange(::Json::Value const& root, int& outMin, int& outMax);
 
-MCNAPI_C bool parseRange(::Json::Value const& root, float& outMin, float& outMax);
+MCNAPI bool parseRange(::Json::Value const& root, float& outMin, float& outMax);
 
 MCNAPI bool parseVec2(::Vec2& outVec, ::Json::Value const& root);
 
 MCNAPI bool parseVec3(::Vec3& outVec, ::Json::Value const& root);
 
-MCNAPI_C bool parseVec4(::Vec4& outVec, ::Json::Value const& root);
+MCNAPI bool parseVec4(::Vec4& outVec, ::Json::Value const& root);
 
-MCNAPI_C ::Json::Value patchJson(::Json::Value const& base, ::Json::Value const& patch, char terminator);
+MCNAPI ::Json::Value patchJson(::Json::Value const& base, ::Json::Value const& patch, char terminator);
 
 MCNAPI void setDefaultPrettyName(::std::string& destPrettyName, ::HashedString const& sourceName);
 

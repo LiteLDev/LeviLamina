@@ -17,6 +17,13 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::InputMode, bool>> mDefaultValues;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    InputModeBoolOption();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,16 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void
-    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
-
-    MCAPI_C void set(::InputMode inputmode, bool value, bool saveOptionChange);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI InputModeBoolOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -55,7 +54,7 @@ public:
         bool                 value
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI InputModeBoolOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -65,6 +64,38 @@ public:
         bool                 valueTouch,
         bool                 valueGamePad
     );
+
+    MCAPI void
+    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
+
+    MCAPI void set(::InputMode inputmode, bool value, bool saveOptionChange);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        bool                 value
+    );
+
+    MCAPI void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        bool                 valueMouse,
+        bool                 valueTouch,
+        bool                 valueGamePad
+    );
+#endif
     // NOLINTEND
 
 public:

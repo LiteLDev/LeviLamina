@@ -29,7 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S void initialize(::EntityContext& entity, ::HeartbeatServerComponent& component) const;
+#ifdef LL_PLAT_S
+    MCAPI void initialize(::EntityContext& entity, ::HeartbeatServerComponent& component) const;
+#endif
     // NOLINTEND
 
 public:

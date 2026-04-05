@@ -22,7 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void load(::CompoundTag const& data);
+#ifdef LL_PLAT_C
+    MCAPI void load(::CompoundTag const& data);
+#endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 

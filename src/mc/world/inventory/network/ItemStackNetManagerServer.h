@@ -108,10 +108,12 @@ public:
 
     MCAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
 
-    MCAPI_C void handleRequest(
+#ifdef LL_PLAT_C
+    MCAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
+#endif
 
     MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND

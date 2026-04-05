@@ -13,9 +13,9 @@ public:
     // NOLINTBEGIN
     virtual ~IStructurePoolActorPredicate() = default;
 
-    virtual bool test(::std::string const&) const = 0;
+    virtual bool test(::std::string const& actor) const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:

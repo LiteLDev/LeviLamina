@@ -53,9 +53,11 @@ public:
     // NOLINTBEGIN
     MCAPI StonecutterContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCFOLD_C void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#ifdef LL_PLAT_C
+    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 
-    MCAPI_C ::std::vector<::std::pair<::ItemInstance, ::RecipeNetId>> getResultForItem(::ItemStack const& item);
+    MCAPI ::std::vector<::std::pair<::ItemInstance, ::RecipeNetId>> getResultForItem(::ItemStack const& item);
+#endif
     // NOLINTEND
 
 public:

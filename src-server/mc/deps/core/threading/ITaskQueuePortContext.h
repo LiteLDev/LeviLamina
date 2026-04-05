@@ -25,9 +25,9 @@ public:
 
     virtual ::ITaskQueuePort* GetPort() = 0;
 
-    virtual bool TrySetStatus(::TaskQueuePortStatus, ::TaskQueuePortStatus) = 0;
+    virtual bool TrySetStatus(::TaskQueuePortStatus expectedStatus, ::TaskQueuePortStatus status) = 0;
 
-    virtual void SetStatus(::TaskQueuePortStatus) = 0;
+    virtual void SetStatus(::TaskQueuePortStatus status) = 0;
 
     virtual void ItemQueued() = 0;
 

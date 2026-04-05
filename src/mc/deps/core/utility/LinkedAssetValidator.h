@@ -140,9 +140,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit LinkedAssetValidator(bool isClient);
+#endif
+
     MCNAPI void _initThreadAssetCollection();
 
-    MCNAPI_C void addFile(int assetType, ::std::string const& filepath);
+#ifdef LL_PLAT_C
+    MCNAPI void addFile(int assetType, ::std::string const& filepath);
+#endif
 
     MCNAPI void addFileReference(int assetType, ::std::string const& filepath, ::std::string contextString);
 
@@ -150,7 +156,9 @@ public:
 
     MCNAPI void addReference(int assetType, ::std::string const& identifier, ::std::string contextString);
 
-    MCNAPI_C void reset();
+#ifdef LL_PLAT_C
+    MCNAPI void reset();
+#endif
     // NOLINTEND
 
 public:
@@ -162,7 +170,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(bool isClient);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(bool isClient);
+#endif
     // NOLINTEND
 
 public:

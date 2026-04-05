@@ -155,7 +155,9 @@ public:
         bool                       shrink
     ) const;
 
-    MCAPI_C void shapeZFightShrink(::AABB& shape) const;
+#ifdef LL_PLAT_C
+    MCAPI void shapeZFightShrink(::AABB& shape) const;
+#endif
     // NOLINTEND
 
 public:

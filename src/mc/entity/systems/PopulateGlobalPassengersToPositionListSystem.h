@@ -22,7 +22,7 @@ struct PopulateGlobalPassengersToPositionListSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _populateList(
+    MCAPI static bool _populateList(
         ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::Exclude<::PassengerComponent>> rootVehicles,
         ::ViewT<::StrictEntityContext, ::VehicleComponent const>                                  vehicles,
         ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>>            flaggedPassengers,
@@ -30,14 +30,14 @@ public:
         ::PassengersToPositionComponent&                                                          destination
     );
 
-    MCNAPI static void _removeRequestsFromBrokenLinks(
+    MCAPI static void _removeRequestsFromBrokenLinks(
         ::ViewT<::StrictEntityContext, ::VehicleComponent const>                       vehicles,
         ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>> flaggedPassengers,
         ::ViewT<::StrictEntityContext, ::PassengerComponent const>                     passengers,
         ::EntityModifier<::PositionPassengerRequestComponent>                          modifier
     );
 
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::Exclude<::PassengerComponent>> rootVehicles,
         ::ViewT<::StrictEntityContext, ::VehicleComponent const>                                  vehicles,
         ::ViewT<::StrictEntityContext, ::Include<::PositionPassengerRequestComponent>>            flaggedPassengers,

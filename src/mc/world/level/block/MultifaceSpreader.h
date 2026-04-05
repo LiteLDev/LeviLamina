@@ -45,7 +45,7 @@ public:
         uchar const          placementDirection
     ) const;
 
-    virtual bool _isOtherBlockValidAsSource(::Block const&) const;
+    virtual bool _isOtherBlockValidAsSource(::Block const& block) const;
     // NOLINTEND
 
 public:
@@ -121,7 +121,7 @@ public:
         uchar const          placementDirection
     ) const;
 
-    MCFOLD bool $_isOtherBlockValidAsSource(::Block const&) const;
+    MCFOLD bool $_isOtherBlockValidAsSource(::Block const& block) const;
 
 
     // NOLINTEND

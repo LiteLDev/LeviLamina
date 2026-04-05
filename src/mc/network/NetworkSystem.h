@@ -195,11 +195,13 @@ public:
     MCAPI bool
     _sortAndPacketizeEvents(::NetworkConnection& connection, ::std::chrono::steady_clock::time_point endTime);
 
-    MCAPI_C void closeConnection(
+#ifdef LL_PLAT_C
+    MCAPI void closeConnection(
         ::NetworkIdentifier const&         id,
         ::Connection::DisconnectFailReason discoReason,
         ::std::string const&               messageFromServer
     );
+#endif
 
     MCAPI void disconnect();
 
@@ -211,7 +213,9 @@ public:
 
     MCAPI bool isServer() const;
 
-    MCAPI_C void registerClientInstance(::NetEventCallback& callback, ::SubClientId subID);
+#ifdef LL_PLAT_C
+    MCAPI void registerClientInstance(::NetEventCallback& callback, ::SubClientId subID);
+#endif
 
     MCAPI void runEvents(bool networkIsCritical);
 

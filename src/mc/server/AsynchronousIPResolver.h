@@ -33,18 +33,30 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkba7ec2;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     AsynchronousIPResolver& operator=(AsynchronousIPResolver const&);
     AsynchronousIPResolver(AsynchronousIPResolver const&);
     AsynchronousIPResolver();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AsynchronousIPResolver(AsynchronousIPResolver const&);
+    AsynchronousIPResolver();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit AsynchronousIPResolver(::std::string url);
 
     MCNAPI void _resolve();
+
+#ifdef LL_PLAT_C
+    MCNAPI ::AsynchronousIPResolver& operator=(::AsynchronousIPResolver const&);
+#endif
 
     MCNAPI ~AsynchronousIPResolver();
     // NOLINTEND

@@ -28,33 +28,33 @@ namespace Scripting::RenderHelper { class BasePrimitive; }
 namespace Editor::Services {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::std::optional<int> _getVanillaActionKey(::KeyboardRemappingLayout& layout, ::Remapping::ActionEnum action);
+MCNAPI ::std::optional<int> _getVanillaActionKey(::KeyboardRemappingLayout& layout, ::Remapping::ActionEnum action);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentAxialSphere const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentBox const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentCone const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentCuboid const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentCylinder const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentDisc const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentEllipsoid const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentLine const& data);
 
-MCNAPI_C ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
+MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentPyramid const& data);
 
 MCNAPI bool

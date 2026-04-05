@@ -17,60 +17,61 @@ public:
 
     virtual bool getDevLogAppend() const = 0;
 
-    virtual void setDevLogAppend(bool) = 0;
+    virtual void setDevLogAppend(bool value) = 0;
 
     virtual bool getDevLogFlushImmediate() const = 0;
 
-    virtual void setDevLogFlushImmediate(bool) = 0;
+    virtual void setDevLogFlushImmediate(bool value) = 0;
 
     virtual int getDevLogFlushDelay() const = 0;
 
-    virtual void setDevLogFlushDelay(int) = 0;
+    virtual void setDevLogFlushDelay(int delay_time) = 0;
 
     virtual bool getDevLogTimestamp() const = 0;
 
-    virtual void setDevLogTimestamp(bool) = 0;
+    virtual void setDevLogTimestamp(bool value) = 0;
 
     virtual bool getDevLogTrace() const = 0;
 
-    virtual void setDevLogTrace(bool) = 0;
+    virtual void setDevLogTrace(bool value) = 0;
 
     virtual bool getDevLogArea() const = 0;
 
-    virtual void setDevLogArea(bool) = 0;
+    virtual void setDevLogArea(bool silent) = 0;
 
     virtual bool getDevLogPriority() const = 0;
 
-    virtual void setDevLogPriority(bool) = 0;
+    virtual void setDevLogPriority(bool silent) = 0;
 
     virtual bool getDevLogProcessId() const = 0;
 
-    virtual void setDevLogProcessId(bool) = 0;
+    virtual void setDevLogProcessId(bool enable) = 0;
 
     virtual bool getDevLogThreadId() const = 0;
 
-    virtual void setDevLogThreadId(bool) = 0;
+    virtual void setDevLogThreadId(bool enable) = 0;
 
     virtual bool getDevLogMessageId() const = 0;
 
-    virtual void setDevLogMessageId(bool) = 0;
+    virtual void setDevLogMessageId(bool enable) = 0;
 
     virtual bool getDevLogSilentLogging() const = 0;
 
-    virtual void setDevLogSilentLogging(bool) = 0;
+    virtual void setDevLogSilentLogging(bool silent) = 0;
 
     virtual ::std::string const& getDevLogAreaFilter() const = 0;
 
-    virtual void setDevLogAreaFilter(::std::string const&) = 0;
+    virtual void setDevLogAreaFilter(::std::string const& filter) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription registerDevLogAreaObserver(::std::function<void(::std::string const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+    registerDevLogAreaObserver(::std::function<void(::std::string const&)> onLogAreaChangedCallback) = 0;
 
     virtual ::std::string const& getDevLogPriorityFilter() const = 0;
 
-    virtual void setDevLogPriorityFilter(::std::string const&) = 0;
+    virtual void setDevLogPriorityFilter(::std::string const& filter) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        registerDevLogPriorityObserver(::std::function<void(::std::string const&)>) = 0;
+    registerDevLogPriorityObserver(::std::function<void(::std::string const&)> onLogPriorityChangedCallback) = 0;
     // NOLINTEND
 
 public:

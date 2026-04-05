@@ -33,18 +33,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Puv::LoadResultAny loadFromString(
-        ::cereal::ReflectionCtx const&,
-        ::std::string const&,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::std::string const&                               atmosphereJson,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) = 0;
 
     virtual void loadDataSync(
-        ::cereal::ReflectionCtx const&,
-        ::ResourcePackManager&,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     ) = 0;
 
-    virtual void _setDefaultIdentifierImpl(::HashedString const&) = 0;
+    virtual void _setDefaultIdentifierImpl(::HashedString const& defaultIdentifier) = 0;
 
     virtual ~RenderingResourcePackJsonConfig() /*override*/;
     // NOLINTEND

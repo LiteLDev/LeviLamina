@@ -21,28 +21,46 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkbf426d;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     EduHeadlessConnectionHandshake& operator=(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake(EduHeadlessConnectionHandshake const&);
     EduHeadlessConnectionHandshake();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EduHeadlessConnectionHandshake(EduHeadlessConnectionHandshake const&);
+    EduHeadlessConnectionHandshake();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI EduHeadlessConnectionHandshake(::std::string const& id, ::Json::Value const& json);
 
+    MCNAPI ::Social::EduHeadlessConnectionHandshake& operator=(::Social::EduHeadlessConnectionHandshake const&);
+
+    MCNAPI ~EduHeadlessConnectionHandshake();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& id, ::Json::Value const& json);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& id, ::Json::Value const& json);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -111,7 +111,9 @@ public:
         ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
 
-    MCAPI_C ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
+#endif
 
     MCAPI void setTargetFPS(uint FPS);
 

@@ -30,16 +30,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool
-    isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
-        /*override*/;
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
 
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -79,15 +82,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&   source,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory

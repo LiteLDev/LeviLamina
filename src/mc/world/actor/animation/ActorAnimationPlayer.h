@@ -37,23 +37,24 @@ public:
     virtual ~ActorAnimationPlayer();
 
     virtual void applyToPose(
-        ::ApplyAnimationContext const&,
-        ::RenderParams&,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
-        float
+        ::ApplyAnimationContext const&                                                    applyContext,
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
     ) = 0;
 
     virtual void resetAnimation() = 0;
 
-    virtual void buildBoneToPartMapping(::AnimationComponent&);
+    virtual void buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
-    virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    virtual void
+    bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
     virtual bool hasAnimationFinished() const = 0;
 
-    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const&) = 0;
+    virtual ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& friendlyName) = 0;
 
     virtual ::ActorAnimationType getAnimationType() const = 0;
 
@@ -83,11 +84,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
-    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCFOLD void
+    $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
     MCAPI void $visit(::AnimationVisitor&& dispatcher);
 

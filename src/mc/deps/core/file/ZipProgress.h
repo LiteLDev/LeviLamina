@@ -13,12 +13,20 @@ public:
     ::ll::UntypedStorage<4, 4> mUnk29d148;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ZipProgress& operator=(ZipProgress const&);
     ZipProgress(ZipProgress const&);
     ZipProgress();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ZipProgress& operator=(ZipProgress const&);
+    ZipProgress(ZipProgress const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,13 +38,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ZipProgress();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

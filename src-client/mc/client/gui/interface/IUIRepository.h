@@ -24,13 +24,14 @@ public:
 
     virtual void reloadGroup() = 0;
 
-    virtual void addRef(::UITextureInfoPtr&) = 0;
+    virtual void addRef(::UITextureInfoPtr& ptr) = 0;
 
-    virtual void removeRef(::UITextureInfoPtr&) = 0;
+    virtual void removeRef(::UITextureInfoPtr& ptr) = 0;
 
-    virtual ::UITextureInfoPtr getUITextureInfoPtr(::ResourceLocation const&, bool) = 0;
+    virtual ::UITextureInfoPtr getUITextureInfoPtr(::ResourceLocation const& resourceLocation, bool forceReload) = 0;
 
-    virtual ::UITextureInfo* getUITextureInfo(::ResourceLocation const&, bool, bool) = 0;
+    virtual ::UITextureInfo*
+    getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload, bool loadIfNeeded) = 0;
 
     virtual ~IUIRepository() /*override*/;
     // NOLINTEND

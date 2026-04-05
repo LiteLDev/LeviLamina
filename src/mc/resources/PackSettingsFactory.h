@@ -122,34 +122,38 @@ public:
     MCAPI ::std::unique_ptr<::SharedTypes::v1_21_100::PackSettingsDefinition::Document>
     _loadUserOverridesFromFile(::Core::Path const& path) const;
 
-    MCAPI_C bool _saveUserOverridesToFile(
+#ifdef LL_PLAT_C
+    MCAPI bool _saveUserOverridesToFile(
         ::SharedTypes::v1_21_100::PackSettingsDefinition::Document doc,
         ::Core::Path const&                                        path
     ) const;
 
-    MCAPI_C void _syncPackSettingsToSaveDoc(
+    MCAPI void _syncPackSettingsToSaveDoc(
         ::mce::UUID                                                 packId,
         ::PackSettings const&                                       packSettings,
         ::SharedTypes::v1_21_100::PackSettingsDefinition::Document& settingsDoc,
         bool                                                        includeTimestamp
     ) const;
+#endif
 
     MCAPI ::PackSettings* getPackSettings(::PackManifest const& manifest, ::std::optional<::std::string> worldId);
 
     MCAPI bool loadPerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 
-    MCAPI_C ::Bedrock::PubSub::Subscription registerObserver(
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription registerObserver(
         ::std::function<
             void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&)> callback
     );
 
-    MCAPI_C bool saveGlobalUserOverrides();
+    MCAPI bool saveGlobalUserOverrides();
 
-    MCAPI_C bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
+    MCAPI bool savePerWorldUserOverrides(::std::string const& worldId, ::Core::Path const& worldPath);
 
-    MCAPI_C ::std::string serializePackSettingsNameValueMap(
+    MCAPI ::std::string serializePackSettingsNameValueMap(
         ::std::unordered_map<::std::string, ::PackSettingValueAndDefault> const& packSettingsNameValueMap
     ) const;
+#endif
     // NOLINTEND
 
 public:

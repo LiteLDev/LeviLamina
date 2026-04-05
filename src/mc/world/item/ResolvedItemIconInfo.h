@@ -21,12 +21,24 @@ public:
     ::ll::TypedStorage<2, 2, ushort>             mTexSizeH;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResolvedItemIconInfo& operator=(ResolvedItemIconInfo const&);
+    ResolvedItemIconInfo(ResolvedItemIconInfo const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResolvedItemIconInfo();
 
     MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
+
+#ifdef LL_PLAT_C
+    MCAPI ::ResolvedItemIconInfo& operator=(::ResolvedItemIconInfo&&);
+#endif
 
     MCAPI ~ResolvedItemIconInfo();
     // NOLINTEND

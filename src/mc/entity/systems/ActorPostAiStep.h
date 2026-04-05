@@ -24,7 +24,7 @@ struct WitherBossPreAIStepResultComponent;
 namespace ActorPostAiStep {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickEach(
+MCAPI void _tickEach(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::InterpolateMovementNeededComponent>,

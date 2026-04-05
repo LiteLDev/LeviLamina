@@ -31,7 +31,9 @@ public:
 
     MCAPI int getItemCooldownLeft(::HashedString const& category) const;
 
-    MCAPI_C float getItemCooldownProgress(::HashedString const& category) const;
+#ifdef LL_PLAT_C
+    MCAPI float getItemCooldownProgress(::HashedString const& category) const;
+#endif
 
     MCAPI ::std::string startItemCooldown(::HashedString const& category, int tickDuration);
     // NOLINTEND

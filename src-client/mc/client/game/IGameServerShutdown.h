@@ -8,9 +8,9 @@ public:
     // NOLINTBEGIN
     virtual ~IGameServerShutdown() = default;
 
-    virtual void requestLeaveGame(bool, bool) = 0;
+    virtual void requestLeaveGame(bool switchScreen, bool sync) = 0;
 
-    virtual void requestLeaveThenJoinFriendsWorld(::std::string_view) = 0;
+    virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) = 0;
     // NOLINTEND
 
 public:

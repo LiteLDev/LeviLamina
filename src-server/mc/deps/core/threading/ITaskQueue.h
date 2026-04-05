@@ -19,26 +19,31 @@ public:
     // NOLINTBEGIN
     virtual ::XTaskQueueObject* GetHandle() = 0;
 
-    virtual HRESULT GetPortContext(::XTaskQueuePort, ::ITaskQueuePortContext**) = 0;
+    virtual HRESULT GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext) = 0;
 
-    virtual HRESULT
-    RegisterWaitHandle(::XTaskQueuePort, void*, void*, void (*)(void*, bool), ::XTaskQueueRegistrationToken*) = 0;
-
-    virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken) = 0;
-
-    virtual HRESULT RegisterSubmitCallback(
-        void*,
-        void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
-        ::XTaskQueueRegistrationToken*
+    virtual HRESULT RegisterWaitHandle(
+        ::XTaskQueuePort port,
+        void*            waitHandle,
+        void*            callbackContext,
+        void (*callback)(void*, bool),
+        ::XTaskQueueRegistrationToken* token
     ) = 0;
 
-    virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken) = 0;
+    virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken token) = 0;
+
+    virtual HRESULT RegisterSubmitCallback(
+        void* context,
+        void (*callback)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
+        ::XTaskQueueRegistrationToken* token
+    ) = 0;
+
+    virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken token) = 0;
 
     virtual bool CanTerminate() = 0;
 
     virtual bool CanClose() = 0;
 
-    virtual HRESULT Terminate(bool, void*, void (*)(void*)) = 0;
+    virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) = 0;
     // NOLINTEND
 
 public:

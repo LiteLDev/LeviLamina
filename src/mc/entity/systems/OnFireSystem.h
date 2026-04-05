@@ -20,7 +20,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void onFireChanged(::Actor& actor);
+#ifdef LL_PLAT_C
+    MCAPI static void onFireChanged(::Actor& actor);
+#endif
 
     MCAPI static void setOnFire(::Actor& actor, int seconds);
 

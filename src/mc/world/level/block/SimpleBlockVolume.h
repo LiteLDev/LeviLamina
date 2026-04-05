@@ -46,6 +46,14 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos> mTo;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SimpleBlockVolume& operator=(SimpleBlockVolume const&);
+    SimpleBlockVolume();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -77,19 +85,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI SimpleBlockVolume(::SimpleBlockVolume const& volume);
+
+    MCAPI SimpleBlockVolume(::BlockPos const& from, ::Vec3 const& size);
+
+    MCAPI SimpleBlockVolume(::BlockPos const& from, ::BlockPos const& to);
+#endif
+
     MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI_C uchar getCornerHandle(::SimpleBlockVolume::CornerIndex cornerIndex) const;
+#ifdef LL_PLAT_C
+    MCAPI uchar getCornerHandle(::SimpleBlockVolume::CornerIndex cornerIndex) const;
 
-    MCAPI_C ::BlockPos getCornerPosition(uchar cornerHandle) const;
+    MCAPI ::BlockPos getCornerPosition(uchar cornerHandle) const;
 
-    MCAPI_C ::AABB getWorldAABB() const;
+    MCAPI ::AABB getWorldAABB() const;
+#endif
 
     MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
 
-    MCAPI_C ::SimpleBlockVolume& setCornerPosition(uchar cornerHandle, ::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI bool operator==(::SimpleBlockVolume const& other) const;
 
-    MCAPI_C ::SimpleBlockVolume& translateCorner(uchar cornerHandle, ::glm::ivec3 const& delta);
+    MCAPI ::SimpleBlockVolume& setCornerPosition(uchar cornerHandle, ::BlockPos const& pos);
+
+    MCAPI ::SimpleBlockVolume& translateCorner(uchar cornerHandle, ::glm::ivec3 const& delta);
+#endif
     // NOLINTEND
 
 public:
@@ -101,11 +123,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::SimpleBlockVolume const& volume);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::SimpleBlockVolume const& volume);
 
-    MCAPI_C void* $ctor(::BlockPos const& from, ::Vec3 const& size);
+    MCAPI void* $ctor(::BlockPos const& from, ::Vec3 const& size);
 
-    MCAPI_C void* $ctor(::BlockPos const& from, ::BlockPos const& to);
+    MCAPI void* $ctor(::BlockPos const& from, ::BlockPos const& to);
+#endif
     // NOLINTEND
 
 public:

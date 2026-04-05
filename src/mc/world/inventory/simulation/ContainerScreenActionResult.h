@@ -17,23 +17,43 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ContainerScreenActionResultData>>> mResultData;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerScreenActionResult& operator=(ContainerScreenActionResult const&);
+    ContainerScreenActionResult();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ContainerScreenActionResult(::ContainerScreenActionResult const&);
 
+    MCNAPI explicit ContainerScreenActionResult(::ContainerValidationResult const& validationResult);
+
+    MCNAPI ::ContainerScreenActionResult& operator=(::ContainerScreenActionResult&&);
+
+    MCNAPI ~ContainerScreenActionResult();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ContainerScreenActionResult const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ContainerScreenActionResult const&);
 
-    MCNAPI_C void* $ctor(::ContainerValidationResult const& validationResult);
+    MCNAPI void* $ctor(::ContainerValidationResult const& validationResult);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

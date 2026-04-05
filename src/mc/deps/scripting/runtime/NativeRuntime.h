@@ -134,7 +134,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ::Scripting::ResultAny runFunction(
+#ifdef LL_PLAT_S
+    MCAPI explicit NativeRuntime(::Scripting::RegistryManager& registryManager);
+
+    MCAPI ::Scripting::ResultAny runFunction(
         ::Scripting::ContextId contextId,
         ::std::function<::Scripting::ResultAny(
             ::Scripting::NativeRuntime&,
@@ -145,12 +148,15 @@ public:
             ::Scripting::IPrinter*
         )> const&              function
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::Scripting::RegistryManager& registryManager);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::Scripting::RegistryManager& registryManager);
+#endif
     // NOLINTEND
 
 public:

@@ -18,9 +18,9 @@ public:
     // NOLINTBEGIN
     virtual ~KeyboardEventProcessor();
 
-    virtual void onKeyDown(int, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin) = 0;
+    virtual void onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin) = 0;
 
-    virtual void onKeyUp(int) = 0;
+    virtual void onKeyUp(int keyCode) = 0;
     // NOLINTEND
 
 public:

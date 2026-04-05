@@ -22,9 +22,9 @@ struct TickingSystemWithInfo;
 namespace UpdateHorizontalPoseSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tick(
+MCAPI void tick(
     ::ViewT<
         ::StrictEntityContext,
         ::ActorDataFlagComponent const,
@@ -37,7 +37,7 @@ MCNAPI void tick(
     ::EntityModifier<::IsHorizontalPoseFlagComponent>    modifier
 );
 
-MCNAPI void update(
+MCAPI void update(
     ::StrictEntityContext const&                       entity,
     ::ActorDataFlagComponent const&                    flags,
     ::EntityModifier<::IsHorizontalPoseFlagComponent>& modifier

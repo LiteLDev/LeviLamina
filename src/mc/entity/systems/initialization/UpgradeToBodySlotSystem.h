@@ -19,12 +19,12 @@ class UpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<::StrictEntityContext, ::Include<::NeedsUpgradeToBodySlotFlagComponent>, ::ActorOwnerComponent> view,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>             modifier
     );
 
-    MCNAPI static void _upgrade(
+    MCAPI static void _upgrade(
         ::StrictEntityContext& strictEntityContext,
         ::ActorOwnerComponent& actorOwnerComponent,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier

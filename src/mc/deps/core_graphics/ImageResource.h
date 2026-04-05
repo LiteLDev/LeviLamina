@@ -26,10 +26,21 @@ public:
         ::ll::TypedStorage<8, 8, uint64>                            mImageHash;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        StreamedResource& operator=(StreamedResource const&);
+        StreamedResource(StreamedResource const&);
+        StreamedResource();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCAPI ::cg::ImageResource::StreamedResource& operator=(::cg::ImageResource::StreamedResource&&);
+#endif
         // NOLINTEND
     };
 
@@ -48,11 +59,11 @@ public:
 
     virtual uint getSize() const = 0;
 
-    virtual ::cg::ImageBuffer const* getImage(uint) const = 0;
+    virtual ::cg::ImageBuffer const* getImage(uint mipLevel) const = 0;
 
-    virtual void addImage(::cg::ImageBuffer) = 0;
+    virtual void addImage(::cg::ImageBuffer imageToAdd) = 0;
 
-    virtual void addImage(::std::shared_ptr<::cg::ImageResource>) = 0;
+    virtual void addImage(::std::shared_ptr<::cg::ImageResource> imageToAdd) = 0;
 
     virtual ::std::variant<::std::vector<::cg::ImageBuffer>, ::cg::ImageResource::StreamedResource>
     unwrapImageData() = 0;

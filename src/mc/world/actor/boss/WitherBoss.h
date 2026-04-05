@@ -96,7 +96,7 @@ public:
 
     virtual bool canFreeze() const /*override*/;
 
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
@@ -106,7 +106,7 @@ public:
 
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
+    virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     virtual int getArmorValue() const /*override*/;
 
@@ -153,7 +153,9 @@ public:
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
 
-    MCAPI_S int getInvulnerableTicks() const;
+#ifdef LL_PLAT_S
+    MCAPI int getInvulnerableTicks() const;
+#endif
 
     MCAPI bool hasAerialAttack() const;
 
@@ -197,7 +199,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint effectId) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -207,7 +209,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD float $causeFallDamageToActor(float, float, ::ActorDamageSource);
+    MCFOLD float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
     MCAPI int $getArmorValue() const;
 

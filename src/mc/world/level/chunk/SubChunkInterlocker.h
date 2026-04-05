@@ -22,7 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool tryLock3x3x3(::SubChunkPos const& center);
+#ifdef LL_PLAT_C
+    MCAPI bool tryLock3x3x3(::SubChunkPos const& center);
+#endif
 
     MCAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
 

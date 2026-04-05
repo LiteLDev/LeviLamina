@@ -24,12 +24,20 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk9d8ab8;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PartyChatJsonRpcComponent& operator=(PartyChatJsonRpcComponent const&);
     PartyChatJsonRpcComponent(PartyChatJsonRpcComponent const&);
     PartyChatJsonRpcComponent();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PartyChatJsonRpcComponent& operator=(PartyChatJsonRpcComponent const&);
+    PartyChatJsonRpcComponent(PartyChatJsonRpcComponent const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,20 +53,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _registerReceiveMessageHandler();
+#ifdef LL_PLAT_C
+    MCNAPI PartyChatJsonRpcComponent();
 
-    MCNAPI_C ::Bedrock::Threading::Async<::std::error_code> joinChannel(::std::string const& partyId);
+    MCNAPI void _registerReceiveMessageHandler();
 
-    MCNAPI_C ::Bedrock::Threading::Async<::std::error_code>
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> joinChannel(::std::string const& partyId);
+
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code>
     leaveChannel(::std::string const& partyId, ::std::string const& xuid);
 
-    MCNAPI_C void sendMessage(::std::string const& partyId, ::std::string const& message);
+    MCNAPI void sendMessage(::std::string const& partyId, ::std::string const& message);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

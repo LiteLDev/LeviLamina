@@ -20,7 +20,7 @@ struct VehicleComponent;
 namespace MobPassengerRotationSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickMobView(
+MCAPI void _tickMobView(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent>>,
     ::PassengerComponent const&     passengerComponent,
     ::ActorRotationComponent&       mobRotation,

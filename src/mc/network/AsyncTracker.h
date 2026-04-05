@@ -17,12 +17,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool hasAsyncOperationTimedOut();
+#ifdef LL_PLAT_C
+    MCNAPI bool hasAsyncOperationTimedOut();
 
-    MCNAPI_C void retryCallInSeconds(int seconds);
+    MCNAPI void retryCallInSeconds(int seconds);
 
-    MCNAPI_C bool shouldCallBeRetried();
+    MCNAPI bool shouldCallBeRetried();
 
-    MCNAPI_C void trackNewAsyncOperation(int timeoutInSeconds);
+    MCNAPI void trackNewAsyncOperation(int timeoutInSeconds);
+#endif
     // NOLINTEND
 };

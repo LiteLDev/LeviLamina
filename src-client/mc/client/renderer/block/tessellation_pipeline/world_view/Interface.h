@@ -19,19 +19,19 @@ public:
     // NOLINTBEGIN
     virtual ~Interface();
 
-    virtual ::ClientBlockPipeline::WorldView::LocalInfo getLocalInfo(::BlockPos const&) const = 0;
+    virtual ::ClientBlockPipeline::WorldView::LocalInfo getLocalInfo(::BlockPos const& relativePos) const = 0;
 
-    virtual ::Block const& getBlock(::BlockPos const&) const = 0;
+    virtual ::Block const& getBlock(::BlockPos const& relativePos) const = 0;
 
-    virtual ::BlockActor const* getBlockActor(::BlockPos const&) const = 0;
+    virtual ::BlockActor const* getBlockActor(::BlockPos const& relativePos) const = 0;
 
-    virtual void offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea&) const = 0;
+    virtual void offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const = 0;
 
-    virtual ::BlockPos getRelativeMin(::BlockPos const&) const = 0;
+    virtual ::BlockPos getRelativeMin(::BlockPos const& worldMin) const = 0;
 
-    virtual ::BlockPos getRelativeMax(::BlockPos const&) const = 0;
+    virtual ::BlockPos getRelativeMax(::BlockPos const& worldMin) const = 0;
 
-    virtual bool isInBounds(::BlockPos const&, ::BlockPos const&) const = 0;
+    virtual bool isInBounds(::BlockPos const& relativePos, ::BlockPos const& dimensions) const = 0;
     // NOLINTEND
 
 public:

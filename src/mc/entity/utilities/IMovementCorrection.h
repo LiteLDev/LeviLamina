@@ -18,20 +18,20 @@ public:
     // NOLINTBEGIN
     virtual ~IMovementCorrection() = default;
 
-    virtual ::AdvanceFrameResult getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
+    virtual ::AdvanceFrameResult getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity);
 
     virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) = 0;
 
     virtual ::std::bitset<2> getCorrectionTypeBitset() const = 0;
 
-    virtual void advanceFrame(::EntityContext&) const = 0;
+    virtual void advanceFrame(::EntityContext& entity) const = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
+    MCNAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const& entity);
 #endif
 
 

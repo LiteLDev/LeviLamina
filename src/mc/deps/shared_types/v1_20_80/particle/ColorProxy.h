@@ -26,6 +26,11 @@ public:
     // NOLINTBEGIN
     MCAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
 
+#ifdef LL_PLAT_S
+    MCAPI ::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy&
+    operator=(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy&&);
+#endif
+
     MCAPI bool
     operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
 

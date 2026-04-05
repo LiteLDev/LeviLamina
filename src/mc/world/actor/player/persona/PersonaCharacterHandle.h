@@ -15,10 +15,25 @@ public:
     ::ll::TypedStorage<1, 1, ::persona::ProfileType> mType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PersonaCharacterHandle(PersonaCharacterHandle const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void invalidate();
+#ifdef LL_PLAT_C
+    MCAPI PersonaCharacterHandle();
+
+    MCAPI void invalidate();
+
+    MCFOLD ::persona::PersonaCharacterHandle& operator=(::persona::PersonaCharacterHandle const&);
+
+    MCAPI ~PersonaCharacterHandle();
+#endif
     // NOLINTEND
 
 public:
@@ -30,13 +45,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -12,7 +12,7 @@ public:
 
     virtual char const* getPayloadName() const = 0;
 
-    virtual bool load(::std::string_view) = 0;
+    virtual bool load(::std::string_view rawData) = 0;
 
     virtual ::std::string save() const = 0;
     // NOLINTEND

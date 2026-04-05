@@ -17,14 +17,14 @@ struct TickingSystemWithInfo;
 namespace TeleportToSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void processAllTeleportToRequestsSystem(
+MCAPI void processAllTeleportToRequestsSystem(
     ::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::TeleportToRequestComponent const> view,
     ::EntityModifier<::TeleportToRequestComponent>                                            modifier
 );
 
-MCNAPI void teleportTo(
+MCAPI void teleportTo(
     ::StrictEntityContext&                         entityContext,
     ::ActorOwnerComponent&                         actorOwnerComponent,
     ::TeleportToRequestComponent const&            teleportToRequestComponent,

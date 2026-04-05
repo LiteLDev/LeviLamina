@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IGameTestListener() = default;
 
-    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
 
-    virtual void onTestPassed(::gametest::BaseGameTestInstance&);
+    virtual void onTestPassed(::gametest::BaseGameTestInstance& test);
 
-    virtual void onTestFailed(::gametest::BaseGameTestInstance&);
+    virtual void onTestFailed(::gametest::BaseGameTestInstance& test);
 
     virtual void onTestStarted(::gametest::BaseGameTestInstance&);
 
@@ -31,11 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance& test);
 
-    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestPassed(::gametest::BaseGameTestInstance& test);
 
-    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCNAPI void $onTestFailed(::gametest::BaseGameTestInstance& test);
 
     MCNAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
 

@@ -18,18 +18,19 @@ public:
     // NOLINTBEGIN
     virtual ~StructureDataCacheServiceProvider() = default;
 
-    virtual void
-        registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider>) = 0;
+    virtual void registerStructureDataProvider(
+        ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
+    ) = 0;
 
-    virtual void informStructureDataRemoved(::mce::UUID const&) = 0;
+    virtual void informStructureDataRemoved(::mce::UUID const& id) = 0;
 
     virtual void informStructureDataUpdated(
-        ::mce::UUID const&,
+        ::mce::UUID const& id,
         ::std::variant<
             ::StructureTemplate const*,
             ::Editor::EditorStructureTemplate const*,
             ::std::shared_ptr<::StructureTemplate const>,
-            ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const&
+            ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data
     ) = 0;
     // NOLINTEND
 

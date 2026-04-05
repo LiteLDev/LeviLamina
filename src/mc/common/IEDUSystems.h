@@ -43,7 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::MessPublicKeyManager> getMessPublicKeyManager() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MessPublicKeyManager> getMessPublicKeyManager() const;
+#endif
     // NOLINTEND
 
 public:

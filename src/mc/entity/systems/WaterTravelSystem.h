@@ -26,7 +26,7 @@ class WaterTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickWaterTravelSystem(
+    MCAPI static void tickWaterTravelSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent const, ::WaterTravelFlagComponent const>,

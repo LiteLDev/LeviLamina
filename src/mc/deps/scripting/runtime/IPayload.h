@@ -24,8 +24,11 @@ public:
     virtual ::Scripting::ResultAny
     runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
-    virtual ::Scripting::ResultAny
-    runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
+    virtual ::Scripting::ResultAny runOn(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::StringBasedRuntime&        runtime,
+        ::std::optional<::Scripting::Privilege> privilege
+    );
     // NOLINTEND
 
 public:
@@ -35,8 +38,11 @@ public:
     $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
 #ifdef LL_PLAT_S
-    MCAPI ::Scripting::ResultAny
-    $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
+    MCAPI ::Scripting::ResultAny $runOn(
+        ::Scripting::ContextId                  contextId,
+        ::Scripting::StringBasedRuntime&        runtime,
+        ::std::optional<::Scripting::Privilege> privilege
+    );
 #endif
 
 

@@ -27,24 +27,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI EduResponseError(
         ::Social::EduResponseType    _type,
         ::Bedrock::Http::StatusCode  _code,
         ::std::string                _message,
         ::std::vector<::std::string> _serverIds
     );
+
+    MCNAPI ~EduResponseError();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::Social::EduResponseType    _type,
+        ::Bedrock::Http::StatusCode  _code,
+        ::std::string                _message,
+        ::std::vector<::std::string> _serverIds
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

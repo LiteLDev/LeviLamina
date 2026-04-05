@@ -716,10 +716,12 @@ public:
         ::ResourcePackClientResponsePacket const& packet
     );
 
-    MCAPI_C void engineDownloadingResponseHelper(
+#ifdef LL_PLAT_C
+    MCAPI void engineDownloadingResponseHelper(
         ::NetworkIdentifier const&                source,
         ::ResourcePackClientResponsePacket const& packet
     );
+#endif
 
     MCAPI void onReady_ClientGeneration(::Player& newPlayer, ::NetworkIdentifier const& source);
 
@@ -736,9 +738,13 @@ public:
         ::ServerPlayer&            player
     );
 
-    MCAPI_S void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+#ifdef LL_PLAT_S
+    MCAPI void setAutomationClient(::Bedrock::NonOwnerPointer<::Automation::AutomationClient> client);
+#endif
 
-    MCAPI_C void setEduSystems(::Bedrock::NonOwnerPointer<::IEDUSystems> eduSystems);
+#ifdef LL_PLAT_C
+    MCAPI void setEduSystems(::Bedrock::NonOwnerPointer<::IEDUSystems> eduSystems);
+#endif
 
     MCAPI void setNewPlayerPermissions(::ServerPlayer& newPlayer);
 
@@ -754,11 +760,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _populateCDNValues(
+#ifdef LL_PLAT_C
+    MCAPI static void _populateCDNValues(
         ::std::vector<::PackInfoData>&                            resourcePacksData,
         ::std::vector<::std::pair<::std::string, ::std::string>>& cdnUrls,
         ::std::string const&                                      deviceModel
     );
+#endif
 
     MCAPI static void _updateCommandBlock(
         ::BlockSource&                             region,

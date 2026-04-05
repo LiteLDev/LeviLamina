@@ -122,9 +122,15 @@ public:
 
     MCAPI LevelSettings(::LevelSettings const&);
 
+#ifdef LL_PLAT_C
+    MCAPI explicit LevelSettings(::LevelSummary const& summary);
+#endif
+
     MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
-    MCAPI_S ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
+#ifdef LL_PLAT_S
+    MCAPI ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
+#endif
 
     MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
@@ -142,7 +148,9 @@ public:
 
     MCAPI ::LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
 
-    MCAPI_C void setEducationLevelSettings(::EducationLevelSettings settings);
+#ifdef LL_PLAT_C
+    MCAPI void setEducationLevelSettings(::EducationLevelSettings settings);
+#endif
 
     MCAPI ::LevelSettings& setEducationProductID(::std::string id);
 
@@ -170,7 +178,9 @@ public:
 
     MCAPI void* $ctor(::LevelSettings const&);
 
-    MCAPI_C void* $ctor(::LevelSummary const& summary);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::LevelSummary const& summary);
+#endif
 
     MCAPI void* $ctor(::LevelData const& data, ::DimensionType dimension);
     // NOLINTEND

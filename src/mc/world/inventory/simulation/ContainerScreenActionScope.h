@@ -21,6 +21,13 @@ public:
     ::ll::TypedStorage<8, 56, ::ContainerScreenActionResult>                              mScreenSimulationResult;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContainerScreenActionScope();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,13 +42,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI
+    ContainerScreenActionScope(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
+#endif
     // NOLINTEND
 
 public:

@@ -21,10 +21,13 @@ public:
     // NOLINTBEGIN
     virtual ~IScriptItemCustomComponentSignalCollection() /*override*/ = default;
 
-    virtual void
-    registerClosures(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    virtual void registerClosures(
+        ::HashedString const&                                         componentName,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
+    ) = 0;
 
-    virtual void subscribeToItemForComponent(::ComponentItem&, ::std::vector<::ItemCustomComponentData> const&) = 0;
+    virtual void
+    subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::ItemCustomComponentData> const& components) = 0;
 
     virtual void clear() = 0;
     // NOLINTEND

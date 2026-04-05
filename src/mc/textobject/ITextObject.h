@@ -18,7 +18,7 @@ public:
 
     virtual ::Json::Value asJsonValue() const = 0;
 
-    virtual ::Json::Value resolve(::ResolveData const&) const = 0;
+    virtual ::Json::Value resolve(::ResolveData const& resolveData) const = 0;
     // NOLINTEND
 
 public:

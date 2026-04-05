@@ -61,13 +61,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::RecipeNetId const _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& materialStack) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::RecipeNetId const _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& materialStack) const;
 
-    MCNAPI_C ::RecipeNetId const
+    MCNAPI ::RecipeNetId const
     _getRecipeNetIdForMapItems(::ItemStack const& inputStack, ::ItemStack const& materialStack) const;
 
-    MCNAPI_C ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
+#endif
     // NOLINTEND
 
 public:

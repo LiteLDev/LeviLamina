@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual void _performDeleteGroup() = 0;
 
-    virtual void _setValid(bool) = 0;
+    virtual void _setValid(bool valid) = 0;
 
     virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) = 0;
 

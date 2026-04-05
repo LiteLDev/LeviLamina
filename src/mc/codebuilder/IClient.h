@@ -22,15 +22,15 @@ public:
     // NOLINTBEGIN
     virtual ~IClient() /*override*/;
 
-    virtual void send(::CodeBuilder::AgentMessage const&) = 0;
+    virtual void send(::CodeBuilder::AgentMessage const& message) = 0;
 
-    virtual void send(::CodeBuilder::CommandMessage const&) = 0;
+    virtual void send(::CodeBuilder::CommandMessage const& message) = 0;
 
-    virtual void send(::CodeBuilder::ErrorMessage const&) = 0;
+    virtual void send(::CodeBuilder::ErrorMessage const& message) = 0;
 
-    virtual void send(::CodeBuilder::EventMessage const&) = 0;
+    virtual void send(::CodeBuilder::EventMessage const& message) = 0;
 
-    virtual void send(::CodeBuilder::ChatMessage const&) = 0;
+    virtual void send(::CodeBuilder::ChatMessage const& message) = 0;
     // NOLINTEND
 
 public:

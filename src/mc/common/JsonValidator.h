@@ -46,7 +46,9 @@ public:
         MCNAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCNAPI_C ::JsonValidator::Property& addType(::Json::ValueType type);
+#ifdef LL_PLAT_C
+        MCNAPI ::JsonValidator::Property& addType(::Json::ValueType type);
+#endif
 
         MCNAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 

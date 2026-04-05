@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     virtual ~ComplexInventoryTransaction();
 
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream&);
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     virtual void write(::BinaryStream& stream) const;
 
@@ -73,7 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
     MCFOLD void $write(::BinaryStream& stream) const;
 

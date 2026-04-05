@@ -29,7 +29,7 @@ struct WasInWaterFlagComponent;
 namespace PostImpulseFallDamagePreventionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickPostImpulseFallDamagePreventionSystem(
+MCAPI void _tickPostImpulseFallDamagePreventionSystem(
     ::entt::type_list<::Include<::InterpolateMovementNeededComponent, ::FallDistanceComponent>>,
     ::StrictEntityContext const&                                 entity,
     ::StateVectorComponent const&                                svc,

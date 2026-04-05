@@ -15,11 +15,17 @@ public:
     // NOLINTBEGIN
     virtual ~IStorageInfoUpdater() = default;
 
-    virtual bool update(bool&, uint64&, uint64&, bool&, bool&) = 0;
+    virtual bool update(
+        bool&   supportsSizeQuery,
+        uint64& storageSize,
+        uint64& storageUsed,
+        bool&   isStorageLow,
+        bool&   isStorageFull
+    ) = 0;
 
-    virtual void addStateListener(::Core::StorageAreaStateListener*) = 0;
+    virtual void addStateListener(::Core::StorageAreaStateListener* listener) = 0;
 
-    virtual void removeStateListener(::Core::StorageAreaStateListener*) = 0;
+    virtual void removeStateListener(::Core::StorageAreaStateListener* listener) = 0;
     // NOLINTEND
 
 public:

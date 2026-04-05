@@ -27,7 +27,7 @@ public:
     virtual bool isLavaBlocking() const /*override*/;
 
     virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar id, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -58,13 +58,8 @@ public:
 
     MCFOLD bool $isLavaBlocking() const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const&
+    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar id, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

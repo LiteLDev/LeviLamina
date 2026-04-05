@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     virtual ~ILocalServerPauseCommunication() = default;
 
-    virtual bool requestInGamePause(bool) = 0;
+    virtual bool requestInGamePause(bool status) = 0;
     // NOLINTEND
 
 public:

@@ -22,10 +22,13 @@ public:
     ::ll::UntypedStorage<8, 48>  mUnk5b8aee;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PriorityPreset& operator=(PriorityPreset const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -43,6 +46,10 @@ public:
     );
 
     MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset&&);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::CameraAimAssist::PriorityPreset& operator=(::CameraAimAssist::PriorityPreset const&);
+#endif
 
     MCNAPI ~PriorityPreset();
     // NOLINTEND

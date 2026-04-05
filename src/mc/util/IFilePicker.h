@@ -14,11 +14,13 @@ public:
     // NOLINTBEGIN
     virtual ~IFilePicker() = default;
 
-    virtual void initFilePick(::Core::Path const&, ::std::function<void(bool, ::FileInfo)>) = 0;
+    virtual void initFilePick(::Core::Path const& filePath, ::std::function<void(bool, ::FileInfo)> callback) = 0;
 
-    virtual uint64 readBytes(::FileInfo const&, uint64, uint64, ::std::vector<uchar>&) = 0;
+    virtual uint64
+    readBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar>& buffer) = 0;
 
-    virtual bool writeBytes(::FileInfo const&, uint64, uint64, ::std::vector<uchar> const&) = 0;
+    virtual bool
+    writeBytes(::FileInfo const& file, uint64 offset, uint64 bufferSize, ::std::vector<uchar> const& buffer) = 0;
     // NOLINTEND
 
 public:

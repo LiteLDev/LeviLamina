@@ -41,13 +41,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
+#ifdef LL_PLAT_C
+    MCAPI void addImage(::cg::TextureSetLayerType const& layerType, ::cg::ImageBuffer imageBuffer);
 
-    MCAPI_C void
+    MCAPI void
     addImage(::cg::TextureSetLayerType const& layerType, ::std::shared_ptr<::cg::ImageResource> imageResource);
 
-    MCAPI_C ::cg::ImageDescription
-    getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
+    MCAPI ::cg::ImageDescription getImageDescription(::cg::TextureSetLayerType const& layerType, uint64 mipLevel) const;
+#endif
     // NOLINTEND
 
 public:

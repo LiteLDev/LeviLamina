@@ -20,14 +20,16 @@ struct VehicleInputSwitchRequestSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tick(
+#ifdef LL_PLAT_C
+    MCAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent>,
             ::ActorOwnerComponent const,
             ::VanillaClientGameplayComponent> view
     );
+#endif
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

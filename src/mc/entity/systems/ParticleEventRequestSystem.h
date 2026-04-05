@@ -17,12 +17,14 @@ struct ParticleEventRequestSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     _tick(::StrictEntityContext const&, ::LevelComponent& level, ::ParticleEventRequestQueueComponent& requests);
 
-    MCNAPI_C static void
+    MCAPI static void
     _view(::ViewT<::StrictEntityContext, ::LevelComponent, ::ParticleEventRequestQueueComponent> view);
 
-    MCNAPI_C static ::TickingSystemWithInfo create();
+    MCAPI static ::TickingSystemWithInfo create();
+#endif
     // NOLINTEND
 };

@@ -32,11 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _allocateTexture();
+#ifdef LL_PLAT_C
+    MCAPI void _allocateTexture();
 
-    MCAPI_C bool _tryCreateAtlasUnderMax(::std::vector<::cg::AtlasCreationTile> const& inTiles, uint maxArea);
+    MCAPI bool _tryCreateAtlasUnderMax(::std::vector<::cg::AtlasCreationTile> const& inTiles, uint maxArea);
 
-    MCAPI_C void createAtlasForTiles(
+    MCAPI void createAtlasForTiles(
         ::std::vector<::cg::AtlasCreationTile> const& inTiles,
         uint                                          maxArea,
         uint                                          padSize,
@@ -44,7 +45,7 @@ public:
         uint                                          maxMips
     );
 
-    MCAPI_C void updateTextureAtUVs(
+    MCAPI void updateTextureAtUVs(
         ::cg::TextureAtlasTileUVs const& inUVs,
         ::cg::ImageBuffer const* const   srcImage,
         uint                             mipLevel,
@@ -63,12 +64,14 @@ public:
         float                            fadeMipAmount,
         ::mce::Color const&              fadeMipColor
     );
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _readTexture(
+#ifdef LL_PLAT_C
+    MCAPI static void _readTexture(
         ::glm::vec<4, uchar>&    color,
         ::glm::vec2 const&       uv,
         ::cg::ImageBuffer const& textureData,
@@ -76,7 +79,7 @@ public:
         ::glm::ivec2 const&      maxDimensions
     );
 
-    MCAPI_C static bool _tryCreateUVs(
+    MCAPI static bool _tryCreateUVs(
         ::std::vector<::cg::AtlasCreationTile> const& inTiles,
         uint                                          width,
         uint                                          height,
@@ -85,6 +88,7 @@ public:
         uint&                                         outMaxWidth,
         uint&                                         outMaxHeight
     );
+#endif
     // NOLINTEND
 };
 

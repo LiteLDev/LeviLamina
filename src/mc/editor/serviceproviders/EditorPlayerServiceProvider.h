@@ -25,10 +25,10 @@ public:
     virtual ::Player* getPlayer() const = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)>) = 0;
+    registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)>) = 0;
+    registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) = 0;
     // NOLINTEND
 
 public:

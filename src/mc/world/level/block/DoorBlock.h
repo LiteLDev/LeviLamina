@@ -145,7 +145,9 @@ public:
 
     MCAPI void setToggled(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool toggled) const;
 
-    MCAPI_C bool shouldFlipTexture(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+#ifdef LL_PLAT_C
+    MCAPI bool shouldFlipTexture(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+#endif
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

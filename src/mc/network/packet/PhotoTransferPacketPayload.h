@@ -43,7 +43,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool fromDisk(::Core::Path path, ::PhotoTransferPacket& result);
+#ifdef LL_PLAT_C
+    MCAPI static bool fromDisk(::Core::Path path, ::PhotoTransferPacket& result);
+#endif
     // NOLINTEND
 
 public:

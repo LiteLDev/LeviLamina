@@ -65,16 +65,31 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<bool(int64)>>                 isInRangeInclusive;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+    public:
+        // prevent constructor by default
+        BucketContext(BucketContext const&);
+        BucketContext();
+
+#else // LL_PLAT_C
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCAPI ::ChunkRecyclerTelemetryData::BucketContext&
+        operator=(::ChunkRecyclerTelemetryData::BucketContext const&);
 
+        MCAPI ~BucketContext();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_S void $dtor();
+#ifdef LL_PLAT_S
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -123,6 +138,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ChunkRecyclerTelemetryData();
+#endif
+
     MCAPI void _reset();
 
     MCAPI void _setIsLocked();
@@ -139,7 +158,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor();
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

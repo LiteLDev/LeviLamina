@@ -23,7 +23,7 @@ namespace MinecraftCamera { struct DefaultInputCameraComponent; }
 namespace CameraInputTransferSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickMoveInputUpdate(
+MCAPI void _tickMoveInputUpdate(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::MinecraftCamera::ActiveCameraComponent>,
@@ -44,9 +44,9 @@ MCNAPI void _tickMoveInputUpdate(
         ::MoveInputComponent> localPlayerView
 );
 
-MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
+MCAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();
 
-MCNAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();
+MCAPI ::TickingSystemWithInfo createPlayerActionUpdateSystem();
 // NOLINTEND
 
 } // namespace CameraInputTransferSystem

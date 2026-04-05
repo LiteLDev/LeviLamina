@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void populatePacketData(::ShapeDataPayload& packet) const /*override*/;
+    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
 
     virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
 
@@ -45,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $populatePacketData(::ShapeDataPayload& packet) const;
+    MCFOLD void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
 
     MCFOLD void $applyUpdatedData(::ShapeDataPayload const& existing);
 

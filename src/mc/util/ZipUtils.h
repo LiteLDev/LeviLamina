@@ -41,9 +41,9 @@ MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::UnzipResult e);
 
 MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::ZipResult e);
 
-MCNAPI_C ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
+MCNAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
 
-MCNAPI_C ::Core::ZipUtils::UnzipResult unzipInTransaction(
+MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
@@ -75,7 +75,7 @@ zip(::Core::PathView                     inputPathIn,
     bool                                 useLowMemMode,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
 
-MCNAPI_C ::Core::ZipUtils::ZipResult
+MCNAPI ::Core::ZipUtils::ZipResult
 zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::PathView                                        zipOutputPath,
     ::Core::ZipUtils::ZipProgress&                          progress,

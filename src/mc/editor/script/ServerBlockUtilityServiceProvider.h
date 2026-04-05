@@ -25,8 +25,8 @@ public:
         ::std::variant<
             ::BlockVolumeBase const*,
             ::CompoundBlockVolume const*,
-            ::Editor::RelativeVolumeListBlockVolume const*> const,
-        ::std::optional<::Block const*> const
+            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                     optBlock
     ) = 0;
     // NOLINTEND
 

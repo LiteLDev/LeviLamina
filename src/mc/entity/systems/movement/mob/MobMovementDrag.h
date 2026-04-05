@@ -21,11 +21,11 @@ struct WaterWalkSpeedEnchantComponent;
 namespace MobMovementDrag {
 // functions
 // NOLINTBEGIN
-MCNAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void tickApplyWaterDrag(
+MCAPI void tickApplyWaterDrag(
     ::entt::type_list<::Include<::WaterTravelFlagComponent>>,
     ::Optional<::OnGroundFlagComponent const>  onGroundFlag,
     ::Optional<::WaterMovementComponent const> waterMovement,

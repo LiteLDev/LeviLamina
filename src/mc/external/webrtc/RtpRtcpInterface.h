@@ -133,25 +133,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void IncomingRtcpPacket(::rtc::ArrayView<uchar const>) = 0;
+    virtual void IncomingRtcpPacket(::rtc::ArrayView<uchar const> rtcp_packet) = 0;
 
-    virtual void SetRemoteSSRC(uint) = 0;
+    virtual void SetRemoteSSRC(uint ssrc) = 0;
 
-    virtual void SetLocalSsrc(uint) = 0;
+    virtual void SetLocalSsrc(uint local_ssrc) = 0;
 
-    virtual void SetMaxRtpPacketSize(uint64) = 0;
+    virtual void SetMaxRtpPacketSize(uint64 rtp_packet_size) = 0;
 
     virtual uint64 MaxRtpPacketSize() const = 0;
 
-    virtual void RegisterSendPayloadFrequency(int, int) = 0;
+    virtual void RegisterSendPayloadFrequency(int payload_type, int payload_frequency) = 0;
 
-    virtual int DeRegisterSendPayload(schar) = 0;
+    virtual int DeRegisterSendPayload(schar payload_type) = 0;
 
-    virtual void SetExtmapAllowMixed(bool) = 0;
+    virtual void SetExtmapAllowMixed(bool extmap_allow_mixed) = 0;
 
-    virtual void RegisterRtpHeaderExtension(::std::string_view, int) = 0;
+    virtual void RegisterRtpHeaderExtension(::std::string_view uri, int id) = 0;
 
-    virtual void DeregisterSendRtpHeaderExtension(::std::string_view) = 0;
+    virtual void DeregisterSendRtpHeaderExtension(::std::string_view uri) = 0;
 
     virtual bool SupportsPadding() const = 0;
 
@@ -159,47 +159,47 @@ public:
 
     virtual uint StartTimestamp() const = 0;
 
-    virtual void SetStartTimestamp(uint) = 0;
+    virtual void SetStartTimestamp(uint timestamp) = 0;
 
     virtual ushort SequenceNumber() const = 0;
 
-    virtual void SetSequenceNumber(ushort) = 0;
+    virtual void SetSequenceNumber(ushort seq_num) = 0;
 
-    virtual void SetRtpState(::webrtc::RtpState const&) = 0;
+    virtual void SetRtpState(::webrtc::RtpState const& rtp_state) = 0;
 
-    virtual void SetRtxState(::webrtc::RtpState const&) = 0;
+    virtual void SetRtxState(::webrtc::RtpState const& rtp_state) = 0;
 
     virtual ::webrtc::RtpState GetRtpState() const = 0;
 
     virtual ::webrtc::RtpState GetRtxState() const = 0;
 
-    virtual void SetNonSenderRttMeasurement(bool) = 0;
+    virtual void SetNonSenderRttMeasurement(bool enabled) = 0;
 
     virtual uint SSRC() const = 0;
 
-    virtual void SetMid(::std::string_view) = 0;
+    virtual void SetMid(::std::string_view mid) = 0;
 
-    virtual void SetRtxSendStatus(int) = 0;
+    virtual void SetRtxSendStatus(int mode) = 0;
 
     virtual int RtxSendStatus() const = 0;
 
     virtual ::std::optional<uint> RtxSsrc() const = 0;
 
-    virtual void SetRtxSendPayloadType(int, int) = 0;
+    virtual void SetRtxSendPayloadType(int payload_type, int associated_payload_type) = 0;
 
     virtual ::std::optional<uint> FlexfecSsrc() const = 0;
 
-    virtual int SetSendingStatus(bool) = 0;
+    virtual int SetSendingStatus(bool sending) = 0;
 
     virtual bool Sending() const = 0;
 
-    virtual void SetSendingMediaStatus(bool) = 0;
+    virtual void SetSendingMediaStatus(bool sending) = 0;
 
     virtual bool SendingMedia() const = 0;
 
     virtual bool IsAudioConfigured() const = 0;
 
-    virtual void SetAsPartOfAllocation(bool) = 0;
+    virtual void SetAsPartOfAllocation(bool part_of_allocation) = 0;
 
     virtual ::webrtc::RtpSendRates GetSendRates() const = 0;
 
@@ -207,30 +207,38 @@ public:
 
     virtual ::webrtc::RTPSender const* RtpSender() const = 0;
 
-    virtual bool OnSendingRtpFrame(uint, int64, int, bool) = 0;
+    virtual bool
+    OnSendingRtpFrame(uint timestamp, int64 capture_time_ms, int payload_type, bool force_sender_report) = 0;
 
-    virtual bool TrySendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&) = 0;
+    virtual bool TrySendPacket(
+        ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
+        ::webrtc::PacedPacketInfo const&             pacing_info
+    ) = 0;
 
-    virtual bool CanSendPacket(::webrtc::RtpPacketToSend const&) const = 0;
+    virtual bool CanSendPacket(::webrtc::RtpPacketToSend const& packet) const = 0;
 
-    virtual void AssignSequenceNumber(::webrtc::RtpPacketToSend&) = 0;
+    virtual void AssignSequenceNumber(::webrtc::RtpPacketToSend& packet) = 0;
 
-    virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend>, ::webrtc::PacedPacketInfo const&) = 0;
+    virtual void
+    SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info) = 0;
 
     virtual void OnBatchComplete() = 0;
 
-    virtual void SetFecProtectionParams(::webrtc::FecProtectionParams const&, ::webrtc::FecProtectionParams const&) = 0;
+    virtual void SetFecProtectionParams(
+        ::webrtc::FecProtectionParams const& delta_params,
+        ::webrtc::FecProtectionParams const& key_params
+    ) = 0;
 
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() = 0;
 
-    virtual void OnAbortedRetransmissions(::rtc::ArrayView<ushort const>) = 0;
+    virtual void OnAbortedRetransmissions(::rtc::ArrayView<ushort const> sequence_numbers) = 0;
 
-    virtual void OnPacketsAcknowledged(::rtc::ArrayView<ushort const>) = 0;
+    virtual void OnPacketsAcknowledged(::rtc::ArrayView<ushort const> sequence_numbers) = 0;
 
-    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64) = 0;
+    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64 target_size_bytes) = 0;
 
     virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-        GetSentRtpPacketInfos(::rtc::ArrayView<ushort const>) const = 0;
+    GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const = 0;
 
     virtual uint64 ExpectedPerPacketOverhead() const = 0;
 
@@ -238,17 +246,20 @@ public:
 
     virtual ::webrtc::RtcpMode RTCP() const = 0;
 
-    virtual void SetRTCPStatus(::webrtc::RtcpMode) = 0;
+    virtual void SetRTCPStatus(::webrtc::RtcpMode method) = 0;
 
-    virtual int SetCNAME(::std::string_view) = 0;
+    virtual int SetCNAME(::std::string_view c_name) = 0;
 
     virtual ::std::optional<::webrtc::TimeDelta> LastRtt() const = 0;
 
     virtual ::webrtc::TimeDelta ExpectedRetransmissionTime() const = 0;
 
-    virtual int SendRTCP(::webrtc::RTCPPacketType) = 0;
+    virtual int SendRTCP(::webrtc::RTCPPacketType packet_type) = 0;
 
-    virtual void GetSendStreamDataCounters(::webrtc::StreamDataCounters*, ::webrtc::StreamDataCounters*) const = 0;
+    virtual void GetSendStreamDataCounters(
+        ::webrtc::StreamDataCounters* rtp_counters,
+        ::webrtc::StreamDataCounters* rtx_counters
+    ) const = 0;
 
     virtual ::std::vector<::webrtc::ReportBlockData> GetLatestReportBlockData() const = 0;
 
@@ -256,19 +267,24 @@ public:
 
     virtual ::std::optional<::webrtc::RtpRtcpInterface::NonSenderRttStats> GetNonSenderRttStats() const = 0;
 
-    virtual void SetRemb(int64, ::std::vector<uint>) = 0;
+    virtual void SetRemb(int64 bitrate_bps, ::std::vector<uint> ssrcs) = 0;
 
     virtual void UnsetRemb() = 0;
 
-    virtual int SendNACK(ushort const*, ushort) = 0;
+    virtual int SendNACK(ushort const* nack_list, ushort size) = 0;
 
-    virtual void SendNack(::std::vector<ushort> const&) = 0;
+    virtual void SendNack(::std::vector<ushort> const& sequence_numbers) = 0;
 
-    virtual void SetStorePacketsStatus(bool, ushort) = 0;
+    virtual void SetStorePacketsStatus(bool enable, ushort number_to_store) = 0;
 
-    virtual void SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const&) = 0;
+    virtual void SetVideoBitrateAllocation(::webrtc::VideoBitrateAllocation const& bitrate) = 0;
 
-    virtual int SendLossNotification(ushort, ushort, bool, bool) = 0;
+    virtual int SendLossNotification(
+        ushort last_decoded_seq_num,
+        ushort last_received_seq_num,
+        bool   decodability_flag,
+        bool   buffering_allowed
+    ) = 0;
 
     virtual ~RtpRtcpInterface() /*override*/ = default;
     // NOLINTEND

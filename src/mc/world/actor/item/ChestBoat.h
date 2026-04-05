@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual void kill() /*override*/;
 
-    virtual void destroy(::Actor* source) /*override*/;
+    virtual void destroy(::Actor* sourceActor) /*override*/;
 
     virtual ::std::string getEntityLocNameString() const /*override*/;
 
@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $kill();
 
-    MCAPI void $destroy(::Actor* source);
+    MCAPI void $destroy(::Actor* sourceActor);
 
     MCAPI ::std::string $getEntityLocNameString() const;
 

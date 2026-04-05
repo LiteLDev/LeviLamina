@@ -24,7 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool isCompatible(int version) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isCompatible(int version) const;
+#endif
     // NOLINTEND
 
 public:

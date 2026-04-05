@@ -22,7 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::string ToString() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string ToString() const;
+#endif
     // NOLINTEND
 };
 

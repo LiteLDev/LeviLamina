@@ -19,12 +19,20 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::CommandPermissionLevel>> mDefaultCommandPermissionLevel;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    CommandsRegistryConfiguration& operator=(CommandsRegistryConfiguration const&);
+    CommandsRegistryConfiguration(CommandsRegistryConfiguration const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     CommandsRegistryConfiguration& operator=(CommandsRegistryConfiguration const&);
     CommandsRegistryConfiguration(CommandsRegistryConfiguration const&);
     CommandsRegistryConfiguration();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,19 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI CommandsRegistryConfiguration();
+#endif
+
     MCAPI CommandsRegistryConfiguration(::CommandsRegistryConfiguration&&);
+
+#ifdef LL_PLAT_S
+    MCAPI ::CommandsRegistryConfiguration& operator=(::CommandsRegistryConfiguration&&);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_S
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor();
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::CommandsRegistryConfiguration&&);
     // NOLINTEND

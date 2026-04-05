@@ -45,6 +45,23 @@ struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                          ::GlobalWrite<>,
                          ::EntityFactoryT<>>> {
 public:
+    // ApplySystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::ActorMovementTickNeededComponent>,
+        ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
+        ::Write<
+            ::ActorDataFlagComponent,
+            ::ActorDataHorseFlagComponent,
+            ::ActorDataJumpDurationComponent,
+            ::ActorDataBoundingBoxComponent,
+            ::ActorDataSeatOffsetComponent,
+            ::ActorDataDirtyFlagsComponent>,
+        ::AddRemove<>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void tick(
@@ -88,7 +105,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickEntity(
+    MCAPI static void tickEntity(
         ::StrictEntityContext const&                             entity,
         ::ClientRewind::ApplyReplayStateTrackerRequestComponent& request,
         ::ActorDataDirtyFlagsComponent&                          dirtyFlags,
@@ -105,7 +122,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
@@ -122,7 +139,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::ActorMovementTickNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,

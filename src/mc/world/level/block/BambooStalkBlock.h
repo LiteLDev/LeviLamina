@@ -45,7 +45,7 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
 
@@ -65,9 +65,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI_S ::LeafSize _getLeafSize(::Block const& block) const;
+#ifdef LL_PLAT_S
+    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
-    MCAPI_S ::StalkThickness _getStalkThickness(::Block const& block) const;
+    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
+#endif
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -98,7 +100,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 

@@ -10,7 +10,7 @@ class EntitySystems;
 namespace BoatMove {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerMoveIntentSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCAPI void registerMoveIntentSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace BoatMove

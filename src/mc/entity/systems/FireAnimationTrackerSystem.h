@@ -27,19 +27,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tickFireAnimationTrackerComponent(
+#ifdef LL_PLAT_C
+    MCAPI static void _tickFireAnimationTrackerComponent(
         ::EntityContext&                    entity,
         ::ActorOwnerComponent&              actorOwnerComponent,
         ::FireAnimationTrackerComponent&    fireAnimationTrackerComponent,
         ::Optional<::OnFireComponent const> onFireComponent
     );
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

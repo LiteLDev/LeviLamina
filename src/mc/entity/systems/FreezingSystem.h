@@ -23,13 +23,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::UUID const& FREEZE_EFFECT_UUID();
+    MCAPI static ::mce::UUID const& FREEZE_EFFECT_UUID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

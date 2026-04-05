@@ -16,23 +16,23 @@ public:
     // NOLINTBEGIN
     virtual ~IRouteMatcher() = default;
 
-    virtual void navigateTo(::std::string const&, ::OreUI::RouteHistoryAction) const = 0;
+    virtual void navigateTo(::std::string const& route, ::OreUI::RouteHistoryAction action) const = 0;
 
-    virtual ::std::string redirectIfNeeded(::std::string const&) const = 0;
+    virtual ::std::string redirectIfNeeded(::std::string const& route) const = 0;
 
-    virtual bool isSupported(::std::string const&) const = 0;
+    virtual bool isSupported(::std::string const& route) const = 0;
 
-    virtual bool areCompatible(::std::string const&, ::std::string const&) const = 0;
+    virtual bool areCompatible(::std::string const& routeA, ::std::string const& routeB) const = 0;
 
-    virtual bool isRouteInDirectory(::std::string const&, ::std::string const&) const = 0;
+    virtual bool isRouteInDirectory(::std::string const& directory, ::std::string const& route) const = 0;
 
-    virtual ::std::optional<::std::string> getDefaultRouteForFile(::std::string const&) const = 0;
+    virtual ::std::optional<::std::string> getDefaultRouteForFile(::std::string const& file) const = 0;
 
-    virtual ::OreUI::RouteType getRouteType(::std::string const&) const = 0;
+    virtual ::OreUI::RouteType getRouteType(::std::string const& route) const = 0;
 
-    virtual ::OreUI::RouteMode getRouteMode(::std::string const&) const = 0;
+    virtual ::OreUI::RouteMode getRouteMode(::std::string const& route) const = 0;
 
-    virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const&) const = 0;
+    virtual ::OreUI::RoutePrerequisite getRoutePrerequisite(::std::string const& route) const = 0;
     // NOLINTEND
 
 public:

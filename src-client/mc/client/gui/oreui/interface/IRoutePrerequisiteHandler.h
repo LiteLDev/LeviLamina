@@ -15,7 +15,7 @@ public:
     virtual ~IRoutePrerequisiteHandler() = default;
 
     virtual ::OreUI::RoutePrerequisiteState
-    handleRoutePrerequisites(::OreUI::RoutePrerequisite, ::std::string const&) = 0;
+    handleRoutePrerequisites(::OreUI::RoutePrerequisite prerequisite, ::std::string const& newRoute) = 0;
     // NOLINTEND
 
 public:

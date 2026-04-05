@@ -54,7 +54,7 @@ public:
 
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
@@ -129,7 +129,7 @@ public:
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
     MCAPI void $_useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 

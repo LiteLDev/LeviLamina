@@ -16,7 +16,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool has(::std::string_view key) const;
+#ifdef LL_PLAT_C
+    MCAPI bool has(::std::string_view key) const;
+
+    MCAPI ~PropertyBag();
+#endif
     // NOLINTEND
 
 public:
@@ -28,6 +32,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

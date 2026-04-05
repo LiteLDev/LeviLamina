@@ -47,7 +47,7 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     virtual ::WeakRef<::Editor::Services::MinimapItem>
-    createMinimap(int, int, ::Editor::Services::MinimapViewType) /*override*/;
+    createMinimap(int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType) /*override*/;
 
     virtual bool destroyMinimap(::mce::UUID const& minimapId) /*override*/;
 
@@ -55,49 +55,53 @@ public:
 
     virtual ::std::vector<::mce::UUID> getAllMinimapIds() const /*override*/;
 
-    virtual bool isMinimapActive(::mce::UUID const&) const /*override*/;
-
-    virtual ::Scripting::Result_deprecated<void> setMinimapActive(::mce::UUID const&, bool) /*override*/;
-
-    virtual ::Scripting::Result_deprecated<void> setMinimapSize(::mce::UUID const&, int, int) /*override*/;
+    virtual bool isMinimapActive(::mce::UUID const& minimapId) const /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    setMinimapViewType(::mce::UUID const&, ::Editor::Services::MinimapViewType) /*override*/;
+    setMinimapActive(::mce::UUID const& minimapId, bool active) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    addMinimapMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType) /*override*/;
+    setMinimapSize(::mce::UUID const& minimapId, int mapWidth, int mapHeight) /*override*/;
 
     virtual ::Scripting::Result_deprecated<void>
-    removeMinimapMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType) /*override*/;
+    setMinimapViewType(::mce::UUID const& minimapId, ::Editor::Services::MinimapViewType minimapViewType) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    addMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType) /*override*/;
+
+    virtual ::Scripting::Result_deprecated<void>
+    removeMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType) /*override*/;
 
     virtual ::Scripting::Result_deprecated<bool>
-    setCustomBiome(::mce::UUID const&, ::WeakRef<::ICustomBiomeSource> const&) /*override*/;
+    setCustomBiome(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<bool> setCustomBiome(::mce::UUID const&, ::mce::UUID const&) /*override*/;
+    virtual ::Scripting::Result_deprecated<bool>
+    setCustomBiome(::mce::UUID const& minimapId, ::mce::UUID const& customBiomeId) /*override*/;
 
-    virtual ::mce::Color getPlayerColor(::ActorUniqueID) /*override*/;
+    virtual ::mce::Color getPlayerColor(::ActorUniqueID playerId) /*override*/;
 
-    virtual void setMinimapUIVisible(::mce::UUID const&, bool) /*override*/;
+    virtual void setMinimapUIVisible(::mce::UUID const& minimapId, bool visible) /*override*/;
 
-    virtual ::std::string generateMinimapImage(::mce::UUID const&, ::Vec3 const&) /*override*/;
+    virtual ::std::string generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
 
-    virtual ::std::vector<::Editor::Network::PlayerMarkerInfo> getPlayerMarkers(::mce::UUID const&) /*override*/;
+    virtual ::std::vector<::Editor::Network::PlayerMarkerInfo>
+    getPlayerMarkers(::mce::UUID const& minimapId) /*override*/;
 
-    virtual bool hasMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType) const /*override*/;
+    virtual bool hasMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType type) const /*override*/;
 
     virtual ::std::vector<::mce::UUID> getAllActiveMinimapIds() const /*override*/;
 
-    virtual ::std::pair<int, int> getMapDimensions(::mce::UUID const&) const /*override*/;
+    virtual ::std::pair<int, int> getMapDimensions(::mce::UUID const& minimapId) const /*override*/;
 
-    virtual void triggerInitialCacheUpdate(::mce::UUID const&, ::Vec3 const&) /*override*/;
-
-    virtual ::Bedrock::PubSub::Subscription
-        listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)>) /*override*/;
+    virtual void triggerInitialCacheUpdate(::mce::UUID const& minimapId, ::Vec3 const& playerPosition) /*override*/;
 
     virtual ::Bedrock::PubSub::Subscription
-        listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)>) /*override*/;
+    listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)> callback) /*override*/;
 
-    virtual ::Bedrock::PubSub::Subscription listenForMeMarkerChanged(::std::function<void()>) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)> callback) /*override*/;
+
+    virtual ::Bedrock::PubSub::Subscription listenForMeMarkerChanged(::std::function<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -129,7 +133,8 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::WeakRef<::Editor::Services::MinimapItem> $createMinimap(int, int, ::Editor::Services::MinimapViewType);
+    MCNAPI ::WeakRef<::Editor::Services::MinimapItem>
+    $createMinimap(int mapWidth, int mapHeight, ::Editor::Services::MinimapViewType minimapViewType);
 
     MCNAPI bool $destroyMinimap(::mce::UUID const& minimapId);
 
@@ -137,47 +142,51 @@ public:
 
     MCNAPI ::std::vector<::mce::UUID> $getAllMinimapIds() const;
 
-    MCNAPI bool $isMinimapActive(::mce::UUID const&) const;
+    MCNAPI bool $isMinimapActive(::mce::UUID const& minimapId) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $setMinimapActive(::mce::UUID const&, bool);
-
-    MCNAPI ::Scripting::Result_deprecated<void> $setMinimapSize(::mce::UUID const&, int, int);
+    MCNAPI ::Scripting::Result_deprecated<void> $setMinimapActive(::mce::UUID const& minimapId, bool active);
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $setMinimapViewType(::mce::UUID const&, ::Editor::Services::MinimapViewType);
+    $setMinimapSize(::mce::UUID const& minimapId, int mapWidth, int mapHeight);
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $addMinimapMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType);
+    $setMinimapViewType(::mce::UUID const& minimapId, ::Editor::Services::MinimapViewType minimapViewType);
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $removeMinimapMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType);
+    $addMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $removeMinimapMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType markerType);
 
     MCNAPI ::Scripting::Result_deprecated<bool>
-    $setCustomBiome(::mce::UUID const&, ::WeakRef<::ICustomBiomeSource> const&);
+    $setCustomBiome(::mce::UUID const& minimapId, ::WeakRef<::ICustomBiomeSource> const& customBiomeSource);
 
-    MCNAPI ::Scripting::Result_deprecated<bool> $setCustomBiome(::mce::UUID const&, ::mce::UUID const&);
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    $setCustomBiome(::mce::UUID const& minimapId, ::mce::UUID const& customBiomeId);
 
-    MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID);
+    MCNAPI ::mce::Color $getPlayerColor(::ActorUniqueID playerId);
 
-    MCNAPI void $setMinimapUIVisible(::mce::UUID const&, bool);
+    MCNAPI void $setMinimapUIVisible(::mce::UUID const& minimapId, bool visible);
 
-    MCNAPI ::std::string $generateMinimapImage(::mce::UUID const&, ::Vec3 const&);
+    MCNAPI ::std::string $generateMinimapImage(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
 
-    MCNAPI ::std::vector<::Editor::Network::PlayerMarkerInfo> $getPlayerMarkers(::mce::UUID const&);
+    MCNAPI ::std::vector<::Editor::Network::PlayerMarkerInfo> $getPlayerMarkers(::mce::UUID const& minimapId);
 
-    MCNAPI bool $hasMarker(::mce::UUID const&, ::Editor::Services::MinimapMarkerType) const;
+    MCNAPI bool $hasMarker(::mce::UUID const& minimapId, ::Editor::Services::MinimapMarkerType type) const;
 
     MCNAPI ::std::vector<::mce::UUID> $getAllActiveMinimapIds() const;
 
-    MCNAPI ::std::pair<int, int> $getMapDimensions(::mce::UUID const&) const;
+    MCNAPI ::std::pair<int, int> $getMapDimensions(::mce::UUID const& minimapId) const;
 
-    MCNAPI void $triggerInitialCacheUpdate(::mce::UUID const&, ::Vec3 const&);
+    MCNAPI void $triggerInitialCacheUpdate(::mce::UUID const& minimapId, ::Vec3 const& playerPosition);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)>);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForMinimapDataChanged(::std::function<void(::mce::UUID const&)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)>);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForPlayerMarkersChanged(::std::function<void(::mce::UUID const&)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()>);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForMeMarkerChanged(::std::function<void()> callback);
 
 
     // NOLINTEND

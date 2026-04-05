@@ -14,7 +14,7 @@ class ClientScratchContainer : public ::SimpleContainer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     virtual void serverInitItemStackIds(
         int                                            containerSlot,
@@ -29,7 +29,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,

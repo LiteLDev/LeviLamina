@@ -40,9 +40,9 @@ public:
     // NOLINTBEGIN
     virtual ~WorldVerificationProgressHandler() /*override*/;
 
-    virtual void onStart(::MinecraftScreenModel&) /*override*/;
+    virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) /*override*/;
 
-    virtual ::LoadingState getLoadingState(::MinecraftScreenModel&) const /*override*/;
+    virtual ::LoadingState getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const /*override*/;
 
     virtual ::std::string getTitleText() const /*override*/;
     // NOLINTEND
@@ -86,9 +86,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
+    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
     MCFOLD ::std::string $getTitleText() const;
     // NOLINTEND

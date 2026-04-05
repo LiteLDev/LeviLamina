@@ -38,26 +38,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition>
+#ifdef LL_PLAT_C
+    MCNAPI ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition>
     loadImageResourceFromMemory(
         ::ResourceLocation const& resourceLocation,
         ::std::string const&      fileContents,
         bool                      tryStreamed
     );
 
-    MCNAPI_C ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition>
-    loadImageWithoutExtension(
+    MCNAPI ::nonstd::expected<::std::shared_ptr<::cg::ImageResource>, ::std::error_condition> loadImageWithoutExtension(
         ::ResourceLocation const&           resourceLocation,
         bool                                tryStreamed,
         ::std::optional<::mce::ImageFormat> desiredImageFormat,
         bool                                splitAsArray
     );
 
-    MCNAPI_C void setTextureCache(
+    MCNAPI void setTextureCache(
         ::std::shared_ptr<
             ::dragon::texturestreaming::TextureCache<::dragon::texturestreaming::DragonTextureCacheContext>>
             textureCache
     );
+#endif
     // NOLINTEND
 };
 

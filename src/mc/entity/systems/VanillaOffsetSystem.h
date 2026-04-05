@@ -37,16 +37,21 @@ struct VanillaOffsetSystem : public ::IStrictTickingSystem<::StrictExecutionCont
                                  ::GlobalWrite<>,
                                  ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk98f57d;
-    // NOLINTEND
+    // VanillaOffsetSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::PlayerComponent, ::InterpolateMovementNeededComponent>,
+        ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,
+        ::Write<::VanillaOffsetComponent>,
+        ::AddRemove<::IsHorizontalPoseFlagComponent>,
+        ::GlobalRead<::BaseGameVersionComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    VanillaOffsetSystem& operator=(VanillaOffsetSystem const&);
-    VanillaOffsetSystem(VanillaOffsetSystem const&);
-    VanillaOffsetSystem();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    // NOLINTEND
 
 public:
     // virtual functions

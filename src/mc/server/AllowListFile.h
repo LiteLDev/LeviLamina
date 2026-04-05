@@ -28,24 +28,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::FileReadResult reload();
+#ifdef LL_PLAT_S
+    MCNAPI explicit AllowListFile(::Core::Path const& filePath);
+
+    MCNAPI ::FileReadResult reload();
+
+    MCNAPI ~AllowListFile();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::AllowListFile loadFromDefaultLocations();
+#ifdef LL_PLAT_S
+    MCNAPI static ::AllowListFile loadFromDefaultLocations();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Core::Path const& filePath);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Core::Path const& filePath);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

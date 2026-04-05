@@ -49,6 +49,10 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_XYZ, ::Vec3 const& vec);
 
+#ifdef LL_PLAT_C
+    MCAPI MolangMemberArray(::MolangStruct_Z, float z);
+#endif
+
     MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
     MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
@@ -88,7 +92,9 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_XYZ, ::Vec3 const& vec);
 
-    MCAPI_C void* $ctor(::MolangStruct_Z, float z);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::MolangStruct_Z, float z);
+#endif
 
     MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
 

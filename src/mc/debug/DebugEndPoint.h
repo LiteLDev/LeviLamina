@@ -117,7 +117,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+#endif
     // NOLINTEND
 
 public:
@@ -129,7 +131,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::optional<::LogLevel> minLogLevel);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
+#endif
     // NOLINTEND
 
 public:

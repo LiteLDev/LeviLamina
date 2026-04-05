@@ -18,7 +18,7 @@ struct PlayerComponent;
 namespace PlayerCanMakeAudibleSoundsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _doPlayerCanMakeAudibleSoundsSystem(
+MCAPI void _doPlayerCanMakeAudibleSoundsSystem(
     ::entt::type_list<::Include<::ActorTickedComponent, ::PlayerComponent>>,
     ::StrictEntityContext const&                      entity,
     ::ActorOwnerComponent&                            owner,

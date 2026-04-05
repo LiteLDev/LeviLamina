@@ -27,14 +27,14 @@ public:
     virtual ~IResourceHandler() = default;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceResponse&) = 0;
+    onResourceRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceResponse& response) = 0;
 
     virtual ::OreUI::IResourceHandler::Status
-    onResourceStreamRequest(::OreUI::ResourceRequest const&, ::OreUI::ResourceStreamResponse&) = 0;
+    onResourceStreamRequest(::OreUI::ResourceRequest const& request, ::OreUI::ResourceStreamResponse& response) = 0;
 
     virtual void update() = 0;
 
-    virtual void onViewCreate(::IClientInstance&);
+    virtual void onViewCreate(::IClientInstance& primaryClient);
 
     virtual void onAppPreSuspend();
     // NOLINTEND
@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onViewCreate(::IClientInstance&);
+    MCFOLD void $onViewCreate(::IClientInstance& primaryClient);
 
     MCFOLD void $onAppPreSuspend();
     // NOLINTEND

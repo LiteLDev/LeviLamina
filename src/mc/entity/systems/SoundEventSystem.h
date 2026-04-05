@@ -14,9 +14,9 @@ struct TickingSystemWithInfo;
 namespace SoundEventSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo create();
+MCAPI ::TickingSystemWithInfo create();
 
-MCNAPI void doSoundEventSystem(
+MCAPI void doSoundEventSystem(
     ::StrictEntityContext const&,
     ::LevelComponent&                  level,
     ::SoundEventRequestQueueComponent& requests,

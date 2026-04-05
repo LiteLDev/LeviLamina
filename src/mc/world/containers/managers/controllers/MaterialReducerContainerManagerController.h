@@ -36,6 +36,13 @@ public:
     ::ll::TypedStorage<8, 40, ::SlotData const>                                        mCreatedItemOutputSlot;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MaterialReducerContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -60,33 +67,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _consumeInputItem();
+#ifdef LL_PLAT_C
+    MCNAPI explicit MaterialReducerContainerManagerController(
+        ::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _destroySlot(::SlotData const& slot, ::ItemTransferAmount amount);
+    MCNAPI void _consumeInputItem();
 
-    MCNAPI_C void _fireReducerBlockEntered(::ItemStackBase const& input);
+    MCNAPI void _destroySlot(::SlotData const& slot, ::ItemTransferAmount amount);
 
-    MCNAPI_C bool _hasAnyInput();
+    MCNAPI void _fireReducerBlockEntered(::ItemStackBase const& input);
 
-    MCNAPI_C bool _hasAnyOutput();
+    MCNAPI bool _hasAnyInput();
 
-    MCNAPI_C ::CreateContainerItemScope _makeCreateOutputItemScope(
+    MCNAPI bool _hasAnyOutput();
+
+    MCNAPI ::CreateContainerItemScope _makeCreateOutputItemScope(
         ::ItemStackRequestScope const& requestScope,
         ::SlotData const&              srcSlot,
         ::ItemInstance const&          instance
     );
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C void _updateResult(::ItemStack const& input);
+    MCNAPI void _updateResult(::ItemStack const& input);
 
-    MCNAPI_C bool isStillValid(float pickRange);
+    MCNAPI bool isStillValid(float pickRange);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::MaterialReducerContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

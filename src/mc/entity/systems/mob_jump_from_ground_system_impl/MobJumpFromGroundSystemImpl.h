@@ -62,7 +62,7 @@ struct VehicleComponent;
 namespace MobJumpFromGroundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doFilter(
+MCAPI void doFilter(
     ::StrictEntityContext const&                      context,
     ::Optional<::LocalPlayerComponent const> const&   localPlayer,
     ::Optional<::LavaSlimeFlagComponent const> const& lavaSlime,
@@ -74,7 +74,7 @@ MCNAPI void doFilter(
         ::OtherJumpRequestComponent> mod
 );
 
-MCNAPI void doLavaSlimeJumpFromGround(
+MCAPI void doLavaSlimeJumpFromGround(
     ::StrictEntityContext const&                     entity,
     ::AABBShapeComponent const&                      aabbShapeComponent,
     ::SynchedActorDataComponent const&               synchedActorDataComponent,
@@ -84,7 +84,7 @@ MCNAPI void doLavaSlimeJumpFromGround(
     ::IConstBlockSource const&                       region
 );
 
-MCNAPI void doLocalPlayerJumpFromGround(
+MCAPI void doLocalPlayerJumpFromGround(
     ::StrictEntityContext const&                     entity,
     ::Optional<::JumpControlComponent const> const&  jumpControl,
     ::AABBShapeComponent const&                      aabbShapeComponent,
@@ -137,7 +137,7 @@ MCNAPI void doLocalPlayerJumpFromGround(
     ::IConstBlockSource const& region
 );
 
-MCNAPI void doOtherMobJumpFromGround(
+MCAPI void doOtherMobJumpFromGround(
     ::StrictEntityContext const&                     entity,
     ::Optional<::JumpControlComponent const> const&  jumpControl,
     ::AABBShapeComponent const&                      aabbShapeComponent,
@@ -151,7 +151,7 @@ MCNAPI void doOtherMobJumpFromGround(
     ::IConstBlockSource const&                       region
 );
 
-MCNAPI void mobJumpFromGround(
+MCAPI void mobJumpFromGround(
     ::StrictEntityContext const&                     entity,
     ::AABBShapeComponent const&                      aabbShapeComponent,
     ::ActorDataFlagComponent const&                  actorDataFlagComponent,

@@ -31,6 +31,13 @@ public:
     ::ll::TypedStorage<8, 136, ::ItemResultPreview> mResultPreview;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SmithingTableContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -62,21 +69,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _consumeItems();
+#ifdef LL_PLAT_C
+    MCNAPI explicit SmithingTableContainerManagerController(
+        ::std::weak_ptr<::SmithingTableContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _createCraftItem(::ItemInstance& stack, ::ItemStackRequestScope const& requestScope);
+    MCNAPI void _consumeItems();
 
-    MCNAPI_C ::std::pair<::ItemInstance, ::RecipeNetId> _getResult();
+    MCNAPI void _createCraftItem(::ItemInstance& stack, ::ItemStackRequestScope const& requestScope);
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI ::std::pair<::ItemInstance, ::RecipeNetId> _getResult();
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+
+    MCNAPI void _setupCallbacks();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::SmithingTableContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::SmithingTableContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

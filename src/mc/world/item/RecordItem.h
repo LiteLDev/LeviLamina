@@ -27,12 +27,12 @@ public:
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::RecordItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     virtual ~RecordItem() /*override*/ = default;
     // NOLINTEND
@@ -65,12 +65,12 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
 
 
     // NOLINTEND

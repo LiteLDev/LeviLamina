@@ -19,15 +19,15 @@ public:
     // NOLINTBEGIN
     virtual ~RtpPacketPacer() = default;
 
-    virtual void CreateProbeClusters(::std::vector<::webrtc::ProbeClusterConfig>) = 0;
+    virtual void CreateProbeClusters(::std::vector<::webrtc::ProbeClusterConfig> probe_cluster_configs) = 0;
 
     virtual void Pause() = 0;
 
     virtual void Resume() = 0;
 
-    virtual void SetCongested(bool) = 0;
+    virtual void SetCongested(bool congested) = 0;
 
-    virtual void SetPacingRates(::webrtc::DataRate, ::webrtc::DataRate) = 0;
+    virtual void SetPacingRates(::webrtc::DataRate pacing_rate, ::webrtc::DataRate padding_rate) = 0;
 
     virtual ::webrtc::TimeDelta OldestPacketWaitTime() const = 0;
 
@@ -37,13 +37,13 @@ public:
 
     virtual ::webrtc::TimeDelta ExpectedQueueTime() const = 0;
 
-    virtual void SetQueueTimeLimit(::webrtc::TimeDelta) = 0;
+    virtual void SetQueueTimeLimit(::webrtc::TimeDelta limit) = 0;
 
-    virtual void SetAccountForAudioPackets(bool) = 0;
+    virtual void SetAccountForAudioPackets(bool account_for_audio) = 0;
 
     virtual void SetIncludeOverhead() = 0;
 
-    virtual void SetTransportOverhead(::webrtc::DataSize) = 0;
+    virtual void SetTransportOverhead(::webrtc::DataSize overhead_per_packet) = 0;
     // NOLINTEND
 
 public:

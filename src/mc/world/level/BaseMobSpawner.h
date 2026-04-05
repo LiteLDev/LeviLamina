@@ -64,13 +64,17 @@ public:
 
     MCAPI void _delay(::BlockSource& source);
 
-    MCAPI_C ::Actor* createAndAddDisplayEntity(::BlockSource& region);
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* createAndAddDisplayEntity(::BlockSource& region);
+#endif
 
     MCAPI void removeDisplayEntity();
 
     MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
 
-    MCAPI_C ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#ifdef LL_PLAT_C
+    MCAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
     // NOLINTEND
 
 public:

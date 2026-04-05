@@ -19,6 +19,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::std::string toString();
+#ifdef LL_PLAT_S
+    MCNAPI ::std::string toString();
+#endif
     // NOLINTEND
 };

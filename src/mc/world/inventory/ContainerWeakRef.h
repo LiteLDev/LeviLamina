@@ -33,7 +33,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit operator bool() const;
 
-    MCAPI_C ::ContainerWeakRefData tryGetContainer(::BlockSource& region) const;
+#ifdef LL_PLAT_C
+    MCAPI ::ContainerWeakRefData tryGetContainer(::BlockSource& region) const;
+#endif
 
     MCAPI ~ContainerWeakRef();
     // NOLINTEND
@@ -41,7 +43,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Container* tryGetActorContainer(::Actor& actor, ::ActorContainerType containerType);
+#ifdef LL_PLAT_C
+    MCAPI static ::Container* tryGetActorContainer(::Actor& actor, ::ActorContainerType containerType);
+#endif
     // NOLINTEND
 
 public:

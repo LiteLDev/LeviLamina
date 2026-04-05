@@ -46,13 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void reset();
+#ifdef LL_PLAT_C
+    MCNAPI void reset();
 
-    MCNAPI_C void resetLevelDataPointer();
+    MCNAPI void resetLevelDataPointer();
 
-    MCNAPI_C void setLevelData(::ILevelListCache& levelListCache, ::std::string const& levelId);
+    MCNAPI void setLevelData(::ILevelListCache& levelListCache, ::std::string const& levelId);
 
-    MCNAPI_C void setLevelData_DEPRECATED(::LevelData& levelData);
+    MCNAPI void setLevelData_DEPRECATED(::LevelData& levelData);
+#endif
     // NOLINTEND
 
 public:

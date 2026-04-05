@@ -82,15 +82,27 @@ public:
         ::ll::UntypedStorage<4, 8>  mUnkdd2de4;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         ComponentStateBoundingBox& operator=(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox(ComponentStateBoundingBox const&);
         ComponentStateBoundingBox();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        ComponentStateBoundingBox& operator=(ComponentStateBoundingBox const&);
+        ComponentStateBoundingBox(ComponentStateBoundingBox const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ComponentStateBoundingBox();
+#endif
+
         MCNAPI bool
         operator==(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateBoundingBox const& other) const;
         // NOLINTEND
@@ -104,7 +116,9 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor();
+#endif
         // NOLINTEND
     };
 
@@ -186,22 +200,34 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkcce666;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         ComponentStateGizmo& operator=(ComponentStateGizmo const&);
         ComponentStateGizmo(ComponentStateGizmo const&);
         ComponentStateGizmo();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        ComponentStateGizmo& operator=(ComponentStateGizmo const&);
+        ComponentStateGizmo(ComponentStateGizmo const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ComponentStateGizmo();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor();
+#endif
         // NOLINTEND
     };
 

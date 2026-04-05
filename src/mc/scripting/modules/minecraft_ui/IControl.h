@@ -22,7 +22,7 @@ public:
     virtual ~IControl();
 
     virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player&, ::CurrentCmdVersion) const = 0;
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const = 0;
     // NOLINTEND
 
 public:

@@ -53,20 +53,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI OpenSSLCertificateInterface(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::string
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::string
     _formatThumbprint(::std::string const& rawThumbprint, ::Crypto::Certificate::ThumbprintFormat formatting);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::Crypto::Certificate::Encoding encoding, ::std::string const& certificateData);
+#endif
     // NOLINTEND
 
 public:

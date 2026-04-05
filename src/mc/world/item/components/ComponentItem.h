@@ -214,7 +214,8 @@ public:
     virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const
         /*override*/;
 
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const
         /*override*/;
@@ -249,11 +250,11 @@ public:
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
     virtual bool canBeCharged() const /*override*/;
 
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     virtual bool shouldUseJsonForRenderMatrix() const;
 
@@ -477,7 +478,8 @@ public:
 
     MCAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
@@ -509,11 +511,11 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 

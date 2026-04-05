@@ -34,47 +34,47 @@ public:
     // NOLINTBEGIN
     virtual ~WndProc() = default;
 
-    virtual ::std::optional<int64> onClose(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onClose(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onDestroy(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onDestroy(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onShow(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onSize(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onSize(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onSessionChange(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onSessionChange(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onSettingChange(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onSettingChange(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onEnterSizeMove(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onExitSizeMove(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onExitSizeMove(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onGetMinMaxInfo(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onGetMinMaxInfo(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onDPIChange(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onCompacting(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onSysCommand(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onSysCommand(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onActivateApp(::MainGameCore::WndProc::WndProcParams params);
 
     virtual ::std::optional<int64> onFocusChange(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onPointerAction(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onPointerAction(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onMouseAction(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onMouseAction(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onKeyboardAction(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onKeyboardAction(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onRawInput(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onRawInput(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onMouseMove(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onMouseMove(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onMouseLeave(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onMouseLeave(::MainGameCore::WndProc::WndProcParams params);
 
-    virtual ::std::optional<int64> onChar(::MainGameCore::WndProc::WndProcParams);
+    virtual ::std::optional<int64> onChar(::MainGameCore::WndProc::WndProcParams params);
     // NOLINTEND
 
 public:

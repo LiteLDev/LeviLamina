@@ -25,16 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void registerEvents();
+#ifdef LL_PLAT_C
+    MCNAPI void registerEvents();
 
-    MCNAPI_C ::TickingSystemRegistrationToken registerTickingSystem(::std::unique_ptr<::ITickingSystem> tickingSystem);
+    MCNAPI ::TickingSystemRegistrationToken registerTickingSystem(::std::unique_ptr<::ITickingSystem> tickingSystem);
 
-    MCNAPI_C void tick();
+    MCNAPI void tick();
+
+    MCNAPI ~AppSystemRegistry();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

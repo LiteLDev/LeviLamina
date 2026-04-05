@@ -29,9 +29,21 @@ struct VehicleComponent;
 
 class TryExitVehicleSystem {
 public:
+    // TryExitVehicleSystem inner types define
+    using VehicleView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent>,
+        ::Exclude<::BoatFlagComponent>,
+        ::Optional<::MobFlagComponent const>,
+        ::MovementAttributesComponent const,
+        ::VehicleComponent const,
+        ::ActorDataFlagComponent const,
+        ::ActorDataControllingSeatIndexComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::ViewT<
             ::StrictEntityContext,
             ::Include<::InterpolateMovementNeededComponent, ::LocalPlayerComponent, ::MobIsJumpingFlagComponent>,
@@ -48,7 +60,7 @@ public:
         ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier
     );
 
-    MCNAPI static void _tickTryExitVehicle(
+    MCAPI static void _tickTryExitVehicle(
         ::StrictEntityContext const& entity,
         ::PassengerComponent const&  passengerComponent,
         ::ViewT<
@@ -63,6 +75,6 @@ public:
         ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent>& modifier
     );
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

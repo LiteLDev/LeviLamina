@@ -15,12 +15,15 @@ class IContainerRegistryAccess {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::shared_ptr<::StorageItemContainerModel> getModel(::FullContainerName const&) = 0;
+    virtual ::std::shared_ptr<::StorageItemContainerModel> getModel(::FullContainerName const& name) = 0;
 
-    virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const&) = 0;
+    virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const& name) = 0;
 
-    virtual void
-    tryCreateEntry(::StorageItemComponent*, ::StorageWeightLimitItemComponent*, ::FullContainerName const&) = 0;
+    virtual void tryCreateEntry(
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent,
+        ::FullContainerName const&         name
+    ) = 0;
 
     virtual ~IContainerRegistryAccess();
     // NOLINTEND

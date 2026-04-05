@@ -28,17 +28,19 @@ public:
         // NOLINTBEGIN
         virtual ~ConnectionCallbacks() = default;
 
-        virtual bool onNewIncomingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
+        virtual bool
+        onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
 
-        virtual bool onNewOutgoingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
+        virtual bool
+        onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
 
         virtual void onConnectionClosed(
-            ::NetworkIdentifier const&,
-            ::Connection::DisconnectFailReason const,
-            ::std::string const&,
-            ::std::string const&,
-            bool,
-            ::Json::Value const&
+            ::NetworkIdentifier const&               id,
+            ::Connection::DisconnectFailReason const discoReason,
+            ::std::string const&                     messageFromServer,
+            ::std::string const&                     messageBodyOverride,
+            bool                                     skipDisconnectMessage,
+            ::Json::Value const&                     sessionSummary
         ) = 0;
         // NOLINTEND
 

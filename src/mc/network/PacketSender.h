@@ -28,23 +28,24 @@ public:
 
     virtual bool isInitialized() const = 0;
 
-    virtual void send(::Packet&) = 0;
+    virtual void send(::Packet& packet) = 0;
 
-    virtual void sendTo(::NetworkIdentifier const&, ::SubClientId, ::Packet&) = 0;
+    virtual void sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet) = 0;
 
-    virtual void sendToServer(::Packet&) = 0;
+    virtual void sendToServer(::Packet& packet) = 0;
 
-    virtual void sendToClient(::UserEntityIdentifierComponent const*, ::Packet const&) = 0;
+    virtual void sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet) = 0;
 
-    virtual void sendToClient(::NetworkIdentifier const&, ::Packet const&, ::SubClientId) = 0;
+    virtual void sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId) = 0;
 
-    virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
+    virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) = 0;
 
-    virtual void sendBroadcast(::Packet const&) = 0;
+    virtual void sendBroadcast(::Packet const& packet) = 0;
 
-    virtual void sendBroadcast(::NetworkIdentifier const&, ::SubClientId, ::Packet const&) = 0;
+    virtual void
+    sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet) = 0;
 
-    virtual void flush(::NetworkIdentifier const&, ::std::function<void()>&&) = 0;
+    virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) = 0;
     // NOLINTEND
 
 public:

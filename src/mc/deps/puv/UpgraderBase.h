@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     virtual ~UpgraderBase();
 
-    virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny) const = 0;
+    virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const = 0;
     // NOLINTEND
 
 public:

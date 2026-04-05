@@ -53,12 +53,14 @@ public:
     MCAPI static ::GameServerToken
     createAndValidateSelfSigned(::RawGameServerToken const& rawToken, int64 currentTime, bool checkExpiration);
 
-    MCAPI_C static ::RawGameServerToken createLocal(
+#ifdef LL_PLAT_C
+    MCAPI static ::RawGameServerToken createLocal(
         ::PrivateKeyManager const&        signer,
         int64                             expirationDate,
         ::std::string const&              keyId,
         ::PlayerAuthenticationInfo const& claims
     );
+#endif
     // NOLINTEND
 
 public:

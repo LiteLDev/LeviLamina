@@ -26,12 +26,20 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkc389dd;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MessPublicKeyManager& operator=(MessPublicKeyManager const&);
     MessPublicKeyManager(MessPublicKeyManager const&);
     MessPublicKeyManager();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MessPublicKeyManager& operator=(MessPublicKeyManager const&);
+    MessPublicKeyManager(MessPublicKeyManager const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,16 +49,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::vector<::std::string> getMessLoginPublicKeys();
+#ifdef LL_PLAT_C
+    MCNAPI MessPublicKeyManager();
 
-    MCNAPI_C void
+    MCNAPI ::std::vector<::std::string> getMessLoginPublicKeys();
+
+    MCNAPI void
     requestPublicKeys(::MessPublicKeyManager::PublicKeysEndpoint endpoint, ::std::function<void(bool)> callback);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

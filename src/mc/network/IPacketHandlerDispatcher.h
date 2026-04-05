@@ -15,7 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~IPacketHandlerDispatcher() = default;
 
-    virtual void handle(::NetworkIdentifier const&, ::NetEventCallback&, ::std::shared_ptr<::Packet>&) const = 0;
+    virtual void handle(
+        ::NetworkIdentifier const&   source,
+        ::NetEventCallback&          callback,
+        ::std::shared_ptr<::Packet>& packet
+    ) const = 0;
     // NOLINTEND
 
 public:

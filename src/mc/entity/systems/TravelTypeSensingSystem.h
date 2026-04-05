@@ -28,4 +28,26 @@ struct WasInWaterFlagComponent;
 struct WaterTravelFlagComponent;
 // clang-format on
 
-struct TravelTypeSensingSystem {};
+struct TravelTypeSensingSystem {
+public:
+    // TravelTypeSensingSystem inner types define
+    using ModType = ::EntityModifier<
+        ::AirTravelFlagComponent,
+        ::GlidingTravelFlagComponent,
+        ::GroundTravelFlagComponent,
+        ::LavaTravelFlagComponent,
+        ::WaterTravelFlagComponent,
+        ::PlayerFlyingTravelComponent,
+        ::LiquidTravelFlagComponent>;
+
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MobTravelComponent>,
+        ::Optional<::MovementAbilitiesComponent const>,
+        ::Optional<::WasInWaterFlagComponent const>,
+        ::Optional<::OnGroundFlagComponent const>,
+        ::Optional<::ImmuneToLavaDragComponent const>,
+        ::AABBShapeComponent const,
+        ::SubBBsComponent const,
+        ::ActorDataFlagComponent const>;
+};

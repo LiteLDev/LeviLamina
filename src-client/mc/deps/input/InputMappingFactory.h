@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~InputMappingFactory();
 
-    virtual ::InputMapping const* getMapping(::std::string const&) = 0;
+    virtual ::InputMapping const* getMapping(::std::string const& mappingName) = 0;
     // NOLINTEND
 
 public:

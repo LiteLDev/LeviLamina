@@ -20,7 +20,7 @@ MCAPI void serializePackStackEntry(::PackInstanceId const& packInstanceId, ::Jso
 
 MCAPI ::std::string stringifyResourceMetadataGeneratedWith(::ResourceMetadata const& resourceMetadata);
 
-MCAPI_C ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
+MCAPI ::PackIdVersion toPackIdAnyVersion(::PackIdVersion const& fromPackIdVersion);
 // NOLINTEND
 
 } // namespace ResourceHelper

@@ -17,11 +17,11 @@ public:
     // NOLINTBEGIN
     virtual ~ITrait();
 
-    virtual void applyToBlockType(::BlockType&) const = 0;
+    virtual void applyToBlockType(::BlockType& blockType) const = 0;
 
-    virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) = 0;
+    virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) = 0;
 
-    virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
+    virtual ::std::unique_ptr<::CompoundTag> _buildNetworkTag(::cereal::ReflectionCtx const& ctx) const = 0;
 
     virtual ::std::string const& _getName() const = 0;
     // NOLINTEND

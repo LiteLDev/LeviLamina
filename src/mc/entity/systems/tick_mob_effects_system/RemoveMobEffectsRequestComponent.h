@@ -8,25 +8,19 @@ struct RemoveMobEffectsRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6d5cab;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mEffectIds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemoveMobEffectsRequestComponent& operator=(RemoveMobEffectsRequestComponent const&);
-    RemoveMobEffectsRequestComponent(RemoveMobEffectsRequestComponent const&);
-    RemoveMobEffectsRequestComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~RemoveMobEffectsRequestComponent();
+    MCAPI ~RemoveMobEffectsRequestComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

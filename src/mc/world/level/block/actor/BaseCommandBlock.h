@@ -56,7 +56,9 @@ public:
 
     MCAPI bool save(::CompoundTag& tag) const;
 
-    MCAPI_C void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
+#ifdef LL_PLAT_C
+    MCAPI void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
+#endif
 
     MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 

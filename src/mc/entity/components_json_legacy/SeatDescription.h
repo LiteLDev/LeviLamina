@@ -21,10 +21,25 @@ public:
     ::ll::TypedStorage<4, 8, ::std::optional<float>> mCameraRelaxDistanceSmoothing;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    SeatDescription();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI SeatDescription(::SeatDescription const&);
+#endif
+
     MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
+
+#ifdef LL_PLAT_S
+    MCAPI ::SeatDescription& operator=(::SeatDescription const&);
+#endif
 
     MCAPI bool operator==(::SeatDescription const& seat) const;
 
@@ -44,7 +59,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::SeatDescription const&);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::SeatDescription const&);
+#endif
     // NOLINTEND
 
 public:

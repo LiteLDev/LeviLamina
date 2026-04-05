@@ -55,9 +55,11 @@ public:
 
     MCAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
 
-    MCAPI_C ::Core::PathView getUserDataPath() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Core::PathView getUserDataPath() const;
 
-    MCAPI_C ::Core::PathView getWorldsPath() const;
+    MCAPI ::Core::PathView getWorldsPath() const;
+#endif
 
     MCAPI void setRootPath(::Core::PathView path);
     // NOLINTEND

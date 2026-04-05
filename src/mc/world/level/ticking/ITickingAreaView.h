@@ -23,11 +23,11 @@ public:
     // NOLINTBEGIN
     virtual ~ITickingAreaView();
 
-    virtual void init(::Bounds const&, bool) = 0;
+    virtual void init(::Bounds const& bounds, bool isCircle) = 0;
 
-    virtual void tick(::Tick const&, ::BlockSource&, bool, bool) = 0;
+    virtual void tick(::Tick const& currentTick, ::BlockSource& region, bool preload, bool randomize) = 0;
 
-    virtual void tickSeasons(::BlockSource&, ::Random&) = 0;
+    virtual void tickSeasons(::BlockSource& region, ::Random& random) = 0;
 
     virtual ::DimensionType getDimensionId() const = 0;
 
@@ -37,15 +37,15 @@ public:
 
     virtual bool isDoneLoading() const = 0;
 
-    virtual bool checkInitialLoadDone(::Tick) = 0;
+    virtual bool checkInitialLoadDone(::Tick currentLevelTick) = 0;
 
-    virtual bool checkLoadedChunkNeighborsDone(::BlockSource const&, bool) const = 0;
+    virtual bool checkLoadedChunkNeighborsDone(::BlockSource const& region, bool useDoneLoading) const = 0;
 
-    virtual void move(::Bounds const&) = 0;
+    virtual void move(::Bounds const& bounds) = 0;
 
     virtual ::std::unique_ptr<::ChunkViewSource> createChildSource() = 0;
 
-    virtual ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const&) = 0;
+    virtual ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp) = 0;
     // NOLINTEND
 
 public:

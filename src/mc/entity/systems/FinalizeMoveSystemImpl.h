@@ -24,7 +24,7 @@ struct VerticalCollisionFlagComponent;
 namespace FinalizeMoveSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickFinalizeMoveSystem(
+MCAPI void tickFinalizeMoveSystem(
     ::StrictEntityContext&                         context,
     ::AABBShapeComponent const&                    aabb,
     ::MoveRequestComponent const&                  moveRequest,

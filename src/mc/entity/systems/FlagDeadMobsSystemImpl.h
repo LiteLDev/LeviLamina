@@ -21,7 +21,7 @@ struct TickDeathNeededComponent;
 namespace FlagDeadMobsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(
+MCAPI void tick(
     ::entt::type_list<::Include<::ActorTickedComponent, ::MobFlagComponent>, ::Exclude<::ActorRemovedFlagComponent>>,
     ::StrictEntityContext const&                 entity,
     ::AttributesComponent&                       attributesComponent,

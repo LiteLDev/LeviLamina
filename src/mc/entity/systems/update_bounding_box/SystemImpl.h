@@ -43,17 +43,27 @@ struct SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
                         ::GlobalWrite<>,
                         ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb4988f;
-    ::ll::UntypedStorage<1, 1> mUnkee2d23;
-    // NOLINTEND
+    // SystemImpl inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+        ::Read<>,
+        ::Write<
+            ::AABBShapeComponent,
+            ::ActorDataBoundingBoxComponent,
+            ::ActorDataDirtyFlagsComponent,
+            ::DepenetrationComponent,
+            ::OffsetsComponent>,
+        ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    SystemImpl& operator=(SystemImpl const&);
-    SystemImpl(SystemImpl const&);
-    SystemImpl();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float const> mSneakHeight;
+    ::ll::TypedStorage<1, 1, bool const>  mIsClientSide;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -97,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,
@@ -113,7 +123,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,

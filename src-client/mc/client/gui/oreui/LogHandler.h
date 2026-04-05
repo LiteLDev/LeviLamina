@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/ILogHandler.h"
-#include "mc/deps/cohtml/Severity.h"
+#include "mc/external/gameface/cohtml/ILogHandler.h"
+#include "mc/external/gameface/cohtml/Severity.h"
 
 namespace OreUI {
 

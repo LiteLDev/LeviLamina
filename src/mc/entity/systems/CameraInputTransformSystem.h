@@ -20,7 +20,7 @@ struct TickingSystemWithInfo;
 namespace CameraInputTransformSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tick(
+MCAPI void _tick(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::MoveInputComponent&         moveInputComponent,
     ::ControlSchemeComponent&     controlSchemeComponent,
@@ -28,11 +28,11 @@ MCNAPI void _tick(
     ::ActorHeadRotationComponent& actorHeadRotationComponent
 );
 
-MCNAPI ::TickingSystemWithInfo create();
+MCAPI ::TickingSystemWithInfo create();
 
-MCNAPI float getWorldYawInDegrees(::Vec2 const& orientation);
+MCAPI float getWorldYawInDegrees(::Vec2 const& orientation);
 
-MCNAPI float getWorldYawInDegrees(::Vec3 const& orientation);
+MCAPI float getWorldYawInDegrees(::Vec3 const& orientation);
 // NOLINTEND
 
 } // namespace CameraInputTransformSystem

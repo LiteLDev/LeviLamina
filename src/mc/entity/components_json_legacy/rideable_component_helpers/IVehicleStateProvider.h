@@ -18,10 +18,10 @@ public:
     virtual ~IVehicleStateProvider() = default;
 
     virtual bool canAddPassenger(
-        ::std::vector<::StrictActorIDEntityContextPair> const&,
-        ::RideableComponentData const&,
-        ::RideableComponentHelpers::IRideableActor const&,
-        ::RideableComponentHelpers::IRideableActor const&
+        ::std::vector<::StrictActorIDEntityContextPair> const& vehiclePassengers,
+        ::RideableComponentData const&                         vehicleData,
+        ::RideableComponentHelpers::IRideableActor const&      vehicleActor,
+        ::RideableComponentHelpers::IRideableActor const&      passengerActor
     ) const = 0;
     // NOLINTEND
 

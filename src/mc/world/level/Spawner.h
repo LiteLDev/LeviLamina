@@ -59,11 +59,11 @@ public:
     // NOLINTBEGIN
     virtual ~Spawner();
 
-    virtual void initializeServerSide(::ResourcePackManager&, ::IWorldRegistriesProvider&) = 0;
+    virtual void initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries) = 0;
 
     virtual ::SpawnSettings const& getSpawnSettings() const = 0;
 
-    virtual void setSpawnSettings(::SpawnSettings const&) = 0;
+    virtual void setSpawnSettings(::SpawnSettings const& spawnSettings) = 0;
 
     virtual ::ActorSpawnRuleGroup const* getSpawnRules() const = 0;
 
@@ -94,9 +94,10 @@ public:
         ::Vec3 const&                      direction
     );
 
-    virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) = 0;
+    virtual void postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random) = 0;
 
-    virtual void tick(::BlockSource&, ::LevelChunkVolumeData const&, ::ChunkPos const) = 0;
+    virtual void
+    tick(::BlockSource& region, ::LevelChunkVolumeData const& levelChunkVolumeData, ::ChunkPos const chunkPos) = 0;
 
     virtual void tickMobCount() = 0;
 
@@ -104,8 +105,14 @@ public:
 
     virtual uint getSpawnableTickedMobCountPrevious() const = 0;
 
-    virtual ::std::unordered_set<::ActorUniqueID>
-    spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) = 0;
+    virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
+        ::BlockSource&                  region,
+        ::std::string const&            spawnGroupId,
+        ::Vec3 const&                   pos,
+        bool                            doScatter,
+        bool                            validateDistToPlayer,
+        ::std::function<void(::Mob&)>&& spawnedCallback
+    ) = 0;
 
     virtual ::br::spawn::SpawnPlacements& getSpawnPlacements() = 0;
 

@@ -48,9 +48,9 @@ public:
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func) /*override*/;
 
-    virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode) = 0;
+    virtual ::Scripting::Result_deprecated<void> _doSwitchMode(::Editor::Mode newMode) = 0;
 
-    virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const&) = 0;
+    virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload) = 0;
     // NOLINTEND
 
 public:

@@ -97,7 +97,9 @@ public:
 
     MCAPI void setCurrentTradeExp(int currentTradeExp);
 
-    MCAPI_C void setDataFromPacket(::UpdateTradePacket const& packet);
+#ifdef LL_PLAT_C
+    MCAPI void setDataFromPacket(::UpdateTradePacket const& packet);
+#endif
 
     MCAPI void setNearbyCuredDiscount(int discount);
 

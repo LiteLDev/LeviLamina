@@ -68,6 +68,13 @@ public:
 
     MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
+#ifdef LL_PLAT_C
+    MCNAPI EditorStructureTemplate(
+        ::StructureTemplate const&                              temp,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
+    );
+#endif
+
     MCNAPI void _editorFillBlockInfo(
         ::BlockSource&                                 region,
         ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
@@ -90,6 +97,10 @@ public:
         ::BlockPos const&                              span
     );
 
+#ifdef LL_PLAT_C
+    MCNAPI ::Editor::EditorStructureTemplate& operator=(::Editor::EditorStructureTemplate&&);
+#endif
+
     MCNAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
         ::BlockPalette const&      globalBlockPalette,
@@ -109,10 +120,12 @@ public:
 
     MCNAPI void* $ctor(::std::string_view name);
 
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::StructureTemplate const&                              temp,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
+#endif
     // NOLINTEND
 
 public:

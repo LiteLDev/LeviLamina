@@ -14,10 +14,20 @@ class RecipeIngredient;
 // clang-format on
 
 class ShapelessRecipe : public ::Recipe {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ShapelessRecipe& operator=(ShapelessRecipe const&);
+    ShapelessRecipe(ShapelessRecipe const&);
+    ShapelessRecipe();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const /*override*/;
 
     virtual int getCraftingSize() const /*override*/;
 
@@ -25,7 +35,8 @@ public:
 
     virtual bool isShapeless() const /*override*/;
 
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     virtual int size() const /*override*/;
 
@@ -35,13 +46,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ShapelessRecipe(::ShapelessRecipe&& recipe);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::ShapelessRecipe&& recipe);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ShapelessRecipe&& recipe);
+#endif
     // NOLINTEND
 
 public:
@@ -53,7 +68,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
+    MCFOLD ::std::vector<::ItemInstance> const&
+    $assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const;
 
     MCAPI int $getCraftingSize() const;
 
@@ -61,7 +77,7 @@ public:
 
     MCFOLD bool $isShapeless() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
 
     MCAPI int $size() const;
 

@@ -25,10 +25,10 @@ public:
         ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     virtual ::Scripting::ResultAny runString(
-        ::Scripting::ContextId,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::optional<::Scripting::Privilege>
+        ::Scripting::ContextId                  contextId,
+        ::std::string const&                    scriptName,
+        ::std::string const&                    scriptData,
+        ::std::optional<::Scripting::Privilege> privilege
     ) = 0;
 
     virtual ~StringBasedRuntime() /*override*/ = default;

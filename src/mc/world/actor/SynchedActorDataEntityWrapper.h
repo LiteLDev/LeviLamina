@@ -38,7 +38,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
-    MCAPI_C float getFloat(ushort id) const;
+#ifdef LL_PLAT_C
+    MCAPI float getFloat(ushort id) const;
+#endif
 
     MCAPI int getInt(ushort id) const;
 
@@ -46,7 +48,9 @@ public:
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCAPI_C short getShort(ushort id) const;
+#ifdef LL_PLAT_C
+    MCAPI short getShort(ushort id) const;
+#endif
 
     MCAPI bool hasData(ushort id) const;
 

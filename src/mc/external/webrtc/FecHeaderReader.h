@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~FecHeaderReader();
 
-    virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket*) const = 0;
+    virtual bool ReadFecHeader(::webrtc::ForwardErrorCorrection::ReceivedFecPacket* fec_packet) const = 0;
     // NOLINTEND
 
 public:

@@ -54,9 +54,10 @@ public:
 
     virtual ::rtc::SocketAddress GetRemoteAddress() const = 0;
 
-    virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) = 0;
+    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) = 0;
 
-    virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&) = 0;
+    virtual int
+    SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options) = 0;
 
     virtual int Close() = 0;
 
@@ -64,11 +65,11 @@ public:
 
     virtual int GetOption(::rtc::Socket::Option opt, int* value) = 0;
 
-    virtual int SetOption(::rtc::Socket::Option, int) = 0;
+    virtual int SetOption(::rtc::Socket::Option opt, int value) = 0;
 
     virtual int GetError() const = 0;
 
-    virtual void SetError(int) = 0;
+    virtual void SetError(int error) = 0;
     // NOLINTEND
 
 public:

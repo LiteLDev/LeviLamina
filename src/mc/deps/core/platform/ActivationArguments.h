@@ -27,7 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void parseURLArgument(::std::string const& url);
+#ifdef LL_PLAT_C
+    MCNAPI ActivationArguments(int argc, char** const argv);
+
+    MCNAPI void parseURLArgument(::std::string const& url);
+#endif
 
     MCNAPI void preParseArguments();
 
@@ -37,7 +41,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(int argc, char** const argv);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(int argc, char** const argv);
+#endif
     // NOLINTEND
 
 public:

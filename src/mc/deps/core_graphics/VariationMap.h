@@ -19,22 +19,38 @@ public:
     ::ll::TypedStorage<8, 16, ::Json::Value>                                 mVariantJson;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    VariationMap& operator=(VariationMap const&);
+    VariationMap();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI VariationMap(::cg::VariationMap const&);
 
+    MCAPI ~VariationMap();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::cg::VariationMap const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::cg::VariationMap const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

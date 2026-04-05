@@ -12,9 +12,9 @@ class CelebrateHuntComponent;
 namespace CelebrateHuntSystemInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI void _stopCelebrating(::Actor& actor, ::CelebrateHuntComponent& component);
+MCAPI void _stopCelebrating(::Actor& actor, ::CelebrateHuntComponent& component);
 
-MCNAPI void _tickCelebrateHuntComponent(
+MCAPI void _tickCelebrateHuntComponent(
     ::ActorOwnerComponent&    actorOwnerComponent,
     ::CelebrateHuntComponent& celebrateHuntComponent
 );

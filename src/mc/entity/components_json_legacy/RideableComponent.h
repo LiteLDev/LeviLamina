@@ -45,6 +45,10 @@ public:
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ~RideableComponent();
+#endif
     // NOLINTEND
 
 public:
@@ -58,6 +62,8 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

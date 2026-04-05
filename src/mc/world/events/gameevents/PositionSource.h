@@ -32,7 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::optional<::Vec3> getPosition(::IBlockSource const& region) const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::Vec3> getPosition(::IBlockSource const& region) const;
+#endif
 
     MCAPI void serializeTo(::CompoundTag& tag) const;
     // NOLINTEND
@@ -40,10 +42,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::optional<::GameEvents::PositionSource> deserializeFrom(::CompoundTag const& tag);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::GameEvents::PositionSource> deserializeFrom(::CompoundTag const& tag);
 
-    MCAPI_C static ::std::optional<::Vec3>
+    MCAPI static ::std::optional<::Vec3>
     extractPosition(::CompoundTag const& data, char const* tagName, ::BlockSource const& region);
+#endif
     // NOLINTEND
 };
 

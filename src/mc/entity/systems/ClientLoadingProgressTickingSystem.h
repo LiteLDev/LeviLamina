@@ -30,7 +30,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _calculateLoadingProgressView(
+#ifdef LL_PLAT_C
+    MCAPI static void _calculateLoadingProgressView(
         ::ActorOwnerComponent&     actorOwnerComponent,
         ::BlockSourceComponent&    blockSourceComponent,
         ::DimensionStateComponent& dimensionStateComponent,
@@ -39,24 +40,25 @@ public:
         bool                       isTextureGroupReloading
     );
 
-    MCNAPI_C static bool _hasLoadedEnoughChunksToView(
+    MCAPI static bool _hasLoadedEnoughChunksToView(
         ::Actor const&                   actor,
         ::IBlockSource&                  region,
         ::DimensionStateComponent const& dimensionStateComponent
     );
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
+    MCAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

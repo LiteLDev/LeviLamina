@@ -26,7 +26,7 @@ struct UpdateWaterStateRequestComponent;
 namespace LiquidPhysicsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _liquidBlockFetch(
+MCAPI void _liquidBlockFetch(
     ::StrictEntityContext const&,
     ::StateVectorComponent&                    stateVector,
     ::UpdateWaterStateRequestComponent&        request,
@@ -37,12 +37,12 @@ MCNAPI void _liquidBlockFetch(
     ::IConstBlockSource const&                 region
 );
 
-MCNAPI void _markForLiquidFlow(
+MCAPI void _markForLiquidFlow(
     ::UpdateWaterStateRequestComponent&                   updateWaterStateRequest,
     ::Optional<::MovementAbilitiesComponent const> const& abilities
 );
 
-MCNAPI void _singleTickLiquidBlocksFetch(
+MCAPI void _singleTickLiquidBlocksFetch(
     ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
@@ -55,7 +55,7 @@ MCNAPI void _singleTickLiquidBlocksFetch(
     ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory
 );
 
-MCNAPI void _tickLiquidBlocksFetch(
+MCAPI void _tickLiquidBlocksFetch(
     ::ViewT<
         ::StrictEntityContext,
         ::StateVectorComponent,
@@ -67,7 +67,7 @@ MCNAPI void _tickLiquidBlocksFetch(
     ::OptionalGlobal<::LocalConstBlockSourceFactoryComponent const> factory
 );
 
-MCNAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
+MCAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace LiquidPhysicsSystem

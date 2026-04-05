@@ -14,7 +14,7 @@ namespace AgentComponents { struct ActionDetails; }
 namespace AgentDestroySystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                        entity,
     ::StateVectorComponent const&           posState,
     ::MobBodyRotationComponent const&       rotState,
@@ -22,7 +22,7 @@ MCNAPI void initialize(
     ::AgentComponents::Destroy const&       destroyInfo
 );
 
-MCNAPI void tick(
+MCAPI void tick(
     ::EntityContext&                        entity,
     ::StateVectorComponent const&           posState,
     ::MobBodyRotationComponent const&       rotState,

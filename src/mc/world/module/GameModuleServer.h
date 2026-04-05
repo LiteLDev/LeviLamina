@@ -30,36 +30,42 @@ public:
     // NOLINTBEGIN
     virtual ~GameModuleServer() /*override*/;
 
-    virtual void init(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::Level> const&) = 0;
+    virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
 
     virtual void initializeBehaviorStack(
-        ::Experiments const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::ResourcePackStack&,
-        ::BaseGameVersion const&,
-        bool
+        ::Experiments const&                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        bool                                                            includeEditorPacks
     ) = 0;
 
     virtual void configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level>&,
-        ::Experiments const&,
-        ::ResourcePackManager&,
-        ::BaseGameVersion const&,
-        ::ServerScriptManager const*,
+        ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
+        ::Experiments const&                    experiments,
+        ::ResourcePackManager&                  resourcePackManager,
+        ::BaseGameVersion const&                baseGameVersion,
+        ::ServerScriptManager const*            scriptManager,
         ::std::optional<::std::reference_wrapper<
             ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlueResolvedBiomeData>>>>
+            biomeIdToResolvedData
     ) = 0;
 
-    virtual void configureNewPlayer(::Player&) = 0;
+    virtual void configureNewPlayer(::Player& player) = 0;
 
-    virtual void configureDocumentation(::IGameModuleDocumentation&, ::ItemRegistryRef const) = 0;
+    virtual void configureDocumentation(
+        ::IGameModuleDocumentation& moduleDocumentation,
+        ::ItemRegistryRef const     docItemRegistry
+    ) = 0;
 
     virtual void tick() = 0;
 
-    virtual void setupCommands(::CommandRegistry&) = 0;
+    virtual void setupCommands(::CommandRegistry& commandRegistry) = 0;
 
-    virtual void
-    configureServerNetworkHandler(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>) = 0;
+    virtual void configureServerNetworkHandler(
+        ::ServerInstance&                                     server,
+        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
+    ) = 0;
     // NOLINTEND
 
 public:

@@ -19,22 +19,36 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkb834fd;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Frame& operator=(Frame const&);
     Frame(Frame const&);
     Frame();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Frame(Frame const&);
+    Frame();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::gif::Frame& operator=(::gif::Frame const&);
 
+    MCNAPI ~Frame();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

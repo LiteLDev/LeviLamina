@@ -25,6 +25,10 @@ public:
     // NOLINTBEGIN
     MCAPI EduSharedUriResource(::EduSharedUriResource&&);
 
+#ifdef LL_PLAT_C
+    MCAPI bool operator!=(::EduSharedUriResource const& rhs) const;
+#endif
+
     MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource&&);
 
     MCFOLD ::EduSharedUriResource& operator=(::EduSharedUriResource const&);
@@ -37,8 +41,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::optional<::EduSharedUriResource>
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::EduSharedUriResource>
     create(::std::unordered_map<::std::string, ::std::string> const& values);
+#endif
 
     MCAPI static ::EduSharedUriResource fromTag(::CompoundTag const& tag);
     // NOLINTEND

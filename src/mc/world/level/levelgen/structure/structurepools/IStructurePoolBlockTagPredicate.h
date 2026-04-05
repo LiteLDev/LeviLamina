@@ -15,9 +15,9 @@ public:
     // NOLINTBEGIN
     virtual ~IStructurePoolBlockTagPredicate() = default;
 
-    virtual bool test(::Block const&, ::CompoundTag const&) const = 0;
+    virtual bool test(::Block const& block, ::CompoundTag const& tag) const = 0;
 
-    virtual void appendMetadataKey(::Util::XXHash&) const = 0;
+    virtual void appendMetadataKey(::Util::XXHash& hash) const = 0;
     // NOLINTEND
 
 public:

@@ -16,13 +16,13 @@ public:
     // NOLINTBEGIN
     virtual ~IContentSourceRepository() = default;
 
-    virtual void deletePackFiles(::ResourceLocation const&) = 0;
+    virtual void deletePackFiles(::ResourceLocation const& packLocation) = 0;
 
-    virtual void postDeletePack(::ResourceLocation const&) = 0;
+    virtual void postDeletePack(::ResourceLocation const& packLocation) = 0;
 
-    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const&) const = 0;
+    virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const = 0;
 
-    virtual ::ResourcePackStack createStack(::std::vector<::PackInstanceId> const&) = 0;
+    virtual ::ResourcePackStack createStack(::std::vector<::PackInstanceId> const& identities) = 0;
     // NOLINTEND
 
 public:

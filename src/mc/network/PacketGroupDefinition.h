@@ -58,6 +58,12 @@ public:
         MCAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
 
         MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
+
+#ifdef LL_PLAT_S
+        MCAPI ::PacketGroupDefinition::PacketGroupBuilder& operator=(::PacketGroupDefinition::PacketGroupBuilder&&);
+
+        MCAPI ~PacketGroupBuilder();
+#endif
         // NOLINTEND
 
     public:
@@ -69,7 +75,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_S void $dtor();
+#ifdef LL_PLAT_S
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 

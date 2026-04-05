@@ -35,7 +35,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::Json::Value toJson() const;
+#ifdef LL_PLAT_C
+        MCAPI ::Json::Value toJson() const;
+#endif
         // NOLINTEND
     };
 
@@ -78,7 +80,9 @@ public:
 
     MCAPI void _recordPacket(::std::string const& data, bool isOutgoing);
 
-    MCAPI_C ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+#endif
     // NOLINTEND
 
 public:

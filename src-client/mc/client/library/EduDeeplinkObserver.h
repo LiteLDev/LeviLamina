@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~EduDeeplinkObserver() /*override*/;
 
-    virtual bool onJoincodeReceived(::std::string const&);
+    virtual bool onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 
 public:

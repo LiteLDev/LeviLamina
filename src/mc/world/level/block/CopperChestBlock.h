@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~CopperChestBlock() /*override*/ = default;
     // NOLINTEND
@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

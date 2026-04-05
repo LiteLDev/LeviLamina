@@ -41,17 +41,18 @@ public:
 
     virtual bool SetParameters(::webrtc::RtpParameters const& parameters);
 
-    virtual void SetObserver(::webrtc::RtpReceiverObserverInterface*) = 0;
+    virtual void SetObserver(::webrtc::RtpReceiverObserverInterface* a1) = 0;
 
-    virtual void SetJitterBufferMinimumDelay(::std::optional<double>) = 0;
+    virtual void SetJitterBufferMinimumDelay(::std::optional<double> a1) = 0;
 
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const;
 
-    virtual void SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>);
+    virtual void SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> a1);
 
     virtual ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> GetFrameDecryptor() const;
 
-    virtual void SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>);
+    virtual void
+    SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> a1);
 
     virtual ~RtpReceiverInterface() /*override*/ = default;
     // NOLINTEND

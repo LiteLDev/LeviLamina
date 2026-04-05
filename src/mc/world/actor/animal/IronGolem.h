@@ -30,7 +30,7 @@ public:
     virtual ::ActorHurtResult
     doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
@@ -47,7 +47,7 @@ public:
 #ifdef LL_PLAT_S
     MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 #endif
 
     MCFOLD void $die(::ActorDamageSource const& source);

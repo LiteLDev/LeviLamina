@@ -2,14 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/AbilitiesIndex.h"
+
+// auto generated forward declare list
+// clang-format off
+struct MovementAbilitiesComponent;
+// clang-format on
+
 namespace UpdateAbilitiesSystemImpl {
 
 struct MovementAbilitiesRequestVisitor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4ccf21;
-    ::ll::UntypedStorage<1, 1> mUnk98ff8b;
+    ::ll::TypedStorage<8, 8, ::MovementAbilitiesComponent&> mAbilitiesComponent;
+    ::ll::TypedStorage<1, 1, ::AbilitiesIndex>              mIndex;
     // NOLINTEND
 
 public:

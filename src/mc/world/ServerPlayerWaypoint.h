@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/PlayerWaypointVisibilityRules.h"
 #include "mc/world/ServerEntityWaypoint.h"
 
 // auto generated forward declare list
@@ -14,14 +15,8 @@ class ServerPlayerWaypoint : public ::ServerEntityWaypoint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8fa22a;
+    ::ll::TypedStorage<1, 1, ::PlayerWaypointVisibilityRules> mPlayerVisibilityRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayerWaypoint& operator=(ServerPlayerWaypoint const&);
-    ServerPlayerWaypoint(ServerPlayerWaypoint const&);
-    ServerPlayerWaypoint();
 
 public:
     // virtual functions
@@ -34,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
+    MCAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
 
     // NOLINTEND

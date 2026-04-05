@@ -25,18 +25,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _tickComponent(
+#ifdef LL_PLAT_C
+    MCAPI static void _tickComponent(
         ::EntityContext&        entity,
         ::ActorOwnerComponent&  actorOwnerComponent,
         ::CameraShakeComponent& cameraShakeComponent
     );
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

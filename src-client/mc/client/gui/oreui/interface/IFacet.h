@@ -19,9 +19,9 @@ public:
     // NOLINTBEGIN
     virtual ~IFacet() /*override*/ = default;
 
-    virtual void unbind(::OreUI::FacetBinder&) = 0;
+    virtual void unbind(::OreUI::FacetBinder& binder) = 0;
 
-    virtual void sync(::OreUI::FacetBinder&, ::std::string const&) = 0;
+    virtual void sync(::OreUI::FacetBinder& binder, ::std::string const& id) = 0;
 
     virtual bool update() = 0;
 

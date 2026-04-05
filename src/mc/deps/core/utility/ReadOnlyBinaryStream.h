@@ -80,7 +80,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::string_view buffer, bool copyBuffer);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
+#endif
     // NOLINTEND
 
 public:

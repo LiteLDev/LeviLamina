@@ -16,12 +16,16 @@ public:
     // NOLINTBEGIN
     virtual ~IActorDimensionTransferProxy() = default;
 
-    virtual void transferTickingArea(::Actor&, ::Dimension&) const = 0;
+    virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) const = 0;
 
-    virtual void removeActorFromLevelChunk(::Actor&) const = 0;
+    virtual void removeActorFromLevelChunk(::Actor& actor) const = 0;
 
-    virtual void
-    transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>) const = 0;
+    virtual void transferActorToDimension(
+        ::Actor const&                   actor,
+        ::Dimension&                     dimension,
+        ::Vec3 const&                    targetPosition,
+        ::std::unique_ptr<::CompoundTag> saveTag
+    ) const = 0;
     // NOLINTEND
 
 public:

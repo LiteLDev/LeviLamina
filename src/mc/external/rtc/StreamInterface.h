@@ -27,9 +27,9 @@ public:
 
     virtual ::rtc::StreamState GetState() const = 0;
 
-    virtual ::rtc::StreamResult Read(::rtc::ArrayView<uchar>, uint64&, int&) = 0;
+    virtual ::rtc::StreamResult Read(::rtc::ArrayView<uchar> buffer, uint64& read, int& error) = 0;
 
-    virtual ::rtc::StreamResult Write(::rtc::ArrayView<uchar const>, uint64&, int&) = 0;
+    virtual ::rtc::StreamResult Write(::rtc::ArrayView<uchar const> data, uint64& written, int& error) = 0;
 
     virtual void Close() = 0;
 

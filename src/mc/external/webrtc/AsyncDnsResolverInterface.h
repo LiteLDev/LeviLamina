@@ -19,9 +19,9 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncDnsResolverInterface() = default;
 
-    virtual void Start(::rtc::SocketAddress const&, ::absl::AnyInvocable<void()>) = 0;
+    virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) = 0;
 
-    virtual void Start(::rtc::SocketAddress const&, int, ::absl::AnyInvocable<void()>) = 0;
+    virtual void Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) = 0;
 
     virtual ::webrtc::AsyncDnsResolverResult const& result() const = 0;
     // NOLINTEND

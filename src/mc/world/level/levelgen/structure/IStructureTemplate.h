@@ -18,11 +18,11 @@ public:
     // NOLINTBEGIN
     virtual ~IStructureTemplate() = default;
 
-    virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos) const = 0;
+    virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos randomPosSeed) const = 0;
 
     virtual ::BlockPos rawSize() const = 0;
 
-    virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const&) const = 0;
+    virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const = 0;
     // NOLINTEND
 
 public:

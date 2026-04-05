@@ -25,15 +25,15 @@ public:
 
     virtual void tick(::JumpControlComponent& parent, ::Mob& mob);
 
-    virtual int getJumpDelay(::JumpControlComponent const&) const;
+    virtual int getJumpDelay(::JumpControlComponent const& parent) const;
 
     virtual float getJumpPower(::JumpControlComponent const& parent) const;
 
-    virtual ::JumpType getJumpType(::JumpControlComponent const&) const;
+    virtual ::JumpType getJumpType(::JumpControlComponent const& parent) const;
 
-    virtual void setJumpType(::JumpControlComponent&, ::JumpType);
+    virtual void setJumpType(::JumpControlComponent& parent, ::JumpType type);
 
-    virtual void resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
+    virtual void resetSpeedModifier(::JumpControlComponent const& parent, ::Mob& mob);
     // NOLINTEND
 
 public:
@@ -45,15 +45,15 @@ public:
 
     MCAPI void $tick(::JumpControlComponent& parent, ::Mob& mob);
 
-    MCFOLD int $getJumpDelay(::JumpControlComponent const&) const;
+    MCFOLD int $getJumpDelay(::JumpControlComponent const& parent) const;
 
     MCAPI float $getJumpPower(::JumpControlComponent const& parent) const;
 
-    MCFOLD ::JumpType $getJumpType(::JumpControlComponent const&) const;
+    MCFOLD ::JumpType $getJumpType(::JumpControlComponent const& parent) const;
 
-    MCFOLD void $setJumpType(::JumpControlComponent&, ::JumpType);
+    MCFOLD void $setJumpType(::JumpControlComponent& parent, ::JumpType type);
 
-    MCFOLD void $resetSpeedModifier(::JumpControlComponent const&, ::Mob&);
+    MCFOLD void $resetSpeedModifier(::JumpControlComponent const& parent, ::Mob& mob);
 
 
     // NOLINTEND

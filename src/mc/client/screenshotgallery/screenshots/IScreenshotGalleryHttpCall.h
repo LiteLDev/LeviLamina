@@ -23,25 +23,30 @@ public:
     virtual ~IScreenshotGalleryHttpCall() = default;
 
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>>>
-    getGallery(::TaskGroup&, ::Social::XUID) = 0;
+    getGallery(::TaskGroup& taskGroup, ::Social::XUID xuid) = 0;
 
     virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::GallerySize>>
-    getGallerySize(::TaskGroup&, ::Social::XUID) = 0;
+    getGallerySize(::TaskGroup& taskGroup, ::Social::XUID xuid) = 0;
 
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
-    getImage(::TaskGroup&, ::std::string const&) = 0;
+    getImage(::TaskGroup& taskGroup, ::std::string const& imageUrl) = 0;
 
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
-    getFeaturedImage(::TaskGroup&, ::Social::XUID) = 0;
+    getFeaturedImage(::TaskGroup& taskGroup, ::Social::XUID xuid) = 0;
 
-    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>>
-    addImageToShowcase(::TaskGroup&, int64, bool, ::Core::PathBuffer<::std::string> const&) = 0;
+    virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>> addImageToShowcase(
+        ::TaskGroup&                             taskGroup,
+        int64                                    captureTime,
+        bool                                     featured,
+        ::Core::PathBuffer<::std::string> const& imagePath
+    ) = 0;
 
-    virtual ::Bedrock::Threading::Async<bool> removeShowcasedImage(::TaskGroup&, ::std::string const&) = 0;
+    virtual ::Bedrock::Threading::Async<bool>
+    removeShowcasedImage(::TaskGroup& taskGroup, ::std::string const& guid) = 0;
 
-    virtual ::Bedrock::Threading::Async<bool> setFeaturedImage(::TaskGroup&, ::std::string const&) = 0;
+    virtual ::Bedrock::Threading::Async<bool> setFeaturedImage(::TaskGroup& taskGroup, ::std::string const& guid) = 0;
 
-    virtual ::Bedrock::Threading::Async<bool> removeFeaturedImage(::TaskGroup&) = 0;
+    virtual ::Bedrock::Threading::Async<bool> removeFeaturedImage(::TaskGroup& taskGroup) = 0;
     // NOLINTEND
 
 public:

@@ -17,6 +17,8 @@ public:
     // NOLINTBEGIN
     MCAPI void lock();
 
-    MCAPI_C void unlock();
+#ifdef LL_PLAT_C
+    MCAPI void unlock();
+#endif
     // NOLINTEND
 };

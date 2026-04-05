@@ -11,7 +11,9 @@ class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C uint64 runDeferredEvents(uint64 maxToRun);
+#ifdef LL_PLAT_C
+    MCNAPI uint64 runDeferredEvents(uint64 maxToRun);
+#endif
 
     MCNAPI ~DeferredSubscription();
     // NOLINTEND

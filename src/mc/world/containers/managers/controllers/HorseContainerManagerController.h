@@ -21,6 +21,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                           mIsEquipTabOpen;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    HorseContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,19 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool canWearCarpet() const;
+#ifdef LL_PLAT_C
+    MCNAPI explicit HorseContainerManagerController(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
 
-    MCNAPI_C bool canWearSaddle() const;
+    MCNAPI bool canWearCarpet() const;
 
-    MCNAPI_C ::Actor* getEntity() const;
+    MCNAPI bool canWearSaddle() const;
 
-    MCNAPI_C void getInventoryGridSize(int& outDimX, int& outDimY) const;
+    MCNAPI ::Actor* getEntity() const;
+
+    MCNAPI void getInventoryGridSize(int& outDimX, int& outDimY) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::HorseContainerManagerModel> ptrModel);
+#endif
     // NOLINTEND
 
 public:

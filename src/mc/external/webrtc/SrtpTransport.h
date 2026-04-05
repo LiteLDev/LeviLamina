@@ -61,7 +61,7 @@ public:
 
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
-    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
+    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
     virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
@@ -129,7 +129,7 @@ public:
 
     MCNAPI bool $UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink);
 
-    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet);
+    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& packet);
 
     MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
 

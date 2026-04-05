@@ -13,9 +13,22 @@ public:
         legacyOnConsumeTriggerItemComponent;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ComponentItemDeprecatedComponentData_v1_20_30(ComponentItemDeprecatedComponentData_v1_20_30 const&);
+    ComponentItemDeprecatedComponentData_v1_20_30();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_30&
+    operator=(::ComponentItemDeprecatedComponentData_v1_20_30 const&);
+#endif
+
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_30();
     // NOLINTEND
 

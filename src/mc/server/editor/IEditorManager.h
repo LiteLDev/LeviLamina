@@ -32,22 +32,23 @@ public:
 
     virtual bool isClientSide() const = 0;
 
-    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player&) = 0;
+    virtual ::std::unique_ptr<::Editor::IEditorPlayer> createPlayer(::Player& player) = 0;
 
     virtual ::std::unique_ptr<::FileArchiver::IWorldConverter> createWorldConverter(
-        ::ILevelListCache&,
-        ::Scheduler&,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>
+        ::ILevelListCache&                                              levelListCache,
+        ::Scheduler&                                                    scheduler,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) = 0;
 
-    virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache&) const = 0;
+    virtual void cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const = 0;
 
     virtual void cleanupOrphanedTemporaryRealmsUploadWorlds() = 0;
 
     virtual ::Scripting::Result_deprecated<void> scriptingTeardown() = 0;
 
-    virtual ::Scripting::Result_deprecated<void> scriptingRebuild(::Scripting::ContextId, bool) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent) = 0;
 
     virtual void tryClearPlaytestRoundtripInfo() = 0;
     // NOLINTEND

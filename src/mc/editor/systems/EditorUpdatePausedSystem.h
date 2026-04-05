@@ -11,6 +11,8 @@ struct EditorUpdatePausedSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::TickingSystemWithInfo create();
+#ifdef LL_PLAT_C
+    MCNAPI static ::TickingSystemWithInfo create();
+#endif
     // NOLINTEND
 };

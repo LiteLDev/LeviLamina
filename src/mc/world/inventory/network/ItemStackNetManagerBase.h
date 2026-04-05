@@ -70,15 +70,19 @@ public:
 
     virtual void onContainerScreenClose();
 
-    virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
+    virtual ::SparseContainer* initOpenContainer(
+        ::BlockSource&             region,
+        ::FullContainerName const& openContainerId,
+        ::ContainerWeakRef const&  containerWeakRef
+    );
 
     virtual void _addLegacyTransactionRequestSetItemSlot(
-        ::ItemStackNetManagerScreen&,
+        ::ItemStackNetManagerScreen&         screen,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
-    virtual void _initScreen(::ItemStackNetManagerScreen&);
+    virtual void _initScreen(::ItemStackNetManagerScreen& screen);
     // NOLINTEND
 
 public:
@@ -133,15 +137,19 @@ public:
 
     MCAPI void $onContainerScreenClose();
 
-    MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
+    MCFOLD ::SparseContainer* $initOpenContainer(
+        ::BlockSource&             region,
+        ::FullContainerName const& openContainerId,
+        ::ContainerWeakRef const&  containerWeakRef
+    );
 
     MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
-        ::ItemStackNetManagerScreen&,
+        ::ItemStackNetManagerScreen&         screen,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
-    MCFOLD void $_initScreen(::ItemStackNetManagerScreen&);
+    MCFOLD void $_initScreen(::ItemStackNetManagerScreen& screen);
 
 
     // NOLINTEND

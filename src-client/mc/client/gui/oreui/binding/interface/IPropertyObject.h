@@ -27,21 +27,21 @@ public:
 
     virtual char const* propertyName() const = 0;
 
-    virtual void addChild(::OreUI::Detail::IPropertyObject*) = 0;
+    virtual void addChild(::OreUI::Detail::IPropertyObject* child) = 0;
 
-    virtual void addProperty(::OreUI::Detail::IProperty*) = 0;
+    virtual void addProperty(::OreUI::Detail::IProperty* property) = 0;
 
-    virtual void removeChild(::OreUI::Detail::IPropertyObject*) = 0;
+    virtual void removeChild(::OreUI::Detail::IPropertyObject* child) = 0;
 
-    virtual void removeProperty(::OreUI::Detail::IProperty*) = 0;
+    virtual void removeProperty(::OreUI::Detail::IProperty* property) = 0;
 
     virtual bool hasParent() const = 0;
 
-    virtual void bind(::cohtml::Binder*, void*) = 0;
+    virtual void bind(::cohtml::Binder* binder, void* object) = 0;
 
-    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const&) = 0;
+    virtual ::Bedrock::PubSub::Subscription setObserver(::std::function<void()> const& observer) = 0;
 
-    virtual void updateParent(::OreUI::Detail::IPropertyObject*) = 0;
+    virtual void updateParent(::OreUI::Detail::IPropertyObject* parent) = 0;
 
     virtual void onChange() = 0;
 

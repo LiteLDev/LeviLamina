@@ -42,15 +42,15 @@ public:
 
     virtual bool IsDtlsActive() const = 0;
 
-    virtual bool GetDtlsRole(::rtc::SSLRole*) const = 0;
+    virtual bool GetDtlsRole(::rtc::SSLRole* role) const = 0;
 
-    virtual bool SetDtlsRole(::rtc::SSLRole) = 0;
+    virtual bool SetDtlsRole(::rtc::SSLRole role) = 0;
 
-    virtual bool GetSslVersionBytes(int*) const = 0;
+    virtual bool GetSslVersionBytes(int* version) const = 0;
 
-    virtual bool GetSrtpCryptoSuite(int*) = 0;
+    virtual bool GetSrtpCryptoSuite(int* cipher) = 0;
 
-    virtual bool GetSslCipherSuite(int* cipher_suite) = 0;
+    virtual bool GetSslCipherSuite(int* cipher) = 0;
 
     virtual ushort GetSslPeerSignatureAlgorithm() const = 0;
 
@@ -69,10 +69,14 @@ public:
         uint64             result_len
     ) = 0;
 
-    virtual bool SetRemoteFingerprint(::std::string_view, uchar const*, uint64) = 0;
+    virtual bool SetRemoteFingerprint(::std::string_view digest_alg, uchar const* digest, uint64 digest_len) = 0;
 
-    virtual ::webrtc::RTCError
-    SetRemoteParameters(::std::string_view, uchar const*, uint64, ::std::optional<::rtc::SSLRole>) = 0;
+    virtual ::webrtc::RTCError SetRemoteParameters(
+        ::std::string_view              digest_alg,
+        uchar const*                    digest,
+        uint64                          digest_len,
+        ::std::optional<::rtc::SSLRole> role
+    ) = 0;
 
     virtual ::cricket::IceTransportInternal* ice_transport() = 0;
     // NOLINTEND

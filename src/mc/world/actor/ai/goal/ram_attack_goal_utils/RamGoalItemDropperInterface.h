@@ -15,9 +15,9 @@ public:
     // NOLINTBEGIN
     virtual ~RamGoalItemDropperInterface() = default;
 
-    virtual void tryDropHorn(::Vec3) const = 0;
+    virtual void tryDropHorn(::Vec3 dropPos) const = 0;
 
-    virtual void checkForHornDropOnCollision(::Vec3) = 0;
+    virtual void checkForHornDropOnCollision(::Vec3 collisionPos) = 0;
 
     virtual void dontDropHorn() = 0;
     // NOLINTEND

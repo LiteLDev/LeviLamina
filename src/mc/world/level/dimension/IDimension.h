@@ -32,9 +32,9 @@ public:
 
     virtual ::DimensionType getDimensionId() const = 0;
 
-    virtual void sendPacketForPosition(::BlockPos const&, ::Packet const&, ::Player const*) = 0;
+    virtual void sendPacketForPosition(::BlockPos const& position, ::Packet const& packet, ::Player const* except) = 0;
 
-    virtual void sendPacketForEntity(::Actor const&, ::Packet const&, ::Player const*) = 0;
+    virtual void sendPacketForEntity(::Actor const& actor, ::Packet const& packet, ::Player const* except) = 0;
 
     virtual void flushLevelChunkGarbageCollector() = 0;
 
@@ -45,21 +45,21 @@ public:
 
     virtual ::BiomeRegistry const& getBiomeRegistry() const = 0;
 
-    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const&, ::DimensionType) const = 0;
+    virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const = 0;
 
-    virtual void forEachPlayer(::brstd::function_ref<bool(::Player&)>) const = 0;
+    virtual void forEachPlayer(::brstd::function_ref<bool(::Player&)> callback) const = 0;
 
-    virtual ::Actor* fetchEntity(::ActorUniqueID, bool) const = 0;
+    virtual ::Actor* fetchEntity(::ActorUniqueID actorID, bool getRemoved) const = 0;
 
     virtual ::BlockSource& getBlockSourceFromMainChunkSource() const = 0;
 
     virtual void buildPlayersForPositionPacket(
-        ::BlockPos const&,
-        ::Player const*,
-        ::std::vector<::NetworkIdentifierWithSubId>&
+        ::BlockPos const&                            position,
+        ::Player const*                              except,
+        ::std::vector<::NetworkIdentifierWithSubId>& result
     ) const = 0;
 
-    virtual void updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    virtual void updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updatePoiBlockStateChange(::BlockPos, ::Block const&, ::Block const&) const;
+    MCFOLD void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
 
     // NOLINTEND

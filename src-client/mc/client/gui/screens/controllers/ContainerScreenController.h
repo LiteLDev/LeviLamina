@@ -120,7 +120,7 @@ public:
 
     virtual void setAssociatedBlockPos(::BlockPos const& pos) /*override*/;
 
-    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID) /*override*/;
+    virtual void setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID) /*override*/;
 
     virtual void addStaticScreenVars(::Json::Value& globalVars) /*override*/;
 
@@ -192,7 +192,7 @@ public:
     virtual ::ProgressiveTakeBarLocation
     _getProgressiveBarDirection(::std::string const& collectionName, int collectionIndex) const;
 
-    virtual bool _isInCreativeContainer(::std::string const&) const;
+    virtual bool _isInCreativeContainer(::std::string const& containerName) const;
 
     virtual bool _getGestureControlEnabled() const /*override*/;
     // NOLINTEND
@@ -348,7 +348,7 @@ public:
 
     MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
+    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
     MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
@@ -416,7 +416,7 @@ public:
     MCAPI ::ProgressiveTakeBarLocation
     $_getProgressiveBarDirection(::std::string const& collectionName, int collectionIndex) const;
 
-    MCFOLD bool $_isInCreativeContainer(::std::string const&) const;
+    MCFOLD bool $_isInCreativeContainer(::std::string const& containerName) const;
 
     MCFOLD bool $_getGestureControlEnabled() const;
     // NOLINTEND

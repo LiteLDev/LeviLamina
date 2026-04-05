@@ -8,15 +8,9 @@ struct SystemUniforms {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk13d5e4;
-    ::ll::UntypedStorage<8, 8> mUnk8df810;
+    ::ll::TypedStorage<1, 1, bool>                                    mEnableMovementPredictionLogging;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNow;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SystemUniforms& operator=(SystemUniforms const&);
-    SystemUniforms(SystemUniforms const&);
-    SystemUniforms();
 };
 
 } // namespace PredictedMovementSystem

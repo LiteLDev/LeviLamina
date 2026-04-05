@@ -61,16 +61,25 @@ public:
 
     virtual void postDraw(::ScreenContext&);
 
-    virtual void render(::ScreenContext&);
+    virtual void render(::ScreenContext& screenContext);
 
-    virtual void render(::ScreenContext& screenContext, ::Actor&, float, float, float, float, float, float);
+    virtual void render(
+        ::ScreenContext& screenContext,
+        ::Actor&         entity,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    );
 
     virtual void render(::BaseActorRenderContext&);
 
     virtual void
     render(::BaseActorRenderContext& baseActorRenderContext, ::Actor&, float, float, float, float, float, float);
 
-    virtual void setupAnim(float, float, float, float, float, float);
+    virtual void setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
 
     virtual void setupAnim();
 
@@ -149,16 +158,25 @@ public:
 
     MCFOLD void $postDraw(::ScreenContext&);
 
-    MCFOLD void $render(::ScreenContext&);
+    MCFOLD void $render(::ScreenContext& screenContext);
 
-    MCAPI void $render(::ScreenContext& screenContext, ::Actor&, float, float, float, float, float, float);
+    MCAPI void $render(
+        ::ScreenContext& screenContext,
+        ::Actor&         entity,
+        float            time,
+        float            r,
+        float            bob,
+        float            yRot,
+        float            xRot,
+        float            scale
+    );
 
     MCFOLD void $render(::BaseActorRenderContext&);
 
     MCFOLD void
     $render(::BaseActorRenderContext& baseActorRenderContext, ::Actor&, float, float, float, float, float, float);
 
-    MCFOLD void $setupAnim(float, float, float, float, float, float);
+    MCFOLD void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
 
     MCFOLD void $setupAnim();
 

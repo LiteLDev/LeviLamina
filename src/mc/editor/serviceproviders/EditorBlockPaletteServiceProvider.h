@@ -33,35 +33,35 @@ public:
 
     virtual ::Editor::EditorBlockPalette const& getActivePalette() const = 0;
 
-    virtual void addOrReplacePalette(::Editor::EditorBlockPalette const&) = 0;
+    virtual void addOrReplacePalette(::Editor::EditorBlockPalette const& palette) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> removePalette(::HashedString const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> removePalette(::HashedString const& paletteId) = 0;
 
     virtual ::Scripting::Result_deprecated<void> setActivePalette(::HashedString const& paletteId) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int) = 0;
+    virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) = 0;
 
     virtual int getSelectedPaletteItemIndex() const = 0;
 
     virtual ::Scripting::Result_deprecated<void> setPaletteItem(
-        ::HashedString const&,
-        int,
-        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const&
+        ::HashedString const&                                                                          paletteId,
+        int                                                                                            index,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     ) = 0;
 
-    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
+    virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const& pickedBlock) = 0;
 
     virtual ::Scripting::Result_deprecated<::BlockType const*> getSelectedBlockType() const = 0;
 
     virtual ::std::vector<::std::string> getPaletteIdList() const = 0;
 
-    virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const&) const = 0;
+    virtual ::std::optional<::Editor::EditorBlockPalette> getPalette(::HashedString const& paletteId) const = 0;
 
     virtual ::Scripting::Result_deprecated<
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
-    getPaletteItem(::HashedString const&, int) const = 0;
+    getPaletteItem(::HashedString const& paletteId, int index) const = 0;
 
-    virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)>) const = 0;
+    virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)> callback) const = 0;
 
     virtual ::Bedrock::PubSub::Subscription registerEventListener(
         ::std::function<void(::std::variant<
@@ -69,7 +69,7 @@ public:
                              ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
                              ::Editor::EditorBlockPaletteEventActivePaletteChanged,
                              ::Editor::EditorBlockPaletteEventPaletteUpdated,
-                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)>
+                             ::Editor::EditorBlockPaletteEventPaletteRemoved> const&)> callback
     ) = 0;
     // NOLINTEND
 

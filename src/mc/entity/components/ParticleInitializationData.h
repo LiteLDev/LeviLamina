@@ -25,6 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ParticleInitializationData(::ParticleInitializationData&&);
+#endif
+
     MCAPI ParticleInitializationData(::ParticleInitializationData const&);
 
     MCAPI ~ParticleInitializationData();
@@ -33,7 +37,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::ParticleInitializationData&&);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ParticleInitializationData&&);
+#endif
 
     MCAPI void* $ctor(::ParticleInitializationData const&);
     // NOLINTEND

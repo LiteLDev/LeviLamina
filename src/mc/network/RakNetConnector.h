@@ -48,7 +48,11 @@ public:
 
         virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) = 0;
 
-        virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>) = 0;
+        virtual void onWebsocketRequest(
+            ::std::string const&    serverAddress,
+            ::std::string const&    payload,
+            ::std::function<void()> errorCallback
+        ) = 0;
         // NOLINTEND
 
     public:
@@ -75,13 +79,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCAPI ~PingCallbackData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -237,7 +245,7 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     virtual bool connect(
-        ::Social::GameConnectionInfo const& gameConnection,
+        ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
@@ -300,8 +308,10 @@ public:
 
     MCAPI void _storeLocalIP();
 
-    MCAPI_C void
+#ifdef LL_PLAT_C
+    MCAPI void
     getPingTimeForConnection(::std::string const& address, int port, ::std::function<void(uint)> pingTimeCallback);
+#endif
 
     MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
@@ -328,8 +338,10 @@ public:
     // NOLINTBEGIN
     MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool
-    $connect(::Social::GameConnectionInfo const& gameConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCAPI bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCAPI void $disconnect();
 

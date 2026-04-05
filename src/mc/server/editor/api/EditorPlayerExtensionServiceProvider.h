@@ -23,16 +23,17 @@ public:
     // NOLINTBEGIN
     virtual ~EditorPlayerExtensionServiceProvider() = default;
 
-    virtual ::Scripting::Result_deprecated<void> startExtensions(::std::optional<::Scripting::ContextId>) = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) = 0;
 
     virtual ::Scripting::Result_deprecated<void> stopExtensions() = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-        forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)>) = 0;
+    forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) = 0;
 
     virtual ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
-    getInternalServiceContext(::Scripting::WeakLifetimeScope const&) = 0;
+    getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) = 0;
     // NOLINTEND
 
 public:

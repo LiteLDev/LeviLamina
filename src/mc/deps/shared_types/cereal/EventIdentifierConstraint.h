@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCFOLD ::cereal::internal::ConstraintDescription description(::cereal::ContextArea) const;
 
     MCFOLD void validateValue(::std::string const& str, ::cereal::SerializerContext& context) const;
     // NOLINTEND

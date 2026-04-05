@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     virtual ~IOptionsReader() = default;
 
-    virtual ::gsl::not_null<::Option const*> get(::OptionID) const = 0;
+    virtual ::gsl::not_null<::Option const*> get(::OptionID optionId) const = 0;
 
     virtual bool getDevRenderBoundingBoxes() const = 0;
 

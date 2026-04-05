@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingEventHandler() = default;
 
-    virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const&);
+    virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
     // NOLINTEND
 
 public:

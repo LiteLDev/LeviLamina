@@ -162,19 +162,19 @@ public:
 
     virtual int getMaxLevel() const;
 
-    virtual int getDamageProtection(int, ::ActorDamageSource const&) const;
+    virtual int getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    virtual float getAfterBreachArmorFraction(int, float) const;
+    virtual float getAfterBreachArmorFraction(int level, float armorFraction) const;
 
     virtual float getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    virtual void doPostAttack(::Actor&, ::Actor&, int) const;
+    virtual void doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    virtual void doPostPiercingAttack(::Actor&, int) const;
+    virtual void doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
     virtual void doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    virtual void doPostHurt(::ItemInstance&, ::Actor&, ::Actor&, int) const;
+    virtual void doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
     virtual bool isMeleeDamageEnchant() const;
 
@@ -184,7 +184,7 @@ public:
 
     virtual bool isDiscoverable() const;
 
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:
@@ -260,19 +260,19 @@ public:
 
     MCFOLD int $getMaxLevel() const;
 
-    MCFOLD int $getDamageProtection(int, ::ActorDamageSource const&) const;
+    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
+    MCFOLD float $getAfterBreachArmorFraction(int level, float armorFraction) const;
 
     MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCFOLD void $doPostAttack(::Actor&, ::Actor&, int) const;
+    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCFOLD void $doPostPiercingAttack(::Actor&, int) const;
+    MCFOLD void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
     MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCFOLD void $doPostHurt(::ItemInstance&, ::Actor&, ::Actor&, int) const;
+    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
     MCFOLD bool $isMeleeDamageEnchant() const;
 
@@ -282,7 +282,7 @@ public:
 
     MCFOLD bool $isDiscoverable() const;
 
-    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type) const;
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
     // NOLINTEND

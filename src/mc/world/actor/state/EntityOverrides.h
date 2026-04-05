@@ -30,6 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void remove(::ActorUniqueID entity, uint propertyIndex);
+#ifdef LL_PLAT_C
+    MCAPI void remove(::ActorUniqueID entity, uint propertyIndex);
+#endif
     // NOLINTEND
 };

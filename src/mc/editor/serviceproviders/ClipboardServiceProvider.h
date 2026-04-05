@@ -30,41 +30,45 @@ public:
 
     virtual ::mce::UUID const& create() = 0;
 
-    virtual bool destroy(::mce::UUID const&) = 0;
+    virtual bool destroy(::mce::UUID const& id) = 0;
 
-    virtual void setPrimaryItem(::mce::UUID const&) = 0;
+    virtual void setPrimaryItem(::mce::UUID const& id) = 0;
 
     virtual ::Editor::Services::ClipboardItem* getPrimaryItem() = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    readFromWorld(::mce::UUID const&, ::Editor::RelativeVolumeListBlockVolume const&) = 0;
-
-    virtual ::Scripting::Result_deprecated<void> readFromWorld(::mce::UUID const&, ::BlockVolumeBase const&) = 0;
+    readFromWorld(::mce::UUID const& itemId, ::Editor::RelativeVolumeListBlockVolume const& volume) = 0;
 
     virtual ::Scripting::Result_deprecated<void>
-    readFromEditorStructure(::mce::UUID const&, ::Editor::EditorStructureTemplate const&) = 0;
+    readFromWorld(::mce::UUID const& itemId, ::BlockVolumeBase const& volume) = 0;
 
-    virtual ::Scripting::Result_deprecated<bool>
-    writeToWorld(::mce::UUID const&, ::BlockPos const&, ::Editor::Services::ClipboardWriteOptions const*) const = 0;
+    virtual ::Scripting::Result_deprecated<void>
+    readFromEditorStructure(::mce::UUID const& itemId, ::Editor::EditorStructureTemplate const& editorStructure) = 0;
 
-    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
-        ::mce::UUID const&,
-        ::BlockPos const&,
-        ::Editor::Services::ClipboardWriteOptions const*
+    virtual ::Scripting::Result_deprecated<bool> writeToWorld(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
     ) const = 0;
 
-    virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const&) = 0;
+    virtual ::Scripting::Result_deprecated<::Editor::RelativeVolumeListBlockVolume> getPredictedWriteVolume(
+        ::mce::UUID const&                               itemId,
+        ::BlockPos const&                                position,
+        ::Editor::Services::ClipboardWriteOptions const* options
+    ) const = 0;
 
-    virtual bool isEmpty(::mce::UUID const&) const = 0;
+    virtual ::Scripting::Result_deprecated<void> clear(::mce::UUID const& itemId) = 0;
 
-    virtual ::BlockPos getSize(::mce::UUID const&) const = 0;
+    virtual bool isEmpty(::mce::UUID const& itemId) const = 0;
 
-    virtual ::Vec3 const& getNormalizedOrigin(::mce::UUID const&) const = 0;
+    virtual ::BlockPos getSize(::mce::UUID const& itemId) const = 0;
 
-    virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const&) const = 0;
+    virtual ::Vec3 const& getNormalizedOrigin(::mce::UUID const& itemId) const = 0;
+
+    virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const& itemId) const = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-        listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)>) = 0;
+    listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback) = 0;
     // NOLINTEND
 
 public:

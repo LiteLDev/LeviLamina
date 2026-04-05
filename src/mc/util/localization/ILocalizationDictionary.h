@@ -31,7 +31,7 @@ public:
     virtual ~ILocalizationDictionary();
 #endif
 
-    virtual ::std::string getLocString(::std::string const&) const = 0;
+    virtual ::std::string getLocString(::std::string const& locKey) const = 0;
 
     virtual bool isLocalizationReady() const = 0;
 
@@ -41,9 +41,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _updateLocPath(::Core::Path const& locFilePath);
+#ifdef LL_PLAT_C
+    MCNAPI bool _updateLocPath(::Core::Path const& locFilePath);
 
-    MCNAPI_C void updateLoc();
+    MCNAPI void updateLoc();
+#endif
     // NOLINTEND
 
 public:

@@ -18,9 +18,9 @@ public:
     // NOLINTBEGIN
     virtual ~ITextBoxController() /*override*/ = default;
 
-    virtual void setTextBoxState(int, ::TextBoxStateChange const&) = 0;
+    virtual void setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange) = 0;
 
-    virtual void onKeyboardDismissed(int) = 0;
+    virtual void onKeyboardDismissed(int controllerId) = 0;
 
     virtual ::std::optional<int> calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement) = 0;
 

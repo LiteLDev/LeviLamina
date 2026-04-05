@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~InputMappingFactoryMap();
 
-    virtual ::InputMappingFactory& getInputMappingFactory(int) = 0;
+    virtual ::InputMappingFactory& getInputMappingFactory(int controllerId) = 0;
     // NOLINTEND
 
 public:

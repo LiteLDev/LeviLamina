@@ -19,19 +19,20 @@ public:
     // NOLINTBEGIN
     virtual ~SctpTransportInternal();
 
-    virtual void SetOnConnectedCallback(::std::function<void()>) = 0;
+    virtual void SetOnConnectedCallback(::std::function<void()> callback) = 0;
 
-    virtual void SetDataChannelSink(::webrtc::DataChannelSink*) = 0;
+    virtual void SetDataChannelSink(::webrtc::DataChannelSink* sink) = 0;
 
-    virtual void SetDtlsTransport(::rtc::PacketTransportInternal*) = 0;
+    virtual void SetDtlsTransport(::rtc::PacketTransportInternal* transport) = 0;
 
-    virtual bool Start(int, int, int) = 0;
+    virtual bool Start(int local_sctp_port, int remote_sctp_port, int max_message_size) = 0;
 
-    virtual bool OpenStream(int) = 0;
+    virtual bool OpenStream(int sid) = 0;
 
-    virtual bool ResetStream(int) = 0;
+    virtual bool ResetStream(int sid) = 0;
 
-    virtual ::webrtc::RTCError SendData(int, ::webrtc::SendDataParams const&, ::rtc::CopyOnWriteBuffer const&) = 0;
+    virtual ::webrtc::RTCError
+    SendData(int sid, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& payload) = 0;
 
     virtual bool ReadyToSendData() = 0;
 
@@ -41,13 +42,13 @@ public:
 
     virtual ::std::optional<int> max_inbound_streams() const = 0;
 
-    virtual uint64 buffered_amount(int) const = 0;
+    virtual uint64 buffered_amount(int sid) const = 0;
 
-    virtual uint64 buffered_amount_low_threshold(int) const = 0;
+    virtual uint64 buffered_amount_low_threshold(int sid) const = 0;
 
-    virtual void SetBufferedAmountLowThreshold(int, uint64) = 0;
+    virtual void SetBufferedAmountLowThreshold(int sid, uint64 bytes) = 0;
 
-    virtual void set_debug_name_for_testing(char const*) = 0;
+    virtual void set_debug_name_for_testing(char const* debug_name) = 0;
     // NOLINTEND
 
 public:

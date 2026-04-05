@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     virtual ~UIComponent();
 
-    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const = 0;
+    virtual ::std::unique_ptr<::UIComponent> clone(::UIControl& cloneOwner) const = 0;
 
     virtual ::ComponentReceiveActionType receive(
         ::VisualTree&            visualTree,
@@ -51,9 +51,9 @@ public:
 
     virtual void onAdded();
 
-    virtual void onVisibilityChanged(bool);
+    virtual void onVisibilityChanged(bool visible);
 
-    virtual void onEnabledChanged(bool);
+    virtual void onEnabledChanged(bool enabled);
 
     virtual bool isRenderableComponent() const;
 
@@ -94,9 +94,9 @@ public:
 
     MCFOLD void $onAdded();
 
-    MCFOLD void $onVisibilityChanged(bool);
+    MCFOLD void $onVisibilityChanged(bool visible);
 
-    MCFOLD void $onEnabledChanged(bool);
+    MCFOLD void $onEnabledChanged(bool enabled);
 
     MCFOLD bool $isRenderableComponent() const;
 

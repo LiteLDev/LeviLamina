@@ -44,7 +44,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void update(double timestampMs) /*override*/;
+    virtual void update(double) /*override*/;
 
     virtual ~ContainerItemQuery() /*override*/;
     // NOLINTEND
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double timestampMs);
+    MCAPI void $update(double);
     // NOLINTEND
 
 public:

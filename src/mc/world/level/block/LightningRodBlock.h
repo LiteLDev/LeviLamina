@@ -59,7 +59,7 @@ public:
 
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     virtual ~LightningRodBlock() /*override*/;
     // NOLINTEND
@@ -110,7 +110,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
 
     // NOLINTEND

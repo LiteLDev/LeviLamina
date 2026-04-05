@@ -17,7 +17,8 @@ public:
     // NOLINTBEGIN
     virtual ~HttpInterface() /*override*/ = default;
 
-    virtual void send(::gsl::not_null<::HC_CALL*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*) = 0;
+    virtual void
+    send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env) = 0;
     // NOLINTEND
 
 public:

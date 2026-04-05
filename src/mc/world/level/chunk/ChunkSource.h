@@ -70,7 +70,7 @@ public:
 
     virtual bool isShutdownDone();
 
-    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const&);
+    virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& pos);
 
     virtual ::std::shared_ptr<::LevelChunk> getRandomChunk(::Random& random);
 
@@ -84,15 +84,15 @@ public:
     virtual ::std::shared_ptr<::LevelChunk>
     getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    virtual bool structurePostProcessChunk(::ChunkViewSource&);
+    virtual bool structurePostProcessChunk(::ChunkViewSource& neighborhood);
 
-    virtual bool decorationPostProcessChunk(::ChunkViewSource&);
+    virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    virtual void checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
+    virtual void checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
-    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
+    virtual bool verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
-    virtual void neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
+    virtual void neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -149,7 +149,7 @@ public:
 
     virtual ::std::shared_ptr<::LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 
-    virtual void setLevelChunk(::std::shared_ptr<::LevelChunk>);
+    virtual void setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
 
     virtual bool canLaunchTasks() const;
 
@@ -246,9 +246,11 @@ public:
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
-    MCAPI_C void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
+#ifdef LL_PLAT_C
+    MCAPI void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
-    MCAPI_C void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+    MCAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+#endif
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
@@ -262,7 +264,9 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-    MCAPI_C ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
+#endif
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
@@ -295,7 +299,7 @@ public:
 
     MCAPI bool $isShutdownDone();
 
-    MCFOLD ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const&);
+    MCFOLD ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
 
     MCFOLD ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
@@ -309,15 +313,15 @@ public:
     MCAPI ::std::shared_ptr<::LevelChunk>
     $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
+    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
+    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource&, ::LevelChunk&);
+    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
-    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk&);
+    MCFOLD bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
-    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk&, ::ChunkViewSource&);
+    MCFOLD void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -374,7 +378,7 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
-    MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk>);
+    MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
 
     MCAPI bool $canLaunchTasks() const;
 

@@ -24,7 +24,7 @@ struct ShouldUpdateBoundingBoxRequestComponent;
 namespace StartGlidingActionSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doStartGlidingClientAction(
+MCAPI void doStartGlidingClientAction(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
@@ -34,7 +34,7 @@ MCNAPI void doStartGlidingClientAction(
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
 );
 
-MCNAPI void doStartGlidingServerAction(
+MCAPI void doStartGlidingServerAction(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,

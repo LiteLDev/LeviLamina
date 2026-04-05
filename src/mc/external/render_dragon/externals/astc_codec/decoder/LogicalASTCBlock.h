@@ -52,24 +52,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void
+#ifdef LL_PLAT_C
+    MCNAPI void
     CalculateWeights(::astc_codec::Footprint const& footprint, ::astc_codec::IntermediateBlockData const& block);
 
-    MCNAPI_C ::std::array<int, 4> ColorAt(int x, int y) const;
+    MCNAPI ::std::array<int, 4> ColorAt(int x, int y) const;
 
-    MCNAPI_C void SetDualPlaneChannel(int channel);
+    MCNAPI LogicalASTCBlock(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
+
+    MCNAPI void SetDualPlaneChannel(int channel);
+
+    MCNAPI ~LogicalASTCBlock();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::astc_codec::Footprint const& footprint, ::astc_codec::VoidExtentData const& block);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

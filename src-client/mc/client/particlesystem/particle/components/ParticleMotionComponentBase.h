@@ -23,10 +23,10 @@ public:
     virtual ::ParticleSystem::EffectComponentBase::EffectComponentType getParticleComponentType() const /*override*/;
 
     virtual void updateParticleMotion(
-        ::ParticleSystem::ComponentAccessParticleEmitter&,
-        ::ParticleSystem::CommonParticle&,
-        ::RenderParams&,
-        ::std::chrono::nanoseconds const&
+        ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
+        ::ParticleSystem::CommonParticle&                 particle,
+        ::RenderParams&                                   renderParams,
+        ::std::chrono::nanoseconds const&                 dt
     ) = 0;
     // NOLINTEND
 

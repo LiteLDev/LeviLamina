@@ -24,14 +24,25 @@ public:
     ::ll::TypedStorage<4, 64, ::Matrix>          mSavedModelView;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CameraComponent& operator=(CameraComponent const&);
     CameraComponent();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CameraComponent& operator=(CameraComponent const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI CameraComponent();
+#endif
+
     MCAPI CameraComponent(::MinecraftCamera::CameraComponent&&);
 
     MCAPI CameraComponent(::MinecraftCamera::CameraComponent const&);
@@ -42,7 +53,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::MinecraftCamera::CameraComponent&&);
 

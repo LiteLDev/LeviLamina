@@ -41,13 +41,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void serializeComponentDefinitions(
+#ifdef LL_PLAT_C
+    MCNAPI void serializeComponentDefinitions(
         ::DefinitionInstanceGroup& outputDefinitions,
         ::CompoundTag const&       input,
         ::MinEngineVersion const&  minEngineVersion
     ) const;
 
-    MCNAPI_C ::ICerealDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
+    MCNAPI ::ICerealDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name) const;
+#endif
     // NOLINTEND
 
 public:

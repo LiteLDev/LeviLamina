@@ -73,7 +73,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(
-        ::std::string const&                                                        templateId,
+        ::std::string const&                                                        id,
         ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     ) /*override*/;
 
@@ -148,7 +148,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
-        ::std::string const&                                                        templateId,
+        ::std::string const&                                                        id,
         ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     );
 

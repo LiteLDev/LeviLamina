@@ -29,7 +29,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 };
 

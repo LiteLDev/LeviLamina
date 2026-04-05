@@ -20,13 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C auto toJsonStr() const;
+#ifdef LL_PLAT_C
+    MCNAPI auto toJsonStr() const;
+
+    MCNAPI ~TelemetryError();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -38,14 +38,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _determineLevelChunksToTick(
+    MCAPI static void _determineLevelChunksToTick(
         ::Actor const&                                  actor,
         ::BlockSource&                                  region,
         ::LoadedChunksComponent&                        loadedChunksComponent,
@@ -58,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::EntityRegistry& registry);
+    MCAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

@@ -24,19 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C int getDefaultSubpackIndex(::ContentTierInfo const& contentInfoTier) const;
+#ifdef LL_PLAT_C
+    MCNAPI int getDefaultSubpackIndex(::ContentTierInfo const& contentInfoTier) const;
+#endif
 
     MCNAPI ::std::vector<::std::string> getSubpackNames() const;
 
-    MCNAPI_C ::ContentTierIncompatibleReason isCompatible(::ContentTierInfo const& contentInfoTier) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::ContentTierIncompatibleReason isCompatible(::ContentTierInfo const& contentInfoTier) const;
 
-    MCNAPI_C ::ContentTierIncompatibleReason
+    MCNAPI ::ContentTierIncompatibleReason
     isCompatibleSubpack(int index, ::ContentTierInfo const& contentInfoTier) const;
+
+    MCNAPI ~SubpackInfoCollection();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

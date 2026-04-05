@@ -18,7 +18,7 @@ public:
     virtual ~SctpTransportFactoryInterface() = default;
 
     virtual ::std::unique_ptr<::cricket::SctpTransportInternal>
-    CreateSctpTransport(::webrtc::Environment const&, ::rtc::PacketTransportInternal*) = 0;
+    CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport) = 0;
     // NOLINTEND
 
 public:

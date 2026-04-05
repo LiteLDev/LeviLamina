@@ -26,9 +26,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getStringFromType(::persona::BodySize::Type bodySizeType);
 
-    MCAPI_C static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
+    MCAPI static ::persona::BodySize::Type getTypeFromString(::std::string_view bodySizeStr);
+#endif
     // NOLINTEND
 
 public:

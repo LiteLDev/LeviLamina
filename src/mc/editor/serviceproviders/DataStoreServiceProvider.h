@@ -23,13 +23,14 @@ public:
     virtual ~DataStoreServiceProvider() = default;
 
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
-        ::HashedString const&,
-        ::Editor::DataStore::EventType,
-        ::Json::Value const&,
-        ::Editor::DataStore::PayloadDescription const&
+        ::HashedString const&                          dataTag,
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
     ) = 0;
 
-    virtual ::Json::Value getPayload(::HashedString const&, ::Editor::DataStore::PayloadDescription const&) const = 0;
+    virtual ::Json::Value
+    getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const& desc) const = 0;
 
     virtual ::Bedrock::PubSub::Subscription listenForEvent(
         ::std::function<void(
@@ -37,7 +38,7 @@ public:
             ::Editor::DataStore::EventType,
             ::Json::Value const&,
             ::Editor::DataStore::PayloadDescription const&
-        )>
+        )> callback
     ) = 0;
     // NOLINTEND
 

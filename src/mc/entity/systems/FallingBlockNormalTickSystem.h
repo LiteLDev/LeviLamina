@@ -18,6 +18,13 @@ struct TickingSystemWithInfo;
 
 class FallingBlockNormalTickSystem {
 public:
+    // FallingBlockNormalTickSystem inner types define
+    using SystemView = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::InterpolateMovementNeededComponent, ::FallingBlockFlagComponent>,
+        ::ActorOwnerComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doFallingBlockNormalTickSystem(

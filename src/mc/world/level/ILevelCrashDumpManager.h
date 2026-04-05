@@ -11,7 +11,7 @@ public:
     // NOLINTBEGIN
     virtual ~ILevelCrashDumpManager() = default;
 
-    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID) const = 0;
+    virtual void setCrashDumpLogStringID(::CrashDumpLogStringID crashDumpLogStringID) const = 0;
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
 
         virtual void OnGenerateKeyFrame() = 0;
 
-        virtual void OnEncodedSinkEnabled(bool) = 0;
+        virtual void OnEncodedSinkEnabled(bool enable) = 0;
         // NOLINTEND
 
     public:

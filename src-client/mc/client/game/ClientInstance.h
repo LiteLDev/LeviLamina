@@ -470,7 +470,7 @@ public:
 
     virtual void preFrameTick() /*override*/;
 
-    virtual bool update(bool isInWorld) /*override*/;
+    virtual bool update(bool isInitFinished) /*override*/;
 
     virtual void endFrame() /*override*/;
 
@@ -1532,7 +1532,7 @@ public:
 
     MCAPI void $preFrameTick();
 
-    MCAPI bool $update(bool isInWorld);
+    MCAPI bool $update(bool isInitFinished);
 
     MCFOLD void $endFrame();
 

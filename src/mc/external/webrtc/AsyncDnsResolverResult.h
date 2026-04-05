@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     virtual ~AsyncDnsResolverResult() = default;
 
-    virtual bool GetResolvedAddress(int, ::rtc::SocketAddress*) const = 0;
+    virtual bool GetResolvedAddress(int family, ::rtc::SocketAddress* addr) const = 0;
 
     virtual int GetError() const = 0;
     // NOLINTEND

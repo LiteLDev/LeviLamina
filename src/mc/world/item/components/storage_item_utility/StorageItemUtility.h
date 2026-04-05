@@ -21,7 +21,7 @@ MCAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optiona
 
 MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
 
-MCAPI_C ::std::optional<::StorageItemUtility::StorageItemWeightData>
+MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataClient(::ItemStackBase const& item, ::ContainerManagerController& containerManagerController);
 
 MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>

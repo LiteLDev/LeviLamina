@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     virtual ~DataStoreSyncServer() /*override*/ = default;
 
-    virtual void clear(::std::string const& datastoreName, bool addToOutgoingChanges) /*override*/;
+    virtual void clear(::std::string const& dataStoreName, bool addToOutgoingChanges) /*override*/;
 
     virtual void assertAppropriateThread() const /*override*/;
     // NOLINTEND
@@ -59,7 +59,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
+    MCNAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
 
     MCNAPI void $assertAppropriateThread() const;
 

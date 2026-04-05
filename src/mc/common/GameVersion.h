@@ -40,6 +40,10 @@ public:
 
     MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
+#ifdef LL_PLAT_C
+    MCAPI bool operator!=(::GameVersion const& other) const;
+#endif
+
     MCAPI bool operator<(::GameVersion const& other) const;
 
     MCAPI ::GameVersion& operator=(::GameVersion&&);

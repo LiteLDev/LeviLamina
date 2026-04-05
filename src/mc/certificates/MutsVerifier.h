@@ -45,19 +45,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI MutsVerifier(
         ::std::string                    responseField,
         ::std::string                    payloadField,
         ::std::string                    publicKey,
         ::std::function<int64()>         getTime,
         ::std::function<::std::string()> createRequestId
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::std::string                    responseField,
+        ::std::string                    payloadField,
+        ::std::string                    publicKey,
+        ::std::function<int64()>         getTime,
+        ::std::function<::std::string()> createRequestId
+    );
+#endif
     // NOLINTEND
 
 public:

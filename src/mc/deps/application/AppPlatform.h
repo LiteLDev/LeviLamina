@@ -235,12 +235,27 @@ public:
 
     virtual int getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
 
-    virtual void textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
+    virtual void textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
 
     virtual void textEditComponentLostFocus();
 
-    virtual void
-    showKeyboard(::std::string const&, int, bool, bool, bool, int const, ::glm::vec2 const&, float, ::InputMode);
+    virtual void showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
 
     virtual void hideKeyboard();
 
@@ -256,7 +271,7 @@ public:
 
     virtual bool refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    virtual void setMousePointerType(::Bedrock::Input::PointerType);
+    virtual void setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
     virtual void hideMousePointer();
 
@@ -312,7 +327,7 @@ public:
 
     virtual ::std::string getTermsOfUseHyperlink() const;
 
-    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback>) = 0;
+    virtual void pickImage(::std::shared_ptr<::ImagePickingCallback> callback) = 0;
 
     virtual void pickFile(::std::shared_ptr<::FilePickerSettings> settings);
 
@@ -372,10 +387,10 @@ public:
     );
 
     virtual void setStorageDirectory(
-        ::FileStorageDirectory dir,
-        bool                   isCallback,
-        ::PropertyBag const&   extraData,
-        ::std::function<void(bool)>
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
     );
 
     virtual ::FileStorageDirectory setInitialStorageDirectory(::FileStorageDirectory dir);
@@ -385,7 +400,7 @@ public:
     virtual void setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
 
     virtual ::Bedrock::PubSub::Subscription
-        addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
+    addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
     virtual void runStoragePermissionResultCallback(::StoragePermissionResult result);
 
@@ -510,7 +525,7 @@ public:
 
     virtual uint getMaxClubsRequests() const;
 
-    virtual void queueForMainThread_DEPRECATED(::std::function<void()>) = 0;
+    virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) = 0;
 
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() = 0;
 
@@ -538,11 +553,11 @@ public:
 
     virtual ::std::string getTextBoxBackend() const = 0;
 
-    virtual void setTextBoxBackend(::std::string const&) = 0;
+    virtual void setTextBoxBackend(::std::string const& newText) = 0;
 
     virtual int getCaretPosition() const = 0;
 
-    virtual void setCaretPosition(int) = 0;
+    virtual void setCaretPosition(int position) = 0;
 
     virtual void setTextBoxSelection(::TextBoxSelection selection);
 
@@ -741,7 +756,7 @@ public:
 
     virtual ::AppLifecycleContext& getAppLifecycleContext();
 
-    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const&) = 0;
+    virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) = 0;
 
     virtual bool supportsFliteTTS() const;
 
@@ -910,42 +925,56 @@ public:
     // NOLINTBEGIN
     MCAPI AppPlatform(bool registerService, ::std::unique_ptr<::IAppPlatformImpl> impl);
 
-    MCAPI_C void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
+#ifdef LL_PLAT_C
+    MCAPI void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
 
-    MCAPI_C void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
+    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI_C void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+#endif
 
-    MCAPI_S void _fireAppTerminated();
+#ifdef LL_PLAT_S
+    MCAPI void _fireAppTerminated();
+#endif
 
     MCAPI void _initializeLoadProfiler();
 
-    MCAPI_C ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
 
-    MCAPI_C ::UIProfile getDefaultUIProfile() const;
+    MCAPI ::UIProfile getDefaultUIProfile() const;
+#endif
 
-    MCFOLD_S ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+#ifdef LL_PLAT_S
+    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+#endif
 
     MCAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
 
     MCAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
 
-    MCAPI_C double getTotalActiveSeconds();
+#ifdef LL_PLAT_C
+    MCAPI double getTotalActiveSeconds();
+#endif
 
     MCFOLD ::Core::PathBuffer<::std::string> getUserdataPath() const;
 
-    MCAPI_C void loadImage(::mce::Image& out, ::Core::Path const& filename);
+#ifdef LL_PLAT_C
+    MCAPI void loadImage(::mce::Image& out, ::Core::Path const& filename);
 
-    MCAPI_C ::mce::Image loadTexture(::Core::Path const& filename);
+    MCAPI ::mce::Image loadTexture(::Core::Path const& filename);
 
-    MCAPI_C ::mce::Image loadTextureFromStream(::std::string const& fileStream);
+    MCAPI ::mce::Image loadTextureFromStream(::std::string const& fileStream);
+#endif
 
     MCAPI ::Bedrock::Result<::std::string>
     readAssetFile(::Core::PathView filename, ::AppPlatform::ReadMode const& readMode);
 
-    MCAPI_C bool requiresNetworkOutageMessaging() const;
+#ifdef LL_PLAT_C
+    MCAPI bool requiresNetworkOutageMessaging() const;
 
-    MCAPI_C void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+    MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+#endif
     // NOLINTEND
 
 public:
@@ -953,9 +982,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
 
-    MCAPI_C static bool mouseInputHandledByImGui();
+#ifdef LL_PLAT_C
+    MCAPI static bool mouseInputHandledByImGui();
 
-    MCAPI_C static void updateImGuiMousePosition(float x, float y);
+    MCAPI static void updateImGuiMousePosition(float x, float y);
+#endif
     // NOLINTEND
 
 public:
@@ -967,11 +998,11 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
 
-    MCAPI_C static bool& mIsInitialized();
+    MCAPI static bool& mIsInitialized();
 
-    MCAPI_C static ::ActivationUri& mPendingProtocolActivation();
+    MCAPI static ::ActivationUri& mPendingProtocolActivation();
 
-    MCAPI_C static ::Bedrock::Threading::Mutex& mProtocolMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mProtocolMutex();
     // NOLINTEND
 
 public:
@@ -1444,7 +1475,13 @@ public:
 
     MCFOLD int $getKeyFromKeyCode(int keyCode, int metaState, int deviceId);
 
-    MCFOLD void $textEditComponentGainedFocus(::std::string const&, int, bool, bool, bool);
+    MCFOLD void $textEditComponentGainedFocus(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline
+    );
 
     MCFOLD void $textEditComponentLostFocus();
 
@@ -1462,7 +1499,7 @@ public:
 
     MCAPI bool $refocusMouse(bool lostMouse, bool oldMouseGrabbed);
 
-    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType);
+    MCFOLD void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
     MCFOLD void $hideMousePointer();
 
@@ -1572,10 +1609,10 @@ public:
     );
 
     MCFOLD void $setStorageDirectory(
-        ::FileStorageDirectory dir,
-        bool                   isCallback,
-        ::PropertyBag const&   extraData,
-        ::std::function<void(bool)>
+        ::FileStorageDirectory      dir,
+        bool                        isCallback,
+        ::PropertyBag const&        extraData,
+        ::std::function<void(bool)> onComplete
     );
 
     MCFOLD ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory dir);
@@ -1585,7 +1622,7 @@ public:
     MCFOLD void $setStorageDirectoryChangeDenied(::std::function<void(::FileStorageDirectory)> callback);
 
     MCFOLD ::Bedrock::PubSub::Subscription
-        $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)>);
+    $addStorageDirectoryChangedSubscriber(::std::function<void(::Core::Path const&)> callback);
 
     MCAPI void $runStoragePermissionResultCallback(::StoragePermissionResult result);
 

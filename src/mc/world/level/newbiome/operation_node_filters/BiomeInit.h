@@ -25,21 +25,37 @@ public:
     ::ll::TypedStorage<8, 120, ::std::vector<::std::pair<::Biome const*, uint>>[5]> mSpecialBiomes;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BiomeInit();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI BiomeInit(
         ::BiomeRegistry const& registry,
         ::Biome const&         defaultOceanBiome,
         ::Biome const&         fallbackBiome,
         ::GeneratorType        generator
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::BiomeRegistry const& registry,
+        ::Biome const&         defaultOceanBiome,
+        ::Biome const&         fallbackBiome,
+        ::GeneratorType        generator
+    );
+#endif
     // NOLINTEND
 };
 

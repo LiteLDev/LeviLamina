@@ -15,7 +15,7 @@ class Vec3;
 namespace CreakingHeartParticlesUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void emitTrailParticles(::Level& level, ::CompoundTag const& data, ::Random& random);
+MCNAPI void emitTrailParticles(::Level& level, ::CompoundTag const& data, ::Random& random);
 
 MCNAPI void requestTrailParticles(
     ::BlockSource&    region,

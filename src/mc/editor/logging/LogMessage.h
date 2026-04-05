@@ -31,7 +31,9 @@ public:
     // NOLINTBEGIN
     MCNAPI LogMessage(::Editor::LogMessage&&);
 
-    MCNAPI_C ::std::string getAreaTagsString() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string getAreaTagsString() const;
+#endif
 
     MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage&&);
 

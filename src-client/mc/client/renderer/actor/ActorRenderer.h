@@ -77,17 +77,17 @@ public:
     // NOLINTBEGIN
     virtual ~ActorRenderer() /*override*/;
 
-    virtual void render(::BaseActorRenderContext&, ::ActorRenderData&) = 0;
+    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData) = 0;
 
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
+    virtual void renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     virtual void renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
+    virtual void renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
+    virtual void addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     virtual ::AABB getRenderBounds(::Actor const& entity) const;
 
@@ -100,11 +100,11 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    virtual void setIsOnScreen(::Actor&, bool const, float) const;
+    virtual void setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
 
-    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
+    virtual bool shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+    virtual bool shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:
@@ -248,13 +248,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderEffects(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCFOLD void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     MCAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderWaterHole(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCFOLD void $renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup>);
+    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
     MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
@@ -267,11 +267,11 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    MCFOLD void $setIsOnScreen(::Actor&, bool const, float) const;
+    MCFOLD void $setIsOnScreen(::Actor& actor, bool const isOnScreen, float distance) const;
 
-    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams&) const;
+    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams&) const;
+    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:

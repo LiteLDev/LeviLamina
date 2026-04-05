@@ -74,25 +74,26 @@ public:
 
     virtual ::Bedrock::Result<double> asDouble() = 0;
 
-    virtual ::Bedrock::Result<::std::string> asString(uint64) = 0;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) = 0;
 
-    virtual ::Bedrock::Result<void> asRawBytes(::std::function<::gsl::span<uchar>(uint64)>, uint64) = 0;
+    virtual ::Bedrock::Result<void>
+    asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength) = 0;
 
     virtual ::std::optional<bool> additionalDataAsBool() = 0;
 
     virtual ::std::optional<uint> additionalDataAsUInt32() = 0;
 
-    virtual ::std::optional<::std::string> additionalDataAsString(uint64) = 0;
+    virtual ::std::optional<::std::string> additionalDataAsString(uint64 maxInputLength) = 0;
 
     virtual uint64 members() = 0;
 
-    virtual uint64 length(uint64) = 0;
+    virtual uint64 length(uint64 expectedSize) = 0;
 
-    virtual bool pushMember(::std::string_view const) = 0;
+    virtual bool pushMember(::std::string_view const name) = 0;
 
     virtual ::std::string_view pushNextMember() = 0;
 
-    virtual void pushElement(uint64) = 0;
+    virtual void pushElement(uint64 index) = 0;
 
     virtual void pop() = 0;
 

@@ -82,7 +82,9 @@ public:
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCNAPI_S ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
+#ifdef LL_PLAT_S
+    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncSelectedPaletteIndex(int index);
+#endif
     // NOLINTEND
 
 public:

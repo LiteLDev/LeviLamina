@@ -6,7 +6,7 @@ class ContainerContentChangeListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void containerContentChanged(int) = 0;
+    virtual void containerContentChanged(int slot) = 0;
 
     virtual ~ContainerContentChangeListener();
     // NOLINTEND

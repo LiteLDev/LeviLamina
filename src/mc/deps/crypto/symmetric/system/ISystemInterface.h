@@ -10,19 +10,19 @@ public:
     // NOLINTBEGIN
     virtual ~ISystemInterface() = default;
 
-    virtual void init(::std::string const&, ::std::string const&) = 0;
+    virtual void init(::std::string const& key, ::std::string const& IV) = 0;
 
-    virtual void encrypt(::std::string const&, ::std::string&) = 0;
+    virtual void encrypt(::std::string const& plaintext, ::std::string& out) = 0;
 
-    virtual void decrypt(::std::string const&, ::std::string&) = 0;
+    virtual void decrypt(::std::string const& ciphertext, ::std::string& out) = 0;
 
     virtual uint64 getKeySize() const = 0;
 
     virtual uint64 getBlockSize() const = 0;
 
-    virtual uint64 getEncryptionBufferSize(uint64) const = 0;
+    virtual uint64 getEncryptionBufferSize(uint64 inputSize) const = 0;
 
-    virtual bool encryptToBuffer(::gsl::span<char const>, ::gsl::span<char>, uint64&) = 0;
+    virtual bool encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) = 0;
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class PrettyDecimalWriter : public ::cereal::BasicRapidJSONSchemaWriter<::rapidj
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual bool write(float) /*override*/;
+    virtual bool write(float value) /*override*/;
 
     virtual ~PrettyDecimalWriter() /*override*/ = default;
     // NOLINTEND

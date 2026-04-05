@@ -73,7 +73,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool shouldConnectTo(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction);
+#ifdef LL_PLAT_C
+    MCAPI static bool shouldConnectTo(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction);
+#endif
     // NOLINTEND
 
 public:

@@ -89,7 +89,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
+    MCAPI static void _tick(
         ::StrictEntityContext&                                             entity,
         ::AABBShapeComponent const&                                        aabbShape,
         ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
@@ -112,7 +112,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
             ::Read<

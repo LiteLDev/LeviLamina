@@ -38,7 +38,7 @@ public:
 
     virtual void StopLogging(::std::function<void()> callback);
 
-    virtual void Log(::std::unique_ptr<::webrtc::RtcEvent>) = 0;
+    virtual void Log(::std::unique_ptr<::webrtc::RtcEvent> event) = 0;
     // NOLINTEND
 
 public:

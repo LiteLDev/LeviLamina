@@ -45,8 +45,10 @@ public:
         ::EntityModifier<::DimensionTransitionComponent> mod
     );
 
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     _tickReadyToContinueClient(::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent> view);
+#endif
 
     MCAPI static void _tickReadyToContinueServer(
         ::ViewT<

@@ -13,7 +13,7 @@ namespace ScriptModuleDebugUtilities { struct ScriptDebugDrawerDataComponent; }
 namespace ScriptDebugDrawerDataSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(::OptionalGlobal<::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent> shapesDataComponent);
+MCAPI void tick(::OptionalGlobal<::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent> shapesDataComponent);
 // NOLINTEND
 
 } // namespace ScriptDebugDrawerDataSystemImpl

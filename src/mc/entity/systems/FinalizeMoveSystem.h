@@ -24,9 +24,27 @@ struct VerticalCollisionFlagComponent;
 
 struct FinalizeMoveSystem {
 public:
+    // FinalizeMoveSystem inner types define
+    using FinalizeMoveModifer = ::EntityModifier<
+        ::OnGroundFlagComponent,
+        ::CollisionFlagComponent,
+        ::HorizontalCollisionFlagComponent,
+        ::VerticalCollisionFlagComponent,
+        ::CollidableMobNearFlagComponent>;
+
+    using FinalizeMoveView = ::ViewT<
+        ::StrictEntityContext,
+        ::AABBShapeComponent const,
+        ::MoveRequestComponent const,
+        ::OffsetsComponent const,
+        ::StateVectorComponent,
+        ::Optional<::OnGroundFlagComponent const>,
+        ::Optional<::MovementAbilitiesComponent const>>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<
             ::StrictEntityContext,
             ::AABBShapeComponent const,

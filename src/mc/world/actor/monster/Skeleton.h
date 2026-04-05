@@ -46,9 +46,9 @@ public:
     virtual ::ActorHurtResult
     doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     virtual void normalTick() /*override*/;
 
@@ -88,9 +88,9 @@ public:
 
     MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint effectId) const;
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCAPI void $normalTick();
 

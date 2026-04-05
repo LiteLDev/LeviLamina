@@ -39,38 +39,38 @@ public:
     virtual void init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) = 0;
 
     virtual void configureLevel(
-        ::IClientInstance&,
-        ::Bedrock::NotNullNonOwnerPtr<::MultiPlayerLevel> const&,
-        ::Experiments const&,
-        ::BaseGameVersion const&
+        ::IClientInstance&                                       client,
+        ::Bedrock::NotNullNonOwnerPtr<::MultiPlayerLevel> const& level,
+        ::Experiments const&                                     experiments,
+        ::BaseGameVersion const&                                 baseGameVersion
     ) = 0;
 
-    virtual void deconfigureLevel(::IClientInstance&) = 0;
+    virtual void deconfigureLevel(::IClientInstance& client) = 0;
 
     virtual void initializeResourceStack(
-        ::Experiments const*,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::ResourcePackStack&,
-        ::BaseGameVersion const&,
-        ::GameModuleClient::ResourceLoadingPhase,
-        bool
+        ::Experiments const*                                            experiments,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
+        ::ResourcePackStack&                                            stack,
+        ::BaseGameVersion const&                                        baseGameVersion,
+        ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
+        bool                                                            includeEditorPacks
     ) = 0;
 
     virtual void configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const) = 0;
 
     virtual void tick() = 0;
 
-    virtual void setupStandardCommands(::CommandRegistry&) = 0;
+    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry&) = 0;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) = 0;
 
     virtual void setupUI() = 0;
 
-    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&) = 0;
+    virtual void registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) = 0;
 
-    virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance&) = 0;
+    virtual ::std::unique_ptr<::ClientInputMappingFactory> createInputMappingFactory(::IClientInstance& client) = 0;
 
-    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory&) const = 0;
+    virtual void registerVanillaGoalsForUpgrader(::ActorMigratedDefinitionFactory& migratedFactory) const = 0;
     // NOLINTEND
 
 public:

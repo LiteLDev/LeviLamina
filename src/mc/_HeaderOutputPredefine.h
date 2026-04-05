@@ -16,26 +16,6 @@
 #define MCNAPI [[deprecated("This API is not available. Open an issue if you need it. "\
                             "https://github.com/LiteLDev/mcapi-requests/issues/new")]] MCAPI
 
-#if defined(LL_PLAT_S)
-#define MCAPI_C  [[deprecated("Client API not available on SERVER")]] MCAPI
-#define MCAPI_S  MCAPI
-#define MCTAPI_C [[deprecated("Client API not available on SERVER")]] MCTAPI
-#define MCTAPI_S MCTAPI
-#define MCFOLD_C [[deprecated("Client API not available on SERVER")]] MCFOLD
-#define MCFOLD_S MCFOLD
-#define MCNAPI_C MCNAPI
-#define MCNAPI_S MCNAPI
-#elif defined(LL_PLAT_C)
-#define MCAPI_C  MCAPI
-#define MCAPI_S  [[deprecated("Server API not available on CLIENT")]] MCAPI
-#define MCTAPI_C MCTAPI
-#define MCTAPI_S [[deprecated("Server API not available on CLIENT")]] MCTAPI
-#define MCFOLD_C MCFOLD
-#define MCFOLD_S [[deprecated("Server API not available on CLIENT")]] MCFOLD
-#define MCNAPI_C MCNAPI
-#define MCNAPI_S MCNAPI
-#endif
-
 #include <algorithm>          // STL general algorithms
 #include <array>              // STL array container
 #include <bitset>             // STL bitset container
@@ -181,6 +161,21 @@ struct _INITIALIZE_OPTIONS;
 struct HC_CALL;
 struct tagWNDCLASSEXW;
 struct HINSTANCE__;
+namespace GameInput::v2 {
+    class IGameInput;
+}
+namespace Bedrock {
+    template<typename T>
+    struct ComAdapter {
+        std::unique_ptr<T>* mParent;
+        T* mPtr;
+
+        struct Deleter {
+            void operator()(T* ptr);
+        };
+    };
+}
+struct APP_LOCAL_DEVICE_ID;
 namespace winrt
 {
     struct event_token;

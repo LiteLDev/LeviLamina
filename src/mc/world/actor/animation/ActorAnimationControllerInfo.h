@@ -18,15 +18,26 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorAnimationController>> mPtr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ActorAnimationControllerInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI explicit ActorAnimationControllerInfo(::HashedString const& name);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::HashedString const& name);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::HashedString const& name);
+#endif
     // NOLINTEND
 };

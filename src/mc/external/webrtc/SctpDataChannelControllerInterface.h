@@ -20,20 +20,24 @@ class SctpDataChannelControllerInterface {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::webrtc::RTCError
-    SendData(::webrtc::StreamId, ::webrtc::SendDataParams const&, ::rtc::CopyOnWriteBuffer const&) = 0;
+    virtual ::webrtc::RTCError SendData(
+        ::webrtc::StreamId              sid,
+        ::webrtc::SendDataParams const& params,
+        ::rtc::CopyOnWriteBuffer const& payload
+    ) = 0;
 
-    virtual void AddSctpDataStream(::webrtc::StreamId) = 0;
+    virtual void AddSctpDataStream(::webrtc::StreamId sid) = 0;
 
-    virtual void RemoveSctpDataStream(::webrtc::StreamId) = 0;
+    virtual void RemoveSctpDataStream(::webrtc::StreamId sid) = 0;
 
-    virtual void OnChannelStateChanged(::webrtc::SctpDataChannel*, ::webrtc::DataChannelInterface::DataState) = 0;
+    virtual void
+    OnChannelStateChanged(::webrtc::SctpDataChannel* channel, ::webrtc::DataChannelInterface::DataState state) = 0;
 
-    virtual uint64 buffered_amount(::webrtc::StreamId) const = 0;
+    virtual uint64 buffered_amount(::webrtc::StreamId sid) const = 0;
 
-    virtual uint64 buffered_amount_low_threshold(::webrtc::StreamId) const = 0;
+    virtual uint64 buffered_amount_low_threshold(::webrtc::StreamId sid) const = 0;
 
-    virtual void SetBufferedAmountLowThreshold(::webrtc::StreamId, uint64) = 0;
+    virtual void SetBufferedAmountLowThreshold(::webrtc::StreamId sid, uint64 bytes) = 0;
 
     virtual ~SctpDataChannelControllerInterface();
     // NOLINTEND

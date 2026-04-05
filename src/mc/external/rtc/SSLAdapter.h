@@ -21,21 +21,21 @@ class SSLAdapter : public ::rtc::AsyncSocketAdapter {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void SetIgnoreBadCert(bool) = 0;
+    virtual void SetIgnoreBadCert(bool ignore) = 0;
 
-    virtual void SetAlpnProtocols(::std::vector<::std::string> const&) = 0;
+    virtual void SetAlpnProtocols(::std::vector<::std::string> const& protos) = 0;
 
-    virtual void SetEllipticCurves(::std::vector<::std::string> const&) = 0;
+    virtual void SetEllipticCurves(::std::vector<::std::string> const& curves) = 0;
 
-    virtual void SetMode(::rtc::SSLMode) = 0;
+    virtual void SetMode(::rtc::SSLMode mode) = 0;
 
-    virtual void SetCertVerifier(::rtc::SSLCertificateVerifier*) = 0;
+    virtual void SetCertVerifier(::rtc::SSLCertificateVerifier* ssl_cert_verifier) = 0;
 
-    virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
+    virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity> identity) = 0;
 
-    virtual void SetRole(::rtc::SSLRole) = 0;
+    virtual void SetRole(::rtc::SSLRole role) = 0;
 
-    virtual int StartSSL(::std::string_view) = 0;
+    virtual int StartSSL(::std::string_view hostname) = 0;
 
     virtual bool IsResumedSession() = 0;
 

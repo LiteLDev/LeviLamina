@@ -65,6 +65,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::Json::Value toJson() const;
+#ifdef LL_PLAT_S
+    MCNAPI ::Json::Value toJson() const;
+#endif
     // NOLINTEND
 };

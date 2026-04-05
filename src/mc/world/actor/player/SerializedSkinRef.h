@@ -65,23 +65,31 @@ public:
 
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
-    MCAPI_C bool isValid() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isValid() const;
+#endif
 
     MCFOLD ::SerializedSkinRef& operator=(::SerializedSkinRef&&);
 
     MCFOLD ::SerializedSkinRef& operator=(::SerializedSkinRef const&);
 
-    MCAPI_C void setCapeImageData(::mce::Image const* image);
+#ifdef LL_PLAT_C
+    MCAPI void setCapeImageData(::mce::Image const* image);
+#endif
 
     MCAPI void setCapeImageDataCereal(::SkinImage const& image);
 
-    MCAPI_C void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
+#ifdef LL_PLAT_C
+    MCAPI void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
+#endif
 
     MCAPI void setGeometryDataCereal(::Json::Value data);
 
     MCAPI void setGeometryDataMinEngineVersion(::MinEngineVersion minEngineVersion);
 
-    MCAPI_C void setImageData(::mce::Image const* image);
+#ifdef LL_PLAT_C
+    MCAPI void setImageData(::mce::Image const* image);
+#endif
 
     MCAPI void setImageDataCereal(::SkinImage const& image);
 

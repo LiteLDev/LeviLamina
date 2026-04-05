@@ -39,7 +39,9 @@ public:
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableItemGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI_C void sendEvent(::EventRef<::ItemGameplayEvent<void>> const& event);
+#ifdef LL_PLAT_C
+    MCAPI void sendEvent(::EventRef<::ItemGameplayEvent<void>> const& event);
+#endif
     // NOLINTEND
 
 public:

@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const& instance);
+#ifdef LL_PLAT_C
+    MCAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const& instance);
+#endif
     // NOLINTEND
 };

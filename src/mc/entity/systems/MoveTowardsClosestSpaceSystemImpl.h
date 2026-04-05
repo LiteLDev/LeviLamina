@@ -88,16 +88,49 @@ struct MoveTowardsClosestSpaceSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc85792;
-    // NOLINTEND
+    // MoveTowardsClosestSpaceSystemImpl inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::CanStandOnSnowFlagComponent,
+            ::HasLightweightFamilyFlagComponent,
+            ::HorseFlagComponent,
+            ::MobFlagComponent,
+            ::ParrotFlagComponent,
+            ::VehicleComponent,
+            ::CamelFlagComponent,
+            ::PlayerComponent,
+            ::ActorMovementTickNeededComponent,
+            ::PassengerComponent>,
+        ::Read<
+            ::AABBShapeComponent,
+            ::MovementAbilitiesComponent,
+            ::ActorTypeComponent,
+            ::FallDistanceComponent,
+            ::PassengerComponent,
+            ::ActorGameTypeComponent,
+            ::ActorDataFlagComponent,
+            ::VehicleComponent,
+            ::ActorRotationComponent,
+            ::MobBodyRotationComponent,
+            ::RenderRotationComponent,
+            ::StandAnimationComponent,
+            ::OffsetsComponent,
+            ::VanillaOffsetComponent,
+            ::PassengerRenderingRidingOffsetComponent,
+            ::DepenetrationComponent,
+            ::DimensionTypeComponent,
+            ::MovementInterpolatorComponent>,
+        ::Write<::StateVectorComponent>,
+        ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
+        ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    MoveTowardsClosestSpaceSystemImpl& operator=(MoveTowardsClosestSpaceSystemImpl const&);
-    MoveTowardsClosestSpaceSystemImpl(MoveTowardsClosestSpaceSystemImpl const&);
-    MoveTowardsClosestSpaceSystemImpl();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mIsClientSide;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -147,7 +180,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doTick(
+    MCAPI static void doTick(
         ::StrictEntityContext const&                      entity,
         ::ActorDataFlagComponent const&                   synchedActorData,
         ::AABBShapeComponent const&                       aabbShape,
@@ -198,7 +231,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,

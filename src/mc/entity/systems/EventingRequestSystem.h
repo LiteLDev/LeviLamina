@@ -21,15 +21,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _eventingRequestSystem(
+    MCAPI static void _eventingRequestSystem(
         ::StrictEntityContext const&,
         ::EventingRequestQueueComponent& eventingRequestQueueComponent,
         ::LevelComponent&                levelComponent
     );
 
-    MCNAPI static void
+    MCAPI static void
     _tickEventingRequestSystem(::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent> view);
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

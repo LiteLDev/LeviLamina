@@ -90,7 +90,7 @@ public:
     virtual ::Scripting::Result_deprecated<void>
     syncAndSaveGroup(::StackRefResult<::Editor::Services::PersistenceGroup> group) /*override*/;
 
-    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope) const = 0;
+    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const = 0;
     // NOLINTEND
 
 public:

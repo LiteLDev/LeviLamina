@@ -49,7 +49,9 @@ public:
 
     MCAPI void clearHistory();
 
-    MCAPI_C ::IReplayableActorInput* getCurrentCapturedInput();
+#ifdef LL_PLAT_C
+    MCAPI ::IReplayableActorInput* getCurrentCapturedInput();
+#endif
 
     MCAPI ::ReplayStateComponent& operator=(::ReplayStateComponent&&);
 

@@ -14,7 +14,15 @@ public:
     // NOLINTBEGIN
     virtual ~KeyboardManager() = default;
 
-    virtual bool tryEnableKeyboard(::std::string const&, int, bool, bool, bool, ::Vec2 const&, float) = 0;
+    virtual bool tryEnableKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        ::Vec2 const&        position,
+        float                controlHeight
+    ) = 0;
 
     virtual bool isFullScreenKeyboard() const = 0;
 
@@ -34,7 +42,7 @@ public:
 
     virtual float getKeyboardHeight() const = 0;
 
-    virtual void setForcedHeight(float) = 0;
+    virtual void setForcedHeight(float height) = 0;
 
     virtual bool tryClaimKeyboardOwnership() = 0;
 
@@ -44,7 +52,11 @@ public:
 
     virtual void clearKeyboardClosedEvent() = 0;
 
-    virtual void updateTextEditBoxPosition(::RectangleArea const&, ::Vec2 const&, ::Vec2 const&) = 0;
+    virtual void updateTextEditBoxPosition(
+        ::RectangleArea const& controlPosition,
+        ::Vec2 const&          caretPosition,
+        ::Vec2 const&          caretSize
+    ) = 0;
     // NOLINTEND
 
 public:

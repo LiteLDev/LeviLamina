@@ -30,7 +30,7 @@ namespace SharedTypes::v1_21_90 { struct CameraPreset; }
 namespace CameraAimAssistSystemUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
+MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
     ::Vec3 const&                                    start,
     ::Vec3 const&                                    end,
     ::IConstBlockSource const&                       region,
@@ -44,7 +44,7 @@ MCNAPI_C ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
 
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
-MCNAPI_C ::Frustum createFrustumForCachedFrustumComponent(
+MCNAPI ::Frustum createFrustumForCachedFrustumComponent(
     ::Vec3 const& start,
     ::Vec3 const& direction,
     ::Vec3 const& unitLeft,
@@ -54,7 +54,7 @@ MCNAPI_C ::Frustum createFrustumForCachedFrustumComponent(
     ::Vec3 const& farCenter
 );
 
-MCNAPI_C ::CameraAimAssistSystemUtil::BlockHitDetectResult firstBlockHitDetect(
+MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult firstBlockHitDetect(
     ::IConstBlockSource const& region,
     ::BlockPos const&          currentBlockPos,
     ::Vec3 const&              start,
@@ -83,7 +83,7 @@ setAimAssistForServerPlayer(
     bool                          showDebugRender
 );
 
-MCNAPI_C ::Bedrock::Result<
+MCNAPI ::Bedrock::Result<
     void,
     ::std::variant<
         ::CameraAimAssistErrorType::UnknownPresetId,
@@ -95,9 +95,9 @@ setAimAssistFromClient(
     bool                                         allowAimAssist
 );
 
-MCNAPI_C bool shouldRotatePlayerOnProjectile(::std::string_view cameraMode, ::ControlScheme::Scheme controlScheme);
+MCNAPI bool shouldRotatePlayerOnProjectile(::std::string_view cameraMode, ::ControlScheme::Scheme controlScheme);
 
-MCNAPI_C bool stepAndUpdateCurrentBlockPos(
+MCNAPI bool stepAndUpdateCurrentBlockPos(
     ::Vec3&           currentPos,
     ::BlockPos&       currentBlockPos,
     ::Vec3 const&     endPos,

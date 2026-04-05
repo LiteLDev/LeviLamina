@@ -17,7 +17,7 @@ class PlayerMovementStatsEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickPlayerMovementStatsEventSystem(
+    MCAPI static void tickPlayerMovementStatsEventSystem(
         ::ViewT<
             ::StrictEntityContext,
             ::ActorOwnerComponent,

@@ -15,9 +15,14 @@ struct PlayerPositionModeComponent;
 
 class ResetPositionModeSystem {
 public:
+    // ResetPositionModeSystem inner types define
+    using ViewType =
+        ::ViewT<::StrictEntityContext, ::Include<::InterpolateMovementNeededComponent>, ::PlayerPositionModeComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickResetPositionModeSystem(
+    MCAPI static void tickResetPositionModeSystem(
         ::ViewT<::StrictEntityContext, ::Include<::InterpolateMovementNeededComponent>, ::PlayerPositionModeComponent>
             view
     );

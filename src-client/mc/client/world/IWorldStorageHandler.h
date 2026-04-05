@@ -96,47 +96,51 @@ public:
 
     virtual ::std::
         variant<::World::IWorldStorageHandler::ReadWorldError, ::World::IWorldStorageHandler::CachedWorldData>
-        readWorld(::World::WorldID const&) const = 0;
+        readWorld(::World::WorldID const& id) const = 0;
 
-    virtual ::std::optional<::World::IWorldStorageHandler::WriteWorldError>
-    updateOrCreateWorld(::LevelData&, ::LevelSummary&, ::std::shared_ptr<::LevelSettings>) const = 0;
+    virtual ::std::optional<::World::IWorldStorageHandler::WriteWorldError> updateOrCreateWorld(
+        ::LevelData&                       levelData,
+        ::LevelSummary&                    levelSummary,
+        ::std::shared_ptr<::LevelSettings> levelSettings
+    ) const = 0;
 
-    virtual void deleteWorld(::World::WorldID const&) = 0;
+    virtual void deleteWorld(::World::WorldID const& id) = 0;
 
-    virtual void reloadWorld(::World::WorldID const&) = 0;
+    virtual void reloadWorld(::World::WorldID const& id) = 0;
 
     virtual void duplicateWorld(
-        ::World::WorldID const&,
-        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)>
+        ::World::WorldID const&                                                                             worldId,
+        ::std::function<void(::World::WorldID const&, ::World::IWorldStorageHandler::DuplicateWorldResult)> onComplete
     ) = 0;
 
     virtual void exportWorld(
-        ::World::WorldID const&,
-        ::World::ExportWorldFlags,
-        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)>
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) = 0;
 
     virtual void exportWorldAsTemplate(
-        ::World::WorldID const&,
-        ::World::ExportWorldFlags,
-        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)>
+        ::World::WorldID const&                                                 worldId,
+        ::World::ExportWorldFlags                                               flags,
+        ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) = 0;
 
     virtual ::World::IWorldStorageHandler::ExportWorldStatus exportWorldStatus() const = 0;
 
     virtual void updateWorldIcon(
-        ::World::WorldID const&,
-        ::Core::PathBuffer<::std::string> const&,
-        ::std::string const&,
-        ::std::function<void(::World::WorldID const&)>
+        ::World::WorldID const&                        worldId,
+        ::Core::PathBuffer<::std::string> const&       screenshotPath,
+        ::std::string const&                           id,
+        ::std::function<void(::World::WorldID const&)> onComplete
     ) = 0;
 
-    virtual void resetWorldIcon(::World::WorldID const&, ::std::function<void(::World::WorldID const&)>) = 0;
+    virtual void
+    resetWorldIcon(::World::WorldID const& worldId, ::std::function<void(::World::WorldID const&)> onComplete) = 0;
 
     virtual ::Bedrock::Threading::Async<void> clearPlayerData(
-        ::World::WorldID const&,
-        ::World::ClearPlayerDataType,
-        ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>&
+        ::World::WorldID const&                                                    worldId,
+        ::World::ClearPlayerDataType                                               type,
+        ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) = 0;
     // NOLINTEND
 

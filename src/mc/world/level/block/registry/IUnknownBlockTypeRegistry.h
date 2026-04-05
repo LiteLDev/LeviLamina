@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     virtual ~IUnknownBlockTypeRegistry() = 0;
 
-    virtual ::Block const& getUnknownBlock(::CompoundTag const&) = 0;
+    virtual ::Block const& getUnknownBlock(::CompoundTag const& serId) = 0;
     // NOLINTEND
 
 public:

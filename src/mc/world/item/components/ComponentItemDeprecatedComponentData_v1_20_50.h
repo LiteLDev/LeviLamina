@@ -16,18 +16,31 @@ public:
     ::ll::TypedStorage<8, 96, ::std::optional<::LegacyOnDigTriggerItemComponentData>> legacyOnDigTriggerItemComponent;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ComponentItemDeprecatedComponentData_v1_20_50& operator=(ComponentItemDeprecatedComponentData_v1_20_50 const&);
     ComponentItemDeprecatedComponentData_v1_20_50(ComponentItemDeprecatedComponentData_v1_20_50 const&);
     ComponentItemDeprecatedComponentData_v1_20_50();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ComponentItemDeprecatedComponentData_v1_20_50(ComponentItemDeprecatedComponentData_v1_20_50 const&);
+    ComponentItemDeprecatedComponentData_v1_20_50();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemDeprecatedComponentData_v1_20_50(::ComponentItemDeprecatedComponentData_v1_20_50&&);
 
     MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50& operator=(::ComponentItemDeprecatedComponentData_v1_20_50&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_50&
+    operator=(::ComponentItemDeprecatedComponentData_v1_20_50 const&);
+#endif
 
     MCAPI ~ComponentItemDeprecatedComponentData_v1_20_50();
     // NOLINTEND

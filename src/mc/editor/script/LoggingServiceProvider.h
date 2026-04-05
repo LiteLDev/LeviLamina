@@ -25,14 +25,18 @@ public:
     virtual ~LoggingServiceProvider() = default;
 
     virtual void
-    log(::Editor::LogContent, ::Player*, ::Editor::LogLevel, ::std::vector<::HashedString>&&, ::Editor::LogChannel) = 0;
+    log(::Editor::LogContent            content,
+        ::Player*                       player,
+        ::Editor::LogLevel              level,
+        ::std::vector<::HashedString>&& areaTags,
+        ::Editor::LogChannel            logChannel) = 0;
 
     virtual void flush() = 0;
 
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const = 0;
 
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForLogMessage(::std::function<void(::Editor::LogMessage const&)>) = 0;
+    listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) = 0;
     // NOLINTEND
 
 public:

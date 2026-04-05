@@ -28,11 +28,24 @@ public:
     ::ll::TypedStorage<1, 1, bool>                               mWasShaking;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CameraShakeComponent& operator=(CameraShakeComponent const&);
+    CameraShakeComponent(CameraShakeComponent const&);
+    CameraShakeComponent();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void initialize(::Random& random);
+#ifdef LL_PLAT_C
+    MCAPI void initialize(::Random& random);
 
-    MCAPI_C bool queueShakeEvent(float intensity, float duration);
+    MCAPI ::CameraShakeComponent& operator=(::CameraShakeComponent&&);
+
+    MCAPI bool queueShakeEvent(float intensity, float duration);
+#endif
     // NOLINTEND
 };

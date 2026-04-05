@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString> mRecipeTag;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    FurnaceInputContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,13 +38,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI FurnaceInputContainerController(
+        ::std::shared_ptr<::ContainerModel> containerModel,
+        ::HashedString const&               recipeTag
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, ::HashedString const& recipeTag);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, ::HashedString const& recipeTag);
+#endif
     // NOLINTEND
 
 public:

@@ -46,7 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _lazyOpenFileHandle();
+#ifdef LL_PLAT_C
+    MCNAPI bool _lazyOpenFileHandle();
+#endif
     // NOLINTEND
 
 public:

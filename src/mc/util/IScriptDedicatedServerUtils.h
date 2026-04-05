@@ -21,15 +21,15 @@ public:
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() = 0;
 
-    virtual bool addNameToAllowList(::std::string const&) = 0;
+    virtual bool addNameToAllowList(::std::string const& name) = 0;
 
-    virtual bool removeNameFromAllowList(::std::string const&) = 0;
+    virtual bool removeNameFromAllowList(::std::string const& name) = 0;
 
-    virtual bool allowListContains(::std::string const&) = 0;
+    virtual bool allowListContains(::std::string const& name) = 0;
 
     virtual bool reloadAllowListFile() = 0;
 
-    virtual void setAllowListEnabled(bool) = 0;
+    virtual void setAllowListEnabled(bool enabled) = 0;
 
     virtual bool getAllowListEnabled() const = 0;
     // NOLINTEND

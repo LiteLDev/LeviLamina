@@ -60,6 +60,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandBlockUpdatePacket(::CommandBlockUpdatePacket const&);
+
+#ifdef LL_PLAT_C
+    MCAPI CommandBlockUpdatePacket(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
+#endif
     // NOLINTEND
 
 public:
@@ -67,7 +71,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::CommandBlockUpdatePacket const&);
 
-    MCAPI_C void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
+#endif
     // NOLINTEND
 
 public:

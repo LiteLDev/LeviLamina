@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     virtual ~PackWriteStrategy() = default;
 
-    virtual void writeAsset(::PackWriteStrategy::FileName, ::std::string const&) = 0;
+    virtual void writeAsset(::PackWriteStrategy::FileName path, ::std::string const& fileContent) = 0;
     // NOLINTEND
 
 public:

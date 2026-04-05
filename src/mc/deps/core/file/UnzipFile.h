@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     virtual ~UnzipFile();
 
-    virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) = 0;
+    virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) = 0;
 
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() = 0;
 
@@ -33,9 +33,9 @@ public:
 
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() = 0;
 
-    virtual void readCurrentFileContentsIntoMemory(::std::string&) = 0;
+    virtual void readCurrentFileContentsIntoMemory(::std::string& str) = 0;
 
-    virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) = 0;
+    virtual void readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) = 0;
 
     virtual uint64 getTotalFilesInZip() = 0;
 

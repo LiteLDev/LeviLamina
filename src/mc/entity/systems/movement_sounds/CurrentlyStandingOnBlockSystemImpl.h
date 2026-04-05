@@ -56,7 +56,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doCurrentlyStandingOnBlockSystem(
+    MCAPI static void doCurrentlyStandingOnBlockSystem(
         ::StrictEntityContext const&                          entity,
         ::ActorOwnerComponent const&                          actorOwnerComponent,
         ::StateVectorComponent const&                         stateVectorComponent,
@@ -69,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::ShouldPlayMovementSoundComponent>,
             ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,

@@ -39,10 +39,22 @@ public:
         ::ll::TypedStorage<4, 4, int>            lineLength;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CachedLineData& operator=(CachedLineData const&);
+        CachedLineData(CachedLineData const&);
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI CachedLineData();
+
+#ifdef LL_PLAT_C
+        MCAPI CachedLineData(::ChalkboardBlockActor::CachedLineData&&);
+#endif
 
         MCAPI ~CachedLineData();
         // NOLINTEND
@@ -52,7 +64,9 @@ public:
         // NOLINTBEGIN
         MCFOLD void* $ctor();
 
-        MCFOLD_C void* $ctor(::ChalkboardBlockActor::CachedLineData&&);
+#ifdef LL_PLAT_C
+        MCFOLD void* $ctor(::ChalkboardBlockActor::CachedLineData&&);
+#endif
         // NOLINTEND
 
     public:
@@ -73,16 +87,31 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                                       dirty;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CachedMessageData& operator=(CachedMessageData const&);
+        CachedMessageData(CachedMessageData const&);
+        CachedMessageData();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI ::ChalkboardBlockActor::CachedMessageData& operator=(::ChalkboardBlockActor::CachedMessageData&&);
 
+        MCAPI ~CachedMessageData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -155,12 +184,16 @@ public:
 
     MCAPI ::std::string const& getText() const;
 
-    MCAPI_C ::ChalkboardBlockActor::CachedMessageData&
+#ifdef LL_PLAT_C
+    MCAPI ::ChalkboardBlockActor::CachedMessageData&
     setCachedMessage(::ChalkboardBlockActor::CachedMessageData cachedMessage);
+#endif
 
     MCAPI void setText(::std::string const& text);
 
-    MCAPI_C void setText(::std::string const& text, ::TextObjectRoot&& root);
+#ifdef LL_PLAT_C
+    MCAPI void setText(::std::string const& text, ::TextObjectRoot&& root);
+#endif
 
     MCAPI void validate(::BlockSource& region);
     // NOLINTEND

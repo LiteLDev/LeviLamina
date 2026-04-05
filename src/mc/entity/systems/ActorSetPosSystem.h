@@ -64,16 +64,37 @@ class ActorSetPosSystem : public ::IStrictTickingSystem<::StrictExecutionContext
                               ::GlobalWrite<>,
                               ::EntityFactoryT<>>> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3fcc8a;
-    // NOLINTEND
+    // ActorSetPosSystem inner types define
+    using Base = ::IStrictTickingSystem<::StrictExecutionContext<
+        ::Filter<
+            ::ActorAddedFlagComponent,
+            ::ActorRemovedFlagComponent,
+            ::LocalPlayerComponent,
+            ::PaintingFlagComponent,
+            ::PlayerComponent,
+            ::ShulkerFlagComponent>,
+        ::Read<::ActorOwnerComponent, ::ChunkPositionComponent, ::OffsetsComponent>,
+        ::Write<
+            ::AABBShapeComponent,
+            ::ActorSetPositionRequestComponent,
+            ::HitboxComponent,
+            ::StateVectorComponent,
+            ::SynchedActorDataComponent,
+            ::ActorDataFlagComponent,
+            ::ActorDataDirtyFlagsComponent>,
+        ::AddRemove<
+            ::ActorChunkMoveFlagComponent,
+            ::ActorLocalPlayerEntityMovedFlagComponent,
+            ::ActorSetPositionRequestComponent>,
+        ::GlobalRead<>,
+        ::GlobalWrite<>,
+        ::EntityFactoryT<>>>;
 
 public:
-    // prevent constructor by default
-    ActorSetPosSystem& operator=(ActorSetPosSystem const&);
-    ActorSetPosSystem(ActorSetPosSystem const&);
-    ActorSetPosSystem();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -139,15 +160,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
+    MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
-    MCNAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
+    MCAPI static void moveHitboxTo(::Vec3 const& pos, ::std::vector<::Hitbox>& hitboxes);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $singleTick(
+    MCAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorAddedFlagComponent,
@@ -175,7 +196,7 @@ public:
         ::StrictEntityContext&   entityContext
     );
 
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorAddedFlagComponent,

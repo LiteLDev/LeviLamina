@@ -18,12 +18,12 @@ struct ShouldBeSimulatedComponent;
 namespace ActorMovementTickFilterSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void designateAllEntities(
+MCAPI void designateAllEntities(
     ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>> tickNeeded,
     ::EntityModifier<::InterpolateMovementNeededComponent>                        modifier
 );
 
-MCNAPI void designateSimulatedEntities(
+MCAPI void designateSimulatedEntities(
     ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>> tickNeeded,
     ::ViewT<::StrictEntityContext, ::Include<::ShouldBeSimulatedComponent>>       shouldBeSimulated,
     ::EntityModifier<::InterpolateMovementNeededComponent>                        modifier

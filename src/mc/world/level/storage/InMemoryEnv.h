@@ -33,7 +33,7 @@ public:
 
     virtual ::leveldb::Status NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
-    virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
+    virtual ::leveldb::Status RemoveFile(::std::string const& f) /*override*/;
 
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
@@ -61,7 +61,7 @@ public:
 
     MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& fname);
+    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& f);
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
 

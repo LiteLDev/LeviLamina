@@ -126,11 +126,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ContainerScreenTemporaryActionScope _createTemporaryScope();
+#ifdef LL_PLAT_C
+    MCNAPI ::ContainerScreenTemporaryActionScope _createTemporaryScope();
 
-    MCNAPI_C void _leaveActionScope(::ContainerScreenActionResult& result);
+    MCNAPI void _leaveActionScope(::ContainerScreenActionResult& result);
 
-    MCNAPI_C ::ContainerScreenActionResult _tryTransfer(
+    MCNAPI ::ContainerScreenActionResult _tryTransfer(
         ::ItemTransferType                   transferType,
         ::ContainerValidationSlotData const& srcSlot,
         ::ContainerValidationSlotData const& dstSlot,
@@ -138,15 +139,16 @@ public:
         ::ContainerScreenTransferBehaviour   transferBehaviour
     );
 
-    MCNAPI_C ::ContainerScreenActionResult _tryTransferSpecial(
+    MCNAPI ::ContainerScreenActionResult _tryTransferSpecial(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount                 transferAmount,
         ::ItemSpecialLocation                location
     );
 
-    MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
+    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerScreenActionResult result);
 
-    MCNAPI_C ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
+    MCNAPI ::ContainerScreenActionResult _updateCurrentScope(::ContainerValidationResult result);
+#endif
     // NOLINTEND
 
 public:

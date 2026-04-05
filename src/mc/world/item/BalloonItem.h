@@ -39,7 +39,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
+#ifdef LL_PLAT_C
+    MCAPI static bool canAttachToBlock(::BlockPos const& blockPos, ::BlockSource const& region);
+#endif
     // NOLINTEND
 
 public:

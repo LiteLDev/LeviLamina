@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
+    virtual void onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const /*override*/;
 
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -98,7 +98,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCAPI void $onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 

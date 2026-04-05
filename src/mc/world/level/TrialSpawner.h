@@ -209,7 +209,9 @@ public:
         ::std::string const& lootTableName
     );
 
-    MCAPI_C static char const* _getSmallFlameParticleName(bool isOminous);
+#ifdef LL_PLAT_C
+    MCAPI static char const* _getSmallFlameParticleName(bool isOminous);
+#endif
 
     MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
 
@@ -219,8 +221,10 @@ public:
 
     MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
 
-    MCAPI_C static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
+#ifdef LL_PLAT_C
+    MCAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 
-    MCAPI_C static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
+    MCAPI static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
+#endif
     // NOLINTEND
 };

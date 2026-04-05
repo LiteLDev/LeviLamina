@@ -30,7 +30,9 @@ public:
 
     MCNAPI ::Json::Value toJson() const;
 
-    MCNAPI_S ::std::string toString() const;
+#ifdef LL_PLAT_S
+    MCNAPI ::std::string toString() const;
+#endif
     // NOLINTEND
 
 public:

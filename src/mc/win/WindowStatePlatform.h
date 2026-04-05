@@ -14,11 +14,11 @@ public:
 
     virtual bool getWindowShowCommand(::HWND__* window, int& result) const;
 
-    virtual bool getClosestMonitorRect(::tagRECT const&, ::tagRECT&) const = 0;
+    virtual bool getClosestMonitorRect(::tagRECT const& closestToRect, ::tagRECT& result) const = 0;
 
     virtual bool getAdjustedWindowRect(::tagRECT const& clientRect, ::tagRECT& windowRect) const;
 
-    virtual ::tagRECT _fitClientToScreen(::tagRECT const&, ::tagRECT const&, ::tagRECT const&) = 0;
+    virtual ::tagRECT _fitClientToScreen(::tagRECT const& client, ::tagRECT const& window, ::tagRECT const& screen) = 0;
     // NOLINTEND
 
 public:

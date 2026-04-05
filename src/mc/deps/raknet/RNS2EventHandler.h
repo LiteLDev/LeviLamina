@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     virtual ~RNS2EventHandler();
 
-    virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct*) = 0;
+    virtual void OnRNS2Recv(::RakNet::RNS2RecvStruct* recvStruct) = 0;
 
-    virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct*, char const*, uint) = 0;
+    virtual void DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct* s, char const* file, uint line) = 0;
 
-    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const*, uint) = 0;
+    virtual ::RakNet::RNS2RecvStruct* AllocRNS2RecvStruct(char const* file, uint line) = 0;
     // NOLINTEND
 
 public:

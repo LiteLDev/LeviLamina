@@ -16,7 +16,7 @@ class MobEffectPacket;
 namespace MobEffectPacketUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI_C void applyPacket(::Actor& actor, ::MobEffectPacket const& packet);
+MCNAPI void applyPacket(::Actor& actor, ::MobEffectPacket const& packet);
 
 MCNAPI ::std::optional<::MobEffectPacket> createPacket(
     ::MobEffectPacketPayload::Event eventType,

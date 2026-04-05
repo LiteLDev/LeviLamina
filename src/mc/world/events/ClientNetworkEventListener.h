@@ -16,14 +16,14 @@ public:
     // NOLINTBEGIN
     virtual ~ClientNetworkEventListener() = default;
 
-    virtual ::EventResult onMessage(::ClientMessageEvent const&);
+    virtual ::EventResult onMessage(::ClientMessageEvent const& messageEvent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::EventResult $onMessage(::ClientMessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::ClientMessageEvent const& messageEvent);
 #endif
 
 

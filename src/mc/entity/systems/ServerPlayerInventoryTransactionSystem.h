@@ -23,9 +23,9 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerInventoryTransactionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tickInventoryTransactionSystem(
+MCAPI void tickInventoryTransactionSystem(
     ::StrictEntityContext const&                                  entity,
     ::ServerPlayerInventoryTransactionComponent const&            inventoryTransaction,
     ::MoveInputComponent const&                                   moveInput,
@@ -35,7 +35,7 @@ MCNAPI void tickInventoryTransactionSystem(
     ::EntityModifier<::ServerPlayerInventoryTransactionComponent> modifier
 );
 
-MCNAPI void transactInventoryPacket(
+MCAPI void transactInventoryPacket(
     ::InventoryTransactionPacket const& packet,
     ::ServerPlayer&                     player,
     ::BlockPalette&                     blockPalette

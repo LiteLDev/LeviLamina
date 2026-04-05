@@ -29,13 +29,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~AvailableGame();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -64,27 +68,43 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnk2eacee;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ThirdPartyServer& operator=(ThirdPartyServer const&);
     ThirdPartyServer(ThirdPartyServer const&);
     ThirdPartyServer();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ThirdPartyServer& operator=(ThirdPartyServer const&);
+    ThirdPartyServer(ThirdPartyServer const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ThirdPartyServer();
 
+    MCNAPI ~ThirdPartyServer();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

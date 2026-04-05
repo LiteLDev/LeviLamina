@@ -63,29 +63,52 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkb05ae8;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&);
     PersonaPiece(PersonaPiece const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PersonaPiece& operator=(PersonaPiece const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI PersonaPiece();
 
-    MCNAPI_C ::std::string getPieceName() const;
+#ifdef LL_PLAT_C
+    MCNAPI PersonaPiece(::PersonaPiece&&);
 
-    MCNAPI_C ::TintMapColor getTintBaseColor() const;
+    MCNAPI PersonaPiece(::PersonaPiece const&);
 
-    MCNAPI_C bool getTintMapColor(::TintMapColor& tintColor) const;
+    MCNAPI PersonaPiece(
+        ::std::string const&   pieceId,
+        ::PackIdVersion const& packIdVersion,
+        ::persona::PieceType   pieceTypeId,
+        bool                   platformLocked,
+        bool                   titleLocked
+    );
 
-    MCNAPI_C void hipBoneParentRetarget();
+    MCNAPI ::std::string getPieceName() const;
 
-    MCNAPI_C void initLocalizationDictionary();
+    MCNAPI ::TintMapColor getTintBaseColor() const;
 
-    MCNAPI_C bool isValid() const;
+    MCNAPI bool getTintMapColor(::TintMapColor& tintColor) const;
 
-    MCNAPI_C void setPieceNameAsLocKey(::std::string const& pieceName);
+    MCNAPI void hipBoneParentRetarget();
+
+    MCNAPI void initLocalizationDictionary();
+
+    MCNAPI bool isValid() const;
+
+    MCNAPI bool operator!=(::PersonaPiece const& asset) const;
+
+    MCNAPI void setPieceNameAsLocKey(::std::string const& pieceName);
+#endif
 
     MCNAPI ~PersonaPiece();
     // NOLINTEND
@@ -93,12 +116,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::PersonaPiece createPersonaPieceFromPiecePack(
+#ifdef LL_PLAT_C
+    MCNAPI static ::PersonaPiece createPersonaPieceFromPiecePack(
         ::std::shared_ptr<::Pack>        sourcePack,
         ::PersonaPiece::FilePaths const& filePaths,
         bool                             differPieceAndPackIds,
         bool                             isTestResourcePack
     );
+#endif
     // NOLINTEND
 
 public:
@@ -112,17 +137,19 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::PersonaPiece&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::PersonaPiece&&);
 
-    MCNAPI_C void* $ctor(::PersonaPiece const&);
+    MCNAPI void* $ctor(::PersonaPiece const&);
 
-    MCNAPI_C void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&   pieceId,
         ::PackIdVersion const& packIdVersion,
         ::persona::PieceType   pieceTypeId,
         bool                   platformLocked,
         bool                   titleLocked
     );
+#endif
     // NOLINTEND
 
 public:

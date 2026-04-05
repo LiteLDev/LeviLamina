@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/BreakIteratorBoundary.h"
-#include "mc/deps/cohtml/IInternationalizationManager.h"
-#include "mc/deps/cohtml/TextDirection.h"
+#include "mc/external/gameface/cohtml/BreakIteratorBoundary.h"
+#include "mc/external/gameface/cohtml/IInternationalizationManager.h"
+#include "mc/external/gameface/cohtml/TextDirection.h"
 
 // auto generated forward declare list
 // clang-format off

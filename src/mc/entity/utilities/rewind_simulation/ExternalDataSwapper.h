@@ -28,19 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit ExternalDataSwapper(::EntityRegistry& registry);
 
+    MCNAPI ~ExternalDataSwapper();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::EntityRegistry& registry);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::EntityRegistry& registry);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

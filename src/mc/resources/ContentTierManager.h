@@ -42,13 +42,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::std::function<bool()> isHardwareRayTracingCompatible);
+#endif
     // NOLINTEND
 
 public:

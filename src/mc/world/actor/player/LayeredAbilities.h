@@ -41,10 +41,12 @@ public:
 
     MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
 
-    MCAPI_C void forEachAbility(
+#ifdef LL_PLAT_C
+    MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, char const*)> const& callback,
         ::Ability::Options                                          requiredOptions
     ) const;
+#endif
 
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
@@ -53,9 +55,11 @@ public:
 
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
-    MCAPI_C bool loadSaveData(::CompoundTag const& parentTag);
+#ifdef LL_PLAT_C
+    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
-    MCAPI_C void onSwitchToCustom();
+    MCAPI void onSwitchToCustom();
+#endif
 
     MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
 
@@ -67,7 +71,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::optional<::std::string> getDiff(::LayeredAbilities const& lhs, ::LayeredAbilities const& rhs);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::std::string> getDiff(::LayeredAbilities const& lhs, ::LayeredAbilities const& rhs);
+#endif
     // NOLINTEND
 
 public:

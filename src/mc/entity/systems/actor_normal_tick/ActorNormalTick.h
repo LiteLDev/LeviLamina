@@ -33,7 +33,7 @@ struct WolfFlagComponent;
 namespace ActorNormalTick {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickEach(
+MCAPI void _tickEach(
     bool isClientSide,
     ::ViewT<
         ::StrictEntityContext,

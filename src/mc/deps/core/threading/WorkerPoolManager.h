@@ -21,12 +21,12 @@ public:
     virtual void init() = 0;
 
     virtual ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> createWorkerPool(
-        ::std::string,
-        uint64,
-        ::Bedrock::Threading::OSThreadPriority const&,
-        ::std::optional<uint64> const,
-        bool,
-        ::std::optional<int> const
+        ::std::string                                 name,
+        uint64                                        threadCount,
+        ::Bedrock::Threading::OSThreadPriority const& priority,
+        ::std::optional<uint64> const                 coreAffinityMask,
+        bool                                          suppressWorkerProfiling,
+        ::std::optional<int> const                    idealCore
     ) = 0;
 
     virtual void tick() = 0;

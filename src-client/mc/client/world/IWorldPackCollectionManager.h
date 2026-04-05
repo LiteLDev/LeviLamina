@@ -26,33 +26,40 @@ public:
 
     virtual void tick() = 0;
 
-    virtual void setContentSource(::std::unique_ptr<::ContentSource>&&) = 0;
+    virtual void setContentSource(::std::unique_ptr<::ContentSource>&& contentSource) = 0;
 
     virtual void resetContent() = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-    subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&&) = 0;
+    subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback) = 0;
 
     virtual ::WorldContentItemCollectionsModel getWorldCollectionsModel() const = 0;
 
-    virtual ::std::optional<::World::PackActionError> activatePack(::std::string const&, ::ContentType, bool) = 0;
+    virtual ::std::optional<::World::PackActionError>
+    activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) = 0;
 
-    virtual ::std::optional<::World::PackActionError> deactivatePack(::std::string const&, ::ContentType, bool) = 0;
+    virtual ::std::optional<::World::PackActionError>
+    deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) = 0;
 
     virtual ::std::optional<::World::PackActionError> continuePendingPackAction() = 0;
 
     virtual void clearPendingPackAction() = 0;
 
-    virtual ::Bedrock::PubSub::Subscription
-        subscribeToPendingPackActionPublisher(::std::function<void(::std::optional<::World::PendingPackAction>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription subscribeToPendingPackActionPublisher(
+        ::std::function<void(::std::optional<::World::PendingPackAction>)> callback
+    ) = 0;
 
-    virtual ::std::optional<::World::PackActionError>
-    changePackPriority(::std::string const&, ::ContentType, int, int) = 0;
+    virtual ::std::optional<::World::PackActionError> changePackPriority(
+        ::std::string const& packIdVersion,
+        ::ContentType        packType,
+        int                  fromPosition,
+        int                  toPosition
+    ) = 0;
 
-    virtual ::std::optional<::PackSettingsInfo> getPackSettingsForPackIdVersion(::std::string const&) = 0;
+    virtual ::std::optional<::PackSettingsInfo> getPackSettingsForPackIdVersion(::std::string const& packIdVersion) = 0;
 
     virtual ::Bedrock::PubSub::Subscription subscribeToMarketplacePackDownloadStatus(
-        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&&
+        ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     ) = 0;
     // NOLINTEND
 

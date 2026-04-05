@@ -53,7 +53,7 @@ public:
 
         virtual ::std::vector<::JigsawBlockInfo> const& getJigsawMarkers() const = 0;
 
-        virtual ::BlockPos getSize(::Rotation) const = 0;
+        virtual ::BlockPos getSize(::Rotation rotation) const = 0;
 
         virtual bool isLegacyStructure() const = 0;
         // NOLINTEND

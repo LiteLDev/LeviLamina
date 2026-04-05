@@ -22,11 +22,11 @@ public:
 
     virtual ::std::string ToPEMString() const = 0;
 
-    virtual void ToDER(::rtc::BufferT<uchar, 0>*) const = 0;
+    virtual void ToDER(::rtc::BufferT<uchar, 0>* der_buffer) const = 0;
 
-    virtual bool GetSignatureDigestAlgorithm(::std::string*) const = 0;
+    virtual bool GetSignatureDigestAlgorithm(::std::string* algorithm) const = 0;
 
-    virtual bool ComputeDigest(::std::string_view, uchar*, uint64, uint64*) const = 0;
+    virtual bool ComputeDigest(::std::string_view algorithm, uchar* digest, uint64 size, uint64* length) const = 0;
 
     virtual int64 CertificateExpirationTime() const = 0;
     // NOLINTEND

@@ -11,8 +11,8 @@ struct SendLinkPacketOfPassengersSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::TickingSystemWithInfo createCleanupSystem();
+    MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
-    MCNAPI static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

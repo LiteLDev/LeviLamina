@@ -10,7 +10,7 @@ class Sheep : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     virtual ~Sheep() /*override*/ = default;
     // NOLINTEND
@@ -19,7 +19,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 #endif
 
 

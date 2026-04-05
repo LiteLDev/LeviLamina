@@ -17,7 +17,8 @@ public:
     // NOLINTBEGIN
     virtual int getEnchantSlot() const /*override*/;
 
-    virtual void executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const /*override*/;
+    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+        /*override*/;
 
     virtual ~PickaxeItem() /*override*/ = default;
     // NOLINTEND
@@ -27,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
 
-    MCFOLD void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
+    MCFOLD void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 
 
     // NOLINTEND

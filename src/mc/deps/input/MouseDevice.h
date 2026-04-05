@@ -26,19 +26,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void
+#ifdef LL_PLAT_C
+    MCAPI MouseDevice();
+
+    MCAPI void
     feed(char actionButtonId, schar buttonData, short x, short y, short dx, short dy, bool forceMotionlessPointer);
+
+    MCAPI ~MouseDevice();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -23,10 +23,19 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRuntimeResults;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     SmithingTransformRecipe();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&);
+    SmithingTransformRecipe(SmithingTransformRecipe const&);
+    SmithingTransformRecipe();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,6 +50,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI SmithingTransformRecipe(::SmithingTransformRecipe&&);
+#endif
+
     MCAPI SmithingTransformRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
@@ -60,7 +73,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::SmithingTransformRecipe&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::SmithingTransformRecipe&&);
+#endif
 
     MCAPI void* $ctor(
         ::std::string const&      recipeId,

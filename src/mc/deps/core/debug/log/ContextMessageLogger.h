@@ -36,13 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit ContextMessageLogger(::ContextMessageLoggerOptions const& options);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ContextMessageLoggerOptions const& options);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ContextMessageLoggerOptions const& options);
+#endif
     // NOLINTEND
 
 public:

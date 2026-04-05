@@ -44,30 +44,30 @@ public:
     virtual ~IInvocationStateTracker() = default;
 
     virtual ::Bedrock::PubSub::Subscription onChange(
-        ::OreUI::Detail::IdType const&,
+        ::OreUI::Detail::IdType const& id,
         ::std::function<void(
             ::OreUI::Detail::IdType const&,
             ::OreUI::Detail::IInvocationStateTracker::InvocationInformation const&
-        )>
+        )>                             observer
     ) = 0;
 
     virtual ::Bedrock::PubSub::Subscription
-    onRemove(::OreUI::Detail::IdType const&, ::std::function<void(::OreUI::Detail::IdType const&)>) = 0;
+    onRemove(::OreUI::Detail::IdType const& id, ::std::function<void(::OreUI::Detail::IdType const&)> observer) = 0;
 
     virtual void setState(
-        ::OreUI::Detail::IdType const&,
-        ::OreUI::Detail::IInvocationStateTracker::InvocationInformation const&
+        ::OreUI::Detail::IdType const&                                         id,
+        ::OreUI::Detail::IInvocationStateTracker::InvocationInformation const& information
     ) = 0;
 
     virtual void setState(
-        ::OreUI::Detail::IdType const&,
-        ::OreUI::InvocationState,
-        ::OreUI::InvocationResult,
-        uchar,
-        ::std::optional<int>
+        ::OreUI::Detail::IdType const& id,
+        ::OreUI::InvocationState       state,
+        ::OreUI::InvocationResult      result,
+        uchar                          progress,
+        ::std::optional<int>           error
     ) = 0;
 
-    virtual void remove(::OreUI::Detail::IdType const&) = 0;
+    virtual void remove(::OreUI::Detail::IdType const& id) = 0;
     // NOLINTEND
 
 public:

@@ -37,7 +37,9 @@ public:
 
     MCAPI ::BlockPos above() const;
 
-    MCAPI_C ::BlockPos below() const;
+#ifdef LL_PLAT_C
+    MCAPI ::BlockPos below() const;
+#endif
 
     MCAPI ::BlockPos east() const;
 
@@ -80,3 +82,8 @@ public:
     MCAPI void* $ctor(float x, float y, float z);
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
+// NOLINTEND

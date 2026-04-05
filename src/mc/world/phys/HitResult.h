@@ -47,6 +47,10 @@ public:
 
     MCAPI HitResult(::HitResult const&);
 
+#ifdef LL_PLAT_C
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
+#endif
+
     MCAPI HitResult(
         ::Vec3 const& startPos,
         ::Vec3 const& rayDir,
@@ -61,7 +65,9 @@ public:
 
     MCAPI ::HitResult& operator=(::HitResult const&);
 
-    MCAPI_C void resetHitEntity();
+#ifdef LL_PLAT_C
+    MCAPI void resetHitEntity();
+#endif
 
     MCAPI ~HitResult();
     // NOLINTEND
@@ -75,7 +81,9 @@ public:
 
     MCAPI void* $ctor(::HitResult const&);
 
-    MCAPI_C void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
+#endif
 
     MCAPI void*
     $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);

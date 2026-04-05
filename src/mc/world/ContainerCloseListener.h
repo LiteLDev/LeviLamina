@@ -11,7 +11,7 @@ class ContainerCloseListener {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void containerClosed(::Actor&) = 0;
+    virtual void containerClosed(::Actor& actor) = 0;
 
     virtual ~ContainerCloseListener();
     // NOLINTEND

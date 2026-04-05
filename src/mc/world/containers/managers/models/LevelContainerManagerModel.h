@@ -31,7 +31,7 @@ public:
 
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
 
-    virtual void setSlot(int slot, ::ItemStack const& item, bool) /*override*/;
+    virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
 
     virtual ::ItemStack const& getSlot(int slot) const /*override*/;
 
@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 

@@ -33,49 +33,61 @@ public:
     virtual ~IPackSourceFactory() /*override*/;
 
 #ifdef LL_PLAT_C
-    virtual ::TreatmentPackSource& createTreatmentPackSource(::Core::Path const&, ::PackType) = 0;
+    virtual ::TreatmentPackSource& createTreatmentPackSource(::Core::Path const& path, ::PackType packType) = 0;
 
-    virtual ::TreatmentPackSource* getTreatmentPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::TreatmentPackSource* getTreatmentPackSource(::Core::Path const& path, ::PackType packType) const = 0;
 
-    virtual void removeFromTreatmentPackSource(::Core::Path const&) = 0;
+    virtual void removeFromTreatmentPackSource(::Core::Path const& fullPathToPack) = 0;
 
 #endif
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const&,
-        ::mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+        ::mce::UUID const&                                                  worldTemplateId,
+        ::PackType                                                          packType,
+        ::PackOrigin                                                        packOrigin
     ) = 0;
 
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
-        ::std::unique_ptr<::WorldTemplateCollectionView>,
-        ::mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
+        ::std::unique_ptr<::WorldTemplateCollectionView> view,
+        ::mce::UUID const&                               worldTemplateId,
+        ::PackType                                       packType,
+        ::PackOrigin                                     packOrigin
     ) = 0;
 
-    virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const&, ::PackType) const = 0;
+    virtual ::WorldTemplatePackSource*
+    getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const = 0;
 
-    virtual ::DirectoryPackSource& createDirectoryPackSource(::Core::Path const&, ::PackType, ::PackOrigin, bool) = 0;
+    virtual ::DirectoryPackSource& createDirectoryPackSource(
+        ::Core::Path const& path,
+        ::PackType          packType,
+        ::PackOrigin        packOrigin,
+        bool                isDevDirectory
+    ) = 0;
 
-    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const = 0;
 
-    virtual ::InPackagePackSource& createInPackagePackSource(::PackType) = 0;
+    virtual ::InPackagePackSource& createInPackagePackSource(::PackType packType) = 0;
 
-    virtual ::InPackagePackSource* getInPackagePackSource(::PackType) = 0;
+    virtual ::InPackagePackSource* getInPackagePackSource(::PackType packType) = 0;
 
-    virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const&, ::PackType) = 0;
+    virtual ::WorldHistoryPackSource&
+    createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) = 0;
 
-    virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const&, ::PackType) const = 0;
+    virtual ::WorldHistoryPackSource*
+    getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const = 0;
 
-    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*>) = 0;
+    virtual ::std::unique_ptr<::CompositePackSource>
+    createCompositePackSource(::std::vector<::PackSource*> sources) = 0;
 
-    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const&) const = 0;
+    virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const& packId) const = 0;
 
-    virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
+    virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) = 0;
 
-    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource>
-    createRealmsServicePackSource(int64, ::PackType, ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&&) = 0;
+    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
+    ) = 0;
     // NOLINTEND
 
 public:

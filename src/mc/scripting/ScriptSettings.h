@@ -36,16 +36,28 @@ public:
     ::ll::TypedStorage<8, 8, ::IScriptDedicatedServerUtils*>           mDedicatedServerUtils;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ScriptSettings& operator=(ScriptSettings const&);
+    ScriptSettings();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ScriptSettings& operator=(ScriptSettings const&);
     ScriptSettings(ScriptSettings const&);
     ScriptSettings();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptSettings(::ScriptSettings&&);
+
+#ifdef LL_PLAT_S
+    MCNAPI ScriptSettings(::ScriptSettings const&);
+#endif
 
     MCNAPI ~ScriptSettings();
     // NOLINTEND
@@ -55,7 +67,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptSettings&&);
 
-    MCNAPI_S void* $ctor(::ScriptSettings const&);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::ScriptSettings const&);
+#endif
     // NOLINTEND
 
 public:

@@ -22,7 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S void _initAbilityOptions();
+#ifdef LL_PLAT_S
+    MCAPI void _initAbilityOptions();
+#endif
 
     MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
@@ -36,7 +38,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Ability const& getDefault(::AbilitiesIndex abilityIndex);
 
-    MCAPI_C static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::std::string> getDiff(::Abilities const& lhs, ::Abilities const& rhs);
+#endif
     // NOLINTEND
 
 public:
