@@ -24,8 +24,7 @@ public:
     }
 
 public:
-    // prevent constructor by default
-    StackResultStorageEntity();
+    StackResultStorageEntity() = default;
 
 public:
     // member functions
