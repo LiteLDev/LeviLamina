@@ -42,8 +42,9 @@ public:
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
 
-    MCAPI_C static void
-    initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
+#ifdef LL_PLAT_C
+    MCAPI static void initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
+#endif
 
     MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
     // NOLINTEND

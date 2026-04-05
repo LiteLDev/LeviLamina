@@ -20,6 +20,15 @@ public:
     ::ll::TypedStorage<1, 1, bool> mAssumeSymmetry;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ShapedRecipe& operator=(ShapedRecipe const&);
+    ShapedRecipe(ShapedRecipe const&);
+    ShapedRecipe();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,6 +55,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ShapedRecipe(::ShapedRecipe&& recipe);
+#endif
+
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
@@ -54,7 +67,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::ShapedRecipe&& recipe);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ShapedRecipe&& recipe);
+#endif
     // NOLINTEND
 
 public:

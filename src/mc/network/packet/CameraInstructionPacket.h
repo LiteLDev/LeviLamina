@@ -23,6 +23,13 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    CameraInstructionPacket();
+
+#else // LL_PLAT_C
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,13 +73,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCAPI explicit CameraInstructionPacket(::CameraInstructionPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor(::CameraInstructionPacketPayload payload);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::CameraInstructionPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

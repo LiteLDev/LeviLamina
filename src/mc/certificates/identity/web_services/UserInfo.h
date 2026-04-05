@@ -30,19 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI UserInfo(::WebServices::EduSignin::UserInfo&&);
 
+    MCNAPI ::WebServices::EduSignin::UserInfo& operator=(::WebServices::EduSignin::UserInfo&&);
+
+    MCNAPI ~UserInfo();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::WebServices::EduSignin::UserInfo&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::WebServices::EduSignin::UserInfo&&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

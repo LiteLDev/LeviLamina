@@ -19,6 +19,13 @@ public:
     ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TradeIngredientContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,13 +37,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void setTradeItem(::ItemStack const& item);
+#ifdef LL_PLAT_C
+    MCNAPI explicit TradeIngredientContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
+    MCNAPI void setTradeItem(::ItemStack const& item);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:

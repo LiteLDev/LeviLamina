@@ -28,11 +28,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit RealmsStoriesData(::LevelStorage& levelStorage);
+#endif
+
     MCNAPI void setPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid);
 
     MCNAPI void setWorldRealmEventPublished(::RealmEventId eventId);
 
     MCNAPI bool wasPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid) const;
+
+#ifdef LL_PLAT_S
+    MCNAPI ~RealmsStoriesData();
+#endif
     // NOLINTEND
 
 public:
@@ -46,12 +54,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::LevelStorage& levelStorage);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::LevelStorage& levelStorage);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

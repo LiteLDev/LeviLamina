@@ -83,7 +83,9 @@ public:
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI_S bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
+#ifdef LL_PLAT_S
+    MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
+#endif
 
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 

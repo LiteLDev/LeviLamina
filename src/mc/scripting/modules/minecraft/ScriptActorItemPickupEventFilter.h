@@ -26,16 +26,29 @@ public:
     ::ll::TypedStorage<8, 80, ::std::optional<::ScriptModuleMinecraft::ScriptItemFilter>>   mItemFilter;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptActorItemPickupEventFilter& operator=(ScriptActorItemPickupEventFilter const&);
     ScriptActorItemPickupEventFilter(ScriptActorItemPickupEventFilter const&);
     ScriptActorItemPickupEventFilter();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptActorItemPickupEventFilter& operator=(ScriptActorItemPickupEventFilter const&);
+    ScriptActorItemPickupEventFilter();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptActorItemPickupEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter&&);
+
+#ifdef LL_PLAT_C
+    MCAPI
+    ScriptActorItemPickupEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter const&);
+#endif
 
     MCFOLD bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData const& data);
 
@@ -53,7 +66,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter&&);
 
-    MCFOLD_C void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter const&);
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilter const&);
+#endif
     // NOLINTEND
 
 public:

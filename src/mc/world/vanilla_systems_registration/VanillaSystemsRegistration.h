@@ -125,7 +125,7 @@ MCAPI void registerTravelEligibilitySystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI_C void registerVanillaClientTickingSystems(
+MCAPI void registerVanillaClientTickingSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );

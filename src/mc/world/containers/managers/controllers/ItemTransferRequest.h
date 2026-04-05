@@ -33,13 +33,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~Entry();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -59,12 +63,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
+#ifdef LL_PLAT_C
+    MCNAPI void _addOutputsAsDestinations(::std::vector<::AutoPlaceResult>& destinations) const;
+
+    MCNAPI ~ItemTransferRequest();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

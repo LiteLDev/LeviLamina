@@ -57,7 +57,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void setLoggingVerbosity(::Option const& loggingOption);
+#ifdef LL_PLAT_C
+    MCNAPI static void setLoggingVerbosity(::Option const& loggingOption);
+#endif
     // NOLINTEND
 
 public:

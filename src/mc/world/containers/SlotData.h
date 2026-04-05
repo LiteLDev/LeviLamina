@@ -10,12 +10,28 @@ public:
     ::ll::TypedStorage<4, 4, int>            mCollectionIndex;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SlotData(SlotData const&);
+    SlotData();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool matches(::SlotData const& other) const;
+#ifdef LL_PLAT_C
+    MCAPI bool matches(::SlotData const& other) const;
 
-    MCAPI_C void set(::std::string const& collectionName, int collectionIndex);
+    MCAPI bool operator!=(::SlotData const& other) const;
+
+    MCFOLD ::SlotData& operator=(::SlotData&&);
+
+    MCFOLD ::SlotData& operator=(::SlotData const&);
+
+    MCAPI void set(::std::string const& collectionName, int collectionIndex);
+#endif
 
     MCAPI ~SlotData();
     // NOLINTEND

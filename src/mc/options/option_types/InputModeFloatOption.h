@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<4, 4, float const>                               DELTA;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    InputModeFloatOption();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,16 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void
-    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
-
-    MCAPI_C void set(::InputMode inputmode, float value, bool saveOptionChange);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI InputModeFloatOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -59,6 +58,29 @@ public:
         float                valueMin,
         float                rangeMax
     );
+
+    MCAPI void
+    _saveForInputMode(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::InputMode mode);
+
+    MCAPI void set(::InputMode inputmode, float value, bool saveOptionChange);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        float                value,
+        float                valueMin,
+        float                rangeMax
+    );
+#endif
     // NOLINTEND
 
 public:

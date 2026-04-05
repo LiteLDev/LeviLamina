@@ -73,7 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
 
-    MCAPI_C static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
+#ifdef LL_PLAT_C
+    MCAPI static float getSlopeAngle(::BlockSource& region, ::BlockPos const& pos, ::Material const& m);
+#endif
     // NOLINTEND
 
 public:

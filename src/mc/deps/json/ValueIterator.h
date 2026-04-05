@@ -28,13 +28,25 @@ public:
 
     using value_type = ::Json::Value;
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ValueIterator();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ValueIterator& operator=(ValueIterator const&);
+    ValueIterator();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ValueIterator(::Json::ValueIterator const& other);
+#endif
+
     MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
 
     MCAPI ~ValueIterator();
@@ -43,7 +55,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::Json::ValueIterator const& other);
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::Json::ValueIterator const& other);
+#endif
 
     MCFOLD void* $ctor(::Json::ValueConstIterator const& other);
     // NOLINTEND

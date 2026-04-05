@@ -35,19 +35,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
+#ifdef LL_PLAT_C
+        MCNAPI NetSerializationCallbacks(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
+
+        MCNAPI ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& setNeverClientSide();
+
+        MCNAPI ~NetSerializationCallbacks();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_C void* $ctor(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
+#ifdef LL_PLAT_C
+        MCNAPI void* $ctor(::ComponentNetRelevancyRegistry::NetSerializationCallbacks&&);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -66,18 +76,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(
+#ifdef LL_PLAT_C
+    MCNAPI ::ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(
         ::HashedString const&                                                   definitionName,
         ::std::function<bool(::DefinitionInstanceGroup const&, ::CompoundTag&)> serializationCallback
     );
+#endif
 
     MCNAPI bool
     serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ~ComponentNetRelevancyRegistry();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

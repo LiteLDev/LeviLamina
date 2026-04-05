@@ -76,7 +76,9 @@ public:
 
     MCAPI ::Tag const* get(::std::string_view name) const;
 
-    MCAPI_C ::Tag* get(::std::string_view name);
+#ifdef LL_PLAT_C
+    MCAPI ::Tag* get(::std::string_view name);
+#endif
 
     MCAPI bool getBoolean(::std::string_view string) const;
 

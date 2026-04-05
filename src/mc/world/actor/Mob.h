@@ -322,7 +322,9 @@ public:
 
     MCAPI void frostWalk();
 
-    MCAPI_C ::std::vector<int> getAllArmorID() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<int> getAllArmorID() const;
+#endif
 
     MCAPI float getArmorCoverPercentage() const;
 
@@ -364,13 +366,17 @@ public:
 
     MCAPI float getYBodyRotation() const;
 
-    MCAPI_C ::InterpolationPair getYBodyRotationsNewOld() const;
+#ifdef LL_PLAT_C
+    MCAPI ::InterpolationPair getYBodyRotationsNewOld() const;
+#endif
 
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
     MCAPI bool isAbleToMove() const;
 
-    MCAPI_C bool isGliding() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isGliding() const;
+#endif
 
     MCAPI void knockback(::Actor* source, int damage, float xd, float zd, float horizontalPower, float verticalPower);
 

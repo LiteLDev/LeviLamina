@@ -37,26 +37,45 @@ public:
         ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor const> mIcon;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CreativeGroupInfoDescription();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI CreativeGroupInfoDescription(
+            ::CreativeItemCategory          creativeItemCategory,
+            ::std::string                   name,
+            ::NetworkItemInstanceDescriptor itemDescriptor
+        );
 
+        MCAPI ~CreativeGroupInfoDescription();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(
             ::CreativeItemCategory          creativeItemCategory,
             ::std::string                   name,
             ::NetworkItemInstanceDescriptor itemDescriptor
         );
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -70,22 +89,39 @@ public:
         ::ll::TypedStorage<4, 4, uint const>                             mGroupIndex;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        CreativeItemEntryDescription& operator=(CreativeItemEntryDescription const&);
+        CreativeItemEntryDescription(CreativeItemEntryDescription const&);
+        CreativeItemEntryDescription();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI CreativeItemEntryDescription(::CreativeContentPacket::CreativeItemEntryDescription&&);
 
+        MCAPI ~CreativeItemEntryDescription();
+#endif
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI_C void* $ctor(::CreativeContentPacket::CreativeItemEntryDescription&&);
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(::CreativeContentPacket::CreativeItemEntryDescription&&);
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 

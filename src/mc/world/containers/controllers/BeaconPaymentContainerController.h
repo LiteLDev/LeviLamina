@@ -13,6 +13,13 @@ class Recipes;
 // clang-format on
 
 class BeaconPaymentContainerController : public ::ContainerController {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BeaconPaymentContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,13 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit BeaconPaymentContainerController(::std::shared_ptr<::ContainerModel> ptrContainerModel);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> ptrContainerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> ptrContainerModel);
+#endif
     // NOLINTEND
 
 public:

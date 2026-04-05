@@ -27,18 +27,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _fitToScreen();
+#ifdef LL_PLAT_C
+    MCNAPI WindowState(
+        ::tagRECT const&                         defaultRect,
+        ::std::unique_ptr<::WindowStateStorage>  storage,
+        ::std::unique_ptr<::WindowStatePlatform> platform
+    );
 
-    MCNAPI_C bool readFromWindow(::HWND__* window);
+    MCNAPI bool _fitToScreen();
+
+    MCNAPI bool readFromWindow(::HWND__* window);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::tagRECT const&                         defaultRect,
         ::std::unique_ptr<::WindowStateStorage>  storage,
         ::std::unique_ptr<::WindowStatePlatform> platform
     );
+#endif
     // NOLINTEND
 };

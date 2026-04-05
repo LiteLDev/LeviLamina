@@ -42,7 +42,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool canPlayerDrink(::ItemStack const& item, ::Player const& player);
+#ifdef LL_PLAT_C
+    MCAPI static bool canPlayerDrink(::ItemStack const& item, ::Player const& player);
+#endif
     // NOLINTEND
 
 public:

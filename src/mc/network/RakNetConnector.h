@@ -78,13 +78,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCAPI ~PingCallbackData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -304,8 +308,10 @@ public:
 
     MCAPI void _storeLocalIP();
 
-    MCAPI_C void
+#ifdef LL_PLAT_C
+    MCAPI void
     getPingTimeForConnection(::std::string const& address, int port, ::std::function<void(uint)> pingTimeCallback);
+#endif
 
     MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND

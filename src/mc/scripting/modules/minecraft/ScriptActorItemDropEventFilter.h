@@ -26,16 +26,28 @@ public:
     ::ll::TypedStorage<8, 80, ::std::optional<::ScriptModuleMinecraft::ScriptItemFilter>>   mItemFilter;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptActorItemDropEventFilter& operator=(ScriptActorItemDropEventFilter const&);
     ScriptActorItemDropEventFilter(ScriptActorItemDropEventFilter const&);
     ScriptActorItemDropEventFilter();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptActorItemDropEventFilter& operator=(ScriptActorItemDropEventFilter const&);
+    ScriptActorItemDropEventFilter();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptActorItemDropEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilter&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ScriptActorItemDropEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilter const&);
+#endif
 
     MCFOLD bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData const& data);
 
@@ -53,7 +65,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilter&&);
 
-    MCFOLD_C void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilter const&);
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilter const&);
+#endif
     // NOLINTEND
 
 public:

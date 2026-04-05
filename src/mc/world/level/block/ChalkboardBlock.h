@@ -82,7 +82,9 @@ public:
 
     MCAPI static void _getShape(::ChalkboardSize size, bool isOnGround, int dir, ::AABB& bufferValue);
 
-    MCAPI_C static bool mayPlayerEdit(::Player& player, ::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI static bool mayPlayerEdit(::Player& player, ::BlockPos const& pos);
+#endif
     // NOLINTEND
 
 public:

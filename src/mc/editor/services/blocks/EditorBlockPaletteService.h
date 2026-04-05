@@ -118,8 +118,10 @@ public:
 
     MCNAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCNAPI_C ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
+#ifdef LL_PLAT_C
+    MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     _checkAndClampWeights(::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> item);
+#endif
 
     MCNAPI ::Scripting::Result_deprecated<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,

@@ -21,34 +21,56 @@ public:
     ::ll::UntypedStorage<4, 8>   mUnkcf3b82;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ContextKeyBinding& operator=(ContextKeyBinding const&);
     ContextKeyBinding(ContextKeyBinding const&);
     ContextKeyBinding();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContextKeyBinding& operator=(ContextKeyBinding const&);
+    ContextKeyBinding();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ContextKeyBinding(::Editor::Input::ContextKeyBinding const&);
 
+    MCNAPI ContextKeyBinding(
+        ::Editor::Input::KeyBinding const&                                                                  binding,
+        ::Editor::Input::BindingInfo const&                                                                 info,
+        ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
+    );
+
+    MCNAPI ~ContextKeyBinding();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Editor::Input::ContextKeyBinding const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Editor::Input::ContextKeyBinding const&);
 
-    MCNAPI_C void* $ctor(
+    MCNAPI void* $ctor(
         ::Editor::Input::KeyBinding const&                                                                  binding,
         ::Editor::Input::BindingInfo const&                                                                 info,
         ::std::function<void(::Editor::Input::KeyBinding const&, ::Editor::Input::KeyBinding const&, bool)> modifiedFn
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

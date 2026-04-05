@@ -43,7 +43,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::ElementType getElement(::ItemStackBase const& item);
+#ifdef LL_PLAT_C
+    MCAPI static ::ElementType getElement(::ItemStackBase const& item);
+#endif
 
     MCAPI static ::ElementInfo getElementInfo(::ElementType e);
 

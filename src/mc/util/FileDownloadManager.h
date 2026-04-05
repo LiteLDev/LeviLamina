@@ -55,7 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _writeData(
+#ifdef LL_PLAT_C
+    MCNAPI FileDownloadManager(
+        ::std::shared_ptr<::IFilePicker>          filePicker,
+        ::std::shared_ptr<::IFileChunkDownloader> fileDownloader
+    );
+
+    MCNAPI void _writeData(
         ::std::vector<uchar>                data,
         uint64                              writeBytes,
         uint64                              offset,
@@ -63,7 +69,7 @@ public:
         ::std::function<void(uint64, bool)> writeComplete
     );
 
-    MCNAPI_C void downloadFile(
+    MCNAPI void downloadFile(
         ::std::string const&                                           downloadId,
         ::std::string const&                                           downloadUrl,
         ::Core::Path const&                                            downloadPath,
@@ -73,13 +79,16 @@ public:
         ::std::function<void(::Core::Path const&, ::DownloaderResult)> onCompleteCallback,
         int                                                            slotIndex
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(::std::shared_ptr<::IFilePicker> filePicker, ::std::shared_ptr<::IFileChunkDownloader> fileDownloader);
+#endif
     // NOLINTEND
 
 public:

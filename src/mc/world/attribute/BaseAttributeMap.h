@@ -43,7 +43,9 @@ public:
     // NOLINTBEGIN
     MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
-    MCFOLD_C void _onAttributeModifiedDisabled(::AttributeInstance const&);
+#ifdef LL_PLAT_C
+    MCFOLD void _onAttributeModifiedDisabled(::AttributeInstance const&);
+#endif
 
     MCAPI ::AttributeInstanceRef getMutableInstance(uint idValue);
 
@@ -51,7 +53,9 @@ public:
 
     MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
 
-    MCAPI_C void updateOrCreateAttribute(::AttributeData const& attributeData);
+#ifdef LL_PLAT_C
+    MCAPI void updateOrCreateAttribute(::AttributeData const& attributeData);
+#endif
     // NOLINTEND
 
 public:

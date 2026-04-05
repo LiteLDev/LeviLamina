@@ -41,9 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
+#ifdef LL_PLAT_C
+    MCAPI CommandOutputSender();
 
-    MCAPI_C ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
+    MCAPI void _sendToCodeBuilder(::CommandOrigin const& origin, ::CommandOutput const& commandOutput);
+
+    MCAPI ::Json::Value _toJson(::CommandOutput const& commandOutput) const;
+#endif
 
     MCAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
@@ -58,7 +62,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

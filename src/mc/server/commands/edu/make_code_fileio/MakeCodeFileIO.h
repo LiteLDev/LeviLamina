@@ -20,7 +20,7 @@ MCAPI ::Bedrock::Result<::std::string> _writeFile(::std::string const& filePath,
 
 MCAPI bool isFileTypeValid(::std::string const& filePath);
 
-MCAPI_C void openFilePicker(
+MCAPI void openFilePicker(
     ::std::string&                      resultPath,
     ::CodeBuilder::IRequestHandler&     sender,
     ::CodeBuilder::RequestHeader const& header

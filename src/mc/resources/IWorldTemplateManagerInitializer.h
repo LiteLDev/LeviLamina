@@ -22,7 +22,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::unique_ptr<::IWorldTemplateManagerInitializer> create(::WorldTemplateManagerInitDeps&& deps);
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::unique_ptr<::IWorldTemplateManagerInitializer> create(::WorldTemplateManagerInitDeps&& deps);
+#endif
     // NOLINTEND
 
 public:

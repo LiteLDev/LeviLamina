@@ -21,10 +21,19 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mUserDataBuffer;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     NetworkItemInstanceDescriptor();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,9 +43,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
+#endif
+
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::NetworkItemInstanceDescriptor& operator=(::NetworkItemInstanceDescriptor&&);
+#endif
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
@@ -44,7 +61,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::NetworkItemInstanceDescriptor&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
+#endif
 
     MCAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND

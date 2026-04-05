@@ -40,13 +40,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~ConnectionRecord();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -67,12 +71,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _connectSignal(
+#ifdef LL_PLAT_C
+    MCNAPI bool _connectSignal(
         ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> const&
                                             connectOp,
         ::Bedrock::Detail::SignalPublisher* signalID,
         int                                 priority
     );
+#endif
     // NOLINTEND
 };
 

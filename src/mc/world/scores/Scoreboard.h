@@ -111,7 +111,9 @@ public:
         ::CommandOperator              opCode
     );
 
-    MCAPI_C bool clearScoreboardIdentity(::ScoreboardId const& scoreboardId);
+#ifdef LL_PLAT_C
+    MCAPI bool clearScoreboardIdentity(::ScoreboardId const& scoreboardId);
+#endif
 
     MCAPI ::ObjectiveCriteria const&
     createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
@@ -120,10 +122,12 @@ public:
 
     MCAPI ::std::vector<::PlayerScore> getDisplayInfoFiltered(::std::string const& displaySlot) const;
 
-    MCAPI_C ::std::vector<::PlayerScore> getDisplayInfoSorted(
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::PlayerScore> getDisplayInfoSorted(
         ::std::string const&                                                       displaySlot,
         ::std::function<void(::ObjectiveSortOrder, ::std::vector<::PlayerScore>&)> sortMethod
     ) const;
+#endif
 
     MCAPI ::DisplayObjective const* getDisplayObjective(::std::string const& displaySlotName) const;
 

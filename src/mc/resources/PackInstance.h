@@ -55,11 +55,15 @@ public:
     MCAPI void
     forEachIn(::Core::Path const& path, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
 
-    MCAPI_C bool hasResource(::Core::Path const& resourceName) const;
+#ifdef LL_PLAT_C
+    MCAPI bool hasResource(::Core::Path const& resourceName) const;
+#endif
 
     MCAPI ::PackInstance& operator=(::PackInstance const&);
 
-    MCAPI_C ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
+#endif
 
     MCAPI ~PackInstance();
     // NOLINTEND

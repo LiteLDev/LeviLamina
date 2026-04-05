@@ -85,7 +85,9 @@ public:
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::brstd::function_ref<void(::Item const&)> callback);
 
-    MCAPI_C static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
+#ifdef LL_PLAT_C
+    MCAPI static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
+#endif
 
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 

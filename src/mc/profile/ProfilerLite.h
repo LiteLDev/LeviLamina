@@ -88,7 +88,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C void resetRecursive();
+#ifdef LL_PLAT_C
+        MCNAPI void resetRecursive();
+#endif
 
         MCNAPI ~ScopedData();
         // NOLINTEND
@@ -157,26 +159,27 @@ public:
     // NOLINTBEGIN
     MCAPI ProfilerLite();
 
-    MCAPI_C void _calculateRealtimeFrameData();
+#ifdef LL_PLAT_C
+    MCAPI void _calculateRealtimeFrameData();
 
-    MCAPI_C void _getProfileStringRecursive(
+    MCAPI void _getProfileStringRecursive(
         ::ProfilerLite::ScopedData& scope,
         uint64&                     writeCount,
         uint64&                     remainingLength,
         char*&                      stringBuilderTemp
     );
 
-    MCFOLD_C void _shutdown();
+    MCFOLD void _shutdown();
 
-    MCAPI_C void applyProfilerOptions(bool isClientDiagnosticsEnabled);
+    MCAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
 
-    MCAPI_C ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
+    MCAPI ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
 
-    MCAPI_C void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
+    MCAPI void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
 
-    MCAPI_C void reset();
+    MCAPI void reset();
 
-    MCAPI_C bool tick(
+    MCAPI bool tick(
         bool                           isVSynced,
         bool                           frameDiscarded,
         bool                           outputProfilerInfo,
@@ -184,6 +187,7 @@ public:
         ::ProfilerResourceUsage const& resources,
         bool                           logPackets
     );
+#endif
 
     MCAPI ~ProfilerLite();
     // NOLINTEND
@@ -191,10 +195,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
 
-    MCAPI_C static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
+    MCAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
+#endif
     // NOLINTEND
 
 public:

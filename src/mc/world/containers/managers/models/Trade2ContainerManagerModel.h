@@ -61,17 +61,19 @@ public:
 
     MCFOLD ::Actor* getEntity() const;
 
-    MCAPI_C int getEntityMaxTradeTier() const;
+#ifdef LL_PLAT_C
+    MCAPI int getEntityMaxTradeTier() const;
 
-    MCAPI_C int getEntityTradeTier() const;
+    MCAPI int getEntityTradeTier() const;
 
-    MCAPI_C ::std::vector<int> getNumberOfTradesByTier() const;
+    MCAPI ::std::vector<int> getNumberOfTradesByTier() const;
 
-    MCAPI_C int getTradeExpForCurrentRequirement(uint currentExp) const;
+    MCAPI int getTradeExpForCurrentRequirement(uint currentExp) const;
 
-    MCAPI_C int getTradeExpToNextRequirement(uint currentExp) const;
+    MCAPI int getTradeExpToNextRequirement(uint currentExp) const;
 
-    MCAPI_C void setSelectedTrade(int index);
+    MCAPI void setSelectedTrade(int index);
+#endif
     // NOLINTEND
 
 public:

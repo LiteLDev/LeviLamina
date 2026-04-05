@@ -70,6 +70,15 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit AggregationEventListener(::Core::Path const& logFileName);
 
+#ifdef LL_PLAT_C
+    MCNAPI AggregationEventListener(
+        uint                regBatchSize,
+        uint                regSendInterval,
+        uint                throttledSendInterval,
+        ::Core::Path const& logFileName
+    );
+#endif
+
     MCNAPI void _handleAggregation(
         ::std::deque<::Social::Events::Event>& listOfSameTypeEvents,
         ::Social::Events::Event const&         event
@@ -94,8 +103,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Core::Path const& logFileName);
 
-    MCNAPI_C void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(uint regBatchSize, uint regSendInterval, uint throttledSendInterval, ::Core::Path const& logFileName);
+#endif
     // NOLINTEND
 
 public:

@@ -22,15 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction) const;
+#ifdef LL_PLAT_C
+    MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction) const;
 
-    MCNAPI_C int
-    addRequestToFilterString(::std::string const& stringToFilter, ::TextProcessingEventOrigin origin) const;
+    MCNAPI int addRequestToFilterString(::std::string const& stringToFilter, ::TextProcessingEventOrigin origin) const;
+
+    MCNAPI ~ItemStackRequestScope();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

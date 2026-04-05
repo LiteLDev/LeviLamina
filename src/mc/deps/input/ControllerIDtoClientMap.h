@@ -37,9 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void insertClientInstance(int id, ::std::shared_ptr<::IClientInstance> clientInstance);
+#ifdef LL_PLAT_C
+    MCAPI void insertClientInstance(int id, ::std::shared_ptr<::IClientInstance> clientInstance);
 
-    MCAPI_C void removeClientInstance(::std::shared_ptr<::IClientInstance> const& clientInstance);
+    MCAPI void removeClientInstance(::std::shared_ptr<::IClientInstance> const& clientInstance);
+#endif
     // NOLINTEND
 
 public:

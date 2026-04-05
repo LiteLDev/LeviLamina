@@ -21,19 +21,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI StringData(::std::string key, ::std::string value);
 
+    MCNAPI ~StringData();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string key, ::std::string value);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string key, ::std::string value);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

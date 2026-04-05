@@ -165,8 +165,10 @@ public:
         ::Player&         player
     );
 
-    MCAPI_C static ::SignBlock::SignInteractionResult
+#ifdef LL_PLAT_C
+    MCAPI static ::SignBlock::SignInteractionResult
     getInteractResult(::Player& player, ::BlockPos const& pos, uchar face);
+#endif
 
     MCAPI static ::mce::Color getSignTextColorFromDyeItem(::Item const& dyeItem);
     // NOLINTEND

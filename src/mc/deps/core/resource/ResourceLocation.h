@@ -22,18 +22,37 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                             mFullHash;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceLocation();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ResourceLocation();
+
+    MCAPI ResourceLocation(::ResourceLocation const&);
+
+    MCAPI explicit ResourceLocation(::Core::PathView path);
+#endif
+
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCAPI_C ::HashedString getHashedPath() const;
+#ifdef LL_PLAT_C
+    MCAPI ::HashedString getHashedPath() const;
+
+    MCAPI bool operator<(::ResourceLocation const& rhs) const;
+
+    MCAPI ::ResourceLocation& operator=(::ResourceLocation const&);
+
+    MCAPI bool operator==(::ResourceLocation const& rhs) const;
+#endif
 
     MCAPI ~ResourceLocation();
     // NOLINTEND
@@ -41,17 +60,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::ResourceLocation const& getEmptyLocation();
+#ifdef LL_PLAT_C
+    MCAPI static ::ResourceLocation const& getEmptyLocation();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::ResourceLocation const&);
+    MCAPI void* $ctor(::ResourceLocation const&);
 
-    MCAPI_C void* $ctor(::Core::PathView path);
+    MCAPI void* $ctor(::Core::PathView path);
+#endif
 
     MCAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
     // NOLINTEND

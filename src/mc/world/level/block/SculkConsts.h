@@ -10,9 +10,9 @@ class Vec3;
 namespace SculkConsts {
 // static variables
 // NOLINTBEGIN
-MCAPI_C ::Vec3 const& CHARGE_PARTICLE_INWARDS_EXTRUSION();
+MCAPI ::Vec3 const& CHARGE_PARTICLE_INWARDS_EXTRUSION();
 
-MCAPI_C ::Vec3 const& CHARGE_PARTICLE_OUTWARDS_EXTRUSION();
+MCAPI ::Vec3 const& CHARGE_PARTICLE_OUTWARDS_EXTRUSION();
 
 MCAPI ::std::string const& CHARGE_TAG();
 

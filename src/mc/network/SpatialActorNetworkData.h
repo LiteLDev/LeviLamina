@@ -92,22 +92,26 @@ public:
 
     MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCNAPI_C bool didTeleportEntity(::MoveActorAbsoluteData const& moveData);
+#ifdef LL_PLAT_C
+    MCNAPI bool didTeleportEntity(::MoveActorAbsoluteData const& moveData);
 
-    MCNAPI_C void handleServerData(
+    MCNAPI void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
         ::std::chrono::steady_clock::time_point const& receiveTimepoint,
         bool                                           isPredictableActor
     );
+#endif
 
     MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 
-    MCNAPI_C void setLastReceivedMoveDataForAddedEntity(
+#ifdef LL_PLAT_C
+    MCNAPI void setLastReceivedMoveDataForAddedEntity(
         ::ActorRuntimeID runtimeId,
         ::Vec3           position,
         ::Vec2           rotation,
         float            yHeadRotation
     );
+#endif
 
     MCNAPI bool shouldSendMotionPredictionHintsPacket() const;
 

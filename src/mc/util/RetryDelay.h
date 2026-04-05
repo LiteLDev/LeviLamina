@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void restart(bool now);
+#ifdef LL_PLAT_C
+    MCNAPI void restart(bool now);
+#endif
     // NOLINTEND
 };

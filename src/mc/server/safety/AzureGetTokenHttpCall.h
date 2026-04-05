@@ -46,20 +46,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
+#ifdef LL_PLAT_S
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::optional<::Bedrock::Http::Request> _buildRequest(
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::optional<::Bedrock::Http::Request> _buildRequest(
         ::std::string const&                        url,
         ::std::string const&                        clientId,
         ::std::string const&                        scope,
         ::Bedrock::Services::ClientAssertion const& clientAssertionAuth
     );
 
-    MCNAPI_S static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
+    MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
+#endif
     // NOLINTEND
 
 public:

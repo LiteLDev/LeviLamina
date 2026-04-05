@@ -51,7 +51,9 @@ public:
     // NOLINTBEGIN
     MCAPI LoomContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCFOLD_C void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#ifdef LL_PLAT_C
+    MCFOLD void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#endif
     // NOLINTEND
 
 public:

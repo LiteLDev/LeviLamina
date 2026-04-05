@@ -9,6 +9,8 @@ class MobSpawnInfo {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static int categoryID(::ActorType category);
+#ifdef LL_PLAT_S
+    MCNAPI static int categoryID(::ActorType category);
+#endif
     // NOLINTEND
 };

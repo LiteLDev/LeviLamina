@@ -18,10 +18,10 @@ namespace persona::color {
 MCNAPI ::std::unique_ptr<::persona::color::SwatchList>
 createSwatchList(::std::vector<::persona::color::Swatch>&& swatches);
 
-MCNAPI_C ::persona::color::SwatchListInfo
+MCNAPI ::persona::color::SwatchListInfo
 createSwatchListInfo(::std::unique_ptr<::persona::color::SwatchList> const& swatchList, ::std::string&& name);
 
-MCNAPI_C ::persona::color::SwatchListInfo getSwatchListInfoByColorOption(::persona::PersonaColorOption colorOption);
+MCNAPI ::persona::color::SwatchListInfo getSwatchListInfoByColorOption(::persona::PersonaColorOption colorOption);
 // NOLINTEND
 
 } // namespace persona::color

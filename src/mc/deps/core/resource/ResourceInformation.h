@@ -31,11 +31,18 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                      mEntry;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceInformation& operator=(ResourceInformation const&);
     ResourceInformation();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResourceInformation();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -49,6 +56,10 @@ public:
         ::std::string const&                language,
         ::std::string const&                entry
     );
+
+#ifdef LL_PLAT_C
+    MCAPI ::ResourceInformation& operator=(::ResourceInformation const&);
+#endif
 
     MCAPI ~ResourceInformation();
     // NOLINTEND

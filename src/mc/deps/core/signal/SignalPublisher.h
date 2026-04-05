@@ -25,8 +25,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::unique_ptr<::Bedrock::Detail::SignalPublisher>
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::unique_ptr<::Bedrock::Detail::SignalPublisher>
     makePublisher(bool isWrapped, uint64 unwrappedSize);
+#endif
     // NOLINTEND
 
 public:

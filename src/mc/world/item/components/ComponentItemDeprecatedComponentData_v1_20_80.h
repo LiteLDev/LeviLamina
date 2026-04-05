@@ -13,15 +13,26 @@ public:
     ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnUseTriggerItemComponentData>> legacyOnUseTriggerItemComponent;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ComponentItemDeprecatedComponentData_v1_20_80(ComponentItemDeprecatedComponentData_v1_20_80 const&);
     ComponentItemDeprecatedComponentData_v1_20_80();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ComponentItemDeprecatedComponentData_v1_20_80();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemDeprecatedComponentData_v1_20_80(::ComponentItemDeprecatedComponentData_v1_20_80&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ComponentItemDeprecatedComponentData_v1_20_80(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
+#endif
 
     MCAPI ::ComponentItemDeprecatedComponentData_v1_20_80&
     operator=(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
@@ -34,7 +45,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_80&&);
 
-    MCAPI_C void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
+#endif
     // NOLINTEND
 
 public:

@@ -24,6 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::TrackerStat& operator=(::TrackerStat&&);
+#endif
+
     MCNAPI ~TrackerStat();
     // NOLINTEND
 

@@ -16,6 +16,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::ContainerValidationSlotData const& AUTOPLACE();
+    MCNAPI static ::ContainerValidationSlotData const& AUTOPLACE();
     // NOLINTEND
 };

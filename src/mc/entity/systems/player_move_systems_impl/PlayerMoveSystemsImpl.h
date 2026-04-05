@@ -33,14 +33,14 @@ MCAPI void _doPlayerPreMoveSystem(
     ::EntityModifier<::WasOnGroundFlagComponent>& modifier
 );
 
-MCAPI_C void _singleTickDebugCameraFilterSystem(
+MCAPI void _singleTickDebugCameraFilterSystem(
     ::StrictEntityContext&                                                                    entity,
     ::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::MoveRequestComponent>> view,
     ::EntityModifier<::MoveRequestComponent>                                                  modifier,
     ::OptionalGlobal<::DebugCameraIsActiveComponent>                                          debugCamera
 );
 
-MCAPI_C void _tickDebugCameraFilterSystem(
+MCAPI void _tickDebugCameraFilterSystem(
     ::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::MoveRequestComponent>> view,
     ::EntityModifier<::MoveRequestComponent>                                                  modifier,
     ::OptionalGlobal<::DebugCameraIsActiveComponent>                                          debugCamera

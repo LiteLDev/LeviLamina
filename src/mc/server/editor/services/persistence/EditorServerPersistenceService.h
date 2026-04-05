@@ -83,10 +83,12 @@ public:
         ::std::optional<int>                 version
     );
 
-    MCNAPI_S void _dispatchGroupItemsToClient(
+#ifdef LL_PLAT_S
+    MCNAPI void _dispatchGroupItemsToClient(
         ::Editor::Services::PersistenceGroupItemMetadata     item,
         ::Editor::Services::PersistenceGroupItemChangeAction action
     );
+#endif
 
     MCNAPI void _dispatchGroupToClients(
         ::Editor::Services::PersistenceGroupChangeAction action,

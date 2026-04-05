@@ -121,8 +121,9 @@ public:
     MCAPI static ::std::shared_ptr<::PropertyGroup const>
     loadPropertiesFromJson(::Json::Value const& root, ::MolangVersion molangVersion);
 
-    MCAPI_C static ::std::shared_ptr<::PropertyGroup const>
-    loadPropertiesFromNetworkSync(::ListTag const& propertiesTag);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::shared_ptr<::PropertyGroup const> loadPropertiesFromNetworkSync(::ListTag const& propertiesTag);
+#endif
     // NOLINTEND
 
 public:

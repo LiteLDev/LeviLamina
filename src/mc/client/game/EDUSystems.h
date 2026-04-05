@@ -84,30 +84,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _setupImmersiveReaderListener(::IClientInstance& client);
+#ifdef LL_PLAT_C
+    MCNAPI EDUSystems(
+        ::IMinecraftGame&                               game,
+        ::EducationServicesEnvironment                  environment,
+        ::Identity::ActiveDirectoryIdentityParameters&& activeDirectoryIdentityParameters
+    );
 
-    MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity();
+    MCNAPI void _setupImmersiveReaderListener(::IClientInstance& client);
 
-    MCNAPI_C ::ServicePackSystem*
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity();
+
+    MCNAPI ::ServicePackSystem*
     initializeServicePackSystem(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity);
 
-    MCNAPI_C void onInitFinished();
+    MCNAPI void onInitFinished();
 
-    MCNAPI_C void setReferrerId(::std::string referrerId);
+    MCNAPI void setReferrerId(::std::string referrerId);
 
-    MCNAPI_C void setReferrerType(::std::string referrerType);
+    MCNAPI void setReferrerType(::std::string referrerType);
 
-    MCNAPI_C void tick(bool isAuthenticated) const;
+    MCNAPI void tick(bool isAuthenticated) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::IMinecraftGame&                               game,
         ::EducationServicesEnvironment                  environment,
         ::Identity::ActiveDirectoryIdentityParameters&& activeDirectoryIdentityParameters
     );
+#endif
     // NOLINTEND
 
 public:

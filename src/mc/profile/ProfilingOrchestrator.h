@@ -50,7 +50,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI_C void tick();
+#ifdef LL_PLAT_C
+        MCNAPI void tick();
+#endif
         // NOLINTEND
     };
 
@@ -69,7 +71,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void tick();
+#ifdef LL_PLAT_C
+    MCNAPI void tick();
+#endif
     // NOLINTEND
 };
 

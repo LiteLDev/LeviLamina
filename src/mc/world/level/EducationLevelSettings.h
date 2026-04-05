@@ -55,7 +55,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
+#endif
     // NOLINTEND
 
 public:

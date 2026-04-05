@@ -50,7 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
+#ifdef LL_PLAT_C
+    MCNAPI void _recursiveMerge(::Json::Value& root, ::Json::Value const& object);
+#endif
     // NOLINTEND
 
 public:

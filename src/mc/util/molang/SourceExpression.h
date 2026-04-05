@@ -77,13 +77,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit SourceExpression(::Molang::details::SourceTree node);
+#endif
+
     MCNAPI SourceExpression(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Molang::details::SourceTree node);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Molang::details::SourceTree node);
+#endif
 
     MCNAPI void* $ctor(::MolangScriptArg value, ::ExpressionOp op);
     // NOLINTEND

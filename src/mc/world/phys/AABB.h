@@ -23,7 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C float _clipAxisCollide(::AABB const& c, float vAxis, int axisIndex, bool oneway) const;
+#ifdef LL_PLAT_C
+    MCAPI float _clipAxisCollide(::AABB const& c, float vAxis, int axisIndex, bool oneway) const;
+#endif
 
     MCAPI ::AABBHitResult clip(::Vec3 const& a, ::Vec3 const& b) const;
 
@@ -37,13 +39,17 @@ public:
 
     MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
 
-    MCAPI_C bool contains(::Vec3 const& p) const;
+#ifdef LL_PLAT_C
+    MCAPI bool contains(::Vec3 const& p) const;
+#endif
 
     MCAPI float distanceTo(::Vec3 const& pos) const;
 
     MCAPI float distanceToSqr(::AABB const& aabb) const;
 
-    MCAPI_C ::std::array<::Vec3, 8> getCorners() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::array<::Vec3, 8> getCorners() const;
+#endif
 
     MCAPI bool intersectSegment(
         ::Vec3 const& segmentBegin,

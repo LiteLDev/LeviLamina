@@ -47,7 +47,7 @@ MCFOLD void tickAirGravity(
     ::EntityModifier<::ApplyGravityComponent> modifier
 );
 
-MCAPI_S void tickDefaultGravity(
+MCAPI void tickDefaultGravity(
     ::StrictEntityContext const&               context,
     ::ActorDataFlagComponent const&            synchedActorData,
     ::MobEffectsComponent const&               mobEffects,
@@ -77,7 +77,7 @@ MCAPI void tickLavaGravity(
     ::IConstBlockSource const&                region
 );
 
-MCAPI_C void tickLavaWalkGravity(
+MCAPI void tickLavaWalkGravity(
     ::entt::type_list<
         ::Include<::LavaTravelFlagComponent>,
         ::Exclude<::AutoClimbTravelFlagComponent, ::LevitateTravelFlagComponent>>,

@@ -69,18 +69,22 @@ public:
 
     MCAPI void _loadLocalPermissionsList();
 
-    MCAPI_C void _updatePermissionLevel();
+#ifdef LL_PLAT_C
+    MCAPI void _updatePermissionLevel();
 
-    MCAPI_C void _updatePermissionsList();
+    MCAPI void _updatePermissionsList();
 
-    MCAPI_C bool arePermissionsSynced(
+    MCAPI bool arePermissionsSynced(
         ::std::optional<::PlayerPermissionLevel>           playerPermissionLevel,
         ::std::vector<::std::pair<::AbilitiesIndex, bool>> playerPermissions
     ) const;
+#endif
 
     MCAPI bool loadPlayerPermissions(::ActorUniqueID playerId);
 
-    MCAPI_C bool savePlayerPermissions(::ActorUniqueID playerId);
+#ifdef LL_PLAT_C
+    MCAPI bool savePlayerPermissions(::ActorUniqueID playerId);
+#endif
     // NOLINTEND
 
 public:

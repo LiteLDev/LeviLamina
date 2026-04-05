@@ -25,11 +25,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _tickComponent(
+#ifdef LL_PLAT_C
+    MCAPI static void _tickComponent(
         ::EntityContext&        entity,
         ::ActorOwnerComponent&  actorOwnerComponent,
         ::CameraShakeComponent& cameraShakeComponent
     );
+#endif
     // NOLINTEND
 
 public:

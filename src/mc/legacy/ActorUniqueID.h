@@ -14,7 +14,9 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 getHash() const;
 
-    MCFOLD_C ::std::string toString() const;
+#ifdef LL_PLAT_C
+    MCFOLD ::std::string toString() const;
+#endif
     // NOLINTEND
 
 public:

@@ -24,7 +24,9 @@ public:
     // NOLINTBEGIN
     MCAPI MovementEffectsComponent(::MovementEffectsComponent const&);
 
-    MCAPI_C void setEffect(::MovementEffect movementEffect);
+#ifdef LL_PLAT_C
+    MCAPI void setEffect(::MovementEffect movementEffect);
+#endif
     // NOLINTEND
 
 public:

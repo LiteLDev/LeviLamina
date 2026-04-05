@@ -69,51 +69,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _authenticateDemoWithService();
+#ifdef LL_PLAT_C
+    MCNAPI ActiveDirectoryIdentity(
+        ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
+        ::Identity::ActiveDirectoryIdentityParameters&& parameters
+    );
 
-    MCNAPI_C void _authenticateSignInWithService();
+    MCNAPI ActiveDirectoryIdentity(
+        ::Bedrock::NonOwnerPointer<::IEDUSystems>                                                 eduSystems,
+        ::std::optional<::EducationServicesEnvironment>                                           environment,
+        ::std::unique_ptr<::IActiveDirectoryIdentityTelemetry>&&                                  eventing,
+        ::std::unique_ptr<::Identity::ISettingStorageStrategy>&&                                  settings,
+        ::std::unique_ptr<::Identity::IEduSsoStrategy>&&                                          sso,
+        ::std::function<::std::unique_ptr<::Identity::IEduAuth>(::Identity::EduAuthParameters&&)> createAuth,
+        ::std::unique_ptr<::ResponseVerifier>                                                     verifier,
+        ::std::string                                                                             appSessionId
+    );
 
-    MCNAPI_C void _executeOnMainThread(::std::function<void()>&& callback);
+    MCNAPI void _authenticateDemoWithService();
 
-    MCNAPI_C void _handleAuthenticationResponse(::WebServices::EduSignin::SigninResponse& response);
+    MCNAPI void _authenticateSignInWithService();
 
-    MCNAPI_C void _identityGained();
+    MCNAPI void _executeOnMainThread(::std::function<void()>&& callback);
 
-    MCNAPI_C void _identityLost();
+    MCNAPI void _handleAuthenticationResponse(::WebServices::EduSignin::SigninResponse& response);
 
-    MCNAPI_C void _onError(
+    MCNAPI void _identityGained();
+
+    MCNAPI void _identityLost();
+
+    MCNAPI void _onError(
         ::std::string const&                                     error,
         ::ActiveDirectoryAuthenticationState                     newState,
         ::std::vector<::std::pair<::std::string, ::std::string>> details
     );
 
-    MCNAPI_C void _onStatusChanged(::ActiveDirectoryAuthenticationState from, ::ActiveDirectoryAuthenticationState to);
+    MCNAPI void _onStatusChanged(::ActiveDirectoryAuthenticationState from, ::ActiveDirectoryAuthenticationState to);
 
-    MCNAPI_C ::AccessTokenInfo _parseTokenInfo(::std::string const& tokenToParse) const;
+    MCNAPI ::AccessTokenInfo _parseTokenInfo(::std::string const& tokenToParse) const;
 
-    MCNAPI_C void _populateResponse(::WebServices::EduSignin::SigninResponse const& response);
+    MCNAPI void _populateResponse(::WebServices::EduSignin::SigninResponse const& response);
 
-    MCNAPI_C void _signInCanceled();
+    MCNAPI void _signInCanceled();
 
-    MCNAPI_C void _updateData(
+    MCNAPI void _updateData(
         ::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>> result,
         bool                                                                             isRefresh
     );
 
-    MCNAPI_C void _updateGraphData(
+    MCNAPI void _updateGraphData(
         ::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>> result,
         bool                                                                             isRefresh
     );
 
-    MCNAPI_C void addObserver(::edu::auth::CredentialsObserver& observer);
+    MCNAPI void addObserver(::edu::auth::CredentialsObserver& observer);
 
-    MCNAPI_C void getIdentity();
+    MCNAPI void getIdentity();
 
-    MCNAPI_C void resetAuthenticationState();
+    MCNAPI void resetAuthenticationState();
 
-    MCNAPI_C void signOut(::std::function<void(::Identity::SignOutResult)> callback) const;
+    MCNAPI void signOut(::std::function<void(::Identity::SignOutResult)> callback) const;
 
-    MCNAPI_C void tick();
+    MCNAPI void tick();
+#endif
     // NOLINTEND
 
 public:
@@ -139,12 +157,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IEDUSystems>    eduSystems,
         ::Identity::ActiveDirectoryIdentityParameters&& parameters
     );
 
-    MCNAPI_C void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::IEDUSystems>                                                 eduSystems,
         ::std::optional<::EducationServicesEnvironment>                                           environment,
         ::std::unique_ptr<::IActiveDirectoryIdentityTelemetry>&&                                  eventing,
@@ -154,6 +173,7 @@ public:
         ::std::unique_ptr<::ResponseVerifier>                                                     verifier,
         ::std::string                                                                             appSessionId
     );
+#endif
     // NOLINTEND
 
 public:

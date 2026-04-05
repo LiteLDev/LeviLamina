@@ -40,6 +40,15 @@ public:
         ::std::string_view                          entityName
     );
 
+#ifdef LL_PLAT_C
+    MCAPI ScriptInvalidActorError(
+        ::ScriptModuleMinecraft::ErrorMemberType        memberType,
+        ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
+        ::std::string_view                              functionName,
+        ::std::string_view                              entityName
+    );
+#endif
+
     MCAPI ScriptInvalidActorError(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,
         ::std::string_view                       typeId,
@@ -69,12 +78,14 @@ public:
         ::std::string_view                          entityName
     );
 
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName,
         ::std::string_view                              entityName
     );
+#endif
 
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,

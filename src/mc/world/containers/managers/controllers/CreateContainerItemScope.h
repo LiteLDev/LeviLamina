@@ -24,44 +24,69 @@ public:
     ::ll::TypedStorage<8, 16, ::ItemStackRequestScope>                  mItemStackRequestScope;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CreateContainerItemScope();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _createItemStack(
-        ::ItemStackRequestId const& currentRequestId,
-        ::SlotData const&           createdItemOutputSlot,
-        ::ItemInstance const&       item,
-        ::ItemTransferAmount        takeAmount
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI_C static ::CreateContainerItemScope _createInnerScope(
-        ::ItemStackRequestScope const&           requestScope,
-        ::SlotData const&                        createdItemOutputSlot,
-        ::ItemInstance const&                    item,
-        ::ItemTransferAmount                     takeAmount,
-        ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI CreateContainerItemScope(
         ::ItemStackRequestScope&&                requestScope,
         ::SlotData const&                        createdItemOutputSlot,
         ::ItemInstance const&                    item,
         ::ItemTransferAmount                     takeAmount,
         ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
     );
+
+    MCNAPI void _createItemStack(
+        ::ItemStackRequestId const& currentRequestId,
+        ::SlotData const&           createdItemOutputSlot,
+        ::ItemInstance const&       item,
+        ::ItemTransferAmount        takeAmount
+    );
+
+    MCNAPI ~CreateContainerItemScope();
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static ::CreateContainerItemScope _createInnerScope(
+        ::ItemStackRequestScope const&           requestScope,
+        ::SlotData const&                        createdItemOutputSlot,
+        ::ItemInstance const&                    item,
+        ::ItemTransferAmount                     takeAmount,
+        ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::ItemStackRequestScope&&                requestScope,
+        ::SlotData const&                        createdItemOutputSlot,
+        ::ItemInstance const&                    item,
+        ::ItemTransferAmount                     takeAmount,
+        ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

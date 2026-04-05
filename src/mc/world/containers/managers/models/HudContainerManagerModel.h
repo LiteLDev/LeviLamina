@@ -63,9 +63,11 @@ public:
     // NOLINTBEGIN
     MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
 
-    MCAPI_C ::std::unordered_set<::FullContainerName> _getDynamicContainersInHotbar();
+#ifdef LL_PLAT_C
+    MCAPI ::std::unordered_set<::FullContainerName> _getDynamicContainersInHotbar();
 
-    MCAPI_C void cleanUpDynamicContainers();
+    MCAPI void cleanUpDynamicContainers();
+#endif
     // NOLINTEND
 
 public:

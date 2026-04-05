@@ -96,7 +96,9 @@ public:
 
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
 
-    MCAPI_C static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
+#endif
 
     MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
 

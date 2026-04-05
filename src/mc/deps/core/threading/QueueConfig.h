@@ -31,13 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI QueueConfig(
         ::std::string_view                                              name,
         uint                                                            priority,
         ::Scheduler&                                                    scheduler,
@@ -45,12 +40,32 @@ public:
         ::std::initializer_list<::std::reference_wrapper<::WorkerPool>> secondaryWorkerPools,
         ::gsl::span<::std::thread::id const>                            affinities
     );
+
+    MCAPI ~QueueConfig();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::std::string_view                                              name,
+        uint                                                            priority,
+        ::Scheduler&                                                    scheduler,
+        ::WorkerPool&                                                   primaryWorkerPool,
+        ::std::initializer_list<::std::reference_wrapper<::WorkerPool>> secondaryWorkerPools,
+        ::gsl::span<::std::thread::id const>                            affinities
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

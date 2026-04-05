@@ -63,7 +63,9 @@ public:
 
     MCNAPI bool _checkPendingWork();
 
-    MCNAPI_C ::std::vector<::std::thread::id> getThreadIds() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::std::thread::id> getThreadIds() const;
+#endif
 
     MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 

@@ -126,21 +126,23 @@ public:
 
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
-    MCAPI_C bool blockHasCustomName(::BlockPos const& blockPos) const;
+#ifdef LL_PLAT_C
+    MCAPI bool blockHasCustomName(::BlockPos const& blockPos) const;
 
-    MCAPI_C ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
+    MCAPI ::std::string getBlockDisplayName(::BlockPos const& blockPos) const;
 
-    MCAPI_C ::HashedString getBlockLocName(::BlockPos const& blockPos) const;
+    MCAPI ::HashedString getBlockLocName(::BlockPos const& blockPos) const;
 
-    MCAPI_C ::std::shared_ptr<::ContainerModel> getDynamicContainer(::FullContainerName const& name);
+    MCAPI ::std::shared_ptr<::ContainerModel> getDynamicContainer(::FullContainerName const& name);
 
-    MCAPI_C ::HashedString getEntityLocName(::ActorUniqueID const& actorUniqueID) const;
+    MCAPI ::HashedString getEntityLocName(::ActorUniqueID const& actorUniqueID) const;
 
-    MCAPI_C ::std::string getEntityName(::ActorUniqueID const& actorUniqueID) const;
+    MCAPI ::std::string getEntityName(::ActorUniqueID const& actorUniqueID) const;
 
-    MCAPI_C int getPlayerLevels() const;
+    MCAPI int getPlayerLevels() const;
 
-    MCAPI_C void grantExperience(int amount);
+    MCAPI void grantExperience(int amount);
+#endif
 
     MCAPI void postInit();
     // NOLINTEND

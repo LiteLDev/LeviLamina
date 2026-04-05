@@ -29,7 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string getEventErrorMessage() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string getEventErrorMessage() const;
+#endif
     // NOLINTEND
 
 public:

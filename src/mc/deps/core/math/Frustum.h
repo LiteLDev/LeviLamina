@@ -30,32 +30,53 @@ public:
     ::ll::UntypedStorage<4, 48> mUnkae1f35;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Frustum& operator=(Frustum const&);
     Frustum(Frustum const&);
     Frustum();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Frustum();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void calculateFrustum(::glm::mat4x4 const& mvp);
+#ifdef LL_PLAT_C
+    MCNAPI Frustum(::Frustum&&);
 
-    MCNAPI_C bool cubeInFrustum(::glm::vec3 const& min, ::glm::vec3 const& max) const;
+    MCNAPI Frustum(::Frustum const&);
+
+    MCNAPI void calculateFrustum(::glm::mat4x4 const& mvp);
+
+    MCNAPI bool cubeInFrustum(::glm::vec3 const& min, ::glm::vec3 const& max) const;
+
+    MCNAPI ::Frustum& operator=(::Frustum&&);
+
+    MCNAPI ::Frustum& operator=(::Frustum const&);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Frustum
+#ifdef LL_PLAT_C
+    MCNAPI static ::Frustum
     getFrustum(::glm::mat4x4 const& projection, ::glm::mat4x4 const& view, ::glm::mat4x4 const& world);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Frustum&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Frustum&&);
 
-    MCNAPI_C void* $ctor(::Frustum const&);
+    MCNAPI void* $ctor(::Frustum const&);
+#endif
     // NOLINTEND
 };

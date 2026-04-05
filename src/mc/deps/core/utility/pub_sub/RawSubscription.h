@@ -11,13 +11,17 @@ class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ~RawSubscription();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

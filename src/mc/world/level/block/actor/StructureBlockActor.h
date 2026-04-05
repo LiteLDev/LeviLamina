@@ -30,6 +30,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                            mIsPowered;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StructureBlockActor();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -59,6 +66,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit StructureBlockActor(::BlockPos const& pos);
+#endif
+
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
     MCAPI void _queueStructure(::IStructureWireframeQueue& wireframeQueue, ::StructureEditorData const& dataToQueue);
@@ -67,13 +78,17 @@ public:
 
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
-    MCAPI_S void setStructureData(::StructureEditorData const& data);
+#ifdef LL_PLAT_S
+    MCAPI void setStructureData(::StructureEditorData const& data);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::BlockPos const& pos);
+#endif
     // NOLINTEND
 
 public:

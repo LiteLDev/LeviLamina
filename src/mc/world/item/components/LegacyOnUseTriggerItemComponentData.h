@@ -12,16 +12,28 @@ public:
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnUseTrigger;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    LegacyOnUseTriggerItemComponentData& operator=(LegacyOnUseTriggerItemComponentData const&);
+    LegacyOnUseTriggerItemComponentData();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LegacyOnUseTriggerItemComponentData& operator=(LegacyOnUseTriggerItemComponentData const&);
     LegacyOnUseTriggerItemComponentData(LegacyOnUseTriggerItemComponentData const&);
     LegacyOnUseTriggerItemComponentData();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData&&);
+
+#ifdef LL_PLAT_S
+    MCAPI LegacyOnUseTriggerItemComponentData(::LegacyOnUseTriggerItemComponentData const&);
+#endif
 
     MCAPI ~LegacyOnUseTriggerItemComponentData();
     // NOLINTEND
@@ -31,7 +43,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData&&);
 
-    MCFOLD_S void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
+#ifdef LL_PLAT_S
+    MCFOLD void* $ctor(::LegacyOnUseTriggerItemComponentData const&);
+#endif
     // NOLINTEND
 
 public:

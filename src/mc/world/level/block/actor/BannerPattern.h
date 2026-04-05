@@ -41,7 +41,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::ItemInstance getItemFromPattern(::BannerPattern const& pattern);
+#ifdef LL_PLAT_C
+    MCAPI static ::ItemInstance getItemFromPattern(::BannerPattern const& pattern);
+#endif
     // NOLINTEND
 
 public:

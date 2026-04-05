@@ -22,10 +22,22 @@ public:
     ::ll::TypedStorage<1, 1, bool>                             mIsSelfSigned;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Certificate& operator=(Certificate const&);
+    Certificate();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addToEnd(::Certificate const& certificate);
+#ifdef LL_PLAT_C
+    MCAPI Certificate(::Certificate const& other);
+
+    MCAPI void addToEnd(::Certificate const& certificate);
+#endif
 
     MCAPI int64 getExpirationDate() const;
 
@@ -33,7 +45,9 @@ public:
 
     MCAPI int64 getNotBeforeDate() const;
 
-    MCAPI_C ::Certificate& getRootParentCertificate();
+#ifdef LL_PLAT_C
+    MCAPI ::Certificate& getRootParentCertificate();
+#endif
 
     MCAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 
@@ -43,7 +57,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::Certificate> addAuthorityToCertificate(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::Certificate> addAuthorityToCertificate(
         ::PrivateKeyManager const&       signer,
         int64                            notBeforeDate,
         int64                            expirationDate,
@@ -51,7 +66,7 @@ public:
         ::std::unique_ptr<::Certificate> certificate
     );
 
-    MCAPI_C static ::std::unique_ptr<::WebToken> createWebToken(
+    MCAPI static ::std::unique_ptr<::WebToken> createWebToken(
         ::PrivateKeyManager const& signer,
         int64                      notBeforeDate,
         int64                      expirationDate,
@@ -60,7 +75,7 @@ public:
         ::Json::Value const*       extraData
     );
 
-    MCAPI_C static ::std::unique_ptr<::Certificate> createWrappedCertificate(
+    MCAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
         ::PrivateKeyManager const&       signer,
         int64                            notBeforeDate,
         int64                            expirationDate,
@@ -69,12 +84,15 @@ public:
         ::Json::Value const*             extraData,
         ::std::unique_ptr<::Certificate> parentCertificate
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::Certificate const& other);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Certificate const& other);
+#endif
     // NOLINTEND
 
 public:

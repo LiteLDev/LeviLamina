@@ -42,9 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit BoneOrientation(::HashedString const& boneName);
+#endif
+
     MCAPI ::BoneOrientation& operator=(::BoneOrientation const& rhs);
 
-    MCAPI_C void setBoneBindingMethod(::BoneBindingMethod boneBindingMethod);
+#ifdef LL_PLAT_C
+    MCAPI void setBoneBindingMethod(::BoneBindingMethod boneBindingMethod);
+#endif
 
     MCAPI ::DirectX::XMMATRIX updateLocalPreTransformMatrix();
 
@@ -54,14 +60,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     computeBoneTransform(::BoneOrientation& boneOrientation, ::Vec3 const* offset, ::Matrix& boneToEntitySpaceMatrix);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::HashedString const& boneName);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::HashedString const& boneName);
+#endif
     // NOLINTEND
 
 public:

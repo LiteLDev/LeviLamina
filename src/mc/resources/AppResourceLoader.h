@@ -15,6 +15,13 @@ namespace mce { struct Image; }
 // clang-format on
 
 class AppResourceLoader : public ::ResourceLoader {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AppResourceLoader();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,13 +57,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit AppResourceLoader(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+#endif
     // NOLINTEND
 
 public:

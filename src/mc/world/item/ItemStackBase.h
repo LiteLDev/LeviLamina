@@ -115,7 +115,9 @@ public:
 
     MCAPI ::std::string _getHoverFormattingPrefix() const;
 
-    MCAPI_C bool _hasFullOrPartialTag(::HashedString const& string) const;
+#ifdef LL_PLAT_C
+    MCAPI bool _hasFullOrPartialTag(::HashedString const& string) const;
+#endif
 
     MCAPI void _loadComponents(::CompoundTag const& compoundTag);
 
@@ -149,11 +151,15 @@ public:
 
     MCAPI int getBaseRepairCost() const;
 
-    MCAPI_C ::Block const* getBlockForRendering() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Block const* getBlockForRendering() const;
+#endif
 
     MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
 
-    MCAPI_C ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
+#ifdef LL_PLAT_C
+    MCAPI ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
+#endif
 
     MCAPI ::mce::Color getColor() const;
 
@@ -174,21 +180,27 @@ public:
     MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
-    MCAPI_C ::Bedrock::Safety::RedactableString getFormattedHovertext(::Level& level, bool showCategory) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Safety::RedactableString getFormattedHovertext(::Level& level, bool showCategory) const;
+#endif
 
     MCAPI ::HashedString const& getFullNameHash() const;
 
-    MCAPI_C ::std::string getHoverName() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getHoverName() const;
 
-    MCAPI_C ::ResolvedItemIconInfo getIconInfo(int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo getIconInfo(int newAnimationFrame, bool inInventoryPane) const;
+#endif
 
     MCAPI short getId() const;
 
     MCAPI int getIdAux() const;
 
-    MCAPI_C int getIdAuxEnchanted() const;
+#ifdef LL_PLAT_C
+    MCAPI int getIdAuxEnchanted() const;
 
-    MCAPI_C bool getIsValidPickupTime() const;
+    MCAPI bool getIsValidPickupTime() const;
+#endif
 
     MCAPI ::Item const* getItem() const;
 
@@ -210,11 +222,13 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
 
-    MCAPI_C ::HashedString const& getRendererId() const;
+#ifdef LL_PLAT_C
+    MCAPI ::HashedString const& getRendererId() const;
 
-    MCAPI_C bool hasChargedItem() const;
+    MCAPI bool hasChargedItem() const;
 
-    MCAPI_C bool hasComponent(::std::string const& name) const;
+    MCAPI bool hasComponent(::std::string const& name) const;
+#endif
 
     MCAPI bool hasContainerData() const;
 
@@ -234,17 +248,21 @@ public:
 
     MCAPI bool isArmorItem() const;
 
-    MCAPI_C bool isAttachableEquipment() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isAttachableEquipment() const;
 
-    MCAPI_C bool isBlock() const;
+    MCAPI bool isBlock() const;
 
-    MCAPI_C bool isBlockInstance(::HashedString const& blockName) const;
+    MCAPI bool isBlockInstance(::HashedString const& blockName) const;
+#endif
 
     MCAPI bool isDamageableItem() const;
 
-    MCAPI_C bool isDamaged() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isDamaged() const;
 
-    MCAPI_C bool isEnchanted() const;
+    MCAPI bool isEnchanted() const;
+#endif
 
     MCAPI bool isEnchantingBook() const;
 
@@ -258,11 +276,15 @@ public:
 
     MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
 
-    MCAPI_C bool isLiquidClipItem() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isLiquidClipItem() const;
+#endif
 
     MCAPI bool isNull() const;
 
-    MCAPI_C bool isOnCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isOnCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
+#endif
 
     MCAPI bool
     isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
@@ -274,7 +296,9 @@ public:
 
     MCAPI bool isPotionItem() const;
 
-    MCAPI_C bool isStackable() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isStackable() const;
+#endif
 
     MCAPI bool isStackable(::ItemStackBase const& other) const;
 
@@ -282,7 +306,9 @@ public:
 
     MCAPI bool isValidAuxValue(int value) const;
 
-    MCFOLD_C bool matches(::ItemStackBase const& other) const;
+#ifdef LL_PLAT_C
+    MCFOLD bool matches(::ItemStackBase const& other) const;
+#endif
 
     MCAPI bool matchesEitherWearableCase(::CompoundTag const* userData) const;
 
@@ -343,12 +369,14 @@ public:
     MCAPI static bool
     _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
 
-    MCAPI_C static void loadItemStacksFromDescriptor(
+#ifdef LL_PLAT_C
+    MCAPI static void loadItemStacksFromDescriptor(
         ::std::vector<::ItemStack>&                        outItems,
         ::std::vector<::NetworkItemStackDescriptor> const& descriptors,
         ::BlockPalette&                                    blockPalette,
         bool                                               isClientSide
     );
+#endif
     // NOLINTEND
 
 public:

@@ -25,18 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI explicit JSONSchemaBuilder(::cereal::ReflectionCtx& context);
 
+    MCNAPI ~JSONSchemaBuilder();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::cereal::ReflectionCtx& context);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::cereal::ReflectionCtx& context);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_S void $dtor();
+#ifdef LL_PLAT_S
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

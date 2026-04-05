@@ -30,7 +30,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::Bedrock::Threading::Async<void> queue(::std::function<void()>&& callback);
 
-    MCAPI_C ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Threading::Async<void> queueAutoRequeue(::std::function<bool()>&& callback);
+#endif
     // NOLINTEND
 
 public:

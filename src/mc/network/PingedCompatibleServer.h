@@ -27,10 +27,13 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk30edaa;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PingedCompatibleServer& operator=(PingedCompatibleServer const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -40,7 +43,13 @@ public:
 
     MCNAPI PingedCompatibleServer(::PingedCompatibleServer const&);
 
-    MCNAPI_C ::std::string getId() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string getId() const;
+
+    MCNAPI ::PingedCompatibleServer& operator=(::PingedCompatibleServer&&);
+
+    MCNAPI ::PingedCompatibleServer& operator=(::PingedCompatibleServer const&);
+#endif
 
     MCNAPI ~PingedCompatibleServer();
     // NOLINTEND

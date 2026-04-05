@@ -18,29 +18,52 @@ public:
 #endif
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MaterialVariants(MaterialVariants const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI MaterialVariants();
 
+    MCAPI explicit MaterialVariants(::mce::MaterialPtr const& skinningMaterial);
+
+    MCFOLD ::MaterialVariants& operator=(::MaterialVariants&&);
+
+    MCFOLD ::MaterialVariants& operator=(::MaterialVariants const&);
+
+    MCAPI ~MaterialVariants();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::MaterialVariants const& getDefaultErrorValue();
+#ifdef LL_PLAT_C
+    MCAPI static ::MaterialVariants const& getDefaultErrorValue();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::mce::MaterialPtr const& skinningMaterial);
+    MCAPI void* $ctor(::mce::MaterialPtr const& skinningMaterial);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

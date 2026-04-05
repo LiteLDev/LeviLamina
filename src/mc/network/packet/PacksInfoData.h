@@ -26,7 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::unordered_map<::ContentIdentity, ::std::string> collectKeys() const;
+#endif
 
     MCAPI ~PacksInfoData();
     // NOLINTEND

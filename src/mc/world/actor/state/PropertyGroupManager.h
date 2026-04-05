@@ -25,9 +25,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
-    MCAPI_C void ingestActorPropertyDataTag(::CompoundTag const& propertyData);
+#ifdef LL_PLAT_C
+    MCAPI void ingestActorPropertyDataTag(::CompoundTag const& propertyData);
 
-    MCAPI_C void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
+    MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
+#endif
 
     MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
     // NOLINTEND

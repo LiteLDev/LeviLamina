@@ -24,15 +24,30 @@ public:
     ::ll::TypedStorage<1, 1, bool>           highlight;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AutoCompleteOption& operator=(AutoCompleteOption const&);
+    AutoCompleteOption(AutoCompleteOption const&);
+    AutoCompleteOption();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
 
+    MCAPI ~AutoCompleteOption();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

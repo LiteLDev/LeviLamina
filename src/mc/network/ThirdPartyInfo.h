@@ -19,11 +19,28 @@ public:
     // NOLINTBEGIN
     MCNAPI ThirdPartyInfo();
 
+#ifdef LL_PLAT_C
+    MCNAPI ThirdPartyInfo(::ThirdPartyInfo&&);
+#endif
+
     MCNAPI ThirdPartyInfo(::ThirdPartyInfo const&);
 
-    MCNAPI_C bool isEligible(::std::string const& urlToMatch) const;
+#ifdef LL_PLAT_C
+    MCNAPI ThirdPartyInfo(
+        ::std::unordered_set<::std::string> const& allowListUrls,
+        ::std::string                              creatorId,
+        ::std::string                              creatorName,
+        ::std::string                              storePageId,
+        bool                                       requireXBL,
+        ::std::string const&                       experienceId
+    );
 
-    MCNAPI_C bool isValid() const;
+    MCNAPI bool isEligible(::std::string const& urlToMatch) const;
+
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo&&);
+#endif
 
     MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 
@@ -35,11 +52,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::ThirdPartyInfo&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ThirdPartyInfo&&);
+#endif
 
     MCNAPI void* $ctor(::ThirdPartyInfo const&);
 
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::unordered_set<::std::string> const& allowListUrls,
         ::std::string                              creatorId,
         ::std::string                              creatorName,
@@ -47,6 +67,7 @@ public:
         bool                                       requireXBL,
         ::std::string const&                       experienceId
     );
+#endif
     // NOLINTEND
 
 public:

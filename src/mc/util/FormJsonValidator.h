@@ -22,20 +22,24 @@ public:
 
     MCNAPI static ::JsonValidator::Property getControlLockedProperty();
 
-    MCNAPI_C static ::JsonValidator::Property getDividerProperty();
+#ifdef LL_PLAT_C
+    MCNAPI static ::JsonValidator::Property getDividerProperty();
+#endif
 
     MCNAPI static ::JsonValidator::Property getDropdownProperty(bool requiresDefault);
 
-    MCNAPI_C static ::JsonValidator::Property getElementItemProperty(
+#ifdef LL_PLAT_C
+    MCNAPI static ::JsonValidator::Property getElementItemProperty(
         ::JsonValidator::Property const& buttonType,
         ::JsonValidator::Property const& headerType,
         ::JsonValidator::Property const& labelType,
         ::JsonValidator::Property const& dividerType
     );
 
-    MCNAPI_C static ::JsonValidator::Property getHeaderProperty();
+    MCNAPI static ::JsonValidator::Property getHeaderProperty();
 
-    MCNAPI_C static ::JsonValidator::Property getLabelProperty();
+    MCNAPI static ::JsonValidator::Property getLabelProperty();
+#endif
 
     MCNAPI static ::JsonValidator::Property getSliderProperty(bool requiresDefault);
 
@@ -47,6 +51,8 @@ public:
 
     MCNAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
 
-    MCNAPI_C static ::JsonValidator::Property getValidator();
+#ifdef LL_PLAT_C
+    MCNAPI static ::JsonValidator::Property getValidator();
+#endif
     // NOLINTEND
 };

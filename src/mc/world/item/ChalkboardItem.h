@@ -39,7 +39,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& hitPos, uchar face);
+#ifdef LL_PLAT_C
+    MCAPI static bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& hitPos, uchar face);
+#endif
     // NOLINTEND
 
 public:

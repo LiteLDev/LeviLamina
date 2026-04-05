@@ -18,13 +18,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ~SaveDocument();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

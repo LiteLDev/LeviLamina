@@ -28,13 +28,22 @@ public:
         mEvents;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ParticleEffectData();
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ParticleEffectData();
+
+    MCAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData&&);
+#endif
+
     MCAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
     MCAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);
@@ -53,15 +62,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData&&);
+    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData&&);
+#endif
 
     MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND

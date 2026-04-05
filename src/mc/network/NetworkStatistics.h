@@ -102,11 +102,15 @@ public:
 
     MCAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
 
-    MCAPI_S ::std::string getVerboseInfo() const;
+#ifdef LL_PLAT_S
+    MCAPI ::std::string getVerboseInfo() const;
+#endif
 
     MCAPI void tick(::std::vector<::WeakEntityRef> const* userList);
 
-    MCAPI_C void updateCSV(double time);
+#ifdef LL_PLAT_C
+    MCAPI void updateCSV(double time);
+#endif
     // NOLINTEND
 
 public:

@@ -21,19 +21,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI EduFetchServersResponse(::Social::EduFetchServersResponse&&);
 
+    MCNAPI ~EduFetchServersResponse();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Social::EduFetchServersResponse&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Social::EduFetchServersResponse&&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -60,21 +60,27 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
 
-    MCAPI_C static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::std::string> getFilteredAuthor(::ItemStack const& book);
 
-    MCAPI_C static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
+    MCAPI static ::std::optional<::std::string> getFilteredTitle(::ItemStack const& book);
+#endif
 
     MCAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
 
     MCAPI static int getPageCount(::ItemStackBase const& book);
 
-    MCAPI_C static ::std::vector<int> getPageCountByType(::ItemStack const& book);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::vector<int> getPageCountByType(::ItemStack const& book);
+#endif
 
     MCAPI static ::std::vector<::PageContent> getPages(::ItemStackBase const& book);
 
     MCAPI static ::std::string const& getTitle(::ItemStackBase const& book);
 
-    MCAPI_C static ::std::string const& getXUID(::ItemStackBase const& book);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string const& getXUID(::ItemStackBase const& book);
+#endif
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@
 namespace personaDefault {
 // functions
 // NOLINTBEGIN
-MCNAPI_C bool isBuiltinSkinPack(::mce::UUID const& packId);
+MCNAPI bool isBuiltinSkinPack(::mce::UUID const& packId);
 // NOLINTEND
 
 // static variables

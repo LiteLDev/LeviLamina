@@ -28,22 +28,38 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk9bb687;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
     public:
         // prevent constructor by default
         Params& operator=(Params const&);
         Params(Params const&);
         Params();
 
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        Params(Params const&);
+        Params();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ::JsonRpc::JsonRpcSendPartyChat::Params& operator=(::JsonRpc::JsonRpcSendPartyChat::Params&&);
 
+        MCNAPI ::JsonRpc::JsonRpcSendPartyChat::Params& operator=(::JsonRpc::JsonRpcSendPartyChat::Params const&);
+
+        MCNAPI ~Params();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -62,25 +78,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI JsonRpcSendPartyChat(::std::string const& partyId, ::std::string const& message);
 
+    MCNAPI ~JsonRpcSendPartyChat();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& partyId, ::std::string const& message);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& partyId, ::std::string const& message);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

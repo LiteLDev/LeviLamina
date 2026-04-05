@@ -26,12 +26,20 @@ public:
     ::ll::TypedStorage<4, 4, ::NetworkIdentifier::Type> mType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     NetworkIdentifier& operator=(NetworkIdentifier const&);
     NetworkIdentifier(NetworkIdentifier const&);
     NetworkIdentifier();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    NetworkIdentifier(NetworkIdentifier const&);
+    NetworkIdentifier();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -50,6 +58,10 @@ public:
     MCAPI bool operator<(::NetworkIdentifier const& other) const;
 
     MCFOLD ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::NetworkIdentifier& operator=(::NetworkIdentifier const&);
+#endif
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

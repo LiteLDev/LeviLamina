@@ -39,17 +39,18 @@ public:
 
     MCNAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
-    MCNAPI_C void BlockPlaced(::Player const& player, ::Block const& placedBlock, bool underWater, ushort auxType);
+#ifdef LL_PLAT_C
+    MCNAPI void BlockPlaced(::Player const& player, ::Block const& placedBlock, bool underWater, ushort auxType);
 
-    MCNAPI_C void BossKilled(::Player const& player, int partySize, int64 bossUniqueId, int bossType);
+    MCNAPI void BossKilled(::Player const& player, int partySize, int64 bossUniqueId, int bossType);
 
-    MCNAPI_C void CaravanChanged(::Mob& mob, int caravanSize);
+    MCNAPI void CaravanChanged(::Mob& mob, int caravanSize);
 
-    MCNAPI_C void CauldronUsed(::Player const& player, short contentsType, uint contentsColor, short fillLevel);
+    MCNAPI void CauldronUsed(::Player const& player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCNAPI_C void EndOfDay(::Player const& player);
+    MCNAPI void EndOfDay(::Player const& player);
 
-    MCNAPI_C void ItemAcquired(
+    MCNAPI void ItemAcquired(
         ::Player const&         player,
         ::ItemDescriptor const& item,
         int                     auxType,
@@ -57,7 +58,7 @@ public:
         int                     acquisitionMethod
     );
 
-    MCNAPI_C void ItemCrafted(
+    MCNAPI void ItemCrafted(
         ::Player const&       player,
         int                   craftingSessionId,
         bool                  craftingTable,
@@ -72,18 +73,19 @@ public:
         bool                  recipeBookShown
     );
 
-    MCNAPI_C void ItemNamed(::Player const& player, ::ItemDescriptor const& item);
+    MCNAPI void ItemNamed(::Player const& player, ::ItemDescriptor const& item);
 
-    MCNAPI_C void
-    ItemSmelted(::Player const& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
+    MCNAPI void ItemSmelted(::Player const& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 
-    MCNAPI_C void ItemSmithied(::Player& player, ::ItemDescriptor const& templateItem);
+    MCNAPI void ItemSmithied(::Player& player, ::ItemDescriptor const& templateItem);
+#endif
 
     MCNAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
 
     MCNAPI void MobEffectChanged(::Player const& player, ::MobEffectInstance const& effectInstance, int change);
 
-    MCNAPI_C void MobInteracted(
+#ifdef LL_PLAT_C
+    MCNAPI void MobInteracted(
         ::Player const& player,
         int             legacyInteractedEntityType,
         int             interactionType,
@@ -91,7 +93,7 @@ public:
         uchar           interactedEntityColor
     );
 
-    MCNAPI_C void MobKilled(
+    MCNAPI void MobKilled(
         ::Player const&      player,
         ::Actor*             entKiller,
         ::Mob&               mobKilled,
@@ -100,26 +102,30 @@ public:
         int                  traderTier
     );
 
-    MCNAPI_C void PiglinBarter(::Player const& player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer);
+    MCNAPI void PiglinBarter(::Player const& player, ::std::string const& itemUsed, bool wasTargetingBarteringPlayer);
+#endif
 
     MCNAPI void PlayerBounced(::Player const& player, ::Block const& block, int bounceHeight, int auxType);
 
-    MCNAPI_C void PlayerSaved(::Player& player);
+#ifdef LL_PLAT_C
+    MCNAPI void PlayerSaved(::Player& player);
+#endif
 
     MCNAPI void PlayerTeleported(::Player& player, float metersTravelled, int cause, int sourceType);
 
     MCNAPI void
     PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
 
-    MCNAPI_C void PortalUsed(::Player& player, ::DimensionType const& dimToId, ::DimensionType const& dimFromId);
+#ifdef LL_PLAT_C
+    MCNAPI void PortalUsed(::Player& player, ::DimensionType const& dimToId, ::DimensionType const& dimFromId);
 
-    MCNAPI_C void PotionBrewed(::Player const& player, ::ItemDescriptor const& item, uint itemCount);
+    MCNAPI void PotionBrewed(::Player const& player, ::ItemDescriptor const& item, uint itemCount);
 
-    MCNAPI_C void RaidUpdated(::Player const& player, int currentwave, int totalWaves, bool success);
+    MCNAPI void RaidUpdated(::Player const& player, int currentwave, int totalWaves, bool success);
 
-    MCNAPI_C void TargetBlockHit(::Player& player, int redstoneLevel);
+    MCNAPI void TargetBlockHit(::Player& player, int redstoneLevel);
 
-    MCNAPI_C void TradeCompleted(
+    MCNAPI void TradeCompleted(
         ::Player const&         player,
         ::Actor*                trader,
         ::ItemDescriptor const& itemA,
@@ -128,7 +134,8 @@ public:
         int                     traderEmeraldCount
     );
 
-    MCNAPI_C void waxedOrWaxedOf(::Player& player, int blockID);
+    MCNAPI void waxedOrWaxedOf(::Player& player, int blockID);
+#endif
     // NOLINTEND
 
 public:

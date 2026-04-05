@@ -44,13 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void updateResource(uint64 const& key);
+#ifdef LL_PLAT_C
+    MCNAPI void updateResource(uint64 const& key);
+
+    MCNAPI ~LRUEviction();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

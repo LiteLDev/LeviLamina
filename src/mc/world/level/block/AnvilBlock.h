@@ -73,9 +73,13 @@ public:
     // NOLINTBEGIN
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
-    MCAPI_C static ::AnvilDamage getDamageEnumForName(::HashedString const& name);
+#ifdef LL_PLAT_C
+    MCAPI static ::AnvilDamage getDamageEnumForName(::HashedString const& name);
+#endif
 
-    MCAPI_S static int getDamageForName(::HashedString const& name);
+#ifdef LL_PLAT_S
+    MCAPI static int getDamageForName(::HashedString const& name);
+#endif
     // NOLINTEND
 
 public:

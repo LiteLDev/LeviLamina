@@ -20,19 +20,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ValidationFail(::Bedrock::DeviceIdErrorType::ValidationFail&&);
 
+    MCNAPI ~ValidationFail();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Bedrock::DeviceIdErrorType::ValidationFail&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Bedrock::DeviceIdErrorType::ValidationFail&&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

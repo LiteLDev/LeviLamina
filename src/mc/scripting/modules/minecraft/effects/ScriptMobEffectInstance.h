@@ -33,7 +33,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
-    MCAPI_C int getAmplifier_010() const;
+#ifdef LL_PLAT_C
+    MCAPI int getAmplifier_010() const;
+#endif
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
@@ -41,7 +43,9 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
 
-    MCAPI_C int getDuration_010() const;
+#ifdef LL_PLAT_C
+    MCAPI int getDuration_010() const;
+#endif
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 
@@ -50,7 +54,9 @@ public:
     MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
     operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
 
-    MCAPI_S ::MobEffectInstance const* tryGetEffect() const;
+#ifdef LL_PLAT_S
+    MCAPI ::MobEffectInstance const* tryGetEffect() const;
+#endif
     // NOLINTEND
 
 public:

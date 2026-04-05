@@ -16,7 +16,9 @@ struct CameraDefinitions : public ::cereal::ComponentStorage {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 };
 

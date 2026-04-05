@@ -35,11 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S ::Social::GameConnectionInfo _convertToDestination() const;
+#ifdef LL_PLAT_S
+    MCAPI ::Social::GameConnectionInfo _convertToDestination() const;
 
-    MCAPI_S ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
+    MCAPI ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
+#endif
 
-    MCAPI_C ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
+#endif
     // NOLINTEND
 
 public:

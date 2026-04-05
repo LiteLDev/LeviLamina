@@ -46,20 +46,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::OwnerPtr<::EntityContext> _createVolumeEntity(::DefinitionInstanceGroup const& definitionGroup);
+#ifdef LL_PLAT_C
+    MCNAPI VolumeEntityManager(::StackRefResult<::EntityRegistry> registry, ::cereal::ReflectionCtx& ctx);
+
+    MCNAPI ::OwnerPtr<::EntityContext> _createVolumeEntity(::DefinitionInstanceGroup const& definitionGroup);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void
+#ifdef LL_PLAT_C
+    MCNAPI static void
     registerComponentNetRelevancy(::ComponentNetRelevancyRegistry& registry, ::cereal::ReflectionCtx const& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::StackRefResult<::EntityRegistry> registry, ::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::StackRefResult<::EntityRegistry> registry, ::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:

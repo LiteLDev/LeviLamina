@@ -91,9 +91,11 @@ public:
 
     MCAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
 
-    MCAPI_C ::Block const* getDisplayBlock() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Block const* getDisplayBlock() const;
 
-    MCAPI_C int getDisplayOffset() const;
+    MCAPI int getDisplayOffset() const;
+#endif
 
     MCAPI void postNormalTick(::BlockPos const& preNormalTickBlockPos);
 

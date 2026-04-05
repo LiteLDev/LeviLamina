@@ -77,25 +77,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit AutomationClient(::IMinecraftApp& minecraft);
+#endif
+
     MCNAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
     MCNAPI void _removeSession(::Automation::AutomationSession const& session);
 
     MCNAPI bool _tryAddCommand(::CodeBuilder::CommandRequest&& commandRequest);
 
-    MCNAPI_C ::std::shared_ptr<::Automation::AutomationSession> createSession();
+#ifdef LL_PLAT_C
+    MCNAPI ::std::shared_ptr<::Automation::AutomationSession> createSession();
+#endif
 
     MCNAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCNAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
 
-    MCNAPI_C bool isReady();
+#ifdef LL_PLAT_C
+    MCNAPI bool isReady();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::IMinecraftApp& minecraft);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::IMinecraftApp& minecraft);
+#endif
     // NOLINTEND
 
 public:

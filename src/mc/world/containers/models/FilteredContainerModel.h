@@ -75,7 +75,9 @@ public:
 
     MCAPI void _refreshContainer(bool fullRefresh);
 
-    MCAPI_C void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
+#ifdef LL_PLAT_C
+    MCAPI void setFilteringRule(::std::function<::FilterResult(::ItemInstance const&, bool)> rule);
+#endif
     // NOLINTEND
 
 public:

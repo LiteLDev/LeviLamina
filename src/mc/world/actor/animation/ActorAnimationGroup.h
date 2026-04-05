@@ -43,11 +43,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ActorAnimationGroup();
+#endif
+
     MCAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
-    MCAPI_C ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
+#ifdef LL_PLAT_C
+    MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
+#endif
 
     MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
@@ -61,10 +67,12 @@ public:
         ::std::string const&      personaPieceId
     );
 
-    MCAPI_C void loadActorAnimationsAsync(
+#ifdef LL_PLAT_C
+    MCAPI void loadActorAnimationsAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
+#endif
 
     MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
@@ -72,7 +80,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

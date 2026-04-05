@@ -28,7 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S void _readConfigFile();
+#ifdef LL_PLAT_S
+    MCNAPI void _readConfigFile();
+#endif
     // NOLINTEND
 
 public:

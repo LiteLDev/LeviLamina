@@ -41,33 +41,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void completeSubChunkRequest(::SubChunkPacket const& packet);
+#ifdef LL_PLAT_C
+    MCAPI void completeSubChunkRequest(::SubChunkPacket const& packet);
 
-    MCAPI_C bool containsRequesterAtRequest(
+    MCAPI bool containsRequesterAtRequest(
         ::DimensionType const&       dimensionType,
         ::SubChunkPos const&         subChunkPosition,
         ::SubChunkRequestSubscriber* requester
     ) const;
 
-    MCAPI_C bool
-    isPositionInProgress(::DimensionType const& dimensionType, ::SubChunkPos const& subChunkPosition) const;
+    MCAPI bool isPositionInProgress(::DimensionType const& dimensionType, ::SubChunkPos const& subChunkPosition) const;
 
-    MCAPI_C void queueSubChunkRequest(
+    MCAPI void queueSubChunkRequest(
         ::DimensionType const&       dimensionType,
         ::SubChunkPos const&         subChunkPosition,
         ::SubChunkRequestSubscriber* requester
     );
 
-    MCAPI_C void sendSubChunkRequests(
+    MCAPI void sendSubChunkRequests(
         ::PacketSender*        sender,
         ::SubChunkPos const&   playerSubChunkPosition,
         ::DimensionType const& playerDimension
     );
+
+    MCAPI ~SubChunkRequestManager();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

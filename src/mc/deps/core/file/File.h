@@ -36,18 +36,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI File(::Core::File&& rhs);
+#endif
+
     MCNAPI
     File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
 
     MCNAPI ::Core::Result close();
 
-    MCNAPI_C ::Core::Result flush();
+#ifdef LL_PLAT_C
+    MCNAPI ::Core::Result flush();
+#endif
 
     MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
 
     MCNAPI ::Core::Result getSize(uint64* pSize);
 
-    MCNAPI_C bool isNearTransactionLimit(uint64 windowSize) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool isNearTransactionLimit(uint64 windowSize) const;
+#endif
 
     MCNAPI ::Core::Result
     open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
@@ -70,7 +78,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::PathView entryPath);
+#ifdef LL_PLAT_C
+    MCNAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::PathView entryPath);
+#endif
 
     MCNAPI static ::Core::Result writeCreateOrAppendFileData(
         ::Core::PathView         path,
@@ -84,7 +94,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::File&& rhs);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::File&& rhs);
+#endif
 
     MCNAPI void*
     $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);

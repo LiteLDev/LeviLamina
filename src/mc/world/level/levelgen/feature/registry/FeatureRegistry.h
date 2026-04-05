@@ -75,7 +75,8 @@ public:
 
     MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
-    MCAPI_C bool _setupFeature(
+#ifdef LL_PLAT_C
+    MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -84,6 +85,7 @@ public:
         ::MinEngineVersion const&    minEngineVersion,
         bool                         serializeFeatures
     );
+#endif
 
     MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
@@ -101,11 +103,13 @@ public:
         bool                         clientSideGenEnabled
     );
 
-    MCAPI_C void loadFromJsonData(
+#ifdef LL_PLAT_C
+    MCAPI void loadFromJsonData(
         ::IWorldRegistriesProvider&                                      worldRegistries,
         ::ResourcePackManager const&                                     rpm,
         ::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat> const& jsonData
     );
+#endif
 
     MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
@@ -113,9 +117,11 @@ public:
 
     MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
 
-    MCAPI_C void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
+#ifdef LL_PLAT_C
+    MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
 
-    MCAPI_C void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
+    MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
+#endif
 
     MCAPI ~FeatureRegistry();
     // NOLINTEND

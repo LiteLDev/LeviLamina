@@ -47,24 +47,44 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::cg::TextureSetImageDescription::LayerInfoVar>> mLayerInfo;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TextureSetImageDescription& operator=(TextureSetImageDescription const&);
+    TextureSetImageDescription();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI TextureSetImageDescription(::cg::TextureSetImageDescription const&);
 
+    MCAPI explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+
+    MCAPI ::cg::TextureSetImageDescription& operator=(::cg::TextureSetImageDescription&&);
+
+    MCAPI ~TextureSetImageDescription();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::cg::TextureSetImageDescription const&);
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::cg::TextureSetImageDescription const&);
 
-    MCAPI_C void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    MCAPI void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

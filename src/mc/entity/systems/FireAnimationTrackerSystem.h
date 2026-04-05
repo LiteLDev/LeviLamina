@@ -27,12 +27,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _tickFireAnimationTrackerComponent(
+#ifdef LL_PLAT_C
+    MCAPI static void _tickFireAnimationTrackerComponent(
         ::EntityContext&                    entity,
         ::ActorOwnerComponent&              actorOwnerComponent,
         ::FireAnimationTrackerComponent&    fireAnimationTrackerComponent,
         ::Optional<::OnFireComponent const> onFireComponent
     );
+#endif
     // NOLINTEND
 
 public:

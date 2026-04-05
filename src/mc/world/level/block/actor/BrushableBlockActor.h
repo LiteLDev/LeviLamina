@@ -102,7 +102,9 @@ public:
 
     MCAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
 
-    MCAPI_C ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
 
     MCAPI void update(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
@@ -156,8 +158,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
 
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

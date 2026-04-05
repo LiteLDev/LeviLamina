@@ -204,9 +204,11 @@ public:
         ::std::vector<::HashedString> const& tags
     );
 
-    MCAPI_C void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
+#ifdef LL_PLAT_C
+    MCAPI void addNetMappedRecipe(::RecipeNetId const& recipeNetId, ::std::unique_ptr<::Recipe> recipe);
 
-    MCAPI_C void addRecipeListener(::std::weak_ptr<bool> lifePtr, ::std::function<void()> callback);
+    MCAPI void addRecipeListener(::std::weak_ptr<bool> lifePtr, ::std::function<void()> callback);
+#endif
 
     MCAPI void addShapedRecipe(
         ::std::string                         recipeId,
@@ -371,37 +373,38 @@ public:
 
     MCAPI ::std::pair<::std::string, ::Json::Value> extractRecipeObjInfo(::Json::Value const& obj);
 
-    MCAPI_C void
-    forEachRecipeFor(::HashedString const& tag, ::brstd::function_ref<void(::Recipe const&)> callback) const;
+#ifdef LL_PLAT_C
+    MCAPI void forEachRecipeFor(::HashedString const& tag, ::brstd::function_ref<void(::Recipe const&)> callback) const;
 
-    MCAPI_C void forEachRecipeFor(
+    MCAPI void forEachRecipeFor(
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
-    MCAPI_C void forEachRecipeFor(
+    MCAPI void forEachRecipeFor(
         ::ItemInstance const&                        result,
         ::HashedString const&                        tag,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
-    MCAPI_C void forEachRecipeFor(
+    MCAPI void forEachRecipeFor(
         ::ItemInstance const&                        result,
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<void(::Recipe const&)> callback
     ) const;
 
-    MCAPI_C void forEachRecipeUntil(
+    MCAPI void forEachRecipeUntil(
         ::ItemInstance const&                        result,
         ::HashedString const&                        tag,
         ::brstd::function_ref<bool(::Recipe const&)> callback
     ) const;
 
-    MCAPI_C void forEachRecipeUntil(
+    MCAPI void forEachRecipeUntil(
         ::ItemInstance const&                        result,
         ::std::vector<::std::string> const&          tags,
         ::brstd::function_ref<bool(::Recipe const&)> callback
     ) const;
+#endif
 
     MCAPI ::std::vector<::ItemInstance>
     getFurnaceRecipeFor(::ItemStackBase const& output, ::HashedString const& tag) const;
@@ -426,7 +429,9 @@ public:
         bool                                             isBaseGamePack
     );
 
-    MCAPI_C void notifyRecipeListeners();
+#ifdef LL_PLAT_C
+    MCAPI void notifyRecipeListeners();
+#endif
 
     MCAPI ~Recipes();
     // NOLINTEND

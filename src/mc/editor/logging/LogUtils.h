@@ -21,7 +21,9 @@ class LogUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string getTimeStamp();
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string getTimeStamp();
+#endif
 
     MCNAPI static void
     log(::Player&                                           player,

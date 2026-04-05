@@ -15,16 +15,30 @@ public:
     ::ll::TypedStorage<4, 4, int>                        mCount;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    IngredientSearchInfo& operator=(IngredientSearchInfo const&);
+    IngredientSearchInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI IngredientSearchInfo(::IngredientSearchInfo const&);
+#endif
+
     MCAPI ~IngredientSearchInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::IngredientSearchInfo const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::IngredientSearchInfo const&);
+#endif
     // NOLINTEND
 
 public:

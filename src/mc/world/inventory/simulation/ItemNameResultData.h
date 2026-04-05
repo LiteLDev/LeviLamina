@@ -26,6 +26,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::std::string> getItemName(::ContainerScreenActionResult const& result);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<::std::string> getItemName(::ContainerScreenActionResult const& result);
+#endif
     // NOLINTEND
 };

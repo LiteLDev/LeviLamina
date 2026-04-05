@@ -71,7 +71,9 @@ public:
 
     MCNAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
-    MCNAPI_S void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
+#ifdef LL_PLAT_S
+    MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
+#endif
 
     MCNAPI int _getNewPlayerId() const;
 

@@ -24,8 +24,9 @@ public:
         ::std::vector<::std::string> const& arguments
     );
 
-    MCNAPI_C static ::std::vector<::std::string>
-    getI18nErrorLabelList(uint errorValue, ::std::string const& i18nPrefix);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::vector<::std::string> getI18nErrorLabelList(uint errorValue, ::std::string const& i18nPrefix);
+#endif
     // NOLINTEND
 
 public:

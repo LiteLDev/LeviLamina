@@ -24,17 +24,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::optional<::std::string> getNetworkInfoString();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI NetworkSummary(
         ::std::function<::TransportLayer()> getNetworkType,
         ::std::function<bool()>             isInGame,
         ::std::function<bool()>             isSignedIntoSignalingService,
         ::std::function<bool()>             isHostingLocalDedicatedServer
     );
+
+    MCNAPI ::std::optional<::std::string> getNetworkInfoString();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::std::function<::TransportLayer()> getNetworkType,
+        ::std::function<bool()>             isInGame,
+        ::std::function<bool()>             isSignedIntoSignalingService,
+        ::std::function<bool()>             isHostingLocalDedicatedServer
+    );
+#endif
     // NOLINTEND
 };

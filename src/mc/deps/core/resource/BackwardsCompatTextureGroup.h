@@ -25,11 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::BackwardsCompatTextureInfo const& getBackCompatInfo(::ResourceLocation const& resourceLocation) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::BackwardsCompatTextureInfo const& getBackCompatInfo(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI_C void loadTextures(::gsl::span<::ResourceLocationPair> texturesToLoad);
+    MCNAPI void loadTextures(::gsl::span<::ResourceLocationPair> texturesToLoad);
 
-    MCNAPI_C void populate(::std::string const& backCompatFile);
+    MCNAPI void populate(::std::string const& backCompatFile);
+#endif
     // NOLINTEND
 
 public:

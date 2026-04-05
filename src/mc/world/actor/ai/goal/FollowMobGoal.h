@@ -57,7 +57,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>> _findCandidateMobs();
 
-    MCAPI_S void setFilters(::ActorFilterGroup& filters);
+#ifdef LL_PLAT_S
+    MCAPI void setFilters(::ActorFilterGroup& filters);
+#endif
     // NOLINTEND
 
 public:

@@ -78,11 +78,13 @@ public:
 
     MCNAPI void clearData();
 
-    MCNAPI_C bool shouldTrackNearbyPosition(::BlockPos const& blockToTrack);
+#ifdef LL_PLAT_C
+    MCNAPI bool shouldTrackNearbyPosition(::BlockPos const& blockToTrack);
 
-    MCNAPI_C bool shouldTrackPosition(::BlockPos const& blockToTrack);
+    MCNAPI bool shouldTrackPosition(::BlockPos const& blockToTrack);
 
-    MCNAPI_C bool shouldTrackPosition(::SubChunkPos const& renderChunkPos);
+    MCNAPI bool shouldTrackPosition(::SubChunkPos const& renderChunkPos);
+#endif
 
     MCNAPI void startTimer(::BlockPos const& blockToTrack);
     // NOLINTEND
@@ -90,6 +92,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::PlayerRenderChunkModificationLatencyTracker* getIfTiming();
+#ifdef LL_PLAT_C
+    MCNAPI static ::PlayerRenderChunkModificationLatencyTracker* getIfTiming();
+#endif
     // NOLINTEND
 };

@@ -186,12 +186,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Block const& _mapToRotation(::Block const& curr, ::Rotation rotation);
 
-    MCAPI_C static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
         ::Dimension&                                            targetDimension,
         ::StructureSettings const&                              settings,
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
     );
+#endif
 
     MCAPI static ::Block const* tryGetBlockAtPos(
         ::BlockPos const&                                       pos,

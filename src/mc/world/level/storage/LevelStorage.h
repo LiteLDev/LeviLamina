@@ -113,7 +113,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
+#ifdef LL_PLAT_C
+    MCAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
+#endif
 
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 

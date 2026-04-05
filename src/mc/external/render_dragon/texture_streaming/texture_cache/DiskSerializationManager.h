@@ -106,35 +106,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::optional<::std::vector<uint>> _claimFirstFreeBlocks(uint numberOfBlocks);
+#ifdef LL_PLAT_C
+    MCNAPI DiskSerializationManager(
+        ::std::string fileLocation,
+        uint          blockSize,
+        uint          maxSize,
+        uint          maxMipSize,
+        bool          forceRestartCache
+    );
 
-    MCNAPI_C ::std::vector<::cg::ImageBuffer> _getMipChainForImageMetadata(
+    MCNAPI ::std::optional<::std::vector<uint>> _claimFirstFreeBlocks(uint numberOfBlocks);
+
+    MCNAPI ::std::vector<::cg::ImageBuffer> _getMipChainForImageMetadata(
         ::dragon::texturestreaming::DiskSerializationManager::ImageMetadata const& imageMetadata
     );
 
-    MCNAPI_C void _initializeFreeBlockList();
+    MCNAPI void _initializeFreeBlockList();
 
-    MCNAPI_C void _initializeResidencyTable();
+    MCNAPI void _initializeResidencyTable();
 
-    MCNAPI_C bool _isHeaderSame();
+    MCNAPI bool _isHeaderSame();
 
-    MCNAPI_C ::std::optional<::dragon::texturestreaming::DiskSerializationManager::ImageMetadata>
+    MCNAPI ::std::optional<::dragon::texturestreaming::DiskSerializationManager::ImageMetadata>
     _isImageResident(uint64 const& key);
 
-    MCNAPI_C uint64 _read(void* buffer, uint64& position, uint64 size);
+    MCNAPI uint64 _read(void* buffer, uint64& position, uint64 size);
 
-    MCNAPI_C ::std::optional<::std::vector<::cg::ImageBuffer>>
+    MCNAPI ::std::optional<::std::vector<::cg::ImageBuffer>>
     _readImageAt(::dragon::texturestreaming::DiskSerializationManager::ImageMetadata const& imageMetadata);
 
-    MCNAPI_C void _write(void const* buffer, uint64& position, uint64 size);
+    MCNAPI void _write(void const* buffer, uint64& position, uint64 size);
 
-    MCNAPI_C void _writeMipChainToDisk(
+    MCNAPI void _writeMipChainToDisk(
         ::std::vector<::cg::ImageBuffer> const& mipChain,
         ::std::vector<uint> const&              addresses,
         uchar                                   firstSerializedMipOffset
     );
 
-    MCNAPI_C bool _writeMipChainToResidencyTable(
+    MCNAPI bool _writeMipChainToResidencyTable(
         uint64 const&                           key,
         ::std::vector<::cg::ImageBuffer> const& mipChain,
         ::std::vector<uint> const&              addresses,
@@ -142,35 +151,42 @@ public:
         uchar                                   firstSerializedMipOffset
     );
 
-    MCNAPI_C void _writeNewFile();
+    MCNAPI void _writeNewFile();
 
-    MCNAPI_C ::std::optional<::std::pair<::std::vector<::cg::ImageBuffer>, uchar>> deserialize(uint64 const& imageKey);
+    MCNAPI ::std::optional<::std::pair<::std::vector<::cg::ImageBuffer>, uchar>> deserialize(uint64 const& imageKey);
 
-    MCNAPI_C void flush();
+    MCNAPI void flush();
 
-    MCNAPI_C ::std::vector<::std::pair<uint64, ::std::string>> getSerializationDebugEntries() const;
+    MCNAPI ::std::vector<::std::pair<uint64, ::std::string>> getSerializationDebugEntries() const;
 
-    MCNAPI_C void
+    MCNAPI void
     serialize(uint64 const& imageHash, ::std::vector<::cg::ImageBuffer> const& mipChain, uchar startingMipInChain);
+
+    MCNAPI ~DiskSerializationManager();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::array<uint, 256> const& mCrcTable();
+    MCNAPI static ::std::array<uint, 256> const& mCrcTable();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(::std::string fileLocation, uint blockSize, uint maxSize, uint maxMipSize, bool forceRestartCache);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

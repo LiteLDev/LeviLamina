@@ -46,13 +46,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI CrashHandlerImpl(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Bedrock::CrashManagerImpl& manager, ::Core::PathBuffer<::std::string> const& filePath);
+#endif
     // NOLINTEND
 
 public:

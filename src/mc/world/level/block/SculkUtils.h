@@ -14,10 +14,9 @@ class Random;
 namespace SculkUtils {
 // functions
 // NOLINTBEGIN
-MCAPI_C void
-addChargeEffects(::BlockSource& region, ::BlockPos const& pos, int charge, int facingData, ::Random& random);
+MCAPI void addChargeEffects(::BlockSource& region, ::BlockPos const& pos, int charge, int facingData, ::Random& random);
 
-MCAPI_C void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
+MCAPI void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 
 MCAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
 

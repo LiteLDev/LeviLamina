@@ -240,11 +240,13 @@ public:
         // NOLINTBEGIN
         MCAPI void reset();
 
-        MCAPI_C void updateRuntimeData(
+#ifdef LL_PLAT_C
+        MCAPI void updateRuntimeData(
             ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& newItem,
             ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& prevNewItem,
             uint64                                                                    currentHistoryItemSize
         );
+#endif
         // NOLINTEND
 
     public:
@@ -277,18 +279,20 @@ public:
 
         MCAPI void _clearHistory();
 
-        MCAPI_C void
+#ifdef LL_PLAT_C
+        MCAPI void
         addHistory(::AddActorPacket const& actorData, ::std::chrono::steady_clock::time_point const& receiveTimepoint);
 
-        MCAPI_C void addHistory(
+        MCAPI void addHistory(
             ::SetActorMotionPacket const&                  motionData,
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
 
-        MCAPI_C void addHistory(
+        MCAPI void addHistory(
             ::MotionPredictionHintsPacket const&           motionPredictionHints,
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
+#endif
 
         MCAPI void addHistory(
             ::MoveActorAbsoluteData const&                 moveData,
@@ -343,13 +347,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+        MCAPI MotionHistoryItem(
             ::Vec3 const&                                                                   motion,
             bool                                                                            onGround,
             bool                                                                            isMotionHintItem,
@@ -359,6 +358,24 @@ public:
             bool                                                                            didAdjustTimepoint,
             ::std::chrono::milliseconds const&                                              timepointDiff
         );
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI void* $ctor(
+            ::Vec3 const&                                                                   motion,
+            bool                                                                            onGround,
+            bool                                                                            isMotionHintItem,
+            ::std::chrono::steady_clock::time_point const&                                  timepoint,
+            ::std::shared_ptr<::PredictedMovementComponent::MoveHistoryItem const> const&   prevMoveItem,
+            ::std::shared_ptr<::PredictedMovementComponent::MotionHistoryItem const> const& prevMotionItem,
+            bool                                                                            didAdjustTimepoint,
+            ::std::chrono::milliseconds const&                                              timepointDiff
+        );
+#endif
         // NOLINTEND
 
     public:

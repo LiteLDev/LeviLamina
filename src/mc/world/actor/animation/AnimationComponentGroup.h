@@ -21,7 +21,9 @@ public:
     MCAPI static ::std::shared_ptr<::AnimationComponent>
     getAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
 
-    MCAPI_C static void onFrameRendered();
+#ifdef LL_PLAT_C
+    MCAPI static void onFrameRendered();
+#endif
 
     MCAPI static void
     releaseAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);

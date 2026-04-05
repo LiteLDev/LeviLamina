@@ -26,6 +26,13 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<int(int)>> mCoerceSaveValueCallback;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    IntOption();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,13 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C int _validate(int value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI IntOption(
         ::OptionID                id,
         ::OptionOwnerType         ownerType,
         ::OptionResetFlags        resetFlags,
@@ -61,7 +63,7 @@ public:
         ::GameVersion             version
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI IntOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -73,6 +75,40 @@ public:
         int                  valueMax,
         ::GameVersion        version
     );
+
+    MCAPI int _validate(int value);
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::OptionID                id,
+        ::OptionOwnerType         ownerType,
+        ::OptionResetFlags        resetFlags,
+        ::std::string const&      captionId,
+        ::std::string const&      saveTag,
+        int                       value,
+        ::std::vector<int> const& values,
+        bool                      clampToRange,
+        ::GameVersion             version
+    );
+
+    MCAPI void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        int                  value,
+        bool                 clampToRange,
+        int                  valueMin,
+        int                  valueMax,
+        ::GameVersion        version
+    );
+#endif
     // NOLINTEND
 
 public:

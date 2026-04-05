@@ -46,13 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Json::Value serialize() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value serialize() const;
+
+    MCNAPI ~Accessor();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -19,16 +19,20 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mPasscode;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
+    ScriptDebuggerSettings(ScriptDebuggerSettings const&);
+    ScriptDebuggerSettings();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptDebuggerSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI ScriptDebuggerSettings(
         bool                           allowOutbound,
         bool                           allowInbound,
         ::ScriptDebuggerAttachMode     attachMode,
@@ -38,6 +42,28 @@ public:
         ::std::optional<uint>          port,
         ::std::optional<::std::string> passcode
     );
+
+    MCNAPI ::ScriptDebuggerSettings& operator=(::ScriptDebuggerSettings&&);
+#endif
+
+    MCNAPI ~ScriptDebuggerSettings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        bool                           allowOutbound,
+        bool                           allowInbound,
+        ::ScriptDebuggerAttachMode     attachMode,
+        uint                           autoAttachTimeoutSec,
+        bool                           forcePort,
+        ::std::optional<::std::string> host,
+        ::std::optional<uint>          port,
+        ::std::optional<::std::string> passcode
+    );
+#endif
     // NOLINTEND
 
 public:

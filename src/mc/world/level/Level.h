@@ -1513,7 +1513,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorManager> getActorManager();
 
-    MCAPI_C ::NpcEventCoordinator& getNpcEventCoordinator();
+#ifdef LL_PLAT_C
+    MCAPI ::NpcEventCoordinator& getNpcEventCoordinator();
+#endif
 
     MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
 

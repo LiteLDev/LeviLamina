@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cohtml/IAsyncResourceHandler.h"
+#include "mc/external/gameface/cohtml/IAsyncResourceHandler.h"
 
 // auto generated forward declare list
 // clang-format off

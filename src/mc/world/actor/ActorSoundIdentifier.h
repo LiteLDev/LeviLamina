@@ -43,7 +43,9 @@ public:
         bool                                                isBaby
     );
 
-    MCAPI_C ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
+#endif
 
     MCAPI ~ActorSoundIdentifier();
     // NOLINTEND

@@ -30,7 +30,9 @@ public:
         ::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData
     );
 
-    MCAPI_C ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
+#endif
 
     MCFOLD ::JigsawStructureDataPacketPayload& operator=(::JigsawStructureDataPacketPayload&&);
 

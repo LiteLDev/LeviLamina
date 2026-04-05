@@ -26,9 +26,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
+#ifdef LL_PLAT_C
+    MCNAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
 
-    MCNAPI_C ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
+    MCNAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
+#endif
     // NOLINTEND
 };
 

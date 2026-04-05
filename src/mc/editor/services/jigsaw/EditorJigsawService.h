@@ -56,17 +56,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI TemplatePoolData(
+            ::std::string const&                                        templateId,
+            ::std::set<::std::string> const&                            structNames,
+            ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
+        );
+#endif
+
         MCNAPI ~TemplatePoolData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI_S void* $ctor(
+#ifdef LL_PLAT_S
+        MCNAPI void* $ctor(
             ::std::string const&                                        templateId,
             ::std::set<::std::string> const&                            structNames,
             ::std::map<::std::string, ::std::set<::std::string>> const& structTargetNames
         );
+#endif
         // NOLINTEND
 
     public:

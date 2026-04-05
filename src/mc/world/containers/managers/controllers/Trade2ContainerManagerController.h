@@ -35,6 +35,13 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance>                                mResultPreviewItem;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Trade2ContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,27 +78,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _consumeIngredients(uchar numCrafts);
+#ifdef LL_PLAT_C
+    MCNAPI explicit Trade2ContainerManagerController(::std::weak_ptr<::Trade2ContainerManagerModel> pModel);
 
-    MCNAPI_C void _consumeMaterials(int amount, ::ContainerEnumName ingredientContainerEnumName);
+    MCNAPI void _consumeIngredients(uchar numCrafts);
 
-    MCNAPI_C void _createResult(bool shouldPlayAudio);
+    MCNAPI void _consumeMaterials(int amount, ::ContainerEnumName ingredientContainerEnumName);
 
-    MCNAPI_C void
+    MCNAPI void _createResult(bool shouldPlayAudio);
+
+    MCNAPI void
     _createTradeItem(::ItemInstance& itemInstance, ::ItemStackRequestScope const& requestScope, uchar numCrafts);
 
-    MCNAPI_C void
-    _handleBuyItemUse(::ItemInstance const& buyItem, int& emeraldCount, ::Actor& trader, ::Player& player);
+    MCNAPI void _handleBuyItemUse(::ItemInstance const& buyItem, int& emeraldCount, ::Actor& trader, ::Player& player);
 
-    MCNAPI_C bool _handleTransferTrade(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _handleTransferTrade(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C bool _ingredientsMatchRecipe(
+    MCNAPI bool _ingredientsMatchRecipe(
         ::MerchantRecipe const* recipe,
         ::ItemStackBase const&  itemA,
         ::ItemStackBase const&  itemB
     ) const;
 
-    MCNAPI_C void _pullInIngredientItemsFromInventory(
+    MCNAPI void _pullInIngredientItemsFromInventory(
         ::ItemInstance const&  recipeItemA,
         ::ItemInstance const&  recipeItemB,
         ::ContainerController* slot1,
@@ -99,57 +108,62 @@ public:
         bool                   ignoreCustomNamedItems
     );
 
-    MCNAPI_C void _selectBestTradeForIngredients();
+    MCNAPI void _selectBestTradeForIngredients();
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C int getCurrentTradeExp() const;
+    MCNAPI int getCurrentTradeExp() const;
 
-    MCNAPI_C ::std::string getDisplayName();
+    MCNAPI ::std::string getDisplayName();
 
-    MCNAPI_C ::std::string getDisplayNameTag() const;
+    MCNAPI ::std::string getDisplayNameTag() const;
 
-    MCNAPI_C int getEntityMaxTradeTier() const;
+    MCNAPI int getEntityMaxTradeTier() const;
 
-    MCNAPI_C int getEntityTradeTier() const;
+    MCNAPI int getEntityTradeTier() const;
 
-    MCNAPI_C ::MerchantRecipe* getSelectedTrade() const;
+    MCNAPI ::MerchantRecipe* getSelectedTrade() const;
 
-    MCNAPI_C ::MerchantRecipe* getTrade(int tier, int index) const;
+    MCNAPI ::MerchantRecipe* getTrade(int tier, int index) const;
 
-    MCNAPI_C void handleAutoTrade(int tier, int index, ::std::vector<::AutoPlaceResult>&);
+    MCNAPI void handleAutoTrade(int tier, int index, ::std::vector<::AutoPlaceResult>&);
 
-    MCNAPI_C bool hasAvailableTradeWithSecondItem() const;
+    MCNAPI bool hasAvailableTradeWithSecondItem() const;
 
-    MCNAPI_C bool isItemValidForSelectedTrade(::ItemStackBase const& item, bool withCount, bool buyA) const;
+    MCNAPI bool isItemValidForSelectedTrade(::ItemStackBase const& item, bool withCount, bool buyA) const;
 
-    MCNAPI_C bool isSelectedTrade(int tier, int index) const;
+    MCNAPI bool isSelectedTrade(int tier, int index) const;
 
-    MCNAPI_C bool isSelectedTradeValid() const;
+    MCNAPI bool isSelectedTradeValid() const;
 
-    MCNAPI_C void moveIngredientsBackToInventory();
+    MCNAPI void moveIngredientsBackToInventory();
 
-    MCNAPI_C bool playerHasItemsForTrade(::MerchantRecipe const* recipe) const;
+    MCNAPI bool playerHasItemsForTrade(::MerchantRecipe const* recipe) const;
 
-    MCNAPI_C ::std::pair<bool, bool> playerHasItemsForTradeInInventory(::MerchantRecipe const* recipe) const;
+    MCNAPI ::std::pair<bool, bool> playerHasItemsForTradeInInventory(::MerchantRecipe const* recipe) const;
 
-    MCNAPI_C void pullInIngredientsForSelectedTrade();
+    MCNAPI void pullInIngredientsForSelectedTrade();
 
-    MCNAPI_C bool selectOfferedTrade();
+    MCNAPI bool selectOfferedTrade();
 
-    MCNAPI_C void setSelectedTrade(int tier, int index);
+    MCNAPI void setSelectedTrade(int tier, int index);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static bool itemMatchesRecipe(::ItemStackBase const& item, ::ItemStackBase const& recipe);
+#ifdef LL_PLAT_C
+    MCNAPI static bool itemMatchesRecipe(::ItemStackBase const& item, ::ItemStackBase const& recipe);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::Trade2ContainerManagerModel> pModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::Trade2ContainerManagerModel> pModel);
+#endif
     // NOLINTEND
 
 public:

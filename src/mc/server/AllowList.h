@@ -37,6 +37,10 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI AllowListEntryMatcher(::std::string name, ::std::string xuid, ::mce::UUID const& uuid);
+
+#ifdef LL_PLAT_S
+        MCAPI bool operator()(::AllowListEntry const& entry);
+#endif
         // NOLINTEND
 
     public:
@@ -53,6 +57,13 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void()>>         mSyncCallback;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AllowList();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,11 +82,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_S bool addByName(::std::string const& name);
+#ifdef LL_PLAT_C
+    MCAPI explicit AllowList(::std::function<void()> syncCallback);
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI bool addByName(::std::string const& name);
+#endif
 
     MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
-    MCAPI_S bool removeByName(::std::string const& name);
+#ifdef LL_PLAT_S
+    MCAPI bool removeByName(::std::string const& name);
+#endif
 
     MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
     // NOLINTEND
@@ -83,7 +102,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::function<void()> syncCallback);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::function<void()> syncCallback);
+#endif
     // NOLINTEND
 
 public:

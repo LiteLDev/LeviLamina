@@ -105,13 +105,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~NewOutgoingConnectionEvent();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -226,7 +230,9 @@ public:
 
     MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
 
-    MCAPI_C void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+#ifdef LL_PLAT_C
+    MCAPI void _queueOutgoingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
+#endif
     // NOLINTEND
 
 public:

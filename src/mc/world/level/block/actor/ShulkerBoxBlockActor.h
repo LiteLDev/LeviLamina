@@ -82,11 +82,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
+#endif
 
     MCAPI static bool itemAllowed(::ItemStackBase const& item);
 
-    MCAPI_C static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+#ifdef LL_PLAT_C
+    MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+#endif
     // NOLINTEND
 
 public:

@@ -27,7 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
+#ifdef LL_PLAT_C
+    MCNAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
+#endif
     // NOLINTEND
 
 public:
@@ -39,7 +45,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
+#endif
     // NOLINTEND
 };
 

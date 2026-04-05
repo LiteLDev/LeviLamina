@@ -28,16 +28,34 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
         // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+    public:
+        // prevent constructor by default
+        Description(Description const&);
+        Description();
+
+#endif
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCFOLD ::SharedTypes::v1_21_100::CameraDocument::Description&
+        operator=(::SharedTypes::v1_21_100::CameraDocument::Description&&);
 
+        MCFOLD ::SharedTypes::v1_21_100::CameraDocument::Description&
+        operator=(::SharedTypes::v1_21_100::CameraDocument::Description const&);
+
+        MCAPI ~Description();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -48,28 +66,45 @@ public:
     ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_100::CameraDefinitions>           mComponents;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CameraDocument& operator=(CameraDocument const&);
+    CameraDocument(CameraDocument const&);
+    CameraDocument();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCFOLD ::SharedTypes::v1_21_100::CameraDocument& operator=(::SharedTypes::v1_21_100::CameraDocument&&);
 
+    MCAPI ~CameraDocument();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

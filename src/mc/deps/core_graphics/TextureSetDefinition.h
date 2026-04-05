@@ -34,28 +34,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
+#ifdef LL_PLAT_C
+    MCAPI TextureSetDefinition();
+
+    MCAPI ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
     _addLayer(::cg::TextureSetLayerType const& type, ::mce::Color const& color);
 
-    MCAPI_C ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
+    MCAPI ::std::optional<::Bedrock::NonOwnerPointer<::cg::TextureSetLayerDefinition const>>
     _addLayer(::cg::TextureSetLayerType const& type, ::ResourceLocationPair const& resourceLocationPair);
 
-    MCAPI_C ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetImageContainer> _getImageContainer();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetImageContainer> _getImageContainer();
 
-    MCAPI_C void _removeLayerInfo(::cg::TextureSetLayerType const& type);
+    MCAPI void _removeLayerInfo(::cg::TextureSetLayerType const& type);
 
-    MCAPI_C ::std::vector<::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetLayerDefinition const>>
-    getLayerInfoList() const;
+    MCAPI ::std::vector<::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetLayerDefinition const>> getLayerInfoList() const;
 
-    MCAPI_C uint64 getStorageSize(::cg::TextureSetLayerType t) const;
+    MCAPI uint64 getStorageSize(::cg::TextureSetLayerType t) const;
 
-    MCAPI_C ::std::optional<::std::string> hasValidationError() const;
+    MCAPI ::std::optional<::std::string> hasValidationError() const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
     // NOLINTEND
 };
 

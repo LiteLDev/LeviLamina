@@ -51,11 +51,13 @@ public:
     // NOLINTBEGIN
     MCAPI AnvilContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI_C void applyDamageToAnvilBlock();
+#ifdef LL_PLAT_C
+    MCAPI void applyDamageToAnvilBlock();
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
-    MCAPI_C void fireItemCraftedEvent(::ItemInstance const& item);
+    MCAPI void fireItemCraftedEvent(::ItemInstance const& item);
+#endif
     // NOLINTEND
 
 public:

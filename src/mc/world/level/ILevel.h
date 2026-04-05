@@ -1188,7 +1188,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
+#ifdef LL_PLAT_C
+    MCAPI void addParticleEffect(::HashedString const& effect, ::Vec3 const& emitterPosition);
+#endif
     // NOLINTEND
 
 public:

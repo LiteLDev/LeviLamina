@@ -14,7 +14,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static uint const& TRIPOD_CAMERA_MODE_PRIORITY();
+    MCAPI static uint const& TRIPOD_CAMERA_MODE_PRIORITY();
     // NOLINTEND
 };
 

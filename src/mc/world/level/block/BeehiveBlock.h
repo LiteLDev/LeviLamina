@@ -70,7 +70,9 @@ public:
     MCAPI static ::ItemStack
     getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 
-    MCAPI_C static bool hasHoneyToHarvest(::Block const& block);
+#ifdef LL_PLAT_C
+    MCAPI static bool hasHoneyToHarvest(::Block const& block);
+#endif
 
     MCAPI static void resetHoneyLevel(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
     // NOLINTEND

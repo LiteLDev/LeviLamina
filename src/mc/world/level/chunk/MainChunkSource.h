@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>>> mChunkMap;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MainChunkSource();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,13 +57,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::unique_ptr<::ChunkSource> storage);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage);
+#endif
     // NOLINTEND
 
 public:

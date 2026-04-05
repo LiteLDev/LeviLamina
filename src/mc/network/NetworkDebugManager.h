@@ -56,7 +56,9 @@ public:
         // NOLINTBEGIN
         MCNAPI Tracker();
 
-        MCNAPI_C void update();
+#ifdef LL_PLAT_C
+        MCNAPI void update();
+#endif
 
         MCNAPI ~Tracker();
         // NOLINTEND

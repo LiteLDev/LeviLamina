@@ -121,13 +121,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool _createApp();
+#ifdef LL_PLAT_C
+    MCAPI bool _createApp();
 
-    MCAPI_C bool init(::Bedrock::ActivationArguments const& actArgs);
+    MCAPI bool init(::Bedrock::ActivationArguments const& actArgs);
 
-    MCAPI_C bool startApp(::Bedrock::ActivationArguments const& actArgs);
+    MCAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
 
-    MCAPI_C int update(bool canRender);
+    MCAPI int update(bool canRender);
+#endif
     // NOLINTEND
 
 public:

@@ -23,15 +23,26 @@ public:
     ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>     mDeprecatedItemComponents;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ComponentItemData_v1_26_0();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ComponentItemData_v1_26_0(ComponentItemData_v1_26_0 const&);
     ComponentItemData_v1_26_0();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ComponentItemData_v1_26_0(::ComponentItemData_v1_26_0&&);
+
+#ifdef LL_PLAT_S
+    MCAPI ComponentItemData_v1_26_0(::ComponentItemData_v1_26_0 const&);
+#endif
 
     MCAPI ::ComponentItemData_v1_26_0& operator=(::ComponentItemData_v1_26_0&&);
 
@@ -62,7 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ComponentItemData_v1_26_0&&);
 
-    MCAPI_S void* $ctor(::ComponentItemData_v1_26_0 const&);
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor(::ComponentItemData_v1_26_0 const&);
+#endif
     // NOLINTEND
 
 public:

@@ -23,7 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::ClientNetworkSystem& toClientNetworkSystem();
+#ifdef LL_PLAT_C
+    MCAPI ::ClientNetworkSystem& toClientNetworkSystem();
+#endif
 
     MCAPI ::ServerNetworkSystem& toServerNetworkSystem();
     // NOLINTEND

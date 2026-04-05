@@ -28,36 +28,56 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChangeDimensionSubscription;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DisplayActorManager();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _removeDisplayActorEntity(::OwnerPtr<::EntityContext> entity);
+#ifdef LL_PLAT_C
+    MCNAPI DisplayActorManager(
+        ::std::unique_ptr<::IDisplayActorManagerProxy>         displayActorManagerProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
+    );
 
-    MCNAPI_C ::Actor* addDisplayActorEntity(
+    MCNAPI void _removeDisplayActorEntity(::OwnerPtr<::EntityContext> entity);
+
+    MCNAPI ::Actor* addDisplayActorEntity(
         ::IAddDisplayActorEntityProxy& addDisplayActorEntityProxy,
         ::OwnerPtr<::EntityContext>    entity
     );
 
-    MCNAPI_C void
+    MCNAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
 
-    MCNAPI_C void removeAllDisplayActorEntities();
+    MCNAPI void removeAllDisplayActorEntities();
 
-    MCNAPI_C bool removeDisplayActorEntity(::WeakEntityRef weakEntityRef);
+    MCNAPI bool removeDisplayActorEntity(::WeakEntityRef weakEntityRef);
+
+    MCNAPI ~DisplayActorManager();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::IDisplayActorManagerProxy>         displayActorManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

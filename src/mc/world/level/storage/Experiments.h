@@ -19,10 +19,12 @@ public:
 
     MCAPI Experiments();
 
-    MCAPI_C bool _shouldShowAsExperimentalLevel(
+#ifdef LL_PLAT_C
+    MCAPI bool _shouldShowAsExperimentalLevel(
         ::std::vector<bool> const&       experimentData,
         ::gsl::span<::std::string const> toggleNames
     ) const;
+#endif
 
     MCAPI ::std::string getExperimentsActiveAsJSONList() const;
 
@@ -30,11 +32,15 @@ public:
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI_S void setExperimentEnabled(::AllExperiments experiment, bool value);
+#ifdef LL_PLAT_S
+    MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
+#endif
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
-    MCAPI_C bool shouldShowAsExperimentalLevel() const;
+#ifdef LL_PLAT_C
+    MCAPI bool shouldShowAsExperimentalLevel() const;
+#endif
 
     MCAPI ~Experiments();
     // NOLINTEND

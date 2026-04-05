@@ -43,6 +43,13 @@ public:
     ::ll::TypedStorage<1, 1, uchar>                              mRequiredTextures;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RenderMaterialBase& operator=(RenderMaterialBase const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -64,37 +71,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void addDefine(::std::string const& define);
+#ifdef LL_PLAT_C
+    MCAPI RenderMaterialBase();
 
-    MCAPI_C void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
+    MCAPI RenderMaterialBase(::cg::RenderMaterialBase const&);
 
-    MCAPI_C void parseDefines(::Json::Value const& root);
+    MCAPI void addDefine(::std::string const& define);
 
-    MCAPI_C void parseMaterial(::Json::Value const& root);
+    MCAPI void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
 
-    MCAPI_C void parseStates(::Json::Value const& root);
+    MCAPI void parseDefines(::Json::Value const& root);
 
-    MCAPI_C bool parseVariantWithInheritance(
+    MCAPI void parseMaterial(::Json::Value const& root);
+
+    MCAPI void parseStates(::Json::Value const& root);
+
+    MCAPI bool parseVariantWithInheritance(
         ::Json::Value const&   root,
         ::std::string_view     key,
         ::mce::InheritanceType inheritanceType
     );
 
-    MCAPI_C void parseVersion(::Json::Value const& root);
+    MCAPI void parseVersion(::Json::Value const& root);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void warnOnDeprecatedSchemaKeyword(::Json::Value const& root, ::std::string_view key);
+#ifdef LL_PLAT_C
+    MCAPI static void warnOnDeprecatedSchemaKeyword(::Json::Value const& root, ::std::string_view key);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::cg::RenderMaterialBase const&);
+    MCAPI void* $ctor(::cg::RenderMaterialBase const&);
+#endif
     // NOLINTEND
 
 public:

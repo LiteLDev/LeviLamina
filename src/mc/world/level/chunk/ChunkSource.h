@@ -246,9 +246,11 @@ public:
 
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
-    MCAPI_C void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
+#ifdef LL_PLAT_C
+    MCAPI void _structurePostProcessingTask(::LevelChunk& lc, ::ChunkViewSource& chunks);
 
-    MCAPI_C void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+    MCAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+#endif
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
@@ -262,7 +264,9 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-    MCAPI_C ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
+#endif
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);

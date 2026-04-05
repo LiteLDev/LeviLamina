@@ -26,13 +26,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _tickAmbientSoundComponent(
+#ifdef LL_PLAT_C
+    MCAPI static void _tickAmbientSoundComponent(
         ::ActorOwnerComponent&   actorOwnerComponent,
         ::AmbientSoundComponent& ambientSoundComponent
     );
 
-    MCAPI_C static void
+    MCAPI static void
     tickAmbientSoundComponent(::Actor& actor, ::AmbientSoundComponent& ambientSoundComponent, ::IRandom& random);
+#endif
     // NOLINTEND
 
 public:

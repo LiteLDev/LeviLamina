@@ -21,6 +21,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>             mIsRecipeSmeltable;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    FurnaceContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,13 +51,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void clearSelectedRecipe();
+#ifdef LL_PLAT_C
+    MCNAPI FurnaceContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+
+    MCNAPI void clearSelectedRecipe();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+#endif
     // NOLINTEND
 
 public:

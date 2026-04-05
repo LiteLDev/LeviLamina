@@ -31,10 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _flushCompletedConditionals();
+#ifdef LL_PLAT_C
+    MCAPI void _flushCompletedConditionals();
 
-    MCAPI_C void
+    MCAPI void
     _forAll(::std::function<void(::std::shared_ptr<::Bedrock::Threading::Details::PendingConditional>&)> pred);
+#endif
     // NOLINTEND
 
 public:

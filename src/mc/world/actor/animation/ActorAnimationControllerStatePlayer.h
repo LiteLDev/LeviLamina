@@ -79,11 +79,13 @@ public:
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCAPI_C void addAnimation(
+#ifdef LL_PLAT_C
+    MCAPI void addAnimation(
         ::AnimationComponent&       animationComponent,
         ::HashedString const&       friendlyName,
         ::ActorSkeletalAnimationPtr animation
     );
+#endif
     // NOLINTEND
 
 public:

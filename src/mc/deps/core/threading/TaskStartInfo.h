@@ -23,14 +23,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit TaskStartInfo(char const* name);
+
+    MCNAPI explicit TaskStartInfo(::std::string_view name);
+#endif
+
     MCNAPI ::TaskStartInfo& startWithDelay(::std::chrono::nanoseconds delay);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(char const* name);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(char const* name);
 
-    MCNAPI_C void* $ctor(::std::string_view name);
+    MCNAPI void* $ctor(::std::string_view name);
+#endif
     // NOLINTEND
 };

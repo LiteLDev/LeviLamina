@@ -53,6 +53,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI SignalingServiceSignInJob(
+        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&&                        netherNetConnector,
+        ::std::shared_ptr<::SignalingService>                                        signalingService,
+        ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
+    );
+#endif
+
     MCNAPI void _handleRelayConfig(
         ::std::vector<::NetherNet::StunRelayServer> const&      config,
         ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
@@ -70,11 +78,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&&                        netherNetConnector,
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
+#endif
     // NOLINTEND
 
 public:

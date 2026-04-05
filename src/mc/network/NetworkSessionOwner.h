@@ -30,7 +30,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void createNetworkSession(::TransportLayer transportLayer);
 
-    MCNAPI_S void destroyNetworkSession();
+#ifdef LL_PLAT_S
+    MCNAPI void destroyNetworkSession();
+#endif
     // NOLINTEND
 
 public:

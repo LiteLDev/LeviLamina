@@ -49,7 +49,9 @@ public:
         ::BlockActorType  blockActorType
     );
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+#ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& itemInstance, int count);
+#endif
     // NOLINTEND
 
 public:

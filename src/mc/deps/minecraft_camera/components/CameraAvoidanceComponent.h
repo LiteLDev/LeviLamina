@@ -25,10 +25,21 @@ public:
     ::ll::TypedStorage<4, 4, float> mSmoothedDistanceConstraint;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CameraAvoidanceComponent& operator=(CameraAvoidanceComponent const&);
+    CameraAvoidanceComponent(CameraAvoidanceComponent const&);
+    CameraAvoidanceComponent();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
+#endif
     // NOLINTEND
 };
 

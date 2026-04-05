@@ -42,12 +42,14 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorAnimationControllerState(::HashedString const& name);
 
-    MCAPI_C void addTransition(
+#ifdef LL_PLAT_C
+    MCAPI void addTransition(
         ::std::string const& stateName,
         ::std::string const& expression,
         ::MolangVersion      molangVersion,
         bool                 createEvenIfAlreadyExists
     );
+#endif
 
     MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 

@@ -38,7 +38,9 @@ public:
 
     MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
 
-    MCAPI_C uint64 getTotalNumberChildItems();
+#ifdef LL_PLAT_C
+    MCAPI uint64 getTotalNumberChildItems();
+#endif
     // NOLINTEND
 
 public:

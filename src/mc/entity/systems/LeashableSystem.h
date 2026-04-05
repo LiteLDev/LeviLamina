@@ -15,7 +15,7 @@ MCAPI ::TickingSystemWithInfo createHandleAddToLeashedEntitiesRequestSystem();
 
 MCAPI ::TickingSystemWithInfo createHandleRemoveFromLeashedEntitiesRequestSystem();
 
-MCAPI_C void registerClientSystems(::EntitySystems& systemRegistry);
+MCAPI void registerClientSystems(::EntitySystems& systemRegistry);
 
 MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND

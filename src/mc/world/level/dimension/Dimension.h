@@ -376,15 +376,19 @@ public:
 
     MCAPI float getMoonBrightness() const;
 
-    MCAPI_C int getMoonPhase() const;
+#ifdef LL_PLAT_C
+    MCAPI int getMoonPhase() const;
+#endif
 
     MCAPI ::Brightness getOldSkyDarken(float a);
 
-    MCAPI_C float getSkyDarken(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI float getSkyDarken(float a) const;
 
-    MCAPI_C float getSunAngle(float a) const;
+    MCAPI float getSunAngle(float a) const;
 
-    MCAPI_C float getTimeOfDay(float a) const;
+    MCAPI float getTimeOfDay(float a) const;
+#endif
 
     MCAPI bool isBrightOutside() const;
 
@@ -392,7 +396,9 @@ public:
 
     MCAPI bool operator==(::Dimension const& rhs) const;
 
-    MCAPI_C void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
+#ifdef LL_PLAT_C
+    MCAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
+#endif
 
     MCAPI void removeActorByID(::ActorUniqueID const& id);
 

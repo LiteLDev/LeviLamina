@@ -59,10 +59,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::RecipeNetId _getResultRecipeIdForInput(::ItemStack const& inputStack);
+#ifdef LL_PLAT_C
+    MCNAPI ::RecipeNetId _getResultRecipeIdForInput(::ItemStack const& inputStack);
 
-    MCNAPI_C ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
+#endif
     // NOLINTEND
 
 public:

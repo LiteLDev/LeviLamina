@@ -100,8 +100,10 @@ public:
         float blendWeight
     );
 
-    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer>
     getStatePlayer(::HashedString const& stateName, ::AnimationComponent& animationComponent, bool createIfMissing);
+#endif
     // NOLINTEND
 
 public:

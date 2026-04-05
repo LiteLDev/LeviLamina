@@ -65,9 +65,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
 
-    MCNAPI_S bool hasValidMessToken() const;
+#ifdef LL_PLAT_S
+    MCNAPI bool hasValidMessToken() const;
+#endif
 
-    MCNAPI_C void setTokens(::Identity::EduAuthTokenPair tokens);
+#ifdef LL_PLAT_C
+    MCNAPI void setTokens(::Identity::EduAuthTokenPair tokens);
+#endif
     // NOLINTEND
 
 public:

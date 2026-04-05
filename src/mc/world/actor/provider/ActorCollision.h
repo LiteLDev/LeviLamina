@@ -29,7 +29,7 @@ MCAPI void setHorizontalCollision(::EntityContext& provider, bool value);
 
 MCAPI void setIsPickable(::EntityContext& provider, bool isPickable);
 
-MCAPI_S void setOnGround(::EntityContext& provider, bool value);
+MCAPI void setOnGround(::EntityContext& provider, bool value);
 
 MCAPI void setVerticalCollision(::EntityContext& provider, bool value);
 

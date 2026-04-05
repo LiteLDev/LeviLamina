@@ -18,23 +18,23 @@ MCAPI ::SemVersionConstant const& CurrentGameSemVersion();
 
 MCAPI ::LevelChunkFormat const& CurrentLevelChunkFormat();
 
-MCAPI_C int const& MajorVersion();
+MCAPI int const& MajorVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> MajorVersionStringFormated();
 
 MCAPI ::GameVersion const& MinimumCompatibleGameVersionForLevelData();
 
-MCAPI_C int const& MinorVersion();
+MCAPI int const& MinorVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> MinorVersionStringFormated();
 
-MCAPI_C int const& NetworkProtocolVersion();
+MCAPI int const& NetworkProtocolVersion();
 
-MCAPI_C int const& PatchVersion();
+MCAPI int const& PatchVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> PatchVersionStringFormated();
 
-MCAPI_S ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
+MCAPI ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
 // NOLINTEND
 
 } // namespace SharedConstants

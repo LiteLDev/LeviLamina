@@ -38,17 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Json::Value _getReportDataJson();
+#ifdef LL_PLAT_C
+    MCNAPI ::Json::Value _getReportDataJson();
 
-    MCNAPI_C void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
+    MCNAPI void _getReportJsonHandler(::PlayerReportingSignal::GetReportJson const& signal);
 
-    MCNAPI_C void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
+    MCNAPI void _resetAll(::PlayerReportingSignal::ResetAll const& signal);
 
-    MCNAPI_C void _sendReport(::PlayerReportingSignal::SendReport const& signal);
+    MCNAPI void _sendReport(::PlayerReportingSignal::SendReport const& signal);
 
-    MCNAPI_C void _setDataHandler(::PlayerReportingSignal::SetData const& signal);
+    MCNAPI void _setDataHandler(::PlayerReportingSignal::SetData const& signal);
 
-    MCNAPI_C void _setJsonHandler(::PlayerReportingSignal::SetJson const& signal);
+    MCNAPI void _setJsonHandler(::PlayerReportingSignal::SetJson const& signal);
+#endif
     // NOLINTEND
 
 public:

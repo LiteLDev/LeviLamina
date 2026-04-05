@@ -9,6 +9,8 @@ class ResourceUtil {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::ResourceFileSystem pathFromString(::std::string_view name);
+#ifdef LL_PLAT_C
+    MCNAPI static ::ResourceFileSystem pathFromString(::std::string_view name);
+#endif
     // NOLINTEND
 };

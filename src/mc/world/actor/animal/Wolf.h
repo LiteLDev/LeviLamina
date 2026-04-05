@@ -59,11 +59,15 @@ public:
     // NOLINTBEGIN
     MCAPI void _avoidSnowBury();
 
-    MCAPI_S bool _isShakeAnimationOngoing() const;
+#ifdef LL_PLAT_S
+    MCAPI bool _isShakeAnimationOngoing() const;
+#endif
 
     MCAPI void _updateTintColor();
 
-    MCAPI_S bool isInterested() const;
+#ifdef LL_PLAT_S
+    MCAPI bool isInterested() const;
+#endif
 
     MCAPI void postNormalTick();
     // NOLINTEND

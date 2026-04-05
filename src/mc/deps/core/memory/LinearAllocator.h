@@ -10,5 +10,7 @@ public:
     std::shared_ptr<AllocatorData> mData;
 
 public:
-    MCAPI_C T0* allocate(size_t n);
+#ifdef LL_PLAT_C
+    MCAPI T0* allocate(size_t n);
+#endif
 };

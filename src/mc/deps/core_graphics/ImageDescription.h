@@ -24,13 +24,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C uint getStorageSize() const;
+#ifdef LL_PLAT_C
+    MCAPI uint getStorageSize() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static uint getStrideFromFormat(::mce::TextureFormat textureFormat);
+#ifdef LL_PLAT_C
+    MCAPI static uint getStrideFromFormat(::mce::TextureFormat textureFormat);
+#endif
     // NOLINTEND
 };
 

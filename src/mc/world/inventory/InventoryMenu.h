@@ -23,6 +23,13 @@ public:
     ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    InventoryMenu();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,13 +56,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI InventoryMenu(::Player& player, ::Container* container);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::Player& player, ::Container* container);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Player& player, ::Container* container);
+#endif
     // NOLINTEND
 
 public:

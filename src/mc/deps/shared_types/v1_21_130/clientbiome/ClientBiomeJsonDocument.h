@@ -92,7 +92,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI_C static ::SemVersionConstant const& VERSION();
+        MCAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
 
     public:

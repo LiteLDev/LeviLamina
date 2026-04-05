@@ -31,9 +31,20 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AssignSynchedActorDataComponent::Args>> mValuesToAssign;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    AssignSynchedActorDataComponent& operator=(AssignSynchedActorDataComponent const&);
+    AssignSynchedActorDataComponent(AssignSynchedActorDataComponent const&);
+    AssignSynchedActorDataComponent();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ::AssignSynchedActorDataComponent& operator=(::AssignSynchedActorDataComponent&&);
+#endif
     // NOLINTEND
 };

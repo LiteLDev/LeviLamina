@@ -28,7 +28,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void initializeFromTrimPatterns(::std::vector<::TrimPattern> const& patterns);
+#ifdef LL_PLAT_C
+    MCAPI void initializeFromTrimPatterns(::std::vector<::TrimPattern> const& patterns);
+#endif
 
     MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND

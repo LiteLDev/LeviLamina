@@ -37,7 +37,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::WriteThrottledOS::ThrottledFileWriteEstimator::WriteTimeEstimate getTimeToWrite(
+#ifdef LL_PLAT_C
+    MCNAPI static ::Core::WriteThrottledOS::ThrottledFileWriteEstimator::WriteTimeEstimate getTimeToWrite(
         int                                                     recoverLeewayHintMb,
         ::Core::WriteThrottledOS::OSWriteThrottleTracker const& tracker,
         uint64                                                  size,
@@ -46,6 +47,7 @@ public:
         ::std::chrono::nanoseconds const&                       timeDiffbeforeImpacted,
         ::std::chrono::nanoseconds const&                       timeDiffbeforeImpactedWhileWaiting
     );
+#endif
     // NOLINTEND
 };
 

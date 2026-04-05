@@ -26,6 +26,10 @@ public:
     // NOLINTBEGIN
     MCNAPI SchemaConverterCollection(::JsonUtil::SchemaConverterCollection const&);
 
+#ifdef LL_PLAT_C
+    MCNAPI explicit SchemaConverterCollection(::Json::Value& node);
+#endif
+
     MCNAPI ::JsonUtil::SchemaConverterCollection&
     operator()(::std::string const& filterString, bool forceCaseInsensitive);
 
@@ -39,7 +43,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::JsonUtil::SchemaConverterCollection const&);
 
-    MCNAPI_C void* $ctor(::Json::Value& node);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Json::Value& node);
+#endif
     // NOLINTEND
 
 public:

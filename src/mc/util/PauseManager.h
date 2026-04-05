@@ -33,7 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool requestInGamePause(::ILocalServerPauseCommunication& pauseCommunication, bool status) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool requestInGamePause(::ILocalServerPauseCommunication& pauseCommunication, bool status) const;
+#endif
 
     MCNAPI ~PauseManager();
     // NOLINTEND
@@ -43,8 +45,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
 
-    MCNAPI_C static void
+#ifdef LL_PLAT_C
+    MCNAPI static void
     setSimulationType(::StackRefResult<::PauseManager> pauseManager, ::SimulationType simulationType);
+#endif
     // NOLINTEND
 
 public:

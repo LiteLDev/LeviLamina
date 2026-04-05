@@ -42,7 +42,7 @@ MCNAPI bool operator==(
     ::SemVersionBase<::std::string_view> const&               rhs
 );
 
-MCNAPI_C bool operator>=(
+MCNAPI bool operator>=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
 );

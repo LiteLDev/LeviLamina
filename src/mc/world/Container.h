@@ -191,6 +191,14 @@ public:
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
+#ifdef LL_PLAT_C
+    MCAPI Container(
+        ::SharedTypes::Legacy::ContainerType       type,
+        ::Bedrock::Safety::RedactableString const& name,
+        bool                                       customName
+    );
+#endif
+
     MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
@@ -232,8 +240,10 @@ public:
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI_C void*
+#ifdef LL_PLAT_C
+    MCAPI void*
     $ctor(::SharedTypes::Legacy::ContainerType type, ::Bedrock::Safety::RedactableString const& name, bool customName);
+#endif
     // NOLINTEND
 
 public:

@@ -80,11 +80,15 @@ public:
 
     MCAPI ::InteractionResult getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI_C ::std::string const& getInteractiveRawText(::Actor const& owner) const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getInteractiveRawText(::Actor const& owner) const;
+#endif
 
     MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
 
-    MCAPI_C ::std::string const& getName(::Actor const& owner) const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getName(::Actor const& owner) const;
+#endif
 
     MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
 
@@ -109,14 +113,18 @@ public:
 
     MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
 
-    MCAPI_C void
+#ifdef LL_PLAT_C
+    MCAPI void
     setInteractiveTextFilter(::std::function<::std::string(::std::string const&)> filter, bool shouldRunFilter);
+#endif
 
     MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
 
     MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
 
-    MCAPI_C void syncActionsWithServer(::Actor& owner) const;
+#ifdef LL_PLAT_C
+    MCAPI void syncActionsWithServer(::Actor& owner) const;
+#endif
     // NOLINTEND
 
 public:

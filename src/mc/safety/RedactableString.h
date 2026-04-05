@@ -15,20 +15,34 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRedactedString;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     RedactableString& operator=(RedactableString const&);
     RedactableString(RedactableString const&);
     RedactableString();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RedactableString& operator=(RedactableString const&);
+    RedactableString();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI RedactableString(::Bedrock::Safety::RedactableString const&);
+#endif
+
     MCAPI RedactableString(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
 
     MCAPI void append(::std::string rhs);
 
-    MCAPI_C void clear();
+#ifdef LL_PLAT_C
+    MCAPI void clear();
+#endif
 
     MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
 
@@ -56,7 +70,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::Bedrock::Safety::RedactableString const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Bedrock::Safety::RedactableString const&);
+#endif
 
     MCAPI void* $ctor(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
     // NOLINTEND

@@ -61,7 +61,9 @@ public:
 
     MCAPI void init(::ItemStack const& itemToSpawn, int ticksBeforeRemoval);
 
-    MCAPI_C ::Actor* tryGetOrCreateDisplayEntity();
+#ifdef LL_PLAT_C
+    MCAPI ::Actor* tryGetOrCreateDisplayEntity();
+#endif
     // NOLINTEND
 
 public:

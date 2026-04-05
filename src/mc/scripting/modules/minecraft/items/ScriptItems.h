@@ -103,7 +103,9 @@ public:
     MCAPI static ::std::unordered_map<::std::string, ::std::string>
     generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry, bool allowAirBlockItem);
 
-    MCAPI_S static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
+#ifdef LL_PLAT_S
+    MCAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
+#endif
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
     getOrCreateItemTypeHandle(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);

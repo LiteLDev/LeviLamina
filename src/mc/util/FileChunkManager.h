@@ -31,11 +31,17 @@ public:
     MCNAPI void _generateChunkInfo();
 
     MCNAPI void reset(uint64 totalSize, uint chunkSize);
+
+#ifdef LL_PLAT_C
+    MCNAPI ~FileChunkManager();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

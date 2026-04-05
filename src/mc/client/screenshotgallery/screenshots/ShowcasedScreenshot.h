@@ -30,13 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI ShowcasedScreenshot(
         ::std::string                     guid,
         ::Core::PathBuffer<::std::string> thumbnailPath,
         ::Core::PathBuffer<::std::string> imagePath,
@@ -46,12 +41,34 @@ public:
         bool                              featured,
         bool                              loadingImage
     );
+
+    MCNAPI ~ShowcasedScreenshot();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::std::string                     guid,
+        ::Core::PathBuffer<::std::string> thumbnailPath,
+        ::Core::PathBuffer<::std::string> imagePath,
+        ::std::string                     imageUrl,
+        int64                             captureTime,
+        int64                             lastModifiedTime,
+        bool                              featured,
+        bool                              loadingImage
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

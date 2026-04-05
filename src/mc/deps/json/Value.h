@@ -234,7 +234,11 @@ public:
 
     MCAPI bool isUInt() const;
 
-    MCAPI_C bool isValidIndex(uint index) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isValidIndex(uint index) const;
+
+    MCFOLD bool operator!() const;
+#endif
 
     MCAPI bool operator!=(::Json::Value const& other) const;
 
@@ -272,7 +276,9 @@ public:
 
     MCAPI uint size() const;
 
-    MCAPI_C void swap(::Json::Value& other);
+#ifdef LL_PLAT_C
+    MCAPI void swap(::Json::Value& other);
+#endif
 
     MCAPI ::std::string toStyledString() const;
 

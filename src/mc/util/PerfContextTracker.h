@@ -176,16 +176,16 @@ public:
     // NOLINTBEGIN
     MCNAPI void _reset();
 
-    MCNAPI_C void _resetStats();
+#ifdef LL_PLAT_C
+    MCNAPI void _resetStats();
 
-    MCNAPI_C bool
-    _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
+    MCNAPI bool _tryBeginContext(::std::string const& contextName, ::std::chrono::steady_clock::time_point const& now);
 
-    MCNAPI_C void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
+    MCNAPI void _tryEndContext(::std::chrono::steady_clock::time_point const& now);
 
-    MCNAPI_C bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
+    MCNAPI bool _tryRestartContext(::std::chrono::steady_clock::time_point const& now);
 
-    MCNAPI_C void tick(
+    MCNAPI void tick(
         ::std::string const& currentContext,
         uint                 clientCount,
         uint                 renderDistance,
@@ -193,6 +193,7 @@ public:
         ::brstd::function_ref<void(::PerfContextTrackerReport const&) const, void(::PerfContextTrackerReport const&)>
             reporter
     );
+#endif
     // NOLINTEND
 
 public:

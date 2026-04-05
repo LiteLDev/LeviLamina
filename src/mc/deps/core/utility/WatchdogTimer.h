@@ -34,17 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _queueTaskWithoutLock();
-
-    MCNAPI_C ::TaskResult _watchdogTimerThreadRoutine();
-
-    MCNAPI_C void terminateWatchdogTimer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI WatchdogTimer(
         ::WorkerPool&                                              workerPool,
         ::Scheduler&                                               scheduler,
         ::std::chrono::nanoseconds                                 timeout,
@@ -53,5 +44,28 @@ public:
         ::std::chrono::nanoseconds                                 deadline,
         bool                                                       assertOnDeadline
     );
+
+    MCNAPI void _queueTaskWithoutLock();
+
+    MCNAPI ::TaskResult _watchdogTimerThreadRoutine();
+
+    MCNAPI void terminateWatchdogTimer();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::WorkerPool&                                              workerPool,
+        ::Scheduler&                                               scheduler,
+        ::std::chrono::nanoseconds                                 timeout,
+        bool                                                       startPaused,
+        ::std::function<::std::chrono::steady_clock::time_point()> timeoutCallback,
+        ::std::chrono::nanoseconds                                 deadline,
+        bool                                                       assertOnDeadline
+    );
+#endif
     // NOLINTEND
 };

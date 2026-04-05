@@ -29,7 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
+#ifdef LL_PLAT_C
+    MCAPI void sendEvent(::EventRef<::ClientInstanceGameplayEvent<void>> const& event);
+#endif
     // NOLINTEND
 
 public:

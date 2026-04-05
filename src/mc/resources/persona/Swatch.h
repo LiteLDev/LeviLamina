@@ -27,7 +27,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::persona::color::Swatch const& getInvalidSwatch();
+#ifdef LL_PLAT_C
+    MCNAPI static ::persona::color::Swatch const& getInvalidSwatch();
+#endif
     // NOLINTEND
 
 public:

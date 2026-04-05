@@ -62,7 +62,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::Pack> createPack(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::ResourceLocation const&                               fileLocation,
         ::PackType                                              type,
         ::PackOrigin                                            origin,
@@ -71,6 +72,7 @@ public:
         ::PackSourceReport*                                     report,
         ::Core::Path const&                                     zipSubDir
     );
+#endif
 
     MCAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,

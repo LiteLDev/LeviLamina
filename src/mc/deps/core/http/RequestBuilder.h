@@ -20,31 +20,44 @@ public:
     ::ll::UntypedStorage<8, 64>  mUnkd459f4;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     RequestBuilder& operator=(RequestBuilder const&);
     RequestBuilder(RequestBuilder const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    RequestBuilder& operator=(RequestBuilder const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI RequestBuilder();
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder& body(::gsl::span<uchar> const& binaryData);
+#ifdef LL_PLAT_C
+    MCNAPI RequestBuilder(::Bedrock::Http::RequestBuilder const&);
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder&
+    MCNAPI ::Bedrock::Http::RequestBuilder& body(::gsl::span<uchar> const& binaryData);
+
+    MCNAPI ::Bedrock::Http::RequestBuilder&
     body(::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>> body);
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder& body(::Core::Path const& file);
+    MCNAPI ::Bedrock::Http::RequestBuilder& body(::Core::Path const& file);
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder& body(::Json::Value const& json);
+    MCNAPI ::Bedrock::Http::RequestBuilder& body(::Json::Value const& json);
+#endif
 
     MCNAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder& contentType(::std::string const& contentType);
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Http::RequestBuilder& contentType(::std::string const& contentType);
 
-    MCNAPI_C ::Bedrock::Http::RequestBuilder&
+    MCNAPI ::Bedrock::Http::RequestBuilder&
     retryPolicy(::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)>&& policy);
+#endif
 
     MCNAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
 
@@ -56,7 +69,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::Bedrock::Http::RequestBuilder const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Bedrock::Http::RequestBuilder const&);
+#endif
     // NOLINTEND
 
 public:

@@ -16,7 +16,8 @@ class PackMover {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void copyPack(
+#ifdef LL_PLAT_C
+    MCNAPI static void copyPack(
         ::TaskGroup&                        taskGroup,
         ::ResourceLocation const&           srcLocation,
         bool                                srcPackIsZipped,
@@ -29,7 +30,7 @@ public:
         bool                                unzipInTransaction
     );
 
-    MCNAPI_C static void copyPack(
+    MCNAPI static void copyPack(
         ::AppPlatform&                       appPlatform,
         ::TaskGroup&                         taskGroup,
         ::Core::ZipUtils::IZipUtility const& zipUtility,
@@ -43,5 +44,6 @@ public:
         bool                                 unzipAsFlatFile,
         bool                                 unzipInTransaction
     );
+#endif
     // NOLINTEND
 };

@@ -19,18 +19,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI AccessTokenInfo(::std::string _email, int64 _expiration);
 
+    MCNAPI ::AccessTokenInfo& operator=(::AccessTokenInfo&&);
+
+    MCNAPI ~AccessTokenInfo();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string _email, int64 _expiration);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string _email, int64 _expiration);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -37,9 +37,11 @@ public:
 
     MCAPI ::BlockPos above() const;
 
-    MCAPI_C ::BlockPos below() const;
+#ifdef LL_PLAT_C
+    MCAPI ::BlockPos below() const;
 
-    MCAPI_C ::Vec3 center() const;
+    MCAPI ::Vec3 center() const;
+#endif
 
     MCAPI ::BlockPos east() const;
 
@@ -50,6 +52,10 @@ public:
     MCAPI explicit operator ::Vec3() const;
 
     MCFOLD bool operator!=(::BlockPos const& rhs) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::BlockPos operator+(::BlockPos const& rhs) const;
+#endif
 
     MCAPI ::BlockPos operator-(::BlockPos const& rhs) const;
 
@@ -91,5 +97,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
+MCNAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
 // NOLINTEND

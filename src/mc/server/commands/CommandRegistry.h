@@ -210,7 +210,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C bool isTerminal() const;
+#ifdef LL_PLAT_C
+        MCAPI bool isTerminal() const;
+#endif
         // NOLINTEND
     };
 
@@ -455,13 +457,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCAPI ~SemanticInfo();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -808,17 +814,19 @@ public:
         ::SemanticConstraint             requiredConstraints
     ) const;
 
-    MCAPI_C ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
         ::CommandRegistry::ParseToken const* paramTree,
         ::CommandRegistry::SemanticInfo&     semanticInfo
     ) const;
 
-    MCAPI_C ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
+    MCAPI ::std::vector<::CommandRegistry::Symbol> _reconstructParseStack(
         ::std::vector<::CommandParameterData> const& params,
         uint                                         matchedParams,
         ::CommandRegistry::ParseToken const*         commandParseTree,
         ::CommandRegistry::SemanticInfo&             semanticInfo
     ) const;
+#endif
 
     MCAPI void addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
 
@@ -850,7 +858,8 @@ public:
 
     MCAPI ::CommandRegistry::Symbol addSoftTerminal(::std::string const& name);
 
-    MCAPI_C void autoComplete(
+#ifdef LL_PLAT_C
+    MCAPI void autoComplete(
         ::CommandRegistry::Symbol        symbol,
         ::std::string const&             cmdLine,
         ::std::string const&             partialMatch,
@@ -860,11 +869,12 @@ public:
         ::CommandRegistry::SemanticInfo& semanticInfo
     ) const;
 
-    MCAPI_C void autoCompleteCommand(
+    MCAPI void autoCompleteCommand(
         ::std::string const&       partialMatch,
         ::CommandOrigin const&     origin,
         ::AutoCompleteInformation& info
     ) const;
+#endif
 
     MCAPI void buildFirstSet(::CommandRegistry::ParseTable& table, ::CommandRegistry::Symbol t, uint version) const;
 
@@ -940,11 +950,13 @@ public:
 
     MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
 
-    MCAPI_C ::std::unique_ptr<::AutoCompleteInformation> getAutoCompleteOptions(
+#ifdef LL_PLAT_C
+    MCAPI ::std::unique_ptr<::AutoCompleteInformation> getAutoCompleteOptions(
         ::CommandOrigin const& origin,
         ::std::string const&   _cmdLine,
         uint                   cursorPositionUnsafe
     ) const;
+#endif
 
     MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
 
@@ -953,31 +965,36 @@ public:
 
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
-    MCAPI_C ::CommandSyntaxInformation getOverloadSyntaxInformation(
+#ifdef LL_PLAT_C
+    MCAPI ::CommandSyntaxInformation getOverloadSyntaxInformation(
         ::CommandOrigin const& origin,
         ::std::string const&   cmdLine,
         uint                   cursorPosition
     ) const;
 
-    MCAPI_C bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+#endif
 
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
 
-    MCAPI_C void loadRemoteCommands(::AvailableCommandsPacket const& packet);
+#ifdef LL_PLAT_C
+    MCAPI void loadRemoteCommands(::AvailableCommandsPacket const& packet);
+#endif
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Overload const& overload) const;
 
-    MCAPI_C bool
-    originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
+#ifdef LL_PLAT_C
+    MCAPI bool originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
 
-    MCAPI_C ::std::string parsePartialCommand(
+    MCAPI ::std::string parsePartialCommand(
         ::CommandRegistry::Parser& parser,
         ::std::string const&       _cmdLine,
         uint                       cursorPosition,
         bool                       cutLastToken
     ) const;
+#endif
 
     MCAPI bool parseSelector(
         ::ActorSelectorArgs&                 args,
@@ -988,9 +1005,11 @@ public:
         ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI_C void popState();
+#ifdef LL_PLAT_C
+    MCAPI void popState();
 
-    MCAPI_C void pushState();
+    MCAPI void pushState();
+#endif
 
     MCAPI void registerAlias(::std::string name, ::std::string alias);
 
@@ -1033,7 +1052,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
+#ifdef LL_PLAT_C
+    MCAPI static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
+#endif
 
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 

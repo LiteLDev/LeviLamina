@@ -91,25 +91,27 @@ public:
 
     MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
 
-    MCNAPI_C void _computeTrackerStats(
+#ifdef LL_PLAT_C
+    MCNAPI void _computeTrackerStats(
         ::Core::DiskAccessTracker::TrackerStats& trackerStats,
         ::std::chrono::steady_clock::time_point  byteWriteCalculationWindow,
         ::std::chrono::steady_clock::time_point  writeCountCalculationWindow
     );
 
-    MCNAPI_C ::std::_Deque_const_iterator<
+    MCNAPI ::std::_Deque_const_iterator<
         ::std::_Deque_val<::std::_Deque_simple_types<::Core::DiskAccessTracker::WriteOperation>>>
     _findOldestWriteOperation(::std::chrono::steady_clock::time_point oldestAllowedTime, uint64 hint) const;
 
-    MCNAPI_C void _setCurrentWriteThrottleTracker(
+    MCNAPI void _setCurrentWriteThrottleTracker(
         ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
     );
 
-    MCNAPI_C void setOSWriteThrottleTracker(
+    MCNAPI void setOSWriteThrottleTracker(
         ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> osWriteThrottleTracker
     );
 
-    MCNAPI_C void update();
+    MCNAPI void update();
+#endif
 
     MCNAPI ~DiskAccessTracker();
     // NOLINTEND

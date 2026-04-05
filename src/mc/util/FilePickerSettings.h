@@ -68,9 +68,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
 
-    MCNAPI_C void setDefaultFileName(::std::string fileName);
+#ifdef LL_PLAT_C
+    MCNAPI void setDefaultFileName(::std::string fileName);
 
-    MCNAPI_C void setPickerTitle(::std::string FilePickerTitle);
+    MCNAPI void setPickerTitle(::std::string FilePickerTitle);
+#endif
 
     MCNAPI ~FilePickerSettings();
     // NOLINTEND

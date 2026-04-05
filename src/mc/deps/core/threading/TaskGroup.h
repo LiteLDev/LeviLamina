@@ -139,15 +139,19 @@ public:
 
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
-    MCAPI_C uint64 count() const;
+#ifdef LL_PLAT_C
+    MCAPI uint64 count() const;
+#endif
 
     MCAPI void flush(::std::function<void()> waitFn);
 
     MCAPI bool isEmpty() const;
 
-    MCAPI_C void kick(uint count);
+#ifdef LL_PLAT_C
+    MCAPI void kick(uint count);
 
-    MCAPI_C void resume();
+    MCAPI void resume();
+#endif
 
     MCAPI void sync_DEPRECATED_ASK_TOMMO(::std::function<void()> waitFn);
     // NOLINTEND

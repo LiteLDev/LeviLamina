@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/Waypoint.h"
+#include "mc/world/level/WorldPosition.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-struct WorldPosition;
-namespace mce { class Color; }
 // clang-format on
 
 class ServerWaypoint : public ::Waypoint {
@@ -36,25 +37,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk246422;
-        ::ll::UntypedStorage<1, 2>  mUnk8af0b5;
-        ::ll::UntypedStorage<4, 20> mUnk9beed6;
-        ::ll::UntypedStorage<4, 8>  mUnk83526f;
-        ::ll::UntypedStorage<4, 20> mUnk932122;
-        ::ll::UntypedStorage<1, 2>  mUnkf327ad;
-        ::ll::UntypedStorage<8, 16> mUnk396697;
+        ::ll::TypedStorage<4, 4, uint>                              mUpdateFlag;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>             mIsVisible;
+        ::ll::TypedStorage<4, 20, ::std::optional<::WorldPosition>> mWorldPosition;
+        ::ll::TypedStorage<4, 8, ::std::optional<uint>>             mTextureId;
+        ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>    mColor;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>             mClientPositionAuthority;
+        ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>> mActorID;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Payload& operator=(Payload const&);
-        Payload(Payload const&);
-        Payload();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::ServerWaypoint::Payload const&) const;
+        MCAPI bool operator==(::ServerWaypoint::Payload const&) const;
         // NOLINTEND
     };
 
@@ -62,56 +57,42 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkb8c352;
-        ::ll::UntypedStorage<4, 8> mUnk427f8f;
-        ::ll::UntypedStorage<4, 4> mUnk3450de;
+        ::ll::TypedStorage<4, 4, int>                  mLowerBound;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>> mUpperBound;
+        ::ll::TypedStorage<4, 4, uint>                 mTextureId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Texture& operator=(Texture const&);
-        Texture(Texture const&);
-        Texture();
     };
 
     struct TextureSelector {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk41affd;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ServerWaypoint::Texture>> mTextures;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TextureSelector& operator=(TextureSelector const&);
-        TextureSelector(TextureSelector const&);
-        TextureSelector();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~TextureSelector();
+        MCAPI ~TextureSelector();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkdcfcaa;
-    ::ll::UntypedStorage<8, 24> mUnk51aadc;
-    ::ll::UntypedStorage<4, 4>  mUnke862d1;
+    ::ll::TypedStorage<1, 1, bool>                               mIsEnabled;
+    ::ll::TypedStorage<8, 24, ::ServerWaypoint::TextureSelector> mTextureSelector;
+    ::ll::TypedStorage<4, 4, uint>                               mUpdateFlags;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ServerWaypoint& operator=(ServerWaypoint const&);
-    ServerWaypoint(ServerWaypoint const&);
     ServerWaypoint();
 
 public:
@@ -139,7 +120,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerWaypoint(
+    MCAPI ServerWaypoint(
         ::ServerWaypoint::TextureSelector const& textureSelector,
         ::std::optional<::mce::Color> const&     color,
         ::WorldPosition                          worldPosition
@@ -149,7 +130,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ServerWaypoint::TextureSelector const& textureSelector,
         ::std::optional<::mce::Color> const&     color,
         ::WorldPosition                          worldPosition
@@ -159,21 +140,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setWorldPosition(::WorldPosition const& worldPosition);
+    MCAPI void $setWorldPosition(::WorldPosition const& worldPosition);
 
-    MCNAPI void $setColor(::std::optional<::mce::Color> const& color);
+    MCAPI void $setColor(::std::optional<::mce::Color> const& color);
 
-    MCNAPI void $setIsVisible(bool isVisible);
+    MCAPI void $setIsVisible(bool isVisible);
 
-    MCNAPI void $setClientPositionAuthority(bool clientPositionAuthority);
+    MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
 
-    MCNAPI void $setTextureId(::std::optional<uint> const& textureId);
+    MCAPI void $setTextureId(::std::optional<uint> const& textureId);
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
+    MCAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
-    MCNAPI void $update(::Player const& viewingPlayer);
+    MCAPI void $update(::Player const& viewingPlayer);
 
 
     // NOLINTEND

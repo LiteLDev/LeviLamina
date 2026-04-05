@@ -75,8 +75,10 @@ public:
             biomeIdToResolvedData
     );
 
-    MCAPI_C ::Bedrock::PubSub::Subscription
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription
     subscribeToLevelBiomesRegistered(::std::function<void(::BiomeRegistry&)> callback);
+#endif
 
     MCAPI ~BiomeManager();
     // NOLINTEND

@@ -71,7 +71,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const* const[]> DownloaderResultStrings();
+    MCNAPI static ::std::add_lvalue_reference_t<char const* const[]> DownloaderResultStrings();
     // NOLINTEND
 
 public:

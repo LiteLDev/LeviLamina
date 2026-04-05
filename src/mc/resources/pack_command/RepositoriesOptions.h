@@ -21,13 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI RepositoriesOptions(::PackCommand::RepositoriesOptions&&);
+#endif
+
     MCNAPI ~RepositoriesOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::PackCommand::RepositoriesOptions&&);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::PackCommand::RepositoriesOptions&&);
+#endif
     // NOLINTEND
 
 public:

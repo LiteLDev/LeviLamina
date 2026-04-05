@@ -139,7 +139,9 @@ public:
 
         MCNAPI void load();
 
-        MCNAPI_C void save();
+#ifdef LL_PLAT_C
+        MCNAPI void save();
+#endif
 
         MCNAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
 

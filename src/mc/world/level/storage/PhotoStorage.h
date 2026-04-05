@@ -34,33 +34,37 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
-    MCAPI_C bool _addValidFile(::Core::Path path);
+#ifdef LL_PLAT_C
+    MCAPI bool _addValidFile(::Core::Path path);
 
-    MCAPI_C bool _isValidFile(::Core::Path file);
+    MCAPI bool _isValidFile(::Core::Path file);
 
-    MCAPI_C bool _readFile(::Core::Path path, ::std::string& resultData);
+    MCAPI bool _readFile(::Core::Path path, ::std::string& resultData);
+#endif
 
     MCAPI void _readManifest();
 
-    MCAPI_C bool _writeFile(::Core::Path path, ::std::string const& photoData);
+#ifdef LL_PLAT_C
+    MCAPI bool _writeFile(::Core::Path path, ::std::string const& photoData);
 
-    MCAPI_C void _writeManifest();
+    MCAPI void _writeManifest();
 
-    MCAPI_C void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
+    MCAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
+    MCAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
+    MCAPI ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
+    MCAPI ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
 
-    MCAPI_C void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
+    MCAPI void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
-    MCAPI_C void storePhoto(
+    MCAPI void storePhoto(
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData
     );
+#endif
 
     MCAPI ~PhotoStorage();
     // NOLINTEND
@@ -68,7 +72,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Core::PathBuffer<::std::string> getScreenshotFilename();
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::PathBuffer<::std::string> getScreenshotFilename();
+#endif
     // NOLINTEND
 
 public:

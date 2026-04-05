@@ -15,6 +15,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                mHasOverflowed;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ReadOnlyBinaryStream();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,6 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
+#endif
+
     MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
     MCAPI ::Bedrock::Result<bool> getBool();
@@ -70,7 +81,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::std::string_view buffer, bool copyBuffer);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
+#endif
     // NOLINTEND
 
 public:

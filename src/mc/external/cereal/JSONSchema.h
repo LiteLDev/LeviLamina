@@ -50,7 +50,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
 
     MCNAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);

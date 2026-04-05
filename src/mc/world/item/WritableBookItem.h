@@ -53,7 +53,9 @@ public:
 
     MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI_C static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
+#ifdef LL_PLAT_C
+    MCAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
+#endif
 
     MCAPI static void signBook(
         ::ItemStack&                   book,

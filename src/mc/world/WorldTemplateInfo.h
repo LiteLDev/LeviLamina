@@ -26,23 +26,25 @@ public:
     // NOLINTBEGIN
     MCNAPI WorldTemplateInfo(::WorldTemplateInfo const&);
 
-    MCNAPI_C ::std::string const& getAuthors() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string const& getAuthors() const;
 
-    MCNAPI_C ::std::string const& getDescription() const;
+    MCNAPI ::std::string const& getDescription() const;
 
-    MCNAPI_C ::std::string const& getGameType() const;
+    MCNAPI ::std::string const& getGameType() const;
 
-    MCNAPI_C ::std::string getIdAsString() const;
+    MCNAPI ::std::string getIdAsString() const;
 
-    MCNAPI_C ::std::string const& getVersion() const;
+    MCNAPI ::std::string const& getVersion() const;
 
-    MCNAPI_C ::std::string const& getWorldIconAllowListPath() const;
+    MCNAPI ::std::string const& getWorldIconAllowListPath() const;
 
-    MCNAPI_C ::std::string const& getWorldName() const;
+    MCNAPI ::std::string const& getWorldName() const;
 
-    MCNAPI_C bool isPremium() const;
+    MCNAPI bool isPremium() const;
 
-    MCNAPI_C bool isWorldIconOverridden() const;
+    MCNAPI bool isWorldIconOverridden() const;
+#endif
     // NOLINTEND
 
 public:

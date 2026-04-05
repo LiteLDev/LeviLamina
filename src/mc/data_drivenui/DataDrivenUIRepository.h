@@ -121,7 +121,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _initializeLoaders(
+#ifdef LL_PLAT_C
+    MCNAPI DataDrivenUIRepository(
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::ResourcePackManager&                               resourcePackManager
+    );
+
+    MCNAPI void _initializeLoaders(
         ::Puv::SlicedLoader<
             ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot,
             nullptr_t,
@@ -135,27 +141,30 @@ public:
         bool                                                        isBuiltinPack
     );
 
-    MCNAPI_C void _loadAllDataDrivenUIData(::ResourcePackManager const& resourcePackManager);
+    MCNAPI void _loadAllDataDrivenUIData(::ResourcePackManager const& resourcePackManager);
 
-    MCNAPI_C void
+    MCNAPI void
     _parseAndLoadUICompositionData(char const* filenameStr, ::std::string const& fileData, bool isBuiltinPack);
 
-    MCNAPI_C void _parseAndLoadUIRootData(char const* filenameStr, ::std::string const& fileData, bool isBuiltinPack);
+    MCNAPI void _parseAndLoadUIRootData(char const* filenameStr, ::std::string const& fileData, bool isBuiltinPack);
 
-    MCNAPI_C void _validateUICompositionDoc(
+    MCNAPI void _validateUICompositionDoc(
         ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const& uiComposition,
         bool                                                         isBuiltinPack,
         ::Puv::Logger&                                               logger
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ResourcePackManager&                               resourcePackManager
     );
+#endif
     // NOLINTEND
 
 public:

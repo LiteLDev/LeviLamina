@@ -30,7 +30,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _calculateLoadingProgressView(
+#ifdef LL_PLAT_C
+    MCAPI static void _calculateLoadingProgressView(
         ::ActorOwnerComponent&     actorOwnerComponent,
         ::BlockSourceComponent&    blockSourceComponent,
         ::DimensionStateComponent& dimensionStateComponent,
@@ -39,11 +40,12 @@ public:
         bool                       isTextureGroupReloading
     );
 
-    MCAPI_C static bool _hasLoadedEnoughChunksToView(
+    MCAPI static bool _hasLoadedEnoughChunksToView(
         ::Actor const&                   actor,
         ::IBlockSource&                  region,
         ::DimensionStateComponent const& dimensionStateComponent
     );
+#endif
     // NOLINTEND
 
 public:

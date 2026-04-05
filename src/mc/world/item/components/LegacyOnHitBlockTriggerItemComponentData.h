@@ -12,16 +12,28 @@ public:
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHitBlock;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    LegacyOnHitBlockTriggerItemComponentData& operator=(LegacyOnHitBlockTriggerItemComponentData const&);
+    LegacyOnHitBlockTriggerItemComponentData();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LegacyOnHitBlockTriggerItemComponentData& operator=(LegacyOnHitBlockTriggerItemComponentData const&);
     LegacyOnHitBlockTriggerItemComponentData(LegacyOnHitBlockTriggerItemComponentData const&);
     LegacyOnHitBlockTriggerItemComponentData();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LegacyOnHitBlockTriggerItemComponentData(::LegacyOnHitBlockTriggerItemComponentData&&);
+
+#ifdef LL_PLAT_S
+    MCAPI LegacyOnHitBlockTriggerItemComponentData(::LegacyOnHitBlockTriggerItemComponentData const&);
+#endif
 
     MCAPI ~LegacyOnHitBlockTriggerItemComponentData();
     // NOLINTEND
@@ -31,7 +43,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&&);
 
-    MCFOLD_S void* $ctor(::LegacyOnHitBlockTriggerItemComponentData const&);
+#ifdef LL_PLAT_S
+    MCFOLD void* $ctor(::LegacyOnHitBlockTriggerItemComponentData const&);
+#endif
     // NOLINTEND
 
 public:

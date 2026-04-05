@@ -80,11 +80,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _buildMatrixFromData(
+#ifdef LL_PLAT_C
+    MCAPI static void _buildMatrixFromData(
         ::MatrixStack::MatrixStackRef&                      mvs,
         ::RenderOffsetsItemComponent::ItemTransforms const& hand,
         ::RenderOffsetsItemComponent::Perspective           perspective
     );
+#endif
 
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,

@@ -41,13 +41,15 @@ public:
     // NOLINTBEGIN
     MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
 
-    MCAPI_C void addFurnaceAuxRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
+#ifdef LL_PLAT_C
+    MCAPI void addFurnaceAuxRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
 
-    MCAPI_C void addFurnaceRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
+    MCAPI void addFurnaceRecipe(::Recipes& recipes, ::BlockPalette& blockPalette) const;
 
-    MCAPI_C void addMultiRecipe(::Recipes& recipes) const;
+    MCAPI void addMultiRecipe(::Recipes& recipes) const;
 
-    MCAPI_C void addSmithingTransformRecipe(::Recipes& recipes) const;
+    MCAPI void addSmithingTransformRecipe(::Recipes& recipes) const;
+#endif
 
     MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
 
@@ -55,7 +57,9 @@ public:
 
     MCAPI void fillFromRecipe(::Recipe const& recipe);
 
-    MCAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+#endif
 
     MCAPI ~CraftingDataEntry();
     // NOLINTEND

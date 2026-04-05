@@ -45,7 +45,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string _getName(::CompoundType type);
 
-    MCAPI_C static ::std::string getCompoundFormula(::ItemInstance const& instance);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
+#endif
 
     MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 

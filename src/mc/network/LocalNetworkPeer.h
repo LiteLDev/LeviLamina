@@ -31,13 +31,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCNAPI ::LocalNetworkPeer::IncomingData& operator=(::LocalNetworkPeer::IncomingData&&);
 
+        MCNAPI ~IncomingData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -48,12 +54,20 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk1898c5;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     LocalNetworkPeer& operator=(LocalNetworkPeer const&);
     LocalNetworkPeer(LocalNetworkPeer const&);
     LocalNetworkPeer();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    LocalNetworkPeer& operator=(LocalNetworkPeer const&);
+    LocalNetworkPeer(LocalNetworkPeer const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -76,13 +90,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void addIncomingData(::std::string data);
+#ifdef LL_PLAT_C
+    MCNAPI LocalNetworkPeer();
+
+    MCNAPI void addIncomingData(::std::string data);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:

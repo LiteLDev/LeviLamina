@@ -24,7 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::vector<::Bedrock::DDUI::DataStoreUpdate> getAndClearUpdates();
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<::Bedrock::DDUI::DataStoreUpdate> getAndClearUpdates();
+#endif
     // NOLINTEND
 
 public:

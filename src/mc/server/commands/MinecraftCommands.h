@@ -96,14 +96,16 @@ public:
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
 
-    MCAPI_C ::MCRESULT requestCommandExecution(
+#ifdef LL_PLAT_C
+    MCAPI ::MCRESULT requestCommandExecution(
         ::std::unique_ptr<::CommandOrigin> origin,
         ::std::string const&               commandLine,
         int                                version,
         bool                               suppressOutput
     );
 
-    MCAPI_C void tick();
+    MCAPI void tick();
+#endif
     // NOLINTEND
 
 public:

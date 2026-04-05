@@ -33,6 +33,8 @@ public:
 
     MCAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
 
-    MCAPI_C void setDataFromPacket(::UpdateEquipPacket const& packet);
+#ifdef LL_PLAT_C
+    MCAPI void setDataFromPacket(::UpdateEquipPacket const& packet);
+#endif
     // NOLINTEND
 };

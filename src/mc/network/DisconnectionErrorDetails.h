@@ -32,18 +32,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI DisconnectionErrorDetails(::DisconnectionErrorDetails&&);
 
+    MCNAPI ~DisconnectionErrorDetails();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::DisconnectionErrorDetails&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::DisconnectionErrorDetails&&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -37,7 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void setExtensions(::AppExtensions::IAppExtensionsNonOwner const& owner);
+#ifdef LL_PLAT_C
+    MCNAPI void setExtensions(::AppExtensions::IAppExtensionsNonOwner const& owner);
+#endif
     // NOLINTEND
 
 public:

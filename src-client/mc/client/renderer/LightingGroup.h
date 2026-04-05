@@ -43,35 +43,35 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P0,
     ::LightingGroup::AmbientLightImpl<1, 21, 40> const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P0,
     ::LightingGroup::AmbientLightImpl<1, 26, 0> const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P0,
     ::LightingGroup::KeyframedDirectionalLightImpl<1> const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P0,
     ::LightingGroup::KeyframedDirectionalLightImpl<0> const& __P1
 );
 
-MCNAPI_C bool operator==(::LightingGroup::OrbitalLights<1> const& __P0, ::LightingGroup::OrbitalLights<1> const& __P1);
+MCNAPI bool operator==(::LightingGroup::OrbitalLights<1> const& __P0, ::LightingGroup::OrbitalLights<1> const& __P1);
 
-MCNAPI_C bool operator==(::LightingGroup::OrbitalLights<0> const& __P0, ::LightingGroup::OrbitalLights<0> const& __P1);
+MCNAPI bool operator==(::LightingGroup::OrbitalLights<0> const& __P0, ::LightingGroup::OrbitalLights<0> const& __P1);
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P0,
     ::LightingGroup::SkyIntensityImpl<1, 26, 0> const& __P1
 );
 
-MCNAPI_C bool
+MCNAPI bool
 operator==(::LightingGroup::StaticDirectionalLight const& __P0, ::LightingGroup::StaticDirectionalLight const& __P1);
 // NOLINTEND

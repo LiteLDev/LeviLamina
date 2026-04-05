@@ -45,7 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::Player* _tryGetPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Player* _tryGetPlayer() const;
+#endif
 
     MCAPI ::Scripting::Result_deprecated<void> cameraAttachToEntity(
         ::std::optional<::ScriptModuleMinecraft::ScriptCameraAttachOptions> const& attachOptions

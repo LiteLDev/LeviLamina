@@ -30,6 +30,13 @@ public:
     ::ll::TypedStorage<8, 40, ::SlotData const>                                mCreativeItemOutputSlot;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    FurnaceContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -55,54 +62,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void clearAllRecipes();
+#ifdef LL_PLAT_C
+    MCNAPI FurnaceContainerManagerController(
+        ::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel,
+        ::HashedString const&                           recipeTag
+    );
 
-    MCNAPI_C void clearGhostRecipe(::ContainerEnumName container, int slot);
+    MCNAPI void clearAllRecipes();
 
-    MCNAPI_C void
+    MCNAPI void clearGhostRecipe(::ContainerEnumName container, int slot);
+
+    MCNAPI void
     evacuateContainerToInventory(::ContainerController* container, ::std::vector<::AutoPlaceItem> const& autoPlace);
 
-    MCNAPI_C int getBackgroundStyle(::std::string const& containerName, int collectionIndex) const;
+    MCNAPI int getBackgroundStyle(::std::string const& containerName, int collectionIndex) const;
 
-    MCNAPI_C int getBurnProgress(int max);
+    MCNAPI int getBurnProgress(int max);
 
-    MCNAPI_C ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
+    MCNAPI ::std::string const& getExpandoItemGroupName(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI_C int getLitProgress(int max);
+    MCNAPI int getLitProgress(int max);
 
-    MCNAPI_C ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI ::ItemInstance const& getRecipeItem(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI_C ::std::string const& getSearchString() const;
+    MCNAPI ::std::string const& getSearchString() const;
 
-    MCNAPI_C void handleRecipeSelect(
+    MCNAPI void handleRecipeSelect(
         ::std::string const&                  collectionName,
         int                                   collectionIndex,
         bool                                  displayOnly,
         ::std::vector<::AutoPlaceItem> const& autoPlace
     );
 
-    MCNAPI_C bool isCreativeContainer(::std::string const& containerName) const;
+    MCNAPI bool isCreativeContainer(::std::string const& containerName) const;
 
-    MCNAPI_C bool isExpandableItemFiltered(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI bool isExpandableItemFiltered(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI_C bool isRecipeContainer(::std::string const& containerName) const;
+    MCNAPI bool isRecipeContainer(::std::string const& containerName) const;
 
-    MCNAPI_C bool isRecipeIngredient(
+    MCNAPI bool isRecipeIngredient(
         ::std::string const&   collectionName,
         int                    collectionIndex,
         ::ItemStackBase const& ingredient
     ) const;
 
-    MCNAPI_C bool isTakeableContainer(::std::string const& containerName) const;
+    MCNAPI bool isTakeableContainer(::std::string const& containerName) const;
 
-    MCNAPI_C void setSearchString(::std::string const& searchString);
+    MCNAPI void setSearchString(::std::string const& searchString);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(::std::weak_ptr<::FurnaceContainerManagerModel> containerManagerModel, ::HashedString const& recipeTag);
+#endif
     // NOLINTEND
 
 public:

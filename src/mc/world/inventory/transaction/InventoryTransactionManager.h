@@ -33,7 +33,9 @@ public:
 
     MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 
-    MCAPI_C void addExpectedAction(::InventoryAction const& action);
+#ifdef LL_PLAT_C
+    MCAPI void addExpectedAction(::InventoryAction const& action);
+#endif
 
     MCAPI ~InventoryTransactionManager();
     // NOLINTEND

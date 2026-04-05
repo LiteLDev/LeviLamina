@@ -10,22 +10,36 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk540898;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    CustomBiome& operator=(CustomBiome const&);
+    CustomBiome();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     CustomBiome& operator=(CustomBiome const&);
     CustomBiome(CustomBiome const&);
     CustomBiome();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI CustomBiome(::CustomBiome const&);
+#endif
+
     MCNAPI ~CustomBiome();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::CustomBiome const&);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::CustomBiome const&);
+#endif
     // NOLINTEND
 
 public:

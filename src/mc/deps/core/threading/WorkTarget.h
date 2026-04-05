@@ -16,22 +16,37 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::Threading::Burst::Details::WorkTargetItem>> mSecondariesStorage;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WorkTarget();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit WorkTarget(uint64 secondaryWorkersCount);
 
+    MCAPI ~WorkTarget();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(uint64 secondaryWorkersCount);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(uint64 secondaryWorkersCount);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

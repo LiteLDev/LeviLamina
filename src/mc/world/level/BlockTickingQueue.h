@@ -85,13 +85,15 @@ public:
     MCAPI void
     add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
-    MCAPI_C void addTickToLevelChunk(
+#ifdef LL_PLAT_C
+    MCAPI void addTickToLevelChunk(
         ::LevelChunk&     lc,
         ::BlockPos const& pos,
         ::Block const&    block,
         int               tickDelay,
         int               priorityOffset
     );
+#endif
 
     MCAPI void eliminateDuplicatesOf(::BlockType const& block);
 

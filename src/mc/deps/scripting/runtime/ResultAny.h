@@ -29,7 +29,9 @@ public:
 
     MCAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const&);
 
-    MCAPI_C ::entt::meta_any toAny();
+#ifdef LL_PLAT_C
+    MCAPI ::entt::meta_any toAny();
+#endif
 
     MCAPI ::entt::meta_any toAny() const;
 

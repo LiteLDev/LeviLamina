@@ -20,17 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void tryFireSignInEvent(
+#ifdef LL_PLAT_C
+    MCNAPI void tryFireSignInEvent(
         ::IActiveDirectoryIdentityTelemetry& eventing,
         ::std::string const&                 mutsUserId,
         ::edu::Role                          role,
         ::std::string const&                 tenantType
     ) const;
+
+    MCNAPI ~ADPopupTelemetryEvent();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

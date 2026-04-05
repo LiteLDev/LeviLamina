@@ -58,6 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ResourcePackStack(
+        ::std::vector<::PackInstance> const&                                  packs,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
+    );
+#endif
+
     MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
@@ -71,7 +78,9 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  isDependent);
 
-    MCAPI_C ::ContentTierIncompatibleReason canSupportPacks(::ContentTierInfo const& contentInfoTier) const;
+#ifdef LL_PLAT_C
+    MCAPI ::ContentTierIncompatibleReason canSupportPacks(::ContentTierInfo const& contentInfoTier) const;
+#endif
 
     MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
 
@@ -82,13 +91,17 @@ public:
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
-    MCAPI_C ::std::vector<::PackInstanceId> getStackAsIdentities() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
+#endif
 
     MCAPI bool hasCapabilityInStack(::std::string_view capability) const;
 
     MCAPI bool hasPlatformLockedContent() const;
 
-    MCAPI_C bool isOnStack(::PackIdVersion const& packIdentity) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
+#endif
 
     MCAPI void removeDuplicates();
 
@@ -96,9 +109,11 @@ public:
 
     MCAPI void removeInvalidPacks();
 
-    MCAPI_C void serialize(::std::ostream& fileStream) const;
+#ifdef LL_PLAT_C
+    MCAPI void serialize(::std::ostream& fileStream) const;
 
-    MCAPI_C bool supportsVibrantVisuals() const;
+    MCAPI bool supportsVibrantVisuals() const;
+#endif
     // NOLINTEND
 
 public:
@@ -117,20 +132,24 @@ public:
         ::std::optional<::std::string>                                        levelId
     );
 
-    MCAPI_C static ::std::unique_ptr<::ResourcePackStack> deserialize(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
         ::std::vector<::PackInstanceId> const&                                ids,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         ::std::optional<::std::string>                                        levelId
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
+#endif
 
     MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,

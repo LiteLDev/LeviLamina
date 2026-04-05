@@ -19,33 +19,21 @@ public:
     ::ll::TypedStorage<1, 1, bool>                mIsValid;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ArmorTrimIconGenerationInfo& operator=(ArmorTrimIconGenerationInfo const&);
+    ArmorTrimIconGenerationInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ArmorTrimIconGenerationInfo(::ArmorTrimIconGenerationInfo const&);
 
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI_C static ::std::string
-    buildPaletteName(::std::string const& trimMaterial, ::std::string const& armorMaterial);
-
-    MCAPI static ::std::string buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
-
-    MCAPI_C static ::std::string buildTrimmedArmorName(
-        ::std::string const& trimMaterial,
-        ::std::string const& armorMaterial,
-        ::std::string const& armorType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::ArmorTrimIconGenerationInfo const&);
-
-    MCAPI_C void* $ctor(
+    MCAPI ArmorTrimIconGenerationInfo(
         ::std::string const&      armorName,
         ::std::string const&      armorType,
         ::ResourceLocation const& armorTextureLocation,
@@ -54,11 +42,52 @@ public:
         ::std::string const&      trimMaterial,
         ::std::string const&      trimPalette
     );
+
+    MCAPI ~ArmorTrimIconGenerationInfo();
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string buildPaletteName(::std::string const& trimMaterial, ::std::string const& armorMaterial);
+#endif
+
+    MCAPI static ::std::string buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
+
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string buildTrimmedArmorName(
+        ::std::string const& trimMaterial,
+        ::std::string const& armorMaterial,
+        ::std::string const& armorType
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ArmorTrimIconGenerationInfo const&);
+
+    MCAPI void* $ctor(
+        ::std::string const&      armorName,
+        ::std::string const&      armorType,
+        ::ResourceLocation const& armorTextureLocation,
+        ::ResourceLocation const& trimTextureLocation,
+        ::std::string const&      armorMaterial,
+        ::std::string const&      trimMaterial,
+        ::std::string const&      trimPalette
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

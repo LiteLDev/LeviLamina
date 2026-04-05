@@ -27,7 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit Audio(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+#endif
     // NOLINTEND
 
 public:
@@ -39,7 +41,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::function<void(::Editor::Settings::AudioProps const&)> callback);
+#endif
     // NOLINTEND
 };
 

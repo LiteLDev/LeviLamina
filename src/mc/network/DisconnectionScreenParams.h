@@ -29,18 +29,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit DisconnectionScreenParams(::Connection::DisconnectFailReason disconnectFailReason);
 
+    MCNAPI ~DisconnectionScreenParams();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Connection::DisconnectFailReason disconnectFailReason);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Connection::DisconnectFailReason disconnectFailReason);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

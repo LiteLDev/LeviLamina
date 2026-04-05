@@ -23,11 +23,18 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    EmotePacket& operator=(EmotePacket const&);
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     EmotePacket& operator=(EmotePacket const&);
     EmotePacket();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,17 +78,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI EmotePacket();
+#endif
+
     MCAPI EmotePacket(::EmotePacket const&);
+
+#ifdef LL_PLAT_C
+    MCAPI explicit EmotePacket(::EmotePacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_S void* $ctor();
+#ifdef LL_PLAT_S
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::EmotePacket const&);
 
-    MCAPI_C void* $ctor(::EmotePacketPayload payload);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::EmotePacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

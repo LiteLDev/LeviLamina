@@ -13,11 +13,18 @@ public:
     ::ll::UntypedStorage<8, 72>  mUnkb6979c;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ServerConfigurationJoinInfo& operator=(ServerConfigurationJoinInfo const&);
     ServerConfigurationJoinInfo();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ServerConfigurationJoinInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -27,6 +34,11 @@ public:
 
     MCNAPI ::ServerConfiguration::ServerConfigurationJoinInfo&
     operator=(::ServerConfiguration::ServerConfigurationJoinInfo&&);
+
+#ifdef LL_PLAT_C
+    MCNAPI ::ServerConfiguration::ServerConfigurationJoinInfo&
+    operator=(::ServerConfiguration::ServerConfigurationJoinInfo const&);
+#endif
 
     MCNAPI ~ServerConfigurationJoinInfo();
     // NOLINTEND

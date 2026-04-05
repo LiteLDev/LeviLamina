@@ -69,15 +69,19 @@ public:
 
     MCAPI void generateAssetSet();
 
-    MCAPI_C ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Core::PathBuffer<::std::string> getIconPath(::PackIconType iconType) const;
+#endif
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
-    MCAPI_C ::Json::Value getTexturesList(int subpackIndex) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Json::Value getTexturesList(int subpackIndex) const;
 
-    MCAPI_C bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
+    MCAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
 
-    MCAPI_C bool hasIcon(::PackIconType iconType) const;
+    MCAPI bool hasIcon(::PackIconType iconType) const;
+#endif
 
     MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
 
@@ -86,7 +90,9 @@ public:
     MCAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     preloadPath(::Core::Path const& packRelativePath, int subpackIndex, bool) const;
 
-    MCAPI_C void regenerateAssetSet();
+#ifdef LL_PLAT_C
+    MCAPI void regenerateAssetSet();
+#endif
 
     MCAPI void setLocale(::std::string const& code);
 

@@ -48,9 +48,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _appendLoc(::std::string const& locCode, ::Localization& localizationObjToAppendLoc);
+#ifdef LL_PLAT_C
+    MCNAPI bool _appendLoc(::std::string const& locCode, ::Localization& localizationObjToAppendLoc);
 
-    MCNAPI_C void _initialize();
+    MCNAPI void _initialize();
+#endif
     // NOLINTEND
 
 public:

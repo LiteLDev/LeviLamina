@@ -47,7 +47,9 @@ public:
 
     MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCNAPI_S void loadConfigs(::cereal::ReflectionCtx const& ctx);
+#ifdef LL_PLAT_S
+    MCNAPI void loadConfigs(::cereal::ReflectionCtx const& ctx);
+#endif
     // NOLINTEND
 
 public:

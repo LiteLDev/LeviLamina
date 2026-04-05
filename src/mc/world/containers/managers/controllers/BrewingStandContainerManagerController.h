@@ -30,11 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _calculateValidPotionBrewed(::ItemInstance const& itemInstance);
+#ifdef LL_PLAT_C
+    MCNAPI void _calculateValidPotionBrewed(::ItemInstance const& itemInstance);
 
-    MCNAPI_C int getBrewProgress(int max);
+    MCNAPI int getBrewProgress(int max);
 
-    MCNAPI_C int getFuelProgress(int max);
+    MCNAPI int getFuelProgress(int max);
+#endif
     // NOLINTEND
 
 public:

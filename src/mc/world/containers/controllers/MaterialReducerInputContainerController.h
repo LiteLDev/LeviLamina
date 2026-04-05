@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockReducer*> mBlockReducer;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MaterialReducerInputContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,13 +38,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI explicit MaterialReducerInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:

@@ -505,27 +505,27 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P0,
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::ColorGrading const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P0,
     ::ColorGraderConfig::ColorGradingParametersSrcV1::ColorGradingSettings::ColorGrading const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P0,
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Highlights const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P0,
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Midtones const& __P1
 );
 
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P0,
     ::ColorGraderConfig::ColorGradingParametersSrcV0::ColorGradingSettings::Shadows const& __P1
 );

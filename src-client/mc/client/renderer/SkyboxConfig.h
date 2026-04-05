@@ -36,7 +36,7 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI_C bool operator==(
+MCNAPI bool operator==(
     ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P0,
     ::SkyboxConfig::SkyboxConfigSettingsV0::SkyboxParameters::Lighting const& __P1
 );

@@ -28,6 +28,13 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::EnchantingContainerManagerModel>> mEnchantingContainerManagerModel;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EnchantingContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,29 +48,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string _getEnchantHint(int option);
+#ifdef LL_PLAT_C
+    MCNAPI explicit EnchantingContainerManagerController(
+        ::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI ::std::string _getEnchantHint(int option);
 
-    MCNAPI_C void enchantResult(int option);
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C ::std::string getEnchantHint(int option);
+    MCNAPI void enchantResult(int option);
 
-    MCNAPI_C ::std::string getHoverText(int option);
+    MCNAPI ::std::string getEnchantHint(int option);
 
-    MCNAPI_C int getInputItemId();
+    MCNAPI ::std::string getHoverText(int option);
 
-    MCNAPI_C int getPlayerLevels();
+    MCNAPI int getInputItemId();
 
-    MCNAPI_C ::std::string getRunesForOption(int option);
+    MCNAPI int getPlayerLevels();
 
-    MCNAPI_C ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
+    MCNAPI ::std::string getRunesForOption(int option);
+
+    MCNAPI ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

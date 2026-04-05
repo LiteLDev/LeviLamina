@@ -111,7 +111,8 @@ public:
 
     MCAPI void _validateItem();
 
-    MCAPI_C void clientInitialize(
+#ifdef LL_PLAT_C
+    MCAPI void clientInitialize(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
         ::ItemStack const& item,
@@ -119,6 +120,7 @@ public:
         bool               isInItemFrame,
         bool               isFromFishing
     );
+#endif
 
     MCAPI void postNormalTick();
     // NOLINTEND

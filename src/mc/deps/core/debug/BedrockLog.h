@@ -25,7 +25,7 @@ _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::
 
 MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
 
-MCAPI_C bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
+MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
 
 MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 
@@ -50,7 +50,7 @@ MCAPI void createLog(
     double                    _logCycleInS
 );
 
-MCAPI_C ::Bedrock::ScopeExit initialize();
+MCAPI ::Bedrock::ScopeExit initialize();
 
 MCAPI void log_va(
     ::BedrockLog::LogCategory _category,
@@ -66,7 +66,7 @@ MCAPI void log_va(
 
 MCAPI int rakDebugLog(char const*, ...);
 
-MCAPI_S void updateLogFilter(
+MCAPI void updateLogFilter(
     ::std::unique_ptr<::LogSettingsUpdater> options,
     ::std::string const&                    filterType,
     ::std::vector<::std::string> const&     filters,

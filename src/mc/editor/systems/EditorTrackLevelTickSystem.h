@@ -22,15 +22,17 @@ struct EditorTrackLevelTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _trackAddedActors(
+#ifdef LL_PLAT_C
+    MCNAPI static void _trackAddedActors(
         ::EntityModifier<::LevelTickTrackingComponent> entityModifier,
         ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
         ::ViewT<::StrictEntityContext, ::Include<::ActorComponent>, ::Exclude<::LevelTickTrackingComponent>> view
     );
 
-    MCNAPI_C static void _trackTickingActors(
+    MCNAPI static void _trackTickingActors(
         ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
         ::ViewT<::StrictEntityContext, ::Include<::ActorTickNeededComponent>, ::LevelTickTrackingComponent> view
     );
+#endif
     // NOLINTEND
 };

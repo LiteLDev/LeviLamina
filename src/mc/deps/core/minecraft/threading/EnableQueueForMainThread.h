@@ -32,9 +32,11 @@ public:
 
     MCAPI EnableQueueForMainThread(::WorkerPool&, ::Scheduler&, ::std::string);
 
-    MCAPI_C ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Threading::Async<void> queueForMainThread(::std::function<void()>&& callback);
 
-    MCAPI_C ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
+    MCAPI ::Bedrock::Threading::Async<void> queueForMainThreadAutoRequeue(::std::function<bool()>&& callback);
+#endif
     // NOLINTEND
 
 public:

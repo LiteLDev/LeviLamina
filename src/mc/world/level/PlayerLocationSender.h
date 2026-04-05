@@ -95,7 +95,9 @@ public:
 
     MCAPI void _updatePlayerData(::Player const& player);
 
-    MCAPI_S void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
+#ifdef LL_PLAT_S
+    MCAPI void updatePlayersData(::std::vector<::WeakEntityRef> const& gameplayUsers);
+#endif
 
     MCAPI ~PlayerLocationSender();
     // NOLINTEND

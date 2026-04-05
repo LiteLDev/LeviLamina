@@ -57,9 +57,11 @@ public:
 
     MCAPI ::BrewingStandBlockActor* _getBrewingStandEntity();
 
-    MCAPI_C void fireItemAcquiredEvent(::ItemInstance const& item, int count);
+#ifdef LL_PLAT_C
+    MCAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 
-    MCAPI_C bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
+    MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
+#endif
     // NOLINTEND
 
 public:

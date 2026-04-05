@@ -63,27 +63,35 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+#ifdef LL_PLAT_C
+    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+#endif
 
     MCAPI static int getBaseColor(::ItemStack const& item);
 
-    MCAPI_C static ::std::string getColors(::CompoundTag const* tag);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getColors(::CompoundTag const* tag);
+#endif
 
     MCAPI static int getPatternCount(::CompoundTag const* tagElement);
 
-    MCAPI_C static ::std::string getPatterns(::CompoundTag const* tag);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getPatterns(::CompoundTag const* tag);
+#endif
 
     MCAPI static bool isDefaultBanner(::ItemStackBase const& instance);
 
     MCAPI static void removeLastPattern(::ItemStack& instance);
 
-    MCAPI_C static void setBannerDetails(
+#ifdef LL_PLAT_C
+    MCAPI static void setBannerDetails(
         ::ItemStack&         instance,
         int                  customColor,
         ::std::string const& patterns,
         ::std::string const& colors,
         ::BannerBlockType    bannerType
     );
+#endif
     // NOLINTEND
 
 public:

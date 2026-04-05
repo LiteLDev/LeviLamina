@@ -331,7 +331,9 @@ public:
     MCNAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
 
-    MCNAPI_C void _punchHoles();
+#ifdef LL_PLAT_C
+    MCNAPI void _punchHoles();
+#endif
 
     MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
 

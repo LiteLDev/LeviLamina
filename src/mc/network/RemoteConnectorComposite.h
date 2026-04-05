@@ -84,17 +84,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getActiveConnector() const;
+#ifdef LL_PLAT_C
+    MCNAPI RemoteConnectorComposite(
+        ::RakNetConnector::ConnectionCallbacks&              callbacks,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner
+    );
+
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getActiveConnector() const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::RakNetConnector::ConnectionCallbacks&              callbacks,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner
     );
+#endif
     // NOLINTEND
 
 public:

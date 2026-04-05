@@ -14,6 +14,13 @@ class Recipes;
 // clang-format on
 
 class EnchantingInputContainerController : public ::ContainerController {
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    EnchantingInputContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -25,13 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _isEnchantingInputItem(::ItemDescriptor const& item) const;
+#ifdef LL_PLAT_C
+    MCNAPI explicit EnchantingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
+    MCNAPI bool _isEnchantingInputItem(::ItemDescriptor const& item) const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:

@@ -38,6 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ScriptPlayerJoinAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                         scope
+    );
+#endif
+
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
 
@@ -55,10 +62,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                         scope
     );
+#endif
     // NOLINTEND
 
 public:

@@ -190,7 +190,9 @@ public:
 
     MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI_C void addStateListener(::Core::StorageAreaStateListener* l);
+#ifdef LL_PLAT_C
+    MCAPI void addStateListener(::Core::StorageAreaStateListener* l);
+#endif
 
     MCAPI bool canWrite() const;
 
@@ -205,8 +207,10 @@ public:
     MCAPI static ::Core::Result
     _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
-    MCAPI_C static ::Core::Result
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::Result
     getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
+#endif
     // NOLINTEND
 
 public:

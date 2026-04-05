@@ -25,7 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::ItemInstance createInstance(int count) const;
+#ifdef LL_PLAT_C
+    MCAPI ::ItemInstance createInstance(int count) const;
+#endif
 
     MCAPI ::std::optional<::ItemInstance>
     createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;

@@ -24,38 +24,69 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ResourceLocation>>         mResourceLocationPtr;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TexturePtr(TexturePtr const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD_C ::mce::ClientTexture const& getClientTexture() const;
+#ifdef LL_PLAT_C
+    MCAPI TexturePtr();
+
+    MCAPI TexturePtr(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
+
+    MCAPI TexturePtr(
+        ::BedrockTexture const&   bedrockTexture,
+        ::ResourceLocation const& resourceLocation,
+        ::cg::TextureSetLayerType textureType
+    );
+
+    MCFOLD ::mce::ClientTexture const& getClientTexture() const;
+
+    MCFOLD ::mce::ClientTexture const& operator*() const;
+
+    MCAPI ::mce::TexturePtr& operator=(::mce::TexturePtr&& rhs);
+
+    MCAPI ::mce::TexturePtr& operator=(::mce::TexturePtr const& rhs);
+
+    MCAPI ~TexturePtr();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::mce::TexturePtr const& NONE();
+    MCAPI static ::mce::TexturePtr const& NONE();
 
-    MCAPI_C static ::BedrockTextureData const& mDefaultTextureData();
+    MCAPI static ::BedrockTextureData const& mDefaultTextureData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
+    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> group, ::ResourceLocation const& resourceLocation);
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::BedrockTexture const&   bedrockTexture,
         ::ResourceLocation const& resourceLocation,
         ::cg::TextureSetLayerType textureType
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

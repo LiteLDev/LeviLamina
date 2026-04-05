@@ -38,7 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void doCheck();
+#ifdef LL_PLAT_C
+    MCAPI void doCheck();
+#endif
     // NOLINTEND
 
 public:

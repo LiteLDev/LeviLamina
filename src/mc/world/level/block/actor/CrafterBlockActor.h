@@ -40,13 +40,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+        MCAPI ~LruCache();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_S void $dtor();
+#ifdef LL_PLAT_S
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -120,8 +124,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
 
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
     // NOLINTEND
 };

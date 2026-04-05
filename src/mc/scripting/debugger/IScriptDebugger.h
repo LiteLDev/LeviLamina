@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
 
-    MCNAPI_C static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
+    MCNAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
     // NOLINTEND
 
 public:

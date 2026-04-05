@@ -34,20 +34,34 @@ public:
     ::ll::TypedStorage<1, 1, bool>                 mIsSubClient;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PlayerListEntry& operator=(PlayerListEntry const&);
     PlayerListEntry(PlayerListEntry const&);
     PlayerListEntry();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PlayerListEntry& operator=(PlayerListEntry const&);
+    PlayerListEntry();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI PlayerListEntry(::PlayerListEntry const&);
+#endif
+
     MCAPI PlayerListEntry(::PlayerListEntry&&);
 
     MCAPI explicit PlayerListEntry(::Player const& player);
 
-    MCAPI_C ::PlayerListEntry cloneExceptSkin() const;
+#ifdef LL_PLAT_C
+    MCAPI ::PlayerListEntry cloneExceptSkin() const;
+#endif
 
     MCAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
 
@@ -63,7 +77,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::PlayerListEntry const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PlayerListEntry const&);
+#endif
 
     MCAPI void* $ctor(::PlayerListEntry&&);
 

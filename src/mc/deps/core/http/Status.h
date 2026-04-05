@@ -21,7 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool isSuccess() const;
+#ifdef LL_PLAT_C
+    MCNAPI bool isSuccess() const;
+#endif
     // NOLINTEND
 };
 

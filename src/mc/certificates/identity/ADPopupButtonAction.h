@@ -22,21 +22,37 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk97a29c;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ADPopupButtonAction& operator=(ADPopupButtonAction const&);
     ADPopupButtonAction(ADPopupButtonAction const&);
     ADPopupButtonAction();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ADPopupButtonAction(ADPopupButtonAction const&);
+    ADPopupButtonAction();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::ADPopupButtonAction& operator=(::ADPopupButtonAction&&);
 
+    MCNAPI ::ADPopupButtonAction& operator=(::ADPopupButtonAction const&);
+
+    MCNAPI ~ADPopupButtonAction();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

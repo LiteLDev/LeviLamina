@@ -67,7 +67,9 @@ public:
 
     MCNAPI bool _validateChildrenAreNumerical(::MolangVersion version) const;
 
-    MCNAPI_S bool areAllChildrenEqual() const;
+#ifdef LL_PLAT_S
+    MCNAPI bool areAllChildrenEqual() const;
+#endif
 
     MCNAPI void clear();
 
@@ -122,8 +124,10 @@ public:
 
     MCNAPI void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
 
-    MCNAPI_C ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>
+#ifdef LL_PLAT_C
+    MCNAPI ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>
     replaceResourceVariables(::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>& resourceTable);
+#endif
 
     MCNAPI void validateArrayVariables() const;
 
@@ -152,10 +156,12 @@ public:
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
 
-    MCNAPI_C static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
+#ifdef LL_PLAT_C
+    MCNAPI static ::MolangScriptArg const* _getScriptArgFromMemberAccessedVariable(
         ::MolangEvalParams&                      state,
         ::Molang::details::ExpressionNode const& memberAccessorNode
     );
+#endif
 
     MCNAPI static void _writeScriptArgToMemberAccessedVariable(
         ::MolangEvalParams&                      state,

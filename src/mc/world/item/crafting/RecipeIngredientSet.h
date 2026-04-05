@@ -18,14 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void add(::ItemStackBase const& item);
+#ifdef LL_PLAT_C
+    MCAPI void add(::ItemStackBase const& item);
 
-    MCAPI_C void add(::std::vector<::ItemStack> const& list);
+    MCAPI void add(::std::vector<::ItemStack> const& list);
+
+    MCAPI ~RecipeIngredientSet();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

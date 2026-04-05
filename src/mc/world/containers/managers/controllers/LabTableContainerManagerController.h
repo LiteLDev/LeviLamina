@@ -22,6 +22,13 @@ public:
     ::ll::TypedStorage<1, 1, ::CompoundContainerType>                           mResultContainer;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    LabTableContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,21 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _setupCallbacks();
+#ifdef LL_PLAT_C
+    MCNAPI explicit LabTableContainerManagerController(
+        ::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _updateResult();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C void combineInputs(::BlockPos const& blockPos);
+    MCNAPI void _updateResult();
 
-    MCNAPI_C bool hasInput();
+    MCNAPI void combineInputs(::BlockPos const& blockPos);
 
-    MCNAPI_C bool isStillValid(float pickRange);
+    MCNAPI bool hasInput();
+
+    MCNAPI bool isStillValid(float pickRange);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::LabTableContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

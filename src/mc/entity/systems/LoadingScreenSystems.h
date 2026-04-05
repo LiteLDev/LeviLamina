@@ -11,10 +11,9 @@ namespace LoadingScreenSystems { class IClientFactory; }
 namespace LoadingScreenSystems {
 // functions
 // NOLINTBEGIN
-MCAPI_C ::std::unique_ptr<::LoadingScreenSystems::IClientFactory> createClientFactory();
+MCAPI ::std::unique_ptr<::LoadingScreenSystems::IClientFactory> createClientFactory();
 
-MCAPI_C void
-registerClientSystems(::EntitySystems& entitySystems, ::LoadingScreenSystems::IClientFactory const& factory);
+MCAPI void registerClientSystems(::EntitySystems& entitySystems, ::LoadingScreenSystems::IClientFactory const& factory);
 
 MCAPI void registerServerSystems(::EntitySystems& entitySystems);
 // NOLINTEND

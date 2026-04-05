@@ -32,21 +32,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::Threading::Async<::std::error_code> signin(::NetherNet::NetworkID const& netherNetId);
+#ifdef LL_PLAT_C
+    MCNAPI SignalingConsumerSignInOwner(
+        ::std::shared_ptr<::SignalingService>                                        signalingService,
+        ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
+    );
+
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(::NetherNet::NetworkID const& netherNetId);
+
+    MCNAPI ~SignalingConsumerSignInOwner();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

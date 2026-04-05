@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/renoir/ColorWriteMask.h"
-#include "mc/deps/renoir/PixelFormat.h"
+#include "mc/external/gameface/renoir/ColorWriteMask.h"
+#include "mc/external/gameface/renoir/PixelFormat.h"
 
 // auto generated forward declare list
 // clang-format off

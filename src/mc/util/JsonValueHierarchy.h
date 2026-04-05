@@ -17,47 +17,66 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk21f130;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     JsonValueHierarchy& operator=(JsonValueHierarchy const&);
     JsonValueHierarchy(JsonValueHierarchy const&);
     JsonValueHierarchy();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    JsonValueHierarchy& operator=(JsonValueHierarchy const&);
+    JsonValueHierarchy();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Json::Value const& get(::std::string const& name) const;
+#ifdef LL_PLAT_C
+    MCNAPI JsonValueHierarchy(::JsonValueHierarchy const&);
 
-    MCNAPI_C ::Json::Value const&
-    get(::std::string const& name, ::SemVersion const& requiredMinimumFormatVersion) const;
+    MCNAPI ::Json::Value const& get(::std::string const& name) const;
 
-    MCNAPI_C ::Json::Value const& get(::std::string const& owningFieldName, ::std::string const& subFieldName) const;
+    MCNAPI ::Json::Value const& get(::std::string const& name, ::SemVersion const& requiredMinimumFormatVersion) const;
 
-    MCNAPI_C ::SemVersion const& getFormatVersion() const;
+    MCNAPI ::Json::Value const& get(::std::string const& owningFieldName, ::std::string const& subFieldName) const;
 
-    MCNAPI_C ::std::vector<::JsonValueHierarchyNode> getMemberArray(::std::string const& name) const;
+    MCNAPI ::SemVersion const& getFormatVersion() const;
 
-    MCNAPI_C ::MinEngineVersion const& getMinEngineVersion() const;
+    MCNAPI ::std::vector<::JsonValueHierarchyNode> getMemberArray(::std::string const& name) const;
 
-    MCNAPI_C void pushEmptyNode();
+    MCNAPI ::MinEngineVersion const& getMinEngineVersion() const;
 
-    MCNAPI_C void push_back(
+    MCNAPI ::Json::Value const& operator[](::std::string const& name) const;
+
+    MCNAPI void pushEmptyNode();
+
+    MCNAPI void push_back(
         ::Json::Value&            value,
         ::SemVersion const&       formatVersion,
         ::MinEngineVersion const& minEngineVersion,
         ::std::string const&      fileName
     );
+
+    MCNAPI ~JsonValueHierarchy();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::JsonValueHierarchy const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::JsonValueHierarchy const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -105,11 +105,17 @@ public:
     MCAPI bool matchType(::Actor const& entity) const;
 
     MCAPI ::std::shared_ptr<::std::vector<::Actor*>> newResults(::CommandOrigin const& origin) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ~CommandSelectorBase();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

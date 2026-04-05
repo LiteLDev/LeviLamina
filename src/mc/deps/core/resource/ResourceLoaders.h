@@ -18,17 +18,17 @@ namespace mce { struct Image; }
 namespace ResourceLoaders {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::gsl::span<::std::string const> getFileTypeExtensions(::ResourceLoaders::ResourceFileType fileType);
+MCNAPI ::gsl::span<::std::string const> getFileTypeExtensions(::ResourceLoaders::ResourceFileType fileType);
 
-MCNAPI_C ::ResourceLocation getRawResourceLocation(::ResourceLocation const& resourceLocation);
+MCNAPI ::ResourceLocation getRawResourceLocation(::ResourceLocation const& resourceLocation);
 
-MCNAPI_C ::nonstd::expected<::mce::Image, ::std::error_condition> loadImageWithoutExtension(
+MCNAPI ::nonstd::expected<::mce::Image, ::std::error_condition> loadImageWithoutExtension(
     ::ResourceLocation const&           imageResourceLocation,
     ::std::optional<::mce::ImageFormat> desiredImageFormat,
     bool                                splitAsArray
 );
 
-MCNAPI_C void registerLoader(::ResourceFileSystem fileSystem, ::std::unique_ptr<::ResourceLoader> loader);
+MCNAPI void registerLoader(::ResourceFileSystem fileSystem, ::std::unique_ptr<::ResourceLoader> loader);
 // NOLINTEND
 
 // static variables

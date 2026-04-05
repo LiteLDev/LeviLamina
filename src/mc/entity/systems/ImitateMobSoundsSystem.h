@@ -23,7 +23,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void _tickImitateMobSoundsComponent(::ActorOwnerComponent& actorOwnerComponent);
+#ifdef LL_PLAT_C
+    MCAPI static void _tickImitateMobSoundsComponent(::ActorOwnerComponent& actorOwnerComponent);
+#endif
     // NOLINTEND
 
 public:

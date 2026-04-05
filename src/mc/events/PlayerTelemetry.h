@@ -44,13 +44,16 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddBiomeVisited(::std::string biome);
 
-    MCNAPI_C void ItemAcquired(::std::string const& itemName, ::std::string const& acquisitionMethod, int itemCount);
+#ifdef LL_PLAT_C
+    MCNAPI void ItemAcquired(::std::string const& itemName, ::std::string const& acquisitionMethod, int itemCount);
 
-    MCNAPI_C void ItemEquipped(::std::string const& itemName, int slot, int enchantCount);
+    MCNAPI void ItemEquipped(::std::string const& itemName, int slot, int enchantCount);
+#endif
 
     MCNAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
 
-    MCNAPI_C void MobInteracted(
+#ifdef LL_PLAT_C
+    MCNAPI void MobInteracted(
         ::std::string                                   InteractedEntity,
         bool                                            isBaby,
         bool                                            isGrowthPaused,
@@ -61,6 +64,7 @@ public:
         ::Social::Events::PlayerTelemetryLoadout const& loadout,
         ::std::map<::std::string, ::std::string> const& mobProps
     );
+#endif
 
     MCNAPI PlayerTelemetry();
 

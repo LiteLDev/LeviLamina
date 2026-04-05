@@ -38,11 +38,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void resizeHalfSkinData(::mce::Image& image);
+#ifdef LL_PLAT_C
+    MCAPI static void resizeHalfSkinData(::mce::Image& image);
 
-    MCAPI_C static void validateAlpha(::mce::Image& image, bool isPremium);
+    MCAPI static void validateAlpha(::mce::Image& image, bool isPremium);
 
-    MCAPI_C static bool verifyIsPremiumGeometry(::std::string const& geometryName);
+    MCAPI static bool verifyIsPremiumGeometry(::std::string const& geometryName);
+#endif
     // NOLINTEND
 
 public:

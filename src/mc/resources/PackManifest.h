@@ -98,11 +98,18 @@ public:
     ::ll::TypedStorage<8, 24, ::SemVersion>                                                      mOptimizationVersion;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     PackManifest& operator=(PackManifest const&);
     PackManifest();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PackManifest();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -131,9 +138,11 @@ public:
 
     MCAPI void addPackDependency(::PackIdVersion const& packId);
 
-    MCAPI_C ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
 
-    MCAPI_C ::Core::PathBuffer<::std::string> generateIconPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> generateIconPath() const;
+#endif
 
     MCAPI ::std::string getDescription() const;
 
@@ -143,15 +152,21 @@ public:
 
     MCAPI ::std::string getNameWithVersionForTelemetry() const;
 
-    MCAPI_C ::std::unordered_map<::std::string, ::std::string> getPackNameLocalization() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::unordered_map<::std::string, ::std::string> getPackNameLocalization() const;
+#endif
 
     MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
 
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
-    MCAPI_C bool isRestrictedPack() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isRestrictedPack() const;
 
-    MCAPI_C bool isUsingPackNameKeyword() const;
+    MCAPI bool isUsingPackNameKeyword() const;
+
+    MCAPI ::PackManifest& operator=(::PackManifest const&);
+#endif
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 

@@ -41,9 +41,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _updateLocPath(::Core::Path const& locFilePath);
+#ifdef LL_PLAT_C
+    MCNAPI bool _updateLocPath(::Core::Path const& locFilePath);
 
-    MCNAPI_C void updateLoc();
+    MCNAPI void updateLoc();
+#endif
     // NOLINTEND
 
 public:

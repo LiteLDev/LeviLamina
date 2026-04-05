@@ -166,7 +166,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
+#ifdef LL_PLAT_S
+    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
+#endif
 
     MCAPI static char const* getLogAreaName(::LogArea area);
     // NOLINTEND

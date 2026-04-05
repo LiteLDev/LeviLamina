@@ -26,19 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI JsonData(::std::string key, ::Json::Value value);
 
+    MCNAPI ~JsonData();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string key, ::Json::Value value);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string key, ::Json::Value value);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

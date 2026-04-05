@@ -199,8 +199,9 @@ public:
         bool                                         logNotFound
     ) const;
 
-    MCAPI_C void
-    addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
+#ifdef LL_PLAT_C
+    MCAPI void addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
+#endif
 
     MCAPI void checkBlockPermutationCap() const;
 
@@ -208,11 +209,15 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI_C void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
+#ifdef LL_PLAT_C
+    MCAPI void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
+#endif
 
     MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
-    MCFOLD_C void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
+#ifdef LL_PLAT_C
+    MCFOLD void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
+#endif
 
     MCFOLD void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
@@ -225,14 +230,17 @@ public:
 
     MCAPI ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks() const;
 
-    MCAPI_C int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
+#ifdef LL_PLAT_C
+    MCAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
+#endif
 
     MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
 
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
-    MCAPI_C bool
-    isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
+#endif
 
     MCAPI ::WeakPtr<::BlockType> lookupByName(::HashedString const& name, bool logNotFound) const;
 

@@ -73,7 +73,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _checkWriteBudget(
+#ifdef LL_PLAT_C
+    MCNAPI void _checkWriteBudget(
         ::std::chrono::steady_clock::time_point currentTime,
         uint64                                  budgetLowPoint,
         uint64                                  budgetReplenishPoint,
@@ -82,7 +83,7 @@ public:
         ::std::optional<uint64>                 osMaxWriteSpeed
     );
 
-    MCNAPI_C void update(
+    MCNAPI void update(
         uint64                     byteWrittenPerPeriod,
         ::std::chrono::nanoseconds byteWriteLimitPeriodDuration,
         uint64                     byteWriteLimitPerPeriod,
@@ -90,6 +91,7 @@ public:
         ::std::chrono::nanoseconds writeCountLimitPeriodDuration,
         uint                       writeCountLimitPerPeriod
     );
+#endif
 
     MCNAPI ~DiskAccessDiagnostics();
     // NOLINTEND

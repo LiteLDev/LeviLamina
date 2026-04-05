@@ -19,8 +19,7 @@ MCNAPI void sendDataStorePacketsToClient(
     ::UserEntityIdentifierComponent const* id
 );
 
-MCNAPI_C void
-sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
+MCNAPI void sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
 // NOLINTEND
 
 } // namespace Bedrock::DDUI

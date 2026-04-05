@@ -39,13 +39,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~TransactionContext();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -70,13 +74,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~TelemetryOperationInProgress();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -115,28 +123,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::Threading::Async<bool> beginLargeFileTransaction(
+#ifdef LL_PLAT_C
+    MCNAPI ThrottledFileWriteManager(
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                        appPlatform,
+        ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> oSWriteThrottleTracker
+    );
+
+    MCNAPI ::Bedrock::Threading::Async<bool> beginLargeFileTransaction(
         uint64                                            bytesToBeWritten,
         ::std::string const&                              originatingSystem,
         ::ThrottledFileWriteManager::TransactionContext&& context
     );
 
-    MCNAPI_C void emitTelemetryEvent(
+    MCNAPI void emitTelemetryEvent(
         ::std::string const&                    originatingSystem,
         bool                                    operationWasCancelled,
         ::std::chrono::steady_clock::time_point operationCompleteTimestamp
     );
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> endLargeFileTransaction(::std::string const& originatingSystem);
+    MCNAPI ::Bedrock::Threading::Async<void> endLargeFileTransaction(::std::string const& originatingSystem);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>                        appPlatform,
         ::std::shared_ptr<::Core::WriteThrottledOS::OSWriteThrottleTracker> oSWriteThrottleTracker
     );
+#endif
     // NOLINTEND
 
 public:

@@ -132,8 +132,12 @@ public:
 
     MCAPI ::GameRules& operator=(::GameRules const& rhs);
 
-    MCAPI_C ::Bedrock::PubSub::Subscription
+#ifdef LL_PLAT_C
+    MCAPI bool operator==(::GameRules const& rhs) const;
+
+    MCAPI ::Bedrock::PubSub::Subscription
     registerOnGameRuleChangeCallback(::std::function<void(::GameRules const&, ::GameRuleId const&)> callback);
+#endif
 
     MCAPI void setMarketplaceOverrides();
 

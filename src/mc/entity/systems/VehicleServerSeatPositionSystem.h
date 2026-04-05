@@ -71,7 +71,8 @@ public:
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
 
-    MCAPI_S static void _setSeatDescriptionToActorDataSystemSingleEntity(
+#ifdef LL_PLAT_S
+    MCAPI static void _setSeatDescriptionToActorDataSystemSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<
             ::StrictEntityContext,
@@ -90,5 +91,6 @@ public:
         ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
+#endif
     // NOLINTEND
 };

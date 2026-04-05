@@ -90,7 +90,9 @@ public:
 
     MCAPI void _openLogFile();
 
-    MCAPI_C void _updateAllSettings(::LogSettingsUpdater& _settings);
+#ifdef LL_PLAT_C
+    MCAPI void _updateAllSettings(::LogSettingsUpdater& _settings);
+#endif
 
     MCAPI void closeLog();
 
@@ -103,13 +105,15 @@ public:
         double                _logCycleInS
     );
 
-    MCAPI_S void updateLogFilter(
+#ifdef LL_PLAT_S
+    MCAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,
         ::std::string const&                    filterType,
         ::std::vector<::std::string> const&     filters,
         ::std::string&                          result,
         bool                                    toggle
     );
+#endif
 
     MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
     // NOLINTEND

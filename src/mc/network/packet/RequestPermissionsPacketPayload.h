@@ -37,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void _setFromAbilities(::Abilities const& abilities);
+#ifdef LL_PLAT_C
+    MCAPI void _setFromAbilities(::Abilities const& abilities);
+#endif
     // NOLINTEND
 };

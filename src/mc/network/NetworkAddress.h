@@ -10,15 +10,29 @@ public:
     ::ll::TypedStorage<2, 2, ushort>         port;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    NetworkAddress(NetworkAddress const&);
+    NetworkAddress();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCFOLD ::NetworkAddress& operator=(::NetworkAddress const&);
 
+    MCAPI ~NetworkAddress();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_S void $dtor();
+#ifdef LL_PLAT_S
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

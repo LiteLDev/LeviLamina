@@ -21,11 +21,18 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnUseOn;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     OnUseOnItemComponentLegacyFactoryData& operator=(OnUseOnItemComponentLegacyFactoryData const&);
     OnUseOnItemComponentLegacyFactoryData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    OnUseOnItemComponentLegacyFactoryData();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,6 +47,10 @@ public:
     MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::DefinitionTrigger trigger);
 
     MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData&&);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData const&);
+#endif
     // NOLINTEND
 
 public:

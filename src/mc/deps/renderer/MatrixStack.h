@@ -24,13 +24,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+#ifdef LL_PLAT_C
+        MCAPI ::MatrixStack::MatrixStackRef& operator=(::Matrix const& lhs);
 
+        MCAPI ~MatrixStackRef();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -45,18 +51,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::Matrix& _pushIdentity();
+#ifdef LL_PLAT_C
+    MCAPI ::Matrix& _pushIdentity();
 
-    MCAPI_C ::Matrix& getTop();
+    MCAPI ::Matrix& getTop();
 
-    MCAPI_C ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
+    MCAPI ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
-    MCAPI_C ::Matrix const& sortOriginTransform() const;
+    MCAPI ::Matrix const& sortOriginTransform() const;
+
+    MCAPI ~MatrixStack();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

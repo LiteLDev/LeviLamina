@@ -65,7 +65,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::Tag& emplace(::Tag&& tag);
 
-    MCAPI_C ::Tag* get();
+#ifdef LL_PLAT_C
+    MCAPI ::Tag* get();
+#endif
 
     MCAPI ~CompoundTagVariant();
     // NOLINTEND

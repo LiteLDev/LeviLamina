@@ -99,9 +99,11 @@ public:
         ::BlockVolume&    volume
     ) const;
 
-    MCAPI_C ::SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
+#ifdef LL_PLAT_C
+    MCAPI ::SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
 
-    MCAPI_C bool isPlaceHolderSubChunk() const;
+    MCAPI bool isPlaceHolderSubChunk() const;
+#endif
 
     MCAPI bool isUniform(::Block const& block) const;
 

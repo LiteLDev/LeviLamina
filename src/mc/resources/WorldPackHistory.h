@@ -19,19 +19,34 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk30ef62;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&);
     WorldPackHistory();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WorldPackHistory& operator=(WorldPackHistory const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI WorldPackHistory();
+
+    MCNAPI WorldPackHistory(::WorldPackHistory&&);
+#endif
+
     MCNAPI WorldPackHistory(::WorldPackHistory const&);
 
     MCNAPI bool initializeFromJson(::Json::Value const& value);
 
-    MCNAPI_C void setUnlocalizedName(::std::string const& unlocalizedName);
+#ifdef LL_PLAT_C
+    MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
+#endif
 
     MCNAPI ::Json::Value toJsonValue() const;
 
@@ -41,9 +56,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::WorldPackHistory&&);
+    MCNAPI void* $ctor(::WorldPackHistory&&);
+#endif
 
     MCNAPI void* $ctor(::WorldPackHistory const&);
     // NOLINTEND

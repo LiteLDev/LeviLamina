@@ -15,16 +15,27 @@ struct Degree : public ::type_safe::strong_typedef<::mce::Degree, float>,
                 public ::type_safe::strong_typedef_op::input_operator<::mce::Degree>,
                 public ::type_safe::strong_typedef_op::relational_comparison<::mce::Degree>,
                 public ::type_safe::strong_typedef_op::output_operator<::mce::Degree> {
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    Degree();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_S
+    MCNAPI explicit Degree(::mce::Radian rad);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_S void* $ctor(::mce::Radian rad);
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::mce::Radian rad);
+#endif
     // NOLINTEND
 };
 

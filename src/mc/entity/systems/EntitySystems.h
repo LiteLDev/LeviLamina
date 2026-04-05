@@ -101,7 +101,9 @@ public:
 
     MCAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCAPI_C void registerEvents(::EntityRegistry& registry);
+#ifdef LL_PLAT_C
+    MCAPI void registerEvents(::EntityRegistry& registry);
+#endif
 
     MCAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
@@ -109,13 +111,15 @@ public:
 
     MCAPI void registerTickingSystem(::TickingSystemWithInfo&& system);
 
-    MCAPI_C ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
+#ifdef LL_PLAT_C
+    MCAPI ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
     setSystemInvokeCallbacks(
         ::std::function<void(::TickingSystemId)>&& preInvoke,
         ::std::function<void(::TickingSystemId)>&& postInvoke
     );
 
-    MCAPI_C void tick(::EntityRegistry& registry);
+    MCAPI void tick(::EntityRegistry& registry);
+#endif
     // NOLINTEND
 
 public:

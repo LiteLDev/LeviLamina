@@ -79,7 +79,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _authenticateWithService(
+#ifdef LL_PLAT_C
+    MCNAPI EduWebService(
+        ::std::unique_ptr<::ResponseVerifier>                             verifier,
+        ::std::function<::std::string const()>                            getEduIdentityToken,
+        ::std::function<::std::optional<::EDUConfigData>(::Json::Value&)> clientConfigParser,
+        ::std::string const&                                              appSessionId
+    );
+
+    MCNAPI void _authenticateWithService(
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
                                      callback,
@@ -87,7 +95,7 @@ public:
         ::WebServices::SigninContext context
     );
 
-    MCNAPI_C void _authenticateWithService(
+    MCNAPI void _authenticateWithService(
         ::Bedrock::Http::Response response,
         ::std::function<
             void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
@@ -95,28 +103,33 @@ public:
         ::WebServices::SigninContext context
     );
 
-    MCNAPI_C ::Bedrock::Http::Request
+    MCNAPI ::Bedrock::Http::Request
     getRequest(::std::string_view url, ::std::string apiVersion, bool includeAuth, ::Json::Value&& body);
 
-    MCNAPI_C ::WebServices::EduSignin::EduRole getRole(::std::string const& str);
+    MCNAPI ::WebServices::EduSignin::EduRole getRole(::std::string const& str);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::ActiveDirectoryAuthenticationState
+#ifdef LL_PLAT_C
+    MCNAPI static ::ActiveDirectoryAuthenticationState
     getErrorState(::std::string const& reason, ::WebServices::SigninContext context);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ResponseVerifier>                             verifier,
         ::std::function<::std::string const()>                            getEduIdentityToken,
         ::std::function<::std::optional<::EDUConfigData>(::Json::Value&)> clientConfigParser,
         ::std::string const&                                              appSessionId
     );
+#endif
     // NOLINTEND
 
 public:

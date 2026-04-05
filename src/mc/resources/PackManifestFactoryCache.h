@@ -52,7 +52,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::Core::PathView const& CacheFileName();
+    MCNAPI static ::Core::PathView const& CacheFileName();
     // NOLINTEND
 
 public:

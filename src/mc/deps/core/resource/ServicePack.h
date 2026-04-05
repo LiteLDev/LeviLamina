@@ -18,29 +18,48 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk88d93b;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ServicePack& operator=(ServicePack const&);
     ServicePack(ServicePack const&);
     ServicePack();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ServicePack();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ServicePack(::ServicePack const&);
 
+    MCNAPI ServicePack(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
+
+    MCNAPI ::ServicePack& operator=(::ServicePack const&);
+
+    MCNAPI ~ServicePack();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::ServicePack const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::ServicePack const&);
 
-    MCNAPI_C void* $ctor(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
+    MCNAPI void* $ctor(::PackIdVersion packId, ::Core::PathBuffer<::std::string> downloadUrl);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -17,18 +17,34 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mWeakEntity;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     WeakEntityRef& operator=(WeakEntityRef const&);
     WeakEntityRef(WeakEntityRef const&);
     WeakEntityRef();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    WeakEntityRef(WeakEntityRef const&);
+    WeakEntityRef();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
 
+#ifdef LL_PLAT_C
+    MCAPI bool operator!=(::WeakEntityRef entityRef) const;
+#endif
+
     MCFOLD ::WeakEntityRef& operator=(::WeakEntityRef&&);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::WeakEntityRef& operator=(::WeakEntityRef const&);
+#endif
 
     MCAPI ~WeakEntityRef();
     // NOLINTEND

@@ -31,6 +31,13 @@ public:
     ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant>                            mSrcItemNetId;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    GrindstoneContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -62,23 +69,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
+#ifdef LL_PLAT_C
+    MCNAPI explicit GrindstoneContainerManagerController(
+        ::std::weak_ptr<::GrindstoneContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _grantExperience(::ItemStack const& input, ::ItemStack const& additional) const;
+    MCNAPI bool _createCraftItem(::ItemInstance& instance, ::ItemStackRequestScope const& requestScope);
 
-    MCNAPI_C bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI void _grantExperience(::ItemStack const& input, ::ItemStack const& additional) const;
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCNAPI_C void _updateResult(::ItemInstance const& oldItem);
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C void _updateResultPreview();
+    MCNAPI void _updateResult(::ItemInstance const& oldItem);
+
+    MCNAPI void _updateResultPreview();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::GrindstoneContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::GrindstoneContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

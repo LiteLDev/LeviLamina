@@ -34,7 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::Bedrock::Result<
+#ifdef LL_PLAT_C
+    MCNAPI explicit DeviceIdRecord(::std::string const& deviceId);
+
+    MCNAPI ::Bedrock::DeviceIdRecord& operator=(::Bedrock::DeviceIdRecord&& other);
+
+    MCNAPI ::Bedrock::Result<
         void,
         ::std::variant<
             ::Bedrock::DeviceIdErrorType::FileWriteError,
@@ -42,16 +47,20 @@ public:
             ::Bedrock::DeviceIdErrorType::CacheOpenFailed,
             ::Bedrock::DeviceIdErrorType::ValidationFail>>
     writeToCacheFile(::Core::Path const& pathToCacheFile);
+
+    MCNAPI ~DeviceIdRecord();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static bool _isValid(::std::string const& md5Hash, ::std::string const& guid);
+#ifdef LL_PLAT_C
+    MCNAPI static bool _isValid(::std::string const& md5Hash, ::std::string const& guid);
 
-    MCNAPI_C static ::std::string generateHash(::std::string const& str);
+    MCNAPI static ::std::string generateHash(::std::string const& str);
 
-    MCNAPI_C static ::Bedrock::Result<
+    MCNAPI static ::Bedrock::Result<
         void,
         ::std::variant<
             ::Bedrock::DeviceIdErrorType::FileWriteError,
@@ -64,7 +73,7 @@ public:
         ::Bedrock::DeviceIdRecord& outRecord
     );
 
-    MCNAPI_C static ::Bedrock::Result<
+    MCNAPI static ::Bedrock::Result<
         void,
         ::std::variant<
             ::Bedrock::DeviceIdErrorType::FileWriteError,
@@ -76,24 +85,29 @@ public:
         ::Core::Path const&        pathToCacheFolder,
         ::Bedrock::DeviceIdRecord& outRecord
     );
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static char const*& _cacheRecordFileName();
+    MCNAPI static char const*& _cacheRecordFileName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::string const& deviceId);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& deviceId);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

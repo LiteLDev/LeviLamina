@@ -21,9 +21,9 @@ MCNAPI ::std::vector<::PackIdVersion> getMissingDependencyIdentities(
     ::std::vector<::PackIdVersion> const&                                                   dependencyIdentities
 );
 
-MCNAPI_C bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
+MCNAPI bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
 
-MCNAPI_C bool isNativeModule(::mce::UUID const& uuid);
+MCNAPI bool isNativeModule(::mce::UUID const& uuid);
 // NOLINTEND
 
 } // namespace PackDependencyManager

@@ -129,16 +129,20 @@ public:
 
     MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI_C ::SlotData const& getItemSource(int slot) const;
+#ifdef LL_PLAT_C
+    MCAPI ::SlotData const& getItemSource(int slot) const;
 
-    MCAPI_C int getValidIngredientItemCount(::ItemDescriptor const& descriptor) const;
+    MCAPI int getValidIngredientItemCount(::ItemDescriptor const& descriptor) const;
+#endif
 
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI_C ::Bedrock::PubSub::Subscription registerContainerSizeChangedListener(::std::function<void(int)> callback);
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::PubSub::Subscription registerContainerSizeChangedListener(::std::function<void(int)> callback);
 
-    MCAPI_C ::Bedrock::PubSub::Subscription
+    MCAPI ::Bedrock::PubSub::Subscription
     registerContainerSlotChangedListener(int slot, ::std::function<void(::ItemStackBase const&)> callback);
+#endif
 
     MCAPI void
     registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
@@ -150,7 +154,9 @@ public:
 
     MCAPI void setItemSource(int slot, ::SlotData const& srcSlot);
 
-    MCAPI_C void unregisterTrackedOnContainerChangedCallback(::SharedTypes::Legacy::ContainerType containerType);
+#ifdef LL_PLAT_C
+    MCAPI void unregisterTrackedOnContainerChangedCallback(::SharedTypes::Legacy::ContainerType containerType);
+#endif
     // NOLINTEND
 
 public:

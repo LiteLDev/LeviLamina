@@ -163,7 +163,9 @@ public:
 
     MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
 
-    MCAPI_C static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
+#ifdef LL_PLAT_C
+    MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
+#endif
     // NOLINTEND
 
 public:

@@ -89,13 +89,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::string const& getServicesEndpoint();
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::string const& getServicesEndpoint();
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::EducationServicesEnvironment& mCachedEnvironment();
+    MCNAPI static ::EducationServicesEnvironment& mCachedEnvironment();
     // NOLINTEND
 
 public:

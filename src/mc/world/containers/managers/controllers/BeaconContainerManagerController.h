@@ -47,6 +47,13 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BeaconContainerManagerModel>> mBeaconContainerManagerModel;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BeaconContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,30 +65,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _confirmTransaction();
+#ifdef LL_PLAT_C
+    MCNAPI explicit BeaconContainerManagerController(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI void _confirmTransaction();
 
-    MCNAPI_C ::BeaconContainerManagerController::ClickStatus
+    MCNAPI void _setupCallbacks();
+
+    MCNAPI ::BeaconContainerManagerController::ClickStatus
     buttonClicked(::BeaconContainerManagerController::ButtonId id);
 
-    MCNAPI_C ::std::string getButtonHoverText(::std::string const& buttonName) const;
+    MCNAPI ::std::string getButtonHoverText(::std::string const& buttonName) const;
 
-    MCNAPI_C ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;
+    MCNAPI ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;
 
-    MCNAPI_C bool isSecondaryEffect(::std::string const& buttonName) const;
+    MCNAPI bool isSecondaryEffect(::std::string const& buttonName) const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::BeaconContainerManagerController::ButtonId buttonNameToButtonId(::std::string const& buttonName);
+#ifdef LL_PLAT_C
+    MCNAPI static ::BeaconContainerManagerController::ButtonId buttonNameToButtonId(::std::string const& buttonName);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
+#endif
     // NOLINTEND
 
 public:

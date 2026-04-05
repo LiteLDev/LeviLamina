@@ -29,6 +29,13 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance>                                         mResultItemPreview;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CompoundCreatorContainerManagerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -63,22 +70,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool
-    _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
+#ifdef LL_PLAT_C
+    MCNAPI explicit CompoundCreatorContainerManagerController(
+        ::std::weak_ptr<::CompoundCreatorContainerManagerModel> containerManagerModel
+    );
 
-    MCNAPI_C void _setupCallbacks();
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot, ::ItemTransferAmount amount);
 
-    MCNAPI_C void _updateResultPreview();
+    MCNAPI void _setupCallbacks();
 
-    MCNAPI_C ::std::string getOutputFormula();
+    MCNAPI void _updateResultPreview();
 
-    MCNAPI_C bool isStillValid(float pickRange);
+    MCNAPI ::std::string getOutputFormula();
+
+    MCNAPI bool isStillValid(float pickRange);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::weak_ptr<::CompoundCreatorContainerManagerModel> containerManagerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::weak_ptr<::CompoundCreatorContainerManagerModel> containerManagerModel);
+#endif
     // NOLINTEND
 
 public:

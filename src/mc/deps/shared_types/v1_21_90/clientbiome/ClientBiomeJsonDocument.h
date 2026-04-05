@@ -119,10 +119,23 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mFormatVersion;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ClientBiomeJsonDocument& operator=(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument(ClientBiomeJsonDocument const&);
+    ClientBiomeJsonDocument();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_90::ClientBiomeJsonDocument&&);
 
+    MCAPI ~ClientBiomeJsonDocument();
+#endif
     // NOLINTEND
 
 public:
@@ -134,13 +147,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD_C void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument&&);
+#ifdef LL_PLAT_C
+    MCFOLD void* $ctor(::SharedTypes::v1_21_90::ClientBiomeJsonDocument&&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };
 

@@ -16,7 +16,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD_C ::std::string toUiString() const;
+#ifdef LL_PLAT_C
+    MCFOLD ::std::string toUiString() const;
+#endif
     // NOLINTEND
 
 public:

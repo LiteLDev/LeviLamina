@@ -72,7 +72,7 @@ MCAPI ::Vec3 getFeetPos(::Actor const* entity);
 
 MCAPI ::std::vector<::ActorType> getInvalidCommandEntities();
 
-MCAPI_C ::Player const* getOriginPlayer(::CommandOrigin const& origin);
+MCAPI ::Player const* getOriginPlayer(::CommandOrigin const& origin);
 
 MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 

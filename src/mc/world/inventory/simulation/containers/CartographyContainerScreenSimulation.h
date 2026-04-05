@@ -62,12 +62,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::RecipeNetId _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& additionalStack);
+#ifdef LL_PLAT_C
+    MCNAPI ::RecipeNetId _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& additionalStack);
 
-    MCNAPI_C bool _isRenamingMap(::ItemStack const& inputStack, ::ItemStack const& additionalStack) const;
+    MCNAPI bool _isRenamingMap(::ItemStack const& inputStack, ::ItemStack const& additionalStack) const;
 
-    MCNAPI_C ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
+#endif
     // NOLINTEND
 
 public:

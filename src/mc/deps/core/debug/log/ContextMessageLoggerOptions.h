@@ -13,21 +13,33 @@ public:
     ::ll::UntypedStorage<1, 1> mUnk393c38;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ContextMessageLoggerOptions& operator=(ContextMessageLoggerOptions const&);
     ContextMessageLoggerOptions(ContextMessageLoggerOptions const&);
     ContextMessageLoggerOptions();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ContextMessageLoggerOptions& operator=(ContextMessageLoggerOptions const&);
+    ContextMessageLoggerOptions(ContextMessageLoggerOptions const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI ContextMessageLoggerOptions();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 };

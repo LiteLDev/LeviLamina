@@ -39,16 +39,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI TickTimeManagerClient(
+        ::std::unique_ptr<::ITickTimeManagerProxy>           tickTimeManagerProxy,
+        ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ITickTimeManagerProxy>           tickTimeManagerProxy,
         ::Bedrock::NotNullNonOwnerPtr<::PacketSender> const& packetSender
     );
+#endif
     // NOLINTEND
 
 public:

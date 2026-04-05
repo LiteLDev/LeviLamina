@@ -45,13 +45,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+#ifdef LL_PLAT_C
+        MCAPI bool decodeMusicCommand(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+
+        MCAPI ~CommandData();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+        MCFOLD void $dtor();
+#endif
         // NOLINTEND
     };
 

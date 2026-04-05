@@ -22,22 +22,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void changeOption(::std::variant<bool, int, float, ::std::string> currentValue);
+#ifdef LL_PLAT_C
+    MCNAPI OptionChange(
+        ::std::variant<bool, int, float, ::std::string> initialValue,
+        ::std::variant<bool, int, float, ::std::string> currentValue
+    );
+
+    MCNAPI void changeOption(::std::variant<bool, int, float, ::std::string> currentValue);
+
+    MCNAPI ~OptionChange();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::variant<bool, int, float, ::std::string> initialValue,
         ::std::variant<bool, int, float, ::std::string> currentValue
     );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

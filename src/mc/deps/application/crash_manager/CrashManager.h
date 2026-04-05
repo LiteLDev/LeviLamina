@@ -61,7 +61,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI_C static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_CRASH_DIRECTORY_NAME();
     // NOLINTEND
 
 public:

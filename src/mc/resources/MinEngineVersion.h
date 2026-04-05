@@ -16,16 +16,31 @@ public:
     ::ll::TypedStorage<2, 2, ::MolangVersion>     mMolangVersion;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     MinEngineVersion& operator=(MinEngineVersion const&);
     MinEngineVersion(MinEngineVersion const&);
     MinEngineVersion();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MinEngineVersion();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI MinEngineVersion(::MinEngineVersion const&);
+#endif
+
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::MinEngineVersion& operator=(::MinEngineVersion const&);
+#endif
 
     MCAPI bool operator==(::MinEngineVersion const& rhs) const;
 
@@ -41,7 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::MinEngineVersion const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::MinEngineVersion const&);
+#endif
     // NOLINTEND
 
 public:

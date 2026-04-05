@@ -165,7 +165,9 @@ public:
         int                 amplification
     ) const;
 
-    MCAPI_C ::std::string const& getIconName() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getIconName() const;
+#endif
 
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
@@ -186,7 +188,9 @@ public:
     MCAPI static void
     darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
-    MCAPI_C static ::MobEffect* getById(uint effectId);
+#ifdef LL_PLAT_C
+    MCAPI static ::MobEffect* getById(uint effectId);
+#endif
 
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 

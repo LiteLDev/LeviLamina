@@ -20,14 +20,18 @@ public:
         ::EntityContext&                     liveData
     );
 
-    MCAPI_C static ::TickingSystemWithInfo createCorrectionInterpolationSystem();
+#ifdef LL_PLAT_C
+    MCAPI static ::TickingSystemWithInfo createCorrectionInterpolationSystem();
 
-    MCAPI_C static ::TickingSystemWithInfo createRewindHistorySystem();
+    MCAPI static ::TickingSystemWithInfo createRewindHistorySystem();
 
-    MCAPI_C static ::TickingSystemWithInfo createSystem();
+    MCAPI static ::TickingSystemWithInfo createSystem();
+#endif
 
     MCAPI static ::TickingSystemWithInfo discardHistoryChangesSystem();
 
-    MCAPI_C static ::TickingSystemWithInfo publishHistoryChangesSystem();
+#ifdef LL_PLAT_C
+    MCAPI static ::TickingSystemWithInfo publishHistoryChangesSystem();
+#endif
     // NOLINTEND
 };

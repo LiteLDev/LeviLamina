@@ -20,15 +20,26 @@ public:
     ::ll::TypedStorage<4, 4, ::DimensionType>  dimension;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    SpawnSettings();
+
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     SpawnSettings& operator=(SpawnSettings const&);
     SpawnSettings();
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI SpawnSettings(::SpawnSettings const&);
+
+#ifdef LL_PLAT_S
+    MCAPI ::SpawnSettings& operator=(::SpawnSettings const&);
+#endif
 
     MCAPI ~SpawnSettings();
     // NOLINTEND

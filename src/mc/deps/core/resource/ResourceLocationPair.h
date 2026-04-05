@@ -17,29 +17,50 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk9d3d38;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ResourceLocationPair& operator=(ResourceLocationPair const&);
     ResourceLocationPair(ResourceLocationPair const&);
     ResourceLocationPair();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ResourceLocationPair(ResourceLocationPair const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ResourceLocationPair();
 
+    MCNAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+
+    MCNAPI ::ResourceLocationPair& operator=(::ResourceLocationPair&&);
+
+    MCNAPI ::ResourceLocationPair& operator=(::ResourceLocationPair const&);
+
+    MCNAPI ~ResourceLocationPair();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
 
-    MCNAPI_C void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    MCNAPI void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -20,7 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void fillType(void* data, uint amount);
+#ifdef LL_PLAT_C
+    MCNAPI void fillType(void* data, uint amount);
+#endif
 
     MCNAPI ::std::string getBytes(uint amount);
     // NOLINTEND

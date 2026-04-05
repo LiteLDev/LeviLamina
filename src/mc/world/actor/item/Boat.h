@@ -70,7 +70,9 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI_C ::std::string getExitText(bool isPocket) const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string getExitText(bool isPocket) const;
+#endif
 
     MCFOLD uchar getWoodID() const;
     // NOLINTEND

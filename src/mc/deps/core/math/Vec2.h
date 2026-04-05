@@ -13,7 +13,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI ::Vec2 operator*(float s) const;
 
+    MCAPI ::Vec2 operator+(::Vec2 const& rhs) const;
+#endif
+
+#ifdef LL_PLAT_S
+    MCAPI ::Vec2 operator-(::Vec2 const& rhs) const;
+#endif
     // NOLINTEND
 
 public:

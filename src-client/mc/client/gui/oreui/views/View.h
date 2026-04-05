@@ -7,10 +7,10 @@
 #include "mc/client/gui/oreui/interface/IView.h"
 #include "mc/client/gui/oreui/interface/RouteMode.h"
 #include "mc/client/gui/oreui/interface/ViewState.h"
-#include "mc/deps/cohtml/Cursors.h"
-#include "mc/deps/cohtml/IViewListener.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/TextBoxCaretMovement.h"
+#include "mc/external/gameface/cohtml/Cursors.h"
+#include "mc/external/gameface/cohtml/IViewListener.h"
 #include "mc/platform/brstd/flat_map.h"
 
 // auto generated forward declare list

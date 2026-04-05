@@ -125,7 +125,9 @@ public:
 
     MCAPI void _setupDependencies();
 
-    MCAPI_C ::Option* get(::FeatureOptionID featureID);
+#ifdef LL_PLAT_C
+    MCAPI ::Option* get(::FeatureOptionID featureID);
+#endif
 
     MCAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND

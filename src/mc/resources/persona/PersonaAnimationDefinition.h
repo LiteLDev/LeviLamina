@@ -20,6 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI PersonaAnimationDefinition(::PersonaAnimationDefinition&&);
+#endif
+
     MCNAPI ~PersonaAnimationDefinition();
     // NOLINTEND
 
@@ -32,7 +36,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::PersonaAnimationDefinition&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::PersonaAnimationDefinition&&);
+#endif
     // NOLINTEND
 
 public:

@@ -19,13 +19,14 @@ class TextureSetLayerDefinitionParser {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void _buildTextureSetLayerSchema_v1_16_100(
+#ifdef LL_PLAT_C
+    MCNAPI static void _buildTextureSetLayerSchema_v1_16_100(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>,
             ::cg::TextureSetDefinition>& description
     );
 
-    MCNAPI_C static void _schemaAddChildColor(
+    MCNAPI static void _schemaAddChildColor(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>,
             ::cg::TextureSetDefinition>& description,
@@ -34,13 +35,14 @@ public:
         bool                             ignoreAlpha
     );
 
-    MCNAPI_C static void _schemaAddChildResourceLocation(
+    MCNAPI static void _schemaAddChildResourceLocation(
         ::JsonUtil::JsonSchemaObjectNode<
             ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::cg::TextureSetDefinition>,
             ::cg::TextureSetDefinition>& description,
         ::std::string const&             jsonLayerPropertyName,
         ::cg::TextureSetLayerType const& type
     );
+#endif
     // NOLINTEND
 };
 

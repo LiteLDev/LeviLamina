@@ -72,7 +72,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI_C static ::Vec3 convertToNormalizedVecFromAbs(::Vec3 const& absoluteOrigin, ::Vec3 const& structureSize);
+#ifdef LL_PLAT_C
+    MCNAPI static ::Vec3 convertToNormalizedVecFromAbs(::Vec3 const& absoluteOrigin, ::Vec3 const& structureSize);
+#endif
     // NOLINTEND
 
 public:

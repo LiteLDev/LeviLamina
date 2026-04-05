@@ -140,7 +140,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PackSource(::PackSourceOptions options);
 
-    MCAPI_C void _addPack(::std::shared_ptr<::Pack> pack);
+#ifdef LL_PLAT_C
+    MCAPI void _addPack(::std::shared_ptr<::Pack> pack);
+#endif
 
     MCAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
 
@@ -153,7 +155,9 @@ public:
 
     MCAPI ::PackSourceLoadResult _returnOriginalPacks(::std::shared_ptr<::PackSource::PackTaskData> task);
 
-    MCAPI_C ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::Pack> fetchPack(::PackIdVersion const& packId);
+#endif
 
     MCAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,

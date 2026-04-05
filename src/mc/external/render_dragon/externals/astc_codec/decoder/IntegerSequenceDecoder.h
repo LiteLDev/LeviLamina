@@ -17,8 +17,10 @@ class IntegerSequenceDecoder : public ::astc_codec::IntegerSequenceCodec {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::vector<int>
+#ifdef LL_PLAT_C
+    MCNAPI ::std::vector<int>
     Decode(int num_vals, ::astc_codec::base::BitStream<::astc_codec::base::UInt128>* bit_src) const;
+#endif
     // NOLINTEND
 };
 

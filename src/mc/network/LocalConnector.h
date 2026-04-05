@@ -56,9 +56,11 @@ public:
     // NOLINTBEGIN
     MCNAPI LocalConnector(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
 
-    MCNAPI_C bool connect(::NetworkIdentifier const& id);
+#ifdef LL_PLAT_C
+    MCNAPI bool connect(::NetworkIdentifier const& id);
 
-    MCNAPI_C void connectToClient(::LocalConnector& clientConnector, ::std::shared_ptr<::LocalNetworkPeer> clientPeer);
+    MCNAPI void connectToClient(::LocalConnector& clientConnector, ::std::shared_ptr<::LocalNetworkPeer> clientPeer);
+#endif
 
     MCNAPI void disconnect();
 

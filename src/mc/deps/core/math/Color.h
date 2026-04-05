@@ -21,13 +21,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI Color(::glm::vec3 const& color, float a_);
+#endif
+
     MCAPI Color(float r_, float g_, float b_, float a_);
 
-    MCAPI_C bool isNan() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isNan() const;
+
+    MCAPI bool operator!=(::mce::Color const& c) const;
+
+    MCAPI ::mce::Color& operator*=(float s);
+#endif
 
     MCAPI bool operator==(::mce::Color const& c) const;
 
-    MCAPI_C int toARGB() const;
+#ifdef LL_PLAT_C
+    MCAPI int toARGB() const;
+#endif
 
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
@@ -37,7 +49,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::Color fromARGB(int col);
 
-    MCAPI_C static ::mce::Color fromHSB(float hue, float saturation, float brightness);
+#ifdef LL_PLAT_C
+    MCAPI static ::mce::Color fromHSB(float hue, float saturation, float brightness);
+#endif
 
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
@@ -51,31 +65,31 @@ public:
 
     MCAPI static ::mce::Color const& BLUE();
 
-    MCAPI_C static ::mce::Color const& CYAN();
+    MCAPI static ::mce::Color const& CYAN();
 
     MCAPI static ::mce::Color const& GREEN();
 
-    MCAPI_C static ::mce::Color const& GREY();
+    MCAPI static ::mce::Color const& GREY();
 
     MCAPI static ::mce::Color const& NIL();
 
-    MCAPI_C static ::mce::Color const& ORANGE();
+    MCAPI static ::mce::Color const& ORANGE();
 
-    MCAPI_C static ::mce::Color const& PINK();
+    MCAPI static ::mce::Color const& PINK();
 
     MCAPI static ::mce::Color const& PURPLE();
 
-    MCAPI_C static ::mce::Color const& REBECCA_PURPLE();
+    MCAPI static ::mce::Color const& REBECCA_PURPLE();
 
     MCAPI static ::mce::Color const& RED();
 
-    MCAPI_C static ::mce::Color const& SHADE_DOWN();
+    MCAPI static ::mce::Color const& SHADE_DOWN();
 
-    MCAPI_C static ::mce::Color const& SHADE_NORTH_SOUTH();
+    MCAPI static ::mce::Color const& SHADE_NORTH_SOUTH();
 
-    MCAPI_C static ::mce::Color const& SHADE_UP();
+    MCAPI static ::mce::Color const& SHADE_UP();
 
-    MCAPI_C static ::mce::Color const& SHADE_WEST_EAST();
+    MCAPI static ::mce::Color const& SHADE_WEST_EAST();
 
     MCAPI static ::mce::Color const& WHITE();
 
@@ -85,7 +99,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::glm::vec3 const& color, float a_);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::glm::vec3 const& color, float a_);
+#endif
 
     MCFOLD void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND

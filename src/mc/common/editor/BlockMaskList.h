@@ -29,11 +29,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C bool containsBlock(::HashedString const& blockName) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool containsBlock(::HashedString const& blockName) const;
+#endif
 
     MCNAPI void fromStringList(::std::vector<::std::string> const& blockNames);
 
-    MCNAPI_C bool match(::Block const* block) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool match(::Block const* block) const;
+#endif
 
     MCNAPI ::std::vector<::std::string> toStringList() const;
 

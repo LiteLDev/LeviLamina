@@ -255,7 +255,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::MovementDataExtractionUtility::StorageStorage& getOrInit(::EntityRegistry& registry);
+#ifdef LL_PLAT_C
+    MCNAPI static ::MovementDataExtractionUtility::StorageStorage& getOrInit(::EntityRegistry& registry);
+#endif
     // NOLINTEND
 };
 

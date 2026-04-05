@@ -137,7 +137,9 @@ public:
 
     MCNAPI void _updateLanguageSubpacks();
 
-    MCNAPI_C ::ContentTierIncompatibleReason canSupportPacks();
+#ifdef LL_PLAT_C
+    MCNAPI ::ContentTierIncompatibleReason canSupportPacks();
+#endif
 
     MCNAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -145,15 +147,17 @@ public:
         ::ResourcePackStack const& levelStack
     ) const;
 
-    MCNAPI_C void ensureSupportedSubpacks();
+#ifdef LL_PLAT_C
+    MCNAPI void ensureSupportedSubpacks();
 
-    MCNAPI_C ::std::vector<::ResourceLocationPair> findAllTexturesInUse() const;
+    MCNAPI ::std::vector<::ResourceLocationPair> findAllTexturesInUse() const;
 
-    MCNAPI_C ::std::vector<::PackIdVersion> findInPacks(::ResourceLocation const& resourceLocation) const;
+    MCNAPI ::std::vector<::PackIdVersion> findInPacks(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI_C void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
+    MCNAPI void finishLoadingLinkedAssets(::LinkedAssetValidator& validator);
 
-    MCNAPI_C ::std::vector<::PackInstance> getIncompatiblePacks() const;
+    MCNAPI ::std::vector<::PackInstance> getIncompatiblePacks() const;
+#endif
 
     MCNAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
@@ -161,23 +165,29 @@ public:
 
     MCNAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
 
-    MCNAPI_C bool hasResource(::ResourceLocation const& resourceLocation) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool hasResource(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI_C bool hasResource(
+    MCNAPI bool hasResource(
         ::ResourcePackStack const&       resourcePackStack,
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const;
+#endif
 
     MCNAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
 
-    MCNAPI_C void onLanguageChanged();
+#ifdef LL_PLAT_C
+    MCNAPI void onLanguageChanged();
+#endif
 
     MCNAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
 
-    MCNAPI_C void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
+#ifdef LL_PLAT_C
+    MCNAPI void removePacks(::std::vector<::gsl::not_null<::ResourcePack const*>> const& packs);
 
-    MCNAPI_C void removeUnsupportedPacks();
+    MCNAPI void removeUnsupportedPacks();
+#endif
 
     MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 

@@ -14,11 +14,18 @@ namespace Core { class PathPart; }
 namespace Core {
 
 class Path : public ::Core::PathBuffer<::std::string> {
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     Path& operator=(Path const&);
     Path(Path const&);
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    Path(Path const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
@@ -28,7 +35,15 @@ public:
 
     MCAPI explicit Path(::Core::PathPart const&);
 
+#ifdef LL_PLAT_S
+    MCAPI explicit Path(char const* s);
+#endif
+
     MCFOLD ::Core::Path& operator=(::Core::Path&&);
+
+#ifdef LL_PLAT_C
+    MCFOLD ::Core::Path& operator=(::Core::Path const&);
+#endif
 
     MCAPI ~Path();
     // NOLINTEND
@@ -48,7 +63,9 @@ public:
 
     MCAPI void* $ctor(::Core::PathPart const&);
 
-    MCFOLD_S void* $ctor(char const* s);
+#ifdef LL_PLAT_S
+    MCFOLD void* $ctor(char const* s);
+#endif
     // NOLINTEND
 
 public:

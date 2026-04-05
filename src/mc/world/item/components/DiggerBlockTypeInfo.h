@@ -15,17 +15,28 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                    onDig;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DiggerBlockTypeInfo& operator=(DiggerBlockTypeInfo const&);
     DiggerBlockTypeInfo();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DiggerBlockTypeInfo();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI DiggerBlockTypeInfo(::DiggerBlockTypeInfo const&);
 
     MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo const&);
+#endif
     // NOLINTEND
 
 public:

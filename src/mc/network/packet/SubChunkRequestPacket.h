@@ -29,6 +29,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mArePositionsAbsolute;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    SubChunkRequestPacket();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -46,14 +53,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI SubChunkRequestPacket(
+        ::DimensionType                     dimensionType,
+        ::SubChunkPos const&                playerPos,
+        ::std::vector<::SubChunkPos> const& pos
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void*
+#ifdef LL_PLAT_C
+    MCAPI void*
     $ctor(::DimensionType dimensionType, ::SubChunkPos const& playerPos, ::std::vector<::SubChunkPos> const& pos);
+#endif
     // NOLINTEND
 
 public:

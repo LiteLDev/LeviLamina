@@ -48,7 +48,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::std::array<::std::string_view, 4> const& POSES();
+    MCAPI static ::std::array<::std::string_view, 4> const& POSES();
     // NOLINTEND
 
 public:

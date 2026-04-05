@@ -84,7 +84,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static void tickEntity(
+#ifdef LL_PLAT_C
+    MCAPI static void tickEntity(
         ::StrictEntityContext const&   entity,
         ::ReplayStateComponent&        replay,
         ::ReplayStateTrackerComponent& tracker,
@@ -96,6 +97,7 @@ public:
             ::Optional<::ActorDataBoundingBoxComponent const>,
             ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked
     );
+#endif
     // NOLINTEND
 
 public:

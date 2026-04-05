@@ -35,13 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCAPI EnumOption(
         ::OptionID                                      id,
         ::OptionOwnerType                               ownerType,
         ::OptionResetFlags                              resetFlags,
@@ -52,6 +47,25 @@ public:
         ::std::unordered_map<int, ::std::string> const& valueNameMap,
         ::GameVersion                                   version
     );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(
+        ::OptionID                                      id,
+        ::OptionOwnerType                               ownerType,
+        ::OptionResetFlags                              resetFlags,
+        ::std::string const&                            captionId,
+        ::std::string const&                            saveTag,
+        int                                             value,
+        ::std::vector<int> const&                       values,
+        ::std::unordered_map<int, ::std::string> const& valueNameMap,
+        ::GameVersion                                   version
+    );
+#endif
     // NOLINTEND
 
 public:

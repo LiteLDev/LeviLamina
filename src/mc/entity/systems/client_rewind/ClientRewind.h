@@ -28,14 +28,14 @@ struct ReplayStateValidFrameSupportComponent;
 namespace ClientRewind {
 // functions
 // NOLINTBEGIN
-MCAPI_C void _advanceRewindFrameSystem(
+MCAPI void _advanceRewindFrameSystem(
     ::Optional<::MoveInputComponent const>                    moveInputComponent,
     ::Optional<::ReplayStateValidFrameSupportComponent const> validFrameSupportComponent,
     ::ActorOwnerComponent&                                    actorOwnerComponent,
     ::ReplayStateComponent&                                   replayStateComponent
 );
 
-MCAPI_C void _tickAdvanceRewindFrameSystem(
+MCAPI void _tickAdvanceRewindFrameSystem(
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent>,
@@ -55,14 +55,14 @@ MCAPI void tickAccumulate(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCAPI_C void tickCorrectionInterpolation(
+MCAPI void tickCorrectionInterpolation(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                     entity,
     ::DynamicRenderOffsetComponent&                  offset,
     ::EntityModifier<::DynamicRenderOffsetComponent> modifier
 );
 
-MCAPI_C void tickPublish(
+MCAPI void tickPublish(
     ::ReplayStateComponent&        replay,
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
@@ -73,8 +73,7 @@ MCAPI_C void tickPublish(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
-MCAPI_C void
-tickRewindHistory(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::ReplayStateComponent> const& view);
+MCAPI void tickRewindHistory(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::ReplayStateComponent> const& view);
 // NOLINTEND
 
 } // namespace ClientRewind

@@ -27,12 +27,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
+#ifdef LL_PLAT_C
+    MCAPI void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
+
+    MCAPI ~NPCDialogueData();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

@@ -42,13 +42,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+        MCNAPI ~MigrationProgress();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -70,12 +74,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::function<::TaskResult()> createMigrationTask(
+#ifdef LL_PLAT_C
+    MCNAPI ::std::function<::TaskResult()> createMigrationTask(
         ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>                           manifest,
         ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>                             filesToMigrate,
         ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)> progressCallback,
         ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>                    completeCallback
     );
+#endif
     // NOLINTEND
 
 public:

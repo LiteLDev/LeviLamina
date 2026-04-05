@@ -717,7 +717,9 @@ public:
         bool                                           positionFromSave
     );
 
-    MCAPI_C void _checkMovementShouldStopEmoting();
+#ifdef LL_PLAT_C
+    MCAPI void _checkMovementShouldStopEmoting();
+#endif
 
     MCAPI void _chooseSpawnArea();
 
@@ -834,7 +836,9 @@ public:
 
     MCAPI float getLuck();
 
-    MCAPI_C void getNewEnchantmentSeed();
+#ifdef LL_PLAT_C
+    MCAPI void getNewEnchantmentSeed();
+#endif
 
     MCAPI ::AABB getPickupArea() const;
 
@@ -846,7 +850,8 @@ public:
 
     MCAPI int getXpNeededForNextLevel() const;
 
-    MCAPI_C void handleMovePlayerPacket(
+#ifdef LL_PLAT_C
+    MCAPI void handleMovePlayerPacket(
         ::PlayerPositionModeComponent::PositionMode mode,
         ::Vec3 const&                               pos,
         ::Vec2 const&                               rot,
@@ -854,6 +859,7 @@ public:
         int                                         cause,
         int                                         sourceEntityType
     );
+#endif
 
     MCAPI bool hasResource(::ItemDescriptor const& resource);
 
@@ -871,7 +877,9 @@ public:
 
     MCAPI bool is2DPositionRelevant(::DimensionType dimension, ::BlockPos const& position);
 
-    MCAPI_C bool isEmoting() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isEmoting() const;
+#endif
 
     MCAPI bool isEquipmentHidden() const;
 
@@ -887,7 +895,9 @@ public:
 
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
-    MCAPI_C bool isScoping() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isScoping() const;
+#endif
 
     MCAPI void loadLastDeathLocation(::CompoundTag const& tag);
 
@@ -902,7 +912,9 @@ public:
 
     MCAPI void recheckSpawnPosition();
 
-    MCAPI_C void registerTrackedBoss(::ActorUniqueID mob);
+#ifdef LL_PLAT_C
+    MCAPI void registerTrackedBoss(::ActorUniqueID mob);
+#endif
 
     MCAPI void releaseUsingItem();
 
@@ -916,7 +928,9 @@ public:
 
     MCAPI void setBedRespawnPosition(::BlockPos const& bedPosition);
 
-    MCAPI_C void setChunkRadius(uint chunkRadius);
+#ifdef LL_PLAT_C
+    MCAPI void setChunkRadius(uint chunkRadius);
+#endif
 
     MCAPI void setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> manager);
 
@@ -926,7 +940,9 @@ public:
 
     MCAPI void setLastDeathPos(::BlockPos pos);
 
-    MCAPI_C void setLastHurtBy(::ActorType lastHurtBy);
+#ifdef LL_PLAT_C
+    MCAPI void setLastHurtBy(::ActorType lastHurtBy);
+#endif
 
     MCAPI void setName(::std::string const& newName);
 
@@ -967,7 +983,9 @@ public:
 
     MCAPI void unRegisterTrackedBoss(::ActorUniqueID mob);
 
-    MCAPI_C bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
+#ifdef LL_PLAT_C
+    MCAPI bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
+#endif
 
     MCAPI void updateInventoryTransactions();
 
@@ -983,7 +1001,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void _causeFoodExhaustion(::MutableAttributeWithContext& attribute, float exhaustionAmount);
 
-    MCAPI_C static ::std::optional<::Player::FixedSpawnPositionData> checkAndFixSpawnPosition(
+#ifdef LL_PLAT_C
+    MCAPI static ::std::optional<::Player::FixedSpawnPositionData> checkAndFixSpawnPosition(
         ::Vec3 const&                                  spawnPosition,
         ::std::vector<::gsl::not_null<::BlockSource*>> regions,
         ::AABB                                         aabb,
@@ -993,6 +1012,7 @@ public:
         bool                                           spawningAtForcedSpawn,
         short                                          dimensionHeight
     );
+#endif
 
     MCAPI static ::std::optional<::Player::FixedSpawnPositionData_DEPRECATED> checkAndFixSpawnPosition_DEPRECATED(
         ::Vec3 const&                                  spawnPosition,
@@ -1019,7 +1039,9 @@ public:
 
     MCAPI static bool isDangerousVolumeForSpawn(::BlockSource& region, ::AABB const& centeredAABB);
 
-    MCAPI_C static bool isDangerousVolumeForSpawnFromSave(::BlockSource& region, ::AABB const& centeredAABB);
+#ifdef LL_PLAT_C
+    MCAPI static bool isDangerousVolumeForSpawnFromSave(::BlockSource& region, ::AABB const& centeredAABB);
+#endif
 
     MCAPI static bool
     isDangerousVolume_DEPRECATED(::BlockSource& region, ::AABB const& centeredAABB, bool checkForLava);

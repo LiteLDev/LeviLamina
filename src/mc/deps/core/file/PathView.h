@@ -40,9 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
+#endif
+
     MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const& src);
 
+#ifdef LL_PLAT_C
+    MCNAPI explicit PathView(::std::string const& src);
+#endif
+
     MCNAPI explicit PathView(::Core::Path const& src);
+
+#ifdef LL_PLAT_C
+    MCNAPI explicit PathView(char const* src);
+#endif
 
     MCNAPI bool operator==(::Core::PathView const& rhs) const;
 
@@ -52,15 +64,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
+#endif
 
     MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& src);
 
-    MCNAPI_C void* $ctor(::std::string const& src);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::string const& src);
+#endif
 
     MCNAPI void* $ctor(::Core::Path const& src);
 
-    MCNAPI_C void* $ctor(char const* src);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(char const* src);
+#endif
     // NOLINTEND
 
 public:

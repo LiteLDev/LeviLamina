@@ -39,10 +39,12 @@ public:
 
     MCNAPI void pushSnapshot();
 
-    MCNAPI_C void toTelemetryEvent(
+#ifdef LL_PLAT_C
+    MCNAPI void toTelemetryEvent(
         ::Social::Events::Event&               event,
         ::DBStorageFolderWatcherSnapshotKind   kind,
         ::Social::Events::PrivacyTagEnterprise privacyTag
     ) const;
+#endif
     // NOLINTEND
 };

@@ -30,19 +30,34 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::std::variant<::ItemQueryOptions, bool>>> mProcessedItemQueryOptions;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ScriptItemFilter& operator=(ScriptItemFilter const&);
     ScriptItemFilter(ScriptItemFilter const&);
     ScriptItemFilter();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScriptItemFilter();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
+#ifdef LL_PLAT_C
+    MCAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter const&);
+#endif
+
     MCAPI ::nonstd::expected<::ItemQueryOptions, ::std::vector<::ScriptModuleMinecraft::ScriptItemFilterError>>
     getItemQueryOptions(::Scripting::WeakLifetimeScope const& scope) const;
+
+#ifdef LL_PLAT_C
+    MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter const&);
+#endif
 
     MCAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
 
@@ -60,7 +75,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
-    MCAPI_C void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
+#endif
     // NOLINTEND
 
 public:

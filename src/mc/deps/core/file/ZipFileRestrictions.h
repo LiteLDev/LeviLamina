@@ -18,28 +18,48 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkafe69e;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     ZipFileRestrictions& operator=(ZipFileRestrictions const&);
     ZipFileRestrictions(ZipFileRestrictions const&);
     ZipFileRestrictions();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ZipFileRestrictions& operator=(ZipFileRestrictions const&);
+    ZipFileRestrictions();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ZipFileRestrictions(::Core::ZipUtils::ZipFileRestrictions const&);
+#endif
+
     MCNAPI bool allowFile(::Core::PathView file) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ~ZipFileRestrictions();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::Core::ZipUtils::ZipFileRestrictions const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::Core::ZipUtils::ZipFileRestrictions const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

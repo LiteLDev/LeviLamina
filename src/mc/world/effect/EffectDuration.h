@@ -12,7 +12,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::std::optional<int> getValue() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::optional<int> getValue() const;
+
+    MCAPI bool operator<(int rhs) const;
+#endif
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

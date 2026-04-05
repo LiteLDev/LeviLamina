@@ -11,10 +11,14 @@ struct ProfileTypeConverter {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
+#ifdef LL_PLAT_C
+    MCAPI static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
+#endif
 
-    MCAPI_S static ::std::string_view
+#ifdef LL_PLAT_S
+    MCAPI static ::std::string_view
     getStringFromProfileType(::persona::ProfileType typeToGetStringFor, bool nonLegacyStrDesired);
+#endif
     // NOLINTEND
 };
 

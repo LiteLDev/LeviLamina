@@ -37,18 +37,87 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mDisableTrickleIce;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     GameConnectionInfo(GameConnectionInfo const&);
 
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameConnectionInfo();
 
-    MCAPI_C ::std::string getCorrelationId() const;
+#ifdef LL_PLAT_C
+    MCAPI GameConnectionInfo(::Social::GameConnectionInfo&&);
 
-    MCAPI_C ::std::string const getRakNetGUID() const;
+    MCAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
+
+    MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
+
+    MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType            connectionType,
+        ::NetherNet::NetworkID const&       netherNetId,
+        ::PlayerMessaging::NetworkID const& playerMessagingId
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::GatheringServerInfo const&  serverInfo
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::ThirdPartyInfo const&       serverInfo
+    );
+
+    MCAPI GameConnectionInfo(
+        ::RakNet::SystemAddress      connection,
+        ::RakNet::RakNetGUID const&  rakGuid,
+        ::ThirdPartyInfo const&      serverInfo,
+        ::GatheringServerInfo const& gatheringServerInfo
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType     connectionType,
+        ::std::string const&         ipAddress,
+        int                          port,
+        ::GatheringServerInfo const& serverInfo
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType connectionType,
+        ::std::string const&     ipAddress,
+        int                      port,
+        ::ThirdPartyInfo const&  serverInfo
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType      connectionType,
+        ::NetherNet::NetworkID const& netherNetId,
+        ::std::string&                serverRegion,
+        int                           serviceQuality
+    );
+
+    MCAPI GameConnectionInfo(
+        ::Social::ConnectionType connectionType,
+        ::std::string const&     ipAddress,
+        int                      port,
+        ::std::string&           serverRegion,
+        int                      serviceQuality
+    );
+
+    MCAPI ::std::string getCorrelationId() const;
+
+    MCAPI ::std::string const getRakNetGUID() const;
+
+    MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
+#endif
 
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
 
@@ -58,7 +127,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Social::GameConnectionInfo fromJson(::Json::Value const& properties);
+#ifdef LL_PLAT_C
+    MCAPI static ::Social::GameConnectionInfo fromJson(::Json::Value const& properties);
+#endif
     // NOLINTEND
 
 public:
@@ -66,67 +137,69 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::Social::GameConnectionInfo&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Social::GameConnectionInfo&&);
 
-    MCAPI_C void* $ctor(::Social::GameConnectionInfo const&);
+    MCAPI void* $ctor(::Social::GameConnectionInfo const&);
 
-    MCAPI_C void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
+    MCAPI void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
-    MCAPI_C void* $ctor(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
+    MCAPI void* $ctor(::Social::ConnectionType connectionType, ::std::string const& ipAddress, int port);
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType            connectionType,
         ::NetherNet::NetworkID const&       netherNetId,
         ::PlayerMessaging::NetworkID const& playerMessagingId
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::GatheringServerInfo const&  serverInfo
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::RakNet::SystemAddress      connection,
         ::RakNet::RakNetGUID const&  rakGuid,
         ::ThirdPartyInfo const&      serverInfo,
         ::GatheringServerInfo const& gatheringServerInfo
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType     connectionType,
         ::std::string const&         ipAddress,
         int                          port,
         ::GatheringServerInfo const& serverInfo
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::std::string const&     ipAddress,
         int                      port,
         ::ThirdPartyInfo const&  serverInfo
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::std::string&                serverRegion,
         int                           serviceQuality
     );
 
-    MCAPI_C void* $ctor(
+    MCAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::std::string const&     ipAddress,
         int                      port,
         ::std::string&           serverRegion,
         int                      serviceQuality
     );
+#endif
     // NOLINTEND
 
 public:

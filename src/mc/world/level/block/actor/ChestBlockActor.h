@@ -224,8 +224,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::std::unique_ptr<::ChestBlockActor>
+#ifdef LL_PLAT_C
+    MCAPI static ::std::unique_ptr<::ChestBlockActor>
     createChestBlockEntity(::std::optional<::ChestType> const& chestType, ::BlockPos const& pos);
+#endif
     // NOLINTEND
 
 public:

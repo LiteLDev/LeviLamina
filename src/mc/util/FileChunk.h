@@ -13,15 +13,30 @@ public:
     ::ll::TypedStorage<8, 24, ::FileChunkInfo>      info;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    FileChunk& operator=(FileChunk const&);
+    FileChunk(FileChunk const&);
+    FileChunk();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ::FileChunk& operator=(::FileChunk&&);
 
+    MCNAPI ~FileChunk();
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

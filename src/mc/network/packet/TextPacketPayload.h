@@ -145,7 +145,9 @@ public:
 
     MCAPI TextPacketPayload(::TextPacketPayload const&);
 
-    MCAPI_C ::std::string const& getAuthorOrEmpty() const;
+#ifdef LL_PLAT_C
+    MCAPI ::std::string const& getAuthorOrEmpty() const;
+#endif
 
     MCAPI ::std::string const& getMessage() const;
 

@@ -22,7 +22,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
-    MCAPI_C ::ItemInstance getItemInstanceCopy() const;
+#ifdef LL_PLAT_C
+    MCAPI ::ItemInstance getItemInstanceCopy() const;
+#endif
 
     MCAPI ~ItemGroup();
     // NOLINTEND

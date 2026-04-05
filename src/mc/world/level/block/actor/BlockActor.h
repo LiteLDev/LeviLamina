@@ -169,7 +169,9 @@ public:
 
     MCAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
 
-    MCAPI_C ::Bedrock::Safety::RedactableString getDisplayName() const;
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Safety::RedactableString getDisplayName() const;
+#endif
 
     MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
     // NOLINTEND

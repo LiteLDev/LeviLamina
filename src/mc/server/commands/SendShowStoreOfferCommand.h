@@ -35,7 +35,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_S static void setup(::CommandRegistry& registry);
+#ifdef LL_PLAT_S
+    MCAPI static void setup(::CommandRegistry& registry);
+#endif
     // NOLINTEND
 
 public:

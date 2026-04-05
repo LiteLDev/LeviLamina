@@ -138,7 +138,9 @@ public:
 
     MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
 
-    MCAPI_C ::StructureTemplate* importStructure(::std::string const& structureName, ::Core::Path const& filePath);
+#ifdef LL_PLAT_C
+    MCAPI ::StructureTemplate* importStructure(::std::string const& structureName, ::Core::Path const& filePath);
+#endif
 
     MCAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
 

@@ -33,7 +33,9 @@ public:
 
     MCNAPI bool isExcludedActor(::Actor const& actor) const;
 
-    MCNAPI_C bool isExcludedBlock(::BlockType const& block) const;
+#ifdef LL_PLAT_C
+    MCNAPI bool isExcludedBlock(::BlockType const& block) const;
+#endif
 
     MCNAPI ::CameraAimAssist::PriorityPresetExclusionData& operator=(::CameraAimAssist::PriorityPresetExclusionData&&);
 

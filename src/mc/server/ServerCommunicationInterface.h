@@ -25,9 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_S void communicate(::std::string const& method, ::Json::Value const& params);
+#ifdef LL_PLAT_S
+    MCNAPI void communicate(::std::string const& method, ::Json::Value const& params);
 
-    MCNAPI_S void sendBandwidthMetric(
+    MCNAPI void sendBandwidthMetric(
         uint64               connectionTotalBytesReceived,
         uint64               connectionTotalBytesSent,
         uint64               playerDeltaBytesReceived,
@@ -35,12 +36,15 @@ public:
         ::std::string const& xuid
     );
 
-    MCNAPI_S void sendServerStarted();
+    MCNAPI void sendServerStarted();
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_S static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
+#endif
     // NOLINTEND
 };

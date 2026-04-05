@@ -21,18 +21,33 @@ public:
         mPriorityCategoryList;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     CameraAimAssistRegistryComponent& operator=(CameraAimAssistRegistryComponent const&);
     CameraAimAssistRegistryComponent(CameraAimAssistRegistryComponent const&);
     CameraAimAssistRegistryComponent();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CameraAimAssistRegistryComponent& operator=(CameraAimAssistRegistryComponent const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI CameraAimAssistRegistryComponent();
+#endif
+
     MCAPI CameraAimAssistRegistryComponent(::CameraAimAssistRegistryComponent&&);
 
-    MCAPI_C bool hasPriorityPreset(::HashedString const& id) const;
+#ifdef LL_PLAT_C
+    MCAPI CameraAimAssistRegistryComponent(::CameraAimAssistRegistryComponent const&);
+
+    MCAPI bool hasPriorityPreset(::HashedString const& id) const;
+#endif
 
     MCAPI ::CameraAimAssistRegistryComponent& operator=(::CameraAimAssistRegistryComponent&&);
 
@@ -44,11 +59,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::CameraAimAssistRegistryComponent&&);
 
-    MCAPI_C void* $ctor(::CameraAimAssistRegistryComponent const&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::CameraAimAssistRegistryComponent const&);
+#endif
     // NOLINTEND
 
 public:

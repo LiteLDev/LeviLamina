@@ -13,7 +13,9 @@ class StreamedResources {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static bool shouldStream(::ResourceLocation const& resourceLocation);
+#ifdef LL_PLAT_C
+    MCNAPI static bool shouldStream(::ResourceLocation const& resourceLocation);
+#endif
     // NOLINTEND
 
 public:

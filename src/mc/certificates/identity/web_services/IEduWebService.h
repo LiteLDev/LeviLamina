@@ -52,9 +52,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static void commonSigninBody(::Json::Value& body, ::std::string const& appSessionId);
+#ifdef LL_PLAT_C
+    MCNAPI static void commonSigninBody(::Json::Value& body, ::std::string const& appSessionId);
 
-    MCNAPI_C static void setupDemoIdentity(::Json::Value& body);
+    MCNAPI static void setupDemoIdentity(::Json::Value& body);
+#endif
     // NOLINTEND
 
 public:

@@ -15,13 +15,13 @@ namespace MovementDataExtractionUtility { struct Extractors; }
 namespace MovementDataExtractionUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::MovementDataExtractionUtility::Extractors _buildInitialRewindExtractors();
+MCNAPI ::MovementDataExtractionUtility::Extractors _buildInitialRewindExtractors();
 
-MCNAPI_C ::AttributesComponent copyComponent(::AttributesComponent const& attributes);
+MCNAPI ::AttributesComponent copyComponent(::AttributesComponent const& attributes);
 
 MCNAPI void extractExternalData(::ExternalDataSnapshotComponent& component, ::EntityRegistry& context);
 
-MCNAPI_C void extractPackedSnapshot(
+MCNAPI void extractPackedSnapshot(
     ::EntityRegistry&            sourceContext,
     ::EntityRegistry&            targetContext,
     ::StrictEntityContext const& source,
@@ -29,9 +29,9 @@ MCNAPI_C void extractPackedSnapshot(
     bool                         removeWhenMissing
 );
 
-MCNAPI_C void tryStoreImmutableDataSnapshotOnEntity(::EntityContext& liveEntity);
+MCNAPI void tryStoreImmutableDataSnapshotOnEntity(::EntityContext& liveEntity);
 
-MCNAPI_C void unpackImmutableSnapshot(
+MCNAPI void unpackImmutableSnapshot(
     ::EntityRegistry&            sourceContext,
     ::EntityRegistry&            targetContext,
     ::StrictEntityContext const& sourceSnapshot,
@@ -39,7 +39,7 @@ MCNAPI_C void unpackImmutableSnapshot(
     bool
 );
 
-MCNAPI_C void unpackSnapshot(
+MCNAPI void unpackSnapshot(
     ::EntityRegistry&            sourceContext,
     ::EntityRegistry&            targetContext,
     ::StrictEntityContext const& sourceSnapshot,

@@ -275,13 +275,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit VaultBlockActor(::BlockPos const& pos);
 
-    MCAPI_C void clientEmitActivationParticles(::BlockSource& region) const;
+#ifdef LL_PLAT_C
+    MCAPI void clientEmitActivationParticles(::BlockSource& region) const;
 
-    MCAPI_C void clientEmitConnectedParticles(::BlockSource& region) const;
+    MCAPI void clientEmitConnectedParticles(::BlockSource& region) const;
 
-    MCAPI_C void clientEmitDeactivationParticles(::BlockSource& region) const;
+    MCAPI void clientEmitDeactivationParticles(::BlockSource& region) const;
 
-    MCAPI_C ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+#endif
     // NOLINTEND
 
 public:

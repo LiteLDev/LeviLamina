@@ -124,15 +124,21 @@ public:
 
     MCAPI void _initializeWorldIconPath(::Core::Path const& directory);
 
-    MCAPI_C bool cloudSaveForWorldIsEnabled() const;
+#ifdef LL_PLAT_C
+    MCAPI bool cloudSaveForWorldIsEnabled() const;
 
-    MCAPI_C bool isEditionCompatible() const;
+    MCAPI bool isEditionCompatible() const;
 
-    MCAPI_C bool isVersionCompatible() const;
+    MCAPI bool isVersionCompatible() const;
+#endif
 
     MCAPI ::LevelSummary& operator=(::LevelSummary const&);
 
-    MCAPI_C ::LevelSummary& setId(::std::string Id);
+#ifdef LL_PLAT_C
+    MCAPI bool operator==(::LevelSummary const& rhs) const;
+
+    MCAPI ::LevelSummary& setId(::std::string Id);
+#endif
 
     MCAPI ::LevelSummary& setName(::std::string Name);
 
@@ -142,8 +148,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI_C static ::Core::PathBuffer<::std::string>
+#ifdef LL_PLAT_C
+    MCAPI static ::Core::PathBuffer<::std::string>
     buildScreenshotIconPath(::Core::Path const& worldDirectory, ::Core::Path const& previousScreenshotIconPath);
+#endif
     // NOLINTEND
 
 public:

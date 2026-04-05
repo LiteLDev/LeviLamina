@@ -18,16 +18,16 @@ namespace Bedrock {
 // NOLINTBEGIN
 MCAPI ::std::unique_ptr<::Bedrock::DeviceIdManager> _createDefaultDeviceIdManager();
 
-MCAPI_C ::std::unique_ptr<::HIDControllerGameCoreDesktop> _createHIDController(
+MCAPI ::std::unique_ptr<::HIDControllerGameCoreDesktop> _createHIDController(
     ::HWND__* hwnd,
     ::std::queue<
         ::brstd::move_only_function<void(::IMinecraftEventing*)>,
         ::std::deque<::brstd::move_only_function<void(::IMinecraftEventing*)>>>& events
 );
 
-MCAPI_C void fileNameToSessionID(::std::string& out, ::Core::PathBuffer<::std::string> const& filePath);
+MCAPI void fileNameToSessionID(::std::string& out, ::Core::PathBuffer<::std::string> const& filePath);
 
-MCAPI_S int strtoint32(char const* str, char** endptr, int base);
+MCAPI int strtoint32(char const* str, char** endptr, int base);
 
 MCAPI void throw_system_error(::std::errc errc);
 // NOLINTEND

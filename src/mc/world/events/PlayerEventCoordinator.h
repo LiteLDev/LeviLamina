@@ -43,7 +43,9 @@ public:
 
     MCAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
-    MCAPI_C void sendPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+#ifdef LL_PLAT_C
+    MCAPI void sendPlayerPortalBuilt(::Player& player, ::DimensionType dimensionBuiltIn);
+#endif
     // NOLINTEND
 
 public:

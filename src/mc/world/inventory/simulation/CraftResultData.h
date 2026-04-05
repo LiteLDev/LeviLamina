@@ -28,6 +28,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::std::optional<::RecipeNetId> getRecipeId(::ContainerScreenActionResult const& result);
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::optional<::RecipeNetId> getRecipeId(::ContainerScreenActionResult const& result);
+#endif
     // NOLINTEND
 };

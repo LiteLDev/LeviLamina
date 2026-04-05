@@ -151,7 +151,9 @@ public:
 
     MCAPI ::PlayerActionComponent readIntoComponent() const;
 
-    MCAPI_C void setFromComponent(::PlayerActionComponent& input);
+#ifdef LL_PLAT_C
+    MCAPI void setFromComponent(::PlayerActionComponent& input);
+#endif
     // NOLINTEND
 
 public:

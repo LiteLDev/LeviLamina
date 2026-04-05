@@ -23,11 +23,18 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                  mOnDigDefault;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     DiggerItemComponentLegacyFactoryData& operator=(DiggerItemComponentLegacyFactoryData const&);
     DiggerItemComponentLegacyFactoryData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    DiggerItemComponentLegacyFactoryData();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,6 +47,10 @@ public:
     MCAPI DiggerItemComponentLegacyFactoryData(::DiggerItemComponentLegacyFactoryData const&);
 
     MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData&&);
+
+#ifdef LL_PLAT_C
+    MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData const&);
+#endif
     // NOLINTEND
 
 public:

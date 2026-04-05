@@ -16,6 +16,10 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::string asString() const;
 
+#ifdef LL_PLAT_C
+    MCAPI bool operator!=(::mce::UUID const& rhs) const;
+#endif
+
     MCFOLD bool operator==(::mce::UUID const& rhs) const;
     // NOLINTEND
 
@@ -32,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& EMPTY();
 
-    MCAPI_C static uint64& STRING_LENGTH();
+    MCAPI static uint64& STRING_LENGTH();
     // NOLINTEND
 };
 

@@ -42,7 +42,9 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Actor* getEntity() const;
 
-    MCAPI_C void recipeChanged();
+#ifdef LL_PLAT_C
+    MCAPI void recipeChanged();
+#endif
     // NOLINTEND
 
 public:

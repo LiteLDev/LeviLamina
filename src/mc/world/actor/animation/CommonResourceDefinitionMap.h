@@ -25,21 +25,40 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>           mQueryableGeometryBoneNames;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CommonResourceDefinitionMap& operator=(CommonResourceDefinitionMap const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommonResourceDefinitionMap();
 
+#ifdef LL_PLAT_C
+    MCAPI CommonResourceDefinitionMap(::CommonResourceDefinitionMap&&);
+
+    MCAPI CommonResourceDefinitionMap(::CommonResourceDefinitionMap const&);
+#endif
+
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
-    MCAPI_C void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
+#ifdef LL_PLAT_C
+    MCAPI void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
 
-    MCAPI_C void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
+    MCAPI void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
+#endif
 
     MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
     MCAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
+
+#ifdef LL_PLAT_C
+    MCAPI ~CommonResourceDefinitionMap();
+#endif
     // NOLINTEND
 
 public:
@@ -47,14 +66,18 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI_C void* $ctor(::CommonResourceDefinitionMap&&);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::CommonResourceDefinitionMap&&);
 
-    MCAPI_C void* $ctor(::CommonResourceDefinitionMap const&);
+    MCAPI void* $ctor(::CommonResourceDefinitionMap const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };

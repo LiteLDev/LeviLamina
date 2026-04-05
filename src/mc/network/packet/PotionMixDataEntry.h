@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+#endif
     // NOLINTEND
 };

@@ -23,6 +23,13 @@ public:
     ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    PartyChangedPacket();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,13 +78,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI explicit PartyChangedPacket(::PartyChangedPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::PartyChangedPacketPayload payload);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::PartyChangedPacketPayload payload);
+#endif
     // NOLINTEND
 
 public:

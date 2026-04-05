@@ -32,9 +32,27 @@ public:
         mType;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    MovementIntent();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI explicit MovementIntent(
+        ::std::variant<
+            ::sim::VoidMoveIntent,
+            ::sim::MoveInDirectionIntent,
+            ::sim::MoveToPositionIntent,
+            ::sim::NavigateToPositionsIntent,
+            ::sim::NavigateToEntityIntent> type
+    );
+#endif
+
     MCNAPI void finalize(::SimulatedPlayer& player);
 
     MCNAPI ~MovementIntent();
@@ -43,7 +61,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::variant<
             ::sim::VoidMoveIntent,
             ::sim::MoveInDirectionIntent,
@@ -51,6 +70,7 @@ public:
             ::sim::NavigateToPositionsIntent,
             ::sim::NavigateToEntityIntent> type
     );
+#endif
     // NOLINTEND
 
 public:

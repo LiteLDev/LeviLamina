@@ -23,28 +23,54 @@ public:
     ::ll::TypedStorage<4, 64, ::Matrix>                mWorldAbsoluteTransform;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ModelPartLocator();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI_C bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
-    // NOLINTEND
+#ifdef LL_PLAT_C
+    MCAPI ModelPartLocator(::ModelPartLocator const&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI_C void* $ctor(::ModelPartLocator const&);
-
-    MCAPI_C void* $ctor(
+    MCAPI ModelPartLocator(
         ::std::string const& name,
         ::std::string const& boneName,
         ::Vec3 const&        localOffset,
         bool                 ignoreInheritedScale
     );
+
+    MCAPI bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
+
+    MCAPI ::ModelPartLocator& operator=(::ModelPartLocator const&);
+
+    MCAPI ~ModelPartLocator();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::ModelPartLocator const&);
+
+    MCAPI void* $ctor(
+        ::std::string const& name,
+        ::std::string const& boneName,
+        ::Vec3 const&        localOffset,
+        bool                 ignoreInheritedScale
+    );
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD_C void $dtor();
+#ifdef LL_PLAT_C
+    MCFOLD void $dtor();
+#endif
     // NOLINTEND
 };

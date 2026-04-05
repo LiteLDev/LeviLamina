@@ -14,27 +14,41 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkaee5ec;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     TelemetryInfo& operator=(TelemetryInfo const&);
     TelemetryInfo(TelemetryInfo const&);
     TelemetryInfo();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    TelemetryInfo& operator=(TelemetryInfo const&);
+    TelemetryInfo(TelemetryInfo const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void _detectTampering();
+#ifdef LL_PLAT_C
+    MCNAPI TelemetryInfo();
 
-    MCNAPI_C ::std::string _generateTamperGuard(::std::string const& content) const;
+    MCNAPI void _detectTampering();
 
-    MCNAPI_C void _load();
+    MCNAPI ::std::string _generateTamperGuard(::std::string const& content) const;
 
-    MCNAPI_C void _save();
+    MCNAPI void _load();
+
+    MCNAPI void _save();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 };

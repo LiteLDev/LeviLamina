@@ -13,7 +13,7 @@ namespace mce::MathUtility {
 // NOLINTBEGIN
 MCNAPI ::mce::MathUtility::GramSchmidtResult computeGramSchmidtBasis(::Vec3 const& forward, ::Vec3 const& up);
 
-MCNAPI_C ::glm::vec2 getRotationFromNegZToVector(::glm::vec3 const& vector);
+MCNAPI ::glm::vec2 getRotationFromNegZToVector(::glm::vec3 const& vector);
 // NOLINTEND
 
 } // namespace mce::MathUtility

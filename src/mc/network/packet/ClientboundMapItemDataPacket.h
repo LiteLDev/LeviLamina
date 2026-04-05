@@ -86,7 +86,9 @@ public:
         ::BlockPos const&   mapOrigin
     );
 
-    MCAPI_C void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
+#ifdef LL_PLAT_C
+    MCAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
+#endif
 
     MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND

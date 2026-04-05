@@ -12,7 +12,7 @@ namespace Json { class Value; }
 namespace Core::JsonUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI_C ::Core::Result deserializeFromFile(::Json::Value& json, ::Core::Path const& path);
+MCNAPI ::Core::Result deserializeFromFile(::Json::Value& json, ::Core::Path const& path);
 // NOLINTEND
 
 } // namespace Core::JsonUtil

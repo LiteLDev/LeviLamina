@@ -148,7 +148,7 @@ public:
     public:
         // vftables
         // NOLINTBEGIN
-        MCNAPI static void** $vftable();
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -798,7 +798,9 @@ public:
 
     MCAPI void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const;
 
-    MCAPI_C void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
+#ifdef LL_PLAT_C
+    MCAPI void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
+#endif
 
     MCAPI ::BlockState const* getBlockState(::HashedString const& name) const;
 
@@ -815,7 +817,9 @@ public:
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCAPI_C bool isDuplicatedAliasName() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isDuplicatedAliasName() const;
+#endif
 
     MCAPI bool isValidSpawn(
         ::BlockSource&                 region,

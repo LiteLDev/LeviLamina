@@ -39,9 +39,11 @@ public:
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
 
-    MCNAPI_C void setResponseBodyHandler(
+#ifdef LL_PLAT_C
+    MCNAPI void setResponseBodyHandler(
         ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>> responseBodyHandler
     );
+#endif
 
     MCNAPI ~Request();
     // NOLINTEND

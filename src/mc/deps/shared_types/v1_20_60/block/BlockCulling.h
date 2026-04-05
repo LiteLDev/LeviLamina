@@ -118,7 +118,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCAPI ~BlockCulling();
+#endif
     // NOLINTEND
 
 public:
@@ -130,13 +132,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI_C static ::SemVersionConstant const& VERSION();
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

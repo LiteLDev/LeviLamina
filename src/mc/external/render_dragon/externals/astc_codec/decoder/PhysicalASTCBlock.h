@@ -29,43 +29,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::astc_codec::base::Optional<int> ColorStartBit() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::astc_codec::base::Optional<int> ColorStartBit() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> ColorValuesRange() const;
+    MCNAPI ::astc_codec::base::Optional<int> ColorValuesRange() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> DualPlaneChannel() const;
+    MCNAPI ::astc_codec::base::Optional<int> DualPlaneChannel() const;
 
-    MCNAPI_C void GetColorValuesInfo(int* color_bits, int* color_range) const;
+    MCNAPI void GetColorValuesInfo(int* color_bits, int* color_range) const;
 
-    MCNAPI_C ::astc_codec::base::Optional<::astc_codec::ColorEndpointMode> GetEndpointMode(int partition) const;
+    MCNAPI ::astc_codec::base::Optional<::astc_codec::ColorEndpointMode> GetEndpointMode(int partition) const;
 
-    MCNAPI_C bool IsDualPlane() const;
+    MCNAPI bool IsDualPlane() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<::std::string> IsIllegalEncoding() const;
+    MCNAPI ::astc_codec::base::Optional<::std::string> IsIllegalEncoding() const;
 
-    MCNAPI_C bool IsVoidExtent() const;
+    MCNAPI bool IsVoidExtent() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> NumColorBits() const;
+    MCNAPI ::astc_codec::base::Optional<int> NumColorBits() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> NumColorValues() const;
+    MCNAPI ::astc_codec::base::Optional<int> NumColorValues() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> NumPartitions() const;
+    MCNAPI ::astc_codec::base::Optional<int> NumPartitions() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> NumWeightBits() const;
+    MCNAPI ::astc_codec::base::Optional<int> NumWeightBits() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> PartitionID() const;
+    MCNAPI ::astc_codec::base::Optional<int> PartitionID() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<::std::array<int, 4>> VoidExtentCoords() const;
+    MCNAPI explicit PhysicalASTCBlock(::astc_codec::base::UInt128 astc_block);
 
-    MCNAPI_C ::astc_codec::base::Optional<::std::array<int, 2>> WeightGridDims() const;
+    MCNAPI ::astc_codec::base::Optional<::std::array<int, 4>> VoidExtentCoords() const;
 
-    MCNAPI_C ::astc_codec::base::Optional<int> WeightRange() const;
+    MCNAPI ::astc_codec::base::Optional<::std::array<int, 2>> WeightGridDims() const;
+
+    MCNAPI ::astc_codec::base::Optional<int> WeightRange() const;
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::astc_codec::base::UInt128 astc_block);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::astc_codec::base::UInt128 astc_block);
+#endif
     // NOLINTEND
 };
 

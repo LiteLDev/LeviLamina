@@ -90,12 +90,14 @@ public:
 
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
 
-    MCNAPI_C void addKnownPackFromImport(::Pack const& pack);
+#ifdef LL_PLAT_C
+    MCNAPI void addKnownPackFromImport(::Pack const& pack);
 
-    MCNAPI_C ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
+    MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
     loadPacksForTemplate(::WorldTemplateInfo const& info);
 
-    MCNAPI_C void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
+    MCNAPI void setWorldIconAllowListPath(::WorldTemplateInfo const& info, ::std::string path);
+#endif
 
     MCNAPI void sortWorldTemplates();
     // NOLINTEND

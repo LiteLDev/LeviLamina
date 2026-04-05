@@ -69,7 +69,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Bedrock::JSONObject::ObjectNode const* getProfileObjectFromBootstrapConfig();
+#ifdef LL_PLAT_C
+    MCNAPI static ::Bedrock::JSONObject::ObjectNode const* getProfileObjectFromBootstrapConfig();
+#endif
     // NOLINTEND
 
 public:

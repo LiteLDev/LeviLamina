@@ -925,42 +925,56 @@ public:
     // NOLINTBEGIN
     MCAPI AppPlatform(bool registerService, ::std::unique_ptr<::IAppPlatformImpl> impl);
 
-    MCAPI_C void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
+#ifdef LL_PLAT_C
+    MCAPI void _clipboardCopyHandler(::ApplicationSignal::ClipboardCopy const& signal);
 
-    MCAPI_C void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
+    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI_C void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+    MCAPI void _clipboardPasteRequestHandler(::ApplicationSignal::ClipboardPasteRequest const& signal);
+#endif
 
-    MCAPI_S void _fireAppTerminated();
+#ifdef LL_PLAT_S
+    MCAPI void _fireAppTerminated();
+#endif
 
     MCAPI void _initializeLoadProfiler();
 
-    MCAPI_C ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
+#ifdef LL_PLAT_C
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Bedrock::IApplicationDataStores> getApplicationDataStores();
 
-    MCAPI_C ::UIProfile getDefaultUIProfile() const;
+    MCAPI ::UIProfile getDefaultUIProfile() const;
+#endif
 
-    MCFOLD_S ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+#ifdef LL_PLAT_S
+    MCFOLD ::Core::PathBuffer<::std::string> getInternalStoragePath() const;
+#endif
 
     MCAPI ::std::optional<::std::locale> getLocaleForDateTimeFormatting() const;
 
     MCAPI ::gsl::not_null<::Bedrock::PubSub::Connector<void(::LowMemorySeverity)>*> getOnLowMemoryConnector();
 
-    MCAPI_C double getTotalActiveSeconds();
+#ifdef LL_PLAT_C
+    MCAPI double getTotalActiveSeconds();
+#endif
 
     MCFOLD ::Core::PathBuffer<::std::string> getUserdataPath() const;
 
-    MCAPI_C void loadImage(::mce::Image& out, ::Core::Path const& filename);
+#ifdef LL_PLAT_C
+    MCAPI void loadImage(::mce::Image& out, ::Core::Path const& filename);
 
-    MCAPI_C ::mce::Image loadTexture(::Core::Path const& filename);
+    MCAPI ::mce::Image loadTexture(::Core::Path const& filename);
 
-    MCAPI_C ::mce::Image loadTextureFromStream(::std::string const& fileStream);
+    MCAPI ::mce::Image loadTextureFromStream(::std::string const& fileStream);
+#endif
 
     MCAPI ::Bedrock::Result<::std::string>
     readAssetFile(::Core::PathView filename, ::AppPlatform::ReadMode const& readMode);
 
-    MCAPI_C bool requiresNetworkOutageMessaging() const;
+#ifdef LL_PLAT_C
+    MCAPI bool requiresNetworkOutageMessaging() const;
 
-    MCAPI_C void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+    MCAPI void setShareData(::std::string shareTitle, ::std::string shareText, ::std::string shareUri);
+#endif
     // NOLINTEND
 
 public:
@@ -968,9 +982,11 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::string> _readAssetFileGeneric(::Core::PathView filename);
 
-    MCAPI_C static bool mouseInputHandledByImGui();
+#ifdef LL_PLAT_C
+    MCAPI static bool mouseInputHandledByImGui();
 
-    MCAPI_C static void updateImGuiMousePosition(float x, float y);
+    MCAPI static void updateImGuiMousePosition(float x, float y);
+#endif
     // NOLINTEND
 
 public:
@@ -982,11 +998,11 @@ public:
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& SHADERCACHE_PATH();
 
-    MCAPI_C static bool& mIsInitialized();
+    MCAPI static bool& mIsInitialized();
 
-    MCAPI_C static ::ActivationUri& mPendingProtocolActivation();
+    MCAPI static ::ActivationUri& mPendingProtocolActivation();
 
-    MCAPI_C static ::Bedrock::Threading::Mutex& mProtocolMutex();
+    MCAPI static ::Bedrock::Threading::Mutex& mProtocolMutex();
     // NOLINTEND
 
 public:

@@ -153,7 +153,9 @@ public:
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
 
-    MCAPI_S int getInvulnerableTicks() const;
+#ifdef LL_PLAT_S
+    MCAPI int getInvulnerableTicks() const;
+#endif
 
     MCAPI bool hasAerialAttack() const;
 

@@ -31,12 +31,20 @@ public:
     ::ll::TypedStorage<8, 8, ::std::string&> mBuffer;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&);
     BinaryStream(BinaryStream const&);
     BinaryStream();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    BinaryStream& operator=(BinaryStream const&);
+    BinaryStream(BinaryStream const&);
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -123,17 +131,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI BinaryStream();
+#endif
+
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
 
-    MCAPI_C void write(void const* origin, uint64 num);
+#ifdef LL_PLAT_C
+    MCAPI void write(void const* origin, uint64 num);
 
-    MCAPI_C void writeRawBytes(::buffer_span<uchar> bytes, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeRawBytes(::buffer_span<uchar> bytes, char const* docFieldName, char const* docFieldNotes);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor();
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::std::string& buffer, bool copyBuffer);
     // NOLINTEND

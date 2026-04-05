@@ -11,6 +11,8 @@ class JpegData {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static bool WriteJpgComments(::Core::Path const& fileName, ::std::string const& inComment);
+#ifdef LL_PLAT_C
+    MCNAPI static bool WriteJpgComments(::Core::Path const& fileName, ::std::string const& inComment);
+#endif
     // NOLINTEND
 };

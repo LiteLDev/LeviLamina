@@ -57,19 +57,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void checkForStutters(
+#ifdef LL_PLAT_C
+    MCNAPI explicit FrameAnomalyDetector(::FrameAnomalyDetectionConfiguration config);
+
+    MCNAPI void checkForStutters(
         ::std::chrono::nanoseconds              frameDelta,
         ::std::chrono::nanoseconds              medianTiming,
         ::std::chrono::steady_clock::time_point now
     );
 
-    MCNAPI_C void update(::std::chrono::nanoseconds frameDelta);
+    MCNAPI void update(::std::chrono::nanoseconds frameDelta);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::FrameAnomalyDetectionConfiguration config);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::FrameAnomalyDetectionConfiguration config);
+#endif
     // NOLINTEND
 
 public:

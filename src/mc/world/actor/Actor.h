@@ -561,7 +561,9 @@ public:
 
     MCAPI bool canBeginOrContinueClimbingLadder() const;
 
-    MCAPI_S bool canCurrentlySwim() const;
+#ifdef LL_PLAT_S
+    MCAPI bool canCurrentlySwim() const;
+#endif
 
     MCAPI bool canFly() const;
 
@@ -601,9 +603,11 @@ public:
 
     MCAPI ::ActorDefinitionIdentifier const& getActorIdentifier() const;
 
-    MCAPI_C ::Matrix getActorToWorldTransform(float frameAlpha, bool useActorRotation, ::Vec3 const& offset) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Matrix getActorToWorldTransform(float frameAlpha, bool useActorRotation, ::Vec3 const& offset) const;
 
-    MCFOLD_C ::std::vector<::MobEffectInstance> const& getAllEffects() const;
+    MCFOLD ::std::vector<::MobEffectInstance> const& getAllEffects() const;
+#endif
 
     MCAPI ::ItemStack const& getArmor(::SharedTypes::Legacy::ArmorSlot slot) const;
 
@@ -635,7 +639,9 @@ public:
 
     MCFOLD ::Dimension const& getDimensionConst() const;
 
-    MCAPI_C ::DimensionType getDimensionId() const;
+#ifdef LL_PLAT_C
+    MCAPI ::DimensionType getDimensionId() const;
+#endif
 
     MCAPI ::MobEffectInstance const* getEffect(::MobEffect const& effect) const;
 
@@ -657,7 +663,9 @@ public:
 
     MCAPI ::Vec3 getInterpolatedRidingPosition(float a) const;
 
-    MCAPI_C ::Vec2 getInterpolatedRotation(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Vec2 getInterpolatedRotation(float a) const;
+#endif
 
     MCAPI bool getIsExperienceDropEnabled() const;
 
@@ -677,7 +685,9 @@ public:
 
     MCAPI int getMaxHealth() const;
 
-    MCAPI_C int64 getMetadataId() const;
+#ifdef LL_PLAT_C
+    MCAPI int64 getMetadataId() const;
+#endif
 
     MCAPI ::std::string const& getNameTag() const;
 
@@ -729,7 +739,9 @@ public:
 
     MCFOLD ::Vec3 getViewVector(float a) const;
 
-    MCAPI_C ::Vec2 getViewVector2(float a) const;
+#ifdef LL_PLAT_C
+    MCAPI ::Vec2 getViewVector2(float a) const;
+#endif
 
     MCAPI ::WeakRef<::EntityContext> const getWeakEntity() const;
 
@@ -745,7 +757,9 @@ public:
 
     MCAPI bool hasFamily(::HashedString const& family) const;
 
-    MCAPI_C bool hasPassenger() const;
+#ifdef LL_PLAT_C
+    MCAPI bool hasPassenger() const;
+#endif
 
     MCAPI bool hasPlayerPassenger() const;
 
@@ -765,8 +779,9 @@ public:
 
     MCAPI void initParams(::RenderParams& params);
 
-    MCAPI_C bool
-    isActorLocationInMaterial(::SharedTypes::Legacy::ActorLocation actorLocation, ::MaterialType type) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isActorLocationInMaterial(::SharedTypes::Legacy::ActorLocation actorLocation, ::MaterialType type) const;
+#endif
 
     MCAPI bool isAdventure() const;
 
@@ -800,7 +815,9 @@ public:
 
     MCAPI bool isInThunderstorm() const;
 
-    MCAPI_C bool isInWater() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isInWater() const;
+#endif
 
     MCAPI bool isInWaterOrRain() const;
 
@@ -808,15 +825,21 @@ public:
 
     MCAPI bool isLeashed() const;
 
-    MCAPI_C bool isLocalPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isLocalPlayer() const;
+#endif
 
     MCAPI bool isOverWater() const;
 
     MCAPI bool isPassenger(::Actor const& passenger) const;
 
-    MCAPI_C bool isPlayer() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isPlayer() const;
+#endif
 
-    MCAPI_S bool isRemotePlayer() const;
+#ifdef LL_PLAT_S
+    MCAPI bool isRemotePlayer() const;
+#endif
 
     MCAPI bool isRiding() const;
 
@@ -842,7 +865,9 @@ public:
 
     MCAPI bool isTrading() const;
 
-    MCAPI_C bool isType(::ActorType type) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isType(::ActorType type) const;
+#endif
 
     MCAPI bool isUnderLiquid(::MaterialType type) const;
 
@@ -869,7 +894,9 @@ public:
 
     MCAPI void onEffectUpdated(::MobEffectInstance& effect);
 
-    MCAPI_C void onSynchedFlagUpdate(::std::bitset<127> const& changedFlags);
+#ifdef LL_PLAT_C
+    MCAPI void onSynchedFlagUpdate(::std::bitset<127> const& changedFlags);
+#endif
 
     MCAPI void pickUpItem(::ItemActor& itemActor, int count);
 
@@ -885,7 +912,9 @@ public:
     MCAPI void
     playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
 
-    MCAPI_C void positionAllPassengers();
+#ifdef LL_PLAT_C
+    MCAPI void positionAllPassengers();
+#endif
 
     MCAPI void positionPassenger(::Actor& passenger);
 
@@ -965,7 +994,9 @@ public:
 
     MCAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI_C void setRuntimeID(::ActorRuntimeID id);
+#ifdef LL_PLAT_C
+    MCAPI void setRuntimeID(::ActorRuntimeID id);
+#endif
 
     MCAPI void setSaddle(bool saddled);
 
@@ -981,7 +1012,9 @@ public:
 
     MCAPI void setTradingPlayer(::Player* player);
 
-    MCAPI_C void setUniqueID(::ActorUniqueID id);
+#ifdef LL_PLAT_C
+    MCAPI void setUniqueID(::ActorUniqueID id);
+#endif
 
     MCFOLD void setVariant(int value);
 

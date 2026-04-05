@@ -65,9 +65,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI_S ::LeafSize _getLeafSize(::Block const& block) const;
+#ifdef LL_PLAT_S
+    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
-    MCAPI_S ::StalkThickness _getStalkThickness(::Block const& block) const;
+    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
+#endif
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 

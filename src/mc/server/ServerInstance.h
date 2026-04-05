@@ -244,7 +244,9 @@ public:
 
     MCAPI void disconnectAllClients(::Connection::DisconnectFailReason reason);
 
-    MCAPI_C void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
+#ifdef LL_PLAT_C
+    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
+#endif
 
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
@@ -252,21 +254,29 @@ public:
 
     MCAPI bool initializeServer(::ServerInstanceInitArguments&& args);
 
-    MCAPI_S void leaveGameSync();
+#ifdef LL_PLAT_S
+    MCAPI void leaveGameSync();
+#endif
 
     MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
 
     MCAPI void queueForServerThread(::std::function<void()> command);
 
-    MCAPI_S void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
+#ifdef LL_PLAT_S
+    MCAPI void setScriptWatchdogCriticalErrorCallback(::std::function<void(char const*)> criticalErrorCallback);
 
-    MCAPI_S void setUnrecoverableErrorCallback(
+    MCAPI void setUnrecoverableErrorCallback(
         ::std::function<void(::Connection::DisconnectFailReason, char const*)> unrecoverableErrorCallback
     );
+#endif
 
-    MCAPI_C void startLeaveGame();
+#ifdef LL_PLAT_C
+    MCAPI void startLeaveGame();
+#endif
 
-    MCAPI_S void startServerThread();
+#ifdef LL_PLAT_S
+    MCAPI void startServerThread();
+#endif
     // NOLINTEND
 
 public:
@@ -276,7 +286,9 @@ public:
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);
 
-    MCAPI_S static bool forceOffClientChunkGeneration(::LevelData& levelData);
+#ifdef LL_PLAT_S
+    MCAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
+#endif
     // NOLINTEND
 
 public:

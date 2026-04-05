@@ -27,13 +27,13 @@ MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
 MCAPI void clearInputState(::MoveInputComponent& input);
 
-MCAPI_C ::InputMode getInputMode(::EntityContext const& provider);
+MCAPI ::InputMode getInputMode(::EntityContext const& provider);
 
 MCAPI void initializePlayer(::EntityContext& provider);
 
 MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
-MCAPI_C bool shouldStopEmoting(
+MCAPI bool shouldStopEmoting(
     ::Vec2                            rawMove,
     ::ActorDataFlagComponent&         actorDataFlag,
     ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,

@@ -32,16 +32,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-
+#ifdef LL_PLAT_C
+    MCNAPI NetworkConnectionTypeChangeObserver(
+        ::std::function<::NetworkConnectionType()>  getNetworkConnectionType,
+        ::std::function<void(::std::string const&)> fireNetworkChangedEvent
+    );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
         ::std::function<::NetworkConnectionType()>  getNetworkConnectionType,
         ::std::function<void(::std::string const&)> fireNetworkChangedEvent
     );
+#endif
     // NOLINTEND
 
 public:

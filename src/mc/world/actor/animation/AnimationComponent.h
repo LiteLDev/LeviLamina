@@ -53,8 +53,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI_C ::std::shared_ptr<::AnimationComponent>&
+#ifdef LL_PLAT_C
+        MCAPI ::std::shared_ptr<::AnimationComponent>&
         getAnimationComponent(::Actor& owner, ::SubClientId subClientId, ::AttachableSlotIndex attachableIndex);
+#endif
         // NOLINTEND
     };
 
@@ -126,14 +128,16 @@ public:
     // NOLINTBEGIN
     MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
 
-    MCAPI_C void _addAnimationToStatePlayer(
+#ifdef LL_PLAT_C
+    MCAPI void _addAnimationToStatePlayer(
         ::HashedString const&                                    friendlyName,
         ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
     );
 
-    MCAPI_C ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
+    MCAPI ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
 
-    MCAPI_C void applyAnimations(bool setDefaultPose);
+    MCAPI void applyAnimations(bool setDefaultPose);
+#endif
 
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
         ::HashedString const&                                    friendlyName,
@@ -141,7 +145,8 @@ public:
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
+#ifdef LL_PLAT_C
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
         ::HashedString const& friendlyName,
         float                 blendOutTime,
         ::std::string const&  stopExpression,
@@ -150,21 +155,24 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCAPI_C ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
 
-    MCAPI_C void forceNextUpdateToApplyAnimations();
+    MCAPI void forceNextUpdateToApplyAnimations();
 
-    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerPlayer>
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
     getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
+#endif
 
     MCAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
-    MCAPI_C ::std::weak_ptr<::CommonResourceDefinitionMap> getCommonResourceDefinitionMap();
+#ifdef LL_PLAT_C
+    MCAPI ::std::weak_ptr<::CommonResourceDefinitionMap> getCommonResourceDefinitionMap();
 
-    MCAPI_C float getRegisteredAnimationLength(::std::string const& friendlyName) const;
+    MCAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
 
-    MCAPI_C bool haveInitializedScriptsRun() const;
+    MCAPI bool haveInitializedScriptsRun() const;
+#endif
 
     MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 
@@ -174,19 +182,23 @@ public:
         ::std::function<void(::ActorAnimationPlayer&)>   animationComponentInitFunction
     );
 
-    MCAPI_C bool isAnimationRegistered(::HashedString const& friendlyName) const;
+#ifdef LL_PLAT_C
+    MCAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
 
-    MCAPI_C ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
         ::HashedString const& friendlyName,
         ::HashedString const& owningStateName,
         ::std::string const&  runtimeController
     );
 
-    MCAPI_C void setInitializedScriptsRun(bool);
+    MCAPI void setInitializedScriptsRun(bool);
+#endif
 
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
 
-    MCAPI_C bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
+#ifdef LL_PLAT_C
+    MCAPI bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
+#endif
     // NOLINTEND
 
 public:

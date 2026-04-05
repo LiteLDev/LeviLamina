@@ -23,13 +23,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C ::std::string toString() const;
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string toString() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI_C static ::Bedrock::Result<::Social::XUID> parse(::std::string_view xuidString, bool allowGuestXUIDs);
+#ifdef LL_PLAT_C
+    MCNAPI static ::Bedrock::Result<::Social::XUID> parse(::std::string_view xuidString, bool allowGuestXUIDs);
+#endif
     // NOLINTEND
 };
 

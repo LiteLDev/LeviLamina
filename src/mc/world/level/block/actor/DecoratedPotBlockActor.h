@@ -86,7 +86,9 @@ public:
 
     MCAPI void _setContainedItem(::ItemStack const& item);
 
-    MCAPI_C void fromItem(::ItemStack const& item);
+#ifdef LL_PLAT_C
+    MCAPI void fromItem(::ItemStack const& item);
+#endif
 
     MCAPI void tryAddItem(::Player& player);
     // NOLINTEND
@@ -96,12 +98,16 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::std::array<::std::string, 4>> _tryGetSherdsFromItem(::ItemStackBase const& item);
 
-    MCAPI_C static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
+#ifdef LL_PLAT_C
+    MCAPI static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
+#endif
 
     MCAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
 
-    MCAPI_C static void
+#ifdef LL_PLAT_C
+    MCAPI static void
     saveSherdsToItemForInventoryRendering(::ItemStack& itemInstance, ::std::string const& screenSherdNames);
+#endif
 
     MCAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
@@ -151,8 +157,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
 
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

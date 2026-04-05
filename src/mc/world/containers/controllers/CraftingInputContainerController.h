@@ -20,6 +20,13 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRecipeItems;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    CraftingInputContainerController();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,18 +42,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI_C void onRecipeSelectedWithSpecificIngredients(
+#ifdef LL_PLAT_C
+    MCNAPI explicit CraftingInputContainerController(::std::shared_ptr<::ContainerModel> containerModel);
+
+    MCNAPI void onRecipeSelectedWithSpecificIngredients(
         ::Recipe const*                          recipe,
         uint64                                   gridSize,
         bool                                     displayGhostItems,
         ::std::vector<::RecipeIngredient> const& ingredients
     );
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI_C void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel);
+#endif
     // NOLINTEND
 
 public:

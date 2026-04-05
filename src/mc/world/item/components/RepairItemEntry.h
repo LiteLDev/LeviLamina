@@ -18,9 +18,21 @@ public:
     ::ll::TypedStorage<8, 16, ::ExpressionNode>                mRepairAmount;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    RepairItemEntry(RepairItemEntry const&);
+    RepairItemEntry();
+
+#else // LL_PLAT_C
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCAPI ::RepairItemEntry& operator=(::RepairItemEntry const&);
+#endif
+
     MCAPI ~RepairItemEntry();
     // NOLINTEND
 

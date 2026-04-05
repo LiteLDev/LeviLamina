@@ -60,7 +60,9 @@ public:
 
     MCNAPI bool _readWorldHistoryFile(::WorldPacksHistoryFile& file) const;
 
-    MCNAPI_C ::Bedrock::Threading::Async<void> saveHistoryFile();
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::Threading::Async<void> saveHistoryFile();
+#endif
     // NOLINTEND
 
 public:

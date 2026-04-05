@@ -17,22 +17,37 @@ public:
 #endif
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ScopedMemoryTrackingTag();
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCAPI explicit ScopedMemoryTrackingTag(::Memory::MemoryCategory category);
 
+    MCAPI ~ScopedMemoryTrackingTag();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI_C void* $ctor(::Memory::MemoryCategory category);
+#ifdef LL_PLAT_C
+    MCAPI void* $ctor(::Memory::MemoryCategory category);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI_C void $dtor();
+#ifdef LL_PLAT_C
+    MCAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

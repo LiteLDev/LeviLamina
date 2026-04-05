@@ -74,7 +74,9 @@ public:
 
     MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
-    MCAPI_C void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
+#ifdef LL_PLAT_C
+    MCAPI void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
+#endif
 
     MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -121,7 +123,9 @@ public:
         ::Actor*             actor
     ) const;
 
-    MCAPI_C void forEachState(::brstd::function_ref<bool(::BlockState const&, int)> callback) const;
+#ifdef LL_PLAT_C
+    MCAPI void forEachState(::brstd::function_ref<bool(::BlockState const&, int)> callback) const;
+#endif
 
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,
@@ -130,21 +134,28 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI_C ::BlockType::HorizontalDirectionBits
+#ifdef LL_PLAT_C
+    MCAPI ::BlockType::HorizontalDirectionBits
     getConnectedDirections(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI_C ::std::string getCraftingLabelText() const;
+    MCAPI ::std::string getCraftingLabelText() const;
+#endif
 
     MCAPI ::std::string getDescriptionId() const;
 
-    MCAPI_C ::VoxelShapes::VoxelShape const* getOcclusionFaceShape(uchar face) const;
+#ifdef LL_PLAT_C
+    MCAPI ::VoxelShapes::VoxelShape const* getOcclusionFaceShape(uchar face) const;
 
-    MCAPI_C ::AABB const&
-    getOutline(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCAPI ::AABB const& getOutline(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+#endif
 
-    MCAPI_S ::Vec3 getRandomOffset(::BlockPos const& pos) const;
+#ifdef LL_PLAT_S
+    MCAPI ::Vec3 getRandomOffset(::BlockPos const& pos) const;
+#endif
 
-    MCAPI_C bool getSecondPart(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+#ifdef LL_PLAT_C
+    MCAPI bool getSecondPart(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+#endif
 
     MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
 
@@ -154,9 +165,11 @@ public:
 
     MCAPI bool hasTag(::HashedString const& tagName) const;
 
-    MCAPI_C bool isCraftingBlock() const;
+#ifdef LL_PLAT_C
+    MCAPI bool isCraftingBlock() const;
 
-    MCAPI_C bool isInteractiveBlock() const;
+    MCAPI bool isInteractiveBlock() const;
+#endif
 
     MCAPI bool isPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 

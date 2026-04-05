@@ -57,7 +57,7 @@ MCAPI void addPendingEventResponseChange(
     ::std::string const&       displayName
 );
 
-MCAPI_C void ingestPropertySyncData(
+MCAPI void ingestPropertySyncData(
     ::PropertyComponent&      props,
     ::PropertySyncData const& syncData,
     ::ActorUniqueID           id,
