@@ -119,3 +119,11 @@ bool Player::addAndRefresh(class ItemStack& item) {
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() const { return mEnderChestInventory.get(); }
 
 Inventory& Player::getInventory() const { return *mInventory->mInventory; }
+
+Player* Player::tryGetFromEntity(EntityContext& entity, bool includeRemoved) {
+    auto player = static_cast<Player*>(Actor::tryGetFromEntity(entity, includeRemoved));
+    if (player->getEntityTypeId() == ActorType::Player || player->hasCategory(ActorCategory::Player)) {
+        return player;
+    }
+    return nullptr;
+}

@@ -309,6 +309,8 @@ public:
 
     LLNDAPI Inventory& getInventory() const;
 
+    LLNDAPI static Player* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+
 public:
     // member variables
     // NOLINTBEGIN
