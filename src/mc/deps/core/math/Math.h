@@ -11,7 +11,9 @@ namespace mce { struct Radian; }
 namespace mce::Math {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCAPI ::mce::Radian atan2(float dy, float dx);
+#endif
 
 MCAPI float clamp(float v, float low, float high);
 
@@ -83,7 +85,9 @@ MCAPI float easeOutSine(float from, float to, float alpha);
 
 MCAPI float lerpRotate(float from, float to, float alpha);
 
+#ifdef LL_PLAT_S
 MCAPI float sin(float f);
+#endif
 
 MCAPI float wrapDegrees(float input);
 

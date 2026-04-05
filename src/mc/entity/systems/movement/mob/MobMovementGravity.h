@@ -47,6 +47,7 @@ MCFOLD void tickAirGravity(
     ::EntityModifier<::ApplyGravityComponent> modifier
 );
 
+#ifdef LL_PLAT_S
 MCAPI void tickDefaultGravity(
     ::StrictEntityContext const&               context,
     ::ActorDataFlagComponent const&            synchedActorData,
@@ -54,6 +55,7 @@ MCAPI void tickDefaultGravity(
     ::StateVectorComponent const&              stateVector,
     ::EntityModifier<::ApplyGravityComponent>& modifier
 );
+#endif
 
 MCFOLD void tickGroundGravity(
     ::entt::type_list<
@@ -77,6 +79,7 @@ MCAPI void tickLavaGravity(
     ::IConstBlockSource const&                region
 );
 
+#ifdef LL_PLAT_C
 MCAPI void tickLavaWalkGravity(
     ::entt::type_list<
         ::Include<::LavaTravelFlagComponent>,
@@ -88,6 +91,7 @@ MCAPI void tickLavaWalkGravity(
     ::StateVectorComponent const&             stateVector,
     ::EntityModifier<::ApplyGravityComponent> modifier
 );
+#endif
 
 MCAPI void tickMobWaterGravity(
     ::StrictEntityContext const&              context,

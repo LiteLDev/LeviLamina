@@ -18,6 +18,7 @@ namespace Bedrock {
 // NOLINTBEGIN
 MCAPI ::std::unique_ptr<::Bedrock::DeviceIdManager> _createDefaultDeviceIdManager();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::unique_ptr<::HIDControllerGameCoreDesktop> _createHIDController(
     ::HWND__* hwnd,
     ::std::queue<
@@ -26,8 +27,11 @@ MCAPI ::std::unique_ptr<::HIDControllerGameCoreDesktop> _createHIDController(
 );
 
 MCAPI void fileNameToSessionID(::std::string& out, ::Core::PathBuffer<::std::string> const& filePath);
+#endif
 
+#ifdef LL_PLAT_S
 MCAPI int strtoint32(char const* str, char** endptr, int base);
+#endif
 
 MCAPI void throw_system_error(::std::errc errc);
 // NOLINTEND

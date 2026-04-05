@@ -10,15 +10,19 @@ namespace mce { class Color; }
 namespace ColorFormat {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::string ColorCodeFromColor(::mce::Color const& color);
 
 MCNAPI ::mce::Color const* ColorFromChar(char colorCode);
 
 MCNAPI ::mce::Color const* ColorFromColorCode(::std::string const& colorCode);
+#endif
 
 MCNAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string NameFromFormatCode(::std::string const& formatCode);
+#endif
 // NOLINTEND
 
 // static variables

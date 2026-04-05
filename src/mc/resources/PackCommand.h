@@ -13,10 +13,12 @@ namespace PackCommand { struct RepositoriesOptions; }
 namespace PackCommand {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCNAPI ::std::unique_ptr<::PackCommand::IPackCommandPipeline> createPackCommandPipeline(
     ::std::unique_ptr<::TaskGroup>                          taskGroup,
     ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories
 );
+#endif
 
 MCNAPI ::std::unique_ptr<::PackCommand::IResourceRepositories>
 createResourceRepositories(::PackCommand::RepositoriesOptions options);

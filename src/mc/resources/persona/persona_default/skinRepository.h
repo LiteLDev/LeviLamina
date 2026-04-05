@@ -10,7 +10,9 @@ namespace mce { class UUID; }
 namespace personaDefault::skinRepository {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::mce::UUID const& getCustomSkinPackUUID();
+#endif
 // NOLINTEND
 
 // static variables

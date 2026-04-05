@@ -21,9 +21,11 @@ fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const&
 
 MCAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
 
+#ifdef LL_PLAT_C
 MCAPI ::std::string_view getActionValue(::std::variant<::npc::CommandAction, ::npc::UrlAction> const& action);
 
 MCAPI ::std::string_view getButtonLabel(::std::variant<::npc::CommandAction, ::npc::UrlAction> const& action);
+#endif
 
 MCAPI ::Json::Value toJson(::npc::CommandAction const& action);
 

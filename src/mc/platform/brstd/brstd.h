@@ -14,6 +14,7 @@ namespace mce::framebuilder { struct PerCascadeParameters; }
 namespace brstd {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI bool operator==(
     ::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8> const& lhs,
     ::brstd::static_vector<::mce::framebuilder::PerCascadeParameters, 8> const& rhs
@@ -27,6 +28,7 @@ MCNAPI void swap(
         associative_adapter<int, ::std::string, ::std::less<int>, ::std::vector<int>, ::std::vector<::std::string>>::
             zip_iterator::reference rhs
 );
+#endif
 // NOLINTEND
 
 } // namespace brstd

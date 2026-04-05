@@ -20,11 +20,13 @@ MCAPI ::Bedrock::Result<::std::string> _writeFile(::std::string const& filePath,
 
 MCAPI bool isFileTypeValid(::std::string const& filePath);
 
+#ifdef LL_PLAT_C
 MCAPI void openFilePicker(
     ::std::string&                      resultPath,
     ::CodeBuilder::IRequestHandler&     sender,
     ::CodeBuilder::RequestHeader const& header
 );
+#endif
 
 MCAPI ::MakeCodeFileIO::MakeCodeFileIOReadResult readFile(::std::string const& filePath);
 

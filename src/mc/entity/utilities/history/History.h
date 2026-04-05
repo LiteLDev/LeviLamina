@@ -22,7 +22,9 @@ MCNAPI void addMovementEffectsToEntity(
     ::Bedrock::EnumSet<::MovementEffectType, 2> const& toSet
 );
 
+#ifdef LL_PLAT_C
 MCNAPI void runExtractors(::EntityContext const& fromLive, ::EntityContext& toHistory, bool removeIfMissing);
+#endif
 // NOLINTEND
 
 } // namespace History

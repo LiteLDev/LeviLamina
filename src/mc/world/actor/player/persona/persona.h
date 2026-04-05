@@ -19,23 +19,29 @@ class UIPropertyBag;
 namespace persona {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::string getPieceRarityBarTexture(::persona::Rarity pieceRarity);
 
 MCAPI ::mce::Color getPieceRarityColor(::UIPropertyBag const& bag, ::persona::Rarity pieceRarity);
 
 MCAPI ::persona::Rarity pieceRarityFromString(::std::string const& rarityTypeStr);
+#endif
 
 MCAPI ::persona::PieceType pieceTypeFromString(::std::string const& assetTypeStr);
 
+#ifdef LL_PLAT_C
 MCAPI ::std::string const& stringFromPersonaError(::persona::PersonaError const& error);
 
 MCAPI ::std::string stringFromPieceRarity(::persona::Rarity const& rarity);
+#endif
 
 MCAPI ::std::string const& stringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
 
+#ifdef LL_PLAT_C
 MCAPI ::std::string_view stringViewFromProfileType(::persona::ProfileType profileType);
 
 MCAPI ::std::string ttsStringFromPieceType(::persona::PieceType assetType, bool isDefaultItem);
+#endif
 // NOLINTEND
 
 // static variables
@@ -64,15 +70,19 @@ MCAPI ::std::string const& ANIMATED_FACE_NAME();
 
 MCAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
 
+#ifdef LL_PLAT_C
 MCAPI ::mce::UUID const& NONE_PIECE_ID();
+#endif
 
 MCAPI ::std::string const& NONE_PIECE_PATH();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::string const& PIECE_SIDE_LEFT_STR();
 
 MCAPI ::std::string const& PIECE_SIDE_RIGHT_STR();
 
 MCAPI uint const& RANDOM_DEFAULT_APPEARANCE_INDEX();
+#endif
 
 MCAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
 // NOLINTEND

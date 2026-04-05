@@ -18,6 +18,7 @@ namespace mce { struct Image; }
 namespace ResourceLoaders {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::gsl::span<::std::string const> getFileTypeExtensions(::ResourceLoaders::ResourceFileType fileType);
 
 MCNAPI ::ResourceLocation getRawResourceLocation(::ResourceLocation const& resourceLocation);
@@ -29,6 +30,7 @@ MCNAPI ::nonstd::expected<::mce::Image, ::std::error_condition> loadImageWithout
 );
 
 MCNAPI void registerLoader(::ResourceFileSystem fileSystem, ::std::unique_ptr<::ResourceLoader> loader);
+#endif
 // NOLINTEND
 
 // static variables

@@ -15,7 +15,9 @@ enum : int {
 
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::ostream& operator<<(::std::ostream& sout, ::Json::Value const& root);
+#endif
 
 MCAPI ::std::string valueToQuotedString(char const* value);
 

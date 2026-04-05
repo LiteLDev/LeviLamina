@@ -11,7 +11,9 @@ namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace ExpressionNodeSerializer {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI void fromSharedTypes(::ExpressionNode& instance, ::SharedTypes::Legacy::ExpressionNode const& expr);
+#endif
 
 MCNAPI ::std::vector<::ExpressionNode>
 fromSharedTypesVector(::std::vector<::SharedTypes::Legacy::ExpressionNode> const& v);

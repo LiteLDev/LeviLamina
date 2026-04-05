@@ -25,6 +25,7 @@ namespace Scripting { struct Version; }
 namespace CreatorMetadataUtils {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
 
 MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
@@ -97,9 +98,11 @@ MCAPI void generateVanillaDataDocumentation(
     ::CameraPresets const&                                                           presets,
     ::BiomeRegistry const&                                                           biomes
 );
+#endif
 
 MCAPI ::std::string getGameSemVersionAsString();
 
+#ifdef LL_PLAT_S
 MCAPI ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadata();
 
 MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
@@ -112,6 +115,7 @@ MCAPI bool validateVariantResolution(
 );
 
 MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
+#endif
 // NOLINTEND
 
 } // namespace CreatorMetadataUtils

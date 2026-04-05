@@ -16,9 +16,11 @@ namespace mce { class Color; }
 namespace CopperBlockUtil {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI void emitScrapeParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos);
 
 MCNAPI void emitWaxParticlesAroundPosition(::BlockSource& region, ::Vec3 const& pos, ::mce::Color const& color);
+#endif
 
 MCNAPI bool shouldUseInteractableBlockAsCopper(::Actor const& actor);
 

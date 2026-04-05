@@ -51,11 +51,13 @@ MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(
     ::Player&                       player
 );
 
+#ifdef LL_PLAT_C
 MCNAPI void sendControlSchemeToClient(
     ::ControlScheme::Scheme                scheme,
     ::PacketSender&                        sender,
     ::UserEntityIdentifierComponent const* userIdentifier
 );
+#endif
 
 MCNAPI bool setControlScheme(
     ::Player&                                           player,

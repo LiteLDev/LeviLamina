@@ -12,9 +12,11 @@ struct IGameModeTimer;
 namespace GameModeExt {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessenger(::Player& player);
 
 MCAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessengerWithServerAuthBlockBreaking(::Player& player);
+#endif
 
 MCAPI ::std::unique_ptr<::IGameModeTimer> createDefaultTimer(::Player const& player);
 

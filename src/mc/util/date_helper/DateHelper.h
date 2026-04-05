@@ -14,6 +14,7 @@ class I18n;
 namespace DateHelper {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::string getDateAsFormattedString(int64 time);
 
 MCNAPI ::std::string getDurationAsString(
@@ -35,16 +36,19 @@ MCNAPI ::std::string
 getTimeRemainingAsString(int64 now, int64 time, uint numberOfFields, bool addRemainingStr, bool isTelemetry);
 
 MCNAPI ::std::string getTimeSpecificFormatAsString(int64 now, int64 time);
+#endif
 
 MCNAPI ::std::string getTimestampFileName(int64 const& timestamp);
 
 MCNAPI ::std::string removeSeconds(::std::string const& timeStr);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string toLocalDate(int64 time);
 
 MCNAPI ::std::string toLocalShortDateTime(int64 time);
 
 MCNAPI ::std::string toLocalTime(int64 time);
+#endif
 // NOLINTEND
 
 } // namespace DateHelper

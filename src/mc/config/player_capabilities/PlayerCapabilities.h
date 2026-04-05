@@ -13,8 +13,10 @@ namespace PlayerCapabilities { struct IClientController; }
 namespace PlayerCapabilities {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::unique_ptr<::PlayerCapabilities::IClientController>
 createClientController(::std::weak_ptr<::IClientInstance const> client);
+#endif
 
 MCNAPI ::std::unique_ptr<::PlayerCapabilities::ISharedController> createController(::Level const& level);
 // NOLINTEND

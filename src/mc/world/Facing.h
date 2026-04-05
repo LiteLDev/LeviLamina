@@ -48,7 +48,9 @@ MCAPI ::std::array<::Facing::Name, 6> const& DIRECTIONS();
 
 MCAPI ::std::array<uchar, 6> const& FACINGMASK();
 
+#ifdef LL_PLAT_C
 MCAPI ::std::array<uchar, 6> const& FACINGMASK_INV();
+#endif
 
 MCAPI ::Facing::StringMap const& FROM_STRING_MAP();
 

@@ -30,6 +30,7 @@ namespace SharedTypes::v1_21_90 { struct CameraPreset; }
 namespace CameraAimAssistSystemUtil {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
     ::Vec3 const&                                    start,
     ::Vec3 const&                                    end,
@@ -41,9 +42,11 @@ MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult blockHitDetect(
     ::std::function<bool(::BlockType const&)> const& isBlockExcluded,
     ::std::function<int(::BlockType const&)> const&  getBlockPriority
 );
+#endif
 
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
+#ifdef LL_PLAT_C
 MCNAPI ::Frustum createFrustumForCachedFrustumComponent(
     ::Vec3 const& start,
     ::Vec3 const& direction,
@@ -64,6 +67,7 @@ MCNAPI ::CameraAimAssistSystemUtil::BlockHitDetectResult firstBlockHitDetect(
     ::std::function<bool(::BlockType const&)> const& isBlockExcluded,
     ::std::function<int(::BlockType const&)> const&  getBlockPriority
 );
+#endif
 
 MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode>
 getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
@@ -83,6 +87,7 @@ setAimAssistForServerPlayer(
     bool                          showDebugRender
 );
 
+#ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Result<
     void,
     ::std::variant<
@@ -103,6 +108,7 @@ MCNAPI bool stepAndUpdateCurrentBlockPos(
     ::Vec3 const&     endPos,
     ::BlockPos const& endBlockPos
 );
+#endif
 // NOLINTEND
 
 } // namespace CameraAimAssistSystemUtil

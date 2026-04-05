@@ -33,6 +33,7 @@ MCAPI void _doPlayerPreMoveSystem(
     ::EntityModifier<::WasOnGroundFlagComponent>& modifier
 );
 
+#ifdef LL_PLAT_C
 MCAPI void _singleTickDebugCameraFilterSystem(
     ::StrictEntityContext&                                                                    entity,
     ::ViewT<::StrictEntityContext, ::Include<::LocalPlayerComponent, ::MoveRequestComponent>> view,
@@ -45,6 +46,7 @@ MCAPI void _tickDebugCameraFilterSystem(
     ::EntityModifier<::MoveRequestComponent>                                                  modifier,
     ::OptionalGlobal<::DebugCameraIsActiveComponent>                                          debugCamera
 );
+#endif
 // NOLINTEND
 
 } // namespace VanillaSystems::PlayerMoveSystemsImpl

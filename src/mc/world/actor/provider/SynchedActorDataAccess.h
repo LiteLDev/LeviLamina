@@ -11,13 +11,17 @@ class Vec3;
 namespace SynchedActorDataAccess {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI float getBoundingBoxScale(::EntityContext const& entity);
+#endif
 
 MCAPI int getControllingSeatIndex(::EntityContext const& entity);
 
 MCAPI int getJumpDuration(::EntityContext const& entity);
 
+#ifdef LL_PLAT_C
 MCAPI ::Vec3 getSeatOffset(::EntityContext const& entity);
+#endif
 
 MCAPI void initializeActor(::EntityContext& entityContext);
 

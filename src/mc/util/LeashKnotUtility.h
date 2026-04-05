@@ -17,7 +17,9 @@ namespace LeashKnotUtility {
 // NOLINTBEGIN
 MCNAPI bool canSurviveAtPos(::BlockSource const& region, ::BlockPos const& pos);
 
+#ifdef LL_PLAT_C
 MCNAPI bool canTransferLeashedActors(::Actor const& holderActor, ::BlockPos const& pos);
+#endif
 
 MCNAPI ::LeashKnot* findAt(::BlockSource& region, ::BlockPos const& pos);
 

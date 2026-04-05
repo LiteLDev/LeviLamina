@@ -22,10 +22,12 @@ MCAPI bool operator==(
     ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& __P1
 );
 
+#ifdef LL_PLAT_C
 MCAPI bool operator==(
     ::SharedTypes::v1_21_60::StorageItemComponent const& __P0,
     ::SharedTypes::v1_21_60::StorageItemComponent const& __P1
 );
+#endif
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_60

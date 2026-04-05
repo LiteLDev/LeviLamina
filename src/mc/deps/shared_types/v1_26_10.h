@@ -12,8 +12,10 @@ namespace SharedTypes::v1_26_10 { struct LayEggGoalDefinition; }
 namespace SharedTypes::v1_26_10 {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI bool
 operator==(::SharedTypes::v1_26_10::ActorDocument const& __P0, ::SharedTypes::v1_26_10::ActorDocument const& __P1);
+#endif
 
 MCAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_10::LayEggGoalDefinition& sharedGoal);
