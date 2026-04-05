@@ -375,7 +375,7 @@ public:
     MCAPI bool isMember(char const* key) const;
 
 #ifdef LL_PLAT_C
-    MCAPI_C bool isValidIndex(uint index) const;
+    MCAPI bool isValidIndex(uint index) const;
 #endif
 
     MCAPI bool operator!=(::Json::Value const& other) const;

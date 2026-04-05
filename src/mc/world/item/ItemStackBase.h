@@ -269,8 +269,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCAPI bool isDamaged() const;
-
-    MCAPI bool isEnchanted() const;
 #endif
 
     MCAPI bool isEnchantingBook() const;
