@@ -147,10 +147,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI BinaryStream();
-#endif
-
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
 
 #ifdef LL_PLAT_C

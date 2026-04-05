@@ -5,7 +5,7 @@
 #include "mc/deps/nbt/CompoundTag.h"
 
 #include "mc/deps/input/HIDController.h"
-#include "mc/deps/input/win32/HIDControllerWin32.h"
+#include "mc/deps/input/win/HIDControllerWin32.h"
 
 namespace ll::event::inline input {
 

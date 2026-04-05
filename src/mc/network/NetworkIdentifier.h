@@ -27,23 +27,15 @@ public:
     ::NetworkIdentifier::Type    mType;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
     LLNDAPI std::string getIPAndPort() const;
 
     [[nodiscard]] bool operator==(::NetworkIdentifier const& other) const { return equalsTypeData(other); }
 
-    NetworkIdentifier(::NetworkIdentifier const& other) = default;
-
-    NetworkIdentifier() = default;
-
-#else // LL_PLAT_C
 public:
-    // prevent constructor by default
-    NetworkIdentifier(NetworkIdentifier const&);
-    NetworkIdentifier();
+    NetworkIdentifier(::NetworkIdentifier const& other) = default;
+    NetworkIdentifier()                                 = default;
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
