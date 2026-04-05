@@ -97,10 +97,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
 
-#ifdef LL_PLAT_C
-    MCAPI ::Bedrock::CallStack& operator=(::Bedrock::CallStack&&);
-#endif
-
     MCAPI ~CallStack();
     // NOLINTEND
 
