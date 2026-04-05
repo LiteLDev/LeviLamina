@@ -6,8 +6,6 @@
 
 #include "mc/deps/core/memory/IMemoryAllocator.h"
 
-#include "ll/api/base/Containers.h"
-
 #include "mimalloc.h"
 
 // #define LL_MEMORY_DEBUG
@@ -121,7 +119,7 @@ struct MemSize {
 template <typename T>
 class debugAllocator : public std::allocator<T> {
 public:
-    constexpr void deallocate(T* const _Ptr, const size_t) { free(_Ptr); }
+    constexpr void deallocate(T* const _Ptr, size_t const) { free(_Ptr); }
 
     _NODISCARD_RAW_PTR_ALLOC constexpr __declspec(allocator) T* allocate(_CRT_GUARDOVERFLOW const size_t _Count) {
         return static_cast<T*>(malloc(std::_Get_size_of_n<sizeof(T)>(_Count)));
@@ -182,10 +180,18 @@ public:
 #endif
 
 ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator() {
+#ifdef LL_PLAT_C
+#ifdef LL_MEMORY_DEBUG
+    static DebugAllocator<StdMemoryAllocator> ins;
+#else
+    static StdMemoryAllocator ins;
+#endif
+#else
 #ifdef LL_MEMORY_DEBUG
     static DebugAllocator<MimallocMemoryAllocator> ins;
 #else
     static MimallocMemoryAllocator ins;
+#endif
 #endif
     return ins;
 }
