@@ -82,8 +82,3 @@ public:
     MCAPI void* $ctor(float x, float y, float z);
     // NOLINTEND
 };
-
-// free functions
-// NOLINTBEGIN
-MCNAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
-// NOLINTEND
