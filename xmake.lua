@@ -267,8 +267,7 @@ target("LeviLamina")
     end
 
     if not is_windows then
-        remove_files("./**/*_win.*")
-        remove_files("./**/*_windows.*") -- mojang has two styles
+        remove_files("./**/*_windows.*")
         remove_files("./**/win/**.*")
         remove_headerfiles("./**/win/**.*")
     end
