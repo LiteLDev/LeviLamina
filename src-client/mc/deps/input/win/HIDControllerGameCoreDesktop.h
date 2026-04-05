@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/KeyboardEventProcessor.h"
-#include "mc/deps/input/win32/HIDControllerWin32.h"
+#include "mc/deps/input/win/HIDControllerWin32.h"
 
 class HIDControllerGameCoreDesktop : public ::HIDControllerWin32 {
 public:
