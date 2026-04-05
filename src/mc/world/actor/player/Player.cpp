@@ -2,6 +2,7 @@
 
 #include "ll/api/service/Bedrock.h"
 
+#include "mc/deps/vanilla_components/PlayerComponent.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
@@ -121,9 +122,10 @@ optional_ref<EnderChestContainer> Player::getEnderChestContainer() const { retur
 Inventory& Player::getInventory() const { return *mInventory->mInventory; }
 
 Player* Player::tryGetFromEntity(EntityContext& entity, bool includeRemoved) {
-    auto player = static_cast<Player*>(Actor::tryGetFromEntity(entity, includeRemoved));
-    if (player->getEntityTypeId() == ActorType::Player || player->hasCategory(ActorCategory::Player)) {
-        return player;
+    if (entity.hasComponent<PlayerComponent>()) {
+        if (auto* player = static_cast<Player*>(Actor::tryGetFromEntity(entity, includeRemoved))) {
+            return player;
+        }
     }
     return nullptr;
 }

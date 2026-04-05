@@ -129,7 +129,7 @@ public:
 
     LLNDAPI bool isOnGround() const;
 
-    LLAPI void setOnFire(int time, bool isEffect = true);
+    LLAPI void setOnFire(int time, bool hasEffect = true);
     LLAPI void stopFire();
 
     LLNDAPI Vec3  getVelocity() const;
@@ -171,6 +171,10 @@ public:
     [[nodiscard]] bool hasCategory(ActorCategory category) const { return (mCategories & category) == category; }
 
     LLNDAPI ::DimensionType getDimensionId() const;
+
+    LLNDAPI bool isType(::ActorType type) const;
+
+    LLNDAPI bool isPlayer() const;
 
 public:
     // member variables
@@ -892,10 +896,6 @@ public:
 
     MCAPI bool isPassenger(::Actor const& passenger) const;
 
-#ifdef LL_PLAT_C
-    MCAPI bool isPlayer() const;
-#endif
-
 #ifdef LL_PLAT_S
     MCAPI bool isRemotePlayer() const;
 #endif
@@ -923,10 +923,6 @@ public:
     MCAPI bool isTouchingDamageBlock() const;
 
     MCAPI bool isTrading() const;
-
-#ifdef LL_PLAT_C
-    MCAPI bool isType(::ActorType type) const;
-#endif
 
     MCAPI bool isUnderLiquid(::MaterialType type) const;
 

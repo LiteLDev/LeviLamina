@@ -95,6 +95,9 @@ public:
     using OnPlayerLoadedCallback = ::std::function<void(::ServerPlayer&)>;
 
 public:
+    LLNDAPI static ServerPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PlatformType>                          mPlatformType;

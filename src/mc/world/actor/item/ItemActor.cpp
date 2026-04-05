@@ -18,3 +18,10 @@ bool&            ItemActor::isInItemFrame() { return mIsInItemFrame; }
 bool const&      ItemActor::isInItemFrame() const { return mIsInItemFrame; }
 bool&            ItemActor::isFromFishing() { return mIsFromFishing; }
 bool const&      ItemActor::isFromFishing() const { return mIsFromFishing; }
+
+ItemActor* ItemActor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
+    if (auto* actor = Actor::tryGetFromEntity(entity, includeRemoved); actor && actor->isType(ActorType::ItemEntity)) {
+        return static_cast<ItemActor*>(actor);
+    }
+    return nullptr;
+}

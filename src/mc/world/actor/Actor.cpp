@@ -14,6 +14,8 @@
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
 #include "mc/deps/vanilla_components/OnGroundFlagComponent.h"
+#include "mc/deps/vanilla_components/PlayerComponent.h"
+#include "mc/entity/components/ActorOwnerComponent.h"
 #include "mc/entity/components/ActorRotationComponent.h"
 #include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/components/PostTickPositionDeltaComponent.h"
@@ -77,8 +79,8 @@ bool Actor::isOnGround() const {
     return getEntityContext().mEnTTRegistry.template all_of<OnGroundFlagComponent>(getEntityContext().mEntity.mRawId);
 }
 
-void Actor::setOnFire(int time, bool isEffect) {
-    if (isEffect) {
+void Actor::setOnFire(int time, bool hasEffect) {
+    if (hasEffect) {
         OnFireSystem::setOnFire(*this, time);
     } else {
         OnFireSystem::setOnFireNoEffects(*this, time);
@@ -195,10 +197,16 @@ float Actor::evalMolang(std::string const& expression) {
 
 
 Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
-    return tryGetFromEntity(
-        StrictEntityContext{.mEntity = entity.mEntity, .mRegistryId = entity.mRegistry.mId},
-        entity.mRegistry,
-        includeRemoved
-    );
+    if (auto component = entity.tryGetComponent<ActorOwnerComponent>(); component && component->mActor) {
+        if (includeRemoved || !component->mActor->mRemoved) {
+            return &*component->mActor;
+        }
+    }
+    return nullptr;
 }
+
 ::DimensionType Actor::getDimensionId() const { return getDimension().getDimensionId(); }
+
+bool Actor::isType(::ActorType type) const { return getEntityTypeId() == type; }
+
+bool Actor::isPlayer() const { return mEntityContext->hasComponent<PlayerComponent>(); }

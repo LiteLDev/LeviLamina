@@ -78,6 +78,7 @@ public:
     LLNDAPI bool const&      isInItemFrame() const;
     LLNDAPI bool&            isFromFishing();
     LLNDAPI bool const&      isFromFishing() const;
+    LLNDAPI static ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
 public:
     // virtual functions
