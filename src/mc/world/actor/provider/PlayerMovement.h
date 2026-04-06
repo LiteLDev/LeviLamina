@@ -27,12 +27,15 @@ MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
 MCAPI void clearInputState(::MoveInputComponent& input);
 
+#ifdef LL_PLAT_C
 MCAPI ::InputMode getInputMode(::EntityContext const& provider);
+#endif
 
 MCAPI void initializePlayer(::EntityContext& provider);
 
 MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
+#ifdef LL_PLAT_C
 MCAPI bool shouldStopEmoting(
     ::Vec2                            rawMove,
     ::ActorDataFlagComponent&         actorDataFlag,
@@ -40,6 +43,7 @@ MCAPI bool shouldStopEmoting(
     ::ClientInputLockComponent&       lockComponent,
     ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
 );
+#endif
 // NOLINTEND
 
 } // namespace PlayerMovement

@@ -10,12 +10,15 @@ namespace Json { class Value; }
 namespace JsonHelpers {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI void addIntField(::Json::Value& rootValue, ::std::string const& fieldName, int const& value);
 
 MCNAPI void addStringField(::Json::Value& rootValue, ::std::string const& fieldName, ::std::string const& value);
+#endif
 
 MCNAPI ::std::string getAsString(::Json::Value const& value, ::std::string_view defaultString);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::vector<::std::string> getAsStringArray(::Json::Value const& value);
 
 MCNAPI ::Json::Value const& getField(::Json::Value const& rootValue, ::std::string const& fieldName);
@@ -54,6 +57,7 @@ MCNAPI bool hasField(::Json::Value const& rootValue, ::std::string const& fieldN
 MCNAPI bool parseJson(::std::string const& str, ::Json::Value& root);
 
 MCNAPI ::std::string serialize(::Json::Value const& root);
+#endif
 // NOLINTEND
 
 // static variables

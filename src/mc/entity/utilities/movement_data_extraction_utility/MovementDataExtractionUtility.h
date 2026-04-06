@@ -15,12 +15,15 @@ namespace MovementDataExtractionUtility { struct Extractors; }
 namespace MovementDataExtractionUtility {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::MovementDataExtractionUtility::Extractors _buildInitialRewindExtractors();
 
 MCNAPI ::AttributesComponent copyComponent(::AttributesComponent const& attributes);
+#endif
 
 MCNAPI void extractExternalData(::ExternalDataSnapshotComponent& component, ::EntityRegistry& context);
 
+#ifdef LL_PLAT_C
 MCNAPI void extractPackedSnapshot(
     ::EntityRegistry&            sourceContext,
     ::EntityRegistry&            targetContext,
@@ -46,6 +49,7 @@ MCNAPI void unpackSnapshot(
     ::StrictEntityContext const& target,
     bool
 );
+#endif
 // NOLINTEND
 
 } // namespace MovementDataExtractionUtility

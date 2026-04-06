@@ -41,6 +41,7 @@ MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::UnzipResult e);
 
 MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::ZipResult e);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
 
 MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
@@ -50,6 +51,7 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     bool                                   useLowMemMode,
     ::Core::ZipUtils::UnzipSettings const& unzipSettings
 );
+#endif
 
 MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
@@ -75,6 +77,7 @@ zip(::Core::PathView                     inputPathIn,
     bool                                 useLowMemMode,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
 
+#ifdef LL_PLAT_C
 MCNAPI ::Core::ZipUtils::ZipResult
 zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::PathView                                        zipOutputPath,
@@ -82,6 +85,7 @@ zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     bool                                                    useLowMemMode,
     ::std::function<::std::string(::Core::PathView)>        overrideNameCallback,
     ::Core::ZipUtils::ZipSettings const&                    zipSettings);
+#endif
 
 MCNAPI ::Core::ZipUtils::ZipResult zipFromZip(
     ::Core::PathView                     zipInputPath,

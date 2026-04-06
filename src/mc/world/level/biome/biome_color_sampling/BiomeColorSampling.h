@@ -33,11 +33,13 @@ MCFOLD int getMapWaterColor(::Biome const& biome, ::BlockPos const&);
 
 MCAPI ::std::vector<::BlockPos> const& getPattern(::BiomeColorSampling::Pattern pattern);
 
+#ifdef LL_PLAT_C
 MCAPI ::BiomeColorSampling::TessellationPolicy const& getTessellationPolicy(::TintMethod tint);
 
 MCAPI int getWaterColor(::Biome const& biome, ::BlockPos const&);
 
 MCFOLD int getWhite(::Biome const&, ::BlockPos const&);
+#endif
 // NOLINTEND
 
 } // namespace BiomeColorSampling

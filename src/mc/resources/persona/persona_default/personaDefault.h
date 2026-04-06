@@ -8,7 +8,9 @@
 namespace personaDefault {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI bool isBuiltinSkinPack(::mce::UUID const& packId);
+#endif
 // NOLINTEND
 
 // static variables

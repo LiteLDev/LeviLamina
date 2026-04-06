@@ -125,10 +125,12 @@ MCAPI void registerTravelEligibilitySystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+#ifdef LL_PLAT_C
 MCAPI void registerVanillaClientTickingSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
+#endif
 
 MCAPI void registerVanillaServerRuntimeInitializers(
     ::EntitySystems&                                         systems,

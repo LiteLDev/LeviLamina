@@ -57,12 +57,14 @@ MCAPI void addPendingEventResponseChange(
     ::std::string const&       displayName
 );
 
+#ifdef LL_PLAT_C
 MCAPI void ingestPropertySyncData(
     ::PropertyComponent&      props,
     ::PropertySyncData const& syncData,
     ::ActorUniqueID           id,
     ::EntityOverrides const&  overrides
 );
+#endif
 
 MCAPI bool tryQueueBoolValue(::PropertyComponent const& props, ::Actor& actor, uint64 propertyNameHash, bool value);
 

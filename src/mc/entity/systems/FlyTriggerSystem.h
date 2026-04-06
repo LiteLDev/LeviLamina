@@ -10,7 +10,9 @@ struct TickingSystemWithInfo;
 namespace FlyTriggerSystem {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_S
 MCAPI ::TickingSystemWithInfo createActionSystem();
+#endif
 
 MCAPI ::TickingSystemWithInfo createIntentSystem();
 

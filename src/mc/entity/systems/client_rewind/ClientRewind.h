@@ -28,6 +28,7 @@ struct ReplayStateValidFrameSupportComponent;
 namespace ClientRewind {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI void _advanceRewindFrameSystem(
     ::Optional<::MoveInputComponent const>                    moveInputComponent,
     ::Optional<::ReplayStateValidFrameSupportComponent const> validFrameSupportComponent,
@@ -44,6 +45,7 @@ MCAPI void _tickAdvanceRewindFrameSystem(
         ::ActorOwnerComponent,
         ::ReplayStateComponent> view
 );
+#endif
 
 MCAPI void tickAccumulate(
     ::ReplayStateTrackerComponent& tracker,
@@ -55,6 +57,7 @@ MCAPI void tickAccumulate(
         ::Optional<::ActorDataSeatOffsetComponent const>> const& data
 );
 
+#ifdef LL_PLAT_C
 MCAPI void tickCorrectionInterpolation(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                     entity,
@@ -74,6 +77,7 @@ MCAPI void tickPublish(
 );
 
 MCAPI void tickRewindHistory(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::ReplayStateComponent> const& view);
+#endif
 // NOLINTEND
 
 } // namespace ClientRewind

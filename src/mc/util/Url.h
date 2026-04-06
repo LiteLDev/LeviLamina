@@ -12,7 +12,9 @@ namespace Util::Url { struct ComponentsView; }
 namespace Util::Url {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::string addUrlSchemeIfNotPresent(::std::string const& url, ::std::string const& scheme);
+#endif
 
 MCNAPI ::std::string anonymizeIPAddress(::std::string const& ipAddress);
 
@@ -20,6 +22,7 @@ MCNAPI ::std::string anonymizeIPv6Address(::std::string const& ipAddress);
 
 MCNAPI ::std::string append(::std::string const& lhs, ::std::string const& rhs);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string appendQueryString(::std::string const& url, ::std::string const& query);
 
 MCNAPI ::std::string buildMailtoUrl(::std::string const& subject, ::std::string const& body);
@@ -33,11 +36,13 @@ MCNAPI ::std::optional<::std::string> getExtension(::std::string const& url);
 MCNAPI ::std::vector<::std::pair<::std::string_view, ::std::string_view>> getQueryParameters(::std::string_view url);
 
 MCNAPI bool isValidAbsoluteUrl(::std::string const& url);
+#endif
 
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string setQueryParameter(::std::string_view url, ::std::string_view key, ::std::string_view value);
 
 MCNAPI bool startsWithMatchingFullPathSegments(::std::string_view route, ::std::string_view start);
@@ -47,6 +52,7 @@ MCNAPI ::std::string stripProtocol(::std::string const& url);
 MCNAPI ::std::optional<::std::string> urlDecode(::std::string_view value, bool replacePlusWithSpace);
 
 MCNAPI ::std::string urlEncode(::std::string const& value);
+#endif
 
 MCNAPI ::std::string urlEncode(::std::string_view value, ::std::function<bool(uchar)> isAlphaNum);
 

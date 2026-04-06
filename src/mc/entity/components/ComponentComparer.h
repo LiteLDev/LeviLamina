@@ -5,7 +5,9 @@
 namespace ComponentComparer {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCAPI ::std::string getDiffMessage(char const* valueName, ::std::string const& lhs, ::std::string const& rhs);
+#endif
 // NOLINTEND
 
 // static variables

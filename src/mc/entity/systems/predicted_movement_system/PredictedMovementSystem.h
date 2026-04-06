@@ -58,7 +58,9 @@ MCAPI void _tickSystem(
     ::ViewT<::StrictEntityContext, ::PredictedMovementComponent> disablingView
 );
 
+#ifdef LL_PLAT_C
 MCAPI void _updateRuntimeData(::PredictedMovementComponent& component);
+#endif
 
 MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND

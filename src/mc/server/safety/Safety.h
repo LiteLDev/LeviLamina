@@ -24,9 +24,11 @@ MCNAPI ::std::unordered_map<
     ::std::equal_to<::Safety::ChatFloodingAction>> const&
 ChatFloodingActionEnumToStringMap();
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::unordered_map<::Safety::ReportArea, ::std::string> const& ReportAreaEnumMap();
 
 MCNAPI ::std::unordered_map<::Safety::ReportReason, ::std::string> const& ReportReasonEnumMap();
+#endif
 // NOLINTEND
 
 } // namespace Safety

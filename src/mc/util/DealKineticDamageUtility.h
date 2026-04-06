@@ -18,7 +18,9 @@ MCNAPI void onKineticDamageDealt(::Mob& owner, ::ActorUniqueID const& target, ::
 
 MCNAPI void startDealingKineticDamage(::EntityContext& entityContext, ::KineticDamageSettings const& settings);
 
+#ifdef LL_PLAT_C
 MCNAPI void stopDealingKineticDamage(::EntityContext& entityContext);
+#endif
 // NOLINTEND
 
 } // namespace DealKineticDamageUtility

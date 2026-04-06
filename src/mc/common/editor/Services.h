@@ -28,6 +28,7 @@ namespace Scripting::RenderHelper { class BasePrimitive; }
 namespace Editor::Services {
 // functions
 // NOLINTBEGIN
+#ifdef LL_PLAT_C
 MCNAPI ::std::optional<int> _getVanillaActionKey(::KeyboardRemappingLayout& layout, ::Remapping::ActionEnum action);
 
 MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
@@ -56,6 +57,7 @@ createPrimitive(::Editor::Network::WidgetPrimComponentLine const& data);
 
 MCNAPI ::OwnerPtr<::Scripting::RenderHelper::BasePrimitive>
 createPrimitive(::Editor::Network::WidgetPrimComponentPyramid const& data);
+#endif
 
 MCNAPI bool
 operator==(::Editor::Services::EditorRealmsWorld const& __P0, ::Editor::Services::EditorRealmsWorld const& __P1);

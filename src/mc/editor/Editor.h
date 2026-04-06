@@ -25,10 +25,13 @@ namespace Editor {
 // NOLINTBEGIN
 MCNAPI ::std::unordered_set<uint64> _getFilteredBlockSet();
 
+#ifdef LL_PLAT_C
 MCNAPI ::Bedrock::Result<::CompoundTag> compoundTagFromString(::std::string_view data);
+#endif
 
 MCNAPI ::Bedrock::Result<::std::string> compoundTagToString(::CompoundTag const& tag);
 
+#ifdef LL_PLAT_C
 MCNAPI ::std::string getLocalizedString(::std::variant<::std::string, ::Editor::LocalizationEntry> const& locale);
 
 MCNAPI void
@@ -42,6 +45,7 @@ MCNAPI void makeHollowCylinder(
     ::std::vector<::Editor::Vertex>& r_vertices,
     ::std::vector<ushort>&           r_indices
 );
+#endif
 
 MCNAPI bool operator==(::Editor::EditorBlockPalette const& __P0, ::Editor::EditorBlockPalette const& __P1);
 
