@@ -116,13 +116,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     bus.publish(e2);
 
     using namespace ll::event;
-
-    std::vector<std::pair<std::string, EventId>> ids;
-    for (auto [modName, id] : bus.events()) {
-        ids.emplace_back(std::string{modName}, id);
-    }
-    for (auto [modName, id] : ids) {
-        if (!id.name.ends_with("::LevelTickEvent"))
+    for (auto [modName, id] :  bus.events()) {
+        if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent")) 
             bus.addListener(
                 DynamicListener::create([modName](CompoundTag& nbt) {
                     ll::getLogger().debug("event from {}, {}", modName, nbt.toSnbt(SnbtFormat::PrettyChatPrint));
