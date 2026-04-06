@@ -19,7 +19,12 @@ namespace Json { class Value; }
 class SmithingTableScreenController : public ::ContainerScreenController {
 public:
     // SmithingTableScreenController inner types define
-    enum class SlotIndex : int {};
+    enum class SlotIndex : int {
+        Input    = 0,
+        Material = 1,
+        Result   = 2,
+        Template = 3,
+    };
 
 public:
     // member variables

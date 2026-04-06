@@ -4,6 +4,10 @@
 
 namespace Settings {
 
-enum class ComponentState : int {};
+enum class ComponentState : int {
+    Hidden   = 0,
+    Disabled = 1,
+    Enabled  = 2,
+};
 
 }

@@ -15,7 +15,10 @@ namespace Json { class Value; }
 class AddExternalServerScreenController : public ::MainMenuScreenController {
 public:
     // AddExternalServerScreenController inner types define
-    enum class Mode : int {};
+    enum class Mode : int {
+        Add  = 0,
+        Edit = 1,
+    };
 
 public:
     // member variables

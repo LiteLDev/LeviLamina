@@ -20,7 +20,11 @@ struct ActorUniqueID;
 class AnvilScreenController : public ::ContainerScreenController {
 public:
     // AnvilScreenController inner types define
-    enum class SlotIndex : int {};
+    enum class SlotIndex : int {
+        Input    = 0,
+        Material = 1,
+        Result   = 2,
+    };
 
 public:
     // member variables

@@ -24,7 +24,12 @@ class UIScene;
 class HudCameraRenderer : public ::MinecraftUICustomRenderer, public ::CameraCallbacks {
 public:
     // HudCameraRenderer inner types define
-    enum class State : int {};
+    enum class State : int {
+        None          = 0,
+        ShowBlackBars = 1,
+        ShowShutter   = 2,
+        ShowPicture   = 3,
+    };
 
 public:
     // member variables

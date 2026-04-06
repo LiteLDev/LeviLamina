@@ -9,6 +9,7 @@
 #include "mc/client/gui/screens/controllers/FadeInIconBehavior.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/item/FurnaceItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,9 +33,32 @@ public:
     // clang-format on
 
     // FurnaceScreenController inner types define
-    enum class CategoryTabState : int {};
+    enum class CategoryTabState : int {
+        Visible = 0,
+        Hidden  = 1,
+    };
 
-    struct CategoryTabInfo {};
+    struct CategoryTabInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::FurnaceItemCategory> category;
+        ::ll::TypedStorage<1, 1, ::ContainerEnumName>   containerEnum;
+        ::ll::TypedStorage<8, 32, ::std::string>        tabName;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~CategoryTabInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

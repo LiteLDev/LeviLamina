@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/ComponentReceiveActionType.h"
+#include "mc/client/gui/controls/SoundEventConditions.h"
 #include "mc/client/gui/controls/UIComponent.h"
 #include "mc/client/gui/screens/ScreenEventType.h"
 
@@ -15,7 +16,6 @@ class UIControl;
 class UISoundPlayer;
 class VisualTree;
 struct ScreenEvent;
-union SoundEventConditions;
 // clang-format on
 
 class SoundComponent : public ::UIComponent {
@@ -26,7 +26,19 @@ public:
     // clang-format on
 
     // SoundComponent inner types define
-    struct SoundEventInfo {};
+    struct SoundEventInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                          mSoundName;
+        ::ll::TypedStorage<4, 4, float>                                   mVolume;
+        ::ll::TypedStorage<4, 4, float>                                   mPitch;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPlayTime;
+        ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds>             mMinTimeBetweenPlays;
+        ::ll::TypedStorage<4, 4, ::ScreenEventType>                       mScreenEventType;
+        ::ll::TypedStorage<4, 8, ::SoundEventConditions>                  mEventConditions;
+        // NOLINTEND
+    };
 
 public:
     // member variables

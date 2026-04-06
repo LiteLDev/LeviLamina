@@ -10,7 +10,16 @@ public:
     // clang-format on
 
     // ScrollbarDynamics inner types define
-    class TargetPosDeltaSim {};
+    class TargetPosDeltaSim {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float> mAccumulatedDelta;
+        ::ll::TypedStorage<4, 4, float> mTimeAccumulator;
+        ::ll::TypedStorage<4, 4, float> mInterpStart;
+        ::ll::TypedStorage<4, 4, float> mInterpEnd;
+        // NOLINTEND
+    };
 
 public:
     // member variables

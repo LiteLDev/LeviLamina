@@ -7,9 +7,11 @@
 #include "mc/deps/core/checked_resource_service/ClientResourcePointer.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Matrix.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/minecraft_renderer/resources/ServerTexture.h"
 #include "mc/world/phys/AABB.h"
 
@@ -35,7 +37,52 @@ public:
     // clang-format on
 
     // UIThumbnailAtlasRenderer inner types define
-    struct AtlasInfo {};
+    struct AtlasInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>               mScale;
+        ::ll::TypedStorage<8, 8, uint64>              mTextureWidth;
+        ::ll::TypedStorage<8, 8, uint64>              mTextureHeight;
+        ::ll::TypedStorage<8, 8, uint64>              mThumbnailWidth;
+        ::ll::TypedStorage<8, 8, uint64>              mThumbnailHeight;
+        ::ll::TypedStorage<4, 4, float>               mTranslateX;
+        ::ll::TypedStorage<4, 4, float>               mTranslateY;
+        ::ll::TypedStorage<8, 56, ::ResourceLocation> mServerResourceLocation;
+        ::ll::TypedStorage<8, 56, ::ResourceLocation> mAtlasResourceLocation;
+        ::ll::TypedStorage<8, 32, ::mce::TexturePtr>  mAtlasTexturePtr;
+        ::ll::TypedStorage<8, 8, uint64>              mAtlasTexturePtrHash;
+        ::ll::TypedStorage<8, 32, ::std::string>      mServerTextureName;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        AtlasInfo& operator=(AtlasInfo const&);
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI AtlasInfo();
+
+        MCAPI AtlasInfo(::UIThumbnailAtlasRenderer::AtlasInfo const&);
+
+        MCAPI ~AtlasInfo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+
+        MCAPI void* $ctor(::UIThumbnailAtlasRenderer::AtlasInfo const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using SubstitutionMap = ::std::unordered_map<::HashedString, ::HashedString>;
 

@@ -19,7 +19,11 @@ struct PackIdVersion;
 class DlcBatchModel : public ::IDlcBatchModel {
 public:
     // DlcBatchModel inner types define
-    enum class DlcProductIdSearch : int {};
+    enum class DlcProductIdSearch : int {
+        Unknown   = 0,
+        Searching = 1,
+        Done      = 2,
+    };
 
 public:
     // member variables

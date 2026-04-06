@@ -25,7 +25,11 @@ namespace Json { class Value; }
 class EDUWorldsScreenController : public ::SettingsScreenControllerBase {
 public:
     // EDUWorldsScreenController inner types define
-    enum class StartWorldCaller : int {};
+    enum class StartWorldCaller : int {
+        Play     = 0,
+        Host     = 1,
+        Download = 2,
+    };
 
 public:
     // member variables

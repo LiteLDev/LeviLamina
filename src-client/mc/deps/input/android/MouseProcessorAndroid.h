@@ -10,12 +10,30 @@ public:
     // clang-format on
 
     // MouseProcessorAndroid inner types define
-    enum class MouseType : int {};
+    enum class MouseType : int {
+        Relative = 0,
+        Absolute = 1,
+    };
 
     struct MouseInputEvent {
     public:
         // MouseInputEvent inner types define
-        enum class Action : uchar {};
+        enum class Action : uchar {
+            Invalid   = 0,
+            Scroll    = 1,
+            Move      = 2,
+            HoverMove = 3,
+            Interact  = 4,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::MouseProcessorAndroid::MouseInputEvent::Action> mAction;
+        ::ll::TypedStorage<4, 4, int>                                              mButtonState;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                                      mCursorPosition;
+        ::ll::TypedStorage<4, 4, int>                                              mExplicitScrollData;
+        // NOLINTEND
     };
 
 public:

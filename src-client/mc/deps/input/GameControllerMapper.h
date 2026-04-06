@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputDeviceMapper.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/enums/ButtonState.h"
 #include "mc/deps/input/enums/DirectionId.h"
 
 // auto generated forward declare list
@@ -33,15 +34,95 @@ public:
     // clang-format on
 
     // GameControllerMapper inner types define
-    struct TriggerState {};
+    struct TriggerState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>          id;
+        ::ll::TypedStorage<1, 1, ::ButtonState> currentState;
+        ::ll::TypedStorage<4, 4, float>         triggerThreshold;
+        // NOLINTEND
+    };
 
-    struct DirectionAttributes {};
+    struct DirectionAttributes {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::DirectionId> id;
+        ::ll::TypedStorage<4, 4, int>           xAxis;
+        ::ll::TypedStorage<4, 4, int>           yAxis;
+        ::ll::TypedStorage<1, 1, bool>          raiseTurnEvents;
+        // NOLINTEND
+    };
 
-    struct ButtonAttributes {};
+    struct ButtonAttributes {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>  nameId;
+        ::ll::TypedStorage<4, 4, float> repeatInterval;
+        // NOLINTEND
+    };
 
-    struct GameControllerMappingData {};
+    struct GameControllerMappingData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 64, ::std::unordered_multimap<int, ::GameControllerMapper::ButtonAttributes>>
+            mGamePadButtonToButtonIdMap;
+        ::ll::TypedStorage<8, 64, ::std::unordered_multimap<int, ::GameControllerMapper::TriggerState>>
+            mTriggerToButtonIdMap;
+        ::ll::TypedStorage<8, 64, ::std::unordered_multimap<int, ::GameControllerMapper::DirectionAttributes>>
+                                                                                         mStickToDirectionIdMap;
+        ::ll::TypedStorage<8, 64, ::std::unordered_multimap<int, uint>>                  mStickToButtonIdMap;
+        ::ll::TypedStorage<8, 64, ::std::unordered_multimap<::DirectionId, uint>>        mStickDirectionToButtonIdMap;
+        ::ll::TypedStorage<8, 16, ::std::set<uint>>                                      mExclusiveButtonIdSet;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::GameControllerStickEvent>> mPreviousStickEvents;
+        ::ll::TypedStorage<1, 1, bool>                                                   mMappingChanged;
+        // NOLINTEND
 
-    struct GamepadStickTurnData {};
+    public:
+        // prevent constructor by default
+        GameControllerMappingData& operator=(GameControllerMappingData const&);
+        GameControllerMappingData(GameControllerMappingData const&);
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI GameControllerMappingData();
+
+        MCAPI GameControllerMappingData(::GameControllerMapper::GameControllerMappingData&&);
+
+        MCAPI ::GameControllerMapper::GameControllerMappingData&
+        operator=(::GameControllerMapper::GameControllerMappingData&&);
+
+        MCAPI ~GameControllerMappingData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+
+        MCAPI void* $ctor(::GameControllerMapper::GameControllerMappingData&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct GamepadStickTurnData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>        turnStickActive;
+        ::ll::TypedStorage<4, 8, ::glm::vec2> lastTurnStickPos;
+        ::ll::TypedStorage<4, 4, int>         controllerId;
+        // NOLINTEND
+    };
 
     using GameControllerButtonId = int;
 

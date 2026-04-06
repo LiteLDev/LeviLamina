@@ -22,7 +22,11 @@ namespace Json { class Value; }
 class LoomScreenController : public ::ContainerScreenController {
 public:
     // LoomScreenController inner types define
-    enum class LeftTabIndex : int {};
+    enum class LeftTabIndex : int {
+        Inventory = 0,
+        Patterns  = 1,
+        Count     = 2,
+    };
 
 public:
     // member variables

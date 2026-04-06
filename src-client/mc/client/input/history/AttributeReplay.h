@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/vanilla_components/MovementAttributesComponent.h"
+#include "mc/entity/components/MovementAttributeAccess.h"
+#include "mc/entity/components/MovementAttributeCorrectionMode.h"
 #include "mc/entity/utilities/AdvanceFrameResult.h"
 #include "mc/entity/utilities/IMovementCorrection.h"
 
@@ -25,7 +27,17 @@ public:
     // clang-format on
 
     // AttributeReplay inner types define
-    struct MovementAttributeInfo {};
+    struct MovementAttributeInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::optional<float> MovementAttributesComponent::*>
+                                                                    mMovementAttributeComponentMemberPtr;
+        ::ll::TypedStorage<1, 1, ::MovementAttributeAccess>         mAccess;
+        ::ll::TypedStorage<1, 1, ::MovementAttributeCorrectionMode> mCorrectionMode;
+        ::ll::TypedStorage<1, 1, bool>                              mSkipUpdate;
+        // NOLINTEND
+    };
 
 public:
     // member variables

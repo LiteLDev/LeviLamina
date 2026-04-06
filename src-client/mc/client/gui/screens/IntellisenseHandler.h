@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemInstance.h"
+
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
@@ -19,7 +22,26 @@ public:
     // clang-format on
 
     // IntellisenseHandler inner types define
-    struct AutoCompleteMessage {};
+    struct AutoCompleteMessage {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>   text;
+        ::ll::TypedStorage<8, 128, ::ItemInstance> itemInstance;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~AutoCompleteMessage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

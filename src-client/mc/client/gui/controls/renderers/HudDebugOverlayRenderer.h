@@ -20,17 +20,70 @@ public:
     // clang-format on
 
     // HudDebugOverlayRenderer inner types define
-    struct WorkerStatsSnapshot {};
+    struct WorkerStatsSnapshot {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64> queued;
+        ::ll::TypedStorage<8, 8, uint64> reQueued;
+        ::ll::TypedStorage<8, 8, uint64> processed;
+        ::ll::TypedStorage<8, 8, uint64> noops;
+        ::ll::TypedStorage<8, 8, uint64> maxQueued;
+        ::ll::TypedStorage<8, 8, uint64> sorts;
+        ::ll::TypedStorage<8, 8, uint64> waits;
+        // NOLINTEND
+    };
 
-    struct WorkerStats {};
+    struct WorkerStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 56, ::HudDebugOverlayRenderer::WorkerStatsSnapshot> last;
+        ::ll::TypedStorage<8, 56, ::HudDebugOverlayRenderer::WorkerStatsSnapshot> curr;
+        // NOLINTEND
+    };
 
-    struct TaskStatsSnapshot {};
+    struct TaskStatsSnapshot {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64> count;
+        ::ll::TypedStorage<8, 8, uint64> maxCount;
+        // NOLINTEND
+    };
 
-    struct TaskStats {};
+    struct TaskStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::HudDebugOverlayRenderer::TaskStatsSnapshot> last;
+        ::ll::TypedStorage<8, 16, ::HudDebugOverlayRenderer::TaskStatsSnapshot> curr;
+        // NOLINTEND
+    };
 
-    struct SpinLockMetrics {};
+    struct SpinLockMetrics {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64> contention;
+        ::ll::TypedStorage<8, 8, uint64> contentionBlocked;
+        ::ll::TypedStorage<8, 8, uint64> blockedTicks;
+        ::ll::TypedStorage<8, 8, uint64> blockedTicksMax;
+        ::ll::TypedStorage<8, 8, uint64> yields;
+        ::ll::TypedStorage<8, 8, uint64> lockCount;
+        ::ll::TypedStorage<8, 8, uint64> lockTicks;
+        ::ll::TypedStorage<8, 8, uint64> lockTicksMax;
+        // NOLINTEND
+    };
 
-    struct SpinLockStats {};
+    struct SpinLockStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 64, ::HudDebugOverlayRenderer::SpinLockMetrics> last;
+        ::ll::TypedStorage<8, 64, ::HudDebugOverlayRenderer::SpinLockMetrics> curr;
+        // NOLINTEND
+    };
 
 public:
     // member variables

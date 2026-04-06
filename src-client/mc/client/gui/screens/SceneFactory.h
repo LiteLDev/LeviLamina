@@ -26,6 +26,7 @@
 #include "mc/client/tts/TTSEnabledStatus.h"
 #include "mc/deps/core/file/FileUploadType.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/optional_ref.h"
@@ -53,6 +54,7 @@ class IContentManager;
 class IMinecraftGame;
 class IStoreCatalogItem;
 class IUIDefRepository;
+class LayoutManager;
 class LibraryCollection;
 class LibraryItem;
 class MinecraftScreenModel;
@@ -69,8 +71,11 @@ class SkinPackCollectionModel;
 class SkinPackModel;
 class StoreCatalogItem;
 class TaskGroup;
+class UIControl;
+class UIControlFactory;
 class UIScene;
 class UISoundPlayer;
+class VisualTree;
 struct ActiveDirectoryModalArgs;
 struct ActorUniqueID;
 struct ContentItem;
@@ -98,7 +103,30 @@ public:
     // clang-format on
 
     // SceneFactory inner types define
-    struct PreCachePackage {};
+    struct PreCachePackage {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                         screenName;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIControlFactory>> controlFactory;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VisualTree>>        visualTree;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LayoutManager>>     layoutManager;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIControl>>        rootControl;
+        ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>     taskHandle;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~PreCachePackage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using InGameScreenCreator = ::std::function<::std::shared_ptr<::UIScene>(
         ::SceneFactory&,

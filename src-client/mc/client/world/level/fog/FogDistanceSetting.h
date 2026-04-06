@@ -8,7 +8,10 @@
 struct FogDistanceSetting {
 public:
     // FogDistanceSetting inner types define
-    enum class DistanceType : int {};
+    enum class DistanceType : int {
+        Fixed  = 0,
+        Render = 1,
+    };
 
 public:
     // member variables

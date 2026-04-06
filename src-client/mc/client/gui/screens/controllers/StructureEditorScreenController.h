@@ -26,7 +26,10 @@ namespace Json { class Value; }
 class StructureEditorScreenController : public ::BlockScreenController {
 public:
     // StructureEditorScreenController inner types define
-    enum class FilePickerType : uchar {};
+    enum class FilePickerType : uchar {
+        Export = 0,
+        Import = 1,
+    };
 
 public:
     // member variables

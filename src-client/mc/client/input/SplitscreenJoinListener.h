@@ -15,9 +15,20 @@ public:
     // clang-format on
 
     // SplitscreenJoinListener inner types define
-    enum class SplitscreenJoinInputState : int {};
+    enum class SplitscreenJoinInputState : int {
+        None                       = 0,
+        InitialJoinInputReceived   = 1,
+        WaitingForJoinConfirmation = 2,
+    };
 
-    struct SplitscreenJoinTracker {};
+    struct SplitscreenJoinTracker {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::SplitscreenJoinListener::SplitscreenJoinInputState> mState;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>              mSplitscreenJoinExpiration;
+        // NOLINTEND
+    };
 
 public:
     // member variables

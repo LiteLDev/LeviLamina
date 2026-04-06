@@ -26,7 +26,32 @@ public:
     // clang-format on
 
     // ISceneStack inner types define
-    struct SceneElement {};
+    struct SceneElement {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AbstractScene>> mScene;
+        ::ll::TypedStorage<1, 1, bool>                                mHasCompletedPrepop;
+        // NOLINTEND
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~SceneElement();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
     using SceneChangeCallback = ::std::function<void(::AbstractScene&)>;
 

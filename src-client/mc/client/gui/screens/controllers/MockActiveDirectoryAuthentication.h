@@ -19,7 +19,30 @@ struct Purchase;
 class MockActiveDirectoryAuthentication : public ::ActiveDirectoryAuthenticationInterface {
 public:
     // MockActiveDirectoryAuthentication inner types define
-    enum class UIState : int {};
+    enum class UIState : int {
+        SignInPrompt                  = 0,
+        SignInAdalInProgress          = 1,
+        SignInPromptAdalFailed        = 2,
+        SignInMutsInProgress          = 3,
+        SignInPromptMutsInvalid       = 4,
+        SignInPromptMutsNetworkError  = 5,
+        SignInInvalidClient           = 6,
+        SignInInvalidAccountType      = 7,
+        TrialNew                      = 8,
+        TrialWarning                  = 9,
+        OneTrialWarning               = 10,
+        FinalTrialWarning             = 11,
+        TrialEnded                    = 12,
+        GeneralPopupContinue          = 13,
+        GeneralPopupQuit              = 14,
+        GeneralPopupDisplayDemoChoice = 15,
+        Eula                          = 16,
+        Purchase                      = 17,
+        Welcome                       = 18,
+        DemoSignIn                    = 19,
+        SigninDemoInvalid             = 20,
+        Count                         = 21,
+    };
 
 public:
     // member variables

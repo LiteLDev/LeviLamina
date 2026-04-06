@@ -10,7 +10,10 @@ class StoreCatalogItem;
 class ISuggestedContentOffersProvider {
 public:
     // ISuggestedContentOffersProvider inner types define
-    enum class CollectionType : int {};
+    enum class CollectionType : int {
+        StoreItems      = 0,
+        RealmsPlusItems = 1,
+    };
 
 public:
     // virtual functions

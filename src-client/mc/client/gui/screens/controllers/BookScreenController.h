@@ -20,7 +20,12 @@ namespace Json { class Value; }
 class BookScreenController : public ::ClientInstanceScreenController {
 public:
     // BookScreenController inner types define
-    enum class BookView : uchar {};
+    enum class BookView : uchar {
+        Viewing   = 0,
+        Signing   = 1,
+        Picking   = 2,
+        Exporting = 3,
+    };
 
 public:
     // member variables

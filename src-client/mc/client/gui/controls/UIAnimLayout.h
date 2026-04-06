@@ -15,7 +15,10 @@ class UIResolvedDef;
 class UIAnimLayout : public ::UIAnim {
 public:
     // UIAnimLayout inner types define
-    enum class ApplyTo : int {};
+    enum class ApplyTo : int {
+        Offset = 0,
+        Size   = 1,
+    };
 
 public:
     // member variables

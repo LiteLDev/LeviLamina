@@ -21,7 +21,30 @@ public:
     // clang-format on
 
     // FileDownloadScreenController inner types define
-    struct RealmData {};
+    struct RealmData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> realmID;
+        ::ll::TypedStorage<8, 32, ::std::string> realmName;
+        ::ll::TypedStorage<8, 32, ::std::string> realmVersion;
+        ::ll::TypedStorage<8, 32, ::std::string> realmVersionName;
+        ::ll::TypedStorage<8, 32, ::std::string> currentUserXuid;
+        ::ll::TypedStorage<4, 4, int>            slotIndex;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~RealmData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

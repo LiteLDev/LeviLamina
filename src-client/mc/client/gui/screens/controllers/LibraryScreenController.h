@@ -20,13 +20,28 @@ namespace librarySearch { struct TelemetryData; }
 class LibraryScreenController : public ::MainMenuScreenController {
 public:
     // LibraryScreenController inner types define
-    enum class ItemType : uchar {};
+    enum class ItemType : uchar {
+        Normal = 0,
+        Large  = 1,
+    };
 
-    enum class OptionalFeature : uchar {};
+    enum class OptionalFeature : uchar {
+        None                         = 0,
+        FilterBar                    = 2,
+        FindWorldsAndFeedbackButtons = 4,
+        WelcomeMessage               = 8,
+    };
 
-    enum class ScreenType : uchar {};
+    enum class ScreenType : uchar {
+        None    = 0,
+        Library = 1,
+    };
 
-    enum class ErrorType : uchar {};
+    enum class ErrorType : uchar {
+        None              = 0,
+        LibraryConnection = 1,
+        NoLessonsFound    = 2,
+    };
 
 public:
     // member variables

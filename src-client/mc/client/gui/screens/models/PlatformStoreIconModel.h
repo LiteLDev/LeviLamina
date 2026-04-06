@@ -18,7 +18,14 @@ public:
     // clang-format on
 
     // PlatformStoreIconModel inner types define
-    struct PlatformStoreIconVisibility {};
+    struct PlatformStoreIconVisibility {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mIsInGameBrowsing;
+        ::ll::TypedStorage<1, 1, bool> mIsCheckoutInProgress;
+        // NOLINTEND
+    };
 
 public:
     // member variables

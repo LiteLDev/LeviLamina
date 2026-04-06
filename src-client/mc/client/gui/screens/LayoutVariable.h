@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/screens/LayoutRule.h"
 #include "mc/client/gui/screens/LayoutVariableStringType.h"
 #include "mc/client/gui/screens/LayoutVariableType.h"
 
 // auto generated forward declare list
 // clang-format off
-class LayoutRule;
 class UIControl;
 class VariableRef;
 struct PostOperation;
@@ -24,9 +24,35 @@ public:
     // clang-format on
 
     // LayoutVariable inner types define
-    struct RuleValue {};
+    struct RuleValue {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>         mValue;
+        ::ll::TypedStorage<8, 24, ::LayoutRule> mRule;
+        // NOLINTEND
+    };
 
-    struct MinMaxRuleValue {};
+    struct MinMaxRuleValue {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::LayoutVariable::RuleValue> mMinValue;
+        ::ll::TypedStorage<8, 32, ::LayoutVariable::RuleValue> mMaxValue;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~MinMaxRuleValue();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

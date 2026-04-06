@@ -21,7 +21,21 @@ public:
     // clang-format on
 
     // NinePatchLayer inner types define
-    struct CachedQuad {};
+    struct CachedQuad {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float> x0;
+        ::ll::TypedStorage<4, 4, float> x1;
+        ::ll::TypedStorage<4, 4, float> y0;
+        ::ll::TypedStorage<4, 4, float> y1;
+        ::ll::TypedStorage<4, 4, float> z;
+        ::ll::TypedStorage<4, 4, float> u0;
+        ::ll::TypedStorage<4, 4, float> u1;
+        ::ll::TypedStorage<4, 4, float> v0;
+        ::ll::TypedStorage<4, 4, float> v1;
+        // NOLINTEND
+    };
 
 public:
     // member variables

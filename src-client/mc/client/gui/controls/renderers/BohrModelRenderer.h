@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
+#include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
@@ -16,6 +17,7 @@ class Tessellator;
 class UIControl;
 class UICustomRenderer;
 class UIScene;
+namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
 // clang-format on
 
@@ -28,9 +30,28 @@ public:
     // clang-format on
 
     // BohrModelRenderer inner types define
-    class Renderable {};
+    class Renderable {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::Mesh>> mMesh;
+        ::ll::TypedStorage<8, 32, ::mce::TexturePtr>             mTexture;
+        // NOLINTEND
+    };
 
-    struct State {};
+    struct State {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>    mElectrons;
+        ::ll::TypedStorage<4, 4, int>    mProtons;
+        ::ll::TypedStorage<4, 4, int>    mNeutrons;
+        ::ll::TypedStorage<4, 4, int>    mRings;
+        ::ll::TypedStorage<4, 4, float>  mScale;
+        ::ll::TypedStorage<4, 8, ::Vec2> mTopLeft;
+        ::ll::TypedStorage<4, 8, ::Vec2> mBottomRight;
+        // NOLINTEND
+    };
 
 public:
     // member variables

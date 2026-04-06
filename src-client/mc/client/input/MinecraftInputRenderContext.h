@@ -7,11 +7,11 @@
 #include "mc/client/gui/ScreenRenderer.h"
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/input/InputRenderContext.h"
+#include "mc/deps/input/RectangleArea.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
 // clang-format off
-class RectangleArea;
 class ScreenContext;
 class Tessellator;
 namespace mce { class TextureGroup; }
@@ -25,7 +25,15 @@ public:
     // clang-format on
 
     // MinecraftInputRenderContext inner types define
-    struct TextItem {};
+    struct TextItem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 16, ::RectangleArea> area;
+        ::ll::TypedStorage<4, 16, ::mce::Color>    color;
+        ::ll::TypedStorage<8, 32, ::std::string>   text;
+        // NOLINTEND
+    };
 
 public:
     // member variables

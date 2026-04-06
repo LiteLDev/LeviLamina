@@ -10,7 +10,9 @@
 #include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/SlotData.h"
 #include "mc/world/containers/controllers/ItemCraftType.h"
+#include "mc/world/item/ItemGroup.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
@@ -48,9 +50,24 @@ public:
     // clang-format on
 
     // ContainerAPI inner types define
-    struct SplitMultipleState {};
+    struct SplitMultipleState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 136, ::ItemGroup> distributionSource;
+        ::ll::TypedStorage<8, 40, ::SlotData>   lastPlaceAllSlot;
+        ::ll::TypedStorage<4, 4, int>           lastPlaceAllAmount;
+        // NOLINTEND
+    };
 
-    struct SplitSingleState {};
+    struct SplitSingleState {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneSelectedSlot;
+        ::ll::TypedStorage<8, 40, ::SlotData> lastPlaceOneDestinationSlot;
+        // NOLINTEND
+    };
 
 public:
     // member variables

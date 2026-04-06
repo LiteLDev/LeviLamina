@@ -23,7 +23,11 @@ struct LevelSummary;
 class MakeInfiniteProgressHandler : public ::ProgressHandler {
 public:
     // MakeInfiniteProgressHandler inner types define
-    enum class State : int {};
+    enum class State : int {
+        Backup  = 0,
+        Loading = 1,
+        Saving  = 2,
+    };
 
 public:
     // member variables

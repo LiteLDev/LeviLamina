@@ -17,7 +17,12 @@ struct ActorUniqueID;
 class ElementConstructorScreenController : public ::ContainerScreenController {
 public:
     // ElementConstructorScreenController inner types define
-    enum class ParticleType : uchar {};
+    enum class ParticleType : uchar {
+        Proton   = 0,
+        Electron = 1,
+        Neutron  = 2,
+        Count    = 3,
+    };
 
 public:
     // member variables

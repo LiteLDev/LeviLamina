@@ -18,7 +18,19 @@ namespace Social { class User; }
 class WorldSettingsRules {
 public:
     // WorldSettingsRules inner types define
-    enum class GeneralMultiplayerWarningState : int {};
+    enum class GeneralMultiplayerWarningState : int {
+        None                                        = 0,
+        CheckInternetConnection                     = 1,
+        DisconnectedThirdPartyWithSubscription      = 2,
+        DisconnectedThirdParty                      = 3,
+        LocalMultiplayerPrivilegesBlockedThirdParty = 4,
+        MultiplayerPrivilegesBlockedThirdParty      = 5,
+        MultiplayerPrivilegesBlocked                = 6,
+        MultiplayerPrivilegesBlockedOnConsole       = 7,
+        CrossPlatformDisabled                       = 8,
+        NonMultiplayerSkinEquipped                  = 9,
+        Max                                         = 10,
+    };
 
 public:
     // member variables

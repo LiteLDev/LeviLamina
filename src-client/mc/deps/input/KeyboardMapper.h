@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputDeviceMapper.h"
 #include "mc/deps/input/InputMode.h"
+#include "mc/deps/input/enums/FocusImpact.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,9 +25,23 @@ public:
     // clang-format on
 
     // KeyboardMapper inner types define
-    struct KeyboardKeyButtonDetails {};
+    struct KeyboardKeyButtonDetails {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>          nameId;
+        ::ll::TypedStorage<1, 1, ::FocusImpact> focusImpact;
+        // NOLINTEND
+    };
 
-    struct KeyboardMappingData {};
+    struct KeyboardMappingData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::multimap<int, ::KeyboardMapper::KeyboardKeyButtonDetails>>
+            mKeyboardKeyToButtonDetailsMap;
+        // NOLINTEND
+    };
 
     using KeyboardKeyId = int;
 

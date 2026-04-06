@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/input/InputMapping.h"
+#include "mc/deps/input/InputMappingFactory.h"
 #include "mc/deps/input/InputMappingFactoryMap.h"
 
 // auto generated forward declare list
 // clang-format off
-class InputMappingFactory;
 struct ControllerIDtoClientMap;
 // clang-format on
 
@@ -20,7 +21,33 @@ public:
     // clang-format on
 
     // MinecraftInputMappingFactoryMap inner types define
-    class NullInputMappingFactory {};
+    class NullInputMappingFactory : public ::InputMappingFactory {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 720, ::InputMapping const> mEmptyInputMapping;
+        // NOLINTEND
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::InputMapping const* getMapping(::std::string const& mappingName) /*override*/;
+
+        virtual ~NullInputMappingFactory() /*override*/ = default;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCFOLD ::InputMapping const* $getMapping(::std::string const& mappingName);
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
 public:
     // member variables

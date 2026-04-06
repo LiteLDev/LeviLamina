@@ -7,6 +7,8 @@
 #include "mc/client/gui/screens/controllers/MainMenuScreenController.h"
 #include "mc/client/services/clubs/ActivityFeed.h"
 #include "mc/client/services/clubs/ClubModel.h"
+#include "mc/client/social/PlatformUserProfileData.h"
+#include "mc/client/social/ProfileImageOptions.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/platform/threading/Mutex.h"
@@ -29,9 +31,48 @@ public:
     // clang-format on
 
     // ClubsBaseController inner types define
-    struct FeedPlayerInfo {};
+    struct FeedPlayerInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                 mPlayerName;
+        ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions> mProfileImage;
+        // NOLINTEND
 
-    struct LinkedPlatformUserProfileData {};
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~FeedPlayerInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct LinkedPlatformUserProfileData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Social::XboxLiveUserProfileData const*> mXboxUserProfileData;
+        ::ll::TypedStorage<8, 192, ::Social::PlatformUserProfileData>      mPlatformUserProfileData;
+        ::ll::TypedStorage<1, 1, bool>                                     mUsesLinkedProfile;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~LinkedPlatformUserProfileData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

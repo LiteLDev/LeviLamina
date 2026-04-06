@@ -24,7 +24,10 @@ namespace Realms { struct World; }
 class MainMenuScreenController : public ::MinecraftScreenController {
 public:
     // MainMenuScreenController inner types define
-    enum class StartRealmFailureAction : int {};
+    enum class StartRealmFailureAction : int {
+        ShowModalPopup     = 0,
+        JustNotifyCallback = 1,
+    };
 
 public:
     // member variables

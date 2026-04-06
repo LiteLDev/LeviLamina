@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/models/ContentItemCollectionVersion.h"
 #include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
+class IVersionedContentItemCollection;
 class ReadOnlyContentItemCollection;
 struct ContentCollectionOptions;
 struct ContentItem;
@@ -21,9 +23,36 @@ public:
     // clang-format on
 
     // ContentItemCollection inner types define
-    struct ContentViewSource {};
+    struct ContentViewSource {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::ContentItemCollectionVersion>                            mLastVersion;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::IVersionedContentItemCollection const>> mCollection;
+        // NOLINTEND
+    };
 
-    struct ItemCollection {};
+    struct ItemCollection {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::ContentItem>>>                      mItemProxy;
+        ::ll::TypedStorage<8, 64, ::brstd::move_only_function<bool(::ContentItem const&)>>                mPredicate;
+        ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::std::shared_ptr<::ContentItem const>>>> mCollection;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ItemCollection();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using OnReload = ::brstd::move_only_function<void(::ContentItemCollection&)>;
 

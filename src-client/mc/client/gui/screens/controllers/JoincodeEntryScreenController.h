@@ -18,7 +18,14 @@ namespace EDUDiscovery { struct JoinServerQueryState; }
 class JoincodeEntryScreenController : public ::MinecraftScreenController {
 public:
     // JoincodeEntryScreenController inner types define
-    enum class ActiveScreen : int {};
+    enum class ActiveScreen : int {
+        None        = 0,
+        Entry       = 1,
+        Connecting  = 2,
+        Error       = 3,
+        ServerFound = 4,
+        IPEntry     = 5,
+    };
 
 public:
     // member variables

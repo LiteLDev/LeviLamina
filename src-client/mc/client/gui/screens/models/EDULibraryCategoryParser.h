@@ -11,7 +11,10 @@ struct EDULibraryCategory;
 struct EDULibraryCategoryParser {
 public:
     // EDULibraryCategoryParser inner types define
-    enum class CategoryType : int {};
+    enum class CategoryType : int {
+        SubCategory = 0,
+        Worlds      = 1,
+    };
 
     using SubCategoryCallback = ::std::function<void(
         ::std::shared_ptr<::MainMenuScreenModel>,

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/enums/TouchPadTouchPointState.h"
+
 struct TouchPadTouchEventData {
 public:
     // TouchPadTouchEventData inner types declare
@@ -11,9 +14,25 @@ public:
     // clang-format on
 
     // TouchPadTouchEventData inner types define
-    struct TouchPoint {};
+    struct TouchPoint {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>                       mId;
+        ::ll::TypedStorage<4, 4, float>                     mX;
+        ::ll::TypedStorage<4, 4, float>                     mY;
+        ::ll::TypedStorage<4, 4, ::TouchPadTouchPointState> mState;
+        // NOLINTEND
+    };
 
-    struct Resolution {};
+    struct Resolution {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float> mWidth;
+        ::ll::TypedStorage<4, 4, float> mHeight;
+        // NOLINTEND
+    };
 
 public:
     // member variables

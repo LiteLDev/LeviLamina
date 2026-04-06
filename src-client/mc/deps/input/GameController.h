@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/input/interface/IGameController.h"
+#include "mc/platform/brstd/simple_circular_queue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +20,14 @@ public:
     // clang-format on
 
     // GameController inner types define
-    struct EventQueue {};
+    struct EventQueue {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, void const*>                                                    mToken;
+        ::ll::TypedStorage<8, 31216, ::brstd::simple_circular_queue<::GameControllerEvent, 600>> mEvents;
+        // NOLINTEND
+    };
 
 public:
     // member variables

@@ -7,6 +7,7 @@
 #include "mc/client/gui/screens/controllers/EntryType.h"
 #include "mc/client/gui/screens/controllers/MinecraftScreenController.h"
 #include "mc/client/network/realms/World.h"
+#include "mc/client/social/PlatformUserProfileData.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@
 class MinecraftScreenModel;
 namespace Json { class Value; }
 namespace Parties { class PartySystem; }
-namespace Social { struct PlatformUserProfileData; }
 namespace Social { struct XboxLiveUserProfileData; }
 // clang-format on
 
@@ -28,11 +28,57 @@ public:
     // clang-format on
 
     // InviteScreenController inner types define
-    struct XboxLiveUserEntryData {};
+    struct XboxLiveUserEntryData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Social::XboxLiveUserProfileData const*> mUserProfileData;
+        ::ll::TypedStorage<1, 1, bool>                                     mToggleState;
+        // NOLINTEND
+    };
 
-    struct PlatformUserEntryData {};
+    struct PlatformUserEntryData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 192, ::Social::PlatformUserProfileData> mUserProfileData;
+        ::ll::TypedStorage<1, 1, bool>                                mToggleState;
+        // NOLINTEND
 
-    struct LinkedUserEntryData {};
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~PlatformUserEntryData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct LinkedUserEntryData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Social::XboxLiveUserProfileData const*> mXboxUserProfileData;
+        ::ll::TypedStorage<8, 192, ::Social::PlatformUserProfileData>      mPlatformUserProfileData;
+        ::ll::TypedStorage<1, 1, bool>                                     mToggleState;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~LinkedUserEntryData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

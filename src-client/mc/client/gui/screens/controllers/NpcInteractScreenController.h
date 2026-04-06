@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/DeferredTextObject.h"
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ClientInstanceScreenController.h"
+#include "mc/world/actor/npc/action_type/Enum.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/NpcEventListener.h"
 
@@ -13,7 +15,6 @@
 // clang-format off
 class Actor;
 class ClientInstanceScreenModel;
-class DeferredTextObject;
 class Player;
 class UIPropertyBag;
 struct ActorUniqueID;
@@ -30,13 +31,63 @@ public:
     // clang-format on
 
     // NpcInteractScreenController inner types define
-    enum class Section : uchar {};
+    enum class Section : uchar {
+        Basic               = 0,
+        Advanced            = 1,
+        MaximizedActionEdit = 2,
+        Student             = 3,
+    };
 
-    enum class NpcTextEdit : int {};
+    enum class NpcTextEdit : int {
+        Name             = 0,
+        InteractText     = 1,
+        ActionButtonName = 2,
+        ActionText       = 3,
+    };
 
-    enum class NpcTextErrorStatus : uchar {};
+    enum class NpcTextErrorStatus : uchar {
+        Empty             = 0,
+        ButtonSetUriEmpty = 1,
+        InvalidUri        = 2,
+        Valid             = 3,
+    };
 
-    struct NpcActionEditData {};
+    struct NpcActionEditData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::npc::_ActionType::Enum>                          type;
+        ::ll::TypedStorage<8, 104, ::DeferredTextObject>                            name;
+        ::ll::TypedStorage<8, 104, ::DeferredTextObject>                            text;
+        ::ll::TypedStorage<1, 1, ::NpcInteractScreenController::NpcTextErrorStatus> state;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NpcActionEditData& operator=(NpcActionEditData const&);
+        NpcActionEditData(NpcActionEditData const&);
+        NpcActionEditData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI NpcActionEditData(::NpcInteractScreenController::NpcActionEditData&&);
+
+        MCAPI ~NpcActionEditData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::NpcInteractScreenController::NpcActionEditData&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

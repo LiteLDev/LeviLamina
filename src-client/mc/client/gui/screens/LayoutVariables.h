@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
+#include "mc/client/gui/screens/VariableRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,14 @@ public:
     // clang-format on
 
     // LayoutVariables inner types define
-    struct UnsatisfiedVar {};
+    struct UnsatisfiedVar {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 40, ::VariableRef> mVar;
+        ::ll::TypedStorage<1, 1, bool>           mIsSatisfied;
+        // NOLINTEND
+    };
 
 public:
     // member variables

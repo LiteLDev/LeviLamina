@@ -6,8 +6,10 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonId.h"
 #include "mc/client/gui/screens/controllers/ModalScreenButtonMode.h"
+#include "mc/client/gui/screens/controllers/ModalScreenData.h"
 #include "mc/client/gui/screens/controllers/MultiplayerLockState.h"
 #include "mc/client/gui/screens/controllers/SettingsScreenControllerBase.h"
+#include "mc/client/network/realms/ConfigInfo.h"
 #include "mc/client/network/realms/SubscriptionInfo.h"
 #include "mc/client/network/realms/World.h"
 #include "mc/client/network/realms/WorldBackupList.h"
@@ -30,7 +32,6 @@ struct GameRuleId;
 struct PackContentItem;
 struct PackManagerContentSource;
 namespace Realms { class ContentService; }
-namespace Realms { struct ConfigInfo; }
 namespace Realms { struct Content; }
 namespace Realms { struct InviteLink; }
 namespace Realms { struct ServerRegion; }
@@ -47,17 +48,88 @@ public:
     // clang-format on
 
     // RealmsSettingsScreenController inner types define
-    enum class PurchaseIntent : int {};
+    enum class PurchaseIntent : int {
+        Unsupported        = 0,
+        ManageSubscription = 1,
+        RenewSubscription  = 2,
+        ExtendConsumable   = 3,
+        RenewConsumable    = 4,
+    };
 
-    enum class SaveType : int {};
+    enum class SaveType : int {
+        Unknown   = -1,
+        Manual    = 0,
+        Automatic = 1,
+    };
 
-    enum class RealmsSaveAction : int {};
+    enum class RealmsSaveAction : int {
+        Save     = 0,
+        Restore  = 1,
+        Download = 2,
+        Upload   = 3,
+        Delete   = 4,
+    };
 
-    struct SaveStatusTracker {};
+    struct SaveStatusTracker {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mRealmsSaveInProgress;
+        ::ll::TypedStorage<1, 1, bool> mClubsSaveInProgress;
+        ::ll::TypedStorage<1, 1, bool> mRealmsSaveSuccess;
+        // NOLINTEND
+    };
 
-    struct RealmsVersionState {};
+    struct RealmsVersionState {
+    public:
+        // RealmsVersionState inner types define
+        using Version = ::Realms::ConfigInfo::Version;
 
-    struct DelayedStandardModalScreenData {};
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>                                           mPageIndex;
+        ::ll::TypedStorage<1, 1, bool>                                          mAwaitingResponse;
+        ::ll::TypedStorage<8, 32, ::std::string>                                mPendingRef;
+        ::ll::TypedStorage<8, 32, ::std::string>                                mLastFilter;
+        ::ll::TypedStorage<8, 56, ::Realms::ConfigInfo>                         mConfigInfo;
+        ::ll::TypedStorage<8, 24, ::std::vector<::Realms::ConfigInfo::Version>> mFilteredVersions;
+        ::ll::TypedStorage<8, 104, ::Realms::ConfigInfo::Version>               mMatchingVersion;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~RealmsVersionState();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct DelayedStandardModalScreenData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 368, ::ModalScreenData>                           screenData;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::ModalScreenButtonId)>> callback;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~DelayedStandardModalScreenData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using PackContentItemPtr = ::std::shared_ptr<::PackContentItem>;
 

@@ -25,7 +25,13 @@ struct OffscreenCaptureData;
 class PaperDollRenderer : public ::MinecraftUICustomRenderer {
 public:
     // PaperDollRenderer inner types define
-    enum class RotationStyle : int {};
+    enum class RotationStyle : int {
+        None      = 0,
+        Automatic = 1,
+        GestureX  = 2,
+        CustomY   = 3,
+        Lerping   = 4,
+    };
 
 public:
     // member variables

@@ -17,6 +17,7 @@ class MinecraftUIRenderContext;
 class MultiPlayerLevel;
 class UIControl;
 class UICustomRenderer;
+class UIPropertyBag;
 class UIResolvedDef;
 class UIScene;
 // clang-format on
@@ -29,7 +30,42 @@ public:
     // clang-format on
 
     // EquipmentPreviewRenderer inner types define
-    struct ItemProperties {};
+    struct ItemProperties {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<2, 2, short>          mItemId;
+        ::ll::TypedStorage<4, 4, int>            mAuxValue;
+        ::ll::TypedStorage<4, 4, int>            mCustomColor;
+        ::ll::TypedStorage<1, 1, bool>           mIsEnchanted;
+        ::ll::TypedStorage<8, 32, ::std::string> mTrimPattern;
+        ::ll::TypedStorage<8, 32, ::std::string> mTrimMaterial;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ItemProperties();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI explicit ItemProperties(::UIPropertyBag const& propertyBag);
+
+        MCAPI ~ItemProperties();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::UIPropertyBag const& propertyBag);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

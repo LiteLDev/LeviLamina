@@ -31,6 +31,7 @@ class Block;
 class BlockGraphics;
 class BlockOccluder;
 class BlockSource;
+class BlockType;
 class LightTexture;
 class Material;
 class Matrix;
@@ -53,17 +54,53 @@ public:
     // clang-format on
 
     // BlockTessellator inner types define
-    enum class CrossTextureWidth : uchar {};
+    enum class CrossTextureWidth : uchar {
+        Normal = 0,
+        Wide   = 1,
+    };
 
-    enum class CrossTextureReverseSideMapping : uchar {};
+    enum class CrossTextureReverseSideMapping : uchar {
+        Mirrored = 0,
+        Normal   = 1,
+    };
 
-    enum class BambooFenceSlatPieceType : int {};
+    enum class BambooFenceSlatPieceType : int {
+        LeftSidePiece  = 0,
+        CenterPiece    = 1,
+        RightSidePiece = 2,
+    };
 
-    enum class FenceGatePieceType : int {};
+    enum class FenceGatePieceType : int {
+        Post                 = 0,
+        ClosedInnerLeftPost  = 1,
+        ClosedInnerRightPost = 2,
+        Slat                 = 3,
+        OpenedInnerLeftPost  = 4,
+        OpenedInnerRightPost = 5,
+    };
 
-    struct LocalRegistry {};
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::BlockType const*> mFire;
+        ::ll::TypedStorage<8, 8, ::Block const*>     mRedstoneTorch;
+        ::ll::TypedStorage<8, 8, ::Block const*>     mUnlitRedstoneTorch;
+        ::ll::TypedStorage<8, 8, ::Block const*>     mObsidian;
+        // NOLINTEND
+    };
 
-    struct UVOverride {};
+    struct UVOverride {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<2, 2, ushort> pbrTextureDataHandle;
+        ::ll::TypedStorage<4, 4, float>  u0;
+        ::ll::TypedStorage<4, 4, float>  u1;
+        ::ll::TypedStorage<4, 4, float>  v0;
+        ::ll::TypedStorage<4, 4, float>  v1;
+        // NOLINTEND
+    };
 
 public:
     // member variables

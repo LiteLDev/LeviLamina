@@ -10,7 +10,10 @@ namespace MinecraftCamera {
 struct DebugCameraComponent {
 public:
     // DebugCameraComponent inner types define
-    enum class InputMode : int {};
+    enum class InputMode : int {
+        Game        = 0,
+        DebugCamera = 1,
+    };
 
 public:
     // member variables

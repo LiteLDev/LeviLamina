@@ -24,11 +24,29 @@ public:
     // clang-format on
 
     // EduShareLinkScreenController inner types define
-    enum class UriResourceValidationStatus : int {};
+    enum class UriResourceValidationStatus : int {
+        Empty   = 0,
+        Invalid = 1,
+        Valid   = 2,
+    };
 
-    enum class ScreenState : int {};
+    enum class ScreenState : int {
+        None        = 0,
+        Simple      = 1,
+        Teams       = 2,
+        AddResource = 3,
+    };
 
-    struct EduShareLinkCapabilities {};
+    struct EduShareLinkCapabilities {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mShareLinkIgnored;
+        ::ll::TypedStorage<1, 1, bool> mShareToTeams;
+        ::ll::TypedStorage<1, 1, bool> mCanAssignResources;
+        ::ll::TypedStorage<1, 1, bool> mIsEducator;
+        // NOLINTEND
+    };
 
 public:
     // member variables

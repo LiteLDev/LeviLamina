@@ -15,7 +15,11 @@ class UIResolvedDef;
 class UIAnim {
 public:
     // UIAnim inner types define
-    enum class State : int {};
+    enum class State : int {
+        Running          = 0,
+        Waiting          = 1,
+        WaitingForRender = 2,
+    };
 
 public:
     // member variables

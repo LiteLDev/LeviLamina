@@ -125,9 +125,41 @@ public:
     // clang-format on
 
     // MinecraftScreenModel inner types define
-    enum class FriendsDrawerLocation : int {};
+    enum class FriendsDrawerLocation : int {
+        MainMenu   = 0,
+        InGameMenu = 1,
+    };
 
-    struct Context {};
+    struct Context {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                          mMinecraft;
+        ::ll::TypedStorage<8, 8, ::IClientInstance&>                                         mClient;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions>> mAdvancedGraphicsOptions;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>>              mSceneStack;
+        ::ll::TypedStorage<8, 8, ::SceneFactory&>                                            mSceneFactory;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IScreenCapabilities>>                   mCapabilities;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Context& operator=(Context const&);
+        Context(Context const&);
+        Context();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~Context();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

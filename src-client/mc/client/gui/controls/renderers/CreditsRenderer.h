@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +31,21 @@ public:
     struct CreditsContent {
     public:
         // CreditsContent inner types define
-        enum class Type : int {};
+        enum class Type : int {
+            Text  = 0,
+            Image = 1,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::CreditsRenderer::CreditsContent::Type> mType;
+        ::ll::TypedStorage<4, 4, int>                                     mHeight;
+        ::ll::TypedStorage<4, 4, int>                                     mPaddingAfter;
+        ::ll::TypedStorage<8, 32, ::std::string>                          mText;
+        ::ll::TypedStorage<1, 1, bool>                                    mCentered;
+        ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                      mTexturePtr;
+        // NOLINTEND
     };
 
     using clock_type = ::std::chrono::steady_clock;

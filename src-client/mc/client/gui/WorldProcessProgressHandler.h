@@ -14,7 +14,10 @@ class MinecraftScreenModel;
 class WorldProcessProgressHandler : public ::EmptyProgressHandler {
 public:
     // WorldProcessProgressHandler inner types define
-    enum class Type : int {};
+    enum class Type : int {
+        Convert = 0,
+        Upload  = 1,
+    };
 
 public:
     // member variables
