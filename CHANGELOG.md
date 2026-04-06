@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.0] - 2026-04-07
+
+### Added
+
+- Added commonly used utility functions @子沐呀
+- Added symbol cache @子沐呀
+- Added default constructors for `ActorDamageSource` and `RedactableString` @ShrBox
+- Added `CommandRegistrar` instance getter shortcuts @OEOTYAN
+
+### Changed
+
+- Adapted to `26.10` @ShrBox @OEOTYAN @Lovelylavender4 @Esczvefs
+- Moved built-in command registration to events and realigned its lifecycle @Esczvefs
+- Modified client enable/disable timing [#1785] @ShrBox
+
+### Fixed
+
+- Fixed `ActorHurtEvent` [#1747] @ShrBox
+- Synced and optimized the MCPE-228407 workaround @ShrBox
+- Fixed `ll::getGameVersion()` and game version display @ShrBox @OEOTYAN
+- Fixed client-side coroutines [#1791] @子沐呀
+
 ## [1.9.9] - 2026-04-02
 
 ### Added
@@ -1404,10 +1426,13 @@ For lip and tooth-hub test only.
 [#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 [#1759]: https://github.com/LiteLDev/LeviLamina/issues/1759
 [#1776]: https://github.com/LiteLDev/LeviLamina/issues/1776
+[#1785]: https://github.com/LiteLDev/LeviLamina/issues/1785
 [#1789]: https://github.com/LiteLDev/LeviLamina/issues/1789
+[#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.9...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.0...HEAD
+[26.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.9...v26.10.0
 [1.9.9]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.8...v1.9.9
 [1.9.8]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.7...v1.9.8
 [1.9.7]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.6...v1.9.7
