@@ -25,7 +25,9 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDamageSource();
+    ActorDamageSource() {
+        mCause = SharedTypes::Legacy::ActorDamageCause::None;
+    }
 
 public:
     // virtual functions

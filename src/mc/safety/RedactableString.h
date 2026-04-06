@@ -17,16 +17,16 @@ public:
 
 #ifdef LL_PLAT_S
 public:
-    RedactableString()                                   = default;
-    RedactableString& operator=(RedactableString const&) = default;
     RedactableString& operator=(RedactableString&&)      = default;
+    RedactableString& operator=(RedactableString const&) = default;
     RedactableString(RedactableString const&)            = default;
+    RedactableString()                                   = default;
 
 #else // LL_PLAT_C
 public:
-    // prevent constructor by default
-    RedactableString& operator=(RedactableString const&);
-    RedactableString();
+    RedactableString& operator=(RedactableString&&)      = default;
+    RedactableString& operator=(RedactableString const&) = default;
+    RedactableString()                                   = default;
 
 #endif
 public:
