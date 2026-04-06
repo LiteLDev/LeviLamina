@@ -5,7 +5,6 @@
 
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/scripting/event_handlers/ScriptActorGameplayHandler.h"
-#include "mc/world/actor/ActorHurtResult.h"
 #include "mc/world/events/ActorBeforeHurtEvent.h"
 
 namespace ll::event::inline entity {
