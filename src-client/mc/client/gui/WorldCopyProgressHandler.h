@@ -17,7 +17,11 @@ class TaskGroup;
 class WorldCopyProgressHandler : public ::ProgressHandler {
 public:
     // WorldCopyProgressHandler inner types define
-    enum class Result : int {};
+    enum class Result : int {
+        Success   = 0,
+        Error     = 1,
+        Cancelled = 2,
+    };
 
 public:
     // member variables

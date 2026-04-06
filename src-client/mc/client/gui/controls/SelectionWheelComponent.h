@@ -25,9 +25,21 @@ public:
     // clang-format on
 
     // SelectionWheelComponent inner types define
-    enum class SelectionWheelIterateDir : uchar {};
+    enum class SelectionWheelIterateDir : uchar {
+        Left  = 0,
+        Right = 1,
+    };
 
-    struct ButtonInteractionInfo {};
+    struct ButtonInteractionInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, uint64> mHoverSlice;
+        ::ll::TypedStorage<4, 4, uint>   mButtonEventName;
+        ::ll::TypedStorage<1, 1, bool>   mIsInteracted;
+        ::ll::TypedStorage<1, 1, bool>   mIsSlotButtonPressed;
+        // NOLINTEND
+    };
 
     using HoverSliceType = uint64;
 

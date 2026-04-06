@@ -21,7 +21,12 @@ namespace mce { class TextureGroup; }
 class HudBubblesRenderer : public ::MinecraftUICustomRenderer {
 public:
     // HudBubblesRenderer inner types define
-    enum class BubbleType : int {};
+    enum class BubbleType : int {
+        Full  = 0,
+        Pop   = 1,
+        Empty = 2,
+        Count = 3,
+    };
 
 public:
     // member variables

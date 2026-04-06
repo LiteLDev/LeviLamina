@@ -17,7 +17,10 @@ namespace Realms { struct World; }
 class ManageFeedScreenController : public ::ClubsBaseController {
 public:
     // ManageFeedScreenController inner types define
-    enum class Reason : int {};
+    enum class Reason : int {
+        Deleted = 0,
+        Ignored = 1,
+    };
 
 public:
     // member variables

@@ -16,6 +16,7 @@
 #include "mc/world/containers/controllers/ItemCraftType.h"
 #include "mc/world/containers/controllers/ItemTakeType.h"
 #include "mc/world/inventory/InventoryLeftTabIndex.h"
+#include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/ItemInstance.h"
 
 // auto generated forward declare list
@@ -41,9 +42,50 @@ public:
     // clang-format on
 
     // CraftingScreenController inner types define
-    struct CategoryTabInfo {};
+    struct CategoryTabInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex> tabIndex;
+        ::ll::TypedStorage<4, 4, ::CreativeItemCategory>  category;
+        ::ll::TypedStorage<1, 1, ::ContainerEnumName>     container;
+        ::ll::TypedStorage<8, 32, ::std::string>          tabName;
+        ::ll::TypedStorage<8, 32, ::std::string>          factoryName;
+        // NOLINTEND
 
-    struct ScrollItemData {};
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~CategoryTabInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
+    struct ScrollItemData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 40, ::SlotData> mSlot;
+        ::ll::TypedStorage<4, 4, int>         mNumExpandedItems;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ScrollItemData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

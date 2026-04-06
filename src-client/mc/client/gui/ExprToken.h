@@ -12,7 +12,10 @@
 class ExprToken {
 public:
     // ExprToken inner types define
-    enum class StringOption : int {};
+    enum class StringOption : int {
+        EvaluateAsExpression = 0,
+        KeepAsString         = 1,
+    };
 
 public:
     // member variables

@@ -19,6 +19,7 @@
 #include "mc/platform/Result.h"
 #include "mc/util/CallbackToken.h"
 #include "mc/util/UploadState.h"
+#include "mc/world/level/LevelListCacheObserver.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,9 +56,68 @@ public:
     // clang-format on
 
     // PlayScreenModel inner types define
-    struct LiveServer {};
+    struct LiveServer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Social::MultiplayerGameInfo>> server;
+        ::ll::TypedStorage<1, 1, bool>                                             found;
+        ::ll::TypedStorage<8, 8, double>                                           lastFoundTime;
+        ::ll::TypedStorage<1, 1, bool>                                             dead;
+        // NOLINTEND
+    };
 
-    class PlayScreenLevelListCacheObserver {};
+    class PlayScreenLevelListCacheObserver : public ::LevelListCacheObserver {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::PlayScreenModel&> mModel;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlayScreenLevelListCacheObserver& operator=(PlayScreenLevelListCacheObserver const&);
+        PlayScreenLevelListCacheObserver(PlayScreenLevelListCacheObserver const&);
+        PlayScreenLevelListCacheObserver();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual void onLevelAdded(::std::string const& levelId) /*override*/;
+
+        virtual void onLevelUpdated(::std::string const& levelId) /*override*/;
+
+        virtual void onLevelDeleted(::std::string const& levelId) /*override*/;
+
+        virtual void onStorageChanged() /*override*/;
+
+        virtual ~PlayScreenLevelListCacheObserver() /*override*/;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCFOLD void $onLevelAdded(::std::string const& levelId);
+
+        MCFOLD void $onLevelUpdated(::std::string const& levelId);
+
+        MCFOLD void $onLevelDeleted(::std::string const& levelId);
+
+        MCFOLD void $onStorageChanged();
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
     using PlayerCountMap = ::std::map<::Realms::RealmId, int>;
 

@@ -28,11 +28,29 @@ public:
     // clang-format on
 
     // InputComponent inner types define
-    enum class PressType : int {};
+    enum class PressType : int {
+        Single = 0,
+        Double = 1,
+    };
 
-    struct ScreenHoverButtonMapping {};
+    struct ScreenHoverButtonMapping {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, uint>               toButtonId;
+        ::ll::TypedStorage<1, 1, ::ScreenEventScope> scope;
+        // NOLINTEND
+    };
 
-    struct PressStats {};
+    struct PressStats {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>                                     pressCount;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> lastPressTime;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>                             position;
+        // NOLINTEND
+    };
 
 public:
     // member variables

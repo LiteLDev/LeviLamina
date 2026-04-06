@@ -48,14 +48,77 @@ public:
     // clang-format on
 
     // HudScreenController inner types define
-    enum class Tooltips : uchar {};
+    enum class Tooltips : uchar {
+        None      = 0,
+        LeftTips  = 1,
+        RightTips = 2,
+    };
 
-    struct ButtonLists {};
+    struct ButtonLists {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> chatbuttonList;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> ttsButtonList;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~ButtonLists();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
     struct Tooltip {
     public:
         // Tooltip inner types define
-        enum class Type : uchar {};
+        enum class Type : uchar {
+            KeyboardOnly = 0,
+            GamepadOnly  = 1,
+            Mixed        = 2,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::Remapping::ActionEnum>              action;
+        ::ll::TypedStorage<1, 1, ::HudScreenController::Tooltip::Type> type;
+        ::ll::TypedStorage<8, 64, ::std::function<::std::string()>>    generateTooltipDescription;
+        ::ll::TypedStorage<8, 32, ::std::string>                       keyPostfix;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Tooltip(Tooltip const&);
+        Tooltip();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Tooltip(::HudScreenController::Tooltip&&);
+
+        MCAPI ::HudScreenController::Tooltip& operator=(::HudScreenController::Tooltip const&);
+
+        MCAPI ~Tooltip();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::HudScreenController::Tooltip&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
 public:

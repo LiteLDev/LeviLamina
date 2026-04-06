@@ -21,9 +21,22 @@ public:
     // clang-format on
 
     // DeleteStorageAreaContentProgressHandler inner types define
-    enum class StateBitField : uint {};
+    enum class StateBitField : uint {
+        // bitfield representation
+        InProgress    = 1u << 0,
+        UserCanCancel = 1u << 1,
+        TakingTooLong = 1u << 2,
+        Complete      = 1u << 3,
+    };
 
-    struct CancelTimeInfo {};
+    struct CancelTimeInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::std::chrono::seconds const> mSecondsBeforeUserCanCancel;
+        ::ll::TypedStorage<8, 8, ::std::chrono::seconds const> mSecondsBeforeClientShouldCancel;
+        // NOLINTEND
+    };
 
     using OnCompleteCallback = ::std::function<void()> const;
 

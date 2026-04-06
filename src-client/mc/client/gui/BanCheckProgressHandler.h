@@ -14,7 +14,12 @@ class MinecraftScreenModel;
 class BanCheckProgressHandler : public ::ProgressHandler {
 public:
     // BanCheckProgressHandler inner types define
-    enum class State : int {};
+    enum class State : int {
+        Pending    = 0,
+        Done       = 1,
+        Cancelling = 2,
+        Cancelled  = 3,
+    };
 
 public:
     // member variables

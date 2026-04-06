@@ -21,9 +21,29 @@ public:
     // clang-format on
 
     // RemoteStorageProviderSyncProgressHandler inner types define
-    enum class State : int {};
+    enum class State : int {
+        Idle              = 0,
+        WaitingForRequest = 1,
+        Error             = 2,
+        Complete          = 3,
+    };
 
-    class SyncState {};
+    class SyncState : public ::std::enable_shared_from_this<::RemoteStorageProviderSyncProgressHandler::SyncState> {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::RemoteStorageProviderSyncProgressHandler::State> mState;
+        ::ll::TypedStorage<1, 1, bool>                                              mSyncSuccess;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Core::Result)>>            mCompletedCallback;
+        ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                               mCompletedCallbackCalled;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void onCompleted(::Core::Result&& result, bool canceled);
+        // NOLINTEND
+    };
 
 public:
     // member variables

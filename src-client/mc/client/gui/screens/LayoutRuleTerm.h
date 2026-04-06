@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/OrientationType.h"
 #include "mc/client/gui/screens/LayoutRuleTermType.h"
 #include "mc/client/gui/screens/LayoutVariableType.h"
 
@@ -18,6 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::LayoutRuleTermType> mType;
     union {
+        ::ll::TypedStorage<4, 16, float> mConstant;
     } mData;
     ::ll::TypedStorage<8, 24, ::std::vector<::VariableRef>> mDependentVariables;
     // NOLINTEND

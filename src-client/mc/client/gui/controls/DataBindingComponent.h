@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/UiExpression.h"
 #include "mc/client/gui/controls/BindingCondition.h"
 #include "mc/client/gui/controls/BindingType.h"
 #include "mc/client/gui/controls/UIComponent.h"
@@ -11,7 +12,6 @@
 // clang-format off
 class ScreenController;
 class UIControl;
-class UiExpression;
 // clang-format on
 
 class DataBindingComponent : public ::UIComponent {
@@ -22,7 +22,56 @@ public:
     // clang-format on
 
     // DataBindingComponent inner types define
-    struct DataBinding {};
+    struct DataBinding {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::BindingType>                 bindingType;
+        ::ll::TypedStorage<4, 4, ::BindingCondition>            bindingCondition;
+        ::ll::TypedStorage<8, 32, ::std::string>                bindingName;
+        ::ll::TypedStorage<8, 32, ::UiExpression>               bindingExpression;
+        ::ll::TypedStorage<8, 32, ::std::string>                bindingNameOverride;
+        ::ll::TypedStorage<8, 32, ::std::string>                collectionName;
+        ::ll::TypedStorage<8, 32, ::std::string>                collectionPrefix;
+        ::ll::TypedStorage<8, 32, ::UiExpression>               viewBindingSourcePropertyName;
+        ::ll::TypedStorage<8, 32, ::std::string>                viewBindingTargetPropertyName;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::UIControl>> viewBindingSourceControl;
+        ::ll::TypedStorage<4, 4, uint>                          collectionNameHash;
+        ::ll::TypedStorage<4, 4, uint>                          bindingNameHash;
+        ::ll::TypedStorage<4, 4, int>                           collectionIndex;
+        ::ll::TypedStorage<1, 1, bool>                          alreadyBoundOnce;
+        ::ll::TypedStorage<1, 1, bool>                          visible;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DataBinding& operator=(DataBinding const&);
+        DataBinding();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DataBinding(::DataBindingComponent::DataBinding const&);
+
+        MCAPI DataBinding(::DataBindingComponent::DataBinding&&);
+
+        MCAPI ~DataBinding();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::DataBindingComponent::DataBinding const&);
+
+        MCAPI void* $ctor(::DataBindingComponent::DataBinding&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

@@ -17,7 +17,15 @@ public:
     // clang-format on
 
     // IStorageManagementModel inner types define
-    struct PremiumWorldInfo {};
+    struct PremiumWorldInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mWorldExists;
+        ::ll::TypedStorage<1, 1, bool> mWorldIsPremium;
+        ::ll::TypedStorage<1, 1, bool> mIsPremiumOwned;
+        // NOLINTEND
+    };
 
 public:
     // virtual functions

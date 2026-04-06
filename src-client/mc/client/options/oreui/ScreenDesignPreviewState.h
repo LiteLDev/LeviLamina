@@ -4,6 +4,9 @@
 
 namespace OreUI {
 
-enum class ScreenDesignPreviewState : int {};
+enum class ScreenDesignPreviewState : int {
+    OptedIn  = 0,
+    OptedOut = 1,
+};
 
 }

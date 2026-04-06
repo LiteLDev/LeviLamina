@@ -18,7 +18,15 @@ public:
     // clang-format on
 
     // StorageManagementViews inner types define
-    struct ContentTab {};
+    struct ContentTab {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::string_view>                                         prefix;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ContentItemCollection>>> view;
+        ::ll::TypedStorage<1, 1, bool>                                                        expanded;
+        // NOLINTEND
+    };
 
     using ConstContentItemPtr = ::std::shared_ptr<::ContentItem const>;
 

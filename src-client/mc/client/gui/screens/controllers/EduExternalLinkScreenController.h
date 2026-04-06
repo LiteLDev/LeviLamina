@@ -21,7 +21,13 @@ public:
     // clang-format on
 
     // EduExternalLinkScreenController inner types define
-    struct Capabilities {};
+    struct Capabilities {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mExternalLinkEnabled;
+        // NOLINTEND
+    };
 
 public:
     // member variables

@@ -29,9 +29,39 @@ public:
     // clang-format on
 
     // TrueTypeFont inner types define
-    struct LoadedFontInformation {};
+    struct LoadedFontInformation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 160, ::stbtt_fontinfo> info;
+        ::ll::TypedStorage<4, 4, float>              scale;
+        ::ll::TypedStorage<4, 4, int>                ascent;
+        ::ll::TypedStorage<4, 4, int>                descent;
+        ::ll::TypedStorage<4, 4, int>                lineGap;
+        ::ll::TypedStorage<8, 32, ::std::string>     resourceData;
+        // NOLINTEND
 
-    struct PageOfGlyphs {};
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~LoadedFontInformation();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct PageOfGlyphs {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 7168, ::stbtt_packedchar[256]> characterInfo;
+        ::ll::TypedStorage<4, 4, int>                        atlasPageSize;
+        // NOLINTEND
+    };
 
 public:
     // member variables

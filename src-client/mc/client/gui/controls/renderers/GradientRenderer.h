@@ -17,7 +17,10 @@ class UICustomRenderer;
 class GradientRenderer : public ::MinecraftUICustomRenderer {
 public:
     // GradientRenderer inner types define
-    enum class GradientDirection : int {};
+    enum class GradientDirection : int {
+        Vertical   = 0,
+        Horizontal = 1,
+    };
 
 public:
     // member variables

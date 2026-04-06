@@ -27,9 +27,65 @@ public:
     // clang-format on
 
     // UIDefRepository inner types define
-    class UIDefNamespace {};
+    class UIDefNamespace {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string>                                      mName;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Json::Value>> mDefs;
+        // NOLINTEND
 
-    struct DefEntry {};
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~UIDefNamespace();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
+
+    struct DefEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>            collectionIndex;
+        ::ll::TypedStorage<8, 32, ::std::string> ns;
+        ::ll::TypedStorage<8, 32, ::std::string> name;
+        ::ll::TypedStorage<8, 32, ::std::string> refNs;
+        ::ll::TypedStorage<8, 32, ::std::string> refName;
+        ::ll::TypedStorage<8, 16, ::Json::Value> jsonVal;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DefEntry& operator=(DefEntry const&);
+        DefEntry(DefEntry const&);
+        DefEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DefEntry(::UIDefRepository::DefEntry&&);
+
+        MCAPI ~DefEntry();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::UIDefRepository::DefEntry&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using VisitNodeFunc = ::std::function<
         ::Json::Value&(::std::string const&, ::std::string const&, ::std::string const&, ::Json::Value&)>;

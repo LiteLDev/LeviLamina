@@ -19,7 +19,11 @@ namespace Json { class Value; }
 class StonecutterScreenController : public ::ContainerScreenController {
 public:
     // StonecutterScreenController inner types define
-    enum class LeftTabIndex : int {};
+    enum class LeftTabIndex : int {
+        Inventory = 0,
+        Stones    = 1,
+        Count     = 2,
+    };
 
 public:
     // member variables

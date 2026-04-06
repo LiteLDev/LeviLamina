@@ -15,6 +15,7 @@ add_requires("type_safe v0.2.4")
 add_requires("expected-lite v0.6.3")
 add_requires("rapidjson v1.1.0")
 add_requires("concurrentqueue v1.0.4")
+add_requires("stb 2025.03.14")
 
 target("header_server")
     set_kind("shared")
@@ -27,7 +28,7 @@ target("header_server")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS", "LL_PLAT_S")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/main.cpp")
-    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite", "concurrentqueue")
+    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite", "concurrentqueue", "stb")
     before_build(function (target)
         headers = "// clang-format off\n#ifndef __INCLUDE_ALL_H__\n#define __INCLUDE_ALL_H__\n\n"
         for _,x in ipairs(os.files("src/**.h")) do
@@ -57,7 +58,7 @@ target("header_client")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS", "LL_PLAT_C")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/main.cpp")
-    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite", "concurrentqueue")
+    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite", "concurrentqueue", "stb")
     before_build(function (target)
         headers = "// clang-format off\n#ifndef __INCLUDE_ALL_H__\n#define __INCLUDE_ALL_H__\n\n"
         for _,x in ipairs(os.files("src/**.h")) do

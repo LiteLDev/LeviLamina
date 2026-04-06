@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
 #include "mc/client/renderer/ActorShaderManager.h"
+#include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +25,27 @@ public:
     // clang-format on
 
     // BannerPatternRenderer inner types define
-    struct BannerPatternTextureInfo {};
+    struct BannerPatternTextureInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>        mUV;
+        ::ll::TypedStorage<4, 8, ::glm::vec2>        mUVScale;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~BannerPatternTextureInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

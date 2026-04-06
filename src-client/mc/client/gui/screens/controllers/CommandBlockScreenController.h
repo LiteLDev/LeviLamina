@@ -21,7 +21,10 @@ struct TextEditScreenEventData;
 class CommandBlockScreenController : public ::BlockScreenController {
 public:
     // CommandBlockScreenController inner types define
-    enum class CommandBlockColorContext : int {};
+    enum class CommandBlockColorContext : int {
+        DropDown = 0,
+        Dialog   = 1,
+    };
 
 public:
     // member variables

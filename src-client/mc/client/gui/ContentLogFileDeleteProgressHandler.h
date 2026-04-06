@@ -15,7 +15,10 @@ class TaskGroup;
 class ContentLogFileDeleteProgressHandler : public ::ProgressHandler {
 public:
     // ContentLogFileDeleteProgressHandler inner types define
-    enum class FileDeleteTarget : int {};
+    enum class FileDeleteTarget : int {
+        ContentLogs                    = 0,
+        DiagnosticsAndProfilerCaptures = 1,
+    };
 
 public:
     // member variables

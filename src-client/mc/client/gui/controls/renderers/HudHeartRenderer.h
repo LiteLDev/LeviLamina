@@ -28,11 +28,50 @@ public:
     // clang-format on
 
     // HudHeartRenderer inner types define
-    enum class HeartType : int {};
+    enum class HeartType : int {
+        Background      = 0,
+        BackgroundBlink = 1,
+        Full            = 2,
+        FullPoison      = 3,
+        FullWither      = 4,
+        FullFrozen      = 5,
+        FullFlash       = 6,
+        FullPoisonFlash = 7,
+        FullWitherFlash = 8,
+        FullFrozenFlash = 9,
+        Half            = 10,
+        HalfPoison      = 11,
+        HalfWither      = 12,
+        HalfFrozen      = 13,
+        HalfFlash       = 14,
+        HalfPoisonFlash = 15,
+        HalfWitherFlash = 16,
+        HalfFrozenFlash = 17,
+        FullAbsorption  = 18,
+        HalfAbsorption  = 19,
+        Count           = 20,
+    };
 
-    struct SanitizedHealthData {};
+    struct SanitizedHealthData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int> mHealth;
+        ::ll::TypedStorage<4, 4, int> mOldHealth;
+        ::ll::TypedStorage<4, 4, int> mMaxHealth;
+        ::ll::TypedStorage<4, 4, int> mAbsorption;
+        // NOLINTEND
+    };
 
-    struct HeartIconData {};
+    struct HeartIconData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::HudHeartRenderer::HeartType> mType;
+        ::ll::TypedStorage<8, 8, uint64>                        mOffset;
+        ::ll::TypedStorage<8, 8, uint64>                        mCount;
+        // NOLINTEND
+    };
 
 public:
     // member variables

@@ -34,7 +34,19 @@ public:
     // clang-format on
 
     // InventoryItemRenderer inner types define
-    class CachedProperties {};
+    class CachedProperties {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>   mCacheVersion;
+        ::ll::TypedStorage<4, 4, int>   mItemIdAux;
+        ::ll::TypedStorage<4, 4, int>   mChargedItem;
+        ::ll::TypedStorage<4, 4, int>   mCustomColor;
+        ::ll::TypedStorage<1, 1, bool>  mIsFiltered;
+        ::ll::TypedStorage<8, 8, int64> mRawPickUpTime;
+        ::ll::TypedStorage<1, 1, bool>  mIsShowPickup;
+        // NOLINTEND
+    };
 
 public:
     // member variables

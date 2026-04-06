@@ -7,6 +7,7 @@
 #include "mc/client/gui/ViewRequest.h"
 #include "mc/client/gui/screens/controllers/ContainerScreenController.h"
 #include "mc/client/gui/screens/controllers/FadeInIconBehavior.h"
+#include "mc/deps/json/Value.h"
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/item/trading/MerchantRecipe.h"
 
@@ -16,7 +17,6 @@ class ClientInstanceScreenModel;
 class ItemStackBase;
 class Trade2ContainerManagerController;
 struct ActorUniqueID;
-namespace Json { class Value; }
 // clang-format on
 
 class Trade2ScreenController : public ::ContainerScreenController {
@@ -27,9 +27,51 @@ public:
     // clang-format on
 
     // Trade2ScreenController inner types define
-    enum class LeftTabIndex : int {};
+    enum class LeftTabIndex : int {
+        Inventory = 0,
+        Trade     = 1,
+        Count     = 2,
+    };
 
-    class TradeItemCollections {};
+    class TradeItemCollections {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::Json::Value const>                mCollections;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>               mHasTradeItem1Collection;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>               mHasTradeItem2Collection;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>               mHasSellItemCollection;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>               mHasValidTradeItemCollections;
+        ::ll::TypedStorage<1, 2, ::std::optional<bool>>               mHasValidTradeToggleCollections;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                mTierIndex;
+        ::ll::TypedStorage<4, 8, ::std::optional<int>>                mTradeIndex;
+        ::ll::TypedStorage<8, 16, ::std::optional<::MerchantRecipe*>> mTrade;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI int getTierIndex() const;
+
+        MCAPI int getTradeIndex() const;
+
+        MCAPI bool hasSellItemCollection() const;
+
+        MCAPI bool hasTradeItem1Collection() const;
+
+        MCAPI bool hasTradeItem2Collection() const;
+
+        MCAPI bool hasValidTradeToggleCollections() const;
+
+        MCAPI ~TradeItemCollections();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

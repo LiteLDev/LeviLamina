@@ -14,7 +14,14 @@ class MinecraftScreenModel;
 class SkinBanCheckProgressHandler : public ::ProgressHandler {
 public:
     // SkinBanCheckProgressHandler inner types define
-    enum class State : int {};
+    enum class State : int {
+        Pending        = 0,
+        LoadingPersona = 1,
+        InPopup        = 2,
+        Done           = 3,
+        Cancelling     = 4,
+        Cancelled      = 5,
+    };
 
 public:
     // member variables

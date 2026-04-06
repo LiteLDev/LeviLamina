@@ -17,9 +17,17 @@ struct BundleTooltipLayoutData;
 class BundleHelper {
 public:
     // BundleHelper inner types define
-    enum class BundleItemStickScrollDirection : int {};
+    enum class BundleItemStickScrollDirection : int {
+        Left  = 0,
+        Right = 1,
+        Up    = 2,
+        Down  = 3,
+    };
 
-    enum class BundleItemScrollWheelDirection : int {};
+    enum class BundleItemScrollWheelDirection : int {
+        Up   = 0,
+        Down = 1,
+    };
 
 public:
     // member variables

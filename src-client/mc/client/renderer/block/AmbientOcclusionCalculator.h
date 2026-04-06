@@ -23,7 +23,14 @@ public:
     // clang-format on
 
     // AmbientOcclusionCalculator inner types define
-    struct AocConfiguration {};
+    struct AocConfiguration {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mBakeFaceShading;
+        ::ll::TypedStorage<1, 1, bool> mBrightShadingForEmissiveBlocks;
+        // NOLINTEND
+    };
 
 public:
     // member variables

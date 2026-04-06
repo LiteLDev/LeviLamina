@@ -21,7 +21,11 @@ namespace Json { class Value; }
 class PortfolioScreenController : public ::ClientInstanceScreenController {
 public:
     // PortfolioScreenController inner types define
-    enum class PortfolioView : uchar {};
+    enum class PortfolioView : uchar {
+        Viewing   = 0,
+        Picking   = 1,
+        Exporting = 2,
+    };
 
     using ImageMetaDataLoadorFunction = ::std::function<bool(::std::string&, ::Core::Path const&)>;
 

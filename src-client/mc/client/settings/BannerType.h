@@ -4,6 +4,10 @@
 
 namespace Settings {
 
-enum class BannerType : int {};
+enum class BannerType : int {
+    Neutral     = 0,
+    Notice      = 1,
+    Destructive = 2,
+};
 
 }

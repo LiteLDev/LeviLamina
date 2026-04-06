@@ -13,9 +13,24 @@ class IKeyboardProxy;
 class TextEditContext {
 public:
     // TextEditContext inner types define
-    enum class CaretUpdate : uchar {};
+    enum class CaretUpdate : uchar {
+        Left  = 0,
+        Right = 1,
+        Up    = 2,
+        Down  = 3,
+        Begin = 4,
+        End   = 5,
+    };
 
-    enum class TextEditAction : uchar {};
+    enum class TextEditAction : uchar {
+        Backspace = 0,
+        Copy      = 1,
+        Cut       = 2,
+        Delete    = 3,
+        Newline   = 4,
+        Paste     = 5,
+        SelectAll = 6,
+    };
 
 public:
     // member variables

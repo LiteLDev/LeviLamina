@@ -19,9 +19,30 @@ public:
     // clang-format on
 
     // IPJoinScreenController inner types define
-    enum class JoinRequest : uchar {};
+    enum class JoinRequest : uchar {
+        JoinWorld = 0,
+        Cancel    = 1,
+    };
 
-    struct JoinData {};
+    struct JoinData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> netherNetId;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~JoinData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
     using OnIdJoin = ::std::function<::IPJoinScreenController::JoinRequest(::IPJoinScreenController::JoinData const&)>;
 

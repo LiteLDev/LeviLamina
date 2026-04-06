@@ -23,9 +23,20 @@ public:
     // clang-format on
 
     // ClassroomSettingsScreenController inner types define
-    enum class UriResourceValidationStatus : int {};
+    enum class UriResourceValidationStatus : int {
+        Empty             = 0,
+        ButtonSetUriEmpty = 1,
+        Invalid           = 2,
+        Valid             = 3,
+    };
 
-    struct Capabilities {};
+    struct Capabilities {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mIsShareLinkEnabled;
+        // NOLINTEND
+    };
 
 public:
     // member variables

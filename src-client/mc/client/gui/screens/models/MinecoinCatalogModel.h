@@ -5,7 +5,10 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/OfferCatalogModelBase.h"
 #include "mc/client/gui/screens/models/OfferCatalogStatus.h"
+#include "mc/client/services/catalog/CommonImage.h"
+#include "mc/client/services/catalog/ImageMetaListDocument.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/RetryDelay.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,7 +34,49 @@ public:
     struct ActiveModelImageTracker {
     public:
         // ActiveModelImageTracker inner types define
-        enum class FetchState : uchar {};
+        enum class FetchState : uchar {
+            Fetching          = 0,
+            FailedAndCanRetry = 1,
+            Failed            = 2,
+            Success           = 3,
+        };
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 20, ::RetryDelay>                                               mRetryDelay;
+        ::ll::TypedStorage<8, 32, ::std::string>                                              mActiveModelProductId;
+        ::ll::TypedStorage<8, 192, ::CommonImage>                                             mImage;
+        ::ll::TypedStorage<8, 24, ::ImageMetaListDocument>                                    mImageListDoc;
+        ::ll::TypedStorage<1, 1, ::MinecoinCatalogModel::ActiveModelImageTracker::FetchState> mFetchState;
+        ::ll::TypedStorage<4, 4, uint>                                                        mRefetchCount;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ActiveModelImageTracker& operator=(ActiveModelImageTracker const&);
+        ActiveModelImageTracker(ActiveModelImageTracker const&);
+        ActiveModelImageTracker();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ActiveModelImageTracker(::MinecoinCatalogModel::ActiveModelImageTracker&&);
+
+        MCAPI ~ActiveModelImageTracker();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::MinecoinCatalogModel::ActiveModelImageTracker&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
 public:

@@ -20,11 +20,27 @@ namespace Bedrock::Http { class Response; }
 class ImmersiveReaderScreenController : public ::ClientInstanceScreenController {
 public:
     // ImmersiveReaderScreenController inner types define
-    enum class ImmersiveReaderErrorType : schar {};
+    enum class ImmersiveReaderErrorType : schar {
+        WebviewFailure  = 0,
+        IdentityFailure = 1,
+    };
 
-    enum class ImmersiveReaderStatusCodes : schar {};
+    enum class ImmersiveReaderStatusCodes : schar {
+        StatusError   = -1,
+        LaunchFailure = 0,
+        RetryFailure  = 1,
+        Launched      = 2,
+        Loaded        = 3,
+    };
 
-    enum class ImmersiveReaderStage : schar {};
+    enum class ImmersiveReaderStage : schar {
+        SendUrl       = 0,
+        AddListener   = 1,
+        LaunchReader  = 2,
+        RefreshScreen = 3,
+        Running       = 4,
+        Error         = 5,
+    };
 
 public:
     // member variables

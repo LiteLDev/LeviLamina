@@ -28,7 +28,11 @@ struct LegacyWorldInfo;
 class StorageManagementScreenController : public ::MainMenuScreenController {
 public:
     // StorageManagementScreenController inner types define
-    enum class ConvertProgressState : int {};
+    enum class ConvertProgressState : int {
+        Closed   = 0,
+        Active   = 1,
+        TryClose = 2,
+    };
 
     using ContentItemPtr = ::std::shared_ptr<::ContentItem>;
 

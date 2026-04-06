@@ -14,7 +14,65 @@ public:
     // clang-format on
 
     // DropdownScreenController inner types define
-    struct SetUpCallbacksForCollectionDropdownOptionsParameters {};
+    struct SetUpCallbacksForCollectionDropdownOptionsParameters {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string const>                            mCollectionName;
+        ::ll::TypedStorage<8, 32, ::std::string const>                            mDropdownName;
+        ::ll::TypedStorage<8, 32, ::std::string const>                            mDropdownToggleLabelBindingName;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int> const> mNameValuePairs;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::string> const> mValueLabelPairs;
+        ::ll::TypedStorage<8, 32, ::std::string const>                            mEnabledBindingName;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(int)>>                     mIsEnabled;
+        ::ll::TypedStorage<8, 64, ::std::function<int(int)>>                      mGetValue;
+        ::ll::TypedStorage<8, 64, ::std::function<void(int, int)>>                mSetValue;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SetUpCallbacksForCollectionDropdownOptionsParameters();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI SetUpCallbacksForCollectionDropdownOptionsParameters(
+            ::std::string const&                            collectionName,
+            ::std::string const&                            dropdownName,
+            ::std::string const&                            dropdownToggleLabelBindingName,
+            ::std::unordered_map<::std::string, int> const& nameValuePairs,
+            ::std::unordered_map<int, ::std::string> const& valueLabelPairs,
+            ::std::string const&                            enabledBindingName,
+            ::std::function<bool(int)>                      isEnabled,
+            ::std::function<int(int)>                       getValue,
+            ::std::function<void(int, int)>                 setValue
+        );
+
+        MCAPI ~SetUpCallbacksForCollectionDropdownOptionsParameters();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::std::string const&                            collectionName,
+            ::std::string const&                            dropdownName,
+            ::std::string const&                            dropdownToggleLabelBindingName,
+            ::std::unordered_map<::std::string, int> const& nameValuePairs,
+            ::std::unordered_map<int, ::std::string> const& valueLabelPairs,
+            ::std::string const&                            enabledBindingName,
+            ::std::function<bool(int)>                      isEnabled,
+            ::std::function<int(int)>                       getValue,
+            ::std::function<void(int, int)>                 setValue
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+    };
 
     using BooleanOptionGetter = ::std::function<bool()>;
 

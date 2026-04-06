@@ -18,7 +18,11 @@ class UIResolvedDef;
 class PanoramaRenderer : public ::MinecraftUICustomRenderer {
 public:
     // PanoramaRenderer inner types define
-    enum class RotationStyle : int {};
+    enum class RotationStyle : int {
+        None      = 0,
+        Automatic = 1,
+        GestureX  = 2,
+    };
 
 public:
     // member variables

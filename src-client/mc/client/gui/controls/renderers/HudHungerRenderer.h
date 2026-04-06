@@ -21,7 +21,15 @@ namespace mce { class TextureGroup; }
 class HudHungerRenderer : public ::MinecraftUICustomRenderer {
 public:
     // HudHungerRenderer inner types define
-    enum class HungerType : int {};
+    enum class HungerType : int {
+        Background       = 0,
+        BackgroundEffect = 1,
+        Full             = 2,
+        FullEffect       = 3,
+        Half             = 4,
+        HalfEffect       = 5,
+        Count            = 6,
+    };
 
 public:
     // member variables

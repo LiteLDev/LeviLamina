@@ -18,7 +18,11 @@ struct ActorUniqueID;
 class GrindstoneScreenController : public ::ContainerScreenController {
 public:
     // GrindstoneScreenController inner types define
-    enum class SlotIndex : int {};
+    enum class SlotIndex : int {
+        Input      = 0,
+        Additional = 1,
+        Result     = 2,
+    };
 
 public:
     // member variables

@@ -30,7 +30,27 @@ public:
     // clang-format on
 
     // UIAnimationComponent inner types define
-    struct NewAnimation {};
+    struct NewAnimation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::UIAnim>> newAnim;
+        ::ll::TypedStorage<4, 4, float>                        lastAnimDuration;
+        ::ll::TypedStorage<4, 4, float>                        lastAnimTime;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~NewAnimation();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
     using AnimList = ::std::vector<::std::shared_ptr<::UIAnim>>;
 

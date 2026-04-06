@@ -11,6 +11,7 @@
 class GuiData;
 class IClientInstance;
 class MinecraftUIRenderContext;
+class Mob;
 class UIControl;
 class UICustomRenderer;
 // clang-format on
@@ -23,7 +24,24 @@ public:
     // clang-format on
 
     // LivePlayerRenderer inner types define
-    struct RotationProxy {};
+    struct RotationProxy {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float> mYBodyRot;
+        ::ll::TypedStorage<4, 4, float> mYBodyRotO;
+        ::ll::TypedStorage<4, 4, float> mRotX;
+        ::ll::TypedStorage<4, 4, float> mRotY;
+        ::ll::TypedStorage<4, 4, float> mYHeadRot;
+        ::ll::TypedStorage<4, 4, float> mYHeadRotO;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI void popValueFromMob(::Mob const& mob);
+        // NOLINTEND
+    };
 
 public:
     // virtual functions

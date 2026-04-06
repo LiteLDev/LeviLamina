@@ -20,7 +20,13 @@ class WorldFileDownloadManager;
 class EducationContentManagerScreenController : public ::MainMenuScreenController {
 public:
     // EducationContentManagerScreenController inner types define
-    enum class OptionalBehavior : uint {};
+    enum class OptionalBehavior : uint {
+        // bitfield representation
+        None                      = 1u << 0,
+        AutoLaunchImportedItems   = 1u << 1,
+        TrackTemplateInWorldSaves = 1u << 2,
+        TrackUserInWorldSaves     = 1u << 3,
+    };
 
     using OnDownloadError = ::std::function<void()>;
 

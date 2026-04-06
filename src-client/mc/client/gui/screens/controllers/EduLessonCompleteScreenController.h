@@ -20,7 +20,35 @@ public:
     // clang-format on
 
     // EduLessonCompleteScreenController inner types define
-    struct ImageRecord {};
+    struct ImageRecord {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 32, ::std::string> path;
+        ::ll::TypedStorage<1, 1, bool>           mIncludeInExport;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ImageRecord& operator=(ImageRecord const&);
+        ImageRecord(ImageRecord const&);
+        ImageRecord();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCFOLD ::EduLessonCompleteScreenController::ImageRecord&
+        operator=(::EduLessonCompleteScreenController::ImageRecord&&);
+
+        MCAPI ~ImageRecord();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

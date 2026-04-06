@@ -25,7 +25,16 @@ class CodeScreenController : public ::ClientInstanceScreenController,
                              public ::WebviewObserver {
 public:
     // CodeScreenController inner types define
-    enum class ModalView : int {};
+    enum class ModalView : int {
+        None                     = 0,
+        ResetWarning             = 1,
+        MemoryWarning            = 2,
+        MemoryError              = 3,
+        NetworkError             = 4,
+        DeprecatedIDEWarning     = 5,
+        TynkerDeprecated         = 6,
+        AzurenotebooksDeprecated = 7,
+    };
 
 public:
     // member variables

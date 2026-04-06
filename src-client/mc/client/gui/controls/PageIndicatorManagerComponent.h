@@ -21,7 +21,10 @@ namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 class PageIndicatorManagerComponent : public ::UIComponent {
 public:
     // PageIndicatorManagerComponent inner types define
-    enum class PageIndicatorDirection : uchar {};
+    enum class PageIndicatorDirection : uchar {
+        Left  = 0,
+        Right = 1,
+    };
 
 public:
     // member variables

@@ -21,7 +21,10 @@ namespace mce { struct TextureResourceService; }
 class CubemapBackgroundResources : public ::Bedrock::EnableNonOwnerReferences, public ::ResourcePackListener {
 public:
     // CubemapBackgroundResources inner types define
-    enum class CubemapType : int {};
+    enum class CubemapType : int {
+        Sdr = 0,
+        Hdr = 1,
+    };
 
 public:
     // member variables

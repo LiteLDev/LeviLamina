@@ -22,7 +22,36 @@ public:
     // clang-format on
 
     // WorldSeedCatalogModel inner types define
-    struct WorldSeedFilteredLookup {};
+    struct WorldSeedFilteredLookup {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, int>            contentIndex;
+        ::ll::TypedStorage<8, 8, uint64>         startStringIndex;
+        ::ll::TypedStorage<8, 32, ::std::string> matchedText;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WorldSeedFilteredLookup& operator=(WorldSeedFilteredLookup const&);
+        WorldSeedFilteredLookup(WorldSeedFilteredLookup const&);
+        WorldSeedFilteredLookup();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::WorldSeedCatalogModel::WorldSeedFilteredLookup&
+        operator=(::WorldSeedCatalogModel::WorldSeedFilteredLookup&&);
+
+        MCAPI ~WorldSeedFilteredLookup();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
 public:
     // member variables

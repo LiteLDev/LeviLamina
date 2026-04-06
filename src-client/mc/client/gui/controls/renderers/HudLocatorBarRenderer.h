@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/controls/renderers/MinecraftUICustomRenderer.h"
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/core/math/Vec2.h"
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/minecraft_renderer/renderer/Mesh.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 
@@ -31,7 +33,14 @@ public:
     // HudLocatorBarRenderer inner types define
     struct ActorUniqueIDCompare {};
 
-    struct PlayerData {};
+    struct PlayerData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 12, ::Vec3>       mLocation;
+        ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
+        // NOLINTEND
+    };
 
 public:
     // member variables

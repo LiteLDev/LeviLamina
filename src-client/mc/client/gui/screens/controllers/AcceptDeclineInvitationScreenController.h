@@ -15,7 +15,15 @@ class PlatformMultiplayerRestrictions;
 class AcceptDeclineInvitationScreenController : public ::MinecraftScreenController {
 public:
     // AcceptDeclineInvitationScreenController inner types define
-    enum class AcceptDeclineInvitationState : uchar {};
+    enum class AcceptDeclineInvitationState : uchar {
+        DisplayAcceptDeclineModal           = 0,
+        WaitingForAcceptDeclineModalResult  = 1,
+        CheckPlatformMultiplayerRestriction = 2,
+        WaitingForPlatformUpsellResult      = 3,
+        SendResult                          = 4,
+        Exit                                = 5,
+        Complete                            = 6,
+    };
 
 public:
     // member variables

@@ -7,6 +7,7 @@
 #include "mc/client/gui/screens/models/ContentManagerFactoryArgs.h"
 #include "mc/client/gui/screens/models/ContentType.h"
 #include "mc/client/gui/screens/models/IContentManagerFactory.h"
+#include "mc/client/gui/screens/models/IPackManagerContentQueries.h"
 #include "mc/client/resources/ContentCatalogPackSource.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
@@ -18,8 +19,11 @@
 class AppPlatform;
 class CachedHostPackIdProvider;
 class CompositePackSource;
+class ContentTierInfo;
+class IContentTierManager;
 class Pack;
 class PackSource;
+class StoreCatalogRepository;
 struct ContentSource;
 struct InvalidPacksFilterGroup;
 struct InvalidResourceSource;
@@ -44,7 +48,68 @@ public:
     // clang-format on
 
     // ContentManagerFactoryImpl inner types define
-    class PackManagerContentQueriesImpl {};
+    class PackManagerContentQueriesImpl : public ::IPackManagerContentQueries {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>>       mStoreCatalog;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const>> mContentTierManager;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PackManagerContentQueriesImpl();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
+
+        virtual ::std::string const*
+        getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const /*override*/;
+
+        virtual ~PackManagerContentQueriesImpl() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI PackManagerContentQueriesImpl(
+            ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>       storeCatalog,
+            ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager
+        );
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::Bedrock::NonOwnerPointer<::StoreCatalogRepository>       storeCatalog,
+            ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> contentTierManager
+        );
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCAPI ::ContentTierInfo $getContentTierInfo() const;
+
+        MCAPI ::std::string const*
+        $getStoreCatalogItemAvailableDateByPackIdentityAndType(::mce::UUID const& uuid) const;
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
 
 public:
     // member variables

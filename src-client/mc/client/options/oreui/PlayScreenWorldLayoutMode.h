@@ -4,6 +4,10 @@
 
 namespace OreUI {
 
-enum class PlayScreenWorldLayoutMode : int {};
+enum class PlayScreenWorldLayoutMode : int {
+    Default = 0,
+    List    = 1,
+    Grid    = 2,
+};
 
 }

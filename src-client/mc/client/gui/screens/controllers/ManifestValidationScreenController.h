@@ -25,7 +25,11 @@ namespace Core { class Path; }
 class ManifestValidationScreenController : public ::MinecraftScreenController {
 public:
     // ManifestValidationScreenController inner types define
-    enum class IssueType : int {};
+    enum class IssueType : int {
+        None    = 0,
+        Error   = 1,
+        Warning = 2,
+    };
 
 public:
     // member variables

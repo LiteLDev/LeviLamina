@@ -13,7 +13,11 @@ namespace mce { class TextureGroupBase; }
 class OverlayTextureMap {
 public:
     // OverlayTextureMap inner types define
-    enum class TextureId : int {};
+    enum class TextureId : int {
+        None   = 0,
+        Frozen = 1,
+        Count  = 2,
+    };
 
 public:
     // member variables

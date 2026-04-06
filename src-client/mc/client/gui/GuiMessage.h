@@ -8,7 +8,18 @@
 class GuiMessage {
 public:
     // GuiMessage inner types define
-    enum class MessageType : int {};
+    enum class MessageType : int {
+        None                     = 0,
+        ChatMessage              = 1,
+        ClientMessage            = 2,
+        LocalizedMessage         = 3,
+        SystemMessage            = 4,
+        WhisperMessage           = 5,
+        TextObjectMessage        = 6,
+        TextObjectWhisperMessage = 7,
+        AnnouncementMessage      = 8,
+        AudioSubtitleMessage     = 9,
+    };
 
 public:
     // member variables

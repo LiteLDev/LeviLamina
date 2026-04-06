@@ -35,7 +35,10 @@ struct PackMoveResult;
 class ResourcePacksScreenController : public ::SettingsScreenControllerBase {
 public:
     // ResourcePacksScreenController inner types define
-    enum class PackRestriction : int {};
+    enum class PackRestriction : int {
+        Unrestricted = 0,
+        Restricted   = 1,
+    };
 
     using ConstContentItemPtr = ::std::shared_ptr<::ContentItem const>;
 

@@ -42,7 +42,26 @@ public:
     // clang-format on
 
     // MinecraftScreenController inner types define
-    struct LeaveScreenInfo {};
+    struct LeaveScreenInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>           mShouldLeave;
+        ::ll::TypedStorage<8, 32, ::std::string> mExpectedScreenName;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~LeaveScreenInfo();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
 
     using BooleanOptionGetter = ::std::function<bool()>;
 

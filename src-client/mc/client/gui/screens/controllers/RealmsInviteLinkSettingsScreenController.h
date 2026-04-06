@@ -18,7 +18,16 @@ class MainMenuScreenModel;
 class RealmsInviteLinkSettingsScreenController : public ::SettingsScreenControllerBase {
 public:
     // RealmsInviteLinkSettingsScreenController inner types define
-    enum class ExpirationDuration : int {};
+    enum class ExpirationDuration : int {
+        Unset      = 0,
+        Never      = 1,
+        HalfHour   = 2,
+        Hour       = 3,
+        QuarterDay = 4,
+        HalfDay    = 5,
+        Day        = 6,
+        Week       = 7,
+    };
 
 public:
     // member variables

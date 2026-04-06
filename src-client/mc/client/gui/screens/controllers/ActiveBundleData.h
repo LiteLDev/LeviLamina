@@ -15,9 +15,18 @@ class ItemStackBase;
 struct ActiveBundleData {
 public:
     // ActiveBundleData inner types define
-    enum class BundleState : int {};
+    enum class BundleState : int {
+        Inactive = 0,
+        Active   = 1,
+        Hovered  = 2,
+    };
 
-    enum class TooltipDirection : int {};
+    enum class TooltipDirection : int {
+        SouthEast = 0,
+        NorthEast = 1,
+        NorthWest = 2,
+        SouthWest = 3,
+    };
 
 public:
     // member variables

@@ -23,7 +23,10 @@ namespace Json { class Value; }
 class ChatScreenController : public ::ClientInstanceScreenController {
 public:
     // ChatScreenController inner types define
-    enum class SelectionDirection : int {};
+    enum class SelectionDirection : int {
+        Next     = 0,
+        Previous = 1,
+    };
 
 public:
     // member variables

@@ -22,7 +22,12 @@ namespace npc { struct UrlAction; }
 class NpcDialogScreenController : public ::ClientInstanceScreenController, public ::NpcEventListener {
 public:
     // NpcDialogScreenController inner types define
-    enum class InteractionState : schar {};
+    enum class InteractionState : schar {
+        None       = 0,
+        Opened     = 1,
+        Interacted = 2,
+        Closed     = 3,
+    };
 
 public:
     // member variables

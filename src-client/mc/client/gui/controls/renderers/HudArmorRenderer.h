@@ -22,7 +22,12 @@ namespace mce { class TextureGroup; }
 class HudArmorRenderer : public ::MinecraftUICustomRenderer {
 public:
     // HudArmorRenderer inner types define
-    enum class ArmorType : int {};
+    enum class ArmorType : int {
+        Full  = 0,
+        Half  = 1,
+        Empty = 2,
+        Count = 3,
+    };
 
 public:
     // member variables

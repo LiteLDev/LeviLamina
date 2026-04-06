@@ -115,6 +115,9 @@
 // moodycamel::ConcurrentQueue C++ Library
 #include "concurrentqueue.h" 
 
+// stb C++ Library
+#include "stb_truetype.h"
+
 struct HWND__;
 struct HICON__;
 struct tagRECT;

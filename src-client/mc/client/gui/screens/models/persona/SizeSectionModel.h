@@ -11,7 +11,11 @@ namespace persona {
 class SizeSectionModel {
 public:
     // SizeSectionModel inner types define
-    enum class Section : schar {};
+    enum class Section : schar {
+        Height  = 0,
+        ArmSize = 1,
+        None    = 2,
+    };
 
     using ArmSizeType = ::persona::ArmSize::Type;
 

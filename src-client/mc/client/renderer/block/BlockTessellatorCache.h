@@ -21,7 +21,13 @@ public:
     // clang-format on
 
     // BlockTessellatorCache inner types define
-    struct LocalRegistry {};
+    struct LocalRegistry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 8, ::Block const*> mAirBlock;
+        // NOLINTEND
+    };
 
 public:
     // member variables
