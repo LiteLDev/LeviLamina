@@ -22,7 +22,5 @@ public:
 
     LLNDAPI ActorDamageSource const& source() const;
     LLNDAPI float&                   damage() const;
-    LLNDAPI bool&                    knock() const;
-    LLNDAPI bool&                    ignite() const;
 };
 } // namespace ll::event::inline entity
