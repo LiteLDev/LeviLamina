@@ -4,7 +4,9 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/deps/nbt/CompoundTag.h"
+#include "mc/scripting/event_handlers/ScriptActorGameplayHandler.h"
 #include "mc/world/actor/ActorHurtResult.h"
+#include "mc/world/events/ActorBeforeHurtEvent.h"
 
 namespace ll::event::inline entity {
 
@@ -12,39 +14,31 @@ void ActorHurtEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
     nbt["source"] = serializeRefObj(source());
     nbt["damage"] = damage();
-    nbt["knock"]  = knock();
-    nbt["ignite"] = ignite();
 }
 
 void ActorHurtEvent::deserialize(CompoundTag const& nbt) {
     Cancellable::deserialize(nbt);
     damage() = nbt["damage"];
-    knock()  = nbt["knock"];
-    ignite() = nbt["ignite"];
 }
 
 ActorDamageSource const& ActorHurtEvent::source() const { return mSource; }
 float&                   ActorHurtEvent::damage() const { return mDamage; }
-bool&                    ActorHurtEvent::knock() const { return mKnock; }
-bool&                    ActorHurtEvent::ignite() const { return mIgnite; }
 
 LL_TYPE_INSTANCE_HOOK(
     ActorHurtEventHook,
     HookPriority::Normal,
-    Actor,
-    &Actor::hurt,
-    ActorHurtResult,
-    ActorDamageSource const& source,
-    float                    damage,
-    bool                     knock,
-    bool                     ignite
+    ScriptActorGameplayHandler,
+    &ScriptActorGameplayHandler::$handleEvent,
+    GameplayHandlerResult<CoordinatorResult>,
+    ActorBeforeHurtEvent& actorHurtEvent
 ) {
-    auto ev = ActorHurtEvent(*this, source, damage, knock, ignite);
+    auto ev =
+        ActorHurtEvent(const_cast<Actor&>(actorHurtEvent.mEntity), actorHurtEvent.mSource, actorHurtEvent.mDamage);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
-        return {};
+        return {HandlerResult::BypassListeners, CoordinatorResult::Cancel};
     }
-    return origin(source, damage, knock, ignite);
+    return origin(actorHurtEvent);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

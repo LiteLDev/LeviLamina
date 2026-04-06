@@ -10,22 +10,12 @@ namespace ll::event::inline entity {
 class ActorHurtEvent final : public Cancellable<ActorEvent> {
     ActorDamageSource const& mSource;
     float&                   mDamage;
-    bool&                    mKnock;
-    bool&                    mIgnite;
 
 public:
-    constexpr explicit ActorHurtEvent(
-        Actor&                   actor,
-        ActorDamageSource const& source,
-        float&                   damage,
-        bool&                    knock,
-        bool&                    ignite
-    )
+    constexpr explicit ActorHurtEvent(Actor& actor, ActorDamageSource const& source, float& damage)
     : Cancellable(actor),
       mSource(source),
-      mDamage(damage),
-      mKnock(knock),
-      mIgnite(ignite) {}
+      mDamage(damage) {}
 
     LLAPI void serialize(CompoundTag&) const override;
     LLAPI void deserialize(CompoundTag const&) override;
