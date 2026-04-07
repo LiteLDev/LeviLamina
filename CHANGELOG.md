@@ -7,12 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.1] - 2026-04-07
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.10.4-server.3 and v26.10.4-client.3
+
 ## [26.10.0] - 2026-04-07
 
 ### Added
 
-- Added commonly used utility functions @子沐呀
-- Added symbol cache @子沐呀
+- Added commonly used utility functions @zimuya4153
+- Added symbol cache @zimuya4153
 - Added default constructors for `ActorDamageSource` and `RedactableString` @ShrBox
 - Added `CommandRegistrar` instance getter shortcuts @OEOTYAN
 
@@ -27,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `ActorHurtEvent` [#1747] @ShrBox
 - Synced and optimized the MCPE-228407 workaround @ShrBox
 - Fixed `ll::getGameVersion()` and game version display @ShrBox @OEOTYAN
-- Fixed client-side coroutines [#1791] @子沐呀
+- Fixed client-side coroutines [#1791] @zimuya4153
 
 ## [1.9.9] - 2026-04-02
 
@@ -1431,7 +1437,8 @@ For lip and tooth-hub test only.
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.1...HEAD
+[26.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.0...v26.10.1
 [26.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.9...v26.10.0
 [1.9.9]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.8...v1.9.9
 [1.9.8]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.7...v1.9.8
