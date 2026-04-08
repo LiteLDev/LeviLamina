@@ -53,5 +53,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
+MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
 // NOLINTEND

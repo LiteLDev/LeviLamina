@@ -10,39 +10,39 @@ class SemVersionBase {};
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator!=(
+MCAPI bool operator!=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
-MCNAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
+MCAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
 
-MCNAPI bool operator<(
+MCAPI bool operator<(
     ::SemVersionBase<::std::string_view> const&               lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
-MCNAPI bool operator<(
+MCAPI bool operator<(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
-MCNAPI bool operator<(
+MCAPI bool operator<(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
 );
 
-MCNAPI bool operator==(
+MCAPI bool operator==(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
-MCNAPI bool operator==(
+MCAPI bool operator==(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
 );
 
-MCNAPI bool operator>=(
+MCAPI bool operator>=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
 );

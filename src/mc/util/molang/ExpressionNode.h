@@ -277,5 +277,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
+MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 // NOLINTEND

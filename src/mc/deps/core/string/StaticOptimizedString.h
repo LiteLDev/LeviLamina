@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/Packed.h"
+
 namespace Bedrock {
 
 class StaticOptimizedString {
@@ -15,7 +18,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk31dddc;
+    ::ll::TypedStorage<8, 8, ::Bedrock::PackedPointer::Packed<char const, 1, 0>> mData;
     // NOLINTEND
 
 public:

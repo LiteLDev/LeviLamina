@@ -97,5 +97,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
+MCAPI ::Vec3 operator+(::BlockPos const& pos, ::Vec3 const& rhs);
 // NOLINTEND
