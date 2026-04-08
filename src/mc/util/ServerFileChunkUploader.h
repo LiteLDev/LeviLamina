@@ -75,13 +75,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initFileUploader(
+    MCAPI void $initFileUploader(
         ::std::string const&        uploadId,
         ::FileInfo const&           file,
         int                         chunkSize,
@@ -89,29 +89,29 @@ public:
         ::std::function<void(bool)> callback
     );
 
-    MCNAPI void $getServerMissingChunks(
+    MCAPI void $getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    MCNAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
-    MCNAPI void $uploadChunk(
+    MCAPI void $uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
         ::std::vector<uchar>        data,
         ::std::function<void(bool)> onCompleteCallback
     );
 
-    MCNAPI bool $canCancelUpload(::FileInfo const& file) const;
+    MCFOLD bool $canCancelUpload(::FileInfo const& file) const;
 
-    MCNAPI void $cancelUpload(::FileInfo const& file);
+    MCFOLD void $cancelUpload(::FileInfo const& file);
 
-    MCNAPI ::UploadError $getInitErrorCode() const;
+    MCFOLD ::UploadError $getInitErrorCode() const;
 
-    MCNAPI float $getUploadProgress(::FileInfo const& file) const;
+    MCFOLD float $getUploadProgress(::FileInfo const& file) const;
 
-    MCNAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
+    MCAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
 
 
     // NOLINTEND

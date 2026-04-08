@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/util/FileInfo.h"
 #include "mc/util/UploadError.h"
+#include "mc/util/UploadState.h"
 
 // auto generated forward declare list
 // clang-format off
 class FileArchiver;
 class IFileChunkUploader;
+class IFilePicker;
 class TaskGroup;
 struct FileChunkInfo;
 namespace Core { class Path; }
@@ -28,48 +31,42 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk1e2144;
-        ::ll::UntypedStorage<1, 1>  mUnkd4776a;
-        ::ll::UntypedStorage<8, 32> mUnk56f049;
-        ::ll::UntypedStorage<8, 32> mUnk1ad345;
-        ::ll::UntypedStorage<8, 8>  mUnke36722;
-        ::ll::UntypedStorage<8, 8>  mUnka9f509;
-        ::ll::UntypedStorage<8, 8>  mUnk811586;
+        ::ll::TypedStorage<1, 1, bool>           needHeader;
+        ::ll::TypedStorage<1, 1, bool>           needTrailer;
+        ::ll::TypedStorage<8, 32, ::std::string> header;
+        ::ll::TypedStorage<8, 32, ::std::string> trailer;
+        ::ll::TypedStorage<8, 8, uint64>         currentFileByte;
+        ::ll::TypedStorage<8, 8, uint64>         totalFileByte;
+        ::ll::TypedStorage<8, 8, uint64>         totalStreamSize;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MultiPartStreamHelper& operator=(MultiPartStreamHelper const&);
-        MultiPartStreamHelper(MultiPartStreamHelper const&);
-        MultiPartStreamHelper();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~MultiPartStreamHelper();
+        MCAPI ~MultiPartStreamHelper();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkd53a1f;
-    ::ll::UntypedStorage<8, 96> mUnk7e81a8;
-    ::ll::UntypedStorage<4, 4>  mUnk3637b8;
-    ::ll::UntypedStorage<4, 4>  mUnkcdb53c;
-    ::ll::UntypedStorage<8, 16> mUnk572878;
-    ::ll::UntypedStorage<8, 16> mUnkbea5f5;
-    ::ll::UntypedStorage<8, 8>  mUnka99ce1;
-    ::ll::UntypedStorage<8, 24> mUnkc47b3b;
-    ::ll::UntypedStorage<1, 1>  mUnk976e6e;
-    ::ll::UntypedStorage<1, 1>  mUnk64961a;
-    ::ll::UntypedStorage<1, 1>  mUnk2e4039;
+    ::ll::TypedStorage<8, 72, ::FileInfo>                                 mFile;
+    ::ll::TypedStorage<8, 96, ::FileUploadManager::MultiPartStreamHelper> mMultiPartHelper;
+    ::ll::TypedStorage<4, 4, ::UploadState>                               mState;
+    ::ll::TypedStorage<4, 4, ::UploadError>                               mUploadError;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IFilePicker>>           mFilePicker;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IFileChunkUploader>>    mFileUploader;
+    ::ll::TypedStorage<8, 8, ::TaskGroup&>                                mIOTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::FileArchiver>> mFileArchiver;
+    ::ll::TypedStorage<1, 1, bool>                                        mUploadAllAtOnce;
+    ::ll::TypedStorage<1, 1, bool>                                        mContinueOnReception;
+    ::ll::TypedStorage<1, 1, bool>                                        mUseStream;
     // NOLINTEND
 
 public:
@@ -98,31 +95,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
 #ifdef LL_PLAT_C
-    MCNAPI FileUploadManager(
+    MCAPI FileUploadManager(
         ::TaskGroup&                                         taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
     );
 #endif
 
-    MCNAPI void _generateMultiPartHelper();
+    MCAPI void _generateMultiPartHelper();
 
-    MCNAPI void _resumeUpload();
+    MCAPI void _resumeUpload();
 
-    MCNAPI void _uploadChunk(::FileChunkInfo const& chunk);
+    MCAPI void _uploadChunk(::FileChunkInfo const& chunk);
 
-    MCNAPI void _uploadStream();
+    MCAPI void _uploadStream();
 
-    MCNAPI void addCallbackQueue(::std::function<void()> callback);
+    MCAPI void addCallbackQueue(::std::function<void()> callback);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setFailed(::UploadError reason);
+    MCAPI void setFailed(::UploadError reason);
 #endif
 
-    MCNAPI void uploadFile(
+    MCAPI void uploadFile(
         ::std::string const& uploadId,
         ::Core::Path const&  filePath,
         bool                 autoStartUpload,
@@ -133,16 +130,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& BOUNDARY();
+    MCAPI static ::std::string const& BOUNDARY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::TaskGroup&                                         taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
@@ -153,15 +150,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getUploadProgress() const;
+    MCAPI float $getUploadProgress() const;
 
-    MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
 
 
     // NOLINTEND

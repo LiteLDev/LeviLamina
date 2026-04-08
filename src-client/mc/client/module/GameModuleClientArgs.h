@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/SubClientId.h"
+
 struct GameModuleClientArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7f037d;
-    ::ll::UntypedStorage<1, 1> mUnkc871e0;
+    ::ll::TypedStorage<1, 1, bool>          mIsConnectedToRemoteServer;
+    ::ll::TypedStorage<1, 1, ::SubClientId> mSubClientId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameModuleClientArgs& operator=(GameModuleClientArgs const&);
-    GameModuleClientArgs(GameModuleClientArgs const&);
-    GameModuleClientArgs();
 };

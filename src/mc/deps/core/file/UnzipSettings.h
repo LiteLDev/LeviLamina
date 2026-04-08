@@ -2,45 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/ZipFileRestrictions.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class IFileAccess;
+// clang-format on
+
 namespace Core::ZipUtils {
 
 class UnzipSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk696362;
-    ::ll::UntypedStorage<1, 1>  mUnk919738;
-    ::ll::UntypedStorage<1, 1>  mUnk81b449;
-    ::ll::UntypedStorage<8, 24> mUnk7cbd7d;
-    ::ll::UntypedStorage<8, 32> mUnk60b7f2;
-    ::ll::UntypedStorage<8, 24> mUnkd99b51;
-    ::ll::UntypedStorage<8, 24> mUnkc28507;
-    ::ll::UntypedStorage<8, 8>  mUnka76847;
+    ::ll::TypedStorage<8, 48, ::Core::ZipUtils::ZipFileRestrictions>     mRestrictions;
+    ::ll::TypedStorage<1, 1, bool>                                       mDeleteZipOnSuccess;
+    ::ll::TypedStorage<1, 1, bool>                                       mPreventOverwrites;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>> mFileAccess;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mPassword;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>              mSelectedPaths;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>              mUnselectedPaths;
+    ::ll::TypedStorage<8, 8, uint64>                                     mMaxDirectoryDepth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UnzipSettings& operator=(UnzipSettings const&);
-    UnzipSettings(UnzipSettings const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UnzipSettings();
+    MCAPI UnzipSettings();
 
-    MCNAPI ~UnzipSettings();
+    MCAPI ~UnzipSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
