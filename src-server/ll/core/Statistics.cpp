@@ -66,7 +66,7 @@ static nlohmann::json addSingleLineChart(std::string_view key, const int value) 
 static nlohmann::json getCustomCharts() {
     nlohmann::json res;
     res.emplace_back(addSimplePie("levilamina_version", getLoaderVersion().to_string()));
-    res.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mBuildId));
+    res.emplace_back(addSimplePie("minecraft_version", Common::getBuildInfo().mGameVersion));
     res.emplace_back(addSingleLineChart(
         "players",
         service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
