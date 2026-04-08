@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Bumped bedrock-runtime-data to v26.10.4-server.4 and v26.10.4-client.4
+- Bumped bedrock-runtime-data to v26.10.4-server.5 and v26.10.4-client.5
+- Updated Minecraft headers
 
 ### Fixed
 
