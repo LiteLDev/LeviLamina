@@ -10,8 +10,8 @@
 class DefaultEntitySystemsCollection : public IEntitySystemsCollection {
 public:
     struct ECSTiming {
-        int   mCount{0};  // this+0x0
-        float mMsTime{0}; // this+0x4
+        int                      mCount{0}; // this+0x0
+        std::chrono::nanoseconds mTime{0};  // this+0x4
     };
     struct TickingSystemsInCategory {
         Bedrock::typeid_t<struct SystemCategory> mCategory;  // this+0x0
@@ -19,9 +19,10 @@ public:
         std::vector<ECSTiming>                   mTimings{}; // this+0x20
     };
 
-    std::vector<std::shared_ptr<ISystem>> mAllSystems;              // this+0x8
-    std::vector<InternalSystemInfo>       mAllSystemsInfo;          // this+0x20
-    std::vector<TickingSystemsInCategory> mTickingSystemCategories; // this+0x38
-    entt::dense_map<uint, ComponentInfo>  mAllComponentsInfo;       // this+0x50
-    std::mutex                            mTimingMutex;             // this+0x98
+    std::vector<std::shared_ptr<ISystem>> mAllSystems;                    // this+0x8
+    std::vector<InternalSystemInfo>       mAllSystemsInfo;                // this+0x20
+    std::vector<TickingSystemsInCategory> mTickingSystemCategories;       // this+0x38
+    std::vector<TickingSystemsInCategory> mSingleTickingSystemCategories; // this+0x50
+    entt::dense_map<uint, ComponentInfo>  mAllComponentsInfo;             // this+0x68
+    std::mutex                            mTimingMutex;                   // this+0xa0
 };
