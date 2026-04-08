@@ -11,13 +11,13 @@ class Vec3;
 namespace PushableByEntityUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI void pullToRide(::Actor& owner, ::Actor& other);
+MCAPI void pullToRide(::Actor& owner, ::Actor& other);
 
-MCNAPI void push(::Actor& owner, ::Vec3 const& vec);
+MCAPI void push(::Actor& owner, ::Vec3 const& vec);
 
-MCNAPI void push(::Actor& owner, ::Actor& other, bool pushSelfOnly);
+MCAPI void push(::Actor& owner, ::Actor& other, bool pushSelfOnly);
 
-MCNAPI bool skipPush(::Actor& owner, ::Actor& other);
+MCAPI bool skipPush(::Actor& owner, ::Actor& other);
 // NOLINTEND
 
 } // namespace PushableByEntityUtility

@@ -37,5 +37,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
+MCFOLD bool operator==(::KineticDamageSettings const& __P0, ::KineticDamageSettings const& __P1);
 // NOLINTEND

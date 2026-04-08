@@ -58,5 +58,5 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCNAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
+MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
 // NOLINTEND
