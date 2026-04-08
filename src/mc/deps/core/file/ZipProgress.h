@@ -8,25 +8,11 @@ class ZipProgress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk80e410;
-    ::ll::UntypedStorage<4, 4> mUnka99759;
-    ::ll::UntypedStorage<4, 4> mUnk29d148;
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mFilesDone;
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mFilesSkipped;
+    ::ll::TypedStorage<4, 4, ::std::atomic<uint>> mTotalFiles;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-public:
-    // prevent constructor by default
-    ZipProgress& operator=(ZipProgress const&);
-    ZipProgress(ZipProgress const&);
-    ZipProgress();
-
-#else // LL_PLAT_C
-public:
-    // prevent constructor by default
-    ZipProgress& operator=(ZipProgress const&);
-    ZipProgress(ZipProgress const&);
-
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,7 +25,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ZipProgress();
+    MCAPI ZipProgress();
 #endif
     // NOLINTEND
 
@@ -47,20 +33,20 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear();
+    MCAPI void $clear();
 
 
     // NOLINTEND

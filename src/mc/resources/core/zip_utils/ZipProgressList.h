@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/threading/Mutex.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core::ZipUtils { class ZipProgress; }
@@ -13,23 +16,17 @@ struct ZipProgressList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2b0950;
-    ::ll::UntypedStorage<8, 80> mUnkdebe11;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Core::ZipUtils::ZipProgress>>> mZipProgress;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mProgressLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ZipProgressList& operator=(ZipProgressList const&);
-    ZipProgressList(ZipProgressList const&);
-    ZipProgressList();
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
+    MCAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
 
-    MCNAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
+    MCAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
 #endif
     // NOLINTEND
 };

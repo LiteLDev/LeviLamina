@@ -22,29 +22,29 @@ namespace Core::ZipUtils { class ZipSettings; }
 namespace Core::ZipUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
+MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
 
-MCNAPI bool getFilenames(
+MCAPI bool getFilenames(
     ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
     ::Core::ZipUtils::UnzipSettings const&            unzipSettings
 );
 
-MCNAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int inputResult);
+MCAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int inputResult);
 
-MCNAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
+MCAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
 
-MCNAPI ::Core::Result
+MCAPI ::Core::Result
 isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
 
-MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::UnzipResult e);
+MCAPI ::std::error_code make_error_code(::Core::ZipUtils::UnzipResult e);
 
-MCNAPI ::std::error_code make_error_code(::Core::ZipUtils::ZipResult e);
+MCAPI ::std::error_code make_error_code(::Core::ZipUtils::ZipResult e);
 
 #ifdef LL_PLAT_C
-MCNAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
+MCAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
 
-MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
+MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
@@ -53,7 +53,7 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
 );
 #endif
 
-MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
+MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
@@ -62,7 +62,7 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Bedrock::Result<void>&               transactionCommitResult
 );
 
-MCNAPI ::Core::ZipUtils::UnzipResult unzipToFlatFile(
+MCAPI ::Core::ZipUtils::UnzipResult unzipToFlatFile(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
@@ -70,7 +70,7 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipToFlatFile(
     ::Core::ZipUtils::UnzipSettings const& unzipSettings
 );
 
-MCNAPI ::Core::ZipUtils::ZipResult
+MCAPI ::Core::ZipUtils::ZipResult
 zip(::Core::PathView                     inputPathIn,
     ::Core::PathView                     zipOutputPath,
     ::Core::ZipUtils::ZipProgress&       progress,
@@ -78,7 +78,7 @@ zip(::Core::PathView                     inputPathIn,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
 
 #ifdef LL_PLAT_C
-MCNAPI ::Core::ZipUtils::ZipResult
+MCAPI ::Core::ZipUtils::ZipResult
 zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::PathView                                        zipOutputPath,
     ::Core::ZipUtils::ZipProgress&                          progress,
@@ -87,7 +87,7 @@ zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::ZipUtils::ZipSettings const&                    zipSettings);
 #endif
 
-MCNAPI ::Core::ZipUtils::ZipResult zipFromZip(
+MCAPI ::Core::ZipUtils::ZipResult zipFromZip(
     ::Core::PathView                     zipInputPath,
     ::Core::PathView                     zipInputSubPath,
     ::Core::PathView                     zipOutputPath,

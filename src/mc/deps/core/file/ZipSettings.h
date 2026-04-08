@@ -2,44 +2,48 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/ZipFileRestrictions.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class IFileAccess;
+// clang-format on
+
 namespace Core::ZipUtils {
 
 class ZipSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk3c3d64;
-    ::ll::UntypedStorage<1, 1>  mUnkd47ca3;
-    ::ll::UntypedStorage<1, 1>  mUnk525460;
-    ::ll::UntypedStorage<4, 4>  mUnk6bb064;
-    ::ll::UntypedStorage<8, 24> mUnk70535b;
-    ::ll::UntypedStorage<8, 32> mUnkc903da;
-    ::ll::UntypedStorage<4, 4>  mUnk952208;
+    ::ll::TypedStorage<8, 48, ::Core::ZipUtils::ZipFileRestrictions>     mRestrictions;
+    ::ll::TypedStorage<1, 1, bool>                                       mZipDirectoryContents;
+    ::ll::TypedStorage<1, 1, bool>                                       mSkipInaccessibleFiles;
+    ::ll::TypedStorage<4, 4, int>                                        mCompressionLevel;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IFileAccess>> mFileAccess;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mPassword;
+    ::ll::TypedStorage<4, 4, int>                                        mZip64;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ZipSettings& operator=(ZipSettings const&);
-    ZipSettings(ZipSettings const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ZipSettings();
+    MCAPI ZipSettings();
 
-    MCNAPI ~ZipSettings();
+    MCAPI ~ZipSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

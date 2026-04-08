@@ -81,7 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> $zip(
+    MCAPI ::Bedrock::Result<void> $zip(
         ::Core::Path const&                  inputPath,
         ::Core::Path const&                  zipOutputPath,
         ::Core::ZipUtils::ZipProgress&       progress,
@@ -89,7 +89,7 @@ public:
         ::Core::ZipUtils::ZipSettings const& zipSettings
     ) const;
 
-    MCNAPI ::Bedrock::Result<void> $zip(
+    MCAPI ::Bedrock::Result<void> $zip(
         ::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
         ::Core::PathView                                        zipOutputPath,
         ::Core::ZipUtils::ZipProgress&                          progress,
@@ -98,7 +98,7 @@ public:
         ::Core::ZipUtils::ZipSettings const&                    zipSettings
     ) const;
 
-    MCNAPI ::Bedrock::Result<void> $zipFromZip(
+    MCAPI ::Bedrock::Result<void> $zipFromZip(
         ::Core::PathView                     zipInputPath,
         ::Core::PathView                     zipInputSubPath,
         ::Core::PathView                     zipOutputPath,
@@ -107,7 +107,7 @@ public:
         ::Core::ZipUtils::ZipSettings const& zipSettings
     ) const;
 
-    MCNAPI ::Bedrock::Result<void> $unzipInTransaction(
+    MCAPI ::Bedrock::Result<void> $unzipInTransaction(
         ::Core::Path const&                    zipInputPath,
         ::Core::Path const&                    outputFolderPath,
         ::Core::ZipUtils::ZipProgress&         progress,
@@ -115,7 +115,7 @@ public:
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const;
 
-    MCNAPI ::Bedrock::Result<void> $unzipToFlatFile(
+    MCAPI ::Bedrock::Result<void> $unzipToFlatFile(
         ::Core::Path const&                    zipInputPath,
         ::Core::Path const&                    outputFolderPath,
         ::Core::ZipUtils::ZipProgress&         progress,
@@ -123,13 +123,13 @@ public:
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
     ) const;
 
-    MCNAPI bool $getFilenames(
+    MCAPI bool $getFilenames(
         ::Core::Path const&                               zipPath,
         ::std::vector<::Core::PathBuffer<::std::string>>& result,
         ::Core::ZipUtils::UnzipSettings const&            unzipSettings
     ) const;
 
-    MCNAPI bool $exists(
+    MCAPI bool $exists(
         ::Core::Path const&                    zipPath,
         ::Core::Path const&                    filePath,
         ::Core::ZipUtils::UnzipSettings const& unzipSettings
