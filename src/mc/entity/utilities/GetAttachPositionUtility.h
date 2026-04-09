@@ -21,7 +21,7 @@ struct VanillaOffsetComponent;
 namespace GetAttachPositionUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 _getBaseAttachPoint(
+MCAPI ::Vec3 _getBaseAttachPoint(
     ::SharedTypes::Legacy::ActorLocation                            location,
     ::Vec3 const&                                                   interpolatedPosition,
     ::AABBShapeComponent const&                                     aabbShapeComponent,
@@ -33,14 +33,14 @@ MCNAPI ::Vec3 _getBaseAttachPoint(
     float                                                           alpha
 );
 
-MCNAPI ::std::optional<::Vec3> getAttachPosition(
+MCAPI ::std::optional<::Vec3> getAttachPosition(
     ::StrictEntityContext const&         entity,
     ::GetAttachPositionViews const&      views,
     ::SharedTypes::Legacy::ActorLocation location,
     ::Vec3 const&                        interpolatedPosition
 );
 
-MCNAPI ::Vec3 getPassengerAttachPos(
+MCAPI ::Vec3 getPassengerAttachPos(
     ::StrictEntityContext const&         entity,
     ::GetAttachPositionViews const&      views,
     ::SharedTypes::Legacy::ActorLocation location,

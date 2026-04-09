@@ -18,7 +18,7 @@ struct VanillaOffsetComponent;
 namespace VanillaOffsetSystemUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void _clientTick(
+MCAPI void _clientTick(
     ::StrictEntityContext&,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
@@ -28,7 +28,7 @@ MCNAPI void _clientTick(
     float                                             sneakHeight
 );
 
-MCNAPI void _serverTick(
+MCAPI void _serverTick(
     ::StrictEntityContext&,
     ::VanillaOffsetComponent&                         vanillaOffsetComponent,
     ::OffsetsComponent const&                         offsetComponent,
@@ -38,7 +38,7 @@ MCNAPI void _serverTick(
     float                                             sneakHeight
 );
 
-MCNAPI float getCameraOffset(
+MCAPI float getCameraOffset(
     ::ActorDataFlagComponent const&                   actorDataFlag,
     ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,

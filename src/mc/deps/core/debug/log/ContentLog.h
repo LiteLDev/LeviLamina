@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
+#include "mc/deps/core/string/StaticOptimizedString.h"
+#include "mc/deps/core/threading/InstancedThreadLocal.h"
 #include "mc/deps/core/utility/DisableServiceLocatorOverride.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,7 +18,6 @@
 // clang-format off
 class ContentLogEndPoint;
 class ContextMessageLogger;
-namespace Bedrock { class StaticOptimizedString; }
 // clang-format on
 
 class ContentLog : public ::Bedrock::EnableNonOwnerReferences, public ::DisableServiceLocatorOverride {
@@ -62,15 +63,9 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 8> mUnkeefd3d;
-            ::ll::UntypedStorage<8, 8> mUnkc883e3;
+            ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString>                      mMessage;
+            ::ll::TypedStorage<8, 8, ::gsl::not_null<::ContentLog::ContentLogScope const*>> mContentLogScope;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            ScopeData& operator=(ScopeData const&);
-            ScopeData(ScopeData const&);
-            ScopeData();
         };
 
     public:
@@ -85,14 +80,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 168> mUnkf021af;
+        ::ll::TypedStorage<
+            8,
+            168,
+            ::Bedrock::Threading::InstancedThreadLocal<
+                ::ContentLog::ThreadSpecificData,
+                ::std::allocator<::ContentLog::ThreadSpecificData>>>
+            mThreadSpecificData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopeHandler& operator=(ScopeHandler const&);
-        ScopeHandler(ScopeHandler const&);
-        ScopeHandler();
     };
 
     class ContentLogScope {
