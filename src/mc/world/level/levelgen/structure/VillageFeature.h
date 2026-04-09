@@ -1,6 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#ifdef LL_PLAT_S
+#include "mc/common/BiomeIdType.h"
+#include "mc/world/level/biome/Biome.h"
+#include "mc/world/level/biome/registry/BiomeRegistry.h"
+#include "mc/world/level/levelgen/structure/VanillaStructureFeatureType.h"
+#endif
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeature.h"
@@ -29,6 +35,19 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+    VillageFeature(uint seed, int townSpacing, int minTownSeparation, BiomeRegistry const& biomeRegistry)
+    : StructureFeature(seed, VanillaStructureFeatureType::Village()),
+      mTownSpacing(townSpacing),
+      mMinTownSeparation(minTownSeparation) {
+        mAllowedBiomes->clear();
+        mRadius = 4;
+
+        for (auto const& biome : biomeRegistry.mBiomesById.get()) {
+            if (biome.get() != biomeRegistry.mEmptyBiome) {
+                mAllowedBiomes->push_back(biome->mId);
+            }
+        }
+    }
 #else // LL_PLAT_C
 public:
     // prevent constructor by default
