@@ -5,6 +5,9 @@
 
 namespace ll::memory {
 void* SignatureView::uncachedResolve(std::span<std::byte> range) const {
+    if (elements.empty()) [[unlikely]] {
+        return nullptr;
+    }
     const auto firstByte = *elements.front();
     const auto scanEnd   = range.end() - elements.size() + 1;
 
