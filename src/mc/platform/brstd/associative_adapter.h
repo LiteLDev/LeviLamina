@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 #include "mc/platform/brstd/no_mapped_container_t.h"
-#include "mc/platform/brstd/no_value_t.h"
 
 #include <algorithm>
 #include <compare>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
 #include "mc/platform/brstd/associative_adapter.h"
 
 namespace brstd {
