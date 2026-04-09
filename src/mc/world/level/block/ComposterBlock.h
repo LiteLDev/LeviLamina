@@ -54,13 +54,13 @@ public:
         /*override*/;
 
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     virtual bool addCollisionShapes(
@@ -149,6 +149,16 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
+    MCFOLD ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
     MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -166,27 +176,13 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
 
     MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-#ifdef LL_PLAT_C
-    MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
-#endif
 
 
     // NOLINTEND

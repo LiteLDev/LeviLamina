@@ -8,7 +8,7 @@ class IBreakIterator {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~IBreakIterator() = default;
+    virtual ~IBreakIterator();
 
     virtual void Destroy() = 0;
 
@@ -34,9 +34,29 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $ClearText();
 
+    MCNAPI int $GetCurrentPosition();
+
+    MCNAPI int $MoveToCandidateAfter(int);
+
+    MCNAPI int $MoveToNext();
+
+    MCNAPI int $MoveToPrevious();
+
+    MCNAPI int $ResetToBeginning();
+
+    MCNAPI int $ResetToEnd();
+
+    MCNAPI void $SetText(char const*, uint);
     // NOLINTEND
 };
 

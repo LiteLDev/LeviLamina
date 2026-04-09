@@ -62,7 +62,7 @@ public:
 
     virtual ::Option& _registerOption(::std::unique_ptr<::Option> option) /*override*/;
 
-    virtual void updateInputMode(::InputMode) /*override*/;
+    virtual void updateInputMode(::InputMode inputMode) /*override*/;
 
     virtual void setMainVolume(float volume) /*override*/;
 
@@ -86,11 +86,11 @@ public:
 
     virtual void setSensitivity(float sensitivity, ::InputMode inputMode) /*override*/;
 
-    virtual float getSensitivity(::InputMode) const /*override*/;
+    virtual float getSensitivity(::InputMode inputMode) const /*override*/;
 
     virtual void setSpyglassDamping(float value, ::InputMode inputMode) /*override*/;
 
-    virtual float getSpyglassDamping(::InputMode) const /*override*/;
+    virtual float getSpyglassDamping(::InputMode inputMode) const /*override*/;
 
     virtual void setDwellBeforeDrag(float value) /*override*/;
 
@@ -100,9 +100,9 @@ public:
 
     virtual float getStackSplittingTrigger() const /*override*/;
 
-    virtual float getGameSensitivity(::InputMode) const /*override*/;
+    virtual float getGameSensitivity(::InputMode inputmode) const /*override*/;
 
-    virtual bool getInvertYMouse(::InputMode) const /*override*/;
+    virtual bool getInvertYMouse(::InputMode inputMode) const /*override*/;
 
     virtual float getParticleViewDistance() const /*override*/;
 
@@ -140,11 +140,11 @@ public:
 
     virtual bool isHotbarOnlyTouch() const /*override*/;
 
-    virtual bool getDestroyVibration(::InputMode) const /*override*/;
+    virtual bool getDestroyVibration(::InputMode inputMode) const /*override*/;
 
-    virtual bool getSplitVibration(::InputMode) const /*override*/;
+    virtual bool getSplitVibration(::InputMode inputMode) const /*override*/;
 
-    virtual bool getAutoJump(::InputMode) const /*override*/;
+    virtual bool getAutoJump(::InputMode inputMode) const /*override*/;
 
     virtual void setFullscreen(bool fullscreen) /*override*/;
 
@@ -682,6 +682,8 @@ public:
 
     MCAPI ::Option& $_registerOption(::std::unique_ptr<::Option> option);
 
+    MCAPI void $updateInputMode(::InputMode inputMode);
+
     MCAPI void $setMainVolume(float volume);
 
     MCAPI float $getMainVolume() const;
@@ -704,7 +706,11 @@ public:
 
     MCAPI void $setSensitivity(float sensitivity, ::InputMode inputMode);
 
+    MCAPI float $getSensitivity(::InputMode inputMode) const;
+
     MCAPI void $setSpyglassDamping(float value, ::InputMode inputMode);
+
+    MCAPI float $getSpyglassDamping(::InputMode inputMode) const;
 
     MCAPI void $setDwellBeforeDrag(float value);
 
@@ -713,6 +719,10 @@ public:
     MCAPI void $setStackSplittingTrigger(float value);
 
     MCAPI float $getStackSplittingTrigger() const;
+
+    MCAPI float $getGameSensitivity(::InputMode inputmode) const;
+
+    MCAPI bool $getInvertYMouse(::InputMode inputMode) const;
 
     MCAPI float $getParticleViewDistance() const;
 
@@ -749,6 +759,12 @@ public:
     MCAPI bool $isLeftHanded() const;
 
     MCAPI bool $isHotbarOnlyTouch() const;
+
+    MCAPI bool $getDestroyVibration(::InputMode inputMode) const;
+
+    MCAPI bool $getSplitVibration(::InputMode inputMode) const;
+
+    MCAPI bool $getAutoJump(::InputMode inputMode) const;
 
     MCAPI void $setFullscreen(bool fullscreen);
 
@@ -794,6 +810,8 @@ public:
 
     MCAPI void $setSplitscreenDirection(int splitScreenDirection);
 
+    MCAPI ::SplitScreenDirection $getSplitscreenDirection() const;
+
     MCAPI void $setHideScreens(bool hideScreens);
 
     MCAPI bool $getHideScreens() const;
@@ -803,6 +821,8 @@ public:
     MCAPI bool $getHideItemInHand() const;
 
     MCAPI bool $getScreenAnimations() const;
+
+    MCAPI ::UIProfile $getUIProfile() const;
 
     MCAPI void $setForceUseUnsortedPolys(bool renderUnsorted);
 
@@ -1239,6 +1259,8 @@ public:
     MCAPI void $setUseFontOverrides(bool value);
 
     MCAPI bool $getUseFontOverrides() const;
+
+    MCAPI ::NewInteractionModel $getEffectiveTouchScheme() const;
     // NOLINTEND
 
 public:

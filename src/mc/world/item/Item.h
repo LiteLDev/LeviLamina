@@ -553,6 +553,8 @@ public:
 
     MCFOLD bool $isDye() const;
 
+    MCFOLD ::ItemColor $getItemColor() const;
+
     MCFOLD bool $isFertilizer() const;
 
     MCFOLD bool $isFood() const;
@@ -761,6 +763,8 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
+    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+
     MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $useInterruptedByAttacking() const;
@@ -801,10 +805,6 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::ItemColor $getItemColor() const;
-#endif
 
 
     // NOLINTEND

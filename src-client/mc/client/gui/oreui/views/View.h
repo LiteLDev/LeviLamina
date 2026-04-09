@@ -250,6 +250,8 @@ public:
 
     MCAPI uint $getHeight() const;
 
+    MCAPI ::OreUI::ViewState $getState() const;
+
     MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
 
     MCAPI ::std::optional<int> $calculateCaretPositionAfterMovement(::TextBoxCaretMovement movement);

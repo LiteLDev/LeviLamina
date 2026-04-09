@@ -125,7 +125,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI bool $OnNavigateTo(char const*);
 
+    MCNAPI ::cohtml::InterceptRequestStatus $OnResourceRequestIntercepted(char const*);
+
+    MCNAPI void $OnScriptContextCreated();
+
+    MCNAPI void $OnDOMBuilt();
+
+    MCNAPI void $OnFinishLoad(char const*);
+
+    MCNAPI ::cohtml::EventAction::Actions $OnNodeTouched(
+        ::cohtml::INodeProxy const*,
+        ::cohtml::TouchEventData const*,
+        void*,
+        ::cohtml::InputEventPhase::PhaseType const
+    );
+
+    MCNAPI ::cohtml::EventAction::Actions $OnNodeMouseEvent(
+        ::cohtml::INodeProxy const*,
+        ::cohtml::MouseEventData const*,
+        void*,
+        ::cohtml::InputEventPhase::PhaseType const
+    );
+
+    MCNAPI ::cohtml::EventAction::Actions $OnNodeKeyEvent(
+        ::cohtml::INodeProxy const*,
+        ::cohtml::KeyEventData const*,
+        void*,
+        ::cohtml::InputEventPhase::PhaseType const
+    );
+
+    MCNAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType);
     // NOLINTEND
 };
 

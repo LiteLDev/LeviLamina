@@ -99,6 +99,8 @@ public:
 
     MCFOLD ::Direction::Type $loadDirection(::Direction::Type direction);
 
+    MCFOLD ::Rotation $loadRotation(::Rotation rotation);
+
     MCFOLD ::Mirror $loadMirror(::Mirror mirror);
 
     MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
@@ -113,10 +115,6 @@ public:
     MCFOLD bool $shouldResetTime();
 
     MCFOLD ::DataLoadHelperType $getType() const;
-
-#ifdef LL_PLAT_C
-    MCFOLD ::Rotation $loadRotation(::Rotation rotation);
-#endif
 
 
     // NOLINTEND

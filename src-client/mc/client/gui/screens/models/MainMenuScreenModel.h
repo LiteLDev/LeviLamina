@@ -138,7 +138,7 @@ public:
 
     virtual bool isAdhocEnabled() const /*override*/;
 
-    virtual bool isNetworkEnabled(::NetworkFilter) const /*override*/;
+    virtual bool isNetworkEnabled(::NetworkFilter withFilter) const /*override*/;
 
     virtual bool platformTTSExists() const /*override*/;
     // NOLINTEND
@@ -447,6 +447,8 @@ public:
     MCFOLD ::IMinecraftEventing& $getMinecraftEventing() const;
 
     MCAPI bool $isAdhocEnabled() const;
+
+    MCAPI bool $isNetworkEnabled(::NetworkFilter withFilter) const;
 
     MCFOLD bool $platformTTSExists() const;
     // NOLINTEND

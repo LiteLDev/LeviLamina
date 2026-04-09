@@ -280,7 +280,7 @@ public:
     virtual void onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 
     virtual void onDisconnect(
-        ::NetworkIdentifier const&               id,
+        ::NetworkIdentifier const&               source,
         ::Connection::DisconnectFailReason const discoReason,
         ::Connection::DisconnectionStage const   disconnectStage,
         ::std::string const&                     messageFromServer,
@@ -812,16 +812,14 @@ public:
 
     MCFOLD void $onTick();
 
-#ifdef LL_PLAT_S
     MCFOLD void $onOutgoingPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
 
     MCFOLD void $onValidPacketReceived(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId, ::SubClientId);
-#endif
 
     MCFOLD void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 
     MCFOLD void $onDisconnect(
-        ::NetworkIdentifier const&               id,
+        ::NetworkIdentifier const&               source,
         ::Connection::DisconnectFailReason const discoReason,
         ::Connection::DisconnectionStage const   disconnectStage,
         ::std::string const&                     messageFromServer,
@@ -836,7 +834,18 @@ public:
         ::std::function<void()> errorCallback
     );
 
-#ifdef LL_PLAT_S
+    MCFOLD void $handlePacketViolation(
+        ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
+        ::std::error_code const&                              errorCode,
+        ::PacketViolationResponse const                       response,
+        ::MinecraftPacketIds const                            packetId,
+        ::std::string&&                                       context,
+        ::NetworkIdentifier const&                            netId,
+        ::SubClientId const                                   clientSubId,
+        ::SubClientId const                                   senderSubId,
+        uint const                                            packetSize
+    );
+
     MCFOLD void $sendPacketViolationWarningPacket(
         ::std::error_code const&   errorCode,
         ::PacketViolationResponse  violationResponse,
@@ -845,7 +854,6 @@ public:
         ::NetworkIdentifier const& netId,
         ::SubClientId              clientSubId
     );
-#endif
 
     MCFOLD void $onTransferRequest(::NetworkIdentifier const& id, ::Social::GameConnectionInfo const& destination);
 

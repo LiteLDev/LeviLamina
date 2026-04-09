@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual ~LeaveLevelProgressScreenController() /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::ui::DirtyFlag tick() /*override*/;
 
@@ -110,6 +110,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI ::ui::DirtyFlag $tick();
 
     MCFOLD ::std::string $getAdditionalScreenInfo() const;

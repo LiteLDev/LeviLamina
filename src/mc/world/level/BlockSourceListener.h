@@ -63,7 +63,6 @@ public:
 
     MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-#ifdef LL_PLAT_S
     MCFOLD void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
@@ -75,7 +74,6 @@ public:
         ::BlockChangedEventTarget      eventTarget,
         ::Actor*                       blockChangeSource
     );
-#endif
 
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 

@@ -528,33 +528,38 @@ public:
     ) = 0;
 
     virtual void fireEventPlayerJoinWorld(
-        uint const&,
-        ::SubClientId const,
-        bool,
-        ::std::optional<bool>,
-        ::IConnectionEventing::PlayerJoinWorldAttemptState const,
-        int,
-        ::Connection::DisconnectFailReason,
-        ::Json::Value const&,
-        ::TransportLayer,
-        ::NetworkType,
-        ::Social::MultiplayerState,
-        bool,
-        bool,
-        ::Social::MultiplayerServiceIdentifier,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        bool,
-        bool,
-        bool,
-        bool,
-        ::Social::GameConnectionInfo const&
+        uint const&                                              userId,
+        ::SubClientId const                                      subId,
+        bool                                                     isJoiningLocalServer,
+        ::std::optional<bool>                                    isUsingTURN,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const JoinState,
+        int                                                      attemptId,
+        ::Connection::DisconnectFailReason                       failReason,
+        ::Json::Value const&                                     failDebugInfo,
+        ::TransportLayer                                         transportLayer,
+        ::NetworkType                                            networkTypeOverride,
+        ::Social::MultiplayerState                               multiplayerState,
+        bool                                                     isConnectedToApplicationLayer,
+        bool                                                     isFilteringProfanity,
+        ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
+        ::std::string const&                                     titleMessage,
+        ::std::string const&                                     errorMessage,
+        ::std::string const&                                     codeword,
+        ::std::string const&                                     partyId,
+        bool                                                     isPartyLeader,
+        bool                                                     isPartyDestination,
+        bool                                                     isServerTransfer,
+        bool                                                     isReconnect,
+        ::Social::GameConnectionInfo const&                      connectionInfo
     ) = 0;
 
-    virtual void
-    fireEventClientLastPackets(uint const&, ::SubClientId const, int, ::Json::Value const&, ::Json::Value const&) = 0;
+    virtual void fireEventClientLastPackets(
+        uint const&          userId,
+        ::SubClientId const  subId,
+        int                  correlationId,
+        ::Json::Value const& lastSentPackets,
+        ::Json::Value const& lastReceivedPackets
+    ) = 0;
 
     virtual void fireEventSignalServiceConnect(
         ::SignalServiceConnectStage stage,
@@ -572,27 +577,27 @@ public:
     ) = 0;
 
     virtual void fireEventOnClientDisconnect(
-        ::SubClientId,
-        bool,
-        ::Connection::DisconnectFailReason,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&
+        ::SubClientId                      subId,
+        bool                               isNetworked,
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
     ) = 0;
 
     virtual void fireEventOnServerDisconnect(
-        ::Connection::DisconnectFailReason,
-        ::std::string const&,
-        ::SubClientId,
-        ::std::string const&,
-        uint64,
-        ::std::string const&
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               disconnectedClientId,
+        ::SubClientId                      subId,
+        ::std::string const&               reasonContext,
+        uint64                             clientCount,
+        ::std::string const&               firstTimeStamp
     ) = 0;
 
     virtual void fireEventOnServerAsyncJoinTaskVerdict(
-        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const&,
-        ::SubClientId const,
-        uint
+        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const& joinVerdict,
+        ::SubClientId const                                          subId,
+        uint                                                         verdictQueueLength
     ) = 0;
 
     virtual void fireEventHttpClientError(::std::string const& error) = 0;
@@ -746,7 +751,7 @@ public:
 
     virtual void fireEventWorldImported(int64 worldSeed, uint64 worldSize) = 0;
 
-    virtual void fireEventWorldImportedResult(::FileArchiverOutcome) = 0;
+    virtual void fireEventWorldImportedResult(::FileArchiverOutcome importResult) = 0;
 
     virtual void fireCurrentInputUpdated(uint userId, ::InputMode inputMode) = 0;
 
@@ -826,26 +831,29 @@ public:
     ) = 0;
 
     virtual void fireEventPacketViolationDetected(
-        uint64,
-        ::std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        ::NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
+        uint64                     readResult,
+        ::std::string              readResultContext,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::NetworkIdentifier const& netId,
+        uint                       numViolations,
+        ::SubClientId              clientSubId,
+        ::SubClientId              senderSubId,
+        uint                       packetStreamLength
     ) = 0;
 
-    virtual void
-    fireEventServerReceivedValidPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId) = 0;
+    virtual void fireEventServerReceivedValidPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId
+    ) = 0;
 
     virtual void fireEventClientSentOrReceivedPacket(
-        ::NetworkIdentifier const&,
-        ::MinecraftPacketIds,
-        ::SubClientId,
-        ::std::string,
-        bool
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId,
+        ::std::string              correlationId,
+        bool                       isOutgoing
     ) = 0;
 
     virtual void fireEventJoinCanceled(::LoadingState currentState) = 0;
@@ -1045,7 +1053,11 @@ public:
 
     virtual void fireEventBlockPlacedByCommand(::Block const& placedBlock, int numberOfBlocksPlaced) = 0;
 
-    virtual void fireEventServerPlayerJoinedGame(::NetworkIdentifier const&, ::SubClientId, ::std::string const&) = 0;
+    virtual void fireEventServerPlayerJoinedGame(
+        ::NetworkIdentifier const& id,
+        ::SubClientId              subId,
+        ::std::string const&       firstConnectionTime
+    ) = 0;
 
     virtual void fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client) = 0;
 
@@ -1096,10 +1108,10 @@ public:
     virtual void fireQuickPlayEvent() = 0;
 
     virtual void firePermissionsSetEvent(
-        ::PlayerPermissionLevel const,
-        ::CommandPermissionLevel const,
-        ::PlayerPermissionLevel const,
-        ::CommandPermissionLevel const
+        ::PlayerPermissionLevel const  prevPlayerPermissionLevel,
+        ::CommandPermissionLevel const prevCommandPermissionLevel,
+        ::PlayerPermissionLevel const  playerPermissionLevel,
+        ::CommandPermissionLevel const commandPermissionLevel
     ) = 0;
 
     virtual void fireExternalUriLaunched(::std::string const& uri) const = 0;
@@ -1256,7 +1268,10 @@ public:
     virtual void
     fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const = 0;
 
-    virtual void fireEventDifficultySet(::SharedTypes::Legacy::Difficulty, ::SharedTypes::Legacy::Difficulty) = 0;
+    virtual void fireEventDifficultySet(
+        ::SharedTypes::Legacy::Difficulty oldDifficulty,
+        ::SharedTypes::Legacy::Difficulty newDifficulty
+    ) = 0;
 
     virtual void fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName) = 0;
 
@@ -1264,7 +1279,7 @@ public:
 
     virtual void fireEventGameRulesUpdated(float oldValue, float newValue, ::std::string const& gameRuleName) = 0;
 
-    virtual void fireEventDefaultGameTypeChanged(::GameType, ::GameType) = 0;
+    virtual void fireEventDefaultGameTypeChanged(::GameType oldGameType, ::GameType newGameType) = 0;
 
     virtual void fireEventNewContentCheckCompleted(::std::string const& newContentPrefix, bool hasNewStoreContent) = 0;
 

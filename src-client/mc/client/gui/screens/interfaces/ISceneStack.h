@@ -155,11 +155,11 @@ public:
 
     virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const = 0;
 
-    virtual bool popScreensBackTo(::ui::SceneType const) = 0;
+    virtual bool popScreensBackTo(::ui::SceneType const sceneType) = 0;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) = 0;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) = 0;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const) = 0;
+    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) = 0;
 
     virtual bool update() = 0;
 
@@ -189,7 +189,7 @@ public:
 
     virtual void handleLicenseChanged() = 0;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) = 0;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) = 0;
 
     virtual ::AbstractScene* getTopScene() = 0;
 

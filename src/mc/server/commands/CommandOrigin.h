@@ -67,7 +67,7 @@ public:
 
     virtual bool hasTellPerms() const;
 
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const;
 
     virtual bool isWorldBuilder() const;
 
@@ -148,9 +148,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-#ifdef LL_PLAT_S
-    MCFOLD bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
-#endif
+    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCAPI bool $isWorldBuilder() const;
 

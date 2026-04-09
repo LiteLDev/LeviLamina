@@ -48,7 +48,7 @@ public:
 
     virtual ::ResourceLocation getResourceLocation(int textureSlot, int pass) const;
 
-    virtual ::UIMaterialType getUIMaterialType(int) const;
+    virtual ::UIMaterialType getUIMaterialType(int pass) const;
 
     virtual bool getRequiresPreRenderSetup(int pass) const;
 
@@ -73,6 +73,8 @@ public:
     MCFOLD int $getNumRenderPasses() const;
 
     MCAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
+
+    MCFOLD ::UIMaterialType $getUIMaterialType(int pass) const;
 
     MCFOLD bool $getRequiresPreRenderSetup(int pass) const;
 

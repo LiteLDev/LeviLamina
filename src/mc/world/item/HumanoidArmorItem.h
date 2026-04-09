@@ -200,6 +200,8 @@ public:
 
     MCAPI bool $isTrimAllowed() const;
 
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCAPI int $getDamageChance(int unbreaking) const;
@@ -221,10 +223,6 @@ public:
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI int $buildIdAux(short auxValue, ::CompoundTag const* userData) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
-#endif
 
 
     // NOLINTEND

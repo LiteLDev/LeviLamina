@@ -62,9 +62,9 @@ public:
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        int
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
     );
 
     virtual ::std::optional<
@@ -81,7 +81,7 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
+    onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
 
     virtual void onBeforePlayerLeave(::Player const& player);
 
@@ -134,6 +134,14 @@ public:
     );
 
     MCFOLD ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
+    $onBeforeWeatherChangedEvent(
+        ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
+        ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
+        int                                        duration
+    );
+
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(
         ::Player&                                    player,
@@ -145,11 +153,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData);
 
-#ifdef LL_PLAT_S
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
-#endif
+    $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
 
     MCFOLD void $onBeforePlayerLeave(::Player const& player);
 

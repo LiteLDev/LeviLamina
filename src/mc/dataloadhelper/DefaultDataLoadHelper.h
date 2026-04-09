@@ -85,11 +85,9 @@ public:
 
     MCFOLD ::Direction::Type $loadDirection(::Direction::Type direction);
 
-#ifdef LL_PLAT_S
     MCFOLD ::Rotation $loadRotation(::Rotation rotation);
 
     MCFOLD ::Mirror $loadMirror(::Mirror mirror);
-#endif
 
     MCFOLD ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 

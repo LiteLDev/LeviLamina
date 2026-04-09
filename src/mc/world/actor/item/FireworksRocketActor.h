@@ -106,6 +106,8 @@ public:
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCAPI void $onSynchedDataUpdate(int dataId);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;

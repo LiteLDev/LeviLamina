@@ -51,7 +51,8 @@ public:
     // NOLINTBEGIN
     virtual ~CraftHandlerGrindstone() /*override*/ = default;
 
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
     // NOLINTEND
@@ -81,6 +82,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+
     MCAPI void $_postCraftRequest(bool const wasSuccess);
 
 

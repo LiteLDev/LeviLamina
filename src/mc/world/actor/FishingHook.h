@@ -112,6 +112,8 @@ public:
     // NOLINTBEGIN
     MCAPI void $remove();
 
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     MCFOLD float $getShadowRadius() const;
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
@@ -119,10 +121,6 @@ public:
     MCFOLD bool $shouldDropDeathLoot() const;
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-#ifdef LL_PLAT_C
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-#endif
 
 
     // NOLINTEND

@@ -23,7 +23,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
@@ -33,6 +33,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::BehaviorStatus $tick(::Actor& owner);
+
     MCFOLD void $initializeFromDefinition(::Actor& owner);
 
 

@@ -31,9 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::BehaviorStatus $tick(::Actor& owner);
-#endif
 
 
     // NOLINTEND

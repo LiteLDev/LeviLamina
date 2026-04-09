@@ -95,6 +95,8 @@ public:
 
     MCFOLD void $onAppTerminated();
 
+    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
+
     MCFOLD void $onPerformanceModeChanged(bool const boost);
 
     MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
@@ -113,9 +115,7 @@ public:
 
     MCFOLD void $onClipboardPaste(::std::string const& clipString);
 
-#ifdef LL_PLAT_C
-    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
-#endif
+    MCFOLD void $onLowMemory(::LowMemorySeverity);
 
 
     // NOLINTEND

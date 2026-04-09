@@ -937,7 +937,6 @@ public:
     MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -947,7 +946,6 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-#endif
 
     MCAPI ::AABB $getCollisionShape(
         ::Block const&                                     block,
@@ -1020,6 +1018,8 @@ public:
     MCFOLD bool $isStrippable(::Block const& srcBlock) const;
 
     MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
+
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 

@@ -73,7 +73,7 @@ public:
 
     virtual void onLeave() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void leaveScreen() /*override*/;
 
@@ -93,7 +93,7 @@ public:
 
     virtual void postRenderUpdate(::ScreenContext& screenContext) /*override*/;
 
-    virtual void handleInputModeChanged(::InputMode) /*override*/;
+    virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
     virtual void handleButtonPress(uint buttonId, ::FocusImpact focusImpact) /*override*/;
 
@@ -286,6 +286,8 @@ public:
 
     MCFOLD void $onLeave();
 
+    MCFOLD void $onGameEventNotification(::ui::GameEventNotification notification);
+
     MCFOLD void $leaveScreen();
 
     MCFOLD void $preFrameTick();
@@ -301,6 +303,8 @@ public:
     MCFOLD void $prepareFrame(::ScreenContext& screenContext);
 
     MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
+
+    MCFOLD void $handleInputModeChanged(::InputMode inputMode);
 
     MCFOLD void $handleButtonPress(uint buttonId, ::FocusImpact focusImpact);
 

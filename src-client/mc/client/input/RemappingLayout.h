@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     virtual ~RemappingLayout();
 
-    virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType);
+    virtual void setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
 
     virtual int getAdjustedKey(int key) const;
 
@@ -58,7 +58,7 @@ public:
 
     virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const;
 
-    virtual int _rawKeyToKey(int, ::RawInputType) const = 0;
+    virtual int _rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const = 0;
     // NOLINTEND
 
 public:
@@ -95,6 +95,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
+
     MCFOLD int $getAdjustedKey(int key) const;
 
     MCFOLD ::std::string $getSaveString(::std::string const& action) const;

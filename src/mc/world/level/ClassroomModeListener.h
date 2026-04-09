@@ -54,6 +54,18 @@ public:
 
     MCFOLD void $onEntityRemoved(::Actor& entity);
 
+    MCFOLD void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
+
     MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);

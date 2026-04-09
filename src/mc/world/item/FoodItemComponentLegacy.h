@@ -145,7 +145,6 @@ public:
 
     MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
 
-#ifdef LL_PLAT_C
     MCAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
         ::ItemStack const&,
@@ -153,7 +152,6 @@ public:
         ::Player&    player,
         ::Level&     level
     );
-#endif
 
 
     // NOLINTEND

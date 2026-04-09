@@ -169,11 +169,15 @@ public:
         ::Json::Value const&                     sessionSummary
     ) /*override*/;
 
-    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, bool) /*override*/;
+    virtual void
+    onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage) /*override*/;
 
-    virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, bool) /*override*/;
+    virtual void onAllRemoteConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        bool                               skipDisconnectMessage
+    ) /*override*/;
 
-    virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) /*override*/;
+    virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason) /*override*/;
 
     virtual void onWebsocketRequest(
         ::std::string const&    serverAddress,
@@ -264,6 +268,13 @@ public:
         bool                                     skipDisconnectMessage,
         ::Json::Value const&                     sessionSummary
     );
+
+    MCAPI void $onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage);
+
+    MCAPI void
+    $onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage);
+
+    MCAPI void $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason);
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,

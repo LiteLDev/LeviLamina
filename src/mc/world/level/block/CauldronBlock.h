@@ -182,6 +182,16 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
+    MCFOLD ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,

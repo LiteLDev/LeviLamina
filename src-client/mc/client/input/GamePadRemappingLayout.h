@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     virtual ~GamePadRemappingLayout() /*override*/ = default;
 
-    virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType) /*override*/;
+    virtual void setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type) /*override*/;
 
     virtual ::std::string getMappedKeyName(int key) const /*override*/;
 
@@ -42,7 +42,7 @@ public:
 
     virtual ::std::string getKeySpriteLocation(::Keymapping const& keyMapping) const /*override*/;
 
-    virtual int _rawKeyToKey(int, ::RawInputType) const /*override*/;
+    virtual int _rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const /*override*/;
     // NOLINTEND
 
 public:
@@ -59,6 +59,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
+
     MCAPI ::std::string $getMappedKeyName(int key) const;
 
     MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
@@ -72,6 +74,8 @@ public:
     MCAPI ::std::string $getKeySpriteLocation(int key, ::IconSize iconSize) const;
 
     MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+
+    MCAPI int $_rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const;
     // NOLINTEND
 
 public:

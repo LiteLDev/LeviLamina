@@ -108,6 +108,8 @@ public:
 
     MCFOLD ushort $getIPv6Port() const;
 
+    MCFOLD ::TransportLayer $getNetworkType() const;
+
 
     // NOLINTEND
 

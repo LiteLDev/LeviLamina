@@ -326,6 +326,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
     MCAPI void $onLevelCorrupt();
 
     MCFOLD void $onGameModeChanged();
@@ -351,10 +353,6 @@ public:
     MCAPI void $onAppResumed();
 
     MCFOLD void $updateScreens();
-
-#ifdef LL_PLAT_C
-    MCAPI void $onLowMemory(::LowMemorySeverity);
-#endif
 
 
     // NOLINTEND

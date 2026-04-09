@@ -199,7 +199,7 @@ public:
         ::UIPropertyBag&     bag
     ) /*override*/;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void onInit() /*override*/;
 
@@ -432,6 +432,8 @@ public:
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
+
+    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI void $onInit();
 

@@ -87,9 +87,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-#endif
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 

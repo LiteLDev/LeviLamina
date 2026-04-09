@@ -48,7 +48,7 @@ public:
 
     virtual bool _polymorphicButtonEnabled() const;
 
-    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification notification) /*override*/;
     // NOLINTEND
 
 public:

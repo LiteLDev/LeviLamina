@@ -105,9 +105,7 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
-#endif
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

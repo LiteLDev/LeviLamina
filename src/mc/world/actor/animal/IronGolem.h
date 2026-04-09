@@ -44,11 +44,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-#endif
 
     MCFOLD void $die(::ActorDamageSource const& source);
 

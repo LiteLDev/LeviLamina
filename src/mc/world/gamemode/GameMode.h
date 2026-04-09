@@ -250,6 +250,8 @@ public:
 
     MCAPI void $tick();
 
+    MCAPI float $getPickRange(::InputMode const& currentInputMode);
+
     MCAPI bool $useItem(::ItemStack& item);
 
     MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection);
@@ -274,10 +276,6 @@ public:
     MCFOLD bool $isInTrialMode();
 
     MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
-
-#ifdef LL_PLAT_C
-    MCAPI float $getPickRange(::InputMode const& currentInputMode);
-#endif
 
 
     // NOLINTEND

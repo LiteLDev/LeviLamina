@@ -112,7 +112,6 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
@@ -122,7 +121,6 @@ public:
         ::ShapeType                                        shapeType,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-#endif
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 

@@ -38,6 +38,8 @@ public:
     MCAPI void $setupScreen(::ScreenContext& screenContext);
 
     MCAPI void $cleanupScreen(::ScreenContext& screenContext);
+
+    MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
     // NOLINTEND
 
 public:

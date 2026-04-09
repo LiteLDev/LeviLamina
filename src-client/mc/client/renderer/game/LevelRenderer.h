@@ -269,6 +269,8 @@ public:
 
     MCAPI void $onDeviceLost();
 
+    MCAPI void $onLowMemory(::LowMemorySeverity);
+
     MCAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              blockPosition,

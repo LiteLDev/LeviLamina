@@ -50,9 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-#endif
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 

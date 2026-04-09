@@ -81,9 +81,7 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
-#endif
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

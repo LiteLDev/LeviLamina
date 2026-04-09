@@ -60,13 +60,13 @@ public:
     ) const /*override*/;
 
     virtual ::HitResult clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     origin,
-        ::Vec3 const&     end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     virtual ::Block const&
@@ -208,6 +208,16 @@ public:
         ::AABB&                    bufferValue
     ) const;
 
+    MCAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
     MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
@@ -229,18 +239,6 @@ public:
     MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-
-#ifdef LL_PLAT_C
-    MCAPI ::HitResult $clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     origin,
-        ::Vec3 const&     end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
-#endif
 
 
     // NOLINTEND
