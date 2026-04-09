@@ -41,6 +41,29 @@ public:
     // NOLINTEND
 
 public:
+    PoolElementStructurePiece(
+        ::StructurePoolElement const& element,
+        ::BlockPos                    position,
+        ::Rotation                    rotation,
+        int                           genDepth,
+        ::JigsawJunction&             junction,
+        ::BoundingBox const&          box,
+        ::BlockPos                    refPos
+    )
+    : mElement(element),
+      mPosition(position),
+      mRotation(rotation),
+      mJigsawJunction(junction),
+      mRefPos(refPos) {
+        mCachedPieceBaseY = 0;
+        mCachedXCenter    = 0;
+        mCachedZCenter    = 0;
+        mCachedMaxRadius  = 0.0f;
+        mBoundingBox      = box;
+        mGenDepth         = genDepth;
+    }
+
+public:
     // prevent constructor by default
     PoolElementStructurePiece& operator=(PoolElementStructurePiece const&);
     PoolElementStructurePiece(PoolElementStructurePiece const&);
