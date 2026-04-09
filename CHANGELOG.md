@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.3] - 2026-04-09
+
+### Added
+
+- Added constructor for `VillageFeature` on server @ShrBox
+- Added constructor for `PoolElementStructurePiece` @ShrBox
+- Implemented `FileReference`, `Identifier`, and `Reference` in `mc/deps/shared_types/util/` @ShrBox
+- Added removable mod lifecycle callbacks @OEOTYAN
+- Added `AABB::shrink(Vec3 const& offset)` @zimuya415
+
+### Changed
+
+- Updated `DefaultEntitySystemsCollection` to 26.0 @ShrBox
+- Bumped bedrock-runtime-data to v26.10.4-server.7 and v26.10.4-client.7
+- Updated Minecraft headers
+
+### Fixed
+
+- Fixed the `uncachedResolve` method crash @zimuya415
+
 ## [26.10.2] - 2026-04-08
 
 ### Changed
@@ -1448,7 +1468,8 @@ For lip and tooth-hub test only.
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.3...HEAD
+[26.10.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.2...v26.10.3
 [26.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.1...v26.10.2
 [26.10.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.0...v26.10.1
 [26.10.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.9.9...v26.10.0

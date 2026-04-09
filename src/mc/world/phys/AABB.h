@@ -78,6 +78,24 @@ public:
         return *this;
     }
 
+    [[nodiscard]] constexpr AABB& shrink(Vec3 const& offset) noexcept {
+        min += offset;
+        max -= offset;
+
+        Vec3::forEachComponent([&]<typename axis_type, size_t iter> {
+            auto& newMin = min.get<axis_type, iter>();
+            auto& newMax = max.get<axis_type, iter>();
+
+            if (newMin > newMax) {
+                auto mid = (newMin + newMax) * 0.5f;
+                newMin   = mid;
+                newMax   = mid;
+            }
+        });
+
+        return *this;
+    }
+
 public:
     // member functions
     // NOLINTBEGIN
