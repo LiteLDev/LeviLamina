@@ -4,16 +4,39 @@
 #include "ll/core/LeviLamina.h"
 
 namespace ll::mod {
+struct ModCallbackRecord {
+    std::weak_ptr<Mod>                    owner;
+    ModManagerRegistry::CallbackId        id;
+    std::function<void(std::string_view)> fn;
+};
+
 struct ModManagerRegistry::Impl {
     std::recursive_mutex                   modMtx;
     StringMap<std::shared_ptr<ModManager>> managers;
     StringMap<std::string>                 loadedMods; // k, v: name, type
 
-    std::recursive_mutex                               fnMtx;
-    std::vector<std::function<void(std::string_view)>> onModLoad;
-    std::vector<std::function<void(std::string_view)>> onModUnload;
-    std::vector<std::function<void(std::string_view)>> onModEnable;
-    std::vector<std::function<void(std::string_view)>> onModDisable;
+    std::recursive_mutex           fnMtx;
+    std::vector<ModCallbackRecord> onModLoad;
+    std::vector<ModCallbackRecord> onModUnload;
+    std::vector<ModCallbackRecord> onModEnable;
+    std::vector<ModCallbackRecord> onModDisable;
+    uint64                         nextCallbackId = 0;
+
+    CallbackId generateCallbackId(ModCallbackType type) { return static_cast<uint64>(type) << 62 | ++nextCallbackId; }
+
+    std::vector<ModCallbackRecord>& getCallbackRecords(ModCallbackType type) {
+        switch (type) {
+        case ModCallbackType::Unload:
+            return onModUnload;
+        case ModCallbackType::Enable:
+            return onModEnable;
+        case ModCallbackType::Disable:
+            return onModDisable;
+        case ModCallbackType::Load:
+        default:
+            return onModLoad;
+        }
+    }
 };
 
 ModManagerRegistry::ModManagerRegistry() : impl(std::make_unique<Impl>()) {}
@@ -155,28 +178,52 @@ std::shared_ptr<Mod> ModManagerRegistry::getMod(std::string_view name) const {
     return getManagerForMod(name)->getMod(name);
 }
 
-void ModManagerRegistry::executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept {
+ModManagerRegistry::CallbackId ModManagerRegistry::executeOnMod(
+    ModCallbackType                              type,
+    std::function<void(std::string_view name)>&& fn,
+    std::weak_ptr<Mod>                           mod
+) noexcept {
+    if (type == ModCallbackType::All) {
+        return {};
+    }
     std::lock_guard lock(impl->fnMtx);
-    impl->onModLoad.push_back(std::move(fn));
-}
-void ModManagerRegistry::executeOnModUnload(std::function<void(std::string_view name)>&& fn) noexcept {
-    std::lock_guard lock(impl->fnMtx);
-    impl->onModUnload.push_back(std::move(fn));
-}
-void ModManagerRegistry::executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept {
-    std::lock_guard lock(impl->fnMtx);
-    impl->onModEnable.push_back(std::move(fn));
-}
-void ModManagerRegistry::executeOnModDisable(std::function<void(std::string_view name)>&& fn) noexcept {
-    std::lock_guard lock(impl->fnMtx);
-    impl->onModDisable.push_back(std::move(fn));
+    return impl->getCallbackRecords(type)
+        .emplace_back(std::move(mod), impl->generateCallbackId(type), std::move(fn))
+        .id;
 }
 
+bool ModManagerRegistry::eraseOnModCallback(CallbackId id) noexcept {
+    std::lock_guard lock(impl->fnMtx);
+    return std::erase_if(
+               impl->getCallbackRecords(static_cast<ModCallbackType>(id >> 62)),
+               [&](auto& item) { return item.id == id; }
+           )
+         > 0;
+}
+size_t ModManagerRegistry::eraseOnModCallback(std::weak_ptr<Mod> mod, ModCallbackType type) noexcept {
+    std::lock_guard lock(impl->fnMtx);
+    auto            isSameOwner = [&mod](std::weak_ptr<Mod> const& owner) {
+        return !owner.owner_before(mod) && !mod.owner_before(owner);
+    };
+    auto eraseCallbackRecordsByOwner = [&](auto& records) {
+        return std::erase_if(records, [&](auto& item) { return isSameOwner(item.owner); });
+    };
+    if (type == ModCallbackType::All) {
+        size_t count  = 0;
+        count        += eraseCallbackRecordsByOwner(impl->onModLoad);
+        count        += eraseCallbackRecordsByOwner(impl->onModUnload);
+        count        += eraseCallbackRecordsByOwner(impl->onModEnable);
+        count        += eraseCallbackRecordsByOwner(impl->onModDisable);
+        return count;
+    } else {
+        return eraseCallbackRecordsByOwner(impl->getCallbackRecords(type));
+    }
+}
 
 Expected<> ModManagerRegistry::onModLoad(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->fnMtx);
-    for (auto& fn : impl->onModLoad) {
-        fn(name);
+    for (auto& rec : impl->onModLoad) {
+        rec.fn(name);
     }
     return {};
 } catch (...) {
@@ -185,8 +232,21 @@ Expected<> ModManagerRegistry::onModLoad(std::string_view name) const noexcept t
 
 Expected<> ModManagerRegistry::onModUnload(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->fnMtx);
-    for (auto& fn : impl->onModUnload) {
-        fn(name);
+
+    auto eraser = [&](ModCallbackRecord const& callback) {
+        if (auto ptr = callback.owner.lock()) {
+            return ptr->getName() == name;
+        }
+        return true;
+    };
+
+    std::erase_if(impl->onModEnable, eraser);
+    std::erase_if(impl->onModDisable, eraser);
+    std::erase_if(impl->onModLoad, eraser);
+    std::erase_if(impl->onModUnload, eraser);
+
+    for (auto& rec : impl->onModUnload) {
+        rec.fn(name);
     }
     return {};
 } catch (...) {
@@ -195,8 +255,8 @@ Expected<> ModManagerRegistry::onModUnload(std::string_view name) const noexcept
 
 Expected<> ModManagerRegistry::onModEnable(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->fnMtx);
-    for (auto& fn : impl->onModEnable) {
-        fn(name);
+    for (auto& rec : impl->onModEnable) {
+        rec.fn(name);
     }
     return {};
 } catch (...) {
@@ -205,8 +265,8 @@ Expected<> ModManagerRegistry::onModEnable(std::string_view name) const noexcept
 
 Expected<> ModManagerRegistry::onModDisable(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->fnMtx);
-    for (auto& fn : impl->onModDisable) {
-        fn(name);
+    for (auto& rec : impl->onModDisable) {
+        rec.fn(name);
     }
     return {};
 } catch (...) {

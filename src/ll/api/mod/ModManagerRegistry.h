@@ -2,9 +2,11 @@
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
 #include "ll/api/coro/Generator.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/mod/ModManager.h"
+#include "ll/api/mod/NativeMod.h"
 
 namespace ll::mod {
 class ModRegistrar;
@@ -34,6 +36,16 @@ class ModManagerRegistry {
     Expected<> onModDisable(std::string_view name) const noexcept;
 
 public:
+    using CallbackId = uint64;
+
+    enum class ModCallbackType {
+        Load,
+        Unload,
+        Enable,
+        Disable,
+        All = -1,
+    };
+
     LLNDAPI static ModManagerRegistry& getInstance();
 
     LLNDAPI bool addManager(std::shared_ptr<ModManager> const& manager);
@@ -56,12 +68,41 @@ public:
 
     LLNDAPI std::shared_ptr<Mod> getMod(std::string_view name) const;
 
-    LLAPI void executeOnModLoad(std::function<void(std::string_view name)>&& fn) noexcept;
+    LLAPI CallbackId executeOnMod(
+        ModCallbackType                              type,
+        std::function<void(std::string_view name)>&& fn,
+        std::weak_ptr<Mod>                           mod = NativeMod::current()
+    ) noexcept;
 
-    LLAPI void executeOnModUnload(std::function<void(std::string_view name)>&& fn) noexcept;
+    CallbackId executeOnModLoad(
+        std::function<void(std::string_view name)>&& fn,
+        std::weak_ptr<Mod>                           mod = NativeMod::current()
+    ) noexcept {
+        return executeOnMod(ModCallbackType::Load, std::move(fn), std::move(mod));
+    }
 
-    LLAPI void executeOnModEnable(std::function<void(std::string_view name)>&& fn) noexcept;
+    CallbackId executeOnModUnload(
+        std::function<void(std::string_view name)>&& fn,
+        std::weak_ptr<Mod>                           mod = NativeMod::current()
+    ) noexcept {
+        return executeOnMod(ModCallbackType::Unload, std::move(fn), std::move(mod));
+    }
 
-    LLAPI void executeOnModDisable(std::function<void(std::string_view name)>&& fn) noexcept;
+    CallbackId executeOnModEnable(
+        std::function<void(std::string_view name)>&& fn,
+        std::weak_ptr<Mod>                           mod = NativeMod::current()
+    ) noexcept {
+        return executeOnMod(ModCallbackType::Enable, std::move(fn), std::move(mod));
+    }
+
+    CallbackId executeOnModDisable(
+        std::function<void(std::string_view name)>&& fn,
+        std::weak_ptr<Mod>                           mod = NativeMod::current()
+    ) noexcept {
+        return executeOnMod(ModCallbackType::Disable, std::move(fn), std::move(mod));
+    }
+
+    LLAPI bool   eraseOnModCallback(CallbackId id) noexcept;
+    LLAPI size_t eraseOnModCallback(std::weak_ptr<Mod> mod, ModCallbackType type = ModCallbackType::All) noexcept;
 };
 } // namespace ll::mod
