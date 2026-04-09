@@ -22,6 +22,7 @@
 #include "mc/world/level/chunk/LevelChunkGarbageCollector.h"
 #include "mc/world/level/dimension/ActorReplication.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
+#include "mc/world/level/dimension/DirectionalLightSource.h"
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/dimension/LimboEntitiesVersion.h"
 #include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
@@ -95,34 +96,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcec13a;
-        ::ll::UntypedStorage<4, 4> mUnkcf25a7;
-        ::ll::UntypedStorage<4, 4> mUnkaf1fb7;
-        ::ll::UntypedStorage<4, 4> mUnkb93f34;
+        ::ll::TypedStorage<4, 4, float> mMinFlashDuration;
+        ::ll::TypedStorage<4, 4, float> mMaxFlashDuration;
+        ::ll::TypedStorage<4, 4, float> mMinFlashCooldown;
+        ::ll::TypedStorage<4, 4, float> mMaxFlashCooldown;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChaoticDirectionalLightControls& operator=(ChaoticDirectionalLightControls const&);
-        ChaoticDirectionalLightControls(ChaoticDirectionalLightControls const&);
-        ChaoticDirectionalLightControls();
     };
 
     struct DirectionalLightState {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkc3428f;
-        ::ll::UntypedStorage<4, 4> mUnkff4708;
-        ::ll::UntypedStorage<4, 4> mUnk2d8810;
-        ::ll::UntypedStorage<4, 4> mUnk8baae1;
+        ::ll::TypedStorage<4, 4, float>                    mAngle;
+        ::ll::TypedStorage<4, 4, float>                    mPerpendicularAngle;
+        ::ll::TypedStorage<4, 4, float>                    mIntensityMultiplier;
+        ::ll::TypedStorage<4, 4, ::DirectionalLightSource> mLightSource;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DirectionalLightState& operator=(DirectionalLightState const&);
-        DirectionalLightState(DirectionalLightState const&);
-        DirectionalLightState();
     };
 
     using ActorTagList = ::std::vector<::std::unique_ptr<::CompoundTag>>;

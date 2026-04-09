@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityRegistry;
+// clang-format on
+
 class EntityModifierBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaa9edb;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::EntityRegistry*>> mRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityModifierBase& operator=(EntityModifierBase const&);
-    EntityModifierBase(EntityModifierBase const&);
-    EntityModifierBase();
 };
