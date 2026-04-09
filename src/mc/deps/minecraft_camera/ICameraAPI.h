@@ -63,8 +63,10 @@ public:
     // NOLINTBEGIN
     virtual ~ICameraAPI() = default;
 
-    virtual ::std::optional<::Vec3>
-    tryGetActorRelativeLocation(::WeakRef<::EntityContext> const, ::SharedTypes::Legacy::ActorLocation) const = 0;
+    virtual ::std::optional<::Vec3> tryGetActorRelativeLocation(
+        ::WeakRef<::EntityContext> const     actorRef,
+        ::SharedTypes::Legacy::ActorLocation actorLoc
+    ) const = 0;
 
     virtual ::std::optional<::Vec3>
     tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> actorRef, float interpolationFactor) const = 0;

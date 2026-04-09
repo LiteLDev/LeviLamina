@@ -84,9 +84,7 @@ public:
         int               itemValue
     ) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-#endif
 
 
     // NOLINTEND

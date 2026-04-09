@@ -73,9 +73,7 @@ public:
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& item, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-#ifdef LL_PLAT_C
     MCFOLD ::ActorType $_getActorType() const;
-#endif
 
 
     // NOLINTEND

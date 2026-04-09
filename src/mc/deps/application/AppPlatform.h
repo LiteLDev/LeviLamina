@@ -1257,6 +1257,10 @@ public:
 
     MCAPI uint64 $getMaximumUsedMemory();
 
+    MCFOLD uint64 $getLowMemoryEventThreshold(::LowMemorySeverity) const;
+
+    MCAPI uint64 $getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
+
     MCAPI uint64 $getLowPhysicalMemoryThreshold() const;
 
     MCAPI void $calculateIfLowMemoryDevice();
@@ -1323,9 +1327,7 @@ public:
 
     MCFOLD bool $platformRequiresControllerApplet() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::InputMode $getDefaultInputMode() const;
-#endif
 
     MCAPI ::AppFocusState $getFocusState();
 
@@ -1484,6 +1486,18 @@ public:
     );
 
     MCFOLD void $textEditComponentLostFocus();
+
+    MCAPI void $showKeyboard(
+        ::std::string const& currentText,
+        int                  maxLength,
+        bool                 limitInput,
+        bool                 numbersOnly,
+        bool                 isMultiline,
+        int const            controllerId,
+        ::glm::vec2 const&   position,
+        float                controlHeight,
+        ::InputMode          inputMode
+    );
 
     MCFOLD void $hideKeyboard();
 
@@ -1647,10 +1661,6 @@ public:
     MCAPI void $setShowLostFocusToasts(bool showLostFocusToasts);
 
     MCAPI bool $getShowLostFocusToasts();
-
-    MCFOLD uint64 $getLowMemoryEventThreshold(::LowMemorySeverity) const;
-
-    MCAPI uint64 $getLowMemoryEventRecoveryThreshold(::LowMemorySeverity severity) const;
 
     MCAPI ::std::string $getDeviceId() const;
 

@@ -101,7 +101,7 @@ public:
 
     virtual void dumpOptionsToLogFile() const = 0;
 
-    virtual void updateInputMode(::InputMode) = 0;
+    virtual void updateInputMode(::InputMode inputMode) = 0;
 
     virtual void setMainVolume(float volume) = 0;
 
@@ -125,11 +125,11 @@ public:
 
     virtual void setSensitivity(float sensitivity, ::InputMode inputMode) = 0;
 
-    virtual float getSensitivity(::InputMode) const = 0;
+    virtual float getSensitivity(::InputMode inputMode) const = 0;
 
     virtual void setSpyglassDamping(float value, ::InputMode inputMode) = 0;
 
-    virtual float getSpyglassDamping(::InputMode) const = 0;
+    virtual float getSpyglassDamping(::InputMode inputMode) const = 0;
 
     virtual void setDwellBeforeDrag(float value) = 0;
 
@@ -139,14 +139,14 @@ public:
 
     virtual float getStackSplittingTrigger() const = 0;
 
-    virtual float getGameSensitivity(::InputMode) const = 0;
+    virtual float getGameSensitivity(::InputMode inputmode) const = 0;
 
     virtual void
     setFileStorageLocation(::FileStorageDirectory fileStorageDirectory, ::std::function<void(bool)> onComplete) = 0;
 
     virtual ::FileStorageDirectory getFileStorageLocation() const = 0;
 
-    virtual bool getInvertYMouse(::InputMode) const = 0;
+    virtual bool getInvertYMouse(::InputMode inputMode) const = 0;
 
     virtual int getViewDistanceChunks() const = 0;
 
@@ -196,11 +196,11 @@ public:
 
     virtual bool isHotbarOnlyTouch() const = 0;
 
-    virtual bool getDestroyVibration(::InputMode) const = 0;
+    virtual bool getDestroyVibration(::InputMode inputMode) const = 0;
 
-    virtual bool getSplitVibration(::InputMode) const = 0;
+    virtual bool getSplitVibration(::InputMode inputMode) const = 0;
 
-    virtual bool getAutoJump(::InputMode) const = 0;
+    virtual bool getAutoJump(::InputMode inputMode) const = 0;
 
     virtual void setFullscreen(bool fullscreen) = 0;
 

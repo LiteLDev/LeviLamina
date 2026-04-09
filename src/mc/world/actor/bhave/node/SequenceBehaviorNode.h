@@ -32,9 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI ::BehaviorStatus $tick(::Actor& owner);
-#endif
 
     MCFOLD void $initializeFromDefinition(::Actor& owner);
 

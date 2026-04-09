@@ -110,9 +110,10 @@ public:
         ::entt::meta_any&                                        arg
     ) /*override*/;
 
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
-        /*override*/;
+    virtual ::Scripting::FutureStatus getFutureStatus(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle
+    ) const /*override*/;
 
     virtual ::Scripting::ResultAny getFutureResult(
         ::Scripting::ContextId                                  contextId,
@@ -243,6 +244,11 @@ public:
         ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
         ::entt::meta_any&                                        arg
     );
+
+    MCNAPI ::Scripting::FutureStatus $getFutureStatus(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle
+    ) const;
 
     MCNAPI ::Scripting::ResultAny $getFutureResult(
         ::Scripting::ContextId                                  contextId,

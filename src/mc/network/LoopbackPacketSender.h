@@ -71,7 +71,11 @@ public:
 
     MCAPI void $send(::Packet& packet);
 
+    MCAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
+
     MCAPI void $sendToServer(::Packet& packet);
+
+    MCAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
 
     MCAPI void $sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet);
 
@@ -79,15 +83,9 @@ public:
 
     MCAPI void $sendBroadcast(::Packet const& packet);
 
-    MCAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
-
-#ifdef LL_PLAT_C
-    MCAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
-
-    MCAPI void $sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId recipientSubId);
-
     MCAPI void $sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet);
-#endif
+
+    MCAPI void $flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback);
 
 
     // NOLINTEND

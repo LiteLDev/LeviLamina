@@ -151,6 +151,10 @@ public:
 
     MCNAPI void $onMainThreadCreate();
 
+    MCNAPI void $onHeapAllocation(void const*, uint64, ::Memory::MemoryCategory, char const*);
+
+    MCNAPI void $onHeapFree(void const*, uint64, ::Memory::MemoryCategory, char const*);
+
     MCNAPI void $enterCPUProfile(::Bedrock::Profile::ScopeStackStorage&, ::Core::Profile::CPUProfileToken const&);
 
     MCNAPI void $enterCPUProfileDynamic(

@@ -242,6 +242,13 @@ public:
 
     MCAPI ::TradeTables* $getTradeTables();
 
+    MCAPI void $runCommand(
+        ::HashedString const&     commandStr,
+        ::CommandOrigin&          origin,
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion const commandVersion
+    );
+
     MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
     MCAPI void $decrementTagCache(
@@ -289,15 +296,6 @@ public:
     MCAPI ::MapDataManager& $_getMapDataManager();
 
     MCAPI void $_initializeMapDataManager();
-
-#ifdef LL_PLAT_C
-    MCAPI void $runCommand(
-        ::HashedString const&     commandStr,
-        ::CommandOrigin&          origin,
-        ::CommandOriginSystem     originSystem,
-        ::CurrentCmdVersion const commandVersion
-    );
-#endif
 
 
     // NOLINTEND

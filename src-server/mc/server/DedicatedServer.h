@@ -196,6 +196,8 @@ public:
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown();
+
+    MCFOLD bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND
 
 public:

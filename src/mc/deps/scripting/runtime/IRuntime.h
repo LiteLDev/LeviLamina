@@ -79,8 +79,10 @@ public:
         ::entt::meta_any&                                        arg
     ) = 0;
 
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
+    virtual ::Scripting::FutureStatus getFutureStatus(
+        ::Scripting::ContextId                                  contextId,
+        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle
+    ) const = 0;
 
     virtual ::Scripting::ResultAny getFutureResult(
         ::Scripting::ContextId                                  contextId,

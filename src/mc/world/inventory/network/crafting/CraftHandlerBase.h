@@ -76,6 +76,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
+
+    MCFOLD ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
+
     MCFOLD void $endRequestBatch();
 
     MCFOLD void $_postCraftRequest(bool const wasSuccess);

@@ -97,9 +97,9 @@ public:
 
     virtual void onLevelDestruction(::std::string const& levelId);
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
     virtual void takePicture(
         ::cg::ImageBuffer&                                              outImage,
@@ -191,9 +191,9 @@ public:
 
     MCFOLD void $onLevelDestruction(::std::string const& levelId);
 
-    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
     MCAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,

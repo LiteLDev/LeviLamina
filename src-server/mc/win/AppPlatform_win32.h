@@ -237,6 +237,8 @@ public:
 
     MCFOLD ::PlatformType $getPlatformType() const;
 
+    MCFOLD ::BuildPlatform $getBuildPlatform() const;
+
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
     MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const& key);

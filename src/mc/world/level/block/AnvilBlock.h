@@ -111,9 +111,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-#ifdef LL_PLAT_S
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
-#endif
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 

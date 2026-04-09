@@ -45,13 +45,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::HitResult clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     A,
-        ::Vec3 const&     B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     virtual ::AABB const&
@@ -187,6 +187,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
+    ) const;
+
     MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
@@ -252,18 +262,6 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
-
-#ifdef LL_PLAT_C
-    MCAPI ::HitResult $clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     A,
-        ::Vec3 const&     B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
-#endif
 
 
     // NOLINTEND

@@ -530,8 +530,7 @@ public:
 
     virtual ::CommandPermissionLevel getCommandPermissionLevel() const /*override*/;
 
-    virtual ::ActorHurtResult
-    attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    virtual ::ActorHurtResult attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     virtual ::ItemStack const& getCarriedItem() const /*override*/;
 
@@ -734,7 +733,7 @@ public:
 
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
+    virtual void setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
 
     virtual void setRemotePlayerTicked(bool ticked);
 
@@ -1265,6 +1264,8 @@ public:
 
     MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
+    MCAPI ::ActorHurtResult $attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+
     MCFOLD ::ItemStack const& $getCarriedItem() const;
 
     MCAPI void $setCarriedItem(::ItemStack const& item);
@@ -1348,9 +1349,7 @@ public:
 
     MCAPI float $getSpeed() const;
 
-#ifdef LL_PLAT_S
     MCAPI void $setPlayerGameType(::GameType gameType);
-#endif
 
     MCAPI void $initHUDContainerManager();
 
@@ -1368,9 +1367,7 @@ public:
 
     MCAPI void $addLevels(int levels);
 
-#ifdef LL_PLAT_S
     MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
-#endif
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
@@ -1443,6 +1440,8 @@ public:
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
+    MCFOLD void $setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
+
     MCFOLD void $setRemotePlayerTicked(bool ticked);
 
     MCFOLD ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
@@ -1457,9 +1456,7 @@ public:
 
     MCAPI bool $_shouldProvideFeedbackOnHandContainerItemSet(::HandSlot handSlot, ::ItemStack const& item) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
-#endif
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 

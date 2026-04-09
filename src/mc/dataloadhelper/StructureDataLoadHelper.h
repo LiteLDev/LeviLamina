@@ -60,9 +60,9 @@ public:
 
     virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
-    virtual ::Rotation loadRotation(::Rotation) /*override*/;
+    virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
-    virtual ::Mirror loadMirror(::Mirror) /*override*/;
+    virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
     virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) /*override*/;
 
@@ -138,6 +138,10 @@ public:
     MCNAPI ::Vec3 $loadDirection(::Vec3 const& direction);
 
     MCNAPI ::Direction::Type $loadDirection(::Direction::Type direction);
+
+    MCNAPI ::Rotation $loadRotation(::Rotation rotation);
+
+    MCNAPI ::Mirror $loadMirror(::Mirror mirror);
 
     MCNAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 

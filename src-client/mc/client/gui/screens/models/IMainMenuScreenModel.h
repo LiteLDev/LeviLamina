@@ -26,7 +26,7 @@ public:
         bool                              requireCancelToExit
     ) = 0;
 
-    virtual bool isNetworkEnabled(::NetworkFilter) const = 0;
+    virtual bool isNetworkEnabled(::NetworkFilter withFilter) const = 0;
 
     virtual bool doesPlatformSupportRealms() const = 0;
 

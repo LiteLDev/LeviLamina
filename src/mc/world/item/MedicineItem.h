@@ -55,9 +55,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-#endif
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

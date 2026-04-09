@@ -134,7 +134,7 @@ public:
 
     virtual void onFocusGained() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual void reload() /*override*/;
 
@@ -148,7 +148,7 @@ public:
 
     virtual void applyInput(float a) /*override*/;
 
-    virtual void handleInputModeChanged(::InputMode) /*override*/;
+    virtual void handleInputModeChanged(::InputMode inputMode) /*override*/;
 
     virtual void
     handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping) /*override*/;
@@ -332,6 +332,8 @@ public:
 
     MCAPI void $onFocusGained();
 
+    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI void $reload();
 
     MCAPI void $leaveScreen();
@@ -343,6 +345,8 @@ public:
     MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCAPI void $applyInput(float a);
+
+    MCAPI void $handleInputModeChanged(::InputMode inputMode);
 
     MCAPI void $handleRawInputEvent(int id, ::RawInputType keyType, ::ButtonState state, bool allowRemapping);
 

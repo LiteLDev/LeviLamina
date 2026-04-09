@@ -449,6 +449,8 @@ public:
 
     MCAPI ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> $getAttackCriticalHitSound() const;
 
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canUseAsAttack() const;
@@ -464,9 +466,7 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-#ifdef LL_PLAT_S
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-#endif
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
@@ -490,6 +490,8 @@ public:
     MCAPI int $getCooldownDuration() const;
 
     MCAPI ::SharedTypes::ItemCooldownType $getCooldownType() const;
+
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCFOLD bool $useVariant(int, int, bool) const;
 
@@ -534,10 +536,6 @@ public:
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
-#endif
 
 
     // NOLINTEND

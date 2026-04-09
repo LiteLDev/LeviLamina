@@ -58,6 +58,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
+
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
@@ -74,10 +76,6 @@ public:
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
-#endif
 
 
     // NOLINTEND

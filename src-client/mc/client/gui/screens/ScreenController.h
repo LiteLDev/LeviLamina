@@ -772,6 +772,8 @@ public:
 
     MCFOLD void $leaveScreen(::std::string const& expectedScreenName);
 
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+
     MCAPI bool $bind(
         ::std::string const& collectionName,
         uint                 collectionNameHash,

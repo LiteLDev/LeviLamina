@@ -47,6 +47,8 @@ public:
 
     MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
+    MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+
     MCFOLD ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,

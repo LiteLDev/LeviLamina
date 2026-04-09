@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
 
-    virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
+    virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
 
 #ifdef LL_PLAT_S
     virtual ~BucketPacketLimitAlgorithm() /*override*/;
@@ -79,6 +79,8 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
     MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
+
+    MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
 #endif
 
 

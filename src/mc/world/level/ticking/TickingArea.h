@@ -190,6 +190,8 @@ public:
 
     MCAPI ::TickingAreaDescription $getDescription() const;
 
+    MCAPI ::TickingAreaLoadMode $getLoadMode() const;
+
     MCAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
 
     MCAPI bool $isPreloadDone() const;

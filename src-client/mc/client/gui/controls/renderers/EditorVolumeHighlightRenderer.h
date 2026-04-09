@@ -59,15 +59,15 @@ public:
     virtual void onSourceDestroyed(::BlockSource& source) /*override*/;
 
     virtual void onBlockChanged(
-        ::BlockSource&,
-        ::BlockPos const&,
-        uint,
-        ::Block const&,
-        ::Block const&,
-        int,
-        ::ActorBlockSyncMessage const*,
-        ::BlockChangedEventTarget,
-        ::Actor*
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
     ) /*override*/;
     // NOLINTEND
 
@@ -110,6 +110,18 @@ public:
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl&, int);
 
     MCFOLD void $onSourceDestroyed(::BlockSource& source);
+
+    MCAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
     // NOLINTEND
 
 public:

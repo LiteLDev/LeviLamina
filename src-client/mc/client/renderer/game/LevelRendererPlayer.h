@@ -273,9 +273,9 @@ public:
 
     virtual void setupFog(::ScreenContext& screenContext, float const skyIntensityOverride) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data) /*override*/;
 
-    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data) /*override*/;
 
     virtual void addCameraListenerToRenderChunkCoordinator() /*override*/;
 
@@ -549,6 +549,10 @@ public:
     MCAPI bool $getForceFog(::Actor const& cameraActor) const;
 
     MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+
+    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+
+    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
     MCFOLD void $addCameraListenerToRenderChunkCoordinator();
 

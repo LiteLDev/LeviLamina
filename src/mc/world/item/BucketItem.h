@@ -134,6 +134,8 @@ public:
 
     MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
     MCFOLD bool $uniqueAuxValues() const;
 
     MCFOLD bool $isBucket() const;

@@ -460,7 +460,7 @@ public:
 
     virtual ::std::chrono::steady_clock::time_point getWorldSessionIdGenerationTimestamp() const /*override*/;
 
-    virtual void fireEventDefaultGameTypeChanged(::GameType, ::GameType) /*override*/;
+    virtual void fireEventDefaultGameTypeChanged(::GameType oldGameType, ::GameType newGameType) /*override*/;
 
     virtual void fireEventWorldLoaded(
         ::Player* player,
@@ -531,26 +531,29 @@ public:
     ) /*override*/;
 
     virtual void fireEventPacketViolationDetected(
-        uint64,
-        ::std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        ::NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
+        uint64                     readResult,
+        ::std::string              readResultContext,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::NetworkIdentifier const& netId,
+        uint                       numViolations,
+        ::SubClientId              clientSubId,
+        ::SubClientId              senderSubId,
+        uint                       packetStreamLength
     ) /*override*/;
 
-    virtual void
-    fireEventServerReceivedValidPacket(::NetworkIdentifier const&, ::MinecraftPacketIds, ::SubClientId) /*override*/;
+    virtual void fireEventServerReceivedValidPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId
+    ) /*override*/;
 
     virtual void fireEventClientSentOrReceivedPacket(
-        ::NetworkIdentifier const&,
-        ::MinecraftPacketIds,
-        ::SubClientId,
-        ::std::string,
-        bool
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId,
+        ::std::string              correlationId,
+        bool                       isOutgoing
     ) /*override*/;
 
     virtual void fireEventJoinCanceled(::LoadingState currentState) /*override*/;
@@ -578,37 +581,37 @@ public:
     ) /*override*/;
 
     virtual void fireEventPlayerJoinWorld(
-        uint const&,
-        ::SubClientId const,
-        bool,
-        ::std::optional<bool>,
-        ::IConnectionEventing::PlayerJoinWorldAttemptState const,
-        int,
-        ::Connection::DisconnectFailReason,
-        ::Json::Value const&,
-        ::TransportLayer,
-        ::NetworkType,
-        ::Social::MultiplayerState,
-        bool,
-        bool,
-        ::Social::MultiplayerServiceIdentifier,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&,
-        bool,
-        bool,
-        bool,
-        bool,
-        ::Social::GameConnectionInfo const&
+        uint const&                                              userId,
+        ::SubClientId const                                      subId,
+        bool                                                     isJoiningLocalServer,
+        ::std::optional<bool>                                    isUsingTURN,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const JoinState,
+        int                                                      attemptId,
+        ::Connection::DisconnectFailReason                       failReason,
+        ::Json::Value const&                                     failDebugInfo,
+        ::TransportLayer                                         transportLayer,
+        ::NetworkType                                            networkTypeOverride,
+        ::Social::MultiplayerState                               multiplayerState,
+        bool                                                     isConnectedToApplicationLayer,
+        bool                                                     isFilteringProfanity,
+        ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
+        ::std::string const&                                     titleMessage,
+        ::std::string const&                                     errorMessage,
+        ::std::string const&                                     codeword,
+        ::std::string const&                                     partyId,
+        bool                                                     isPartyLeader,
+        bool                                                     isPartyDestination,
+        bool                                                     isServerTransfer,
+        bool                                                     isReconnect,
+        ::Social::GameConnectionInfo const&                      connectionInfo
     ) /*override*/;
 
     virtual void fireEventClientLastPackets(
-        uint const&,
-        ::SubClientId const,
-        int,
-        ::Json::Value const&,
-        ::Json::Value const&
+        uint const&          userId,
+        ::SubClientId const  subId,
+        int                  correlationId,
+        ::Json::Value const& lastSentPackets,
+        ::Json::Value const& lastReceivedPackets
     ) /*override*/;
 
     virtual void fireEventSignalServiceConnect(
@@ -627,27 +630,27 @@ public:
     ) /*override*/;
 
     virtual void fireEventOnClientDisconnect(
-        ::SubClientId,
-        bool,
-        ::Connection::DisconnectFailReason,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::string const&
+        ::SubClientId                      subId,
+        bool                               isNetworked,
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
     ) /*override*/;
 
     virtual void fireEventOnServerDisconnect(
-        ::Connection::DisconnectFailReason,
-        ::std::string const&,
-        ::SubClientId,
-        ::std::string const&,
-        uint64,
-        ::std::string const&
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               disconnectedClientId,
+        ::SubClientId                      subId,
+        ::std::string const&               reasonContext,
+        uint64                             clientCount,
+        ::std::string const&               firstTimeStamp
     ) /*override*/;
 
     virtual void fireEventOnServerAsyncJoinTaskVerdict(
-        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const&,
-        ::SubClientId const,
-        uint
+        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const& joinVerdict,
+        ::SubClientId const                                          subId,
+        uint                                                         verdictQueueLength
     ) /*override*/;
 
     virtual void fireEventHttpClientError(::std::string const& error) /*override*/;
@@ -759,8 +762,11 @@ public:
         ::std::string const& serverAddress
     ) /*override*/;
 
-    virtual void
-    fireEventServerPlayerJoinedGame(::NetworkIdentifier const&, ::SubClientId, ::std::string const&) /*override*/;
+    virtual void fireEventServerPlayerJoinedGame(
+        ::NetworkIdentifier const& id,
+        ::SubClientId              subId,
+        ::std::string const&       firstConnectionTime
+    ) /*override*/;
 
     virtual void fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client) /*override*/;
 
@@ -1047,8 +1053,10 @@ public:
     fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const
         /*override*/;
 
-    virtual void
-        fireEventDifficultySet(::SharedTypes::Legacy::Difficulty, ::SharedTypes::Legacy::Difficulty) /*override*/;
+    virtual void fireEventDifficultySet(
+        ::SharedTypes::Legacy::Difficulty oldDifficulty,
+        ::SharedTypes::Legacy::Difficulty newDifficulty
+    ) /*override*/;
 
     virtual void
     fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName) /*override*/;
@@ -1207,10 +1215,10 @@ public:
     virtual void fireQuickPlayEvent() /*override*/;
 
     virtual void firePermissionsSetEvent(
-        ::PlayerPermissionLevel const,
-        ::CommandPermissionLevel const,
-        ::PlayerPermissionLevel const,
-        ::CommandPermissionLevel const
+        ::PlayerPermissionLevel const  prevPlayerPermissionLevel,
+        ::CommandPermissionLevel const prevCommandPermissionLevel,
+        ::PlayerPermissionLevel const  playerPermissionLevel,
+        ::CommandPermissionLevel const commandPermissionLevel
     ) /*override*/;
 
     virtual void fireExternalUriLaunched(::std::string const& uri) const /*override*/;
@@ -1370,7 +1378,7 @@ public:
 
     virtual void fireEventWorldImported(int64 worldSeed, uint64 worldSize) /*override*/;
 
-    virtual void fireEventWorldImportedResult(::FileArchiverOutcome) /*override*/;
+    virtual void fireEventWorldImportedResult(::FileArchiverOutcome importResult) /*override*/;
 
     virtual void
     fireGlobalResourcePackCrashRecovery(::PackInstance& packInstance, ::mce::UUID recoveryID, int order) /*override*/;
@@ -2396,6 +2404,8 @@ public:
 
     MCAPI ::std::chrono::steady_clock::time_point $getWorldSessionIdGenerationTimestamp() const;
 
+    MCAPI void $fireEventDefaultGameTypeChanged(::GameType oldGameType, ::GameType newGameType);
+
     MCAPI void $fireEventWorldLoaded(
         ::Player* player,
         ::brstd::function_ref<
@@ -2457,6 +2467,32 @@ public:
         ::std::string const& status
     );
 
+    MCAPI void $fireEventPacketViolationDetected(
+        uint64                     readResult,
+        ::std::string              readResultContext,
+        ::PacketViolationResponse  violationResponse,
+        ::MinecraftPacketIds       violatingPacketId,
+        ::NetworkIdentifier const& netId,
+        uint                       numViolations,
+        ::SubClientId              clientSubId,
+        ::SubClientId              senderSubId,
+        uint                       packetStreamLength
+    );
+
+    MCAPI void $fireEventServerReceivedValidPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId
+    );
+
+    MCAPI void $fireEventClientSentOrReceivedPacket(
+        ::NetworkIdentifier const& netId,
+        ::MinecraftPacketIds       packetId,
+        ::SubClientId              clientSubId,
+        ::std::string              correlationId,
+        bool                       isOutgoing
+    );
+
     MCAPI void $fireEventJoinCanceled(::LoadingState currentState);
 
     MCAPI void $fireEvent(
@@ -2481,6 +2517,40 @@ public:
         ::Social::MultiplayerServiceIdentifier const friendWorldType
     );
 
+    MCFOLD void $fireEventPlayerJoinWorld(
+        uint const&                                              userId,
+        ::SubClientId const                                      subId,
+        bool                                                     isJoiningLocalServer,
+        ::std::optional<bool>                                    isUsingTURN,
+        ::IConnectionEventing::PlayerJoinWorldAttemptState const JoinState,
+        int                                                      attemptId,
+        ::Connection::DisconnectFailReason                       failReason,
+        ::Json::Value const&                                     failDebugInfo,
+        ::TransportLayer                                         transportLayer,
+        ::NetworkType                                            networkTypeOverride,
+        ::Social::MultiplayerState                               multiplayerState,
+        bool                                                     isConnectedToApplicationLayer,
+        bool                                                     isFilteringProfanity,
+        ::Social::MultiplayerServiceIdentifier                   multiplayerServiceIdentifier,
+        ::std::string const&                                     titleMessage,
+        ::std::string const&                                     errorMessage,
+        ::std::string const&                                     codeword,
+        ::std::string const&                                     partyId,
+        bool                                                     isPartyLeader,
+        bool                                                     isPartyDestination,
+        bool                                                     isServerTransfer,
+        bool                                                     isReconnect,
+        ::Social::GameConnectionInfo const&                      connectionInfo
+    );
+
+    MCAPI void $fireEventClientLastPackets(
+        uint const&          userId,
+        ::SubClientId const  subId,
+        int                  correlationId,
+        ::Json::Value const& lastSentPackets,
+        ::Json::Value const& lastReceivedPackets
+    );
+
     MCAPI void $fireEventSignalServiceConnect(
         ::SignalServiceConnectStage stage,
         bool                        bIsSigningInAsHost,
@@ -2494,6 +2564,30 @@ public:
         ::std::string const&        signinId,
         ::MessagePerformance const& messagePerformanceEvent,
         bool                        isJsonRpc
+    );
+
+    MCAPI void $fireEventOnClientDisconnect(
+        ::SubClientId                      subId,
+        bool                               isNetworked,
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
+    );
+
+    MCAPI void $fireEventOnServerDisconnect(
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               disconnectedClientId,
+        ::SubClientId                      subId,
+        ::std::string const&               reasonContext,
+        uint64                             clientCount,
+        ::std::string const&               firstTimeStamp
+    );
+
+    MCAPI void $fireEventOnServerAsyncJoinTaskVerdict(
+        ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> const& joinVerdict,
+        ::SubClientId const                                          subId,
+        uint                                                         verdictQueueLength
     );
 
     MCAPI void $fireEventHttpClientError(::std::string const& error);
@@ -2600,6 +2694,12 @@ public:
         ::std::string const& creatorName,
         bool                 isTransfer,
         ::std::string const& serverAddress
+    );
+
+    MCAPI void $fireEventServerPlayerJoinedGame(
+        ::NetworkIdentifier const& id,
+        ::SubClientId              subId,
+        ::std::string const&       firstConnectionTime
     );
 
     MCAPI void $fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client);
@@ -2870,6 +2970,11 @@ public:
     MCAPI void
     $fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const;
 
+    MCFOLD void $fireEventDifficultySet(
+        ::SharedTypes::Legacy::Difficulty oldDifficulty,
+        ::SharedTypes::Legacy::Difficulty newDifficulty
+    );
+
     MCFOLD void $fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName);
 
     MCFOLD void $fireEventGameRulesUpdated(int oldValue, int newValue, ::std::string const& gameRuleName);
@@ -3013,9 +3118,22 @@ public:
 
     MCAPI void $fireQuickPlayEvent();
 
+    MCAPI void $firePermissionsSetEvent(
+        ::PlayerPermissionLevel const  prevPlayerPermissionLevel,
+        ::CommandPermissionLevel const prevCommandPermissionLevel,
+        ::PlayerPermissionLevel const  playerPermissionLevel,
+        ::CommandPermissionLevel const commandPermissionLevel
+    );
+
     MCAPI void $fireExternalUriLaunched(::std::string const& uri) const;
 
     MCAPI void $fireUserGeneratedUriLaunched(::UserGeneratedUriSource source) const;
+
+    MCAPI void $fireUserGeneratedUriLaunchFailed(
+        ::UserGeneratedUriSource              source,
+        ::Util::ResourceUri::ValidationStatus reasonCode,
+        ::std::string const&                  additionalData
+    ) const;
 
     MCAPI void $fireEventEmptyLibraryCategoryError(::std::string const& categoryTitle) const;
 
@@ -3158,6 +3276,8 @@ public:
     MCAPI void $fireEventWorldExported(int64 worldSeed, uint64 worldSize);
 
     MCAPI void $fireEventWorldImported(int64 worldSeed, uint64 worldSize);
+
+    MCAPI void $fireEventWorldImportedResult(::FileArchiverOutcome importResult);
 
     MCAPI void $fireGlobalResourcePackCrashRecovery(::PackInstance& packInstance, ::mce::UUID recoveryID, int order);
 
@@ -3771,14 +3891,6 @@ public:
     MCFOLD void $setShouldHaveAchievementsEnabled(bool value);
 
     MCFOLD bool $getAchievementsAlwaysEnabled();
-
-#ifdef LL_PLAT_C
-    MCAPI void $fireUserGeneratedUriLaunchFailed(
-        ::UserGeneratedUriSource              source,
-        ::Util::ResourceUri::ValidationStatus reasonCode,
-        ::std::string const&                  additionalData
-    ) const;
-#endif
 
 
     // NOLINTEND

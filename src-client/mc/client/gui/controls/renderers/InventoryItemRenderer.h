@@ -96,7 +96,7 @@ public:
 
     virtual int getNumRenderPasses() const /*override*/;
 
-    virtual ::UIMaterialType getUIMaterialType(int) const /*override*/;
+    virtual ::UIMaterialType getUIMaterialType(int pass) const /*override*/;
 
     virtual ::ResourceLocation getResourceLocation(int textureSlot, int pass) const /*override*/;
 
@@ -147,9 +147,13 @@ public:
     MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
+    MCAPI ::UIBatchType $getBatchType() const;
+
     MCFOLD int $getCustomId() const;
 
     MCAPI int $getNumRenderPasses() const;
+
+    MCAPI ::UIMaterialType $getUIMaterialType(int pass) const;
 
     MCAPI ::ResourceLocation $getResourceLocation(int textureSlot, int pass) const;
 

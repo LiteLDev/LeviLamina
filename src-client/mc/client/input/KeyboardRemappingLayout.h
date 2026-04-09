@@ -19,7 +19,8 @@ public:
     // NOLINTBEGIN
     virtual ~KeyboardRemappingLayout() /*override*/ = default;
 
-    virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType) /*override*/;
+    virtual void
+    setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType) /*override*/;
 
     virtual ::std::string getMappedKeyName(int key) const /*override*/;
 
@@ -29,12 +30,14 @@ public:
 
     virtual ::std::string getSaveString(::std::string const& action) const /*override*/;
 
-    virtual int _rawKeyToKey(int, ::RawInputType) const /*override*/;
+    virtual int _rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI void $setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType);
+
     MCAPI ::std::string $getMappedKeyName(int key) const;
 
     MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
@@ -42,6 +45,8 @@ public:
     MCAPI int $getAdjustedKey(int key) const;
 
     MCAPI ::std::string $getSaveString(::std::string const& action) const;
+
+    MCAPI int $_rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const;
     // NOLINTEND
 
 public:

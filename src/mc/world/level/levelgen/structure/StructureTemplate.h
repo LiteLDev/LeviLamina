@@ -265,6 +265,8 @@ public:
 
     MCAPI void $fillEmpty(::BlockPos const& size);
 
+    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
+
     MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
     MCAPI bool $_allowReadActor(::Actor const& actor) const;
@@ -272,10 +274,6 @@ public:
     MCAPI ::BlockPos $rawSize() const;
 
     MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos randomPosSeed) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
-#endif
 
 
     // NOLINTEND

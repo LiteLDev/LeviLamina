@@ -1854,6 +1854,8 @@ public:
 
     MCAPI void $setDefaultGameType(::GameType gameType);
 
+    MCAPI ::GameType $getDefaultGameType() const;
+
     MCAPI void $setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCAPI void $setMultiplayerGameIntent(bool multiplayerGame);
@@ -2138,9 +2140,7 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
 
-#ifdef LL_PLAT_S
     MCAPI void $upgradeStorageVersion(::StorageVersion v);
-#endif
 
     MCAPI void $suspendAndSave();
 
@@ -2290,7 +2290,6 @@ public:
 
     MCFOLD ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
-#ifdef LL_PLAT_S
     MCFOLD void $runCommand(
         ::HashedString const&     commandStr,
         ::CommandOrigin&          origin,
@@ -2299,7 +2298,6 @@ public:
     );
 
     MCFOLD void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
-#endif
 
     MCAPI ::PlayerCapabilities::ISharedController const& $getCapabilities() const;
 

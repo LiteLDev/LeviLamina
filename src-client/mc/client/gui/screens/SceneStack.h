@@ -334,11 +334,11 @@ public:
 
     virtual ::std::optional<uint64> getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool popScreensBackTo(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackTo(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const) /*override*/;
+    virtual bool popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType) /*override*/;
 
-    virtual bool popTopScreensOfType(::ui::SceneType const) /*override*/;
+    virtual bool popTopScreensOfType(::ui::SceneType const sceneType) /*override*/;
 
     virtual bool update() /*override*/;
 
@@ -368,7 +368,7 @@ public:
 
     virtual void handleLicenseChanged() /*override*/;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) /*override*/;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) /*override*/;
 
     virtual ::AbstractScene* getTopScene() /*override*/;
 
@@ -564,6 +564,12 @@ public:
 
     MCAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
 
+    MCAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
+
+    MCAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
+
+    MCAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
+
     MCAPI bool $update();
 
     MCAPI void $resetScreenChangeDirtyFlag();
@@ -591,6 +597,8 @@ public:
     MCFOLD ::std::string const& $getLastPoppedScreenName() const;
 
     MCAPI void $handleLicenseChanged();
+
+    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
 
     MCFOLD ::AbstractScene* $getTopScene();
 

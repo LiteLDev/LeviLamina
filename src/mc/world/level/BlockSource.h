@@ -680,6 +680,13 @@ public:
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
 
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(
+        ::ActorType                     entityTypeId,
+        ::AABB const&                   bb,
+        ::Actor const*                  except,
+        ::std::function<bool(::Actor*)> selector
+    );
+
     MCAPI void
     $fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const;
 
@@ -733,6 +740,17 @@ public:
     MCAPI bool $isInWall(::Vec3 const& pos) const;
 
     MCAPI bool $isUnderWater(::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI void $fireBlockChanged(
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            flags,
+        ::BlockChangedEventTarget      eventTarget,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::Actor*                       source
+    );
 
     MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
@@ -789,19 +807,6 @@ public:
         ::BlockPos const&  originPos,
         ::Block const*     affectedBlock
     );
-
-#ifdef LL_PLAT_C
-    MCAPI void $fireBlockChanged(
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            flags,
-        ::BlockChangedEventTarget      eventTarget,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::Actor*                       source
-    );
-#endif
 
 
     // NOLINTEND

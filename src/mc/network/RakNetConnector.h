@@ -42,11 +42,13 @@ public:
         // NOLINTBEGIN
         virtual ~ConnectionCallbacks() /*override*/ = default;
 
-        virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, bool) = 0;
+        virtual void
+        onAllConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage) = 0;
 
-        virtual void onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, bool) = 0;
+        virtual void
+        onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason discoReason, bool skipDisconnectMessage) = 0;
 
-        virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason) = 0;
+        virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason) = 0;
 
         virtual void onWebsocketRequest(
             ::std::string const&    serverAddress,

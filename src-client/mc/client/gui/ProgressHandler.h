@@ -28,7 +28,10 @@ public:
 
     virtual void onStart(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
-    virtual void onGameEventNotification(::MinecraftScreenModel&, ::ui::GameEventNotification const&);
+    virtual void onGameEventNotification(
+        ::MinecraftScreenModel&            minecraftScreenModel,
+        ::ui::GameEventNotification const& notification
+    );
 
     virtual void tick(::MinecraftScreenModel& minecraftScreenModel) = 0;
 
@@ -58,6 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD void $onGameEventNotification(
+        ::MinecraftScreenModel&            minecraftScreenModel,
+        ::ui::GameEventNotification const& notification
+    );
+
     MCFOLD void $onRetry(::MinecraftScreenModel& minecraftScreenModel);
 
     MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;

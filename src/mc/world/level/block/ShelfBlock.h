@@ -217,9 +217,7 @@ public:
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
-#endif
 
     MCAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,

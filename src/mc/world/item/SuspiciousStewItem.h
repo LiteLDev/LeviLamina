@@ -71,6 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
     MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI void $appendFormattedHovertext(
@@ -81,10 +83,6 @@ public:
     ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
-#endif
 
 
     // NOLINTEND

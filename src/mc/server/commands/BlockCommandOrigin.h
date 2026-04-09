@@ -115,9 +115,7 @@ public:
 
     MCFOLD ::Actor* $getEntity() const;
 
-#ifdef LL_PLAT_S
     MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
-#endif
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 

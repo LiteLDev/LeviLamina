@@ -102,9 +102,7 @@ public:
 
     MCAPI ::Actor* $getEntity() const;
 
-#ifdef LL_PLAT_S
     MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
-#endif
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 

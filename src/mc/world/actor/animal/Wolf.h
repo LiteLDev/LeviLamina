@@ -85,9 +85,7 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
-#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-#endif
 
     MCAPI bool $isAlliedTo(::Mob* other);
 

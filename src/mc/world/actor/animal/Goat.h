@@ -42,9 +42,9 @@ public:
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-#ifdef LL_PLAT_S
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-#endif
 
 
     // NOLINTEND

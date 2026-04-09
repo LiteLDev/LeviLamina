@@ -62,7 +62,7 @@ public:
 
     virtual void onLeave() = 0;
 
-    virtual void onGameEventNotification(::ui::GameEventNotification) = 0;
+    virtual void onGameEventNotification(::ui::GameEventNotification notification) = 0;
 
     virtual void leaveScreen() = 0;
 
@@ -82,7 +82,7 @@ public:
 
     virtual void postRenderUpdate(::ScreenContext& screenContext) = 0;
 
-    virtual void handleInputModeChanged(::InputMode) = 0;
+    virtual void handleInputModeChanged(::InputMode inputMode) = 0;
 
     virtual void handleButtonPress(uint buttonId, ::FocusImpact focusImpact) = 0;
 

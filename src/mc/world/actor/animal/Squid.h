@@ -101,9 +101,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
-#endif
 
     MCFOLD bool $checkSpawnObstruction() const;
 

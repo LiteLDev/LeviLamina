@@ -419,7 +419,7 @@ public:
 
     virtual uchar getMaxChunkBuildRadius() const /*override*/;
 
-    virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus) /*override*/;
+    virtual void setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status) /*override*/;
 
     virtual ::std::unique_ptr<::ISparseContainerSetListener> createSparseContainerListener() /*override*/;
 
@@ -702,6 +702,8 @@ public:
     MCAPI void $requestMissingSubChunk(::SubChunkPos const& scp);
 
     MCAPI uchar $getMaxChunkBuildRadius() const;
+
+    MCAPI void $setBehaviorCommandStatus(::std::string const& name, ::BehaviorStatus status);
 
     MCAPI ::std::unique_ptr<::ISparseContainerSetListener> $createSparseContainerListener();
 

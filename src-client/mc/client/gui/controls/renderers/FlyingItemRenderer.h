@@ -72,6 +72,8 @@ public:
     MCAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+
+    MCFOLD ::UIBatchType $getBatchType() const;
     // NOLINTEND
 
 public:
