@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-#include "mc/deps/shared_types/util/AssetType.h"
-
 namespace SharedTypes {
 
-template <AssetType type>
+template <int type> // SharedTypes::AssetType
 struct Reference {
     std::string mValue;
 
