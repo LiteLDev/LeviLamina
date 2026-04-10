@@ -4,7 +4,7 @@
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/FixedString.h"
 
-#if _HAS_CXX23
+#if LL_HAS_CXX23
 #include <expected>
 #endif
 

@@ -151,9 +151,7 @@ coro::Generator<ModManager&> ModManagerRegistry::managers() const {
 coro::Generator<Mod&> ModManagerRegistry::mods() const {
     std::lock_guard lock(impl->modMtx);
     for (auto& manager : managers()) {
-        for (auto& mod : manager.mods()) {
-            co_yield mod;
-        }
+        co_yield coro::ElementsOf(manager.mods());
     }
 }
 

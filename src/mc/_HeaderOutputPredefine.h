@@ -71,7 +71,7 @@
 #include <any>           // STL any type
 
 // STL expected for C++23
-#if _HAS_CXX23
+#if LL_HAS_CXX23
 #include <expected>
 #endif
 

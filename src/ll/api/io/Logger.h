@@ -5,7 +5,7 @@
 #include <string_view>
 #include <utility>
 
-#if _HAS_CXX23
+#if LL_HAS_CXX23
 #include <expected>
 #endif
 
