@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+
 #include "ll/api/Versions.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/client/gui/screens/controllers/StartMenuScreenController.h"
@@ -75,3 +77,15 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     }
 }
 } // namespace ll::test_jsonui
+
+TEST(JsonUiTest, FormattingLogicForBindingStringProducesNonEmptyText) {
+    auto    now        = std::chrono::system_clock::now();
+    auto    time_t_now = std::chrono::system_clock::to_time_t(now);
+    std::tm localTime{};
+    localtime_s(&localTime, &time_t_now);
+
+    auto text = fmt::format("{:%Y-%m-%d %H:%M:%S}", localTime);
+    EXPECT_FALSE(text.empty());
+    EXPECT_NE(text.find('-'), std::string::npos);
+    EXPECT_NE(text.find(':'), std::string::npos);
+}

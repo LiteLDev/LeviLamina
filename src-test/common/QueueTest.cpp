@@ -6,8 +6,6 @@
 
 #include "ll/api/base/Containers.h"
 
-namespace {
-
 struct MyCompare {
     int operator()(int x, int y) { return y % 10 < x % 10; } // highest first
 };
@@ -64,5 +62,3 @@ TEST(QueueTest, ConcurrentPriorityQueueMatchesStdPriorityQueueOrdering) {
     std::ranges::sort(sortedExpected);
     EXPECT_EQ(sortedActual, sortedExpected);
 }
-
-} // namespace

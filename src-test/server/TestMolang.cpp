@@ -8,8 +8,6 @@
 #include "mc/deps/core/string/HashedString.h"
 
 
-namespace {
-
 TEST(TestMolang, MolangQueryFunctionsCanBeRegisteredAndEvaluated) {
 
     ExpressionNode::registerQueryFunction(
@@ -46,4 +44,3 @@ TEST(TestMolang, MolangQueryFunctionsCanBeRegisteredAndEvaluated) {
     EXPECT_FLOAT_EQ(boolQuery.evalAsFloat(renderParams), 1.0f);
     EXPECT_FLOAT_EQ(numQuery.evalAsFloat(renderParams), 114514.0f);
 }
-} // namespace

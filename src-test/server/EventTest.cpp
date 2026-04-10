@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/io/PatternFormatter.h"
@@ -59,34 +61,25 @@ public:
 class TestEventEmitter
 : public ll::event::Emitter<[](auto&&...) { return nullptr; }, TestEvent1, TestEvent2, TestEvent3> {};
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    EventTestH,
-    ll::memory::HookPriority::Normal,
-    ServerScriptManager,
-    &ServerScriptManager::$onServerThreadStarted,
-    EventResult,
-    ::ServerInstance& ins
-) {
-    auto result = origin(ins);
-
+TEST(EventTest, EventBusPublishesAndRemovesListeners) {
     auto& bus = ll::event::EventBus::getInstance();
 
     static std::atomic_uint times{};
+    times = 0;
 
     auto listener = ll::event::Listener<TestEventB>::create([](TestEventB& ev) {
-        ll::getLogger().debug("I'm 1, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
+        ++times;
+        EXPECT_FALSE(ev.some.empty());
     });
-    bus.addListener<TestEvent1>(listener);
-    bus.addListener<TestEvent2>(listener);
+    EXPECT_TRUE(bus.addListener<TestEvent1>(listener));
+    EXPECT_TRUE(bus.addListener<TestEvent2>(listener));
 
     auto listener2 = ll::event::Listener<TestEvent2>::create(
         [](TestEvent2& ev) {
-            ll::getLogger().debug("I'm 2, receive: {}, str: {}, {}", ev.getId().name, ev.some, times++);
-
-            ll::getLogger().debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
-            ll::getLogger().debug("try cancel");
+            ++times;
+            EXPECT_FALSE(ev.isCancelled());
             ev.cancel();
-            ll::getLogger().debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
+            EXPECT_TRUE(ev.isCancelled());
 
             if (times.load() == 5) {
                 throw std::runtime_error("hello");
@@ -95,29 +88,35 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ll::event::EventPriority::High
     );
 
-    ll::getLogger().debug("I'm 1 myid: {}", listener->getId());
-    ll::getLogger().debug("I'm 2 myid: {}", listener2->getId());
-
-    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent1>.name);
-    ll::getLogger().debug("eventid: {}", ll::event::getEventId<TestEvent2>.name);
+    EXPECT_NE(listener->getId(), listener2->getId());
+    EXPECT_EQ(ll::event::getEventId<TestEvent1>.name, TestEvent1::CustomEventId.name);
 
     bus.publish(TestEvent1{});
     TestEvent2 e2{"I'm reused TestEvent2......"};
     bus.publish(e2);
+    EXPECT_EQ(times.load(), 2u);
+    EXPECT_FALSE(e2.isCancelled());
 
-    bus.removeListener<TestEvent2>(listener);
-
-    ll::getLogger().debug("remove 1, 2");
-
-    ll::getLogger().debug("repeat add, res: {}", bus.addListener<TestEvent2>(listener2));
+    EXPECT_TRUE(bus.removeListener<TestEvent2>(listener));
+    EXPECT_TRUE(bus.addListener<TestEvent2>(listener2));
 
     bus.publish(TestEvent1{});
-    bus.publish(TestEvent2{});
-    bus.publish(e2);
+    EXPECT_EQ(times.load(), 3u);
+
+    auto dynamicListener = ll::event::DynamicListener::create([](CompoundTag& nbt) { nbt["observed"] = true; });
+    EXPECT_TRUE(bus.addListener(dynamicListener, ll::event::getEventId<TestEvent1>));
+
+    TestEvent1 event;
+    bus.publish(event);
+    EXPECT_EQ(times.load(), 4u);
+
+    EXPECT_TRUE(bus.removeListener<TestEvent1>(listener));
+    EXPECT_TRUE(bus.removeListener<TestEvent2>(listener2));
+    EXPECT_TRUE(bus.removeListener(dynamicListener, ll::event::getEventId<TestEvent1>));
 
     using namespace ll::event;
-    for (auto [modName, id] :  bus.events()) {
-        if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent")) 
+    for (auto [modName, id] : bus.events()) {
+        if (!id.name.ends_with("LevelTickEvent") && !id.name.ends_with("ChangedEvent"))
             bus.addListener(
                 DynamicListener::create([modName](CompoundTag& nbt) {
                     ll::getLogger().debug("event from {}, {}", modName, nbt.toSnbt(SnbtFormat::PrettyChatPrint));
@@ -141,5 +140,4 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         }
     };
     ll::getLogger().addSink(std::make_shared<BroadcastSink>());
-    return result;
 }

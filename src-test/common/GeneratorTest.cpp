@@ -6,8 +6,6 @@
 
 #include "ll/api/coro/Generator.h"
 
-namespace {
-
 using ll::coro::ElementsOf;
 using ll::coro::Generator;
 
@@ -68,5 +66,3 @@ TEST(GeneratorTest, GeneratorElementOfPropagatesNestedExceptions) {
 
     EXPECT_THROW(++iter, std::runtime_error);
 }
-
-} // namespace

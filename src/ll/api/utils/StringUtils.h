@@ -9,7 +9,6 @@
 #include <string_view>
 #include <type_traits>
 #include <utility>
-#include <vector>
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"

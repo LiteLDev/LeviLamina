@@ -83,8 +83,6 @@ CoroTask<Expected<int>> coroutine() {
     co_return v1.value() + v2.value() + vec[0].value() + vec[1].value();
 }
 
-namespace {
-
 CoroTask<int> countCallbackValuesUntilGreaterThanTen() {
     CallbackTransformer<int> transformer;
     std::thread{[setter = transformer.getValueSetter()]() mutable {
@@ -129,5 +127,3 @@ TEST(ExecTest, GeneratorProducesExpectedSequence) {
 
     EXPECT_EQ(values, (std::vector<size_t>{0, 1, 2, 3, 4}));
 }
-
-} // namespace

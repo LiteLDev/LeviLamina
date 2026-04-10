@@ -10,7 +10,7 @@
 namespace ll::command {
 
 namespace detail {
-LLAPI void printCommandError(::Command const&, ::CommandOutput&) noexcept;
+LLAPI void mayPrintCommandError(::Command const&, ::CommandOutput&);
 }
 
 struct EmptyParam {};
@@ -41,7 +41,7 @@ public:
                 executor();
             }
         } catch (...) {
-            ::ll::command::detail::printCommandError(*this, output);
+            ::ll::command::detail::mayPrintCommandError(*this, output);
         }
     }
 };

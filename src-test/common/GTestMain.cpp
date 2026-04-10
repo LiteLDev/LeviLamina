@@ -6,6 +6,7 @@
 
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
+#include "ll/api/utils/StringUtils.h"
 
 namespace {
 
@@ -23,23 +24,7 @@ private:
         logger.debug("property {}={}", property.key(), property.value());
     }
 
-    static void logTestPartResult(testing::TestPartResult const& result) {
-        auto file = result.file_name() != nullptr ? result.file_name() : "<unknown>";
-        auto line = result.line_number();
-        auto text = std::string{result.message()};
-
-        if (result.failed()) {
-            logger.error("{}:{} {}", file, line, text);
-            return;
-        }
-        logger.debug("{}:{} {}", file, line, text);
-    }
-
     static void logTestResultDetails(testing::TestResult const& result, std::string_view prefix) {
-        for (int i = 0; i < result.total_part_count(); ++i) {
-            logger.debug("{} part {}", prefix, i + 1);
-            logTestPartResult(result.GetTestPartResult(i));
-        }
         for (int i = 0; i < result.test_property_count(); ++i) {
             logger.debug("{} property {}", prefix, i + 1);
             logTestProperty(result.GetTestProperty(i));
@@ -76,7 +61,35 @@ public:
         logger.debug("DISABLED {}.{}", testInfo.test_suite_name(), testInfo.name());
     }
 
-    void OnTestPartResult(testing::TestPartResult const& result) override { logTestPartResult(result); }
+    void OnTestPartResult(testing::TestPartResult const& result) override {
+        auto file = result.file_name() != nullptr ? result.file_name() : "<unknown>";
+        auto line = result.line_number();
+        auto text = std::string{result.message()};
+
+        auto lines = ll::string_utils::splitByPattern(text, "\n");
+
+        if (lines.empty()) {
+            lines.emplace_back(text);
+        }
+
+        if (result.failed()) {
+            for (size_t i = 0; i < lines.size(); ++i) {
+                if (i == 0) {
+                    logger.error("{}:{} {}", file, line, lines[i]);
+                } else {
+                    logger.error("{}", lines[i]);
+                }
+            }
+            return;
+        }
+        for (size_t i = 0; i < lines.size(); ++i) {
+            if (i == 0) {
+                logger.debug("{}:{} {}", file, line, lines[i]);
+            } else {
+                logger.debug("{}", lines[i]);
+            }
+        }
+    }
 
     void OnTestEnd(testing::TestInfo const& testInfo) override {
         auto& result = *testInfo.result();

@@ -7,8 +7,6 @@
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/brstd/move_only_function.h"
 
-namespace {
-
 TEST(BrstdFnTest, BrstdCopyableFunctionSupportsCopyResetAndRebind) {
     using brstd::copyable_function;
 
@@ -85,5 +83,3 @@ TEST(BrstdFnTest, BrstdMoveOnlyFunctionSupportsResetAndRebind) {
     EXPECT_EQ(recordedInt, 17);
     EXPECT_EQ(recordedValues, (std::vector<float>{0.7f, 0.7f, 0.7f}));
 }
-
-} // namespace

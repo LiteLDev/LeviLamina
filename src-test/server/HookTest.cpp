@@ -6,7 +6,6 @@
 #include "ll/api/memory/Memory.h"
 
 // NOLINTBEGIN
-namespace {
 class TestOverloadClass {
 protected:
     int some = 0;
@@ -104,5 +103,4 @@ TEST(HookTest, HookExPreservesStaticSingletonIdentity) {
 
     EXPECT_EQ(&instance1, &instance2);
 }
-} // namespace
 // NOLINTEND

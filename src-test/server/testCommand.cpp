@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+
 
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
@@ -10,6 +12,10 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/ServerCommandOrigin.h"
+#include "mc/world/Minecraft.h"
+#include "mc/world/level/Level.h"
 
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
@@ -33,6 +39,32 @@ struct fmt::formatter<CommandRegistry::Symbol> : fmt::formatter<std::string> {
 
 using namespace ll::command;
 
+namespace {
+
+struct CommandExecutionResult {
+    std::unique_ptr<::Command> compiledCommand;
+    CommandOutput              output{CommandOutputType::AllOutput};
+};
+
+CommandExecutionResult executeTestCommand(std::string_view commandLine) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandExecutionResult result;
+    auto                   compiled = registrar.compileCommand(commandLine, origin);
+    if (!compiled) {
+        compiled.error().log(result.output);
+        compiled.error().log(ll::getLogger());
+        return result;
+    }
+
+    result.compiledCommand = std::move(compiled.value());
+    result.compiledCommand->run(origin, result.output);
+    return result;
+}
+
+} // namespace
+
 template <>
 bool CommandRegistry::parse<CompoundTagVariant>(
     void*                              storage,
@@ -45,7 +77,6 @@ bool CommandRegistry::parse<CompoundTagVariant>(
     size_t      parsedLength{};
     std::string str = token.toString();
     auto        res = CompoundTagVariant::parse(str, parsedLength);
-    std::cout << str << std::endl;
     if (res) {
         (*(CompoundTagVariant*)storage) = std::move(*res);
         return true;
@@ -157,20 +188,160 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         .execute([](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
             output.success("snbt: {}", param.snbt.toSnbt(SnbtFormat::PrettyChatPrint));
         });
-    cmd.overload<ParamTest3>().text("json").required("json").execute([](CommandOrigin const&,
-                                                                        CommandOutput&    output,
-                                                                        ParamTest3 const& param) {
-        output.success("json: {}", param.json.toStyledString());
-        ll::getLogger().debug("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
-        auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
-        ll::getLogger().debug("first : {}", table.first | std::views::keys);
-        // ll::getLogger().debug("first : {}", table.first);
-        ll::getLogger().debug("second : {}", table.follow | std::views::keys);
+    cmd.overload<ParamTest3>().text("json").required("json").execute(
+        [](CommandOrigin const&, CommandOutput& output, ParamTest3 const& param) {
+            output.success("json: {}", param.json.toStyledString());
+            output.success("mParseTables : {}", ll::service::getCommandRegistry()->mParseTables | std::views::keys);
+            auto& table = ll::service::getCommandRegistry()->mParseTables.begin()->second;
+            output.success("first : {}", table.first | std::views::keys);
+            output.success("second : {}", table.follow | std::views::keys);
 
-        for (auto [k, v] : table.predict) {
-            if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{")
-                ll::getLogger().debug("{} : {}", k, v);
+            for (auto [k, v] : table.predict) {
+                if (ll::service::getCommandRegistry()->symbolToString(k.first) == "{") output.success("{} : {}", k, v);
+            }
         }
-    });
+    );
     return result;
+}
+
+TEST(TestCommand, RegisteringEnumsAndCommandsDoesNotThrow) {
+    auto& registrar = CommandRegistrar::getServerInstance();
+
+    EXPECT_NO_THROW((void)registrar.tryRegisterSoftEnum("hello_gtest", {"SoftEnum1", "af1451"}));
+    EXPECT_NO_THROW((void)registrar.tryRegisterRuntimeEnum(
+        "testenum_gtest",
+        {
+            {"a", 1},
+            {"b", 2}
+    }
+    ));
+    EXPECT_NO_THROW((void)std::addressof(registrar.getOrCreateCommand("t_gtest", "test tttttt")));
+}
+
+TEST(TestCommand, CompiledCommandCanBeRunAndProducesExpectedOutput) {
+    CommandExecutionResult result;
+    ASSERT_NO_THROW(result = executeTestCommand("t 123hi ni sb st true 4.5"));
+
+    ASSERT_TRUE(result.compiledCommand);
+    EXPECT_EQ(result.compiledCommand->getCommandName(), "t");
+    EXPECT_GE(result.output.mSuccessCount, 1);
+    ASSERT_GE(result.output.mMessages.size(), 6);
+
+    EXPECT_EQ(result.output.mMessages[0].mMessageId, "overload1");
+    EXPECT_EQ(result.output.mMessages[1].mMessageId, "p1: 123");
+    EXPECT_EQ(result.output.mMessages[2].mMessageId, "p2: true 4.5");
+    EXPECT_EQ(result.output.mMessages[3].mMessageId, "p3: true");
+    EXPECT_EQ(result.output.mMessages[4].mMessageId, "p4: sb");
+    EXPECT_EQ(result.output.mMessages[5].mMessageId, "p5: ");
+}
+
+TEST(TestCommand, ExecuteCommandRunsRegisteredCommandAndProducesExpectedOutput) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t 123hi ni sb st true 4.5", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_GE(output.mMessages.size(), 6);
+    EXPECT_EQ(output.mMessages[0].mMessageId, "overload1");
+    EXPECT_EQ(output.mMessages[1].mMessageId, "p1: 123");
+    EXPECT_EQ(output.mMessages[2].mMessageId, "p2: true 4.5");
+    EXPECT_EQ(output.mMessages[3].mMessageId, "p3: true");
+    EXPECT_EQ(output.mMessages[4].mMessageId, "p4: sb");
+    EXPECT_EQ(output.mMessages[5].mMessageId, "p5: ");
+}
+
+TEST(TestCommand, ExecuteCommandRunsSubcommandAndMergesOutput) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t stone overworld t 123hi ni sb st true 4.5", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_GE(output.mMessages.size(), 9);
+    EXPECT_EQ(output.mMessages[0].mMessageId, "block: tile.stone");
+    EXPECT_EQ(output.mMessages[1].mMessageId, "dim: 0");
+    EXPECT_EQ(output.mMessages[2].mMessageId, "subcmd: t");
+    EXPECT_EQ(output.mMessages[3].mMessageId, "overload1");
+    EXPECT_EQ(output.mMessages[4].mMessageId, "p1: 123");
+}
+
+TEST(TestCommand, ExecuteCommandReturnsErrorOutputWhenCompilationFails) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t not_an_inthi ni sb st true 4.5", origin));
+
+    EXPECT_EQ(output.mSuccessCount, 0);
+    EXPECT_FALSE(output.mMessages.empty());
+}
+
+TEST(TestCommand, ExecuteCommandCatchesCommandExceptions) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t throw", origin));
+
+    EXPECT_EQ(output.mSuccessCount, 0);
+    EXPECT_FALSE(output.mMessages.empty());
+}
+
+TEST(TestCommand, ExecuteCommandRunsSoftEnumOverload) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t 123 gr s1b 4.5 true", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_GE(output.mMessages.size(), 6);
+    EXPECT_EQ(output.mMessages[0].mMessageId, "overload1");
+    EXPECT_EQ(output.mMessages[1].mMessageId, "p1: 123");
+    EXPECT_EQ(output.mMessages[2].mMessageId, "p2: true 4.5");
+    EXPECT_EQ(output.mMessages[3].mMessageId, "p3: true");
+    EXPECT_EQ(output.mMessages[4].mMessageId, "p4: sb");
+    EXPECT_EQ(output.mMessages[5].mMessageId, "p5: s1b");
+}
+
+TEST(TestCommand, ExecuteCommandRunsRuntimeOverload) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t 123 4..9 SoftEnum1 testenumhhhh", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_GE(output.mMessages.size(), 5);
+    EXPECT_EQ(output.mMessages[1].mMessageId, "runtime : 123");
+    EXPECT_EQ(output.mMessages[2].mMessageId, "range : 4 9");
+    EXPECT_EQ(output.mMessages[3].mMessageId, "SoftEnum : SoftEnum1");
+    EXPECT_TRUE(output.mMessages[4].mMessageId.starts_with("Enum : "));
+}
+
+TEST(TestCommand, ExecuteCommandRunsNbtOverload) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t nbt {\"value\":1}", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_FALSE(output.mMessages.empty());
+    EXPECT_TRUE(output.mMessages[0].mMessageId.starts_with("snbt: "));
+}
+
+TEST(TestCommand, ExecuteCommandRunsJsonOverload) {
+    auto&               registrar = CommandRegistrar::getServerInstance();
+    ServerCommandOrigin origin("test", ll::service::getLevel()->asServer(), CommandPermissionLevel::Owner, 0);
+
+    CommandOutput output;
+    ASSERT_NO_THROW(output = registrar.executeCommand("t json {\"value\":1}", origin));
+
+    EXPECT_GE(output.mSuccessCount, 1);
+    ASSERT_FALSE(output.mMessages.empty());
+    EXPECT_TRUE(output.mMessages[0].mMessageId.starts_with("json: "));
 }

@@ -5,8 +5,6 @@
 
 #include "ll/api/data/AnyFunction.h"
 
-namespace {
-
 using ll::data::AnyFunction;
 
 TEST(AnyFnTest, AnyFunctionSupportsReassignmentAndReferenceArgs) {
@@ -40,5 +38,3 @@ TEST(AnyFnTest, AnyFunctionSupportsReassignmentAndReferenceArgs) {
     EXPECT_EQ(recordedInt, 17);
     EXPECT_EQ(recordedValues, vec);
 }
-
-} // namespace

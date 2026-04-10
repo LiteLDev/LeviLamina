@@ -6,6 +6,7 @@
 #include <utility>
 #include <vector>
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Containers.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
@@ -13,12 +14,18 @@
 #include "ll/api/command/runtime/RuntimeEnum.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/GamingStatus.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/core/LeviLamina.h"
 #include "ll/core/mod/ModRegistrar.h"
 
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/MinecraftCommands.h"
+#include "mc/world/Minecraft.h"
 
 namespace ll::command {
 struct CommandRegistrar::Impl {
@@ -35,7 +42,7 @@ CommandRegistrar::CommandRegistrar(bool isClientSide) : impl(std::make_unique<Im
         }
     });
     reg.executeOnModLoad([this, isClientSide](std::string_view name) {
-        if (ll::service::getCommandRegistry(isClientSide)) {
+        if (service::getCommandRegistry(isClientSide)) {
             addSoftEnumValues(std::string{mod::modsEnumName}, {std::string{name}});
         }
     });
@@ -53,7 +60,7 @@ void CommandRegistrar::clear() {
     impl->textWithRef.clear();
 }
 
-CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(isClient); }
+CommandRegistry& CommandRegistrar::getRegistry() const { return *service::getCommandRegistry(isClient); }
 
 CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,
@@ -80,6 +87,90 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     } else {
         return impl->commands.try_emplace(signature->name, *this, *signature, false).first->second;
     }
+}
+
+Expected<std::unique_ptr<::Command>> CommandRegistrar::compileCommand(
+    std::string_view    commandStr,
+    ::CommandOrigin&    origin,
+    ::CurrentCmdVersion version
+) const noexcept try {
+    auto minecraft = service::getMinecraft(isClient);
+    if (!minecraft.has_value()) {
+        return makeStringError("Minecraft service is unavailable");
+    }
+    auto&        commands      = *minecraft->mCommands;
+    HashedString hashedCommand = commandStr;
+    {
+        Error error;
+        auto* compiled = commands.compileCommand(hashedCommand, origin, version, [&](std::string const& errMsg) {
+            error.join(makeStringError(errMsg));
+        });
+        if (!compiled && !error) {
+            return makeStringError("compileCommand returned nullptr");
+        }
+        if (error) {
+            return forwardError(error);
+        }
+    }
+    auto& compiledCommandMap = *commands.mCompiledCommandMap;
+    auto  compiledIt         = compiledCommandMap.find(hashedCommand);
+    if (compiledIt == compiledCommandMap.end()) {
+        return makeStringError("compiled command was not stored in mCompiledCommandMap");
+    }
+    auto ownedCommand = std::move(compiledIt->second);
+    compiledCommandMap.erase(compiledIt);
+    if (!ownedCommand) {
+        return makeStringError("compiled command ownership transfer failed");
+    }
+    return ownedCommand;
+} catch (...) {
+    return makeExceptionError();
+}
+
+namespace detail {
+static thread_local bool isExecutingCommand = false;
+
+LLAPI void printCommandError(::Command const& command, ::CommandOutput& output) noexcept {
+    try {
+        getLogger().error("Error in command {}:", command.getCommandName());
+        output.error("command threw an exception");
+    } catch (...) {}
+    error_utils::printCurrentException(getLogger());
+}
+
+void mayPrintCommandError(::Command const& command, ::CommandOutput& output) {
+    if (isExecutingCommand) {
+        throw;
+    }
+    printCommandError(command, output);
+}
+} // namespace detail
+
+CommandOutput CommandRegistrar::executeCommand(
+    std::string_view    commandStr,
+    ::CommandOrigin&    origin,
+    ::CommandOutputType outputType,
+    ::CurrentCmdVersion version
+) const noexcept {
+    CommandOutput output(outputType);
+    auto          compileResult = compileCommand(commandStr, origin, version);
+    if (!compileResult) {
+        compileResult.error().log(output);
+        return output;
+    }
+    auto& command = *compileResult.value();
+    try {
+        struct Guard {
+            bool& isExecuting;
+            Guard(bool& isExecuting) : isExecuting(isExecuting) { isExecuting = true; }
+            ~Guard() { isExecuting = false; }
+        };
+        Guard guard(detail::isExecutingCommand);
+        command.run(origin, output);
+    } catch (...) {
+        makeExceptionError().error().log(output);
+    }
+    return output;
 }
 
 void CommandRegistrar::disableModCommands(std::string_view modName) {

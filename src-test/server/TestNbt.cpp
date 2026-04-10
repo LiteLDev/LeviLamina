@@ -10,8 +10,6 @@
 
 #include "nlohmann/json.hpp"
 
-namespace {
-
 TEST(TestNbt, CompoundTagSupportsRoundTripConversionsAndNestedAccess) {
     using namespace ll::literals;
 
@@ -171,5 +169,3 @@ TEST(TestNbt, CompoundTagSupportsRoundTripConversionsAndNestedAccess) {
     EXPECT_NE(ptr.get(), nullptr);
     EXPECT_FALSE(j.empty());
 }
-
-} // namespace

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/server/commands/CommandOutputMessage.h"
 #include "mc/server/commands/CommandOutputParameter.h"
+#include "mc/server/commands/CommandPropertyBag.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandOutputMessageType.h"
@@ -41,7 +42,7 @@ public:
 
 public:
     // prevent constructor by default
-    CommandOutput();
+    CommandOutput() = default;
 
 public:
     // member functions

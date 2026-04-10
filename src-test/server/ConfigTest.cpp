@@ -1,46 +1,29 @@
+#include "gtest/gtest.h"
+
 #include "nlohmann/json.hpp"
 
-#include "ll/api/data/Version.h"
-
 #include "ll/api/Config.h"
-
-#include "ll/api/memory/Hook.h"
-#include "ll/api/utils/ErrorUtils.h"
-#include "ll/core/LeviLamina.h"
-
-#include "mc/server/ServerInstance.h"
-
-// #include "ll/api/service/Bedrock.h"
-// #include "mc/world/level/BlockPos.h"
-// #include "mc/world/level/Level.h"
-// #include "mc/world/level/LevelChunkTag.h"
-// #include "mc/world/level/storage/LevelStorage.h"
-
-#include "ll/api/utils/SystemUtils.h"
-
-#include "mc/deps/nbt/CompoundTag.h"
-#include "mc/server/ServerLevel.h"
-#include "mc/server/commands/standard/FillCommand.h"
-
-#include "mc/deps/core/math/Color.h"
-#include "mc/platform/UUID.h"
+#include "ll/api/base/Containers.h"
+#include "ll/api/data/IndirectValue.h"
+#include "ll/api/data/Version.h"
 
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/nbt/CompoundTag.h"
+#include "mc/platform/UUID.h"
+#include "mc/util/MultidimensionalArray.h"
+#include "mc/world/actor/DataItem.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 
-#include "mc/world/actor/DataItem.h"
-
-#include "ll/api/base/Containers.h"
-#include "ll/api/data/IndirectValue.h"
-
-#include "mc/util/MultidimensionalArray.h"
-
-// [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
-
-// ["structure", "version", "ver", "someFlag", "eeeeFlag", "ssbbFlag", "str", "plain", "amap", "bmap", "vec2", "vec3",
-// "pos", "box", "tuple", "pair", "array", "vector", "nullvector", "mulset", "hi"]
+#include <array>
+#include <map>
+#include <optional>
+#include <set>
+#include <string>
+#include <string_view>
+#include <tuple>
+#include <vector>
 
 template <class T>
 class TestClass {
@@ -99,103 +82,75 @@ public:
     } hi;
 };
 
-
 struct Test {
     template <class... Args>
-    Test(Args&&...) {
-        ll::getLogger().debug("Test {}", sizeof...(Args));
-    }
-    virtual ~Test() { ll::getLogger().debug("~Test"); }
-
-    // virtual std::unique_ptr<Test> clone() const {
-
-    //     // return nullptr;
-    //     ll::getLogger().debug("Test::clone");
-    //     return std::make_unique<Test>(*this);
-    // }
+    explicit Test(Args&&...) {}
+    virtual ~Test() = default;
 };
+
 struct TestD : public Test {
     template <class... Args>
-    TestD(Args&&...) {
-        ll::getLogger().debug("TestD {}", sizeof...(Args));
-    }
-    virtual ~TestD() { ll::getLogger().debug("~TestD"); }
-
-    // virtual std::unique_ptr<Test> clone() const {
-    //     ll::getLogger().debug("TestD::clone");
-    //     return std::make_unique<TestD>(*this);
-    //     // return nullptr;
-    // }
+    explicit TestD(Args&&...) {}
+    ~TestD() override = default;
 };
 
-LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
-    origin();
+TEST(ConfigTest, DataItemStoresTypedValues) {
+    int         integer = 1;
+    float       decimal = 1.0f;
+    std::string text    = "hello world";
 
-    int         s        = 1;
-    float       f        = 1.0f;
-    std::string str      = "hello world";
-    auto        sbbbbbb  = DataItem::create(1, s);
-    auto        sbbbbbb1 = DataItem::create(1, f);
-    auto        sbbbbbb2 = DataItem::create(1, str);
+    auto integerItem = DataItem::create(1, integer);
+    auto decimalItem = DataItem::create(1, decimal);
+    auto textItem    = DataItem::create(1, text);
 
-    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
-    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb1).name(), sbbbbbb1->getData<float>().value());
-    ll::getLogger().debug("DataItem {} {}", typeid(*sbbbbbb2).name(), sbbbbbb2->getData<std::string>().value());
+    ASSERT_TRUE(integerItem->getData<int>().has_value());
+    ASSERT_TRUE(decimalItem->getData<float>().has_value());
+    ASSERT_TRUE(textItem->getData<std::string>().has_value());
 
+    EXPECT_EQ(integerItem->getData<int>().value(), integer);
+    EXPECT_FLOAT_EQ(decimalItem->getData<float>().value(), decimal);
+    EXPECT_EQ(textItem->getData<std::string>().value(), text);
+}
 
-    auto helloReflection = TestClass<int>{};
+TEST(ConfigTest, ReflectionSerializesToNbtAndJson) {
+    auto value = TestClass<int>{};
 
-    // ll::config::saveConfig(helloReflection, "mods/Test/config/testconfig.json");
+    auto nbt = ll::reflection::serialize<CompoundTagVariant>(value);
+    ASSERT_TRUE(nbt.has_value());
+    auto snbt = nbt->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed);
+    EXPECT_NE(snbt.find("structure"), std::string::npos);
+    EXPECT_NE(snbt.find("plain"), std::string::npos);
 
-    auto list = ll::string_utils::splitByPattern("structure.trs", ".");
+    auto json = ll::reflection::serialize<nlohmann::json>(value);
+    ASSERT_TRUE(json.has_value());
+    EXPECT_EQ(json->at("structure").at("hello"), 233);
+    EXPECT_EQ(json->at("plain"), 1111);
+    EXPECT_EQ(json->at("str"), R"(\1hellow)");
+}
 
-    ll::getLogger().debug(
-        "reflection NBT: {}",
-        ll::reflection::serialize<CompoundTagVariant>(helloReflection)
-            .value()
-            .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ArrayLineFeed)
-    );
+TEST(ConfigTest, ReflectionDeserializeReportsTypeMismatch) {
+    auto value  = TestClass<int>{};
+    auto parsed = CompoundTagVariant::parse(R"({"structure":{"hello":""}})");
+    ASSERT_TRUE(parsed.has_value());
 
-    ll::getLogger().debug(
-        "reflection json: {}",
-        ll::reflection::serialize<nlohmann::json>(helloReflection).value().dump(4)
-    );
+    auto result = ll::reflection::deserialize(value, *parsed);
+    EXPECT_FALSE(result.has_value());
+}
 
-    // ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
-
-    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
-    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().data());
-
-    ll::getLogger().debug("0x{:X}", (uintptr_t)ll::sys_utils::getImageRange().size());
-    ll::getLogger().debug(
-        "0x{:X}",
-        (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute)
-            - (uintptr_t)ll::sys_utils::getImageRange("LeviLamina.dll").data()
-    );
-
-    ll::getLogger().debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
-    ll::getLogger().debug("{}", ll::reflection::getRawName<&ServerLevel::_initializeMapDataManager>());
-
-    ll::reflection::deserialize(helloReflection, CompoundTagVariant::parse(R"({"structure":{"hello":""}})").value())
-        .error()
-        .log(ll::getLogger());
-
-    ll::getLogger().debug("789\xDB\xFE");
-    ll::getLogger().debug("789\xDB\xFE");
-
-    Vec3 v1{2};
-
-    ll::getLogger().debug("{}", 3 / v1);
-
-
-    auto indirect = ll::makePolymorphic<Test>();
-    indirect      = ll::makePolymorphic<TestD>(13, 23);
+TEST(ConfigTest, IndirectValueSupportsPolymorphicCopies) {
+    auto indirect = ll::makePolymorphic<TestD>(13, 23);
 
     auto indirect2 = indirect;
     auto indirect3 = indirect;
 
+    EXPECT_NE(dynamic_cast<TestD*>(&*indirect), nullptr);
+    EXPECT_NE(dynamic_cast<TestD*>(&*indirect2), nullptr);
+    EXPECT_NE(dynamic_cast<TestD*>(&*indirect3), nullptr);
+}
+
+TEST(ConfigTest, MultidimensionalArrayReportsDimensionsAndSize) {
     auto arr = Util::MultidimensionalArray<int, 2, 3, 4>{};
 
-    static_assert(arr.dim() == 3);
-    static_assert(arr.size() == 2 * 3 * 4);
+    EXPECT_EQ(arr.dim(), 3);
+    EXPECT_EQ(arr.size(), 2 * 3 * 4);
 }

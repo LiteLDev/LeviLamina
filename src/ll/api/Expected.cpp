@@ -83,11 +83,11 @@ struct ErrorList : ErrorInfoBase {
 };
 
 Error& Error::join(Error err) noexcept {
-    if (!*this) {
-        mInfo = std::move(err.mInfo);
+    if (!err) {
         return *this;
     }
-    if (!err) {
+    if (!*this) {
+        mInfo = std::move(err.mInfo);
         return *this;
     }
     if (isA<ErrorList>()) {

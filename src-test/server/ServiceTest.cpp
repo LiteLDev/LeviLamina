@@ -16,8 +16,6 @@ public:
     bool invalidated = false;
 };
 
-namespace {
-
 TEST(ServiceTest, ServiceManagerPublishesRegisterAndUnregisterLifecycle) {
     auto  service = std::make_shared<SimpleService>();
     auto& sm      = ServiceManager::getInstance();
@@ -42,5 +40,3 @@ TEST(ServiceTest, ServiceManagerPublishesRegisterAndUnregisterLifecycle) {
 
     event::EventBus::getInstance().removeListener(listener);
 }
-
-} // namespace

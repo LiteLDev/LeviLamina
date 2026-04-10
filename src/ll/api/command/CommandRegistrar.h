@@ -9,6 +9,7 @@
 
 #include "magic_enum/magic_enum_all.hpp" // IWYU pragma: keep
 
+#include "ll/api/Expected.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/command/EnumName.h"
@@ -18,8 +19,10 @@
 
 #include "mc/deps/core/utility/typeid_t.h"
 #include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandRegistry.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
 
 namespace ll::mod {
 class Mod;
@@ -59,6 +62,19 @@ public:
         CommandFlag             flag        = CommandFlagValue::NotCheat,
         std::weak_ptr<mod::Mod> mod         = mod::NativeMod::current()
     );
+
+    LLNDAPI Expected<std::unique_ptr<::Command>> compileCommand(
+        std::string_view    commandStr,
+        ::CommandOrigin&    origin,
+        ::CurrentCmdVersion version = CurrentCmdVersion::Latest
+    ) const noexcept;
+
+    LLAPI CommandOutput executeCommand(
+        std::string_view    commandStr,
+        ::CommandOrigin&    origin,
+        ::CommandOutputType outputType = CommandOutputType::AllOutput,
+        ::CurrentCmdVersion version    = CurrentCmdVersion::Latest
+    ) const noexcept;
 
     LLAPI bool hasEnum(std::string const& name);
 
