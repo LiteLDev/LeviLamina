@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+
 #include "ll/core/LeviLamina.h"
 
 #include "ll/api/chrono/GameChrono.h"
@@ -9,6 +11,10 @@
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/thread/ThreadName.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
+
+#include <atomic>
+#include <thread>
+#include <vector>
 
 using namespace ll;
 using namespace coro;
@@ -76,71 +82,52 @@ CoroTask<Expected<int>> coroutine() {
     );
     co_return v1.value() + v2.value() + vec[0].value() + vec[1].value();
 }
-static bool run = [] {
-    using namespace ll;
 
-    thread::ServerThreadExecutor::getDefault().execute([&] {
-        coroutine().launch(thread::ThreadPoolExecutor::getDefault(), [](Expected<int>&& val) {
-            getLogger().info("coroutine done, {}", val.value());
-        });
+namespace {
 
-        auto f = []() -> CoroTask<> {
-            CallbackTransformer<int> t;
-            std::thread{[&] {
-                auto setter   = t.getValueSetter();
-                auto callback = [&](int i) {
-                    setter.emplace(i);
-                    return !setter.finished();
-                };
-                getLogger().info("start callback");
-                for (int i = 0; i < 20; ++i) {
-                    getLogger().info("callback {}", i);
-                    if (!callback(i)) {
-                        break;
-                    }
-                }
-            }}.detach();
-            int a = 0;
-            for (auto iter = co_await t.begin(); iter != t.end(); co_await ++iter) {
-                auto&& val = *iter;
-                if (val > 10) {
-                    break;
-                }
-                a++;
-                getLogger().info("val {}, thread {}", val, *thread::getThreadName());
-            }
-            getLogger().info("breaked {}", a);
-            co_await 0.1s;
-        };
-        keepThis(std::move(f)).syncLaunch(thread::ThreadPoolExecutor::getDefault());
-
-        CallbackTransformer<int> t;
-
-        auto f2 = [&t]() -> CoroTask<> {
-            for (auto iter = co_await t.begin(); iter != t.end(); co_await ++iter) {
-                auto&& val = *iter;
-
-                if (val > 10) {
-                    break;
-                }
-                getLogger().info("val {}, thread {}", val, *thread::getThreadName());
-            }
-            getLogger().info("breaked");
-        };
-        f2().launch(thread::InplaceExecutor::getDefault());
-
-        auto callback = [v = t.getValueSetter()](int i) {
-            v.emplace(i);
-            return !v.finished();
-        };
-        getLogger().info("start callback");
-        for (int i = 0; i < 7; ++i) {
-            getLogger().info("callback {}", i);
-            if (!callback(i)) {
+CoroTask<int> countCallbackValuesUntilGreaterThanTen() {
+    CallbackTransformer<int> transformer;
+    std::thread{[setter = transformer.getValueSetter()]() mutable {
+        for (int i = 0; i < 20; ++i) {
+            setter.emplace(i);
+            if (setter.finished()) {
                 break;
             }
         }
-    });
+        setter.finish();
+    }}.detach();
 
-    return true;
-}();
+    int count = 0;
+    for (auto iter = co_await transformer.begin(); iter != transformer.end(); co_await ++iter) {
+        if (*iter > 10) {
+            break;
+        }
+        ++count;
+    }
+    co_return count;
+}
+
+TEST(ExecTest, CoroTaskCollectAllReturnsExpectedValues) {
+    auto result = coroutine().syncLaunch(thread::ThreadPoolExecutor::getDefault());
+
+    ASSERT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), 50);
+}
+
+TEST(ExecTest, CallbackTransformerStopsAfterValueGreaterThanTen) {
+    auto result = countCallbackValuesUntilGreaterThanTen().syncLaunch(thread::ThreadPoolExecutor::getDefault());
+
+    ASSERT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), 11);
+}
+
+TEST(ExecTest, GeneratorProducesExpectedSequence) {
+    std::vector<size_t> values;
+    for (auto value : generator(5)) {
+        values.push_back(value);
+    }
+
+    EXPECT_EQ(values, (std::vector<size_t>{0, 1, 2, 3, 4}));
+}
+
+} // namespace

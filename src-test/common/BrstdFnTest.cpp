@@ -1,40 +1,89 @@
-#include "ll/core/LeviLamina.h"
+#include "gtest/gtest.h"
+
+#include <string>
+#include <vector>
 
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/brstd/move_only_function.h"
 
-static bool run = [] {
-    using namespace brstd;
-    {
-        ll::getLogger().info("copyable_function");
-        auto fn = copyable_function<void(std::string par, int i, std::vector<float>&& fs)>(
-            [](std::string par, int i, std::vector<float> fs) { ll::getLogger().warn("{}, {}, {}", par, i, fs); }
-        );
-        auto fn2 = fn;
+namespace {
 
-        fn2(std::string{"emmmmm"}, 10, std::vector<float>{0.2f, 0.2f, 0.2f});
-        fn       = nullptr;
-        auto vec = std::vector<float>{0.7f, 0.7f, 0.7f};
+TEST(BrstdFnTest, BrstdCopyableFunctionSupportsCopyResetAndRebind) {
+    using brstd::copyable_function;
 
-        fn = [](std::string par, int i, std::vector<float> fs) { ll::getLogger().info("{} | {} | {}", par, i, fs); };
+    std::string        recordedString;
+    int                recordedInt = 0;
+    std::vector<float> recordedValues;
 
-        fn(std::string{"hmmmmm"}, 17, std::move(vec));
-    }
-    {
-        ll::getLogger().info("move_only_function");
-        auto fn = move_only_function<void(std::string par, int i, std::vector<float>&& fs)>(
-            [](std::string par, int i, std::vector<float> fs) { ll::getLogger().warn("{}, {}, {}", par, i, fs); }
-        );
+    auto fn = copyable_function<void(std::string par, int i, std::vector<float>&& fs)>(
+        [&](std::string par, int i, std::vector<float> fs) {
+            recordedString = std::move(par);
+            recordedInt    = i;
+            recordedValues = std::move(fs);
+        }
+    );
+    auto fn2 = fn;
 
-        fn(std::string{"emmmmm"}, 10, std::vector<float>{0.2f, 0.2f, 0.2f});
-        fn       = nullptr;
-        auto vec = std::vector<float>{0.7f, 0.7f, 0.7f};
+    fn2(std::string{"emmmmm"}, 10, std::vector<float>{0.2f, 0.2f, 0.2f});
 
-        fn = [](std::string par, int i, std::vector<float> fs) { ll::getLogger().info("{} | {} | {}", par, i, fs); };
+    EXPECT_EQ(recordedString, "emmmmm");
+    EXPECT_EQ(recordedInt, 10);
+    EXPECT_EQ(recordedValues, (std::vector<float>{0.2f, 0.2f, 0.2f}));
 
-        fn(std::string{"hmmmmm"}, 17, std::move(vec));
-    }
+    fn = nullptr;
+    EXPECT_FALSE(static_cast<bool>(fn));
 
-    return true;
-}();
+    auto vec = std::vector<float>{0.7f, 0.7f, 0.7f};
+    fn       = [&](std::string par, int i, std::vector<float> fs) {
+        recordedString = std::move(par);
+        recordedInt    = i;
+        recordedValues = std::move(fs);
+    };
+
+    fn(std::string{"hmmmmm"}, 17, std::move(vec));
+
+    EXPECT_EQ(recordedString, "hmmmmm");
+    EXPECT_EQ(recordedInt, 17);
+    EXPECT_EQ(recordedValues, (std::vector<float>{0.7f, 0.7f, 0.7f}));
+}
+
+TEST(BrstdFnTest, BrstdMoveOnlyFunctionSupportsResetAndRebind) {
+    using brstd::move_only_function;
+
+    std::string        recordedString;
+    int                recordedInt = 0;
+    std::vector<float> recordedValues;
+
+    auto fn = move_only_function<void(std::string par, int i, std::vector<float>&& fs)>(
+        [&](std::string par, int i, std::vector<float> fs) {
+            recordedString = std::move(par);
+            recordedInt    = i;
+            recordedValues = std::move(fs);
+        }
+    );
+
+    fn(std::string{"emmmmm"}, 10, std::vector<float>{0.2f, 0.2f, 0.2f});
+
+    EXPECT_EQ(recordedString, "emmmmm");
+    EXPECT_EQ(recordedInt, 10);
+    EXPECT_EQ(recordedValues, (std::vector<float>{0.2f, 0.2f, 0.2f}));
+
+    fn = nullptr;
+    EXPECT_FALSE(static_cast<bool>(fn));
+
+    auto vec = std::vector<float>{0.7f, 0.7f, 0.7f};
+    fn       = [&](std::string par, int i, std::vector<float> fs) {
+        recordedString = std::move(par);
+        recordedInt    = i;
+        recordedValues = std::move(fs);
+    };
+
+    fn(std::string{"hmmmmm"}, 17, std::move(vec));
+
+    EXPECT_EQ(recordedString, "hmmmmm");
+    EXPECT_EQ(recordedInt, 17);
+    EXPECT_EQ(recordedValues, (std::vector<float>{0.7f, 0.7f, 0.7f}));
+}
+
+} // namespace

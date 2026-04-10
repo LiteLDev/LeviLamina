@@ -47,15 +47,15 @@ Generator<int> parentWithThrowingChild() {
     co_yield 2;
 }
 
-TEST(LeviLamina, GeneratorElementOfFlattensNestedGenerator) {
+TEST(GeneratorTest, GeneratorElementOfFlattensNestedGenerator) {
     EXPECT_EQ((collect(parentGenerator())), (std::vector<int>{0, 1, 2, 4}));
 }
 
-TEST(LeviLamina, GeneratorElementOfFlattensRanges) {
+TEST(GeneratorTest, GeneratorElementOfFlattensRanges) {
     EXPECT_EQ((collect(vectorAndArrayGenerator())), (std::vector<int>{1, 2, 3, 4, 5}));
 }
 
-TEST(LeviLamina, GeneratorElementOfPropagatesNestedExceptions) {
+TEST(GeneratorTest, GeneratorElementOfPropagatesNestedExceptions) {
     auto generator = parentWithThrowingChild();
     auto iter      = generator.begin();
 

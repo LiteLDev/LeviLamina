@@ -1,19 +1,18 @@
-#include "ll/api/io/FileUtils.h"
-#include "ll/api/memory/Hook.h"
+#include "gtest/gtest.h"
+
+#include "ll/api/memory/Signature.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/core/LeviLamina.h"
 
 #include "mc/deps/core/math/Color.h"
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/deps/nbt/UniqueTagPtr.h"
-#include "mc/server/ServerInstance.h"
 #include "mc/util/ColorFormat.h"
 
 #include "nlohmann/json.hpp"
 
-LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
-    origin();
+namespace {
 
+TEST(TestNbt, CompoundTagSupportsRoundTripConversionsAndNestedAccess) {
     using namespace ll::literals;
 
     auto nbt = CompoundTag{
@@ -36,11 +35,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     nbt["some"]["new"]["compound"]          = nbt;
     nbt["hello"]["789\xDB\xFE"]["\u123456"] = std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE";
-
-
-    for (auto& i : nbt["list"]) {
-        ll::getLogger().debug("iter {}", i.toSnbt(SnbtFormat::Minimize, 0));
-    }
 
     nlohmann::json j{
         { "num",         1},
@@ -105,21 +99,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     )"};
 
     auto nbt2 = CompoundTag::fromSnbt(snbt2, iter);
-
-
-    if (!nbt2) {
-
-        ll::getLogger().debug(
-            "{}, at: \"{}\"",
-            nbt2.error().message(),
-            std::string_view{
-                snbt2.data() + std::max(0ll, (int64)iter - 8ll),
-                snbt2.data() + std::min(snbt2.size() - 1, iter + 8)
-            }
-        );
-    } else {
-        ll::getLogger().debug("success {} {}", iter, snbt2.size());
-    }
+    ASSERT_TRUE(nbt2.has_value()) << nbt2.error().message();
+    EXPECT_GT(iter, 0);
 
     CompoundTag nbt3;
 
@@ -129,58 +110,39 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     nbt3["hello"][", "] = "world";
 
-    ll::getLogger().debug("\n{}", nbt3["hello"][", "] == "world");
+    EXPECT_EQ(nbt3["hello"][", "], "world");
+    EXPECT_TRUE(nbt.equals(nbt2.value()));
+    EXPECT_EQ(nbt.toSnbt(), nbt2.value().toSnbt());
 
-    ll::getLogger().debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
+    auto binaryRoundTrip1 = CompoundTag::fromBinaryNbt(nbt.toBinaryNbt());
+    auto binaryRoundTrip2 = CompoundTag::fromBinaryNbt(nbt2.value().toBinaryNbt());
+    ASSERT_TRUE(binaryRoundTrip1.has_value());
+    ASSERT_TRUE(binaryRoundTrip2.has_value());
+    EXPECT_EQ(binaryRoundTrip1.value(), binaryRoundTrip2.value());
+    EXPECT_EQ(nbt.toBinaryNbt(), nbt2.value().toBinaryNbt());
 
-    ll::getLogger().debug("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
-    ll::getLogger().debug("\n{}", nbt2.value().toSnbt(SnbtFormat::PrettyConsolePrint));
+    auto networkRoundTrip1 = CompoundTag::fromNetworkNbt(nbt.toNetworkNbt());
+    auto networkRoundTrip2 = CompoundTag::fromNetworkNbt(nbt2.value().toNetworkNbt());
+    ASSERT_TRUE(networkRoundTrip1.has_value());
+    ASSERT_TRUE(networkRoundTrip2.has_value());
+    EXPECT_EQ(networkRoundTrip1.value(), networkRoundTrip2.value());
+    EXPECT_EQ(nbt.toNetworkNbt(), nbt2.value().toNetworkNbt());
 
-    ll::getLogger().debug("\n{}", nbt3.toSnbt(SnbtFormat::PrettyConsolePrint));
-
-    ll::getLogger().debug(
-        "\n{}",
-        CompoundTagVariant::parse(StringTag{nbt2.value().toNetworkNbt()}.toSnbt())
-            ->get<StringTag>()
-            .toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
+    EXPECT_FALSE(
+        ll::string_utils::replaceMcToAnsiCode(
+            ll::string_utils::replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console))
+        )
+            .empty()
     );
+    EXPECT_FALSE(ll::string_utils::replaceMcToAnsiCode(nbt2.value().toSnbt(SnbtFormat::Colored)).empty());
 
-    ll::getLogger().debug("\n{}", nbt.equals(nbt2.value()));
-
-    ll::getLogger().debug("\n{}", nbt.toSnbt() == nbt2.value().toSnbt());
-
-    ll::getLogger().debug(
-        "\n{}",
-        CompoundTag::fromBinaryNbt(nbt.toBinaryNbt()).value()
-            == CompoundTag::fromBinaryNbt(nbt2.value().toBinaryNbt()).value()
-    );
-    ll::getLogger().debug("\n{}", nbt.toBinaryNbt() == nbt2.value().toBinaryNbt());
-
-    ll::getLogger().debug(
-        "\n{}",
-        CompoundTag::fromNetworkNbt(nbt.toNetworkNbt()).value()
-            == CompoundTag::fromNetworkNbt(nbt2.value().toNetworkNbt()).value()
-    );
-
-    ll::getLogger().debug("\n{}", nbt.toNetworkNbt() == nbt2.value().toNetworkNbt());
-
-
-    ll::getLogger().debug(ColorFormat::AQUA);
-    ll::getLogger().debug(ColorFormat::MINECOIN_GOLD);
-    ll::getLogger().debug(ColorFormat::LIGHT_PURPLE);
+    EXPECT_FALSE(std::string{ColorFormat::AQUA}.empty());
+    EXPECT_FALSE(std::string{ColorFormat::MINECOIN_GOLD}.empty());
+    EXPECT_FALSE(std::string{ColorFormat::LIGHT_PURPLE}.empty());
 
     using namespace ll::string_utils;
 
-    ll::getLogger().debug(
-        "\n{}",
-        replaceMcToAnsiCode(replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)))
-    );
-    ll::getLogger().debug("\n{}", replaceMcToAnsiCode(nbt2.value().toSnbt(SnbtFormat::Colored)));
-
-
-    ll::getLogger().debug(
-        "\n{}",
-        CompoundTag::fromSnbt(R"({
+    auto parsedMinimalChest = CompoundTag::fromSnbt(R"({
     Findable: 0b,
     Items: [],
     id: Chest,
@@ -188,21 +150,26 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     x: -3,
     y: 88,
     z: -1
-})")
-            ->toSnbt(SnbtFormat::PrettyConsolePrint)
-    );
+})");
+    ASSERT_TRUE(parsedMinimalChest.has_value());
+    EXPECT_TRUE(parsedMinimalChest->contains("id"));
 
-    ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sig.toString(false, false));
-    ll::getLogger().debug("resolve   {}", "48 8D 05 ? ? ? ? E8"_sig.resolve());
+    auto signatureString = "48 8D 05 ? ? ? ? E8"_sig.toString(false, false);
+    EXPECT_FALSE(signatureString.empty());
 
     auto nbt11 = CompoundTag{
         {"a", {{"b", {{"c", 12345}}}}}
     };
     auto nbt12 = ListTag{{ListTag{{ListTag{{54321}}}}}};
 
-    ll::getLogger().debug("nbt {}\n{}", nbt11.toSnbt(), nbt12.toSnbt());
-    ll::getLogger().debug("nbt {} {}", int{nbt11["a"]["b"]["c"]}, int{nbt12[0][0][0]});
+    EXPECT_EQ(int{nbt11["a"]["b"]["c"]}, 12345);
+    EXPECT_EQ(int{nbt12[0][0][0]}, 54321);
 
     UniqueTagPtr ptr;
     ptr.emplace<CompoundTag>();
+
+    EXPECT_NE(ptr.get(), nullptr);
+    EXPECT_FALSE(j.empty());
 }
+
+} // namespace

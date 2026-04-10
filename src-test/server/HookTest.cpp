@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+
 #include <string>
 
 #include "ll/api/memory/Hook.h"
@@ -82,6 +84,25 @@ LL_TYPE_STATIC_HOOK_EX(
     HookExTestClass&
 ) {
     return origin();
+}
+
+TEST(HookTest, InstanceHookUsesNonConstOverloadAndPreservesResult) {
+    TestOverloadClass instance;
+
+    EXPECT_EQ(instance.test(2, 3), 5);
+}
+
+TEST(HookTest, InstanceHookSupportsUncheckedFunctionPointer) {
+    TestPtrClass instance;
+
+    EXPECT_EQ(instance.test(7, 8), 15);
+}
+
+TEST(HookTest, HookExPreservesStaticSingletonIdentity) {
+    auto& instance1 = HookExTestClass::getInstance();
+    auto& instance2 = HookExTestClass::getInstance();
+
+    EXPECT_EQ(&instance1, &instance2);
 }
 } // namespace
 // NOLINTEND

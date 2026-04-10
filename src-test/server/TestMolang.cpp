@@ -1,29 +1,16 @@
+#include "gtest/gtest.h"
+
 #include "mc/util/MolangScriptArg.h"
 #include "mc/world/actor/RenderParams.h"
 
 #include "mc/util/molang/ExpressionNode.h"
 
-
-#include "ll/api/memory/Hook.h"
-#include "mc/scripting/ServerScriptManager.h"
-#include "mc/server/commands/CommandOutput.h"
-
-#include "ll/api/io/Logger.h"
-#include "ll/api/io/LoggerRegistry.h"
 #include "mc/deps/core/string/HashedString.h"
 
 
 namespace {
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    testtttt,
-    ll::memory::HookPriority::Low,
-    ServerScriptManager,
-    &ServerScriptManager::$onServerThreadStarted,
-    EventResult,
-    ::ServerInstance& ins
-) {
-    static auto ptr    = ll::io::LoggerRegistry::getInstance().getOrCreate("MolangTest");
-    auto&       logger = *ptr;
+
+TEST(TestMolang, MolangQueryFunctionsCanBeRegisteredAndEvaluated) {
 
     ExpressionNode::registerQueryFunction(
         "query.is_levilamina",
@@ -51,15 +38,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         ~0ull,
         {}
     );
-    auto parm = RenderParams();
-    logger.info(
-        "query.is_levilamina: {}",
-        ExpressionNode("query.is_levilamina", MolangVersion::Latest, {{HashedString{"default"}}}).evalAsFloat(parm)
-    );
-    logger.info(
-        "query.homo_number: {}",
-        ExpressionNode("query.homo_number", MolangVersion::Latest, {{HashedString{"default"}}}).evalAsFloat(parm)
-    );
-    return origin(ins);
+
+    auto renderParams = RenderParams();
+    auto boolQuery    = ExpressionNode("query.is_levilamina", MolangVersion::Latest, {{HashedString{"default"}}});
+    auto numQuery     = ExpressionNode("query.homo_number", MolangVersion::Latest, {{HashedString{"default"}}});
+
+    EXPECT_FLOAT_EQ(boolQuery.evalAsFloat(renderParams), 1.0f);
+    EXPECT_FLOAT_EQ(numQuery.evalAsFloat(renderParams), 114514.0f);
 }
 } // namespace
