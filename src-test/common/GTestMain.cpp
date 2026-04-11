@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include <memory>
+#include <optional>
 #include <string>
 #include <string_view>
 
@@ -8,15 +9,20 @@
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/utils/StringUtils.h"
 
-namespace {
+#include "coverage/CoverageCatalog.h"
+#include "coverage/CoverageConfig.h"
 
-ll::io::Logger& getGTestLogger() {
+#include <filesystem>
+#include <fstream>
+
+
+static ll::io::Logger& getGTestLogger() {
     static auto logger = ll::io::LoggerRegistry::getInstance().getOrCreate("GTest");
     return *logger;
 }
 static ll::io::Logger& logger = getGTestLogger();
 
-class LlTestEventListener final : public testing::TestEventListener {
+class LLTestEventListener final : public testing::TestEventListener {
 private:
     static constexpr std::string_view separator = "----------------------------------------";
 
@@ -157,6 +163,21 @@ public:
     }
 };
 
+static ll::test::coverage::CoverageConfig makeLLCoverageConfig() {
+    ll::test::coverage::CoverageConfig config;
+    config.name = "ll-tests";
+    config.sourcePathAnchors =
+        {"src\\ll", "src\\mc", "src-client\\ll", "src-client\\mc", "src-server\\ll", "src-server\\mc"};
+    config.targetSourcePrefixes =
+        {"src\\ll", "src\\mc", "src-client\\ll", "src-client\\mc", "src-server\\ll", "src-server\\mc"};
+    config.moduleFileNames          = {"LeviLamina"};
+    config.modulePathContains       = {};
+    config.fallbackToSelfModule     = true;
+    config.includeSourceFunctions   = true;
+    config.includeExportedFunctions = true;
+    return config;
+}
+
 static bool gmain = [] {
     using namespace ll;
 
@@ -164,13 +185,60 @@ static bool gmain = [] {
         testing::InitGoogleTest();
         auto& listeners = testing::UnitTest::GetInstance()->listeners();
         delete listeners.Release(listeners.default_result_printer());
-        listeners.Append(new LlTestEventListener());
+        listeners.Append(new LLTestEventListener());
+
+        auto                                coverageConfig = makeLLCoverageConfig();
+        ll::test::coverage::CoverageCatalog catalog{coverageConfig};
+        bool                                catalogOk = catalog.buildForProcess();
+        if (catalogOk) {
+            catalog.dumpStats(logger);
+        }
+        if (catalog.modules().empty()) {
+            logger.warn("CoverageCatalog found no target modules, coverage disabled");
+            catalogOk = false;
+        }
+
+        if (catalogOk) {
+            if (!catalog.startSampling()) {
+                logger.warn("CoverageCatalog startSampling failed, coverage disabled");
+            }
+        }
 
         [[maybe_unused]] auto result = RUN_ALL_TESTS();
         logger.debug("RUN_ALL_TESTS() returned {}", result);
+
+        if (catalog.isSampling()) {
+            catalog.stopSampling();
+            auto summary = catalog.summarizeHits();
+            logger.info(
+                "Coverage summary: lines {}/{} ({:.1f}%), source-fns {}/{} ({:.1f}%), exported-fns {}/{} ({:.1f}%)",
+                summary.hitLines,
+                summary.totalLines,
+                summary.totalLines ? (100.0 * summary.hitLines / summary.totalLines) : 0.0,
+                summary.hitSourceFunctions,
+                summary.totalSourceFunctions,
+                summary.totalSourceFunctions ? (100.0 * summary.hitSourceFunctions / summary.totalSourceFunctions)
+                                             : 0.0,
+                summary.hitExportedFunctions,
+                summary.totalExportedFunctions,
+                summary.totalExportedFunctions ? (100.0 * summary.hitExportedFunctions / summary.totalExportedFunctions)
+                                               : 0.0
+            );
+
+            try {
+                auto outDir = std::filesystem::path("logs") / "coverage";
+                std::filesystem::create_directories(outDir);
+                auto reportPath = outDir / "coverage_hits.json";
+                {
+                    std::ofstream reportFile(reportPath);
+                    reportFile << catalog.reportToJson().dump(2);
+                }
+                logger.info("Coverage report written to {}", reportPath.string());
+            } catch (...) {
+                logger.error("Failed to write coverage reports");
+            }
+        }
     });
 
     return true;
 }();
-
-} // namespace

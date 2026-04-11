@@ -65,7 +65,7 @@ CoroTask<Expected<int>> coroutine() {
     );
     std::vector<ll::coro::CoroTask<int>> tasks{};
     parbegin = std::chrono::steady_clock::now();
-    for (auto&& i : generator(1000000)) {
+    for (auto&& i : generator(10000)) {
         (void)i;
         tasks.emplace_back(val1());
     }

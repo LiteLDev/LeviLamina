@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include <array>
+#include <memory>
 #include <stdexcept>
 #include <vector>
 
@@ -45,6 +46,20 @@ Generator<int> parentWithThrowingChild() {
     co_yield 2;
 }
 
+Generator<int&> referenceLeafGenerator(std::array<int, 3>& values) {
+    for (auto& value : values) {
+        co_yield value;
+    }
+}
+
+Generator<int&> referenceMiddleGenerator(std::array<int, 3>& values) {
+    co_yield ElementsOf(referenceLeafGenerator(values));
+}
+
+Generator<int&> referenceRootGenerator(std::array<int, 3>& values) {
+    co_yield ElementsOf(referenceMiddleGenerator(values));
+}
+
 TEST(GeneratorTest, GeneratorElementOfFlattensNestedGenerator) {
     EXPECT_EQ((collect(parentGenerator())), (std::vector<int>{0, 1, 2, 4}));
 }
@@ -65,4 +80,20 @@ TEST(GeneratorTest, GeneratorElementOfPropagatesNestedExceptions) {
     EXPECT_EQ(*iter, 1);
 
     EXPECT_THROW(++iter, std::runtime_error);
+}
+
+TEST(GeneratorTest, GeneratorElementOfPreservesReferenceAcrossNestedGenerators) {
+    std::array<int, 3> values{1, 2, 3};
+    std::vector<int*>  refs;
+
+    for (auto& value : referenceRootGenerator(values)) {
+        refs.push_back(std::addressof(value));
+        value *= 10;
+    }
+
+    ASSERT_EQ(refs.size(), values.size());
+    for (size_t i = 0; i < values.size(); ++i) {
+        EXPECT_EQ(refs[i], std::addressof(values[i]));
+    }
+    EXPECT_EQ(values, (std::array<int, 3>{10, 20, 30}));
 }

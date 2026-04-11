@@ -93,7 +93,7 @@ struct ParamTest {
     Optional<float> p2;
     bool            p3;
 
-    enum class TestEnums { sb, sb2, CamCas } p4;
+    enum class TestEnums { sb, sb2, CamCas } p4{};
     enum class TestEnums2 { s1b, s2b2, s3j, gGG, s, sf, b };
     SoftEnum<TestEnums2> p5;
 };

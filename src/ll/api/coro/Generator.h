@@ -162,7 +162,7 @@ struct Generator {
         }
 
         template <class U>
-        auto yield_value(ElementsOf<Generator<U>> elements)
+        auto yield_value(ElementsOf<Generator<U>&&> elements)
             requires std::same_as<typename Generator<U>::yielded, yielded>
         {
             return YieldNested{std::move(elements).get()};
@@ -172,12 +172,12 @@ struct Generator {
         auto yield_value(ElementsOf<Generator<U>&> elements)
             requires std::same_as<typename Generator<U>::yielded, yielded>
         {
-            return YieldNested{std::move(elements).get()};
+            return YieldNested{std::move(elements.get())};
         }
 
         template <class Range>
-        auto yield_value(ElementsOf<Range> elements) {
-            return YieldNested{Generator::makeElementGenerator(std::move(elements).get())};
+        auto yield_value(ElementsOf<Range>&& elements) {
+            return YieldNested{Generator::makeElementGenerator(std::move(elements))};
         }
         void return_void() noexcept {}
 
@@ -251,6 +251,7 @@ struct Generator {
     [[nodiscard]] iterator end() noexcept { return {}; }
 
     constexpr Generator(Generator&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}
+    Generator(Generator const&) = delete;
 
     constexpr ~Generator() {
         if (handle) {
@@ -263,6 +264,7 @@ struct Generator {
         std::swap(other.handle, handle);
         return *this;
     }
+    Generator& operator=(Generator const&) = delete;
 
 private:
     template <class>
@@ -272,10 +274,10 @@ private:
     : handle(std::coroutine_handle<promise_type>::from_promise(promise)) {}
 
     template <class Range>
-        requires concepts::RangeLoopable<Range>
-    static Generator makeElementGenerator(Range&& range) {
-        for (auto&& element : range) {
-            co_yield element;
+        requires concepts::RangeLoopable<decltype(std::declval<ElementsOf<Range>&>().get())>
+    static Generator makeElementGenerator(ElementsOf<Range> elements) {
+        for (auto&& element : elements.get()) {
+            co_yield std::forward<decltype(element)>(element);
         }
     }
 
