@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.5] - 2026-04-11
+
+### Added
+
+- Added ElementsOf for Generator @OEOTYAN
+- Use gtest @OEOTYAN
+- Added command execution helpers and gtest coverage @OEOTYAN
+
+### Fixed
+
+- Modified FileReference, Identifier, and Reference's template parameter to int because of the MC header @ShrBox
+
 ## [26.10.4] - 2026-04-10
 
 ### Changed
@@ -1478,7 +1490,8 @@ For lip and tooth-hub test only.
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.5...HEAD
+[26.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.4...v26.10.5
 [26.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.3...v26.10.4
 [26.10.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.2...v26.10.3
 [26.10.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.1...v26.10.2
