@@ -17,7 +17,7 @@ ServerInstance& ServerStartedEvent::server() const { return mInstance; }
 
 LL_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
-    ll::memory::HookPriority::Normal,
+    ll::memory::HookPriority::Low,
     ServerScriptManager,
     &ServerScriptManager::$onServerThreadStarted,
     EventResult,

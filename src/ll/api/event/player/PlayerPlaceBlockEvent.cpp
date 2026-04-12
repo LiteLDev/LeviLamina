@@ -5,6 +5,8 @@
 
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/world/events/BlockEventCoordinator.h"
+#include "mc/world/gamemode/GameMode.h"
+#include "mc/world/gamemode/InteractionResult.h"
 #include "mc/world/level/BlockSource.h"
 
 
@@ -26,6 +28,27 @@ BlockPos const& PlayerPlaceBlockEvent::pos() const { return mPos; }
 uchar const&    PlayerPlacingBlockEvent::face() const { return mFace; }
 Block const&    PlayerPlacedBlockEvent::placedBlock() const { return mPlacedBlock; }
 
+static thread_local bool isUsingItem = false;
+
+LL_TYPE_INSTANCE_HOOK(
+    PlayerPlacingBlockEventCallerHook,
+    HookPriority::High,
+    GameMode,
+    &GameMode::$useItemOn,
+    InteractionResult,
+    ItemStack&      item,
+    BlockPos const& blockPos,
+    uchar           face,
+    Vec3 const&     clickPos,
+    Block const*    block,
+    bool            isFirstEvent
+) {
+    isUsingItem = true;
+    auto result = origin(item, blockPos, face, clickPos, block, isFirstEvent);
+    isUsingItem = false;
+    return result;
+}
+
 LL_TYPE_INSTANCE_HOOK(
     PlayerPlacingBlockEventHook,
     HookPriority::Normal,
@@ -38,7 +61,7 @@ LL_TYPE_INSTANCE_HOOK(
     ItemStackBase const& item,
     bool                 genParticle
 ) {
-    if (actor.getEntityTypeId() == ActorType::Player) {
+    if (isUsingItem && actor.getEntityTypeId() == ActorType::Player) {
         auto event = PlayerPlacingBlockEvent{static_cast<Player&>(actor), blockpos, face};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
@@ -67,7 +90,7 @@ LL_TYPE_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> placingEmitterFactory();
 class PlayerPlacingBlockEventEmitter : public Emitter<placingEmitterFactory, PlayerPlacingBlockEvent> {
-    memory::HookRegistrar<PlayerPlacingBlockEventHook> hook;
+    memory::HookRegistrar<PlayerPlacingBlockEventHook, PlayerPlacingBlockEventCallerHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> placingEmitterFactory() {
