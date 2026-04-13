@@ -13,16 +13,16 @@ class BlockType;
 namespace BlockTypeIdMappingUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void addBlockTypeIdMapping(::BlockType const& blockType, uint64 legacyId);
+MCAPI void addBlockTypeIdMapping(::BlockType const& blockType, uint64 legacyId);
 
-MCNAPI void addBlockTypeIdMappings();
+MCAPI void addBlockTypeIdMappings();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::unordered_map<uint, ::WeakPtr<::BlockType const>>& mBlockIdToVanillaBlockTypesMap();
+MCAPI ::std::unordered_map<uint, ::WeakPtr<::BlockType const>>& mBlockIdToVanillaBlockTypesMap();
 
-MCNAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
+MCAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND
 
 } // namespace BlockTypeIdMappingUtils

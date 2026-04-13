@@ -54,24 +54,24 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI MolangClientTextureSet(::MolangClientTextureSet const& rhs);
+    MCAPI MolangClientTextureSet(::MolangClientTextureSet const& rhs);
 
-    MCNAPI MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
+    MCAPI MolangClientTextureSet(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
 
-    MCNAPI MolangClientTextureSet(
+    MCAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr
     );
 
-    MCNAPI MolangClientTextureSet(
+    MCAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
         ::mce::TexturePtr     normalTexturePtr
     );
 
-    MCNAPI MolangClientTextureSet(
+    MCAPI MolangClientTextureSet(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
@@ -80,7 +80,7 @@ public:
         ::NormalTextureMode   normalTextureMode
     );
 
-    MCNAPI MolangClientTextureSet(
+    MCAPI MolangClientTextureSet(
         ::HashedString const&                     name,
         ::mce::TexturePtr                         colorTexturePtr,
         ::mce::TexturePtr                         mersTexturePtr,
@@ -90,17 +90,17 @@ public:
         ::std::optional<::MERSUniformData> const& uniformData
     );
 
-    MCNAPI ::std::unique_ptr<::MolangClientTextureSet::ExtraPBRData> _clonePBRData() const;
+    MCAPI ::std::unique_ptr<::MolangClientTextureSet::ExtraPBRData> _clonePBRData() const;
 
-    MCNAPI ::mce::ClientTexture const& getClientTexture() const;
+    MCAPI ::mce::ClientTexture const& getClientTexture() const;
 #endif
 
-    MCNAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
+    MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet&& rhs);
 
 #ifdef LL_PLAT_C
-    MCNAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
+    MCAPI ::MolangClientTextureSet& operator=(::MolangClientTextureSet const& rhs);
 
-    MCNAPI ~MolangClientTextureSet();
+    MCAPI ~MolangClientTextureSet();
 #endif
     // NOLINTEND
 
@@ -108,7 +108,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::MolangClientTextureSet const& getDefaultErrorValue();
+    MCAPI static ::MolangClientTextureSet const& getDefaultErrorValue();
 #endif
     // NOLINTEND
 
@@ -116,20 +116,20 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::MolangClientTextureSet const& rhs);
+    MCAPI void* $ctor(::MolangClientTextureSet const& rhs);
 
-    MCNAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
+    MCAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr);
 
-    MCNAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr, ::mce::TexturePtr mersTexturePtr);
+    MCAPI void* $ctor(::HashedString const& name, ::mce::TexturePtr colorTexturePtr, ::mce::TexturePtr mersTexturePtr);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
         ::mce::TexturePtr     normalTexturePtr
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const& name,
         ::mce::TexturePtr     colorTexturePtr,
         ::mce::TexturePtr     mersTexturePtr,
@@ -138,7 +138,7 @@ public:
         ::NormalTextureMode   normalTextureMode
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const&                     name,
         ::mce::TexturePtr                         colorTexturePtr,
         ::mce::TexturePtr                         mersTexturePtr,
@@ -154,7 +154,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

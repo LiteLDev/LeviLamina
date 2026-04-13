@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MolangQueryFunction(
+    MCAPI MolangQueryFunction(
         ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
         ::std::string_view                  documentation,
         uint64                              minArgumentCount,
@@ -47,13 +47,13 @@ public:
         ::MolangQueryFunctionReturnType     functionReturnType
     );
 
-    MCNAPI ~MolangQueryFunction();
+    MCAPI ~MolangQueryFunction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
         ::std::string_view                  documentation,
         uint64                              minArgumentCount,
@@ -66,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

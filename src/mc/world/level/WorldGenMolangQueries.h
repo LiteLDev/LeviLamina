@@ -5,7 +5,7 @@
 namespace WorldGenMolangQueries {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerWorldGenMolangQueries();
+MCAPI void registerWorldGenMolangQueries();
 // NOLINTEND
 
 } // namespace WorldGenMolangQueries
