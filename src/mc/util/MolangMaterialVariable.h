@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::MolangMaterialVariable& operator=(::MolangMaterialVariable&&);
+    MCFOLD ::MolangMaterialVariable& operator=(::MolangMaterialVariable&&);
     // NOLINTEND
 };

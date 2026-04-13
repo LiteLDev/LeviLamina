@@ -34,31 +34,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Actor*
+    MCAPI ::Actor*
     getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
 
-    MCNAPI ::Actor* popActor();
+    MCAPI ::Actor* popActor();
 
-    MCNAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
+    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
-    MCNAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+    MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
-    MCNAPI void restoreStackState(::MolangEvalStackState&& state);
+    MCAPI void restoreStackState(::MolangEvalStackState&& state);
 
-    MCNAPI ~MolangEvalParams();
+    MCAPI ~MolangEvalParams();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::RenderParams& mErrorRenderParams();
+    MCAPI static ::RenderParams& mErrorRenderParams();
 
-    MCNAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
+    MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

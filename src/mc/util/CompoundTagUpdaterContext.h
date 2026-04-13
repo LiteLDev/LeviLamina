@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class CompoundTagUpdater;
 class CompoundTagUpdaterNodeBuilder;
 // clang-format on
 
@@ -15,21 +16,15 @@ class CompoundTagUpdaterContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2572ce;
-    ::ll::UntypedStorage<8, 24> mUnkfe1271;
+    ::ll::TypedStorage<1, 1, uchar>                                                   mUpdaterVersion;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTagUpdater>>> mUpdaters;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompoundTagUpdaterContext& operator=(CompoundTagUpdaterContext const&);
-    CompoundTagUpdaterContext(CompoundTagUpdaterContext const&);
-    CompoundTagUpdaterContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTagUpdaterNodeBuilder addUpdater(uchar major, uchar minor, uchar patch);
+    MCAPI ::CompoundTagUpdaterNodeBuilder addUpdater(uchar major, uchar minor, uchar patch);
 
-    MCNAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
+    MCAPI ::CompoundTagUpdaterResult update(::CompoundTag& tag, uint version) const;
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/CompoundTagUpdater.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTagEditHelper;
@@ -11,7 +14,7 @@ class CompoundTagUpdaterNodeBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8cf5d3;
+    ::ll::TypedStorage<8, 8, ::CompoundTagUpdater::Node&> mUpdaterNode;
     // NOLINTEND
 
 public:
@@ -23,26 +26,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
+    MCAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder&
+    MCAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
+    MCAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder&
+    MCAPI ::CompoundTagUpdaterNodeBuilder&
     tryEdit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
+    MCAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
     // NOLINTEND
 };

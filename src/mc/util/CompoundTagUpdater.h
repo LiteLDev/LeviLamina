@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class CompoundTagEditHelper;
 // clang-format on
 
 class CompoundTagUpdater {
@@ -19,34 +20,22 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkc85b07;
-        ::ll::UntypedStorage<8, 24> mUnk2d58b7;
-        ::ll::UntypedStorage<8, 24> mUnkbd28d9;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::function<bool(::CompoundTagEditHelper&)>>> mFilters;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(::CompoundTagEditHelper&)>>> mUpdates;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CompoundTagUpdater::Node>>>   mChildren;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Node& operator=(Node const&);
-        Node(Node const&);
-        Node();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke350b7;
-    ::ll::UntypedStorage<8, 72> mUnk14c4aa;
+    ::ll::TypedStorage<4, 4, uint>                        mVersion;
+    ::ll::TypedStorage<8, 72, ::CompoundTagUpdater::Node> mHead;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompoundTagUpdater& operator=(CompoundTagUpdater const&);
-    CompoundTagUpdater(CompoundTagUpdater const&);
-    CompoundTagUpdater();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
+    MCAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
     // NOLINTEND
 };

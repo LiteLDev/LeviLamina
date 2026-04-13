@@ -29,24 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NamedMolangScript(::HashedString const& name, ::ExpressionNode const& script);
+    MCAPI NamedMolangScript(::HashedString const& name, ::ExpressionNode const& script);
 
 #ifdef LL_PLAT_S
-    MCNAPI ::NamedMolangScript& operator=(::NamedMolangScript const&);
+    MCAPI ::NamedMolangScript& operator=(::NamedMolangScript const&);
 #endif
 
-    MCNAPI ~NamedMolangScript();
+    MCAPI ~NamedMolangScript();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString const& name, ::ExpressionNode const& script);
+    MCAPI void* $ctor(::HashedString const& name, ::ExpressionNode const& script);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
