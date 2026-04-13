@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.7] - 2026-04-13
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.10.5-server.11 and v26.10.5-client.11
+
+### Fixed
+
+- Corrected block placing trigger and add BlockPos tests @OEOTYAN
+
 ## [26.10.6] - 2026-04-12
 
 ### Added
@@ -1505,7 +1515,8 @@ For lip and tooth-hub test only.
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.6...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.7...HEAD
+[26.10.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.6...v26.10.7
 [26.10.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.5...v26.10.6
 [26.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.4...v26.10.5
 [26.10.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.3...v26.10.4

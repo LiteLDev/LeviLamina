@@ -30,8 +30,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mHasPublicVariables;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
+#ifdef LL_PLAT_S
     MolangVariableMap(MolangVariableMap const& rhs) {
         mMapFromVariableIndexToVariableArrayOffset = rhs.mMapFromVariableIndexToVariableArrayOffset;
         mVariables                                 = {};
@@ -40,13 +40,13 @@ public:
         }
         mHasPublicVariables = rhs.mHasPublicVariables;
     }
+#else // LL_PLAT_C
+#endif
 
     void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value) {
         setMolangVariable(variableName.getHash(), variableName.c_str(), value);
     }
 
-#else // LL_PLAT_C
-#endif
 public:
     // member functions
     // NOLINTBEGIN
