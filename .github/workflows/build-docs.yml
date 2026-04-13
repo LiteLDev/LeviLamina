@@ -81,7 +81,7 @@ jobs:
           tar -xvf artifacts/doxygen-pages/artifact.tar -C site/
           tar -xvf artifacts/mkdocs-pages/artifact.tar -C site/
 
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site/
 
