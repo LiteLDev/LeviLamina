@@ -14,5 +14,5 @@ LLNDAPI Unexpected makeDeserStringTypeError() noexcept;
 LLNDAPI Unexpected makeDeserArrayTypeError() noexcept;
 LLNDAPI Unexpected makeDeserObjectTypeError() noexcept;
 LLNDAPI Unexpected makeDeserArraySizeError(std::size_t expectedSize) noexcept;
-LLNDAPI Unexpected makeDeserMissingRequiredFieldError(std::string_view fieldName) noexcept;
+LLNDAPI Unexpected makeDeserMissingRequiredFieldError(std::string const& fieldName) noexcept;
 } // namespace ll::reflection

@@ -46,7 +46,15 @@ struct ExceptionError : ErrorInfoBase {
 #else
 struct ErrorInfoBase::Impl {};
 ErrorInfoBase::ErrorInfoBase() noexcept {}
-std::string Error::message() const noexcept { return message({}); }
+
+std::string Error::message(std::string_view locale) const noexcept try {
+    if (!mInfo) {
+        return "success"_trl(locale);
+    }
+    return mInfo->message(locale);
+} catch (...) {
+    return "unknown"_trl(locale);
+}
 
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
@@ -54,6 +62,8 @@ struct ExceptionError : ErrorInfoBase {
     std::string message(std::string_view) const noexcept override { return error_utils::makeExceptionString(exc); }
 };
 #endif
+
+std::string Error::message() const noexcept { return message({}); }
 
 ErrorInfoBase::~ErrorInfoBase() = default;
 
@@ -80,15 +90,6 @@ struct ErrorList : ErrorInfoBase {
         return result;
     }
 };
-
-std::string Error::message(std::string_view locale) const noexcept try {
-    if (!mInfo) {
-        return "success"_trl(locale);
-    }
-    return locale.empty() ? message() : mInfo->message(locale);
-} catch (...) {
-    return "unknown"_trl(locale);
-}
 
 Error& Error::join(Error err) noexcept {
     if (!err) {

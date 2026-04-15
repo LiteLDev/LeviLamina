@@ -55,7 +55,7 @@ Unexpected makeDeserArraySizeError(std::size_t expectedSize) noexcept {
     return makeI18nStringError<"array size must be {0}">(expectedSize);
 }
 
-Unexpected makeDeserMissingRequiredFieldError(std::string_view fieldName) noexcept {
+Unexpected makeDeserMissingRequiredFieldError(std::string const& fieldName) noexcept {
     return makeI18nStringError<"missing required field \"{0}\" when deserializing">(fieldName);
 }
 } // namespace ll::reflection
