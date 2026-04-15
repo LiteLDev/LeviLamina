@@ -45,7 +45,9 @@ public:
     [[nodiscard]] CompoundTagVariant&       operator[](std::string_view index);
     [[nodiscard]] CompoundTagVariant const& operator[](std::string_view index) const;
 
-    [[nodiscard]] CompoundTagVariant&       at(std::string_view index) { return operator[](index); }
+    [[nodiscard]] CompoundTagVariant& at(std::string_view index) {
+        return const_cast<CompoundTagVariant&>(std::as_const(*this).operator[](index));
+    }
     [[nodiscard]] CompoundTagVariant const& at(std::string_view index) const { return operator[](index); }
 
     LLNDAPI static ll::Expected<CompoundTag>
