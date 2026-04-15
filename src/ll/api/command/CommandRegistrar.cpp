@@ -12,6 +12,7 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/OverloadData.h"
 #include "ll/api/command/runtime/RuntimeEnum.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -96,7 +97,7 @@ Expected<std::unique_ptr<::Command>> CommandRegistrar::compileCommand(
 ) const noexcept try {
     auto minecraft = service::getMinecraft(isClient);
     if (!minecraft.has_value()) {
-        return makeStringError("Minecraft service is unavailable");
+        return makeI18nStringError<"Minecraft service is unavailable">();
     }
     auto&        commands      = *minecraft->mCommands;
     HashedString hashedCommand = commandStr;
@@ -106,7 +107,7 @@ Expected<std::unique_ptr<::Command>> CommandRegistrar::compileCommand(
             error.join(makeStringError(errMsg));
         });
         if (!compiled && !error) {
-            return makeStringError("compileCommand returned nullptr");
+            return makeI18nStringError<"compileCommand returned nullptr">();
         }
         if (error) {
             return forwardError(error);
@@ -115,12 +116,12 @@ Expected<std::unique_ptr<::Command>> CommandRegistrar::compileCommand(
     auto& compiledCommandMap = *commands.mCompiledCommandMap;
     auto  compiledIt         = compiledCommandMap.find(hashedCommand);
     if (compiledIt == compiledCommandMap.end()) {
-        return makeStringError("compiled command was not stored in mCompiledCommandMap");
+        return makeI18nStringError<"compiled command was not stored in mCompiledCommandMap">();
     }
     auto ownedCommand = std::move(compiledIt->second);
     compiledCommandMap.erase(compiledIt);
     if (!ownedCommand) {
-        return makeStringError("compiled command ownership transfer failed");
+        return makeI18nStringError<"compiled command ownership transfer failed">();
     }
     return ownedCommand;
 } catch (...) {
@@ -138,11 +139,15 @@ LLAPI void printCommandError(::Command const& command, ::CommandOutput& output) 
     error_utils::printCurrentException(getLogger());
 }
 
-void mayPrintCommandError(::Command const& command, ::CommandOutput& output) {
+void mayPrintCommandError(::Command const& command, ::CommandOutput& output, CommandOrigin const& origin) {
     if (isExecutingCommand) {
         throw;
     }
-    printCommandError(command, output);
+    try {
+        getLogger().error("Error in command {}:"_tr(command.getCommandName()));
+        output.error("command threw an exception"_trl(origin.getLocaleCode()));
+    } catch (...) {}
+    error_utils::printCurrentException(getLogger());
 }
 } // namespace detail
 

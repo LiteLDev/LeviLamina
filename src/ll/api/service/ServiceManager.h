@@ -25,7 +25,7 @@ struct GetServiceError : ErrorInfoBase {
 
     GetServiceError(ErrorType code, size_t version = 0) : code(code), version(version) {}
 
-    LLAPI std::string message() const noexcept override;
+    LLAPI std::string message(std::string_view locale) const noexcept override;
 };
 
 struct QueryServiceResult {

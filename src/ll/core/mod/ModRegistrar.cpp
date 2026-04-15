@@ -60,7 +60,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
-        return makeStringError("Manifest is not a valid JSON text"_tr());
+        return makeI18nStringError<"Manifest is not a valid JSON text">();
     }
     return ::ll::reflection::deserialize_to<Manifest>(json).and_then([&](auto&& manifest) -> Expected<Manifest> {
         using namespace pl;
@@ -68,7 +68,7 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
             return makeSuccessed(); // bypass preloader mod
         }
         if (std::string dirName = string_utils::u8str2str(dir.filename().u8string()); manifest.name != dirName) {
-            return makeStringError("Mod name {0} do not match folder {1}"_tr(manifest.name, dirName));
+            return makeI18nStringError<"Mod name {0} do not match folder {1}">(manifest.name, dirName);
         }
         return manifest;
     });
@@ -336,10 +336,10 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     if (!res) {
         if (res.error()) {
             return forwardError(
-                makeStringError("Failed to load manifest for {0}"_tr(name)).error().join(std::move(res.error()))
+                makeI18nStringError<"Failed to load manifest for {0}">(name).error().join(std::move(res.error()))
             );
         } else {
-            return makeStringError("Mod does not exist, or the manifest is empty"_tr());
+            return makeI18nStringError<"Mod does not exist, or the manifest is empty">();
         }
     }
     auto& manifest = *res;
@@ -347,23 +347,21 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     if (manifest.platform) {
         if (isClient()) {
             if (*manifest.platform != "client" && *manifest.platform != "universal") {
-                return makeStringError("{0} is not compatible with client platform"_tr(name));
+                return makeI18nStringError<"{0} is not compatible with client platform">(name);
             }
         } else {
             if (*manifest.platform != "server" && *manifest.platform != "universal") {
-                return makeStringError("{0} is not compatible with server platform"_tr(name));
+                return makeI18nStringError<"{0} is not compatible with server platform">(name);
             }
         }
     }
     if (manifest.dependencies) {
         for (auto& dependency : *manifest.dependencies) {
             if (!reg.hasMod(dependency.name) || !checkVersion(reg.getMod(dependency.name)->getManifest(), dependency)) {
-                return makeStringError(
-                    "Missing dependency {0}"_tr(dependency.version
-                                                    .transform([&](auto& ver) {
-                                                        return fmt::format("{} v{}", dependency.name, ver.to_string());
-                                                    })
-                                                    .value_or(dependency.name))
+                return makeI18nStringError<"Missing dependency {0}">(
+                    dependency.version
+                        .transform([&](auto& ver) { return fmt::format("{} v{}", dependency.name, ver.to_string()); })
+                        .value_or(dependency.name)
                 );
             }
         }
@@ -371,13 +369,12 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
     if (manifest.conflicts) {
         for (auto& conflict : *manifest.conflicts) {
             if (reg.hasMod(conflict.name) && checkVersion(reg.getMod(conflict.name)->getManifest(), conflict)) {
-                return makeStringError(
-                    "{0} conflicts with {1}"_tr(
-                        name,
-                        conflict.version
-                            .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
-                            .value_or(conflict.name)
-                    )
+                return makeI18nStringError<"{0} conflicts with {1}">(
+                    name,
+                    conflict.version
+                        .transform([&](auto& ver) { return fmt::format("{} v{}", conflict.name, ver.to_string()); })
+                        .value_or(conflict.name)
+
                 );
             }
         }
@@ -403,7 +400,7 @@ Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
     auto            dependents = impl->deps.dependentBy(std::string{name});
     if (!dependents.empty()) {
-        return makeStringError("{0} still depends on {1}"_tr(dependents, name));
+        return makeI18nStringError<"{0} still depends on {1}">(dependents, name);
     }
     return impl->registry.unloadMod(name).transform([&, this]() { impl->deps.erase(std::string{name}); });
 }
@@ -420,7 +417,7 @@ Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
         }
     }
     if (!dependents.empty()) {
-        return makeStringError("Dependency {0} of {1} is not enabled"_tr(dependents, name));
+        return makeI18nStringError<"Dependency {0} of {1} is not enabled">(dependents, name);
     }
     return registry.enableMod(name);
 }
@@ -435,7 +432,7 @@ Expected<> ModRegistrar::disableMod(std::string_view name) noexcept {
         return true;
     });
     if (!dependents.empty()) {
-        return makeStringError("{0} still depends on {1}"_tr(dependents, name));
+        return makeI18nStringError<"{0} still depends on {1}">(dependents, name);
     }
     return registry.disableMod(name);
 }

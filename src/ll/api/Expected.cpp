@@ -1,4 +1,5 @@
 #include "ll/api/Expected.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -15,16 +16,16 @@ struct ErrorInfoBase::Impl {
     Stacktrace stacktrace;
 };
 ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>(Stacktrace::current(1))) {}
-std::string Error::message() const noexcept try {
+std::string Error::message(std::string_view locale) const noexcept try {
     if (!mInfo) {
-        return "success";
+        return "success"_trl(locale);
     }
-    auto res  = mInfo->message();
+    auto res  = mInfo->message(locale);
     res      += "\nexpected stacktrace:\n";
     res      += stacktrace_utils::toString(mInfo->impl->stacktrace);
     return res;
 } catch (...) {
-    return "unknown";
+    return "unknown"_trl(locale);
 }
 
 struct ExceptionError : ErrorInfoBase {
@@ -33,7 +34,7 @@ struct ExceptionError : ErrorInfoBase {
     ExceptionError(std::exception_ptr const& exc) noexcept
     : exc(exc),
       stacktrace(error_utils::stacktraceFromCurrentException()) {}
-    [[nodiscard]] std::string message() const noexcept override {
+    [[nodiscard]] std::string message(std::string_view) const noexcept override {
         auto res = error_utils::makeExceptionString(exc);
         if (!stacktrace.empty()) {
             res += "\nexception stacktrace:\n";
@@ -45,14 +46,12 @@ struct ExceptionError : ErrorInfoBase {
 #else
 struct ErrorInfoBase::Impl {};
 ErrorInfoBase::ErrorInfoBase() noexcept {}
-std::string Error::message() const noexcept try { return mInfo ? mInfo->message() : "success"; } catch (...) {
-    return "unknown";
-}
+std::string Error::message() const noexcept { return message({}); }
 
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
     ExceptionError(std::exception_ptr const& exc) noexcept : exc(exc) {}
-    std::string message() const noexcept override { return error_utils::makeExceptionString(exc); }
+    std::string message(std::string_view) const noexcept override { return error_utils::makeExceptionString(exc); }
 };
 #endif
 
@@ -69,11 +68,11 @@ Unexpected makeExceptionError(std::exception_ptr const& exc) noexcept {
 struct ErrorList : ErrorInfoBase {
     std::vector<std::shared_ptr<ErrorInfoBase>> errors;
     ErrorList() noexcept = default;
-    [[nodiscard]] std::string message() const noexcept override {
+    [[nodiscard]] std::string message(std::string_view locale) const noexcept override {
         std::string result;
 
         for (size_t i = 0; i < errors.size(); i++) {
-            result += errors[i]->message();
+            result += errors[i]->message(locale);
             if (i + 1 < errors.size()) {
                 result += '\n';
             }
@@ -81,6 +80,15 @@ struct ErrorList : ErrorInfoBase {
         return result;
     }
 };
+
+std::string Error::message(std::string_view locale) const noexcept try {
+    if (!mInfo) {
+        return "success"_trl(locale);
+    }
+    return locale.empty() ? message() : mInfo->message(locale);
+} catch (...) {
+    return "unknown"_trl(locale);
+}
 
 Error& Error::join(Error err) noexcept {
     if (!err) {
@@ -110,33 +118,25 @@ Error& Error::join(Error err) noexcept {
     }
     return *this;
 }
-LLAPI Error const& Error::log(io::Logger& l, io::LogLevel level) const noexcept {
-    auto msg = message();
-    for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
-        if (sv.ends_with('\r')) {
-            sv.remove_suffix(1);
-        }
-        if (sv.starts_with('\r')) {
-            sv.remove_prefix(1);
-        }
-        l.log(level, sv);
-    }
-    return *this;
+Error const& Error::log(io::Logger& l, io::LogLevel level) const noexcept { return log(l, {}, level); }
+Error const& Error::log(io::Logger& l, std::string_view locale, io::LogLevel level) const noexcept {
+    return log([&](std::string_view msg) { l.log(level, msg); }, locale);
 }
-LLAPI Error const& Error::log(CommandOutput& stream, CommandOutputMessageType type) const noexcept {
-    auto msg = message();
-    for (auto& sv : string_utils::splitByPattern(msg, "\n")) {
+Error const& Error::log(CommandOutput& stream, CommandOutputMessageType type) const noexcept {
+    return log(stream, {}, type);
+}
+Error const& Error::log(CommandOutput& stream, std::string_view locale, CommandOutputMessageType type) const noexcept {
+    return log([&](std::string_view msg) { stream.addMessage(msg, {}, type); }, locale);
+}
+Error const& Error::log(brstd::function_ref<void(std::string_view msg)> out, std::string_view locale) const noexcept {
+    for (std::string_view sv : string_utils::splitByPattern(message(locale), "\n")) {
         if (sv.ends_with('\r')) {
             sv.remove_suffix(1);
         }
         if (sv.starts_with('\r')) {
             sv.remove_prefix(1);
         }
-        if (type == CommandOutputMessageType::Error) {
-            stream.error(sv);
-        } else {
-            stream.success(sv);
-        }
+        out(sv);
     }
     return *this;
 }

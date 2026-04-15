@@ -39,7 +39,7 @@ void RuntimeCommand::execute(class CommandOrigin const& origin, class CommandOut
     try {
         executor(origin, output, *this);
     } catch (...) {
-        ::ll::command::detail::mayPrintCommandError(*this, output);
+        ::ll::command::detail::mayPrintCommandError(*this, output, origin);
     }
 }
 ParamStorageType const& RuntimeCommand::operator[](std::string_view name) const {

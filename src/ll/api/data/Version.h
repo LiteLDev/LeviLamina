@@ -15,6 +15,7 @@
 #include <variant>
 #include <vector>
 
+#include "ll/api/reflection/ReflectionError.h"
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -310,7 +311,7 @@ template <class T, class J>
             return makeErrorCodeError(res.ec);
         }
     } else {
-        return makeStringError("field must be a string");
+        return reflection::makeDeserStringTypeError();
     }
 }
 

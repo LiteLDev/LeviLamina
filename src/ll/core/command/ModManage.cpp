@@ -67,7 +67,7 @@ void registerModManageCommand(bool isClientSide) {
                 output.success("Load mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
             } else {
                 output.error("Failed to load mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                res.error().log(output);
+                res.error().log(output, origin.getLocaleCode());
             }
         }
     );
@@ -86,7 +86,7 @@ void registerModManageCommand(bool isClientSide) {
                     output.success("Unload mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to unload mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                    res.error().log(output);
+                    res.error().log(output, origin.getLocaleCode());
                 }
                 break;
             case LeviCommandOperation::reload:
@@ -94,7 +94,7 @@ void registerModManageCommand(bool isClientSide) {
                     output.success("Reload mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to reload mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                    res.error().log(output);
+                    res.error().log(output, origin.getLocaleCode());
                 }
                 break;
             case LeviCommandOperation::reactivate:
@@ -102,7 +102,7 @@ void registerModManageCommand(bool isClientSide) {
                     output.success("Reactivate mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to reactivate mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                    res.error().log(output);
+                    res.error().log(output, origin.getLocaleCode());
                 }
                 break;
             default:
@@ -124,7 +124,7 @@ void registerModManageCommand(bool isClientSide) {
                     output.success("Enable mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to enable mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                    res.error().log(output);
+                    res.error().log(output, origin.getLocaleCode());
                 }
                 break;
             case LeviCommandOperation2::disable:
@@ -132,7 +132,7 @@ void registerModManageCommand(bool isClientSide) {
                     output.success("Disable mod {0} successfully"_trl(origin.getLocaleCode(), param.mod));
                 } else {
                     output.error("Failed to disable mod {0}"_trl(origin.getLocaleCode(), param.mod));
-                    res.error().log(output);
+                    res.error().log(output, origin.getLocaleCode());
                 }
                 break;
             case LeviCommandOperation2::show: {

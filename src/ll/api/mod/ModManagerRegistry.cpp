@@ -52,7 +52,7 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
     std::lock_guard lock(impl->modMtx);
     if (hasManager(manifest.type)) {
         if (hasMod(manifest.name)) {
-            return makeStringError("Mod {0} already loaded"_tr(manifest.name));
+            return makeI18nStringError<"Mod {0} already loaded">(manifest.name);
         }
         std::string name = manifest.name;
         std::string type = manifest.type;
@@ -60,7 +60,7 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
             impl->loadedMods.insert_or_assign(std::move(name), std::move(type)).first;
         });
     } else {
-        return makeStringError("Unrecognized mod type: {0}"_tr(manifest.type));
+        return makeI18nStringError<"Unrecognized mod type: {0}">(manifest.type);
     }
 } catch (...) {
     return makeExceptionError();
@@ -69,7 +69,7 @@ Expected<> ModManagerRegistry::loadMod(Manifest manifest) noexcept try {
 Expected<> ModManagerRegistry::unloadMod(std::string_view name) noexcept try {
     std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
-        return makeStringError("Mod {0} not found"_tr(name));
+        return makeI18nStringError<"Mod {0} not found">(name);
     }
     return getManagerForMod(name)->unload(name).transform([&, this] { impl->loadedMods.erase(std::string{name}); });
 } catch (...) {
@@ -79,10 +79,10 @@ Expected<> ModManagerRegistry::unloadMod(std::string_view name) noexcept try {
 Expected<> ModManagerRegistry::enableMod(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
-        return makeStringError("Mod {0} not found"_tr(name));
+        return makeI18nStringError<"Mod {0} not found">(name);
     }
     if (getMod(name)->isEnabled()) {
-        return makeStringError("Mod {0} already enabled"_tr(name));
+        return makeI18nStringError<"Mod {0} already enabled">(name);
     }
     return getManagerForMod(name)->enable(name);
 } catch (...) {
@@ -92,10 +92,10 @@ Expected<> ModManagerRegistry::enableMod(std::string_view name) const noexcept t
 Expected<> ModManagerRegistry::disableMod(std::string_view name) const noexcept try {
     std::lock_guard lock(impl->modMtx);
     if (!hasMod(name)) {
-        return makeStringError("Mod {0} not found"_tr(name));
+        return makeI18nStringError<"Mod {0} not found">(name);
     }
     if (getMod(name)->isDisabled()) {
-        return makeStringError("Mod {0} already disabled"_tr(name));
+        return makeI18nStringError<"Mod {0} already disabled">(name);
     }
     return getManagerForMod(name)->disable(name);
 } catch (...) {

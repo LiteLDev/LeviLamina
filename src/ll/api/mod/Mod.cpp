@@ -105,7 +105,7 @@ Expected<> Mod::onLoad() noexcept {
             }
             return {};
         } else {
-            return makeStringError("The mod cannot be loaded"_tr());
+            return makeI18nStringError<"The mod cannot be loaded">();
         }
     } catch (...) {
         return makeExceptionError();
@@ -120,7 +120,7 @@ Expected<> Mod::onUnload() noexcept {
         if (!mImpl->onUnload || mImpl->onUnload(*this)) {
             return ModManagerRegistry::getInstance().onModUnload(getName());
         } else {
-            return makeStringError("The mod cannot be unloaded"_tr());
+            return makeI18nStringError<"The mod cannot be unloaded">();
         }
     } catch (...) {
         return makeExceptionError();
@@ -139,7 +139,7 @@ Expected<> Mod::onEnable() noexcept {
             setState(State::Enabled);
             return {};
         } else {
-            return makeStringError("The mod cannot be enabled"_tr());
+            return makeI18nStringError<"The mod cannot be enabled">();
         }
     } catch (...) {
         return makeExceptionError();
@@ -158,7 +158,7 @@ Expected<> Mod::onDisable() noexcept {
             setState(State::Disabled);
             return {};
         } else {
-            return makeStringError("The mod cannot be disabled"_tr());
+            return makeI18nStringError<"The mod cannot be disabled">();
         }
     } catch (...) {
         return makeExceptionError();

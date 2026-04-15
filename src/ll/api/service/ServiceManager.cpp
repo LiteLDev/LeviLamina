@@ -3,14 +3,15 @@
 #include "ll/api/base/Containers.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/service/ServiceEvents.h"
+#include "ll/api/i18n/I18n.h"
 
 namespace ll::service {
-std::string GetServiceError::message() const noexcept {
+std::string GetServiceError::message(std::string_view locale) const noexcept {
     switch (code) {
     case NotExist:
-        return "service not exist";
+        return "service not exist"_trl(locale);
     case VersionMismatch:
-        return fmt::format("service version mismatch [{}]", version);
+        return "service version mismatch [{}]"_trl(locale, version);
     default:
         LL_UNREACHABLE;
     }

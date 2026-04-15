@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ll/api/reflection/Reflection.h"
-#include "ll/api/reflection/SerializationError.h"
+#include "ll/api/reflection/ReflectionError.h"
 
 // Priority:
 // 5. IsVectorBase IsDispatcher IsOptional
@@ -87,15 +87,14 @@ template <class T, class J>
 inline Expected<> deserialize_impl(T& str, J&& j, meta::PriorityTag<4>)
     requires(concepts::IsString<T> && std::is_assignable_v<T, std::string>)
 {
-    if (!j.is_string()) return makeStringError("field must be a string");
+    if (!j.is_string()) return makeDeserStringTypeError();
     str = std::string{std::forward<J>(j)};
     return {};
 }
 template <concepts::TupleLike T, class J>
 inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<3>) {
-    if (!j.is_array()) return makeStringError("field must be an array");
-    if (j.size() != std::tuple_size_v<T>)
-        return makeStringError(fmt::format("array size must be {}", std::tuple_size_v<T>));
+    if (!j.is_array()) return makeDeserArrayTypeError();
+    if (j.size() != std::tuple_size_v<T>) return makeDeserArraySizeError(std::tuple_size_v<T>);
     Expected<> res{};
     std::apply(
         [&](auto&... args) {
@@ -115,7 +114,7 @@ inline Expected<> deserialize_impl(T& tuple, J&& j, meta::PriorityTag<3>) {
 }
 template <concepts::ArrayLike T, class J>
 inline Expected<> deserialize_impl(T& arr, J&& j, meta::PriorityTag<2>) {
-    if (!j.is_array()) return makeStringError("field must be an array");
+    if (!j.is_array()) return makeDeserArrayTypeError();
     using value_type = typename T::value_type;
     if constexpr (requires(T a) { a.clear(); }) {
         arr.clear();
@@ -145,7 +144,7 @@ inline Expected<> deserialize_impl(T& map, J const& j, meta::PriorityTag<2>) {
         (concepts::IsString<typename T::key_type> || std::is_enum_v<typename T::key_type>),
         "the key type of the associative container must be convertible to a string"
     );
-    if (!j.is_object()) return makeStringError("field must be an object");
+    if (!j.is_object()) return makeDeserObjectTypeError();
     map.clear();
     for (auto&& [k, v] : j.items()) {
         if constexpr (concepts::IsString<typename T::key_type>) {
@@ -174,7 +173,7 @@ template <Reflectable T, class J>
 inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>) {
     Expected<> res;
     if (!j.is_object()) {
-        res = makeStringError("field must be an object");
+        res = makeDeserObjectTypeError();
         return res;
     }
     forEachMember(obj, [&](std::string_view name, auto& member) {
@@ -192,7 +191,7 @@ inline Expected<> deserialize_impl(T& obj, J const& j, meta::PriorityTag<1>) {
             }
         } else {
             if constexpr (!concepts::IsOptional<member_type>) {
-                res = makeStringError(fmt::format("missing required field \"{}\" when deserializing", sname));
+                res = makeDeserMissingRequiredFieldError(sname);
             } else {
                 member = std::nullopt;
             }

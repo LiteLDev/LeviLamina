@@ -28,7 +28,8 @@ public:
     LLAPI ErrorInfoBase() noexcept;
     LLAPI virtual ~ErrorInfoBase();
 
-    virtual std::string message() const noexcept = 0;
+    virtual std::string message() const noexcept { return message({}); }
+    virtual std::string message(std::string_view locale) const noexcept = 0;
 };
 class Error {
     mutable std::unique_ptr<ErrorInfoBase> mInfo;
@@ -54,6 +55,8 @@ public:
 
     LLNDAPI std::string message() const noexcept;
 
+    LLNDAPI std::string message(std::string_view locale) const noexcept;
+
     template <class T>
     LL_CONSTEXPR23 bool isA() noexcept {
         return mInfo ? typeid(T) == typeid(*mInfo) : false;
@@ -64,34 +67,54 @@ public:
     }
     LLAPI Error& join(Error) noexcept;
 
+    Error& join(Unexpected err) noexcept { return join(std::move(err.error())); }
+
     LLAPI Error const& log(io::Logger&, io::LogLevel = io::LogLevel::Error) const noexcept;
 
+    LLAPI Error const& log(io::Logger&, std::string_view locale, io::LogLevel = io::LogLevel::Error) const noexcept;
+
     LLAPI Error const& log(CommandOutput&, CommandOutputMessageType = CommandOutputMessageType::Error) const noexcept;
+
+    LLAPI Error const&
+    log(CommandOutput&,
+        std::string_view locale,
+        CommandOutputMessageType = CommandOutputMessageType::Error) const noexcept;
+
+    LLAPI Error const&
+    log(brstd::function_ref<void(std::string_view msg)> out, std::string_view locale = {}) const noexcept;
 };
 
 struct StringError : ErrorInfoBase {
     std::string str;
     StringError(std::string str) : str(std::move(str)) {}
-    std::string message() const noexcept override { return str; }
+    std::string message(std::string_view) const noexcept override { return str; }
 };
 struct ErrorCodeError : ErrorInfoBase {
     std::error_code ec;
     ErrorCodeError(std::error_code ec) : ec(ec) {}
-    std::string message() const noexcept override { return ec.message(); }
+    std::string message(std::string_view) const noexcept override { return ec.message(); }
 };
-inline Unexpected forwardError(::ll::Error& err) noexcept { return ::nonstd::make_unexpected(std::move(err)); }
+[[nodiscard]] inline Unexpected forwardError(::ll::Error& err) noexcept {
+    return ::nonstd::make_unexpected(std::move(err));
+}
 
-inline Unexpected makeSuccessed() noexcept { return ::nonstd::make_unexpected(Error{}); }
+[[nodiscard]] inline Unexpected makeSuccessed() noexcept { return ::nonstd::make_unexpected(Error{}); }
 
 template <std::derived_from<::ll::ErrorInfoBase> T, class... Args>
-inline Unexpected makeError(Args&&... args) noexcept {
+[[nodiscard]] LL_CONSTEXPR23 inline Unexpected makeError(Args&&... args) noexcept {
     return ::nonstd::make_unexpected<Error>(std::in_place, std::make_unique<T>(std::forward<Args>(args)...));
 }
-inline Unexpected makeStringError(std::string str) noexcept { return makeError<StringError>(std::move(str)); }
+[[nodiscard]] inline Unexpected makeStringError(std::string str) noexcept {
+    return makeError<StringError>(std::move(str));
+}
 
-inline Unexpected makeErrorCodeError(std::error_code ec) noexcept { return makeError<ErrorCodeError>(ec); }
+[[nodiscard]] inline Unexpected makeErrorCodeError(std::error_code ec) noexcept {
+    return makeError<ErrorCodeError>(ec);
+}
 
-inline Unexpected makeErrorCodeError(std::errc ec) noexcept { return makeError<ErrorCodeError>(make_error_code(ec)); }
+[[nodiscard]] inline Unexpected makeErrorCodeError(std::errc ec) noexcept {
+    return makeError<ErrorCodeError>(make_error_code(ec));
+}
 
 LLNDAPI Unexpected makeExceptionError(std::exception_ptr const& exc = std::current_exception()) noexcept;
 

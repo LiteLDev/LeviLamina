@@ -75,7 +75,7 @@ static void addNestedData(I18n& i18n, std::string_view code, nlohmann::json cons
 
 Expected<> I18n::load(std::filesystem::path const& path) noexcept try {
     if (!exists(path)) {
-        return makeStringError("Path not found");
+        return makeI18nStringError<"Path not found: {}">(path.string());
     }
     if (is_directory(path)) {
         for (auto& f : std::filesystem::directory_iterator(path)) {

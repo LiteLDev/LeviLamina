@@ -8,6 +8,7 @@
 #include <expected>
 #endif
 
+#include "fmt/args.h"    // IWYU pragma: keep
 #include "fmt/chrono.h"  // IWYU pragma: keep
 #include "fmt/color.h"   // IWYU pragma: keep
 #include "fmt/compile.h" // IWYU pragma: keep
@@ -44,6 +45,40 @@ inline I18n& getInstance() {
     return ins;
 }
 
+class I18nStringError : public ErrorInfoBase {
+private:
+    gsl::not_null<I18n*>                               mI18n;
+    std::string                                        mKey;
+    fmt::dynamic_format_arg_store<fmt::format_context> mArgs;
+
+public:
+    template <typename... Args>
+    constexpr explicit I18nStringError(fmt::format_string<Args...> fmt, Args&&... args)
+    : mI18n(std::addressof(ll::i18n::getInstance())),
+      mKey(std::string{fmt.get().begin(), fmt.get().end()}),
+      mArgs() {
+        if constexpr (sizeof...(Args) > 0) {
+            mArgs.reserve(sizeof...(Args), 0);
+            (mArgs.push_back(std::forward<Args>(args)), ...);
+        }
+    }
+
+public:
+    std::string message() const noexcept override { return message(ll::i18n::getDefaultLocaleCode()); }
+    std::string message(std::string_view localeCode) const noexcept override try {
+        auto pattern = mI18n->get(mKey, localeCode.empty() ? ll::i18n::getDefaultLocaleCode() : localeCode);
+        if (!pattern.empty()) try {
+                return fmt::vformat(pattern, mArgs);
+            } catch (...) {}
+        return fmt::vformat(mKey, mArgs);
+    } catch (...) {
+        return mKey;
+    }
+
+    std::string const&                                        key() const noexcept { return mKey; }
+    fmt::dynamic_format_arg_store<fmt::format_context> const& args() const noexcept { return mArgs; }
+};
+
 } // namespace ll::i18n
 
 #ifdef LL_I18N_COLLECT_STRINGS
@@ -71,6 +106,17 @@ struct TrStrOut {
 #define LL_I18N_STRING_LITERAL_TYPE ::ll::FixedString
 #endif
 #endif
+
+namespace ll {
+template <LL_I18N_STRING_LITERAL_TYPE Fmt, typename... Args>
+[[nodiscard]] constexpr inline Unexpected makeI18nStringError(Args&&... args) noexcept {
+#ifdef LL_I18N_COLLECT_STRINGS
+    static i18n::detail::TrStrOut<Fmt> e{};
+#endif
+    return makeError<i18n::I18nStringError>(fmt::format_string<Args...>(Fmt.sv()), std::forward<Args>(args)...);
+}
+} // namespace ll
+
 namespace ll::inline literals::inline i18n_literals {
 template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 [[nodiscard]] constexpr auto operator""_tr() {

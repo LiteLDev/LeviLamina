@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ll/api/reflection/Reflection.h"
-#include "ll/api/reflection/SerializationError.h"
+#include "ll/api/reflection/ReflectionError.h"
 
 // Priority:
 // 5. IsVectorBase IsDispatcher IsOptional
@@ -199,11 +199,11 @@ inline Expected<J> serialize_impl(T&& e, meta::PriorityTag<1>)
     using enum_type = std::remove_cvref_t<T>;
     if constexpr (magic_enum::detail::supported<enum_type>::value) {
         if constexpr (magic_enum::detail::subtype_v<enum_type> == magic_enum::detail::enum_subtype::flags) {
-            if (const auto name = magic_enum::enum_flags_name<enum_type>(e); !name.empty()) {
+            if (auto const name = magic_enum::enum_flags_name<enum_type>(e); !name.empty()) {
                 return name;
             }
         } else {
-            if (const auto name = magic_enum::enum_name<enum_type>(e); !name.empty()) {
+            if (auto const name = magic_enum::enum_name<enum_type>(e); !name.empty()) {
                 return name;
             }
         }
