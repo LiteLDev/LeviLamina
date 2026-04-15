@@ -131,12 +131,20 @@ Expected<std::unique_ptr<::Command>> CommandRegistrar::compileCommand(
 namespace detail {
 static thread_local bool isExecutingCommand = false;
 
-LLAPI void printCommandError(::Command const& command, ::CommandOutput& output) noexcept {
+LLAPI void
+printCommandError(::Command const& command, ::CommandOutput& output) noexcept { // TODO: remove in next version
     try {
         getLogger().error("Error in command {}:", command.getCommandName());
         output.error("command threw an exception");
     } catch (...) {}
     error_utils::printCurrentException(getLogger());
+}
+
+LLAPI void mayPrintCommandError(::Command const& command, ::CommandOutput& output) { // TODO: remove in next version
+    if (isExecutingCommand) {
+        throw;
+    }
+    printCommandError(command, output);
 }
 
 void mayPrintCommandError(::Command const& command, ::CommandOutput& output, CommandOrigin const& origin) {
