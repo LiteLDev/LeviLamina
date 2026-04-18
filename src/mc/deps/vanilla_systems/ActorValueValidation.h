@@ -14,7 +14,7 @@ namespace VanillaSystems { struct VanillaSystemsEventingComponent; }
 namespace VanillaSystems::ActorValueValidation {
 // functions
 // NOLINTBEGIN
-MCNAPI bool validateVec3Position(
+MCAPI bool validateVec3Position(
     ::Vec3 const&                                                        pos,
     char const*                                                          caller,
     ::OptionalGlobal<::VanillaSystems::VanillaSystemsEventingComponent>& eventingComponent

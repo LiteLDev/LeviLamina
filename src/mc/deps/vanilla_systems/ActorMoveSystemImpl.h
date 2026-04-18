@@ -17,12 +17,12 @@ struct StateVectorComponent;
 namespace VanillaSystems::ActorMoveSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickUpdateHitboxSystem(
+MCAPI void tickUpdateHitboxSystem(
     ::ViewT<::StrictEntityContext, ::Include<::MoveRequestComponent>, ::StateVectorComponent const, ::HitboxComponent>
         view
 );
 
-MCNAPI void
+MCAPI void
 updateHitboxSystem(::StrictEntityContext const&, ::StateVectorComponent const& svc, ::HitboxComponent& hitbox);
 // NOLINTEND
 

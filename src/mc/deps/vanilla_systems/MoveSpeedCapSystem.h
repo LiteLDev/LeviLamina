@@ -32,7 +32,7 @@ struct MoveSpeedCapSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::ViewT<::StrictEntityContext, ::MoveRequestComponent> view,
         ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>
             actorView,

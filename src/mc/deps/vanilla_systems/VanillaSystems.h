@@ -19,15 +19,15 @@ namespace VanillaSystems { struct BlockSourceFactoryAdapterComponent; }
 namespace VanillaSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::VanillaSystems::IActorAdapter> createActorAdapter(::WeakRef<::EntityRegistry>& registry);
+MCAPI ::std::unique_ptr<::VanillaSystems::IActorAdapter> createActorAdapter(::WeakRef<::EntityRegistry>& registry);
 
-MCNAPI void
+MCAPI void
 createTemporaryBlockSource(::OptionalGlobal<::VanillaSystems::BlockSourceFactoryAdapterComponent> adapterComponent);
 
-MCNAPI ::std::unique_ptr<::VanillaSystems::IVanillaSystemsEventingAdapter>
+MCAPI ::std::unique_ptr<::VanillaSystems::IVanillaSystemsEventingAdapter>
 createVanillaSystemsEventingAdapter(::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
 
-MCNAPI void
+MCAPI void
 resetTemporaryBlockSource(::OptionalGlobal<::VanillaSystems::BlockSourceFactoryAdapterComponent> adapterComponent);
 // NOLINTEND
 

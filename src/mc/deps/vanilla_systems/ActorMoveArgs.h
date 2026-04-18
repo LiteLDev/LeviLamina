@@ -2,21 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace VanillaSystems { class IActorAdapter; }
+namespace VanillaSystems { class IBlockSourceFactoryAdapter; }
+// clang-format on
+
 namespace VanillaSystems {
 
 struct ActorMoveArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk172cfc;
-    ::ll::UntypedStorage<8, 8> mUnk974e84;
+    ::ll::TypedStorage<8, 8, ::VanillaSystems::IActorAdapter*>              mActorAdapter;
+    ::ll::TypedStorage<8, 8, ::VanillaSystems::IBlockSourceFactoryAdapter*> mBlockSourceFactoryAdapter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorMoveArgs& operator=(ActorMoveArgs const&);
-    ActorMoveArgs(ActorMoveArgs const&);
-    ActorMoveArgs();
 };
 
 } // namespace VanillaSystems

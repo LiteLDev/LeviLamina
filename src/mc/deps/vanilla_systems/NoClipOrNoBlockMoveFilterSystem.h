@@ -25,7 +25,7 @@ struct NoClipOrNoBlockMoveFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
+    MCAPI static void tick(
         ::StrictEntityContext const&                                        context,
         ::MoveRequestComponent const&                                       moveRequest,
         ::OffsetsComponent const&                                           offsets,

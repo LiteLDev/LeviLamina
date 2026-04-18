@@ -8,7 +8,7 @@ struct DataStoreRemoval {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkec9042;
+    ::ll::TypedStorage<8, 32, ::std::string> mDataStoreName;
     // NOLINTEND
 
 public:
@@ -19,17 +19,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval&&);
+    MCFOLD ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval&&);
 
-    MCNAPI ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval const&);
+    MCFOLD ::Bedrock::DDUI::DataStoreRemoval& operator=(::Bedrock::DDUI::DataStoreRemoval const&);
 
-    MCNAPI ~DataStoreRemoval();
+    MCAPI ~DataStoreRemoval();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

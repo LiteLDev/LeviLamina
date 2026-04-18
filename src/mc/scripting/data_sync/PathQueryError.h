@@ -8,8 +8,8 @@ struct PathQueryError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkad9576;
-    ::ll::UntypedStorage<8, 32> mUnk461e42;
+    ::ll::TypedStorage<1, 1, bool>           parsingError;
+    ::ll::TypedStorage<8, 32, ::std::string> message;
     // NOLINTEND
 
 public:
@@ -20,21 +20,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PathQueryError(::Bedrock::DDUI::PathUtility::PathQueryError const&);
+    MCAPI PathQueryError(::Bedrock::DDUI::PathUtility::PathQueryError const&);
 
-    MCNAPI ~PathQueryError();
+    MCAPI ~PathQueryError();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::DDUI::PathUtility::PathQueryError const&);
+    MCAPI void* $ctor(::Bedrock::DDUI::PathUtility::PathQueryError const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

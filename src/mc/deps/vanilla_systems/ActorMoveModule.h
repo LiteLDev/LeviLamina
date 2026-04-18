@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs_module/IECSModule.h"
+#include "mc/deps/vanilla_systems/ActorMoveArgs.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,14 +19,8 @@ struct ActorMoveModule : public ::ECSModule::IECSModule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf549a7;
+    ::ll::TypedStorage<8, 16, ::VanillaSystems::ActorMoveArgs> mArgs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorMoveModule& operator=(ActorMoveModule const&);
-    ActorMoveModule(ActorMoveModule const&);
-    ActorMoveModule();
 
 public:
     // virtual functions
@@ -40,9 +35,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initRegistry(::EntityRegistry& registry);
+    MCAPI void $initRegistry(::EntityRegistry& registry);
 
-    MCNAPI void $registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args);
+    MCAPI void $registerSystems(::IEntitySystems& systems, ::ECSModule::ModuleInitArgs const& args);
 
 
     // NOLINTEND
