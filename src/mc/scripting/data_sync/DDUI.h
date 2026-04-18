@@ -13,14 +13,14 @@ namespace Bedrock::DDUI { class DataStoreSyncServer; }
 namespace Bedrock::DDUI {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendDataStorePacketsToClient(
+MCAPI void sendDataStorePacketsToClient(
     ::Bedrock::DDUI::DataStoreSyncServer&  dataSync,
     ::PacketSender&                        packetSender,
     ::UserEntityIdentifierComponent const* id
 );
 
 #ifdef LL_PLAT_C
-MCNAPI void sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
+MCAPI void sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
 #endif
 // NOLINTEND
 

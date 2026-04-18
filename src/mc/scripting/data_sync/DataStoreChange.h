@@ -2,16 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
+
 namespace Bedrock::DDUI {
 
 struct DataStoreChange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5359a7;
-    ::ll::UntypedStorage<8, 32> mUnkfb62c2;
-    ::ll::UntypedStorage<4, 4>  mUnk488ed9;
-    ::ll::UntypedStorage<8, 72> mUnk86bb09;
+    ::ll::TypedStorage<8, 32, ::std::string>          mDataStoreName;
+    ::ll::TypedStorage<8, 32, ::std::string>          mProperty;
+    ::ll::TypedStorage<4, 4, uint>                    mUpdateCount;
+    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue> mNewData;
     // NOLINTEND
 
 public:
@@ -22,19 +25,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
+    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange&&);
 
-    MCNAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange const&);
+    MCAPI ::Bedrock::DDUI::DataStoreChange& operator=(::Bedrock::DDUI::DataStoreChange const&);
 
-    MCNAPI bool operator==(::Bedrock::DDUI::DataStoreChange const& rhs) const;
+    MCAPI bool operator==(::Bedrock::DDUI::DataStoreChange const& rhs) const;
 
-    MCNAPI ~DataStoreChange();
+    MCAPI ~DataStoreChange();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace VanillaSystems { class IVanillaSystemsEventingAdapter; }
+// clang-format on
+
 namespace VanillaSystems {
 
 struct VanillaSystemsEventingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkdb645b;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::VanillaSystems::IVanillaSystemsEventingAdapter*>> mEventing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaSystemsEventingComponent& operator=(VanillaSystemsEventingComponent const&);
-    VanillaSystemsEventingComponent(VanillaSystemsEventingComponent const&);
-    VanillaSystemsEventingComponent();
 };
 
 } // namespace VanillaSystems

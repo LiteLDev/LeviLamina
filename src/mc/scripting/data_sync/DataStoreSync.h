@@ -7,6 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::DDUI { struct DataStoreChange; }
+namespace Bedrock::DDUI { struct DataStoreRemoval; }
+namespace Bedrock::DDUI { struct DataStoreUpdate; }
 namespace Bedrock::DDUI::PathUtility { struct PathQueryError; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
@@ -17,19 +20,54 @@ namespace Bedrock::DDUI {
 
 class DataStoreSync {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkdbc653;
-    ::ll::UntypedStorage<8, 64> mUnk4b8e07;
-    ::ll::UntypedStorage<8, 64> mUnk1938e1;
-    ::ll::UntypedStorage<8, 64> mUnk4d84f4;
-    ::ll::UntypedStorage<8, 24> mUnk1d154f;
-    // NOLINTEND
+    // DataStoreSync inner types define
+    using PropertyChangePublisher = ::Bedrock::PubSub::
+        Publisher<void(::cereal::DynamicValue const*), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>;
 
 public:
-    // prevent constructor by default
-    DataStoreSync& operator=(DataStoreSync const&);
-    DataStoreSync(DataStoreSync const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::unordered_map<::std::string, ::cereal::DynamicValue>>>
+        mDataStores;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::unordered_map<
+                ::std::string,
+                ::std::unordered_map<
+                    ::std::string,
+                    ::Bedrock::PubSub::Publisher<
+                        void(::cereal::DynamicValue const*),
+                        ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                        0>,
+                    ::std::hash<::std::string>,
+                    ::std::equal_to<::std::string>>>>>
+        mPropertyPathPublishers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unordered_map<::std::string, uint>>>
+        mPropertyUpdateCount;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::unordered_map<
+                ::std::string,
+                ::std::unordered_map<::std::string, uint, ::std::hash<::std::string>, ::std::equal_to<::std::string>>>>>
+        mPathUpdateCount;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::variant<
+            ::Bedrock::DDUI::DataStoreUpdate,
+            ::Bedrock::DDUI::DataStoreChange,
+            ::Bedrock::DDUI::DataStoreRemoval>>>
+        mOutgoingChanges;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -44,28 +82,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DataStoreSync();
+    MCAPI DataStoreSync();
 
-    MCNAPI ::cereal::DynamicValue const* get(::std::string const& datastoreName, ::std::string const& property) const;
+    MCAPI ::cereal::DynamicValue const* get(::std::string const& datastoreName, ::std::string const& property) const;
 
-    MCNAPI ::nonstd::
+    MCAPI ::nonstd::
         expected<::gsl::not_null<::cereal::DynamicValue const*>, ::Bedrock::DDUI::PathUtility::PathQueryError>
         getPath(::std::string const& dataStoreName, ::std::string const& property, ::std::string const& path) const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription listen(
+    MCAPI ::Bedrock::PubSub::Subscription listen(
         ::std::string const&                                 datastoreName,
         ::std::string const&                                 property,
         ::std::string const&                                 path,
         ::std::function<void(::cereal::DynamicValue const*)> onChange
     );
 
-    MCNAPI void
+    MCAPI void
     set(::std::string const&          datastoreName,
         ::std::string const&          property,
         ::cereal::DynamicValue const& obj,
         bool                          addToOutgoingChanges);
 
-    MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setObjectPath(
+    MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setObjectPath(
         ::std::string const&          dataStoreName,
         ::std::string const&          propertyName,
         ::std::string const&          path,
@@ -73,7 +111,7 @@ public:
         ::std::string const&          newDataString
     );
 
-    MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
+    MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
         ::std::string const&                               dataStoreName,
         ::std::string const&                               propertyName,
         ::std::string const&                               path,
@@ -86,19 +124,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
+    MCAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
 
     // NOLINTEND

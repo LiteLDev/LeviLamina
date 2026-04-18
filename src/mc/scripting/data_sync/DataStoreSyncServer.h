@@ -16,14 +16,8 @@ class DataStoreSyncServer : public ::Bedrock::DDUI::DataStoreSync {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6ca290;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::set<::std::string>>> mUpdateableFromClient;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DataStoreSyncServer& operator=(DataStoreSyncServer const&);
-    DataStoreSyncServer(DataStoreSyncServer const&);
-    DataStoreSyncServer();
 
 public:
     // virtual functions
@@ -38,17 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void applyUpdate(::Bedrock::DDUI::DataStoreUpdate const& change);
+    MCAPI void applyUpdate(::Bedrock::DDUI::DataStoreUpdate const& change);
 
-    MCNAPI bool canClientUpdateProperty(
+    MCAPI bool canClientUpdateProperty(
         ::std::string const& dataStoreName,
         ::std::string const& propertyName,
         ::std::string const& path
     );
 
-    MCNAPI void clearAll(bool addToOutgoingChanges);
+    MCAPI void clearAll(bool addToOutgoingChanges);
 
-    MCNAPI void setPropertyUpdateAllowed(
+    MCAPI void setPropertyUpdateAllowed(
         ::std::string const& dataStoreName,
         ::std::string const& propertyName,
         ::std::string const& path,
@@ -59,9 +53,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
+    MCAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
 
-    MCNAPI void $assertAppropriateThread() const;
+    MCFOLD void $assertAppropriateThread() const;
 
 
     // NOLINTEND

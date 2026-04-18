@@ -14,13 +14,13 @@ namespace cereal { class DynamicValue; }
 namespace Bedrock::DDUI::PathUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI char const* getTypeString(::cereal::DynamicValue::Type const& type);
+MCAPI char const* getTypeString(::cereal::DynamicValue::Type const& type);
 
-MCNAPI ::nonstd::
+MCAPI ::nonstd::
     expected<::std::vector<::std::variant<::std::string, uint>>, ::Bedrock::DDUI::PathUtility::PathQueryError>
     parsePath(::std::string const& wholePath);
 
-MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
+MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
     ::cereal::DynamicValue&       originalObject,
     ::std::string const&          path,
     ::cereal::DynamicValue const& newData,
@@ -28,7 +28,7 @@ MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> se
     ::std::string const&          propertyName
 );
 
-MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
+MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPathOnDataStoreObject(
     ::cereal::DynamicValue&                            originalObject,
     ::std::string const&                               path,
     ::std::variant<double, bool, ::std::string> const& newData,
@@ -36,7 +36,7 @@ MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> se
     ::std::string const&                               propertyName
 );
 
-MCNAPI ::std::optional<::cereal::DynamicValue> stringToDynamicValue(::std::string const& s);
+MCAPI ::std::optional<::cereal::DynamicValue> stringToDynamicValue(::std::string const& s);
 // NOLINTEND
 
 } // namespace Bedrock::DDUI::PathUtility
