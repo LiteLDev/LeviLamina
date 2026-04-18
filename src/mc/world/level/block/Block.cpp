@@ -78,15 +78,4 @@ optional_ref<Block const> Block::tryGetFromRegistry(class CompoundTag const& nbt
     return BlockSerializationUtils::tryGetBlockFromNBT(nbt, nullptr).second;
 }
 
-
-optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
-    return tryGetFromRegistry(HashedString{name});
-}
-optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
-    return tryGetFromRegistry(HashedString{name}, legacyData);
-}
-optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, BlockStatesType const& states) {
-    return tryGetFromRegistry(HashedString{name}, states);
-}
-
 bool Block::isAir() const { return getBlockType().mNameInfo->mFullName->mStrHash == BedrockBlockNames::Air().mStrHash; }

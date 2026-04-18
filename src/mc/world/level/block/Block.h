@@ -53,10 +53,6 @@ public:
     tryGetFromRegistry(HashedString const& name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
 
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
-
     LLNDAPI bool isAir() const;
 
     [[nodiscard]] BlockType const& getBlockType() const { return *mBlockType; }
