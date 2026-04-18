@@ -7,11 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.8] - 2026-04-18
+
+### Added
+
+- Enhanced i18n support and error handling across modules, finish [#1806] @OEOTYAN
+- Added mayPrintCommandError function for improved error handling in command execution @OEOTYAN
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.10.4-server.12 and v26.10.4-client.12
+- Updated Error message handling and parameter types for better clarity @OEOTYAN
+- Updated nbt at() method @OEOTYAN
+
+### Fixed
+
+- Fixed `ll::getWorldDataRoot()` and `ll::getWorldConfigRoot()` crash @OEOTYAN
+- Fixed missing include in TypeTraits.h @zimuya4153
+
 ## [26.10.7] - 2026-04-13
 
 ### Changed
 
-- Bumped bedrock-runtime-data to v26.10.5-server.11 and v26.10.5-client.11
+- Bumped bedrock-runtime-data to v26.10.4-server.11 and v26.10.4-client.11
 
 ### Fixed
 
@@ -26,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Synced MCPE-228407 fix to client @ShrBox
-- Bumped bedrock-runtime-data to v26.10.5-server.10 and v26.10.5-client.10
+- Bumped bedrock-runtime-data to v26.10.4-server.10 and v26.10.4-client.10
 
 ### Fixed
 
@@ -1514,8 +1532,10 @@ For lip and tooth-hub test only.
 [#1789]: https://github.com/LiteLDev/LeviLamina/issues/1789
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
+[#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.8...HEAD
+[26.10.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.7...v26.10.8
 [26.10.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.6...v26.10.7
 [26.10.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.5...v26.10.6
 [26.10.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.4...v26.10.5
