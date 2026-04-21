@@ -5,7 +5,7 @@
 #include "mc/deps/nbt/CompoundTag.h"
 
 #include "mc/deps/input/HIDController.h"
-#include "mc/deps/input/win/HIDControllerWin32.h"
+#include "mc/deps/input/win/HIDControllerGameCoreDesktop.h"
 
 namespace ll::event::inline input {
 
@@ -29,8 +29,8 @@ bool                  KeyInputEvent::isDown() const { return mAction == Action::
 LL_TYPE_INSTANCE_HOOK(
     KeyInputDownEventHook,
     HookPriority::Normal,
-    HIDController,
-    &HIDController::$onKeyDown,
+    HIDControllerGameCoreDesktop,
+    &HIDControllerGameCoreDesktop::$onKeyDown,
     void,
     int                                                 keyCode,
     Bedrock::Input::KeyboardEventProcessor::InputOrigin a2
@@ -47,8 +47,8 @@ LL_TYPE_INSTANCE_HOOK(
 LL_TYPE_INSTANCE_HOOK(
     KeyInputUpEventHook,
     HookPriority::Normal,
-    HIDControllerWin32,
-    &HIDControllerWin32::$onKeyUp,
+    HIDControllerGameCoreDesktop,
+    &HIDControllerGameCoreDesktop::$onKeyUp,
     void,
     int keyCode
 ) {
