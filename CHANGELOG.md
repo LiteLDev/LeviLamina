@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.9] - 2026-04-22
+
+### Fixed
+
+- Fixed the ambiguity in function calls(`Block::tryGetFromRegistry` and `BlockType::tryGetFromRegistry`) @zimuya4153
+- Fixed KeyInputEvent [#1807] @dreamguaxiang
+
 ## [26.10.8] - 2026-04-18
 
 ### Added
@@ -1533,8 +1540,10 @@ For lip and tooth-hub test only.
 [#1791]: https://github.com/LiteLDev/LeviLamina/issues/1791
 [#1792]: https://github.com/LiteLDev/LeviLamina/issues/1792
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
+[#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.8...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.9...HEAD
+[26.10.9]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.8...v26.10.9
 [26.10.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.7...v26.10.8
 [26.10.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.6...v26.10.7
 [26.10.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.5...v26.10.6
