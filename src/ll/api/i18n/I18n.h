@@ -109,7 +109,7 @@ struct TrStrOut {
 
 namespace ll {
 template <LL_I18N_STRING_LITERAL_TYPE Fmt, typename... Args>
-[[nodiscard]] constexpr inline Unexpected makeI18nStringError(Args&&... args) noexcept {
+[[nodiscard]] inline Unexpected makeI18nStringError(Args&&... args) noexcept {
 #ifdef LL_I18N_COLLECT_STRINGS
     static i18n::detail::TrStrOut<Fmt> e{};
 #endif

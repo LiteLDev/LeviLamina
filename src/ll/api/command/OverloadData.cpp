@@ -31,6 +31,8 @@ OverloadData& OverloadData::operator=(OverloadData&&) = default;
 OverloadData::OverloadData(OverloadData&&)            = default;
 OverloadData::~OverloadData()                         = default;
 
+void OverloadData::disable() { impl->factoryClosure.reset(); }
+
 CommandRegistry::Overload::AllocFunction const& OverloadData::getFactory() { return impl->factoryClosure.value(); }
 std::vector<CommandParameterData>&              OverloadData::getParams() { return impl->params; }
 CommandHandle&                                  OverloadData::getHandle() { return impl->handle; }

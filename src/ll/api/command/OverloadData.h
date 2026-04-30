@@ -26,6 +26,8 @@ class OverloadData {
     struct Impl;
     std::unique_ptr<Impl> impl;
 
+    void disable();
+
 protected:
     LLNDAPI CommandRegistry::Overload::AllocFunction const& getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();

@@ -40,9 +40,10 @@ size_t CommandHandle::disableModOverloads(std::string_view modName) {
         if (!overload.getMod().expired() && (overload.getMod().lock()->getName() != modName)) {
             return false;
         }
+        overload.disable();
         erase_if(impl->signature.overloads, [&](auto& o) {
             if (o.params == overload.getParams()) {
-                impl->disabledOverloads.emplace_back(std::move(o));
+                impl->disabledOverloads.emplace_back(std::move(o)).alloc = nullptr;
                 return true;
             }
             return false;
