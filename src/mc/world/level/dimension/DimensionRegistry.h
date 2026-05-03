@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WeakRef<::Dimension> registerDimension(::DimensionIdType id, ::OwnerPtr<::Dimension> dimension);
+    MCAPI ::WeakRef<::Dimension> registerDimension(::DimensionIdType id, ::OwnerPtr<::Dimension> dimension);
     // NOLINTEND
 
 public:
