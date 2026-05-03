@@ -20,9 +20,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class AppPlatform;
 class CDNConfig;
 class EducationOptions;
 class ILevel;
+class IMinecraftEventing;
 class ItemRegistry;
 class ItemRegistryRef;
 class LevelData;
@@ -40,9 +42,12 @@ class ServerTextSettings;
 class TextFilteringProcessor;
 class Timer;
 class WorldSessionEndPoint;
+struct ConnectionDefinition;
 struct DimensionFactoryAndManager;
+struct NetworkServerConfig;
 struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
+struct ServerNetworkHandlerDependencies;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
@@ -74,13 +79,28 @@ public:
 
     struct CreateServerLevelOps {
     public:
+        // CreateServerLevelOps inner types define
+        using CreateDimensionFactoryCallback =
+            ::brstd::move_only_function<::std::unique_ptr<::DimensionFactoryAndManager>(
+                ::Bedrock::NotNullNonOwnerPtr<::ILevel>,
+                ::br::worldgen::StructureSetRegistry&
+            ) const>;
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkfbffdb;
-        ::ll::UntypedStorage<1, 1>  mUnkd12db4;
-        ::ll::UntypedStorage<8, 8>  mUnk212caf;
-        ::ll::UntypedStorage<8, 8>  mUnk42e420;
-        ::ll::UntypedStorage<8, 64> mUnk337f0d;
+        ::ll::TypedStorage<8, 8, ::ServerInstance&>      mInstance;
+        ::ll::TypedStorage<1, 1, bool>                   mServerAuthSound;
+        ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>  mEventing;
+        ::ll::TypedStorage<8, 8, ::ResourcePackManager&> mClientResourcePackManager;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::brstd::move_only_function<::std::unique_ptr<::DimensionFactoryAndManager>(
+                ::Bedrock::NotNullNonOwnerPtr<::ILevel>,
+                ::br::worldgen::StructureSetRegistry&
+            ) const>>
+            mCreateDimensionFactoryAndManager;
         // NOLINTEND
 
     public:
@@ -92,13 +112,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~CreateServerLevelOps();
+        MCAPI ~CreateServerLevelOps();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -106,12 +126,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk238da3;
-        ::ll::UntypedStorage<8, 8> mUnkfc9e39;
-        ::ll::UntypedStorage<8, 8> mUnkbcd9d1;
-        ::ll::UntypedStorage<4, 4> mUnkc92d4a;
-        ::ll::UntypedStorage<1, 1> mUnka2dec3;
-        ::ll::UntypedStorage<8, 8> mUnk3aa863;
+        ::ll::TypedStorage<8, 8, ::ServerInstance&>                    mInstance;
+        ::ll::TypedStorage<8, 8, ::NetworkServerConfig&&>              mNetworkServerConfig;
+        ::ll::TypedStorage<8, 8, ::std::string const&>                 mHostPublicKey;
+        ::ll::TypedStorage<4, 4, int>                                  mMaxChunkRadius;
+        ::ll::TypedStorage<1, 1, bool>                                 mShouldAnnounce;
+        ::ll::TypedStorage<8, 8, ::ServerNetworkHandlerDependencies&&> mServerNetworkOptions;
         // NOLINTEND
 
     public:
@@ -125,11 +145,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk18547d;
-        ::ll::UntypedStorage<1, 1> mUnk926d13;
-        ::ll::UntypedStorage<1, 1> mUnk905ba3;
-        ::ll::UntypedStorage<1, 1> mUnk5f5870;
-        ::ll::UntypedStorage<8, 8> mUnk148b7c;
+        ::ll::TypedStorage<8, 8, ::AppPlatform const&>          mPlatform;
+        ::ll::TypedStorage<1, 1, bool>                          mDisableLanSignaling;
+        ::ll::TypedStorage<1, 1, bool>                          mIsServerVisibleToLanDiscovery;
+        ::ll::TypedStorage<1, 1, bool>                          mEnablePacketRateLimiting;
+        ::ll::TypedStorage<8, 8, ::ConnectionDefinition const&> mConnectionDefinition;
         // NOLINTEND
 
     public:
