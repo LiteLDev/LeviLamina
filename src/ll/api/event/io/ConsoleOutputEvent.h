@@ -19,24 +19,17 @@ public:
 
 class ConsoleOutputtedEvent final : public Event {
     std::string const& mMessage;
+    bool               mIsCancelled;
 
 public:
-    constexpr explicit ConsoleOutputtedEvent(std::string const& message) : mMessage(message) {}
+    constexpr explicit ConsoleOutputtedEvent(std::string const& message, bool isCancelled = false)
+    : mMessage(message),
+      mIsCancelled(isCancelled) {}
 
     LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI std::string const& message() const;
-};
-
-class ConsoleOutputAttemptedEvent final : public Event {
-    std::string const& mMessage;
-
-public:
-    constexpr explicit ConsoleOutputAttemptedEvent(std::string const& message) : mMessage(message) {}
-
-    LLAPI void serialize(CompoundTag&) const override;
-
-    LLNDAPI std::string const& message() const;
+    LLNDAPI bool               isCancelled() const;
 };
 
 } // namespace ll::event::inline io

@@ -18,22 +18,15 @@ void ConsoleOutputtingEvent::deserialize(CompoundTag const& nbt) {
 
 void ConsoleOutputtedEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
-    nbt["message"] = message();
+    nbt["message"]   = message();
+    nbt["cancelled"] = isCancelled();
 }
 
-void ConsoleOutputAttemptedEvent::serialize(CompoundTag& nbt) const {
-    Event::serialize(nbt);
-    nbt["message"] = message();
-}
-
-std::string& ConsoleOutputtingEvent::message() const { return mMessage; }
+std::string&       ConsoleOutputtingEvent::message() const { return mMessage; }
 std::string const& ConsoleOutputtedEvent::message() const { return mMessage; }
-std::string const& ConsoleOutputAttemptedEvent::message() const { return mMessage; }
+bool               ConsoleOutputtedEvent::isCancelled() const { return mIsCancelled; }
 
-class ConsoleOutputEventEmitter : public Emitter<
-                                      [](auto&&...) { return nullptr; },
-                                      ConsoleOutputtingEvent,
-                                      ConsoleOutputtedEvent,
-                                      ConsoleOutputAttemptedEvent> {};
+class ConsoleOutputEventEmitter
+: public Emitter<[](auto&&...) { return nullptr; }, ConsoleOutputtingEvent, ConsoleOutputtedEvent> {};
 
 } // namespace ll::event::inline io
