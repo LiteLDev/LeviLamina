@@ -21,10 +21,19 @@ void ConsoleOutputtedEvent::serialize(CompoundTag& nbt) const {
     nbt["message"] = message();
 }
 
+void ConsoleOutputAttemptedEvent::serialize(CompoundTag& nbt) const {
+    Event::serialize(nbt);
+    nbt["message"] = message();
+}
+
 std::string& ConsoleOutputtingEvent::message() const { return mMessage; }
 std::string const& ConsoleOutputtedEvent::message() const { return mMessage; }
+std::string const& ConsoleOutputAttemptedEvent::message() const { return mMessage; }
 
-class ConsoleOutputEventEmitter
-: public Emitter<[](auto&&...) { return nullptr; }, ConsoleOutputtingEvent, ConsoleOutputtedEvent> {};
+class ConsoleOutputEventEmitter : public Emitter<
+                                      [](auto&&...) { return nullptr; },
+                                      ConsoleOutputtingEvent,
+                                      ConsoleOutputtedEvent,
+                                      ConsoleOutputAttemptedEvent> {};
 
 } // namespace ll::event::inline io

@@ -28,4 +28,15 @@ public:
     LLNDAPI std::string const& message() const;
 };
 
+class ConsoleOutputAttemptedEvent final : public Event {
+    std::string const& mMessage;
+
+public:
+    constexpr explicit ConsoleOutputAttemptedEvent(std::string const& message) : mMessage(message) {}
+
+    LLAPI void serialize(CompoundTag&) const override;
+
+    LLNDAPI std::string const& message() const;
+};
+
 } // namespace ll::event::inline io
