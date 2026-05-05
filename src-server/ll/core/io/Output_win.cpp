@@ -5,7 +5,7 @@
 #include "io.h"
 
 namespace ll::io {
-void defaultOutput(std::string_view sv) {
+void defaultOutputImpl(std::string_view sv) {
     auto fd = _fileno(stdout);
     if (_isatty(fd)) {
         auto wstr = string_utils::str2wstr(sv);

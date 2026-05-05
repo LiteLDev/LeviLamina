@@ -32,8 +32,7 @@ void DefaultSink::append(LogMessageView const& view) {
     std::lock_guard lock(impl.mutex);
     std::string     buffer;
     formatter->format(view, buffer);
-    defaultOutput(buffer);
-    buffer.clear();
+    defaultOutput(std::move(buffer));
     impl.logFileFormatter.format(view, buffer);
     impl.logFile << buffer;
 }

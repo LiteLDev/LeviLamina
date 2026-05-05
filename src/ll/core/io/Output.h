@@ -4,6 +4,6 @@
 
 namespace ll::io {
 
-void defaultOutput(std::string_view);
+void defaultOutput(std::string);
 
 } // namespace ll::io

@@ -5,7 +5,7 @@
 #include "Windows.h"
 #include "io.h"
 namespace ll::io {
-void defaultOutput(std::string_view sv) { 
+void defaultOutputImpl(std::string_view sv) { 
     getDefaultLogPipe().write(sv); 
     auto fd = _fileno(stdout);
     if (_isatty(fd)) {
