@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
+    MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const,
         ::ItemStackBase const& item,
@@ -43,13 +43,13 @@ public:
         bool
     ) const;
 
-    MCNAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
+    MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND

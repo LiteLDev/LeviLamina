@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/managers/controllers/CraftableCompounds.h"
 #include "mc/world/inventory/simulation/validation/ContainerValidationBase.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockReducer;
 class ContainerScreenContext;
 class ItemStackBase;
 // clang-format on
@@ -15,15 +17,9 @@ class MaterialReducerInputValidation : public ::ContainerValidationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk4c444e;
-    ::ll::UntypedStorage<8, 264> mUnk31aa8f;
+    ::ll::TypedStorage<8, 8, ::BlockReducer*>        mBlockReducer;
+    ::ll::TypedStorage<8, 264, ::CraftableCompounds> mCraftableCompounds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MaterialReducerInputValidation& operator=(MaterialReducerInputValidation const&);
-    MaterialReducerInputValidation(MaterialReducerInputValidation const&);
-    MaterialReducerInputValidation();
 
 public:
     // virtual functions
@@ -50,13 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isItemAllowed(::ItemStackBase const& item) const;
+    MCAPI bool isItemAllowed(::ItemStackBase const& item) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
+    MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
         ::ItemStackBase const&          item,
@@ -64,13 +60,13 @@ public:
         bool
     ) const;
 
-    MCNAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
+    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
-    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCNAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
 
 
     // NOLINTEND

@@ -36,10 +36,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemInstance
+    MCAPI ::ItemInstance
     _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
 
-    MCNAPI bool _recipeMatches(
+    MCAPI bool _recipeMatches(
         ::ContainerScreenContext const& screenContext,
         ::RecipeNetId const&            recipeNetId,
         ::ItemStack const&              inputStack
@@ -49,9 +49,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isCraftingImplemented();
+    MCFOLD bool $isCraftingImplemented();
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
+    MCAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
