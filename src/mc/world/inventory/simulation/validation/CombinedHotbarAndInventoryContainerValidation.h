@@ -30,12 +30,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool
+    MCFOLD bool
     $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
-    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
 
     // NOLINTEND

@@ -24,14 +24,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkb3b7d1;
+        ::ll::TypedStorage<4, 4, int> mLastItemRemovedExperienceReward;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ExperienceRewards& operator=(ExperienceRewards const&);
-        ExperienceRewards(ExperienceRewards const&);
-        ExperienceRewards();
     };
 
 public:
@@ -56,25 +50,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FurnaceContainerScreenValidator();
+    MCAPI FurnaceContainerScreenValidator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject>
+    MCAPI ::std::shared_ptr<::ContainerValidationCommitObject>
     $postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const& item);
 
 

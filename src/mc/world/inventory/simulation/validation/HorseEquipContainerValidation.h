@@ -49,29 +49,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit HorseEquipContainerValidation(::ContainerScreenContext const& screenContext);
+    MCAPI explicit HorseEquipContainerValidation(::ContainerScreenContext const& screenContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerScreenContext const& screenContext);
+    MCAPI void* $ctor(::ContainerScreenContext const& screenContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
+    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
-    MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCNAPI bool $isItemAllowedInSlot(
+    MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const              slot,
         ::ItemStackBase const& item,
@@ -79,7 +79,7 @@ public:
         bool
     ) const;
 
-    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND
