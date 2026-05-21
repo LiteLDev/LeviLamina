@@ -60,17 +60,29 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
         using function_type          = Ret(Args...);                                                                   \
         using function_type_noexcept = Ret(Args...) noexcept(NOEXCEPT);                                                \
         template <class T>                                                                                             \
-        using cvref                               = T       CVREF;                                                     \
-        static constexpr bool is_noexcept         = NOEXCEPT;                                                          \
-        static constexpr bool is_const            = std::is_const_v<cvref<int>>;                                       \
-        static constexpr bool is_volatile         = std::is_volatile_v<cvref<int>>;                                    \
-        static constexpr bool is_reference        = std::is_reference_v<cvref<int>>;                                   \
-        static constexpr bool is_lvalue_reference = std::is_lvalue_reference_v<cvref<int>>;                            \
-        static constexpr bool is_rvalue_reference = std::is_rvalue_reference_v<cvref<int>>;                            \
+        using cvref = T CVREF;                                                                                         \
+                                                                                                                       \
+        using return_type = Ret;                                                                                       \
+        using args_tuple  = std::tuple<Args...>;                                                                       \
+        template <size_t I>                                                                                            \
+        using arg = std::tuple_element_t<I, args_tuple>;                                                               \
+                                                                                                                       \
+        static constexpr size_t arity               = sizeof...(Args);                                                 \
+        static constexpr bool   is_member_function  = false;                                                           \
+        static constexpr bool   is_noexcept         = NOEXCEPT;                                                        \
+        static constexpr bool   is_const            = std::is_const_v<cvref<int>>;                                     \
+        static constexpr bool   is_volatile         = std::is_volatile_v<cvref<int>>;                                  \
+        static constexpr bool   is_reference        = std::is_reference_v<cvref<int>>;                                 \
+        static constexpr bool   is_lvalue_reference = std::is_lvalue_reference_v<cvref<int>>;                          \
+        static constexpr bool   is_rvalue_reference = std::is_rvalue_reference_v<cvref<int>>;                          \
     };                                                                                                                 \
     template <class Ret, class Cls, class... Args>                                                                     \
     struct function_traits<Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT)>                                             \
-    : function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {};
+    : function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {                                                         \
+        using class_type = Cls;                                                                                        \
+                                                                                                                       \
+        static constexpr bool is_member_function = true;                                                               \
+    };
 
 LL_BUILD_FUNCTION_SIGNATURE(, false)
 LL_BUILD_FUNCTION_SIGNATURE(const, false)
