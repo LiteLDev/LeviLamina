@@ -77,6 +77,23 @@ public:
     HumanoidArmorItem();
 
 public:
+    HumanoidArmorItem(
+        std::string const&                   nameId,
+        short                                id,
+        SharedTypes::Legacy::ArmorSlot const slot,
+        int const                            defense,
+        int const                            modelIndex,
+        ArmorMaterial const&                 armorType,
+        bool                                 allowTrim
+    )
+    : Item(nameId, id),
+      mSlot(slot),
+      mDefense(defense),
+      mModelIndex(modelIndex),
+      mArmorType(armorType),
+      mCurrentVersionAllowsTrim(allowTrim) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isHumanoidArmor() const /*override*/;

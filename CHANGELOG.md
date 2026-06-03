@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.10.12] - 2026-06-04
+
+### Added
+
+- Enhanced the `ll::traits::function_traits` @zimuya4153
+- Added constructor for `HumanoidArmorItem`
+
+### Changed
+
+- Bumped bedrock-runtime-data to v26.10.4-server.15 and v26.10.4-client.15
+
 ## [26.10.11] - 2026-05-09
 
 ### Added
@@ -1563,7 +1574,8 @@ For lip and tooth-hub test only.
 [#1806]: https://github.com/LiteLDev/LeviLamina/issues/1806
 [#1807]: https://github.com/LiteLDev/LeviLamina/issues/1807
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.11...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.12...HEAD
+[26.10.12]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.11...v26.10.12
 [26.10.11]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.10...v26.10.11
 [26.10.10]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.9...v26.10.10
 [26.10.9]: https://github.com/LiteLDev/LeviLamina/compare/v26.10.8...v26.10.9
