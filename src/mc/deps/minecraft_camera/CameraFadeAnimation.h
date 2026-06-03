@@ -14,40 +14,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk2946e5;
-        ::ll::UntypedStorage<4, 4> mUnkfb5d8c;
+        ::ll::TypedStorage<4, 4, float> mTime;
+        ::ll::TypedStorage<4, 4, float> mValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Keyframe& operator=(Keyframe const&);
-        Keyframe(Keyframe const&);
-        Keyframe();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb98805;
-    ::ll::UntypedStorage<4, 4>  mUnk5c5a75;
-    ::ll::UntypedStorage<4, 4>  mUnkf3b045;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CameraFadeAnimation::Keyframe>> mKeyframes;
+    ::ll::TypedStorage<4, 4, float>                                           mCurrentValue;
+    ::ll::TypedStorage<4, 4, float>                                           mElapsedTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraFadeAnimation& operator=(CameraFadeAnimation const&);
-    CameraFadeAnimation(CameraFadeAnimation const&);
-    CameraFadeAnimation();
 
 public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void _addKeyframe(float time, float value);
+    MCAPI void _addKeyframe(float time, float value);
 
-    MCNAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
+    MCAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
 
-    MCNAPI float evaluate(float time) const;
+    MCAPI float evaluate(float time) const;
 #endif
     // NOLINTEND
 };

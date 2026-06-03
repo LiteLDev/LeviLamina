@@ -21,25 +21,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk50fc12;
+        ::ll::TypedStorage<8, 8, ::cereal::SchemaReader*> mAdaptor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScopedPop& operator=(ScopedPop const&);
-        ScopedPop(ScopedPop const&);
-        ScopedPop();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ScopedPop();
+        MCAPI ~ScopedPop();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

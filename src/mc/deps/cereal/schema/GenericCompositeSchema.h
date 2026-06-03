@@ -38,14 +38,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doLoad(
+    MCAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
 
-    MCNAPI void $doSave(
+    MCAPI void $doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state

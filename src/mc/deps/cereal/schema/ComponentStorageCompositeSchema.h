@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(
+    MCAPI ::cereal::SchemaDescription makeDescriptionForComponents(
         ::cereal::internal::ReflectionContext const& ctx,
         ::entt::meta_type const&                     type,
         ::cereal::DescriptionConfig                  config
@@ -51,10 +51,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::entt::meta_data
+    MCAPI static ::entt::meta_data
     findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
 
-    MCNAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
+    MCAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
         ::entt::meta_type const& source,
         ::entt::meta_type const& curr,
         ::std::string_view       family,
@@ -65,13 +65,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doSave(
+    MCAPI void $doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
 
-    MCNAPI void $doLoad(
+    MCAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,

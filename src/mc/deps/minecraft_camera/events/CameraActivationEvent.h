@@ -20,7 +20,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ~CameraActivationEvent();
+    MCAPI ~CameraActivationEvent();
 #endif
     // NOLINTEND
 
@@ -28,7 +28,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
 #endif
     // NOLINTEND
 };

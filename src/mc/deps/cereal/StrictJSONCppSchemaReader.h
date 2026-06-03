@@ -48,45 +48,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StrictJSONCppSchemaReader(::std::reference_wrapper<::Json::Value const> value);
+    MCAPI explicit StrictJSONCppSchemaReader(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
+    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_allowAsBool();
+    MCAPI bool $_allowAsBool();
 
-    MCNAPI bool $_allowAsInt8();
+    MCAPI bool $_allowAsInt8();
 
-    MCNAPI bool $_allowAsUInt8();
+    MCAPI bool $_allowAsUInt8();
 
-    MCNAPI bool $_allowAsInt16();
+    MCAPI bool $_allowAsInt16();
 
-    MCNAPI bool $_allowAsUInt16();
+    MCAPI bool $_allowAsUInt16();
 
-    MCNAPI bool $_allowAsInt32();
+    MCAPI bool $_allowAsInt32();
 
-    MCNAPI bool $_allowAsUInt32();
+    MCAPI bool $_allowAsUInt32();
 
-    MCNAPI bool $_allowAsInt64();
+    MCAPI bool $_allowAsInt64();
 
-    MCNAPI bool $_allowAsUInt64();
+    MCAPI bool $_allowAsUInt64();
 
-    MCNAPI bool $_allowAsFloat();
+    MCFOLD bool $_allowAsFloat();
 
-    MCNAPI bool $_allowAsDouble();
+    MCFOLD bool $_allowAsDouble();
 
 
     // NOLINTEND

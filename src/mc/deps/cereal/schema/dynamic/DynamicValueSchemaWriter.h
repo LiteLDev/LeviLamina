@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaWriter.h"
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class DynamicValue; }
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -18,16 +18,10 @@ class DynamicValueSchemaWriter : public ::cereal::SchemaWriter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnke7aa60;
-    ::ll::UntypedStorage<8, 8>  mUnk62b5d6;
-    ::ll::UntypedStorage<8, 24> mUnk71f643;
+    ::ll::TypedStorage<8, 72, ::cereal::DynamicValue>                                          mData;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mExpectedSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::cereal::DynamicValue>>> mStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicValueSchemaWriter& operator=(DynamicValueSchemaWriter const&);
-    DynamicValueSchemaWriter(DynamicValueSchemaWriter const&);
-    DynamicValueSchemaWriter();
 
 public:
     // virtual functions
@@ -82,61 +76,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool write(::cereal::DynamicValue value);
+    MCAPI bool write(::cereal::DynamicValue value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $write(::cereal::NullType);
+    MCAPI bool $write(::cereal::NullType);
 
-    MCNAPI bool $write(bool value);
+    MCAPI bool $write(bool value);
 
-    MCNAPI bool $write(schar value);
+    MCAPI bool $write(schar value);
 
-    MCNAPI bool $write(uchar value);
+    MCAPI bool $write(uchar value);
 
-    MCNAPI bool $write(short value);
+    MCAPI bool $write(short value);
 
-    MCNAPI bool $write(ushort value);
+    MCAPI bool $write(ushort value);
 
-    MCNAPI bool $write(int value);
+    MCAPI bool $write(int value);
 
-    MCNAPI bool $write(uint value);
+    MCAPI bool $write(uint value);
 
-    MCNAPI bool $write(int64 value);
+    MCFOLD bool $write(int64 value);
 
-    MCNAPI bool $write(uint64 value);
+    MCFOLD bool $write(uint64 value);
 
-    MCNAPI bool $write(float value);
+    MCAPI bool $write(float value);
 
-    MCNAPI bool $write(double value);
+    MCAPI bool $write(double value);
 
-    MCNAPI bool $write(::std::string_view const value);
+    MCAPI bool $write(::std::string_view const value);
 
-    MCNAPI bool $write(::gsl::span<uchar const> view);
+    MCAPI bool $write(::gsl::span<uchar const> view);
 
-    MCNAPI void $writeAdditionalData(bool);
+    MCFOLD void $writeAdditionalData(bool);
 
-    MCNAPI void $writeAdditionalData(uint);
+    MCFOLD void $writeAdditionalData(uint);
 
-    MCNAPI void $writeAdditionalData(::std::string_view const);
+    MCFOLD void $writeAdditionalData(::std::string_view const);
 
-    MCNAPI bool $pushMember(::std::string_view const value);
+    MCAPI bool $pushMember(::std::string_view const value);
 
-    MCNAPI void $popMember();
+    MCAPI void $popMember();
 
-    MCNAPI ::cereal::SchemaRWType $openObject();
+    MCAPI ::cereal::SchemaRWType $openObject();
 
-    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
-    MCNAPI void $close();
+    MCAPI void $close();
 
 
     // NOLINTEND

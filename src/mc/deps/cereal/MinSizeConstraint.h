@@ -8,14 +8,8 @@ struct MinSizeConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfe3c2d;
+    ::ll::TypedStorage<8, 8, uint64> mMinSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MinSizeConstraint& operator=(MinSizeConstraint const&);
-    MinSizeConstraint(MinSizeConstraint const&);
-    MinSizeConstraint();
 };
 
 } // namespace cereal::internal

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/List.h"
+
 namespace RakNet {
 
 class VariableListDeltaTracker {
@@ -31,15 +34,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk60f868;
-    ::ll::UntypedStorage<4, 4>  mUnk8df975;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::VariableListDeltaTracker::VariableLastValueNode>>
+                                   variableList;
+    ::ll::TypedStorage<4, 4, uint> nextWriteIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VariableListDeltaTracker& operator=(VariableListDeltaTracker const&);
-    VariableListDeltaTracker(VariableListDeltaTracker const&);
-    VariableListDeltaTracker();
 };
 
 } // namespace RakNet

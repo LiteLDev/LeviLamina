@@ -99,7 +99,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::bgfx::UniformHandle*> m_uniforms;
-        ::ll::UntypedStorage<8, 16>                      m_name;
+        ::ll::TypedStorage<8, 16, ::bx::StringT>         m_name;
         ::ll::TypedStorage<4, 4, uint>                   m_hash;
         ::ll::TypedStorage<2, 2, short>                  m_refCount;
         ::ll::TypedStorage<2, 2, ushort>                 m_num;
@@ -140,7 +140,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>                         m_name;
+        ::ll::TypedStorage<8, 16, ::bx::StringT>            m_name;
         ::ll::TypedStorage<4, 4, ::bgfx::UniformType::Enum> m_type;
         ::ll::TypedStorage<2, 2, ushort>                    m_num;
         ::ll::TypedStorage<2, 2, short>                     m_refCount;
@@ -171,17 +171,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>      m_name;
-        ::ll::TypedStorage<8, 8, void*>  m_ptr;
-        ::ll::TypedStorage<4, 4, uint>   m_storageSize;
-        ::ll::TypedStorage<2, 2, short>  m_refCount;
-        ::ll::TypedStorage<1, 1, uchar>  m_bbRatio;
-        ::ll::TypedStorage<1, 1, uchar>  m_format;
-        ::ll::TypedStorage<1, 1, uchar>  m_numMips;
-        ::ll::TypedStorage<2, 2, ushort> m_numLayers;
-        ::ll::TypedStorage<1, 1, bool>   m_owned;
-        ::ll::TypedStorage<1, 1, bool>   m_immutable;
-        ::ll::TypedStorage<1, 1, bool>   m_rt;
+        ::ll::TypedStorage<8, 16, ::bx::StringT> m_name;
+        ::ll::TypedStorage<8, 8, void*>          m_ptr;
+        ::ll::TypedStorage<4, 4, uint>           m_storageSize;
+        ::ll::TypedStorage<2, 2, short>          m_refCount;
+        ::ll::TypedStorage<1, 1, uchar>          m_bbRatio;
+        ::ll::TypedStorage<1, 1, uchar>          m_format;
+        ::ll::TypedStorage<1, 1, uchar>          m_numMips;
+        ::ll::TypedStorage<2, 2, ushort>         m_numLayers;
+        ::ll::TypedStorage<1, 1, bool>           m_owned;
+        ::ll::TypedStorage<1, 1, bool>           m_immutable;
+        ::ll::TypedStorage<1, 1, bool>           m_rt;
         // NOLINTEND
     };
 
@@ -189,11 +189,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>     m_name;
-        ::ll::TypedStorage<8, 8, void*> m_ptr;
-        ::ll::TypedStorage<4, 4, uint>  m_stride;
-        ::ll::TypedStorage<4, 4, uint>  m_count;
-        ::ll::TypedStorage<2, 2, short> m_refCount;
+        ::ll::TypedStorage<8, 16, ::bx::StringT> m_name;
+        ::ll::TypedStorage<8, 8, void*>          m_ptr;
+        ::ll::TypedStorage<4, 4, uint>           m_stride;
+        ::ll::TypedStorage<4, 4, uint>           m_count;
+        ::ll::TypedStorage<2, 2, short>          m_refCount;
         // NOLINTEND
 
     public:

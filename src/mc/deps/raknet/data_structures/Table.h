@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/BPlusTree.h"
+#include "mc/deps/raknet/data_structures/List.h"
+
 namespace DataStructures {
 
 class Table {
@@ -43,92 +47,56 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk40537c;
-        ::ll::UntypedStorage<8, 8> mUnk6acced;
-        ::ll::UntypedStorage<8, 8> mUnk89a942;
-        ::ll::UntypedStorage<8, 8> mUnk45425d;
+        ::ll::TypedStorage<1, 1, bool>   isEmpty;
+        ::ll::TypedStorage<8, 8, double> i;
+        ::ll::TypedStorage<8, 8, char*>  c;
+        ::ll::TypedStorage<8, 8, void*>  ptr;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Cell& operator=(Cell const&);
-        Cell(Cell const&);
-        Cell();
     };
 
     struct ColumnDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 64> mUnk4d8bdc;
-        ::ll::UntypedStorage<4, 4>  mUnk512ac9;
+        ::ll::TypedStorage<1, 64, char[64]>                           columnName;
+        ::ll::TypedStorage<4, 4, ::DataStructures::Table::ColumnType> columnType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ColumnDescriptor& operator=(ColumnDescriptor const&);
-        ColumnDescriptor(ColumnDescriptor const&);
-        ColumnDescriptor();
     };
 
     struct FilterQuery {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 64> mUnka34b8a;
-        ::ll::UntypedStorage<4, 4>  mUnk9ca462;
-        ::ll::UntypedStorage<8, 8>  mUnk4fcb09;
-        ::ll::UntypedStorage<4, 4>  mUnk40d112;
+        ::ll::TypedStorage<1, 64, char[64]>                                columnName;
+        ::ll::TypedStorage<4, 4, uint>                                     columnIndex;
+        ::ll::TypedStorage<8, 8, ::DataStructures::Table::Cell*>           cellValue;
+        ::ll::TypedStorage<4, 4, ::DataStructures::Table::FilterQueryType> operation;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FilterQuery& operator=(FilterQuery const&);
-        FilterQuery(FilterQuery const&);
-        FilterQuery();
     };
 
     struct Row {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkc89e3e;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::DataStructures::Table::Cell*>> cells;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Row& operator=(Row const&);
-        Row(Row const&);
-        Row();
     };
 
     struct SortQuery {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnka3c809;
-        ::ll::UntypedStorage<4, 4> mUnk93de92;
+        ::ll::TypedStorage<4, 4, uint>                                   columnIndex;
+        ::ll::TypedStorage<4, 4, ::DataStructures::Table::SortQueryType> operation;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SortQuery& operator=(SortQuery const&);
-        SortQuery(SortQuery const&);
-        SortQuery();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk4275ed;
-    ::ll::UntypedStorage<8, 16> mUnkf4143b;
+    ::ll::TypedStorage<8, 48, ::DataStructures::BPlusTree<uint, ::DataStructures::Table::Row*, 16>> rows;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::DataStructures::Table::ColumnDescriptor>>    columns;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Table& operator=(Table const&);
-    Table(Table const&);
-    Table();
 };
 
 } // namespace DataStructures

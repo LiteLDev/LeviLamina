@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/EasingType.h"
+
 namespace CameraSplineUtils {
 
 struct Keyframe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkcd48b3;
-    ::ll::UntypedStorage<4, 4>  mUnkdc2dbc;
-    ::ll::UntypedStorage<4, 4>  mUnkb40430;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mValue;
+    ::ll::TypedStorage<4, 4, float>        mTime;
+    ::ll::TypedStorage<4, 4, ::EasingType> mEasingFunc;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Keyframe& operator=(Keyframe const&);
-    Keyframe(Keyframe const&);
-    Keyframe();
 };
 
 } // namespace CameraSplineUtils

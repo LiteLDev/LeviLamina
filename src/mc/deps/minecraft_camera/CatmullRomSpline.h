@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 class CatmullRomSpline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2e0798;
-    ::ll::UntypedStorage<8, 24> mUnkc28a35;
-    ::ll::UntypedStorage<1, 1>  mUnk57b1b4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mControlPoints;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>>  mAccumulatedSegmentLengths;
+    ::ll::TypedStorage<1, 1, bool>                   mLooped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CatmullRomSpline& operator=(CatmullRomSpline const&);
-    CatmullRomSpline(CatmullRomSpline const&);
-    CatmullRomSpline();
 };

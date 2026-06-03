@@ -3,11 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
+#include "mc/deps/cereal/schema/SerializationTraits.h"
 #include "mc/deps/cereal/schema/VariantPriorityLevel.h"
+#include "mc/external/cereal/StringViewHash.h"
 #include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
@@ -39,26 +43,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnka33fb1;
-        ::ll::UntypedStorage<8, 8>  mUnkcc227c;
+        ::ll::TypedStorage<8, 64, ::entt::meta_any>                                   mArg;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::SerializerContext const*>> mContext;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DynamicSetterArg& operator=(DynamicSetterArg const&);
-        DynamicSetterArg(DynamicSetterArg const&);
-        DynamicSetterArg();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~DynamicSetterArg();
+        MCAPI ~DynamicSetterArg();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -66,32 +64,41 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk74679d;
-        ::ll::UntypedStorage<1, 1> mUnk7505fe;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                              mAllowedAreas;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GetterDescriptor& operator=(GetterDescriptor const&);
-        GetterDescriptor(GetterDescriptor const&);
-        GetterDescriptor();
     };
 
     struct MemberDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk81e2b5;
-        ::ll::UntypedStorage<8, 8>  mUnk937fa7;
-        ::ll::UntypedStorage<8, 32> mUnkf2d8ae;
-        ::ll::UntypedStorage<8, 32> mUnk5e01d3;
-        ::ll::UntypedStorage<8, 8>  mUnkb0e062;
-        ::ll::UntypedStorage<8, 72> mUnk99d9f1;
-        ::ll::UntypedStorage<8, 24> mUnk54613d;
-        ::ll::UntypedStorage<8, 32> mUnk748427;
-        ::ll::UntypedStorage<1, 1>  mUnk9dbec8;
-        ::ll::UntypedStorage<1, 1>  mUnkb484a6;
-        ::ll::UntypedStorage<1, 1>  mUnk39c99d;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::Constraint>>            mConstraint;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mNameExt;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
+        ::ll::TypedStorage<8, 8, ::entt::meta_type (*)(::entt::meta_ctx const&)>     mDynamicSetterArgCtor;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::entt::dense_map<
+                ::std::string,
+                ::std::pair<::entt::meta_type (*)(::entt::meta_ctx const&), ::entt::basic_any<16, 8>>,
+                ::cereal::util::internal::StringViewHash,
+                ::std::equal_to<void>>>
+            mUserPropertiesMap;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::brstd::flat_set<
+                ::cereal::internal::OverrideState,
+                ::std::less<void>,
+                ::std::vector<::cereal::internal::OverrideState>>>
+                                                                mOverridingTypes;
+        ::ll::TypedStorage<8, 32, ::std::string>                mErrorMessage;
+        ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits> mSerializationTraits;
+        ::ll::TypedStorage<1, 1, ::cereal::ContextArea>         mAllowedAreas;
+        ::ll::TypedStorage<1, 1, bool>                          mIsDeprecatedComponent;
         // NOLINTEND
 
     public:
@@ -103,21 +110,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
+        MCAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
 
-        MCNAPI ~MemberDescriptor();
+        MCAPI ~MemberDescriptor();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
+        MCAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -125,77 +132,72 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnk3a19ad;
-        ::ll::UntypedStorage<4, 4>  mUnka1413a;
+        ::ll::TypedStorage<8, 40, ::std::basic_regex<char, ::std::regex_traits<char>>> mRegex;
+        ::ll::TypedStorage<4, 4, uint>                                                 mMemberId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MemberFamily& operator=(MemberFamily const&);
-        MemberFamily(MemberFamily const&);
-        MemberFamily();
     };
 
     struct SetterDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkbfd728;
-        ::ll::UntypedStorage<8, 8> mUnkd0b8e8;
-        ::ll::UntypedStorage<1, 1> mUnkf432c3;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::Constraint>>            mConstraint;
+        ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                              mAllowedAreas;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SetterDescriptor& operator=(SetterDescriptor const&);
-        SetterDescriptor(SetterDescriptor const&);
-        SetterDescriptor();
     };
 
     struct TaggedVariantDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkdd8194;
-        ::ll::UntypedStorage<8, 32> mUnkd3ba52;
+        ::ll::TypedStorage<8, 8, ::entt::meta_type (*)(::entt::meta_ctx const&)> mResolve;
+        ::ll::TypedStorage<8, 32, ::std::string>                                 mTaggedName;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TaggedVariantDescriptor& operator=(TaggedVariantDescriptor const&);
-        TaggedVariantDescriptor(TaggedVariantDescriptor const&);
-        TaggedVariantDescriptor();
     };
 
     struct TypeDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkdf496c;
-        ::ll::UntypedStorage<8, 32> mUnk21bf73;
-        ::ll::UntypedStorage<8, 72> mUnkbece46;
-        ::ll::UntypedStorage<8, 24> mUnkd6def4;
-        ::ll::UntypedStorage<8, 32> mUnk95d3f9;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::internal::BasicSchema>> mPtr;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mName;
+        ::ll::TypedStorage<
+            8,
+            72,
+            ::entt::dense_map<
+                ::std::string,
+                ::std::pair<::entt::meta_type (*)(::entt::meta_ctx const&), ::entt::basic_any<16, 8>>,
+                ::cereal::util::internal::StringViewHash,
+                ::std::equal_to<void>>>
+                                                                                                mUserPropertiesMap;
+        ::ll::TypedStorage<8, 24, ::std::vector<::cereal::internal::BasicSchema::MemberFamily>> mMemberFamilies;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                mErrorMessage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TypeDescriptor& operator=(TypeDescriptor const&);
-        TypeDescriptor(TypeDescriptor const&);
-        TypeDescriptor();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~TypeDescriptor();
+        MCAPI ~TypeDescriptor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
+
+    using DynamicGetterWrapper = ::entt::meta_any (*)(::entt::meta_any const&, ::cereal::SerializerContext const&);
+
+    using DynamicSetterArgCtor = ::entt::meta_type (*)(::entt::meta_ctx const&);
+
+    using IdType = uint;
+
+    using OverridingSet = ::brstd::flat_set<
+        ::cereal::internal::OverrideState,
+        ::std::less<void>,
+        ::std::vector<::cereal::internal::OverrideState>>;
 
 public:
     // virtual functions
@@ -226,7 +228,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(
+    MCAPI void load(
         ::cereal::SchemaReader&              value,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
@@ -237,15 +239,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::cereal::internal::BasicSchema const& lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
+    MCAPI static ::cereal::internal::BasicSchema const& lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isGreedy(::entt::meta_ctx const& ctx) const;
+    MCFOLD bool $isGreedy(::entt::meta_ctx const& ctx) const;
 
-    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
+    MCFOLD ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
 
     // NOLINTEND

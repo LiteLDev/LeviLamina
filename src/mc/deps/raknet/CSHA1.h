@@ -33,16 +33,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Final();
+    MCAPI void Final();
 
-    MCNAPI void Transform(uint* pState, uchar const* pBuffer);
+    MCAPI void Transform(uint* pState, uchar const* pBuffer);
 
-    MCNAPI ~CSHA1();
+    MCAPI ~CSHA1();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

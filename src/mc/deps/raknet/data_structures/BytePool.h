@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/MemoryPool.h"
+
 namespace DataStructures {
 
 class BytePool {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk82ed3d;
-    ::ll::UntypedStorage<8, 32> mUnk44850d;
-    ::ll::UntypedStorage<8, 32> mUnk7a1a11;
-    ::ll::UntypedStorage<8, 32> mUnk51f8e9;
+    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<uchar[128]>>  pool128;
+    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<uchar[512]>>  pool512;
+    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<uchar[2048]>> pool2048;
+    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<uchar[8192]>> pool8192;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BytePool& operator=(BytePool const&);
-    BytePool(BytePool const&);
-    BytePool();
 };
 
 } // namespace DataStructures

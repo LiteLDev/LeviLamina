@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/ConstraintDescription.h"
 #include "mc/deps/cereal/schema/ReflectedType.h"
 #include "mc/deps/cereal/schema/SchemaInfo.h"
+#include "mc/deps/cereal/schema/SerializationTraits.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
-namespace cereal::internal { struct ConstraintDescription; }
 namespace cereal::internal { struct EnumValue; }
 namespace cereal::internal { struct Member; }
 // clang-format on
@@ -19,23 +20,37 @@ namespace cereal {
 
 struct SchemaDescription : public ::cereal::internal::SchemaInfo {
 public:
+    // SchemaDescription inner types define
+    using CerealProperties = ::std::map<::std::string, ::cereal::DynamicValue>;
+
+    using ConstraintDescription = ::cereal::internal::ConstraintDescription;
+
+    using EnumValue = ::cereal::internal::EnumValue;
+
+    using Member = ::cereal::internal::Member;
+
+    using ReflectedType = ::cereal::internal::ReflectedType;
+
+    using SchemaInfo = ::cereal::internal::SchemaInfo;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 456> mUnk9dbec0;
-    ::ll::UntypedStorage<8, 32>  mUnk887506;
-    ::ll::UntypedStorage<8, 32>  mUnk1fbc13;
-    ::ll::UntypedStorage<8, 32>  mUnkfd64a2;
-    ::ll::UntypedStorage<8, 24>  mUnke56e24;
-    ::ll::UntypedStorage<8, 24>  mUnkca1ec7;
-    ::ll::UntypedStorage<8, 16>  mUnk109302;
-    ::ll::UntypedStorage<8, 16>  mUnk1a97ca;
-    ::ll::UntypedStorage<8, 16>  mUnkd3bebd;
-    ::ll::UntypedStorage<8, 24>  mUnk31cfac;
-    ::ll::UntypedStorage<4, 8>   mUnkbfd93c;
-    ::ll::UntypedStorage<4, 8>   mUnke044de;
-    ::ll::UntypedStorage<1, 2>   mUnk493455;
-    ::ll::UntypedStorage<1, 2>   mUnkfcbed6;
-    ::ll::UntypedStorage<8, 40>  mUnk708860;
+    ::ll::TypedStorage<8, 456, ::std::optional<::cereal::internal::ConstraintDescription>>            mConstraint;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::internal::EnumValue>>>          mEnumValues;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mParents;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mSetters;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::cereal::internal::Member>>> mMembers;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::cereal::internal::Member>>> mPatternMembers;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::SchemaDescription>>                         mValueType;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::SchemaDescription>>                         mKeyType;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::SchemaDescription>>                         mMappedType;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::cereal::DynamicValue>>>     mCerealProperties;
+    ::ll::TypedStorage<4, 8, ::std::optional<::cereal::internal::ReflectedType>>                      mUnderlyingType;
+    ::ll::TypedStorage<4, 8, ::std::optional<::cereal::internal::ReflectedType>>                      mControlValueType;
+    ::ll::TypedStorage<1, 2, ::std::optional<::cereal::SerializationTraits>> mSerializationTraits;
+    ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                         mOrdinalIndex;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mNonPublicFlag;
     // NOLINTEND
 
 public:
@@ -45,35 +60,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SchemaDescription(::cereal::SchemaDescription&&);
+    MCAPI SchemaDescription(::cereal::SchemaDescription&&);
 
-    MCNAPI SchemaDescription(::cereal::SchemaDescription const&);
+    MCAPI SchemaDescription(::cereal::SchemaDescription const&);
 
-    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
+    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
 
-    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
+    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
 
-    MCNAPI ~SchemaDescription();
+    MCAPI ~SchemaDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::SchemaDescription&&);
+    MCAPI void* $ctor(::cereal::SchemaDescription&&);
 
-    MCNAPI void* $ctor(::cereal::SchemaDescription const&);
+    MCAPI void* $ctor(::cereal::SchemaDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

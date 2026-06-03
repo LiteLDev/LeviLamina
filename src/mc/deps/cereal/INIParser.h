@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct INISection; }
+// clang-format on
+
 namespace cereal {
 
 class INIParser {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb9a4c2;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::cereal::INISection>> mParsedData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    INIParser& operator=(INIParser const&);
-    INIParser(INIParser const&);
-    INIParser();
 };
 
 } // namespace cereal

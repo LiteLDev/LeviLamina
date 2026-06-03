@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/Constraint.h"
 #include "mc/deps/cereal/ConstraintHandle.h"
 #include "mc/deps/cereal/ContextArea.h"
+#include "mc/deps/cereal/MinSizeConstraint.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
@@ -19,16 +20,10 @@ class SequenceContainerConstraint : public ::cereal::ConstraintHandle<::cereal::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk37e863;
-    ::ll::UntypedStorage<8, 16> mUnkdb155c;
-    ::ll::UntypedStorage<1, 1>  mUnk611bb9;
+    ::ll::TypedStorage<8, 8, ::cereal::internal::MinSizeConstraint>    mConstraint;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::Constraint>> mValueConstraint;
+    ::ll::TypedStorage<1, 1, bool>                                     mNoDuplicates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SequenceContainerConstraint& operator=(SequenceContainerConstraint const&);
-    SequenceContainerConstraint(SequenceContainerConstraint const&);
-    SequenceContainerConstraint();
 
 public:
     // virtual functions
@@ -41,21 +36,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
+    MCAPI ::cereal::internal::ConstraintDescription description(::cereal::ContextArea req) const;
 
-    MCNAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
+    MCAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
+    MCAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
+#include "mc/deps/cereal/ResultCode.h"
+#include "mc/deps/core/container/small_vector.h"
+#include "mc/deps/core/string/StaticOptimizedString.h"
+
 namespace cereal {
 
 class BasicSerializerContext {
@@ -24,19 +30,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkb9a995;
+        ::ll::TypedStorage<8, 16, ::std::variant<uint, ::Bedrock::StaticOptimizedString>> mToken;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TokenHolder& operator=(TokenHolder const&);
-        TokenHolder(TokenHolder const&);
-        TokenHolder();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit operator ::std::string_view() const;
+        MCAPI explicit operator ::std::string_view() const;
         // NOLINTEND
     };
 
@@ -44,27 +44,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk8cd56c;
-        ::ll::UntypedStorage<8, 16> mUnk597ab4;
-        ::ll::UntypedStorage<4, 4>  mUnk6d1130;
+        ::ll::TypedStorage<4, 4, ::cereal::BasicSerializerContext::ContextType>  mType;
+        ::ll::TypedStorage<8, 16, ::cereal::BasicSerializerContext::TokenHolder> mToken;
+        ::ll::TypedStorage<4, 4, uint>                                           mPrevIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
-        Context();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~Context();
+        MCAPI ~Context();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -72,40 +66,34 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>  mUnk661e44;
-        ::ll::UntypedStorage<8, 16> mUnkfc29ff;
-        ::ll::UntypedStorage<4, 4>  mUnk47ae14;
-        ::ll::UntypedStorage<8, 8>  mUnk1b2a23;
-        ::ll::UntypedStorage<4, 4>  mUnk2bab13;
+        ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                           mResultCode;
+        ::ll::TypedStorage<8, 16, ::cereal::BasicSerializerContext::TokenHolder> mMessage;
+        ::ll::TypedStorage<4, 4, uint>                                           mContextIndex;
+        ::ll::TypedStorage<8, 8, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 1> const*> mStack;
+        ::ll::TypedStorage<4, 4, uint> mGeneration;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LogEntry& operator=(LogEntry const&);
-        LogEntry(LogEntry const&);
-        LogEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~LogEntry();
+        MCAPI ~LogEntry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke38ce2;
-    ::ll::UntypedStorage<8, 48> mUnk16c65c;
-    ::ll::UntypedStorage<8, 64> mUnke42d72;
-    ::ll::UntypedStorage<2, 2>  mUnkbb4d26;
-    ::ll::UntypedStorage<1, 1>  mUnk10d234;
+    ::ll::TypedStorage<4, 4, uint>                                                                    mCurrentIndex;
+    ::ll::TypedStorage<8, 48, ::Bedrock::small_vector<::cereal::BasicSerializerContext::Context, 1>>  mStack;
+    ::ll::TypedStorage<8, 64, ::Bedrock::small_vector<::cereal::BasicSerializerContext::LogEntry, 1>> mLog;
+    ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                                                    mErrorCodes;
+    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                                                   mContextArea;
     // NOLINTEND
 
 public:
@@ -117,14 +105,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string _getContextString(uint index) const;
+    MCAPI ::std::string _getContextString(uint index) const;
 
-    MCNAPI ::std::vector<::cereal::BasicSerializerContext::Context>
+    MCAPI ::std::vector<::cereal::BasicSerializerContext::Context>
     contextFor(::cereal::BasicSerializerContext::LogEntry const& entry) const;
 
-    MCNAPI ::std::vector<::std::string> errors() const;
+    MCAPI ::std::vector<::std::string> errors() const;
 
-    MCNAPI ::cereal::BasicSerializerContext& operator=(::cereal::BasicSerializerContext&&);
+    MCAPI ::cereal::BasicSerializerContext& operator=(::cereal::BasicSerializerContext&&);
     // NOLINTEND
 };
 

@@ -8,8 +8,8 @@ struct JSONSchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk841502;
-    ::ll::UntypedStorage<8, 40> mUnk9aac33;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mTitle;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mDescription;
     // NOLINTEND
 
 public:
@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JSONSchemaInfo(::cereal::ext::internal::JSONSchemaInfo const&);
+    MCAPI JSONSchemaInfo(::cereal::ext::internal::JSONSchemaInfo const&);
 
-    MCNAPI ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo&&);
+    MCFOLD ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo&&);
 
-    MCNAPI ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo const&);
+    MCAPI ::cereal::ext::internal::JSONSchemaInfo& operator=(::cereal::ext::internal::JSONSchemaInfo const&);
 
-    MCNAPI ~JSONSchemaInfo();
+    MCAPI ~JSONSchemaInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaInfo const&);
+    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

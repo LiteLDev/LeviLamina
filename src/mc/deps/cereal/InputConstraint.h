@@ -8,14 +8,8 @@ struct InputConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk15f1d6;
+    ::ll::TypedStorage<8, 8, uint64> mMaxLength;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InputConstraint& operator=(InputConstraint const&);
-    InputConstraint(InputConstraint const&);
-    InputConstraint();
 };
 
 } // namespace cereal::internal

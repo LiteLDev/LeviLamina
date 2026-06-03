@@ -4,6 +4,12 @@
 
 namespace bgfx {
 
-struct VertexBufferHandle {};
+struct VertexBufferHandle {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ushort> idx;
+    // NOLINTEND
+};
 
 } // namespace bgfx

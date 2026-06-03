@@ -11,13 +11,17 @@ namespace cereal::internal {
 
 struct EnumValue {
 public:
+    // EnumValue inner types define
+    using CerealProperties = ::std::map<::std::string, ::cereal::DynamicValue>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8e0140;
-    ::ll::UntypedStorage<8, 32> mUnk4d87c7;
-    ::ll::UntypedStorage<8, 40> mUnkfb6c04;
-    ::ll::UntypedStorage<8, 24> mUnk82e42e;
-    ::ll::UntypedStorage<8, 40> mUnk8a44de;
+    ::ll::TypedStorage<8, 8, int64>                                                               mValue;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                      mName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                     mDescription;
+    ::ll::TypedStorage<8, 24, ::std::optional<::std::map<::std::string, ::cereal::DynamicValue>>> mCerealProperties;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                     mNonPublicFlag;
     // NOLINTEND
 
 public:
@@ -27,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EnumValue(::cereal::internal::EnumValue&&);
+    MCAPI EnumValue(::cereal::internal::EnumValue&&);
 
-    MCNAPI EnumValue(::cereal::internal::EnumValue const&);
+    MCAPI EnumValue(::cereal::internal::EnumValue const&);
 
-    MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue&&);
+    MCAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue&&);
 
-    MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
+    MCAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
 
-    MCNAPI ~EnumValue();
+    MCAPI ~EnumValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::internal::EnumValue&&);
+    MCAPI void* $ctor(::cereal::internal::EnumValue&&);
 
-    MCNAPI void* $ctor(::cereal::internal::EnumValue const&);
+    MCAPI void* $ctor(::cereal::internal::EnumValue const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

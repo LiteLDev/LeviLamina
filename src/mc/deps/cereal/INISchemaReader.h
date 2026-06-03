@@ -3,9 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/INISection.h"
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class INIProperty; }
+// clang-format on
 
 namespace cereal {
 
@@ -13,16 +19,15 @@ class INISchemaReader : public ::cereal::SchemaReader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk21bb5f;
-    ::ll::UntypedStorage<8, 8>  mUnke11cc5;
-    ::ll::UntypedStorage<8, 8>  mUnkaccc23;
+    ::ll::TypedStorage<8, 96, ::cereal::INISection>  mData;
+    ::ll::TypedStorage<8, 8, ::cereal::INIProperty*> mCurrentProp;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::_List_iterator<
+            ::std::_List_val<::std::_List_simple_types<::std::pair<::std::string const, ::cereal::INIProperty>>>>>
+        mIt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    INISchemaReader& operator=(INISchemaReader const&);
-    INISchemaReader(INISchemaReader const&);
-    INISchemaReader();
 
 public:
     // virtual functions

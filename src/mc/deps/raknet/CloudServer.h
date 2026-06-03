@@ -7,12 +7,17 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class Hash; }
+namespace DataStructures { class OrderedList; }
+namespace RakNet { class CloudServerQueryFilter; }
+namespace RakNet { struct CloudKey; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -174,23 +179,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk27253f;
-    ::ll::UntypedStorage<8, 8>   mUnkd0a5af;
-    ::ll::UntypedStorage<8, 16>  mUnkcece0b;
-    ::ll::UntypedStorage<8, 16>  mUnk6a5163;
-    ::ll::UntypedStorage<8, 16>  mUnk6ffb76;
-    ::ll::UntypedStorage<8, 16>  mUnk46ff2b;
-    ::ll::UntypedStorage<8, 8>   mUnk291a22;
-    ::ll::UntypedStorage<4, 4>   mUnk515af2;
-    ::ll::UntypedStorage<8, 16>  mUnkfc3151;
-    ::ll::UntypedStorage<8, 136> mUnk4af8a3;
+    ::ll::TypedStorage<8, 8, uint64>                                                     maxUploadBytesPerClient;
+    ::ll::TypedStorage<8, 8, uint64>                                                     maxBytesPerDowload;
+    ::ll::UntypedStorage<8, 16>                                                          dataRepository;
+    ::ll::UntypedStorage<8, 16>                                                          remoteSystems;
+    ::ll::UntypedStorage<8, 16>                                                          remoteServers;
+    ::ll::UntypedStorage<8, 16>                                                          getRequests;
+    ::ll::TypedStorage<8, 8, uint64>                                                     nextGetRequestsCheck;
+    ::ll::TypedStorage<4, 4, uint>                                                       nextGetRequestId;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::CloudServerQueryFilter*>> queryFilters;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                                  forceAddress;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CloudServer& operator=(CloudServer const&);
-    CloudServer(CloudServer const&);
-    CloudServer();
 
 public:
     // virtual functions

@@ -33,20 +33,22 @@ public:
         Entry();
     };
 
+    using BanCallback = ::std::function<void(::std::string const&)>;
+
+    using Ip = ::std::array<::std::byte, 16>;
+
+    using LoggingFunctor = ::std::function<void(::std::string const&)>;
+
+    using Time = ::std::chrono::seconds;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>     mUnk36ad48;
-    ::ll::UntypedStorage<8, 8>     mUnk1af0c9;
-    ::ll::UntypedStorage<8, 10240> mUnk515729;
-    ::ll::UntypedStorage<8, 64>    mUnk6becdb;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds> banExpiryDuration;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds> appHandshakeGracePeriod;
+    ::ll::TypedStorage<8, 10240, ::std::array<::std::optional<::RakNet::ShadowBanList::Entry>, 256>> mEntries;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>                           mBanCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShadowBanList& operator=(ShadowBanList const&);
-    ShadowBanList(ShadowBanList const&);
-    ShadowBanList();
 
 public:
     // member functions
