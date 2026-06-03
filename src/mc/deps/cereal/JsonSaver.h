@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/BasicRapidJSONSchemaWriter.h"
 #include "mc/deps/cereal/BasicSaver.h"
 
 // auto generated forward declare list
@@ -17,15 +18,31 @@ class JsonSaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 168> mUnkb954b8;
-    ::ll::UntypedStorage<8, 184> mUnkd5d8b1;
-    ::ll::UntypedStorage<1, 1>   mUnk3d4165;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::cereal::BasicRapidJSONSchemaWriter<::rapidjson::Writer<
+            ::rapidjson::GenericStringBuffer<::rapidjson::UTF8<char>, ::rapidjson::CrtAllocator>,
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::CrtAllocator,
+            0>>>
+        mWriter;
+    ::ll::TypedStorage<
+        8,
+        184,
+        ::cereal::BasicRapidJSONSchemaWriter<::rapidjson::PrettyWriter<
+            ::rapidjson::GenericStringBuffer<::rapidjson::UTF8<char>, ::rapidjson::CrtAllocator>,
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::CrtAllocator,
+            0>>>
+                                   mPrettyWriter;
+    ::ll::TypedStorage<1, 1, bool> mPretty;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    JsonSaver& operator=(JsonSaver const&);
-    JsonSaver(JsonSaver const&);
     JsonSaver();
 
 public:
@@ -37,25 +54,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JsonSaver(::cereal::ReflectionCtx const&, ::cereal::SaverConfig const&);
+    MCAPI JsonSaver(::cereal::ReflectionCtx const&, ::cereal::SaverConfig const&);
 
-    MCNAPI JsonSaver(::cereal::ReflectionCtx const& reflectionCtx, char indentChar, uint indentAmount);
+    MCAPI JsonSaver(::cereal::ReflectionCtx const& reflectionCtx, char indentChar, uint indentAmount);
 
-    MCNAPI ::std::string toString();
+    MCAPI ::std::string toString();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&, ::cereal::SaverConfig const&);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const&, ::cereal::SaverConfig const&);
 
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx, char indentChar, uint indentAmount);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx, char indentChar, uint indentAmount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

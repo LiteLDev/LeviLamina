@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BinaryStream;
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -17,7 +18,7 @@ class BinarySchemaWriter : public ::cereal::SchemaWriter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7d3b71;
+    ::ll::TypedStorage<8, 8, ::BinaryStream&> mStream;
     // NOLINTEND
 
 public:
@@ -79,49 +80,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $write(::cereal::NullType);
+    MCFOLD bool $write(::cereal::NullType);
 
-    MCNAPI bool $write(bool value);
+    MCFOLD bool $write(bool value);
 
-    MCNAPI bool $write(schar);
+    MCFOLD bool $write(schar);
 
-    MCNAPI bool $write(uchar value);
+    MCFOLD bool $write(uchar value);
 
-    MCNAPI bool $write(short value);
+    MCFOLD bool $write(short value);
 
-    MCNAPI bool $write(ushort value);
+    MCFOLD bool $write(ushort value);
 
-    MCNAPI bool $write(int value);
+    MCFOLD bool $write(int value);
 
-    MCNAPI bool $write(uint value);
+    MCFOLD bool $write(uint value);
 
-    MCNAPI bool $write(int64 value);
+    MCFOLD bool $write(int64 value);
 
-    MCNAPI bool $write(uint64 value);
+    MCFOLD bool $write(uint64 value);
 
-    MCNAPI bool $write(float value);
+    MCFOLD bool $write(float value);
 
-    MCNAPI bool $write(double value);
+    MCFOLD bool $write(double value);
 
-    MCNAPI bool $write(::std::string_view const value);
+    MCFOLD bool $write(::std::string_view const value);
 
-    MCNAPI bool $write(::gsl::span<uchar const> view);
+    MCFOLD bool $write(::gsl::span<uchar const> view);
 
-    MCNAPI void $writeAdditionalData(bool value);
+    MCFOLD void $writeAdditionalData(bool value);
 
-    MCNAPI void $writeAdditionalData(uint value);
+    MCFOLD void $writeAdditionalData(uint value);
 
-    MCNAPI void $writeAdditionalData(::std::string_view const value);
+    MCFOLD void $writeAdditionalData(::std::string_view const value);
 
-    MCNAPI bool $pushMember(::std::string_view const);
+    MCFOLD bool $pushMember(::std::string_view const);
 
-    MCNAPI void $popMember();
+    MCFOLD void $popMember();
 
-    MCNAPI ::cereal::SchemaRWType $openObject();
+    MCFOLD ::cereal::SchemaRWType $openObject();
 
-    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCFOLD ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
-    MCNAPI void $close();
+    MCFOLD void $close();
 
 
     // NOLINTEND

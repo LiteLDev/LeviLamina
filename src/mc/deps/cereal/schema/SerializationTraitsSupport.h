@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/SerializationTraits.h"
+
 namespace cereal {
 
 struct SerializationTraitsSupport {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke9e0de;
-    ::ll::UntypedStorage<1, 1> mUnk225374;
+    ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits> mSerializationTraitsOverride;
+    ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits> mSerializationTraits;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SerializationTraitsSupport& operator=(SerializationTraitsSupport const&);
-    SerializationTraitsSupport(SerializationTraitsSupport const&);
-    SerializationTraitsSupport();
 
 public:
     // virtual functions

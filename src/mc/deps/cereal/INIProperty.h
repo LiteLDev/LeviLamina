@@ -19,16 +19,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1f72c7;
-    ::ll::UntypedStorage<8, 32> mUnkcad0a3;
-    ::ll::UntypedStorage<8, 32> mUnk692e5b;
+    ::ll::TypedStorage<4, 4, ::cereal::INIProperty::PropertyType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                      name;
+    ::ll::TypedStorage<8, 32, ::std::string>                      value;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    INIProperty& operator=(INIProperty const&);
-    INIProperty(INIProperty const&);
-    INIProperty();
 };
 
 } // namespace cereal

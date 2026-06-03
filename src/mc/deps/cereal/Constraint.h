@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ContextArea.h"
+#include "mc/deps/cereal/InputConstraint.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,17 +16,17 @@ namespace cereal {
 
 class Constraint {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9fd194;
-    ::ll::UntypedStorage<1, 1> mUnk709a4e;
-    // NOLINTEND
+    // Constraint inner types define
+    using Description = ::cereal::internal::ConstraintDescription;
+
+    using TypeInfo = ::entt::type_info;
 
 public:
-    // prevent constructor by default
-    Constraint& operator=(Constraint const&);
-    Constraint(Constraint const&);
-    Constraint();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::cereal::internal::InputConstraint> mInputConstraint;
+    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>               mContextArea;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -44,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
+    MCFOLD ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

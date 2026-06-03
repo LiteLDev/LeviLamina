@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicSaver.h"
+#include "mc/deps/cereal/BinarySchemaWriter.h"
 
 namespace cereal {
 
@@ -11,14 +12,8 @@ class BinarySaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk40d3c8;
+    ::ll::TypedStorage<8, 24, ::cereal::BinarySchemaWriter> mWriter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BinarySaver& operator=(BinarySaver const&);
-    BinarySaver(BinarySaver const&);
-    BinarySaver();
 
 public:
     // virtual functions
@@ -29,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

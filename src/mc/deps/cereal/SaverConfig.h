@@ -8,15 +8,9 @@ struct SaverConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk59d900;
-    ::ll::UntypedStorage<1, 1> mUnk731504;
+    ::ll::TypedStorage<1, 1, bool> mWriteDeprecatedFields;
+    ::ll::TypedStorage<1, 1, bool> mSkipDefaultFields;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SaverConfig& operator=(SaverConfig const&);
-    SaverConfig(SaverConfig const&);
-    SaverConfig();
 };
 
 } // namespace cereal

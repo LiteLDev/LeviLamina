@@ -26,18 +26,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void constraintDescriptionIfAny(
+    MCAPI void constraintDescriptionIfAny(
         ::cereal::SchemaDescription& description,
         ::cereal::Constraint const*  constraint,
         ::cereal::DescriptionConfig  config
     ) const;
 
-    MCNAPI ::cereal::internal::VariantPriorityLevel
+    MCAPI ::cereal::internal::VariantPriorityLevel
     findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
-    MCNAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
+    MCAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
-    MCNAPI ::cereal::SchemaDescription makeDescriptionForType(
+    MCAPI ::cereal::SchemaDescription makeDescriptionForType(
         ::cereal::internal::ReflectionContext const& ctx,
         ::entt::meta_type const&                     type,
         ::cereal::DescriptionConfig                  config

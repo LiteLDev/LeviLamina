@@ -21,28 +21,40 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk730fe0;
-        ::ll::UntypedStorage<8, 8> mUnkaf8b5f;
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::rapidjson::GenericValue<
+                ::rapidjson::UTF8<char>,
+                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const*>
+            mValue;
+        ::ll::TypedStorage<
+            8,
+            8,
+            ::rapidjson::GenericMemberIterator<
+                1,
+                ::rapidjson::UTF8<char>,
+                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>>
+            mIt;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        State& operator=(State const&);
-        State(State const&);
-        State();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc36d0a;
-    ::ll::UntypedStorage<8, 96> mUnk5155d9;
+    ::ll::TypedStorage<8, 24, ::std::vector<::cereal::StrictRapidJSONSchemaReader::State>> mState;
+    ::ll::TypedStorage<
+        8,
+        96,
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>>
+        mDoc;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StrictRapidJSONSchemaReader& operator=(StrictRapidJSONSchemaReader const&);
-    StrictRapidJSONSchemaReader(StrictRapidJSONSchemaReader const&);
     StrictRapidJSONSchemaReader();
 
 public:
@@ -105,9 +117,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit StrictRapidJSONSchemaReader(::std::string const& data);
+    MCAPI explicit StrictRapidJSONSchemaReader(::std::string const& data);
 
-    MCNAPI explicit StrictRapidJSONSchemaReader(
+    MCAPI explicit StrictRapidJSONSchemaReader(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -117,9 +129,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& data);
+    MCAPI void* $ctor(::std::string const& data);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -129,62 +141,62 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::cereal::SchemaRWType $expectedType() const;
+    MCFOLD ::cereal::SchemaRWType $expectedType() const;
 
-    MCNAPI ::Bedrock::Result<void> $asNull();
+    MCAPI ::Bedrock::Result<void> $asNull();
 
-    MCNAPI ::Bedrock::Result<bool> $asBool();
+    MCAPI ::Bedrock::Result<bool> $asBool();
 
-    MCNAPI ::Bedrock::Result<schar> $asInt8();
+    MCAPI ::Bedrock::Result<schar> $asInt8();
 
-    MCNAPI ::Bedrock::Result<uchar> $asUInt8();
+    MCAPI ::Bedrock::Result<uchar> $asUInt8();
 
-    MCNAPI ::Bedrock::Result<short> $asInt16();
+    MCAPI ::Bedrock::Result<short> $asInt16();
 
-    MCNAPI ::Bedrock::Result<ushort> $asUInt16();
+    MCAPI ::Bedrock::Result<ushort> $asUInt16();
 
-    MCNAPI ::Bedrock::Result<int> $asInt32();
+    MCAPI ::Bedrock::Result<int> $asInt32();
 
-    MCNAPI ::Bedrock::Result<uint> $asUInt32();
+    MCAPI ::Bedrock::Result<uint> $asUInt32();
 
-    MCNAPI ::Bedrock::Result<int64> $asInt64();
+    MCAPI ::Bedrock::Result<int64> $asInt64();
 
-    MCNAPI ::Bedrock::Result<uint64> $asUInt64();
+    MCAPI ::Bedrock::Result<uint64> $asUInt64();
 
-    MCNAPI ::Bedrock::Result<float> $asFloat();
+    MCAPI ::Bedrock::Result<float> $asFloat();
 
-    MCNAPI ::Bedrock::Result<double> $asDouble();
+    MCAPI ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+    MCAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
-    MCNAPI ::Bedrock::Result<void>
+    MCAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCNAPI ::std::optional<bool> $additionalDataAsBool();
+    MCFOLD ::std::optional<bool> $additionalDataAsBool();
 
-    MCNAPI ::std::optional<uint> $additionalDataAsUInt32();
+    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
 
-    MCNAPI ::std::optional<::std::string> $additionalDataAsString(uint64);
+    MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64);
 
-    MCNAPI uint64 $members();
+    MCFOLD uint64 $members();
 
-    MCNAPI uint64 $length(uint64 expectedSize);
+    MCFOLD uint64 $length(uint64 expectedSize);
 
-    MCNAPI bool $pushMember(::std::string_view const name);
+    MCFOLD bool $pushMember(::std::string_view const name);
 
-    MCNAPI ::std::string_view $pushNextMember();
+    MCFOLD ::std::string_view $pushNextMember();
 
-    MCNAPI void $pushElement(uint64 index);
+    MCFOLD void $pushElement(uint64 index);
 
-    MCNAPI void $pop();
+    MCFOLD void $pop();
 
 
     // NOLINTEND

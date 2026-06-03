@@ -8,15 +8,9 @@ struct HashIndex {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk277edd;
-    ::ll::UntypedStorage<4, 4> mUnk23f068;
+    ::ll::TypedStorage<4, 4, uint> primaryIndex;
+    ::ll::TypedStorage<4, 4, uint> secondaryIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HashIndex& operator=(HashIndex const&);
-    HashIndex(HashIndex const&);
-    HashIndex();
 };
 
 } // namespace DataStructures

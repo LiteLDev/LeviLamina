@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicSaver.h"
+#include "mc/deps/cereal/INISchemaWriter.h"
 
 namespace cereal {
 
@@ -11,14 +12,8 @@ class INISaver : public ::cereal::BasicSaver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkb9979a;
+    ::ll::TypedStorage<8, 120, ::cereal::INISchemaWriter> mWriter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    INISaver& operator=(INISaver const&);
-    INISaver(INISaver const&);
-    INISaver();
 
 public:
     // virtual functions

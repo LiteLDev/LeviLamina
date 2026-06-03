@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/minecraft_camera/CameraShakeType.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
@@ -11,7 +13,6 @@
 class EntityContext;
 class EntityRegistry;
 class Vec2;
-class Vec3;
 // clang-format on
 
 class ICameraAPI {
@@ -32,30 +33,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkaa59b5;
-        ::ll::UntypedStorage<4, 4>  mUnka686c9;
+        ::ll::TypedStorage<4, 12, ::Vec3>                           mDirection;
+        ::ll::TypedStorage<4, 4, ::ICameraAPI::CameraMovementSpeed> mSpeed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CameraMovementData& operator=(CameraMovementData const&);
-        CameraMovementData(CameraMovementData const&);
-        CameraMovementData();
     };
 
     struct ShakeParameters {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkb19a92;
-        ::ll::UntypedStorage<1, 1>  mUnk3780d8;
+        ::ll::TypedStorage<4, 12, ::Vec3>           mShakeNoise;
+        ::ll::TypedStorage<1, 1, ::CameraShakeType> mShakeType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ShakeParameters& operator=(ShakeParameters const&);
-        ShakeParameters(ShakeParameters const&);
-        ShakeParameters();
     };
 
 public:

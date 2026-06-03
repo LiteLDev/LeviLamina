@@ -11,14 +11,8 @@ class EnumConstraint : public ::cereal::ConstraintHandle<::cereal::EnumConstrain
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk533231;
+    ::ll::TypedStorage<8, 24, ::std::vector<int64>> mValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnumConstraint& operator=(EnumConstraint const&);
-    EnumConstraint(EnumConstraint const&);
-    EnumConstraint();
 
 public:
     // virtual functions
@@ -29,7 +23,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -8,14 +8,8 @@ struct LoaderConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka628d1;
+    ::ll::TypedStorage<1, 1, bool> mReadDeprecatedFields;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoaderConfig& operator=(LoaderConfig const&);
-    LoaderConfig(LoaderConfig const&);
-    LoaderConfig();
 };
 
 } // namespace cereal

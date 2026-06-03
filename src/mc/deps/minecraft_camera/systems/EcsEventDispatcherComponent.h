@@ -22,7 +22,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::StackRefResult<::EcsEventDispatcher> get();
+    MCFOLD ::StackRefResult<::EcsEventDispatcher> get();
 #endif
     // NOLINTEND
 };

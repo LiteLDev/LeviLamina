@@ -16,7 +16,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ~CameraSplineInstructionEvent();
+    MCAPI ~CameraSplineInstructionEvent();
 #endif
     // NOLINTEND
 
@@ -24,7 +24,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 };

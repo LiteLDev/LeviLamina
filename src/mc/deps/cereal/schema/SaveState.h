@@ -2,14 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class SerializerContext; }
+namespace cereal { struct SaverConfig; }
+// clang-format on
+
 namespace cereal::internal {
 
 struct SaveState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk146526;
-    ::ll::UntypedStorage<8, 8> mUnkc72c33;
+    ::ll::TypedStorage<8, 8, ::cereal::SerializerContext&> mContext;
+    ::ll::TypedStorage<8, 8, ::cereal::SaverConfig const&> mConfig;
     // NOLINTEND
 
 public:

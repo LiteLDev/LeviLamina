@@ -2,16 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class Constraint; }
+namespace cereal { class SerializerContext; }
+namespace cereal { struct LoaderConfig; }
+// clang-format on
+
 namespace cereal::internal {
 
 struct LoadState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk90c609;
-    ::ll::UntypedStorage<8, 8> mUnk394bb0;
-    ::ll::UntypedStorage<8, 8> mUnkf50cdf;
-    ::ll::UntypedStorage<1, 1> mUnkd05e68;
+    ::ll::TypedStorage<8, 8, ::cereal::SerializerContext&>  mContext;
+    ::ll::TypedStorage<8, 8, ::cereal::LoaderConfig const&> mConfig;
+    ::ll::TypedStorage<8, 8, ::cereal::Constraint const*>   mConstraint;
+    ::ll::TypedStorage<1, 1, bool>                          mIsTopLevel;
     // NOLINTEND
 
 public:

@@ -16,62 +16,70 @@ namespace cereal::ext {
 
 struct JSONSchema : public ::cereal::ext::internal::JSONSchemaDef {
 public:
+    // JSONSchema inner types define
+    using JSONSchemaDef = ::cereal::ext::internal::JSONSchemaDef;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd36771;
-    ::ll::UntypedStorage<8, 32> mUnkd07188;
-    ::ll::UntypedStorage<8, 32> mUnkf7fce6;
-    ::ll::UntypedStorage<8, 32> mUnk6e7fa1;
-    ::ll::UntypedStorage<4, 8>  mUnkfffa36;
-    ::ll::UntypedStorage<8, 72> mUnk67cde9;
+    ::ll::TypedStorage<8, 32, ::std::string>       mSchemaUrl;
+    ::ll::TypedStorage<8, 32, ::std::string>       mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>       mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>       mMinecraftVersion;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mProtocolVersion;
+    ::ll::TypedStorage<
+        8,
+        72,
+        ::std::optional<::std::unordered_map<::std::string, ::cereal::ext::internal::JSONSchemaDef>>>
+        mDefs;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JSONSchema();
+    MCAPI JSONSchema();
 
-    MCNAPI JSONSchema(::cereal::ext::JSONSchema&&);
+    MCAPI JSONSchema(::cereal::ext::JSONSchema&&);
 
-    MCNAPI JSONSchema(::cereal::ext::JSONSchema const&);
+    MCAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
-    MCNAPI void makeAndNormalizeDefs(
+    MCAPI void makeAndNormalizeDefs(
         ::cereal::ext::internal::OutRefsMap&              outRefs,
         ::std::vector<::cereal::SchemaDescription> const& descriptions
     );
 
-    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
+    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
 
-    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
+    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
 
-    MCNAPI ~JSONSchema();
+    MCAPI ~JSONSchema();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
 
-    MCNAPI static ::cereal::ext::JSONSchema
+    MCAPI static ::cereal::ext::JSONSchema
     fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::cereal::ext::JSONSchema&&);
+    MCAPI void* $ctor(::cereal::ext::JSONSchema&&);
 
-    MCNAPI void* $ctor(::cereal::ext::JSONSchema const&);
+    MCAPI void* $ctor(::cereal::ext::JSONSchema const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

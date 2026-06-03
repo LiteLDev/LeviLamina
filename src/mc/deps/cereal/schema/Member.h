@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/schema/SchemaDescription.h"
+#include "mc/deps/cereal/schema/dynamic/DynamicValue.h"
 
 namespace cereal::internal {
 
@@ -11,28 +12,22 @@ struct Member : public ::cereal::SchemaDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3205d4;
-    ::ll::UntypedStorage<1, 1>  mUnkd0026d;
-    ::ll::UntypedStorage<8, 80> mUnk89c4d6;
-    ::ll::UntypedStorage<8, 80> mUnk173a57;
+    ::ll::TypedStorage<1, 1, bool>                                     mRequired;
+    ::ll::TypedStorage<1, 1, bool>                                     mDeprecated;
+    ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mDefaultValue;
+    ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mConstValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Member& operator=(Member const&);
-    Member(Member const&);
-    Member();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~Member();
+    MCAPI ~Member();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicLoader.h"
+#include "mc/deps/cereal/BinarySchemaReader.h"
 
 namespace cereal {
 
@@ -11,14 +12,8 @@ class BinaryLoader : public ::cereal::BasicLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkac09ce;
+    ::ll::TypedStorage<8, 24, ::cereal::BinarySchemaReader> mReader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BinaryLoader& operator=(BinaryLoader const&);
-    BinaryLoader(BinaryLoader const&);
-    BinaryLoader();
 
 public:
     // virtual functions
@@ -29,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

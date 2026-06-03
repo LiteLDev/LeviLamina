@@ -8,16 +8,10 @@ struct AvoidanceCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk878e16;
-    ::ll::UntypedStorage<4, 4>  mUnkf06e2e;
-    ::ll::UntypedStorage<4, 4>  mUnke0ae2b;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mTargetPos;
+    ::ll::TypedStorage<4, 4, float>        mDistanceConstraint;
+    ::ll::TypedStorage<4, 4, float>        mDistanceToTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvoidanceCache& operator=(AvoidanceCache const&);
-    AvoidanceCache(AvoidanceCache const&);
-    AvoidanceCache();
 };
 
 } // namespace CameraAvoidanceSystem

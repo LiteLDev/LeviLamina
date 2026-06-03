@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/INISection.h"
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaWriter.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class INIProperty; }
 namespace cereal { struct NullType; }
 // clang-format on
 
@@ -17,15 +19,9 @@ class INISchemaWriter : public ::cereal::SchemaWriter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk6741b6;
-    ::ll::UntypedStorage<8, 8>  mUnke426ee;
+    ::ll::TypedStorage<8, 96, ::cereal::INISection>  mData;
+    ::ll::TypedStorage<8, 8, ::cereal::INIProperty*> mCurrentProp;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    INISchemaWriter& operator=(INISchemaWriter const&);
-    INISchemaWriter(INISchemaWriter const&);
-    INISchemaWriter();
 
 public:
     // virtual functions

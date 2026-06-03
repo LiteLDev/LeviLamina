@@ -8,26 +8,20 @@ struct OutRefsMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk68c195;
-    ::ll::UntypedStorage<4, 4>  mUnk12f1cf;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mMap;
+    ::ll::TypedStorage<4, 4, uint const>                                mRootSchemaId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OutRefsMap& operator=(OutRefsMap const&);
-    OutRefsMap(OutRefsMap const&);
-    OutRefsMap();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~OutRefsMap();
+    MCAPI ~OutRefsMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

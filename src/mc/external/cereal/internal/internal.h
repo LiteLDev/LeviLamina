@@ -23,22 +23,22 @@ namespace cereal::util::internal { struct StringViewHash; }
 namespace cereal::internal {
 // functions
 // NOLINTBEGIN
-MCNAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
+MCAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
 
-MCNAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
+MCAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
 
-MCNAPI ::cereal::DynamicValue dynamicValueFromProp(::entt::meta_any const& any);
+MCAPI ::cereal::DynamicValue dynamicValueFromProp(::entt::meta_any const& any);
 
-MCNAPI void fillEnumDescription(
+MCAPI void fillEnumDescription(
     ::cereal::internal::ReflectionContext const& ctx,
     ::cereal::SchemaDescription&                 ret,
     ::entt::meta_type const&                     type,
     ::cereal::DescriptionConfig                  config
 );
 
-MCNAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
+MCAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
 
-MCNAPI void loadOrFail(
+MCAPI void loadOrFail(
     ::cereal::SchemaReader&              reader,
     ::entt::meta_any&                    any,
     ::entt::type_info const&             expected,
@@ -46,11 +46,11 @@ MCNAPI void loadOrFail(
     ::cereal::internal::LoadState const& state
 );
 
-MCNAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
+MCAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, ::entt::type_info info);
 
-MCNAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type, ::cereal::ContextArea area);
+MCAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type, ::cereal::ContextArea area);
 
-MCNAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
+MCAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
     ::cereal::internal::ReflectionContext const& ctx,
     ::entt::dense_map<
         ::std::string,
@@ -59,14 +59,14 @@ MCNAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
         ::std::equal_to<void>> const& userProps
 );
 
-MCNAPI void saveOrFail(
+MCAPI void saveOrFail(
     ::cereal::SchemaWriter&              writer,
     ::entt::meta_any const&              any,
     ::entt::type_info const&             expected,
     ::cereal::internal::SaveState const& state
 );
 
-MCNAPI ::std::string toString(double d);
+MCAPI ::std::string toString(double d);
 // NOLINTEND
 
 } // namespace cereal::internal

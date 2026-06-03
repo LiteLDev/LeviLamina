@@ -6,15 +6,9 @@ class CheckSum {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk34dd67;
-    ::ll::UntypedStorage<2, 2> mUnkfa44fa;
-    ::ll::UntypedStorage<2, 2> mUnkddd49b;
-    ::ll::UntypedStorage<4, 4> mUnk180f33;
+    ::ll::TypedStorage<2, 2, ushort> r;
+    ::ll::TypedStorage<2, 2, ushort> c1;
+    ::ll::TypedStorage<2, 2, ushort> c2;
+    ::ll::TypedStorage<4, 4, uint>   sum;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CheckSum& operator=(CheckSum const&);
-    CheckSum(CheckSum const&);
-    CheckSum();
 };

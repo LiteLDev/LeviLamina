@@ -6,6 +6,6 @@ class WSAStartupSingleton {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int& refCount();
+    MCAPI static int& refCount();
     // NOLINTEND
 };

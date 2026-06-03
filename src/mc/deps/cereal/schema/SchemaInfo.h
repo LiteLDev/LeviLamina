@@ -2,16 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/schema/ReflectedType.h"
+
 namespace cereal::internal {
 
 struct SchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkad17fc;
-    ::ll::UntypedStorage<4, 8>  mUnkc4eb0b;
-    ::ll::UntypedStorage<8, 40> mUnk8e4992;
-    ::ll::UntypedStorage<8, 40> mUnkb2d571;
+    ::ll::TypedStorage<4, 4, uint>                                               mId;
+    ::ll::TypedStorage<4, 8, ::std::optional<::cereal::internal::ReflectedType>> mType;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                    mDescription;
     // NOLINTEND
 
 public:
@@ -23,15 +26,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo&&);
+    MCAPI ::cereal::internal::SchemaInfo& operator=(::cereal::internal::SchemaInfo&&);
 
-    MCNAPI ~SchemaInfo();
+    MCAPI ~SchemaInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

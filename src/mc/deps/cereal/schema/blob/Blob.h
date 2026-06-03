@@ -6,17 +6,19 @@ namespace cereal {
 
 struct Blob {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk1b6570;
-    ::ll::UntypedStorage<8, 8>  mUnk6b43ce;
-    // NOLINTEND
+    // Blob inner types define
+    using StorageType = ::std::unique_ptr<uchar[0]>;
+
+    using ValueType = uchar;
+
+    using ViewType = ::gsl::span<uchar const>;
 
 public:
-    // prevent constructor by default
-    Blob& operator=(Blob const&);
-    Blob(Blob const&);
-    Blob();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::gsl::span<uchar const>>   mView;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<uchar[0]>> mData;
+    // NOLINTEND
 };
 
 } // namespace cereal

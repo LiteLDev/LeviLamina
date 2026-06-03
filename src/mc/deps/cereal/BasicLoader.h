@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicContextOwner.h"
+#include "mc/deps/cereal/LoaderConfig.h"
 #include "mc/deps/cereal/ResultCode.h"
+#include "mc/deps/cereal/schema/Schema.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct LoaderConfig; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal::internal { class BasicSchema; }
@@ -20,14 +21,12 @@ class BasicLoader : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkab84fe;
-    ::ll::UntypedStorage<1, 1>   mUnke16cbe;
+    ::ll::TypedStorage<8, 144, ::cereal::internal::Schema> mSchema;
+    ::ll::TypedStorage<1, 1, ::cereal::LoaderConfig>       mConfig;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BasicLoader& operator=(BasicLoader const&);
-    BasicLoader(BasicLoader const&);
     BasicLoader();
 
 public:
@@ -39,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BasicLoader(
+    MCAPI BasicLoader(
         ::cereal::ReflectionCtx const& reflectionCtx,
         ::cereal::ResultCode           errorCodes,
         ::cereal::LoaderConfig const&  config
     );
 
-    MCNAPI bool loadImpl(
+    MCAPI bool loadImpl(
         ::cereal::SchemaReader&                reader,
         ::entt::meta_handle                    handle,
         ::entt::meta_any const&                loadContext,
@@ -56,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::cereal::ReflectionCtx const& reflectionCtx,
         ::cereal::ResultCode           errorCodes,
         ::cereal::LoaderConfig const&  config
@@ -66,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

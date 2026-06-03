@@ -2,26 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/CloudKey.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
+
 namespace RakNet {
 
 struct CloudQueryRow {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkcfc947;
-    ::ll::UntypedStorage<8, 8>   mUnkea17aa;
-    ::ll::UntypedStorage<4, 4>   mUnk195802;
-    ::ll::UntypedStorage<8, 136> mUnk53a8fc;
-    ::ll::UntypedStorage<8, 136> mUnk2c8c7f;
-    ::ll::UntypedStorage<8, 16>  mUnk7ef42c;
-    ::ll::UntypedStorage<8, 16>  mUnk4544dc;
+    ::ll::TypedStorage<8, 16, ::RakNet::CloudKey>       key;
+    ::ll::TypedStorage<8, 8, uchar*>                    data;
+    ::ll::TypedStorage<4, 4, uint>                      length;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> serverSystemAddress;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> clientSystemAddress;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     serverGUID;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     clientGUID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CloudQueryRow& operator=(CloudQueryRow const&);
-    CloudQueryRow(CloudQueryRow const&);
-    CloudQueryRow();
 };
 
 } // namespace RakNet

@@ -3,26 +3,26 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ContextArea.h"
 #include "mc/deps/cereal/schema/DescriptionExtra.h"
+#include "mc/deps/cereal/schema/SerializationTraits.h"
 
 namespace cereal {
 
 struct DescriptionConfig {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk49e27a;
-    ::ll::UntypedStorage<1, 1> mUnkbf0af1;
-    ::ll::UntypedStorage<1, 1> mUnk9e7e78;
-    ::ll::UntypedStorage<1, 1> mUnk4cedb0;
-    ::ll::UntypedStorage<1, 1> mUnk7dd408;
-    // NOLINTEND
+    // DescriptionConfig inner types define
+    using Extra = ::cereal::internal::DescriptionExtra;
 
 public:
-    // prevent constructor by default
-    DescriptionConfig& operator=(DescriptionConfig const&);
-    DescriptionConfig(DescriptionConfig const&);
-    DescriptionConfig();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, ::cereal::ContextArea>                mContextArea;
+    ::ll::TypedStorage<1, 1, ::cereal::SerializationTraits>        mSerializationTraits;
+    ::ll::TypedStorage<1, 1, ::cereal::internal::DescriptionExtra> mExtraInfo;
+    ::ll::TypedStorage<1, 1, bool>                                 mIgnoreDeprecatedMembers;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsTopLevel;
+    // NOLINTEND
 };
 
 } // namespace cereal

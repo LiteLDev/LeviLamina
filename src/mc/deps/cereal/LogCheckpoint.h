@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class SerializerContext; }
+// clang-format on
+
 namespace cereal {
 
 class LogCheckpoint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf3594c;
-    ::ll::UntypedStorage<4, 4> mUnka33bce;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::SerializerContext*>> mParent;
+    ::ll::TypedStorage<4, 4, uint>                                          mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LogCheckpoint& operator=(LogCheckpoint const&);
-    LogCheckpoint(LogCheckpoint const&);
-    LogCheckpoint();
 };
 
 } // namespace cereal

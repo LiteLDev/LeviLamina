@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace cereal {
 
 class BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb67527;
+    ::ll::TypedStorage<8, 8, ::cereal::ReflectionCtx const* const> mReflectionCtx;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BasicContextOwner& operator=(BasicContextOwner const&);
-    BasicContextOwner(BasicContextOwner const&);
-    BasicContextOwner();
 };
 
 } // namespace cereal
