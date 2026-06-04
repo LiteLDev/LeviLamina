@@ -18,6 +18,15 @@ template <typename T>
 using PersistentSerializationLookup = brstd::function_ref<CompoundTag const*(T const&), CompoundTag const*(T const&)>;
 
 template <typename T>
+using RuntimeDeserializationLookup = brstd::function_ref<T const*(unsigned long), T const*(unsigned long)>;
+
+template <typename T>
+using PersistentDeserializationLookup = brstd::function_ref<T const*(CompoundTag const&), T const*(CompoundTag const&)>;
+
+template <typename T>
+using GenericPaletteBase = gsl::span<T const*>;
+
+template <typename T>
 class SubChunkStorage {
 public:
     // NOLINTBEGIN
