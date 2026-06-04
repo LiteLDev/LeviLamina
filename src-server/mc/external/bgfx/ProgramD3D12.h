@@ -4,7 +4,6 @@
 
 namespace bgfx::d3d12 {
 
-template <int T0>
-struct RingBufferAllocator {};
+struct ProgramD3D12 {};
 
 } // namespace bgfx::d3d12

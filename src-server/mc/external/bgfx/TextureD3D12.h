@@ -4,7 +4,10 @@
 
 namespace bgfx::d3d12 {
 
-template <int T0>
-struct RingBufferAllocator {};
+struct TextureD3D12 {
+public:
+    // TextureD3D12 inner types define
+    enum class Enum : int {};
+};
 
 } // namespace bgfx::d3d12
