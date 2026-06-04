@@ -2,5 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0>
-class BlockDataFetchResult {};
+#include "mc/world/level/BlockPos.h"
+
+template <typename T>
+class BlockDataFetchResult {
+public:
+    std::reference_wrapper<T const> mData;
+    BlockPos                        mDataPos;
+    uint32_t                        mDistanceSquared;
+};
