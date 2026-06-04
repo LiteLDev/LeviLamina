@@ -84,6 +84,9 @@ public:
 template <typename T>
 class SubChunkStoragePaletted<T, 0UL, static_cast<SubChunkStorageUnit::Type>(0)> : public ISubChunkStoragePaletted<T> {
 public:
+    using GenericPalette = GenericPaletteBase<T>;
+    using VolumeView     = ChunkVolume::VolumeOf<T>::ConstSubViewType;
+
     AppendOnlyAtomicLookupTable<T const*, 1UL> mPalette;
 
 public:
