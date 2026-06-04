@@ -8,22 +8,22 @@ struct RendererContextD3D12 {
 public:
     // RendererContextD3D12 inner types declare
     // clang-format off
-    struct BLASGeometryInfo;
+    struct TlasBuildRequest;
     struct BlasBuildRequest;
     struct BlasCompactionRequest;
-    struct TlasBuildRequest;
+    struct BLASGeometryInfo;
     // clang-format on
 
     // RendererContextD3D12 inner types define
     enum class BufferHeapUpdateMode : int {};
 
-    struct BLASGeometryInfo {};
+    struct TlasBuildRequest {};
 
     struct BlasBuildRequest {};
 
     struct BlasCompactionRequest {};
 
-    struct TlasBuildRequest {};
+    struct BLASGeometryInfo {};
 };
 
 } // namespace bgfx::d3d12

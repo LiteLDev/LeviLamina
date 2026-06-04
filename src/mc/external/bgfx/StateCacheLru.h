@@ -4,7 +4,7 @@
 
 namespace bgfx {
 
-template <typename T0, typename T1, typename T2, typename T3>
-class RingBuffer {};
+template <typename T0, int T1>
+class StateCacheLru {};
 
 } // namespace bgfx
