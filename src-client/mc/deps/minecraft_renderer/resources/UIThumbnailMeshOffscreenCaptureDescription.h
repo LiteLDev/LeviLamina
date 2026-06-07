@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_renderer/resources/OffscreenCaptureData.h"
+
 struct UIThumbnailMeshOffscreenCaptureDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk60d5ec;
+    ::ll::TypedStorage<8, 32, ::OffscreenCaptureData> mCaptureData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UIThumbnailMeshOffscreenCaptureDescription& operator=(UIThumbnailMeshOffscreenCaptureDescription const&);
-    UIThumbnailMeshOffscreenCaptureDescription(UIThumbnailMeshOffscreenCaptureDescription const&);
-    UIThumbnailMeshOffscreenCaptureDescription();
 };
